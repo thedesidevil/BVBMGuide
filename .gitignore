@@ -5,6 +5,10 @@ env/
 __pycache__/
 *.py[cod]
 
+# Environment secrets
+.env
+.env.local
+
 # OS files
 .DS_Store
 Thumbs.db
@@ -18,4 +22,11 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Generated databases (can be regenerated)
+database/
+restaurant_db.json
+# aig-library/library_db.json
+
+settings.local.json
 

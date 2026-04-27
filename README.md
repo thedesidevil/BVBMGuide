@@ -11,11 +11,16 @@ This project documents and aims to improve the process of creating "All Inclusiv
 ```
 BVBMGuide/
 ├── aig-library/          # 91 reference AIGs covering 20+ destinations
-├── sample/               # Sample AIG (Peru) for detailed analysis
-├── docs/                 # Project documentation
-│   ├── AIG_STRUCTURE.md      # Format & conventions breakdown
-│   ├── LIBRARY_INVENTORY.md  # Complete catalog of reference AIGs
-│   └── PROJECT_CONTEXT.md    # Project status & next steps
+├── sample/
+│   ├── Divya-Mauritius-Itinerary.pdf           # Sample INPUT (client itinerary)
+│   └── All Inclusive Guide - Peru-....pdf      # Sample OUTPUT (full AIG)
+├── docs/
+│   ├── INPUT_FORMAT.md           # Input itinerary format analysis
+│   ├── AIG_STRUCTURE.md          # Output AIG format & conventions
+│   ├── CUSTOMGPT_INSTRUCTIONS.md # GPT system prompt
+│   ├── INSTRUCTION_ANALYSIS.md   # Key rules breakdown
+│   ├── LIBRARY_INVENTORY.md      # Catalog of reference AIGs
+│   └── PROJECT_CONTEXT.md        # Project status
 └── README.md
 ```
 
@@ -29,9 +34,17 @@ An All Inclusive Guide is a 30-40 page travel document that includes:
 
 ## Current Workflow
 
-1. **Custom GPT** generates AIGs using the instruction set
-2. **Library** of 91 reference guides provides verified content
-3. **Instruction Set** defines formatting rules, quality gates, and mandatory sections
+```
+┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
+│  Client         │     │   Custom GPT     │     │  All Inclusive  │
+│  Itinerary      │ ──▶ │  + Library       │ ──▶ │  Guide (AIG)    │
+│  (16 pages)     │     │  + Instructions  │     │  (30-40 pages)  │
+└─────────────────┘     └──────────────────┘     └─────────────────┘
+```
+
+- **Input**: High-level client itinerary with day-by-day activities
+- **Processing**: Custom GPT enriches with restaurants, logistics, maps links
+- **Output**: Comprehensive AIG with all supplementary sections
 
 ## Documentation
 

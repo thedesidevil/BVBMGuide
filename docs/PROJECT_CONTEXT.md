@@ -16,9 +16,13 @@ The current workflow involves:
 ## Reference Materials
 
 ### Collected So Far:
-- [x] **Sample AIG**: Peru guide for Neha and Mayur (34-page PDF)
+- [x] **Sample AIG (Output)**: Peru guide for Neha and Mayur (34-page PDF)
   - Location: `/sample/All Inclusive Guide - Peru- Neha and Mayur (1).pdf`
   - Analysis: See `/docs/AIG_STRUCTURE.md`
+
+- [x] **Sample Input**: Divya Mauritius Itinerary (16-page PDF)
+  - Location: `/sample/Divya-Mauritius-Itinerary.pdf`
+  - Analysis: See `/docs/INPUT_FORMAT.md`
 
 - [x] **Library** - 91 reference AIGs covering multiple destinations
   - Location: `/aig-library/`
@@ -29,13 +33,16 @@ The current workflow involves:
   - See `/docs/INSTRUCTION_ANALYSIS.md` for breakdown
 
 ### Pending:
-- [ ] Define improvements or automation goals for the AIG generation process
+- [x] Define program requirements → See `/docs/REQUIREMENTS.md`
+- [ ] Build the AIG generator program
 
 ## Documentation Index
 
 | Document | Description |
 |----------|-------------|
-| `AIG_STRUCTURE.md` | Detailed breakdown of AIG format, sections, and conventions |
+| `REQUIREMENTS.md` | **Program requirements and user flow** |
+| `INPUT_FORMAT.md` | Analysis of the input itinerary format |
+| `AIG_STRUCTURE.md` | Detailed breakdown of AIG output format and conventions |
 | `LIBRARY_INVENTORY.md` | Complete catalog of all 91 reference AIGs by destination |
 | `CUSTOMGPT_INSTRUCTIONS.md` | The actual instruction set used by the Custom GPT |
 | `INSTRUCTION_ANALYSIS.md` | Analysis of key rules and generation logic |

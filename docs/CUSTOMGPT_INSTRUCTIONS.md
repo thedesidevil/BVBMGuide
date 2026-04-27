@@ -129,11 +129,6 @@ For every venue:
 
 These must be included in every guide:
 
-#### 📸 Instagrammable Cafés & Restaurants
-
-* 3–4 per hotel zone
-* Must be in the verified library or curated (clearly marked)
-
 #### 🍛 Must-Try Local Dishes
 
 * Grouped by **type** (Street Food, Main Dishes, Drinks)

@@ -1,0 +1,578 @@
+{
+  "restaurants": [
+    {
+      "name": "Amaya – SeaShell Rooftop Restaurant",
+      "city": "Port Blair",
+      "cuisine_type": [
+        "Indian",
+        "Seafood"
+      ],
+      "price_range": "₹800–1,200 per person",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "Refined rooftop dining space with sea views and a relaxed vibe",
+      "area": "SeaShell Hotel",
+      "highlights": [
+        "Rooftop location",
+        "Sea views",
+        "In-house restaurant"
+      ],
+      "must_try_dishes": [
+        "Grilled seafood",
+        "Indian curries",
+        "veg & non-veg platters"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Salt & Pepper",
+      "city": "Port Blair",
+      "cuisine_type": [
+        "Seafood",
+        "Indian"
+      ],
+      "price_range": "budget",
+      "hours": "10 AM to 10 PM",
+      "ambience": "Popular local seafood & Indian fare (casual)",
+      "highlights": [
+        "Popular local restaurant",
+        "Casual dining"
+      ],
+      "must_try_dishes": [
+        "Fish curry",
+        "prawns",
+        "Indian thalis"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+        "Andamans/Tushar_All Inclusive Guide_Andamans.pdf"
+      ],
+      "area": "Marine Hill",
+      "nearby_landmarks": [
+        "Hotel Mansha Palace, Port Blair"
+      ]
+    },
+    {
+      "name": "Icy Spicy Pure Veg",
+      "city": "Port Blair",
+      "cuisine_type": [
+        "Vegetarian",
+        "Chinese",
+        "Italian"
+      ],
+      "price_range": "₹400–800 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Easy and comfortable vegetarian restaurant",
+      "area": "Foreshore Road area",
+      "highlights": [
+        "Pure vegetarian",
+        "Multiple cuisines"
+      ],
+      "must_try_dishes": [
+        "Chaat",
+        "Pasta/Pizza",
+        "Chinese"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Amaya (SeaShell rooftop)",
+      "city": "Port Blair",
+      "cuisine_type": [
+        "Seafood",
+        "Indian"
+      ],
+      "price_range": "mid-range",
+      "hours": "11 AM to 11 PM",
+      "ambience": "Seafood-forward rooftop lounge with sea views",
+      "area": "Marine Hill",
+      "nearby_landmarks": [
+        "Hotel Mansha Palace, Port Blair"
+      ],
+      "highlights": [
+        "Rooftop location",
+        "Sea views",
+        "Good mix veg/non-veg"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Andamans/Tushar_All Inclusive Guide_Andamans.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Samudrika Marine Museum",
+      "city": "Port Blair",
+      "description": "Managed by the Indian Navy, this compact yet insightful museum introduces you to the Andaman Islands' marine biodiversity, tribal culture, and naval history",
+      "hours": "9:00 AM – 5:00 PM (closed Mondays)",
+      "entry_fee": "₹50 per person",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Corbyn's Cove Beach",
+      "city": "Port Blair",
+      "description": "A gentle, palm-fringed beach close to the city, perfect for slowing the pace after your excursion. Enjoy a barefoot stroll, relaxed seating by the shore, or simply take in the sea breeze",
+      "hours": "Open all day",
+      "entry_fee": "Free entry",
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Cellular Jail National Memorial",
+      "city": "Port Blair",
+      "description": "A deeply moving visit to India's most powerful freedom monument. Walk through the prison corridors and galleries that narrate stories of sacrifice, resilience, and courage during the colonial era",
+      "hours": "9:00 AM – 12:00 PM & 2:00 PM – 5:00 PM",
+      "entry_fee": "₹30 per person",
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Chidiya Tapu",
+      "city": "Port Blair",
+      "description": "Often called the 'Bird Island,' known for its forested coastline and dramatic sunsets. As the sun dips into the sea, the sky turns into deep oranges and purples",
+      "hours": "Best visited near sunset",
+      "entry_fee": "Free entry",
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Cellular Jail Light & Sound Show",
+      "city": "Port Blair",
+      "description": "Through narration, music, and illumination, the story of India's freedom struggle comes alive in a truly unforgettable way",
+      "hours": "7:30 PM show",
+      "entry_fee": "₹300 per person",
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Cellular Jail & Museum",
+      "city": "Port Blair",
+      "description": "Historic Cellular Jail (National Memorial) with museum walkthrough to learn about the Freedom Struggle and prison history",
+      "hours": "9 AM to 12 PM and 2 PM to 5 PM",
+      "entry_fee": "₹30 pp",
+      "recommended_duration": "1.5–2 hours",
+      "source_files": [
+        "Andamans/Tushar_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Light & Sound Show (National Memorial)",
+      "city": "Port Blair",
+      "description": "Light & Sound Show at the Cellular Jail / National Memorial",
+      "hours": "5:50 pm / 6:50 pm / 7:50 pm",
+      "entry_fee": "₹300 per person",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Andamans/Tushar_All Inclusive Guide_Andamans.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "SeaShell, Port Blair",
+      "city": "Port Blair",
+      "location": "Port Blair",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "name": "Hotel Mansha Palace",
+      "city": "Port Blair",
+      "location": "Marine Hill, Sri Vijaya Puram",
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "name": "Sea Deck",
+      "city": "Port Blair",
+      "location": "Haddo / Foreshore Road",
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Coconut-Based Vegetarian Curries (Island Style)",
+      "city": "Port Blair",
+      "description": "Traditional island-style vegetarian curries made with coconut",
+      "vegetarian": true,
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Banana Flower (Vazhaipoo) Curry / Stir Fry",
+      "city": "Port Blair",
+      "description": "Curry or stir fry made with banana flower",
+      "vegetarian": true,
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Grilled/curried seafood",
+      "city": "Port Blair",
+      "description": "Fresh local catch including prawns, lobster, reef fish",
+      "vegetarian": false,
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Coconut prawn curry / fish curry with coconut milk",
+      "city": "Port Blair",
+      "description": "Island special curry made with coconut milk",
+      "vegetarian": false,
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Andaman crab preparations",
+      "city": "Port Blair",
+      "description": "Seasonal crab dishes prepared in local style",
+      "vegetarian": false,
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Local coconut-based sweets & fresh tropical fruits",
+      "city": "Port Blair",
+      "description": "Traditional sweets made with coconut and fresh tropical fruits",
+      "vegetarian": true,
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Respect local marine rules — do not touch/damage coral; use reef-safe sunscreen where possible",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "For snorkeling/diving: always follow guide instructions. Bring motion-sickness meds if you're prone to seasickness",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Carry prescription meds in original packaging + scan of prescriptions",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Drink bottled water or ask hotels about drinking water",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Shell Crafts & Sea-Themed Souvenirs",
+      "city": "Port Blair",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Sagarika Emporium (Government Handicraft Emporium)",
+        "Aberdeen Bazaar"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Coconut & Cane Handicrafts",
+      "city": "Port Blair",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Sagarika Emporium",
+        "Samudrika Naval Marine Museum shop"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Spices & Island Flavours",
+      "city": "Port Blair",
+      "category": "Food",
+      "where_to_buy": [
+        "Aberdeen Bazaar spice shops",
+        "Khadi Emporium grocery wing"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Nicobari Tribal Handicrafts",
+      "city": "Port Blair",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Sagarika Emporium",
+        "Cottage Industries Emporium"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Local Art & Marine-Themed Paintings",
+      "city": "Port Blair",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Art galleries near Marina Park",
+        "Samudrika Museum shop"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Pearl Jewelry (Cultured)",
+      "city": "Port Blair",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Sagarika Emporium",
+        "certified jewelry stores in Aberdeen Bazaar"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Apparel & Island Wear",
+      "city": "Port Blair",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Aberdeen Bazaar clothing lanes"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Organic Beauty & Wellness Products",
+      "city": "Port Blair",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Government emporiums",
+        "wellness shops near MG Road"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Fridge Magnets, Keychains & Miniature Boats",
+      "city": "Port Blair",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Aberdeen Bazaar",
+        "Marina Park stalls"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Packaged Snacks Made Locally",
+      "city": "Port Blair",
+      "category": "Food",
+      "where_to_buy": [
+        "Local bakeries",
+        "ANIIDCO outlets"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Shell Crafts & Sea-Themed Souvenirs",
+      "city": "Port Blair",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Sagarika Emporium (Government Handicraft Emporium)",
+        "Aberdeen Bazaar"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "item": "Coconut & Cane Handicrafts",
+      "city": "Port Blair",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Sagarika Emporium",
+        "Samudrika Naval Marine Museum shop"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "item": "Spices & Island Flavours",
+      "city": "Port Blair",
+      "category": "Food",
+      "where_to_buy": [
+        "Aberdeen Bazaar spice shops",
+        "Khadi Emporium grocery wing"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "item": "Nicobari Tribal Handicrafts",
+      "city": "Port Blair",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Sagarika Emporium",
+        "Cottage Industries Emporium"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "item": "Local Art & Marine-Themed Paintings",
+      "city": "Port Blair",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Art galleries near Marina Park",
+        "Samudrika Museum shop"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "item": "Pearl Jewelry (Cultured)",
+      "city": "Port Blair",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Sagarika Emporium",
+        "certified jewelry stores in Aberdeen Bazaar"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "item": "Apparel & Island Wear",
+      "city": "Port Blair",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Aberdeen Bazaar clothing lanes"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "item": "Organic Beauty & Wellness Products",
+      "city": "Port Blair",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Government emporiums",
+        "wellness shops near MG Road"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "item": "Fridge Magnets, Keychains & Miniature Boats",
+      "city": "Port Blair",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Aberdeen Bazaar",
+        "Marina Park stalls"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "item": "Packaged Snacks Made Locally",
+      "city": "Port Blair",
+      "category": "Food",
+      "where_to_buy": [
+        "Local bakeries",
+        "ANIIDCO outlets"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Carry seasickness tablets (important for ferry rides between islands)",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Carry prescription medicines in sufficient stock",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Pack mosquito repellent for protection against insects",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    }
+  ],
+  "source_files": [
+    "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+    "Andamans/Tushar_All Inclusive Guide_Andamans.pdf"
+  ]
+}

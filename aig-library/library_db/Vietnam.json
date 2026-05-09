@@ -1,0 +1,2710 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Vegetarian Pho",
+      "city": "Vietnam",
+      "description": "Rice noodle soup with clear vegetable broth, herbs, tofu",
+      "vegetarian": true,
+      "source_files": [
+        "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "Bun Chay",
+      "city": "Vietnam",
+      "description": "Vermicelli noodles with vegetables, herbs, and tofu",
+      "vegetarian": true,
+      "source_files": [
+        "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "Banh Xeo (Veg)",
+      "city": "Vietnam",
+      "description": "Crispy rice pancake with vegetables",
+      "vegetarian": true,
+      "source_files": [
+        "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "Fresh Spring Rolls (Veg)",
+      "city": "Vietnam",
+      "description": "Rice paper rolls with herbs and tofu",
+      "vegetarian": true,
+      "source_files": [
+        "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "Phở Bò / Phở Gà",
+      "city": "Vietnam",
+      "description": "Vietnam's iconic noodle soup with slow-simmered beef or chicken broth, rice noodles, fresh herbs, and lime",
+      "vegetarian": false,
+      "source_files": [
+        "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "Gà Nướng",
+      "city": "Vietnam",
+      "description": "Lemongrass-marinated grilled chicken, smoky, juicy, and widely loved across Vietnam",
+      "vegetarian": false,
+      "source_files": [
+        "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "Pho Chay",
+      "city": "Vietnam",
+      "description": "The vegetarian version of Pho",
+      "vegetarian": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf"
+      ]
+    },
+    {
+      "name": "Xoi or Com Chay",
+      "city": "Vietnam",
+      "description": "Vegetarian version of sticky rice served with chickpeas, coconut, sugar, mushrooms, broccoli, pepper, red chilli and onion",
+      "vegetarian": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf"
+      ]
+    },
+    {
+      "name": "Rau Muong Xao Toi",
+      "city": "Vietnam",
+      "description": "Fresh water spinach fried with garlic and Vietnamese herbs, served with peanut powder topping",
+      "vegetarian": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf"
+      ]
+    },
+    {
+      "name": "Goi cuon chay",
+      "city": "Vietnam",
+      "description": "Vegetarian fresh Vietnamese spring rolls",
+      "vegetarian": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf"
+      ]
+    },
+    {
+      "name": "Banh Mi Chay",
+      "city": "Vietnam",
+      "description": "Vegetarian version of famous Vietnamese sandwich - French style baguette filled with tofu, cheese or fried eggs",
+      "vegetarian": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf"
+      ]
+    },
+    {
+      "name": "Bun dau mam tom",
+      "city": "Vietnam",
+      "description": "Tofu and noodle dish served with mam tom sauce - deep-fried tofu slabs with pungent purple dipping sauce",
+      "vegetarian": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf"
+      ]
+    },
+    {
+      "name": "Banh Khoai Tay Chien",
+      "city": "Vietnam",
+      "description": "Deep-fried potato cakes made with mashed sweet potato, coconut and green beans, served with peanut dipping sauce",
+      "vegetarian": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf"
+      ]
+    },
+    {
+      "name": "Dau Sot Ca Chua",
+      "city": "Vietnam",
+      "description": "Yellow tofu pieces with slices of tomato, green onion and Vietnamese herbs, served with steamed rice",
+      "vegetarian": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf"
+      ]
+    },
+    {
+      "name": "Cai Xao Nam",
+      "city": "Vietnam",
+      "description": "Bok choy fried with shitake mushrooms, served with steamed sticky rice and tofu pieces",
+      "vegetarian": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf"
+      ]
+    },
+    {
+      "name": "Pho",
+      "city": "Vietnam",
+      "description": "Vietnamese noodle soup with chicken or beef broth and fresh herbs",
+      "vegetarian": false,
+      "where_to_try": "Pho Ga Nguyet",
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx",
+        "Vietnam/Eating Out Guide_ Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "Fresh Spring Rolls",
+      "city": "Vietnam",
+      "description": "Fresh vegetable spring rolls with herbs",
+      "vegetarian": true,
+      "where_to_try": "Various restaurants",
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Phở",
+      "city": "Vietnam",
+      "description": "Deeply comforting bowl of slow-simmered broth, rice noodles, and herbs - Vietnam's most iconic dish",
+      "vegetarian": false,
+      "where_to_try": "Pho Thin Da Nang",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf"
+      ]
+    },
+    {
+      "name": "Xoi",
+      "city": "Vietnam",
+      "description": "Vietnamese sticky rice in savory or sweet options",
+      "vegetarian": true,
+      "where_to_try": "Xoi Yen",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf"
+      ]
+    },
+    {
+      "name": "Xoi Chay",
+      "city": "Vietnam",
+      "description": "Vegetarian sticky rice served with chickpeas, coconut, sugar, mushrooms, broccoli, pepper, red chilli and onion",
+      "vegetarian": true,
+      "where_to_try": "Vegetarian restaurants",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf"
+      ]
+    },
+    {
+      "name": "Banh Mi",
+      "city": "Vietnam",
+      "description": "Baguette sandwich with paté, margarine, pickled vegetables, cilantro and cucumber",
+      "vegetarian": false,
+      "where_to_try": "Aha BaMi",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf"
+      ]
+    },
+    {
+      "name": "Egg Coffee",
+      "city": "Vietnam",
+      "description": "Creamy soft, meringue-like egg white foam on dense Vietnamese coffee",
+      "vegetarian": true,
+      "where_to_try": "Giang Café",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf"
+      ]
+    },
+    {
+      "name": "Bánh Mì",
+      "city": "Vietnam",
+      "description": "Perfect fusion of French and Vietnamese influences, crispy baguette filled with meats, pickles, herbs, and bold sauces",
+      "vegetarian": false,
+      "where_to_try": "Banh Mi Phuong",
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Goi cuon",
+      "city": "Vietnam",
+      "description": "Vietnamese fresh spring rolls with rice paper, leafy greens, mint, coriander and protein",
+      "vegetarian": false,
+      "where_to_try": "Ask for seafood or chicken options",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Vietnam",
+      "english": "Hello",
+      "local": "Xin chào",
+      "category": "greeting",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "english": "How are you?",
+      "local": "Khỏe không",
+      "category": "greeting",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "english": "Thank you",
+      "local": "Cảm ơn",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "english": "Yes",
+      "local": "Đúng",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "english": "No",
+      "local": "Không",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "english": "Hello",
+      "local": "Xin chào",
+      "category": "greeting",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "english": "How are you?",
+      "local": "Khỏe không",
+      "category": "greeting",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "english": "Thank you",
+      "local": "Cảm ơn",
+      "category": "polite",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "english": "Yes",
+      "local": "Đúng",
+      "category": "polite",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "english": "No",
+      "local": "Không",
+      "category": "polite",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "english": "Hello",
+      "local": "Xin chào",
+      "category": "greeting",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "english": "How are you?",
+      "local": "Khỏe không",
+      "category": "greeting",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "english": "Thank you",
+      "local": "Cảm ơn",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "english": "Yes",
+      "local": "Đúng",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "english": "No",
+      "local": "Không",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "english": "Hello",
+      "local": "Xin chào",
+      "category": "greeting",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "english": "Thank you",
+      "local": "Cảm ơn",
+      "category": "polite",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "english": "Yes",
+      "local": "Vâng",
+      "category": "polite",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "english": "No",
+      "local": "Không",
+      "category": "polite",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "english": "Excuse me / Sorry",
+      "local": "Xin lỗi",
+      "category": "polite",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "english": "How much is this?",
+      "local": "Bao nhiêu tiền?",
+      "category": "food",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "english": "Delicious",
+      "local": "Ngon quá",
+      "category": "food",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "english": "Goodbye",
+      "local": "Tạm biệt",
+      "category": "greeting",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "english": "Hello",
+      "local": "Xin chào",
+      "category": "greeting",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "english": "How are you?",
+      "local": "Khỏe không",
+      "category": "greeting",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "english": "Thank you",
+      "local": "Cảm ơn",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "english": "Yes",
+      "local": "Đúng",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "english": "No",
+      "local": "Không",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "english": "Hello",
+      "local": "Xin chào",
+      "category": "greeting",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "english": "How are you?",
+      "local": "Khỏe không",
+      "category": "greeting",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "english": "Thank you",
+      "local": "Cảm ơn",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "english": "Yes",
+      "local": "Đúng",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "english": "No",
+      "local": "Không",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "english": "Hello",
+      "local": "Xin chào",
+      "category": "greeting",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "city": "Vietnam",
+      "english": "Thank you",
+      "local": "Cảm ơn",
+      "category": "polite",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "city": "Vietnam",
+      "english": "Yes",
+      "local": "Vâng",
+      "category": "polite",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "city": "Vietnam",
+      "english": "No",
+      "local": "Không",
+      "category": "polite",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "city": "Vietnam",
+      "english": "How much is this?",
+      "local": "Cái này bao nhiêu?",
+      "category": "food",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "city": "Vietnam",
+      "english": "Delicious!",
+      "local": "Ngon quá!",
+      "category": "food",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "city": "Vietnam",
+      "english": "Hello",
+      "local": "Xin chào",
+      "category": "greeting",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "english": "How are you?",
+      "local": "Khỏe không",
+      "category": "greeting",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "english": "Thank you",
+      "local": "Cảm ơn",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "english": "Yes",
+      "local": "Đúng",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "english": "No",
+      "local": "Không",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "english": "Hello",
+      "local": "Xin chào",
+      "category": "greeting",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "english": "How are you?",
+      "local": "Khỏe không",
+      "category": "greeting",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "english": "Thank you",
+      "local": "Cảm ơn",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "english": "Yes",
+      "local": "Đúng",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "english": "No",
+      "local": "Không",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "english": "Hello",
+      "local": "Xin chào",
+      "category": "greeting",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "english": "How are you?",
+      "local": "Khỏe không",
+      "category": "greeting",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "english": "Thank you",
+      "local": "Cảm ơn",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "english": "Yes",
+      "local": "Đúng",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "english": "No",
+      "local": "Không",
+      "category": "polite",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Watch belongings in crowded markets",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Drink bottled water only",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Cross roads slowly & confidently",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Keep valuables in crossbody bags or money belts, especially in crowded areas",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Avoid carrying passports daily — keep copies instead",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Use hotel safes for passports, cash, and jewelry",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Stick to well-lit areas at night",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Apply insect repellent during evenings and near water bodies",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Refrain from taking cabs which are not from recommended companies (Grab, Uber, Vinasun, Mai linh) to avoid scams",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Unless particularly known for their veg or chicken/seafood options, avoid visiting the sidewalk restaurants",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Avoid nighttime travel in isolated or poorly lit areas, especially outside busy tourist zones",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Beaches after dark – Stick to well-lit areas and avoid secluded sections late at night",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Busy roads and motorbike traffic – Traffic can be chaotic; cross roads slowly and steadily rather than rushing",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Avoid unmarked taxis. Use trusted ride-hailing apps like Grab for transparent pricing",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Vietnamese Dong has large denominations. Always double-check the amount before paying",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Bargaining is normal in markets; compare prices and negotiate politely",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Avoid carrying all cash and cards in one place",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Use the hotel safe for passports and valuables",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry a printed or digital copy of your passport while exploring",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Stay mindful of personal belongings in busy markets and nightlife areas",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Refrain from taking cabs which are not from Grab, Uber, Vinasun, or Mai linh to avoid scams",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Unless particularly known for their veg or chicken/seafood options, avoid visiting the sidewalk restaurants",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Unless particularly known for their veg or chicken/seafood options, avoid visiting the sidewalk restaurants",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Refrain from taking cabs which are not from Grab, Uber, Vinasun, or Mai linh companies to avoid scams",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Refrain from taking cabs which are not from Grab, Uber, Vinasun, or Mai linh to avoid scams",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Unless particularly known for their veg or chicken/seafood options, avoid visiting the sidewalk restaurants",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Refrain from taking cabs which are not from approved companies (Grab, Uber, Vinasun, Mai linh) to avoid scams",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Unless particularly known for their veg or chicken/seafood options, avoid visiting the sidewalk restaurants",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Vietnamese coffee",
+      "city": "Vietnam",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "item": "Vietnamese coffee",
+      "city": "Vietnam",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "item": "Vietnamese Silk Products",
+      "city": "Vietnam",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Han Market",
+        "Hoi An Silk Village",
+        "Quoc Huy Silk",
+        "B'Lan Silk Tailor Shop"
+      ],
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "item": "Vietnamese Hand Embroidery",
+      "city": "Vietnam",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Han Market",
+        "Hoi An Night Market along Nguyen Hoang Street"
+      ],
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "item": "Vietnamese Coffee",
+      "city": "Vietnam",
+      "category": "Food",
+      "where_to_buy": [
+        "WinMart",
+        "convenience stores",
+        "Trung Nguyen Coffee",
+        "King Coffee"
+      ],
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "item": "Ô Mai (Vietnamese Dried Fruit Snacks)",
+      "city": "Vietnam",
+      "category": "Food",
+      "where_to_buy": [
+        "Hong Lam Store",
+        "Tien Tinh Store"
+      ],
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "item": "Local Vietnamese Snacks",
+      "city": "Vietnam",
+      "category": "Food",
+      "where_to_buy": [
+        "bakeries",
+        "specialty gift shops around Hoi An and Da Nang"
+      ],
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "item": "Vietnamese coffee",
+      "city": "Vietnam",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "item": "Vietnamese coffee",
+      "city": "Vietnam",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "item": "Vietnamese coffee",
+      "city": "Vietnam",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "item": "Vietnamese coffee",
+      "city": "Vietnam",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "item": "Vietnamese coffee",
+      "city": "Vietnam",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Vietnam",
+      "service": "General Emergency",
+      "number": "113",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "city": "Vietnam",
+      "service": "Police",
+      "number": "113",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "city": "Vietnam",
+      "service": "Fire",
+      "number": "114",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "city": "Vietnam",
+      "service": "Ambulance",
+      "number": "115",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "city": "Vietnam",
+      "service": "Embassy of India – Hanoi",
+      "number": "+84 24 3824 4989",
+      "notes": "Monday–Friday | 9:00 AM – 5:30 PM",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "city": "Vietnam",
+      "service": "Domestic Long Distance Telephone Service",
+      "number": "101",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "service": "Social and Cultural Information",
+      "number": "1080",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "service": "International Telephone Service",
+      "number": "110",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "service": "Police",
+      "number": "113",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "service": "Fire Brigade",
+      "number": "114",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "service": "Ambulance",
+      "number": "115",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "service": "Police",
+      "number": "113",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "service": "Fire Brigade",
+      "number": "114",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "service": "Ambulance",
+      "number": "115",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "service": "Domestic Long Distance Telephone Service",
+      "number": "101",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "service": "International Telephone Service",
+      "number": "110",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "service": "Social and Cultural Information",
+      "number": "1080",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "service": "Domestic Long Distance Telephone Service",
+      "number": "101",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "service": "Social and Cultural Information",
+      "number": "1080",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "service": "International Telephone Service",
+      "number": "110",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "service": "Police",
+      "number": "113",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "service": "Fire Brigade",
+      "number": "114",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "service": "Ambulance",
+      "number": "115",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "service": "Police",
+      "number": "113",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "service": "Ambulance",
+      "number": "115",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "service": "Fire Department",
+      "number": "114",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "service": "Embassy of India – Hanoi",
+      "number": "+84 24 3824 4989",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "service": "Consulate General of India – Ho Chi Minh City",
+      "number": "+84 28 3744 2400",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "service": "Emergency Contact",
+      "number": "+84 91 718 0776",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "service": "Domestic Long Distance Telephone Service",
+      "number": "101",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "service": "Social and Cultural Information",
+      "number": "1080",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "service": "International Telephone Service",
+      "number": "110",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "service": "Police",
+      "number": "113",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "service": "Fire Brigade",
+      "number": "114",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "service": "Ambulance",
+      "number": "115",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "service": "Domestic Long Distance Telephone Service",
+      "number": "101",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "service": "Social and Cultural Information",
+      "number": "1080",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "service": "International Telephone Service",
+      "number": "110",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "service": "Police",
+      "number": "113",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "service": "Fire Brigade",
+      "number": "114",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "service": "Ambulance",
+      "number": "115",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "service": "Police",
+      "number": "113",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "city": "Vietnam",
+      "service": "Fire",
+      "number": "114",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "city": "Vietnam",
+      "service": "Ambulance",
+      "number": "115",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "city": "Vietnam",
+      "service": "Tourist Hotline",
+      "number": "+84 236 1022",
+      "notes": "English-speaking",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "city": "Vietnam",
+      "service": "Indian Embassy – Hanoi",
+      "number": "+84 24 3826 6785",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "city": "Vietnam",
+      "service": "Indian Consulate – HCMC",
+      "number": "+84 28 3935 2120",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "city": "Vietnam",
+      "service": "Domestic Long Distance Telephone Service",
+      "number": "101",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "service": "Social and Cultural Information",
+      "number": "1080",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "service": "International Telephone Service",
+      "number": "110",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "service": "Police",
+      "number": "113",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "service": "Fire Brigade",
+      "number": "114",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "service": "Ambulance",
+      "number": "115",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "service": "Domestic Long Distance Telephone Service",
+      "number": "101",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "service": "Social and Cultural Information",
+      "number": "1080",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "service": "International Telephone Service",
+      "number": "110",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "service": "Police",
+      "number": "113",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "service": "Fire Brigade",
+      "number": "114",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "service": "Ambulance",
+      "number": "115",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "service": "Embassy of the Republic of India, Hanoi",
+      "number": "+84 913089165",
+      "notes": "Emergency contact",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "service": "Domestic Long Distance Telephone Service",
+      "number": "101",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "service": "Social and Cultural Information",
+      "number": "1080",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "service": "International Telephone Service",
+      "number": "110",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "service": "Police",
+      "number": "113",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "service": "Fire Brigade",
+      "number": "114",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "service": "Ambulance",
+      "number": "115",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "eSIM Options: Airalo, Holafly",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Local SIMs: Viettel, Vinaphone, Mobifone",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Wi-Fi: Widely available in hotels, cafes, and restaurants",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "eSIM is easiest for families",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "There are 3 main SIM Card providers in Vietnam: Viettel, Vinaphone, and Mobifone. Viettel is recommended for best coverage.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Expect to pay between 150,000-350,000 VND (Rs. 500 - Rs. 1200) for a SIM card and then additional for a prepaid data package",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "The best place to buy a sim card is at the airport kiosks",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Even if you do not purchase an international roaming plan for your current India number, remember to activate roaming so that you receive messages (important for things like OTPs)",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "There are 3 main SIM Card providers: Viettel, Vinaphone, and Mobifone. Viettel is recommended for best coverage",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Expect to pay between 150,000-350,000 VND (Rs. 500 - Rs. 1200) for a SIM card plus additional for prepaid data package",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Best place to buy a sim card is at the airport kiosks",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Activate roaming on your India number to receive messages like OTPs even without international roaming plan",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "There are 3 main SIM Card providers in Vietnam: Viettel, Vinaphone, and Mobifone. Viettel is recommended for best coverage.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Expect to pay between 150,000-350,000 VND (Rs. 500 - Rs. 1200) for a SIM card and additional for prepaid data package.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "The best place to buy a sim card is at the airport kiosks.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Activate roaming on your India number to receive messages for OTPs even without international roaming plan.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Viettel – The largest and most reliable network with excellent coverage even in rural areas like Sapa and the Mekong Delta",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Vinaphone – Good network coverage in cities and tourist destinations",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Mobifone – Reliable in major cities with competitive data plans",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "You can easily purchase a tourist SIM card at Noi Bai International Airport (Hanoi), Da Nang International Airport, Tan Son Nhat International Airport (Ho Chi Minh City), official telecom stores, and convenience stores",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Typical Cost: Approx. VND 150,000 – 300,000 (INR 500 – 1000) depending on the data package. Most tourist SIM cards include 10–20 GB of data valid for 15–30 days",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "If your phone supports eSIM, you may prefer activating an international eSIM before departure. Popular travel eSIM providers include Airalo, Holafly, and Nomad",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "There are 3 main SIM Card providers: Viettel, Vinaphone, and Mobifone. Viettel is recommended for best coverage.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Expect to pay between 150,000-350,000 VND (₹500-₹1200) for a SIM card plus additional for prepaid data package.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Best place to buy a sim card is at the airport kiosks.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Activate roaming on your India number to receive messages for OTPs even if not purchasing international roaming plan.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "There are 3 main SIM Card providers: Viettel, Vinaphone, and Mobifone. Viettel is recommended for best coverage",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Expect to pay between 150,000-350,000 VND (₹500-1200) for a SIM card plus additional for prepaid data package",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Best place to buy a sim card is at the airport kiosks",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Even without international roaming plan, activate roaming to receive messages for OTPs",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Recommended Carriers: Viettel, Vinaphone, Mobifone, with Viettel being the top recommendation",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Buy SIM cards at Da Nang Airport (after arrival) or convenience stores",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Cost: ~INR 500–700 for 7–10 days with unlimited data",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "4G coverage is strong in Da Nang, Hoi An, and even along Hai Van Pass",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Wi-Fi is available in most cafés, hotels, and even markets",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Use eSIM platforms like Airalo or Holafly if your phone supports digital SIMs (~INR 1,200–1,500 for 10 days)",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Activate the SIM at the airport with help from staff to ensure APN settings are configured correctly",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "There are 3 main SIM Card providers: Viettel, Vinaphone, and Mobifone. Viettel is recommended for best coverage within Vietnam.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Expect to pay between 150,000-350,000 VND (Rs. 500 - Rs. 1200) for a SIM card plus additional for prepaid data package.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Best place to buy a sim card is at the airport kiosks.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Even without international roaming plan, activate roaming to receive messages for OTPs.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "There are 3 main SIM Card providers: Viettel, Vinaphone, and Mobifone. Viettel is recommended for best coverage",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Expect to pay between 150,000-350,000 VND (Rs. 500 - Rs. 1200) for a SIM card plus additional for prepaid data package",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Best place to buy a sim card is at the airport kiosks",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Even without international roaming plan, activate roaming to receive messages for OTPs",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "There are 3 main SIM Card providers in Vietnam: Viettel, Vinaphone, and Mobifone. Viettel is recommended as it has best coverage for traveling within Vietnam",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Expect to pay between 150,000-350,000 VND (Rs. 500 - Rs. 1200) for a SIM card and then additional for a prepaid data package",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "The best place to buy a sim card is at the airport kiosks",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Even if you do not purchase an international roaming plan for your current India number, remember to activate roaming so that you receive messages (important for things like OTPs)",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Vietnam",
+      "mode": "Grab",
+      "description": "Transport app for ride-hailing services",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Grab",
+      "description": "Ride hailing app - you will need a data pack for this to book Taxis on the go. You can set up your account in India and set up your credit card as a payment option, before you leave on vacation",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Uber",
+      "description": "Ride hailing app - you will need a data pack for this to book Taxis on the go. You can use your existing account",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Vinasun",
+      "description": "Taxi company - no app available",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Mai linh",
+      "description": "Taxi company - no app available",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Tuktuks",
+      "description": "Cycle driven autos",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Buses",
+      "description": "Public transport option",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Grab",
+      "description": "Ride hailing app - recommended for ease, affordability and reliability. Requires data pack to book taxis",
+      "cost": "Affordable",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Uber",
+      "description": "Ride hailing app - requires data pack to book taxis",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Vinasun",
+      "description": "Taxi company - no app available",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Mai linh",
+      "description": "Taxi company - no app available",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Tuktuks",
+      "description": "Cycle driven autos",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Buses",
+      "description": "Public transport option",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Grab",
+      "description": "Ride hailing app - most recommended for ease, affordability and reliability",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Uber",
+      "description": "Ride hailing app",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Vinasun",
+      "description": "Taxi company - no app available",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Mai linh",
+      "description": "Taxi company - no app available",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Tuktuks",
+      "description": "Cycle driven autos",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Buses",
+      "description": "Public transport option",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Grab",
+      "description": "Ride-hailing app for booking taxis, bike rides, and food delivery with transparent pricing",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Taxi",
+      "description": "Available throughout cities, recommended to use marked taxis or ride-hailing apps",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Limousine Bus",
+      "description": "Comfortable shared transfer service between cities like Hanoi to Sapa",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Domestic Flights",
+      "description": "Connecting major cities like Hanoi, Da Nang, and Ho Chi Minh City",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Grab",
+      "description": "Ride hailing app - most recommended for ease, affordability and reliability",
+      "cost": "Affordable",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Uber",
+      "description": "Ride hailing app - can use existing account",
+      "cost": "Affordable",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Vinasun",
+      "description": "Taxi company - no app available",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Mai linh",
+      "description": "Taxi company - no app available",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Tuktuks",
+      "description": "Cycle driven autos",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Buses",
+      "description": "Public transport option",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Tuktuks",
+      "description": "Cycle driven autos available as public transport",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Buses",
+      "description": "Available as public transport",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Grab",
+      "description": "Ride hailing app - recommended for ease, affordability and reliability. Need data pack to book. Can set up account and credit card in India",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Uber",
+      "description": "Ride hailing app - need data pack to book. Can use existing account",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Vinasun",
+      "description": "Taxi company - no app available",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Mai linh",
+      "description": "Taxi company - no app available",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Grab",
+      "description": "Ride hailing app - most recommended for ease, affordability and reliability. You will need a data pack to book taxis. Can set up account in India with credit card payment.",
+      "cost": "Affordable",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Uber",
+      "description": "Ride hailing app - you will need a data pack to book taxis. Can use existing account.",
+      "cost": "Affordable",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Vinasun",
+      "description": "Taxi company - no app available",
+      "cost": "Not specified",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Mai linh",
+      "description": "Taxi company - no app available",
+      "cost": "Not specified",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Tuktuks",
+      "description": "Cycle driven autos",
+      "cost": "Not specified",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Buses",
+      "description": "Public transport option",
+      "cost": "Not specified",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Grab",
+      "description": "Ride hailing app - most recommended for ease, affordability and reliability",
+      "cost": "Affordable",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Uber",
+      "description": "Ride hailing app - can use existing account",
+      "cost": "Affordable",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Vinasun",
+      "description": "Taxi company - no app available",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Mai linh",
+      "description": "Taxi company - no app available",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Tuktuks",
+      "description": "Cycle driven autos",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Buses",
+      "description": "Public transport option",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Grab",
+      "description": "Ride hailing app - most recommended for ease, affordability and reliability. You will need a data pack for this to book Taxis on the go",
+      "cost": "You can set up your account in India and set up your credit card as a payment option",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Uber",
+      "description": "Ride hailing app - you will need a data pack for this to book Taxis on the go. You can use your existing account",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Vinasun",
+      "description": "Taxi company - no app available",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Mai linh",
+      "description": "Taxi company - no app available",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Tuktuks",
+      "description": "Cycle driven autos",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Buses",
+      "description": "Public transport option available",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry personal prescription medications",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Pack basic first-aid kit with band-aids and antiseptic wipes",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Bring motion sickness tablets for Halong Bay cruise",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Pack ORS packets and antihistamines for insect bites",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Get travel insurance with 10,000 USD coverage per person. Recommendation - TATA AIG",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry mosquito repellent",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Bring doctors prescriptions/travel prescriptions for medicines (except over the counter meds)",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Get travel insurance with 10,000 USD coverage per person. Recommendation - TATA AIG",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry doctors prescriptions/travel prescriptions for medicines (except over the counter meds)",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry mosquito repellent",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Get travel insurance with 10,000 USD coverage per person. Recommendation - TATA AIG.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry doctors prescriptions/travel prescriptions for medicines (except over the counter meds).",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Bring mosquito repellent.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "It is advisable to consult your doctor 4–6 weeks before travel regarding recommended vaccines including Hepatitis A, Typhoid, Tetanus, and routine immunizations",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Hepatitis A – Recommended for most travelers as it can be contracted through contaminated food or water",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Typhoid – Recommended if you plan to eat local food or street food",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Tetanus – Ensure your routine booster is up to date",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Stay well hydrated, especially in warm and humid coastal cities like Da Nang and Ho Chi Minh City",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Use sunscreen, sunglasses, and a hat when sightseeing during the day",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "It is always helpful to carry a small personal medical kit while traveling",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Take it slow during the first day to adjust to the climate and travel fatigue",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Get travel insurance with 10,000 USD coverage per person. Recommendation - TATA AIG.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry mosquito repellent.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Bring doctors prescriptions/travel prescriptions for medicines (except over the counter meds).",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Travel Insurance recommended - get 10,000 USD coverage per person. Recommendation: TATA AIG",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry doctors prescriptions/travel prescriptions for medicines (except over the counter meds)",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Bring mosquito repellent",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Hepatitis A vaccination recommended for all travelers",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Hepatitis B vaccination recommended, especially if staying long or visiting rural areas",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Typhoid vaccination recommended if you're exploring local markets, street food",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Ensure Tetanus & Diphtheria booster is updated (every 10 years)",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Japanese Encephalitis vaccination optional, for longer stays or visits to rural areas during monsoon",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Rabies vaccination not essential for city travelers but consider if interacting with animals or visiting rural areas",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "No Yellow Fever requirement for travelers from India",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry mosquito repellent, sunscreen, and hydration salts—very useful for tropical travel",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Most pharmacies in Da Nang are well-stocked, but carry your essential meds from home, especially prescription ones",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Get travel insurance with 10,000 USD coverage per person. Recommendation - TATA AIG.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry doctors prescriptions/travel prescriptions for medicines (except over the counter meds).",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Get travel insurance with 10,000 USD coverage per person. Recommendation - TATA AIG",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry doctor's prescriptions/travel prescriptions for medicines (except over the counter meds)",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry mosquito repellent",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Travel Insurance recommended - you should get 10,000 USD coverage per person. Recommendation - TATA AIG",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry mosquito repellent",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry doctors prescriptions/travel prescriptions for medicines (except over the counter meds)",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678
+    }
+  ],
+  "source_files": [
+    "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+    "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+    "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+    "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+    "Vietnam/Mohnish_All Inclusive Guide.docx",
+    "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+    "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+    "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+    "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+    "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+    "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+    "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+    "Vietnam/Eating Out Guide_ Vietnam.pdf"
+  ]
+}

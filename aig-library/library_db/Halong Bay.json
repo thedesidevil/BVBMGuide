@@ -1,0 +1,139 @@
+{
+  "restaurants": [],
+  "attractions": [
+    {
+      "name": "Halong Bay Day Cruise",
+      "city": "Halong Bay",
+      "description": "UNESCO World Heritage Site cruise through emerald waters with dramatic limestone karsts. Includes Surprising Cave, Titop Island, and Luon Cave",
+      "recommended_duration": "5-6 hours",
+      "source_files": [
+        "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "Halong Bay",
+      "city": "Halong Bay",
+      "description": "UNESCO World Heritage site with emerald-green waters and towering limestone karsts, explored by overnight cruise",
+      "hours": "Various cruise schedules",
+      "entry_fee": null,
+      "recommended_duration": "Overnight",
+      "source_files": [
+        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+        "Vietnam/Mohnish_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sung Sot Cave (Surprise Cave)",
+      "city": "Halong Bay",
+      "description": "Famous grotto with impressive stalactites and dramatic cave chambers shaped naturally over thousands of years",
+      "hours": "During cruise activities",
+      "entry_fee": null,
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Surprising Cave (Sung Sot Cave)",
+      "city": "Halong Bay",
+      "description": "One of the largest and most impressive caves in Halong Bay with vast chambers filled with stalactites and stalagmites shaped like animals and sea creatures",
+      "hours": "During cruise",
+      "entry_fee": null,
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Titop Island",
+      "city": "Halong Bay",
+      "description": "Beautiful island known for its sandy beach and panoramic viewpoints with spectacular views of Halong Bay",
+      "hours": "During cruise",
+      "entry_fee": null,
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Luon Cave",
+      "city": "Halong Bay",
+      "description": "One of Halong Bay's most scenic natural formations where you paddle through a natural limestone arch into a quiet hidden lagoon surrounded by cliffs",
+      "hours": "During cruise",
+      "entry_fee": null,
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Le Journey Classic Cruise Halong Bay",
+      "city": "Halong Bay",
+      "description": "Traditional Vietnamese cruise through emerald waters dotted with towering limestone karsts, featuring kayaking, cave exploration, and onboard dining",
+      "hours": "Multi-day cruise experience",
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Surprising Cave",
+      "city": "Halong Bay",
+      "description": "Cave in Bo Hon archipelago with kayaking opportunities in Luon Cave",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf"
+      ]
+    },
+    {
+      "name": "Titov Island",
+      "city": "Halong Bay",
+      "description": "Island with sandy beach and Titov Peak for panoramic view of the bay",
+      "recommended_duration": "1.5 hours",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "La Regina Grand Cruise",
+      "city": "Halong Bay",
+      "location": "Halong Bay waters",
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_mtime": 1778201112.0
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Halong Bay",
+      "mode": "Overnight Cruise",
+      "description": "Luxury cruise experience through limestone karsts and emerald waters",
+      "cost": null,
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_mtime": 1778201112.0
+    },
+    {
+      "city": "Halong Bay",
+      "mode": "Day Cruise",
+      "description": "Boat cruises through Halong Bay's limestone karsts and islands",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+    "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+    "Vietnam/Mohnish_All Inclusive Guide.docx",
+    "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+    "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf"
+  ]
+}

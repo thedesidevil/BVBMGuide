@@ -1,0 +1,136 @@
+{
+  "restaurants": [
+    {
+      "name": "CHINESE RESTAURANT TONKOU HIROSHIMA",
+      "city": "Hiroshima",
+      "cuisine_type": [
+        "Chinese"
+      ],
+      "hours": "Open till 3pm",
+      "area": "Near Shukkei-en Garden",
+      "nearby_landmarks": [
+        "Shukkei-en Garden, Hiroshima"
+      ],
+      "highlights": [
+        "4 min walk from Shukkei-en Garden"
+      ],
+      "source_files": [
+        "Japan/Detailed Final Itinerary for Japan_05052024.pdf"
+      ]
+    },
+    {
+      "name": "Baku",
+      "city": "Hiroshima",
+      "hours": "Closes at 3pm",
+      "area": "Near Shukkei-en Garden",
+      "nearby_landmarks": [
+        "Shukkei-en Garden, Hiroshima"
+      ],
+      "highlights": [
+        "1 min walk from Shukkei-en Garden"
+      ],
+      "source_files": [
+        "Japan/Detailed Final Itinerary for Japan_05052024.pdf"
+      ]
+    },
+    {
+      "name": "Hoka Hoka Tei",
+      "city": "Hiroshima",
+      "hours": "7am-7pm",
+      "area": "Near Shukkei-en Garden",
+      "nearby_landmarks": [
+        "Shukkei-en Garden, Hiroshima"
+      ],
+      "highlights": [
+        "Take out available"
+      ],
+      "source_files": [
+        "Japan/Detailed Final Itinerary for Japan_05052024.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Hiroshima Peace Memorial Park",
+      "city": "Hiroshima",
+      "description": "Memorial park with Peace Memorial Museum",
+      "source_files": [
+        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf"
+      ]
+    },
+    {
+      "name": "Shukkei-en Garden",
+      "city": "Hiroshima",
+      "description": "Traditional Japanese garden",
+      "source_files": [
+        "Japan/Detailed Final Itinerary for Japan_05052024.pdf"
+      ]
+    },
+    {
+      "name": "Atomic Bomb Dome",
+      "city": "Hiroshima",
+      "description": "Historic memorial site",
+      "hours": "open 24/7",
+      "entry_fee": "free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Japan/All Inclusive Guide- Japan_PN.pdf"
+      ]
+    },
+    {
+      "name": "Peace Memorial Park",
+      "city": "Hiroshima",
+      "description": "Memorial park",
+      "hours": "open 24/7",
+      "entry_fee": "free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Japan/All Inclusive Guide- Japan_PN.pdf"
+      ]
+    },
+    {
+      "name": "Peace Memorial Museum",
+      "city": "Hiroshima",
+      "description": "Museum dedicated to peace memorial",
+      "hours": "7:30am- 7pm",
+      "entry_fee": "around 200 Japanese yen per person",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Japan/All Inclusive Guide- Japan_PN.pdf"
+      ]
+    },
+    {
+      "name": "Kure Yamato Maritime Museum",
+      "city": "Hiroshima",
+      "description": "Maritime museum",
+      "hours": "9am- 6pm (closed on Tuesdays)",
+      "entry_fee": "500 Japanese yen",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Japan/All Inclusive Guide- Japan_PN.pdf"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Hiroshima",
+      "mode": "JR Ferry",
+      "description": "Ferry service to Miyajima, JR pass active only on JR ferry",
+      "_source_file": "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
+      "_source_mtime": 1772384318.9773004
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
+    "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
+    "Japan/All Inclusive Guide- Japan_PN.pdf"
+  ]
+}

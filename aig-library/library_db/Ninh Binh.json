@@ -1,0 +1,611 @@
+{
+  "restaurants": [
+    {
+      "name": "Thao Beo Restaurant Bar",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 700–1,500 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Rustic riverside dining",
+      "highlights": [
+        "Lively riverside dining spot with rustic décor"
+      ],
+      "must_try_dishes": [
+        "Garlic prawns",
+        "grilled chicken",
+        "Vietnamese noodles",
+        "Beef noodle stir-fry",
+        "vegetable spring rolls"
+      ],
+      "best_for": [
+        "casual local-style dinner"
+      ],
+      "source_files": [
+        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Vedana Restaurant",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Vietnamese",
+        "International"
+      ],
+      "price_range": "INR 1,200–2,000 per person",
+      "hours": "6:00 AM – 10:00 PM",
+      "ambience": "Elegant resort dining",
+      "area": "Wyndham Grand Vedana Resort",
+      "highlights": [
+        "Resort's own restaurant with peaceful and refined setting"
+      ],
+      "must_try_dishes": [
+        "Lemongrass chicken",
+        "grilled prawns",
+        "Vietnamese hotpot"
+      ],
+      "best_for": [
+        "relaxed dinner after transfer day"
+      ],
+      "source_files": [
+        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Trang An Riverside Restaurant",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 700–1,400 per person",
+      "hours": "9:00 AM – 8:00 PM",
+      "ambience": "Riverside Vietnamese dining",
+      "area": "Trang An area",
+      "nearby_landmarks": [
+        "Trang An Landscape Complex, Ninh Binh"
+      ],
+      "highlights": [
+        "Peaceful riverside restaurant surrounded by limestone scenery"
+      ],
+      "must_try_dishes": [
+        "Grilled chicken",
+        "seafood fried rice",
+        "stir-fried prawns"
+      ],
+      "best_for": [
+        "scenic relaxed lunch"
+      ],
+      "source_files": [
+        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Chef Dung Restaurant",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 900–1,600 per person",
+      "hours": "10:00 AM – 10:00 PM",
+      "ambience": "Contemporary Vietnamese dining",
+      "area": "Trang An area",
+      "highlights": [
+        "Modern Vietnamese restaurant with countryside surroundings"
+      ],
+      "must_try_dishes": [
+        "Claypot seafood",
+        "grilled lamb skewers",
+        "vegetable noodles"
+      ],
+      "best_for": [
+        "comfortable family lunch"
+      ],
+      "source_files": [
+        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Trung Tuyet Restaurant",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 600–1,300 per person",
+      "hours": "8:00 AM – 9:30 PM",
+      "ambience": "Cozy local dining",
+      "area": "Trang An area",
+      "highlights": [
+        "Charming family-run restaurant known for warm hospitality"
+      ],
+      "must_try_dishes": [
+        "Lemongrass chicken",
+        "garlic prawns",
+        "fresh spring rolls"
+      ],
+      "best_for": [
+        "authentic Vietnamese lunch"
+      ],
+      "source_files": [
+        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Chookie's Hideaway",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 800–1,500 per person",
+      "hours": "9:00 AM – 9:00 PM",
+      "ambience": "Garden-style casual dining",
+      "highlights": [
+        "Rustic tropical-style dining space with countryside atmosphere"
+      ],
+      "must_try_dishes": [
+        "Garlic butter prawns",
+        "grilled lamb",
+        "fresh spring rolls"
+      ],
+      "best_for": [
+        "relaxed local-style dinner"
+      ],
+      "source_files": [
+        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tam Gia Trang Restaurant",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 700–1,400 per person",
+      "hours": "9:00 AM – 9:00 PM",
+      "ambience": "Countryside Vietnamese dining",
+      "highlights": [
+        "Spacious restaurant surrounded by natural scenery"
+      ],
+      "must_try_dishes": [
+        "Seafood noodles",
+        "grilled chicken",
+        "crispy spring rolls"
+      ],
+      "best_for": [
+        "scenic family dinner"
+      ],
+      "source_files": [
+        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "NGON Vegan Restaurant",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹500-1000 per person",
+      "hours": "10:00am-09:00pm",
+      "highlights": [
+        "Vegan restaurant"
+      ],
+      "must_try_dishes": [
+        "Veg Pho",
+        "spring rolls"
+      ],
+      "best_for": [
+        "vegetarian"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
+      ]
+    },
+    {
+      "name": "Ngo Dong Vegan Restaurant",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹500-1000 per person",
+      "hours": "07:30am-10:00pm",
+      "highlights": [
+        "Vegan restaurant"
+      ],
+      "must_try_dishes": [
+        "Veg Pho",
+        "spring rolls"
+      ],
+      "best_for": [
+        "vegetarian"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
+      ]
+    },
+    {
+      "name": "An Tam Coc Restaurant and Coffee",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "₹300-800 per person",
+      "hours": "08:00am-10:00pm (Closed on weekends)",
+      "highlights": [
+        "Coffee and sandwiches",
+        "Closed on weekends"
+      ],
+      "must_try_dishes": [
+        "Coffee",
+        "sandwiches",
+        "Grilled fish",
+        "fresh salads",
+        "tropical juices"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Com Nieu Tam Coc- Claypot restaurant",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹500-1000 per person",
+      "hours": "09:00am-11:00pm",
+      "highlights": [
+        "Known for Veg Claypot"
+      ],
+      "must_try_dishes": [
+        "Veg Claypot"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
+      ]
+    },
+    {
+      "name": "Aroma Indian Restaurant",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹500-1000 per person",
+      "hours": "11:00am-10:00pm",
+      "must_try_dishes": [
+        "Curries",
+        "rotis"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
+      ]
+    },
+    {
+      "name": "Curry King Indian Restaurant",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹500-1000 per person",
+      "hours": "10:00am-10:00pm",
+      "must_try_dishes": [
+        "Curries",
+        "rotis"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
+      ]
+    },
+    {
+      "name": "Saffron Indian Restaurant",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹500-1000 per person",
+      "hours": "11:30am-10:00pm",
+      "must_try_dishes": [
+        "Curries",
+        "rotis"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
+      ]
+    },
+    {
+      "name": "Chookie's Beer Garden",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "BBQ",
+        "Vietnamese"
+      ],
+      "price_range": "₹600 – ₹1,200 per person",
+      "hours": "9:00 AM – 10:00 PM",
+      "ambience": "Lively garden setting with rustic décor and relaxed vibe",
+      "must_try_dishes": [
+        "BBQ platters",
+        "grilled meats",
+        "local craft beer"
+      ],
+      "best_for": [
+        "casual social dinner"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ngon Vegan Restaurant Ninh Binh",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Vegan",
+        "Vietnamese"
+      ],
+      "price_range": "₹400 – ₹800 per person",
+      "hours": "10:00 AM – 9:00 PM",
+      "ambience": "Simple, peaceful plant-based dining space",
+      "must_try_dishes": [
+        "Vegan pho",
+        "tofu in claypot",
+        "mushroom hotpot"
+      ],
+      "best_for": [
+        "light wholesome dinner"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Family Restaurant",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹500 – ₹1,000 per person",
+      "hours": "8:00 AM – 11:30 PM",
+      "ambience": "Homely, welcoming local restaurant",
+      "must_try_dishes": [
+        "Goat meat specialties (local delicacy)",
+        "fried rice variations"
+      ],
+      "best_for": [
+        "trying regional Ninh Binh flavors"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tam Coc Lantern Restaurant",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹400 – ₹900 per person",
+      "hours": "10:00 AM – 10:00 PM",
+      "ambience": "Cozy, lantern-lit interiors",
+      "must_try_dishes": [
+        "Lemongrass chicken",
+        "stir-fried noodles with vegetables"
+      ],
+      "best_for": [
+        "comfortable authentic meal"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Banana Tree Hostel Restaurant",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹500 – ₹1,000 per person",
+      "hours": "7:00 AM – 10:30 PM",
+      "ambience": "Lively, social setting",
+      "must_try_dishes": [
+        "Vietnamese curry bowl",
+        "fresh fruit smoothies"
+      ],
+      "best_for": [
+        "casual dinner vibe"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Old Vietnam Restaurant Tam Coc",
+      "city": "Ninh Binh",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹500 – ₹1,000 per person",
+      "hours": "9:00 AM – 11:00 PM",
+      "ambience": "Rustic, traditional interiors",
+      "must_try_dishes": [
+        "Claypot tofu with mushrooms",
+        "steamed fish with ginger"
+      ],
+      "best_for": [
+        "comforting Vietnamese meal"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Hoa Lu Ancient Capital",
+      "city": "Ninh Binh",
+      "description": "Ancient capital of Vietnam during 10th and 11th centuries, featuring temples of King Dinh and King Le surrounded by limestone mountains",
+      "hours": "7:00 AM – 5:00 PM",
+      "entry_fee": "Approx. INR 300–400 per person",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Trang An Landscape Complex",
+      "city": "Ninh Binh",
+      "description": "UNESCO World Heritage Site with boat rides through emerald rivers, cave tunnels, and towering limestone valleys",
+      "hours": "7:00 AM – 5:00 PM",
+      "entry_fee": "Approx. INR 850–1,000 per person for boat ride",
+      "recommended_duration": "2-2.5 hours",
+      "source_files": [
+        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bai Dinh Complex",
+      "city": "Ninh Binh",
+      "description": "Complex of buddhist pagodas",
+      "hours": "6:00 am to 6:00 pm",
+      "source_files": [
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Trang An Boat Tour",
+      "city": "Ninh Binh",
+      "description": "3 hr scenic boat journey viewing mountains, countryside and caves from Trang An Wharf",
+      "hours": "7am-5pm",
+      "entry_fee": "250,000 Vietnamese Dong (VND) per person, approximately $10 USD",
+      "source_files": [
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
+      ],
+      "recommended_duration": "3 hours"
+    },
+    {
+      "name": "Bich Dong Pagoda",
+      "city": "Ninh Binh",
+      "description": "Ancient Buddhist temple",
+      "hours": "7:30 am - 4:30 pm",
+      "entry_fee": "Free",
+      "source_files": [
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
+      ]
+    },
+    {
+      "name": "Hang Mua Caves",
+      "city": "Ninh Binh",
+      "description": "Mountain with one of the best viewpoints in Ninh Binh, involves 500 steps climb for sunset views",
+      "hours": "6:00 am - 7:00 pm",
+      "entry_fee": "100,000 VND per adult",
+      "source_files": [
+        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
+      ],
+      "recommended_duration": "Sunset at 5:30 pm, arrive by 4 pm"
+    },
+    {
+      "name": "Bai Dinh",
+      "city": "Ninh Binh",
+      "description": "Complex of Buddhist pagodas",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
+      ]
+    },
+    {
+      "name": "Trang An Scenic Landscape Complex",
+      "city": "Ninh Binh",
+      "description": "Traditional rowboat journey through surreal landscape of limestone karsts and winding waterways, passing through cave tunnels and hidden valleys",
+      "hours": "7:00 AM – 4:00 PM",
+      "entry_fee": "~₹800 – ₹1,000 per person",
+      "recommended_duration": "2-2.5 hours",
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mua Cave Ninh Binh",
+      "city": "Ninh Binh",
+      "description": "Climb 500 stone steps to reach iconic viewpoint with dragon sculpture overlooking panorama of rice fields and rivers through limestone peaks",
+      "hours": "6:00 AM – 7:00 PM",
+      "entry_fee": "~₹300 – ₹400",
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Wyndham Grand Vedana Ninh Binh Resort",
+      "city": "Ninh Binh",
+      "location": "Countryside setting",
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_mtime": 1778201112.0
+    },
+    {
+      "name": "Wyndham Grand Vedana Ninh Binh",
+      "city": "Ninh Binh",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384374.58598
+    },
+    {
+      "name": "Tam Coc Lion Kings Hotel & Resort",
+      "city": "Ninh Binh",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212
+    },
+    {
+      "name": "Nan House Tam Coc Ninh Binh",
+      "city": "Ninh Binh",
+      "location": "Tam Coc area",
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_mtime": 1778197216.0
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+    "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
+    "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+    "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+  ]
+}

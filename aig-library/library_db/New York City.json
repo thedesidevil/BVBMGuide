@@ -1,0 +1,225 @@
+{
+  "restaurants": [],
+  "attractions": [
+    {
+      "name": "Central Park",
+      "city": "New York City",
+      "description": "Famous park with carousel, playgrounds, row boat rides, Alice in Wonderland statue and Belvedere Castle",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "Times Square",
+      "city": "New York City",
+      "description": "Giant LED screens, M&M's World, Disney Store, and costumed characters",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "Bronx Zoo",
+      "city": "New York City",
+      "description": "Meet lions, gorillas, flamingos, and ride the Bug Carousel",
+      "hours": "10:00 AM – 2:00 PM",
+      "recommended_duration": "4 hours",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "Harry Potter and the Cursed Child",
+      "city": "New York City",
+      "description": "Broadway show experience for the whole family",
+      "hours": "6:00 PM – 10:00 PM",
+      "recommended_duration": "3 hours including intermission",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "Statue at Sunset Cruise",
+      "city": "New York City",
+      "description": "Circle Line cruise with close views of Statue of Liberty and NYC skyline at golden hour",
+      "hours": "7:00 – 8:30 PM",
+      "recommended_duration": "1.5 hours",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "9/11 Memorial",
+      "city": "New York City",
+      "description": "Quiet, respectful memorial site",
+      "hours": "5:30 – 6:30 PM",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "Brooklyn Bridge",
+      "city": "New York City",
+      "description": "Walk across the bridge with sunset views and city lights, visit Dumbo's Pebble beach",
+      "hours": "6:45 – 8:00 PM",
+      "recommended_duration": "1.25 hours",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "St. Patrick's Cathedral",
+      "city": "New York City",
+      "description": "Marvel at neo-Gothic architecture",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "LEGO Store",
+      "city": "New York City",
+      "description": "Play zones, giant models, and build-your-own kits",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "Rockefeller Plaza",
+      "city": "New York City",
+      "description": "Prometheus statue, Channel Gardens, and seasonal ice rink",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "Color Factory NYC",
+      "city": "New York City",
+      "description": "Interactive, artistic fun with bright rooms, secret treats, and photo ops for families",
+      "hours": "Last entry at 6 PM",
+      "recommended_duration": "1.5 hours",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "Harry Potter Store",
+      "city": "New York City",
+      "description": "Explore wand walls, house robes, and sip Butterbeer",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "SUMMIT One Vanderbilt",
+      "city": "New York City",
+      "description": "Multi-sensory observation deck with mirror rooms, immersive art, and sky-high views",
+      "hours": "Last entry: 10:00 PM",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "Empire State Building",
+      "city": "New York City",
+      "description": "Observation decks on 86th and optional 102nd floor with incredible views",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "SPYSCAPE",
+      "city": "New York City",
+      "description": "Hands-on spy challenges, codebreaking, and laser maze fun ideal for older kids",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "Bryant Park",
+      "city": "New York City",
+      "description": "Live music, pop-up events, outdoor movies, or storytelling sessions in May",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "The High Line & Hudson Yards Vessel",
+      "city": "New York City",
+      "description": "Elevated park with city views, gardens, art installations, and futuristic honeycomb structure",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "Little Island (Pier 55)",
+      "city": "New York City",
+      "description": "Floating park with winding paths, lawns, and occasional live performances",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    },
+    {
+      "name": "Seaport District & Pier 17",
+      "city": "New York City",
+      "description": "Cobblestone streets, waterfront views, and pop-up activities with free outdoor concerts or markets",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "USA/NYC Plan.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "The Time New York - JDV by Hyatt",
+      "city": "New York City",
+      "location": "Times Square area",
+      "_source_file": "USA/NYC Plan.pdf",
+      "_source_mtime": 1772384245.8185823
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "New York City",
+      "mode": "Cab",
+      "description": "Quickest and easiest with luggage from JFK Airport to hotel, takes about 1 hour",
+      "_source_file": "USA/NYC Plan.pdf",
+      "_source_mtime": 1772384245.8185823
+    },
+    {
+      "city": "New York City",
+      "mode": "Subway",
+      "description": "C/E line to 50th St with 10-minute walk to Circle Line Cruise Terminal, about 25 minutes to 9/11 Memorial",
+      "_source_file": "USA/NYC Plan.pdf",
+      "_source_mtime": 1772384245.8185823
+    },
+    {
+      "city": "New York City",
+      "mode": "Walking",
+      "description": "10-15 minutes between hotel and Central Park/Times Square, attractions in Midtown within 5-10 minutes",
+      "_source_file": "USA/NYC Plan.pdf",
+      "_source_mtime": 1772384245.8185823
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "USA/NYC Plan.pdf"
+  ]
+}

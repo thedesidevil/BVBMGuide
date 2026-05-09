@@ -1,0 +1,648 @@
+{
+  "restaurants": [
+    {
+      "name": "Healthy U Cebu",
+      "city": "Cebu",
+      "cuisine_type": [
+        "Wellness"
+      ],
+      "price_range": "₹600–1,200 per person",
+      "hours": "9:00 AM – 9:00 PM",
+      "ambience": "Wellness-focused café offering fresh, plant-forward meals in a calm setting",
+      "highlights": [
+        "Wellness-focused",
+        "Fresh plant-forward meals",
+        "Calm setting"
+      ],
+      "must_try_dishes": [
+        "Buddha bowls",
+        "smoothies",
+        "vegan rice meals"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Ching Palace",
+      "city": "Cebu",
+      "cuisine_type": [
+        "Asian"
+      ],
+      "price_range": "₹800–1,500 per person",
+      "hours": "10:30 AM–1 PM, 5:30 PM–9 PM",
+      "ambience": "Casual Asian dining with several vegetable-based dishes and customizable meals",
+      "highlights": [
+        "Vegetable-based dishes",
+        "Customizable meals"
+      ],
+      "must_try_dishes": [
+        "Stir-fried vegetables",
+        "tofu dishes",
+        "fried rice"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mizuhiki Japanese Restaurant-Minglanilla",
+      "city": "Cebu",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "mid-range",
+      "hours": "11:00 AM – 8:00 PM",
+      "ambience": "A simple, casual Japanese dining spot located right within the Belmont One complex near the park. It's one of the closest proper sit-down options, offering a calm break from the theme park energy.",
+      "nearby_landmarks": [
+        "Anjo World Theme Park, Cebu"
+      ],
+      "highlights": [
+        "Calm break from theme park energy"
+      ],
+      "must_try_dishes": [
+        "Veg sushi rolls",
+        "vegetable tempura",
+        "fried rice"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Americano Grill",
+      "city": "Cebu",
+      "cuisine_type": [
+        "Western"
+      ],
+      "price_range": "mid-range",
+      "hours": "11:00 AM – 9:00 PM (closed on Sunday)",
+      "ambience": "A casual Western-style grill spot offering burgers, sandwiches, and comfort food in a relaxed setting. Good option if you're craving familiar flavours.",
+      "nearby_landmarks": [
+        "Anjo World Theme Park, Cebu"
+      ],
+      "highlights": [
+        "Western-style grill",
+        "Comfort food",
+        "Familiar flavours"
+      ],
+      "must_try_dishes": [
+        "Veg burger",
+        "fries",
+        "pasta"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "D' Food Spot",
+      "city": "Cebu",
+      "cuisine_type": [
+        "Local"
+      ],
+      "price_range": "budget",
+      "hours": "3:00 PM – 10:00 PM",
+      "ambience": "A budget-friendly local eatery with a homely feel—great for a quick, no-frills meal. Ideal if you want something simple and filling without going far.",
+      "nearby_landmarks": [
+        "Anjo World Theme Park, Cebu"
+      ],
+      "highlights": [
+        "Budget-friendly",
+        "Homely feel",
+        "No-frills meal"
+      ],
+      "must_try_dishes": [
+        "Vegetable stir-fry",
+        "rice meals"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Earth Restaurant Cebu",
+      "city": "Cebu",
+      "cuisine_type": [
+        "Wellness"
+      ],
+      "price_range": "₹700–1,500 per person",
+      "hours": "6:00 AM – 10:00 PM",
+      "ambience": "A serene garden-style café known for its wellness-focused menu and relaxed tropical setting—perfect for a slow, refreshing lunch close to the resort.",
+      "highlights": [
+        "Garden-style",
+        "Wellness-focused menu",
+        "Relaxed tropical setting"
+      ],
+      "must_try_dishes": [
+        "Veg rice bowls",
+        "tofu dishes",
+        "fresh juices"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Cafe Elim Cebu",
+      "city": "Cebu",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "₹600–1,200 per person",
+      "hours": "8:00 AM – 3:00 AM",
+      "ambience": "Minimalist Korean-inspired café with soft pastel tones and clean interiors",
+      "highlights": [
+        "Minimalist Korean-inspired",
+        "Soft pastel tones",
+        "Clean interiors"
+      ],
+      "must_try_dishes": [
+        "Desserts",
+        "coffee",
+        "light veg meals"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Scape Skydeck Cebu",
+      "city": "Cebu",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "₹1,200–2,500 per person",
+      "hours": "10:00 AM – 11:00 PM",
+      "ambience": "Rooftop restaurant offering panoramic city views with a chic, upscale vibe",
+      "highlights": [
+        "Rooftop",
+        "Panoramic city views",
+        "Chic upscale vibe"
+      ],
+      "must_try_dishes": [
+        "Veg pizza",
+        "pasta",
+        "mocktails"
+      ],
+      "best_for": [
+        "romantic",
+        "luxury"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Circa 1900 Casa Dos Cebu",
+      "city": "Cebu",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "₹1,000–2,000 per person",
+      "hours": "7:00 AM – 12:00 AM",
+      "ambience": "Colonial-style heritage house surrounded by tropical gardens, blending old-world charm with modern dining",
+      "highlights": [
+        "Colonial-style heritage house",
+        "Tropical gardens",
+        "Old-world charm"
+      ],
+      "must_try_dishes": [
+        "Veg pasta",
+        "salads"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Commonly Uncommon Cafe Cebu",
+      "city": "Cebu",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "₹600–1,200 per person",
+      "hours": "8:00 AM – 10:00 PM",
+      "ambience": "Industrial-chic café with clean lines, greenery accents, and modern interiors",
+      "highlights": [
+        "Industrial-chic",
+        "Clean lines",
+        "Greenery accents",
+        "Modern interiors"
+      ],
+      "must_try_dishes": [
+        "Veg sandwiches",
+        "pasta",
+        "coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Daily Grind Cebu",
+      "city": "Cebu",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "₹500–1,000 per person",
+      "hours": "7:30 AM – 11:00 PM",
+      "ambience": "Bright, airy café with a relaxed, contemporary vibe and greenery accents",
+      "highlights": [
+        "Bright airy",
+        "Relaxed contemporary vibe",
+        "Greenery accents"
+      ],
+      "must_try_dishes": [
+        "Coffee",
+        "desserts",
+        "light veg meals"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Balai Cafe Cebu",
+      "city": "Cebu",
+      "cuisine_type": [
+        "Filipino"
+      ],
+      "price_range": "₹600–1,200 per person",
+      "hours": "7:00 AM – 11:30 PM",
+      "ambience": "Filipino-inspired space with warm wooden interiors and cozy, home-style charm",
+      "highlights": [
+        "Filipino-inspired",
+        "Warm wooden interiors",
+        "Cozy home-style charm"
+      ],
+      "must_try_dishes": [
+        "Veg-friendly local meals",
+        "desserts"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Cebu Ocean Park",
+      "city": "Cebu",
+      "description": "Step into a world of vibrant marine life as you walk through immersive tunnels surrounded by sharks, rays, and tropical fish. The oceanarium offers a calming, almost dreamlike atmosphere with soft blue lighting and slow-moving aquatic life all around you.",
+      "hours": "10:00 AM – 6:00 PM",
+      "entry_fee": "₹1,200–1,800 per person",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Magellan's Cross",
+      "city": "Cebu",
+      "description": "One of Cebu's most iconic landmarks, this historic cross marks the arrival of Christianity in the Philippines. The painted ceiling above adds a cultural layer, depicting the moment of its planting.",
+      "hours": "8:00 AM – 6:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Basílica del Santo Niño",
+      "city": "Cebu",
+      "description": "The oldest Roman Catholic church in the country, it carries a deeply spiritual energy with flickering candles and quiet prayer corners. The atmosphere is both reverent and culturally rich.",
+      "hours": "6:00 AM – 7:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "45 minutes",
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Fort San Pedro",
+      "city": "Cebu",
+      "description": "A compact Spanish-era fort surrounded by greenery, offering a glimpse into Cebu's colonial past. The stone walls and quiet courtyards create a peaceful break from the city bustle.",
+      "hours": "8:00 AM – 5:00 PM",
+      "entry_fee": "₹50–₹100",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "SM Seaside City Cebu",
+      "city": "Cebu",
+      "description": "One of the largest malls in the Philippines, offering a mix of shopping, cafés, and sea-facing views. A great place to unwind, explore, or pick up essentials in a comfortable setting.",
+      "hours": "10:00 AM – 9:00 PM",
+      "entry_fee": "Free entry",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Anjo World Theme Park",
+      "city": "Cebu",
+      "description": "Step into a lively, carnival-style atmosphere filled with colorful rides, playful energy, and nostalgic fairground vibes. It's a fun, lighthearted experience perfect for families or anyone looking to add a bit of excitement to the day.",
+      "hours": "12:00 PM – 8:00 PM (closed from Monday - Wednesday)",
+      "entry_fee": "₹800–₹1,500 per person",
+      "recommended_duration": "4–6 hours",
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Grilled Corn (Inasal-style Corn)",
+      "city": "Cebu",
+      "description": "Smoky, flame-charred corn brushed with butter and seasoning—simple, aromatic, and perfect for an evening nibble while exploring.",
+      "vegetarian": true,
+      "where_to_try": "Street vendors",
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Banana Cue",
+      "city": "Cebu",
+      "description": "Caramelized bananas coated in crunchy brown sugar—warm, sticky, and incredibly addictive as a quick sweet bite.",
+      "vegetarian": true,
+      "where_to_try": "Street vendors",
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Vegetable Lumpia (Fresh or Fried)",
+      "city": "Cebu",
+      "description": "Light Filipino spring rolls filled with vegetables—either crisp-fried or fresh, making for an easy and familiar snack.",
+      "vegetarian": true,
+      "where_to_try": "Local restaurants",
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pancit Canton (Veg Version)",
+      "city": "Cebu",
+      "description": "Stir-fried noodles with vegetables—comforting and flavorful. Ask for a vegetarian version without oyster sauce or meat.",
+      "vegetarian": true,
+      "where_to_try": "Local restaurants",
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ensaladang Talong (Eggplant Salad)",
+      "city": "Cebu",
+      "description": "Smoky grilled eggplant paired with tomatoes and onions—light, refreshing, and distinctly Filipino in flavor.",
+      "vegetarian": true,
+      "where_to_try": "Local restaurants",
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Chopsuey (Vegetable Stir Fry)",
+      "city": "Cebu",
+      "description": "A hearty mix of sautéed vegetables in a light sauce—one of the safest and most satisfying vegetarian Filipino dishes.",
+      "vegetarian": true,
+      "where_to_try": "Local restaurants",
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Garlic Rice (Sinangag) + Veg Sides",
+      "city": "Cebu",
+      "description": "Fragrant garlic-infused rice served with vegetable sides—simple, comforting, and widely available across resorts.",
+      "vegetarian": true,
+      "where_to_try": "Resort restaurants",
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Halo-Halo (Veg Version)",
+      "city": "Cebu",
+      "description": "A vibrant layered dessert with shaved ice, fruits, beans, and milk—fun, colorful, and refreshing.",
+      "vegetarian": true,
+      "where_to_try": "Cafes and restaurants",
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tablea Hot Chocolate",
+      "city": "Cebu",
+      "description": "Rich, traditional Filipino hot chocolate made from local cacao—deep, slightly bitter, and comforting.",
+      "vegetarian": true,
+      "where_to_try": "Local cafes",
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Dried mangoes",
+      "city": "Cebu",
+      "category": "Food",
+      "where_to_buy": [
+        "Island Central Mactan",
+        "Shangs Island Souvenirs"
+      ],
+      "_source_file": "Philippines/Megha_Philippines_All Inclusive Guide.docx",
+      "_source_mtime": 1773790224.0
+    },
+    {
+      "item": "Local chocolates",
+      "city": "Cebu",
+      "category": "Food",
+      "where_to_buy": [
+        "Island Central Mactan",
+        "Shangs Island Souvenirs"
+      ],
+      "_source_file": "Philippines/Megha_Philippines_All Inclusive Guide.docx",
+      "_source_mtime": 1773790224.0
+    },
+    {
+      "item": "Small souvenirs & keepsakes",
+      "city": "Cebu",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Island Central Mactan",
+        "Shangs Island Souvenirs"
+      ],
+      "_source_file": "Philippines/Megha_Philippines_All Inclusive Guide.docx",
+      "_source_mtime": 1773790224.0
+    },
+    {
+      "item": "Handcrafted items",
+      "city": "Cebu",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Shangs Island Souvenirs"
+      ],
+      "_source_file": "Philippines/Megha_Philippines_All Inclusive Guide.docx",
+      "_source_mtime": 1773790224.0
+    },
+    {
+      "item": "Cebu specialties",
+      "city": "Cebu",
+      "category": "Food",
+      "where_to_buy": [
+        "Shangs Island Souvenirs"
+      ],
+      "_source_file": "Philippines/Megha_Philippines_All Inclusive Guide.docx",
+      "_source_mtime": 1773790224.0
+    },
+    {
+      "item": "Vacuum-sealed dried mango packs",
+      "city": "Cebu",
+      "category": "Food",
+      "where_to_buy": [
+        "Malls"
+      ],
+      "_source_file": "Philippines/Megha_Philippines_All Inclusive Guide.docx",
+      "_source_mtime": 1773790224.0
+    },
+    {
+      "item": "Chocolate-coated mangoes",
+      "city": "Cebu",
+      "category": "Food",
+      "where_to_buy": [
+        "Malls"
+      ],
+      "_source_file": "Philippines/Megha_Philippines_All Inclusive Guide.docx",
+      "_source_mtime": 1773790224.0
+    },
+    {
+      "item": "Handwoven textures",
+      "city": "Cebu",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Local markets"
+      ],
+      "_source_file": "Philippines/Megha_Philippines_All Inclusive Guide.docx",
+      "_source_mtime": 1773790224.0
+    },
+    {
+      "item": "Rattan, bamboo, and capiz shell products",
+      "city": "Cebu",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Local markets"
+      ],
+      "_source_file": "Philippines/Megha_Philippines_All Inclusive Guide.docx",
+      "_source_mtime": 1773790224.0
+    },
+    {
+      "item": "Capiz shell décor items",
+      "city": "Cebu",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Local markets"
+      ],
+      "_source_file": "Philippines/Megha_Philippines_All Inclusive Guide.docx",
+      "_source_mtime": 1773790224.0
+    },
+    {
+      "item": "Cebu-themed ref magnets & miniature jeepneys",
+      "city": "Cebu",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Malls",
+        "Local shops"
+      ],
+      "_source_file": "Philippines/Megha_Philippines_All Inclusive Guide.docx",
+      "_source_mtime": 1773790224.0
+    },
+    {
+      "item": "Locally made woven bags or beach hats",
+      "city": "Cebu",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Local markets"
+      ],
+      "_source_file": "Philippines/Megha_Philippines_All Inclusive Guide.docx",
+      "_source_mtime": 1773790224.0
+    },
+    {
+      "item": "Handmade spa products (coconut oil, soaps)",
+      "city": "Cebu",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Local markets"
+      ],
+      "_source_file": "Philippines/Megha_Philippines_All Inclusive Guide.docx",
+      "_source_mtime": 1773790224.0
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Cebu",
+      "mode": "Taxi",
+      "description": "Transfer from Mactan-Cebu International Airport to hotel and general transportation around the city",
+      "cost": "₹500–₹900 per car",
+      "_source_file": "Philippines/Megha_Philippines_All Inclusive Guide.docx",
+      "_source_mtime": 1773790224.0
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+  ]
+}

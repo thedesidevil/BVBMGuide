@@ -1,0 +1,192 @@
+{
+  "restaurants": [
+    {
+      "name": "Parking Pizza",
+      "city": "Barcelona",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "€15-25 per person",
+      "hours": "1:00-4:00 PM & 8:00-11:00 PM",
+      "highlights": [
+        "Artisanal pizzas",
+        "Salads available"
+      ],
+      "must_try_dishes": [
+        "Artisanal pizzas",
+        "Salads"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Granja Petitbo",
+      "city": "Barcelona",
+      "cuisine_type": [
+        "Comfort food"
+      ],
+      "price_range": "€15-20 per person",
+      "hours": "9:00 AM - 11:00 PM",
+      "highlights": [
+        "Light meals",
+        "Comfort food"
+      ],
+      "must_try_dishes": [
+        "Eggs",
+        "Pancakes"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Can Vador",
+      "city": "Barcelona",
+      "cuisine_type": [
+        "Catalan"
+      ],
+      "price_range": "€25-30 per person",
+      "hours": "1PM-4PM & 8PM-11PM",
+      "highlights": [
+        "Catalan cuisine"
+      ],
+      "must_try_dishes": [
+        "Seafood",
+        "Chicken options"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "La Pepita",
+      "city": "Barcelona",
+      "cuisine_type": [
+        "Catalan comfort food"
+      ],
+      "price_range": "€20-30 per person",
+      "highlights": [
+        "Gourmet burgers & Catalan comfort food"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Botafumeiro",
+      "city": "Barcelona",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "€40-60 per person",
+      "highlights": [
+        "Iconic seafood restaurant"
+      ],
+      "must_try_dishes": [
+        "Shellfish",
+        "Grilled fish",
+        "Galician specialties"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Can Solé",
+      "city": "Barcelona",
+      "cuisine_type": [
+        "Traditional"
+      ],
+      "price_range": "€30-40 per person",
+      "highlights": [
+        "Traditional rice & seafood dishes"
+      ],
+      "must_try_dishes": [
+        "Paella",
+        "Meat stews"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Sagrada Família",
+      "city": "Barcelona",
+      "description": "Antoni Gaudí's unfinished masterpiece blending Gothic structure with organic Art Nouveau forms",
+      "recommended_duration": "1.5-2 hours",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Park Güell",
+      "city": "Barcelona",
+      "description": "Whimsical hilltop park designed by Gaudí, famous for colorful mosaics and panoramic views",
+      "recommended_duration": "1.5 hours",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Catalonia Gracia",
+      "city": "Barcelona",
+      "location": "Gràcia neighbourhood",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Cava",
+      "city": "Barcelona",
+      "category": "Drinks",
+      "where_to_buy": [
+        "La Boqueria",
+        "El Corte Inglés"
+      ],
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    },
+    {
+      "item": "Gaudí-style mosaics",
+      "city": "Barcelona",
+      "category": "Crafts",
+      "where_to_buy": [
+        "La Boqueria",
+        "El Corte Inglés"
+      ],
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Barcelona",
+      "mode": "Metro, Bus, Tram",
+      "description": "Comprehensive public transport system",
+      "recommended_pass": "Hola Barcelona Travel Card - 5 Day Pass",
+      "cost": "€40",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+  ]
+}

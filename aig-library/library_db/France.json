@@ -1,0 +1,739 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Croissants and viennoisseries",
+      "city": "France",
+      "description": "Traditional French pastries",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Crepes",
+      "city": "France",
+      "description": "Ultrathin pancakes that can be filled with sweet or savory ingredients",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf",
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ],
+      "vegetarian": true
+    },
+    {
+      "name": "French Onion Soup",
+      "city": "France",
+      "description": "Traditionally topped with melted cheese and baguette croutons",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf",
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf"
+      ],
+      "vegetarian": true,
+      "where_to_try": "French restaurants"
+    },
+    {
+      "name": "Ratatouille",
+      "city": "France",
+      "description": "A Provençal vegetable stew made with eggplant, zucchini, peppers, and tomatoes",
+      "vegetarian": true,
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf",
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf"
+      ],
+      "where_to_try": "Traditional bistro or brasserie"
+    },
+    {
+      "name": "Quiche",
+      "city": "France",
+      "description": "Savory tart with varieties like pumpkin and goat cheese and mushroom",
+      "vegetarian": true,
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf",
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    },
+    {
+      "name": "Tomato Tart",
+      "city": "France",
+      "description": "Savory tart made with flaky pastry crust, Dijon mustard, ripe tomatoes and herbs",
+      "vegetarian": true,
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf",
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    },
+    {
+      "name": "Celery Root Remoulade",
+      "city": "France",
+      "description": "Salad made with thinly sliced celery root, tossed in creamy rémoulade sauce with mayonnaise, mustard, and herbs",
+      "vegetarian": true,
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf",
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    },
+    {
+      "name": "Cheese Souffle",
+      "city": "France",
+      "description": "Light and airy dish with cheese-flavored béchamel sauce",
+      "vegetarian": true,
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf",
+        "France/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    },
+    {
+      "name": "Gratin Dauphinois",
+      "city": "France",
+      "description": "Thinly sliced potatoes, milk, cream, garlic, and nutmeg, baked to golden perfection",
+      "vegetarian": true,
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf",
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    },
+    {
+      "name": "Salad Nicoise",
+      "city": "France",
+      "description": "Fresh tomatoes, black olives, capers and green beans served cold",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf",
+        "France/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    },
+    {
+      "name": "Escargot",
+      "city": "France",
+      "description": "Snails with parsley and garlic butter",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Confit de Canard",
+      "city": "France",
+      "description": "Slow-cooked duck",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Sole Meuniere",
+      "city": "France",
+      "description": "Sole fish breaded with flour and sautéed in butter",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Coq au Vin",
+      "city": "France",
+      "description": "Chicken slow-cooked in red wine with mushrooms",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf",
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ],
+      "vegetarian": false
+    },
+    {
+      "name": "Tarte Tatin",
+      "city": "France",
+      "description": "Upside-down caramelized apple tart with deep, buttery flavor",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf",
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ],
+      "vegetarian": true
+    },
+    {
+      "name": "Souffle",
+      "city": "France",
+      "description": "Rich yet lightweight dessert",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Crème Brulee",
+      "city": "France",
+      "description": "Creamy custard underneath crunchy caramelized sugar",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf",
+        "France/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    },
+    {
+      "name": "Profiteroles",
+      "city": "France",
+      "description": "Little cream puffs filled with vanilla custard, cream or ice cream, topped with chocolate sauce or fruit",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf",
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ],
+      "vegetarian": true
+    },
+    {
+      "name": "French Cheese",
+      "city": "France",
+      "description": "Camembert, Roquefort and Brie are most popular",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Bouillabaisse",
+      "city": "France",
+      "description": "Seafood stew with saffron broth",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf",
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ],
+      "vegetarian": false
+    },
+    {
+      "name": "Macarons",
+      "city": "France",
+      "description": "Made with almond flour, egg white and sugar with buttercream or ganache sandwiched in between",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf",
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ],
+      "vegetarian": true
+    },
+    {
+      "name": "Croissants",
+      "city": "France",
+      "description": "Buttery, flaky pastries and other viennoiseries",
+      "vegetarian": true,
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    },
+    {
+      "name": "Soupe à l'Oignon",
+      "city": "France",
+      "description": "French onion soup topped with melted cheese and toasted baguette",
+      "vegetarian": true,
+      "where_to_try": "French brasseries",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Quiche aux Légumes",
+      "city": "France",
+      "description": "Savoury tart filled with seasonal vegetables, cream, and cheese",
+      "vegetarian": true,
+      "where_to_try": "French cafés",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Tarte Flambée",
+      "city": "France",
+      "description": "Alsatian flatbread topped with cheese, onions, and mushrooms",
+      "vegetarian": true,
+      "where_to_try": "Alsatian restaurants",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Savoyard Fondue",
+      "city": "France",
+      "description": "Melted Gruyère & Emmental cheese served with bread",
+      "vegetarian": true,
+      "where_to_try": "Annecy/Chamonix",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Raclette",
+      "city": "France",
+      "description": "Melted Alpine cheese scraped over potatoes and vegetables",
+      "vegetarian": true,
+      "where_to_try": "Alpine restaurants",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Moules Marinières",
+      "city": "France",
+      "description": "Mussels cooked in white wine, garlic, and parsley",
+      "vegetarian": false,
+      "where_to_try": "French brasseries",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Cheese Soufflé",
+      "city": "France",
+      "description": "Light and airy dish made with cheese-flavored béchamel sauce, whipped egg whites, and grated cheese",
+      "vegetarian": true,
+      "source_files": [
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    },
+    {
+      "name": "Salade Niçoise",
+      "city": "France",
+      "description": "Seasonal selection of fresh tomatoes, black olives, capers and green beans, served cold",
+      "vegetarian": true,
+      "source_files": [
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    },
+    {
+      "name": "Crème Brûlée",
+      "city": "France",
+      "description": "Creamy custard underneath crunchy caramelized sugar",
+      "vegetarian": true,
+      "source_files": [
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "France",
+      "english": "Hello",
+      "local": "Bonjour",
+      "category": "greeting",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384271.7324994
+    },
+    {
+      "city": "France",
+      "english": "Good morning",
+      "local": "Bonjour",
+      "category": "greeting",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384271.7324994
+    },
+    {
+      "city": "France",
+      "english": "Thank you",
+      "local": "Merci",
+      "category": "polite",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384271.7324994
+    },
+    {
+      "city": "France",
+      "english": "Welcome",
+      "local": "De rien",
+      "category": "polite",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384271.7324994
+    },
+    {
+      "city": "France",
+      "english": "Yes",
+      "local": "Oui",
+      "category": "polite",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384271.7324994
+    },
+    {
+      "city": "France",
+      "english": "No",
+      "local": "Non",
+      "category": "polite",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384271.7324994
+    },
+    {
+      "city": "France",
+      "english": "Hello",
+      "local": "Bonjour",
+      "category": "greeting",
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "city": "France",
+      "english": "Good morning",
+      "local": "Bonjour",
+      "category": "greeting",
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "city": "France",
+      "english": "Thank you",
+      "local": "Merci",
+      "category": "polite",
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "city": "France",
+      "english": "Welcome",
+      "local": "De rien",
+      "category": "polite",
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "city": "France",
+      "english": "Yes",
+      "local": "Oui",
+      "category": "polite",
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "city": "France",
+      "english": "No",
+      "local": "Non",
+      "category": "polite",
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "city": "France",
+      "english": "Hello / Good day",
+      "local": "Bonjour",
+      "category": "greeting",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "city": "France",
+      "english": "Please",
+      "local": "S'il vous plaît",
+      "category": "polite",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "city": "France",
+      "english": "Thank you",
+      "local": "Merci beaucoup",
+      "category": "polite",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "city": "France",
+      "english": "Excuse me",
+      "local": "Pardon",
+      "category": "polite",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "city": "France",
+      "english": "Hello",
+      "local": "Bonjour",
+      "category": "greeting",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    },
+    {
+      "city": "France",
+      "english": "Good morning",
+      "local": "Bonjour",
+      "category": "greeting",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    },
+    {
+      "city": "France",
+      "english": "Thank you",
+      "local": "Merci",
+      "category": "polite",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    },
+    {
+      "city": "France",
+      "english": "Welcome",
+      "local": "De rien",
+      "category": "polite",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    },
+    {
+      "city": "France",
+      "english": "Yes",
+      "local": "Oui",
+      "category": "polite",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    },
+    {
+      "city": "France",
+      "english": "No",
+      "local": "Non",
+      "category": "polite",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    },
+    {
+      "city": "France",
+      "english": "Hello / Good day",
+      "local": "Bonjour",
+      "category": "greeting",
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "city": "France",
+      "english": "Please",
+      "local": "S'il vous plaît",
+      "category": "polite",
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "city": "France",
+      "english": "Thank you",
+      "local": "Merci beaucoup",
+      "category": "polite",
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "city": "France",
+      "english": "Excuse me",
+      "local": "Pardon",
+      "category": "polite",
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "city": "France",
+      "english": "Hello / Good day",
+      "local": "Bonjour",
+      "category": "greeting",
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "city": "France",
+      "english": "Please",
+      "local": "S'il vous plaît",
+      "category": "polite",
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "city": "France",
+      "english": "Thank you",
+      "local": "Merci beaucoup",
+      "category": "polite",
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "city": "France",
+      "english": "Excuse me",
+      "local": "Pardon",
+      "category": "polite",
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    }
+  ],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [
+    {
+      "city": "France",
+      "service": "Fire Brigade",
+      "number": "18",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384271.7324994
+    },
+    {
+      "city": "France",
+      "service": "Police Emergency",
+      "number": "112",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384271.7324994
+    },
+    {
+      "city": "France",
+      "service": "SOS Doctors",
+      "number": "3624",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384271.7324994
+    },
+    {
+      "city": "France",
+      "service": "Medical Emergencies",
+      "number": "01 53 94 94 94",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384271.7324994
+    },
+    {
+      "city": "France",
+      "service": "Embassy Emergency",
+      "number": "+33-648340063",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384271.7324994
+    },
+    {
+      "city": "France",
+      "service": "Fire Brigade",
+      "number": "18",
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "city": "France",
+      "service": "Police Emergency",
+      "number": "112",
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "city": "France",
+      "service": "SOS Doctors",
+      "number": "3624",
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "city": "France",
+      "service": "Medical Emergencies",
+      "number": "01 53 94 94 94",
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "city": "France",
+      "service": "Fire Brigade",
+      "number": "18",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    },
+    {
+      "city": "France",
+      "service": "Police Emergency",
+      "number": "112",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    },
+    {
+      "city": "France",
+      "service": "SOS Doctors",
+      "number": "3624",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    },
+    {
+      "city": "France",
+      "service": "Medical Emergencies",
+      "number": "01 53 94 94 94",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    },
+    {
+      "city": "France",
+      "service": "Embassy Emergency",
+      "number": "+33-648340063",
+      "notes": "In case of emergency",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Switzerland",
+        "France"
+      ],
+      "tip": "You can purchase a TSIM Unlimited Europe SIM card which will work in both Switzerland and France",
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "France"
+      ],
+      "tip": "If you prefer, you can instead activate international roaming packs on your India number",
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "France"
+      ],
+      "tip": "Even if you choose not to purchase an international roaming pack, do ensure your roaming is activated to receive SMS such as for OTPs",
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "France"
+      ],
+      "tip": "You can purchase a TSIM Unlimited Europe SIM card which will work in both Switzerland and France",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "France"
+      ],
+      "tip": "You can activate international roaming packs on your India number as an alternative",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "France"
+      ],
+      "tip": "Even if you choose not to purchase an international roaming pack, ensure your roaming is activated to receive SMS such as for OTPs",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "France/2. France- Final Detailed Itinerary.pdf",
+    "France/All Inclusive Guide- Switzerland and Paris.pdf",
+    "France/Tanya and Shovit_All Inclusive Guide.pdf",
+    "France/Paris, Switzerland and Italy.pdf",
+    "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+    "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+    "Switzerland/Paris, Switzerland and Italy.pdf",
+    "Italy/Paris, Switzerland and Italy.pdf"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "restaurants": [
+    {
+      "name": "La Fabrica Girona",
+      "city": "Girona",
+      "cuisine_type": [
+        "Modern café-bistro"
+      ],
+      "price_range": "€15-20 per person",
+      "hours": "9:00 AM - 5:00 PM",
+      "highlights": [
+        "Great for light lunches"
+      ],
+      "must_try_dishes": [
+        "Salads",
+        "Sandwiches",
+        "Eggs",
+        "Cakes"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Brots de Vi",
+      "city": "Girona",
+      "cuisine_type": [
+        "Catalan"
+      ],
+      "price_range": "€20-25 per person",
+      "hours": "12:30-10:30 PM",
+      "highlights": [
+        "Cozy Catalan spot"
+      ],
+      "must_try_dishes": [
+        "Seasonal Catalan dishes",
+        "Tapas"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Casa Marieta",
+      "city": "Girona",
+      "cuisine_type": [
+        "Catalan"
+      ],
+      "price_range": "€25-30 per person",
+      "hours": "9:30 AM-3:30 PM",
+      "highlights": [
+        "Traditional Catalan cuisine in historic setting",
+        "Good mix of veg, chicken & seafood"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Girona Cathedral",
+      "city": "Girona",
+      "description": "Famous for having the widest Gothic nave in the world",
+      "recommended_duration": "30-40 minutes",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Call Jueu (Jewish Quarter)",
+      "city": "Girona",
+      "description": "One of Europe's best-preserved Jewish quarters with narrow stone alleys",
+      "recommended_duration": "30-45 minutes",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Girona City Walls",
+      "city": "Girona",
+      "description": "Medieval walls offering panoramic city views",
+      "recommended_duration": "30-40 minutes",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "restaurants": [
+    {
+      "name": "O Dezaseis",
+      "city": "Santiago de Compostela",
+      "cuisine_type": [
+        "Galician"
+      ],
+      "price_range": "€20-30 per person",
+      "highlights": [
+        "Traditional Galician cooking"
+      ],
+      "must_try_dishes": [
+        "Pork ribs",
+        "Octopus",
+        "Local meats"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Casa Marcelo",
+      "city": "Santiago de Compostela",
+      "cuisine_type": [
+        "Modern Galician"
+      ],
+      "price_range": "€30-40 per person",
+      "highlights": [
+        "Modern Galician cuisine",
+        "Meat & seafood forward"
+      ],
+      "must_try_dishes": [
+        "Creative tasting plates"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Mesón do Pulpo",
+      "city": "Santiago de Compostela",
+      "cuisine_type": [
+        "Galician"
+      ],
+      "price_range": "€20-25 per person",
+      "highlights": [
+        "Famous for Galician octopus",
+        "Rustic, authentic, filling"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Santiago de Compostela Cathedral",
+      "city": "Santiago de Compostela",
+      "description": "Final destination of the Camino de Santiago with grand Baroque façade",
+      "recommended_duration": "30-45 minutes",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Pulpo a la Gallega",
+      "city": "Santiago de Compostela",
+      "description": "Paprika octopus",
+      "vegetarian": false,
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+  ]
+}

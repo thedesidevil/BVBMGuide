@@ -1,0 +1,199 @@
+{
+  "restaurants": [
+    {
+      "name": "Il Canguro",
+      "city": "Pisa",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹1,200–2,000 per person",
+      "hours": "9:30 AM – 11:00 PM, 9:30 AM – 11:30 PM (only on Sundays)",
+      "area": "Near Pisa Tower",
+      "nearby_landmarks": [
+        "Leaning Tower of Pisa, Pisa"
+      ],
+      "highlights": [
+        "Casual Italian spot very close to the tower with plenty of veg options"
+      ],
+      "must_try_dishes": [
+        "Pastas",
+        "salads",
+        "local Italian plates",
+        "wines",
+        "Salads"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Grano Libero Ristorante",
+      "city": "Pisa",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹1,200–2,200 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "area": "Near Pisa Tower",
+      "nearby_landmarks": [
+        "Leaning Tower of Pisa, Pisa"
+      ],
+      "highlights": [
+        "Great for a relaxed sit-down lunch with vegetarian & vegan-friendly dishes"
+      ],
+      "must_try_dishes": [
+        "Bruschetta",
+        "lasagna",
+        "Italian mains",
+        "Lasagna"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Ristoro Dantesca",
+      "city": "Pisa",
+      "cuisine_type": [
+        "Tuscan"
+      ],
+      "price_range": "₹1,200–2,200 per person",
+      "hours": "11:00 AM – 10:00 PM (on Sunday, Monday, Thursday); 11:00 AM – 10:30 PM (Tuesday); 5:00– 10:00 PM (Wednesday); 11:30 AM – 10:30 PM (Friday)",
+      "area": "Near Pisa Tower",
+      "nearby_landmarks": [
+        "Leaning Tower of Pisa, Pisa"
+      ],
+      "highlights": [
+        "Simple, local-style restaurant with a good mix of traditional Tuscan dishes"
+      ],
+      "must_try_dishes": [
+        "Pasta",
+        "salads",
+        "regional dishes",
+        "Salads",
+        "traditional Tuscan dishes",
+        "Traditional Tuscan dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Namaste India",
+      "city": "Pisa",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "11:30am-3pm, 7-11pm",
+      "highlights": [
+        "On the way back from Leaning Tower to hotel"
+      ],
+      "must_try_dishes": [
+        "Curries",
+        "rotis"
+      ],
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Gandhi Indian Restaurant Pisa",
+      "city": "Pisa",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "11:30am-4pm, 6-11pm",
+      "highlights": [
+        "On the way back from Leaning Tower to hotel"
+      ],
+      "must_try_dishes": [
+        "Curries",
+        "rotis"
+      ],
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Leaning Tower of Pisa",
+      "city": "Pisa",
+      "description": "The famous tilt is even more striking in person. The contrast of white marble against green lawns makes the entire setting feel grand and surreal",
+      "hours": "9:00 AM – 8:00 PM",
+      "entry_fee": "~₹2,000–2,500 (tower climb)",
+      "recommended_duration": "~10–15 mins from station",
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+        "Italy/Italy- Final Itinerary with booking links.pdf",
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Piazza dei Miracoli",
+      "city": "Pisa",
+      "description": "A UNESCO-listed square that houses the tower, cathedral, and baptistery — spacious, elegant, and perfect for slow exploration and photos",
+      "hours": "Open all day",
+      "entry_fee": "Free (monuments separate)",
+      "recommended_duration": "Same location",
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Hotel Moderno",
+      "city": "Pisa",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Pisa",
+      "mode": "Public transport",
+      "description": "Pay as you go recommended since hotel is close to station and most sites",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "city": "Pisa",
+      "mode": "Pay as you go",
+      "description": "Not recommended to buy a pass for less than a day visit",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+    "Italy/Italy- Final Itinerary with booking links.pdf",
+    "Italy/4. Italy- Final Detailed Itinerary.pdf",
+    "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+  ]
+}

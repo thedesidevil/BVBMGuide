@@ -1,0 +1,373 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Thatte Idli",
+      "city": "Karnataka",
+      "description": "Soft, plate-sized idlis that are incredibly fluffy and served with coconut chutney and sambar; a staple Karnataka breakfast that feels light yet filling",
+      "vegetarian": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Benne Dosa (Butter Dosa)",
+      "city": "Karnataka",
+      "description": "Crisp on the outside and soft inside, generously layered with butter, giving it a rich, indulgent flavour",
+      "vegetarian": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Set Dosa",
+      "city": "Karnataka",
+      "description": "A trio of soft, spongy dosas served with vegetable kurma — comforting and mildly spiced",
+      "vegetarian": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ragi Mudde with Chicken/Mutton Curry",
+      "city": "Karnataka",
+      "description": "A traditional powerhouse meal made of finger millet balls paired with rich, spicy gravies — deeply rooted in Karnataka cuisine",
+      "vegetarian": false,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kori Gassi (Chicken Curry) with Neer Dosa",
+      "city": "Karnataka",
+      "description": "A Mangalorean-style coconut-based chicken curry, slightly spicy and incredibly flavourful, paired with delicate rice crepes",
+      "vegetarian": false,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mutton Pepper Fry",
+      "city": "Karnataka",
+      "description": "Bold, pepper-forward dry preparation with intense flavours — perfect for those who enjoy spice and depth",
+      "vegetarian": false,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Fish Curry (Coastal Style)",
+      "city": "Karnataka",
+      "description": "Tangy, coconut-based curry with fresh catch, often infused with tamarind and local spices",
+      "vegetarian": false,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bisi Bele Bath",
+      "city": "Karnataka",
+      "description": "A wholesome rice-lentil dish cooked with vegetables and a signature spice blend — warm, comforting, and slightly tangy",
+      "vegetarian": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Akki Roti",
+      "city": "Karnataka",
+      "description": "A rustic rice flour flatbread, lightly spiced and often paired with chutney or curry — simple yet flavourful",
+      "vegetarian": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "South Indian Meals (Banana Leaf Thali)",
+      "city": "Karnataka",
+      "description": "A complete spread of rice, sambar, rasam, vegetables, curd, and pickles served traditionally on a banana leaf",
+      "vegetarian": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mangalore Buns",
+      "city": "Karnataka",
+      "description": "Slightly sweet, fluffy deep-fried bread made from fermented banana dough — best enjoyed hot",
+      "vegetarian": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Goli Baje (Mangalore Bajji)",
+      "city": "Karnataka",
+      "description": "Crispy, golden fritters with a soft interior, typically served with coconut chutney — addictive and light",
+      "vegetarian": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Karnataka",
+      "english": "Hello",
+      "local": "Namaskara",
+      "category": "greeting",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "city": "Karnataka",
+      "english": "Thank you",
+      "local": "Dhanyavaadagalu",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "city": "Karnataka",
+      "english": "How much?",
+      "local": "Eshtu?",
+      "category": "food",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "city": "Karnataka",
+      "english": "Yes",
+      "local": "Haudu",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "city": "Karnataka",
+      "english": "No",
+      "local": "Illa",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "city": "Karnataka",
+      "english": "Please",
+      "local": "Dayavittu",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "city": "Karnataka",
+      "english": "I don't understand",
+      "local": "Nanage gothilla",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "city": "Karnataka",
+      "english": "Hello / Greetings",
+      "local": "Namaskara",
+      "category": "greeting",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "city": "Karnataka",
+      "english": "How are you?",
+      "local": "Hegiddira?",
+      "category": "greeting",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "city": "Karnataka",
+      "english": "It's good / I'm fine",
+      "local": "Chennagide",
+      "category": "greeting",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "city": "Karnataka",
+      "english": "I want food / meal",
+      "local": "Oota beku",
+      "category": "food",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "city": "Karnataka",
+      "english": "Make it less spicy",
+      "local": "Swalpa spicy kodi",
+      "category": "food",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "city": "Karnataka",
+      "english": "Please give water",
+      "local": "Neeru kodi",
+      "category": "food",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "city": "Karnataka",
+      "english": "Where is this place?",
+      "local": "Idu elli ide?",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "city": "Karnataka",
+      "english": "Please tell me the route",
+      "local": "Route swalpa heli",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "city": "Karnataka",
+      "english": "What time does it open?",
+      "local": "Yavaga open agatte?",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "city": "Karnataka",
+      "english": "Thank you",
+      "local": "Dhanyavadagalu",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "city": "Karnataka",
+      "english": "It's okay / No problem",
+      "local": "Parvagilla",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "city": "Karnataka",
+      "english": "Please help",
+      "local": "Dayavittu help maadi",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Karnataka"
+      ],
+      "tip": "Always keep fuel above half tank in forest and ghat sections (especially Chikkamagaluru–Sringeri–Thirthahalli stretch)",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "cities": [
+        "Karnataka"
+      ],
+      "tip": "Avoid late-night driving in ghat roads and elephant corridor zones",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "cities": [
+        "Karnataka"
+      ],
+      "tip": "Network can be patchy in forest belts — download offline Google Maps in advance",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "cities": [
+        "Karnataka"
+      ],
+      "tip": "Keep physical ID proofs (Aadhar/passport copy) for hotels and temple entries",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "cities": [
+        "Karnataka"
+      ],
+      "tip": "Do not leave valuables visible inside the car during sightseeing stops",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "cities": [
+        "Karnataka"
+      ],
+      "tip": "In wildlife zones (Sakrebyle Elephant Camp), follow instructions strictly and maintain silence around animals",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    },
+    {
+      "cities": [
+        "Karnataka"
+      ],
+      "tip": "Roads in Western Ghats may get slippery during sudden rain — drive cautiously",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx",
+      "_source_mtime": 1776961464.0
+    }
+  ],
+  "souvenirs": [],
+  "emergency_contacts": [
+    {
+      "city": "Karnataka",
+      "service": "Karnataka Tourism Helpline",
+      "number": "080–2235 2901",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "city": "Karnataka",
+      "service": "Police",
+      "number": "100",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "city": "Karnataka",
+      "service": "Ambulance",
+      "number": "108",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "city": "Karnataka",
+      "service": "Fire",
+      "number": "101",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "city": "Karnataka",
+      "service": "Bon Voyage by Marina Helpline",
+      "number": "86000-15316",
+      "notes": "Available for support before/during the trip",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    }
+  ],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+    "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx"
+  ]
+}

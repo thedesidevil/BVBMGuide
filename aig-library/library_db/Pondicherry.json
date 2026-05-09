@@ -1,0 +1,386 @@
+{
+  "restaurants": [
+    {
+      "name": "Bismilla Multicuisine Restaurant – Saram",
+      "city": "Pondicherry",
+      "cuisine_type": [
+        "North Indian",
+        "Chinese"
+      ],
+      "price_range": "₹300–600 pp",
+      "hours": "12:00 PM – 10:30 PM",
+      "must_try_dishes": [
+        "biryani",
+        "curries",
+        "noodles"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Banana Leaf – Saram",
+      "city": "Pondicherry",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "₹200–400 pp",
+      "hours": "11:30 AM – 11:00 PM",
+      "highlights": [
+        "Traditional veg thali served on banana leaf"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Café des Arts",
+      "city": "Pondicherry",
+      "cuisine_type": [
+        "French",
+        "Cafe"
+      ],
+      "price_range": "₹400–800 pp",
+      "hours": "8:30 AM – 6:00 PM (closed on Tuesday)",
+      "must_try_dishes": [
+        "pastas",
+        "breakfast plates"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bread & Chocolate",
+      "city": "Pondicherry",
+      "cuisine_type": [
+        "Healthy",
+        "Bakery"
+      ],
+      "price_range": "₹400–800 pp",
+      "hours": "8:15 AM – 9:30 PM",
+      "highlights": [
+        "Healthy bowls",
+        "bakery",
+        "coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Coromandel Cafe",
+      "city": "Pondicherry",
+      "cuisine_type": [
+        "Italian",
+        "Cafe"
+      ],
+      "price_range": "₹600–900 pp",
+      "hours": "8:30 AM – 11:00 PM",
+      "area": "French Quarter (White Town)",
+      "nearby_landmarks": [
+        "Promenade Beach, Pondicherry"
+      ],
+      "must_try_dishes": [
+        "Pizza",
+        "desserts",
+        "coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Le Café",
+      "city": "Pondicherry",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "₹200–400 pp",
+      "hours": "Open 24 hours",
+      "area": "French Quarter (White Town)",
+      "nearby_landmarks": [
+        "Promenade Beach, Pondicherry"
+      ],
+      "must_try_dishes": [
+        "Coffee",
+        "sandwiches"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Café Xtasi",
+      "city": "Pondicherry",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹400–700 pp",
+      "hours": "11:00 AM – 10:30 PM",
+      "highlights": [
+        "Wood-fired pizzas"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "La Maison Rose",
+      "city": "Pondicherry",
+      "cuisine_type": [
+        "European",
+        "Cafe"
+      ],
+      "price_range": "₹600–1,000 pp",
+      "hours": "10:30 AM – 11:00 PM, 8:30 AM – 11:00 PM (on Sunday)",
+      "ambience": "Cozy, aesthetic setting",
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sicilys",
+      "city": "Pondicherry",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹1,200–2,000 pp",
+      "hours": "8:00 PM – 10:30 PM, 12–10:30 PM (on Tuesday)",
+      "highlights": [
+        "Italian fine dining"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Indian Kaffe Express",
+      "city": "Pondicherry",
+      "cuisine_type": [
+        "Indian",
+        "Fusion"
+      ],
+      "price_range": "₹600–1,000 pp",
+      "hours": "8:00 PM – 8:30 PM (10 PM on Monday), (closed on Tuesday)",
+      "highlights": [
+        "Indian fusion",
+        "global menu"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pavilion",
+      "city": "Pondicherry",
+      "cuisine_type": [
+        "Multi-cuisine",
+        "Indian",
+        "Asian"
+      ],
+      "price_range": "₹300–600 pp",
+      "hours": "7 AM–11 PM",
+      "ambience": "Comfortable multi-cuisine dining",
+      "must_try_dishes": [
+        "Paneer makhani",
+        "dal",
+        "Thai green curry"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kamatchi Restaurant",
+      "city": "Pondicherry",
+      "cuisine_type": [
+        "Chettinad",
+        "Seafood"
+      ],
+      "price_range": "₹400–800 pp",
+      "hours": "12–4:30 PM, 6:30–10 PM",
+      "highlights": [
+        "Popular spot for Chettinad-style cuisine and seafood",
+        "known for bold flavours"
+      ],
+      "must_try_dishes": [
+        "Fish curry",
+        "prawn fry",
+        "chicken Chettinad",
+        "parotta"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "French Quarter (White Town)",
+      "city": "Pondicherry",
+      "description": "Charming colonial area with tree-lined boulevards, mustard-yellow buildings, boutique cafés and art stores",
+      "hours": "Best time: 4:30 PM onwards",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Promenade Beach",
+      "city": "Pondicherry",
+      "description": "Beach promenade with Gandhi Statue and French War Memorial",
+      "hours": "All day",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Serenity Beach",
+      "city": "Pondicherry",
+      "description": "Beach ideal for sunset views and relaxed walks",
+      "hours": "Best time: 5:15 PM onwards",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Le Royal Park",
+      "city": "Pondicherry",
+      "location": "Puducherry",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx",
+      "_source_mtime": 1775061740.0
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Croissants & Baguettes",
+      "city": "Pondicherry",
+      "description": "Freshly baked French-style breads, a specialty of Pondicherry's café culture",
+      "vegetarian": true,
+      "where_to_try": "French cafés in Pondicherry",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Wood-Fired Pizza / Pasta",
+      "city": "Pondicherry",
+      "description": "A blend of European flavours with local ingredients, commonly found in Pondicherry cafés",
+      "vegetarian": true,
+      "where_to_try": "Pondicherry cafés",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Auroville Handmade Products",
+      "city": "Pondicherry",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Auroville Visitor Centre"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx",
+      "_source_mtime": 1775061740.0
+    },
+    {
+      "item": "Handcrafted Bags & Accessories",
+      "city": "Pondicherry",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Boutique stores",
+        "Local markets"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx",
+      "_source_mtime": 1775061740.0
+    },
+    {
+      "item": "Ceramics & Pottery",
+      "city": "Pondicherry",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Local markets"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx",
+      "_source_mtime": 1775061740.0
+    },
+    {
+      "item": "Cotton Clothing",
+      "city": "Pondicherry",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Local markets"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx",
+      "_source_mtime": 1775061740.0
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+  ]
+}

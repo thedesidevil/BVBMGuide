@@ -1,0 +1,141 @@
+{
+  "restaurants": [
+    {
+      "name": "Bäckerei Konditorei Confiserie Café Haueter AG",
+      "city": "Adelboden",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "CHF 20-30 per person",
+      "hours": "7 AM - 5 PM",
+      "ambience": "A family-run, historic café-bakery in the village center—casual, cozy, and perfect for a relaxed midday bite",
+      "highlights": [
+        "Family-run",
+        "Historic"
+      ],
+      "must_try_dishes": [
+        "Cheese quiche",
+        "rösti with vegetables",
+        "Chicken salad with house dressing"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "AlpenChic das Restaurant",
+      "city": "Adelboden",
+      "cuisine_type": [
+        "Alpine"
+      ],
+      "price_range": "CHF 30-45 per person",
+      "hours": "7:30 AM - 10 PM",
+      "ambience": "Modern alpine style with a sunny terrace overlooking the mountains—great for a leisurely lunch with views",
+      "must_try_dishes": [
+        "Tagliatelle with seasonal vegetables",
+        "grilled trout with herbs"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Restaurant Alpenblick",
+      "city": "Adelboden",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "CHF 35-55 per person",
+      "hours": "7 AM - 11 PM",
+      "ambience": "Traditional chalet-style restaurant with warm interiors and sweeping views of the valley",
+      "must_try_dishes": [
+        "Cheese fondue",
+        "vegetable rösti",
+        "Roast chicken with alpine herbs"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Restaurant Viktoria",
+      "city": "Adelboden",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "CHF 40- 60 per person",
+      "hours": "7 AM - 11:30 PM",
+      "ambience": "Stylish yet welcoming dining room in Hotel Viktoria Eden, known for blending Swiss classics with a modern touch",
+      "must_try_dishes": [
+        "Seasonal vegetable risotto",
+        "Chicken breast in creamy sauce with rösti"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Engstligen Falls",
+      "city": "Adelboden",
+      "description": "Waterfall accessible by walking trail from valley station",
+      "recommended_duration": "1.5 hours",
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "The Cambrian",
+      "city": "Adelboden",
+      "location": "Village center",
+      "_source_file": "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384290.512721
+    },
+    {
+      "name": "The Cambrian",
+      "city": "Adelboden",
+      "location": "9 min from Adelboden station by walk",
+      "_source_file": "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384308.452988
+    },
+    {
+      "name": "The Cambrian",
+      "city": "Adelboden",
+      "location": "Village center",
+      "_source_file": "Italy/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384338.18424
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+    "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+    "Italy/Tejas - Europe All Inclusive Guide.pdf"
+  ]
+}

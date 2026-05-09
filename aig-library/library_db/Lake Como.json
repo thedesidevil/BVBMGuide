@@ -1,0 +1,41 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Lake Como",
+      "mode": "Ferry",
+      "description": "Scenic ferry connections between towns on Lake Como",
+      "_source_file": "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384290.512721
+    },
+    {
+      "city": "Lake Como",
+      "mode": "Ferry",
+      "description": "Fast ferry service connecting towns around the lake",
+      "cost": "Around €4–6 per person for bus alternative",
+      "_source_file": "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384308.452988
+    },
+    {
+      "city": "Lake Como",
+      "mode": "Ferry",
+      "description": "Scenic ferry service connecting towns around the lake",
+      "_source_file": "Italy/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384338.18424
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+    "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+    "Italy/Tejas - Europe All Inclusive Guide.pdf"
+  ]
+}

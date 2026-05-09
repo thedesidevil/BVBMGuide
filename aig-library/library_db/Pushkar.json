@@ -1,0 +1,484 @@
+{
+  "restaurants": [
+    {
+      "name": "The Laughing Buddha Café",
+      "city": "Pushkar",
+      "cuisine_type": [
+        "Israeli"
+      ],
+      "price_range": "₹300-₹500",
+      "ambience": "Cozy rooftop, spiritual backpacker vibe",
+      "must_try_dishes": [
+        "Israeli platters",
+        "falafel",
+        "fresh juices"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Honey & Spice",
+      "city": "Pushkar",
+      "cuisine_type": [
+        "Vegetarian"
+      ],
+      "price_range": "₹300-₹500",
+      "ambience": "Bright, wholesome, health-oriented",
+      "highlights": [
+        "Highly popular vegetarian spot"
+      ],
+      "must_try_dishes": [
+        "Buddha bowls",
+        "buckwheat pancakes",
+        "smoothies"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Raju Terrace Garden Restaurant",
+      "city": "Pushkar",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹250-₹400",
+      "ambience": "Simple terrace with beautiful hill views",
+      "must_try_dishes": [
+        "Thali",
+        "paratha",
+        "veg Indian dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "La Pizzeria",
+      "city": "Pushkar",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹400-₹700",
+      "ambience": "Garden café with rustic charm",
+      "must_try_dishes": [
+        "Wood-fired pizzas",
+        "pasta",
+        "salads"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Om Shiva Garden Restaurant",
+      "city": "Pushkar",
+      "cuisine_type": [
+        "Vegetarian"
+      ],
+      "price_range": "₹300-₹500",
+      "ambience": "Relaxed garden seating",
+      "must_try_dishes": [
+        "Thalis",
+        "veg curries",
+        "herbal teas"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Funky Monkey Café",
+      "city": "Pushkar",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "₹250-₹450",
+      "ambience": "Bohemian, friendly, artistic",
+      "must_try_dishes": [
+        "Sandwiches",
+        "pancakes",
+        "smoothie bowls"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Sixth Sense",
+      "city": "Pushkar",
+      "cuisine_type": [
+        "Mediterranean",
+        "Indian"
+      ],
+      "price_range": "₹400-₹700",
+      "ambience": "Rooftop haveli-style restaurant",
+      "highlights": [
+        "Located at Inn Seventh Heaven Hotel"
+      ],
+      "must_try_dishes": [
+        "Mediterranean plates",
+        "veg Indian dishes",
+        "fresh juices"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Nature's Blessing",
+      "city": "Pushkar",
+      "cuisine_type": [
+        "Vegan"
+      ],
+      "price_range": "₹300-₹500",
+      "ambience": "Scenic, eco-friendly, greenery-filled",
+      "must_try_dishes": [
+        "Vegan thali",
+        "smoothie bowls",
+        "millet dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Out of the Blue Café",
+      "city": "Pushkar",
+      "cuisine_type": [
+        "Israeli"
+      ],
+      "price_range": "₹300-₹500",
+      "ambience": "Rooftop seating with views",
+      "must_try_dishes": [
+        "Israeli breakfast",
+        "pasta",
+        "desserts"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "The Sunset Café",
+      "city": "Pushkar",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "₹300-₹500",
+      "ambience": "Lakeside chill ambience with soft views of setting sun",
+      "nearby_landmarks": [
+        "Pushkar Lake, Pushkar"
+      ],
+      "highlights": [
+        "Relaxed boho vibe right on the lake"
+      ],
+      "must_try_dishes": [
+        "Pasta",
+        "falafel",
+        "fresh juices"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Café Lake View",
+      "city": "Pushkar",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹250-₹450",
+      "ambience": "Simple, scenic, overlooking the water",
+      "nearby_landmarks": [
+        "Pushkar Lake, Pushkar"
+      ],
+      "must_try_dishes": [
+        "Parathas",
+        "veg curries",
+        "chai"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Tiko's Café",
+      "city": "Pushkar",
+      "cuisine_type": [
+        "Vegetarian"
+      ],
+      "price_range": "₹250-₹450",
+      "ambience": "Artistic, friendly vegetarian café",
+      "must_try_dishes": [
+        "Pizza",
+        "hummus plate",
+        "pancakes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Brahma Temple",
+      "city": "Pushkar",
+      "description": "One of the very few temples in the world dedicated to Lord Brahma",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Rajasthan/Jaipur and Jodhpur Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Brahma Temple (Jagatpita Brahma Mandir)",
+      "city": "Pushkar",
+      "description": "One of the very few temples in the world dedicated to Lord Brahma. The temple stands in striking red and blue tones",
+      "hours": "6:00 AM – 9:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Pushkar Lake",
+      "city": "Pushkar",
+      "description": "Sacred lake surrounded by 52 ghats and steeped in mythology. It is believed that a dip here cleanses the soul",
+      "entry_fee": "Free",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Savitri Mata Temple",
+      "city": "Pushkar",
+      "description": "Located atop Ratnagiri Hill, offers breathtaking views of Pushkar, the desert, and surrounding valleys",
+      "hours": "5:00 AM – 12:00 PM, 4:00 PM – 9:00 PM",
+      "entry_fee": "Free (cable car ₹100-₹150 per person each way)",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Bamboo Saa Resort & Spa",
+      "city": "Pushkar",
+      "location": "Natural surroundings with panoramic views of surrounding hills",
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Bohemian & ethnic clothes",
+      "city": "Pushkar",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Pushkar Main Market"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Silver & tribal jewelry",
+      "city": "Pushkar",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Pushkar Main Market"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Leather bags, wallets & camel-leather items",
+      "city": "Pushkar",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Pushkar Main Market"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Rose water, perfumes (ittar)",
+      "city": "Pushkar",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Pushkar Main Market"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Incense & spiritual items",
+      "city": "Pushkar",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Pushkar Main Market"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Rajasthani handicrafts & showpieces",
+      "city": "Pushkar",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Sadar Bazaar"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Colourful bangles & costume jewelry",
+      "city": "Pushkar",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Sadar Bazaar"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Tie-dye & block-print stoles, dupattas",
+      "city": "Pushkar",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Sadar Bazaar"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Miniature paintings & wall hangings",
+      "city": "Pushkar",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Sadar Bazaar"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Premium silver jewelry & tribal ornaments",
+      "city": "Pushkar",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Sarafa Bazaar",
+        "Kedalganj Bazaar"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Traditional mojaris (juttis) & leather footwear",
+      "city": "Pushkar",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Sarafa Bazaar",
+        "Kedalganj Bazaar"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Home décor: pottery, lanterns, wooden crafts",
+      "city": "Pushkar",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Sarafa Bazaar",
+        "Kedalganj Bazaar"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Textile fabrics, cushion covers & tapestries",
+      "city": "Pushkar",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Sarafa Bazaar",
+        "Kedalganj Bazaar"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Handmade paper diaries & notebooks",
+      "city": "Pushkar",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Sarafa Bazaar",
+        "Kedalganj Bazaar"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Rajasthan/Jaipur and Jodhpur Itinerary.pdf",
+    "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+  ]
+}

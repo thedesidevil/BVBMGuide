@@ -1,0 +1,212 @@
+{
+  "restaurants": [
+    {
+      "name": "Ristorante Locanda Locarnese",
+      "city": "Locarno",
+      "cuisine_type": [
+        "Mediterranean",
+        "Italian"
+      ],
+      "price_range": "CHF 35-50 per person",
+      "hours": "11:30 AM - 3 PM, 6:30 PM - 11:30 PM",
+      "ambience": "Refined Mediterranean-Italian ambiance right on Piazza Grande, recognized in the Michelin Guide",
+      "area": "Piazza Grande",
+      "highlights": [
+        "Michelin Guide recognized"
+      ],
+      "must_try_dishes": [
+        "Italian seafood",
+        "Mediterranean fare"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Ristorante Piazza Grande",
+      "city": "Locarno",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "CHF 50 per person",
+      "hours": "11:00 AM - 12:00 AM",
+      "ambience": "Central and charming—located in a boutique hotel in a historic building on the square. Serves all meals from breakfast through late evening with outdoor seating and a warm, casual vibe",
+      "area": "Piazza Grande",
+      "must_try_dishes": [
+        "Vegana Pizza",
+        "Cous Cous with veggies",
+        "Frutti di Mare Pasta",
+        "Fritto misto di lago"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Al Borgo Bistrot",
+      "city": "Locarno",
+      "cuisine_type": [
+        "Mediterranean"
+      ],
+      "price_range": "CHF 25-40 per person",
+      "hours": "9 AM - 7:30 PM",
+      "ambience": "Cozy Mediterranean bistro a short walk from Piazza Grande, relaxed, café-style setting for lunch or early dinner",
+      "must_try_dishes": [
+        "vegetarian-friendly pastas",
+        "seafood options",
+        "light chicken dishes"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Ristorante vegetariano Govinda",
+      "city": "Locarno",
+      "cuisine_type": [
+        "Vegetarian",
+        "Indian",
+        "Asian"
+      ],
+      "price_range": "CHF 25-40 per person",
+      "hours": "10:00 AM - 3 PM, 6:00 PM - 10:30 PM; closed on Sunday",
+      "ambience": "Natural vegetarian restaurant with Indian/Asian influences. Pleasant relaxed interior, quiet street atmosphere, also a lovely small terrace / courtyard. The vibe is calm, colourful, and cosy — often praised by locals as a peaceful alternative among the busier spots in Locarno",
+      "highlights": [
+        "Natural vegetarian restaurant"
+      ],
+      "must_try_dishes": [
+        "Thalis"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Osteria Reginetta",
+      "city": "Locarno",
+      "cuisine_type": [
+        "Mediterranean"
+      ],
+      "price_range": "CHF 40-50 per person",
+      "hours": "7:30 PM - 10:30 PM",
+      "ambience": "An elegant, tranquil Mediterranean-inspired osteria tucked just off the pedestrian old-town zone—perfect for a romantic dinner or relaxed evening",
+      "area": "old-town zone",
+      "must_try_dishes": [
+        "Mediterranean fish dishes",
+        "Mediterranean fish dishes prepared with fresh, seasonal ingredients"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "La Prosciutteria",
+      "city": "Locarno",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "CHF 30-40 per person",
+      "hours": "7 AM - 12 AM",
+      "ambience": "Casual yet refined spot offering a contemporary Italian vibe—great for sharing plates and relaxed dinners",
+      "must_try_dishes": [
+        "Gnocchi with pomodorini, stracciatella & basilico fresco",
+        "salmone with mango & basilico",
+        "Gamberi with stracciatella & passion fruit"
+      ],
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Lake Maggiore",
+      "city": "Locarno",
+      "description": "Beautiful lake with promenade and boat rides to nearby towns like Ascona and Brissago Islands",
+      "source_files": [
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Piazza Grande",
+      "city": "Locarno",
+      "description": "The heart of Locarno, famous for its film festival and lively squares with cafés",
+      "source_files": [
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Cardada Cable Car",
+      "city": "Locarno",
+      "description": "Panoramic views of Lake Maggiore, surrounding valleys, and the highest peaks",
+      "source_files": [
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Hotel la Palma au Lac",
+      "city": "Locarno",
+      "location": "Lakeside",
+      "_source_file": "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384290.512721
+    },
+    {
+      "name": "Hotel la Palma au Lac",
+      "city": "Locarno",
+      "location": "2 hr 37 min from zurich airport by public transport",
+      "_source_file": "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384308.452988
+    },
+    {
+      "name": "Hotel la Palma au Lac",
+      "city": "Locarno",
+      "location": "Lakeside",
+      "_source_file": "Italy/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384338.18424
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Locarno",
+      "mode": "PostBus",
+      "description": "Bus service to remote villages like Foroglio",
+      "recommended_pass": "Swiss Travel Pass",
+      "_source_file": "Italy/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384338.18424
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+    "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+    "Italy/Tejas - Europe All Inclusive Guide.pdf"
+  ]
+}

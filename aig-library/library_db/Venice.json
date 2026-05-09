@@ -1,0 +1,875 @@
+{
+  "restaurants": [
+    {
+      "name": "Gio's restaurant and terrace",
+      "city": "Venice",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "EUR 100 per person",
+      "hours": "7am-10pm",
+      "ambience": "A refined, contemporary fine–casual restaurant perched on a terrace overlooking the Grand Canal",
+      "nearby_landmarks": [
+        "Gondola ride area, Venice"
+      ],
+      "highlights": [
+        "Lots of veg options",
+        "Great cocktails",
+        "Tiramisu",
+        "Gelato"
+      ],
+      "must_try_dishes": [
+        "Lasagna alla Norma",
+        "blue lobster ravioli",
+        "duck ragù",
+        "Lasagna alla Norma featuring local lagoon eggplants",
+        "tiramisu",
+        "gelato",
+        "Tiramisu",
+        "Gelato"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ],
+      "area": "Venice",
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Ristorante Piccola Martini",
+      "city": "Venice",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "EUR 25-35 per person",
+      "hours": "11am-11pm",
+      "ambience": "A small, unpretentious pizzeria-style restaurant near Piazza San Marco",
+      "area": "Near Piazza San Marco",
+      "nearby_landmarks": [
+        "St. Marks square, Venice"
+      ],
+      "highlights": [
+        "Lots of veg options",
+        "Pasta",
+        "Pizza"
+      ],
+      "must_try_dishes": [
+        "Fresh salads",
+        "pizzas",
+        "grilled chicken with vegetable soup",
+        "spaghetti frutti di mare",
+        "squid-ink pasta with squid",
+        "pasta",
+        "pizza",
+        "Pasta",
+        "Pizza"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ],
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Venchi Cioccolato e Gelato",
+      "city": "Venice",
+      "cuisine_type": [
+        "Gelato"
+      ],
+      "price_range": "EUR 4-5 per person",
+      "hours": "9am-8pm",
+      "ambience": "A retro-chic gelateria and chocolate boutique",
+      "highlights": [
+        "Many flavours",
+        "Dark chocolate and pistachio ones are popular"
+      ],
+      "must_try_dishes": [
+        "nougatine gelato",
+        "dark chocolate with caramelized hazelnuts",
+        "nougatine (dark chocolate with caramelized hazelnuts)",
+        "dark chocolate",
+        "pistachio",
+        "Dark chocolate gelato",
+        "Pistachio gelato",
+        "Creamy, artisanal gelato",
+        "nougatine"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ],
+      "area": "At the Santa Lucia station",
+      "nearby_landmarks": [],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Art Café and Food",
+      "city": "Venice",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "9am-6pm, Closed on Thurs",
+      "ambience": "Closed on Thursday",
+      "area": "Located in Murano",
+      "highlights": [
+        "Spaghetti",
+        "Pizzas",
+        "Tiramisu",
+        "Veg options"
+      ],
+      "must_try_dishes": [
+        "Spaghetti",
+        "pizzas",
+        "tiramisu",
+        "Tiramisu"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "B Restaurant alla Vecchia Pescharia",
+      "city": "Venice",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "Thus to Sun 11:am-3:20pm, 6:30pm-9:15pm",
+      "area": "Located in Murano",
+      "highlights": [
+        "Bruschetta",
+        "Spaghetti A Oglio",
+        "Vegeterian curry tagliatelle",
+        "Limoncello",
+        "Many veg options"
+      ],
+      "must_try_dishes": [
+        "Bruschetta",
+        "Spaghetti A Oglio",
+        "Vegetarian curry tagliatelle",
+        "Limoncello"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Pizzeria Marlin Ristorante",
+      "city": "Venice",
+      "cuisine_type": [
+        "Pizzeria"
+      ],
+      "hours": "11:30am-5pm, Closed on Wed",
+      "ambience": "Closed on Wednesday",
+      "area": "Located in Murano",
+      "highlights": [
+        "Veg lasagna",
+        "Soups",
+        "Many vegetarian options for pastas and pizzas"
+      ],
+      "must_try_dishes": [
+        "Veg lasagna",
+        "soups"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Ristorante Camp Venedig",
+      "city": "Venice",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "7am-2pm, 4-10pm",
+      "ambience": "Located inside the campsite. You can sit inside or outside",
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Taverna Fontana",
+      "city": "Venice",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "11am-2:30pm, 7-10pm, Closed on Mon",
+      "highlights": [
+        "Gnocchi",
+        "Tiramisu"
+      ],
+      "must_try_dishes": [
+        "Gnocchi",
+        "Tiramisu"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Ristorante Trattoria alla Laguna",
+      "city": "Venice",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "12-2:30pm, 7-10pm",
+      "highlights": [
+        "Classic Venetian fare"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "St. Mark's Basilica",
+      "city": "Venice",
+      "description": "A stunning Byzantine masterpiece and spiritual heart of Venice, renowned for its golden mosaics",
+      "hours": "09:30–17:15 (Sun & holidays from 14:00)",
+      "entry_fee": "€3",
+      "recommended_duration": "1.5 hours",
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Doge's Palace",
+      "city": "Venice",
+      "description": "Masterpiece of Gothic architecture and symbol of Venice's political power, former residence of the Doge and seat of Venetian government",
+      "hours": "09:00–19:00 (Apr–Oct), 09:00–18:00 (Nov–Mar)",
+      "entry_fee": "€25 (advance online) or €30 (on-site)",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Rialto Bridge",
+      "city": "Venice",
+      "description": "One of the oldest bridges in Venice with bustling atmosphere, shops and stalls",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Italy- Final Itinerary with booking links.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "St. Mark's Square",
+      "city": "Venice",
+      "description": "Heart of Venice with St. Mark's Basilica and Doge's Palace",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Italy/Italy- Final Itinerary with booking links.pdf"
+      ]
+    },
+    {
+      "name": "St. Marks Square",
+      "city": "Venice",
+      "description": "The heart of Venice with stunning Basilica di San Marco",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Gondola ride",
+      "city": "Venice",
+      "description": "Classical Gondola tour",
+      "entry_fee": "80 euros per Gondola by day, 100 euros in the evening (from 7 pm)",
+      "recommended_duration": "30-35 minutes",
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Saint Mark's Basilica",
+      "city": "Venice",
+      "description": "One of the most famous landmarks in Venice, known for its breathtaking Byzantine architecture, golden mosaics, and rich history",
+      "source_files": [
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Campanile",
+      "city": "Venice",
+      "description": "Bell tower offering panoramic city views",
+      "source_files": [
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Murano-Burano",
+      "city": "Venice",
+      "description": "Two charming islands near Venice known for their colourful houses",
+      "source_files": [
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Royal San Marco",
+      "city": "Venice",
+      "location": "Near Venezia S Lucia",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0
+    },
+    {
+      "name": "Royal San Marco",
+      "city": "Venice",
+      "location": "Venice",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "name": "Royal San Marco",
+      "city": "Venice",
+      "location": "San Marco",
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "name": "Best Western Tritone",
+      "city": "Venice",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "name": "Hilton Garden Inn Venice Mestre San Giuliano",
+      "city": "Venice",
+      "location": "Mestre San Giuliano",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "name": "Royal San Marco",
+      "city": "Venice",
+      "location": "Venice",
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Spaghetti alle Vongole",
+      "city": "Venice",
+      "description": "Pasta with clams, garlic, olive oil, and white wine",
+      "vegetarian": false,
+      "where_to_try": "Venetian restaurants",
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Bigoli in salsa",
+      "city": "Venice",
+      "description": "Long, thick, whole-wheat pasta called bigoli coated in a sauce made of onions and salt-cured anchovies or sardines",
+      "vegetarian": false,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Risotto al nero di sepia",
+      "city": "Venice",
+      "description": "Risotto with squid ink",
+      "vegetarian": false,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Risi e bisi",
+      "city": "Venice",
+      "description": "Rice and peas - hearty classic Venetian dish often served as starter but can be a meal in itself",
+      "vegetarian": true,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Risotto al Nero di Seppia",
+      "city": "Venice",
+      "description": "Venetian specialty risotto with cuttlefish and squid ink",
+      "vegetarian": false,
+      "where_to_try": null,
+      "source_files": [
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Murano glass",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Murano island"
+      ],
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0
+    },
+    {
+      "item": "Burano lace",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Burano island"
+      ],
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0
+    },
+    {
+      "item": "Hand-blown Murano glass",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Burano lace",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Artisanal biscuits (baicoli)",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Bellini mix",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Authentic Murano glass jewelry",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Masks from Carnevale",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Prosecco (Veneto)",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Murano glass",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Murano island"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Burano lace",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Burano island"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Artisanal biscuits",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Local bakeries"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Bellini mix",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Local shops"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Carnival masks",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Local artisan shops"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Venetian masks",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Venice shops and boutiques"
+      ],
+      "_source_file": "Italy/Italy- Final Itinerary with booking links.pdf",
+      "_source_mtime": 1772384341.8963616
+    },
+    {
+      "item": "Handcrafted jewelry",
+      "city": "Venice",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Venice shops and boutiques"
+      ],
+      "_source_file": "Italy/Italy- Final Itinerary with booking links.pdf",
+      "_source_mtime": 1772384341.8963616
+    },
+    {
+      "item": "Chocolates",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Venchi Cioccolato e Gelato",
+        "VizioVirtu"
+      ],
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "item": "Traditional biscuits and pastries",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "The Baicoli Colussi - supermarkets",
+        "Majer",
+        "Pasticceria dal Mas"
+      ],
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "item": "Regional wines like Prosecco and grappa",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Poli grappa shop"
+      ],
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "item": "Italian Coffee",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Caffe Girani"
+      ],
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "item": "Venetian Masks",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Ca'Macana"
+      ],
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "item": "Murano Glass",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "NasonMoretti",
+        "Salviati",
+        "Venini"
+      ],
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "item": "Leather Goods",
+      "city": "Venice",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Il Graffio"
+      ],
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "item": "Perfumes",
+      "city": "Venice",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Merchant of Venice"
+      ],
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "item": "Typical souvenirs",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Liberia Acqua Alta"
+      ],
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "item": "Chocolates",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Venchi Cioccolato e Gelato",
+        "VizioVirtu"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "item": "Traditional biscuits and pastries",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "The Baicoli Colussi supermarkets",
+        "Majer",
+        "Pasticceria dal Mas"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "item": "Regional wines",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Poli grappa shop"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "item": "Italian Coffee",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Caffe Girani"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "item": "Venetian Masks",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Ca'Macana"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "item": "Murano Glass",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "NasonMoretti",
+        "Salviati",
+        "Venini"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "item": "Leather Goods",
+      "city": "Venice",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Il Graffio"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "item": "Perfumes",
+      "city": "Venice",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Merchant of Venice"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "item": "Typical souvenirs",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Liberia Acqua Alta"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "item": "Hand-blown Murano glass",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Burano lace",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Artisanal biscuits (baicoli)",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Bellini mix",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Authentic Murano glass jewelry",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Masks from Carnevale",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Prosecco (Veneto)",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Venice",
+      "mode": "Water transport",
+      "description": "Vaporetto, buses, Tram, People Mover service, and Trenitalia train service within Venice municipality",
+      "recommended_pass": "1 day pass",
+      "cost": "25 EUR",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "city": "Venice",
+      "mode": "Public Transport",
+      "description": "Includes Vaporetto, buses, Tram, People Mover service and Trenitalia train service within Venice municipality",
+      "recommended_pass": "1 day pass",
+      "cost": "25 EUR",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+    "France/Paris, Switzerland and Italy.pdf",
+    "Switzerland/Paris, Switzerland and Italy.pdf",
+    "Italy/Italy- Final Itinerary with booking links.pdf",
+    "Italy/4. Italy- Final Detailed Itinerary.pdf",
+    "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+    "Italy/Paris, Switzerland and Italy.pdf"
+  ]
+}

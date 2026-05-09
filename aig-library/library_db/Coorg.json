@@ -1,0 +1,589 @@
+{
+  "restaurants": [
+    {
+      "name": "Raintree Restaurant",
+      "city": "Coorg",
+      "cuisine_type": [
+        "Coorg",
+        "South Indian"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:00 AM – 10:30 PM",
+      "highlights": [
+        "On the Mysore→Madikeri route; excellent local food",
+        "Reliable, central, high-quality local food"
+      ],
+      "must_try_dishes": [
+        "Akki Roti/Neer Dosa",
+        "Paneer Ghee Roast",
+        "Coffee Pudding",
+        "Forest Mushroom Curry",
+        "Akki Roti/neer dosa",
+        "paneer ghee roast",
+        "Elaneer Payasam"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    },
+    {
+      "name": "Coorg Cuisine",
+      "city": "Coorg",
+      "cuisine_type": [
+        "Traditional Kodava cuisine"
+      ],
+      "price_range": "₹₹",
+      "hours": "12:00 PM – 4:30 PM, and 7:00 PM – 10:00 PM",
+      "highlights": [
+        "Classic spot to experience authentic Coorg flavours",
+        "Best stop for traditional flavours after the morning hill circuit"
+      ],
+      "must_try_dishes": [
+        "Noolputtu",
+        "Bamboo Shoot Masala"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    },
+    {
+      "name": "Beans N Brews Café",
+      "city": "Coorg",
+      "cuisine_type": [
+        "Café-style"
+      ],
+      "price_range": "₹₂",
+      "hours": "9:00 AM to 10:00 PM",
+      "highlights": [
+        "Ideal for guests who prefer something light after travel",
+        "Light lunch for guests wanting a quick, casual break"
+      ],
+      "must_try_dishes": [
+        "Sandwiches",
+        "shakes",
+        "coffee",
+        "Coffee Shakes",
+        "Cheesecake"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    },
+    {
+      "name": "In-House Dining — Old Kent Estate",
+      "city": "Coorg",
+      "cuisine_type": [
+        "Local Coorgi dishes",
+        "Indian",
+        "international"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "Breakfast: 8:00 AM – 10:00 AM, Lunch: 1:00 PM – 3:00 PM, Dinner: 8:00 PM – 10:00 PM",
+      "highlights": [
+        "Comfortable, atmospheric, freshest ingredients"
+      ],
+      "must_try_dishes": [
+        "Kodava-style curries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Kunphen Café",
+      "city": "Coorg",
+      "cuisine_type": [
+        "Tibetan",
+        "Vegetarian"
+      ],
+      "price_range": "₹150–400",
+      "hours": "9 AM – 6 PM",
+      "ambience": "Cozy Tibetan-style vegetarian café",
+      "area": "Bylakuppe",
+      "nearby_landmarks": [
+        "Tibetan Golden Temple (Namdroling Monastery), Coorg"
+      ],
+      "highlights": [
+        "Vegetarian only",
+        "Tibetan-style"
+      ],
+      "must_try_dishes": [
+        "Thukpa",
+        "Veg Momos",
+        "Ginger-Lemon Tea"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    },
+    {
+      "name": "Nellaki – Taj Madikeri Resort & Spa",
+      "city": "Coorg",
+      "cuisine_type": [
+        "Kodava"
+      ],
+      "price_range": "₹1500–2500",
+      "hours": "Open for dinner",
+      "ambience": "Elegant rainforest-view restaurant offering authentic Kodava cuisine",
+      "highlights": [
+        "Rainforest views",
+        "Authentic Kodava cuisine"
+      ],
+      "must_try_dishes": [
+        "Kadambuttu",
+        "Bamboo Shoot Curry"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    },
+    {
+      "name": "The Falls – The Tamara Coorg",
+      "city": "Coorg",
+      "cuisine_type": [
+        "Indian",
+        "Global"
+      ],
+      "price_range": "₹2000–3000",
+      "hours": "Open for dinner",
+      "ambience": "Plantation-side fine dining with Indian & global cuisine",
+      "highlights": [
+        "Plantation-side setting",
+        "Fine dining"
+      ],
+      "must_try_dishes": [
+        "Kummu curry and nooputtu",
+        "Chef's Signature Dessert"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    },
+    {
+      "name": "Fern Tree – Taj Madikeri",
+      "city": "Coorg",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "₹1800–2500 for two",
+      "hours": "Open till 10:30 PM",
+      "ambience": "Multi-cuisine in-house restaurant with open-air seating",
+      "highlights": [
+        "Open-air seating",
+        "Multi-cuisine"
+      ],
+      "must_try_dishes": [
+        "Dal Makhani",
+        "Crème Brûlée"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    },
+    {
+      "name": "Tiger Tiger Restaurant",
+      "city": "Coorg",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "₹800–1200 per person",
+      "hours": "7 PM – 10:30 PM",
+      "ambience": "Stylish rooftop eatery with valley views",
+      "highlights": [
+        "Rooftop setting",
+        "Valley views"
+      ],
+      "must_try_dishes": [
+        "Veg Thali",
+        "Passion fruit pudding",
+        "Chocolate Mousse"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Tibetan Golden Temple (Namdroling Monastery)",
+      "city": "Coorg",
+      "description": "A serene Buddhist monastery known for its golden Buddha statues, vibrant murals, peaceful chants, and Tibetan-style architecture.",
+      "hours": "7:00 AM to 7:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "30–45 minutes",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    },
+    {
+      "name": "Kaveri Nisargadhama",
+      "city": "Coorg",
+      "description": "A tranquil forest island accessible via a hanging bridge. Spot deer, stroll among bamboo groves, and enjoy views of the Kaveri River.",
+      "hours": "9 AM – 5 PM",
+      "entry_fee": "₹10 adults / ₹5 children",
+      "recommended_duration": "45–60 mins",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Mandalpatti Viewpoint",
+      "city": "Coorg",
+      "description": "One of Coorg's most breathtaking sunrise points with rolling mist and 360° hill views",
+      "hours": "Best time: Arrive by ~5:00 AM for sunrise",
+      "entry_fee": "₹3500 (round trip jeep)",
+      "recommended_duration": "3–3.5 hours round trip",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    },
+    {
+      "name": "Tala Kaveri",
+      "city": "Coorg",
+      "description": "A serene spiritual site believed to be the origin of the River Kaveri. Climb up the steps behind the temple for panoramic mountain views.",
+      "hours": "6:00 AM – 8:30 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    },
+    {
+      "name": "Bhagamandala Temple Complex",
+      "city": "Coorg",
+      "description": "Located at the Triveni Sangam — confluence of three rivers. A peaceful temple stop rich in Dravidian architecture.",
+      "hours": "6:00 AM – 1:30 PM and 3:00 PM – 8:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    },
+    {
+      "name": "Dubare Elephant Camp",
+      "city": "Coorg",
+      "description": "Interact with elephants, learn about conservation efforts, and participate in feeding or bathing (availability varies)",
+      "hours": "9:00 AM – 11:00 AM and 4:30 PM – 5:30 PM",
+      "entry_fee": "₹30 + ₹50 boat ride + activity charges",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    },
+    {
+      "name": "Abbey Falls",
+      "city": "Coorg",
+      "description": "A short forest walk leads to this powerful waterfall surrounded by spices and coffee plantations — great for photos.",
+      "hours": "9:00 AM – 5:00 PM",
+      "entry_fee": "₹10– ₹15 per person",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    },
+    {
+      "name": "Nisargadhama (Kaveri Nisargadhama Forest Park)",
+      "city": "Coorg",
+      "description": "Bamboo groves, deer park, and riverside walkways – perfect for a scenic pitstop",
+      "hours": "9 AM – 5 PM",
+      "entry_fee": "₹10 adults / ₹5 children",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    },
+    {
+      "name": "Raja's Seat",
+      "city": "Coorg",
+      "description": "Sunset garden with panoramic valley views",
+      "hours": "5:30 AM – 7:30 PM",
+      "entry_fee": "₹5",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Old Kent Estates",
+      "city": "Coorg",
+      "location": "A colonial-era estate property surrounded by 200 acres of lush coffee plantations",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "name": "Taj Madikeri Resort & Spa",
+      "city": "Coorg",
+      "location": "Nestled amidst Coorg's lush forests",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf",
+      "_source_mtime": 1772384283.1962335
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Noolputtu (String Hoppers)",
+      "city": "Coorg",
+      "description": "Steamed rice noodles",
+      "vegetarian": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Bamboo Shoot Curry",
+      "city": "Coorg",
+      "description": "Traditional Kodava curry made with bamboo shoots",
+      "vegetarian": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    },
+    {
+      "name": "Kadambuttu",
+      "city": "Coorg",
+      "description": "Steamed Rice Dumplings",
+      "vegetarian": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    },
+    {
+      "name": "Noolputtu",
+      "city": "Coorg",
+      "description": "Rice string hoppers - light and fluffy, paired with Coorgi gravies",
+      "vegetarian": true,
+      "where_to_try": "Coorg Cuisine",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Mysore",
+        "Coorg",
+        "Kabini"
+      ],
+      "tip": "Removing footwear before entering temples/homes is customary",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "cities": [
+        "Mysore",
+        "Coorg",
+        "Kabini"
+      ],
+      "tip": "Avoid loud conversation inside temples or wildlife parks",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "cities": [
+        "Mysore",
+        "Coorg",
+        "Kabini"
+      ],
+      "tip": "Ask permission before photographing local people",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Freshly Ground Coffee",
+      "city": "Coorg",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "item": "Homemade Wines",
+      "city": "Coorg",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "item": "Spices",
+      "city": "Coorg",
+      "category": "Food",
+      "where_to_buy": [
+        "pepper, cardamom, cinnamon"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "item": "Organic Cacao Products",
+      "city": "Coorg",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "item": "Local Dry Fruits & Honey",
+      "city": "Coorg",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "item": "Coorg Coffee",
+      "city": "Coorg",
+      "category": "Food",
+      "where_to_buy": [
+        "Local plantations",
+        "Madikeri Market",
+        "Coffee Works"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf",
+      "_source_mtime": 1772384283.1962335
+    },
+    {
+      "item": "Homemade Wines",
+      "city": "Coorg",
+      "category": "Food",
+      "where_to_buy": [
+        "Co-operative wine outlets in Madikeri"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf",
+      "_source_mtime": 1772384283.1962335
+    },
+    {
+      "item": "Spices",
+      "city": "Coorg",
+      "category": "Food",
+      "where_to_buy": [
+        "Spiceland",
+        "plantations",
+        "town markets"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf",
+      "_source_mtime": 1772384283.1962335
+    },
+    {
+      "item": "Honey",
+      "city": "Coorg",
+      "category": "Food",
+      "where_to_buy": [
+        "Estate stores",
+        "organic markets"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf",
+      "_source_mtime": 1772384283.1962335
+    },
+    {
+      "item": "Traditional Coorg Knives & Curios",
+      "city": "Coorg",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Local handicraft stores in Madikeri"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf",
+      "_source_mtime": 1772384283.1962335
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Mysore",
+        "Coorg",
+        "Kabini"
+      ],
+      "tip": "Carry personal prescription medicines",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "cities": [
+        "Mysore",
+        "Coorg",
+        "Kabini"
+      ],
+      "tip": "Stay hydrated — weather is cool but can be dry",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "cities": [
+        "Mysore",
+        "Coorg",
+        "Kabini"
+      ],
+      "tip": "Avoid eating cut fruits from roadside vendors",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    },
+    {
+      "cities": [
+        "Coorg",
+        "Kabini"
+      ],
+      "tip": "Wear full sleeves for nature walks & safaris",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283
+    }
+  ],
+  "source_files": [
+    "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya.pdf"
+  ]
+}

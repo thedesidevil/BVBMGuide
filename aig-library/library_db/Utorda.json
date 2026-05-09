@@ -1,0 +1,63 @@
+{
+  "restaurants": [
+    {
+      "name": "Zeebop Utorda",
+      "city": "Utorda",
+      "cuisine_type": [
+        "Goan",
+        "Indian"
+      ],
+      "price_range": "₹500-1000",
+      "hours": "10am- 11pm",
+      "ambience": "Quintessential beachside restaurant with serene coastal views",
+      "highlights": [
+        "Fresh seafood",
+        "Scenic beauty"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Goa/Goa All Inclusive Guide - Rashi and Rajnesh.pdf",
+        "Goa/Goa- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Jamming Goat",
+      "city": "Utorda",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "₹900-1200",
+      "hours": "12pm- 1 am",
+      "ambience": "Popular beachfront restaurant with vibrant atmosphere",
+      "highlights": [
+        "Live music",
+        "Seafood, Indian, and international cuisine"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Goa/Goa All Inclusive Guide - Rashi and Rajnesh.pdf",
+        "Goa/Goa- All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Goa/Goa All Inclusive Guide - Rashi and Rajnesh.pdf",
+    "Goa/Goa- All Inclusive Guide.pdf"
+  ]
+}

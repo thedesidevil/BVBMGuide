@@ -1,0 +1,202 @@
+{
+  "restaurants": [
+    {
+      "name": "Pitogyros Oia",
+      "city": "Santorini",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "₹800–1,500",
+      "hours": "12:00 PM – 11:00 PM",
+      "area": "Central",
+      "nearby_landmarks": [
+        "Oia Village, Santorini"
+      ],
+      "must_try_dishes": [
+        "Veg gyros",
+        "wraps",
+        "quick bites"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Skiza Café",
+      "city": "Santorini",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹800–1,500",
+      "hours": "9:00 AM – 9:00 PM",
+      "area": "Central",
+      "nearby_landmarks": [
+        "Oia Village, Santorini"
+      ],
+      "must_try_dishes": [
+        "Sandwiches",
+        "coffee",
+        "desserts"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Lolita's Gelato",
+      "city": "Santorini",
+      "cuisine_type": [
+        "Dessert"
+      ],
+      "price_range": "₹400–800",
+      "hours": "10:00 AM – 9:00 PM",
+      "area": "Central",
+      "nearby_landmarks": [
+        "Oia Village, Santorini"
+      ],
+      "must_try_dishes": [
+        "Gelato",
+        "sorbets"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Parea Tavern",
+      "city": "Santorini",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€15-25 per person",
+      "hours": "12:00 PM - 11:00 PM",
+      "ambience": "Cozy, family-friendly tavern with a warm, Mediterranean feel—relaxed indoor and outdoor seating at the heart of Fira",
+      "area": "Fira",
+      "highlights": [
+        "Family-friendly",
+        "Warm Mediterranean feel"
+      ],
+      "must_try_dishes": [
+        "Lamb kleftiko",
+        "zucchini balls",
+        "Tzatziki dip",
+        "Santorini salad",
+        "grilled octopus",
+        "moussaka"
+      ],
+      "best_for": [
+        "family",
+        "cozy"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Ouzeri",
+      "city": "Santorini",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€15-25 per person",
+      "hours": "12:00 PM - 11:00 PM",
+      "ambience": "Casual Greek ouzeri just off the main walkway—no caldera view, but a genuine local experience with outdoor seating and friendly service",
+      "area": "Fira",
+      "highlights": [
+        "Genuine local experience",
+        "Friendly service"
+      ],
+      "must_try_dishes": [
+        "Vegetarian moussaka",
+        "Tzatziki",
+        "Greek salad",
+        "pastitsio",
+        "wild greens"
+      ],
+      "best_for": [
+        "local experience",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Fira Town",
+      "city": "Santorini",
+      "description": "Lively and vibrant, with narrow lanes, white buildings, and endless viewpoints overlooking the caldera",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "Directly at cable car exit",
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Oia Village",
+      "city": "Santorini",
+      "description": "This is the Santorini you've seen in postcards — blue domes, whitewashed homes, and dramatic cliffside views",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "~20–25 mins from Fira",
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Santorini Cable Car",
+      "city": "Santorini",
+      "description": "This short but scenic ride lifts you up dramatic cliffs into Fira, offering breathtaking views over the caldera as you ascend",
+      "hours": "8:00 AM – 9:00 PM",
+      "entry_fee": "~₹800–1,000 per person",
+      "recommended_duration": "~5 mins ride",
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Fira",
+      "city": "Santorini",
+      "description": "Capital of Santorini, full of shops and cafés, Cable car down to the old port or walk the caldera path",
+      "hours": "7:00 AM - 9:00 PM",
+      "entry_fee": "6 euros for one-way cable car ticket",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Oia",
+      "city": "Santorini",
+      "description": "Gorgeous cliffside village, blue domes and postcard-perfect scenery",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+    "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+  ]
+}

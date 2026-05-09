@@ -1,0 +1,410 @@
+{
+  "restaurants": [
+    {
+      "name": "BON! Café",
+      "city": "Tashkent",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "40,000 – 80,000 UZS per person",
+      "hours": "8:00 AM – 10:00 PM",
+      "ambience": "Modern café-bakery popular with locals for light lunches, freshly baked breads, and good coffee",
+      "must_try_dishes": [
+        "Chicken Sandwich",
+        "Fresh Croissants",
+        "Vegetable Wraps",
+        "Cappuccino"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Coffee Nation Tashkent",
+      "city": "Tashkent",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "45,000 – 90,000 UZS per person",
+      "hours": "8:00 AM – 9:00 PM",
+      "ambience": "A stylish café known for excellent coffee and quick lunch options",
+      "must_try_dishes": [
+        "Club Sandwich",
+        "Chicken Wrap",
+        "Cheesecake",
+        "Iced Latte"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Tim's Coffee & Roastery",
+      "city": "Tashkent",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "50,000 – 90,000 UZS per person",
+      "hours": "8:00 AM – 10:00 PM",
+      "ambience": "A cozy specialty coffee café offering quality brews and light café food in a relaxed atmosphere",
+      "must_try_dishes": [
+        "Avocado Sandwich",
+        "Toasts",
+        "Pastries",
+        "Flat White"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Afsona Shevchenko",
+      "city": "Tashkent",
+      "cuisine_type": [
+        "Uzbek"
+      ],
+      "price_range": "180,000 – 300,000 UZS per person",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "A stylish restaurant offering modern Uzbek cuisine with elegant presentation",
+      "must_try_dishes": [
+        "Grilled meats",
+        "soups & salads"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Restaurant Caravan",
+      "city": "Tashkent",
+      "cuisine_type": [
+        "Uzbek",
+        "Central Asian"
+      ],
+      "price_range": "200,000 – 350,000 UZS per person",
+      "hours": "11:00 AM – 2:00 AM",
+      "ambience": "One of the most famous restaurants in Tashkent, known for its beautiful Central Asian décor and authentic Uzbek cuisine",
+      "must_try_dishes": [
+        "Plov",
+        "Vegetable Lagman",
+        "Manti Dumplings",
+        "Fresh Uzbek Bread"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Safia Cafe & Bakery",
+      "city": "Tashkent",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "40,000 – 80,000 UZS per person",
+      "hours": "8:00 AM – 11:00 PM",
+      "ambience": "A well-known local café chain in Tashkent famous for its pastries, sandwiches, and light café meals",
+      "must_try_dishes": [
+        "Chicken Sandwich",
+        "Cheese Croissant",
+        "Fresh Pastries",
+        "Cappuccino"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Raspberry Coffee Roasters",
+      "city": "Tashkent",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "25,000 – 50,000 UZS per person",
+      "hours": "8:00 AM – 6:00 PM",
+      "ambience": "A small specialty coffee café known for excellent coffee and quick café-style snacks",
+      "must_try_dishes": [
+        "Toasted Sandwiches",
+        "Croissants",
+        "Espresso",
+        "Iced Coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Space Coffee",
+      "city": "Tashkent",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "20,000 – 50,000 UZS per person",
+      "hours": "8:00 AM – 12:00 AM",
+      "ambience": "A cozy coffee spot offering light meals and pastries with a relaxed atmosphere",
+      "must_try_dishes": [
+        "Chicken Wrap",
+        "Pastries",
+        "Latte",
+        "Cold Brew"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Vlad`s Restaurant",
+      "city": "Tashkent",
+      "cuisine_type": [
+        "Uzbek"
+      ],
+      "price_range": "120,000 – 200,000 UZS per person",
+      "hours": "9:00 AM – 11:00 PM",
+      "ambience": "A small local restaurant popular for grilled meats and Uzbek comfort food. Casual and authentic dining experience",
+      "must_try_dishes": [
+        "Shashlik (grilled skewers)",
+        "Uzbek Bread",
+        "Fresh Salads"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "National Food Restaurant",
+      "city": "Tashkent",
+      "cuisine_type": [
+        "Uzbek"
+      ],
+      "price_range": "100,000 – 160,000 UZS per person",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "A well-known restaurant serving authentic Uzbek cuisine in a traditional setting",
+      "must_try_dishes": [
+        "Lagman noodles",
+        "Samsa pastries",
+        "Plov"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Silk96 Wine & Lounge",
+      "city": "Tashkent",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "200,000 – 320,000 UZS per person",
+      "hours": "3:00 PM – 2:00 AM",
+      "ambience": "A modern lounge restaurant with international cuisine and a relaxed ambiance, ideal for evening dining",
+      "must_try_dishes": [
+        "Grilled Steak",
+        "Pasta",
+        "Uzbek Plov"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Jago",
+      "city": "Tashkent",
+      "cuisine_type": [
+        "Uzbek"
+      ],
+      "price_range": "120,000 – 200,000 UZS per person",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "A casual restaurant popular among locals for Uzbek comfort food",
+      "must_try_dishes": [
+        "Lamb Shashlik",
+        "Plov",
+        "Samsa"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Bek Cafe",
+      "city": "Tashkent",
+      "cuisine_type": [
+        "Uzbek"
+      ],
+      "price_range": "90,000 – 150,000 UZS per person",
+      "hours": "Typically 9:00 AM – 12:00 AM",
+      "ambience": "A popular local restaurant known for serving traditional Uzbek cuisine in a relaxed and casual setting",
+      "must_try_dishes": [
+        "Shashlik kebabs",
+        "Lagman noodles",
+        "Uzbek Plov",
+        "Shurpa soup"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Yoree",
+      "city": "Tashkent",
+      "cuisine_type": [
+        "Korean",
+        "Asian"
+      ],
+      "price_range": "150,000 – 240,000 UZS per person",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "A well-known Korean restaurant in Tashkent offering Korean and Asian dishes",
+      "must_try_dishes": [
+        "Bibimbap",
+        "Korean BBQ",
+        "Kimchi Jjigae (Kimchi Stew)"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Tashkent City Park",
+      "city": "Tashkent",
+      "description": "A beautifully designed contemporary urban park with landscaped gardens, a lake promenade, fountains, cafés, and entertainment areas",
+      "hours": "11:00 AM – 11:00 PM",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "WWII Memorial",
+      "city": "Tashkent",
+      "description": "This peaceful memorial honors Uzbek soldiers who fought during World War II. The beautifully landscaped gardens, solemn sculptures, and memorial halls create a reflective atmosphere",
+      "hours": "8:00 AM – 12:00 AM",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Independence Square (Mustaqillik Maydoni)",
+      "city": "Tashkent",
+      "description": "One of the most important landmarks in Uzbekistan, Independence Square symbolizes the country's sovereignty and national identity",
+      "hours": "24 hours",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Hazrati Imam complex",
+      "city": "Tashkent",
+      "description": "This historic religious complex is one of the most important Islamic centers in Uzbekistan. Dating back several centuries, the complex houses beautiful madrasas, mosques, and courtyards",
+      "hours": "9:00 AM – 9:00 PM",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Muyi Muborak Madrasah",
+      "city": "Tashkent",
+      "description": "Located within the Hazrat Imam complex, this madrasa houses one of the most treasured relics in the Islamic world - the Uthman Quran",
+      "hours": "9:00 AM – 5:00 PM",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Tillya Sheikh Mosque",
+      "city": "Tashkent",
+      "description": "Another highlight of the complex, Tillya Sheikh Mosque is known for its elegant Islamic architecture and tranquil courtyard",
+      "hours": "Daytime hours",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Chorsu Bozor (Chorsu Bazaar)",
+      "city": "Tashkent",
+      "description": "Located in the heart of the old city, Chorsu Bazaar is one of Tashkent's oldest and most colorful markets",
+      "hours": "8:00 AM – 11:00 PM",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Hoja Ahror Juma Mosque",
+      "city": "Tashkent",
+      "description": "Also known as the Friday Mosque, this beautiful mosque dates back to the 15th century and remains an important religious site for locals",
+      "hours": "Daytime hours",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Ramada Encore by Wyndham Tashkent",
+      "city": "Tashkent",
+      "location": "Central Tashkent",
+      "_source_file": "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx",
+      "_source_mtime": 1775604640.0
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+  ]
+}

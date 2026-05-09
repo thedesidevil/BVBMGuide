@@ -1,0 +1,943 @@
+{
+  "restaurants": [
+    {
+      "name": "Vatan",
+      "city": "New York",
+      "cuisine_type": [
+        "Indian",
+        "Gujarati"
+      ],
+      "hours": "5 pm - 9:30 pm",
+      "highlights": [
+        "Gujarati all you can eat"
+      ],
+      "must_try_dishes": [
+        "Gujarati thali"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Saravanna Bhavan",
+      "city": "New York",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "hours": "9am - 10:30pm",
+      "must_try_dishes": [
+        "Dosas",
+        "thalis"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Darbar Grill",
+      "city": "New York",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "11:30 am - 10 pm",
+      "highlights": [
+        "Has a lunch buffet"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Urban Hawker",
+      "city": "New York",
+      "cuisine_type": [
+        "Food Hall"
+      ],
+      "hours": "10am - 10 pm",
+      "highlights": [
+        "Multiple options"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Bengal Tiger",
+      "city": "New York",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "11:30am - 3pm, 5-10pm",
+      "highlights": [
+        "Lunch specials"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Chelsea Market",
+      "city": "New York",
+      "cuisine_type": [
+        "Food Market"
+      ],
+      "hours": "7am-10pm",
+      "area": "Mid town Manhattan",
+      "must_try_dishes": [
+        "doughnuts",
+        "noodles",
+        "tacos",
+        "New York-style pizza"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "Multiple stalls",
+        "doughnuts to noodles",
+        "tacos",
+        "New York-style pizza"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ]
+    },
+    {
+      "name": "Union Square Greenmarket",
+      "city": "New York",
+      "cuisine_type": [
+        "Farmers market"
+      ],
+      "hours": "8am-6pm (Closed on tues, thurs and sun)",
+      "area": "Mid town Manhattan",
+      "must_try_dishes": [
+        "Fresh produce",
+        "baked goods"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "Fresh produce and baked goods"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Essex Street Market",
+      "city": "New York",
+      "cuisine_type": [
+        "Food Market"
+      ],
+      "hours": "8am-8pm (Sun 10am-6pm)",
+      "area": "Lower Manhattan (East)",
+      "must_try_dishes": [
+        "Pizzas",
+        "burgers",
+        "donuts",
+        "bagels"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "Multiple stalls",
+        "Pizzas",
+        "burgers",
+        "donuts",
+        "bagels",
+        "ceviche",
+        "beer stands"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Shanghai 21",
+      "city": "New York",
+      "cuisine_type": [
+        "Chinese"
+      ],
+      "hours": "11am-8:30pm",
+      "area": "Chinatown, Lower Manhattan",
+      "must_try_dishes": [
+        "soup dumplings",
+        "noodles"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "soup dumplings",
+        "shrimp",
+        "noodles"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Golden Steamer",
+      "city": "New York",
+      "cuisine_type": [
+        "Chinese"
+      ],
+      "hours": "11am-8:30pm",
+      "area": "Chinatown, Lower Manhattan",
+      "must_try_dishes": [
+        "fluffy steamed buns with various fillings",
+        "steamed buns"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "fluffy steamed buns with various fillings"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "The Original Chinatown Ice cream factory",
+      "city": "New York",
+      "cuisine_type": [
+        "Ice cream"
+      ],
+      "hours": "11am-8:30pm",
+      "area": "Chinatown, Lower Manhattan",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ]
+    },
+    {
+      "name": "Emilio's Ballato",
+      "city": "New York",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "12pm-11pm",
+      "area": "Little Italy, Lower Manhattan",
+      "must_try_dishes": [
+        "fried zucchini",
+        "tagliatelle ala bolognese",
+        "linguine with white clam sauce"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "fried zucchini",
+        "tagliatelle ala bolognese",
+        "linguine with white clam sauce"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Lombardis",
+      "city": "New York",
+      "cuisine_type": [
+        "Italian",
+        "Pizzeria"
+      ],
+      "hours": "12pm-11pm",
+      "area": "Little Italy, Lower Manhattan",
+      "must_try_dishes": [
+        "pizza"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "pizza"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Ferrara Bakery",
+      "city": "New York",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "12pm-11pm",
+      "area": "Little Italy, Lower Manhattan",
+      "must_try_dishes": [
+        "hazelnut gelato"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "hazelnut gelato"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Bar Six",
+      "city": "New York",
+      "cuisine_type": [
+        "French",
+        "Moroccan"
+      ],
+      "hours": "12pm-11pm",
+      "area": "Greenwich Village, Midtown Manhattan",
+      "must_try_dishes": [
+        "onion soup",
+        "stuffed artichokes"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "onion soup",
+        "stuffed artichokes"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Gene's",
+      "city": "New York",
+      "cuisine_type": [
+        "American"
+      ],
+      "hours": "12pm-11pm",
+      "area": "Greenwich Village, Midtown Manhattan",
+      "must_try_dishes": [
+        "baked ziti",
+        "roast clams"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "roast clams",
+        "baked ziti"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Serendipity",
+      "city": "New York",
+      "cuisine_type": [
+        "American"
+      ],
+      "hours": "11am-12am",
+      "area": "Midtown Manhattan",
+      "must_try_dishes": [
+        "Frozen Hot Chocolate"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "Frozen Hot Chocolate"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ]
+    },
+    {
+      "name": "Sylvia's restaurant",
+      "city": "New York",
+      "cuisine_type": [
+        "Southern American"
+      ],
+      "hours": "11am-10pm (Closes at 8pm Sun, Mon and Tues)",
+      "area": "Upper Manhattan",
+      "must_try_dishes": [
+        "Candied yams and string beans",
+        "cornbread",
+        "mac n cheese",
+        "Down Home Fried Chicken",
+        "Catfish Fingers",
+        "Candied yams"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "Down Home Fried Chicken",
+        "Catfish Fingers",
+        "Candied yams and string beans",
+        "cornbread",
+        "mac n cheese"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ]
+    },
+    {
+      "name": "Joe's pizzeria",
+      "city": "New York",
+      "cuisine_type": [
+        "Pizzeria"
+      ],
+      "hours": "11am-9pm",
+      "area": "Brooklyn",
+      "must_try_dishes": [
+        "Pizzas",
+        "chicken parm"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "Pizzas",
+        "chicken parm"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Mariscos El Submarino",
+      "city": "New York",
+      "cuisine_type": [
+        "Mexican"
+      ],
+      "hours": "12pm-10pm (Closed on Mon)",
+      "area": "Brooklyn",
+      "must_try_dishes": [
+        "Tacos",
+        "tostadas",
+        "grilled shrimp"
+      ],
+      "highlights": [
+        "Tacos",
+        "tostadas",
+        "grilled shrimp",
+        "Great cocktails"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Little Italy Pizza",
+      "city": "New York",
+      "cuisine_type": [
+        "Pizzeria"
+      ],
+      "hours": "9am-4am",
+      "area": null,
+      "highlights": [
+        "New York style pizzas and calzones"
+      ],
+      "must_try_dishes": [
+        "New York style pizzas",
+        "calzones"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Tacombi",
+      "city": "New York",
+      "cuisine_type": [
+        "Mexican"
+      ],
+      "hours": "11am-11pm",
+      "area": null,
+      "highlights": [
+        "Tacos",
+        "Tostadas",
+        "Sangria",
+        "Margaritas"
+      ],
+      "must_try_dishes": [
+        "Tacos",
+        "Tostadas"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Black Seed Bagels",
+      "city": "New York",
+      "cuisine_type": [
+        "Bagels"
+      ],
+      "hours": "7am-4pm",
+      "area": null,
+      "highlights": [
+        "New York style bagels"
+      ],
+      "must_try_dishes": [
+        "Everything bagel",
+        "salmon bagel"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Think Coffee",
+      "city": "New York",
+      "cuisine_type": [
+        "Café"
+      ],
+      "hours": "7am-7pm",
+      "area": null,
+      "highlights": [
+        "Coffee",
+        "baked goods",
+        "sandwiches"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Double Crispy Bakery",
+      "city": "New York",
+      "cuisine_type": [
+        "Chinese"
+      ],
+      "hours": "11am-8:30pm",
+      "area": "Chinatown, Lower Manhattan",
+      "highlights": [
+        "fish filet bun",
+        "steamed baos"
+      ],
+      "must_try_dishes": [
+        "fish filet bun",
+        "steamed baos"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Harpers Bread House",
+      "city": "New York",
+      "cuisine_type": [
+        "Chinese"
+      ],
+      "hours": "11am-8:30pm",
+      "area": "Chinatown, Lower Manhattan",
+      "highlights": [
+        "warm egg tart"
+      ],
+      "must_try_dishes": [
+        "egg tart"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Astoria Seafood",
+      "city": "New York",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "hours": "12pm-9pm (Closed on sun and monday)",
+      "area": "Queens",
+      "highlights": [
+        "Family owned",
+        "pick your own seafood",
+        "cuddle Fish",
+        "calamari",
+        "salmon",
+        "shrimp",
+        "flounder"
+      ],
+      "must_try_dishes": [
+        "cuddle Fish",
+        "calamari",
+        "salmon",
+        "shrimp",
+        "flounder"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Times Square",
+      "city": "New York",
+      "description": "Famous square in Midtown Manhattan",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Central Park",
+      "city": "New York",
+      "description": "Famous carousel, playgrounds, row boat rides, Alice in Wonderland statue and Belvedere Castle",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Bronx Zoo",
+      "city": "New York",
+      "description": "Zoo",
+      "hours": "11am entry",
+      "recommended_duration": "4 hours",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Broadway Show - Harry Potter and the Cursed Child",
+      "city": "New York",
+      "description": "Unforgettable Broadway experience for the whole family",
+      "hours": "6:00 PM - 10:00 PM",
+      "recommended_duration": "3 hours",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Statue at Sunset Cruise",
+      "city": "New York",
+      "description": "Close views of the Statue of Liberty, with NYC skyline at golden hour",
+      "hours": "7:00 - 8:30 PM",
+      "recommended_duration": "1.5 hours",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "9/11 Memorial",
+      "city": "New York",
+      "description": "A quiet, respectful moment for reflection",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Brooklyn Bridge",
+      "city": "New York",
+      "description": "Sunset views, city lights, and memorable family stroll",
+      "recommended_duration": "1.5 hours",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "St. Patrick's Cathedral",
+      "city": "New York",
+      "description": "Marvel at its neo-Gothic architecture",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "LEGO Store",
+      "city": "New York",
+      "description": "Play zones, giant models, and build-your-own kits",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Rockefeller Plaza",
+      "city": "New York",
+      "description": "Prometheus statue, Channel Gardens, and the ice rink",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Color Factory NYC",
+      "city": "New York",
+      "description": "Interactive, artistic fun with bright rooms, secret treats, and photo ops",
+      "hours": "Last entry at 6 pm",
+      "recommended_duration": "1.5 hours",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Harry Potter Store",
+      "city": "New York",
+      "description": "Explore wand walls, house robes, and sip a Butterbeer",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Statue of Liberty Tour",
+      "city": "New York",
+      "description": "Ferry tour to Statue of Liberty with pedestal climbing",
+      "recommended_duration": "3 hours",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Museum of Ice Cream",
+      "city": "New York",
+      "description": "Interactive museum",
+      "hours": "Last entry at 6:30 pm",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "AKA Central Park",
+      "city": "New York",
+      "location": "Central Park area",
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.pdf",
+      "_source_mtime": 1772384246.3359978
+    },
+    {
+      "name": "Comfort Inn JFK Airport",
+      "city": "New York",
+      "location": "JFK Airport",
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.pdf",
+      "_source_mtime": 1772384246.3359978
+    },
+    {
+      "name": "Best Western Empire State Hotel",
+      "city": "New York",
+      "location": "Manhattan",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "New York Pizza",
+      "city": "New York",
+      "description": "Classic New York style pizza",
+      "vegetarian": true,
+      "where_to_try": "Little Italy Pizza, Lombardis",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Bagels",
+      "city": "New York",
+      "description": "New York style bagels",
+      "vegetarian": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "where_to_try": "Black Seed Bagels"
+    },
+    {
+      "name": "Dimsums",
+      "city": "New York",
+      "description": "Chinese dumplings in Chinatown",
+      "where_to_try": "Shanghai 21",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Classic New York Cheesecake",
+      "city": "New York",
+      "description": "Traditional New York cheesecake",
+      "vegetarian": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Tipping people, especially at restaurants, is a norm. Restaurant waiters expect 18%-25% of total bill as tips. Also customary to add 10%-15% tips for taxi rides",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "souvenirs": [],
+  "emergency_contacts": [
+    {
+      "city": "New York",
+      "service": "Consulate General of India",
+      "number": "+1 347-721-9243",
+      "notes": "Located at 3 E 64th St, New York, NY 10065",
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.pdf",
+      "_source_mtime": 1772384246.3359978
+    },
+    {
+      "city": "New York",
+      "service": "Emergency",
+      "number": "911",
+      "notes": "One number for any emergencies including medical emergencies and ambulance. Accessible from anywhere, even where there doesn't appear to be any cell signal",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    },
+    {
+      "city": "New York",
+      "service": "Consulate General of India",
+      "number": "+1 347-721-9243",
+      "notes": "3 E 64th St, New York, NY 10065",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Buy a sim card from TSIM. They offer both physical and eSIMs. If getting two sims, recommend getting a T-mobile one and an AT&T one",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "New York",
+      "mode": "Public Transport",
+      "description": "Excellent public transport system. Tap and pay using a card or phone.",
+      "recommended_pass": "Metro Card or OMNY card",
+      "cost": "Each metro ride costs $2.90 but transfers are free. Fares are capped at $34 for a week. Up to three children under 44 inches tall ride for free when with a fare-paying adult.",
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.pdf",
+      "_source_mtime": 1772384246.3359978
+    },
+    {
+      "city": "New York",
+      "mode": "Subway and Bus",
+      "description": "Excellent public transport system. Finding parking can be very challenging and expensive",
+      "recommended_pass": "Metro Card",
+      "cost": "$15 load recommended. Each metro ride costs $2.90 but transfers are free. Fares are capped at $34 for a week. Children under 44 inches tall ride free when accompanied by an adult",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Travel insurance recommended with $100,000 coverage for each family member. Tata AIG has a plan for Rs. 8370 with $100 deductible. visitorscoverage.com has a Patriot America Plus plan with zero deductible at $200",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    },
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Most places in the US are pretty dry and it is easy to get sunburnt, so carry and apply sunscreen (SPF 30) when out in the Sun",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    },
+    {
+      "cities": [
+        "Boston",
+        "New York"
+      ],
+      "tip": "Boston and NYC could get cold at night. Boston max temp: 15°C, min: 8°C. NYC pretty similar to Boston. Pack winter weather clothes accordingly",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "source_files": [
+    "USA/ALL INCLUSIVE GUIDE USA.pdf",
+    "USA/Varun-Priyankee-Orlando-2024.pdf"
+  ]
+}

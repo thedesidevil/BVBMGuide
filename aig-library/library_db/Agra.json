@@ -1,0 +1,862 @@
+{
+  "restaurants": [
+    {
+      "name": "The Salt Café Kitchen & Bar",
+      "city": "Agra",
+      "cuisine_type": [
+        "Modern"
+      ],
+      "price_range": "₹800–1200 pp",
+      "hours": "12:00 PM – 12:00 AM",
+      "ambience": "Modern rooftop café with a lively yet relaxed vibe",
+      "highlights": [
+        "Modern rooftop café",
+        "Lively yet relaxed vibe"
+      ],
+      "must_try_dishes": [
+        "Butter chicken pizza",
+        "peri peri fries",
+        "loaded nachos"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bon Barbecue",
+      "city": "Agra",
+      "cuisine_type": [
+        "Barbecue"
+      ],
+      "price_range": "₹900–1300 pp",
+      "hours": "12:00 PM – 11:00 PM",
+      "ambience": "Spacious buffet-style dining with live grills",
+      "highlights": [
+        "Spacious buffet-style dining",
+        "Live grills"
+      ],
+      "must_try_dishes": [
+        "Live kebabs",
+        "tandoori platter",
+        "desserts"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pinch of Spice",
+      "city": "Agra",
+      "cuisine_type": [
+        "North Indian",
+        "Mughlai"
+      ],
+      "price_range": "₹800–1200 pp",
+      "hours": "12:00 PM – 11:00 PM",
+      "ambience": "A local favourite for rich North Indian flavours",
+      "highlights": [
+        "Local favourite",
+        "Rich North Indian flavours",
+        "Authentic Mughlai flavours"
+      ],
+      "must_try_dishes": [
+        "Dal makhani",
+        "paneer lababdar",
+        "butter naan"
+      ],
+      "best_for": [
+        "authentic"
+      ],
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Peshawri",
+      "city": "Agra",
+      "cuisine_type": [
+        "North-West Frontier"
+      ],
+      "price_range": "₹2500–4000 pp",
+      "hours": "7:00 PM – 10:30 PM",
+      "ambience": "Rustic interiors paired with bold North-West Frontier flavours",
+      "highlights": [
+        "Rustic interiors",
+        "Bold flavours",
+        "Rich, indulgent meal"
+      ],
+      "must_try_dishes": [
+        "Dal Bukhara",
+        "sikandari raan",
+        "naan"
+      ],
+      "best_for": [
+        "luxury"
+      ],
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Esphahan",
+      "city": "Agra",
+      "cuisine_type": [
+        "Mughlai"
+      ],
+      "price_range": "₹3000–5000 pp",
+      "hours": "6:30 PM – 10:30 PM",
+      "ambience": "Refined Mughal dining in an intimate luxury setting",
+      "highlights": [
+        "Refined Mughal dining",
+        "Intimate luxury setting",
+        "Special, elevated dinner"
+      ],
+      "must_try_dishes": [
+        "Dum biryani",
+        "galouti kebabs",
+        "shahi tukda"
+      ],
+      "best_for": [
+        "luxury",
+        "romantic"
+      ],
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sky Grill",
+      "city": "Agra",
+      "cuisine_type": [
+        "Continental"
+      ],
+      "price_range": "₹1200–1800 pp",
+      "hours": "7:00 PM – 11:00 PM",
+      "ambience": "Open-air rooftop dining with a breezy, relaxed vibe",
+      "highlights": [
+        "Open-air rooftop dining",
+        "Breezy, relaxed vibe"
+      ],
+      "must_try_dishes": [
+        "Grilled platters",
+        "pasta",
+        "cocktails"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Dasaprakash Restaurant",
+      "city": "Agra",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "₹400–700 pp",
+      "hours": "11:00 AM – 10:30 PM",
+      "ambience": "South Indian comfort food in a simple, clean setting",
+      "highlights": [
+        "Simple, clean setting",
+        "Light, familiar meal"
+      ],
+      "must_try_dishes": [
+        "Dosa",
+        "filter coffee",
+        "thali"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Jhankar Restaurant",
+      "city": "Agra",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "₹600–900 pp",
+      "hours": "7:30 AM – 11:30 PM",
+      "ambience": "Classic multi-cuisine dining with a calm ambience",
+      "highlights": [
+        "Calm ambience",
+        "Comfortable sit-down lunch"
+      ],
+      "must_try_dishes": [
+        "North Indian thali",
+        "kebabs"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tea'se Me Café",
+      "city": "Agra",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹500–800 pp",
+      "hours": "12:00 AM – 12:30 PM",
+      "ambience": "Creative café-style menu with a relaxed vibe",
+      "highlights": [
+        "Creative café-style menu",
+        "Relaxed vibe"
+      ],
+      "must_try_dishes": [
+        "Sandwiches",
+        "desserts",
+        "shakes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Molecule Air Bar",
+      "city": "Agra",
+      "cuisine_type": [
+        "Modern",
+        "Fusion"
+      ],
+      "price_range": "₹1200–1800 pp",
+      "hours": "12:00 PM – 1:00 AM",
+      "ambience": "Lively rooftop with music and a modern menu",
+      "highlights": [
+        "Lively rooftop",
+        "Music",
+        "Modern menu",
+        "Energetic evening"
+      ],
+      "must_try_dishes": [
+        "Fusion starters",
+        "cocktails"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bellevue",
+      "city": "Agra",
+      "cuisine_type": [
+        "Continental"
+      ],
+      "price_range": "₹2500–4000 pp",
+      "hours": "6:30 AM – 10:30 PM",
+      "ambience": "Elegant, refined dining with a luxurious feel",
+      "highlights": [
+        "Elegant, refined dining",
+        "Luxurious feel",
+        "Sophisticated dinner"
+      ],
+      "must_try_dishes": [
+        "Continental dishes",
+        "desserts"
+      ],
+      "best_for": [
+        "luxury"
+      ],
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Palm Burj",
+      "city": "Agra",
+      "cuisine_type": [
+        "North Indian"
+      ],
+      "price_range": "₹1200–1800 pp",
+      "hours": "4:00 PM – 1:30 PM",
+      "ambience": "Rooftop setting with scenic views and relaxed ambience",
+      "highlights": [
+        "Rooftop setting",
+        "Scenic views",
+        "Relaxed ambience"
+      ],
+      "must_try_dishes": [
+        "North Indian",
+        "grills"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Taj Terrace",
+      "city": "Agra",
+      "cuisine_type": [
+        "North Indian"
+      ],
+      "price_range": "₹1200–1800 pp",
+      "hours": "7:00 PM – 11:00 PM",
+      "ambience": "A relaxed rooftop setting offering distant Taj views and a calm, open-air ambience",
+      "nearby_landmarks": [
+        "Taj Mahal, Agra"
+      ],
+      "highlights": [
+        "Relaxed rooftop setting",
+        "Distant Taj views",
+        "Calm, open-air ambience"
+      ],
+      "must_try_dishes": [
+        "Butter chicken",
+        "dal makhani",
+        "tandoori platters"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Infini – The Sky Lounge",
+      "city": "Agra",
+      "cuisine_type": [
+        "Asian",
+        "Continental"
+      ],
+      "price_range": "₹1200–2000 pp",
+      "hours": "12:00 PM – 11:00 PM",
+      "ambience": "A stylish rooftop lounge with a more contemporary, upbeat vibe",
+      "highlights": [
+        "Stylish rooftop lounge",
+        "Contemporary, upbeat vibe",
+        "Music and views"
+      ],
+      "must_try_dishes": [
+        "Asian starters",
+        "pizzas",
+        "cocktails"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Cafe Sheroes Hangout",
+      "city": "Agra",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "Pay-as-you-wish",
+      "hours": "10:00 AM onwards",
+      "ambience": "A meaningful café experience with a simple, soulful vibe",
+      "highlights": [
+        "Meaningful café experience",
+        "Simple, soulful vibe",
+        "Unique, impactful visit"
+      ],
+      "must_try_dishes": [
+        "Light breakfast",
+        "coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Taj Mahal",
+      "city": "Agra",
+      "description": "Iconic marble mausoleum, most serene and visually magical at sunrise",
+      "hours": "Sunrise ~5:45 AM",
+      "entry_fee": "₹50 (Indians) + ₹200 (main mausoleum)",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mehtab Bagh",
+      "city": "Agra",
+      "description": "Tranquil Mughal garden across the Yamuna with uninterrupted Taj views, fewer crowds and serene photogenic experience",
+      "hours": "Sunrise to Sunset",
+      "entry_fee": "₹30 (Indians) / ₹300 (Foreigners)",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sadar Bazaar",
+      "city": "Agra",
+      "description": "Lively local bazaar for exploring everyday rhythm of Agra",
+      "hours": "Open till ~10:30 PM",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kinari Bazaar",
+      "city": "Agra",
+      "description": "Local bazaar for exploring Agra's everyday rhythm",
+      "hours": "Open till ~10:30 PM",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Itimad-ud-Daulah (Baby Taj)",
+      "city": "Agra",
+      "description": "A delicate marble tomb often considered the inspiration behind the Taj Mahal- quieter and beautifully intricate",
+      "hours": "8:00 AM – 12:00 AM",
+      "entry_fee": "₹30 pp",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Agra Fort",
+      "city": "Agra",
+      "description": "A grand Mughal fortress offering sweeping courtyards, royal chambers, and distant Taj views",
+      "hours": "6:00 AM – 6:00 PM",
+      "entry_fee": "₹50 pp",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Fatehpur Sikri",
+      "city": "Agra",
+      "description": "Magnificent Mughal city, once the empire's capital, filled with grand courtyards, royal residences, and intricately carved structures",
+      "hours": "6:00 AM – 6:00 PM",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Holiday Inn Agra",
+      "city": "Agra",
+      "location": "Agra",
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Petha",
+      "city": "Agra",
+      "description": "Agra's signature sweet made from ash gourd—soft, translucent, and delicately flavoured",
+      "vegetarian": true,
+      "where_to_try": "Gopal Das Pethe Wale",
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bedai & Jalebi",
+      "city": "Agra",
+      "description": "A beloved local breakfast combination—crispy, spiced lentil-stuffed puris paired with hot, syrupy jalebis",
+      "vegetarian": true,
+      "where_to_try": "Deviram Sweets",
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mughlai Biryani",
+      "city": "Agra",
+      "description": "Fragrant basmati rice layered with spices and slow-cooked meat or vegetables—rich yet aromatic",
+      "where_to_try": "Esphahan",
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Butter Chicken",
+      "city": "Agra",
+      "description": "Creamy, mildly spiced tomato-based curry with tender chicken pieces",
+      "where_to_try": "Taj Terrace",
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Dal Makhani",
+      "city": "Agra",
+      "description": "Slow-cooked black lentils enriched with butter and cream—one of the most comforting dishes",
+      "vegetarian": true,
+      "where_to_try": "Peshawri",
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tandoori Kebabs",
+      "city": "Agra",
+      "description": "Juicy meats or paneer marinated in spices and cooked in a traditional clay oven",
+      "where_to_try": "Bon Barbecue",
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Shahi Tukda",
+      "city": "Agra",
+      "description": "A royal Mughal dessert made with fried bread soaked in sweetened milk and topped with dry fruits",
+      "vegetarian": true,
+      "where_to_try": "Esphahan",
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Stuffed Parathas",
+      "city": "Agra",
+      "description": "Thick, pan-fried flatbreads stuffed with spiced fillings like potato, paneer, or lentils",
+      "vegetarian": true,
+      "source_files": [
+        "North India/Dilna_Agra_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Agra"
+      ],
+      "tip": "Dress modestly at monuments & religious sites - cover shoulders and knees, especially at heritage and religious locations",
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "cities": [
+        "Agra"
+      ],
+      "tip": "You may be required to remove shoes at certain areas or use shoe covers at the Taj Mahal",
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "cities": [
+        "Agra"
+      ],
+      "tip": "Photography is allowed in most outdoor areas but restricted inside certain sections of monuments like the main mausoleum at the Taj Mahal",
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "cities": [
+        "Agra"
+      ],
+      "tip": "A polite but firm 'No, thank you' works well with persistent sellers or unofficial guides, especially near major attractions",
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "cities": [
+        "Agra"
+      ],
+      "tip": "Avoid loud behaviour in heritage spaces and keep public displays of affection minimal in crowded or traditional areas",
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "cities": [
+        "Agra"
+      ],
+      "tip": "Expect security checks, especially at the Taj Mahal. Follow queue systems and instructions from staff",
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "cities": [
+        "Agra"
+      ],
+      "tip": "Carry minimal belongings to make entry smoother, especially at Taj Mahal where large bags are not allowed",
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Leather goods",
+      "city": "Agra",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Sadar Bazaar",
+        "Hidesign Agra"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Souvenirs & handicrafts",
+      "city": "Agra",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Sadar Bazaar"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Local snacks & street treats",
+      "city": "Agra",
+      "category": "Food",
+      "where_to_buy": [
+        "Sadar Bazaar"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Fabrics & embroidery",
+      "city": "Agra",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Kinari Bazaar"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Traditional jewellery",
+      "city": "Agra",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Kinari Bazaar"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Decorative items",
+      "city": "Agra",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kinari Bazaar"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Marble inlay work",
+      "city": "Agra",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Subhash Bazaar",
+        "Oswal Emporium"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Mini Taj Mahal replicas",
+      "city": "Agra",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Subhash Bazaar"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Handcrafted décor",
+      "city": "Agra",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Subhash Bazaar"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Classic & flavored petha",
+      "city": "Agra",
+      "category": "Food",
+      "where_to_buy": [
+        "Gopal Das Pethe Wale"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Packaged sweets",
+      "city": "Agra",
+      "category": "Food",
+      "where_to_buy": [
+        "Gopal Das Pethe Wale"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Angoori petha",
+      "city": "Agra",
+      "category": "Food",
+      "where_to_buy": [
+        "Panchhi Petha Store"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Modern petha variations",
+      "city": "Agra",
+      "category": "Food",
+      "where_to_buy": [
+        "Panchhi Petha Store"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "High-quality marble inlay tables & décor",
+      "city": "Agra",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Oswal Emporium"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Premium handicrafts",
+      "city": "Agra",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Oswal Emporium"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Handloom textiles",
+      "city": "Agra",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Shilpgram"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Artisan-made crafts",
+      "city": "Agra",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Shilpgram"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Regional handicrafts",
+      "city": "Agra",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Shilpgram"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Premium leather bags",
+      "city": "Agra",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Hidesign Agra"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Footwear",
+      "city": "Agra",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Hidesign Agra"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Traditional snacks",
+      "city": "Agra",
+      "category": "Food",
+      "where_to_buy": [
+        "Deviram Sweets"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "item": "Indian sweets",
+      "city": "Agra",
+      "category": "Food",
+      "where_to_buy": [
+        "Deviram Sweets"
+      ],
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Agra"
+      ],
+      "tip": "Stay hydrated and carry water, especially during daytime sightseeing",
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    },
+    {
+      "cities": [
+        "Agra"
+      ],
+      "tip": "Use bottled water for drinking",
+      "_source_file": "North India/Dilna_Agra_All Inclusive Guide.docx",
+      "_source_mtime": 1775452780.0
+    }
+  ],
+  "source_files": [
+    "North India/Dilna_Agra_All Inclusive Guide.docx"
+  ]
+}

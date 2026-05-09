@@ -1,0 +1,484 @@
+{
+  "restaurants": [
+    {
+      "name": "The Southern Deck",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Multi-cuisine",
+        "Seafood",
+        "Vegan"
+      ],
+      "price_range": "₹500-700",
+      "hours": "8:30 am to 1 am",
+      "ambience": "Perfect blend of delicious seafood, lively music, and breathtaking sea views",
+      "area": "Beachfront",
+      "highlights": [
+        "Right on the beach",
+        "Lively music",
+        "Breathtaking sea views"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Ankush_Goa Guide.pdf",
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ],
+      "must_try_dishes": [
+        "Indian veg curries",
+        "Chinese starters",
+        "comfort food"
+      ]
+    },
+    {
+      "name": "Pedro's Bar & Restaurant",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Goan",
+        "Indian",
+        "Chinese",
+        "Continental",
+        "Seafood"
+      ],
+      "price_range": "₹300-700",
+      "hours": "8 am to 2 am",
+      "ambience": "Legendary beachside retreat since 1969 with laid-back vibe and soulful music",
+      "area": "Beachfront",
+      "highlights": [
+        "Operating since 1969",
+        "Fresh seafood specialties",
+        "Stunning sunsets"
+      ],
+      "source_files": [
+        "Goa/Ankush_Goa Guide.pdf"
+      ]
+    },
+    {
+      "name": "TikiBab Goa",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Barbecue"
+      ],
+      "price_range": "₹500-700",
+      "hours": "11 am to 1 am",
+      "ambience": "Tropical paradise with live music creating ultimate beach party experience",
+      "area": "Beachfront",
+      "highlights": [
+        "Exotic cocktails",
+        "Sizzling barbecues",
+        "Live music"
+      ],
+      "source_files": [
+        "Goa/Ankush_Goa Guide.pdf"
+      ]
+    },
+    {
+      "name": "Martin's Corner",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Goan"
+      ],
+      "price_range": "₹700-1000",
+      "hours": "11:30 am- 4pm; 6:30pm- 11:30 pm",
+      "ambience": "Spacious eatery adorned with Mario Miranda's iconic artwork",
+      "area": "Betalbatim",
+      "highlights": [
+        "Celebrated for king crab",
+        "Mario Miranda artwork",
+        "Batter-fried calamari"
+      ],
+      "must_try_dishes": [
+        "King crab",
+        "Batter-fried calamari",
+        "Vindaloo",
+        "Xacuti",
+        "Recheado masalas",
+        "Veg curries",
+        "paneer cafreal-style dishes",
+        "breads",
+        "desserts"
+      ],
+      "source_files": [
+        "Goa/Ankush_Goa Guide.pdf",
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Cota Cozinha",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Goan",
+        "Portuguese"
+      ],
+      "price_range": "₹800-1000",
+      "hours": "12pm- 3pm; 7pm- 11pm. Closed on Tues",
+      "ambience": "Cozy ambiance with Portuguese inspired cuisine",
+      "area": "Betalbatim",
+      "highlights": [
+        "Portuguese inspired cuisine",
+        "Closed on Tuesdays"
+      ],
+      "source_files": [
+        "Goa/Ankush_Goa Guide.pdf"
+      ]
+    },
+    {
+      "name": "Cavatina",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Modern Goan"
+      ],
+      "price_range": "₹2500-3000",
+      "hours": "12:30- 3pm; 7-11pm. Closed on Monday",
+      "ambience": "Chic and sophisticated fine dining with contemporary take on Goan cuisine",
+      "area": "Benaulim",
+      "highlights": [
+        "Chef Avinash Martins",
+        "Innovative cocktails",
+        "Extensive wine list",
+        "Closed on Monday"
+      ],
+      "source_files": [
+        "Goa/Ankush_Goa Guide.pdf"
+      ]
+    },
+    {
+      "name": "Zeebop Utorda",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Goan",
+        "Indian"
+      ],
+      "price_range": "₹500-1000",
+      "hours": "10am- 11pm",
+      "ambience": "Quintessential beachside restaurant with serene coastal views",
+      "area": "Utorda Beach",
+      "highlights": [
+        "Fresh seafood",
+        "Scenic beauty",
+        "Sandy shores location"
+      ],
+      "source_files": [
+        "Goa/Ankush_Goa Guide.pdf"
+      ]
+    },
+    {
+      "name": "Jamming Goat",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "₹900-1200",
+      "hours": "12pm- 1 am",
+      "ambience": "Popular beachfront restaurant with vibrant atmosphere and live music",
+      "area": "Utorda",
+      "highlights": [
+        "Live music",
+        "Beachfront location",
+        "Vibrant atmosphere"
+      ],
+      "source_files": [
+        "Goa/Ankush_Goa Guide.pdf"
+      ]
+    },
+    {
+      "name": "Robin's Ark",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "₹700-1000",
+      "hours": "12pm-11pm",
+      "ambience": "Spacious bungalow setting with outdoor seating and full bar",
+      "area": "Cavelossim",
+      "highlights": [
+        "Spacious bungalow setting",
+        "Outdoor seating",
+        "Full bar"
+      ],
+      "source_files": [
+        "Goa/Ankush_Goa Guide.pdf"
+      ]
+    },
+    {
+      "name": "Riverside – The St. Regis Goa Resort",
+      "city": "South Goa",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "₹1500–2500 per person",
+      "hours": "7:00 PM – 10:30 PM",
+      "ambience": "Elegant riverside restaurant with serene views and refined ambience",
+      "area": "Mobor",
+      "highlights": [
+        "Riverside location",
+        "Serene views",
+        "Refined ambience"
+      ],
+      "must_try_dishes": [
+        "Wood-fired pizzas (veg)",
+        "risotto",
+        "fresh pastas"
+      ],
+      "best_for": [
+        "refined dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Fisherman's Wharf – South Goa",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Goan"
+      ],
+      "price_range": "₹1200–1800 per person",
+      "hours": "12:00 PM – 11:30 PM",
+      "ambience": "Lively riverside restaurant with music and vibrant Goan atmosphere",
+      "highlights": [
+        "Riverside location",
+        "Live music",
+        "Vibrant Goan atmosphere"
+      ],
+      "must_try_dishes": [
+        "Veg caldin",
+        "mushroom xacuti",
+        "starters & mocktails"
+      ],
+      "best_for": [
+        "lively dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Cavatina by Avinash Martins",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Contemporary",
+        "Goan-inspired"
+      ],
+      "price_range": "₹1500–2500 per person",
+      "hours": "12:00 PM – 3:30 PM & 7:00 PM – 11:00 PM",
+      "ambience": "Contemporary, chef-driven restaurant with a refined yet intimate setting",
+      "highlights": [
+        "Chef-driven",
+        "Contemporary design",
+        "Intimate setting"
+      ],
+      "must_try_dishes": [
+        "Seasonal vegetarian plates",
+        "creative Goan-inspired dishes",
+        "artisanal desserts"
+      ],
+      "best_for": [
+        "fine dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Zeebop by the Sea",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Goan",
+        "Coastal"
+      ],
+      "price_range": "₹1000–1800 per person",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "Rustic beachfront dining setup with tables right on the sand",
+      "highlights": [
+        "Beachfront dining",
+        "Tables on sand",
+        "Rustic setup"
+      ],
+      "must_try_dishes": [
+        "Veg Goan curries",
+        "fried starters",
+        "simple coastal fare"
+      ],
+      "best_for": [
+        "beachside dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Zest Café & Kitchen",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Plant-based",
+        "Wellness"
+      ],
+      "price_range": "₹800–1400 per person",
+      "hours": "9:00 AM – 5:00 PM",
+      "ambience": "Bright, plant-based café with a breezy, tropical aesthetic and strong wellness focus",
+      "highlights": [
+        "Plant-based focus",
+        "Wellness-oriented",
+        "Tropical aesthetic"
+      ],
+      "must_try_dishes": [
+        "Smoothie bowls",
+        "vegan burgers",
+        "sourdough toasts",
+        "cold-pressed juices"
+      ],
+      "best_for": [
+        "healthy dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Jaali Boutique & Café",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Continental"
+      ],
+      "price_range": "₹800–1500 per person",
+      "hours": "9:00 AM – 9:00 PM",
+      "ambience": "Stylish café with a mix of bohemian and modern design, popular among travellers",
+      "area": "Benaulim",
+      "highlights": [
+        "Boutique store",
+        "Bohemian and modern design",
+        "Popular among travellers"
+      ],
+      "must_try_dishes": [
+        "Salads",
+        "sandwiches",
+        "smoothie bowls",
+        "continental veg plates"
+      ],
+      "best_for": [
+        "aesthetic dining",
+        "shopping"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Farmhouse Bar & Bistro",
+      "city": "South Goa",
+      "cuisine_type": [
+        "European"
+      ],
+      "price_range": "₹1200–2000 per person",
+      "hours": "7:30 PM – 11:30 PM",
+      "ambience": "Elegant yet relaxed European-style bistro with a garden setting and refined ambience",
+      "highlights": [
+        "European-style bistro",
+        "Garden setting",
+        "Refined ambience"
+      ],
+      "must_try_dishes": [
+        "Wood-fired veg pizzas",
+        "pastas",
+        "grilled vegetables",
+        "desserts"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Seagull Beach Shack",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Goan",
+        "Casual"
+      ],
+      "price_range": "₹800–1200 per person",
+      "hours": "7:00 AM – 11:30 PM",
+      "ambience": "Casual beachfront shack with laid-back vibes and direct sea views",
+      "highlights": [
+        "Beachfront shack",
+        "Direct sea views",
+        "Laid-back vibes"
+      ],
+      "must_try_dishes": [
+        "Veg noodles",
+        "paneer starters",
+        "Goan veg curries"
+      ],
+      "best_for": [
+        "casual",
+        "beachside dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Houses of Goa Private Tour",
+      "city": "South Goa",
+      "description": "Heritage exploration tour",
+      "hours": "3:30 pm",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mobor Beach",
+      "city": "South Goa",
+      "description": "South Goa offers a noticeably calmer, more expansive coastline — perfect for a peaceful evening",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Goa Chitra Museum",
+      "city": "South Goa",
+      "description": "A thoughtfully curated museum that offers a glimpse into traditional Goan life through artifacts, tools, and storytelling",
+      "hours": "9:00 AM – 6:00 PM",
+      "entry_fee": "₹300 per person",
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "The St. Regis Goa Resort",
+      "city": "South Goa",
+      "location": "Mobor Beach, surrounded by lagoons and greenery",
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_mtime": 1774234288.0
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Goa/Ankush_Goa Guide.pdf",
+    "Goa/Oishee_Goa_All Inclusive Guide.docx"
+  ]
+}

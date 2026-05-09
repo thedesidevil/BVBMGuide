@@ -1,0 +1,80 @@
+{
+  "restaurants": [
+    {
+      "name": "La Parenthese",
+      "city": "Giverny",
+      "cuisine_type": [
+        "International"
+      ],
+      "hours": "10am-10pm",
+      "nearby_landmarks": [
+        "Monet Garden, Giverny"
+      ],
+      "highlights": [
+        "Has veg options"
+      ],
+      "must_try_dishes": [
+        "Burgers",
+        "pastas",
+        "salads"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Au Coin du Pain'tre",
+      "city": "Giverny",
+      "cuisine_type": [
+        "French"
+      ],
+      "hours": "9am-7pm",
+      "nearby_landmarks": [
+        "Monet Garden, Giverny"
+      ],
+      "highlights": [
+        "Boulangerie/cafe"
+      ],
+      "must_try_dishes": [
+        "Viennoisseries",
+        "coffee",
+        "cocktails"
+      ],
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "House of Claude Monet",
+      "city": "Giverny",
+      "description": "Monet's house with sprawling gardens, lily pond and Japanese bridge",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Musée des Impressionnismes Giverny",
+      "city": "Giverny",
+      "description": "Museum housing collection of Impressionist art",
+      "source_files": [
+        "France/2. France- Final Detailed Itinerary.pdf"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "France/2. France- Final Detailed Itinerary.pdf"
+  ]
+}

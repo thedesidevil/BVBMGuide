@@ -1,0 +1,670 @@
+{
+  "restaurants": [
+    {
+      "name": "Naatu Naatu Indian Vegetarian Cuisine",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "11:30am - 3pm, 6-10:30 pm (closed on tues)",
+      "highlights": [
+        "Pure veg"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Royal Indian Cuisine and Bar",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "12:00 PM to 3:00 PM and 5:00 PM to 11:00 PM (closed on wed)",
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Black bean Deli",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Cuban"
+      ],
+      "hours": "7am-9pm (Opens at 8am on Sat, Sun 9am-4pm)",
+      "area": "CBD",
+      "must_try_dishes": [
+        "Sandwiches",
+        "empanadas",
+        "coffee",
+        "embanadas",
+        "baked chicken"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "Sandwiches",
+        "embanadas",
+        "baked chicken",
+        "coffee"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Black Rooster Taqueira",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Mexican"
+      ],
+      "hours": "11am-3pm, 5-11pm (Closed on Monday)",
+      "area": "CBD",
+      "must_try_dishes": [
+        "Tacos",
+        "Chicken tinga",
+        "tacos"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "Chicken tinga",
+        "tacos"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "TaKo Cheena",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Mexican"
+      ],
+      "hours": "12pm-12am",
+      "area": "CBD",
+      "must_try_dishes": [
+        "Empanadas",
+        "burritos",
+        "Emanadas"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "Emanadas",
+        "burritos"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Santiago's Bodega",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Tapas"
+      ],
+      "hours": "11am-2am",
+      "area": "CBD",
+      "must_try_dishes": [
+        "Tapas plates",
+        "mimosas"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "Tapas plates",
+        "mimosas"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Pizza Bruno",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Pizzeria"
+      ],
+      "hours": "12pm-9:30pm",
+      "area": "CBD",
+      "must_try_dishes": [
+        "Pizza",
+        "garlic knots",
+        "kale salad",
+        "cannoli"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "Local favorite",
+        "Pizza",
+        "garlic knots",
+        "kale salad",
+        "cannoli"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Jeremiahs Italian Ice",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Ice cream"
+      ],
+      "hours": "12pm-10pm",
+      "must_try_dishes": [
+        "Ice cream"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "Ice cream chain"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ]
+    },
+    {
+      "name": "Kelly's Homemade ice cream",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Ice cream"
+      ],
+      "hours": "12pm-9pm",
+      "area": "CBD",
+      "highlights": [
+        "Home made ice cream"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ]
+    },
+    {
+      "name": "Gideons Bakehouse",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Bakery"
+      ],
+      "hours": "10am-7pm",
+      "area": "CBD",
+      "must_try_dishes": [
+        "Cookies and cakes",
+        "Cookies",
+        "cakes"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "Cookies and cakes"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Miller's Ale House",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Sports pub"
+      ],
+      "hours": "11am-2am",
+      "highlights": [
+        "Tap beers",
+        "snacks",
+        "cajun chicken pasta",
+        "tenders"
+      ],
+      "must_try_dishes": [
+        "cajun chicken pasta",
+        "tenders"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Olive Garden",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "11am-10pm",
+      "highlights": [
+        "Pastas",
+        "salads"
+      ],
+      "must_try_dishes": [
+        "Pastas",
+        "salads"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Chili's Grill & Bar",
+      "city": "Orlando",
+      "cuisine_type": [
+        "American",
+        "Tex-Mex"
+      ],
+      "hours": "11am-11pm",
+      "highlights": [
+        "Burgers",
+        "fries",
+        "nachos",
+        "margaritas"
+      ],
+      "must_try_dishes": [
+        "Burgers",
+        "nachos"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Red Robin Gourmet Burgers & Brews",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Burgers"
+      ],
+      "hours": "11am-10pm",
+      "highlights": [
+        "Burgers",
+        "sweet potato fries",
+        "onion rings"
+      ],
+      "must_try_dishes": [
+        "Burgers",
+        "sweet potato fries",
+        "onion rings"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Tacos Don Andres",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Mexican"
+      ],
+      "hours": "11am-9:30pm",
+      "highlights": [
+        "Tacos",
+        "Burritos",
+        "Queso Fundido",
+        "Margaritas"
+      ],
+      "must_try_dishes": [
+        "Tacos",
+        "Burritos",
+        "Queso Fundido"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Pronto Eataly Pizza",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Pizzeria"
+      ],
+      "hours": "11am-9:30pm",
+      "highlights": [
+        "Pizzas",
+        "pastas"
+      ],
+      "must_try_dishes": [
+        "Pizzas",
+        "pastas"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Tijuana Flats",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Mexican fast food"
+      ],
+      "hours": "10:30am-10pm",
+      "highlights": [
+        "Hot sauce bar",
+        "chimichanga",
+        "tex-mex bowls"
+      ],
+      "must_try_dishes": [
+        "chimichanga",
+        "tex-mex bowls"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Foxtail Coffee Co.",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Coffee shop"
+      ],
+      "hours": "6am-9pm",
+      "area": "CBD",
+      "highlights": [
+        "Popular Orlando staple",
+        "Sometimes has Kelly's icecream"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Paris Banh Mi Café and Bakery",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Vietnamese",
+        "Bakery"
+      ],
+      "hours": "9am-8pm",
+      "area": "CBD",
+      "highlights": [
+        "Vietnamese banh mi",
+        "boba drinks",
+        "French pastries"
+      ],
+      "must_try_dishes": [
+        "Vietnamese banh mi",
+        "boba drinks",
+        "French pastries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Magic Kingdom",
+      "city": "Orlando",
+      "description": "Disney theme park",
+      "recommended_duration": "Full day",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Kennedy Space Center",
+      "city": "Orlando",
+      "description": "Space exploration exhibits and experiences",
+      "hours": "9am - 5pm",
+      "recommended_duration": "6-7 hours",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Island of Adventure",
+      "city": "Orlando",
+      "description": "Theme park",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Orlando Outlet Marketplace",
+      "city": "Orlando",
+      "description": "Shopping outlet",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Premium Outlets",
+      "city": "Orlando",
+      "description": "Shopping outlet",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "The Mall at Millenia",
+      "city": "Orlando",
+      "description": "Shopping mall",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Cranes Roost Park",
+      "city": "Orlando",
+      "description": "Halloween party venue",
+      "entry_fee": "free",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Halloween at Old Town",
+      "city": "Orlando",
+      "description": "Halloween event",
+      "entry_fee": "free",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Happy Frights at Leu Gardens",
+      "city": "Orlando",
+      "description": "Halloween event",
+      "entry_fee": "$60 for a family of 4",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "City of Winter Garden",
+      "city": "Orlando",
+      "description": "Halloween event",
+      "entry_fee": "free",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Oviedo Mall",
+      "city": "Orlando",
+      "description": "Halloween event",
+      "entry_fee": "free",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Volcano Bay",
+      "city": "Orlando",
+      "description": "Water theme park",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Nasa Space Centre",
+      "city": "Orlando",
+      "description": "Space center",
+      "hours": "9am-5pm (Last admission at 4pm)",
+      "recommended_duration": "6 hours",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Cocoa Beach",
+      "city": "Orlando",
+      "description": "Beach for relaxing",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Buena Vista Suites Orlando",
+      "city": "Orlando",
+      "location": "Orlando",
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.pdf",
+      "_source_mtime": 1772384246.3359978
+    },
+    {
+      "name": "Airbnb - 8020 Tuscany Way 2206",
+      "city": "Orlando",
+      "location": "Davenport, FL",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Tipping people, especially at restaurants, is a norm. Restaurant waiters expect 18%-25% of total bill as tips. Also customary to add 10%-15% tips for taxi rides",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "souvenirs": [],
+  "emergency_contacts": [
+    {
+      "city": "Orlando",
+      "service": "Emergency",
+      "number": "911",
+      "notes": "One number for any emergencies including medical emergencies and ambulance. Accessible from anywhere, even where there doesn't appear to be any cell signal",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Buy a sim card from TSIM. They offer both physical and eSIMs. If getting two sims, recommend getting a T-mobile one and an AT&T one",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Orlando",
+      "mode": "Rental Car",
+      "description": "Public transport isn't great. Finding parking shouldn't be a big deal so use rental car",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Travel insurance recommended with $100,000 coverage for each family member. Tata AIG has a plan for Rs. 8370 with $100 deductible. visitorscoverage.com has a Patriot America Plus plan with zero deductible at $200",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    },
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Most places in the US are pretty dry and it is easy to get sunburnt, so carry and apply sunscreen (SPF 30) when out in the Sun",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    },
+    {
+      "cities": [
+        "Orlando",
+        "Miami"
+      ],
+      "tip": "Florida should be pleasant but humid - max temp: 28°C, min: 24°C",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "source_files": [
+    "USA/ALL INCLUSIVE GUIDE USA.pdf",
+    "USA/Varun-Priyankee-Orlando-2024.pdf"
+  ]
+}

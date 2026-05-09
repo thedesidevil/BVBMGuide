@@ -1,0 +1,406 @@
+{
+  "restaurants": [
+    {
+      "name": "The Farm – DakshinaChitra",
+      "city": "Chennai",
+      "cuisine_type": [
+        "Farm-to-table"
+      ],
+      "price_range": "₹500–800 pp",
+      "hours": "11:00 AM – 6:30 PM (closed on Monday)",
+      "ambience": "Rustic, farm-to-table setting",
+      "must_try_dishes": [
+        "Fresh salads",
+        "pizzas",
+        "baked goods"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Six 'O' One",
+      "city": "Chennai",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "₹2,000–3,500 pp",
+      "hours": "24/7",
+      "highlights": [
+        "Multi-cuisine fine dining",
+        "global buffet & à la carte"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "PAPAYA",
+      "city": "Chennai",
+      "cuisine_type": [
+        "Asian"
+      ],
+      "price_range": "₹1,500–2,500 pp",
+      "hours": "12:00 PM – 11:00 PM",
+      "highlights": [
+        "Modern Asian cuisine"
+      ],
+      "must_try_dishes": [
+        "sushi",
+        "dim sum",
+        "small plates"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Junior Kuppanna – Nungambakkam",
+      "city": "Chennai",
+      "cuisine_type": [
+        "Kongunadu",
+        "South Indian"
+      ],
+      "price_range": "₹400–800 pp",
+      "hours": "10:00 AM – 11:55 PM",
+      "highlights": [
+        "Kongunadu cuisine",
+        "South Indian non-veg specialities"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Palmshore Restaurant",
+      "city": "Chennai",
+      "cuisine_type": [
+        "Arabian"
+      ],
+      "price_range": "₹600–1,000 pp",
+      "hours": "10:30 AM – 11:30 PM",
+      "ambience": "Popular Arabian-themed dining",
+      "must_try_dishes": [
+        "Mandi",
+        "grilled chicken"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Arabian Garden Seafood Restaurant",
+      "city": "Chennai",
+      "cuisine_type": [
+        "Seafood",
+        "Middle Eastern"
+      ],
+      "price_range": "₹600–1,200 pp",
+      "hours": "12:00 PM – 11:00 PM",
+      "highlights": [
+        "Fresh seafood + grilled options"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kappa Chakka Kandhari",
+      "city": "Chennai",
+      "cuisine_type": [
+        "Kerala"
+      ],
+      "price_range": "₹800–1,500 pp",
+      "hours": "12:00 PM – 3:30 PM, 7:00 PM – 10:30 PM",
+      "highlights": [
+        "Kerala cuisine",
+        "rich and flavourful"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Velidis Restaurant",
+      "city": "Chennai",
+      "cuisine_type": [
+        "South Indian",
+        "Chinese"
+      ],
+      "price_range": "₹300–600 pp",
+      "hours": "12:30 AM – 3:30 PM, 6:30 PM – 10:30 PM",
+      "area": "Near St. Thomas Mount",
+      "nearby_landmarks": [
+        "St. Thomas Mount, Chennai"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Anjappar Chettinad Restaurant",
+      "city": "Chennai",
+      "cuisine_type": [
+        "Chettinad"
+      ],
+      "price_range": "₹400–800 pp",
+      "hours": "11:30 AM – 11:30 PM",
+      "must_try_dishes": [
+        "biryani",
+        "curries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mathsya Restaurant",
+      "city": "Chennai",
+      "cuisine_type": [
+        "North Indian",
+        "South Indian",
+        "Vegetarian"
+      ],
+      "price_range": "₹300–600 pp",
+      "hours": "12:00 PM – 3:30 PM, 7:00 PM – 10:30 PM",
+      "highlights": [
+        "Light, vegetarian meal"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Basil With a Twist",
+      "city": "Chennai",
+      "cuisine_type": [
+        "European",
+        "Fusion"
+      ],
+      "price_range": "₹1,200–2,000 pp",
+      "hours": "10:00 AM – 11:00 PM",
+      "ambience": "Elegant, relaxed dinner",
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Southern Spice",
+      "city": "Chennai",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "₹2,000–3,500 pp",
+      "hours": "12:30 PM – 3:00 PM, 7:00 PM – 11:00 PM",
+      "highlights": [
+        "Authentic South Indian fine dining"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "A2B – Adyar Ananda Bhavan",
+      "city": "Chennai",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "₹200–400 pp",
+      "hours": "7:00 AM – 11:00 PM",
+      "highlights": [
+        "Quick service"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sangeetha Veg Restaurant",
+      "city": "Chennai",
+      "cuisine_type": [
+        "South Indian",
+        "Vegetarian"
+      ],
+      "price_range": "₹200–400 pp",
+      "hours": "7:00 AM – 11:00 PM",
+      "must_try_dishes": [
+        "Tiffin",
+        "mini meals"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Hotel Saravana Bhavan",
+      "city": "Chennai",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "₹250–450 pp",
+      "hours": "7:00 AM – 10:30 PM",
+      "must_try_dishes": [
+        "South Indian meals",
+        "thali"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Geetham Veg Restaurant",
+      "city": "Chennai",
+      "cuisine_type": [
+        "South Indian",
+        "North Indian",
+        "Vegetarian"
+      ],
+      "price_range": "₹200–400 pp",
+      "hours": "7:00 AM – 2:00 AM",
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Marina Beach",
+      "city": "Chennai",
+      "description": "Long urban beach ideal for short walks and fresh sea breeze",
+      "hours": "Best time: After 5:30 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Santhome Basilica",
+      "city": "Chennai",
+      "description": "Historic basilica located by the sea with calm and reflective setting",
+      "hours": "5:00 AM – 8:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "St. Thomas Mount",
+      "city": "Chennai",
+      "description": "Hilltop church offering panoramic views of the city",
+      "hours": "6:00 AM – 8:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "The Kings Park Grand",
+      "city": "Chennai",
+      "location": "Chennai",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx",
+      "_source_mtime": 1775061740.0
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Silk Sarees",
+      "city": "Chennai",
+      "category": "Fashion",
+      "where_to_buy": [
+        "T. Nagar"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx",
+      "_source_mtime": 1775061740.0
+    },
+    {
+      "item": "Temple Jewelry",
+      "city": "Chennai",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Traditional jewelry shops"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx",
+      "_source_mtime": 1775061740.0
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx"
+  ]
+}

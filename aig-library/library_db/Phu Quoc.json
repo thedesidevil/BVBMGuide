@@ -1,0 +1,487 @@
+{
+  "restaurants": [
+    {
+      "name": "Crab House",
+      "city": "Phu Quoc",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "Rs. 1,200 - Rs. 2,000",
+      "hours": "11:00 AM - 10:00 PM",
+      "must_try_dishes": [
+        "Crab boil",
+        "garlic butter shrimp"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+        "Vietnam/Eating Out Guide_ Vietnam.pdf"
+      ],
+      "ambience": "Clean, air-conditioned seafood hotspot known for impressively fresh, expertly cooked crab",
+      "best_for": [
+        "family",
+        "casual"
+      ]
+    },
+    {
+      "name": "Đảo Hải Sản Beer & Seafood",
+      "city": "Phu Quoc",
+      "cuisine_type": [
+        "Vietnamese",
+        "Seafood"
+      ],
+      "price_range": "Rs. 400 - Rs. 800",
+      "hours": "10:00 AM - 12:00 AM",
+      "must_try_dishes": [
+        "Grilled giant freshwater prawns",
+        "Beer-steamed sea crab",
+        "Grilled oysters"
+      ],
+      "highlights": [
+        "Excellent choice for dinner by the beach"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Xin Chao Seafood Restaurant",
+      "city": "Phu Quoc",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "Rs. 1,000 - Rs. 1,800",
+      "hours": "10:00 AM - 10:00 PM",
+      "must_try_dishes": [
+        "Fresh oysters",
+        "local specialties"
+      ],
+      "nearby_landmarks": [
+        "Phu Quoc Night Market"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+        "Vietnam/Eating Out Guide_ Vietnam.pdf"
+      ],
+      "ambience": "Beachfront favourite serving exceptionally fresh live seafood in open-air setting",
+      "best_for": [
+        "family",
+        "casual"
+      ]
+    },
+    {
+      "name": "Ra Khơi Restaurant",
+      "city": "Phu Quoc",
+      "cuisine_type": [
+        "Seafood",
+        "Vietnamese"
+      ],
+      "price_range": "Rs. 300 - Rs. 1500",
+      "hours": "10:00 AM – 11:00 PM",
+      "must_try_dishes": [
+        "Grilled Squid",
+        "Steamed Crabs",
+        "Hotpot"
+      ],
+      "nearby_landmarks": [
+        "Phu Quoc Night Market"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Hiên - Charcoal Kitchen",
+      "city": "Phu Quoc",
+      "cuisine_type": [
+        "Japanese",
+        "Grilled"
+      ],
+      "price_range": "Rs. 1,500 - Rs. 2,500",
+      "hours": "5:00 PM - 11:00 PM",
+      "must_try_dishes": [
+        "Charcoal-grilled meats and veggies"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+        "Vietnam/Eating Out Guide_ Vietnam.pdf"
+      ],
+      "ambience": "Cozy, Japanese-influenced charcoal-grill gem with intimate open-kitchen setting",
+      "best_for": [
+        "romantic",
+        "casual"
+      ]
+    },
+    {
+      "name": "Winston's Burgers & Beer",
+      "city": "Phu Quoc",
+      "cuisine_type": [
+        "American"
+      ],
+      "price_range": "Rs. 400 - Rs. 700",
+      "hours": "12:00 PM – 9:00 PM",
+      "must_try_dishes": [
+        "burgers",
+        "draft beer",
+        "Famous burgers"
+      ],
+      "highlights": [
+        "Games available"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+        "Vietnam/Eating Out Guide_ Vietnam.pdf"
+      ],
+      "ambience": "Cozy, rock-tuned American burger bar with laid-back, off-the-beaten-path setting",
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Home Pizza Phu Quoc",
+      "city": "Phu Quoc",
+      "cuisine_type": [
+        "Italian",
+        "Vietnamese Fusion"
+      ],
+      "price_range": "Rs. 800 - Rs. 1,500",
+      "hours": "10:30 AM - 10:00 PM",
+      "must_try_dishes": [
+        "Wood-fired pizza",
+        "tiramisu"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+        "Vietnam/Eating Out Guide_ Vietnam.pdf"
+      ],
+      "ambience": "Cozy, homey pizzeria blending traditional Italian dough with inventive Vietnamese toppings",
+      "best_for": [
+        "family",
+        "casual"
+      ]
+    },
+    {
+      "name": "Pakka Indian",
+      "city": "Phu Quoc",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "Rs. 1,000 - Rs. 1,500",
+      "hours": "12:00 PM - 10:00 PM",
+      "must_try_dishes": [
+        "Butter chicken",
+        "garlic naan"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+        "Vietnam/Eating Out Guide_ Vietnam.pdf"
+      ],
+      "ambience": "Sophisticated, award-winning dining destination with lush, romantic garden setting",
+      "best_for": [
+        "romantic",
+        "family"
+      ]
+    },
+    {
+      "name": "Ganesh Indian Restaurant",
+      "city": "Phu Quoc",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "Rs. 400 - Rs. 800",
+      "hours": "10:00 AM – 11:00 PM",
+      "must_try_dishes": [
+        "curry",
+        "naan",
+        "biryani"
+      ],
+      "highlights": [
+        "Halal-friendly",
+        "Adjustable spice levels"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+        "Vietnam/Eating Out Guide_ Vietnam.pdf"
+      ],
+      "ambience": "Cozy, Indian-owned halal-friendly spot offering authentic North-Indian classics",
+      "best_for": [
+        "family",
+        "casual"
+      ]
+    },
+    {
+      "name": "On The Rock Restaurant",
+      "city": "Phu Quoc",
+      "cuisine_type": [
+        "Fusion"
+      ],
+      "price_range": "Rs. 1,200 - Rs. 2,000",
+      "hours": "10:00 AM - 10:00 PM",
+      "ambience": "Architecturally stunning, nature-inspired venue tucked inside tropical greenery",
+      "must_try_dishes": [
+        "Grilled seafood platter"
+      ],
+      "best_for": [
+        "romantic",
+        "family"
+      ],
+      "source_files": [
+        "Vietnam/Eating Out Guide_ Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "Hoa Bien Restaurant",
+      "city": "Phu Quoc",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "Rs. 350 - Rs. 800",
+      "hours": "9:00 AM – 11:00 PM",
+      "ambience": "Spacious, airy seafood spot near the island's welcome gate with street-view ambiance",
+      "area": "Duong Dong",
+      "must_try_dishes": [
+        "Budget-friendly seafood"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "source_files": [
+        "Vietnam/Eating Out Guide_ Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "Department of Chemistry Bar - JW Marriott",
+      "city": "Phu Quoc",
+      "cuisine_type": [
+        "Cocktails",
+        "Fusion"
+      ],
+      "price_range": "Rs. 2,500 - Rs. 4,000",
+      "hours": "Open daily: Lunch to late night",
+      "ambience": "Whimsically themed, beachfront cocktail bar designed like vintage chemistry lab",
+      "nearby_landmarks": [
+        "Emerald Bay, Phu Quoc"
+      ],
+      "must_try_dishes": [
+        "Signature cocktails",
+        "fusion dishes"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "highlights": [
+        "Live music at sunset"
+      ],
+      "source_files": [
+        "Vietnam/Eating Out Guide_ Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "40six Beach Haus",
+      "city": "Phu Quoc",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "Rs. 1,000 - Rs. 1,800",
+      "hours": "11:00 AM - 10:00 PM",
+      "ambience": "Rustic-chic beachfront spot celebrated for unbeatable sunset views",
+      "area": "Gành Dầu Cape",
+      "must_try_dishes": [
+        "Gourmet burgers",
+        "fresh salads"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "source_files": [
+        "Vietnam/Eating Out Guide_ Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "Lucia Phu Quoc",
+      "city": "Phu Quoc",
+      "cuisine_type": [
+        "Mediterranean",
+        "Vietnamese"
+      ],
+      "price_range": "Rs. 1,500 - Rs. 2,000",
+      "hours": "Tue-Sun: 4:30 PM - 12:30 AM",
+      "ambience": "Stylish Mediterranean-inspired beachfront eatery and mixology bar with breathtaking sunset views",
+      "area": "Sunset Town",
+      "nearby_landmarks": [
+        "Kiss Bridge, Phu Quoc"
+      ],
+      "must_try_dishes": [
+        "Iberico beef",
+        "fresh seafood"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "source_files": [
+        "Vietnam/Eating Out Guide_ Vietnam.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Vinpearl Safari Phu Quoc",
+      "city": "Phu Quoc",
+      "description": "Vietnam's largest semi-wildlife conservation park with open-zoo experience across 380 hectares",
+      "hours": "09:00 AM – 04:00 PM",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "VinWonders Phu Quoc",
+      "city": "Phu Quoc",
+      "description": "Vietnam's largest theme park with family-friendly rides, water park, 5D cinema, and shows",
+      "hours": "09:00 AM – 07:30 PM",
+      "recommended_duration": "4-5 hours",
+      "source_files": [
+        "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "Hon Thom Cable Car",
+      "city": "Phu Quoc",
+      "description": "World's longest three-rope sea-crossing cable car with views of turquoise waters and islands",
+      "hours": "09:00 AM – 05:00 PM",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "Sunset Town Phu Quoc",
+      "city": "Phu Quoc",
+      "description": "Mediterranean-inspired waterfront area with stone-paved streets and colorful facades",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "Kiss Bridge",
+      "city": "Phu Quoc",
+      "description": "Romantic bridge stretching over the sea, perfect for sunset photography",
+      "hours": "7:00 AM – 11:00 PM",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf"
+      ]
+    },
+    {
+      "name": "Vin Wonders",
+      "city": "Phu Quoc",
+      "description": "Theme park",
+      "hours": "10:00 am - 7:30 pm",
+      "entry_fee": null,
+      "recommended_duration": "Full day",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Phu Quoc Night Market",
+      "city": "Phu Quoc",
+      "description": "Night market",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Vinpearl Resort & Spa Phu Quoc",
+      "city": "Phu Quoc",
+      "location": "Phu Quoc",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "name": "The Poplar Resort Phu Quoc",
+      "city": "Phu Quoc",
+      "location": "25 min taxi ride from airport",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Phu Quoc pepper (black, white & red varieties)",
+      "city": "Phu Quoc",
+      "category": "Food",
+      "where_to_buy": [
+        "Duong Dong Market"
+      ],
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "item": "Pearl jewelry and accessories",
+      "city": "Phu Quoc",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Pearl Farms & Showrooms"
+      ],
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "item": "Coconut oil, soaps, and handmade cosmetics",
+      "city": "Phu Quoc",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Duong Dong Market"
+      ],
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    },
+    {
+      "item": "Local spices and food products",
+      "city": "Phu Quoc",
+      "category": "Food",
+      "where_to_buy": [
+        "Duong Dong Market"
+      ],
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Phu Quoc",
+      "mode": "Vin Bus",
+      "description": "Free shuttle bus service for rides to and from Phu Quoc Night Market. Take Vin Bus 17 or 19. Bus frequency every 10-20 mins. Runs from 6 am to midnight.",
+      "recommended_pass": null,
+      "cost": "Free",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+    "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+    "Vietnam/Eating Out Guide_ Vietnam.pdf"
+  ]
+}

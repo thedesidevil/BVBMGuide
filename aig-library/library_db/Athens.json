@@ -1,0 +1,665 @@
+{
+  "restaurants": [
+    {
+      "name": "Taverna Saita",
+      "city": "Athens",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€15–25 per person",
+      "hours": "12:00 - 11:00 PM",
+      "ambience": "Traditional Greek taverna with checkered tablecloths, stone walls, and warm, cozy lighting",
+      "area": "Plaka",
+      "nearby_landmarks": [
+        "Lycabettus Hill, Athens"
+      ],
+      "highlights": [
+        "Traditional Greek taverna"
+      ],
+      "must_try_dishes": [
+        "Grilled lamb chops",
+        "moussaka",
+        "stuffed vine leaves (dolmades)"
+      ],
+      "best_for": [
+        "traditional",
+        "cozy"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Restaurant Scholarhio",
+      "city": "Athens",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€20-30 per person",
+      "hours": "11:30 AM - 12:00 AM",
+      "ambience": "Lively, no-frills tavern with colorful plates, casual seating, and a fun meze (small plates) concept",
+      "area": "Plaka",
+      "highlights": [
+        "Fun meze concept",
+        "Lively atmosphere"
+      ],
+      "must_try_dishes": [
+        "fried cheese",
+        "tzatziki",
+        "meatballs",
+        "eggplant",
+        "grilled meats"
+      ],
+      "best_for": [
+        "casual",
+        "lively"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Ydria",
+      "city": "Athens",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€15-25 per person",
+      "hours": "11:00 AM - 11:00 PM",
+      "ambience": "A spacious, refreshing garden (smoking and non-smoking zones) right in the tourist heart",
+      "area": "Plaka",
+      "highlights": [
+        "Spacious garden seating",
+        "Smoking and non-smoking zones"
+      ],
+      "must_try_dishes": [
+        "moussaka",
+        "pastitsio",
+        "souvlaki",
+        "seafood"
+      ],
+      "best_for": [
+        "garden dining",
+        "spacious"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Traditional food Diodos",
+      "city": "Athens",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€15–25 per person",
+      "hours": "8:30 AM - 2:00 AM",
+      "ambience": "Outdoor terrace with direct views of the Temple of Hephaestus and a shady, tree-lined walkway",
+      "nearby_landmarks": [
+        "Temple of Hephaestus, Athens"
+      ],
+      "highlights": [
+        "Direct views of Temple of Hephaestus",
+        "Shady terrace"
+      ],
+      "must_try_dishes": [
+        "Moussaka",
+        "grilled meats",
+        "fava",
+        "Greek salads",
+        "home made baklava"
+      ],
+      "best_for": [
+        "views",
+        "traditional"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Sin Athina",
+      "city": "Athens",
+      "cuisine_type": [
+        "Greek",
+        "Mediterranean"
+      ],
+      "price_range": "€20-30 per person",
+      "hours": "9:00 AM - 2:00 AM",
+      "ambience": "Rooftop terrace with panoramic Acropolis and Agora views, boho-chic decor",
+      "nearby_landmarks": [
+        "Acropolis, Athens",
+        "Ancient Agora, Athens"
+      ],
+      "highlights": [
+        "Panoramic Acropolis views",
+        "Boho-chic decor",
+        "Many veg options"
+      ],
+      "must_try_dishes": [
+        "Refreshing cocktails or juices",
+        "Meze platters",
+        "grilled chicken or salmon",
+        "risottos"
+      ],
+      "best_for": [
+        "views",
+        "cocktails"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Attalos Restaurant & Café",
+      "city": "Athens",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€15-25 per person",
+      "hours": "11:30 AM - 11:30 PM",
+      "ambience": "Rooftop terrace with unobstructed views of the Acropolis, Ancient Agora, and Temple of Hephaestus – casual but beautiful",
+      "nearby_landmarks": [
+        "Acropolis, Athens",
+        "Ancient Agora, Athens",
+        "Temple of Hephaestus, Athens"
+      ],
+      "highlights": [
+        "Unobstructed Acropolis views",
+        "Casual but beautiful"
+      ],
+      "must_try_dishes": [
+        "souvlaki",
+        "pastitsio",
+        "Greek salad",
+        "grilled vegetables"
+      ],
+      "best_for": [
+        "views",
+        "casual"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Savvas Restaurant",
+      "city": "Athens",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€15–25 per person",
+      "hours": "9:00 AM - 4:00 AM",
+      "ambience": "Rooftop with breathtaking views of the Acropolis, casual but lively",
+      "area": "Monastiraki Square",
+      "nearby_landmarks": [
+        "Acropolis, Athens"
+      ],
+      "highlights": [
+        "Breathtaking Acropolis views",
+        "Famous for gyro platters",
+        "Great veggie options"
+      ],
+      "must_try_dishes": [
+        "gyro platters",
+        "kebabs",
+        "mixed grills",
+        "falafel",
+        "salads",
+        "local beer"
+      ],
+      "best_for": [
+        "views",
+        "lively"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Oineas Restaurant",
+      "city": "Athens",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€20-30 per person",
+      "hours": "5:30 PM - 11:00 PM",
+      "ambience": "Vintage, eclectic decor with cozy indoor and charming outdoor tables under lights",
+      "area": "Monastiraki Square",
+      "highlights": [
+        "Vintage eclectic decor",
+        "Inventive takes on Greek classics",
+        "Vegetarian dishes"
+      ],
+      "must_try_dishes": [
+        "Stuffed chicken",
+        "lamb in clay pot",
+        "shrimp saganaki",
+        "house wine"
+      ],
+      "best_for": [
+        "vintage atmosphere",
+        "inventive cuisine"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Efcharis",
+      "city": "Athens",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€15-25 per person",
+      "hours": "9:30 AM - 11:30 PM",
+      "ambience": "Classic taverna ambiance with outdoor seating in a pedestrian zone, often with live music",
+      "area": "Monastiraki Square",
+      "highlights": [
+        "Classic taverna",
+        "Often with live music"
+      ],
+      "must_try_dishes": [
+        "traditional mezedes",
+        "moussaka",
+        "grilled octopus",
+        "saganaki",
+        "lamb chops"
+      ],
+      "best_for": [
+        "traditional",
+        "live music"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Bulacan Halo-Halo",
+      "city": "Athens",
+      "cuisine_type": [
+        "Filipino"
+      ],
+      "price_range": "€10–15 per person",
+      "hours": "1:30 PM - 9:00 PM",
+      "ambience": "All you can eat Filipino restaurant",
+      "highlights": [
+        "All you can eat buffet"
+      ],
+      "must_try_dishes": [
+        "buffet"
+      ],
+      "best_for": [
+        "buffet",
+        "value"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Tsiftis Gastro Koutouki",
+      "city": "Athens",
+      "cuisine_type": [
+        "Greek",
+        "Gastro"
+      ],
+      "price_range": "€25-35 per person (without alcohol)",
+      "hours": "5:00 PM - 1:00 AM",
+      "ambience": "Stylish yet cozy gastro vibe, indoor-outdoor seating",
+      "highlights": [
+        "Stylish gastro vibe",
+        "Excellent wine list",
+        "Creative cocktails"
+      ],
+      "must_try_dishes": [
+        "Seasonal mezedes: taramasalata",
+        "mussels with chorizo",
+        "local cheese dishes"
+      ],
+      "best_for": [
+        "gastro dining",
+        "wine"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Taverna Restaurant Papagiannis",
+      "city": "Athens",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€15-25 per person",
+      "hours": "12:00 PM - 8:00 PM",
+      "ambience": "Classic taverna ambiance with outdoor seating in a pedestrian zone, often with live music",
+      "highlights": [
+        "Classic taverna",
+        "Often with live music"
+      ],
+      "must_try_dishes": [
+        "Wide range of traditional mezedes"
+      ],
+      "best_for": [
+        "traditional",
+        "live music"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Karavitis Tavern",
+      "city": "Athens",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€15-20 per person",
+      "hours": "7:00 PM - 1:00 AM",
+      "ambience": "Rustic, open-air courtyard with a welcoming, family-style vibe; lots of sharing plates and a casual atmosphere",
+      "nearby_landmarks": [
+        "Panathenaic Stadium, Athens"
+      ],
+      "highlights": [
+        "Rustic open-air courtyard",
+        "Family-style vibe",
+        "Lots of sharing plates"
+      ],
+      "must_try_dishes": [
+        "Grilled lamb chops",
+        "biftekia (Greek-style patties)",
+        "fried zucchini",
+        "house wine"
+      ],
+      "best_for": [
+        "family-style",
+        "sharing"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Vyrinis Greek Tavern",
+      "city": "Athens",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€15-30 per person",
+      "hours": "1:00 PM - 12:00 AM",
+      "ambience": "Cozy, family-run courtyard tavern with modern touches—barrels, strings of lights, and a warm, buzzing local feel",
+      "nearby_landmarks": [
+        "Panathenaic Stadium, Athens"
+      ],
+      "highlights": [
+        "Family-run",
+        "Modern touches",
+        "Complimentary limoncello sorbet after meals"
+      ],
+      "must_try_dishes": [
+        "Stuffed tomatoes & peppers",
+        "eggplant & octopus salads",
+        "Succulent lamb",
+        "grilled calamari",
+        "crispy fries"
+      ],
+      "best_for": [
+        "family-run",
+        "modern touches"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Magemenos Avlos (The Magic Flute)",
+      "city": "Athens",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€10-20 per person",
+      "hours": "12:00 PM - 2:00 AM",
+      "ambience": "Nostalgic taverna with live rebetika performances, oak tables & a 1960s-era vibe",
+      "nearby_landmarks": [
+        "Panathenaic Stadium, Athens"
+      ],
+      "highlights": [
+        "Live rebetika performances",
+        "1960s-era vibe",
+        "Nostalgic atmosphere"
+      ],
+      "must_try_dishes": [
+        "A la carte meze & grilled meats",
+        "vino or ouzo"
+      ],
+      "best_for": [
+        "live music",
+        "nostalgic"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "To Laini Kafeneio",
+      "city": "Athens",
+      "cuisine_type": [
+        "Cretan",
+        "Greek"
+      ],
+      "price_range": "€15-25 per person",
+      "hours": "10:00 AM - 1:00 AM",
+      "ambience": "Traditional Cretan \"kafeneio\" (coffeehouse) style with a relaxed, village‑tavern feel; indoor and small outdoor seating",
+      "area": "Keramikos District",
+      "highlights": [
+        "Traditional Cretan kafeneio style",
+        "Village-tavern feel"
+      ],
+      "must_try_dishes": [
+        "Dakos salad with tomato, feta, olives",
+        "Cretan dakos bruschetta",
+        "Cretan cheeses",
+        "house raki or local wine"
+      ],
+      "best_for": [
+        "traditional",
+        "Cretan cuisine"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Taverna at Bios",
+      "city": "Athens",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€15-30 per person",
+      "hours": "7:00 PM - 12:00 AM",
+      "ambience": "Trendy Bauhaus‑style space with a vaulted interior and outdoor seating; often hosts cultural events",
+      "area": "Keramikos District",
+      "highlights": [
+        "Trendy Bauhaus-style",
+        "Often hosts cultural events"
+      ],
+      "must_try_dishes": [
+        "Seasonal mezes: dips",
+        "grilled veggies",
+        "souvlaki",
+        "Fresh Greek salad",
+        "homemade desserts"
+      ],
+      "best_for": [
+        "trendy",
+        "cultural events"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "To Piroliki Restaurant",
+      "city": "Athens",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€15-25 per person",
+      "hours": "10:00 AM - 7:00 PM",
+      "ambience": "Intimate, home-style taverna with friendly service, rustic tables, and casual seating",
+      "area": "Keramikos District",
+      "highlights": [
+        "Intimate home-style",
+        "Friendly service"
+      ],
+      "must_try_dishes": [
+        "Home-cooked Greek stews",
+        "dolmades",
+        "saganaki",
+        "eggplant dip",
+        "house wine"
+      ],
+      "best_for": [
+        "intimate",
+        "home-style"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Lycabettus Hill",
+      "city": "Athens",
+      "description": "Panoramic views of the city and sea with the best photo opportunities at golden hour",
+      "hours": "24 hours",
+      "entry_fee": "€12 for a round trip or €9 for a one-way trip via funicular",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Plaka neighborhood",
+      "city": "Athens",
+      "description": "Walk through Plaka and explore neoclassical houses, quaint shops, and tavernas",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Ancient Agora & Temple of Hephaestus",
+      "city": "Athens",
+      "description": "Center of ancient public life- Ancient Agora and Temple of Hephaestus",
+      "hours": "8:00 AM- 5:00 PM",
+      "entry_fee": "Pre-purchased tickets",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "National Archaeological Museum",
+      "city": "Athens",
+      "description": "Home to iconic Greek artifacts like the Mask of Agamemnon",
+      "hours": "8:00 AM- 08:00 PM with the exception of Tuesdays, when it opens at 1:00 PM",
+      "entry_fee": "€12 during the peak season (April to October) and €6 during the off-season (November to March)",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Monastiraki Square",
+      "city": "Athens",
+      "description": "Wander through the flea market, dinner with a view of the Acropolis lit up at night",
+      "hours": "24 hours a day",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Acropolis",
+      "city": "Athens",
+      "description": "Explore the Parthenon, Erechtheion, and Temple of Athena Nike",
+      "hours": "During the summer (April 1 to September 15), 8:00 AM to 7:30 PM. In the winter (November 1 to March 31), 8:00 AM to 5:00 PM",
+      "entry_fee": "Pre-purchased tickets",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Acropolis Museum",
+      "city": "Athens",
+      "description": "One of the best museums in Greece, enjoy the glass floors and Acropolis view from inside",
+      "hours": "Generally opens at 9:00 AM daily. During summer (April 1st to October 31st), closes at 5:00 PM on Mondays, and 8:00 PM on Tuesdays through Sundays, with extended hours to 10:00 PM on Fridays. In winter (November 1st to March 31st), closes at 5:00 PM on Mondays through Thursdays, 10:00 PM on Fridays, and 8:00 PM on Saturdays and Sundays",
+      "entry_fee": "Pre-purchased tickets",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Panathenaic Stadium",
+      "city": "Athens",
+      "description": "Original Olympic site, made entirely of marble",
+      "hours": "8:00 AM - 7:00 PM",
+      "entry_fee": "€10",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Keramikos District",
+      "city": "Athens",
+      "description": "Trendy, artsy neighborhood with cafes and murals, visit the ancient cemetery or grab dinner at a modern bistro",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Airotel stratos Vassilikos",
+      "city": "Athens",
+      "location": "Athens",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Athens",
+        "Istanbul"
+      ],
+      "tip": "Check local news or apps (like Google Alerts or Smart Traveler) for protests or strikes",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "cities": [
+        "Athens",
+        "Istanbul"
+      ],
+      "tip": "Check local news or apps (like Google Alerts or Smart Traveler) for protests or strikes",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    }
+  ],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "England and Scotland/Edlyn London.pdf",
+    "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+  ]
+}

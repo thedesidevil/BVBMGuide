@@ -1,0 +1,989 @@
+{
+  "restaurants": [
+    {
+      "name": "Mango Tree Restaurant",
+      "city": "Hampi",
+      "cuisine_type": [
+        "North Indian",
+        "South Indian"
+      ],
+      "price_range": "₹150-400",
+      "hours": "8 AM – 9:30 PM",
+      "ambience": "Calm setting and consistently good food",
+      "highlights": [
+        "One of Hampi's most loved restaurants",
+        "Great food and relaxed ambience"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Gouthami Guest House Restaurant",
+      "city": "Hampi",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "₹300-400",
+      "hours": "7:30 AM – 9:30 PM",
+      "ambience": "Simple South Indian vegetarian",
+      "nearby_landmarks": [
+        "Royal Enclosure, Hampi"
+      ],
+      "highlights": [
+        "Quick, no-fuss meals",
+        "Near the monuments"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf"
+      ]
+    },
+    {
+      "name": "Taste of Brahmins",
+      "city": "Hampi",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "₹50-200",
+      "hours": "7:30 AM – 11:30 AM",
+      "nearby_landmarks": [
+        "Virupaksha Temple, Hampi"
+      ],
+      "highlights": [
+        "Great spot for a light early lunch",
+        "Very close to Virupaksha Temple"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ],
+      "ambience": "Hole in the wall, no frills place",
+      "area": "Very close to the Virupaksha Temple",
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Sree Lakshmi Restaurant",
+      "city": "Hampi",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "₹150-300",
+      "hours": "7:30 AM – 8:30 PM",
+      "highlights": [
+        "Clean, local, and budget-friendly"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf"
+      ]
+    },
+    {
+      "name": "The Goan Corner",
+      "city": "Hampi",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹200-500",
+      "hours": "6:00 AM – 10:00 PM",
+      "ambience": "Calm setting for a relaxed meal",
+      "highlights": [
+        "Vegetarian options on request"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf"
+      ]
+    },
+    {
+      "name": "The Nest – Lakefront Restaurant",
+      "city": "Hampi",
+      "cuisine_type": [
+        "Multicuisine"
+      ],
+      "hours": "8 am - 10:30 pm",
+      "ambience": "Nice sit-down dining option with good food and ambiance, lakefront view",
+      "highlights": [
+        "Part of Hampi's feathers resort",
+        "Good food and ambiance",
+        "Has lakefront view"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf"
+      ]
+    },
+    {
+      "name": "The Bridge (Clarks Inn)",
+      "city": "Hampi",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "7 AM – 10 PM",
+      "ambience": "Nice sit down restaurant inside a hotel",
+      "highlights": [
+        "Reliable sit-down restaurant inside a hotel",
+        "Comfortable seating and consistent food"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ],
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Ganesh Old Chillout",
+      "city": "Hampi",
+      "cuisine_type": [
+        "Multicuisine"
+      ],
+      "hours": "7 AM – 11 PM",
+      "ambience": "Hippie vibes, casual ambiance",
+      "highlights": [
+        "Good for falafel, hummus, and quick plates"
+      ],
+      "must_try_dishes": [
+        "Hummus",
+        "Falafel"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ],
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Shambhu Dosa Center",
+      "city": "Hampi",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "hours": "7 am - 12 pm",
+      "ambience": "Hole in the wall, no frills place",
+      "area": "Very close to the Virupaksha Temple",
+      "nearby_landmarks": [
+        "Virupaksha Temple, Hampi"
+      ],
+      "highlights": [
+        "Dosa lover's paradise",
+        "Good for quick snack",
+        "Breakfast restaurant"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Lotus Mahal",
+      "city": "Hampi",
+      "description": "Elegant, lotus-shaped pavilion blending Indo-Islamic design elements. A serene and photogenic landmark, it once served as a space for royal gatherings",
+      "hours": "8 AM to 6 PM",
+      "entry_fee": "₹40 per person",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ],
+      "recommended_duration": "1 hour"
+    },
+    {
+      "name": "Elephant Stables",
+      "city": "Hampi",
+      "description": "A long row of domed chambers built for the royal elephants — grand, sturdy, and beautifully preserved",
+      "hours": "8:30 AM to 5:30 PM",
+      "entry_fee": "₹40 per person",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ],
+      "recommended_duration": "30 mins"
+    },
+    {
+      "name": "Queen's Bath",
+      "city": "Hampi",
+      "description": "A seemingly simple exterior opens into a beautifully detailed bathing chamber with arched corridors and an enormous central pool",
+      "hours": "6 AM to 6 PM",
+      "entry_fee": "Free",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ],
+      "recommended_duration": "30 mins"
+    },
+    {
+      "name": "Matanga Hill",
+      "city": "Hampi",
+      "description": "One of Hampi's highest points for a spectacular panoramic sunset over scattered ruins, boulder hills, and the Tungabhadra valley",
+      "hours": "6 AM to 6 PM",
+      "entry_fee": "Free",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ],
+      "recommended_duration": "1-2 hours"
+    },
+    {
+      "name": "Virupaksha Temple",
+      "city": "Hampi",
+      "description": "Hampi's most active and oldest temple, dedicated to Lord Shiva. Walk through the towering gopuram, witness ongoing rituals, and take in the carvings that span centuries of devotion",
+      "hours": "6 AM to 1 PM",
+      "entry_fee": "Special darshan ₹25",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ],
+      "recommended_duration": "1-2 hours"
+    },
+    {
+      "name": "Lakshmi Narasimha",
+      "city": "Hampi",
+      "description": "Iconic monolithic statue",
+      "hours": "6:00 AM – 6:00 PM",
+      "entry_fee": "Free",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf"
+      ]
+    },
+    {
+      "name": "Krishna Temple",
+      "city": "Hampi",
+      "description": "Built by Krishnadevaraya to commemorate his victory in Odisha, the temple complex features ornate carvings and a lively bazaar street leading up to it",
+      "hours": "6 AM to 6 PM",
+      "entry_fee": "Free",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ],
+      "recommended_duration": "45 mins"
+    },
+    {
+      "name": "Badavilinga",
+      "city": "Hampi",
+      "description": "A massive monolithic Shiva Linga partially submerged in water — simple yet powerful in presence",
+      "hours": "5 AM to 9 PM",
+      "entry_fee": "Free",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ],
+      "recommended_duration": "20 mins"
+    },
+    {
+      "name": "Hampi Archaeological Museum",
+      "city": "Hampi",
+      "description": "A beautifully curated museum showcasing sculptures, coins, tools, and artefacts excavated from the Vijayanagara Empire. The gallery helps contextualise the ruins you've been exploring with detailed models and historical narratives",
+      "hours": "9 AM to 5 PM",
+      "entry_fee": "₹5 per person",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ],
+      "recommended_duration": "1-2 hours"
+    },
+    {
+      "name": "Hazara Rama Temple",
+      "city": "Hampi",
+      "description": "Dedicated to Lord Rama, this 15th-century temple is famed for its intricate bas-reliefs depicting scenes from the Ramayana. Every wall narrates a different episode, making it one of Hampi's most artistically rich monuments",
+      "hours": "6 AM to 6 PM",
+      "entry_fee": "Free",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ],
+      "recommended_duration": "1 hour"
+    },
+    {
+      "name": "Palace of Vira Harihara",
+      "city": "Hampi",
+      "description": "Although only foundation outlines remain today, the palace complex offers a glimpse into the grand scale and regal lifestyle of the Vijayanagara rulers, complete with sculpted details that survived centuries",
+      "hours": "6 AM to 6 PM",
+      "entry_fee": "Free",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ],
+      "recommended_duration": "30 mins"
+    },
+    {
+      "name": "Underground Shiva Temple",
+      "city": "Hampi",
+      "description": "Also known as the Prasanna Virupaksha Temple, this unique structure sits partially submerged below ground level. The cool, silent corridors give it an atmospheric, almost mystical feel",
+      "hours": "6 AM to 6 PM",
+      "entry_fee": "Free",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ],
+      "recommended_duration": "30 mins"
+    },
+    {
+      "name": "Stepped Tank (Pushkarni)",
+      "city": "Hampi",
+      "description": "Geometric architectural marvel",
+      "hours": "6:00 AM – 6:00 PM",
+      "entry_fee": "Free",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf"
+      ]
+    },
+    {
+      "name": "Royal Center of Hampi",
+      "city": "Hampi",
+      "description": "Includes the Lotus Mahal, the Elephant Stable, and the Queen's Bath. Learn about the grandeur and opulence of the Vijayanagara Empire",
+      "hours": "Closes at 6 pm",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Sacred Center of Hampi",
+      "city": "Hampi",
+      "description": "Find Narasimha Shrine, the Krishna Temple, and the Badavilinga",
+      "recommended_duration": "1-1.5 hours total",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Tungabhadra River",
+      "city": "Hampi",
+      "description": "Enjoy a coracle ride on the river",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Hemkuta Hill",
+      "city": "Hampi",
+      "description": "Breathtaking panoramic view of the ruins and stunning sunset",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Hampi Bazaar",
+      "city": "Hampi",
+      "description": "Vibrant stalls offering local textiles, stone carvings, brassware, and quirky souvenirs. Great for light snacks and people-watching",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ],
+      "hours": "6 AM to 11 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours"
+    },
+    {
+      "name": "Vijaya Vittala Temple",
+      "city": "Hampi",
+      "description": "A masterpiece of architecture known for its famous Stone Chariot. Intricate carvings and serene atmosphere",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Archaeological Museum",
+      "city": "Hampi",
+      "description": "Museum with archaeological artifacts",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Anegundi",
+      "city": "Hampi",
+      "description": "Charming village with ancient temples and beautiful landscapes. Experience local culture",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Hazara Raama Temple",
+      "city": "Hampi",
+      "description": "15th-century Hindu temple dedicated to Lord Rama, known for its intricate carvings depicting scenes from the Ramayana",
+      "hours": "6am - 6pm",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Zanana Enclosure",
+      "city": "Hampi",
+      "description": "Fortified area within the Vijayanagara Empire, specifically designed for the residence and leisure of royal women",
+      "hours": "8am - 6pm",
+      "entry_fee": "Rs. 10 per person",
+      "recommended_duration": "15 minutes",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Underground Shiva Temple (Prasanna Virupaksha Temple)",
+      "city": "Hampi",
+      "description": "14th-century Hindu temple built below ground level, discovered in the 1980s after being buried for over four hundred years",
+      "hours": "6am - 6pm",
+      "entry_fee": "Free",
+      "recommended_duration": "45 minutes",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Stepped Tank",
+      "city": "Hampi",
+      "description": "An architectural masterpiece of geometric precision, the tank was used for ceremonial purposes. Its perfectly symmetrical design makes it one of the most striking structures in the Royal Enclosure",
+      "hours": "8 AM to 6 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "30 mins",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf",
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ]
+    },
+    {
+      "name": "Yantrodharaka Hanuman Temple",
+      "city": "Hampi",
+      "description": "15th-century temple dedicated to Lord Hanuman, located on the banks of the Tungabhadra River, featuring Lord Hanuman in a meditative pose within a sacred Yantra",
+      "hours": "6am - 9pm",
+      "entry_fee": "Free",
+      "recommended_duration": "30-45 minutes climb (575 steps)",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Monolithic Bull (Nandi)",
+      "city": "Hampi",
+      "description": "Colossal sculpture of Nandi carved from a single granite boulder, located at the eastern end of the Virupaksha Bazaar",
+      "hours": "7am - 8pm",
+      "entry_fee": "Free",
+      "recommended_duration": "15 minutes",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Shri Achyutaraaya Swamy Temple",
+      "city": "Hampi",
+      "description": "16th-century architectural marvel dedicated to Lord Tiruvengalanatha, showcasing intricate carvings, sculpted pillars, and ornate details",
+      "hours": "5:30am - 1pm and 5:30pm - 9pm",
+      "entry_fee": "Free",
+      "recommended_duration": "30-60 minutes",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Sanapur Lake",
+      "city": "Hampi",
+      "description": "Picturesque lake that is part of the larger Tungabhadra River basin",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Narasimha Shrine (Lakshmi Narasimha Temple)",
+      "city": "Hampi",
+      "description": "Famous for the striking monolith of Narasimha seated on the coils of Adishesha. The scale and expressive detailing make this one of Hampi's most photographed monuments",
+      "hours": "6 AM to 6 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "30 mins",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ]
+    },
+    {
+      "name": "Coracle Ride on the Tungabhadra River",
+      "city": "Hampi",
+      "description": "A gentle, circular boat ride that lets you drift along boulder-strewn riverbanks and ancient ghats. A relaxing way to appreciate Hampi's surreal landscape from the water",
+      "hours": "6 AM to 6 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "30-45 mins",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ]
+    },
+    {
+      "name": "Achyutaraya Temple",
+      "city": "Hampi",
+      "description": "A stunning 16th-century temple surrounded by boulder hills and ancient bazaar streets. The towering gopurams, intricate carvings, and quiet courtyards give you an immersive sense of Hampi's grandeur during the Vijayanagara era",
+      "hours": "6 AM to 8 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Evolve Back, Hampi",
+      "city": "Hampi",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "name": "Heritage Resort Hampi",
+      "city": "Hampi",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384281.3079963
+    },
+    {
+      "name": "Heritage Resort Hampi",
+      "city": "Hampi",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf",
+      "_source_mtime": 1772384278.7178218
+    },
+    {
+      "name": "Evolve Back",
+      "city": "Hampi",
+      "location": "Hampi",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [
+    {
+      "city": "Hampi",
+      "english": "Hello",
+      "local": "Namaskara",
+      "category": "greeting",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "city": "Hampi",
+      "english": "Thank You",
+      "local": "Dhanyavaadagalu",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "city": "Hampi",
+      "english": "How much?",
+      "local": "EshTu?",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "city": "Hampi",
+      "english": "Yes",
+      "local": "Haudu",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "city": "Hampi",
+      "english": "No",
+      "local": "Illa",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "city": "Hampi",
+      "english": "Please",
+      "local": "Dayavittu",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "city": "Hampi",
+      "english": "Water",
+      "local": "Neeru",
+      "category": "food",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "city": "Hampi",
+      "english": "Food",
+      "local": "Oota",
+      "category": "food",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "city": "Hampi",
+      "english": "Where is this?",
+      "local": "Idu elli ide?",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "city": "Hampi",
+      "english": "Hello",
+      "local": "Namaskara",
+      "category": "greeting",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    },
+    {
+      "city": "Hampi",
+      "english": "Thank You",
+      "local": "Dhanyavaadagalu",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    },
+    {
+      "city": "Hampi",
+      "english": "How much?",
+      "local": "EshTu?",
+      "category": "food",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    },
+    {
+      "city": "Hampi",
+      "english": "Yes",
+      "local": "Haudu",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    },
+    {
+      "city": "Hampi",
+      "english": "No",
+      "local": "Illa",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    },
+    {
+      "city": "Hampi",
+      "english": "Please",
+      "local": "Dayavittu",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    },
+    {
+      "city": "Hampi",
+      "english": "Water",
+      "local": "Neeru",
+      "category": "food",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    },
+    {
+      "city": "Hampi",
+      "english": "Food",
+      "local": "Oota",
+      "category": "food",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    },
+    {
+      "city": "Hampi",
+      "english": "Where is this?",
+      "local": "Idu elli ide?",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Wear comfortable walking shoes — ruins involve uneven terrain",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Carry a hat, sunglasses, and sunscreen; Hampi is warm and open",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Hydrate regularly",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Start early to enjoy monuments in pleasant morning light",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "ATMs are limited around Hampi; carry some cash for entrances and small shops",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Photography is allowed in most places, but flash is restricted in some temples",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Wear comfortable walking shoes — ruins involve uneven terrain",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Carry a hat, sunglasses, and sunscreen; Hampi is warm and open",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Hydrate regularly",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Start early to enjoy monuments in pleasant morning light",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "ATMs are limited around Hampi; carry some cash for entrances and small shops",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Photography is allowed in most places, but flash is restricted in some temples",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Banana Fiber Crafts",
+      "city": "Hampi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kishkinta Trust shop behind Virupaksha Temple"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "item": "Lambani Crafts",
+      "city": "Hampi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Stores outside Virupaksha Temple"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "item": "Stone Artefacts",
+      "city": "Hampi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Push carts close to famous ruins",
+        "Main bazaar stalls and carts"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111
+    },
+    {
+      "item": "Banana Fiber Crafts",
+      "city": "Hampi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kishkinta Trust shop behind Virupaksha Temple"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384281.3079963
+    },
+    {
+      "item": "Lambani Crafts",
+      "city": "Hampi",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Stores outside Virupaksha Temple"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384281.3079963
+    },
+    {
+      "item": "Stone Artefacts",
+      "city": "Hampi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Push carts close to famous ruins",
+        "Main bazaar stalls and carts"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384281.3079963
+    },
+    {
+      "item": "Banana Fiber Crafts",
+      "city": "Hampi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kishkinta Trust shop behind Virupaksha Temple"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf",
+      "_source_mtime": 1772384278.7178218
+    },
+    {
+      "item": "Lambani Crafts",
+      "city": "Hampi",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Stores outside Virupaksha Temple"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf",
+      "_source_mtime": 1772384278.7178218
+    },
+    {
+      "item": "Stone Artefacts",
+      "city": "Hampi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Push carts close to famous ruins",
+        "Main bazaar stalls and carts"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf",
+      "_source_mtime": 1772384278.7178218
+    },
+    {
+      "item": "Banana Fiber Crafts",
+      "city": "Hampi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kishkinta Trust shop behind Virupaksha Temple"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    },
+    {
+      "item": "Lambani Crafts",
+      "city": "Hampi",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Stores outside Virupaksha Temple"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    },
+    {
+      "item": "Stone Artefacts",
+      "city": "Hampi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Push carts close to famous ruins",
+        "Stalls and carts in main bazaar"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    },
+    {
+      "item": "General souvenirs",
+      "city": "Hampi",
+      "category": "General",
+      "where_to_buy": [
+        "Hampi Bazaar souvenir shops"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Carry mosquito repellent",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384281.3079963
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Weather will be max 32 degrees and minimum 22 degrees - carry sunscreen and protective hat/cap for sun protection",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384281.3079963
+    }
+  ],
+  "source_files": [
+    "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+    "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+    "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).pdf",
+    "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf"
+  ]
+}

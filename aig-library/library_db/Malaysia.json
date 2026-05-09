@@ -1,0 +1,860 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Roti Canai (Vegetarian)",
+      "city": "Malaysia",
+      "description": "Flaky flatbread served with lentil curry (ask for no egg)",
+      "vegetarian": true,
+      "source_files": [
+        "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Vegetarian Nasi Lemak",
+      "city": "Malaysia",
+      "description": "Coconut rice with sambal, peanuts, cucumber, and veg sides (no anchovies)",
+      "vegetarian": true,
+      "source_files": [
+        "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Vegetarian Laksa",
+      "city": "Malaysia",
+      "description": "Spicy noodle soup with coconut or tamarind base made using vegetable stock",
+      "vegetarian": true,
+      "source_files": [
+        "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Mee Goreng (Veg)",
+      "city": "Malaysia",
+      "description": "Stir-fried yellow noodles with vegetables and soy-based seasoning",
+      "vegetarian": true,
+      "source_files": [
+        "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Vegetarian Char Kway Teow",
+      "city": "Malaysia",
+      "description": "Flat rice noodles stir-fried with vegetables and tofu",
+      "vegetarian": true,
+      "source_files": [
+        "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Thosai / Dosa",
+      "city": "Malaysia",
+      "description": "South Indian–style crepe served with sambar and chutneys (widely available)",
+      "vegetarian": true,
+      "source_files": [
+        "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Idli with Sambar",
+      "city": "Malaysia",
+      "description": "Steamed rice cakes with lentil curry, common in Indian Malaysian eateries",
+      "vegetarian": true,
+      "source_files": [
+        "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Vegetarian Nasi Campur",
+      "city": "Malaysia",
+      "description": "Rice with assorted vegetable curries and stir-fried greens",
+      "vegetarian": true,
+      "source_files": [
+        "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Popiah (Veg)",
+      "city": "Malaysia",
+      "description": "Fresh spring rolls filled with jicama, carrots, tofu, and peanuts",
+      "vegetarian": true,
+      "source_files": [
+        "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Curry Puffs (Veg)",
+      "city": "Malaysia",
+      "description": "Fried pastries stuffed with spiced potatoes and peas",
+      "vegetarian": true,
+      "source_files": [
+        "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Apam Balik",
+      "city": "Malaysia",
+      "description": "Sweet pancake filled with peanuts, sugar, and corn",
+      "vegetarian": true,
+      "source_files": [
+        "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Kuih-Muih (Vegetarian)",
+      "city": "Malaysia",
+      "description": "Traditional bite-sized desserts made from rice flour, coconut, and palm sugar",
+      "vegetarian": true,
+      "source_files": [
+        "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Cendol (Veg Dessert)",
+      "city": "Malaysia",
+      "description": "Iced dessert with coconut milk, palm sugar, and green jelly noodles",
+      "vegetarian": true,
+      "source_files": [
+        "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Teh Tarik (Vegetarian Drink)",
+      "city": "Malaysia",
+      "description": "Famous Malaysian pulled milk tea",
+      "vegetarian": true,
+      "source_files": [
+        "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Malaysia",
+      "english": "Hello",
+      "local": "Hai",
+      "category": "greeting",
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "city": "Malaysia",
+      "english": "Thank you",
+      "local": "Terima Kasih",
+      "category": "polite",
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "city": "Malaysia",
+      "english": "Yes",
+      "local": "Ya",
+      "category": "polite",
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "city": "Malaysia",
+      "english": "No",
+      "local": "Tiday",
+      "category": "polite",
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "city": "Malaysia",
+      "english": "Sorry",
+      "local": "Maaf",
+      "category": "polite",
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "city": "Malaysia",
+      "english": "How much is this?",
+      "local": "Berapa ini?",
+      "category": "food",
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "city": "Malaysia",
+      "english": "Hello",
+      "local": "Hello / Hai",
+      "category": "greeting",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "city": "Malaysia",
+      "english": "Thank you",
+      "local": "Terima kasih",
+      "category": "polite",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "city": "Malaysia",
+      "english": "Welcome / You're welcome",
+      "local": "Sama-sama",
+      "category": "polite",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "city": "Malaysia",
+      "english": "Please",
+      "local": "Sila",
+      "category": "polite",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "city": "Malaysia",
+      "english": "Sorry / Excuse me",
+      "local": "Maaf",
+      "category": "polite",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "city": "Malaysia",
+      "english": "Yes",
+      "local": "Ya",
+      "category": "polite",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "city": "Malaysia",
+      "english": "No",
+      "local": "Tidak",
+      "category": "polite",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "city": "Malaysia",
+      "english": "How much is this?",
+      "local": "Berapa harga ini?",
+      "category": "food",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "city": "Malaysia",
+      "english": "Vegetarian food",
+      "local": "Makanan vegetarian",
+      "category": "food",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Keep your passport and valuables secure; use hotel safes when available",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Carry a photocopy of your passport and visa separately",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Stay alert in crowded places like markets and public transport",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Avoid walking alone in poorly lit areas at night",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Trust your instincts—leave if a situation feels unsafe",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Use Grab (ride-hailing app), or pre-arranged transport",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Avoid unlicensed taxis and unsolicited ride offers",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Keep bags close when using public transport",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Do not display large amounts of cash in public",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Use ATMs inside malls or banks rather than isolated ones",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Keep wallets, phones, and bags zipped and in front of you",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Beware of pickpocketing in busy tourist areas",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Drink bottled or filtered water",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Use sunscreen and stay hydrated due to hot, humid weather",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Carry mosquito repellent, especially in the evenings",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Be cautious of overly friendly strangers offering deals or tours",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Confirm prices before shopping, eating, or using services",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Avoid illegal activities—penalties are very strict in Malaysia",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Respect local laws, customs, and religious practices",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Dress modestly, especially at mosques, temples, and rural areas (cover shoulders & knees)",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Remove shoes before entering homes and places of worship",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Use your right hand for giving, receiving, or eating (left hand is considered impolite)",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Greet politely with a smile; a light nod or handshake is acceptable",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Respect prayer times and religious practices (Islam is the official religion)",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Ask permission before taking photos of people, especially elders and religious sites",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Stand respectfully when the national anthem is played",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Be patient and polite—Malaysians value calm and respectful behaviour",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Don't point with your index finger (use thumb or open hand instead)",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Don't touch anyone's head, especially children—it's considered disrespectful",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Avoid public displays of affection, especially in conservative areas",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Don't criticize religion, royalty, or local customs—very sensitive topics",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Don't raise your voice or argue loudly in public",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Avoid stepping over people or food items, seen as disrespectful",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Don't wear revealing clothes in mosques or temples",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Malaysian Batik",
+      "city": "Malaysia",
+      "category": "Traditional & Cultural Gifts",
+      "where_to_buy": [
+        "scarves",
+        "shirts",
+        "dresses",
+        "wall hangings"
+      ],
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "item": "Royal Selangor Pewter",
+      "city": "Malaysia",
+      "category": "Traditional & Cultural Gifts",
+      "where_to_buy": [
+        "mugs",
+        "bowls",
+        "keychains",
+        "frames"
+      ],
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "item": "Hand-woven & bamboo crafts",
+      "city": "Malaysia",
+      "category": "Traditional & Cultural Gifts",
+      "where_to_buy": [
+        "baskets",
+        "trays",
+        "décor"
+      ],
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "item": "Rattan & wooden kitchenware",
+      "city": "Malaysia",
+      "category": "Traditional & Cultural Gifts",
+      "where_to_buy": [
+        "natural",
+        "lightweight souvenirs"
+      ],
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "item": "Local art & prints",
+      "city": "Malaysia",
+      "category": "Traditional & Cultural Gifts",
+      "where_to_buy": [
+        "contemporary Malaysian designs"
+      ],
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "item": "Ipoh White Coffee",
+      "city": "Malaysia",
+      "category": "Edible & Specialty Items",
+      "where_to_buy": [
+        "instant packs"
+      ],
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "item": "Local snacks & sweets",
+      "city": "Malaysia",
+      "category": "Edible & Specialty Items",
+      "where_to_buy": [
+        "dodol",
+        "nut mixes",
+        "chocolate-coated treats"
+      ],
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "item": "Malaysian teas",
+      "city": "Malaysia",
+      "category": "Edible & Specialty Items",
+      "where_to_buy": [
+        "pandan",
+        "lemongrass",
+        "herbal blends"
+      ],
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "item": "Sarawak Pepper",
+      "city": "Malaysia",
+      "category": "Edible & Specialty Items",
+      "where_to_buy": [
+        "vacuum-sealed packs"
+      ],
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Malaysia",
+      "service": "Emergency",
+      "number": "999",
+      "notes": "integrated emergency number",
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "city": "Malaysia",
+      "service": "Embassy",
+      "number": "+601 2203 6900",
+      "notes": "High Commission of India, Kuala Lumpur - 24 hr emergency phone number",
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "city": "Malaysia",
+      "service": "Police / Emergency",
+      "number": "999",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "city": "Malaysia",
+      "service": "High Commission of India – Kuala Lumpur",
+      "number": "+60 3 4024 0990",
+      "notes": "General Office - Multiple lines",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "city": "Malaysia",
+      "service": "Indian Embassy Emergency Contact",
+      "number": "+60 12 602 0360",
+      "notes": "WhatsApp for Indian nationals - message only",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "There are 5 mobile operators in Malaysia offering prepaid sim cards for tourists: Maxis/Hotlink, CelcomDigi, U mobile, Yes, Unifi",
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "CelcomDigi has the best 4G/5G network in Malaysia in 2025",
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Easiest place to buy sim card is directly on arrival at Kuala Lumpur International Airport from Hotlink Maxis, Tune Talk or CelcomDigi shops",
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "You can activate international roaming packs on your India number as alternative",
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Ensure roaming is activated to receive SMS such as OTPs even if not purchasing international roaming pack",
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Major providers: Maxis (Hotlink) – Strong coverage, fast data; CelcomDigi – Wide coverage, good value; U Mobile – Budget-friendly, good for cities; Yes (by YTL) – Data-focused plans",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Buy SIM cards at KLIA/KLIA2 Airport, mobile provider stores in malls, 7-Eleven stores, or online eSIM platforms",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Passport required for SIM registration - compulsory as per Malaysian law",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Tourist SIMs start from MYR 15–35, includes 15–40 GB data depending on provider & validity",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "SIM activated at store within minutes, restart phone after installation, download provider's app to track usage",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "4G widely available across cities and tourist areas, 5G available in major cities like Kuala Lumpur",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Free Wi-Fi available in hotels, malls, cafés, and airports",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Carry power bank for navigation and Grab app usage, download offline maps as backup",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Malaysia",
+      "mode": "Grab",
+      "description": "Ride-hailing app for taxis and transport",
+      "cost": "Varies by distance",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "city": "Malaysia",
+      "mode": "Private taxi transfer",
+      "description": "Pre-arranged airport transfers and intercity travel",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Keep routine vaccines up to date (MMR, DTP, Polio)",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Drink bottled/filtered water; avoid street food if unsure",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Use mosquito repellent to prevent dengue, chikungunya, malaria",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Protect from sun: sunscreen, hat, sunglasses",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Carry basic medicines and first-aid kit",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Travel insurance is strongly advised",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    },
+    {
+      "cities": [
+        "Malaysia"
+      ],
+      "tip": "Carry prescriptions in original packaging + digital copy",
+      "_source_file": "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384348.334501
+    }
+  ],
+  "source_files": [
+    "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+    "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.pdf"
+  ]
+}

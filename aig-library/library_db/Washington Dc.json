@@ -1,0 +1,152 @@
+{
+  "restaurants": [
+    {
+      "name": "VEGZ",
+      "city": "Washington DC",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "11am - 2:30pm, 5-10pm",
+      "highlights": [
+        "Low key eatery preparing vegetarian and vegan specials"
+      ],
+      "must_try_dishes": [
+        "mysore masala dosa"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Rasa",
+      "city": "Washington DC",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "10:30 am - 10pm",
+      "must_try_dishes": [
+        "Custom bowls",
+        "snacks and sweets"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Herbivore Indian Cuisine",
+      "city": "Washington DC",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "8am - 9:30 pm",
+      "must_try_dishes": [
+        "Malai Kofta",
+        "mango lassi",
+        "pani puri"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Himalayan Doko",
+      "city": "Washington DC",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "12pm - 9:30 pm",
+      "highlights": [
+        "Lunch and dinner buffet options"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Natural History Museum",
+      "city": "Washington DC",
+      "description": "Natural history exhibits and displays",
+      "hours": "10am - 5:30 pm",
+      "entry_fee": "free",
+      "recommended_duration": "4-5 hours",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Air and Space Museum",
+      "city": "Washington DC",
+      "description": "Aviation and space exploration exhibits",
+      "hours": "10am - 5:30pm",
+      "entry_fee": "free",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "International Spy Museum",
+      "city": "Washington DC",
+      "description": "Interactive spy exhibits and experiences",
+      "hours": "9am - 7pm",
+      "entry_fee": "Rs. 3125 per person",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Holiday Inn Washington-central/white house",
+      "city": "Washington DC",
+      "location": "Central Washington/White House area",
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.pdf",
+      "_source_mtime": 1772384246.3359978
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Salvadoran Pupusas",
+      "city": "Washington DC",
+      "description": "Traditional Salvadoran dish",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Middle Eastern Falafel",
+      "city": "Washington DC",
+      "description": "Traditional Middle Eastern chickpea fritters",
+      "vegetarian": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Vegetarian Tacos",
+      "city": "Washington DC",
+      "description": "Plant-based taco options",
+      "vegetarian": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "USA/ALL INCLUSIVE GUIDE USA.pdf"
+  ]
+}

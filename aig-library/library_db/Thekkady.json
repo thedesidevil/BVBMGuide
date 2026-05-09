@@ -1,0 +1,395 @@
+{
+  "restaurants": [
+    {
+      "name": "Tusker Caf'e",
+      "city": "Thekkady",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹200-400",
+      "hours": "8:30 am – 10:00pm",
+      "ambience": "Friendly atmosphere",
+      "highlights": [
+        "Known for delicious food",
+        "Known for reasonable prices",
+        "Veg Thali Meals"
+      ],
+      "must_try_dishes": [
+        "Veg Thali Meals"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Bodhi Vihar Bhojanalaya (Pure Veg)",
+      "city": "Thekkady",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹200-400",
+      "hours": "7:30am- 10:30 pm",
+      "ambience": "Extensive menu with wide variety of vegetarian dishes",
+      "highlights": [
+        "Pure vegetarian",
+        "Extensive menu"
+      ],
+      "must_try_dishes": [
+        "Punjabi Thali",
+        "Sev Tomato",
+        "Stuffed parathas",
+        "stuffed parathas"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Hill View Café Thekkady Home Stay",
+      "city": "Thekkady",
+      "cuisine_type": [
+        "Coffee shop"
+      ],
+      "price_range": "₹1-200",
+      "hours": "7:00am- 10:00pm",
+      "ambience": "Charming and highly-rated establishment",
+      "highlights": [
+        "Coffee shop",
+        "Highly-rated"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Chemmeen Multi Cuisine Restaurant By Hotel Sandra Palace",
+      "city": "Thekkady",
+      "cuisine_type": [
+        "Asian",
+        "Indian",
+        "Arabic",
+        "Continental"
+      ],
+      "price_range": "₹200-400",
+      "hours": "7:30am- 10:0pm",
+      "ambience": "Popular choice by both locals and tourists",
+      "highlights": [
+        "Popular with locals and tourists"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Periyar Lake",
+      "city": "Thekkady",
+      "description": "Serene boating experience with chance to spot wildlife along the water's edge",
+      "hours": "7:30 AM to 5:00 PM",
+      "entry_fee": "₹225 for Indian adults, ₹85 for children",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Periyar Wildlife Sanctuary",
+      "city": "Thekkady",
+      "description": "Explore the region's rich flora and fauna",
+      "hours": "6:00 AM to 7:00 PM",
+      "entry_fee": "₹45 for Indian adults, ₹15 children, ₹500 for foreigners, ₹180 foreign children",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Spice Plantation Tour",
+      "city": "Thekkady",
+      "description": "Discover how Kerala's famous spices are grown and processed",
+      "hours": "8:00 AM to 6:30 PM",
+      "entry_fee": "₹200-₹300 per person",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Elephant Junction",
+      "city": "Thekkady",
+      "description": "Interact with gentle giants for a memorable experience",
+      "hours": "8:00 AM to 6:00 PM",
+      "entry_fee": "₹400 for 30 min, ₹1000 for 1 hr",
+      "recommended_duration": "30 minutes - 1 hour",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Ayurvedic Garden Visit",
+      "city": "Thekkady",
+      "description": "Learn about traditional healing herbs and natural wellness",
+      "hours": "9:00 AM to 6:00 PM",
+      "entry_fee": "₹100 to ₹200 per person",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Gavi Safari",
+      "city": "Thekkady",
+      "description": "Safari passing through border of Periyar Tiger reserve with chances of sighting wild animals. Passes through hills, valleys, tropical forests, grasslands, waterfalls, cardamom plantations, and Pamba Reservoir. Home to over 320 bird species and endangered species like Nilgiritahr and lion tailed macaque",
+      "hours": "Pickup at 5:30 am, return at 4pm",
+      "recommended_duration": "Full day",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Blanket Days Resort and Spa",
+      "city": "Thekkady",
+      "location": "Thekkady",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+      "_source_mtime": 1772384277.134858
+    },
+    {
+      "name": "Blanket Days Resort and Spa",
+      "city": "Thekkady",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+      "_source_mtime": 1760845480.0
+    },
+    {
+      "name": "Blanket Days Resort and Spa",
+      "city": "Thekkady",
+      "location": "Thekkady",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136
+    },
+    {
+      "name": "Blanket Days Resort and Spa",
+      "city": "Thekkady",
+      "location": "Thekkady",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
+      "_source_mtime": 1772384279.852176
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Spices",
+      "city": "Thekkady",
+      "category": "Food",
+      "where_to_buy": [
+        "Spice Plantations",
+        "Local markets near Periyar National Park entrance"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+      "_source_mtime": 1772384277.134858
+    },
+    {
+      "item": "Essential Oils",
+      "city": "Thekkady",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Local markets near Periyar National Park entrance"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+      "_source_mtime": 1772384277.134858
+    },
+    {
+      "item": "Ayurvedic Products",
+      "city": "Thekkady",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Local markets near Periyar National Park entrance"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+      "_source_mtime": 1772384277.134858
+    },
+    {
+      "item": "Tribal Crafts",
+      "city": "Thekkady",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Local markets near Periyar National Park entrance"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+      "_source_mtime": 1772384277.134858
+    },
+    {
+      "item": "Spices",
+      "city": "Thekkady",
+      "category": "Food",
+      "where_to_buy": [
+        "Spice Plantations"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+      "_source_mtime": 1760845480.0
+    },
+    {
+      "item": "Essential Oils",
+      "city": "Thekkady",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Local markets near the Periyar National Park entrance"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+      "_source_mtime": 1760845480.0
+    },
+    {
+      "item": "Ayurvedic Products",
+      "city": "Thekkady",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Local markets near the Periyar National Park entrance"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+      "_source_mtime": 1760845480.0
+    },
+    {
+      "item": "Tribal Crafts",
+      "city": "Thekkady",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Local markets near the Periyar National Park entrance"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+      "_source_mtime": 1760845480.0
+    },
+    {
+      "item": "Spices",
+      "city": "Thekkady",
+      "category": "Food",
+      "where_to_buy": [
+        "Spice Plantations"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136
+    },
+    {
+      "item": "Essential Oils",
+      "city": "Thekkady",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Local markets near the Periyar National Park entrance"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136
+    },
+    {
+      "item": "Ayurvedic Products",
+      "city": "Thekkady",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Local markets near the Periyar National Park entrance"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136
+    },
+    {
+      "item": "Tribal Crafts",
+      "city": "Thekkady",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Local markets near the Periyar National Park entrance"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136
+    },
+    {
+      "item": "Spices",
+      "city": "Thekkady",
+      "category": "Food",
+      "where_to_buy": [
+        "Spice Plantations",
+        "Local markets near the Periyar National Park entrance"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
+      "_source_mtime": 1772384279.852176
+    },
+    {
+      "item": "Essential Oils",
+      "city": "Thekkady",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Local markets near the Periyar National Park entrance"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
+      "_source_mtime": 1772384279.852176
+    },
+    {
+      "item": "Ayurvedic Products",
+      "city": "Thekkady",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Local markets near the Periyar National Park entrance"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
+      "_source_mtime": 1772384279.852176
+    },
+    {
+      "item": "Tribal Crafts",
+      "city": "Thekkady",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Local markets near the Periyar National Park entrance"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
+      "_source_mtime": 1772384279.852176
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+  ]
+}

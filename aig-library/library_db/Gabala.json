@@ -1,0 +1,243 @@
+{
+  "restaurants": [
+    {
+      "name": "Caspian baliq evi",
+      "city": "Gabala",
+      "cuisine_type": [
+        "Azerbaijani"
+      ],
+      "hours": "10am-12am",
+      "highlights": [
+        "Some veg options",
+        "Only accepts cash"
+      ],
+      "must_try_dishes": [
+        "Mixed grill",
+        "fresh salads",
+        "muttabal with fresh bread"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Malabar Restaurant",
+      "city": "Gabala",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "hours": "9am-12am",
+      "must_try_dishes": [
+        "Chicken Biryani",
+        "naan",
+        "channa masala",
+        "veg khorma"
+      ],
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Fontan Restoran Qebele",
+      "city": "Gabala",
+      "cuisine_type": [
+        "Azerbaijani",
+        "multicuisine"
+      ],
+      "hours": "8am-12am",
+      "ambience": "Great ambience",
+      "highlights": [
+        "Some veg options",
+        "excellent kebabs"
+      ],
+      "must_try_dishes": [
+        "Kebabs",
+        "grilled chicken",
+        "pizzas"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Asgard",
+      "city": "Gabala",
+      "cuisine_type": [
+        "Multicuisine"
+      ],
+      "hours": "9:30am-1:30am",
+      "highlights": [
+        "Many veg options"
+      ],
+      "must_try_dishes": [
+        "Biryani",
+        "pastas",
+        "fettucine",
+        "chicken fillet",
+        "pastas (esp. fettucine)"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Beer Bros Gabala",
+      "city": "Gabala",
+      "cuisine_type": [
+        "Beer house with indian food"
+      ],
+      "hours": "8am-12am",
+      "must_try_dishes": [
+        "Local beers"
+      ],
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Gabala Parviz Restaurant",
+      "city": "Gabala",
+      "cuisine_type": [
+        "Azerbaijani"
+      ],
+      "hours": "8am-12am",
+      "highlights": [
+        "Use google translate as there are comments that people felt overcharged because of the language barrier"
+      ],
+      "must_try_dishes": [
+        "Meat saj",
+        "chicken kebabs",
+        "handmade pickles and salads",
+        "home made cranberry vodka"
+      ],
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Quzu eti restaurant",
+      "city": "Gabala",
+      "cuisine_type": [
+        "Azerbaijani"
+      ],
+      "hours": "9am-12am",
+      "highlights": [
+        "Some veg options",
+        "They only accept cash"
+      ],
+      "must_try_dishes": [
+        "Kabsa",
+        "chicken saah with vegetables",
+        "lamb chops",
+        "meat jar",
+        "grilled potatoes",
+        "kunafa"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Nohur Lake",
+      "city": "Gabala",
+      "description": "Relax by the serene lake, surrounded by beautiful scenery. Boat ride, game zone for kids and horse back riding available. Restaurants and shops around",
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Gabala Botanical Garden",
+      "city": "Gabala",
+      "description": "Explore the diverse flora of the region",
+      "hours": "9am-6pm",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Gabala Cable Car",
+      "city": "Gabala",
+      "description": "Take the cable care to the Tufandag Mountain Resort for panoramic views of the surrounding area",
+      "hours": "10am-7pm",
+      "entry_fee": "ANZ 22 one way per person",
+      "recommended_duration": "3-4 hrs",
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Gabala Fortress",
+      "city": "Gabala",
+      "description": "Visit the ruins of the fortress",
+      "recommended_duration": "1-2 hrs",
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Seven Beautiful Waterfalls",
+      "city": "Gabala",
+      "description": "Waterfalls providing unforgettable memories",
+      "source_files": [
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Tufandag Mountain Resort",
+      "city": "Gabala",
+      "description": "Mountain resort offering skiing and memorable summer views of Alpine scenery, accessible by cable car",
+      "source_files": [
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Gabalaland",
+      "city": "Gabala",
+      "description": "Youth entertainment center with karting, ice rink and other attractions",
+      "source_files": [
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Qafqaz Riverside",
+      "city": "Gabala",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616
+    },
+    {
+      "name": "Gabala Garden",
+      "city": "Gabala",
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+    "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+  ]
+}

@@ -1,0 +1,769 @@
+{
+  "restaurants": [
+    {
+      "name": "Hyde Park House",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Bar",
+        "Modern"
+      ],
+      "price_range": "₹₹",
+      "hours": "10 am – 3 am",
+      "area": "Darlinghurst",
+      "ambience": "Rooftop bar with cocktails",
+      "must_try_dishes": [
+        "Great cocktails",
+        "fish tacos",
+        "chicken karage burger",
+        "fried chicken",
+        "Fish tacos",
+        "Chicken karaage burger"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "highlights": [
+        "Rooftop bar",
+        "Cocktails",
+        "Fish tacos",
+        "Chicken karaage burger"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Shady Pines Saloon",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Cowboy themed bar"
+      ],
+      "price_range": "₹₹",
+      "hours": "4 pm – 12 am",
+      "area": "Darlinghurst",
+      "must_try_dishes": [
+        "Speciality whiskys",
+        "craft ales"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf"
+      ],
+      "ambience": "Cowboy themed bar"
+    },
+    {
+      "name": "Chaco Ramen",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:30 am – 2:30 pm, 5:30 pm – 8:30 pm",
+      "area": "Darlinghurst",
+      "must_try_dishes": [
+        "Sake",
+        "yakitori",
+        "ramen",
+        "Ramen",
+        "Yakitori"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ],
+      "highlights": [
+        "Ramen",
+        "Sake",
+        "Yakitori"
+      ]
+    },
+    {
+      "name": "Macchiato Wood Fire Pizza and Coffee Roasters",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Pizza",
+        "Coffee"
+      ],
+      "price_range": "₹₹",
+      "hours": "5 am – 10 pm",
+      "must_try_dishes": [
+        "Wood fired pizza",
+        "coffee",
+        "Pizzas",
+        "Pastas"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ],
+      "ambience": "Casual bistro setting",
+      "highlights": [
+        "Pizzas",
+        "Pastas",
+        "Fresh coffee",
+        "Dinner and dessert"
+      ]
+    },
+    {
+      "name": "The Century Bar",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Sports Bar"
+      ],
+      "price_range": "₹₹",
+      "hours": "10 am – 4 am",
+      "ambience": "Multi-level sports bar with pool tables and DJ nights",
+      "must_try_dishes": [
+        "Bar bites",
+        "beer"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ],
+      "highlights": [
+        "Multi-level sports bar",
+        "Pool tables",
+        "DJ nights"
+      ]
+    },
+    {
+      "name": "Promenade Bondi Beach – Restaurant and Beach Bar",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Seafood bar"
+      ],
+      "price_range": "₹₂₹",
+      "hours": "11 am – 8: 30 pm",
+      "area": "Bondi",
+      "must_try_dishes": [
+        "Great cocktails",
+        "fish and chips",
+        "yellowfin tuna and scallops",
+        "oven roasted king prawns"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "highlights": [
+        "Has outdoor seating"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf"
+      ],
+      "ambience": "Beach bar with outdoor seating"
+    },
+    {
+      "name": "El Indo Bondi Beach",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Mexican"
+      ],
+      "price_range": "₹₹",
+      "hours": "12 pm – 10 pm",
+      "area": "Bondi",
+      "must_try_dishes": [
+        "Great cocktails",
+        "arepas"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "highlights": [
+        "Has outdoor seating"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf"
+      ],
+      "ambience": "Beach restaurant with outdoor seating"
+    },
+    {
+      "name": "34 Bondi",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Breakfast",
+        "Casual"
+      ],
+      "price_range": "₹₹",
+      "hours": "5 pm - 12 am",
+      "area": "Bondi Beach",
+      "ambience": "Casual breakfast with beachside views, underground lounge, ocean-facing deck",
+      "must_try_dishes": [
+        "Great cocktails",
+        "pub eats"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ],
+      "highlights": [
+        "Casual breakfast",
+        "Beachside views",
+        "Underground lounge",
+        "Ocean-facing deck"
+      ],
+      "nearby_landmarks": [
+        "Bondi Beach, Sydney"
+      ]
+    },
+    {
+      "name": "El Camino Cantina The Rocks",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Tex-Mex"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12 pm – 10 pm",
+      "area": "The Rocks",
+      "ambience": "Lively atmosphere",
+      "must_try_dishes": [
+        "Tacos",
+        "buffalo wings",
+        "fajitas",
+        "Buffalo wings"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Frank Mac's",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Irish",
+        "Bar"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12 am – 11 pm (Closed Mon)",
+      "area": "The Rocks",
+      "must_try_dishes": [
+        "Great cocktails"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "highlights": [
+        "Irish gin bar",
+        "Live music",
+        "Outdoor seating"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ],
+      "ambience": "Irish gin bar with live music and outdoor seating"
+    },
+    {
+      "name": "Dulcie's",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Boutique drinking parlour"
+      ],
+      "price_range": "luxury",
+      "hours": "5 pm – 12 am",
+      "area": "Kings cross",
+      "ambience": "1930s themed speakeasy with live jazz music",
+      "must_try_dishes": [
+        "Handcrafted cocktails"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "highlights": [
+        "1930s themed speakeasy with live jazz music",
+        "Sydney's only dedicated Australian spirits cocktail bar"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Kings Cross Hotel",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Pub"
+      ],
+      "price_range": "₹₹",
+      "hours": "10 am – 3:30 am",
+      "ambience": "Live music, rooftop DJ sets",
+      "must_try_dishes": [
+        "Range of beers",
+        "great cocktails",
+        "chicken parmigiana",
+        "chicken burger",
+        "Chicken parmigiana"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ],
+      "highlights": [
+        "Chicken parmigiana",
+        "Live music",
+        "Rooftop DJ sets"
+      ],
+      "area": "Kings Cross"
+    },
+    {
+      "name": "Jangling Jack's",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Bar"
+      ],
+      "price_range": "₹₹",
+      "hours": "4 pm – 11 pm",
+      "must_try_dishes": [
+        "Extensive cocktail menu"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "highlights": [
+        "Has live performances"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ],
+      "ambience": "Bar with live performances"
+    },
+    {
+      "name": "Promenade Bondi Beach",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Café",
+        "Seafood"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:30 am - late",
+      "ambience": "Oceanfront café for breakfast plates and juice, sea views, beachside cocktails, elegant setting",
+      "area": "Bondi Beach",
+      "nearby_landmarks": [
+        "Bondi Beach, Sydney"
+      ],
+      "highlights": [
+        "Oceanfront café",
+        "Breakfast plates",
+        "Juice",
+        "Sea views",
+        "Beachside cocktails"
+      ],
+      "must_try_dishes": [
+        "Fish & chips"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Gertrude & Alice Cafe Bookstore",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Café",
+        "Bookstore"
+      ],
+      "price_range": "₹₹",
+      "hours": "6 am – 6 pm",
+      "ambience": "Quirky spot with good coffee & all-day breakfast",
+      "highlights": [
+        "Quirky spot",
+        "Good coffee",
+        "All-day breakfast",
+        "Bookstore"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Coogee Pavilion",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Mediterranean"
+      ],
+      "price_range": "₹₹",
+      "hours": "7:30 am – late",
+      "ambience": "Rooftop views",
+      "area": "Coogee Beach",
+      "nearby_landmarks": [
+        "Coogee Beach, Sydney"
+      ],
+      "highlights": [
+        "Rooftop views",
+        "Mediterranean plates",
+        "Woodfired pizza"
+      ],
+      "must_try_dishes": [
+        "Mediterranean plates",
+        "Woodfired pizza"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "The Little Kitchen",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Australian"
+      ],
+      "price_range": "₹₹",
+      "hours": "6:30 am – 2 pm",
+      "ambience": "Simple, hearty Australian fare",
+      "area": "Coogee Beach",
+      "highlights": [
+        "Simple",
+        "Hearty Australian fare"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Barzura",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "₹₹",
+      "hours": "7 am – 9 pm",
+      "ambience": "Beachfront dining",
+      "area": "Coogee Beach",
+      "highlights": [
+        "Beachfront dining",
+        "Seafood",
+        "Burgers"
+      ],
+      "must_try_dishes": [
+        "Seafood",
+        "Burgers"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Madam Ji - Indian Restaurant",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹₹",
+      "hours": "5 pm – 10 pm",
+      "highlights": [
+        "Great Indian food"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Yok Yor Thai Food Factory",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:30 am – 11 pm",
+      "highlights": [
+        "Delicious Thai food"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Sydney Opera House",
+      "city": "Sydney",
+      "description": "Iconic Sydney landmark with free grounds access and paid tours",
+      "hours": "9 am – 5 pm",
+      "entry_fee": "Entry to grounds is free; 1-hr tours cost AUD 43 (INR 2300)",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Sydney Harbour Bridge",
+      "city": "Sydney",
+      "description": "Climb for panoramic views of the city and harbour",
+      "recommended_duration": "2 hours for standard BridgeClimb, 1¼ hours for Express",
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Bondi Beach",
+      "city": "Sydney",
+      "description": "Famous beach with restaurants and activities",
+      "recommended_duration": "2-4 hours",
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Manly Beach",
+      "city": "Sydney",
+      "description": "Beach accessible by ferry with restaurants, pubs, and water activities",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Circular Quay",
+      "city": "Sydney",
+      "description": "Stunning views of the Sydney Opera House and Harbour Bridge",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Taronga Zoo",
+      "city": "Sydney",
+      "description": "Home to koalas, kangaroos, platypus, and stunning views of Sydney Harbour",
+      "hours": "9:30 am – 4:30 pm",
+      "entry_fee": "AUD 47 (INR 2500)",
+      "recommended_duration": "4-5 hours",
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Ferry to Manly Beach",
+      "city": "Sydney",
+      "description": "Ferry ride from Circular Quay to Manly Beach for surfing, chilling, paddleboarding, or café-hopping",
+      "hours": "Operates every 15 mins, 20 mins each way",
+      "recommended_duration": "Half day",
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Bondi to Coogee Coastal Walk",
+      "city": "Sydney",
+      "description": "6 km cliffside trail connecting some of Sydney's best beaches and ocean pools, passing Tamarama Beach, Bronte Baths, and Clovelly Beach",
+      "recommended_duration": "2.5 – 3 hours",
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Hyde Park Inn",
+      "city": "Sydney",
+      "location": "14 min drive from airport",
+      "_source_file": "Australia/Australia- All Inclusive Guide(1).pdf",
+      "_source_mtime": 1772384287.136402
+    },
+    {
+      "name": "Hyde Park Inn",
+      "city": "Sydney",
+      "location": "14 min drive from airport",
+      "_source_file": "Australia/Australia- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384288.440096
+    },
+    {
+      "name": "Furama Darling Harbour",
+      "city": "Sydney",
+      "location": "Darling Harbour",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha.pdf",
+      "_source_mtime": 1772384289.4036164
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Fish & Chips",
+      "city": "Sydney",
+      "description": "Beachside favourite",
+      "vegetarian": false,
+      "where_to_try": "Promenade Bondi Beach",
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Tacos & Buffalo Wings",
+      "city": "Sydney",
+      "description": "Great Tex-Mex fix",
+      "vegetarian": false,
+      "where_to_try": "El Camino Cantina The Rocks",
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Ramen, Sake & Yakitori",
+      "city": "Sydney",
+      "description": "Japanese comfort food",
+      "vegetarian": false,
+      "where_to_try": "Chaco Ramen",
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Anzac Biscuits",
+      "city": "Sydney",
+      "description": "Made from oats, coconut & golden syrup",
+      "vegetarian": true,
+      "where_to_try": "Centro Supermarket, Sydney CBD",
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Tim Tams",
+      "city": "Sydney",
+      "description": "Iconic chocolate biscuits with creamy filling",
+      "vegetarian": true,
+      "where_to_try": "Available in supermarkets across Sydney",
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Haigh's Chocolate",
+      "city": "Sydney",
+      "category": "Food",
+      "where_to_buy": [
+        "Haigh's Chocolates",
+        "Queen Victoria Building"
+      ],
+      "_source_file": "Australia/Australia- All Inclusive Guide(1).pdf",
+      "_source_mtime": 1772384287.136402
+    },
+    {
+      "item": "Haigh's Chocolate",
+      "city": "Sydney",
+      "category": "Food",
+      "where_to_buy": [
+        "Haigh's Chocolates",
+        "Queen Victoria Building"
+      ],
+      "_source_file": "Australia/Australia- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384288.440096
+    },
+    {
+      "item": "Haigh's Chocolates",
+      "city": "Sydney",
+      "category": "Food",
+      "where_to_buy": [
+        "Haigh's Chocolates, Queen Victoria Building, Sydney"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha.pdf",
+      "_source_mtime": 1772384289.4036164
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Sydney",
+      "service": "Consulate in Sydney",
+      "number": "+61 2 9223 2702",
+      "notes": "Level 1, 265 Castlereagh St, Sydney NSW",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha.pdf",
+      "_source_mtime": 1772384289.4036164
+    }
+  ],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Sydney",
+      "mode": "Public Transport",
+      "description": "Public transport network including trains, buses and ferries",
+      "recommended_pass": "Opal card or contactless credit card, debit card or mobile device",
+      "cost": "Varies by distance and mode",
+      "_source_file": "Australia/Australia- All Inclusive Guide(1).pdf",
+      "_source_mtime": 1772384287.136402
+    },
+    {
+      "city": "Sydney",
+      "mode": "Public transport",
+      "description": "Comprehensive public transport network",
+      "recommended_pass": "Opal card or contactless credit card, debit card or mobile device",
+      "cost": "Available at Sydney airport and top-up machines at stations",
+      "_source_file": "Australia/Australia- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384288.440096
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Australia/Australia- All Inclusive Guide(1).pdf",
+    "Australia/Australia- All Inclusive Guide.pdf",
+    "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+  ]
+}

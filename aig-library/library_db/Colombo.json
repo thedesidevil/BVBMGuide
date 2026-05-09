@@ -1,0 +1,786 @@
+{
+  "restaurants": [
+    {
+      "name": "Ceylon Curry Club",
+      "city": "Colombo",
+      "cuisine_type": [
+        "Sri Lankan"
+      ],
+      "price_range": "LKR 4,000–6,000 per person",
+      "hours": "11:00 AM to 11:30 PM",
+      "ambience": "Stylish yet relaxed setting blending local heritage with modern design. The open kitchen and warm interiors make it a lively spot",
+      "highlights": [
+        "Open kitchen",
+        "Gourmet twist on Sri Lankan flavors"
+      ],
+      "must_try_dishes": [
+        "Jackfruit curry",
+        "dhal curry with coconut roti",
+        "tempered okra",
+        "red rice with coconut sambol",
+        "wambatu moju (brinjal relish)",
+        "Hoppers",
+        "Sri Lankan rice",
+        "prawn curry",
+        "Devilled chicken",
+        "Katta Sambol"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Madras Masala",
+      "city": "Colombo",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "LKR 2,000–3,000 per person",
+      "hours": "12:00 PM – 12:30 AM",
+      "ambience": "Cozy, warm, casual — not posh, but comfortable. Portions are generous; good value for authentic tastes",
+      "highlights": [
+        "Generous portions",
+        "Good value for authentic tastes"
+      ],
+      "must_try_dishes": [
+        "South Indian dosas",
+        "biryanis",
+        "Chettinad specials",
+        "vegetable biryani"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Pastamania Sri Lanka",
+      "city": "Colombo",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "LKR 3,000–4,500 per person",
+      "hours": "Mon – Thu: 12:00 PM – 12:30 AM, Friday: 1:30 PM – 12:00 AM, Saturday & Sunday: 12:00 PM – 12:00 AM",
+      "ambience": "Bright, family-friendly and casual, with an open pasta counter and a welcoming vibe perfect for a relaxed meal",
+      "highlights": [
+        "Open pasta counter",
+        "Family-friendly"
+      ],
+      "must_try_dishes": [
+        "Creamy mushroom pasta",
+        "aglio olio with vegetables",
+        "margherita pizza",
+        "four-cheese baked pasta"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Nuga Gama",
+      "city": "Colombo",
+      "cuisine_type": [
+        "Sri Lankan"
+      ],
+      "price_range": "LKR 5,000–7,000 per person",
+      "hours": "12:00 PM – 2:30 PM",
+      "ambience": "A charming \"village under the banyan tree\" concept — open-air dining with rustic décor, lanterns, and traditional clay pots. Offers a cultural experience as much as a meal",
+      "highlights": [
+        "Cultural experience",
+        "Open-air dining",
+        "Village concept"
+      ],
+      "must_try_dishes": [
+        "Village-style jackfruit curry",
+        "red lentil dhal",
+        "mallung (shredded greens)",
+        "pol sambol",
+        "curd with treacle for dessert",
+        "Sri Lankan curry",
+        "hoppers"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Shanmugas",
+      "city": "Colombo",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "LKR 1,500–3,000 per person",
+      "hours": "8 AM – 10 PM",
+      "ambience": "Simple, very reliable, South Indian focused",
+      "highlights": [
+        "Pure vegetarian",
+        "Very reliable",
+        "South Indian focused"
+      ],
+      "must_try_dishes": [
+        "Masala dosa",
+        "thali meal",
+        "idli",
+        "vada",
+        "filter coffee",
+        "Thali",
+        "Dosa",
+        "Idli",
+        "Chole",
+        "Paneer selections"
+      ],
+      "best_for": [
+        "vegetarian"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ],
+      "area": "Colombo 6"
+    },
+    {
+      "name": "The Mango Tree",
+      "city": "Colombo",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "LKR 2,000–3,000 per person",
+      "hours": "11:30 AM – 10:30 PM",
+      "ambience": "Casual Indian restaurant with wide vegetarian selection.",
+      "highlights": [
+        "North Indian vegetarian flavors"
+      ],
+      "must_try_dishes": [
+        "Paneer curries",
+        "dal",
+        "vegetable biryani",
+        "roti basket"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf"
+      ]
+    },
+    {
+      "name": "Govinda's Restaurant",
+      "city": "Colombo",
+      "cuisine_type": [
+        "Sri Lankan",
+        "Indian"
+      ],
+      "price_range": "LKR 1,000–1,500 per person",
+      "hours": "11:00 AM – 3:30 PM",
+      "ambience": "ISKCON-run vegetarian restaurant serving wholesome Sri Lankan & Indian dishes.",
+      "highlights": [
+        "Affordable and authentic vegetarian dining"
+      ],
+      "must_try_dishes": [
+        "Vegetarian rice & curry",
+        "chapati meals",
+        "sweets"
+      ],
+      "best_for": [
+        "budget"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf"
+      ]
+    },
+    {
+      "name": "Sri Vihar Restaurant",
+      "city": "Colombo",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "LKR 600–1,000",
+      "hours": "7 AM – 10 PM",
+      "ambience": "Casual; great for a quick, satisfying veg meal",
+      "highlights": [
+        "Great for a quick, satisfying veg meal"
+      ],
+      "must_try_dishes": [
+        "Veg meals",
+        "Dosa",
+        "Uttapam",
+        "Rice & curry"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Dwaraka Indian Vegetarian Restaurant",
+      "city": "Colombo",
+      "cuisine_type": [
+        "North Indian",
+        "South Indian"
+      ],
+      "price_range": "1000 – 2500 LKR per person",
+      "hours": "7:30 AM – 10:30 PM",
+      "ambience": "Clean, reliable, Indian-style dining",
+      "highlights": [
+        "Pure vegetarian",
+        "Clean, reliable"
+      ],
+      "must_try_dishes": [
+        "Paneer tikka masala",
+        "Veg biryani",
+        "Masala dosa"
+      ],
+      "best_for": [
+        "vegetarian"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Mathura Restaurant",
+      "city": "Colombo",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "1,000 per head",
+      "hours": "11:00 AM to 10:30 PM",
+      "ambience": "Clean, spacious, family-friendly",
+      "highlights": [
+        "Pure vegetarian",
+        "Clean, spacious, family-friendly"
+      ],
+      "must_try_dishes": [
+        "Thalis",
+        "Curries",
+        "Rotis",
+        "Dosas"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Barefoot Café",
+      "city": "Colombo",
+      "cuisine_type": [
+        "Sri Lankan"
+      ],
+      "price_range": "LKR 2,500–3,500 pp",
+      "hours": "10:00 AM – 10:00 PM",
+      "area": "Colombo Fort",
+      "ambience": "Artistic, relaxed courtyard café attached to the iconic Barefoot store",
+      "nearby_landmarks": [
+        "Dutch Hospital"
+      ],
+      "highlights": [
+        "Artistic, relaxed courtyard café",
+        "Attached to the iconic Barefoot store",
+        "Excellent Sri Lankan vegetarian plates and salads"
+      ],
+      "must_try_dishes": [
+        "Vegetable rice & curry",
+        "Beetroot & pumpkin curries",
+        "Fresh salads with lime dressing"
+      ],
+      "best_for": [
+        "artistic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Café 1959",
+      "city": "Colombo",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "LKR 2,000–3,000 pp",
+      "hours": "10:00 AM – 10:30 PM",
+      "area": "Dutch Hospital Precinct",
+      "ambience": "Casual café-bar setting inside the restored colonial complex",
+      "highlights": [
+        "Casual café-bar setting",
+        "Inside the restored colonial complex",
+        "Simple, clearly marked vegetarian options"
+      ],
+      "must_try_dishes": [
+        "Veg wraps & sandwiches",
+        "Vegetable pasta",
+        "Fresh juices"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Breeze Barracuda",
+      "city": "Colombo",
+      "cuisine_type": [
+        "Asian Fusion",
+        "Multi-cuisine"
+      ],
+      "hours": "11am-10pm",
+      "ambience": "Has outdoor seating, live music, more known for having a drink with the sea view",
+      "highlights": [
+        "Great cocktails",
+        "Has outdoor seating",
+        "Has live music",
+        "Food is average"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Ministry of Crab",
+      "city": "Colombo",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "5000 LKR per person",
+      "hours": "12pm-10:30pm",
+      "highlights": [
+        "Reservation required"
+      ],
+      "must_try_dishes": [
+        "Crab"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "The Lagoon",
+      "city": "Colombo",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "5000 LKR per person",
+      "hours": "12-2:30pm, 6pm-12am",
+      "area": "Colombo Grand hotel",
+      "highlights": [
+        "Choose live seafood and choose what style you want it cooked",
+        "Situated in Colombo Grand hotel",
+        "Reservations required"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "King of the Mambo",
+      "city": "Colombo",
+      "cuisine_type": [
+        "Cuban"
+      ],
+      "price_range": "5000 LKR per person",
+      "hours": "5pm-2am",
+      "area": "Galle Face Hotel",
+      "ambience": "Has outdoor seating, latin music",
+      "highlights": [
+        "Situated in Galle Face Hotel",
+        "Has outdoor seating",
+        "Latin music"
+      ],
+      "must_try_dishes": [
+        "Fresh seafood"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Galle Face Green",
+      "city": "Colombo",
+      "description": "A spacious oceanfront park perfect for a sunset walk and trying local snacks like kottu, isso wade (shrimp fritters), and fresh fruit",
+      "hours": "24 hours a day",
+      "entry_fee": "free",
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "One Galle Face Mall",
+      "city": "Colombo",
+      "description": "Colombo's modern lifestyle mall with high-end shops, restaurants, and sea-facing cafes",
+      "hours": "10:00 AM – 10:00 PM",
+      "entry_fee": "free",
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Gangaramaya Temple",
+      "city": "Colombo",
+      "description": "One of Colombo's most important Buddhist temples with a fusion of Sri Lankan, Thai, Indian, and Chinese architectural styles",
+      "hours": "6 AM – 10 PM",
+      "entry_fee": "LKR 300 per person",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Independence Memorial Hall",
+      "city": "Colombo",
+      "description": "A grand monument built to commemorate Sri Lanka's freedom from British rule with wide stone steps, carved columns, lion statues, and peaceful park",
+      "hours": "10:00 AM to 10:00 PM",
+      "entry_fee": "LKR 800–1,500",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Pettah Market",
+      "city": "Colombo",
+      "description": "Colombo's bustling commercial heart with spices, textiles, electronics, street vendors, and narrow lanes buzzing with energy. It's lively and colorful.",
+      "hours": "9:00 AM – 6:00 PM",
+      "entry_fee": "Free entry",
+      "recommended_duration": null,
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf"
+      ]
+    },
+    {
+      "name": "Seema Malaka Temple",
+      "city": "Colombo",
+      "description": "A floating temple designed by Geoffrey Bawa with serene, minimalistic pavilions surrounded by water",
+      "hours": "9:00 AM to 4:30 PM",
+      "entry_fee": "LKR 400–500",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Pettah Floating Market",
+      "city": "Colombo",
+      "description": "Here you can witness and also buy local produce and local handicrafts",
+      "hours": "8am-10:30pm everyday except Sundays",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Dutch Hospital Precinct",
+      "city": "Colombo",
+      "description": "A beautifully restored 17th-century colonial building now filled with cafés, shops, and boutiques",
+      "hours": "10:00 AM to 10:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Pinnawala Elephant Orphanage",
+      "city": "Colombo",
+      "description": "Elephant orphanage",
+      "hours": "8:30am-5:30pm",
+      "entry_fee": "2500 LKR for adults and 1250 LKR for children",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "NH Colombo",
+      "city": "Colombo",
+      "location": "40 min car drive from the airport",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "name": "NH Collection Colombo",
+      "city": "Colombo",
+      "location": "Colombo 03 (Kollupitiya area)",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "name": "Radisson Hotel Colombo",
+      "city": "Colombo",
+      "location": "Marine Drive, oceanfront",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "name": "ITC Ratnadipa",
+      "city": "Colombo",
+      "location": "45 mins from the airport",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Handcrafted Wooden Elephants & Masks",
+      "city": "Colombo",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Laksala Handicraft Emporium"
+      ],
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "item": "Ceylon Tea",
+      "city": "Colombo",
+      "category": "Food",
+      "where_to_buy": [
+        "Mlesna Tea Centre",
+        "Dilmah T-Lounge"
+      ],
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "item": "Gems & Jewellery (Sapphires, Moonstones)",
+      "city": "Colombo",
+      "category": "Jewelry",
+      "where_to_buy": [
+        "Premadasa Gems"
+      ],
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "item": "Batik & Handloom Fabrics",
+      "city": "Colombo",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Barefoot Gallery Shop"
+      ],
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "item": "Handcrafted Wooden Elephants & Masks",
+      "city": "Colombo",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Laksala Handicraft Emporium"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "item": "Ceylon Tea",
+      "city": "Colombo",
+      "category": "Food",
+      "where_to_buy": [
+        "Mlesna Tea Centre",
+        "Dilmah T-Lounge"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "item": "Gems & Jewellery (Sapphires, Moonstones)",
+      "city": "Colombo",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Premadasa Gems"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "item": "Batik & Handloom Fabrics",
+      "city": "Colombo",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Barefoot Gallery Shop"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "item": "Ayurvedic Oils & Natural Skincare",
+      "city": "Colombo",
+      "category": "Health & Beauty",
+      "where_to_buy": [
+        "Spa Ceylon"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "item": "Ceylon Tea",
+      "city": "Colombo",
+      "category": "Food",
+      "where_to_buy": [
+        "Mlesna Tea Centre"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "item": "Batik",
+      "city": "Colombo",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Laksala"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "item": "Sarongs",
+      "city": "Colombo",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Laksala"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "item": "Gems including moonstone carvings",
+      "city": "Colombo",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Prestige gems",
+        "Gamini gem and jewellery"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "item": "Local brands apparel",
+      "city": "Colombo",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Crescat Boulevard",
+        "Odel"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "item": "Ayurveda beauty products",
+      "city": "Colombo",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Spa Ceylon"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "item": "Sri Lankan saris",
+      "city": "Colombo",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Barefoot"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "item": "Typical souvenirs - fridge magnets, postcard",
+      "city": "Colombo",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Laksala"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "item": "Traditional handicrafts - sea shell and coconut items, handcrafted elephants, stone art",
+      "city": "Colombo",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Laksala",
+        "Lakpahana"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "item": "Dumbara Mats and Canes Boxes",
+      "city": "Colombo",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Laksala"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+    "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+    "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+    "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+  ]
+}

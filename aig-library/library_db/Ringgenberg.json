@@ -1,0 +1,190 @@
+{
+  "restaurants": [
+    {
+      "name": "Restaurant Ringgenberg",
+      "city": "Ringgenberg",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "CHF 20-40 per person",
+      "hours": "11:30 AM - 11:30 PM",
+      "ambience": "A traditional Swiss restaurant offering a cozy atmosphere",
+      "must_try_dishes": [
+        "Swiss cheese fondue",
+        "Chicken nuggets with country fries"
+      ],
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Hüsi Bierhaus",
+      "city": "Ringgenberg",
+      "cuisine_type": [
+        "German"
+      ],
+      "price_range": "CHF 20-40 per person",
+      "hours": "1:30 PM - 11:30 PM",
+      "ambience": "A rustic tavern-style eatery offering a relaxed dining experience",
+      "must_try_dishes": [
+        "Grilled chicken with seasonal sides",
+        "Veg Grilled chicken with seasonal sides"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Restaurant Bramisegg",
+      "city": "Ringgenberg",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "CHF 20-30 per person",
+      "hours": "9 AM - 11:30 PM",
+      "ambience": "A traditional Swiss restaurant offering a cozy atmosphere",
+      "must_try_dishes": [
+        "Rösti with seasonal vegetables",
+        "Chicken schnitzel with Swiss sides"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Hotel Burgseeli: Restaurant Q",
+      "city": "Ringgenberg",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "CHF 20-40 per person",
+      "hours": "8:30 AM - 11 PM",
+      "ambience": "Located in Goldswil, offering a serene ambiance with views of the surrounding nature",
+      "area": "Goldswil",
+      "must_try_dishes": [
+        "Vegetarian curry beans with rice and naan",
+        "Crispy chicken breast with fries"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Welcome India King",
+      "city": "Ringgenberg",
+      "cuisine_type": [
+        "Indian",
+        "Punjabi"
+      ],
+      "price_range": "CHF 20-40 per person",
+      "hours": "12:00 PM - 10:00 PM",
+      "ambience": "A well-established Indian/Punjabi restaurant close to Interlaken West train station, with a casual dine-in or takeaway vibe",
+      "nearby_landmarks": [
+        "Interlaken West train station"
+      ],
+      "must_try_dishes": [
+        "Chicken Tikka",
+        "Aloo Matar",
+        "Dal",
+        "parathas",
+        "rotis"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Elisa - Bistro & Terrasse",
+      "city": "Ringgenberg",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "CHF 40-60 per person",
+      "hours": "6:30 PM - 11 PM",
+      "ambience": "Located at the Grandhotel Giessbach, offering panoramic views of Lake Brienz and the Giessbach Falls",
+      "nearby_landmarks": [
+        "Lake Brienz",
+        "Giessbach Falls"
+      ],
+      "must_try_dishes": [
+        "Fresh fish from Lake Brienz"
+      ],
+      "source_files": [
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Restaurant Lindenblüte, Hotel Lindenhof",
+      "city": "Ringgenberg",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "CHF 40-60 per person",
+      "hours": "5:30 PM - 9:30 PM",
+      "ambience": "Situated along the shores of Lake Brienz, offering a romantic lakeside dining experience",
+      "nearby_landmarks": [
+        "Lake Brienz"
+      ],
+      "must_try_dishes": [
+        "seasonal mains"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [],
+  "hotels": [
+    {
+      "name": "Hotel Brienzersee",
+      "city": "Ringgenberg",
+      "location": "Lake Brienz area",
+      "_source_file": "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384290.512721
+    },
+    {
+      "name": "Hotel Brienzersee",
+      "city": "Ringgenberg",
+      "location": "22 min from Riggenberg/Brizen station by public transport",
+      "_source_file": "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384308.452988
+    },
+    {
+      "name": "Hotel Brienzersee",
+      "city": "Ringgenberg",
+      "location": "Lake Brienz area",
+      "_source_file": "Italy/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384338.18424
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+    "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+    "Italy/Tejas - Europe All Inclusive Guide.pdf"
+  ]
+}

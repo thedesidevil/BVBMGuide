@@ -1,0 +1,197 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Käsespätzle",
+      "city": "Germany",
+      "description": "Cheesy egg noodles, traditional German dish",
+      "vegetarian": true,
+      "where_to_try": "Zum Bitburger",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Flammkuchen",
+      "city": "Germany",
+      "description": "Thin flatbread with cream, cheese, and vegetables",
+      "vegetarian": true,
+      "where_to_try": "German restaurants",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Kartoffelpuffer",
+      "city": "Germany",
+      "description": "Crispy potato pancakes served with apple sauce or sour cream",
+      "vegetarian": true,
+      "where_to_try": "German restaurants",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "German Pretzels",
+      "city": "Germany",
+      "description": "Freshly baked soft pretzels, often served with mustard or cheese spreads",
+      "vegetarian": true,
+      "where_to_try": "German bakeries",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "German Pretzels (Brezel)",
+      "city": "Germany",
+      "description": "Freshly baked soft pretzels, often served with mustard or cheese spreads",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Germany",
+      "english": "Good day",
+      "local": "Guten Tag",
+      "category": "greeting",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "city": "Germany",
+      "english": "You (formal)",
+      "local": "Sie",
+      "category": "polite",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "city": "Germany",
+      "english": "You (informal)",
+      "local": "du",
+      "category": "polite",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "city": "Germany",
+      "english": "Cash",
+      "local": "Bargeld",
+      "category": "food",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "city": "Germany",
+      "english": "Good day",
+      "local": "Guten Tag",
+      "category": "greeting",
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "city": "Germany",
+      "english": "You (formal)",
+      "local": "Sie",
+      "category": "polite",
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "city": "Germany",
+      "english": "You (informal)",
+      "local": "du",
+      "category": "polite",
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "city": "Germany",
+      "english": "Cash",
+      "local": "Bargeld",
+      "category": "food",
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Be punctual – Germans value time; even 5 minutes late is noticed",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Don't jaywalk – Crossing on red is frowned upon and sometimes fined",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Don't make Nazi-related jokes or gestures – This is extremely offensive and illegal",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Be punctual – Germans value time; even 5 minutes late is noticed",
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Follow rules strictly – Especially traffic lights and public transport validation",
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Don't jaywalk – Crossing on red is frowned upon (and sometimes fined)",
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Don't make Nazi-related jokes or gestures – This is extremely offensive and illegal",
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    }
+  ],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "France/Tanya and Shovit_All Inclusive Guide.pdf",
+    "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+    "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+    "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+  ]
+}

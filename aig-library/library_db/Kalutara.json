@@ -1,0 +1,222 @@
+{
+  "restaurants": [
+    {
+      "name": "King Bee Restaurant",
+      "city": "Kalutara",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "LKR 6,500",
+      "hours": "10am-11pm",
+      "highlights": [
+        "2 mins away from the beach",
+        "3 min drive from the Avani Resort"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ],
+      "must_try_dishes": [
+        "Fresh seafood",
+        "fried rice"
+      ],
+      "area": "2 mins away from the beach",
+      "nearby_landmarks": [
+        "Avani Resort, Kalutara"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Nadee Indian Restaurant",
+      "city": "Kalutara",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "LKR 1,400–1,800+ per person",
+      "hours": "11am-9pm",
+      "area": "Waskaduwa / Kalutara belt",
+      "highlights": [
+        "Fully Indian menu",
+        "Excellent for pure vegetarian meals"
+      ],
+      "must_try_dishes": [
+        "Veg thali",
+        "Vegetable biryani",
+        "Mixed veg curry",
+        "Curries",
+        "biryanis"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Olive Mate",
+      "city": "Kalutara",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "2000 LKR per person",
+      "hours": "10:30am-10:30pm",
+      "highlights": [
+        "Good option for light vegetarian Italian",
+        "Offers vegetarian pizzas & pastas"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ],
+      "must_try_dishes": [
+        "Pizzas",
+        "pasta"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Red Lobster Tours and Restaurant",
+      "city": "Kalutara",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "5000 LKR per person",
+      "hours": "11am-11pm",
+      "nearby_landmarks": [
+        "Avani Resort, Kalutara"
+      ],
+      "highlights": [
+        "6 min walk from Avani Resort"
+      ],
+      "must_try_dishes": [
+        "Seafood platter",
+        "garlic butter prawns",
+        "seafood fried rice"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Sajee Restaurant",
+      "city": "Kalutara",
+      "cuisine_type": [
+        "Sri Lankan"
+      ],
+      "price_range": "2000 LKR per person",
+      "hours": "8am-10pm, Opens at 10:30am on Sunday",
+      "highlights": [
+        "Every day a large selection of different and fresh curries"
+      ],
+      "must_try_dishes": [
+        "Chicken Kottu",
+        "veg kottu",
+        "string hoppers",
+        "chicken curry"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Green Lobster Waskaduwa Seafood Restaurant",
+      "city": "Kalutara",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "hours": "11am-10pm",
+      "ambience": "Feet in sand dining (tables on the beach)",
+      "highlights": [
+        "Feet in sand dining (tables on the beach)"
+      ],
+      "must_try_dishes": [
+        "Fresh seafood",
+        "jumbo prawns",
+        "calamari"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Kalutara Bodhiya",
+      "city": "Kalutara",
+      "description": "Sacred fig tree believed to be a sapling of the original Bodhi tree under which Buddha attained enlightenment",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Kosgoda Sea Turtle Hatchery",
+      "city": "Kalutara",
+      "description": "Sea turtle hatchery",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Avani Kalutara",
+      "city": "Kalutara",
+      "location": "1.5 hrs drive from Colombo",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Gems including moonstone carvings",
+      "city": "Kalutara",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Moonlight Gems and Jewelery"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "item": "Traditional handicrafts",
+      "city": "Kalutara",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Tantra Art Gallery"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+    "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+  ]
+}

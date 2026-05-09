@@ -1,0 +1,215 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Arroz Negro",
+      "city": "Spain",
+      "description": "Squid ink rice with cuttlefish",
+      "vegetarian": false,
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Jamón Ibérico",
+      "city": "Spain",
+      "description": "Cured Iberian ham",
+      "vegetarian": false,
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Gambas al Ajillo",
+      "city": "Spain",
+      "description": "Garlic prawns",
+      "vegetarian": false,
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Tortilla Española",
+      "city": "Spain",
+      "description": "Spanish omelette",
+      "vegetarian": true,
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Spain",
+      "english": "Hello",
+      "local": "Hola",
+      "category": "greeting",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    },
+    {
+      "city": "Spain",
+      "english": "Please",
+      "local": "Por favor",
+      "category": "polite",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    },
+    {
+      "city": "Spain",
+      "english": "Thank you",
+      "local": "Gracias",
+      "category": "polite",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    },
+    {
+      "city": "Spain",
+      "english": "Excuse me",
+      "local": "Perdón",
+      "category": "polite",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    },
+    {
+      "city": "Spain",
+      "english": "Water",
+      "local": "Agua",
+      "category": "food",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    },
+    {
+      "city": "Spain",
+      "english": "Bill please",
+      "local": "La cuenta, por favor",
+      "category": "food",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    }
+  ],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Jamón vacuum packs",
+      "city": "Spain",
+      "category": "Food",
+      "where_to_buy": [
+        "La Boqueria",
+        "El Corte Inglés",
+        "Central Market",
+        "El Rastro",
+        "Gourmet Experience"
+      ],
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    },
+    {
+      "item": "Spanish olive oil",
+      "city": "Spain",
+      "category": "Food",
+      "where_to_buy": [
+        "La Boqueria",
+        "El Corte Inglés",
+        "Central Market",
+        "El Rastro",
+        "Gourmet Experience"
+      ],
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    },
+    {
+      "item": "Saffron",
+      "city": "Spain",
+      "category": "Food",
+      "where_to_buy": [
+        "La Boqueria",
+        "El Corte Inglés",
+        "Central Market",
+        "El Rastro",
+        "Gourmet Experience"
+      ],
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    },
+    {
+      "item": "Paprika (Pimentón)",
+      "city": "Spain",
+      "category": "Food",
+      "where_to_buy": [
+        "La Boqueria",
+        "El Corte Inglés",
+        "Central Market",
+        "El Rastro",
+        "Gourmet Experience"
+      ],
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    },
+    {
+      "item": "Turrón (nougat)",
+      "city": "Spain",
+      "category": "Food",
+      "where_to_buy": [
+        "La Boqueria",
+        "El Corte Inglés",
+        "Central Market",
+        "El Rastro",
+        "Gourmet Experience"
+      ],
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    },
+    {
+      "item": "Canned seafood",
+      "city": "Spain",
+      "category": "Food",
+      "where_to_buy": [
+        "La Boqueria",
+        "El Corte Inglés",
+        "Central Market",
+        "El Rastro",
+        "Gourmet Experience"
+      ],
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    },
+    {
+      "item": "Rioja wine",
+      "city": "Spain",
+      "category": "Drinks",
+      "where_to_buy": [
+        "La Boqueria",
+        "El Corte Inglés",
+        "Central Market",
+        "El Rastro",
+        "Gourmet Experience"
+      ],
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    },
+    {
+      "item": "Flamenco shawls",
+      "city": "Spain",
+      "category": "Crafts",
+      "where_to_buy": [
+        "La Boqueria",
+        "El Corte Inglés",
+        "Central Market",
+        "El Rastro",
+        "Gourmet Experience"
+      ],
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+  ]
+}

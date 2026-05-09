@@ -1,0 +1,459 @@
+{
+  "restaurants": [
+    {
+      "name": "Indian Curry Castle, Frankfurt",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "EUR 25-40 per person",
+      "hours": "11 AM - 2:30 PM; 5:30 PM- 11 PM",
+      "ambience": "Cozy restaurant in Frankfurt's Old Town (Altstadt), warm décor, friendly local vibe—great for lunch or dinner after sightseeing",
+      "area": "Old Town",
+      "must_try_dishes": [
+        "Butter chicken",
+        "Saag Paneer",
+        "Chana Masala with garlic naan"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Café Karin, Frankfurt",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "EUR 15-25 per person",
+      "hours": "9 AM - 7 PM",
+      "ambience": "Cozy café with a Parisian flair, known for fresh, healthy lunches and a relaxed vibe",
+      "must_try_dishes": [
+        "Veggie quiche",
+        "Mediterranean salad",
+        "Smoked salmon with rösti",
+        "sandwiches"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Restaurant Margarete, Frankfurt",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "European"
+      ],
+      "price_range": "CHF 20-30 per person",
+      "hours": "5 PM - 12 AM",
+      "ambience": "Stylish modern bistro with minimalist design and terrace seating; ideal for a slightly more elegant lunch",
+      "must_try_dishes": [
+        "Seasonal vegetable risotto",
+        "Chicken breast with herb jus",
+        "grilled fish"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "MainNizza, Frankfurt",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "Contemporary"
+      ],
+      "price_range": "EUR 35-50 per person",
+      "hours": "11:30 AM - 12 AM",
+      "ambience": "Contemporary riverside restaurant with a large terrace overlooking the Main River; chic yet relaxed",
+      "nearby_landmarks": [
+        "Main River, Frankfurt"
+      ],
+      "must_try_dishes": [
+        "Truffle pasta",
+        "seasonal veggie mains",
+        "roast corn-fed chicken with sides"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Medici Restaurant, Frankfurt",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "European"
+      ],
+      "price_range": "CHF 40-55 per person",
+      "hours": "11:30 AM - 10 PM",
+      "ambience": "Stylish modern bistro with minimalist design and terrace seating; ideal for a slightly more elegant lunch",
+      "must_try_dishes": [
+        "Parmesan risotto with seasonal vegetables",
+        "Sea bass filet with olive oil & lemon"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Zum Bitburger, Frankfurt",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "German"
+      ],
+      "price_range": "CHF 25-40 per person",
+      "hours": "12 PM - 9 PM",
+      "ambience": "Traditional German restaurant & beerhouse—lively, rustic, and authentic, with hearty portions",
+      "highlights": [
+        "Traditional German beerhouse"
+      ],
+      "must_try_dishes": [
+        "Käsespätzle",
+        "Breaded chicken schnitzel with potato salad"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Adolf Wagner, Frankfurt",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "German"
+      ],
+      "price_range": "EUR 20-30 per person",
+      "hours": "11 AM - 12 AM",
+      "ambience": "One of Frankfurt's most famous Apfelwein taverns—rustic, bustling, with wooden benches and lively local vibes",
+      "area": "Sachsenhausen",
+      "highlights": [
+        "Famous Apfelwein tavern"
+      ],
+      "must_try_dishes": [
+        "Handkäse mit Musik",
+        "breaded chicken schnitzel with potato salad"
+      ],
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Zum Gemalten Haus, Frankfurt",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "German"
+      ],
+      "price_range": "CHF 20-35 per person",
+      "hours": "11 AM - 11 PM",
+      "ambience": "Historic tavern with colorful murals, a buzzing beer-garden feel, and live local energy—an institution in Sachsenhausen",
+      "area": "Sachsenhausen",
+      "highlights": [
+        "Historic tavern",
+        "Institution in Sachsenhausen"
+      ],
+      "must_try_dishes": [
+        "Potato pancakes with apple sauce",
+        "Roast chicken with rösti"
+      ],
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Indian Curry Castle",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "EUR 25-40 per person",
+      "hours": "11 AM - 2:30 PM; 5:30 PM- 11 PM",
+      "ambience": "Cozy restaurant in Frankfurt's Old Town (Altstadt), warm décor, friendly local vibe—great for lunch or dinner after sightseeing",
+      "area": "Altstadt",
+      "must_try_dishes": [
+        "Butter chicken",
+        "Saag Paneer",
+        "Chana Masala with garlic naan"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Café Karin",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "EUR 15-25 per person",
+      "hours": "9 AM - 7 PM",
+      "ambience": "Cozy café with a Parisian flair, known for fresh, healthy lunches and a relaxed vibe",
+      "must_try_dishes": [
+        "Veggie quiche",
+        "Mediterranean salad",
+        "Smoked salmon with rösti",
+        "sandwiches"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Restaurant Margarete",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "CHF 20-30 per person",
+      "hours": "5 PM - 12 AM",
+      "ambience": "Stylish modern bistro with minimalist design and terrace seating; ideal for a slightly more elegant lunch",
+      "must_try_dishes": [
+        "Seasonal vegetable risotto",
+        "Chicken breast with herb jus",
+        "grilled fish"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "MainNizza",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "EUR 35-50 per person",
+      "hours": "11:30 AM - 12 AM",
+      "ambience": "Contemporary riverside restaurant with a large terrace overlooking the Main River; chic yet relaxed",
+      "must_try_dishes": [
+        "Truffle pasta",
+        "seasonal veggie mains",
+        "roast corn-fed chicken with sides"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Medici Restaurant",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "CHF 40-55 per person",
+      "hours": "11:30 AM - 10 PM",
+      "ambience": "Stylish modern bistro with minimalist design and terrace seating; ideal for a slightly more elegant lunch",
+      "must_try_dishes": [
+        "Parmesan risotto with seasonal vegetables",
+        "Sea bass filet with olive oil & lemon"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Zum Bitburger",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "German"
+      ],
+      "price_range": "CHF 25-40 per person",
+      "hours": "12 PM - 9 PM",
+      "ambience": "Traditional German restaurant & beerhouse—lively, rustic, and authentic, with hearty portions",
+      "must_try_dishes": [
+        "Käsespätzle",
+        "Breaded chicken schnitzel with potato salad"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Adolf Wagner",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "German"
+      ],
+      "price_range": "EUR 20-30 per person",
+      "hours": "11 AM - 12 AM",
+      "ambience": "One of Frankfurt's most famous Apfelwein taverns—rustic, bustling, with wooden benches and lively local vibes",
+      "area": "Sachsenhausen",
+      "must_try_dishes": [
+        "Handkäse mit Musik",
+        "breaded chicken schnitzel with potato salad"
+      ],
+      "source_files": [
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Zum Gemalten Haus",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "German"
+      ],
+      "price_range": "CHF 20-35 per person",
+      "hours": "11 AM - 11 PM",
+      "ambience": "Historic tavern with colorful murals, a buzzing beer-garden feel, and live local energy—an institution in Sachsenhausen",
+      "area": "Sachsenhausen",
+      "must_try_dishes": [
+        "Potato pancakes with apple sauce",
+        "Roast chicken with rösti"
+      ],
+      "source_files": [
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Römerberg Square",
+      "city": "Frankfurt",
+      "description": "Historic heart of Frankfurt with half-timbered houses and Town Hall",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Frankfurt Cathedral (Kaiserdom)",
+      "city": "Frankfurt",
+      "description": "Cathedral with tower offering panoramic city views",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Frankfurt Cathedral",
+      "city": "Frankfurt",
+      "description": "Cathedral with tower offering panoramic city views",
+      "source_files": [
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "JW Marriott Frankfurt",
+      "city": "Frankfurt",
+      "location": "City Center",
+      "_source_file": "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384290.512721
+    },
+    {
+      "name": "Delta by Marriott, Frankfurt",
+      "city": "Frankfurt",
+      "location": "City Center",
+      "_source_file": "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384290.512721
+    },
+    {
+      "name": "JW Marriott Frankfurt",
+      "city": "Frankfurt",
+      "location": "6 mins by the S1",
+      "_source_file": "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384308.452988
+    },
+    {
+      "name": "Delta by Marriott, Frankfurt",
+      "city": "Frankfurt",
+      "location": "25 mins by public transport from JW Marriott",
+      "_source_file": "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384308.452988
+    },
+    {
+      "name": "JW Marriott Frankfurt",
+      "city": "Frankfurt",
+      "location": "City center",
+      "_source_file": "Italy/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384338.18424
+    },
+    {
+      "name": "Delta by Marriott Frankfurt",
+      "city": "Frankfurt",
+      "location": "City center",
+      "_source_file": "Italy/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384338.18424
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Apfelwein",
+      "city": "Frankfurt",
+      "description": "Traditional Frankfurt cider",
+      "vegetarian": true,
+      "where_to_try": "Sachsenhausen taverns",
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Handkäse mit Musik",
+      "city": "Frankfurt",
+      "description": "Marinated sour milk cheese with onions",
+      "vegetarian": true,
+      "where_to_try": "Adolf Wagner",
+      "source_files": [
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Frankfurt",
+      "mode": "ICE Train",
+      "description": "High-speed rail connections throughout Germany",
+      "_source_file": "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384290.512721
+    },
+    {
+      "city": "Frankfurt",
+      "mode": "S-Bahn",
+      "description": "Suburban rail service connecting city center to airport and surrounding areas",
+      "_source_file": "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384308.452988
+    },
+    {
+      "city": "Frankfurt",
+      "mode": "S-Bahn",
+      "description": "Suburban rail system connecting airport and city center",
+      "_source_file": "Italy/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384338.18424
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+    "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+    "Italy/Tejas - Europe All Inclusive Guide.pdf"
+  ]
+}

@@ -1,0 +1,909 @@
+{
+  "restaurants": [
+    {
+      "name": "Wanida Kitchen",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "hours": "6:30 PM – 3:30 AM",
+      "area": "Near Alcazar Cabaret",
+      "nearby_landmarks": [
+        "Alcazar Cabaret Show, Pattaya"
+      ],
+      "highlights": [
+        "Offers a separate vegetarian menu with 40+ dishes",
+        "Typically open late",
+        "Located just north of Alcazar's parking lot"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Govindam Pure Veg Restaurant",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "9:00 AM - 12:00 AM",
+      "area": "Central Pattaya",
+      "nearby_landmarks": [
+        "Alcazar Cabaret Show, Pattaya"
+      ],
+      "highlights": [
+        "100% vegetarian / Jain-food friendly with wide North/South Indian menu",
+        "Known among vegetarians as a reliable, clean option"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Indian Touch 1",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "10:00 AM - 4:00 AM",
+      "nearby_landmarks": [
+        "Alcazar Cabaret Show, Pattaya"
+      ],
+      "highlights": [
+        "Vegetarian-friendly with vegan-option dishes"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Five Star J Vegan & Vegetarian Restaurant",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "₹500-700 per person",
+      "hours": "12 pm to 9 pm",
+      "highlights": [
+        "Vegetarian restaurant"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ],
+      "must_try_dishes": [
+        "Massaman curry",
+        "Green Curry",
+        "Black Rice"
+      ],
+      "ambience": "Indoor, Casual",
+      "area": "Between Sanctuary of Truth and The Floating Market",
+      "nearby_landmarks": [
+        "Sanctuary of Truth, Pattaya",
+        "Pattaya Floating Market, Pattaya"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Alibaba Tandoori Pattaya",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "THB 300–500 pp",
+      "hours": "11:00 AM - 11:55 PM",
+      "highlights": [
+        "Indian veg curries, rotis & biryani"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Chotivala Pure Vegetarian & Jain Food",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "10:00 AM - 12:00 AM",
+      "area": "Central Pattaya",
+      "highlights": [
+        "Pure vegetarian restaurant offering North & South Indian vegetarian/Jain dishes",
+        "Friendly for vegetarians, and possibly less crowded than fully tourist-oriented eateries"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Yes! Vegan Pattaya",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Multicuisine",
+        "Pizza",
+        "Pasta",
+        "Burgers",
+        "Thai"
+      ],
+      "price_range": "₹500-700 per person",
+      "hours": "11 am to 8 pm",
+      "ambience": "Indoor, Casual",
+      "highlights": [
+        "Vegan restaurant"
+      ],
+      "must_try_dishes": [
+        "Basil Rice",
+        "Hawaiian Pizza",
+        "Tom Yum Soup",
+        "Pesto Pasta",
+        "Fried Vegan Chicken with Basil Leaf Sauce",
+        "Grilled Vegan Chicken Salad with Sunflower Sprouts",
+        "Stir-Fried Vegan Duck with Japanese Bunching Onion"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Dom Pizza",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Pizza",
+        "Burgers",
+        "Sandwiches"
+      ],
+      "price_range": "₹500-700 per person",
+      "hours": "7:30 am to 2 am",
+      "ambience": "Patio Dining, Casual",
+      "highlights": [
+        "Open late"
+      ],
+      "must_try_dishes": [
+        "Fettuccine truffle and Calzone",
+        "3 cheese pasta",
+        "margarita pizza"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Alibaba Tandoori",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹500-700 per person",
+      "hours": "11 am to 11:55 pm",
+      "ambience": "Indoor Casual",
+      "nearby_landmarks": [
+        "Sanctuary of Truth, Pattaya",
+        "Pattaya Floating Market, Pattaya"
+      ],
+      "highlights": [
+        "Indian cuisine"
+      ],
+      "must_try_dishes": [
+        "Paneer Seekh Kebab",
+        "Kadhai Paneer",
+        "Tandoori Chicken",
+        "Kadai Paneer"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "The Oxygen Beachfront Oasis",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Thai",
+        "International"
+      ],
+      "price_range": "₹700-1000 per person",
+      "hours": "11 am to 11 pm",
+      "ambience": "Beachfront outdoor seating available",
+      "highlights": [
+        "Beachfront location"
+      ],
+      "must_try_dishes": [
+        "Pineapple Fried Rice"
+      ],
+      "best_for": [
+        "romantic",
+        "family"
+      ],
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Marco's",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹700-1000 per person",
+      "hours": "11 am - 10 pm",
+      "ambience": "Indoor, Casual",
+      "highlights": [
+        "Italian cuisine"
+      ],
+      "must_try_dishes": [
+        "Pizzas",
+        "Caesar Salad",
+        "Penne Arrabiata"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Pizza and Coffee Koh Larn",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Italian",
+        "Pizza"
+      ],
+      "ambience": "Close to the Na ban Pier",
+      "area": "Koh Larn",
+      "highlights": [
+        "Located on Koh Larn island"
+      ],
+      "must_try_dishes": [
+        "mango smoothie"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Fat Submarine Cafe and Restaurant",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "ambience": "Great views; an insta-worthy cafe",
+      "area": "Koh Larn",
+      "highlights": [
+        "Instagram-worthy cafe",
+        "Great views"
+      ],
+      "must_try_dishes": [
+        "sandwiches",
+        "desserts",
+        "beverages"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Tawaen Beach Resort Restaurant",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "area": "Koh Larn",
+      "nearby_landmarks": [
+        "Tawaen beach, Pattaya"
+      ],
+      "highlights": [
+        "Located near Tawaen beach"
+      ],
+      "must_try_dishes": [
+        "pineapple fried rice",
+        "Pad Thai"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Sanctuary Cafe",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "THB 200-300 per person",
+      "hours": "8 AM - 6 PM",
+      "ambience": "Convenient and on-site, nestled inside the Sanctuary grounds with a direct view of the temple's intricate architecture",
+      "nearby_landmarks": [
+        "Sanctuary of Truth, Pattaya"
+      ],
+      "highlights": [
+        "Located within the Sanctuary grounds",
+        "Direct view of temple architecture"
+      ],
+      "must_try_dishes": [
+        "Pad Thai",
+        "coconut drinks"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Naklua Kitchen",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "THB 150-250 per person",
+      "hours": "9:30 AM - 6 PM",
+      "ambience": "Simple, traditional Thai restaurant",
+      "nearby_landmarks": [
+        "Sanctuary of Truth, Pattaya"
+      ],
+      "highlights": [
+        "Authentic Thai cuisine"
+      ],
+      "must_try_dishes": [
+        "Tom Yum Goong"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Jasmin's Cafe",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "THB 200-300 per person",
+      "hours": "10 AM - 10 PM",
+      "ambience": "A charming, cozy café with a laid-back, rustic vibe and only about 20 seats. It features hanging baskets and appealing artwork, with both indoor and outdoor dining. Its small size gives it an intimate atmosphere",
+      "highlights": [
+        "Intimate atmosphere",
+        "Indoor and outdoor dining",
+        "Small cozy setting"
+      ],
+      "must_try_dishes": [
+        "Pad Thai",
+        "Prawn and Broccoli",
+        "Mango Sticky Rice"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Tree Tales Café",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "European",
+        "Thai"
+      ],
+      "price_range": "THB 300-400 per person",
+      "hours": "9 AM - 7 PM",
+      "ambience": "A serene café offering both air-conditioned indoor dining and a garden seating area. It delivers a tranquil, vintage-style ambience—perfect for relaxed meals or a quiet coffee",
+      "highlights": [
+        "Garden seating area",
+        "Vintage-style ambience",
+        "Creative presentation"
+      ],
+      "must_try_dishes": [
+        "Tofu Steak with Mushroom Gravy",
+        "Mushroom Tempura",
+        "BBQ or grilled plates"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Sugar Hut Restaurant",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "THB 500-600 per person",
+      "hours": "24 hours",
+      "ambience": "An immersive traditional Thai dining experience located within a lush, resort-like forest setting off Thappraya Road. Teak-style salas (dining pavilions) surround a tranquil pool, alongside ambient music and nature sounds—ideal for special occasions",
+      "area": "Thappraya Road",
+      "highlights": [
+        "Traditional Thai dining",
+        "Forest setting",
+        "Teak-style pavilions",
+        "24-hour service"
+      ],
+      "must_try_dishes": [
+        "Penang Curry (Northern Thai style)",
+        "Gaeng Gari Gai (Malaysian-style yellow chicken curry)",
+        "Bou Loy (rice dumplings in coconut milk)"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "The Glass House Pattaya",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "THB 500-600 per person",
+      "hours": "11 AM - 10 PM",
+      "ambience": "Beachfront and chic, ideal for cocktails with a beautiful ocean backdrop",
+      "highlights": [
+        "Beachfront location",
+        "Ocean backdrop",
+        "Instagram-worthy cocktails"
+      ],
+      "must_try_dishes": [
+        "Beet & Thyme Martini"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Drifters Beach Cafe",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "THB 250-400 per person",
+      "hours": "11 AM - 9 PM",
+      "ambience": "A cozy, relaxed beach café just under 2 km from Pattaya Floating Market. Ideal for sunset views and casual dining",
+      "nearby_landmarks": [
+        "Pattaya Floating Market, Pattaya"
+      ],
+      "highlights": [
+        "Beach location",
+        "Sunset views",
+        "Famous for sunset margaritas"
+      ],
+      "must_try_dishes": [
+        "sunset margaritas",
+        "pizza"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Radius Restaurant and Cape Dara Resort",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Thai",
+        "European"
+      ],
+      "price_range": "THB 600 per person",
+      "hours": "6:00 AM - 10:30 AM",
+      "ambience": "A romantic all-day dining spot perched with expansive views over Pattaya Bay. Open-air seating, sea breeze, serene atmosphere",
+      "highlights": [
+        "Views over Pattaya Bay",
+        "Open-air seating"
+      ],
+      "must_try_dishes": [
+        "Massaman curry",
+        "Hawaiian pizza",
+        "European-style dishes"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Triple B Cafe Organic",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "THB 100 per person",
+      "hours": "10 AM - 7 PM",
+      "ambience": "Nestled just steps from Pattaya Floating Market, this cafe delights with a charming, nature-inspired theme—think bamboo lanterns, greenery, and an airy, rustic-modern décor. With both indoor (air-conditioned) and outdoor seating, it's a photo-worthy spot with scenic views overlooking the floating market",
+      "nearby_landmarks": [
+        "Pattaya Floating Market, Pattaya"
+      ],
+      "highlights": [
+        "Nature-inspired theme",
+        "Photo-worthy spot",
+        "Views overlooking floating market"
+      ],
+      "must_try_dishes": [
+        "Khao Soi Kai (Northern-style creamy curry noodle soup)",
+        "Tom Yam Seafood",
+        "papaya salad",
+        "passion fruit soda"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Madras Darbar Indian Restaurant",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "hours": "7:00am-3:00am",
+      "ambience": "Family dining",
+      "area": "Near Golden Beach Hotel",
+      "highlights": [],
+      "must_try_dishes": [
+        "Indo-Chinese",
+        "Dosa",
+        "Tikka",
+        "Seafood",
+        "North & South Indian dishes"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "source_files": [
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Everest Indian Restaurant",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "10:30am-11:00pm",
+      "ambience": "Family dining",
+      "area": "Near Golden Beach Hotel",
+      "highlights": [],
+      "must_try_dishes": [
+        "Garlic naan",
+        "tandoori chicken",
+        "rogan josh"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "source_files": [
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Prime Burger Central Pattaya",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Burgers"
+      ],
+      "hours": "11am-10:00pm",
+      "ambience": "Indoor Casual",
+      "area": "Near Golden Beach Hotel",
+      "highlights": [],
+      "must_try_dishes": [
+        "Burgers",
+        "halloumi salad"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Aroy Dee Pattaya",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "hours": "10:00am-10:00pm",
+      "ambience": "Family dining",
+      "area": "Near Golden Beach Hotel",
+      "highlights": [],
+      "must_try_dishes": [
+        "Tom yum"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "source_files": [
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Alcazar Cabaret Show",
+      "city": "Pattaya",
+      "description": "Captivating cabaret show with 3 show timings- 6 PM, 8 PM, and 9:30 PM",
+      "hours": "5:00 PM | 6:30 PM | 8:00 PM | 9:30 PM",
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Coral Island (Koh Larn)",
+      "city": "Pattaya",
+      "description": "Postcard-perfect beaches with clear shallow waters, soft coral sand, and coconut palms swaying in the breeze.",
+      "hours": "7:00 AM – 6:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "Half day",
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Nong Nooch Tropical Botanical Garden",
+      "city": "Pattaya",
+      "description": "Tropical botanical garden",
+      "hours": "8:00 AM – 6:00 PM",
+      "recommended_duration": "3–4 hours",
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Big Buddha/Wat Phra Yai",
+      "city": "Pattaya",
+      "description": "The centerpiece of the temple is a massive, 18-meter (59-foot) tall golden Buddha statue, one of the largest in Thailand. From the temple grounds, you can enjoy stunning panoramic views of Pattaya Bay and the surrounding areas",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Sanctuary of Truth",
+      "city": "Pattaya",
+      "description": "A magnificent wooden temple showcasing intricate Thai architectural and sculptural designs. It is one of the largest wooden structures in the world",
+      "hours": "8 AM–6 PM and 6:30–8:30 PM daily",
+      "entry_fee": "500 Baht per adult for the day tour",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Pattaya Floating Market",
+      "city": "Pattaya",
+      "description": "Unique floating market experience",
+      "hours": "9am to 7pm",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Pattaya Beach",
+      "city": "Pattaya",
+      "description": "Beach experience",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Jomtien Beach",
+      "city": "Pattaya",
+      "description": "Beach experience",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Koh Larn (Coral Island)",
+      "city": "Pattaya",
+      "description": "A beautiful island with pristine beaches, clear waters, and coral reefs. Great for snorkelling and diving",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Sriracha Tiger Zoo",
+      "city": "Pattaya",
+      "description": "Tiger zoo attraction",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Art in Paradise (3D Art Museum)",
+      "city": "Pattaya",
+      "description": "3D Art Museum",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Tiffany Cabaret Show",
+      "city": "Pattaya",
+      "description": "Cabaret show",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Walking Street",
+      "city": "Pattaya",
+      "description": "Nightlife area with several nightclubs including Lucifer Disco, The Pier Disco Club, 808 Nightclub, Club Insomnia, Mixx Discotheque",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Central Festival Pattaya Beach",
+      "city": "Pattaya",
+      "description": "Shopping mall",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Terminal 21 Pattaya",
+      "city": "Pattaya",
+      "description": "Shopping mall",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Tiffany's Show",
+      "city": "Pattaya",
+      "description": "Tiffany's Show Pattaya is a world-famous transgender cabaret featuring dazzling costumes, vibrant dance performances, and stunning stage sets. Running since 1974, it offers a glamorous 75-minute spectacle that's colorful, energetic, and family-friendly",
+      "hours": "9 AM - 10:30 PM",
+      "entry_fee": "Starting from ฿1000 for mezzanine seats and going up to ฿3800 for VIP Diamond seats",
+      "recommended_duration": "75 minutes",
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Thepprasit Night Market",
+      "city": "Pattaya",
+      "description": "Night market for souvenirs and local snacks",
+      "hours": "5 PM - 10:30 PM",
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Coral Island Tour by Speedboat",
+      "city": "Pattaya",
+      "description": "Island tour with Indian lunch included",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Alcazar Show",
+      "city": "Pattaya",
+      "description": "Cabaret show with regular seat ticket and soft drink",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Art in Paradise",
+      "city": "Pattaya",
+      "description": "3D Art Museum with interactive exhibits",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Golden Beach Hotel Pattaya",
+      "city": "Pattaya",
+      "location": "Close to Pattaya Beach Road",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "name": "Montrra Pattaya",
+      "city": "Pattaya",
+      "location": "Pattaya resort with private beach access",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "name": "Pullman Pattaya Hotel G",
+      "city": "Pattaya",
+      "location": null,
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "name": "Golden Beach Hotel",
+      "city": "Pattaya",
+      "location": "Pattaya beach area",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+    "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+    "Thailand/Arpita Thailand.pdf",
+    "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+  ]
+}

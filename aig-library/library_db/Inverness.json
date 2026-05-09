@@ -1,0 +1,266 @@
+{
+  "restaurants": [
+    {
+      "name": "The Kitchen Brasserie",
+      "city": "Inverness",
+      "cuisine_type": [
+        "Modern"
+      ],
+      "price_range": "£15–25",
+      "hours": "12 PM – 2:30 PM",
+      "ambience": "Modern riverside dining with large glass windows",
+      "must_try_dishes": [
+        "Roast salmon",
+        "beetroot risotto",
+        "cranachan"
+      ],
+      "highlights": [
+        "Scenic Highlands-style lunch with elegant presentation"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf"
+      ]
+    },
+    {
+      "name": "Velocity Café & Bicycle Workshop",
+      "city": "Inverness",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "£8–15",
+      "hours": "9 AM – 4 PM",
+      "ambience": "Community café with a cozy, artsy vibe",
+      "must_try_dishes": [
+        "Toasties",
+        "vegan brownies",
+        "locally roasted coffee"
+      ],
+      "highlights": [
+        "Relaxed, casual lunch with vegetarian options"
+      ],
+      "vegetarian_friendly": true,
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf"
+      ]
+    },
+    {
+      "name": "The Mustard Seed Restaurant",
+      "city": "Inverness",
+      "cuisine_type": [
+        "Scottish"
+      ],
+      "price_range": "£20–30",
+      "hours": "5 PM – 9:30 PM",
+      "ambience": "Upscale yet inviting, inside a converted church",
+      "must_try_dishes": [
+        "Highland lamb",
+        "wild mushroom risotto",
+        "sticky toffee pudding"
+      ],
+      "highlights": [
+        "Refined Scottish dining with a cozy riverside view"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf"
+      ]
+    },
+    {
+      "name": "Rocpool Restaurant",
+      "city": "Inverness",
+      "cuisine_type": [
+        "Bistro"
+      ],
+      "price_range": "£25–35",
+      "hours": "12 PM – 2 PM",
+      "ambience": "Creative bistro-style dishes using local ingredients",
+      "must_try_dishes": [
+        "Duck confit",
+        "scallops",
+        "raspberry cranachan"
+      ],
+      "highlights": [
+        "Stylish yet personal dining with excellent service"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf"
+      ]
+    },
+    {
+      "name": "Black Isle Bar & Rooms",
+      "city": "Inverness",
+      "cuisine_type": [
+        "Pizza"
+      ],
+      "price_range": "£12–18",
+      "hours": "12 PM – 12 AM",
+      "ambience": "Pizza & craft beer spot with rooftop seating",
+      "area": null,
+      "must_try_dishes": [
+        "Wood-fired pizzas",
+        "wild mushroom toppings",
+        "IPA tastings"
+      ],
+      "highlights": [
+        "Laid-back post-adventure dinner with local brews"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf"
+      ]
+    },
+    {
+      "name": "River House Restaurant",
+      "city": "Inverness",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "£25–35",
+      "hours": "9 AM – 11 PM",
+      "ambience": "Intimate seafood & grill on the river",
+      "must_try_dishes": [
+        "Highland venison",
+        "grilled seabass",
+        "wine pairings"
+      ],
+      "highlights": [
+        "Elegant wind-down meal with a serene riverside view"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf"
+      ]
+    },
+    {
+      "name": "MacGregor's Bar",
+      "city": "Inverness",
+      "cuisine_type": [
+        "Pub"
+      ],
+      "price_range": "£15–20",
+      "hours": "12 PM – 11 PM",
+      "ambience": "Live music, Highland ales, and hearty pub fare",
+      "must_try_dishes": [
+        "mac 'n' cheese",
+        "local beer flights"
+      ],
+      "highlights": [
+        "Lively, rustic local vibe to end your day"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf"
+      ]
+    },
+    {
+      "name": "Prime Steak & Seafood",
+      "city": "Inverness",
+      "cuisine_type": [
+        "Steakhouse"
+      ],
+      "price_range": "£25–35",
+      "hours": "5 PM – 9:30 PM",
+      "ambience": "Upmarket grillhouse for a slow, celebratory dinner",
+      "must_try_dishes": [
+        "grilled prawns",
+        "sticky toffee pudding"
+      ],
+      "highlights": [
+        "Refined service and well-executed classics"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Victorian Market",
+      "city": "Inverness",
+      "description": "Indoor arcade offering local craft and food scene under a cast-iron roof from the 1800s",
+      "hours": "8 AM – 5:30 PM (most shops)",
+      "source_files": [
+        "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Private Apartment – 1 Haugh Road",
+      "city": "Inverness",
+      "location": "1 Haugh Road, Ground Floor",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Highland Venison",
+      "city": "Inverness",
+      "description": "Rich, local meat served with seasonal veg",
+      "vegetarian": false,
+      "where_to_try": "River House Restaurant",
+      "source_files": [
+        "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf"
+      ]
+    },
+    {
+      "name": "Cranachan",
+      "city": "Inverness",
+      "description": "Whipped cream, raspberries, honey, and oats",
+      "vegetarian": true,
+      "where_to_try": "The Kitchen Brasserie",
+      "source_files": [
+        "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf"
+      ]
+    },
+    {
+      "name": "Sticky Toffee Pudding",
+      "city": "Inverness",
+      "description": "A rich, treacle-glazed classic",
+      "vegetarian": true,
+      "where_to_try": "The Mustard Seed",
+      "source_files": [
+        "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Inverness",
+      "mode": "Bus",
+      "description": "Local transport within Inverness",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf"
+  ]
+}

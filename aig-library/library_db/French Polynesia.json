@@ -1,0 +1,283 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Poisson Cru au lait de coco",
+      "city": "French Polynesia",
+      "description": "Raw fish marinated in coconut milk and lime. It's similar to ceviche but with a creamy twist from the coconut milk",
+      "vegetarian": false,
+      "source_files": [
+        "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf"
+      ]
+    },
+    {
+      "name": "Poulet fafa",
+      "city": "French Polynesia",
+      "description": "Chicken cooked with taro leaves and coconut milk. Often prepared in a traditional underground oven called an ahima'a, giving it a smoky and earthy flavor",
+      "vegetarian": false,
+      "source_files": [
+        "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf"
+      ]
+    },
+    {
+      "name": "Po'e",
+      "city": "French Polynesia",
+      "description": "A sweet and starchy pudding made from taro, banana, or pumpkin. It's cooked in an ahima'a and served with coconut cream",
+      "vegetarian": true,
+      "source_files": [
+        "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf"
+      ]
+    },
+    {
+      "name": "Fafaru",
+      "city": "French Polynesia",
+      "description": "Fish marinated in fermented seawater with crushed shrimp. It has a strong aroma and flavor that's an acquired taste",
+      "vegetarian": false,
+      "source_files": [
+        "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf"
+      ]
+    },
+    {
+      "name": "Pahua Taioro",
+      "city": "French Polynesia",
+      "description": "Exquisite Tahitian dish based on clams (pahua) soaked in fresh water for a few hours before being combined with taioro, a condiment made by fermenting almonds, grated coconut, seawater, and shrimps",
+      "vegetarian": false,
+      "source_files": [
+        "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf"
+      ]
+    },
+    {
+      "name": "Firi Firi",
+      "city": "French Polynesia",
+      "description": "Tahitian doughnuts made with flour, coconut milk, and sugar, then deep-fried until golden brown. Often served with fruit or jam",
+      "vegetarian": true,
+      "source_files": [
+        "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf"
+      ]
+    },
+    {
+      "name": "Chevrettes",
+      "city": "French Polynesia",
+      "description": "Freshwater prawns that are a local delicacy. Often grilled or cooked in a flavorful sauce. Consists of peeled and deveined shrimps, oil, sliced Tahitian vanilla beans, coconut milk, rum, cream, salt, and black pepper",
+      "vegetarian": false,
+      "source_files": [
+        "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf"
+      ]
+    },
+    {
+      "name": "Breadfruit",
+      "city": "French Polynesia",
+      "description": "Versatile fruit that is a staple in Polynesian cuisine. Can be roasted, boiled, or fried and has a starchy texture and mild flavor",
+      "vegetarian": true,
+      "source_files": [
+        "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf"
+      ]
+    },
+    {
+      "name": "Coconut Crab",
+      "city": "French Polynesia",
+      "description": "Large land crab that is a prized ingredient. Known for its rich and flavorful meat",
+      "vegetarian": false,
+      "source_files": [
+        "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf"
+      ]
+    },
+    {
+      "name": "Taro",
+      "city": "French Polynesia",
+      "description": "Root vegetable that is a staple in Polynesian cuisine. Can be cooked in various ways, including boiled, mashed, or baked",
+      "vegetarian": true,
+      "source_files": [
+        "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "French Polynesia",
+      "english": "Hello",
+      "local": "La ora na",
+      "category": "greeting",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    },
+    {
+      "city": "French Polynesia",
+      "english": "Goodbye",
+      "local": "Nana",
+      "category": "greeting",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    },
+    {
+      "city": "French Polynesia",
+      "english": "Thank you",
+      "local": "Maururu",
+      "category": "polite",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    },
+    {
+      "city": "French Polynesia",
+      "english": "Yes",
+      "local": "E!",
+      "category": "polite",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    },
+    {
+      "city": "French Polynesia",
+      "english": "No",
+      "local": "Aita",
+      "category": "polite",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    }
+  ],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Tahitian Black Pearls",
+      "city": "French Polynesia",
+      "category": "Jewelry",
+      "where_to_buy": [
+        "Papeete's pearl markets",
+        "Pearl farms in Moorea",
+        "Vaipete"
+      ],
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    },
+    {
+      "item": "Monoi Oil",
+      "city": "French Polynesia",
+      "category": "Beauty",
+      "where_to_buy": [
+        "Most shops"
+      ],
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    },
+    {
+      "item": "Vanilla",
+      "city": "French Polynesia",
+      "category": "Food",
+      "where_to_buy": [
+        "Markets",
+        "Plantations",
+        "Taha'a"
+      ],
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    },
+    {
+      "item": "Pareos",
+      "city": "French Polynesia",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Markets"
+      ],
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    },
+    {
+      "item": "Wood Carvings",
+      "city": "French Polynesia",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Markets",
+        "Art galleries",
+        "Moorea's Artisanal Village"
+      ],
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    },
+    {
+      "item": "Tifaifai",
+      "city": "French Polynesia",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Moorea's Artisanal Village"
+      ],
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    },
+    {
+      "item": "Shell Jewelry",
+      "city": "French Polynesia",
+      "category": "Jewelry",
+      "where_to_buy": [
+        "Markets"
+      ],
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    },
+    {
+      "item": "Local Food Products",
+      "city": "French Polynesia",
+      "category": "Food",
+      "where_to_buy": [
+        "Markets"
+      ],
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "French Polynesia",
+      "service": "Ambulance",
+      "number": "15",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    },
+    {
+      "city": "French Polynesia",
+      "service": "Police",
+      "number": "17",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "French Polynesia"
+      ],
+      "tip": "There are 2 main providers- Vini and Vodafone. Vini sim is recommended as they have the best 4G/5G mobile data network across all the islands",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    },
+    {
+      "cities": [
+        "French Polynesia"
+      ],
+      "tip": "Best place to buy a prepaid sim card is in the airport on arrival. At the Relay store, you will find the Vini sim cards and there is also a Vodafone store",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    },
+    {
+      "cities": [
+        "French Polynesia"
+      ],
+      "tip": "You can also purchase an e-sim like Holafly or Airalo if you want international roaming but without a physical sim",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    },
+    {
+      "cities": [
+        "French Polynesia"
+      ],
+      "tip": "The Airport in Papeete does not offer free WiFi",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf",
+      "_source_mtime": 1772384267.6550045
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin.pdf"
+  ]
+}

@@ -1,0 +1,443 @@
+{
+  "restaurants": [
+    {
+      "name": "Azteca South Beach",
+      "city": "Miami",
+      "cuisine_type": [
+        "Mexican"
+      ],
+      "highlights": [
+        "Many veg options",
+        "kids menu",
+        "excellent tequila",
+        "mezcal section"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Café Americano",
+      "city": "Miami",
+      "cuisine_type": [
+        "American café"
+      ],
+      "hours": "8am-10:30pm",
+      "must_try_dishes": [
+        "Sandwiches",
+        "juices",
+        "milkshakes",
+        "coffee",
+        "avocado toast",
+        "sandwiches"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "highlights": [
+        "Latin-inflected all day diner",
+        "Sandwiches",
+        "juices",
+        "milkshakes",
+        "coffee",
+        "avocado toast"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "11th Street Diner",
+      "city": "Miami",
+      "cuisine_type": [
+        "American"
+      ],
+      "hours": "7:30am-12am",
+      "highlights": [
+        "Retro diner",
+        "All day breakfast",
+        "Cuban sandwiches"
+      ],
+      "must_try_dishes": [
+        "Cuban sandwiches"
+      ],
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Bombay bistro",
+      "city": "Miami",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "9-11am, 12-3:30pm, 6-10:45 pm",
+      "highlights": [
+        "serves happy hour food"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Mister O1",
+      "city": "Miami",
+      "cuisine_type": [
+        "Pizzeria"
+      ],
+      "hours": "12pm-10pm",
+      "highlights": [
+        "Pizzas",
+        "anti-pasti",
+        "salads"
+      ],
+      "must_try_dishes": [
+        "Pizzas",
+        "anti-pasti",
+        "salads"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Mandolin Aegan Bistro",
+      "city": "Miami",
+      "cuisine_type": [
+        "Greek",
+        "Turkish"
+      ],
+      "hours": "12pm-11pm",
+      "highlights": [
+        "Kebabs",
+        "salads",
+        "Sangria"
+      ],
+      "must_try_dishes": [
+        "Kebabs",
+        "salads"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Lucali",
+      "city": "Miami",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "12pm-11pm",
+      "highlights": [
+        "Pizzas",
+        "Calzones",
+        "Wine"
+      ],
+      "must_try_dishes": [
+        "Pizzas",
+        "Calzones"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "The Great Indian Kitchen Miami",
+      "city": "Miami",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "12pm-1:30am",
+      "highlights": [
+        "Curries",
+        "rotis",
+        "biryanis"
+      ],
+      "must_try_dishes": [
+        "Curries",
+        "rotis",
+        "biryanis"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Joe's Stone Crab",
+      "city": "Miami",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "luxury",
+      "hours": "11:30am-2:30pm, 5-10pm",
+      "highlights": [
+        "Legendary restaurant",
+        "100$ per person",
+        "Stone crabs",
+        "key lime pie"
+      ],
+      "must_try_dishes": [
+        "Stone crabs",
+        "key lime pie"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Key West Day Trip",
+      "city": "Miami",
+      "description": "Full day tour to Key West",
+      "hours": "6am meeting point",
+      "recommended_duration": "Full day",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "SeAquarium",
+      "city": "Miami",
+      "description": "Kid friendly aquarium experience",
+      "hours": "10am - 5pm (closed on Tues and Wed)",
+      "recommended_duration": "4-5 hours",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Frost Science Museum",
+      "city": "Miami",
+      "description": "Science museum",
+      "hours": "10am-6pm",
+      "entry_fee": "Rs. 2500 per head",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Florida Keys",
+      "city": "Miami",
+      "description": "Island chain destination",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "President Hotel, Miami",
+      "city": "Miami",
+      "location": "Miami",
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.pdf",
+      "_source_mtime": 1772384246.3359978
+    },
+    {
+      "name": "Marriott Vacation Club- South Beach",
+      "city": "Miami",
+      "location": "South Beach",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Key Lime Pie",
+      "city": "Miami",
+      "description": "Florida's signature dessert",
+      "vegetarian": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ],
+      "where_to_try": "Joe's Stone Crab"
+    },
+    {
+      "name": "Cuban Black Beans and Rice",
+      "city": "Miami",
+      "description": "Traditional Cuban dish with black beans and rice",
+      "vegetarian": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Tostones",
+      "city": "Miami",
+      "description": "Fried plantains, popular in Cuban cuisine",
+      "vegetarian": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Arepas",
+      "city": "Miami",
+      "description": "Venezuelan/Colombian corn cakes",
+      "vegetarian": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf",
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Cuban food",
+      "city": "Miami",
+      "description": "Black beans and rice and tostones",
+      "vegetarian": true,
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Ceviche",
+      "city": "Miami",
+      "description": "Seafood marinated in citrus juices",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Florida Rock Shrimp",
+      "city": "Miami",
+      "description": "Local shrimp specialty",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Grouper Sandwich",
+      "city": "Miami",
+      "description": "Crispy fried fillet between an onion roll, Cuban bread or kaiser simply embellished with lettuce, tomato and tartar sauce",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    },
+    {
+      "name": "Stone Crab Claws",
+      "city": "Miami",
+      "description": "Florida specialty seafood",
+      "where_to_try": "Joe's Stone Crab",
+      "source_files": [
+        "USA/Varun-Priyankee-Orlando-2024.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Tipping people, especially at restaurants, is a norm. Restaurant waiters expect 18%-25% of total bill as tips. Also customary to add 10%-15% tips for taxi rides",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "souvenirs": [],
+  "emergency_contacts": [
+    {
+      "city": "Miami",
+      "service": "Emergency",
+      "number": "911",
+      "notes": "One number for any emergencies including medical emergencies and ambulance. Accessible from anywhere, even where there doesn't appear to be any cell signal",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Buy a sim card from TSIM. They offer both physical and eSIMs. If getting two sims, recommend getting a T-mobile one and an AT&T one",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Miami",
+      "mode": "Rental Car",
+      "description": "Use rental car and return it at the airport when leaving for Atlanta",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Travel insurance recommended with $100,000 coverage for each family member. Tata AIG has a plan for Rs. 8370 with $100 deductible. visitorscoverage.com has a Patriot America Plus plan with zero deductible at $200",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    },
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Most places in the US are pretty dry and it is easy to get sunburnt, so carry and apply sunscreen (SPF 30) when out in the Sun",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    },
+    {
+      "cities": [
+        "Orlando",
+        "Miami"
+      ],
+      "tip": "Florida should be pleasant but humid - max temp: 28°C, min: 24°C",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897
+    }
+  ],
+  "source_files": [
+    "USA/ALL INCLUSIVE GUIDE USA.pdf",
+    "USA/Varun-Priyankee-Orlando-2024.pdf"
+  ]
+}

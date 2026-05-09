@@ -1,0 +1,750 @@
+{
+  "restaurants": [
+    {
+      "name": "Indique Restaurant",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹500-₹900",
+      "hours": "07:00 AM - 10:30 PM",
+      "ambience": "Rooftop restaurant with fort views",
+      "nearby_landmarks": [
+        "Mehrangarh Fort, Jodhpur"
+      ],
+      "highlights": [
+        "Rooftop with fort views",
+        "Panoramic views"
+      ],
+      "must_try_dishes": [
+        "Mutton rogan josh",
+        "Paneer makhani",
+        "Garlic naan",
+        "Curries",
+        "tandoor dishes",
+        "naan",
+        "Paneer curry",
+        "tandoori kebabs"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ],
+      "area": "Near Clock Tower"
+    },
+    {
+      "name": "On the Rocks",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "₹700-₹1,000",
+      "hours": "12 PM – 11:00 PM",
+      "ambience": "Multi-level dining, courtyard & cave seating",
+      "highlights": [
+        "Garden setting",
+        "Multi-cuisine"
+      ],
+      "must_try_dishes": [
+        "Tandoori platter",
+        "Chicken tikka",
+        "Dal tadka",
+        "Indian curries",
+        "Chinese",
+        "grills"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "The Curry's, Jodhpur",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "North Indian",
+        "Rajasthani"
+      ],
+      "price_range": "₹900-1200",
+      "hours": "7 AM – 11:30 PM",
+      "ambience": "Elegant fine-dining serving North Indian and Rajasthani dishes",
+      "highlights": [
+        "Fine-dining",
+        "Elegant interiors"
+      ],
+      "must_try_dishes": [
+        "Laal maas",
+        "Paneer pasanda",
+        "Butter naan"
+      ],
+      "best_for": [
+        "fine dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Jharokha 360° Fine Sky Lounge",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹800-1100",
+      "hours": "7 AM- 10:30 AM; 12:30- 3:30 PM; 7:00 PM- 11:00 PM",
+      "ambience": "Rooftop restaurant with sweeping fort views",
+      "highlights": [
+        "360° views",
+        "Sweeping fort views"
+      ],
+      "must_try_dishes": [
+        "Butter chicken",
+        "Dal tadka",
+        "Paneer tikka masala"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Gypsy Dining Hall",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "Vegetarian",
+        "Rajasthani"
+      ],
+      "price_range": "₹600-800",
+      "hours": "10 AM – 11 PM",
+      "ambience": "Legendary vegetarian thali restaurant beloved by locals",
+      "highlights": [
+        "Vegetarian thali specialist",
+        "Beloved by locals"
+      ],
+      "must_try_dishes": [
+        "Rajasthani thali",
+        "Kadhi pakora",
+        "Malpua"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Latitude, Vivanta Jodhpur",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "Contemporary"
+      ],
+      "price_range": "₹1500-2000",
+      "hours": "7 PM – 11 PM",
+      "ambience": "Contemporary fine dining inside Vivanta by Taj",
+      "highlights": [
+        "Contemporary fine dining",
+        "Inside luxury hotel"
+      ],
+      "must_try_dishes": [
+        "Rajasthani red curry",
+        "Chicken biryani",
+        "Crème brûlée"
+      ],
+      "best_for": [
+        "luxury"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "The Filos Café & Continental Restaurant",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "Continental"
+      ],
+      "price_range": "₹700-1000",
+      "hours": "8 AM – 11 PM",
+      "ambience": "Relaxed café with indoor–outdoor seating serving international plates",
+      "highlights": [
+        "Indoor-outdoor seating",
+        "International plates"
+      ],
+      "must_try_dishes": [
+        "Grilled chicken sandwich",
+        "Falafel bowl",
+        "Tiramisu"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Stepwell Café",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "₹800-1100",
+      "hours": "11 AM – 11 PM",
+      "ambience": "Overlooking Toorji Ka Jhalra, this café is perfect for lunch with a view",
+      "nearby_landmarks": [
+        "Toorji Ka Jhalra, Jodhpur"
+      ],
+      "highlights": [
+        "Heritage stepwell views",
+        "Geometric backdrops"
+      ],
+      "must_try_dishes": [
+        "Mutton curry",
+        "Vegetable lasagne",
+        "Iced latte"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Gopal Roof Top Restaurant",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "Marwari"
+      ],
+      "price_range": "₹700-1000",
+      "hours": "6 AM – 11 PM",
+      "ambience": "Candle-lit terrace offering panoramic views and homestyle Marwari dishes",
+      "highlights": [
+        "Candle-lit terrace",
+        "Panoramic views",
+        "Homestyle Marwari dishes"
+      ],
+      "must_try_dishes": [
+        "Laal Maas",
+        "Palak paneer",
+        "Garlic naan"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Baari – A Heritage Rooftop",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "Fusion Rajasthani"
+      ],
+      "price_range": "₹1000-1400",
+      "hours": "8:30 AM – 10:30 PM",
+      "ambience": "Elegant new-age rooftop dining with fusion Rajasthani cuisine",
+      "highlights": [
+        "Fusion Rajasthani cuisine",
+        "Aesthetic lighting"
+      ],
+      "must_try_dishes": [
+        "Butter chicken",
+        "Paneer tikka",
+        "Dal makhani"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Gypsy Restaurant",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "Rajasthani"
+      ],
+      "price_range": "₹400-₹600",
+      "highlights": [
+        "Authentic vegetarian thali"
+      ],
+      "must_try_dishes": [
+        "Rajasthani thali",
+        "gatta curry",
+        "kadhi"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Janta Sweet Home",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "Local"
+      ],
+      "price_range": "₹150-₹300",
+      "highlights": [
+        "Local favourite"
+      ],
+      "must_try_dishes": [
+        "Pyaz kachori",
+        "mirchi vada",
+        "sweets"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "The Blue Turban",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹600-₹900",
+      "ambience": "Evening views of Mehrangarh Fort",
+      "nearby_landmarks": [
+        "Mehrangarh Fort, Jodhpur"
+      ],
+      "highlights": [
+        "Rooftop + Fort View"
+      ],
+      "must_try_dishes": [
+        "Laal maas",
+        "paneer tikka",
+        "veg kebabs"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "The Curry's",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹400-₹600",
+      "ambience": "Simple, modern Indian dining",
+      "must_try_dishes": [
+        "Dal tadka",
+        "paneer lababdar",
+        "roti basket"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Rudraksh Café & Restaurant",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "North Indian"
+      ],
+      "price_range": "₹250-₹400",
+      "area": "Near Bishnoi Village",
+      "ambience": "Simple indoor restaurant",
+      "must_try_dishes": [
+        "North Indian veg thali",
+        "dal fry",
+        "tandoori roti"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Hariyali Dhaba",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "Local"
+      ],
+      "price_range": "₹150-₹300",
+      "ambience": "Rustic, traditional dhaba feel",
+      "highlights": [
+        "Local roadside experience"
+      ],
+      "must_try_dishes": [
+        "Parathas",
+        "kadhi",
+        "veg sabzis"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "The Filos Café & Bistro",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "₹300-₹600",
+      "ambience": "Cozy, modern café",
+      "must_try_dishes": [
+        "Wraps",
+        "pizzas",
+        "coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Padharo Sa",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "Rajasthani"
+      ],
+      "price_range": "₹250-₹450",
+      "ambience": "Local-friendly, simple interiors",
+      "highlights": [
+        "Veg Indian Dining"
+      ],
+      "must_try_dishes": [
+        "Rajasthani thali",
+        "dal bati churma",
+        "masala chaach"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "The Kalinga Restaurant",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "Multi-cuisine Indian"
+      ],
+      "price_range": "₹400-₹700",
+      "area": "Near Railway Station",
+      "ambience": "Classic multi-cuisine Indian restaurant",
+      "must_try_dishes": [
+        "Veg handi",
+        "paneer tikka",
+        "naan"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Umaid Bhawan Palace",
+      "city": "Jodhpur",
+      "description": "An architectural marvel and one of the last great palaces of India",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Rajasthan/Jaipur and Jodhpur Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Mehrangarh Fort",
+      "city": "Jodhpur",
+      "description": "Towering above the city on a rugged cliff, one of India's most magnificent forts. Its scale, museum collections, and panoramic views make it Jodhpur's crown jewel",
+      "hours": "9:00 AM – 5:00 PM",
+      "entry_fee": "₹200 (Indian adult)",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Rajasthan/Jaipur and Jodhpur Itinerary.pdf",
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Jaswant Thada",
+      "city": "Jodhpur",
+      "description": "Often called the Taj Mahal of Marwar. This marble cenotaph glows softly in sunlight, surrounded by immaculate gardens and calm waters",
+      "hours": "9:00 AM – 5:00 PM",
+      "entry_fee": "₹30",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Rajasthan/Jaipur and Jodhpur Itinerary.pdf",
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Umaid Bhawan Palace Museum",
+      "city": "Jodhpur",
+      "description": "A still-inhabited royal residence and one of the last great palaces built in India",
+      "hours": "9:00 AM – 5:00 PM",
+      "entry_fee": "₹60 (Indians)",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Mandore Gardens",
+      "city": "Jodhpur",
+      "description": "Gardens dotted with cenotaphs, temples, and lush greenery — once the seat of the Rathore rulers",
+      "hours": "8:00 AM – 8:00 PM",
+      "entry_fee": "Free entry",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Ghanta Ghar (Clock Tower) Market",
+      "city": "Jodhpur",
+      "description": "The heart of Jodhpur's shopping scene for handicrafts, silver jewelry, spices",
+      "hours": "10 AM – 8 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Bishnoi Village, Guda Bishnoi",
+      "city": "Jodhpur",
+      "description": "Village safari to experience the Bishnoi community's traditional lifestyle and wildlife spotting",
+      "hours": "8:30 AM – 1:30 PM",
+      "entry_fee": "₹2000-3000 per jeep (approx.)",
+      "recommended_duration": "5 hours",
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Toorji Ka Jhalra Stepwell",
+      "city": "Jodhpur",
+      "description": "A restored 18th-century stepwell in the old city surrounded by cafés and boutiques",
+      "hours": "Open all day",
+      "entry_fee": "Free entry",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Clock Tower Market (Ghanta Ghar + Sardar Market)",
+      "city": "Jodhpur",
+      "description": "Jodhpur's famous market, a lively maze filled with spices, handicrafts, textiles, antiques, and everyday local life",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Guda Bishnoi Lake",
+      "city": "Jodhpur",
+      "description": "A protected environment and an important water source for migratory birds and local wildlife",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Raghvendra Heritage",
+      "city": "Jodhpur",
+      "location": null,
+      "_source_file": "Rajasthan/Jaipur and Jodhpur Itinerary.pdf",
+      "_source_mtime": 1772384332.3169577
+    },
+    {
+      "name": "Suraj Haveli",
+      "city": "Jodhpur",
+      "location": "Jodhpur",
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    },
+    {
+      "name": "Surpura Bagh",
+      "city": "Jodhpur",
+      "location": "Heritage-style retreat surrounded by tranquil gardens and water bodies",
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Makhania Lassi",
+      "city": "Jodhpur",
+      "description": "Thick saffron lassi topped with dry fruits",
+      "vegetarian": true,
+      "where_to_try": "Mishrilal Hotel (Jodhpur)",
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Spices",
+      "city": "Jodhpur",
+      "category": "Food",
+      "where_to_buy": [
+        "Clock Tower Market"
+      ],
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    },
+    {
+      "item": "Antiques",
+      "city": "Jodhpur",
+      "category": "Antiques",
+      "where_to_buy": [
+        "Clock Tower Market"
+      ],
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    },
+    {
+      "item": "Silver trinkets",
+      "city": "Jodhpur",
+      "category": "Jewelry",
+      "where_to_buy": [
+        "Clock Tower Market"
+      ],
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    },
+    {
+      "item": "Handcrafted camel leather bags",
+      "city": "Jodhpur",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Umaid Bhawan Boutique"
+      ],
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    },
+    {
+      "item": "Mirror work and tie-dye textiles",
+      "city": "Jodhpur",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Sardar Market"
+      ],
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    },
+    {
+      "item": "Spices",
+      "city": "Jodhpur",
+      "category": "Food",
+      "where_to_buy": [
+        "Clock Tower Market"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Antiques",
+      "city": "Jodhpur",
+      "category": "Antiques",
+      "where_to_buy": [
+        "Clock Tower Market"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Silver trinkets",
+      "city": "Jodhpur",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Clock Tower Market"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Handcrafted camel leather bags",
+      "city": "Jodhpur",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Umaid Bhawan Boutique"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "item": "Mirror work and tie-dye textiles",
+      "city": "Jodhpur",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Sardar Market"
+      ],
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Rajasthan/Jaipur and Jodhpur Itinerary.pdf",
+    "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+    "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+  ]
+}

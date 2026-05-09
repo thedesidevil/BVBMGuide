@@ -1,0 +1,157 @@
+{
+  "restaurants": [
+    {
+      "name": "Golden Grill Restaurant",
+      "city": "Bentota",
+      "cuisine_type": [
+        "Sri Lankan",
+        "Indian"
+      ],
+      "price_range": "LKR 1,500–2,500 per person",
+      "hours": "11:00 AM to 10:00 PM",
+      "ambience": "Relaxed resort-style dining; good variety; well-suited for families and visitors wanting both local and Indian flavours",
+      "highlights": [
+        "Resort-style dining",
+        "Good variety"
+      ],
+      "must_try_dishes": [
+        "Sri Lankan Rice & Curry",
+        "vegetable curries with pol sambol"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Vintage Restaurant",
+      "city": "Bentota",
+      "cuisine_type": [
+        "Sri Lankan",
+        "Indian"
+      ],
+      "price_range": "LKR 1,500–2,500 per person",
+      "hours": "9:00 AM to 11:00 PM",
+      "ambience": "Friendly service; nice quality, fresh ingredients; many vegetarian options; fairly popular with tourists",
+      "highlights": [
+        "Fresh ingredients",
+        "Popular with tourists"
+      ],
+      "must_try_dishes": [
+        "Sri Lankan coconut-based vegetable curries",
+        "Indian tandoori / grilled vegetarian items"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "The Cuisine Delight",
+      "city": "Bentota",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "LKR 1,500–2,500 per person",
+      "hours": "12:00 PM to 11:00 PM",
+      "ambience": "Small Indian restaurant; strong authentic flavours; praised by visitors for large portions and quality of Indian classics",
+      "highlights": [
+        "Strong authentic flavours",
+        "Large portions"
+      ],
+      "must_try_dishes": [
+        "Chole Bhature",
+        "North Indian staples",
+        "Chole bhature",
+        "Paneer dishes",
+        "Veg curries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Bentota River",
+      "city": "Bentota",
+      "description": "Exciting watersports including jet skiing, banana boat rides, tube rides or wakeboarding",
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Madu River Safari",
+      "city": "Bentota",
+      "description": "A gentle boat ride through mangroves, cinnamon plantations, and island temples",
+      "hours": "6:00 AM – 6:00 PM",
+      "entry_fee": "Foreign Visitors: Approximately $25–$35 USD per person for a 1.5–2 hour boat safari",
+      "recommended_duration": "1.5–2 hours",
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Bentota-Cinnamon Bey",
+      "city": "Bentota",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Ceylon Cinnamon & Vanilla",
+      "city": "Bentota",
+      "category": "Food",
+      "where_to_buy": [
+        "Heritance Spice & Allied Products shop"
+      ],
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "item": "Ayurvedic Oils & Natural Skincare",
+      "city": "Bentota",
+      "category": "Health & Beauty",
+      "where_to_buy": [
+        "Spa Ceylon"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "item": "Ceylon Cinnamon & Vanilla",
+      "city": "Bentota",
+      "category": "Food",
+      "where_to_buy": [
+        "Heritance Spice & Allied Products shop"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+    "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+  ]
+}

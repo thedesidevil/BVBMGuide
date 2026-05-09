@@ -1,0 +1,438 @@
+{
+  "restaurants": [
+    {
+      "name": "Baozi Hồ Tùng Mậu",
+      "city": "HCMC",
+      "cuisine_type": [
+        "Taiwanese"
+      ],
+      "price_range": "Rs. 150 - 600",
+      "hours": "10:00 AM - 11:30 PM",
+      "must_try_dishes": [
+        "Pork Belly Bao",
+        "Dumplings"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "The Secret Garden",
+      "city": "HCMC",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Rs. 400 - 800",
+      "hours": "11:00 AM - 10:00 PM",
+      "must_try_dishes": [
+        "Claypot Dishes",
+        "Fried Spring Rolls"
+      ],
+      "nearby_landmarks": [
+        "Notre Dame Cathedral, HCMC"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Pizza 4P's",
+      "city": "HCMC",
+      "cuisine_type": [
+        "Italian",
+        "Fusion"
+      ],
+      "price_range": "Rs. 600 - 1200",
+      "hours": "10:00 AM - 11:00 PM",
+      "must_try_dishes": [
+        "Burrata Pizza",
+        "Salmon Miso Cream Pasta"
+      ],
+      "nearby_landmarks": [
+        "Ben Thanh Market, HCMC"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Propaganda Bistro",
+      "city": "HCMC",
+      "cuisine_type": [
+        "Vietnamese",
+        "Fusion"
+      ],
+      "price_range": "Rs. 500 - 1000",
+      "hours": "7:30 AM - 10:30 PM",
+      "must_try_dishes": [
+        "Vietnamese Tacos",
+        "Rice Paper Rolls"
+      ],
+      "nearby_landmarks": [
+        "Nguyen Hue Walking Street, HCMC"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Mang's Mania",
+      "city": "HCMC",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "Rs. 400 - 800",
+      "hours": "10:00 AM - 10:00 PM",
+      "must_try_dishes": [
+        "Margherita Pizza",
+        "Lasagna"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Banana Leaf Saigon",
+      "city": "HCMC",
+      "cuisine_type": [
+        "Indian",
+        "Asian"
+      ],
+      "price_range": "Rs. 500 - 1000",
+      "hours": "11:00 AM - 10:00 PM",
+      "must_try_dishes": [
+        "Butter Chicken",
+        "Biryani"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Dahi Handi",
+      "city": "HCMC",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "Rs. 500 - 800",
+      "hours": "11:30 AM - 11:00 PM",
+      "must_try_dishes": [
+        "Paneer Butter Masala",
+        "Garlic Naan"
+      ],
+      "nearby_landmarks": [
+        "Nguyen Hue Walking Street, HCMC"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Rose Villa Saigon",
+      "city": "HCMC",
+      "cuisine_type": [
+        "French",
+        "European"
+      ],
+      "price_range": "Rs. 1200 - 2000",
+      "hours": "12:00 PM - 10:00 PM",
+      "must_try_dishes": [
+        "Duck Breast",
+        "Crème Brûlée"
+      ],
+      "ambience": "tropical setting full of flowers",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Quan Bui Restaurant",
+      "city": "HCMC",
+      "cuisine_type": [
+        "Vietnamese",
+        "Fusion"
+      ],
+      "price_range": "Rs. 500 - 1000",
+      "hours": "10:00 AM - 11:00 PM",
+      "must_try_dishes": [
+        "Lemongrass Chicken",
+        "Seafood Hotpot"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Bun Moc Thanh Mai",
+      "city": "HCMC",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Rs. 200 - 400",
+      "hours": "7:00 AM - 9:00 PM",
+      "must_try_dishes": [
+        "Bun Moc (Pork & Mushroom Noodles)"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Bếp Mẹ Ỉn - Vietnamese Restaurant",
+      "city": "HCMC",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Rs. 400 - 800",
+      "hours": "10:30 AM - 9:30 PM",
+      "must_try_dishes": [
+        "Pho",
+        "Vietnamese Pancakes filled with meats",
+        "Vietnamese Sandwich"
+      ],
+      "nearby_landmarks": [
+        "Ben Thanh Market, HCMC"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Soul Ben Thanh Restaurant & Bar",
+      "city": "HCMC",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Rs. 500 - 1000",
+      "hours": "11:00 AM - 10:00 PM",
+      "must_try_dishes": [
+        "Pho",
+        "Spring Rolls",
+        "Grilled Fish"
+      ],
+      "nearby_landmarks": [
+        "Ben Thanh Market, HCMC"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Tung's Restaurant",
+      "city": "HCMC",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Rs. 500 - 900",
+      "hours": "11:00 AM - 10:00 PM",
+      "must_try_dishes": [
+        "Crab",
+        "Pork Ribs",
+        "Seafood Hotpot"
+      ],
+      "nearby_landmarks": [
+        "Ben Thanh Market, HCMC"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Notre Dame Cathedral",
+      "city": "HCMC",
+      "description": "Cathedral",
+      "hours": "8am - 5pm",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Central Post Office",
+      "city": "HCMC",
+      "description": "French colonial masterpiece",
+      "hours": "7:30 am- 6 pm",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Jade Emperor Pagoda",
+      "city": "HCMC",
+      "description": "Colorful Taoist temple showcasing intricate Buddhist iconography",
+      "hours": "7 am- 6 pm",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Nguyen Hue Walking Street",
+      "city": "HCMC",
+      "description": "Pedestrian-only zone filled with shops, cafes, and street performers",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Independence Palace",
+      "city": "HCMC",
+      "description": "Symbol of Vietnamese reunification with halls and exhibits showcasing the country's history",
+      "hours": "8 am to 3:30 pm",
+      "entry_fee": "Rs. 150 per person",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Ho Chi Minh City Museum",
+      "city": "HCMC",
+      "description": "Museum delving into the city's fascinating history and cultural heritage",
+      "hours": "8 am to 5 pm",
+      "entry_fee": "Rs. 100 per person",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Bui Vien Walking Street",
+      "city": "HCMC",
+      "description": "Street offering a wide range of restaurants, bars and street food stalls",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Cho Lon (Chinatown)",
+      "city": "HCMC",
+      "description": "Vibrant district home to many traditional Chinese shops, restaurants, and temples",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Tue Thanh Shrine",
+      "city": "HCMC",
+      "description": "Shrine in Chinatown",
+      "hours": "6am- 5:30 pm",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    },
+    {
+      "name": "Ben Thanh Market",
+      "city": "HCMC",
+      "description": "Market for souvenir shopping and street food",
+      "hours": "Day market: 6 am - 6 pm, Night market: 6 pm - 10 pm",
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Baglioni Saigon",
+      "city": "HCMC",
+      "location": "30 min taxi ride from airport",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Bun Moc",
+      "city": "HCMC",
+      "description": "Pork & Mushroom Noodles",
+      "vegetarian": false,
+      "where_to_try": "Bun Moc Thanh Mai",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Vietnamese silk products",
+      "city": "HCMC",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Ben Thanh",
+        "An Dong Market"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "item": "Vietnamese hand embroidery",
+      "city": "HCMC",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Ben Thanh"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "item": "Do paper products",
+      "city": "HCMC",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "An Dong Market"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "item": "Bamboo products",
+      "city": "HCMC",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Ben Thanh"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    },
+    {
+      "item": "Magnet dolls",
+      "city": "HCMC",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Ben Thanh"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf"
+  ]
+}

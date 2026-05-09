@@ -1,0 +1,118 @@
+{
+  "restaurants": [
+    {
+      "name": "Cafe Troisieme Marche",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "₹1,000–1,500",
+      "hours": "11:30 AM – 5:00 PM",
+      "ambience": "Cozy café with relaxed, artistic vibe",
+      "highlights": [
+        "Comfort + aesthetic café"
+      ],
+      "must_try_dishes": [
+        "Veg pasta",
+        "baked goods",
+        "coffee"
+      ],
+      "best_for": [
+        "comfort",
+        "aesthetic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Shaw's Sushi Bar & Dining",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹1,200–2,000",
+      "hours": "11:30 AM – 1:30 PM | 5:30 PM - 7:30 PM",
+      "ambience": "Casual dining with flexible menu",
+      "highlights": [
+        "Variety"
+      ],
+      "must_try_dishes": [
+        "Veg sushi",
+        "tempura"
+      ],
+      "best_for": [
+        "variety"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Lake Kawaguchiko",
+      "city": "Kawaguchiko",
+      "description": "The calm waters mirror Mt. Fuji's snow-capped peak, creating one of Japan's most photographed landscapes",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "45 minutes",
+      "source_files": [
+        "Japan/AA_All Inclusive Guide_Japan.pdf",
+        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Chureito Pagoda",
+      "city": "Kawaguchiko",
+      "description": "Most photographed Fuji viewpoint with red pagoda foreground and Mount Fuji backdrop",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "45-60 minutes",
+      "source_files": [
+        "Japan/AA_All Inclusive Guide_Japan.pdf"
+      ]
+    },
+    {
+      "name": "Oishi Park",
+      "city": "Kawaguchiko",
+      "description": "A perfectly curated viewpoint with flower beds in the foreground and Mt. Fuji rising dramatically in the background — one of the best photo spots in the region",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "source_files": [
+        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Lake Yamanaka",
+      "city": "Kawaguchiko",
+      "description": "The largest of the Fuji Five Lakes — quieter and more expansive. Known for wide open landscapes, swan sightings, and peaceful, uncrowded atmosphere",
+      "source_files": [
+        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Arakurayama Sengen Park",
+      "city": "Kawaguchiko",
+      "description": "Famous for the Chureito Pagoda with Mt. Fuji in the background — one of Japan's most iconic postcard views. Requires climbing steps (~10–15 min uphill), but the view is absolutely worth it",
+      "source_files": [
+        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Japan/AA_All Inclusive Guide_Japan.pdf",
+    "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+  ]
+}

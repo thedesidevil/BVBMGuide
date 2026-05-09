@@ -1,0 +1,459 @@
+{
+  "restaurants": [
+    {
+      "name": "Theva Cuisine",
+      "city": "Kandy",
+      "cuisine_type": [
+        "International",
+        "Thai"
+      ],
+      "price_range": "LKR 1,900–2,600 per person",
+      "hours": "8:00 AM – 10:00 PM",
+      "ambience": "Upscale, beautiful view overlooking the hills; modern décor; pleasant setting with outdoor seating and a calm, premium vibe",
+      "highlights": [
+        "Hill views",
+        "Outdoor seating",
+        "Premium vibe"
+      ],
+      "must_try_dishes": [
+        "Vegetable Biryani",
+        "Thai Green Curry with rice & green papaya salad",
+        "Vegetable Quesadillas",
+        "Grilled Eggplant with roasted tomato & feta",
+        "Cashew curry",
+        "jackfruit curry (polos)",
+        "vegetable biryani",
+        "coconut sambol",
+        "dhal curry",
+        "Vegetable curries",
+        "String hoppers",
+        "Seafood platter"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "The Empire Cafe",
+      "city": "Kandy",
+      "cuisine_type": [
+        "Sri Lankan",
+        "International"
+      ],
+      "price_range": "LKR 1,900–2,600 per dish",
+      "hours": "8:30 AM to 8:30 PM",
+      "ambience": "Colonial-building charm; nice café vibe; good for breakfast, brunch, relaxed lunch or early dinner; nice views; friendly staff",
+      "highlights": [
+        "Colonial building",
+        "Nice views",
+        "Good for breakfast and brunch"
+      ],
+      "must_try_dishes": [
+        "Empire Classic Rice & Curry with three veg curries + papadums + pol sambol + mallung",
+        "Mac and Cheese with mushroom & leek crispy crumb topping",
+        "Mezze Platter with Sri Lankan dips",
+        "Sri Lankan rice & curry (veg platter)",
+        "vegetable spring rolls",
+        "mac & cheese",
+        "fresh juices",
+        "Spring rolls",
+        "potato wedges",
+        "mac and cheese",
+        "Wedges",
+        "Mac & cheese"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Indian Summer Restaurant Kandy",
+      "city": "Kandy",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "LKR 800 to 1,500 per person",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "Modern, vibrant décor with a cozy atmosphere; centrally located near Kandy's city center; offers a diverse menu catering to various dietary preferences",
+      "area": "Kandy city center",
+      "highlights": [
+        "Diverse menu",
+        "Various dietary preferences"
+      ],
+      "must_try_dishes": [
+        "Indian curries",
+        "rotis",
+        "rice"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Devon Restaurant",
+      "city": "Kandy",
+      "cuisine_type": [
+        "Sri Lankan"
+      ],
+      "price_range": "₨ 800–1,500 per person",
+      "hours": "7:30am-7pm",
+      "ambience": "Over 2 floors, very popular, people are expected to leave once they finish a meal",
+      "highlights": [
+        "Over 2 floors",
+        "Very popular",
+        "People are expected to leave once they finish a meal"
+      ],
+      "must_try_dishes": [
+        "Veg rice box",
+        "vegetable curry platter",
+        "traditional milk tea",
+        "Rice box (veg version)",
+        "Sri Lankan rice & curry",
+        "Milk tea",
+        "Rice Box",
+        "Traditional Milk tea"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Royal Bar and Hotel",
+      "city": "Kandy",
+      "cuisine_type": [
+        "Sri Lankan"
+      ],
+      "hours": "7am-11pm",
+      "ambience": "Old world charm, good place to catch a drink, has live performances",
+      "highlights": [
+        "Great cocktails",
+        "Old world charm",
+        "Has live performances"
+      ],
+      "must_try_dishes": [
+        "Fish cakes",
+        "Chicken curry",
+        "Prawn curry"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Vito Wood Fired Pizza",
+      "city": "Kandy",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "12-09:30pm",
+      "ambience": "Has outdoor seating",
+      "highlights": [
+        "Has outdoor seating"
+      ],
+      "must_try_dishes": [
+        "Pizzas",
+        "pastas"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Temple of the Sacred Tooth Relic",
+      "city": "Kandy",
+      "description": "One of the most revered Buddhist temples in Asia",
+      "hours": "5:30 AM to 8:00 PM",
+      "entry_fee": "Foreign visitors (non-SAARC countries): ~ LKR 2,000",
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf"
+      ]
+    },
+    {
+      "name": "Kandy Lake",
+      "city": "Kandy",
+      "description": "Peaceful lake located next to the Temple of the Sacred Tooth Relic, perfect for walks",
+      "hours": "24 hours",
+      "entry_fee": "free",
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Royal Botanical Gardens Peradeniya",
+      "city": "Kandy",
+      "description": "Spread across 147 acres, these gardens are a tropical paradise of orchids, towering royal palms, bamboo groves, and exotic spice plants.",
+      "hours": "7:30 AM – 5:00 PM",
+      "entry_fee": "LKR 3,000 per person",
+      "recommended_duration": "1.5–2 hours",
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf"
+      ]
+    },
+    {
+      "name": "Kandyan Cultural Centre",
+      "city": "Kandy",
+      "description": "Traditional Kandyan dance show featuring fire walking, mask dances, drumming rituals, and vibrant traditional costumes.",
+      "hours": "Shows typically begin around 5:00 PM",
+      "entry_fee": "LKR 3,500 per person",
+      "recommended_duration": null,
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf"
+      ]
+    },
+    {
+      "name": "Temple of the Sacred Tooth Relic (Sri Dalada Maligawa)",
+      "city": "Kandy",
+      "description": "One of the most revered Buddhist temples in the world, believed to house a sacred relic of Lord Buddha with intricate Kandyan architecture",
+      "hours": "5:30 a.m. to 8:00 p.m",
+      "entry_fee": "LKR 2000 pp",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Kandy Lake (Kiri Muhuda)",
+      "city": "Kandy",
+      "description": "A picturesque spot for a relaxed post-temple walk with optional boat rides",
+      "hours": "Open 24 hours",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Kandy Lake Club Cultural Show",
+      "city": "Kandy",
+      "description": "Cultural show",
+      "hours": "Start time is 5pm",
+      "entry_fee": "3500 LKR",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Temple of the Tooth Relic",
+      "city": "Kandy",
+      "description": "Sacred Buddhist temple",
+      "hours": "05:30am-08:00pm everyday",
+      "entry_fee": "Rs. 1500",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Arthurs Seat Kandy Viewpoint",
+      "city": "Kandy",
+      "description": "Scenic viewpoint",
+      "hours": "Open through",
+      "entry_fee": "No fee",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Kandy-Golden Crown",
+      "city": "Kandy",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "name": "Golden Crown Kandy",
+      "city": "Kandy",
+      "location": "Set amidst quiet hills, ~20 mins from Kandy town center",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "name": "Hotel Radisson",
+      "city": "Kandy",
+      "location": "Kandy",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Spices & Herbal Products",
+      "city": "Kandy",
+      "category": "Food",
+      "where_to_buy": [
+        "Kandy City Centre Spice Market"
+      ],
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "item": "Gems & Jewellery (Sapphires, Moonstones)",
+      "city": "Kandy",
+      "category": "Jewelry",
+      "where_to_buy": [
+        "Gem Museum & Lapidary"
+      ],
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "item": "Batik & Handloom Fabrics",
+      "city": "Kandy",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Selyn Handloom Centre"
+      ],
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "item": "Coconut Shell Crafts & Lacquerware",
+      "city": "Kandy",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kandyan Art Association Craft Centre"
+      ],
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "item": "Handmade Paper & Stationery",
+      "city": "Kandy",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Maximus Elephant Dung Paper Factory Shop"
+      ],
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "item": "Spices & Herbal Products",
+      "city": "Kandy",
+      "category": "Food",
+      "where_to_buy": [
+        "Kandy City Centre Spice Market"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "item": "Gems & Jewellery (Sapphires, Moonstones)",
+      "city": "Kandy",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Gem Museum & Lapidary"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "item": "Batik & Handloom Fabrics",
+      "city": "Kandy",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Selyn Handloom Centre"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "item": "Ayurvedic Oils & Natural Skincare",
+      "city": "Kandy",
+      "category": "Health & Beauty",
+      "where_to_buy": [
+        "Spa Ceylon"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "item": "Coconut Shell Crafts & Lacquerware",
+      "city": "Kandy",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kandyan Art Association Craft Centre"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "item": "Handmade Paper & Stationery",
+      "city": "Kandy",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Maximus Elephant Dung Paper Factory Shop"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "item": "Batik",
+      "city": "Kandy",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Jayamali Batiks Studio in Kandy market"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "item": "Gems including moonstone carvings",
+      "city": "Kandy",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kahandawela"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+    "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+    "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+    "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+  ]
+}

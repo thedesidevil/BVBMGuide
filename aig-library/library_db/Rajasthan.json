@@ -1,0 +1,277 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Laal Maas",
+      "city": "Rajasthan",
+      "description": "A fiery mutton curry made with Mathania red chillies and ghee",
+      "vegetarian": false,
+      "where_to_try": "Khamma Ghani Restaurant",
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Dal Baati Churma",
+      "city": "Rajasthan",
+      "description": "The holy grail of Rajasthani cuisine: baked dough balls (baati), mixed lentils (dal), and sweetened crumbled wheat (churma)",
+      "vegetarian": true,
+      "where_to_try": "Rajwadi Thal",
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Gatte ki Sabzi",
+      "city": "Rajasthan",
+      "description": "Chickpea flour dumplings simmered in a tangy yogurt-based curry",
+      "vegetarian": true,
+      "where_to_try": "Rajwadi Thal",
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf"
+      ]
+    },
+    {
+      "name": "Ker Sangri",
+      "city": "Rajasthan",
+      "description": "A dry sabzi made from desert beans and berries, cooked with minimal spices and lots of oil",
+      "vegetarian": true,
+      "where_to_try": "Rajwadi Thal",
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Pyaz Kachori",
+      "city": "Rajasthan",
+      "description": "Deep-fried flaky pastry filled with a spicy onion mix. Best enjoyed with mint chutney",
+      "vegetarian": true,
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf"
+      ]
+    },
+    {
+      "name": "Ghewar",
+      "city": "Rajasthan",
+      "description": "A honeycomb-like sweet soaked in sugar syrup, topped with rabri, often eaten during festivals",
+      "vegetarian": true,
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Safed Maas",
+      "city": "Rajasthan",
+      "description": "Unlike the fiery laal maas, this mutton curry is creamy, with curd, almonds, and cardamom",
+      "vegetarian": false,
+      "where_to_try": "Khamma Ghani Restaurant",
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Mawa Kachori",
+      "city": "Rajasthan",
+      "description": "A decadent kachori stuffed with sweetened khoya and dry fruits, dipped in sugar syrup",
+      "vegetarian": true,
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Mirchi Bada",
+      "city": "Rajasthan",
+      "description": "A spicy green chili stuffed with potato, dipped in besan, and deep fried",
+      "vegetarian": true,
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf"
+      ]
+    },
+    {
+      "name": "Masala Chaas",
+      "city": "Rajasthan",
+      "description": "A cooling buttermilk spiced with roasted cumin and herbs",
+      "vegetarian": true,
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf"
+      ]
+    },
+    {
+      "name": "Mirchi Vada",
+      "city": "Rajasthan",
+      "description": "Spicy, crisp, and iconic; best enjoyed hot with tamarind chutney",
+      "vegetarian": true,
+      "where_to_try": "Street vendors",
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Malpua with Rabri",
+      "city": "Rajasthan",
+      "description": "Traditional festive sweet",
+      "vegetarian": true,
+      "where_to_try": "LMB (Jaipur)",
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+        "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Rajasthan",
+      "english": "Hello",
+      "local": "Khamma Ghani",
+      "category": "greeting",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    },
+    {
+      "city": "Rajasthan",
+      "english": "How are you?",
+      "local": "Kem Cho?",
+      "category": "greeting",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    },
+    {
+      "city": "Rajasthan",
+      "english": "Thank you",
+      "local": "Dhanyavaad / Sukriya",
+      "category": "polite",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Dress modestly in temples and rural areas",
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    },
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Remove shoes before entering shrines",
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    },
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Tipping 5–10% at restaurants is appreciated",
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    },
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Avoid walking alone late at night in isolated areas",
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    },
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Use registered taxis or hotel transfers",
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    },
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Keep digital copies of travel documents",
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    },
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Dress modestly in temples and rural areas",
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Remove shoes before entering shrines",
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Avoid walking alone late at night in isolated areas",
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Use registered taxis or hotel transfers",
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Keep digital copies of travel documents",
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    }
+  ],
+  "souvenirs": [],
+  "emergency_contacts": [
+    {
+      "city": "Rajasthan",
+      "service": "Police",
+      "number": "100",
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    },
+    {
+      "city": "Rajasthan",
+      "service": "Ambulance",
+      "number": "108",
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764
+    }
+  ],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+    "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+    "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf"
+  ]
+}

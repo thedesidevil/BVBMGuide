@@ -1,0 +1,61 @@
+{
+  "restaurants": [
+    {
+      "name": "Le Pescatore",
+      "city": "Pointe aux Piments",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "₹₹₹₹",
+      "hours": "12–2pm, 7–10pm",
+      "highlights": [
+        "Gourmet seafood",
+        "Beach location"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "Mauritius/Mauritius All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Mauritius Aquarium",
+      "city": "Pointe aux Piments",
+      "description": "Located in the coastal village offering an immersive experience into the island's rich marine biodiversity. An ideal destination for families, marine enthusiasts, and anyone keen to explore the underwater world without diving",
+      "hours": "9:30am–5pm",
+      "entry_fee": "Rs. 250 adult / Rs. 150 child",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Mauritius/Mauritius All Inclusive Guide.pdf",
+        "Mauritius/Mauritius All Inclusive Guide - Roma.pdf",
+        "Mauritius/Mauritius All Inclusive Guide - bak.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Le Méridien Ile Maurice",
+      "city": "Pointe aux Piments",
+      "location": "Pointe aux Piments",
+      "_source_file": "Mauritius/Mauritius All Inclusive Guide - Oishee.pdf",
+      "_source_mtime": 1772384257.9226367
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Mauritius/Mauritius All Inclusive Guide.pdf",
+    "Mauritius/Mauritius All Inclusive Guide - Roma.pdf",
+    "Mauritius/Mauritius All Inclusive Guide - bak.pdf",
+    "Mauritius/Mauritius All Inclusive Guide - Oishee.pdf"
+  ]
+}

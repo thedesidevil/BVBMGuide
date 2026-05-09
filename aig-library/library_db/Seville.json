@@ -1,0 +1,238 @@
+{
+  "restaurants": [
+    {
+      "name": "Bar Restaurante Casa Román",
+      "city": "Seville",
+      "cuisine_type": [
+        "Andalusian"
+      ],
+      "price_range": "€20-30 per person",
+      "hours": "1-5 PM & 8 PM-12 AM",
+      "highlights": [
+        "Andalusian classics"
+      ],
+      "must_try_dishes": [
+        "Pork cheeks",
+        "Oxtail",
+        "Jamón"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Las Teresas",
+      "city": "Seville",
+      "cuisine_type": [
+        "Traditional tapas"
+      ],
+      "price_range": "€20-25 per person",
+      "hours": "11 AM-1 AM",
+      "highlights": [
+        "Traditional tapas & meat dishes"
+      ],
+      "must_try_dishes": [
+        "Cured meats",
+        "Stews"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Malquerer Restaurante",
+      "city": "Seville",
+      "cuisine_type": [
+        "Modern Spanish"
+      ],
+      "price_range": "€25-35 per person",
+      "hours": "12 PM-11 PM",
+      "highlights": [
+        "Modern Spanish with strong non-veg focus"
+      ],
+      "must_try_dishes": [
+        "Paella",
+        "Meats",
+        "Seafood"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Bodega Santa Cruz (Las Columnas)",
+      "city": "Seville",
+      "cuisine_type": [
+        "Sevillian tapas"
+      ],
+      "price_range": "€15-20 per person",
+      "highlights": [
+        "Classic Sevillian tapas bar"
+      ],
+      "must_try_dishes": [
+        "Pringá montadito",
+        "Pork cheeks"
+      ],
+      "area": "Santa Cruz Quarter",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "El Librero Tapas y Quesos",
+      "city": "Seville",
+      "cuisine_type": [
+        "Andalusian"
+      ],
+      "price_range": "€20-25 per person",
+      "highlights": [
+        "Andalusian comfort dishes"
+      ],
+      "must_try_dishes": [
+        "Spinach & chickpeas",
+        "Pork cheeks",
+        "Meatballs"
+      ],
+      "area": "Santa Cruz Quarter",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Vinería San Telmo",
+      "city": "Seville",
+      "cuisine_type": [
+        "Spanish"
+      ],
+      "price_range": "€25-30 per person",
+      "highlights": [
+        "Refined Spanish plates"
+      ],
+      "must_try_dishes": [
+        "Oxtail",
+        "Grilled meats",
+        "Seafood starters"
+      ],
+      "area": "Santa Cruz Quarter",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Casa Román",
+      "city": "Seville",
+      "cuisine_type": [
+        "Andalusian"
+      ],
+      "price_range": "€25-35 per person",
+      "highlights": [
+        "Traditional Andalusian meat dishes"
+      ],
+      "must_try_dishes": [
+        "Jamón",
+        "Pork cheeks",
+        "Oxtail"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Taberna Peregil",
+      "city": "Seville",
+      "cuisine_type": [
+        "Local"
+      ],
+      "price_range": "€15-20 per person",
+      "highlights": [
+        "Casual local bar"
+      ],
+      "must_try_dishes": [
+        "Orange wine & pork specialties"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Plaza de España",
+      "city": "Seville",
+      "description": "Iconic semi-circular plaza with tiled alcoves representing Spanish provinces",
+      "hours": "8 AM-12 AM",
+      "recommended_duration": "45-60 minutes",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Real Alcázar of Seville",
+      "city": "Seville",
+      "description": "Palace with Mudéjar courtyards, ornate tilework, and lush gardens",
+      "entry_fee": "Pre-booking recommended",
+      "recommended_duration": "1.5-2 hours",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Seville Cathedral",
+      "city": "Seville",
+      "description": "One of the largest Gothic cathedrals in the world, contains tomb of Christopher Columbus",
+      "recommended_duration": "45-60 minutes",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Giralda",
+      "city": "Seville",
+      "description": "Cathedral tower with ramp-style ascent offering panoramic views over Seville's rooftops",
+      "recommended_duration": "20-30 minutes",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Exe Sevilla Macarena",
+      "city": "Seville",
+      "location": "Macarena area",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Hand-painted ceramics",
+      "city": "Seville",
+      "category": "Crafts",
+      "where_to_buy": [
+        "Triana ceramic shops"
+      ],
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Seville",
+      "mode": "Metro, Bus",
+      "description": "Historic centre is very walkable",
+      "recommended_pass": "Single tickets or 1-Day Metro Pass",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+  ]
+}

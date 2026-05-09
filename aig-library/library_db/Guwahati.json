@@ -1,0 +1,284 @@
+{
+  "restaurants": [
+    {
+      "name": "The Great Kabab Factory",
+      "city": "Guwahati",
+      "cuisine_type": [
+        "North Indian"
+      ],
+      "price_range": "₹1,200 – ₹2,000 per person",
+      "hours": "07:00 AM – 11:30 PM",
+      "ambience": "Premium, classic North Indian dining",
+      "must_try_dishes": [
+        "Veg kebabs",
+        "dal makhani",
+        "assorted breads"
+      ],
+      "best_for": [
+        "structured dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Terra Mayaa",
+      "city": "Guwahati",
+      "cuisine_type": [
+        "Continental"
+      ],
+      "price_range": "₹800 – ₹1,500 per person",
+      "hours": "12:00 AM – 12:00 PM | 1:00 PM - 12:00 AM",
+      "ambience": "Rooftop, refined yet relaxed",
+      "must_try_dishes": [
+        "Pizzas",
+        "pasta",
+        "salads"
+      ],
+      "best_for": [
+        "upscale lunch"
+      ],
+      "source_files": [
+        "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Table (Guwahati)",
+      "city": "Guwahati",
+      "cuisine_type": [
+        "Continental"
+      ],
+      "price_range": "₹1,000 – ₹1,800 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Stylish, modern dining with a refined yet relaxed setting",
+      "must_try_dishes": [
+        "Continental mains",
+        "pizzas",
+        "desserts"
+      ],
+      "best_for": [
+        "upscale casual dining"
+      ],
+      "source_files": [
+        "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Levitate Rooftop Restaurant",
+      "city": "Guwahati",
+      "cuisine_type": [
+        "Chinese"
+      ],
+      "price_range": "₹800 – ₹1,500 per person",
+      "hours": "11:00 AM – 12:00 AM, 11:00 AM – 1:00 AM (on Mondays)",
+      "ambience": "Rooftop, vibrant with city views",
+      "must_try_dishes": [
+        "Chinese starters",
+        "noodles",
+        "cocktails"
+      ],
+      "best_for": [
+        "evening dining with views"
+      ],
+      "highlights": [
+        "Limited parking"
+      ],
+      "source_files": [
+        "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Maroon Room",
+      "city": "Guwahati",
+      "cuisine_type": [
+        "North Indian"
+      ],
+      "price_range": "₹1,200 – ₹2,000 per person",
+      "hours": "12:00 PM – 12:30 AM",
+      "ambience": "Elegant, fine dining with a premium feel",
+      "must_try_dishes": [
+        "North Indian curries",
+        "kebabs",
+        "biryani"
+      ],
+      "best_for": [
+        "refined dinner"
+      ],
+      "source_files": [
+        "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "11th Avenue Cafe Bistro",
+      "city": "Guwahati",
+      "cuisine_type": [
+        "Continental"
+      ],
+      "price_range": "₹600 – ₹1,000 per person",
+      "hours": "8:00 AM – 11:00 PM",
+      "ambience": "Cozy café-style dining",
+      "must_try_dishes": [
+        "Pasta",
+        "sandwiches",
+        "desserts"
+      ],
+      "best_for": [
+        "light",
+        "relaxed dinner"
+      ],
+      "source_files": [
+        "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Kamakhya Temple",
+      "city": "Guwahati",
+      "description": "Set atop Nilachal Hill, this revered shrine offers sweeping views of the Brahmaputra and a deeply calming atmosphere in the early hours",
+      "hours": "5:30 AM – 1:00 PM & 2:30 PM – 5:30 PM",
+      "entry_fee": "Free (VIP darshan tickets to be arranged independently)",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Brahmaputra Ropeway",
+      "city": "Guwahati",
+      "description": "Short cable-car ride with panoramic views of the Brahmaputra",
+      "hours": "9:00 AM to 5:00 PM",
+      "source_files": [
+        "Northeast India/All Inclusive Guide- Anitha- North East.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Arista by Ambition",
+      "city": "Guwahati",
+      "location": "~1 hour from airport",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0
+    },
+    {
+      "name": "Vivanta Guwahati",
+      "city": "Guwahati",
+      "location": "~40–50 mins to airport",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Masor Tenga",
+      "city": "Guwahati",
+      "description": "A light, tangy curry made with tomatoes and regional herbs—perfect for those who prefer delicate flavours over heavy spices",
+      "vegetarian": false,
+      "where_to_try": "The Table (Guwahati)",
+      "source_files": [
+        "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Guwahati",
+      "english": "Greeting",
+      "local": "Namaskar",
+      "category": "greeting",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Shillong",
+        "Guwahati",
+        "Cherrapunjee"
+      ],
+      "tip": "Roads in Meghalaya are winding—avoid sudden movements while driving",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0
+    },
+    {
+      "cities": [
+        "Shillong",
+        "Guwahati"
+      ],
+      "tip": "Network connectivity may be limited in remote areas",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0
+    },
+    {
+      "cities": [
+        "Shillong",
+        "Guwahati"
+      ],
+      "tip": "Keep wallets, phones, and documents secure in crowded areas like Police Bazaar",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0
+    },
+    {
+      "cities": [
+        "Guwahati"
+      ],
+      "tip": "Dress modestly at religious sites (covered shoulders & knees recommended)",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Assam Tea",
+      "city": "Guwahati",
+      "category": "Food",
+      "where_to_buy": [
+        "Purbashree Emporium",
+        "Fancy Bazaar"
+      ],
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Guwahati",
+        "Shillong"
+      ],
+      "tip": "Mobile signals vary — Guwahati & Shillong have good coverage",
+      "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.pdf",
+      "_source_mtime": 1772384381.158248
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Shillong",
+        "Guwahati"
+      ],
+      "tip": "Carry motion sickness tablets for hilly drives",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0
+    },
+    {
+      "cities": [
+        "Shillong",
+        "Guwahati",
+        "Cherrapunjee"
+      ],
+      "tip": "Use mosquito repellent, important for outdoor areas",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0
+    }
+  ],
+  "source_files": [
+    "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+    "Northeast India/All Inclusive Guide- Anitha- North East.pdf"
+  ]
+}

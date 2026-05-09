@@ -1,0 +1,489 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Vegetarian Haggis, Neeps & Tatties",
+      "city": "Scotland",
+      "description": "A vegetarian version of Scotland's national dish, made with lentils, oats, onions, and spices. Served with mashed turnips (neeps) and potatoes (tatties)",
+      "vegetarian": true,
+      "where_to_try": "Makars Gourmet Mash Bar",
+      "source_files": [
+        "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Cullen Skink (Vegetarian Version)",
+      "city": "Scotland",
+      "description": "Traditionally a smoked fish soup, but many restaurants offer a vegetarian take using potatoes, leeks, onions, and cream",
+      "vegetarian": true,
+      "source_files": [
+        "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Scottish Mash Bowls",
+      "city": "Scotland",
+      "description": "Creamy mashed potatoes topped with vegetarian gravies, mushrooms, or root vegetables",
+      "vegetarian": true,
+      "source_files": [
+        "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Macaroni Pie (Veg)",
+      "city": "Scotland",
+      "description": "A Scottish bakery classic: cheesy macaroni baked inside shortcrust pastry",
+      "vegetarian": true,
+      "source_files": [
+        "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Cheese & Onion Pie",
+      "city": "Scotland",
+      "description": "Shortcrust or puff pastry filled with cheese, onions, and herbs. Found in bakeries and cafés",
+      "vegetarian": true,
+      "source_files": [
+        "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Lentil Soup",
+      "city": "Scotland",
+      "description": "Thick, warming soup made with red lentils and vegetables. A Scottish staple and very filling",
+      "vegetarian": true,
+      "source_files": [
+        "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Leek & Potato Soup",
+      "city": "Scotland",
+      "description": "Smooth, creamy, and mild in flavour — great for kids",
+      "vegetarian": true,
+      "source_files": [
+        "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Cranachan",
+      "city": "Scotland",
+      "description": "A classic Scottish dessert made with whipped cream, oats, honey, and raspberries",
+      "vegetarian": true,
+      "source_files": [
+        "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Sticky Toffee Pudding",
+      "city": "Scotland",
+      "description": "A rich sponge cake made with dates and served with hot toffee sauce. A winter favourite",
+      "vegetarian": true,
+      "source_files": [
+        "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Shortbread",
+      "city": "Scotland",
+      "description": "Buttery Scottish biscuits, perfect for snacking or souvenirs",
+      "vegetarian": true,
+      "source_files": [
+        "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Haggis with Neeps & Tatties",
+      "city": "Scotland",
+      "description": "Scotland's national dish — minced offal with spices, served with mashed turnips (neeps) and potatoes (tatties)",
+      "vegetarian": false,
+      "where_to_try": "Whiski Rooms, Edinburgh",
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    },
+    {
+      "name": "Cullen Skink",
+      "city": "Scotland",
+      "description": "A creamy Scottish soup made of smoked haddock, potatoes, and onions",
+      "vegetarian": false,
+      "where_to_try": "Deacon's House Café, Edinburgh",
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    },
+    {
+      "name": "Scottish Tablet",
+      "city": "Scotland",
+      "description": "A sweet, crumbly fudge made with sugar, condensed milk, and butter",
+      "vegetarian": true,
+      "where_to_try": "Cranachan & Crowdie, Edinburgh",
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Scotland",
+      "english": "Yes",
+      "local": "Aye",
+      "category": "polite",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "city": "Scotland",
+      "english": "No problem / you're welcome",
+      "local": "Nae bother",
+      "category": "polite",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "city": "Scotland",
+      "english": "Small",
+      "local": "Wee",
+      "category": "polite",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "city": "Scotland",
+      "english": "Great, excellent",
+      "local": "Braw",
+      "category": "polite",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "city": "Scotland",
+      "english": "Yes",
+      "local": "Aye",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "city": "Scotland",
+      "english": "No problem / you're welcome",
+      "local": "Nae bother",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "city": "Scotland",
+      "english": "Small",
+      "local": "Wee",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "city": "Scotland",
+      "english": "Great, excellent",
+      "local": "Braw",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "city": "Scotland",
+      "english": "Yes",
+      "local": "Aye",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "city": "Scotland",
+      "english": "No problem",
+      "local": "Nae bother",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "city": "Scotland",
+      "english": "Small",
+      "local": "Wee",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "city": "Scotland",
+      "english": "Great, excellent",
+      "local": "Braw",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "city": "Scotland",
+      "english": "Thanks",
+      "local": "Cheers",
+      "category": "polite",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "city": "Scotland",
+      "english": "Bathroom",
+      "local": "Loo",
+      "category": "polite",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "city": "Scotland",
+      "english": "Yes",
+      "local": "Aye",
+      "category": "polite",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "city": "Scotland",
+      "english": "No problem",
+      "local": "Nae bother",
+      "category": "polite",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "city": "Scotland",
+      "english": "Beautiful",
+      "local": "Bonnie",
+      "category": "polite",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "city": "Scotland",
+      "english": "Small",
+      "local": "Wee",
+      "category": "polite",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Scotland"
+      ],
+      "tip": "Scotland is generally safe, but watch belongings in busy areas like Royal Mile",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "cities": [
+        "Scotland"
+      ],
+      "tip": "Use well-lit paths when walking after dark",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "cities": [
+        "Scotland"
+      ],
+      "tip": "Avoid swimming in lochs unless guided — water temps remain cold even in summer",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Tunnock's Tea Cakes",
+      "city": "Scotland",
+      "category": "Food",
+      "where_to_buy": [
+        "Tesco",
+        "Sainsbury's",
+        "Co-op"
+      ],
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "item": "Shortbread",
+      "city": "Scotland",
+      "category": "Food",
+      "where_to_buy": [
+        "Royal Mile souvenir shops",
+        "Walker's stores",
+        "major supermarkets"
+      ],
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "item": "Sticky Toffee Pudding (packaged)",
+      "city": "Scotland",
+      "category": "Food",
+      "where_to_buy": [
+        "M&S Food",
+        "Waitrose",
+        "Sainsbury's"
+      ],
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "item": "Tartan Scarves & Kilts",
+      "city": "Scotland",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Heritage of Scotland",
+        "Highland House of Fraser, Inverness"
+      ],
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "item": "Scottish Fudge & Tablet",
+      "city": "Scotland",
+      "category": "Food",
+      "where_to_buy": [
+        "Local confectionery stores",
+        "supermarkets"
+      ],
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Scotland",
+      "service": "Police/Medical/Fire",
+      "number": "999",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "city": "Scotland",
+      "service": "NHS 24-hour medical help",
+      "number": "111",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "city": "Scotland",
+      "service": "Non-emergency police",
+      "number": "101",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "city": "Scotland",
+      "service": "Edinburgh Consulate",
+      "number": "+44 131 229 2144",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "city": "Scotland",
+      "service": "Emergency London line",
+      "number": "+44 (0)7768 765035",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Scotland"
+      ],
+      "tip": "Three UK - Best for data-heavy usage and coverage across Highlands",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "cities": [
+        "Scotland"
+      ],
+      "tip": "O2 and EE - Reliable urban and rural reach",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "cities": [
+        "Scotland"
+      ],
+      "tip": "Vodafone - Strong in cities, patchier in remote Skye areas",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "cities": [
+        "Scotland"
+      ],
+      "tip": "SIM cards available at Edinburgh Waverley Station, airports, or local Carphone Warehouse",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "cities": [
+        "Scotland"
+      ],
+      "tip": "4G widely available in cities, intermittent on Isle of Skye and remote Highland routes",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Scotland",
+      "mode": "Train",
+      "description": "ScotRail services connecting major cities",
+      "recommended_pass": "ScotRail",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Scotland"
+      ],
+      "tip": "No special vaccines required for Scotland",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "cities": [
+        "Scotland"
+      ],
+      "tip": "Make sure Tetanus, Hepatitis A, and Typhoid vaccinations are up-to-date",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "cities": [
+        "Scotland"
+      ],
+      "tip": "Carry mosquito repellent for countryside areas",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    },
+    {
+      "cities": [
+        "Scotland"
+      ],
+      "tip": "Water is safe to drink - refills are fine in tap water or mountain springs unless posted otherwise",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048
+    }
+  ],
+  "source_files": [
+    "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+    "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+    "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+    "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf"
+  ]
+}

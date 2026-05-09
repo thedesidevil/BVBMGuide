@@ -1,0 +1,104 @@
+{
+  "restaurants": [
+    {
+      "name": "Weingasthof Donabaum",
+      "city": "Wachau Valley",
+      "cuisine_type": [
+        "Austrian",
+        "Winery"
+      ],
+      "price_range": "₹₹",
+      "hours": "6:30 AM - 10:00 PM",
+      "ambience": "Family-run winery with outdoor tables among the vines",
+      "must_try_dishes": [
+        "Roasted pork with caraway",
+        "apricot chutney",
+        "Wachau white wine"
+      ],
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Landhaus Bacher",
+      "city": "Wachau Valley",
+      "cuisine_type": [
+        "Austrian",
+        "Fine Dining"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "6:30 PM - 12:00 AM",
+      "ambience": "Fine dining with a Michelin star, blending classic and modern Austrian cuisine",
+      "must_try_dishes": [
+        "Seven-course tasting menu",
+        "beetroot tartare",
+        "caramelized goat cheese"
+      ],
+      "highlights": [
+        "Michelin star restaurant"
+      ],
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Melk Abbey",
+      "city": "Wachau Valley",
+      "description": "Grand baroque hilltop monastery overlooking the Danube",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Dürnstein",
+      "city": "Wachau Valley",
+      "description": "Historic Danube village with medieval town, Stiftskirche Cloister Tower and castle ruins where Richard the Lionheart was imprisoned",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Hotel-Restaurant Kirchenwirt",
+      "city": "Wachau Valley",
+      "location": "Heart of the Wachau wine region",
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    },
+    {
+      "name": "Hotel-Restaurant Kirchenwirt",
+      "city": "Wachau Valley",
+      "location": "Heart of the Wachau wine region",
+      "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Wachauer Laberl bread rolls",
+      "city": "Wachau Valley",
+      "category": "Food",
+      "where_to_buy": [
+        "Schmidl bakery in Dürnstein"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+  ]
+}

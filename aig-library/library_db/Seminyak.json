@@ -1,0 +1,572 @@
+{
+  "restaurants": [
+    {
+      "name": "Finns Beach Club",
+      "city": "Seminyak",
+      "cuisine_type": [
+        "International",
+        "Balinese"
+      ],
+      "price_range": "₹800–2000",
+      "hours": "11 AM – 12 AM",
+      "ambience": "Vibrant beachfront setting with lively music, pools, and a relaxed party atmosphere",
+      "nearby_landmarks": [
+        "Tanah Lot Temple"
+      ],
+      "highlights": [
+        "Best for a celebratory sunset dinner with cocktails"
+      ],
+      "must_try_dishes": [
+        "International and Balinese specials"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Desmond.pdf",
+        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf"
+      ]
+    },
+    {
+      "name": "Sangsaka",
+      "city": "Seminyak",
+      "cuisine_type": [
+        "Indonesian"
+      ],
+      "price_range": "₹500–1500",
+      "hours": "5:30 PM – 11 PM",
+      "ambience": "Modern Indonesian with a focus on local ingredients",
+      "nearby_landmarks": [
+        "Tanah Lot Temple"
+      ],
+      "highlights": [
+        "Guests commend the innovative menu and cozy atmosphere",
+        "Perfect for a intimate but refined experience"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Desmond.pdf",
+        "Bali Indonesia/Eating Out Guide- Bali.pdf",
+        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf"
+      ],
+      "must_try_dishes": [
+        "Dumplings",
+        "Char grilled oysters",
+        "Calamari",
+        "Noodles"
+      ]
+    },
+    {
+      "name": "Merah Putih",
+      "city": "Seminyak",
+      "cuisine_type": [
+        "Indonesian Fine Dining"
+      ],
+      "hours": "12-3pm, 5:30-10:30pm",
+      "highlights": [
+        "Reservations required"
+      ],
+      "must_try_dishes": [
+        "Dumplings",
+        "Baos",
+        "Goreng",
+        "Crispy duck"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/Eating Out Guide- Bali.pdf"
+      ]
+    },
+    {
+      "name": "Barbacoa",
+      "city": "Seminyak",
+      "cuisine_type": [
+        "Latin",
+        "Grill"
+      ],
+      "hours": "5:30 PM – 11:30 PM",
+      "highlights": [
+        "On-site parking",
+        "Wood-fired grilling",
+        "Bold flavours"
+      ],
+      "must_try_dishes": [
+        "BBQ",
+        "Wood-fired grilled chicken",
+        "Lamb dishes",
+        "Grilled vegetables"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/Eating Out Guide- Bali.pdf",
+        "Bali Indonesia/All Inclusive Guide- Bali.docx"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "ambience": "Industrial-chic Latin grill setting",
+      "area": "Seminyak",
+      "best_for": [
+        "dinner",
+        "hearty meals"
+      ]
+    },
+    {
+      "name": "KU DE TA",
+      "city": "Seminyak",
+      "cuisine_type": [
+        "International",
+        "Seafood"
+      ],
+      "hours": "8:00 AM – 12:00 AM",
+      "ambience": "Ocean-view dining with relaxed luxury vibe",
+      "highlights": [
+        "Valet / parking available",
+        "Stylish beachfront",
+        "Sophisticated beachfront dining"
+      ],
+      "must_try_dishes": [
+        "Sushi",
+        "Burgers",
+        "Pizzas",
+        "Sushi rolls",
+        "Grilled seafood",
+        "Vegetarian platters",
+        "Signature cocktails"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/Eating Out Guide- Bali.pdf",
+        "Bali Indonesia/All Inclusive Guide- Bali.docx"
+      ],
+      "price_range": "₹1,000–2,000 per person",
+      "area": "Seminyak Beach",
+      "best_for": [
+        "luxury",
+        "romantic",
+        "beachfront"
+      ]
+    },
+    {
+      "name": "Potato Head Beach Club",
+      "city": "Seminyak",
+      "cuisine_type": [
+        "International",
+        "Seafood"
+      ],
+      "hours": "9:00 AM – 12:00 AM",
+      "highlights": [
+        "Valet parking available",
+        "Sunset DJs",
+        "Stylish lounging",
+        "Ocean-facing infinity pool"
+      ],
+      "must_try_dishes": [
+        "Pizzas",
+        "Salads",
+        "Platters",
+        "Great drinks",
+        "Grilled seafood platters",
+        "Sushi rolls",
+        "Fresh salads",
+        "Veg-friendly small plates"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/Eating Out Guide- Bali.pdf",
+        "Bali Indonesia/All Inclusive Guide- Bali.docx"
+      ],
+      "price_range": "₹1,200–2,500 per person",
+      "ambience": "Iconic, ocean-facing infinity pool, chic crowd",
+      "area": "Seminyak Beach",
+      "best_for": [
+        "luxury",
+        "beachfront",
+        "party"
+      ]
+    },
+    {
+      "name": "Tere Seminyak",
+      "city": "Seminyak",
+      "cuisine_type": [
+        "Balinese with European twist"
+      ],
+      "hours": "4pm-12am",
+      "ambience": "Has live music",
+      "highlights": [
+        "Has live music"
+      ],
+      "must_try_dishes": [
+        "Lamb",
+        "Octopus with polenta",
+        "Cocktails"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Bali Indonesia/Eating Out Guide- Bali.pdf"
+      ]
+    },
+    {
+      "name": "Meja Restaurant and Bar",
+      "city": "Seminyak",
+      "cuisine_type": [
+        "Asian"
+      ],
+      "hours": "7:30am-11pm",
+      "ambience": "Has live music",
+      "highlights": [
+        "Has live music",
+        "Amazing cocktails"
+      ],
+      "must_try_dishes": [
+        "Amazing cocktails",
+        "Seafood dishes",
+        "Asian salads",
+        "Grilled chicken"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/Eating Out Guide- Bali.pdf",
+        "Bali Indonesia/All Inclusive Guide- Bali.docx"
+      ]
+    },
+    {
+      "name": "Rayjin Teppanyaki",
+      "city": "Seminyak",
+      "cuisine_type": [
+        "Japanese",
+        "Teppanyaki"
+      ],
+      "hours": "12:00 PM – 9:30 PM",
+      "highlights": [
+        "On-site parking",
+        "Interactive, lively dinner experience"
+      ],
+      "must_try_dishes": [
+        "Japanese grills",
+        "Noodle dishes",
+        "Sushi",
+        "Teppanyaki seafood",
+        "Veg sushi rolls",
+        "Grilled chicken"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/Eating Out Guide- Bali.pdf",
+        "Bali Indonesia/All Inclusive Guide- Bali.docx"
+      ],
+      "price_range": "₹1,200–2,000 per person",
+      "ambience": "Modern Japanese grill",
+      "area": "Seminyak",
+      "best_for": [
+        "interactive",
+        "family"
+      ]
+    },
+    {
+      "name": "Mrs. Sippy Bali",
+      "city": "Seminyak",
+      "cuisine_type": [
+        "Multicuisine"
+      ],
+      "hours": "10am-9pm",
+      "highlights": [
+        "Beach club",
+        "Reservations available"
+      ],
+      "must_try_dishes": [
+        "Seafood",
+        "Cocktails"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Bali Indonesia/Eating Out Guide- Bali.pdf"
+      ]
+    },
+    {
+      "name": "Uma Garden",
+      "city": "Seminyak",
+      "cuisine_type": [
+        "Fire-based kitchen"
+      ],
+      "hours": "1pm-12am",
+      "ambience": "Located in a garden, overlooking rice terraces",
+      "highlights": [
+        "Located in a garden",
+        "Overlooking rice terraces"
+      ],
+      "must_try_dishes": [
+        "Grills",
+        "Sweet Potato Gnocchi Tricolore"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/Eating Out Guide- Bali.pdf"
+      ]
+    },
+    {
+      "name": "Kilo Kitchen Bali",
+      "city": "Seminyak",
+      "cuisine_type": [
+        "Indonesian",
+        "Japanese",
+        "Western"
+      ],
+      "hours": "7am-11pm",
+      "highlights": [
+        "Reservations available"
+      ],
+      "must_try_dishes": [
+        "Squid ink rice",
+        "Wasabi tuna tartare",
+        "Crispy soft shell crab"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Bali Indonesia/Eating Out Guide- Bali.pdf"
+      ]
+    },
+    {
+      "name": "Mamasan",
+      "city": "Seminyak",
+      "cuisine_type": [
+        "Pan Asian"
+      ],
+      "hours": "12-2:30, 5:30-10:30",
+      "highlights": [
+        "Bi-level venue"
+      ],
+      "must_try_dishes": [
+        "Halong Bay Chilli Salt Soft Shell Crab",
+        "Roasted Peking Duck"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/Eating Out Guide- Bali.pdf"
+      ]
+    },
+    {
+      "name": "Biku",
+      "city": "Seminyak",
+      "cuisine_type": [
+        "Cafe",
+        "Tea House"
+      ],
+      "price_range": "₹1,500–3,000 for two",
+      "hours": "08:00 – 23:00",
+      "ambience": "Classic Bali café-tea house with colonial charm",
+      "highlights": [
+        "Tea & dessert spreads with heritage vibes",
+        "Colonial charm"
+      ],
+      "best_for": [
+        "tea",
+        "heritage"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/All Inclusive Guide- Bali.docx"
+      ]
+    },
+    {
+      "name": "The Jardin Cafe Seminyak",
+      "city": "Seminyak",
+      "cuisine_type": [
+        "Cafe",
+        "International"
+      ],
+      "price_range": "₹1,200–2,500 for two",
+      "hours": "07:30 – 21:30",
+      "ambience": "Beautiful garden café tucked in Seminyak",
+      "highlights": [
+        "Lush greenery & breakfast spreads"
+      ],
+      "best_for": [
+        "garden",
+        "breakfast"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/All Inclusive Guide- Bali.docx"
+      ]
+    },
+    {
+      "name": "KYND COMMUNITY SEMINYAK",
+      "city": "Seminyak",
+      "cuisine_type": [
+        "Plant-based",
+        "Healthy"
+      ],
+      "price_range": "₹1,300–2,800 for two",
+      "hours": "07:30 – 21:30",
+      "ambience": "Vibrant plant-based café — iconic pink smoothie bowls",
+      "highlights": [
+        "One of Bali's most Instagrammed spots",
+        "Plant-based"
+      ],
+      "must_try_dishes": [
+        "Pink smoothie bowls"
+      ],
+      "best_for": [
+        "plant-based",
+        "instagram"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/All Inclusive Guide- Bali.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Seminyak Beach",
+      "city": "Seminyak",
+      "description": "Popular beach known for daily sunset ritual with golden skies, silhouettes of surfers, and beach dogs",
+      "hours": "24 hours",
+      "entry_fee": "Free entry",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Bali Indonesia/All Inclusive Guide- Bali.docx"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Boutiques and jewellery",
+      "city": "Seminyak",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Seminyak Village",
+        "Seminyak Square"
+      ],
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf",
+      "_source_mtime": 1772384386.5437362
+    },
+    {
+      "item": "High-quality crafts",
+      "city": "Seminyak",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Seminyak Village",
+        "Seminyak Square"
+      ],
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf",
+      "_source_mtime": 1772384386.5437362
+    },
+    {
+      "item": "Branded souvenirs",
+      "city": "Seminyak",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Seminyak Village"
+      ],
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_mtime": 1773895408.0
+    },
+    {
+      "item": "Quality beachwear",
+      "city": "Seminyak",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Seminyak Village"
+      ],
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_mtime": 1773895408.0
+    },
+    {
+      "item": "Artisan soaps",
+      "city": "Seminyak",
+      "category": "Beauty",
+      "where_to_buy": [
+        "Seminyak Village"
+      ],
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_mtime": 1773895408.0
+    },
+    {
+      "item": "Spa products",
+      "city": "Seminyak",
+      "category": "Beauty",
+      "where_to_buy": [
+        "Seminyak Village"
+      ],
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_mtime": 1773895408.0
+    },
+    {
+      "item": "Packaged coffee",
+      "city": "Seminyak",
+      "category": "Food",
+      "where_to_buy": [
+        "Seminyak Village"
+      ],
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_mtime": 1773895408.0
+    },
+    {
+      "item": "Linen resort wear",
+      "city": "Seminyak",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Biasa Bali"
+      ],
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_mtime": 1773895408.0
+    },
+    {
+      "item": "Handcrafted fashion pieces",
+      "city": "Seminyak",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Biasa Bali"
+      ],
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_mtime": 1773895408.0
+    },
+    {
+      "item": "Premium Balinese coffee beans",
+      "city": "Seminyak",
+      "category": "Food",
+      "where_to_buy": [
+        "Seniman Coffee Studio"
+      ],
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_mtime": 1773895408.0
+    },
+    {
+      "item": "Travel drip packs",
+      "city": "Seminyak",
+      "category": "Food",
+      "where_to_buy": [
+        "Seniman Coffee Studio"
+      ],
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_mtime": 1773895408.0
+    },
+    {
+      "item": "Specialty cold brews",
+      "city": "Seminyak",
+      "category": "Food",
+      "where_to_buy": [
+        "Seniman Coffee Studio"
+      ],
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_mtime": 1773895408.0
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Bali Indonesia/Bali Bliss All-Inclusive Guide - Desmond.pdf",
+    "Bali Indonesia/Eating Out Guide- Bali.pdf",
+    "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf",
+    "Bali Indonesia/All Inclusive Guide- Bali.docx",
+    "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf"
+  ]
+}

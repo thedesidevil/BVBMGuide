@@ -1,0 +1,621 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Caprese Salad",
+      "city": "Italy",
+      "description": "Mozzarella, tomatoes, basil, and olive oil (best in Campania)",
+      "vegetarian": true,
+      "where_to_try": "Best in Campania",
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Parmigiana di Melanzane",
+      "city": "Italy",
+      "description": "Layered eggplant, tomato sauce, mozzarella, and Parmigiano baked to perfection",
+      "vegetarian": true,
+      "where_to_try": "Italian restaurants",
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Cacio e Pepe",
+      "city": "Italy",
+      "description": "Roman classic pasta with pecorino cheese and black pepper",
+      "vegetarian": true,
+      "where_to_try": "Roman restaurants",
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Parmigiana di Melanzane (Eggplant Parmesan)",
+      "city": "Italy",
+      "description": "Layered eggplant, tomato sauce, mozzarella, and Parmigiano baked to perfection",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "France/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Pasta al Pesto",
+      "city": "Italy",
+      "description": "Trofie pasta with basil pesto (Liguria's pride)",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "France/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Risotto ai Funghi Porcini",
+      "city": "Italy",
+      "description": "Creamy risotto with porcini mushrooms",
+      "vegetarian": true,
+      "where_to_try": "Northern Italy",
+      "source_files": [
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Pizza Margherita",
+      "city": "Italy",
+      "description": "The Naples original with tomato, mozzarella, and basil",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "France/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Pollo alla Cacciatora (Hunter's Chicken)",
+      "city": "Italy",
+      "description": "Chicken braised with tomatoes, garlic, rosemary, and wine",
+      "vegetarian": false,
+      "where_to_try": null,
+      "source_files": [
+        "France/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Spaghetti alle Vongole",
+      "city": "Italy",
+      "description": "Pasta with clams, garlic, olive oil, and white wine (must-try in Naples or Venice)",
+      "vegetarian": false,
+      "where_to_try": "Naples or Venice",
+      "source_files": [
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Risotto al Nero di Seppia",
+      "city": "Italy",
+      "description": "Venetian specialty risotto with cuttlefish and squid ink",
+      "vegetarian": false,
+      "where_to_try": null,
+      "source_files": [
+        "France/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Tiramisu",
+      "city": "Italy",
+      "description": "Traditional dessert with soft biscuits layered with espresso coffee, mascarpone cheese, sugar, egg, wine, rum, and cocoa powder",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "France/Paris, Switzerland and Italy.pdf",
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Pizza Napoletana",
+      "city": "Italy",
+      "description": "Traditional Neapolitan style pizza",
+      "vegetarian": false,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Pasta",
+      "city": "Italy",
+      "description": "Including fettucine al pomodoro, gnocchi de patate",
+      "vegetarian": true,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Risotto",
+      "city": "Italy",
+      "description": "Creamy rice dish",
+      "vegetarian": true,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Arancini",
+      "city": "Italy",
+      "description": "Rice balls served with ragu, cheese, and optional sides like aubergine, peas, etc.",
+      "vegetarian": false,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Polenta",
+      "city": "Italy",
+      "description": "Corn mush that pairs well with meats, salads, and zuppa (soup)",
+      "vegetarian": true,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Truffles",
+      "city": "Italy",
+      "description": "Dug up from the forests of Umbria, Piedmont and Tuscany. White truffles are rare with distinctive aroma, black truffles are more available and less fragrant",
+      "vegetarian": true,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Lasagna",
+      "city": "Italy",
+      "description": "Layered pasta with veggies and sauce",
+      "vegetarian": true,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Gelato",
+      "city": "Italy",
+      "description": "Italian ice cream",
+      "vegetarian": true,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Focaccia",
+      "city": "Italy",
+      "description": "Flatbread prepared with vegetables like onions, tomatoes, and olives with a drizzle of olive oil and pesto on top",
+      "vegetarian": true,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Burrata",
+      "city": "Italy",
+      "description": "Tastes similar to traditional mozzarella cheese but is creamier and buttery",
+      "vegetarian": true,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Melanzane alla Parmigiana",
+      "city": "Italy",
+      "description": "Made with thinly sliced aubergine topped with cheese",
+      "vegetarian": true,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Pannacotta",
+      "city": "Italy",
+      "description": "Italian dessert",
+      "vegetarian": true,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Panna Cotta",
+      "city": "Italy",
+      "description": "Italian dessert",
+      "vegetarian": true,
+      "source_files": [
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Italy",
+      "english": "Hello / Good morning",
+      "local": "Buongiorno",
+      "category": "greeting",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "city": "Italy",
+      "english": "Good evening",
+      "local": "Buonasera",
+      "category": "greeting",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "city": "Italy",
+      "english": "Please",
+      "local": "Per favore",
+      "category": "polite",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "city": "Italy",
+      "english": "Thank you",
+      "local": "Grazie mille",
+      "category": "polite",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "city": "Italy",
+      "english": "Excuse me",
+      "local": "Mi scusi",
+      "category": "polite",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "city": "Italy",
+      "english": "Hello / Good morning",
+      "local": "Buongiorno",
+      "category": "greeting",
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "city": "Italy",
+      "english": "Good evening",
+      "local": "Buonasera",
+      "category": "greeting",
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "city": "Italy",
+      "english": "Please",
+      "local": "Per favore",
+      "category": "polite",
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "city": "Italy",
+      "english": "Thank you",
+      "local": "Grazie mille",
+      "category": "polite",
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "city": "Italy",
+      "english": "Excuse me",
+      "local": "Mi scusi",
+      "category": "polite",
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "city": "Italy",
+      "english": "Hello",
+      "local": "Ciao",
+      "category": "greeting",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "city": "Italy",
+      "english": "Goodbye",
+      "local": "Arrivederci",
+      "category": "greeting",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "city": "Italy",
+      "english": "Thank you",
+      "local": "Grazie",
+      "category": "polite",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "city": "Italy",
+      "english": "Please",
+      "local": "Per favore",
+      "category": "polite",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "city": "Italy",
+      "english": "Yes",
+      "local": "Si",
+      "category": "polite",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "city": "Italy",
+      "english": "No",
+      "local": "No",
+      "category": "polite",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "city": "Italy",
+      "english": "Hello",
+      "local": "Ciao",
+      "category": "greeting",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "city": "Italy",
+      "english": "Goodbye",
+      "local": "Arrivederci",
+      "category": "greeting",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "city": "Italy",
+      "english": "Thank you",
+      "local": "Grazie",
+      "category": "polite",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "city": "Italy",
+      "english": "Please",
+      "local": "Per favore",
+      "category": "polite",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "city": "Italy",
+      "english": "Yes",
+      "local": "Si",
+      "category": "polite",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "city": "Italy",
+      "english": "No",
+      "local": "No",
+      "category": "polite",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "city": "Italy",
+      "english": "Hello / Good morning",
+      "local": "Buongiorno",
+      "category": "greeting",
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "city": "Italy",
+      "english": "Good evening",
+      "local": "Buonasera",
+      "category": "greeting",
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "city": "Italy",
+      "english": "Please",
+      "local": "Per favore",
+      "category": "polite",
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "city": "Italy",
+      "english": "Thank you",
+      "local": "Grazie mille",
+      "category": "polite",
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "city": "Italy",
+      "english": "Excuse me",
+      "local": "Mi scusi",
+      "category": "polite",
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    }
+  ],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Kitchen staples like pastas, olive oil, truffle oil, balsamic vinegar",
+      "city": "Italy",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets all across Italy"
+      ],
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "item": "Marbled paper",
+      "city": "Italy",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Bookshops across Italy, specially in venice"
+      ],
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "item": "Limoncello",
+      "city": "Italy",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "item": "Kitchen staples",
+      "city": "Italy",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "item": "Marbled paper",
+      "city": "Italy",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Bookshops"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Italy",
+      "service": "Fire Brigade",
+      "number": "115",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "city": "Italy",
+      "service": "Police Emergency",
+      "number": "113",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "city": "Italy",
+      "service": "Health Emergency",
+      "number": "118",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    },
+    {
+      "city": "Italy",
+      "service": "Fire Brigade",
+      "number": "115",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "city": "Italy",
+      "service": "Police Emergency",
+      "number": "113",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "city": "Italy",
+      "service": "Health Emergency",
+      "number": "118",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "city": "Italy",
+      "service": "Embassy",
+      "number": "0039 064884642-3-4-5",
+      "notes": "Rome, Italy",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "You can purchase a TSIM Unlimited Europe SIM card which will work in both Switzerland and Italy",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "You can activate international roaming packs on your India number as an alternative",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Ensure your roaming is activated to receive SMS such as for OTPs even if you don't purchase an international roaming pack",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+    "France/Paris, Switzerland and Italy.pdf",
+    "Switzerland/Paris, Switzerland and Italy.pdf",
+    "Italy/4. Italy- Final Detailed Itinerary.pdf",
+    "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+    "Italy/Paris, Switzerland and Italy.pdf"
+  ]
+}

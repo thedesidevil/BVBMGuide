@@ -1,0 +1,64 @@
+{
+  "restaurants": [
+    {
+      "name": "St. Anthony's",
+      "city": "Baga",
+      "cuisine_type": [
+        "Goan",
+        "Seafood",
+        "Indian"
+      ],
+      "price_range": "₹300-500",
+      "hours": "12:00 PM - 11:00 PM",
+      "ambience": "Welcoming atmosphere and relaxed beach vibe",
+      "highlights": [
+        "Traditional Goan seafood",
+        "Beachfront location"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Goa/Goa All Inclusive Guide - Rashi and Rajnesh.pdf"
+      ]
+    },
+    {
+      "name": "Brittos",
+      "city": "Baga",
+      "cuisine_type": [
+        "Goan",
+        "Seafood",
+        "Continental",
+        "Chinese"
+      ],
+      "price_range": "₹500-800",
+      "hours": "9:00 AM - 12:00 AM",
+      "ambience": "Vibrant, friendly ambiance right next to the beach",
+      "highlights": [
+        "Beachfront location",
+        "Wide selection of seafood"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Goa/Goa All Inclusive Guide - Rashi and Rajnesh.pdf"
+      ]
+    }
+  ],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Goa/Goa All Inclusive Guide - Rashi and Rajnesh.pdf"
+  ]
+}

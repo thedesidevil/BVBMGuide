@@ -1,0 +1,478 @@
+{
+  "restaurants": [
+    {
+      "name": "Casa Raffaele Conforti Ristorante a Maiori Costiera Amalfitana",
+      "city": "Amalfi",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "mid-range",
+      "hours": "5 PM - 12 AM",
+      "ambience": "A retro-chic gem in a former tailor's shop, with vintage wooden shelving and a warmly minimal interior",
+      "highlights": [
+        "Retro-chic gem",
+        "Former tailor's shop",
+        "Vintage wooden shelving",
+        "Warmly minimal interior"
+      ],
+      "must_try_dishes": [
+        "cacio e pepe",
+        "bruschetta topped with artichokes",
+        "home made pasta"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "o Barão bistrot brasiliano",
+      "city": "Amalfi",
+      "cuisine_type": [
+        "Brazilian"
+      ],
+      "price_range": "EUR 15-25 per person",
+      "hours": "8:30 AM - 11 PM",
+      "ambience": "A cozy, hidden-away spot run by a Brazilian couple, marked by its cheeky \"No Pasta & No Pizza\" sign",
+      "highlights": [
+        "Run by Brazilian couple",
+        "No Pasta & No Pizza sign"
+      ],
+      "must_try_dishes": [
+        "Quinoa burger",
+        "brazilian specialities"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ],
+      "area": "Amalfi",
+      "nearby_landmarks": []
+    },
+    {
+      "name": "Donna Clelia Exclusive Restaurant",
+      "city": "Amalfi",
+      "cuisine_type": [
+        "Italian",
+        "Seafood"
+      ],
+      "price_range": "EUR 50-60 per person",
+      "hours": "7:30 PM - 10:30 PM",
+      "ambience": "A traditional pizzeria and seafood hub with seaside views and a warm, rustic vibe",
+      "highlights": [
+        "Seaside views",
+        "Traditional pizzeria and seafood hub"
+      ],
+      "must_try_dishes": [
+        "Excellent selection of pizzas",
+        "Lobster pasta",
+        "spaghetti with clams",
+        "seafood risotto"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ],
+      "area": "Amalfi",
+      "nearby_landmarks": [],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Il Porticciolo Maiori",
+      "city": "Amalfi",
+      "cuisine_type": [
+        "Mediterranean"
+      ],
+      "price_range": "EUR 20 per person",
+      "hours": "8:15 AM - 3 AM",
+      "ambience": "A relaxed Mediterranean-style eatery just off the main street—casual and inviting",
+      "highlights": [
+        "Relaxed Mediterranean-style",
+        "Off main street"
+      ],
+      "must_try_dishes": [
+        "Campanian vegetable antipasti",
+        "simple pasta preparations",
+        "Fresh Mediterranean seafood dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ],
+      "area": "Maiori",
+      "nearby_landmarks": []
+    },
+    {
+      "name": "Enjoy Bistrot",
+      "city": "Amalfi",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "EUR 15-25 per person",
+      "hours": "12 PM - 12 AM",
+      "ambience": "A modern, cozy bistrot offering Campanian flavors in a casual environment",
+      "highlights": [
+        "Modern and cozy",
+        "Campanian flavors"
+      ],
+      "must_try_dishes": [
+        "Traditional Campanian dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ],
+      "area": "Amalfi",
+      "nearby_landmarks": [],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Ristorante di Pesce Masaniello",
+      "city": "Amalfi",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "EUR 35-45 per person",
+      "hours": "12 PM - 3 PM",
+      "ambience": "A highly rated seafood restaurant with a welcoming coastal charm",
+      "highlights": [
+        "Highly rated seafood restaurant",
+        "Welcoming coastal charm"
+      ],
+      "must_try_dishes": [
+        "grilled vegetables and salads",
+        "seafood platters",
+        "Simple antipasti like grilled vegetables and salads"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ],
+      "area": "Amalfi",
+      "nearby_landmarks": [],
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Casa Ferraiuolo Ristorante a Maiori Costiera Amalfitana",
+      "city": "Amalfi",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "EUR 25-30 per person",
+      "hours": "5 PM - 12 AM",
+      "ambience": "A retro-chic gem in a former tailor's shop, with vintage wooden shelving and a warmly minimal interior",
+      "area": "Maiori",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Retro-chic gem",
+        "Former tailor's shop"
+      ],
+      "must_try_dishes": [
+        "cacio e pepe",
+        "bruschetta topped with artichokes",
+        "home made pasta",
+        "Cacio e pepe"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Sensi Restaurant Amalfi",
+      "city": "Amalfi",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹2,000–3,500 per person",
+      "hours": "12:00 PM – 2:30 PM | 6:00 PM - 11:00 PM",
+      "area": "Central location",
+      "must_try_dishes": [
+        "Vegetarian pasta",
+        "lemon-based dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Andrea Pansa Amalfi",
+      "city": "Amalfi",
+      "cuisine_type": [
+        "Italian pastry shop"
+      ],
+      "hours": "7:30am-11pm",
+      "highlights": [
+        "Option while driving through Amalfi"
+      ],
+      "must_try_dishes": [
+        "Biscuits",
+        "desserts"
+      ],
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Marina Grande Beach",
+      "city": "Amalfi",
+      "description": "Capri's largest and most popular beach, famous for its golden sand, turquoise waters, and lively seaside atmosphere",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "3 hours",
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Ravello",
+      "city": "Amalfi",
+      "description": "A charming hilltop town known for its stunning gardens and breathtaking views",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "3 hours",
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Amalfi Cathedral (Duomo di Amalfi)",
+      "city": "Amalfi",
+      "description": "A dramatic staircase leads up to this striking cathedral, with intricate details and a commanding presence overlooking the square",
+      "hours": "9:00 AM – 6:30 PM",
+      "entry_fee": "~₹300–500",
+      "recommended_duration": "~5 mins from ferry point",
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Piazza del Duomo Amalfi",
+      "city": "Amalfi",
+      "description": "Best place to pause, soak in the vibe, and people-watch. Great for photos with the cathedral backdrop",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "Right at the base of the cathedral",
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Casa Raffaele Conforti",
+      "city": "Amalfi",
+      "location": "Amalfi Coast",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0
+    },
+    {
+      "name": "Casa Raffaele Conforti",
+      "city": "Amalfi",
+      "location": "Amalfi",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "name": "Casa Raffaele Conforti",
+      "city": "Amalfi",
+      "location": "Amalfi",
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "name": "Casa Raffaele Conforti",
+      "city": "Amalfi",
+      "location": "Amalfi",
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Limoncello",
+      "city": "Amalfi",
+      "category": "Food",
+      "where_to_buy": [
+        "Local shops"
+      ],
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0
+    },
+    {
+      "item": "Vietri sul Mare ceramics",
+      "city": "Amalfi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Vietri sul Mare"
+      ],
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0
+    },
+    {
+      "item": "Limoncello",
+      "city": "Amalfi",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Lemon-infused ceramics",
+      "city": "Amalfi",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Candied citrus peels",
+      "city": "Amalfi",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Brightly painted Vietri sul Mare ceramics",
+      "city": "Amalfi",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Limoncello",
+      "city": "Amalfi",
+      "category": "Food",
+      "where_to_buy": [
+        "Local producers"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Lemon-infused ceramics",
+      "city": "Amalfi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Local ceramic shops"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Candied citrus peels",
+      "city": "Amalfi",
+      "category": "Food",
+      "where_to_buy": [
+        "Local confectioneries"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Vietri sul Mare ceramics",
+      "city": "Amalfi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Vietri sul Mare"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Limoncello",
+      "city": "Amalfi",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Lemon-infused ceramics",
+      "city": "Amalfi",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Candied citrus peels",
+      "city": "Amalfi",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Brightly painted Vietri sul Mare ceramics",
+      "city": "Amalfi",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+    "France/Paris, Switzerland and Italy.pdf",
+    "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+    "Switzerland/Paris, Switzerland and Italy.pdf",
+    "Italy/4. Italy- Final Detailed Itinerary.pdf",
+    "Italy/Paris, Switzerland and Italy.pdf"
+  ]
+}

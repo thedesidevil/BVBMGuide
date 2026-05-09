@@ -1,0 +1,110 @@
+{
+  "restaurants": [
+    {
+      "name": "Caffe Positano Ristorante bar",
+      "city": "Positano",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "7am-1am",
+      "ambience": "Has tables overlooking the sea",
+      "highlights": [
+        "Veg options"
+      ],
+      "must_try_dishes": [
+        "pizza",
+        "pasta"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Chez Black Positano",
+      "city": "Positano",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "12-11pm",
+      "ambience": "Maritime themed trattoria with a beachfront terrace",
+      "highlights": [
+        "Mainly known for its seafood but also good for a drink"
+      ],
+      "must_try_dishes": [
+        "pastas",
+        "salads"
+      ],
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Il Fornillo",
+      "city": "Positano",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "12-1pm, 6-11pm",
+      "ambience": "Has a terrace overlooking the sea",
+      "must_try_dishes": [
+        "Traditional dishes"
+      ],
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "La zagara",
+      "city": "Positano",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "8am-10pm",
+      "ambience": "Closed on Wednesday, Charming terrace with a vine-covered pergola",
+      "highlights": [
+        "Veg pasta and pizza option"
+      ],
+      "must_try_dishes": [
+        "Lemon cake"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Fotopoint Positano",
+      "city": "Positano",
+      "description": "Observation deck with panoramic views",
+      "source_files": [
+        "Italy/4. Italy- Final Detailed Itinerary.pdf"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Limoncello",
+      "city": "Positano",
+      "category": "Food",
+      "where_to_buy": [
+        "Valenti Positano"
+      ],
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Italy/4. Italy- Final Detailed Itinerary.pdf"
+  ]
+}

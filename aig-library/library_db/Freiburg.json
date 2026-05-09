@@ -1,0 +1,257 @@
+{
+  "restaurants": [
+    {
+      "name": "Hausbrauerei Feierling",
+      "city": "Freiburg",
+      "cuisine_type": [
+        "German"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11 AM – 11 PM",
+      "ambience": "Traditional German brewery with lively atmosphere",
+      "area": "Old Town",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Traditional German brewery",
+        "Lively atmosphere",
+        "Authentic German dining"
+      ],
+      "must_try_dishes": [
+        "Schnitzel",
+        "sausages",
+        "vegetarian spätzle"
+      ],
+      "best_for": [
+        "authentic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Zum Roten Bären",
+      "city": "Freiburg",
+      "cuisine_type": [
+        "German"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12 PM – 10 PM",
+      "ambience": "One of Germany's oldest inns",
+      "area": "Old Town",
+      "nearby_landmarks": [],
+      "highlights": [
+        "One of Germany's oldest inns",
+        "Historic ambience"
+      ],
+      "must_try_dishes": [
+        "Black Forest specialities",
+        "seasonal dishes"
+      ],
+      "best_for": [
+        "historic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Skajo",
+      "city": "Freiburg",
+      "cuisine_type": [
+        "European"
+      ],
+      "price_range": "₹₹₹₹",
+      "hours": "5 PM onwards",
+      "ambience": "Rooftop dining with city views",
+      "area": "Old Town",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Rooftop dining with city views",
+        "Scenic dinner setting"
+      ],
+      "must_try_dishes": [
+        "Modern European cuisine"
+      ],
+      "best_for": [
+        "scenic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Freiburg Old Town",
+      "city": "Freiburg",
+      "description": "Medieval charm with Bächle water channels and university vibe",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free to explore",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Freiburg Minster",
+      "city": "Freiburg",
+      "description": "Gothic cathedral with intricate sandstone tower",
+      "hours": "Cathedral: 10 AM – 5 PM (may vary)",
+      "entry_fee": "Free entry (tower climb extra ~INR 400–600)",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Schlossberg Viewpoint",
+      "city": "Freiburg",
+      "description": "Panoramic city views over rooftops and forested backdrop",
+      "hours": "Open access",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Aparthotel Adagio Access Freiburg",
+      "city": "Freiburg",
+      "location": "10 mins from Old Town",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "name": "Aparthotel Adagio Access Freiburg",
+      "city": "Freiburg",
+      "location": "Old Town",
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Mini Cuckoo Clocks",
+      "city": "Freiburg",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Freiburg Old Town",
+        "Shops near Freiburg Minster"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Black Forest Cake mix or chocolate",
+      "city": "Freiburg",
+      "category": "Food",
+      "where_to_buy": [
+        "Freiburg Old Town"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Wooden handicrafts",
+      "city": "Freiburg",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Freiburg Old Town"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Baden region wines",
+      "city": "Freiburg",
+      "category": "Food",
+      "where_to_buy": [
+        "Freiburg Old Town"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Organic herbal cosmetics",
+      "city": "Freiburg",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Freiburg Old Town"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Mini Cuckoo Clocks",
+      "city": "Freiburg",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Freiburg Old Town",
+        "Shops near Freiburg Minster"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "item": "Black Forest Cake mix or chocolate",
+      "city": "Freiburg",
+      "category": "Food",
+      "where_to_buy": [
+        "Freiburg Old Town"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "item": "Wooden handicrafts",
+      "city": "Freiburg",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Freiburg Old Town"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "item": "Baden region wines",
+      "city": "Freiburg",
+      "category": "Food",
+      "where_to_buy": [
+        "Freiburg Old Town"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "item": "Organic herbal cosmetics",
+      "city": "Freiburg",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Freiburg Old Town"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "France/Tanya and Shovit_All Inclusive Guide.pdf",
+    "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "restaurants": [
+    {
+      "name": "Taj Palace Indian Restaurant Krabi",
+      "city": "Krabi",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹700–₹900 per person",
+      "hours": "10:00 AM – 1:00 AM",
+      "ambience": "Warm and welcoming Indian restaurant known for authentic flavors",
+      "highlights": [
+        "Known for authentic flavors"
+      ],
+      "must_try_dishes": [
+        "Paneer Butter Masala",
+        "Vegetable Biryani",
+        "Garlic Naan"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Khun Noi Thai Food",
+      "city": "Krabi",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "฿100–฿200",
+      "hours": "11AM to 6PM (monday-closed)",
+      "ambience": "Simple, family-run, outdoor seating among tropical plants, very local feel",
+      "highlights": [
+        "Family-run",
+        "Outdoor seating among tropical plants",
+        "Very local feel"
+      ],
+      "must_try_dishes": [
+        "Pad Thai with prawns",
+        "Thai basil chicken"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "D & E's Jungle Kitchen",
+      "city": "Krabi",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "฿120–฿250",
+      "hours": "11AM to 10PM",
+      "ambience": "Rustic \"jungle\" style venue, family-run, authentic Thai recipes",
+      "highlights": [
+        "Rustic jungle style venue",
+        "Family-run",
+        "Authentic Thai recipes"
+      ],
+      "must_try_dishes": [
+        "Yellow-curry crab",
+        "sweet-and-sour chicken"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Ton Ma Yom Thai Food Restaurant",
+      "city": "Krabi",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "฿100-฿200",
+      "hours": "8AM to 9PM (Monday closed)",
+      "ambience": "Small, colourful venue, good portion sizes, casual and friendly",
+      "highlights": [
+        "Good portion sizes",
+        "Casual and friendly"
+      ],
+      "must_try_dishes": [
+        "Chicken curry with coconut",
+        "fish in herb sauce"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Chicken Island (Koh Gai)",
+      "city": "Krabi",
+      "description": "Famous for its unusual limestone rock formation that resembles the head of a chicken, great snorkeling spot",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tup Island",
+      "city": "Krabi",
+      "description": "Known for its stunning sandbar that appears during low tide, connecting nearby islands",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Poda Island",
+      "city": "Krabi",
+      "description": "Features powdery white sand beaches and crystal-clear waters surrounded by dramatic limestone cliffs",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Phra Nang Cave Beach",
+      "city": "Krabi",
+      "description": "Often ranked among the most beautiful beaches in Thailand, famous for its dramatic cliffs, emerald waters, and sacred cave shrine",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ao Nang Beach",
+      "city": "Krabi",
+      "description": "A vibrant coastal town in Krabi Province, renowned for its golden sands, clear waters, and dramatic limestone cliffs. Popular base for travelers exploring nearby islands like Railay Beach and the Phi Phi Islands",
+      "hours": "Opens daily",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Tiger Cave Temple (Wat Tham Suea)",
+      "city": "Krabi",
+      "description": "Established in 1975, named after a legend where a monk meditated in a cave and observed tigers roaming nearby. Features meditation caves, towering Buddha statues, and offers breathtaking views of Krabi's jungle and limestone cliffs",
+      "hours": "Daily from 8:00 AM to 5:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Railay Beach",
+      "city": "Krabi",
+      "description": "One of Krabi's most scenic spots. Optional activities include rock climbing, kayaking, lagoon hike",
+      "hours": "Opens daily",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Balcony Party Hotel",
+      "city": "Krabi",
+      "location": "22min by car from the airport",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "name": "Balcony Party Hotel",
+      "city": "Krabi",
+      "location": "Krabi",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Pla Pao (Grilled Fish)",
+      "city": "Krabi",
+      "description": "Whole fish stuffed with lemongrass, coated with salt, grilled over charcoal",
+      "vegetarian": false,
+      "where_to_try": "Ao Nang Night Market, Krabi",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Handmade crafts & jewelry",
+      "city": "Krabi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Krabi Walking Street (Night Market)",
+        "Ao Nang Walking Street",
+        "Chao Fah Night Market",
+        "Maharaj Market"
+      ],
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "item": "T-shirts & beachwear",
+      "city": "Krabi",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Krabi Walking Street (Night Market)",
+        "Ao Nang Walking Street",
+        "Chao Fah Night Market",
+        "Maharaj Market"
+      ],
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "item": "Bags & accessories",
+      "city": "Krabi",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Krabi Walking Street (Night Market)",
+        "Ao Nang Walking Street",
+        "Chao Fah Night Market",
+        "Maharaj Market"
+      ],
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "item": "Local snacks & spices",
+      "city": "Krabi",
+      "category": "Food",
+      "where_to_buy": [
+        "Krabi Walking Street (Night Market)",
+        "Ao Nang Walking Street",
+        "Chao Fah Night Market",
+        "Maharaj Market"
+      ],
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "item": "Small wooden souvenirs",
+      "city": "Krabi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Krabi Walking Street (Night Market)",
+        "Ao Nang Walking Street",
+        "Chao Fah Night Market",
+        "Maharaj Market"
+      ],
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+    "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+    "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+  ]
+}

@@ -1,0 +1,646 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Beshbarmak",
+      "city": "Kazakhstan",
+      "description": "Kazakhstan's national dish, traditionally made with boiled meat served over flat noodles and broth. The name literally means \"five fingers\", as it was historically eaten by hand",
+      "vegetarian": false,
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Manty",
+      "city": "Kazakhstan",
+      "description": "Kazakhstan's version of steamed dumplings, often larger and typically filled with minced meat and onions",
+      "vegetarian": false,
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Baursak",
+      "city": "Kazakhstan",
+      "description": "Soft fried dough bites are often served with tea or honey. A popular snack and a staple during festive meals",
+      "vegetarian": true,
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Kazakhstan",
+      "english": "Hello",
+      "local": "Salem! or Salemetsiz be? (formal)",
+      "category": "greeting",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Hello",
+      "local": "Zdravstvuyte!",
+      "category": "greeting",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Goodbye",
+      "local": "Sau bolynyz",
+      "category": "polite",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Goodbye",
+      "local": "Do svidaniya",
+      "category": "polite",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Thank you",
+      "local": "Rakhmet",
+      "category": "polite",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Thank you",
+      "local": "Spasibo",
+      "category": "polite",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Please",
+      "local": "Otinish",
+      "category": "polite",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Please",
+      "local": "Pozhaluysta",
+      "category": "polite",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Excuse me / Sorry",
+      "local": "Keshirasiz",
+      "category": "polite",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Excuse me / Sorry",
+      "local": "Izvinite or Prostite",
+      "category": "polite",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Hello",
+      "local": "Salem! or Salemetsiz be? (formal)",
+      "category": "greeting",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Hello",
+      "local": "Zdravstvuyte!",
+      "category": "greeting",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Goodbye",
+      "local": "Sau bolynyz",
+      "category": "polite",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Goodbye",
+      "local": "Do svidaniya",
+      "category": "polite",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Thank you",
+      "local": "Rakhmet",
+      "category": "polite",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Thank you",
+      "local": "Spasibo",
+      "category": "polite",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Please",
+      "local": "Otinish",
+      "category": "polite",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Please",
+      "local": "Pozhaluysta",
+      "category": "polite",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Excuse me / Sorry",
+      "local": "Keshirasiz",
+      "category": "polite",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "city": "Kazakhstan",
+      "english": "Excuse me / Sorry",
+      "local": "Izvinite or Prostite",
+      "category": "polite",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Avoid walking alone late at night in poorly lit or isolated areas",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Use official taxis or ride apps like Yandex Go or inDrive—avoid flagging down cars on the street",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Keep a copy of your passport and visa in your bag—carry the original when required by law enforcement",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Beware of aggressive street vendors or unsolicited 'guides' in touristy areas",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Tap water is not recommended for drinking—use bottled or filtered water",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Always check the weather forecast before visiting Shymbulak, Medeu, or Issyk Lake",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Stick to marked trails; use a local guide for longer hikes",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Altitude changes can cause fatigue—stay hydrated and carry essentials",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Don't feed or approach wildlife",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Avoid walking alone late at night in poorly lit or isolated areas",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Use official taxis or ride apps like Yandex Go or inDrive—avoid flagging down cars on the street",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Keep a copy of your passport and visa in your bag—carry the original when required by law enforcement",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Beware of aggressive street vendors or unsolicited guides in touristy areas",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Tap water is not recommended for drinking—use bottled or filtered water",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Always check the weather forecast before visiting Shymbulak, Medeu, or Issyk Lake",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Stick to marked trails; use a local guide for longer hikes",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Altitude changes can cause fatigue—stay hydrated and carry essentials",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Don't feed or approach wildlife",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Taxi Overcharging – Unofficial taxis may charge 2–3× the local rate. Use Yandex Go or negotiate clearly before entering",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Helpful Strangers at ATMs may try to steal your card details or money. Use ATMs inside banks or malls; cover your PIN",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Currency Exchange Tricks – Fake or rigged rates at unofficial exchange stalls. Exchange money only at banks or licensed exchange counters",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Petition or Survey Scam – Someone may ask you to sign a petition, then demand a donation. Politely decline and walk away",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Fake Police Officers may ask to see your ID and then demand a bribe. Ask for ID; real officers won't ask for money. Call emergency number or walk to a public space",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Felt & Nomadic Crafts",
+      "city": "Kazakhstan",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Green Bazaar"
+      ],
+      "_source_file": "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx",
+      "_source_mtime": 1775604640.0
+    },
+    {
+      "item": "Camel Wool Products",
+      "city": "Kazakhstan",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Local craft shops",
+        "Markets in Almaty"
+      ],
+      "_source_file": "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx",
+      "_source_mtime": 1775604640.0
+    },
+    {
+      "item": "Local Chocolates",
+      "city": "Kazakhstan",
+      "category": "Food",
+      "where_to_buy": [
+        "Rahat Chocolate Shop"
+      ],
+      "_source_file": "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx",
+      "_source_mtime": 1775604640.0
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Kazakhstan",
+      "service": "General Emergency",
+      "number": "112",
+      "notes": null,
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "service": "Police",
+      "number": "102",
+      "notes": null,
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "service": "Ambulance",
+      "number": "103",
+      "notes": null,
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "service": "Fire Department",
+      "number": "101",
+      "notes": null,
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "service": "Indian Embassy",
+      "number": "+7 7172 925 700 / 925 701",
+      "notes": "Address: 6, Kabanbay Batyr Avenue, Diplomatic Area, Nur-Sultan 010000, Kazakhstan",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "service": "Indian Embassy Emergency",
+      "number": "+7 701 555 5687",
+      "notes": "WhatsApp enabled",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "service": "Consulate General Almaty",
+      "number": "+7 7272 504 043 / 504 046",
+      "notes": "Address: 50-B, Kazybek Bi Street, Almaty 050010, Kazakhstan",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "service": "Consulate Emergency",
+      "number": "+7 701 722 4710",
+      "notes": "24x7 Consular Help",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Kazakhstan",
+      "service": "General Emergency",
+      "number": "112",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "city": "Kazakhstan",
+      "service": "Police",
+      "number": "102",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "city": "Kazakhstan",
+      "service": "Ambulance",
+      "number": "103",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "city": "Kazakhstan",
+      "service": "Fire Department",
+      "number": "101",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "city": "Kazakhstan",
+      "service": "Indian Embassy in Astana",
+      "number": "+7 7172 925 700 / 925 701",
+      "notes": "For consular assistance, lost passports, or other emergencies involving Indian citizens",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "city": "Kazakhstan",
+      "service": "Indian Embassy Emergency Contact",
+      "number": "+7 701 555 5687",
+      "notes": "WhatsApp enabled",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "city": "Kazakhstan",
+      "service": "Consulate General in Almaty",
+      "number": "+7 7272 504 043 / 504 046",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "city": "Kazakhstan",
+      "service": "Consulate General Emergency",
+      "number": "+7 701 722 4710",
+      "notes": "24x7 Consular Help",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Beeline Kazakhstan offers paper SIMs and e-SIMs",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "SIM cards available at airport kiosks at Almaty International Airport for convenience",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Mobile operator stores found in malls like Dostyk Plaza, Esentai Mall, and Mega Center",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Some supermarkets or convenience stores sell SIM starter kits, but activation may require staff assistance",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "You need your passport to buy and activate a SIM card. Registration is mandatory by law",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Beeline Kazakhstan offers paper SIMs and e-SIMs",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "SIM cards available at airport kiosks at Almaty International Airport for convenience",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Mobile operator stores found in malls like Dostyk Plaza, Esentai Mall, and Mega Center",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Some supermarkets or convenience stores sell SIM starter kits, but activation may require staff assistance",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "You need your passport to buy and activate a SIM card. Registration is mandatory by law",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Tap water is not recommended for drinking—use bottled or filtered water",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "cities": [
+        "Kazakhstan"
+      ],
+      "tip": "Altitude changes can cause fatigue—stay hydrated and carry essentials",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    }
+  ],
+  "source_files": [
+    "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+    "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+    "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+  ]
+}

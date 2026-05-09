@@ -1,0 +1,97 @@
+{
+  "restaurants": [
+    {
+      "name": "Zub Express",
+      "city": "Flic en Flac",
+      "cuisine_type": [
+        "Indian",
+        "Chinese"
+      ],
+      "price_range": "₹₹",
+      "hours": "11am–3pm, 5:30pm-9pm",
+      "highlights": [
+        "Halal-friendly",
+        "Indian & Chinese fusion"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Mauritius/Mauritius All Inclusive Guide.pdf",
+        "Mauritius/Mauritius All Inclusive Guide - Roma.pdf",
+        "Mauritius/Mauritius All Inclusive Guide - bak.pdf"
+      ]
+    },
+    {
+      "name": "Tidez",
+      "city": "Flic en Flac",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "7:30am-6pm",
+      "highlights": [
+        "Seafood by the beach",
+        "Hilton's in-house restaurant"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Mauritius/Mauritius All Inclusive Guide.pdf",
+        "Mauritius/Mauritius All Inclusive Guide - Roma.pdf",
+        "Mauritius/Mauritius All Inclusive Guide - bak.pdf"
+      ],
+      "nearby_landmarks": [
+        "Hilton Mauritius Resort & Spa, Flic en Flac"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Flic en Flac Beach",
+      "city": "Flic en Flac",
+      "description": "Located on the west coast of Mauritius, known for its long stretch of white sand, calm waters, and beautiful sunsets. A popular spot for swimming, sunbathing, and water sports like snorkeling and diving, lined with casuarina trees",
+      "source_files": [
+        "Mauritius/Mauritius All Inclusive Guide - bak.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Hilton Mauritius Resort & Spa",
+      "city": "Flic en Flac",
+      "location": "Flic en Flac",
+      "_source_file": "Mauritius/Mauritius All Inclusive Guide.pdf",
+      "_source_mtime": 1772384262.1653094
+    },
+    {
+      "name": "Hilton Mauritius Resort & Spa",
+      "city": "Flic en Flac",
+      "location": "Flic en Flac",
+      "_source_file": "Mauritius/Mauritius All Inclusive Guide - Roma.pdf",
+      "_source_mtime": 1772384263.959312
+    },
+    {
+      "name": "Hilton Mauritius Resort & Spa",
+      "city": "Flic en Flac",
+      "location": "Flic en Flac",
+      "_source_file": "Mauritius/Mauritius All Inclusive Guide - bak.pdf",
+      "_source_mtime": 1772384264.4327457
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Mauritius/Mauritius All Inclusive Guide.pdf",
+    "Mauritius/Mauritius All Inclusive Guide - Roma.pdf",
+    "Mauritius/Mauritius All Inclusive Guide - bak.pdf"
+  ]
+}

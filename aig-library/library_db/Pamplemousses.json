@@ -1,0 +1,87 @@
+{
+  "restaurants": [
+    {
+      "name": "Le Fangourin Restaurant",
+      "city": "Pamplemousses",
+      "cuisine_type": [
+        "Local"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "9am–4:30pm",
+      "nearby_landmarks": [
+        "L'Aventure du Sucre, Pamplemousses"
+      ],
+      "highlights": [
+        "Within L'Aventure du Sucre"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Mauritius/Mauritius All Inclusive Guide.pdf",
+        "Mauritius/Mauritius All Inclusive Guide - Roma.pdf",
+        "Mauritius/Mauritius All Inclusive Guide - bak.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "L'Aventure du Sucre",
+      "city": "Pamplemousses",
+      "description": "A captivating museum offering an immersive journey through the island's rich history intertwined with the sugar industry. Housed in the meticulously restored Beau Plan Sugar Factory, which operated for over 200 years until its closure in 1999",
+      "hours": "9am–5pm",
+      "entry_fee": "Rs. 400 adult / Rs. 200 child",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Mauritius/Mauritius All Inclusive Guide.pdf",
+        "Mauritius/Mauritius All Inclusive Guide - Roma.pdf",
+        "Mauritius/Mauritius All Inclusive Guide - bak.pdf"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Sugar related souvenirs",
+      "city": "Pamplemousses",
+      "category": "Food",
+      "where_to_buy": [
+        "L'Aventure du Sucre"
+      ],
+      "_source_file": "Mauritius/Mauritius All Inclusive Guide.pdf",
+      "_source_mtime": 1772384262.1653094
+    },
+    {
+      "item": "Sugar-related souvenirs",
+      "city": "Pamplemousses",
+      "category": "Food",
+      "where_to_buy": [
+        "L'Aventure du Sucre Boutique"
+      ],
+      "_source_file": "Mauritius/Mauritius All Inclusive Guide - Roma.pdf",
+      "_source_mtime": 1772384263.959312
+    },
+    {
+      "item": "Sugar related souvenirs",
+      "city": "Pamplemousses",
+      "category": "Food",
+      "where_to_buy": [
+        "L'Aventure du Sucre"
+      ],
+      "_source_file": "Mauritius/Mauritius All Inclusive Guide - bak.pdf",
+      "_source_mtime": 1772384264.4327457
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Mauritius/Mauritius All Inclusive Guide.pdf",
+    "Mauritius/Mauritius All Inclusive Guide - Roma.pdf",
+    "Mauritius/Mauritius All Inclusive Guide - bak.pdf"
+  ]
+}

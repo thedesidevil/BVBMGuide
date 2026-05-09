@@ -1,0 +1,431 @@
+{
+  "restaurants": [
+    {
+      "name": "Taj Palace Restaurant",
+      "city": "Langkawi",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "11am - 11:30pm",
+      "ambience": "warm and inviting atmosphere",
+      "highlights": [
+        "offers a taste of Indian cuisine",
+        "focus on flavorful dishes",
+        "classic Indian fare"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Ummi Gulai Panas Dan Asam Pedas",
+      "city": "Langkawi",
+      "cuisine_type": [
+        "Malay"
+      ],
+      "hours": "7pm - 11:30pm, Closed on Saturday",
+      "highlights": [
+        "authentic Malay cuisine",
+        "known for Gulai Panas (hot curry)",
+        "known for Asam Pedas (sour and spicy stew)",
+        "genuine taste of local flavors"
+      ],
+      "must_try_dishes": [
+        "Gulai Panas",
+        "Asam Pedas"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Nasi Campur Top BBQ",
+      "city": "Langkawi",
+      "cuisine_type": [
+        "Malay",
+        "BBQ"
+      ],
+      "hours": "8am - 6pm, Closed on Wednesday",
+      "highlights": [
+        "specializes in Nasi Campur",
+        "choose from variety of pre-cooked dishes",
+        "offers BBQ options",
+        "wide array of local flavors in one meal"
+      ],
+      "must_try_dishes": [
+        "Nasi Campur"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Restoran Pak Hj Ya Nasi Ayam",
+      "city": "Langkawi",
+      "cuisine_type": [
+        "Malaysian"
+      ],
+      "hours": "9am - 6pm, Closed on Friday",
+      "highlights": [
+        "known for Nasi Ayam",
+        "popular Malaysian chicken rice dish",
+        "local favorite"
+      ],
+      "must_try_dishes": [
+        "Nasi Ayam"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Sin Seong Hai Kedai Kopi Dan Makanan",
+      "city": "Langkawi",
+      "cuisine_type": [
+        "Malaysian"
+      ],
+      "hours": "9am - 3pm",
+      "highlights": [
+        "traditional coffee shop",
+        "popular establishment type in Malaysia",
+        "great place to experience local culture"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Saujana indah SEAFOOD (KV-trimula)",
+      "city": "Langkawi",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "hours": "4:30am - 1:30am",
+      "highlights": [
+        "specializes in seafood",
+        "fresh seafood"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Ka Kee Lang Restaurant",
+      "city": "Langkawi",
+      "cuisine_type": [
+        "Malay"
+      ],
+      "price_range": "budget",
+      "hours": "4pm - 10pm, Closed on Wednesday",
+      "highlights": [
+        "great local restaurant",
+        "affordable prices"
+      ],
+      "must_try_dishes": [
+        "tom yum",
+        "golden pomfret fish",
+        "fried squid",
+        "oyster omlette",
+        "sesame chicken"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Eagle's Square (Datarang Lang)",
+      "city": "Langkawi",
+      "description": "Iconic landmark with massive eagle statue and waterfront area perfect for leisurely stroll and photos",
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Al-Hana Mosque",
+      "city": "Langkawi",
+      "description": "Prominent mosque with beautiful architecture, great place to appreciate local Islamic culture",
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Taman Lagenda Park",
+      "city": "Langkawi",
+      "description": "Relaxing park with sculptures and displays showcasing Langkawi's myths and legends",
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Pulau Dayang Bunting",
+      "city": "Langkawi",
+      "description": "Island visited during island hopping tour",
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Pulau Singa Besar",
+      "city": "Langkawi",
+      "description": "Island visited during island hopping tour",
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Pulau Beras Basah",
+      "city": "Langkawi",
+      "description": "Island visited during island hopping tour",
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Langkawi Cable Car (SKYCAB)",
+      "city": "Langkawi",
+      "description": "Cable car experience with SKYDOME, SKYREX, 3D ART and Skybridge by Glide",
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "WE Hotel Langkawi",
+      "city": "Langkawi",
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Roti Canai",
+      "city": "Langkawi",
+      "description": "A flaky, buttery flatbread served with dhal (lentil curry) or other vegetarian sauces. Classic Malaysian breakfast or snack",
+      "vegetarian": true,
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Murtabak",
+      "city": "Langkawi",
+      "description": "A stuffed pancake that can be made with vegetarian fillings like vegetables, onions, and eggs. There are chicken versions too",
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Mee Goreng",
+      "city": "Langkawi",
+      "description": "Fried noodles that can be made vegetarian by requesting no meat or seafood",
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Nasi Goreng",
+      "city": "Langkawi",
+      "description": "Fried rice that can be made vegetarian by requesting no meat or seafood",
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Nasi Ayam",
+      "city": "Langkawi",
+      "description": "Malaysian favorite chicken rice, consists of fragrant rice cooked with chicken broth, served with roasted or steamed chicken",
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Chicken Satay",
+      "city": "Langkawi",
+      "description": "Grilled chicken skewers served with peanut sauce",
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Ikan Goreng",
+      "city": "Langkawi",
+      "description": "Fried fish, available at many restaurants especially seafood restaurants",
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    },
+    {
+      "name": "Asam Pedas",
+      "city": "Langkawi",
+      "description": "A sour and spicy fish stew, a popular Malay dish",
+      "source_files": [
+        "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Duty-Free Chocolates & Sweets",
+      "city": "Langkawi",
+      "category": "Food",
+      "where_to_buy": [
+        "Coco Valley",
+        "Langkawi Airport",
+        "Duty-Free Shops in Kuah Town",
+        "Cenang Mall"
+      ],
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "item": "Batik Items (Clothing, Scarves, Bags)",
+      "city": "Langkawi",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Atma Alam Batik Art Village",
+        "Langkawi Craft Complex",
+        "Local Markets in Kuah Town",
+        "Cenang Mall"
+      ],
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "item": "Gamat Products (Balms, Oils, Soaps)",
+      "city": "Langkawi",
+      "category": "Health & Beauty",
+      "where_to_buy": [
+        "Local Pharmacies",
+        "Langkawi Craft Complex",
+        "Local Markets",
+        "Gamat shops in Kuah Town"
+      ],
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "item": "Handicrafts (Wood carvings, woven items, shell crafts)",
+      "city": "Langkawi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Langkawi Craft Complex",
+        "Local Markets in Kuah Town",
+        "Night Markets",
+        "small shops in Pantai Cenang"
+      ],
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "item": "Local Snacks (Dodol, Belacan, Keropok)",
+      "city": "Langkawi",
+      "category": "Food",
+      "where_to_buy": [
+        "Local Markets",
+        "Supermarkets",
+        "roadside stalls"
+      ],
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "item": "Langkawi Black Beach Sand Souvenirs (Bottled Sand, crafts)",
+      "city": "Langkawi",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "Small shops near Black Sand Beach"
+      ],
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "item": "Pearl Jewellery",
+      "city": "Langkawi",
+      "category": "Jewelry",
+      "where_to_buy": [
+        "Shops in Kuah Town",
+        "Cenang Mall",
+        "Local Markets"
+      ],
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "item": "Pewterware (small decorative items)",
+      "city": "Langkawi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Langkawi Craft Complex",
+        "some souvenir shops in Kuah Town"
+      ],
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "item": "Langkawi Eagle Statues/Magnets",
+      "city": "Langkawi",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "Souvenir Shops in Kuah Town",
+        "Pantai Cenang",
+        "airport"
+      ],
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    },
+    {
+      "item": "Local Honey",
+      "city": "Langkawi",
+      "category": "Food",
+      "where_to_buy": [
+        "Local markets",
+        "some shops in Kuah Town"
+      ],
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Langkawi",
+      "mode": "Taxi",
+      "description": "For independent travel, book taxi from Grab app",
+      "recommended_pass": "Grab app",
+      "_source_file": "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf",
+      "_source_mtime": 1772384344.474768
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Singapore and Malaysia/All Inclusive Guide for Langkawi.pdf"
+  ]
+}

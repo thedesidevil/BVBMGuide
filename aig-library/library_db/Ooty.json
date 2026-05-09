@@ -1,0 +1,339 @@
+{
+  "restaurants": [
+    {
+      "name": "Earl's Secret",
+      "city": "Ooty",
+      "cuisine_type": [
+        "Anglo-Indian"
+      ],
+      "price_range": "INR 400-1000",
+      "hours": "12pm-10:30pm",
+      "ambience": "Colonial charm and elegant ambiance with garden seating and glass conservatory",
+      "highlights": [
+        "Colonial charm",
+        "Fine dining experience",
+        "Garden seating",
+        "Glass conservatory"
+      ],
+      "best_for": [
+        "romantic",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf"
+      ]
+    },
+    {
+      "name": "The Periodic Table",
+      "city": "Ooty",
+      "cuisine_type": [
+        "European",
+        "French"
+      ],
+      "price_range": "INR 400-1200",
+      "hours": "12pm-10pm",
+      "ambience": "Sophisticated ambiance with creative dining experience",
+      "highlights": [
+        "Unique dishes inspired by periodic table",
+        "Beautiful presentation",
+        "Creative dining experience"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf"
+      ]
+    },
+    {
+      "name": "Angaara Restaurant",
+      "city": "Ooty",
+      "cuisine_type": [
+        "Indian",
+        "Mughlai"
+      ],
+      "price_range": "INR 300-800",
+      "hours": "12pm-12am",
+      "ambience": "Warm and inviting with elegant yet cozy decor",
+      "highlights": [
+        "Focus on tandoori dishes",
+        "Fresh ingredients",
+        "Rich aromatic flavors"
+      ],
+      "must_try_dishes": [
+        "Tandoori dishes",
+        "Biryanis"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf"
+      ]
+    },
+    {
+      "name": "Le Cafe",
+      "city": "Ooty",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "INR 400-1000",
+      "hours": "10am-10pm",
+      "ambience": "Charming and cozy cafe with relaxed atmosphere",
+      "area": "Heart of Ooty, near the lake",
+      "highlights": [
+        "Delicious coffee and pastries",
+        "Friendly service",
+        "Beautiful scenery views"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf"
+      ]
+    },
+    {
+      "name": "Willy's Coffee Pub",
+      "city": "Ooty",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "INR 1-300",
+      "hours": "10am-9:30pm",
+      "ambience": "Popular with students, relaxed atmosphere for reading",
+      "highlights": [
+        "Lending library",
+        "Board games available",
+        "Popular with students"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf"
+      ]
+    },
+    {
+      "name": "Tycoons- Fine Dine and Retro Bar",
+      "city": "Ooty",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "INR 400-1200",
+      "hours": "12pm-1am",
+      "ambience": "Elegant ambiance with retro-themed bar",
+      "highlights": [
+        "Multi-cuisine options",
+        "Retro-themed bar",
+        "Fine dining"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf"
+      ]
+    },
+    {
+      "name": "Hotel Blue Hills",
+      "city": "Ooty",
+      "cuisine_type": [
+        "South Indian",
+        "Indo-Chinese"
+      ],
+      "price_range": "INR 200-500",
+      "hours": "9am-10pm",
+      "ambience": "Casual and affordable dining option",
+      "highlights": [
+        "Casual dining",
+        "Affordable prices"
+      ],
+      "must_try_dishes": [
+        "Kerala style biryani",
+        "Blue Hills special fried chicken"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Doddabetta Peak",
+      "city": "Ooty",
+      "description": "Highest point in the Nilgiris",
+      "hours": "7am-5pm",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf"
+      ]
+    },
+    {
+      "name": "Botanical Garden",
+      "city": "Ooty",
+      "description": "Sprawling 55-acre oasis in the Nilgiri Hills with diverse collection of over 1,000 plant species including rare and exotic varieties",
+      "hours": "7am-6:30pm",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf"
+      ]
+    },
+    {
+      "name": "Toda Hamlet viewpoint",
+      "city": "Ooty",
+      "description": "Offers stunning panoramic vistas of the Nilgiri Hills, lush green valleys, rolling meadows, distant mountain ranges and glimpse of traditional Toda settlements",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf"
+      ]
+    },
+    {
+      "name": "Pine Forest",
+      "city": "Ooty",
+      "description": "Picturesque valley nestled amidst towering pine trees creating serene and enchanting atmosphere, popular spot for nature lovers and photographers",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf"
+      ]
+    },
+    {
+      "name": "Pykara Lake",
+      "city": "Ooty",
+      "description": "Created by Pykara Dam, offers stunning views of surrounding mountains and forests with boating facilities",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf"
+      ]
+    },
+    {
+      "name": "Pykara Falls",
+      "city": "Ooty",
+      "description": "Series of cascading waterfalls",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf"
+      ]
+    },
+    {
+      "name": "Tea Museum",
+      "city": "Ooty",
+      "description": "Fascinating place to learn about history and production of tea in the Nilgiris region",
+      "hours": "Open till 6pm",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf"
+      ]
+    },
+    {
+      "name": "Rose Garden",
+      "city": "Ooty",
+      "description": "Sprawling paradise for flower lovers with impressive collection of over 20,000 varieties of roses showcasing breathtaking array of colors and fragrances",
+      "hours": "7am-6:30pm",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Sinclairs Retreat",
+      "city": "Ooty",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf",
+      "_source_mtime": 1772384280.5196347
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Nilgiri Tea",
+      "city": "Ooty",
+      "category": "Food",
+      "where_to_buy": [
+        "tea shops",
+        "Dodabetta Tea Factory/Museum"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf",
+      "_source_mtime": 1772384280.5196347
+    },
+    {
+      "item": "Handmade Chocolates",
+      "city": "Ooty",
+      "category": "Food",
+      "where_to_buy": [
+        "Local confectioneries",
+        "Modern Stores/Moddy's Chocolates"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf",
+      "_source_mtime": 1772384280.5196347
+    },
+    {
+      "item": "Eucalyptus Oil",
+      "city": "Ooty",
+      "category": "Health",
+      "where_to_buy": [
+        "Local herbal shops",
+        "Niligiris Eucalyptus Oil and Essential Oils Distillery"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf",
+      "_source_mtime": 1772384280.5196347
+    },
+    {
+      "item": "Toda Jewelry",
+      "city": "Ooty",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Main Bazaar",
+        "tribal handicraft shops"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf",
+      "_source_mtime": 1772384280.5196347
+    },
+    {
+      "item": "Handwoven Shawls and Scarves",
+      "city": "Ooty",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Main Bazaar",
+        "shops in town center"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf",
+      "_source_mtime": 1772384280.5196347
+    },
+    {
+      "item": "Ooty Honey",
+      "city": "Ooty",
+      "category": "Food",
+      "where_to_buy": [
+        "The Honey Collector"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf",
+      "_source_mtime": 1772384280.5196347
+    },
+    {
+      "item": "Flower Seeds",
+      "city": "Ooty",
+      "category": "Garden",
+      "where_to_buy": [
+        "Sashank's Flower Farm"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf",
+      "_source_mtime": 1772384280.5196347
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf"
+  ]
+}

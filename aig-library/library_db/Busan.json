@@ -1,0 +1,572 @@
+{
+  "restaurants": [
+    {
+      "name": "Haeundae Food Stalls",
+      "city": "Busan",
+      "cuisine_type": [
+        "Korean",
+        "Seafood"
+      ],
+      "price_range": "budget",
+      "area": "Haeundae",
+      "nearby_landmarks": [
+        "Haeundae Beach, Busan"
+      ],
+      "highlights": [
+        "Fresh seafood",
+        "Korean street food"
+      ],
+      "must_try_dishes": [
+        "Abalone",
+        "Sea pineapple",
+        "Grilled seafood"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Haeundae Traditional Market",
+      "city": "Busan",
+      "cuisine_type": [
+        "Korean",
+        "Seafood"
+      ],
+      "price_range": "budget",
+      "hours": "9:00 AM – 10:00 PM",
+      "area": "Haeundae",
+      "nearby_landmarks": [
+        "Haeundae Beach, Busan"
+      ],
+      "highlights": [
+        "Traditional market"
+      ],
+      "must_try_dishes": [
+        "Grilled eel",
+        "Kimchi jeon",
+        "Seafood pancakes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Goraesa Fish Cake Haeundae Branch",
+      "city": "Busan",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "budget",
+      "hours": "9:00 AM – 9:00 PM (Mon- Fri); 9:30am- 9:30 pm Sat-Sun",
+      "area": "Haeundae",
+      "nearby_landmarks": [
+        "Haeundae Beach, Busan"
+      ],
+      "highlights": [
+        "Wide selection of Korean fish cakes (Eomuk)",
+        "Cooked food section"
+      ],
+      "must_try_dishes": [
+        "Korean fish cakes (Eomuk)"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Mom's Touch Seomyeon",
+      "city": "Busan",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "budget",
+      "hours": "10:00 AM – 10:00 PM",
+      "area": "Seomyeon",
+      "highlights": [
+        "Korean fried chicken burger chain"
+      ],
+      "must_try_dishes": [
+        "Korean fried chicken burger"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Cafe Rooftop 420",
+      "city": "Busan",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "budget",
+      "hours": "11:00 AM – 10:00 PM",
+      "area": "Seomyeon",
+      "highlights": [
+        "Great for coffee with views"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Geumsubokguk",
+      "city": "Busan",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "mid-range",
+      "hours": "6:00 AM – 10:00 PM",
+      "highlights": [
+        "Premium pufferfish soup experience"
+      ],
+      "must_try_dishes": [
+        "Pufferfish soup"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "The Bay 101 Cafe",
+      "city": "Busan",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "mid-range",
+      "hours": "10:00 AM – 11:00 PM",
+      "highlights": [
+        "Harbor views",
+        "Ideal for sunset coffee"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Café Rooftop",
+      "city": "Busan",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "budget",
+      "hours": "11:00 AM – 10:00 PM",
+      "area": "Haeundae",
+      "highlights": [
+        "Rooftop seating with views of Haeundae Beach"
+      ],
+      "nearby_landmarks": [
+        "Haeundae Beach, Busan"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Coralani Café",
+      "city": "Busan",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "mid-range",
+      "hours": "10:00 AM – 10:00 PM",
+      "area": "Haeundae",
+      "highlights": [
+        "Multi-level café with ocean views",
+        "Pastel-themed interior"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Avant Garde Café",
+      "city": "Busan",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "budget",
+      "hours": "10:00 AM – 8:00 PM",
+      "area": "Gamcheon",
+      "nearby_landmarks": [
+        "Gamcheon Culture Village, Busan"
+      ],
+      "highlights": [
+        "Known for artistic ambiance"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Café de One Piece",
+      "city": "Busan",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "budget",
+      "hours": "11:00 AM – 9:00 PM",
+      "area": "Seomyeon",
+      "highlights": [
+        "Themed café for anime fans",
+        "Decorated with One Piece memorabilia"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Waveon Coffee",
+      "city": "Busan",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "luxury",
+      "hours": "10:00 AM – 12:00 AM",
+      "area": "Gijang",
+      "nearby_landmarks": [
+        "Haeundae, Busan"
+      ],
+      "highlights": [
+        "Stunning glass-front café overlooking the sea",
+        "Sunset views",
+        "Modern architecture"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "OPS Haeundae",
+      "city": "Busan",
+      "cuisine_type": [
+        "Bakery"
+      ],
+      "price_range": "budget",
+      "hours": "8:00 AM – 10:00 PM",
+      "area": "Seomyeon",
+      "highlights": [
+        "Beloved Busan bakery",
+        "Neatly displayed pastries",
+        "Local sweet treats"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Cafe Avant-Garde Gamcheon",
+      "city": "Busan",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "mid-range",
+      "hours": "11:00 AM – 7:00 PM",
+      "area": "Gamcheon Culture Village",
+      "nearby_landmarks": [
+        "Gamcheon Culture Village, Busan"
+      ],
+      "highlights": [
+        "Colorful hillside café",
+        "Artistic interiors",
+        "Panoramic views of Gamcheon Culture Village"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sulbing Seomyeon",
+      "city": "Busan",
+      "cuisine_type": [
+        "Dessert"
+      ],
+      "price_range": "mid-range",
+      "hours": "11:00 AM – 1:00 AM",
+      "area": "Seomyeon",
+      "highlights": [
+        "Popular Korean dessert café",
+        "Beautifully plated shaved ice"
+      ],
+      "must_try_dishes": [
+        "Bingsu"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Gamcheon Culture Village Asteroid B612 Cafe",
+      "city": "Busan",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "mid-range",
+      "hours": "9:00 AM – 8:00 PM",
+      "area": "Gamcheon Culture Village",
+      "nearby_landmarks": [
+        "Gamcheon Culture Village, Busan"
+      ],
+      "highlights": [
+        "Terrace café overlooking pastel-colored hillside houses"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Rendeja-Vous Haeundae",
+      "city": "Busan",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "mid-range",
+      "hours": "9:30 AM – 11:00 PM",
+      "area": "Haeundae",
+      "nearby_landmarks": [
+        "Haeundae Beach, Busan"
+      ],
+      "highlights": [
+        "Beachfront cafés offering relaxing ocean views"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Haeundae Beach Train & Sky Capsule",
+      "city": "Busan",
+      "description": "A scenic rail journey with beautiful ocean views",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Haeundae Beach",
+      "city": "Busan",
+      "description": "Busan's most famous beach with wide sandy shoreline and refreshing sea breeze",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf",
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ],
+      "hours": "Open area",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours"
+    },
+    {
+      "name": "Gamcheon Culture Village",
+      "city": "Busan",
+      "description": "Hillside neighbourhood known as 'Santorini of Korea' with brightly painted houses, art installations, and murals",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf",
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ],
+      "hours": "9:00 AM – 5:00 PM",
+      "entry_fee": "Free (map ~INR 150)",
+      "recommended_duration": "2-3 hours"
+    },
+    {
+      "name": "Seomyeon District",
+      "city": "Busan",
+      "description": "Shopping and cafe-hopping experience",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Songdo Cable Car",
+      "city": "Busan",
+      "description": "Scenic cable car ride over coastline offering beautiful aerial views of sea, cliffs, and Songdo Beach",
+      "hours": "9:00 AM – 8:00 PM",
+      "entry_fee": "~INR 900–1,200",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Jagalchi Fish Market",
+      "city": "Busan",
+      "description": "Korea's largest seafood market offering local atmosphere and cultural experience",
+      "hours": "Best after 5:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "BIFF Square",
+      "city": "Busan",
+      "description": "Famous area for street food, movie-themed streets, and lively evening energy",
+      "hours": "Best after 5:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Haeundae Blue Line Park",
+      "city": "Busan",
+      "description": "Scenic coastal route with Beach Train and Sky Capsule options offering panoramic ocean views",
+      "hours": "9:30 AM – 6:00 PM",
+      "entry_fee": "INR 800–1,500",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Bay 101",
+      "city": "Busan",
+      "description": "Waterfront area offering beautiful night views with skyline reflections on water",
+      "hours": "Best after sunset",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Shilla Stay Haeundae BEXCO",
+      "city": "Busan",
+      "location": "Haeundae",
+      "_source_file": "South Korea/All Inclusive Guide-South Korea.pdf",
+      "_source_mtime": 1772384286.0845513
+    },
+    {
+      "name": "Solaria Nishitetsu Hotel Busan",
+      "city": "Busan",
+      "location": "Seomyeon",
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Mayak gimbap",
+      "city": "Busan",
+      "description": "Mini seaweed rice rolls",
+      "vegetarian": true,
+      "where_to_try": "Gwangjang Market",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Trendy Fashion & Cute Accessories",
+      "city": "Busan",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Seomyeon Underground Shopping Arcade"
+      ],
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0
+    },
+    {
+      "item": "Local Market Finds",
+      "city": "Busan",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Nampo-dong",
+        "BIFF Square"
+      ],
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0
+    },
+    {
+      "item": "Beachside Treats & Small Crafts",
+      "city": "Busan",
+      "category": "Food",
+      "where_to_buy": [
+        "Haeundae Market"
+      ],
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Busan",
+      "mode": "Metro",
+      "description": "Metro system with excellent connectivity, Lines 1 & 2 cover major attractions",
+      "recommended_pass": "T-Money Card",
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "South Korea/All Inclusive Guide-South Korea.pdf",
+    "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+  ]
+}

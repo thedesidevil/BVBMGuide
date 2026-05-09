@@ -1,0 +1,76 @@
+{
+  "restaurants": [
+    {
+      "name": "Restaurant Stägerstübli Mürren",
+      "city": "Mürren",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "₹2,500–4,000 per person",
+      "hours": "11:00 AM – 10:00 PM (Tuesday, Wednesday Closed)",
+      "must_try_dishes": [
+        "Rösti",
+        "vegetarian pasta",
+        "soups"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Hotel Edelweiss Restaurant Mürren",
+      "city": "Mürren",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "₹2,500–4,000 per person",
+      "hours": "10:00 AM – 9:00 PM",
+      "must_try_dishes": [
+        "Veg rösti",
+        "soups",
+        "local dishes"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Mürren Village",
+      "city": "Mürren",
+      "description": "Peaceful, car-free village with uninterrupted views of the Eiger, Mönch, and Jungfrau peaks",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mürren",
+      "city": "Mürren",
+      "description": "Car-free village with panoramic mountain views",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+    "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+    "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf"
+  ]
+}

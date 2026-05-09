@@ -1,0 +1,272 @@
+{
+  "restaurants": [
+    {
+      "name": "Lou Wai Lou",
+      "city": "Hangzhou",
+      "cuisine_type": [
+        "Hangzhou"
+      ],
+      "price_range": "CNY 200–300 pp",
+      "hours": "10 AM – 10 PM",
+      "ambience": "A legendary Hangzhou institution since 1848, perched directly on West Lake — a quintessential experience for first-time visitors",
+      "area": "Near Sofitel Hangzhou Westlake",
+      "nearby_landmarks": [
+        "West Lake, Hangzhou"
+      ],
+      "must_try_dishes": [
+        "West Lake vinegar fish",
+        "Dongpo pork",
+        "stir-fried river shrimp",
+        "tea-infused chicken"
+      ],
+      "best_for": [
+        "legendary experience",
+        "first-time visitors"
+      ],
+      "source_files": [
+        "China/Sanjeev-All Inclusive Guide_China.pdf"
+      ]
+    },
+    {
+      "name": "Zhi Wei Guan",
+      "city": "Hangzhou",
+      "cuisine_type": [
+        "Zhejiang"
+      ],
+      "price_range": "CNY 80–150 pp",
+      "hours": "9 AM – 10 PM",
+      "ambience": "Famous for its century-old recipes and Zhejiang street classics, offering a casual yet authentic lunch stop",
+      "must_try_dishes": [
+        "Beggar's chicken",
+        "Hangzhou noodles with scallion oil",
+        "vegetarian dumplings",
+        "sweet Osmanthus lotus root"
+      ],
+      "best_for": [
+        "authentic local food",
+        "casual dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "China/Sanjeev-All Inclusive Guide_China.pdf"
+      ]
+    },
+    {
+      "name": "Grandma's Home",
+      "city": "Hangzhou",
+      "cuisine_type": [
+        "Hangzhou"
+      ],
+      "price_range": "CNY 100–180 pp",
+      "hours": "10 AM – 9:30 PM",
+      "ambience": "A beloved local chain offering modern Hangzhou comfort food in a relaxed, family-style setting",
+      "must_try_dishes": [
+        "Crispy duck with soy glaze",
+        "prawns with green tea leaves",
+        "garlic spinach",
+        "fish head soup"
+      ],
+      "best_for": [
+        "family dining",
+        "comfort food"
+      ],
+      "source_files": [
+        "China/Sanjeev-All Inclusive Guide_China.pdf"
+      ]
+    },
+    {
+      "name": "28 HuBin Road",
+      "city": "Hangzhou",
+      "cuisine_type": [
+        "Hangzhou"
+      ],
+      "price_range": "CNY 300–400 pp",
+      "hours": "9 AM – 10 PM",
+      "ambience": "Elegant, award-winning restaurant inside Hyatt Regency, specializing in elevated Hangzhou cuisine with artistic presentation",
+      "must_try_dishes": [
+        "Dongpo pork",
+        "West Lake fish in vinegar sauce",
+        "tea-smoked duck",
+        "sautéed river shrimp"
+      ],
+      "best_for": [
+        "fine dining",
+        "award-winning cuisine"
+      ],
+      "source_files": [
+        "China/Sanjeev-All Inclusive Guide_China.pdf"
+      ]
+    },
+    {
+      "name": "Green Tea Restaurant",
+      "city": "Hangzhou",
+      "cuisine_type": [
+        "Zhejiang"
+      ],
+      "price_range": "CNY 120–200 pp",
+      "hours": "10 AM – 10 PM",
+      "ambience": "Trendy yet cozy; ideal for tasting a lighter, modern take on Zhejiang cuisine",
+      "must_try_dishes": [
+        "Tea-roasted chicken",
+        "grilled fish",
+        "tofu with mushrooms",
+        "sautéed greens"
+      ],
+      "best_for": [
+        "modern cuisine",
+        "trendy dining"
+      ],
+      "source_files": [
+        "China/Sanjeev-All Inclusive Guide_China.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "West Lake",
+      "city": "Hangzhou",
+      "description": "Lose yourself along willow-lined paths and mirror-like waters that have inspired poets for centuries. The lake's tranquil charm, dotted with arched bridges, lotus ponds, and traditional teahouses, captures the essence of Chinese beauty and harmony",
+      "hours": "7 AM – 8 PM (open area)",
+      "entry_fee": "Free entry",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "China/Sanjeev-All Inclusive Guide_China.pdf"
+      ]
+    },
+    {
+      "name": "Leifeng Pagoda",
+      "city": "Hangzhou",
+      "description": "A striking five-story pagoda overlooking West Lake, Leifeng is steeped in legend — said to be the setting of the \"Legend of the White Snake,\" one of China's most beloved love stories. From its terraces, enjoy panoramic views of the shimmering lake and distant mountains",
+      "hours": "8:00 AM – 5:30 PM",
+      "entry_fee": "CNY 40 per adult",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "China/Sanjeev-All Inclusive Guide_China.pdf"
+      ]
+    },
+    {
+      "name": "West Lake Cruise",
+      "city": "Hangzhou",
+      "description": "Board a traditional painted boat to drift across the lake's calm waters. Pass by iconic spots like Three Pools Mirroring the Moon and Su Causeway, where reflections of willow trees shimmer on the surface",
+      "hours": "8 AM – 5 PM (departures every 30 minutes)",
+      "entry_fee": "CNY 55–90 pp depending on boat type",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "China/Sanjeev-All Inclusive Guide_China.pdf"
+      ]
+    },
+    {
+      "name": "Yunqi Zhujing",
+      "city": "Hangzhou",
+      "description": "Escape into tranquility at this bamboo forest trail just outside the city center. The air feels cooler and greener beneath thousands of slender stalks swaying softly in the wind — a place to slow down and soak in nature's rhythm",
+      "hours": "7 AM – 5 PM",
+      "entry_fee": "Free entry",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "China/Sanjeev-All Inclusive Guide_China.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Sofitel Hangzhou Westlake",
+      "city": "Hangzhou",
+      "location": "West Lake",
+      "_source_file": "China/Sanjeev-All Inclusive Guide_China.pdf",
+      "_source_mtime": 1772384329.5979078
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Scallion Pancake",
+      "city": "Hangzhou",
+      "description": "Popular street food pancake",
+      "vegetarian": true,
+      "where_to_try": "Hubin street vendors",
+      "source_files": [
+        "China/Sanjeev-All Inclusive Guide_China.pdf"
+      ]
+    },
+    {
+      "name": "Glutinous Rice Lotus Root with Osmanthus",
+      "city": "Hangzhou",
+      "description": "Sweet traditional dessert",
+      "vegetarian": true,
+      "where_to_try": "Zhi Wei Guan",
+      "source_files": [
+        "China/Sanjeev-All Inclusive Guide_China.pdf"
+      ]
+    },
+    {
+      "name": "West Lake Vinegar Fish",
+      "city": "Hangzhou",
+      "description": "Famous Hangzhou fish dish with sweet and sour sauce",
+      "vegetarian": false,
+      "where_to_try": "Lou Wai Lou",
+      "source_files": [
+        "China/Sanjeev-All Inclusive Guide_China.pdf"
+      ]
+    },
+    {
+      "name": "Dongpo Pork",
+      "city": "Hangzhou",
+      "description": "Traditional braised pork belly dish",
+      "vegetarian": false,
+      "where_to_try": "28 Hubin Road",
+      "source_files": [
+        "China/Sanjeev-All Inclusive Guide_China.pdf"
+      ]
+    },
+    {
+      "name": "Longjing Tea Shrimp",
+      "city": "Hangzhou",
+      "description": "Shrimp cooked with famous Longjing tea",
+      "vegetarian": false,
+      "where_to_try": "Green Tea Restaurant",
+      "source_files": [
+        "China/Sanjeev-All Inclusive Guide_China.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Longjing Tea (Dragon Well Tea)",
+      "city": "Hangzhou",
+      "category": "Food",
+      "where_to_buy": [
+        "Meijiawu Tea Village"
+      ],
+      "_source_file": "China/Sanjeev-All Inclusive Guide_China.pdf",
+      "_source_mtime": 1772384329.5979078
+    },
+    {
+      "item": "Silk Pajamas & Cheongsams",
+      "city": "Hangzhou",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Hubin Yintai stores"
+      ],
+      "_source_file": "China/Sanjeev-All Inclusive Guide_China.pdf",
+      "_source_mtime": 1772384329.5979078
+    },
+    {
+      "item": "Handmade Paper & Ink Sets",
+      "city": "Hangzhou",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Various shops"
+      ],
+      "_source_file": "China/Sanjeev-All Inclusive Guide_China.pdf",
+      "_source_mtime": 1772384329.5979078
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "China/Sanjeev-All Inclusive Guide_China.pdf"
+  ]
+}

@@ -1,0 +1,3297 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Pad Thai Jay",
+      "city": "Thailand",
+      "description": "Stir-fried rice noodles with tofu, peanuts, bean sprouts, and tamarind sauce (vegetarian version)",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Green Curry with Tofu (Gaeng Keow Wan Jay)",
+      "city": "Thailand",
+      "description": "Spicy Thai green curry with vegetables and tofu",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Red Curry with Vegetables (Gaeng Daeng Jay)",
+      "city": "Thailand",
+      "description": "Creamy coconut curry with seasonal vegetables and tofu",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Massaman Curry with Tofu (Gaeng Massaman Jay)",
+      "city": "Thailand",
+      "description": "Mild, slightly sweet curry with potatoes, peanuts, and tofu",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Tom Yum Soup (Vegetarian Version)",
+      "city": "Thailand",
+      "description": "Hot and sour soup with mushrooms, lemongrass, lime, and tofu",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Som Tam Jay",
+      "city": "Thailand",
+      "description": "Green papaya salad, often served without fish sauce for the vegetarian version",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Spring Rolls (Poh Pia Jay)",
+      "city": "Thailand",
+      "description": "Crispy vegetable-filled spring rolls",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Stir-Fried Morning Glory (Pad Pak Boong Jay)",
+      "city": "Thailand",
+      "description": "Spicy stir-fried water spinach with garlic and soy sauce",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Mango Sticky Rice (Khao Niew Mamuang)",
+      "city": "Thailand",
+      "description": "Sweet dessert of sticky rice with coconut milk and fresh mango",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Fried Tofu with Peanut Sauce",
+      "city": "Thailand",
+      "description": "Crispy tofu served with a rich peanut dipping sauce",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Vegetable Fried Rice (Khao Pad Jay)",
+      "city": "Thailand",
+      "description": "Thai-style fried rice with assorted vegetables and tofu",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Thai Sweet Corn Cakes (Tod Man Khao Pod Jay)",
+      "city": "Thailand",
+      "description": "Crispy corn fritters, usually vegetarian-friendly",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Pad Thai (Vegetarian)",
+      "city": "Thailand",
+      "description": "Thailand's most famous noodle dish made with rice noodles, tofu, peanuts, lime, and veggies",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Som Tam (Papaya Salad – Veg Version)",
+      "city": "Thailand",
+      "description": "A refreshing salad made with raw papaya, lime, chili, and peanuts",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Thai Green Curry (Veg)",
+      "city": "Thailand",
+      "description": "A fragrant coconut curry with Thai basil, eggplant, and vegetables",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tom Yum Soup (Vegetarian)",
+      "city": "Thailand",
+      "description": "A hot and sour soup with lemongrass, kaffir lime, mushrooms, and herbs",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pad See Ew (Veg)",
+      "city": "Thailand",
+      "description": "Flat rice noodles stir-fried with soy sauce, Chinese broccoli, and tofu",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mango Sticky Rice",
+      "city": "Thailand",
+      "description": "Thailand's iconic dessert made with sweet sticky rice, coconut milk, and ripe mango",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Morning Glory Stir-Fry (Pad Pak Boong)",
+      "city": "Thailand",
+      "description": "Water spinach stir-fried with garlic and soy sauce. Simple, flavorful, and very local",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Vegetarian Spring Rolls",
+      "city": "Thailand",
+      "description": "Crispy rolls filled with glass noodles and vegetables. Served with sweet chili sauce",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Massaman Curry (Veg)",
+      "city": "Thailand",
+      "description": "A mild, slightly sweet curry with potatoes, peanuts, and coconut milk",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Thai Fried Rice (Veg)",
+      "city": "Thailand",
+      "description": "Jasmine rice stir-fried with vegetables, tofu, and sauces",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pineapple Fried Rice (Veg)",
+      "city": "Thailand",
+      "description": "Rice cooked with pineapple, cashews, and veggies — often served in a pineapple shell",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Thai Iced Tea (Veg-Friendly)",
+      "city": "Thailand",
+      "description": "Sweet, creamy tea made with condensed milk",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pad Thai",
+      "city": "Thailand",
+      "description": "Experience the exquisite blend of sweet, sour, and savoury notes that dance on your palate as skilled street vendors expertly toss wok-fried rice noodles with succulent shrimp, tender chicken, or crispy tofu",
+      "vegetarian": true,
+      "where_to_try": "Thip Samai",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Khanom Bueang (Crispy Crepes)",
+      "city": "Thailand",
+      "description": "These delicate sweet or savory crepes come filled with various ingredients (choose vegetarian options or the sweet ones- coconut cream, or meringue. They offer a delightful textural contrast between the crisp exterior and the soft, flavorful filling",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Mango Sticky Rice with Coconut Cream (Khao Neow Mamuang)",
+      "city": "Thailand",
+      "description": "This classic Thai dessert features perfectly ripe mango served with sticky rice cooked in coconut milk and often drizzled with a sweet coconut cream sauce. It's a simple yet satisfying way to end a meal",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Miang Kam",
+      "city": "Thailand",
+      "description": "This bite-sized northern Thai snack features betel leaves filled with a flavorful mixture of chopped nuts, dried shrimp, ginger, and other ingredients. It's a fresh and healthy option with a complex flavor profile",
+      "vegetarian": false,
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Som Tam",
+      "city": "Thailand",
+      "description": "This spicy papaya salad is a dish made with shredded green papaya, fiery chillies, dried shrimp, tomatoes, crunchy peanuts and umami fish sauce",
+      "vegetarian": false,
+      "where_to_try": "Baan Somtum",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Thai Green Curry",
+      "city": "Thailand",
+      "description": "Thai Green Curry is a staple in Thailand- ask for the vegetarian version",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Cha Yen – Thai Tea",
+      "city": "Thailand",
+      "description": "The vibrant orange hue is matched by the robust flavour of black tea infused with aromatic spices, vanilla, and orange blossom",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Coconut Ice Cream (I-dtim Mat Phrao)",
+      "city": "Thailand",
+      "description": "Served in a coconut shell, this creamy delight is crowned with an array of toppings, from crunchy roasted peanuts to sweet corn and sticky rice",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Thai Green Curry Chicken (Gaeng Keow Wan Gai)",
+      "city": "Thailand",
+      "description": "Tender chicken in fragrant green curry paste infused with herbs and spices",
+      "vegetarian": false,
+      "source_files": [
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Cha Yen (Thai Tea)",
+      "city": "Thailand",
+      "description": "Vibrant orange tea with robust flavor of black tea infused with spices, vanilla, and orange blossom",
+      "vegetarian": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Khao Man Gai",
+      "city": "Thailand",
+      "description": "Thai-style Hainanese chicken rice with spicy Ginger Sauce",
+      "vegetarian": false,
+      "source_files": [
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ],
+      "where_to_try": "Go-Ang Kaomunkai Pratunam, Bangkok"
+    },
+    {
+      "name": "Pla Pao",
+      "city": "Thailand",
+      "description": "Grilled fish dish embodying Thailand's coastal cuisine",
+      "vegetarian": false,
+      "source_files": [
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Thai Red Curry Noodle Soup",
+      "city": "Thailand",
+      "description": "Creamy red curry broth with soft rice noodles, meat slices, and vegetables",
+      "vegetarian": false,
+      "source_files": [
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Tom Yum Goong",
+      "city": "Thailand",
+      "description": "Spicy-sour shrimp soup with lemongrass, galangal, and lime",
+      "vegetarian": false,
+      "where_to_try": "Pe Aor Tom Yum Kung Noodle, Siam area",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Green Curry (Gaeng Keow Wan)",
+      "city": "Thailand",
+      "description": "Spicy coconut curry with chicken or beef and Thai basil",
+      "vegetarian": false,
+      "where_to_try": "Krua Apsorn, Bangkok",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Moo Ping",
+      "city": "Thailand",
+      "description": "Charcoal-grilled pork skewers marinated in coconut milk and herbs",
+      "vegetarian": false,
+      "where_to_try": "Chatuchak Market or Soi Rambuttri, Bangkok",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Kai Yang (Grilled Chicken)",
+      "city": "Thailand",
+      "description": "Smoky grilled chicken marinated with garlic, lemongrass, and coriander root",
+      "vegetarian": false,
+      "where_to_try": "Sabai Jai Gai Yang, Bangkok (Ekkamai area)",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Massaman Curry",
+      "city": "Thailand",
+      "description": "Mild, fragrant curry with beef or chicken, peanuts, and potatoes",
+      "vegetarian": false,
+      "where_to_try": "Blue Elephant, Phuket Old Town",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Khao Pad (Thai Fried Rice)",
+      "city": "Thailand",
+      "description": "Fried rice with shrimp, crab, or chicken — flavored with fish sauce and lime",
+      "vegetarian": false,
+      "where_to_try": "Any beachside restaurant in Phuket or Krabi",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Thailand",
+      "english": "Hello / Hi",
+      "local": "Sawasdee krub/kha (krub = male, kha = female)",
+      "category": "greeting",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "city": "Thailand",
+      "english": "Thank you",
+      "local": "Khob khun krub/kha",
+      "category": "polite",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "city": "Thailand",
+      "english": "Yes",
+      "local": "Chai",
+      "category": "polite",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "city": "Thailand",
+      "english": "No",
+      "local": "Mai",
+      "category": "polite",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "city": "Thailand",
+      "english": "Excuse me / Sorry",
+      "local": "Khor thot krub/kha",
+      "category": "polite",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "city": "Thailand",
+      "english": "Hello / Hi",
+      "local": "Sawasdee krub/kha (krub = male, kha = female)",
+      "category": "greeting",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "city": "Thailand",
+      "english": "Thank you",
+      "local": "Khob khun krub/kha",
+      "category": "polite",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "city": "Thailand",
+      "english": "Yes",
+      "local": "Chai",
+      "category": "polite",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "city": "Thailand",
+      "english": "No",
+      "local": "Mai",
+      "category": "polite",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "city": "Thailand",
+      "english": "Excuse me / Sorry",
+      "local": "Khor thot krub/kha",
+      "category": "polite",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "city": "Thailand",
+      "english": "Hello / Hi",
+      "local": "Sawasdee krub/kha (krub = male, kha = female)",
+      "category": "greeting",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "city": "Thailand",
+      "english": "Thank you",
+      "local": "Khob khun krub/kha",
+      "category": "polite",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "city": "Thailand",
+      "english": "Yes",
+      "local": "Chai",
+      "category": "polite",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "city": "Thailand",
+      "english": "No",
+      "local": "Mai",
+      "category": "polite",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "city": "Thailand",
+      "english": "Excuse me / Sorry",
+      "local": "Khor thot krub/kha",
+      "category": "polite",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "city": "Thailand",
+      "english": "Hello / Hi",
+      "local": "Sawasdee krub/kha (krub = male, kha = female)",
+      "category": "greeting",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "city": "Thailand",
+      "english": "Thank you",
+      "local": "Khob khun krub/kha",
+      "category": "polite",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "city": "Thailand",
+      "english": "Yes",
+      "local": "Chai",
+      "category": "polite",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "city": "Thailand",
+      "english": "No",
+      "local": "Mai",
+      "category": "polite",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "city": "Thailand",
+      "english": "Excuse me / Sorry",
+      "local": "Khor thot krub/kha",
+      "category": "polite",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "city": "Thailand",
+      "english": "No meat",
+      "local": "mai gin neua sat",
+      "category": "food",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "city": "Thailand",
+      "english": "No fish sauce, no oyster sauce",
+      "local": "mai ow nam pla, mai ow nam man hoy",
+      "category": "food",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "city": "Thailand",
+      "english": "Hello",
+      "local": "Sawat Dee",
+      "category": "greeting",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "city": "Thailand",
+      "english": "Thank you",
+      "local": "Khop Khun",
+      "category": "polite",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "city": "Thailand",
+      "english": "Yes",
+      "local": "Chi",
+      "category": "polite",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "city": "Thailand",
+      "english": "No",
+      "local": "Lekh Thi",
+      "category": "polite",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "city": "Thailand",
+      "english": "Sorry",
+      "local": "Khaw Thawt",
+      "category": "polite",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "city": "Thailand",
+      "english": "I'm vegetarian (from a female)",
+      "local": "Chan kin jeh",
+      "category": "food",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "city": "Thailand",
+      "english": "How much is this?",
+      "local": "An- nee tao rai?",
+      "category": "polite",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "city": "Thailand",
+      "english": "Hello",
+      "local": "Sawasdee krub (for men) / Sawasdee ka (for women)",
+      "category": "greeting",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "city": "Thailand",
+      "english": "Thank you",
+      "local": "Khop khun krub/ka",
+      "category": "polite",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "city": "Thailand",
+      "english": "Yes",
+      "local": "Chai",
+      "category": "polite",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "city": "Thailand",
+      "english": "No",
+      "local": "Mai chai",
+      "category": "polite",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "city": "Thailand",
+      "english": "Please",
+      "local": "Karuna krub/ka",
+      "category": "polite",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "city": "Thailand",
+      "english": "Excuse me / Sorry",
+      "local": "Khor thot krub/ka",
+      "category": "polite",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "city": "Thailand",
+      "english": "Hello",
+      "local": "Sawat Dee",
+      "category": "greeting",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "city": "Thailand",
+      "english": "Thank you",
+      "local": "Khop Khun",
+      "category": "polite",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "city": "Thailand",
+      "english": "Yes",
+      "local": "Chi",
+      "category": "polite",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "city": "Thailand",
+      "english": "No",
+      "local": "Lekh Thi",
+      "category": "polite",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "city": "Thailand",
+      "english": "Sorry",
+      "local": "Khaw Thawt",
+      "category": "polite",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "city": "Thailand",
+      "english": "I'm vegetarian (from a female)",
+      "local": "Chan kin jeh",
+      "category": "food",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "city": "Thailand",
+      "english": "How much is this?",
+      "local": "An- nee tao rai?",
+      "category": "polite",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "city": "Thailand",
+      "english": "Hello / Hi",
+      "local": "Sawasdee krub/kha (krub = male, kha = female)",
+      "category": "greeting",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "city": "Thailand",
+      "english": "Thank you",
+      "local": "Khob khun krub/kha",
+      "category": "polite",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "city": "Thailand",
+      "english": "Yes",
+      "local": "Chai",
+      "category": "polite",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "city": "Thailand",
+      "english": "No",
+      "local": "Mai",
+      "category": "polite",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "city": "Thailand",
+      "english": "Excuse me / Sorry",
+      "local": "Khor thot krub/kha",
+      "category": "polite",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay aware of your surroundings – Pickpocketing can happen in crowded areas and markets",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Use reputable transport – Prefer metered taxis, Grab app, BTS/MRT, or licensed tuk-tuks",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Keep valuables secure – Use a money belt or hidden pouch for cash, passport, and cards",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Avoid unlicensed tours – Book excursions through trusted operators or your hotel",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Be cautious with street food – Eat from busy stalls with high turnover for freshness",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Avoid scams – Watch out for tuk-tuk scams, gem scams, and overly 'helpful' strangers",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay hydrated and protected from the sun – Carry water, wear sunscreen and a hat",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Follow local laws – Drug offenses and disrespecting the monarchy carry severe penalties",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Keep emergency contacts handy – Local police, embassy, and hospital numbers",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Avoid isolated areas at night – Stick to well-lit and populated streets",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Respect the monarchy – Always show respect; avoid negative remarks about the royal family",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Dress appropriately – Cover shoulders and knees when visiting temples",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Use polite gestures – Wai (pressing palms together) is a common greeting",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Don't touch someone's head – The head is considered sacred in Thai culture",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Don't point your feet – Feet are considered the lowest part of the body; avoid pointing them at people or religious objects",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Don't raise your voice – Loud arguments or confrontations are frowned upon",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay aware of your surroundings – Pickpocketing can happen in crowded areas and markets",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Use reputable transport – Prefer metered taxis, Grab app, BTS/MRT, or licensed tuk-tuks",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Keep valuables secure – Use a money belt or hidden pouch for cash, passport, and cards",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Avoid unlicensed tours – Book excursions through trusted operators or your hotel",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Be cautious with street food – Eat from busy stalls with high turnover for freshness",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Avoid scams – Watch out for tuk-tuk scams, gem scams, and overly 'helpful' strangers",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay hydrated and protected from the sun – Carry water, wear sunscreen and a hat",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Follow local laws – Drug offenses and disrespecting the monarchy carry severe penalties",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Keep emergency contacts handy – Local police, embassy, and hospital numbers",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Avoid isolated areas at night – Stick to well-lit and populated streets",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay aware of your surroundings – Pickpocketing can happen in crowded areas and markets",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Use reputable transport – Prefer metered taxis, Grab app, BTS/MRT, or licensed tuk-tuks",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Keep valuables secure – Use a money belt or hidden pouch for cash, passport, and cards",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Avoid unlicensed tours – Book excursions through trusted operators or your hotel",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Be cautious with street food – Eat from busy stalls with high turnover for freshness",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Avoid scams – Watch out for tuk-tuk scams, gem scams, and overly helpful strangers",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay hydrated and protected from the sun – Carry water, wear sunscreen and a hat",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Follow local laws – Drug offenses and disrespecting the monarchy carry severe penalties",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Avoid isolated areas at night – Stick to well-lit and populated streets",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Respect the monarchy – Always show respect; avoid negative remarks about the royal family",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Dress appropriately – Cover shoulders and knees when visiting temples",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Use polite gestures – Wai (pressing palms together) is a common greeting",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Don't touch someone's head – The head is considered sacred in Thai culture",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Don't point your feet – Feet are considered the lowest part of the body; avoid pointing them at people or religious objects",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Don't raise your voice – Loud arguments or confrontations are frowned upon",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay aware of your surroundings – Pickpocketing can happen in crowded areas and markets.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Use reputable transport – Prefer metered taxis, Grab app, BTS/MRT, or licensed tuk-tuks.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Keep valuables secure – Use a money belt or hidden pouch for cash, passport, and cards.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Avoid unlicensed tours – Book excursions through trusted operators or your hotel.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Be cautious with street food – Eat from busy stalls with high turnover for freshness.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Avoid scams – Watch out for tuk-tuk scams, gem scams, and overly 'helpful' strangers.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay hydrated and protected from the sun – Carry water, wear sunscreen and a hat.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Follow local laws – Drug offenses and disrespecting the monarchy carry severe penalties.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Keep emergency contacts handy – Local police, embassy, and hospital numbers.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Avoid isolated areas at night – Stick to well-lit and populated streets.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay alert in crowded areas – pickpocketing can occur in markets, night bazaars, buses, and tourist hotspots",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Respect local laws & customs – e.g., no disrespect towards the Thai Royal Family (strict laws)",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Use trusted transport – opt for Grab (ride-hailing app) or licensed taxis; avoid unmetered cabs",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Secure your belongings – keep passport, cash, and valuables in a hotel safe or money belt",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Drink responsibly – avoid accepting drinks from strangers in bars/clubs",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Beach & water safety – obey warning flags, as currents can be strong during monsoon (August)",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay hydrated – Thailand is hot & humid; carry water and wear sunscreen",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Beware of Gem Scam – 'friendly' locals lure you to a gem shop claiming a great deal; gems are overpriced & low quality",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Tuk-Tuk / Taxi Scams – drivers refusing meters or offering cheap all-day tours (usually end at commission shops)",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Jet Ski Scam – rental operators falsely claim you damaged their jet ski; avoid or use reputable shops with photos taken before renting",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Fake Tour Operators for day trips – overly cheap tours may be fake or cut corners; book through reliable agencies",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Closed Attraction Scam – someone tells you a temple/attraction is 'closed' and redirects you to shops",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "ATM Fraud – use ATMs attached to banks; skimming devices may be used at standalone ATMs",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Bar/Club Overcharging – always check the menu and bill before ordering",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Pickpockets – especially in walking streets, floating markets, and festivals",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay aware of your surroundings – Pickpocketing can happen in crowded areas and markets",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Use reputable transport – Prefer metered taxis, Grab app, BTS/MRT, or licensed tuk-tuks",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Keep valuables secure – Use a money belt or hidden pouch for cash, passport, and cards",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Avoid unlicensed tours – Book excursions through trusted operators or your hotel",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Be cautious with street food – Eat from busy stalls with high turnover for freshness",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Avoid scams – Watch out for tuk-tuk scams, gem scams, and overly \"helpful\" strangers",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay hydrated and protected from the sun – Carry water, wear sunscreen and a hat",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Follow local laws – Drug offenses and disrespecting the monarchy carry severe penalties",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Keep emergency contacts handy – Local police, embassy, and hospital numbers",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Avoid isolated areas at night – Stick to well-lit and populated streets",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Fruit Snacks",
+      "city": "Thailand",
+      "category": "Consumables",
+      "where_to_buy": [
+        "All Thai supermarkets (Kunna is a famous brand)"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Instant Noodles",
+      "city": "Thailand",
+      "category": "Consumables",
+      "where_to_buy": [
+        "supermarkets"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Thai Spices (Crushed Chili, coriander seeds, nutmeg, cloves, cinnamon, star anise, prickly ash and long pepper)",
+      "city": "Thailand",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Chatuchak weekend market",
+        "Supermarkets"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Crispy Seaweed",
+      "city": "Thailand",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Siam Paragon Shopping Centre",
+        "Supermarkets"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Exotic flavoured potato chips",
+      "city": "Thailand",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Durian Chips",
+      "city": "Thailand",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Bakery Goodies (Portuguese desserts, mooncakes, pies mochis and Japanese Dorayaki)",
+      "city": "Thailand",
+      "category": "Consumables",
+      "where_to_buy": [
+        "A Bakery and Thai Food",
+        "Thai Baang Bakery",
+        "Thai Pastry and Restaurant",
+        "Konnichipan Numero Uno Panree Bakery",
+        "The Mandarin Oriental Shop",
+        "Paul Veganerie Soul",
+        "Holi Artisan Bakery",
+        "The Bakery",
+        "7Eleven Minimart",
+        "Amantee Bakery"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Thai Alcohol (SangSom Rum, Mekhong Whiskey, Hong Thong Whiskey, LaoKhao Whiskey and Sang Thip Whiskey)",
+      "city": "Thailand",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarket Chains like Top, Big C and Rimping Siam Winery"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Spa Products",
+      "city": "Thailand",
+      "category": "Beauty and Health",
+      "where_to_buy": [
+        "Bath and Bloom at central world in Rama I Road"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Thai Coconut Oil Products",
+      "city": "Thailand",
+      "category": "Beauty and Health",
+      "where_to_buy": [
+        "Chatuchak weekend market"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Organic herbal medicial products (roll on pain relief, cough pills, mosquito repellents)",
+      "city": "Thailand",
+      "category": "Beauty and Health",
+      "where_to_buy": [
+        "All supermarkets and drugstores"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Handmade Bags",
+      "city": "Thailand",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "NaRaYa Siam Paragon",
+        "Siam Paragon Shopping Mall"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Thai Silk",
+      "city": "Thailand",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Jim Thompson House",
+        "Exotic Thai at Siam Paragon",
+        "China World Fabric Outlet",
+        "ChinaTown"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Thai Antiques (old maps, gems, paintings)",
+      "city": "Thailand",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Old Siam Trading Company, 5th floor, Nailert Building"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Benjarong Porcelain",
+      "city": "Thailand",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Chatuchak weekend market",
+        "Siam Paragon Mall"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Handicrafts (cushion covers, baskets, wooden décor, bamboo mats)",
+      "city": "Thailand",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Chatuchak weekend market",
+        "Chinatown"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Silver Jewellery",
+      "city": "Thailand",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Chatuchak weekend market",
+        "Khao San Road"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Mother of Pearl Spoons",
+      "city": "Thailand",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Chatuchak weekend market"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Soap Carvings",
+      "city": "Thailand",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Sunday night Walking Street market in Chiang Mai"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "item": "Fruit snacks, especially dried tropical fruits",
+      "city": "Thailand",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets across Thailand",
+        "Kunna brand"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Instant noodles, particularly Tom Yum noodles from Mama",
+      "city": "Thailand",
+      "category": "Food",
+      "where_to_buy": [
+        "Any supermarket"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Thai spices like crushed chili, coriander seeds, nutmeg, cloves, cinnamon, star anise, prickly ash, and long pepper",
+      "city": "Thailand",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets",
+        "Chatuchak Weekend Market"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Crispy seaweed",
+      "city": "Thailand",
+      "category": "Food",
+      "where_to_buy": [
+        "Siam Paragon shopping centre",
+        "Supermarkets"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Exotic flavored potato chips (like lobster or spicy seafood)",
+      "city": "Thailand",
+      "category": "Food",
+      "where_to_buy": [
+        "Any grocery store"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Durian chips",
+      "city": "Thailand",
+      "category": "Food",
+      "where_to_buy": [
+        "Most supermarkets"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Portuguese desserts, mooncakes, pies, mochis, and Japanese dorayaki",
+      "city": "Thailand",
+      "category": "Food",
+      "where_to_buy": [
+        "Thai Baang Bakery",
+        "Numero Uno",
+        "The Mandarin Oriental Shop",
+        "Konnichipan",
+        "Panree Bakery",
+        "Paul",
+        "Veganerie Soul",
+        "Holi Artisan Bakery",
+        "Amantee Bakery",
+        "7-Eleven"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Thai alcohol - SangSom Rum, Mekhong Whiskey, Hong Thong Whiskey, LaoKhao Whiskey, and Sang Thip Whiskey",
+      "city": "Thailand",
+      "category": "Alcohol",
+      "where_to_buy": [
+        "Tops",
+        "Big C",
+        "Rimping",
+        "Siam Winery"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Spa and wellness products",
+      "city": "Thailand",
+      "category": "Beauty & Wellness",
+      "where_to_buy": [
+        "Bath & Bloom at CentralWorld on Rama I Road"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Thai coconut oil products",
+      "city": "Thailand",
+      "category": "Beauty & Wellness",
+      "where_to_buy": [
+        "Chatuchak Weekend Market"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Organic herbal products like roll-on pain relief, cough pills, and natural mosquito repellents",
+      "city": "Thailand",
+      "category": "Beauty & Wellness",
+      "where_to_buy": [
+        "Supermarkets",
+        "Drugstores nationwide"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Handmade bags",
+      "city": "Thailand",
+      "category": "Fashion",
+      "where_to_buy": [
+        "NaRaYa at Siam Paragon"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Thai silk",
+      "city": "Thailand",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Jim Thompson House",
+        "Exotic Thai (Siam Paragon)",
+        "China World Fabric Outlet in Chinatown"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Benjarong porcelain",
+      "city": "Thailand",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Chatuchak Weekend Market",
+        "Siam Paragon Mall"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Handicrafts like cushion covers, baskets, wooden décor, and bamboo mats",
+      "city": "Thailand",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Chatuchak",
+        "Chinatown"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Silver jewelry",
+      "city": "Thailand",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Chatuchak Weekend Market",
+        "Khao San Road"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Mother-of-pearl spoons",
+      "city": "Thailand",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Chatuchak"
+      ],
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "item": "Fruit Snacks",
+      "city": "Thailand",
+      "category": "Consumables",
+      "where_to_buy": [
+        "All Thai supermarkets (Kunna brand)"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Instant Noodles",
+      "city": "Thailand",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets (Tom yum noodles by Mama brand)"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Thai Spices",
+      "city": "Thailand",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Chatuchak weekend market",
+        "Supermarkets"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Crispy Seaweed",
+      "city": "Thailand",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Siam Paragon Shopping Centre",
+        "Supermarkets"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Exotic flavoured potato chips",
+      "city": "Thailand",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Durian Chips",
+      "city": "Thailand",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Bakery Goodies",
+      "city": "Thailand",
+      "category": "Consumables",
+      "where_to_buy": [
+        "A Bakery and Thai Food",
+        "Thai Baang Bakery",
+        "The Mandarin Oriental Shop",
+        "7Eleven Minimart"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Thai Alcohol",
+      "city": "Thailand",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarket Chains like Top, Big C and Rimping",
+        "Siam Winery"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Spa Products",
+      "city": "Thailand",
+      "category": "Beauty and Health",
+      "where_to_buy": [
+        "Bath and Bloom at central world in Rama I Road"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Thai Coconut Oil Products",
+      "city": "Thailand",
+      "category": "Beauty and Health",
+      "where_to_buy": [
+        "Chatuchak weekend market"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Organic herbal medicinal products",
+      "city": "Thailand",
+      "category": "Beauty and Health",
+      "where_to_buy": [
+        "All supermarkets and drugstores"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Handmade Bags",
+      "city": "Thailand",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "NaRaYa Siam Paragon",
+        "Siam Paragon Shopping Mall"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Thai Silk",
+      "city": "Thailand",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Jim Thompson House",
+        "Exotic Thai at Siam Paragon",
+        "China World Fabric Outlet",
+        "ChinaTown"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Thai Antiques",
+      "city": "Thailand",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Old Siam Trading Company, 5th floor, Nailert Building"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Benjarong Porcelain",
+      "city": "Thailand",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Chatuchak weekend market",
+        "Siam Paragon Mall"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Handicrafts",
+      "city": "Thailand",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Chatuchak weekend market",
+        "Chinatown"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Silver Jewellery",
+      "city": "Thailand",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Chatuchak weekend market",
+        "Khao San Road"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Mother of Pearl Spoons",
+      "city": "Thailand",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Chatuchak weekend market"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "item": "Soap Carvings",
+      "city": "Thailand",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Sunday night Walking Street market in Chiang Mai"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Thailand",
+      "service": "Tourist Police",
+      "number": "1155",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "city": "Thailand",
+      "service": "General Police",
+      "number": "191",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "city": "Thailand",
+      "service": "Fire Department",
+      "number": "199",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "city": "Thailand",
+      "service": "Ambulance / Medical Emergency",
+      "number": "1669",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "city": "Thailand",
+      "service": "Police Assistance for Foreigners",
+      "number": "+66 2 134 5999",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "city": "Thailand",
+      "service": "Indian Embassy, Bangkok",
+      "number": "+66 2 341 2000",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "city": "Thailand",
+      "service": "Tourist Police English Hotline",
+      "number": "+66 2 205 9999",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "city": "Thailand",
+      "service": "High Commission of India Emergency (24/7)",
+      "number": "+66 81 442 9580",
+      "notes": "Consular assistance, lost passports, visa issues, citizen emergencies",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "city": "Thailand",
+      "service": "Tourist Police",
+      "number": "1155",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "city": "Thailand",
+      "service": "General Police",
+      "number": "191",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "city": "Thailand",
+      "service": "Fire Department",
+      "number": "199",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "city": "Thailand",
+      "service": "Ambulance / Medical Emergency",
+      "number": "1669",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "city": "Thailand",
+      "service": "Bangkok Hospital (Major Private Hospital)",
+      "number": "+66 2 310 3000",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "city": "Thailand",
+      "service": "Police Assistance for Foreigners",
+      "number": "+66 2 134 5999",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "city": "Thailand",
+      "service": "Indian Embassy, Bangkok",
+      "number": "+66 2 341 2000",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "city": "Thailand",
+      "service": "Tourist Police English Hotline",
+      "number": "+66 2 205 9999",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "city": "Thailand",
+      "service": "High Commission of India Emergency (24/7)",
+      "number": "+66 81 442 9580",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "city": "Thailand",
+      "service": "Tourist Police",
+      "number": "1155",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "city": "Thailand",
+      "service": "General Police",
+      "number": "191",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "city": "Thailand",
+      "service": "Fire Department",
+      "number": "199",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "city": "Thailand",
+      "service": "Ambulance / Medical Emergency",
+      "number": "1669",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "city": "Thailand",
+      "service": "Police Assistance for Foreigners",
+      "number": "+66 2 134 5999",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "city": "Thailand",
+      "service": "Indian Embassy",
+      "number": "+66 2 341 2000",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "city": "Thailand",
+      "service": "Tourist Police English Hotline",
+      "number": "+66 2 205 9999",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "city": "Thailand",
+      "service": "Indian Embassy Emergency",
+      "number": "+66 81 442 9580",
+      "notes": "24/7 Contact",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "city": "Thailand",
+      "service": "Fire",
+      "number": "199",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "city": "Thailand",
+      "service": "Police",
+      "number": "191",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "city": "Thailand",
+      "service": "Tourist Police",
+      "number": "1155",
+      "notes": "English spoken",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "city": "Thailand",
+      "service": "Ambulance",
+      "number": "1669",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "city": "Thailand",
+      "service": "Tourism Authority of Thailand",
+      "number": "1672",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "city": "Thailand",
+      "service": "Embassy of India, Bangkok",
+      "number": "+66 618819218",
+      "notes": "24 hr emergency phone number",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "city": "Thailand",
+      "service": "Tourist Police",
+      "number": "1155",
+      "notes": "English speaking assistance",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "city": "Thailand",
+      "service": "Police",
+      "number": "191",
+      "notes": null,
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "city": "Thailand",
+      "service": "Ambulance",
+      "number": "1669",
+      "notes": null,
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "city": "Thailand",
+      "service": "Fire Department",
+      "number": "199",
+      "notes": null,
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "city": "Thailand",
+      "service": "Indian Embassy Bangkok",
+      "number": "+66-2-258-0300 to 5",
+      "notes": "Address: 46, Sukhumvit Soi 23, Klongtoey, Bangkok 10110",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "city": "Thailand",
+      "service": "Indian Embassy Emergency (after hours)",
+      "number": "+66-81-854-4225",
+      "notes": "Email: cons.bangkok@mea.gov.in",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "city": "Thailand",
+      "service": "Fire",
+      "number": "199",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "city": "Thailand",
+      "service": "Police",
+      "number": "191",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "city": "Thailand",
+      "service": "Tourist Police",
+      "number": "1155",
+      "notes": "English spoken",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "city": "Thailand",
+      "service": "Ambulance",
+      "number": "1669",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "city": "Thailand",
+      "service": "Tourism Authority of Thailand",
+      "number": "1672",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "city": "Thailand",
+      "service": "Embassy of India Bangkok",
+      "number": "+66 618819218",
+      "notes": "24 hr emergency phone number",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "city": "Thailand",
+      "service": "Tourist Police",
+      "number": "1155",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "city": "Thailand",
+      "service": "General Police",
+      "number": "191",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "city": "Thailand",
+      "service": "Fire Department",
+      "number": "199",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "city": "Thailand",
+      "service": "Ambulance / Medical Emergency",
+      "number": "1669",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "city": "Thailand",
+      "service": "Police Assistance for Foreigners",
+      "number": "+66 2 134 5999",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "city": "Thailand",
+      "service": "Tourist Police English Hotline",
+      "number": "+66 2 205 9999",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "AIS (Advanced Info Service) – Widely used, good coverage across the city and tourist areas",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "DTAC (Total Access Communication) – Strong urban coverage, competitive tourist SIM packages",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "TrueMove H – Fast 4G/5G network, popular among travelers and locals",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Where to buy SIM cards: Airports (Suvarnabhumi & Don Mueang), 7-Eleven, FamilyMart, mobile network stores",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Documents required for SIM: Passport (mandatory for registration)",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "SIM types: Prepaid tourist SIMs with data, call, and text packages",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Top-ups / Reloads: Available at convenience stores, network stores, or online",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "TrueMove H offers fast 4G/5G network, popular among travelers and locals and is top recommendation",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "AIS (Advanced Info Service) is widely used with good coverage across the city and tourist areas",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "DTAC (Total Access Communication) has strong urban coverage and competitive tourist SIM packages",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Buy SIM cards at airports (Suvarnabhumi & Don Mueang), 7-Eleven, FamilyMart, or mobile network stores",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Passport is mandatory for SIM card registration",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Prepaid tourist SIMs available with data, call, and text packages",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Top-ups available at convenience stores, network stores, or online",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "AIS (Advanced Info Service) – Widely used, good coverage across the city and tourist areas",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "DTAC (Total Access Communication) – Strong urban coverage, competitive tourist SIM packages",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "TrueMove H – Fast 4G/5G network, popular among travelers and locals",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Buy SIM cards at airports (Suvarnabhumi & Don Mueang), 7-Eleven, FamilyMart, mobile network stores",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Passport required for SIM card registration",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Prepaid tourist SIMs available with data, call, and text packages",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Top-ups available at convenience stores, network stores, or online",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "AIS, DTAC, and TrueMove H cover most tourist areas; rural areas may have weaker signal",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "AIS (Advanced Info Service) – Widely used, good coverage across the city and tourist areas.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "DTAC (Total Access Communication) – Strong urban coverage, competitive tourist SIM packages.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "TrueMove H – Fast 4G/5G network, popular among travelers and locals.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Buy SIM cards at airports (Suvarnabhumi & Don Mueang), 7-Eleven, FamilyMart, or mobile network stores.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Passport required for SIM card registration.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Prepaid tourist SIMs available with data, call, and text packages.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Top-ups available at convenience stores, network stores, or online.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "You can purchase a True Move sim card. They have an amazing 5G network and offer tourists unlimited data. Packs start at Rs. 750 and you can pick up a sim at the airport.",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "If you prefer, you can instead activate international roaming packs on your India number. Even if you choose not to purchase an international roaming pack, do ensure your roaming is activated to receive SMS such as for OTPs.",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "You can purchase a True Move sim card. They have an amazing 5G network and offer tourists unlimited data",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Packs start at Rs. 750 and you can pick up a sim at the airport",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "If you prefer, you can instead activate international roaming packs on your India number",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Even if you choose not to purchase an international roaming pack, do ensure your roaming is activated to receive SMS such as for OTPs",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "You can purchase a True Move sim card with amazing 5G network offering unlimited data for tourists. Packs start at Rs. 750 and you can pick up a sim at the airport.",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "You can activate international roaming packs on your India number as an alternative to local SIM.",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Even if you choose not to purchase an international roaming pack, ensure your roaming is activated to receive SMS such as for OTPs.",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "AIS, DTAC, and TrueMove H are the main mobile networks with good coverage across tourist areas",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Buy SIM cards at airports (Suvarnabhumi & Don Mueang), 7-Eleven, FamilyMart, or network stores",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Passport required for SIM card registration. Tourist SIMs include data, call, and text packages",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Top-ups available at convenience stores, network stores, or online. Some SIMs include unlimited social media apps",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Thailand",
+      "mode": "Taxi",
+      "description": "For taxis, please choose to book one from Grab or Bolt or InDrive. Download the apps before traveling and configure it with your international credit card",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "city": "Thailand",
+      "mode": "Grab",
+      "description": "Ride-hailing app recommended for trusted transport",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "city": "Thailand",
+      "mode": "Grab",
+      "description": "Ride-hailing app for taxi bookings",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "city": "Thailand",
+      "mode": "Bolt",
+      "description": "Ride-hailing app for taxi bookings",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "city": "Thailand",
+      "mode": "InDrive",
+      "description": "Ride-hailing app for taxi bookings",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Routine vaccinations – Ensure you are up to date on MMR, DTP, polio, and influenza",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Hepatitis A – Recommended for most travelers",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Hepatitis B – Recommended if you might have medical procedures or close contact with locals",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Typhoid – Recommended, especially if eating street food",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Rabies – Consider if you'll have contact with animals or rural travel",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Japanese Encephalitis – For long-term travelers or those visiting rural areas",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Drink bottled or filtered water; avoid tap water",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Eat cooked food and fruits you can peel; avoid raw salads from street vendors",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Use insect repellent to prevent mosquito-borne diseases (dengue, chikungunya, Zika)",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay hydrated and protect yourself from heat and sun exposure",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Carry a basic first-aid kit and personal medications",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Purchase travel insurance covering medical emergencies",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Ensure you are up to date on routine vaccinations: MMR, DTP, polio, and influenza",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Hepatitis A vaccination recommended for most travelers",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Hepatitis B vaccination recommended if you might have medical procedures or close contact with locals",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Typhoid vaccination recommended, especially if eating street food",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Drink bottled or filtered water; avoid tap water",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Eat cooked food and fruits you can peel; avoid raw salads from street vendors",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Use insect repellent to prevent mosquito-borne diseases (dengue, chikungunya, Zika)",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay hydrated and protect yourself from heat and sun exposure",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Carry a basic first-aid kit and personal medications",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Purchase travel insurance covering medical emergencies",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Wash hands frequently or use hand sanitizer",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_mtime": 1773688152.0
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Ensure you are up to date on MMR, DTP, polio, and influenza vaccinations",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Hepatitis A recommended for most travelers",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Hepatitis B recommended if you might have medical procedures or close contact with locals",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Typhoid recommended, especially if eating street food",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Consider Rabies vaccination if you'll have contact with animals or rural travel",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Japanese Encephalitis for long-term travelers or those visiting rural areas",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Drink bottled or filtered water; avoid tap water",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Eat cooked food and fruits you can peel; avoid raw salads from street vendors",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Use insect repellent to prevent mosquito-borne diseases (dengue, chikungunya, Zika)",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay hydrated and protect yourself from heat and sun exposure",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Carry a basic first-aid kit and personal medications",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Purchase travel insurance covering medical emergencies",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Wash hands frequently or use hand sanitizer",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Routine vaccinations – Ensure you are up to date on MMR, DTP, polio, and influenza.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Hepatitis A – Recommended for most travelers.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Hepatitis B – Recommended if you might have medical procedures or close contact with locals.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Typhoid – Recommended, especially if eating street food.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Rabies – Consider if you'll have contact with animals or rural travel.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Japanese Encephalitis – For long-term travelers or those visiting rural areas.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Drink bottled or filtered water; avoid tap water.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Eat cooked food and fruits you can peel; avoid raw salads from street vendors.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Use insect repellent to prevent mosquito-borne diseases (dengue, chikungunya, Zika).",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay hydrated and protect yourself from heat and sun exposure.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Carry a basic first-aid kit and personal medications.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Purchase travel insurance covering medical emergencies.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Wash hands frequently or use hand sanitizer.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Travel Insurance (we would recommend Tata AIG)",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Doctors prescriptions/travel prescriptions for medicines (except over the counter meds)",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "No vaccines are mandatory for entry, but routine vaccinations and a few travel-related vaccines are recommended",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Mosquito-borne illnesses include Dengue Fever (most common, especially in monsoon), Chikungunya, Malaria (rare in major cities, more in remote jungle/border areas), Japanese Encephalitis",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stick to bottled/filtered water (check seal). Avoid ice in drinks from street vendors",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Eat freshly cooked food, avoid raw salads/seafood from unhygienic stalls",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay hydrated (carry electrolyte packets). Wear sunscreen & a hat. Take breaks in shade/indoors",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Carry prescriptions in original packaging + digital copy",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Ensure routine vaccinations are up to date: MMR, DTP, polio, and influenza",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Hepatitis A recommended for most travelers. Hepatitis B recommended if you might have medical procedures",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Typhoid recommended, especially if eating street food. Consider rabies if contact with animals expected",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Japanese Encephalitis for long-term travelers or those visiting rural areas",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Drink bottled or filtered water; avoid tap water",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Eat cooked food and fruits you can peel; avoid raw salads from street vendors",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Use insect repellent to prevent mosquito-borne diseases (dengue, chikungunya, Zika)",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Stay hydrated and protect yourself from heat and sun exposure",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "cities": [
+        "Thailand"
+      ],
+      "tip": "Carry a basic first-aid kit and personal medications. Purchase travel insurance covering medical emergencies",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    }
+  ],
+  "source_files": [
+    "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+    "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+    "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+    "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+    "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+    "Thailand/Arpita Thailand.pdf",
+    "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+    "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+  ]
+}

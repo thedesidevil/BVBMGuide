@@ -1,0 +1,542 @@
+{
+  "restaurants": [
+    {
+      "name": "Guyala Coffee",
+      "city": "Cairns",
+      "cuisine_type": [
+        "Coffee",
+        "Breakfast"
+      ],
+      "price_range": "₹₹",
+      "hours": "7 am – 2:30 pm",
+      "must_try_dishes": [
+        "avocado toast with scallops",
+        "chilly crab omelette",
+        "smoothies",
+        "Coffees",
+        "Avocado toast with scallops",
+        "Chilli crab omelette"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "highlights": [
+        "Avocado toast with scallops",
+        "Chilli crab omelette"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ],
+      "ambience": "Casual breakfast spot"
+    },
+    {
+      "name": "Sipping Duck",
+      "city": "Cairns",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹",
+      "hours": "6 am - 2 pm",
+      "must_try_dishes": [
+        "Coffees"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "highlights": [
+        "Close to the airport"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf"
+      ],
+      "ambience": "Casual coffee spot"
+    },
+    {
+      "name": "Poemphun Thai",
+      "city": "Cairns",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "₹₹",
+      "hours": "11 am – 2 pm, 5 pm – 9 pm",
+      "must_try_dishes": [
+        "Thai curries",
+        "stir fries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "highlights": [
+        "Takeaway or casual eat in"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf"
+      ],
+      "ambience": "Takeaway or casual eat in"
+    },
+    {
+      "name": "Dunwoody's Hotel",
+      "city": "Cairns",
+      "cuisine_type": [
+        "Bistro",
+        "Pub"
+      ],
+      "price_range": "₹₹",
+      "hours": "10:00 am – 4:00 am",
+      "ambience": "Lively pub with outdoor seating and sports",
+      "must_try_dishes": [
+        "Bistro menu"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "highlights": [
+        "Bistro-style meals",
+        "Outdoor seating",
+        "Sports viewing"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Dundees Restaurant on the Waterfront",
+      "city": "Cairns",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "₹₹",
+      "hours": "10 am – 9:30 pm",
+      "area": "Cairns Marina",
+      "must_try_dishes": [
+        "Wild Barramundi",
+        "mud crab",
+        "oysters",
+        "Wild barramundi",
+        "Oysters"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ],
+      "ambience": "Marina views",
+      "highlights": [
+        "Seafood with marina views",
+        "Wild barramundi",
+        "Oysters"
+      ]
+    },
+    {
+      "name": "Prawn Star",
+      "city": "Cairns",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "₹",
+      "hours": "10 am – 9:30 pm",
+      "area": "Marlin Marina",
+      "must_try_dishes": [
+        "Prawns",
+        "Lobster"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "highlights": [
+        "Known for prawns and lobster",
+        "Casual seafood boat eatery"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ],
+      "ambience": "Casual seafood boat eatery at the marina"
+    },
+    {
+      "name": "The DownUnder Bar",
+      "city": "Cairns",
+      "cuisine_type": [
+        "Pub"
+      ],
+      "price_range": "₹₹",
+      "hours": "5 pm – 1 am (Fri/Sat till 3 am)",
+      "must_try_dishes": [
+        "Great cocktails"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "highlights": [
+        "Karaoke",
+        "Live acts",
+        "Vibrant pub scene"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ],
+      "ambience": "Vibrant pub scene with karaoke and live acts"
+    },
+    {
+      "name": "Woolshed",
+      "city": "Cairns",
+      "cuisine_type": [
+        "Nightclub"
+      ],
+      "price_range": "₹₹",
+      "hours": "8 pm – 3 am, Closed on sun, mon and tues",
+      "must_try_dishes": [
+        "Great cocktails"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "highlights": [
+        "Known for theme nights",
+        "DJs",
+        "live music",
+        "table dancing"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf"
+      ],
+      "ambience": "Vibrant nightclub with theme nights"
+    },
+    {
+      "name": "The Cotton Club",
+      "city": "Cairns",
+      "cuisine_type": [
+        "Gastropub"
+      ],
+      "price_range": "₹₹",
+      "hours": "Wednesday & Thursday: 4:00 PM - 9:00 PM, Friday: 11:30 AM - Late, Saturday: 4:00 PM - Late, Sunday: 12:00 PM - Late",
+      "ambience": "Stylish setting with cocktails",
+      "must_try_dishes": [
+        "Great cocktails"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ],
+      "highlights": [
+        "Cocktails",
+        "Contemporary Aussie pub fare",
+        "Sleek design",
+        "Craft cocktails",
+        "Live DJs"
+      ]
+    },
+    {
+      "name": "Elixir Music House",
+      "city": "Cairns",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹₹",
+      "hours": "7 pm – 12 am (Closed Sun, Mon, Thurs)",
+      "best_for": [
+        "casual"
+      ],
+      "highlights": [
+        "Live performances",
+        "Cozy café meals"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ],
+      "ambience": "Live performances and cozy café meals"
+    },
+    {
+      "name": "Rattle n Hum",
+      "city": "Cairns",
+      "cuisine_type": [
+        "Pizza",
+        "Bar"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:30 am – 12 am",
+      "ambience": "Stone-baked pizzas, live music on weekends",
+      "must_try_dishes": [
+        "Stone pizzas",
+        "Stone-baked pizzas"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ],
+      "highlights": [
+        "Stone-baked pizzas",
+        "Live music on weekends"
+      ]
+    },
+    {
+      "name": "The Backyard",
+      "city": "Cairns",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "5 am – 12 pm",
+      "area": "The Pier",
+      "must_try_dishes": [
+        "Fish and chips",
+        "salmon",
+        "Fish & chips",
+        "Grilled salmon"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf",
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ],
+      "ambience": "Relaxed lakeside ambience",
+      "highlights": [
+        "Fish & chips",
+        "Grilled salmon",
+        "Stunning lake views",
+        "Perfect for sunset dining"
+      ]
+    },
+    {
+      "name": "Salt House",
+      "city": "Cairns",
+      "cuisine_type": [
+        "Waterfront"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:30 am – 2 am",
+      "ambience": "Cairns' favorite waterfront spot",
+      "highlights": [
+        "Waterfront location",
+        "Popular local spot"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Sipping Duck Café",
+      "city": "Cairns",
+      "cuisine_type": [
+        "Coffee",
+        "Café"
+      ],
+      "price_range": "₹",
+      "hours": "6:30 am – 2:30 pm",
+      "highlights": [
+        "Great coffee and quick bites"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Ocean Freedom Cruise to Upolu Cay Reef& Outer Edge Upolu Reef",
+      "city": "Cairns",
+      "description": "2 intro dives cruise experience",
+      "hours": "7:15 am - 4:30 pm",
+      "recommended_duration": "9 hours",
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Rainforestation Nature Park",
+      "city": "Cairns",
+      "description": "View Kangaroos and Koalas",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Curtain Fig Tree",
+      "city": "Cairns",
+      "description": "50-meter curtain fig tree with aerial roots, accessible by timber boardwalk",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Yungaburra Platypus Viewing Platform",
+      "city": "Cairns",
+      "description": "See platypus in the wild",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Lake Barrine",
+      "city": "Cairns",
+      "description": "Volcanically formed lake in Crater Lakes National Park, good for spotting tree kangaroos",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Millaa Millaa Falls",
+      "city": "Cairns",
+      "description": "Popular waterfall",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf",
+        "Australia/Australia- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Elinjaa falls",
+      "city": "Cairns",
+      "description": "Lesser known waterfall",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Ocean Freedom Cruise to Upolu Cay Reef & Outer Edge Upolu Reef",
+      "city": "Cairns",
+      "description": "2 intro dives on cruise to reef locations",
+      "hours": "7:15 am - 4:30 pm",
+      "recommended_duration": "9 hours",
+      "source_files": [
+        "Australia/Australia- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Great Barrier Reef Catamaran Cruise",
+      "city": "Cairns",
+      "description": "Full-day catamaran cruise to the Great Barrier Reef with snorkeling and optional intro diving",
+      "hours": "Full day, return by 6 PM",
+      "recommended_duration": "8 hours",
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Airbnb",
+      "city": "Cairns",
+      "location": "4 min drive from Airport",
+      "_source_file": "Australia/Australia- All Inclusive Guide(1).pdf",
+      "_source_mtime": 1772384287.136402
+    },
+    {
+      "name": "Airbnb",
+      "city": "Cairns",
+      "location": "4 min drive from Airport",
+      "_source_file": "Australia/Australia- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384288.440096
+    },
+    {
+      "name": "Cairns Queenslander Hotel & Apartments",
+      "city": "Cairns",
+      "location": "5 min distance by taxi from the airport",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha.pdf",
+      "_source_mtime": 1772384289.4036164
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Barramundi",
+      "city": "Cairns",
+      "description": "Flaky white fish, perfectly grilled",
+      "vegetarian": false,
+      "where_to_try": "Dundees Restaurant on the Waterfront",
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Prawns & Lobster",
+      "city": "Cairns",
+      "description": "Fresh and served on a boat",
+      "vegetarian": false,
+      "where_to_try": "Prawn Star",
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    },
+    {
+      "name": "Chilly Crab Omelette",
+      "city": "Cairns",
+      "description": "A zesty seafood brunch",
+      "vegetarian": false,
+      "where_to_try": "Guyala Coffee",
+      "source_files": [
+        "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Cairns",
+      "mode": "Bus",
+      "description": "Sunbus operates regular routes throughout the city and surrounding suburbs",
+      "recommended_pass": "MyTransLink app or paper ticket from Translink fare machine",
+      "cost": "Single, daily, or weekly tickets available",
+      "_source_file": "Australia/Australia- All Inclusive Guide(1).pdf",
+      "_source_mtime": 1772384287.136402
+    },
+    {
+      "city": "Cairns",
+      "mode": "Bus",
+      "description": "Sunbus operates regular routes throughout the city and surrounding suburbs",
+      "recommended_pass": "MyTransLink app or paper tickets from Translink fare machine",
+      "_source_file": "Australia/Australia- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384288.440096
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Australia/Australia- All Inclusive Guide(1).pdf",
+    "Australia/Australia- All Inclusive Guide.pdf",
+    "Australia/Australia - All Inclusive Guide - Bipasha.pdf"
+  ]
+}

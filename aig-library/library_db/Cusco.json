@@ -1,0 +1,593 @@
+{
+  "restaurants": [
+    {
+      "name": "Saphi Restaurant",
+      "city": "Cusco",
+      "cuisine_type": [
+        "Peruvian"
+      ],
+      "price_range": "PEN 40-50",
+      "hours": "11:00 AM – 10:00 PM; opens at 1:00 PM on Monday",
+      "ambience": "One of the best places to eat in Cusco",
+      "highlights": [
+        "Consistently described as one of the best places to eat in Cusco"
+      ],
+      "must_try_dishes": [
+        "Empanadas with coffee",
+        "hearty soups",
+        "contemporary Peruvian café fare",
+        "Empanadas with a side of coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Restaurant Paccha",
+      "city": "Cusco",
+      "cuisine_type": [
+        "Peruvian"
+      ],
+      "price_range": "mid-range",
+      "hours": "10:00 AM – 10:00 PM",
+      "ambience": "Comfortable atmosphere with extremely friendly staff, authentic food made with pure artistry",
+      "highlights": [
+        "Known for authentic food made with pure artistry",
+        "Excellent service from friendly staff"
+      ],
+      "must_try_dishes": [
+        "Passion fruit Pisco Sour",
+        "Pizza",
+        "Avocado stuffed with chicken",
+        "trout ceviche"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Chakruna Native Burgers",
+      "city": "Cusco",
+      "area": "San Blas",
+      "cuisine_type": [
+        "Modern",
+        "Peruvian"
+      ],
+      "price_range": "PEN 20-30",
+      "hours": "10:30 AM – 09:45 PM",
+      "ambience": "Casual, modern café-meets-bistro, vibrant and laid-back",
+      "highlights": [
+        "Casual modern café-meets-bistro",
+        "Vibrant and laid-back atmosphere"
+      ],
+      "must_try_dishes": [
+        "Alpaca and beef burgers with native Peruvian sauces",
+        "hand-cut fries",
+        "local craft sodas",
+        "Alpaca and beef burgers topped with native Peruvian sauces"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Perucho Restaurant & Craft Beer",
+      "city": "Cusco",
+      "area": "San Blas",
+      "cuisine_type": [
+        "Peruvian",
+        "International"
+      ],
+      "price_range": "PEN 20-30",
+      "hours": "12:00 PM – 11:00 PM",
+      "ambience": "Cozy bar/restaurant with rustic-chic interior",
+      "highlights": [
+        "Combines traditional Peruvian dishes with local brews",
+        "Rustic-chic interior"
+      ],
+      "must_try_dishes": [
+        "lomo saltado",
+        "aji de gallina",
+        "Shaman IPA",
+        "Cusco Stout"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Pachapapa Cocina Cusqueña",
+      "city": "Cusco",
+      "area": "San Blas",
+      "cuisine_type": [
+        "Peruvian"
+      ],
+      "price_range": "PEN 20-30",
+      "hours": "12:00 PM – 10:00 PM",
+      "ambience": "Rustic courtyard seating in traditional adobe building, relaxed and picturesque",
+      "highlights": [
+        "Rustic courtyard seating",
+        "Traditional adobe building",
+        "Perfect for relaxed meal"
+      ],
+      "must_try_dishes": [
+        "Cuy chactado (fried guinea pig)",
+        "chupe de camarones (shrimp chowder)",
+        "alpaca steak",
+        "pachamanca-style meats",
+        "pachamanca-style meats slow-cooked underground"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Mama Jama",
+      "city": "Cusco",
+      "cuisine_type": [
+        "Peruvian"
+      ],
+      "price_range": "Not specified",
+      "hours": "12:00 PM – 10:30 PM",
+      "ambience": "Less crowded and welcoming atmosphere with soft music, away from touristy area",
+      "highlights": [
+        "Located away from most touristy area",
+        "Exceptional service",
+        "Caters to both meat lovers and vegetarians"
+      ],
+      "must_try_dishes": [
+        "Trout",
+        "anticuchos",
+        "roasted native potatoes",
+        "chicken saltado",
+        "antichuchos"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Yuraq Restaurant",
+      "city": "Cusco",
+      "cuisine_type": [
+        "Peruvian"
+      ],
+      "price_range": "PEN 50-60",
+      "hours": "12:00 PM – 3:00 PM; 6:30 PM- 10:00 PM; closed on Tuesday",
+      "ambience": "Beautiful and affordable hidden gem, quiet with chilled music, cozy and hip",
+      "highlights": [
+        "Hidden gem",
+        "Quiet with chilled music",
+        "Cozy and hip atmosphere"
+      ],
+      "must_try_dishes": [
+        "Alpaca lomo saltado",
+        "trout ceviche",
+        "Quinoa Salad",
+        "Strawberry and Aguaymanto Juice",
+        "Salmon",
+        "Tequeños de queso",
+        "Alpaca lomo saltado / tenderloin",
+        "chicken wings & risotto"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Hanz Craft Beer and Restaurant",
+      "city": "Cusco",
+      "nearby_landmarks": [
+        "Plaza de Armas, Cusco"
+      ],
+      "cuisine_type": [
+        "Peruvian"
+      ],
+      "price_range": "PEN 40-80",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "Spacious brewpub overlooking Plaza de Armas, casual and friendly",
+      "highlights": [
+        "Spacious brewpub",
+        "Perfect for evening socializing",
+        "Said to have best lomo saltado in Cusco"
+      ],
+      "must_try_dishes": [
+        "Lomo saltado",
+        "alpaca loin in three-pepper sauce",
+        "lamb shank",
+        "IPA",
+        "Cusco stout",
+        "Lomo saltado (said to be the best in Cusco)"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "INKAGRILL",
+      "city": "Cusco",
+      "cuisine_type": [
+        "Peruvian"
+      ],
+      "price_range": "PEN 40-80",
+      "hours": "08:00 AM – 10:00 PM",
+      "ambience": "Peruvian steakhouse with cozy, colonial-house ambiance with dim lighting",
+      "highlights": [
+        "Peruvian steakhouse",
+        "Cozy colonial-house ambiance",
+        "Perfect for relaxed evening"
+      ],
+      "must_try_dishes": [
+        "Alpaca steak",
+        "Fresh trout",
+        "Andean cheese starters"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Suyu peruvian Restaurant",
+      "city": "Cusco",
+      "cuisine_type": [
+        "Peruvian"
+      ],
+      "price_range": "₹₹",
+      "hours": "12:00 PM –10:00 PM",
+      "ambience": "Michelin star vibes but perfect for backpackers and budget travelers",
+      "area": "Chocomuseo area",
+      "nearby_landmarks": [
+        "Chocomuseum, Cusco"
+      ],
+      "highlights": [
+        "Amazing culinary experience",
+        "Michelin star vibes",
+        "Perfect for budget travelers",
+        "Affordable tasting menu"
+      ],
+      "must_try_dishes": [
+        "11-course degustation menu",
+        "ceviche",
+        "duck",
+        "cocktails"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+      ]
+    },
+    {
+      "name": "Cholos Cocina Peruana",
+      "city": "Cusco",
+      "cuisine_type": [
+        "Peruvian"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:00 AM –11:00 PM",
+      "area": "Chocomuseo area",
+      "nearby_landmarks": [
+        "Chocomuseum, Cusco"
+      ],
+      "must_try_dishes": [
+        "Trout Ceviche",
+        "grilled trout",
+        "aji de gallina",
+        "sopa criolla"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+      ]
+    },
+    {
+      "name": "El Jardin",
+      "city": "Cusco",
+      "cuisine_type": [
+        "Vegetarian"
+      ],
+      "price_range": "₹₹",
+      "hours": "7:00 AM –10:30 PM",
+      "area": "Chocomuseo area",
+      "nearby_landmarks": [
+        "Chocomuseum, Cusco"
+      ],
+      "highlights": [
+        "Vegetarian restaurant"
+      ],
+      "must_try_dishes": [
+        "Avocado toast",
+        "gnocchi",
+        "lasagna"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+      ]
+    },
+    {
+      "name": "Yaku Restaurant",
+      "city": "Cusco",
+      "cuisine_type": [
+        "Peruvian"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:00 AM –10:30 PM",
+      "area": "Chocomuseo area",
+      "nearby_landmarks": [
+        "Chocomuseum, Cusco"
+      ],
+      "must_try_dishes": [
+        "Corn soup",
+        "Quinoa risotto",
+        "trout ceviche"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+      ]
+    },
+    {
+      "name": "Comedor Vegetariano",
+      "city": "Cusco",
+      "cuisine_type": [
+        "Vegetarian"
+      ],
+      "price_range": "PEN 1-10",
+      "hours": "8:00 AM –8:00 PM",
+      "highlights": [
+        "Known for affordable 3 course meals"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "San Pedro Market",
+      "city": "Cusco",
+      "description": "Most famous and bustling market in Cusco with fresh fruit, meats, herbs, textiles, and street food",
+      "hours": "Market hours",
+      "entry_fee": "Free",
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Plaza de Armas",
+      "city": "Cusco",
+      "description": "Main square with Cusco Cathedral and Compañía de Jesús Church",
+      "entry_fee": "Free",
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "San Blas Neighborhood",
+      "city": "Cusco",
+      "description": "Neighborhood with handmade jewelry, textiles, organic items and scenic cafés",
+      "recommended_duration": "Half day",
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Twelve-Angled Stone",
+      "city": "Cusco",
+      "description": "Historic stone on Hatun Rumiyoc Street",
+      "entry_fee": "Free",
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf"
+      ]
+    },
+    {
+      "name": "San Cristóbal Viewpoint",
+      "city": "Cusco",
+      "description": "Panoramic views of the city and hills",
+      "entry_fee": "Free",
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Cristo Blanco",
+      "city": "Cusco",
+      "description": "Best at golden hour for incredible city views",
+      "entry_fee": "Free",
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Rainbow Mountain",
+      "city": "Cusco",
+      "description": "Vibrant landscape at Ausangate mountain range with views of llamas and alpacas",
+      "recommended_duration": "Full day",
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Chocomuseo",
+      "city": "Cusco",
+      "description": "Chocolate workshop experience",
+      "recommended_duration": "Morning workshop",
+      "source_files": [
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+      ]
+    },
+    {
+      "name": "Koricancha (Sun Temple)",
+      "city": "Cusco",
+      "description": "Beautiful Inca sun temple",
+      "source_files": [
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+      ]
+    },
+    {
+      "name": "Cusco Cathedral",
+      "city": "Cusco",
+      "description": "Historic cathedral in city center",
+      "source_files": [
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+      ]
+    },
+    {
+      "name": "Sacsayhuaman",
+      "city": "Cusco",
+      "description": "Remarkable Inca fortress building",
+      "source_files": [
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+      ]
+    },
+    {
+      "name": "Kenko Amphitheater",
+      "city": "Cusco",
+      "description": "Ancient Inca amphitheater",
+      "source_files": [
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+      ]
+    },
+    {
+      "name": "Puca Pucara",
+      "city": "Cusco",
+      "description": "Strategically located 'red fortress' dominating the area",
+      "source_files": [
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+      ]
+    },
+    {
+      "name": "Tambomachay",
+      "city": "Cusco",
+      "description": "Site with two distinctive aqueducts providing clean water",
+      "source_files": [
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+      ]
+    },
+    {
+      "name": "San Blas Market",
+      "city": "Cusco",
+      "description": "Smaller, boutique market in bohemian San Blas neighborhood with narrow cobblestone streets, artisan workshops, and art galleries, dating back over 50 years",
+      "source_files": [
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Apu Mountain Lodge",
+      "city": "Cusco",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "name": "Sonesta Hotel Cusco",
+      "city": "Cusco",
+      "location": "Cusco center",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "name": "Apu Mountain Lodge",
+      "city": "Cusco",
+      "location": "Cusco",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Cusco"
+      ],
+      "tip": "Acclimatization: when you are heading to Cusco or the Sacred Valley (high altitudes), take it easy for the first 24-48 hours. Avoid strenuous activity, heavy meals, and alcohol",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Cusco"
+      ],
+      "tip": "Coca Tea/Leaves: Many hotels offer coca tea (mate de coca), which can help alleviate altitude symptoms. Chewing coca leaves is also a traditional method",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    }
+  ],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "South America/Craig_ All Inclusive Guide - Peru.pdf",
+    "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+    "South America/All Inclusive Guide - Peru_CRE.pdf"
+  ]
+}

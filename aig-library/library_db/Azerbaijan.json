@@ -1,0 +1,426 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Kefli Becha",
+      "city": "Azerbaijan",
+      "description": "The chicken is cooked in wine",
+      "vegetarian": false,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Djiz-biz",
+      "city": "Azerbaijan",
+      "description": "A lamb/sheep meat dish that is fried",
+      "vegetarian": false,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Bozbash",
+      "city": "Azerbaijan",
+      "description": "Traditional Azerbaijani soup, containing lamb, red/white beans, green vegetables, herbs",
+      "vegetarian": false,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Dushbara",
+      "city": "Azerbaijan",
+      "description": "Tiny dough, filled with meat and local herbs",
+      "vegetarian": false,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Lavangi",
+      "city": "Azerbaijan",
+      "description": "This dish typically is prepared with a whole fish, seasoned with local herbs and spices, the whole dish is then baked",
+      "vegetarian": false,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Buglama",
+      "city": "Azerbaijan",
+      "description": "Buglama in Azeri means 'steamed', a traditional lamb stew that is slow-cooked for approximately two hours",
+      "vegetarian": false,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Piti",
+      "city": "Azerbaijan",
+      "description": "This supreme Azeri soup is famous for its authenticity in the regions of Azerbaijan. The broth is made of lamb and chickpeas",
+      "vegetarian": false,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Dolma",
+      "city": "Azerbaijan",
+      "description": "A traditional Azerbaijani dish, stuffed with meat, and vegetables blended with traditional Azerbaijani spices and then wrapped in grape leaves",
+      "vegetarian": false,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Shah Plov",
+      "city": "Azerbaijan",
+      "description": "This Azerbaijan dish consists of a rice base, topped with meat, and dressed with a crust fried dough",
+      "vegetarian": false,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Saj platter",
+      "city": "Azerbaijan",
+      "description": "Something of a cross between a tawa and kadhai, a saj platter transforms meat and vegetables into a delectable family meal! Chicken wings, lamb or even fish is laid out in the centre of the saj and slices of delicious fried eggplant, tomato, potato, peppers and chilli are arranged around it",
+      "vegetarian": false,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Levengi",
+      "city": "Azerbaijan",
+      "description": "A paste made of fried—almost caramelised—onions, walnuts, and dried fruits. It is traditionally used as a stuffing for chicken or fish. Sometimes qutabs (flatbreads) are made with levengi stuffing too",
+      "vegetarian": false,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Qutab",
+      "city": "Azerbaijan",
+      "description": "Stuffed with minced meat, greens and cheese",
+      "vegetarian": false,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Magal Salaty",
+      "city": "Azerbaijan",
+      "description": "A traditional and famous salad with a combination of seasonal vegetables, herbs. Make sure to ask for without meat",
+      "vegetarian": true,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Coban Salatasi",
+      "city": "Azerbaijan",
+      "description": "Called a shepherds salad, made with a combination of chopped tomatoes, cucumbers, onions, green peppers, lemon juice, olive oil, and parsley",
+      "vegetarian": true,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Dovg",
+      "city": "Azerbaijan",
+      "description": "Dovga is a soup made by cooking yogurt with a variety of fresh herbs such as dill, mint, and coriander. It is the national dish of Azerbaijan and can be served either cold in the summer as a refreshment, or warm in the winter",
+      "vegetarian": true,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Serdakh",
+      "city": "Azerbaijan",
+      "description": "The dish is usually made with a combination of eggplants, butter, garlic, tomatoes, vegetable stock, salt, and pepper. The garlic is sautéed in butter, then removed from the pan",
+      "vegetarian": true,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Baklava",
+      "city": "Azerbaijan",
+      "description": "Sweet treat",
+      "vegetarian": true,
+      "source_files": [
+        "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+        "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Azerbaijan",
+      "english": "Hello",
+      "local": "Salam",
+      "category": "greeting",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616
+    },
+    {
+      "city": "Azerbaijan",
+      "english": "Yes",
+      "local": "bəli",
+      "category": "polite",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616
+    },
+    {
+      "city": "Azerbaijan",
+      "english": "No",
+      "local": "yox",
+      "category": "polite",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616
+    },
+    {
+      "city": "Azerbaijan",
+      "english": "Please",
+      "local": "bağışla",
+      "category": "polite",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616
+    },
+    {
+      "city": "Azerbaijan",
+      "english": "Sorry",
+      "local": "bu necedir",
+      "category": "polite",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616
+    },
+    {
+      "city": "Azerbaijan",
+      "english": "How much is this?",
+      "local": "Sag ol",
+      "category": "food",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616
+    },
+    {
+      "city": "Azerbaijan",
+      "english": "Hello",
+      "local": "Salam",
+      "category": "greeting",
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092
+    },
+    {
+      "city": "Azerbaijan",
+      "english": "Yes",
+      "local": "bəli",
+      "category": "polite",
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092
+    },
+    {
+      "city": "Azerbaijan",
+      "english": "No",
+      "local": "yox",
+      "category": "polite",
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092
+    },
+    {
+      "city": "Azerbaijan",
+      "english": "Please",
+      "local": "bağışla",
+      "category": "polite",
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092
+    },
+    {
+      "city": "Azerbaijan",
+      "english": "Sorry",
+      "local": "Sag ol",
+      "category": "polite",
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092
+    },
+    {
+      "city": "Azerbaijan",
+      "english": "How much is this?",
+      "local": "bu necedir",
+      "category": "food",
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092
+    }
+  ],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [
+    {
+      "city": "Azerbaijan",
+      "service": "Emergency Hotline",
+      "number": "112",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616
+    },
+    {
+      "city": "Azerbaijan",
+      "service": "Tourist Police",
+      "number": "103",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616
+    },
+    {
+      "city": "Azerbaijan",
+      "service": "Medical Emergencies",
+      "number": "103",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616
+    },
+    {
+      "city": "Azerbaijan",
+      "service": "Embassy of India, Baku",
+      "number": "+994512071621",
+      "notes": "24 hr emergency phone number",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616
+    },
+    {
+      "city": "Azerbaijan",
+      "service": "Emergency Hotline",
+      "number": "112",
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092
+    },
+    {
+      "city": "Azerbaijan",
+      "service": "Tourist Police",
+      "number": "103",
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092
+    },
+    {
+      "city": "Azerbaijan",
+      "service": "Medical Emergencies",
+      "number": "103",
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092
+    },
+    {
+      "city": "Azerbaijan",
+      "service": "Embassy of India, Baku",
+      "number": "+994512071621",
+      "notes": "24 hr emergency phone number",
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Azerbaijan"
+      ],
+      "tip": "Azercell, Bakcell and Nar Mobile are the sim card service providers in Azerbaijan. Azercell is considered to be the best in terms of coverage.",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616
+    },
+    {
+      "cities": [
+        "Azerbaijan"
+      ],
+      "tip": "You can buy a physical sim or e-sim by visiting an Azercell retail store or authorized reseller and show your ID. The most recommended pack is for 10 AZN which gives you 3 GB of data and 300 minutes of domestic calling.",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616
+    },
+    {
+      "cities": [
+        "Azerbaijan"
+      ],
+      "tip": "You can activate international roaming packs on your India number. Even if you choose not to purchase an international roaming pack, do ensure your roaming is activated to receive SMS such as for OTPs.",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616
+    },
+    {
+      "cities": [
+        "Azerbaijan"
+      ],
+      "tip": "Azercell, Bakcell and Nar Mobile are the sim card service providers. Azercell is considered to be the best in terms of coverage.",
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092
+    },
+    {
+      "cities": [
+        "Azerbaijan"
+      ],
+      "tip": "You can buy a physical sim or e-sim by visiting an Azercell retail store or authorized reseller and show your ID",
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092
+    },
+    {
+      "cities": [
+        "Azerbaijan"
+      ],
+      "tip": "The most recommended pack is for 10 AZN which gives you 3 GB of data and 300 minutes of domestic calling",
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092
+    },
+    {
+      "cities": [
+        "Azerbaijan"
+      ],
+      "tip": "You can activate international roaming packs on your India number as an alternative",
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092
+    },
+    {
+      "cities": [
+        "Azerbaijan"
+      ],
+      "tip": "Even if you choose not to purchase an international roaming pack, do ensure your roaming is activated to receive SMS such as for OTPs",
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Azerbaijan"
+      ],
+      "tip": "Travel Insurance is not mandatory but it is recommended. Tata AIG offers a good package.",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616
+    },
+    {
+      "cities": [
+        "Azerbaijan"
+      ],
+      "tip": "Carry doctors prescriptions/travel prescriptions for medicines (except over the counter meds).",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616
+    }
+  ],
+  "source_files": [
+    "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+    "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf"
+  ]
+}

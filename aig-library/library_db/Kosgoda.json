@@ -1,0 +1,204 @@
+{
+  "restaurants": [
+    {
+      "name": "Sajee Restaurant",
+      "city": "Kosgoda",
+      "cuisine_type": [
+        "Sri Lankan Local"
+      ],
+      "price_range": "1,000–1,500 LKR per person",
+      "hours": "10:30 AM – 9:30 PM",
+      "ambience": "Homely, local, simple but reliable",
+      "highlights": [
+        "Vegetarian-friendly",
+        "Comfort-style vegetarian Sri Lankan flavours"
+      ],
+      "must_try_dishes": [
+        "Rice & curry platter (veg)",
+        "dhal curry",
+        "string hoppers",
+        "veg kottu",
+        "Vegetable kottu",
+        "Dhal curry + rice",
+        "Vegetable fried rice"
+      ],
+      "best_for": [
+        "comfort"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Nadee Indian Restaurant",
+      "city": "Kosgoda",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "LKR 2,000–3,000 per person",
+      "hours": "11:00 AM – 9:00 PM",
+      "ambience": "Casual, comfortable Indian restaurant.",
+      "highlights": [
+        "Familiar vegetarian comfort meal"
+      ],
+      "must_try_dishes": [
+        "Paneer butter masala",
+        "dal tadka",
+        "vegetable biryani",
+        "roti/naan"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf"
+      ]
+    },
+    {
+      "name": "Olive Mate",
+      "city": "Kosgoda",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "LKR 2,000 per person",
+      "hours": "10:30 AM – 10:30 PM",
+      "ambience": "Relaxed café-style Italian setting.",
+      "highlights": [
+        "Light continental vegetarian lunch"
+      ],
+      "must_try_dishes": [
+        "Vegetarian pizza",
+        "mushroom pasta",
+        "garlic bread"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf"
+      ]
+    },
+    {
+      "name": "Red Lobster Tours & Restaurant",
+      "city": "Kosgoda",
+      "cuisine_type": [
+        "Coastal"
+      ],
+      "price_range": "INR 370–400",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "Coastal, casual, relaxed",
+      "highlights": [
+        "Scenic meal with clear vegetarian choices"
+      ],
+      "must_try_dishes": [
+        "Vegetable noodles",
+        "Vegetable fried rice",
+        "Stir-fried seasonal vegetables"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Kosgoda Turtle Hatchery",
+      "city": "Kosgoda",
+      "description": "One of Sri Lanka's well-known turtle conservation centers. Here, rescued eggs are incubated safely before hatchlings are released into the ocean. You'll see baby turtles and learn about different species.",
+      "hours": "8:00 AM – 6:00 PM",
+      "entry_fee": "LKR 1,500 per person",
+      "recommended_duration": "45–60 minutes",
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf"
+      ]
+    },
+    {
+      "name": "Madu River Safari",
+      "city": "Kosgoda",
+      "description": "Drift slowly through mangrove tunnels and small islands. Highlights include cinnamon island visit, fish spa stop, bird watching along mangroves, and peaceful lagoon scenery.",
+      "hours": "8:00 AM – 5:00 PM",
+      "entry_fee": "LKR 6,000–8,000 per private boat",
+      "recommended_duration": "1.5–2 hours",
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf"
+      ]
+    },
+    {
+      "name": "Madu Ganga River Safari",
+      "city": "Kosgoda",
+      "description": "Serene estuary cruise through one of Sri Lanka's largest wetland ecosystems with mangrove tunnels, tiny islets, cinnamon plantations, and birdlife",
+      "hours": "6:00 AM and 4:00 PM",
+      "entry_fee": "1,828 per adult",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Kothduwa Temple Island",
+      "city": "Kosgoda",
+      "description": "Temple island visited during Madu Ganga river safari",
+      "hours": "7:00 AM until around 5:30 PM",
+      "entry_fee": "Free",
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Cinnamon Island",
+      "city": "Kosgoda",
+      "description": "Island with cinnamon demo including peeling and oil distillation",
+      "hours": "8:00 AM to 5:00 PM",
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Kosgoda Sea Turtle Conservation Project",
+      "city": "Kosgoda",
+      "description": "One of Sri Lanka's most responsible turtle conservation centres with protected nesting sites, hatchery operations, and rehabilitated turtles",
+      "hours": "8:30 AM to 6:30 PM",
+      "entry_fee": "LKR ~500–1,000 per person",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Sheraton Kosgoda Turtle Beach Resort",
+      "city": "Kosgoda",
+      "location": "Beachfront location",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "name": "Sheraton Kosgoda Turtle Beach Resort",
+      "city": "Kosgoda",
+      "location": "Beachfront",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+    "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+  ]
+}

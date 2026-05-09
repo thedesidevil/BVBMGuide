@@ -1,0 +1,377 @@
+{
+  "restaurants": [
+    {
+      "name": "Plachutta Wollzeile",
+      "city": "Vienna",
+      "cuisine_type": [
+        "Austrian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:30 AM - 11:30 PM",
+      "ambience": "Upscale brasserie known for Austria's national dish",
+      "must_try_dishes": [
+        "Potato hash",
+        "Kaiserschmarrn"
+      ],
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Glacis Beisl",
+      "city": "Vienna",
+      "cuisine_type": [
+        "Austrian",
+        "Local"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12:00 PM - 10:30 PM",
+      "ambience": "Hidden garden courtyard behind the MuseumsQuartier",
+      "must_try_dishes": [
+        "potato salad with pumpkin oil",
+        "elderflower sorbet"
+      ],
+      "area": "MuseumsQuartier",
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Café Gloriette",
+      "city": "Vienna",
+      "cuisine_type": [
+        "Café",
+        "Austrian"
+      ],
+      "price_range": "₹₂",
+      "hours": "9:00 AM - 17:00 PM",
+      "ambience": "Hilltop café inside the palace garden's domed structure",
+      "must_try_dishes": [
+        "Goulash soup",
+        "apricot strudel",
+        "cappuccino"
+      ],
+      "nearby_landmarks": [
+        "Schönbrunn Palace, Vienna"
+      ],
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Landtmann's Jausen Station",
+      "city": "Vienna",
+      "cuisine_type": [
+        "Bistro",
+        "Garden"
+      ],
+      "price_range": "₹₹",
+      "hours": "7:30 AM - 10:00 PM",
+      "ambience": "Hidden garden bistro inside Schönbrunn park",
+      "must_try_dishes": [
+        "Viennese salad bowl",
+        "lemonade"
+      ],
+      "nearby_landmarks": [
+        "Schönbrunn Palace, Vienna"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Skopik & Lohn",
+      "city": "Vienna",
+      "cuisine_type": [
+        "Contemporary",
+        "Artistic"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "6:00 PM - 12:00 AM",
+      "ambience": "Artistic black-and-white ceilings, candlelight, hip yet refined",
+      "must_try_dishes": [
+        "Duck confit",
+        "horseradish mashed potatoes",
+        "chocolate mousse"
+      ],
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Gasthaus Pöschl",
+      "city": "Vienna",
+      "cuisine_type": [
+        "Austrian",
+        "Traditional"
+      ],
+      "price_range": "₹₹",
+      "hours": "12:00 PM - 11:00 PM",
+      "ambience": "Local favorite with rustic vibe and lively service",
+      "must_try_dishes": [
+        "Schnitzel with lingonberries",
+        "liver dumpling soup",
+        "Austrian red wine"
+      ],
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Café Central Vienna",
+      "city": "Vienna",
+      "cuisine_type": [
+        "Café",
+        "Viennese"
+      ],
+      "ambience": "Viennese institution since 1876, once frequented by Freud and Trotsky",
+      "must_try_dishes": [
+        "Wiener Melange",
+        "apple strudel",
+        "Sachertorte"
+      ],
+      "highlights": [
+        "Historic café since 1876",
+        "Once frequented by Freud and Trotsky"
+      ],
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Café Sperl",
+      "city": "Vienna",
+      "cuisine_type": [
+        "Café",
+        "Traditional"
+      ],
+      "ambience": "Traditional 19th-century Viennese café with billiards and velvet booths",
+      "must_try_dishes": [
+        "Ham & eggs",
+        "Semmel rolls with apricot jam",
+        "mocha with cream"
+      ],
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Joseph Brot vom Pheinsten",
+      "city": "Vienna",
+      "cuisine_type": [
+        "Bakery",
+        "Artisanal"
+      ],
+      "ambience": "Chic artisanal bakery",
+      "must_try_dishes": [
+        "Organic brioche",
+        "sourdough toast with smoked salmon"
+      ],
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Schönbrunn Palace",
+      "city": "Vienna",
+      "description": "Grand summer residence of the Habsburgs with audio-guided palace tour and manicured gardens",
+      "hours": "08:30 AM - 5:00 PM",
+      "entry_fee": "€24",
+      "recommended_duration": "2-2.5 hours",
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "St. Stephen's Cathedral",
+      "city": "Vienna",
+      "description": "Gothic cathedral with tower climb and catacombs tour",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Vienna State Opera",
+      "city": "Vienna",
+      "description": "Historic opera house with guided tours showcasing grand staircases, chandeliers, and royal box",
+      "hours": "Tours start from 10:00",
+      "entry_fee": "€13",
+      "recommended_duration": "40 minutes",
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Naschmarkt Vienna",
+      "city": "Vienna",
+      "description": "Vienna's most famous open-air food market with 120+ stalls",
+      "recommended_duration": "1.5 hours",
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Spanish Riding School",
+      "city": "Vienna",
+      "description": "Historic equestrian school with guided stable tours and practice shows",
+      "entry_fee": "€16–€28",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Naschmarkt",
+      "city": "Vienna",
+      "description": "Vienna's most famous open-air food market with 120+ stalls",
+      "recommended_duration": "1.5 hours",
+      "source_files": [
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Austria Trend Hotel beim Theresianum Wien",
+      "city": "Vienna",
+      "location": "Near Belvedere Palace and city transport",
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    },
+    {
+      "name": "Austria Trend Hotel beim Theresianum Wien",
+      "city": "Vienna",
+      "location": "Near Belvedere Palace",
+      "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Zotter chocolates",
+      "city": "Vienna",
+      "category": "Food",
+      "where_to_buy": [
+        "Naschmarkt Vienna"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    },
+    {
+      "item": "Manner wafers",
+      "city": "Vienna",
+      "category": "Food",
+      "where_to_buy": [
+        "Manner Shop",
+        "Naschmarkt Vienna"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    },
+    {
+      "item": "Viennese spice blends",
+      "city": "Vienna",
+      "category": "Food",
+      "where_to_buy": [
+        "Naschmarkt Vienna"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    },
+    {
+      "item": "Viennese chocolates",
+      "city": "Vienna",
+      "category": "Food",
+      "where_to_buy": [
+        "Demel K. u. K. Hofzuckerbäcker"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    },
+    {
+      "item": "Handmade marzipan",
+      "city": "Vienna",
+      "category": "Food",
+      "where_to_buy": [
+        "Demel K. u. K. Hofzuckerbäcker"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    },
+    {
+      "item": "Small chocolate boxes with hand-painted wrappers",
+      "city": "Vienna",
+      "category": "Food",
+      "where_to_buy": [
+        "Altmann & Kühne"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    },
+    {
+      "item": "Zotter chocolates",
+      "city": "Vienna",
+      "category": "Food",
+      "where_to_buy": [
+        "Naschmarkt"
+      ],
+      "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    },
+    {
+      "item": "Manner wafers",
+      "city": "Vienna",
+      "category": "Food",
+      "where_to_buy": [
+        "Manner Shop"
+      ],
+      "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    },
+    {
+      "item": "Viennese spice blends",
+      "city": "Vienna",
+      "category": "Food",
+      "where_to_buy": [
+        "Naschmarkt"
+      ],
+      "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Vienna",
+      "mode": "Public Transport",
+      "description": "Comprehensive network of metro, trams and buses throughout the city",
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+  ]
+}

@@ -1,0 +1,874 @@
+{
+  "restaurants": [
+    {
+      "name": "Rajwadi Thal",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "Rajasthani"
+      ],
+      "price_range": "₹400-600 per person",
+      "hours": "08:00 AM - 03:00 AM",
+      "ambience": "Traditional Rajasthani thali restaurant with a no-frills, local-style dining setup. Think simple seating, warm hospitality, and servers dressed in traditional attire offering unlimited food in brass thalis",
+      "must_try_dishes": [
+        "Rajasthani Thali",
+        "Dal Baati Churma",
+        "Gatte ki Sabzi",
+        "Ker Sangri",
+        "Bajre ki Roti",
+        "Chaas"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf"
+      ]
+    },
+    {
+      "name": "The Pot Garden Cafe",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "Mediterranean",
+        "Italian"
+      ],
+      "price_range": "₹600 per person",
+      "hours": "24 hours",
+      "ambience": "A boho-chic 24×7 lakeside bistro on Fateh Sagar—think lush plants, cozy indoor/outdoor seating, relaxed vibes, live music events, and great coffee",
+      "area": "Fateh Sagar",
+      "highlights": [
+        "24 hours open",
+        "Live music events",
+        "Great coffee"
+      ],
+      "must_try_dishes": [
+        "Mediterranean/Italian fare",
+        "signature coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf"
+      ]
+    },
+    {
+      "name": "Khamma Ghani Restaurant",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "Rajasthani"
+      ],
+      "price_range": "₹800-1,200 per person",
+      "hours": "11:00 AM - 11:00 PM",
+      "ambience": "Rooftop setting overlooking Lake Pichola, lit with lanterns and fairy lights—great for sunset views. Ethnic decor, folk music in the evenings, and a relaxed, upscale vibe",
+      "nearby_landmarks": [
+        "Lake Pichola, Udaipur"
+      ],
+      "highlights": [
+        "Rooftop setting",
+        "Folk music in the evenings",
+        "Great for sunset views"
+      ],
+      "must_try_dishes": [
+        "Laal Maas",
+        "Safed Maas",
+        "Gatte ki Sabzi",
+        "Khamma Ghani Special Thali"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf"
+      ]
+    },
+    {
+      "name": "Ambrai Restaurant",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "Rajasthani"
+      ],
+      "price_range": "₹1,000-1,500 per person",
+      "hours": "7:30 AM - 10:30 PM",
+      "ambience": "Lakeside fine dining on Ambrai Ghat at Amet Haveli overlooking Lake Pichola, City Palace & Jag Mandir; candlelit tables with water reflections and breeze",
+      "area": "Ambrai Ghat",
+      "nearby_landmarks": [
+        "Lake Pichola, Udaipur",
+        "City Palace, Udaipur",
+        "Jag Mandir, Udaipur"
+      ],
+      "highlights": [
+        "Lakeside fine dining",
+        "Candlelit tables"
+      ],
+      "must_try_dishes": [
+        "dal-baati-churma",
+        "tandoori aloo nazakat"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf"
+      ]
+    },
+    {
+      "name": "Rainbow Cafe",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "Local"
+      ],
+      "price_range": "₹400 per person",
+      "hours": "8:00 AM - 11:00 PM",
+      "ambience": "Bright, casual café opposite Lake Pichola near Jagdish Temple with indoor/outdoor seating and scenic lake views",
+      "nearby_landmarks": [
+        "Lake Pichola, Udaipur",
+        "Jagdish Temple, Udaipur"
+      ],
+      "highlights": [
+        "Scenic lake views"
+      ],
+      "must_try_dishes": [
+        "poha",
+        "lemon-sugar pancakes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf"
+      ]
+    },
+    {
+      "name": "Upre",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "Local"
+      ],
+      "price_range": "₹1,500-2,000+ per person",
+      "hours": "6:30 PM - 10:30 PM",
+      "ambience": "Imperial rooftop lounge at Lake Pichola Hotel (Ambrai Ghat), offering sweeping views of Lake Pichola from a vintage heritage-styled terrace, ideal for romantic dinners",
+      "area": "Ambrai Ghat",
+      "nearby_landmarks": [
+        "Lake Pichola, Udaipur"
+      ],
+      "highlights": [
+        "Rooftop lounge",
+        "Sweeping views",
+        "Vintage heritage-styled terrace"
+      ],
+      "must_try_dishes": [
+        "Chicken kebabs",
+        "laal maas",
+        "veg biryani"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf"
+      ]
+    },
+    {
+      "name": "Ambrai – Amet Haveli",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹1200-1600",
+      "hours": "12 PM – 10 PM",
+      "ambience": "Lakefront dining with dazzling views of City Palace and Jag Mandir",
+      "nearby_landmarks": [
+        "City Palace, Udaipur",
+        "Jag Mandir, Udaipur"
+      ],
+      "highlights": [
+        "Lakefront dining",
+        "Candle-lit tables",
+        "Fort views"
+      ],
+      "must_try_dishes": [
+        "Laal Maas",
+        "Butter chicken",
+        "Paneer tikka"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Upre by 1559 AD",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "Rajasthani",
+        "Global"
+      ],
+      "price_range": "₹1000-1400",
+      "hours": "7:30 AM – 11 PM",
+      "ambience": "Rooftop restaurant offering traditional Rajasthani and global cuisine",
+      "highlights": [
+        "Sophisticated rooftop",
+        "Chic with city views"
+      ],
+      "must_try_dishes": [
+        "Mutton curry",
+        "Grilled fish",
+        "Dal Baati Churma"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Millets of Mewar",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "Healthy Indian"
+      ],
+      "price_range": "₹500-800",
+      "hours": "9 AM – 10:30 PM",
+      "ambience": "Eco-conscious café focusing on healthy Indian meals with millet-based dishes",
+      "highlights": [
+        "Eco-conscious",
+        "Millet-based dishes",
+        "Organic local produce"
+      ],
+      "must_try_dishes": [
+        "Millet thali",
+        "Chicken curry",
+        "Smoothie bowls"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Jheel's Ginger Coffee Bar & Bakery",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "Continental",
+        "Bakery"
+      ],
+      "price_range": "₹400-700",
+      "hours": "8:30 AM – 9:30 PM",
+      "ambience": "Quaint lakeside café with coffee, bakery delights, and light meals",
+      "highlights": [
+        "Lakeside café",
+        "Bakery delights"
+      ],
+      "must_try_dishes": [
+        "Chicken sandwich",
+        "Paneer tikka wrap",
+        "Cheesecake"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Café Edelweiss",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "European",
+        "Bakery"
+      ],
+      "price_range": "₹200-400",
+      "hours": "9:30 AM – 9 PM",
+      "ambience": "One of Udaipur's oldest bakeries, perfect for a mid-day break",
+      "highlights": [
+        "Oldest bakeries",
+        "Vintage vibe"
+      ],
+      "must_try_dishes": [
+        "Veg lasagne",
+        "Tuna sandwich",
+        "Lemon cake"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Harigarh Restaurant",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹800-1000",
+      "hours": "8 AM – 11 PM",
+      "ambience": "Riverside dining with a relaxed, family-friendly atmosphere",
+      "highlights": [
+        "Riverside dining",
+        "Family-friendly"
+      ],
+      "must_try_dishes": [
+        "Tandoori platter",
+        "Rajasthani thali",
+        "Mutton curry"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Palki Khana, City Palace",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "European",
+        "Indian"
+      ],
+      "price_range": "₹800-1100",
+      "hours": "9 AM – 9 PM",
+      "ambience": "Chic café within the palace complex serving European and Indian favorites",
+      "area": "City Palace",
+      "nearby_landmarks": [
+        "City Palace, Udaipur"
+      ],
+      "must_try_dishes": [
+        "Grilled chicken sandwich",
+        "Caesar salad",
+        "Cold coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Natural View Restaurant",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹600-900",
+      "hours": "8 AM – 11 PM",
+      "ambience": "Casual lakeside eatery with breezy open seating",
+      "highlights": [
+        "Lakeside setting",
+        "Breezy open seating"
+      ],
+      "must_try_dishes": [
+        "Veg biryani",
+        "Chicken curry",
+        "Lemon soda"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "1559 AD Restaurant",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "Colonial"
+      ],
+      "price_range": "₹1000-1300",
+      "hours": "11 AM – 11 PM",
+      "ambience": "Elegant colonial-style restaurant near Fateh Sagar Lake",
+      "area": "Fateh Sagar Lake",
+      "nearby_landmarks": [
+        "Fateh Sagar Lake, Udaipur"
+      ],
+      "must_try_dishes": [
+        "Fish curry",
+        "Dal Baati Churma",
+        "Chocolate mousse"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Raaj Bagh Restaurant",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "North Indian",
+        "Continental"
+      ],
+      "price_range": "₹1000-1400",
+      "hours": "7:30 PM – 11 PM",
+      "ambience": "Romantic lakeside setting serving North Indian and continental dishes",
+      "highlights": [
+        "Romantic lakeside setting"
+      ],
+      "must_try_dishes": [
+        "Laal Maas",
+        "Butter garlic naan",
+        "Paneer methi malai"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Charcoal by Carlsson",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "Grill",
+        "BBQ"
+      ],
+      "price_range": "₹1200-1600",
+      "hours": "8 PM – 11 PM",
+      "ambience": "Modern grillhouse with live BBQ and fort views",
+      "highlights": [
+        "Live BBQ",
+        "Fort views"
+      ],
+      "must_try_dishes": [
+        "BBQ chicken wings",
+        "Veg skewers",
+        "Chocolate fondant"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Jaiwana Haveli Rooftop Restaurant",
+      "city": "Udaipur",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹800-1000",
+      "hours": "7 AM – 10 PM",
+      "ambience": "Cozy rooftop with panoramic city views",
+      "highlights": [
+        "Panoramic city views"
+      ],
+      "must_try_dishes": [
+        "Butter chicken",
+        "Palak paneer",
+        "Garlic naan"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "City Palace",
+      "city": "Udaipur",
+      "description": "Majestic palace complex",
+      "hours": "9:30 AM - 5:00 PM",
+      "entry_fee": "₹300 for adults, ₹150 for children (7-12 years) or students with valid ID. Composite ticket ₹400 for adults, ₹250 for children/students",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Lake Pichola",
+      "city": "Udaipur",
+      "description": "Scenic lake with boat rides",
+      "hours": "9:00 AM - 6:00 PM",
+      "entry_fee": "₹400 for Adults, ₹200 for Children. Sunset boat ride ₹700 for Adults, ₹400 for children",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Jag Mandir Island",
+      "city": "Udaipur",
+      "description": "Island palace on Lake Pichola",
+      "hours": "10:00 AM - 6:00 PM",
+      "entry_fee": "₹600 (10am-3pm), ₹800 (4pm-5pm). Additional ₹50 pier access fee",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf"
+      ]
+    },
+    {
+      "name": "Saheliyon Ki Bari",
+      "city": "Udaipur",
+      "description": "Garden of the Maidens",
+      "hours": "9:00 AM - 7:00 PM",
+      "entry_fee": "₹10 for Indian citizens, ₹50 for foreign visitors",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Vintage Car Museum",
+      "city": "Udaipur",
+      "description": "Collection of vintage automobiles",
+      "hours": "9:00 AM - 9:00 PM",
+      "entry_fee": "₹330 for adults, ₹200 for children",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf"
+      ]
+    },
+    {
+      "name": "Hathi Pol Market",
+      "city": "Udaipur",
+      "description": "Traditional shopping market",
+      "hours": "10:00 AM - 8:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf"
+      ]
+    },
+    {
+      "name": "Jagdish Temple",
+      "city": "Udaipur",
+      "description": "Temple dedicated to Lord Vishnu with intricate carvings and rhythmic chanting",
+      "hours": "5:00 AM – 8:00 PM",
+      "entry_fee": "Free entry",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Fateh Sagar Lake",
+      "city": "Udaipur",
+      "description": "Lake for lakeside stroll or speedboat ride with serene sunset views",
+      "hours": "8:00 AM – 6:00 PM",
+      "entry_fee": "₹200 (optional boating)",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Dharohar Folk Dance Show at Bagore Ki Haveli",
+      "city": "Udaipur",
+      "description": "Cultural performance featuring traditional Rajasthani dance, puppetry, and music",
+      "hours": "9:00 PM – 5:00 PM",
+      "entry_fee": "₹90 (Indians) | ₹150 (foreigners)",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Sajjangarh Monsoon Palace",
+      "city": "Udaipur",
+      "description": "Hilltop palace offering spectacular 360° views of Lake Pichola, Fateh Sagar, and the city",
+      "hours": "9:00 AM – 6:00 PM",
+      "entry_fee": "₹120 (Indians) | ₹500 (foreigners)",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Sajjangarh Biological Park",
+      "city": "Udaipur",
+      "description": "Well-maintained reserve home to tigers, panthers, leopards, deer, and bird species",
+      "hours": "9:00 AM – 5:30 PM (Closed on Tuesday)",
+      "entry_fee": "₹30 (Indians) | ₹300 (foreigners)",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Sukhadia Circle",
+      "city": "Udaipur",
+      "description": "Local hangout centered around a fountain and small boating pond",
+      "hours": "24 hrs",
+      "entry_fee": "Free entry",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Karni Mata Ropeway & Sunset Point",
+      "city": "Udaipur",
+      "description": "Cable car up to hilltop temple with sunset views over the Aravalli range",
+      "hours": "9:00 AM – 8:00 PM",
+      "entry_fee": "₹150 (Indians) | ₹300 (foreigners)",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    },
+    {
+      "name": "Vintage & Classic Car Collection Museum",
+      "city": "Udaipur",
+      "description": "Elegant showcase of royal vehicles once used by the Maharanas of Udaipur",
+      "hours": "9 AM – 5 PM",
+      "entry_fee": "₹400 per person",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "The Sierra - By The Lake",
+      "city": "Udaipur",
+      "location": "Lakeside",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    },
+    {
+      "name": "Mahendra Prakash Hotel",
+      "city": "Udaipur",
+      "location": "Udaipur",
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Udaipur",
+        "Jaipur"
+      ],
+      "tip": "Avoid walking alone late at night—especially in poorly lit or less busy areas",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    },
+    {
+      "cities": [
+        "Udaipur",
+        "Jaipur"
+      ],
+      "tip": "Use verified transport apps like Uber/Ola or your hotel's car services",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    },
+    {
+      "cities": [
+        "Udaipur",
+        "Jaipur"
+      ],
+      "tip": "Taxi & Auto Rickshaw Scams: Driver claims your hotel is 'closed' or 'moved' and takes you to a commission-based shop or hotel- Always negotiate a fare or insist on the meter before boarding a local auto, and insist you are taken to your pre-booked hotel, directly",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    },
+    {
+      "cities": [
+        "Udaipur",
+        "Jaipur"
+      ],
+      "tip": "Fake Tour Guides: A 'friendly' person offers to show you around, then demands a large tip or drags you to overpriced shops. Only use licensed guides (e.g., arranged through your hotel or tourism office)",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    },
+    {
+      "cities": [
+        "Udaipur",
+        "Jaipur"
+      ],
+      "tip": "Commission Shops: Guides or drivers take you to shops where you are pressured to buy at inflated prices. Shop where you want. Avoid buying immediately—compare prices first. Politely decline offers from unsolicited 'helpers'",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    },
+    {
+      "cities": [
+        "Udaipur",
+        "Jaipur"
+      ],
+      "tip": "Fake Ticket Sellers: Locals outside attractions sell 'discounted' tickets that are fake or expired. Buy tickets online or at official counters only",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Miniature Pichwai & Mewar Paintings",
+      "city": "Udaipur",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Hathi Pol Bazaar"
+      ],
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    },
+    {
+      "item": "Leather Journals & Bags",
+      "city": "Udaipur",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Hathi Pol Bazaar"
+      ],
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    },
+    {
+      "item": "Handcrafted Silver Jewelry",
+      "city": "Udaipur",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Bada Bazaar",
+        "Rajasthali Government Emporium"
+      ],
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    },
+    {
+      "item": "Rajasthani Puppets (Kathputlis)",
+      "city": "Udaipur",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Jagdish Temple Street Market"
+      ],
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    },
+    {
+      "item": "Wall Hangings & Tapestries",
+      "city": "Udaipur",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Bada Bazaar"
+      ],
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    },
+    {
+      "item": "Zardozi Clutches & Embroidered Bags",
+      "city": "Udaipur",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Bada Bazaar"
+      ],
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    },
+    {
+      "item": "Wooden Toys & Decor",
+      "city": "Udaipur",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Shilpgram"
+      ],
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    },
+    {
+      "item": "Herbal Soaps & Ayurvedic Products",
+      "city": "Udaipur",
+      "category": "Food",
+      "where_to_buy": [
+        "Various shops"
+      ],
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106
+    },
+    {
+      "item": "Miniature paintings",
+      "city": "Udaipur",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Hathi Pol Bazaar"
+      ],
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    },
+    {
+      "item": "Puppets",
+      "city": "Udaipur",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Hathi Pol Bazaar"
+      ],
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    },
+    {
+      "item": "Silver jewelry",
+      "city": "Udaipur",
+      "category": "Jewelry",
+      "where_to_buy": [
+        "Bada Bazaar"
+      ],
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    },
+    {
+      "item": "Colorful turbans",
+      "city": "Udaipur",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Bada Bazaar"
+      ],
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    },
+    {
+      "item": "Ethnic crafts",
+      "city": "Udaipur",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Shilpgram"
+      ],
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+    "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf"
+  ]
+}

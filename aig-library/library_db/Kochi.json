@@ -1,0 +1,328 @@
+{
+  "restaurants": [
+    {
+      "name": "Ginger House Restaurant",
+      "city": "Kochi",
+      "cuisine_type": [
+        "Kerala"
+      ],
+      "price_range": "₹400-800",
+      "hours": "8:00am- 10:00pm",
+      "ambience": "Heritage building with tranquil courtyard, lush greenery and charming interior with artistic details",
+      "highlights": [
+        "Fusion of Indian and international cuisines",
+        "Heritage building setting",
+        "Combines tradition with modernity"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Rasoi, Fort Kochi",
+      "city": "Kochi",
+      "cuisine_type": [
+        "North Indian"
+      ],
+      "price_range": "₹200-600",
+      "hours": "12:00pm- 10:00pm",
+      "area": "Fort Kochi",
+      "ambience": "Culinary gem renowned for North Indian and Mughlai delights",
+      "highlights": [
+        "Renowned for North Indian and Mughlai delights",
+        "Rich, aromatic flavours"
+      ],
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Kashi Art Café",
+      "city": "Kochi",
+      "cuisine_type": [
+        "Café eats and beverages"
+      ],
+      "price_range": "₹200-600",
+      "hours": "08:30 am- 10:00pm",
+      "area": "Fort Kochi",
+      "ambience": "Historic building that doubles as art gallery and cafe with vibrant and artistic ambience",
+      "highlights": [
+        "Doubles as art gallery",
+        "Meeting point for artists, travellers, and locals",
+        "Blend of art and gastronomy"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ],
+      "vegetarian_friendly": false
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Mattancherry Palace",
+      "city": "Kochi",
+      "description": "A 16th-century Portuguese-built palace, later renovated by the Dutch, renowned for its exquisite Kerala-style murals depicting Hindu epics",
+      "hours": "10:00 AM – 5:00 PM",
+      "entry_fee": "₹5 for Adults, Children under 15: Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Paradesi Synagogue and Jew Town",
+      "city": "Kochi",
+      "description": "Historic synagogue with narrow lanes of Jew Town filled with antique shops and spice markets",
+      "hours": "Closed on Saturday",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
+      ]
+    },
+    {
+      "name": "Fort Cochin",
+      "city": "Kochi",
+      "description": "Charming area with historic streets and unique Chinese fishing nets",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
+      ]
+    },
+    {
+      "name": "Fort Kochi",
+      "city": "Kochi",
+      "description": "A historic coastal town renowned for its colonial architecture, vibrant art scene, and cultural heritage",
+      "hours": "24 hours",
+      "entry_fee": "free",
+      "recommended_duration": "Half day",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Jewish Synagogue",
+      "city": "Kochi",
+      "description": "The oldest active synagogue in the Commonwealth, renowned for its rich history and unique blend of Jewish and local Kerala influences",
+      "hours": "10:00 AM – 12:00 PM & 3:00 PM – 5:00 PM",
+      "entry_fee": "₹5 for Indian visitors, ₹100 for foreign visitors",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "St. Francis Church",
+      "city": "Kochi",
+      "description": "The oldest European church in India, renowned for its historical significance and as the original burial site of Vasco da Gama",
+      "hours": "7:00 AM – 6:30 PM",
+      "entry_fee": "free",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Chinese Fishing Nets",
+      "city": "Kochi",
+      "description": "Traditional cantilevered fishing nets introduced by Chinese explorer Zheng He in the 14th century, offering a unique glimpse into Kerala's maritime heritage",
+      "hours": "24 hours",
+      "entry_fee": "free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Presidency Airport Hotel",
+      "city": "Kochi",
+      "location": "Kochi",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136
+    },
+    {
+      "name": "Forte Kochi",
+      "city": "Kochi",
+      "location": "Fort Kochi",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
+      "_source_mtime": 1772384279.852176
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Spices",
+      "city": "Kochi",
+      "category": "Food",
+      "where_to_buy": [
+        "Jewish Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+      "_source_mtime": 1772384277.134858
+    },
+    {
+      "item": "Essential Oils",
+      "city": "Kochi",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Jewish Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+      "_source_mtime": 1772384277.134858
+    },
+    {
+      "item": "Cashews",
+      "city": "Kochi",
+      "category": "Food",
+      "where_to_buy": [
+        "Jewish Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+      "_source_mtime": 1772384277.134858
+    },
+    {
+      "item": "Spices",
+      "city": "Kochi",
+      "category": "Food",
+      "where_to_buy": [
+        "Jewish Market",
+        "Spice markets in Mattancherry"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+      "_source_mtime": 1760845480.0
+    },
+    {
+      "item": "Essential Oils",
+      "city": "Kochi",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Jewish Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+      "_source_mtime": 1760845480.0
+    },
+    {
+      "item": "Cashews",
+      "city": "Kochi",
+      "category": "Food",
+      "where_to_buy": [
+        "Jewish Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+      "_source_mtime": 1760845480.0
+    },
+    {
+      "item": "Spices",
+      "city": "Kochi",
+      "category": "Food",
+      "where_to_buy": [
+        "Jewish Market",
+        "Spice markets in Mattancherry"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136
+    },
+    {
+      "item": "Essential Oils",
+      "city": "Kochi",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Jewish Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136
+    },
+    {
+      "item": "Cashews",
+      "city": "Kochi",
+      "category": "Food",
+      "where_to_buy": [
+        "Jewish Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136
+    },
+    {
+      "item": "Antiques",
+      "city": "Kochi",
+      "category": "Antiques",
+      "where_to_buy": [
+        "Fort Kochi"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136
+    },
+    {
+      "item": "Spices",
+      "city": "Kochi",
+      "category": "Food",
+      "where_to_buy": [
+        "Jewish Market/Spice markets in Mattancherry"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
+      "_source_mtime": 1772384279.852176
+    },
+    {
+      "item": "Essential Oils",
+      "city": "Kochi",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Jewish Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
+      "_source_mtime": 1772384279.852176
+    },
+    {
+      "item": "Cashews",
+      "city": "Kochi",
+      "category": "Food",
+      "where_to_buy": [
+        "Jewish Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
+      "_source_mtime": 1772384279.852176
+    },
+    {
+      "item": "Antiques",
+      "city": "Kochi",
+      "category": "Antiques",
+      "where_to_buy": [
+        "Fort Kochi"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
+      "_source_mtime": 1772384279.852176
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+  ]
+}

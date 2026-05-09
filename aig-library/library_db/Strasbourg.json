@@ -1,0 +1,307 @@
+{
+  "restaurants": [
+    {
+      "name": "Maison Kammerzell",
+      "city": "Strasbourg",
+      "cuisine_type": [
+        "Alsatian"
+      ],
+      "price_range": "₹₹₹₹",
+      "hours": "12 PM – 10 PM",
+      "ambience": "Historic half-timbered building beside the cathedral",
+      "area": "Grande Île",
+      "nearby_landmarks": [
+        "Strasbourg Cathedral, Strasbourg"
+      ],
+      "highlights": [
+        "Historic half-timbered building",
+        "Iconic Strasbourg experience"
+      ],
+      "must_try_dishes": [
+        "Alsatian tarte flambée (flammekueche)",
+        "choucroute"
+      ],
+      "best_for": [
+        "historic",
+        "iconic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Le Clou",
+      "city": "Strasbourg",
+      "cuisine_type": [
+        "Alsatian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:30 AM – 10 PM",
+      "ambience": "Traditional Alsatian tavern ambience",
+      "area": "Grande Île",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Traditional Alsatian tavern ambience",
+        "Authentic local cuisine"
+      ],
+      "must_try_dishes": [
+        "Regional stews",
+        "tarte flambée"
+      ],
+      "best_for": [
+        "authentic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Au Pont Saint-Martin",
+      "city": "Strasbourg",
+      "cuisine_type": [
+        "Alsatian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12 PM – 10 PM",
+      "ambience": "Canal-side dining with rustic interiors",
+      "area": "Grande Île",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Canal-side dining with rustic interiors",
+        "Scenic dinner setting"
+      ],
+      "must_try_dishes": [
+        "Alsatian specialities",
+        "hearty mains"
+      ],
+      "best_for": [
+        "scenic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "La Hache",
+      "city": "Strasbourg",
+      "cuisine_type": [
+        "European"
+      ],
+      "price_range": "₹₹₹",
+      "hours": null,
+      "ambience": "Modern European bistro",
+      "area": null,
+      "nearby_landmarks": [],
+      "highlights": [
+        "Modern European bistro"
+      ],
+      "must_try_dishes": [],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Les Haras",
+      "city": "Strasbourg",
+      "cuisine_type": [
+        "French"
+      ],
+      "price_range": "₹₹₹₹",
+      "hours": null,
+      "ambience": "Elegant historic dining space",
+      "area": null,
+      "nearby_landmarks": [],
+      "highlights": [
+        "Elegant historic dining space"
+      ],
+      "must_try_dishes": [],
+      "best_for": [
+        "elegant"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Strasbourg Cathedral",
+      "city": "Strasbourg",
+      "description": "Gothic cathedral with intricate pink sandstone façade",
+      "hours": "8:30 AM – 11:15 AM & 12:45 PM – 5:45 PM (may vary)",
+      "entry_fee": "Free entry (tower climb extra ~INR 500–700)",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "La Petite France",
+      "city": "Strasbourg",
+      "description": "Most photogenic quarter with half-timbered houses over canals",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free to explore",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Grande Île Boat Cruise",
+      "city": "Strasbourg",
+      "description": "Canal cruise around UNESCO-listed historic centre",
+      "hours": "Typically 10 AM – 5 PM",
+      "entry_fee": "Approx. INR 1,500–2,500 per person",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Holiday Inn Express Strasbourg Centre",
+      "city": "Strasbourg",
+      "location": "10 mins from Old Town",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "name": "Holiday Inn Express Strasbourg Centre",
+      "city": "Strasbourg",
+      "location": "Centre",
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Alsace Wines",
+      "city": "Strasbourg",
+      "category": "Food",
+      "where_to_buy": [
+        "Wine boutiques near Strasbourg Cathedral",
+        "Gourmet stores in Grande Île"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Alsatian hand-painted ceramics",
+      "city": "Strasbourg",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "La Petite France"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Bredele biscuits",
+      "city": "Strasbourg",
+      "category": "Food",
+      "where_to_buy": [
+        "Gourmet stores in Grande Île"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Tarte flambée spice mixes",
+      "city": "Strasbourg",
+      "category": "Food",
+      "where_to_buy": [
+        "Gourmet stores in Grande Île"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Alsace Christmas decorations",
+      "city": "Strasbourg",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "La Petite France"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Alsace Wines",
+      "city": "Strasbourg",
+      "category": "Food",
+      "where_to_buy": [
+        "Wine boutiques near Strasbourg Cathedral",
+        "Gourmet stores in Grande Île"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "item": "Alsatian hand-painted ceramics",
+      "city": "Strasbourg",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "La Petite France"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "item": "Bredele biscuits (seasonal)",
+      "city": "Strasbourg",
+      "category": "Food",
+      "where_to_buy": [
+        "Gourmet stores in Grande Île"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "item": "Tarte flambée spice mixes",
+      "city": "Strasbourg",
+      "category": "Food",
+      "where_to_buy": [
+        "Gourmet stores in Grande Île"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "item": "Alsace Christmas decorations (if available)",
+      "city": "Strasbourg",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "La Petite France"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "France/Tanya and Shovit_All Inclusive Guide.pdf",
+    "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+  ]
+}

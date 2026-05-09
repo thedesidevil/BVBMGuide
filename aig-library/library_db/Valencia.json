@@ -1,0 +1,207 @@
+{
+  "restaurants": [
+    {
+      "name": "Casa Carmela",
+      "city": "Valencia",
+      "cuisine_type": [
+        "Valencian"
+      ],
+      "price_range": "€40-60 per person",
+      "hours": "1-4 PM",
+      "highlights": [
+        "Legendary for traditional Valencian paella",
+        "Wood-fire cooked"
+      ],
+      "must_try_dishes": [
+        "Paella Valenciana (chicken & rabbit)",
+        "Seafood paella"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "El Rall",
+      "city": "Valencia",
+      "cuisine_type": [
+        "Valencian",
+        "Spanish"
+      ],
+      "price_range": "€20-30 per person",
+      "hours": "12-11 PM",
+      "highlights": [
+        "Classic Valencian & Spanish dishes"
+      ],
+      "must_try_dishes": [
+        "Duck rice",
+        "Grilled meats",
+        "Seafood starters"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Horchatería Santa Catalina",
+      "city": "Valencia",
+      "cuisine_type": [
+        "Local specialty"
+      ],
+      "price_range": "€20-30 per person",
+      "hours": "8:30 AM-9 PM",
+      "highlights": [
+        "Perfect post-meal stop"
+      ],
+      "must_try_dishes": [
+        "Horchata with fartons"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "El Camerino Ruzafa",
+      "city": "Valencia",
+      "cuisine_type": [
+        "Spanish",
+        "Mediterranean"
+      ],
+      "price_range": "€20-30 per person",
+      "highlights": [
+        "Dinner service"
+      ],
+      "must_try_dishes": [
+        "Slow-cooked pork",
+        "Grilled meats",
+        "Seafood starters"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Canalla Bistro",
+      "city": "Valencia",
+      "cuisine_type": [
+        "Modern Spanish"
+      ],
+      "price_range": "€25-35 per person",
+      "hours": "8 PM-11:30 PM",
+      "highlights": [
+        "Bold, modern Spanish plates",
+        "Meat-forward"
+      ],
+      "must_try_dishes": [
+        "Pork ribs",
+        "Duck dishes",
+        "Seafood tapas"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Bar Tonyina",
+      "city": "Valencia",
+      "cuisine_type": [
+        "Local"
+      ],
+      "price_range": "€20-30 per person",
+      "hours": "8:30-11 PM",
+      "highlights": [
+        "Casual local favorite"
+      ],
+      "must_try_dishes": [
+        "Tuna tataki",
+        "Seafood tapas",
+        "Grilled fish"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Valencia Cathedral",
+      "city": "Valencia",
+      "description": "Famous for claiming to house the Holy Grail",
+      "recommended_duration": "45 minutes - 1 hour",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "El Miguelete",
+      "city": "Valencia",
+      "description": "Cathedral tower offering city views",
+      "hours": "10 AM-5:45 PM",
+      "recommended_duration": "20-30 minutes",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "La Lonja de la Seda",
+      "city": "Valencia",
+      "description": "UNESCO World Heritage Site, masterpiece of Gothic civil architecture reflecting Valencia's silk-trading wealth",
+      "hours": "10 AM-7 PM",
+      "recommended_duration": "30-40 minutes",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Casual Del Cine Valencia",
+      "city": "Valencia",
+      "location": "Central Valencia",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Paella Valenciana",
+      "city": "Valencia",
+      "description": "Rice with chicken, rabbit & green beans",
+      "vegetarian": false,
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Horchata with fartons",
+      "city": "Valencia",
+      "description": "Local specialty drink with pastries",
+      "vegetarian": true,
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Valencia",
+      "mode": "Metro, Bus, Tram",
+      "description": "City transport system",
+      "recommended_pass": "Valencia Tourist Card - 48 hrs",
+      "cost": "€20",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "restaurants": [
+    {
+      "name": "Ristorante Il Rossellino",
+      "city": "Pienza",
+      "cuisine_type": [
+        "Italian",
+        "Tuscan"
+      ],
+      "price_range": "EUR 20-30 per person",
+      "hours": "12 PM - 2:30 PM",
+      "ambience": "Elegant and intimate, with lovely outdoor seating on the beautiful Piazza di Spagna—reservation strongly recommended",
+      "area": "Pienza",
+      "highlights": [
+        "Elegant and intimate",
+        "Outdoor seating on piazza"
+      ],
+      "must_try_dishes": [
+        "Pici cacio e pepe"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ],
+      "nearby_landmarks": [
+        "Piazza di Spagna, Pienza"
+      ],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Trattoria Latte di Luna",
+      "city": "Pienza",
+      "cuisine_type": [
+        "Italian",
+        "Tuscan"
+      ],
+      "price_range": "EUR 20-30 per person",
+      "hours": "11:30 AM - 4:30 PM",
+      "ambience": "Charming and unpretentious family-run trattoria, famous as a filming location for The English Patient; cozy patio atmosphere",
+      "highlights": [
+        "Family-run trattoria",
+        "Filming location for The English Patient"
+      ],
+      "must_try_dishes": [
+        "pappardelle with truffle shavings",
+        "cacio e pepe spaghetti",
+        "roast duck",
+        "Buttery pappardelle with truffle shavings",
+        "peppery cacio e pepe spaghetti"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ],
+      "area": "Pienza",
+      "nearby_landmarks": [],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "La Buca di Enea",
+      "city": "Pienza",
+      "cuisine_type": [
+        "Italian",
+        "Tuscan"
+      ],
+      "price_range": "EUR 20-25 per person",
+      "hours": "24 hours",
+      "ambience": "Cozy and slightly off the beaten path, with warm gingham tablecloths and glazed ceramic plates—authentic and local",
+      "highlights": [
+        "Off the beaten path",
+        "Authentic and local"
+      ],
+      "must_try_dishes": [
+        "Ribollita soup",
+        "pecorino drizzled with honey"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ],
+      "area": "Pienza",
+      "nearby_landmarks": [],
+      "vegetarian_friendly": true
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Val d'Orcia",
+      "city": "Pienza",
+      "description": "A UNESCO World Heritage valley famed for its rolling hills, cypress-lined roads, vineyards, and Renaissance towns",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Chapel of Vitaleta",
+      "city": "Pienza",
+      "description": "This iconic chapel is a postcard-perfect image of Tuscany and a must-see. Take your time to enjoy the views and capture some stunning photos",
+      "hours": "09:00–19:00 (daily, may vary seasonally)",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "San Quirico d'Orcia",
+      "city": "Pienza",
+      "description": "A charming medieval hill town in Val d'Orcia, known for its historic walls, Romanesque churches, and the Renaissance Horti Leonini gardens",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Renaissance Apartment",
+      "city": "Pienza",
+      "location": "Corso Rossellino 85",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0
+    },
+    {
+      "name": "Renaissance Apartment",
+      "city": "Pienza",
+      "location": "Corso Rossellino 85, Pienza 53026",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "name": "Renaissance Apartment",
+      "city": "Pienza",
+      "location": "Corso Rossellino 85",
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "name": "Renaissance Apartment",
+      "city": "Pienza",
+      "location": "Corso Rossellino 85, Pienza 53026",
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Pecorino di Pienza cheese",
+      "city": "Pienza",
+      "category": "Food",
+      "where_to_buy": [
+        "Local cheese shops"
+      ],
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0
+    },
+    {
+      "item": "Pecorino di Pienza cheese (vacuum-sealed)",
+      "city": "Pienza",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Tuscan olive oil",
+      "city": "Pienza",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Local wines",
+      "city": "Pienza",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Hand-painted ceramics",
+      "city": "Pienza",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Artisanal linens",
+      "city": "Pienza",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Pecorino di Pienza cheese",
+      "city": "Pienza",
+      "category": "Food",
+      "where_to_buy": [
+        "Local cheese shops"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Tuscan olive oil",
+      "city": "Pienza",
+      "category": "Food",
+      "where_to_buy": [
+        "Local producers"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Local wines",
+      "city": "Pienza",
+      "category": "Food",
+      "where_to_buy": [
+        "Wine shops"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Hand-painted ceramics",
+      "city": "Pienza",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Local artisan shops"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Pecorino di Pienza cheese (vacuum-sealed)",
+      "city": "Pienza",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Tuscan olive oil",
+      "city": "Pienza",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Local wines",
+      "city": "Pienza",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Hand-painted ceramics",
+      "city": "Pienza",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Artisanal linens",
+      "city": "Pienza",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Tuscan red wines (Brunello di Montalcino, Vino Nobile di Montepulciano)",
+      "city": "Pienza",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+    "France/Paris, Switzerland and Italy.pdf",
+    "Switzerland/Paris, Switzerland and Italy.pdf",
+    "Italy/Paris, Switzerland and Italy.pdf"
+  ]
+}

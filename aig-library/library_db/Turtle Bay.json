@@ -1,0 +1,74 @@
+{
+  "restaurants": [
+    {
+      "name": "Mystik Lifestyle",
+      "city": "Turtle Bay",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "6:30–10pm",
+      "highlights": [
+        "Chic vibes",
+        "Modern seafood"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "Mauritius/Mauritius All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Kumin",
+      "city": "Turtle Bay",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "6:30–10:30pm",
+      "highlights": [
+        "Fine-dining",
+        "Inside Westin"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "Mauritius/Mauritius All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Blue Safari Submarine Tour",
+      "city": "Turtle Bay",
+      "description": "A unique underwater experience in a real submarine allowing exploration of vibrant marine life and coral reefs without getting wet",
+      "entry_fee": "Rs. 4500–5500 per person",
+      "recommended_duration": "1.5 hours",
+      "source_files": [
+        "Mauritius/Mauritius All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "The Westin Turtle Bay Resort & Spa",
+      "city": "Turtle Bay",
+      "location": "Turtle Bay",
+      "_source_file": "Mauritius/Mauritius All Inclusive Guide.pdf",
+      "_source_mtime": 1772384262.1653094
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Mauritius/Mauritius All Inclusive Guide.pdf"
+  ]
+}

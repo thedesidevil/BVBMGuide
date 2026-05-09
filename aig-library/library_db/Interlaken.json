@@ -1,0 +1,1382 @@
+{
+  "restaurants": [
+    {
+      "name": "Velo Cafe",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "hours": "10:00 am - 10:00 pm",
+      "must_try_dishes": [
+        "Coffee",
+        "short eats",
+        "Avocado toast",
+        "Halloumi"
+      ],
+      "highlights": [],
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/Where to eat in Switzerland.pdf"
+      ]
+    },
+    {
+      "name": "Cafe de Paris",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "hours": "8:00 am - 3:00 am",
+      "must_try_dishes": [
+        "Coffee",
+        "short eats",
+        "Quiche",
+        "French onion soup",
+        "mille-feuille",
+        "Quiche Lorraine",
+        "grilled chicken",
+        "Breakfast",
+        "Mille-feuille"
+      ],
+      "highlights": [],
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/Where to eat in Switzerland.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Pizpaz",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "11:00 am - 11:00 pm",
+      "must_try_dishes": [
+        "Pastas",
+        "pizzas"
+      ],
+      "highlights": [],
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    },
+    {
+      "name": "China Restaurant",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Chinese"
+      ],
+      "hours": "12:00 pm - 2:00 am",
+      "must_try_dishes": [
+        "dimsums",
+        "noodles"
+      ],
+      "highlights": [],
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    },
+    {
+      "name": "Tom Yum Kung",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "must_try_dishes": [
+        "Pad thai",
+        "noodle soup"
+      ],
+      "highlights": [],
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    },
+    {
+      "name": "OX Restaurant and Grill",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "hours": "10:30 am - 10:30 pm",
+      "must_try_dishes": [
+        "Schnitzel",
+        "Veg burgers",
+        "grilled vegetables",
+        "pasta"
+      ],
+      "highlights": [],
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Chalet Beizli",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "hours": "11am-2:30pm, 5-10pm, Closed on Sun and Mon",
+      "must_try_dishes": [
+        "Rosti"
+      ],
+      "highlights": [
+        "Rosti"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Lal Quila Indian Restaurant",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "10am-10pm",
+      "must_try_dishes": [
+        "Gravies",
+        "rotis",
+        "Rotis"
+      ],
+      "highlights": [
+        "Gravies",
+        "Rotis"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Bamboo",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Chinese"
+      ],
+      "hours": "10:30am-2:30pm, 5-10pm",
+      "must_try_dishes": [
+        "Stews",
+        "stir-fries",
+        "braised dishes"
+      ],
+      "highlights": [],
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Bebbis Restaurant",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "hours": "11am-10pm",
+      "must_try_dishes": [
+        "Hearty Swiss dishes",
+        "Fondue dinners",
+        "Fondue"
+      ],
+      "highlights": [
+        "Hearty Swiss dishes",
+        "Fondue dinners",
+        "Folkloric shows"
+      ],
+      "ambience": "Themed restaurant with cowbells, alphorns & folkloric shows",
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/Where to eat in Switzerland.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ],
+      "area": "Closer to Interlaken west",
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Migros Restaurant",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Swiss eats"
+      ],
+      "hours": "8am-8pm, Sat 8am-6pm, Sun closed",
+      "highlights": [
+        "Serve veg and non veg lunch buffet",
+        "Reasonable prices"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/Where to eat in Switzerland.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ],
+      "must_try_dishes": [
+        "veg and non veg lunch buffet"
+      ],
+      "area": "Closer to Interlaken west",
+      "ambience": "Cafeteria style setting in a supermarket/shopping centre"
+    },
+    {
+      "name": "Layaly Beirut",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Lebanese"
+      ],
+      "hours": "11:30–15:00",
+      "must_try_dishes": [
+        "Mezza",
+        "Fatoush",
+        "Hummus",
+        "Arabic coffee",
+        "Falafel",
+        "lamb kofta",
+        "baklava",
+        "Lamb kofta",
+        "Baklava"
+      ],
+      "highlights": [
+        "Authentic Lebanese cuisine"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/Where to eat in Switzerland.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+      ],
+      "area": "Closer to Interlaken west",
+      "ambience": "Authentic Lebanese plates with alpine backdrop",
+      "vegetarian_friendly": false,
+      "price_range": "₹₹",
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Welcome India King",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "11:30am-10:30pm",
+      "highlights": [
+        "Serves happy hour foods",
+        "Has vegan options"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/Where to eat in Switzerland.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ],
+      "must_try_dishes": [
+        "Chicken Tikka",
+        "Aloo Matar",
+        "Dal",
+        "parathas",
+        "rotis"
+      ],
+      "price_range": "CHF 20-40 per person",
+      "ambience": "A well-established Indian/Punjabi restaurant close to Interlaken West train station, with a casual dine-in or takeaway vibe",
+      "nearby_landmarks": [
+        "Interlaken West train station"
+      ],
+      "area": "Closer to Interlaken west"
+    },
+    {
+      "name": "Taj Palace Interlaken",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹₹₣",
+      "hours": "11:30 PM – 11:00 PM",
+      "ambience": "Refined Indian dining space",
+      "highlights": [
+        "Comforting vegetarian cuisine",
+        "Relaxed dinner"
+      ],
+      "must_try_dishes": [
+        "Dal makhani",
+        "butter chicken",
+        "naan basket",
+        "Butter chicken",
+        "dal makhani",
+        "garlic naan",
+        "Paneer tikka masala",
+        "dal",
+        "naan",
+        "Vegetable biryani",
+        "paneer curry",
+        "butter naan",
+        "Garlic naan"
+      ],
+      "best_for": [
+        "relaxed dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+        "Italy/Paris, Switzerland and Italy.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ],
+      "area": "Interlaken",
+      "nearby_landmarks": [
+        "Harder Kulm, Interlaken"
+      ]
+    },
+    {
+      "name": "Restaurant Bebbis",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Swiss",
+        "Alpine"
+      ],
+      "price_range": "CHF 30–35 per person",
+      "hours": "6:30 AM –10:00 AM",
+      "ambience": "Alpine classic dishes in a cozy chalet atmosphere",
+      "highlights": [
+        "Cozy chalet atmosphere",
+        "Alpine classics"
+      ],
+      "must_try_dishes": [
+        "Rösti with cheese",
+        "fondue",
+        "apple strudel"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ],
+      "area": "Interlaken",
+      "nearby_landmarks": [],
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Restaurant Taverne (Hotel Interlaken)",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Swiss",
+        "European"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "18:30 – 21:30",
+      "ambience": "Fine Swiss-European dining in a historic hotel setting with garden views",
+      "highlights": [
+        "Historic hotel setting",
+        "Garden views",
+        "Free parking at hotel"
+      ],
+      "must_try_dishes": [
+        "Rösti with mountain cheese",
+        "Interlaken-style trout",
+        "dark chocolate mousse",
+        "chocolate mousse",
+        "Chocolate mousse"
+      ],
+      "best_for": [
+        "romantic",
+        "elegant dining"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ],
+      "area": "Interlaken",
+      "nearby_landmarks": [],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Husi Bierhaus",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Local",
+        "Brewpub"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:00 – 23:00",
+      "ambience": "Lively brewpub offering a range of local and international beers",
+      "highlights": [
+        "Craft beer selection",
+        "Vibrant atmosphere",
+        "Central location"
+      ],
+      "must_try_dishes": [
+        "Raclette burger",
+        "house lager",
+        "Cheese fondue",
+        "burgers",
+        "beer-battered fish",
+        "Beer-battered fish",
+        "Chicken schnitzel"
+      ],
+      "best_for": [
+        "casual",
+        "lively evening"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/Where to eat in Switzerland.pdf"
+      ],
+      "area": "Interlaken",
+      "nearby_landmarks": [],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Barracuda Café and Bar",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Café bar"
+      ],
+      "hours": "Closed on sun and mon, Open 4-11pm other days",
+      "must_try_dishes": [
+        "Good sandwiches/wraps",
+        "fresh bagels",
+        "coffee"
+      ],
+      "highlights": [
+        "Outdoor seating available"
+      ],
+      "source_files": [
+        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Little Thai restaurant",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "hours": "Closed mon-tues, Open other days 11am-2pm, 5-10pm",
+      "must_try_dishes": [
+        "Pad thai",
+        "spring rolls",
+        "papaya salad"
+      ],
+      "highlights": [
+        "Ask for daily specials",
+        "Outdoor seating"
+      ],
+      "source_files": [
+        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Taj Mahal",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "2pm-10pm, Closed on wed",
+      "must_try_dishes": [
+        "Chicken Tikka masala"
+      ],
+      "source_files": [
+        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
+        "Switzerland/Where to eat in Switzerland.pdf"
+      ]
+    },
+    {
+      "name": "Harder Kulm Panorama Restaurant",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Swiss",
+        "Alpine"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:00 – 21:00",
+      "ambience": "Dine at 1,322 meters with panoramic views of the Eiger, Mönch, and Jungfrau mountains",
+      "highlights": [
+        "Panoramic mountain views",
+        "Accessible via funicular",
+        "Sunset dining"
+      ],
+      "must_try_dishes": [
+        "Swiss fondue",
+        "alpine macaroni",
+        "seasonal desserts",
+        "apple strudel",
+        "Cheese fondue",
+        "bratwurst with onion sauce",
+        "Alpine macaroni",
+        "Apple strudel"
+      ],
+      "best_for": [
+        "scenic dining",
+        "sunset dinner"
+      ],
+      "source_files": [
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Layaly Beirut Interlaken",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Middle Eastern"
+      ],
+      "price_range": "₹₹₣",
+      "hours": "11:00 AM – 10:00 PM",
+      "area": "Interlaken West Zone",
+      "must_try_dishes": [
+        "Hummus",
+        "falafel",
+        "mezze platters",
+        "Falafel platter",
+        "hummus",
+        "grilled vegetables"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ],
+      "ambience": "Cozy Middle Eastern restaurant in warm and elegant setting",
+      "best_for": [
+        "relaxed dining"
+      ],
+      "highlights": [
+        "Flavorful vegetarian dishes",
+        "Warm and elegant setting"
+      ]
+    },
+    {
+      "name": "Little Thai Interlaken",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Thai",
+        "Asian"
+      ],
+      "price_range": "₹₹₣",
+      "hours": "11:00 AM – 2:00 PM | 5:00 PM - 10:00 PM",
+      "must_try_dishes": [
+        "Veg Thai curry",
+        "pad thai",
+        "stir fry",
+        "Thai curry",
+        "vegetable noodles",
+        "tofu stir fry"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ],
+      "ambience": "Cozy Asian restaurant with relaxed contemporary interiors",
+      "best_for": [
+        "casual dining"
+      ],
+      "highlights": [
+        "Fresh vegetarian dishes",
+        "Relaxed contemporary interiors"
+      ]
+    },
+    {
+      "name": "Restaurant Tandoori Interlaken",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹2,000–3,500 per person",
+      "hours": "11:00 AM – 11:00 PM",
+      "must_try_dishes": [
+        "Paneer tikka",
+        "dal",
+        "naan"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "PizPaz Interlaken",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "10:00 AM – 11:00 PM",
+      "must_try_dishes": [
+        "Veg pizza",
+        "pasta",
+        "salads",
+        "Wood-fired vegetarian pizza",
+        "pasta arrabbiata",
+        "tiramisu"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ],
+      "ambience": "Lively Italian restaurant with relaxed ambience",
+      "best_for": [
+        "casual dining"
+      ],
+      "highlights": [
+        "Excellent vegetarian comfort food",
+        "Relaxed ambience"
+      ]
+    },
+    {
+      "name": "Husi Bierhaus Interlaken",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "German",
+        "Swiss"
+      ],
+      "price_range": "₹2,000–3,500 per person",
+      "hours": "3:00 PM – 11:30 PM",
+      "must_try_dishes": [
+        "Veg burgers",
+        "rösti",
+        "fries"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sapori Interlaken",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹2,000–3,500 per person",
+      "hours": "11:30 PM – 2:00 PM | 6 PM - 10 PM",
+      "must_try_dishes": [
+        "Veg pizza",
+        "pasta",
+        "risotto"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kashmir Restaurant Interlaken",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹2,000–3,500 per person",
+      "hours": "1:00 PM – 9:00 PM",
+      "must_try_dishes": [
+        "Paneer dishes",
+        "dal",
+        "naan"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The 3 Tells Irish Pub",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Irish",
+        "Pub"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:00 AM –12:30 AM",
+      "ambience": "Friendly pub atmosphere with hearty food",
+      "highlights": [
+        "Friendly pub atmosphere with hearty food"
+      ],
+      "must_try_dishes": [
+        "Guinness beef stew",
+        "nachos",
+        "burgers"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Panorama-Restaurant Harder Kulm",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Swiss",
+        "Alpine"
+      ],
+      "price_range": "₹₹",
+      "hours": "9:30 AM –9:00 PM",
+      "ambience": "Sunset dining with panoramic views",
+      "highlights": [
+        "Panoramic mountain views"
+      ],
+      "must_try_dishes": [
+        "Cheese fondue",
+        "alpine macaroni",
+        "bratwurst with onion sauce"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf"
+      ],
+      "nearby_landmarks": [
+        "Harder Kulm"
+      ]
+    },
+    {
+      "name": "Confiserie Rieder",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "hours": "8:30am-6pm, Closed mon and Tuesday opens at 11 on sun",
+      "highlights": [
+        "Breakfast option"
+      ],
+      "must_try_dishes": [
+        "Pastries",
+        "quiches",
+        "viennoisseries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Switzerland/Where to eat in Switzerland.pdf"
+      ]
+    },
+    {
+      "name": "Mr Grill",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Fast food"
+      ],
+      "hours": "10am-10:30pm",
+      "must_try_dishes": [
+        "Chicken burger and fries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Switzerland/Where to eat in Switzerland.pdf"
+      ]
+    },
+    {
+      "name": "Mc Donalds",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Fast food"
+      ],
+      "hours": "10am-12am",
+      "must_try_dishes": [
+        "Chicken burger and fries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Switzerland/Where to eat in Switzerland.pdf"
+      ]
+    },
+    {
+      "name": "Spice India Interlaken",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12:00 PM – 3:00 PM | 5:00 PM - 10:00 PM",
+      "ambience": "Warm and elegant Indian restaurant with welcoming hospitality",
+      "must_try_dishes": [
+        "Paneer tikka masala",
+        "dal makhani",
+        "garlic naan"
+      ],
+      "best_for": [
+        "comfort food"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [
+        "Harder Kulm, Interlaken"
+      ],
+      "highlights": [
+        "Flavorful vegetarian dishes",
+        "Welcoming hospitality"
+      ]
+    },
+    {
+      "name": "Aarburg Café",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "6:00 PM – 10:00 PM",
+      "ambience": "Charming Swiss café-restaurant with peaceful riverside surroundings",
+      "must_try_dishes": [
+        "Rösti",
+        "vegetarian pasta",
+        "hot chocolate"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Azzurra Bar Gelateria",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹₹₣",
+      "hours": "12:00 PM – 7:00 PM",
+      "ambience": "Lively Italian-style restaurant and dessert spot with relaxed ambience",
+      "must_try_dishes": [
+        "Vegetarian pizza",
+        "fresh pasta",
+        "gelato"
+      ],
+      "best_for": [
+        "relaxed dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ],
+      "highlights": [
+        "Relaxed ambience",
+        "Scenic evening vibes"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Marktplatz Interlaken",
+      "city": "Interlaken",
+      "description": "Main square in Interlaken lined with shops, cafes, and restaurants",
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    },
+    {
+      "name": "Yash Chopra Statue",
+      "city": "Interlaken",
+      "description": "Bollywood tribute in a scenic park",
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+      ],
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "30 minutes"
+    },
+    {
+      "name": "Höhematte",
+      "city": "Interlaken",
+      "description": "Large park with scenic mountain views and grassy spaces",
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    },
+    {
+      "name": "Schlosskirche",
+      "city": "Interlaken",
+      "description": "Historic 12th-century monastery church",
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+      ],
+      "hours": "Mon–Sat 10:00–16:00, Sun/Public Holidays 11:30–16:00",
+      "entry_fee": "adults €3, reduced €1, children under 18 free",
+      "recommended_duration": "1 hour"
+    },
+    {
+      "name": "Interlaken Castle",
+      "city": "Interlaken",
+      "description": "Interlaken Castle (former Augustinian monastery) is a historic architectural gem in the town center, featuring a Gothic cloister and 14th-century chapel, exceptional for its medieval significance and charming grounds",
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ],
+      "hours": "24 hours",
+      "entry_fee": "Access to the castle grounds is free",
+      "recommended_duration": "1 hour"
+    },
+    {
+      "name": "Lake Thun Cruise",
+      "city": "Interlaken",
+      "description": "Boat ride featuring Spiez Castle, vineyards, Niesen mountain",
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+      ],
+      "entry_fee": "CHF 29 (~INR 2,600)",
+      "recommended_duration": "~2 hours round trip"
+    },
+    {
+      "name": "Lake Brienz Cruise",
+      "city": "Interlaken",
+      "description": "Boat ride featuring Giessbach Falls, emerald waters, charming lakeside villages",
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+      ],
+      "entry_fee": "CHF 29 (~INR 2,600)",
+      "recommended_duration": "~2 hours round trip"
+    },
+    {
+      "name": "Harder Kulm",
+      "city": "Interlaken",
+      "description": "Spectacular panoramic viewpoint overlooking Lake Thun, Lake Brienz, and surrounding mountain peaks",
+      "source_files": [
+        "France/All Inclusive Guide- Switzerland and Paris.pdf",
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ],
+      "hours": "Approx. 9:00 AM – 6:00 PM",
+      "recommended_duration": "2-3 hours"
+    },
+    {
+      "name": "Marktplatz",
+      "city": "Interlaken",
+      "description": "Lively square surrounded by shops and cafés",
+      "hours": "Open daily, 24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Lake Thun",
+      "city": "Interlaken",
+      "description": "Lake Thun is the largest Swiss lake entirely within one canton, admired for its stunning Alpine scenery, historic castles, and serene cruise experiences",
+      "hours": "Cruises operate year-round with a peak summer schedule (May–Oct) offering hourly departures",
+      "entry_fee": "Free with Swiss Pass",
+      "recommended_duration": "3 hours",
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Lake Brienz",
+      "city": "Interlaken",
+      "description": "Lake Brienz is famed for its deep, turquoise-green waters framed by dramatic Alpine vistas—including the iconic Giessbach Falls—and offers nostalgic paddle-steamer cruises like the Lötschberg",
+      "hours": "Boats generally run 09:00 – 18:00 in the main season (April–October) with multiple daily departures",
+      "entry_fee": "Free with Swiss Pass",
+      "recommended_duration": "3 hours",
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Schlosskirche and Interlaken Castle",
+      "city": "Interlaken",
+      "description": "Historic church and castle complex with architecture and stained glass windows",
+      "source_files": [
+        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+      ]
+    },
+    {
+      "name": "Interlaken Castle (Schloss Interlaken)",
+      "city": "Interlaken",
+      "description": "Small heritage site",
+      "source_files": [
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Jungfraujoch - Top of Europe",
+      "city": "Interlaken",
+      "description": "Alpine summit with glacier views, observatory, ice palace and snow activities",
+      "entry_fee": "CHF 210-240 (~INR 18,000-21,000) round trip",
+      "recommended_duration": "4 hours",
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Jungfraujoch",
+      "city": "Interlaken",
+      "description": "High-altitude excursion known as 'Top of Europe'",
+      "source_files": [
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Harder Kulm Viewpoint",
+      "city": "Interlaken",
+      "description": "Best view of Lakes Thun & Brienz and the Eiger, Mönch, and Jungfrau trio",
+      "entry_fee": "CHF 38 round trip",
+      "hours": "09:10–21:40",
+      "source_files": [
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Hotel Weisses Kreuz",
+      "city": "Interlaken",
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "name": "Central Continental Hotel",
+      "city": "Interlaken",
+      "location": "Interlaken West Zone",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_mtime": 1776834870.0
+    },
+    {
+      "name": "The Hey Guesthouse",
+      "city": "Interlaken",
+      "location": "Interlaken",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+      "_source_mtime": 1751904816.0
+    },
+    {
+      "name": "Hotel Weisses Kreuz",
+      "city": "Interlaken",
+      "location": "Interlaken",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    },
+    {
+      "name": "Airbnb Faulensee",
+      "city": "Interlaken",
+      "location": "Interlakenstrasse 64, Faulensee, Bern 3705, Switzerland",
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    },
+    {
+      "name": "Hotel ORA Lakeview bei Interlaken",
+      "city": "Interlaken",
+      "location": "Peaceful lakeside stay surrounded by alpine scenery",
+      "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "name": "The Hey Guesthouse",
+      "city": "Interlaken",
+      "location": "Interlaken",
+      "_source_file": "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+      "_source_mtime": 1772384309.270034
+    },
+    {
+      "name": "Hotel ORA Lakeview bei Interlaken",
+      "city": "Interlaken",
+      "location": "Peaceful lakeside stay surrounded by dramatic alpine scenery",
+      "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1777872516.0
+    },
+    {
+      "name": "Carlton - Europe Vintage Adults Hotel",
+      "city": "Interlaken",
+      "location": "Interlaken Ost",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "name": "Airbnb Faulensee",
+      "city": "Interlaken",
+      "location": "Interlakenstrasse 64, Faulensee, Bern 3705",
+      "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Cowbells",
+      "city": "Interlaken",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Edelweiss Shop"
+      ],
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "item": "Wooden cows",
+      "city": "Interlaken",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Edelweiss Shop"
+      ],
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "item": "Typical souvenirs like fridge magnets, bottle openers, postcards",
+      "city": "Interlaken",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Edelweiss Shop"
+      ],
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398
+    },
+    {
+      "item": "Cowbells",
+      "city": "Interlaken",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Edelweiss Shop"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    },
+    {
+      "item": "Wooden cows",
+      "city": "Interlaken",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Edelweiss Shop"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    },
+    {
+      "item": "Typical souvenirs like fridge magnets, bottle openers, postcards",
+      "city": "Interlaken",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Edelweiss Shop"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384310.3890185
+    },
+    {
+      "item": "Cowbells",
+      "city": "Interlaken",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Edelweiss Shop"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "item": "Wooden cows",
+      "city": "Interlaken",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Edelweiss Shop"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "item": "Typical souvenirs",
+      "city": "Interlaken",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Edelweiss Shop"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Interlaken",
+      "mode": "Funicular",
+      "description": "Harderbahn Funicular to Harder Kulm viewpoint",
+      "cost": "CHF 38 round trip",
+      "_source_file": "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1772384311.980408
+    },
+    {
+      "city": "Interlaken",
+      "mode": "Local Bus",
+      "description": "Public transport connecting train stations to accommodations and attractions",
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    },
+    {
+      "city": "Interlaken",
+      "mode": "Train",
+      "description": "Interlaken–Lucerne Express, part of the scenic Golden Pass Line",
+      "cost": "Travel time approximately 2 hours",
+      "_source_file": "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1772384364.4304612
+    },
+    {
+      "city": "Interlaken",
+      "mode": "Harderbahn Funicular",
+      "description": "Funicular to Harder Kulm viewpoint, departs every 30 mins",
+      "cost": "CHF 38 round trip",
+      "_source_file": "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1772384364.4304612
+    },
+    {
+      "city": "Interlaken",
+      "mode": "Cable car",
+      "description": "Cable cars and funiculars to mountain destinations like Harder Kulm and Jungfraujoch",
+      "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "France/All Inclusive Guide- Switzerland and Paris.pdf",
+    "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+    "France/Paris, Switzerland and Italy.pdf",
+    "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+    "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
+    "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+    "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+    "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+    "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
+    "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+    "Switzerland/Where to eat in Switzerland.pdf",
+    "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+    "Switzerland/Paris, Switzerland and Italy.pdf",
+    "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+    "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+    "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+    "Italy/Paris, Switzerland and Italy.pdf",
+    "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "restaurants": [
+    {
+      "name": "Edogawa Naramachi",
+      "city": "Nara",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹2,000–3,500 per person",
+      "hours": "11 AM–3 PM, 5–9 PM (11 AM–9 PM on Saturday & Sunday)",
+      "area": "Nara Park area",
+      "nearby_landmarks": [
+        "Nara Park, Nara"
+      ],
+      "highlights": [
+        "Authentic Japanese meal",
+        "strong non-veg option"
+      ],
+      "must_try_dishes": [
+        "Unagi (eel)",
+        "tempura sets"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
+        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Maguro Koya",
+      "city": "Nara",
+      "cuisine_type": [
+        "Japanese",
+        "Seafood"
+      ],
+      "price_range": "₹1,200–2,500 per person",
+      "hours": "11 AM – 8 PM",
+      "area": "Nara Park area",
+      "nearby_landmarks": [
+        "Nara Park, Nara"
+      ],
+      "highlights": [
+        "Unique seafood experience"
+      ],
+      "must_try_dishes": [
+        "Tuna rice bowls"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
+        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kamaiki Udon Nara",
+      "city": "Nara",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹800–1,500 per person",
+      "hours": "11 AM–3 PM, 5–9 PM",
+      "area": "Nara Park area",
+      "nearby_landmarks": [
+        "Nara Park, Nara"
+      ],
+      "highlights": [
+        "Light lunch"
+      ],
+      "must_try_dishes": [
+        "Udon"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
+        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mizuya Chaya",
+      "city": "Nara",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹800–1,200 per person",
+      "hours": "11 AM – 3:30 PM (closed on Wednesday)",
+      "area": "Nara Park area",
+      "nearby_landmarks": [
+        "Nara Park, Nara"
+      ],
+      "highlights": [
+        "Simple veg-friendly stop"
+      ],
+      "must_try_dishes": [
+        "Mochi",
+        "light meals"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
+        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Nara Park",
+      "city": "Nara",
+      "description": "A vast, open park where hundreds of friendly deer roam freely- considered sacred messengers in Japanese culture",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Japan/AA_All Inclusive Guide_Japan.pdf",
+        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
+        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
+        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
+        "Japan/All Inclusive Guide- Japan_PN.pdf",
+        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Todai-ji Temple",
+      "city": "Nara",
+      "description": "Temple housing the Great Buddha statue",
+      "hours": "7:30 AM – 5:30 PM",
+      "entry_fee": "~¥600",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Japan/AA_All Inclusive Guide_Japan.pdf",
+        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
+        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
+        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
+        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
+        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Nara Deer Park",
+      "city": "Nara",
+      "description": "Park where you can feed deer with crackers",
+      "hours": "Park open 24hrs, attractions usually 8am-5pm",
+      "entry_fee": "Free to enter park, pay for crackers and temple entries",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Japan/Detailed Final Itinerary for Japan_05052024.pdf"
+      ]
+    },
+    {
+      "name": "Nara Park (Deer Park)",
+      "city": "Nara",
+      "description": "Famous park with free-roaming deer",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Unagi",
+      "city": "Nara",
+      "description": "Grilled eel served over rice",
+      "vegetarian": false,
+      "where_to_try": "Edogawa Naramachi",
+      "source_files": [
+        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tuna rice bowls",
+      "city": "Nara",
+      "description": "Fresh tuna served over rice",
+      "vegetarian": false,
+      "where_to_try": "Maguro Koya",
+      "source_files": [
+        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Udon",
+      "city": "Nara",
+      "description": "Thick wheat noodles in broth",
+      "vegetarian": true,
+      "where_to_try": "Kamaiki Udon Nara",
+      "source_files": [
+        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Nara",
+      "mode": "Kintetsu",
+      "description": "Direct train from Kintetsu Namba to Kintetsu Nara",
+      "cost": "₹600-₹800 per person",
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan.pdf",
+      "_source_mtime": 1772384322.4841816
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Japan/AA_All Inclusive Guide_Japan.pdf",
+    "Japan/AA_All Inclusive Guide_Japan_v5.docx",
+    "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
+    "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
+    "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
+    "Japan/All Inclusive Guide- Japan_PN.pdf",
+    "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
+    "Japan/Amanda_Japan_All Inclusive Guide.docx"
+  ]
+}

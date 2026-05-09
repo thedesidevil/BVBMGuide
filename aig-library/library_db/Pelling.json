@@ -1,0 +1,480 @@
+{
+  "restaurants": [
+    {
+      "name": "Mount Magnolia Boutique Hotel & Spa Restaurant",
+      "city": "Pelling",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹800–1,200 per person",
+      "hours": "7:00 PM – 10:30 PM",
+      "ambience": "Warm, cozy dining with mountain views",
+      "must_try_dishes": [
+        "Indian curries",
+        "grilled chicken",
+        "soups"
+      ],
+      "best_for": [
+        "comfort",
+        "convenience"
+      ],
+      "highlights": [
+        "Within hotel",
+        "Mountain views"
+      ],
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "K-KITCHEN & BAR",
+      "city": "Pelling",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹800–1,200 per person",
+      "hours": "7:30 AM – 9:00 PM",
+      "must_try_dishes": [
+        "Indian curries",
+        "grilled chicken",
+        "soups"
+      ],
+      "best_for": [
+        "comfort",
+        "convenience"
+      ],
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Big Bowl Restaurant Pelling",
+      "city": "Pelling",
+      "cuisine_type": [
+        "Indian",
+        "Chinese",
+        "Tibetan"
+      ],
+      "price_range": "₹500–800 per person",
+      "hours": "8:00 AM – 10:00 PM",
+      "ambience": "Casual, modern setting",
+      "must_try_dishes": [
+        "Noodles",
+        "chilli chicken",
+        "fried rice"
+      ],
+      "best_for": [
+        "variety",
+        "quick service"
+      ],
+      "highlights": [
+        "Tourist-friendly",
+        "Mix of cuisines"
+      ],
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Grains Pure Veg by Udaan Pine Crest",
+      "city": "Pelling",
+      "cuisine_type": [
+        "Vegetarian"
+      ],
+      "price_range": "₹550–1,500 per person",
+      "hours": "7:30 AM – 10:30 PM",
+      "area": "Pelling-Rimbi Road",
+      "must_try_dishes": [
+        "Dal Bukhara",
+        "rajma masala",
+        "crispy corn",
+        "shahi tukda",
+        "veg thali"
+      ],
+      "best_for": [
+        "scenic fine-dining"
+      ],
+      "highlights": [
+        "Mountain views",
+        "Relaxed ambience",
+        "Pure vegetarian"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Crassula Kitchen-Pelling",
+      "city": "Pelling",
+      "cuisine_type": [
+        "Korean",
+        "Local Himalayan"
+      ],
+      "price_range": "₹350–550 per person",
+      "hours": "7:00 AM – 9:00 PM",
+      "area": "Zero Point, Upper Pelling",
+      "must_try_dishes": [
+        "Korean fried chicken",
+        "momos",
+        "chicken thukpa",
+        "chilli chicken",
+        "fried rice"
+      ],
+      "best_for": [
+        "casual dining"
+      ],
+      "ambience": "Lively ambience with Korean + local Himalayan flavours",
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "RITA'S RESTAURANT",
+      "city": "Pelling",
+      "cuisine_type": [
+        "Local",
+        "Vegetarian"
+      ],
+      "price_range": "₹1–200 per person",
+      "hours": "7:30 AM – 9:00 PM",
+      "nearby_landmarks": [
+        "Chumbi Mountain Retreat, Pelling"
+      ],
+      "must_try_dishes": [
+        "Momos",
+        "chow mein",
+        "aloo dishes",
+        "roti",
+        "simple home-style veg meals"
+      ],
+      "best_for": [
+        "budget-friendly"
+      ],
+      "highlights": [
+        "Quick service",
+        "Homely meals"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mountain Lotus Cafe & Restaurant",
+      "city": "Pelling",
+      "cuisine_type": [
+        "Himalayan",
+        "Local"
+      ],
+      "price_range": "₹200–400 per person",
+      "hours": "8:00 AM – 8:00 PM",
+      "ambience": "Cozy café vibes with scenic mountain views",
+      "must_try_dishes": [
+        "Himalayan thukpa",
+        "momos",
+        "fried rice",
+        "pancakes",
+        "coffee"
+      ],
+      "best_for": [
+        "café vibes"
+      ],
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Starry Bites – Pelling",
+      "city": "Pelling",
+      "cuisine_type": [
+        "Fast Food"
+      ],
+      "price_range": "₹300–600 per person",
+      "hours": "10:00 AM – 9:00 PM",
+      "area": "Upper Pelling",
+      "must_try_dishes": [
+        "Burgers",
+        "pizzas",
+        "sandwiches",
+        "momos",
+        "milkshakes"
+      ],
+      "best_for": [
+        "casual hangouts"
+      ],
+      "highlights": [
+        "Quick bites",
+        "Café-style meals"
+      ],
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "SEUY THAP RESTAURANT",
+      "city": "Pelling",
+      "cuisine_type": [
+        "Sikkimese",
+        "Local"
+      ],
+      "price_range": "₹300–700 per person",
+      "hours": "8:00 AM – 9:30 PM",
+      "area": "Upper Pelling",
+      "must_try_dishes": [
+        "Thukpa",
+        "momos",
+        "pork dishes",
+        "fried rice",
+        "local Sikkimese meals"
+      ],
+      "best_for": [
+        "authentic local flavours"
+      ],
+      "ambience": "Simple, no-frills setting",
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Melting Point Restaurant Pelling",
+      "city": "Pelling",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹300–600 per person",
+      "hours": "8:00 AM – 8:00 PM",
+      "must_try_dishes": [
+        "Indian meals",
+        "noodles"
+      ],
+      "best_for": [
+        "comfort"
+      ],
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "FOOD HUB PELLING",
+      "city": "Pelling",
+      "cuisine_type": [
+        "Fast Food"
+      ],
+      "price_range": "₹200–400 per person",
+      "hours": "9:00 AM – 10:00 PM",
+      "area": "Upper Pelling",
+      "must_try_dishes": [
+        "Burgers",
+        "rolls",
+        "sandwiches",
+        "momos",
+        "fries"
+      ],
+      "best_for": [
+        "budget-friendly"
+      ],
+      "highlights": [
+        "Quick bites",
+        "Fast food options"
+      ],
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Baby Reeten – Pelling",
+      "city": "Pelling",
+      "cuisine_type": [
+        "Local"
+      ],
+      "price_range": "₹250–500 per person",
+      "hours": "10:00 AM – 11:00 PM",
+      "area": "Upper Pelling",
+      "must_try_dishes": [
+        "Momos",
+        "thukpa",
+        "chow mein",
+        "fried rice",
+        "local veg & non-veg dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "ambience": "Homely meals with authentic local flavours in a casual setting",
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Chhang Restaurant",
+      "city": "Pelling",
+      "cuisine_type": [
+        "Local",
+        "Indian"
+      ],
+      "price_range": "₹400–600 per person",
+      "hours": "11:00 AM – 09:00 PM",
+      "ambience": "Cozy local-style restaurant with mountain-view seating",
+      "highlights": [
+        "Mountain-view seating",
+        "Local-style"
+      ],
+      "must_try_dishes": [
+        "Veg thali",
+        "momos",
+        "simple Indian curries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf"
+      ]
+    },
+    {
+      "name": "Snow View Restaurant",
+      "city": "Pelling",
+      "cuisine_type": [
+        "Tibetan",
+        "Asian"
+      ],
+      "price_range": "₹350–550 per person",
+      "hours": "10:00 AM – 08:30 PM",
+      "ambience": "Casual dining restaurant with uninterrupted Kanchenjunga views",
+      "highlights": [
+        "Uninterrupted Kanchenjunga views"
+      ],
+      "must_try_dishes": [
+        "Tibetan thukpa",
+        "fried rice",
+        "veg noodles"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf"
+      ]
+    },
+    {
+      "name": "Hotel Sonamchen Dining Hall",
+      "city": "Pelling",
+      "cuisine_type": [
+        "Indian",
+        "Continental"
+      ],
+      "price_range": "₹600–900 per person",
+      "hours": "07:00 AM – 10:00 PM",
+      "ambience": "Comfortable in-house restaurant with Indian & continental spreads",
+      "highlights": [
+        "In-house restaurant",
+        "Indian & continental spreads"
+      ],
+      "must_try_dishes": [
+        "Soft North Indian meals",
+        "soups",
+        "grilled vegetables"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Pemayangtse Monastery",
+      "city": "Pelling",
+      "description": "One of the oldest and most important monasteries in Sikkim, serene space with prayer flags and pine forests",
+      "hours": "9:00 AM – 6:00 PM",
+      "entry_fee": "₹20–50 per person",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+        "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf"
+      ]
+    },
+    {
+      "name": "Rabdentse Ruins",
+      "city": "Pelling",
+      "description": "Remnants of Sikkim's former capital with moss-covered stones and valley views",
+      "hours": "10:00 AM – 5:00 PM",
+      "entry_fee": "₹20–50 per person",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+        "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf"
+      ]
+    },
+    {
+      "name": "Chenrezig Skywalk & Statue",
+      "city": "Pelling",
+      "description": "Glass skywalk leading to a towering statue of Chenrezig with valley views",
+      "hours": "8:00 AM – 4:00 PM",
+      "entry_fee": "₹50–100 per person",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Rimbi Waterfalls",
+      "city": "Pelling",
+      "description": "Cascading waterfall surrounded by greenery",
+      "hours": "8:00 AM – 6:00 PM",
+      "entry_fee": "₹20–30 per person",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Khecheopalri Lake",
+      "city": "Pelling",
+      "description": "Sacred, wish-fulfilling lake hidden amidst dense forest",
+      "hours": "6:00 AM – 6:00 PM",
+      "entry_fee": "₹20–50 per person",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Skywalk & Chenrezig Statue",
+      "city": "Pelling",
+      "description": "India's first glass skywalk, leading to the gigantic statue of Chenrezig (Avalokiteshvara), the Bodhisattva of Compassion. The site offers spectacular valley views and gentle spiritual ambience",
+      "hours": "09:00 AM – 05:00 PM",
+      "entry_fee": "₹50–100 per person",
+      "source_files": [
+        "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Mount Magnolia Boutique Hotel & Spa",
+      "city": "Pelling",
+      "location": "Hillside retreat with Kanchenjunga views",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+    "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf"
+  ]
+}

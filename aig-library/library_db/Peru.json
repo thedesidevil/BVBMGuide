@@ -1,0 +1,1390 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Ceviche",
+      "city": "Peru",
+      "description": "Peru's national dish, made with fresh raw fish or seafood 'cooked' in lime or lemon juice, mixed with chili, salt, red onions, sweet potato, and Peruvian corn",
+      "vegetarian": false,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Aji de Gallina",
+      "city": "Peru",
+      "description": "Creamy, comforting dish made with shredded chicken in rich, mild yellow sauce, served with rice, boiled potatoes, and black olives",
+      "vegetarian": false,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Lomo Saltado",
+      "city": "Peru",
+      "description": "Popular stir-fry dish, Chinese-Peruvian fusion with marinated strips of beef, onions, tomatoes, and French fries, served with white rice",
+      "vegetarian": false,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Causa Rellena",
+      "city": "Peru",
+      "description": "Cold appetizer featuring layers of mashed yellow Peruvian potatoes with various mayonnaise-based fillings like tuna, chicken, crab or prawns",
+      "vegetarian": false,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Papa a la Huancaína",
+      "city": "Peru",
+      "description": "Sliced boiled yellow potatoes covered in creamy, spicy cheese sauce, garnished with hard-boiled egg and olives",
+      "vegetarian": true,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Locro de Zapallo",
+      "city": "Peru",
+      "description": "Hearty, creamy squash stew made with pieces of squash, potatoes, evaporated milk, queso fresco, and vegetables",
+      "vegetarian": true,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Kapchi",
+      "city": "Peru",
+      "description": "Traditional Andean vegetarian stew from Cusco region, featuring mushrooms and fava beans, with potatoes and rice",
+      "vegetarian": true,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Quinoa Soup",
+      "city": "Peru",
+      "description": "Nutritious soup made with quinoa and assorted vegetables in vegetable broth",
+      "vegetarian": true,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf"
+      ]
+    },
+    {
+      "name": "Tacu Tacu",
+      "city": "Peru",
+      "description": "Peruvian take on rice and beans, traditionally made with leftover rice and beans, often served with fried egg",
+      "vegetarian": true,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Solterito",
+      "city": "Peru",
+      "description": "Refreshing Peruvian salad from Arequipa, made with fava beans, corn, onions, tomatoes, black olives, and queso fresco",
+      "vegetarian": true,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Humitas",
+      "city": "Peru",
+      "description": "Sweet or savory corn cakes wrapped and cooked in corn husks, often made with cheese, onions, and spices",
+      "vegetarian": true,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Arroz Chaufa",
+      "city": "Peru",
+      "description": "Chifa fried rice with bell peppers, soy sauce, egg, and various meats",
+      "vegetarian": false,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Pisco Sour",
+      "city": "Peru",
+      "description": "Peru's national cocktail, made with Pisco, lime juice, simple syrup, egg white, and Angostura bitters",
+      "vegetarian": true,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Chicha Morada",
+      "city": "Peru",
+      "description": "Non-alcoholic traditional drink made from boiled purple corn, pineapple skin, cinnamon, cloves, and sugar",
+      "vegetarian": true,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Inca Kola",
+      "city": "Peru",
+      "description": "Bright yellow, super-sweet fizzy soda that tastes like bubblegum, more popular than Coca-Cola in Peru",
+      "vegetarian": true,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Chilcano",
+      "city": "Peru",
+      "description": "Refreshing Pisco-based cocktail made with Pisco, ginger ale, lime juice, and splash of bitters",
+      "vegetarian": true,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Mate de Coca",
+      "city": "Peru",
+      "description": "Herbal tea made from coca plant leaves, consumed to help with altitude sickness",
+      "vegetarian": true,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Lucuma Milkshake",
+      "city": "Peru",
+      "description": "Milkshake made from unique Peruvian fruit lúcuma, known for sweet, caramel-like flavor",
+      "vegetarian": true,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Emoliente",
+      "city": "Peru",
+      "description": "Warming herbal tea made from blend of medicinal plants like plantain leaf, alfalfa sprouts, barley, and flaxseed",
+      "vegetarian": true,
+      "source_files": [
+        "South America/Craig_ All Inclusive Guide - Peru.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    },
+    {
+      "name": "Quinoa Soup (Sopa de Quinua)",
+      "city": "Peru",
+      "description": "A nutritious soup made with quinoa, often including assorted vegetables (potatoes, carrots, zucchini, peppers) in a vegetable broth",
+      "vegetarian": true,
+      "where_to_try": "Yaku Restaurant",
+      "source_files": [
+        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+        "South America/All Inclusive Guide - Peru_CRE.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Peru",
+      "english": "Hello",
+      "local": "Hola",
+      "category": "greeting",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "english": "Good morning",
+      "local": "Buenos días",
+      "category": "greeting",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "english": "Good afternoon",
+      "local": "Buenas tardes",
+      "category": "greeting",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "english": "Good evening/night",
+      "local": "Buenas noches",
+      "category": "greeting",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "english": "Please",
+      "local": "Por favor",
+      "category": "polite",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "english": "Thank you",
+      "local": "Gracias",
+      "category": "polite",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "english": "You're welcome",
+      "local": "De nada",
+      "category": "polite",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "english": "Excuse me (to get past)",
+      "local": "Permiso",
+      "category": "polite",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "english": "Excuse me/Pardon me",
+      "local": "Disculpe",
+      "category": "polite",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "english": "How much does it cost?",
+      "local": "Cuánto cuesta?",
+      "category": "general",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "english": "Where is the bathroom?",
+      "local": "Dónde está el baño?",
+      "category": "general",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "english": "I am vegetarian",
+      "local": "Soy vegetariano/a",
+      "category": "food",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "english": "Do you have vegetarian/vegan options?",
+      "local": "Tiene opciones vegetarianas/veganas?",
+      "category": "food",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "english": "Yes",
+      "local": "Sí",
+      "category": "general",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "english": "No",
+      "local": "No",
+      "category": "general",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "english": "Goodbye",
+      "local": "Adiós",
+      "category": "greeting",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "english": "Hello",
+      "local": "¡Hola!",
+      "category": "greeting",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "english": "Good morning",
+      "local": "¡Buenos días!",
+      "category": "greeting",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "english": "Good afternoon",
+      "local": "¡Buenas tardes!",
+      "category": "greeting",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "english": "Good evening/night",
+      "local": "¡Buenas noches!",
+      "category": "greeting",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "english": "Please",
+      "local": "Por favor",
+      "category": "polite",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "english": "Thank you",
+      "local": "Gracias",
+      "category": "polite",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "english": "You're welcome",
+      "local": "De nada",
+      "category": "polite",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "english": "Excuse me (to get past someone)",
+      "local": "Permiso",
+      "category": "polite",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "english": "Excuse me/Pardon me",
+      "local": "Disculpe",
+      "category": "polite",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "english": "How much does it cost?",
+      "local": "Cuánto cuesta?",
+      "category": "general",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "english": "Where is the bathroom?",
+      "local": "Dónde está el baño?",
+      "category": "general",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "english": "I am vegetarian",
+      "local": "Soy vegetariano/a",
+      "category": "food",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "english": "Do you have vegetarian/vegan options?",
+      "local": "Tiene opciones vegetarianas/veganas?",
+      "category": "food",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "english": "Yes",
+      "local": "Sí",
+      "category": "general",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "english": "No",
+      "local": "No",
+      "category": "general",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "english": "Goodbye",
+      "local": "Adiós",
+      "category": "greeting",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "english": "Hello",
+      "local": "¡Hola!",
+      "category": "greeting",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "english": "Good morning",
+      "local": "¡Buenos días!",
+      "category": "greeting",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "english": "Good afternoon",
+      "local": "¡Buenas tardes!",
+      "category": "greeting",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "english": "Good evening/night",
+      "local": "¡Buenas noches!",
+      "category": "greeting",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "english": "Please",
+      "local": "Por favor",
+      "category": "polite",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "english": "Thank you",
+      "local": "Gracias",
+      "category": "polite",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "english": "You're welcome",
+      "local": "De nada",
+      "category": "polite",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "english": "Excuse me (to get past someone)",
+      "local": "Permiso",
+      "category": "polite",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "english": "Excuse me/Pardon me (to apologize or get attention)",
+      "local": "Disculpe",
+      "category": "polite",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "english": "How much does it cost?",
+      "local": "Cuánto cuesta?",
+      "category": "general",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "english": "Where is the bathroom?",
+      "local": "Dónde está el baño?",
+      "category": "general",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "english": "I am vegetarian (m/f)",
+      "local": "Soy vegetariano/a",
+      "category": "food",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "english": "Do you have vegetarian/vegan options?",
+      "local": "Tiene opciones vegetarianas/veganas?",
+      "category": "food",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "english": "Yes",
+      "local": "Sí",
+      "category": "general",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "english": "No",
+      "local": "No",
+      "category": "general",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "english": "Goodbye",
+      "local": "Adiós",
+      "category": "greeting",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Be aware of your surroundings, especially in crowded areas like markets, bus terminals, and tourist sites",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Avoid walking alone at night, especially in less-trafficked or poorly lit areas",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Minimize displays of expensive jewelry, watches, cameras, or large amounts of cash",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Beware of pickpockets in crowded areas, keep bags zipped and in front of you",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Use ATMs during daylight hours, preferably inside banks or well-lit, secure locations",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Always use official, registered taxis or ride-sharing apps like Uber or Cabify",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Take it easy for first 24-48 hours in high altitude areas like Cusco to avoid altitude sickness",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Drink plenty of bottled water only, avoid tap water",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Be cautious with street food, choose clean establishments with high turnover",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Be wary of 'Good Samaritan' scams where strangers offer unsolicited help",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Be aware of fake police scams - always ask for official identification",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Negotiate taxi fares before getting in if not using meter or ride-sharing app",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Stay alert and pay attention to surroundings, especially in crowded areas like markets, bus terminals, and tourist sites",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Avoid walking alone at night, especially in less-trafficked or poorly lit areas. Take registered taxi or ride-sharing service",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Minimize displays of expensive jewelry, watches, cameras, or large amounts of cash",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Be careful of pickpockets in crowded areas. Keep bags zipped and in front of you, especially in markets like San Pedro Market",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Use ATMs during daylight hours, preferably inside banks or well-lit, secure locations",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Always use official, registered taxis or ride-sharing apps like Uber or Cabify when in Lima",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Don't drink tap water. Stick to bottled water to avoid stomach issues",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Take it easy for first 24-48 hours when heading to Cusco or Sacred Valley due to high altitudes. Avoid strenuous activity, heavy meals, and alcohol",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Drink plenty of bottled water and consider coca tea to help with altitude sickness",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Be cautious with street food; choose establishments that look clean and have high turnover",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Be wary of strangers offering unsolicited help, especially if they try to distract you",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Be aware of individuals posing as police officers. Always ask for official identification and never hand over passport or wallet",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Stay Alert: Pay attention to what's happening around you, especially in crowded areas like markets, bus terminals, and tourist sites",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Avoid Walking Alone at Night: Especially in less-trafficked or poorly lit areas. Take a registered taxi or ride-sharing service",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Minimize Displays: Avoid flashing expensive jewelry, watches, cameras, or large amounts of cash",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Beware of Pickpockets: In crowded areas, keep bags zipped and in front of you. Be especially careful in markets (like San Pedro Market)",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "ATMs: Use ATMs during daylight hours, preferably inside banks or well-lit, secure locations. Be mindful of anyone watching you",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Bags: When sitting at a cafe or restaurant, don't hang your bag on the back of your chair; keep it on your lap or between your feet",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Registered Taxis: Always use official, registered taxis (they usually have a taxi sign on top and company numbers on the side) or ride-sharing apps like Uber or Cabify when in Lima",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Hydration: Drink plenty of water (bottled water only!)",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Food & Water: Stick to bottled water. Be cautious with street food; choose establishments that look clean and have high turnover. Wash fruits and vegetables thoroughly",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Good Samaritan Scams: Be wary of strangers who approach you offering unsolicited help, especially if they try to distract you",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Fake Police: There have been reports of individuals posing as police officers to demand money or search tourists' bags. Always ask for official identification and never hand over your passport or wallet. If suspicious, insist on going to the nearest police station",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Overcharging: Negotiate taxi fares before getting in, especially if not using a meter or ride-sharing app. Check restaurant bills carefully",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Alpaca & Baby Alpaca Products",
+      "city": "Peru",
+      "category": "Fashion",
+      "where_to_buy": [
+        "San Pedro Market, Cusco",
+        "San Blas Market, Cusco",
+        "Sol Alpaca, Miraflores",
+        "Kuna, Miraflores",
+        "Barranco shops"
+      ],
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "item": "Ceramics and Pottery",
+      "city": "Peru",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "San Blas artisan shops, Cusco"
+      ],
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "item": "Musical Instruments",
+      "city": "Peru",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "San Pedro Market, Cusco"
+      ],
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "item": "Peruvian Pima Cotton Apparel",
+      "city": "Peru",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Miraflores clothing stores and boutiques"
+      ],
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "item": "Peruvian Coffee",
+      "city": "Peru",
+      "category": "Food",
+      "where_to_buy": [
+        "Amazonian regions"
+      ],
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "item": "Artisan Chocolate",
+      "city": "Peru",
+      "category": "Food",
+      "where_to_buy": [
+        "Vivanda supermarket",
+        "Wong supermarket",
+        "Miraflores specialty shops"
+      ],
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "item": "Alpaca & Baby Alpaca Products",
+      "city": "Peru",
+      "category": "Fashion",
+      "where_to_buy": [
+        "San Pedro Market, Cusco",
+        "San Blas Market, Cusco",
+        "Traditional markets in Sacred Valley",
+        "Sol Alpaca, Miraflores",
+        "Kuna, Miraflores",
+        "Smaller shops in Barranco"
+      ],
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "item": "Ceramics and Pucará bulls",
+      "city": "Peru",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Artisan shops in Cusco (especially San Blas)",
+        "Specific workshops in Sacred Valley"
+      ],
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "item": "Musical Instruments (panpipes, flutes, drums)",
+      "city": "Peru",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "San Pedro Market, Cusco"
+      ],
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "item": "Peruvian Pima Cotton Apparel",
+      "city": "Peru",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Clothing stores and boutiques in Miraflores"
+      ],
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "item": "Peruvian Coffee",
+      "city": "Peru",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets",
+        "Gourmet food stores",
+        "Specialty shops in Miraflores"
+      ],
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "item": "Artisan Chocolate",
+      "city": "Peru",
+      "category": "Food",
+      "where_to_buy": [
+        "Vivanda supermarket",
+        "Wong supermarket",
+        "Gourmet food stores",
+        "Specialty shops in Miraflores"
+      ],
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "item": "High-Quality Alpaca & Baby Alpaca Products",
+      "city": "Peru",
+      "category": "Fashion",
+      "where_to_buy": [
+        "San Pedro Market, Cusco",
+        "San Blas Market, Cusco",
+        "Traditional markets in Sacred Valley",
+        "Sol Alpaca, Miraflores",
+        "Kuna, Miraflores",
+        "Smaller shops in Barranco"
+      ],
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "item": "Ceramics and Pucará bulls",
+      "city": "Peru",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Artisan shops in Cusco (especially San Blas)"
+      ],
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "item": "Musical Instruments (panpipes, flutes, drums)",
+      "city": "Peru",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "San Pedro Market in Cusco"
+      ],
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "item": "Peruvian Pima Cotton Apparel",
+      "city": "Peru",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Clothing stores and boutiques in Miraflores"
+      ],
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "item": "Peruvian Coffee",
+      "city": "Peru",
+      "category": "Food",
+      "where_to_buy": [
+        "Various locations"
+      ],
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "item": "Artisan Chocolate",
+      "city": "Peru",
+      "category": "Food",
+      "where_to_buy": [
+        "Vivanda supermarket",
+        "Wong supermarket",
+        "Gourmet food stores in Miraflores",
+        "Specialty shops in Miraflores"
+      ],
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Peru",
+      "service": "General Emergency",
+      "number": "105",
+      "notes": "Police/Fire/Ambulance - primary emergency number",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "service": "Tourist Police",
+      "number": "+51 1 460 1060",
+      "notes": "POLTUR Lima, specifically for tourists, often have English-speaking staff",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "service": "Indian Embassy",
+      "number": "+51 1 261 6006 / 261 6007",
+      "notes": "Embassy of India, Lima - for consular assistance, lost passports",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "city": "Peru",
+      "service": "General Emergency (Police/Fire/Ambulance)",
+      "number": "105",
+      "notes": "Primary emergency number for police and can direct to other services",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "service": "Tourist Police (POLTUR)",
+      "number": "+51 1 460 1060",
+      "notes": "Lima, specifically for tourists. Can assist with crimes against tourists, lost passports. Often have English-speaking staff",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "service": "Embassy of India",
+      "number": "+51 1 261 6006 / 261 6007",
+      "notes": "Address: Av. Salaverry 3006, San Isidro, Lima 27, Peru. For consular assistance, lost passports, or other emergencies involving Indian citizens",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "city": "Peru",
+      "service": "General Emergency (Police/Fire/Ambulance)",
+      "number": "105",
+      "notes": "Primary emergency number for police and can direct you to other services",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "service": "Tourist Police (POLTUR)",
+      "number": "+51 1 460 1060",
+      "notes": "Lima, specifically for tourists. They can assist with crimes against tourists, lost passports, etc. They often have English-speaking staff",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "city": "Peru",
+      "service": "Embassy of India, Lima",
+      "number": "+51 1 261 6006 / 261 6007",
+      "notes": "Address: Av. Salaverry 3006, San Isidro, Lima 27, Peru. For consular assistance, lost passports, or other emergencies involving Indian citizens",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "eSIM options available through Airalo, Saily or Nomad",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Claro offers extensive coverage, particularly in urban areas and for national travel",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Paper SIMs can be bought from Lima airport, official carrier stores or supermarkets",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "eSIM-friendly providers include Airalo, Saily or Nomad",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "For paper SIMs, Claro is known for extensive coverage, particularly in urban areas and for national travel",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "You can buy SIM cards from Lima airport, official carrier stores, or supermarkets",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "eSIM-Friendly Providers: Airalo, Saily or Nomad",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Paper SIMs (Local): Claro - Known for extensive coverage, particularly in urban areas and for national travel. You can buy one from the Lima airport or official carrier stores or supermarkets",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Recommended vaccinations include: diphtheria, tetanus, polio, typhus, hepatitis A/B, and rabies",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Yellow fever vaccine strongly recommended for Amazon trips (Puerto Maldonado or Iquitos) and required for travelers from yellow fever-infected countries",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Yellow fever certificate valid 10 days after vaccination and remains valid for 10 years",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "CDC recommends anti-malarial drugs if traveling to northern Peru and Iquitos in Amazon",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Consult with your doctor for most up-to-date vaccination and anti-malarial medication advice",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Carry prescriptions in original packaging plus digital copy",
+      "_source_file": "South America/Craig_ All Inclusive Guide - Peru.pdf",
+      "_source_mtime": 1772384387.8070443
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Recommended vaccinations include: diphtheria, tetanus, polio, typhus, hepatitis A/B, and rabies",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Yellow fever vaccine is strongly recommended for trips to the Amazon (Puerto Maldonado or Iquitos) and required for travelers arriving from yellow fever-infected countries",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Yellow fever certificate is valid 10 days after vaccination and remains valid for 10 years",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "CDC recommends taking anti-malarial drugs if traveling to northern parts of Peru and Iquitos in the Amazon",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Consult with your doctor for most up-to-date information and advice on vaccinations and anti-malarial medication",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Carry prescriptions in original packaging plus digital copy",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Recommended vaccinations for Peru include: diphtheria, tetanus, polio, typhus, hepatitis A/B, and rabies",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "A yellow fever vaccine is strongly recommended for trips to the Amazon (Puerto Maldonado or Iquitos) and required for travelers arriving from yellow fever-infected countries in Africa or Latin America",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "The yellow fever certificate is valid 10 days after vaccination and remains valid for a period of 10 years",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "The Center for Disease Control and Prevention recommends taking anti-malarial drugs if traveling to the northern parts of Peru and Iquitos in the Amazon",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "It is important to consult with your doctor for the most up-to-date information and advice on vaccinations and anti-malarial medication for your specific travel plans in Peru",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Peru"
+      ],
+      "tip": "Carry prescriptions in original packaging + digital copy",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_mtime": 1751044942.0
+    }
+  ],
+  "source_files": [
+    "South America/Craig_ All Inclusive Guide - Peru.pdf",
+    "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+    "South America/All Inclusive Guide - Peru_CRE.pdf"
+  ]
+}

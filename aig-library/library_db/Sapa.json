@@ -1,0 +1,955 @@
+{
+  "restaurants": [
+    {
+      "name": "Hmong Restaurant",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹₹",
+      "hours": "8:00 AM – 10:30 PM",
+      "must_try_dishes": [],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Yummy Restaurant",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹₹",
+      "hours": "8:00 AM – 10:00 PM",
+      "must_try_dishes": [
+        "Coconut chicken curry"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx",
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    },
+    {
+      "name": "Little Vietnam Restaurant Sapa",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹₂",
+      "hours": "8:30 AM – 11:00 PM",
+      "must_try_dishes": [
+        "Pumpkin soup",
+        "coconut chicken curry",
+        "sticky rice in bamboo",
+        "Sapa hotpot",
+        "grilled pork with herbs"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx",
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Cafe Bao Cấp Sapa",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Coffee"
+      ],
+      "price_range": "₹",
+      "hours": "7:00 AM – 11:00 PM",
+      "must_try_dishes": [],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "FAMILY Sapa Restaurant & Vegan",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese",
+        "Vegan"
+      ],
+      "price_range": "₹₂",
+      "hours": "9:30 AM – 10:30 PM",
+      "highlights": [
+        "Vegan options"
+      ],
+      "must_try_dishes": [],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Chợ Tình Quán",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹₂₂",
+      "hours": "8:30 AM – 10:00 PM",
+      "must_try_dishes": [],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Good Morning View Restaurant Sapa",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹₂",
+      "hours": "9:00 AM – 10:00 PM",
+      "must_try_dishes": [
+        "Salmon hotpot",
+        "stir-fried vegetables"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx",
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Chicago Pizza",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Pizza"
+      ],
+      "price_range": "₹₂",
+      "hours": "9:30 AM – 10:00 PM",
+      "must_try_dishes": [],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "White Cloud Cafe & Restaurant",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Coffee"
+      ],
+      "price_range": "₹₂",
+      "hours": "10:00 AM – 10:30 PM",
+      "must_try_dishes": [
+        "Spring rolls",
+        "pizza",
+        "desserts"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx",
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    },
+    {
+      "name": "Le Gecko Café Sapa",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Western",
+        "Café"
+      ],
+      "price_range": "₹400 – ₹800 per person",
+      "hours": "6:30 AM – 11:00 PM",
+      "ambience": "Cozy café with balcony views over the town",
+      "must_try_dishes": [
+        "Pancakes with honey",
+        "omelettes",
+        "Vietnamese coffee"
+      ],
+      "best_for": [
+        "relaxed breakfast with a view"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Good Morning Vietnam Restaurant Sapa",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Western",
+        "Café"
+      ],
+      "price_range": "₹400 – ₹800 per person",
+      "hours": "9:00 AM – 10:30 PM",
+      "ambience": "Casual, welcoming café-style restaurant",
+      "must_try_dishes": [
+        "Fresh fruit bowls",
+        "light sandwiches",
+        "Vietnamese coffee"
+      ],
+      "best_for": [
+        "light and easy meal"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Moment Romantic Restaurant Sapa",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹700 – ₹1,300 per person",
+      "hours": "9:30 AM – 10:00 PM",
+      "ambience": "Cozy, slightly upscale with mountain views",
+      "must_try_dishes": [
+        "Salmon hotpot",
+        "sautéed vegetables",
+        "local dishes"
+      ],
+      "best_for": [
+        "relaxed scenic lunch"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Red Dzao House Sapa",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese",
+        "Ethnic"
+      ],
+      "price_range": "₹700 – ₹1,300 per person",
+      "hours": "10:00 AM – 9:00 PM",
+      "ambience": "Traditional wooden house with cultural décor",
+      "must_try_dishes": [
+        "Herbal hotpot",
+        "grilled meats",
+        "mountain vegetables"
+      ],
+      "best_for": [
+        "authentic ethnic cuisine"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pizza Sapa",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Western",
+        "Pizza"
+      ],
+      "price_range": "₹600 – ₹1,200 per person",
+      "hours": "10:00 AM – 11:00 PM",
+      "ambience": "Casual, cozy restaurant",
+      "must_try_dishes": [
+        "Wood-fired pizza",
+        "pasta",
+        "desserts"
+      ],
+      "best_for": [
+        "easy comfort meal"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "A Quynh Restaurant Sapa",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹700 – ₹1,400 per person",
+      "hours": "9:00 AM – 11:30 PM",
+      "ambience": "Warm, traditional setting with local character",
+      "must_try_dishes": [
+        "Black chicken hotpot",
+        "mountain herbs dishes"
+      ],
+      "best_for": [
+        "authentic Sapa cuisine"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Anh Dung 2 Restaurant Sapa",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹400 – ₹900 per person",
+      "hours": "7:00 AM – 11:00 PM",
+      "ambience": "Casual local restaurant",
+      "must_try_dishes": [
+        "Stir-fried noodles with beef",
+        "vegetable dishes"
+      ],
+      "best_for": [
+        "quick hearty meal"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sapa Cuisine Restaurant",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹500 – ₹1,000 per person",
+      "hours": "9:00 AM – 8:30 PM",
+      "ambience": "Cozy interiors with mountain-town charm",
+      "must_try_dishes": [
+        "Grilled pork skewers",
+        "fresh salads"
+      ],
+      "best_for": [
+        "balanced relaxed lunch"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Saparis Eatery & Cocktail Bar",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese",
+        "Fusion"
+      ],
+      "price_range": "₹800 – ₹1,500 per person",
+      "hours": "7:00 AM – 11:00 PM",
+      "ambience": "Stylish, modern restaurant with cozy lighting",
+      "must_try_dishes": [
+        "Grilled meats",
+        "fusion Vietnamese dishes",
+        "cocktails"
+      ],
+      "best_for": [
+        "contemporary dining"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Le Petit Gecko Sapa",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Western",
+        "European"
+      ],
+      "price_range": "₹600 – ₹1,200 per person",
+      "hours": "7:00 AM – 10:30 PM",
+      "ambience": "Cozy European-style café",
+      "must_try_dishes": [
+        "Pasta",
+        "baked dishes",
+        "desserts"
+      ],
+      "best_for": [
+        "light comforting dinner"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Muong Hoa Restaurant Sapa",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹600 – ₹1,200 per person",
+      "hours": "9:00 AM – 9:00 PM",
+      "ambience": "Traditional wooden interiors with valley views",
+      "must_try_dishes": [
+        "Grilled river fish",
+        "mountain vegetable dishes"
+      ],
+      "best_for": [
+        "post-trek hearty meal"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sapa Lotus Restaurant",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹500 – ₹1,000 per person",
+      "hours": "9:00 AM – 10:00 PM",
+      "ambience": "Comfortable, modern Vietnamese setting",
+      "must_try_dishes": [
+        "Stir-fried glass noodles",
+        "tofu dishes"
+      ],
+      "best_for": [
+        "balanced relaxed lunch"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Vietnames Restaurant Sapa",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹400 – ₹900 per person",
+      "hours": "8:30 AM – 11:00 PM",
+      "ambience": "Simple, clean and casual",
+      "must_try_dishes": [
+        "Fresh spring rolls",
+        "grilled chicken dishes"
+      ],
+      "best_for": [
+        "light quick meal"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "BB Hotel Sapa Restaurant",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹800 – ₹1,500 per person",
+      "hours": "6:00 AM – 10:00 PM",
+      "ambience": "Elegant dining with mountain views",
+      "must_try_dishes": [
+        "Grilled lamb",
+        "Vietnamese fusion dishes"
+      ],
+      "best_for": [
+        "relaxed upscale dinner"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sapa Sky View Restaurant",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹700 – ₹1,400 per person",
+      "hours": "7:00 AM – 10:00 PM",
+      "ambience": "Rooftop-style restaurant with panoramic views",
+      "must_try_dishes": [
+        "Hotpot",
+        "grilled meats",
+        "local specialties"
+      ],
+      "best_for": [
+        "scenic dinner"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Casa Italia Sapa",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹700 – ₹1,300 per person",
+      "hours": "10:00 AM – 10:30 PM",
+      "ambience": "Cozy Italian restaurant",
+      "must_try_dishes": [
+        "Pasta",
+        "risotto",
+        "desserts"
+      ],
+      "best_for": [
+        "comfort European meal"
+      ],
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Casa Italia Pizza",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Pizzeria"
+      ],
+      "price_range": "₹600-900 per person",
+      "hours": "9:30 am – 10:30 pm",
+      "highlights": [
+        "Lasanga, 4 cheese pizza, margherita pizzas"
+      ],
+      "must_try_dishes": [
+        "Lasanga",
+        "4 cheese pizza",
+        "margherita pizzas"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    },
+    {
+      "name": "Old Town Restaurant",
+      "city": "Sapa",
+      "cuisine_type": [
+        "European"
+      ],
+      "price_range": "₹600-900 per person",
+      "hours": "9 am – 11 pm",
+      "highlights": [
+        "Salads, pastas, burgers"
+      ],
+      "must_try_dishes": [
+        "Salads",
+        "pastas",
+        "burgers"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    },
+    {
+      "name": "Fansipan Terrace Café and Homestay",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "Not specified",
+      "hours": "Not specified",
+      "ambience": "Beautiful atmosphere and views",
+      "highlights": [
+        "Beautiful atmosphere and views"
+      ],
+      "must_try_dishes": [
+        "Sandwiches"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    },
+    {
+      "name": "Viettrekking Coffee and Restaurant",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹300 per person",
+      "hours": "7 am – 10 pm",
+      "ambience": "It has a view of the funicular crossing the valley",
+      "highlights": [
+        "View of the funicular crossing the valley"
+      ],
+      "must_try_dishes": [
+        "Milk tea with boba",
+        "Iced Chocolate Brulee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    },
+    {
+      "name": "Paradise Restaurant",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹300 per person",
+      "hours": "8 am – 10 pm",
+      "ambience": "Simple, no frills restaurant",
+      "highlights": [
+        "Simple, no frills restaurant"
+      ],
+      "must_try_dishes": [
+        "Spring rolls with chicken",
+        "papaya salad"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    },
+    {
+      "name": "Pho Bac Ha",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Not specified",
+      "hours": "Not specified",
+      "highlights": [
+        "No veg options",
+        "This is the only item on their menu"
+      ],
+      "must_try_dishes": [
+        "Chicken pho with brown rice noodles"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    },
+    {
+      "name": "O Quy Ho Sapa Restaurant",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹600-900",
+      "hours": "9 am – 10 pm",
+      "highlights": [
+        "Chicken with pumpkin",
+        "spring rolls",
+        "black chicken",
+        "pumpkin soup"
+      ],
+      "must_try_dishes": [
+        "Chicken with pumpkin",
+        "spring rolls",
+        "black chicken",
+        "pumpkin soup"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    },
+    {
+      "name": "Viet Deli Restaurant",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹300 per person",
+      "hours": "8 am – 10 pm",
+      "highlights": [
+        "Fresh salads",
+        "fried tofu & sweet potatoes",
+        "Fish Hot Pot"
+      ],
+      "must_try_dishes": [
+        "Fresh salads",
+        "fried tofu & sweet potatoes",
+        "Fish Hot Pot"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    },
+    {
+      "name": "Sapa Memory Restaurant",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹600-900",
+      "hours": "Not specified",
+      "highlights": [
+        "Has veg options as well"
+      ],
+      "must_try_dishes": [
+        "Chicken curry"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    },
+    {
+      "name": "Sang Meo Restaurant",
+      "city": "Sapa",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹300 per person",
+      "hours": "8 am – 10 pm",
+      "highlights": [
+        "Has veg options as well"
+      ],
+      "must_try_dishes": [
+        "Fish hot pot",
+        "Fried chicken with chili and garlic"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Muong Hoa Valley",
+      "city": "Sapa",
+      "description": "Stunning valley famous for its dramatic terraced rice fields, winding streams, and traditional ethnic minority villages",
+      "hours": "Open all day",
+      "entry_fee": "Approx. 150,000 VND (~INR 500)",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Fansipan Mountain",
+      "city": "Sapa",
+      "description": "The highest peak in Indochina at 3,143 meters above sea level, famous for its spectacular three-rope cable car system",
+      "hours": "7:30 AM – 5:30 PM",
+      "entry_fee": "approx. VND 750,000 (~INR 2,500–3,000)",
+      "recommended_duration": "4-5 hours",
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Rong May Glass Bridge (Dragon Cloud Bridge)",
+      "city": "Sapa",
+      "description": "Dramatic glass-bottom skywalk extends from a cliffside high above the valley, offering a thrilling perspective over the mountains below",
+      "hours": "7:00 AM – 5:30 PM",
+      "entry_fee": "approx. VND 400,000 (~INR 1,300)",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Vietnam/Mohnish_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Fansipan Cable Car Station Sapa",
+      "city": "Sapa",
+      "description": "One of the world's longest and highest cable cars, ascending through clouds, lush valleys, and dramatic mountain landscapes to Vietnam's highest peak",
+      "hours": "~7:30 AM – 2:30 PM",
+      "entry_fee": "~₹2,500 – ₹3,500 per person",
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Cat Cat Village Sapa",
+      "city": "Sapa",
+      "description": "Black H'mong community village with stone paths, traditional wooden houses, terraced fields, and small waterfalls",
+      "hours": "6:00 AM – 6:00 PM",
+      "entry_fee": "~₹200 – ₹300",
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Y Linh Ho Village Sapa",
+      "city": "Sapa",
+      "description": "Starting point for scenic trek through terraced rice fields and traditional villages",
+      "hours": "Daylight hours",
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Lao Chai Village Sapa",
+      "city": "Sapa",
+      "description": "Traditional Black H'mong village along the trekking route with terraced rice fields",
+      "hours": "Daylight hours",
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ta Van Village Sapa",
+      "city": "Sapa",
+      "description": "Giay community village featuring traditional homes and mountain agriculture",
+      "hours": "Daylight hours",
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sapa Market",
+      "city": "Sapa",
+      "description": "Vibrant local market with textiles, handicrafts, and glimpses of ethnic minority culture",
+      "hours": "6:00 AM – 6:00 PM",
+      "entry_fee": "Free entry",
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sapa Stone Church",
+      "city": "Sapa",
+      "description": "Unique blend of architectural styles and cultural influences, making it a notable landmark",
+      "hours": "6 am to 8:30pm",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    },
+    {
+      "name": "Rong May Glass Bridge (Sapa Glass Bridge)",
+      "city": "Sapa",
+      "description": "Situated on Mount O Quy Ho, near Sapa, at an elevation of over 2,200 meters above sea level. The bridge is made entirely of transparent tempered glass, offering breathtaking views of the surrounding mountains and valleys. It extends 60 meters from the cliff's edge.",
+      "hours": "7:30 am – 6pm",
+      "entry_fee": "500,000 VND per adult",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    },
+    {
+      "name": "Fansipan",
+      "city": "Sapa",
+      "description": "Known as the rooftop of Indochina. Accessible via Muong Hoa Mountain Train, Fansipan Cable Car and Fansipan Mountain Train/funicular. Can continue up 600 stairs to the peak.",
+      "hours": "08:30 am- 4:30pm",
+      "entry_fee": "Muong Hoa Mountain Train: 150,000 VND per adult round trip, Fansipan Cable Car: 800,000 VND per adult round trip, Fansipan Mountain Train: 270,000 VND round trip per adult",
+      "recommended_duration": "Full day",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    },
+    {
+      "name": "Heaven's Gate Sapa",
+      "city": "Sapa",
+      "description": "Nestled within the magnificent O Quy Ho Pass at 2,000 meters above sea level. From this vantage point, visitors can gaze down at the challenging terrain of Hoang Lien Son Mountain Range or marvel at the grandeur of Fansipan.",
+      "hours": "9am- 5pm",
+      "entry_fee": "120,000 VND per person",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    },
+    {
+      "name": "Ham Rong Mountain (Sapa Dragon Mountain)",
+      "city": "Sapa",
+      "description": "Named after its unique shape, which resembles the head of a dragon. Great place to enjoy stunning views of Sapa town, terraced rice fields, and the Hoang Lien Son mountain range. Home to a beautiful flower garden with colorful blooms.",
+      "hours": "7 am- 6pm",
+      "entry_fee": "70,000 VND per adult",
+      "recommended_duration": "3 hours",
+      "source_files": [
+        "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Sapa Praha Hotel",
+      "city": "Sapa",
+      "location": "Central Sapa",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    },
+    {
+      "name": "Lacasa Sapa Hotel",
+      "city": "Sapa",
+      "location": "Sapa town center",
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_mtime": 1778197216.0
+    },
+    {
+      "name": "DeLaSol Sapa",
+      "city": "Sapa",
+      "location": "Sapa town",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Sapa Hotpot",
+      "city": "Sapa",
+      "description": "Regional hotpot specialty featuring local mountain ingredients and herbs",
+      "vegetarian": false,
+      "where_to_try": "Little Vietnam Restaurant Sapa",
+      "source_files": [
+        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Sapa",
+      "mode": "Cable Car",
+      "description": "Cable car system to reach Fansipan Mountain peak",
+      "recommended_pass": null,
+      "cost": "approx. VND 750,000 (~INR 2,500–3,000)",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Vietnam/Mohnish_All Inclusive Guide.docx",
+    "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+    "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf"
+  ]
+}

@@ -1,0 +1,1186 @@
+{
+  "restaurants": [
+    {
+      "name": "Myeongdong Kyoja",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "budget",
+      "hours": "10:30 AM – 9:30 PM",
+      "area": "Myeongdong",
+      "highlights": [
+        "Long-standing local favorite",
+        "Known for handmade noodle dishes and dumplings"
+      ],
+      "must_try_dishes": [
+        "Kalguksu (hand-cut noodles)",
+        "Vegetarian noodles"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf",
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ],
+      "ambience": "Busy local favourite",
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Jjukkumi Bulgogi",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "budget",
+      "hours": "12:00 PM – 10:00 PM",
+      "area": "Myeongdong",
+      "highlights": [
+        "Spicy baby octopus BBQ"
+      ],
+      "must_try_dishes": [
+        "Spicy baby octopus BBQ"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "La Yeon",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "luxury",
+      "hours": "12:00 PM – 2:30 PM, 5:30 PM - 9:30 PM",
+      "area": "Lotte Mall",
+      "highlights": [
+        "Michelin starred",
+        "Upscale fine Korean dining"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Food Court at Lotte World Mall",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Korean",
+        "Asian"
+      ],
+      "price_range": "budget",
+      "hours": "10:30 AM – 10:00 PM",
+      "area": "Lotte World Mall",
+      "highlights": [
+        "Varied quick eats",
+        "Fast food options"
+      ],
+      "must_try_dishes": [
+        "Bibimbap",
+        "Ramen"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Jinjja Chicken",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "budget",
+      "hours": "11:00 AM – 10:00 PM",
+      "area": "Lotte World Mall",
+      "highlights": [
+        "Korean fried chicken with spicy sauces"
+      ],
+      "must_try_dishes": [
+        "Korean fried chicken"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Tosokchon Samgyetang",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "luxury",
+      "hours": "10:00 AM – 10:00 PM",
+      "nearby_landmarks": [
+        "Gyeongbokgung Palace, Seoul"
+      ],
+      "highlights": [
+        "Cultural dining experience"
+      ],
+      "must_try_dishes": [
+        "Ginseng chicken soup"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf",
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ],
+      "ambience": "Traditional Korean setting",
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Café Onion Anguk",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "mid-range",
+      "hours": "9:00 AM – 10:00 PM",
+      "nearby_landmarks": [
+        "Bukchon Hanok Village, Seoul"
+      ],
+      "highlights": [
+        "Stunning industrial-meets-hanok café",
+        "Courtyard seating",
+        "Beautifully styled pastries"
+      ],
+      "must_try_dishes": [
+        "Pastries",
+        "Fresh pastries",
+        "Breads",
+        "Coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf",
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ],
+      "ambience": "Hanok-style Instagrammable café",
+      "area": "Anguk",
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Baedongbaji",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "mid-range",
+      "hours": "12:00 PM – 9:00 PM",
+      "highlights": [
+        "Authentic modern Korean",
+        "Cozy hanok setting"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Gwangjang Market Food Alley",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "budget",
+      "hours": "9:00 AM – 10:30 PM",
+      "area": "Gwangjang Market",
+      "highlights": [
+        "Local specialties",
+        "Authentic setting"
+      ],
+      "must_try_dishes": [
+        "Bindaetteok (mung bean pancake)",
+        "Mayak gimbap"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Hongdae Dakgalbi",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "budget",
+      "hours": "11:00 AM – 10:30 PM",
+      "area": "Hongdae",
+      "highlights": [
+        "Spicy stir-fried chicken"
+      ],
+      "must_try_dishes": [
+        "Dakgalbi"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Isaac Toast Myeongdong",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "budget",
+      "hours": "7:00 AM – 8:00 PM",
+      "area": "Myeongdong",
+      "highlights": [
+        "Quick vegetarian options",
+        "Korean-style breakfast toast sandwiches"
+      ],
+      "must_try_dishes": [
+        "Korean street toast sandwiches",
+        "Egg & cheese toast"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf",
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ],
+      "ambience": "Casual takeaway",
+      "nearby_landmarks": [
+        "Myeongdong Station, Seoul"
+      ],
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Thanks Nature Cafe",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "mid-range",
+      "hours": "11:30 AM – 2:00 AM",
+      "area": "Hongdae",
+      "highlights": [
+        "Sheep cafe",
+        "Unique café where you can enjoy coffee alongside friendly sheep"
+      ],
+      "must_try_dishes": [
+        "Waffles",
+        "Coffee"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Bulgogi Brothers Hongdae",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "mid-range",
+      "hours": "10:00 AM – 10:00 PM",
+      "area": "Hongdae",
+      "highlights": [
+        "Modern Korean BBQ",
+        "Nice ambiance"
+      ],
+      "must_try_dishes": [
+        "Bulgogi"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "HanCook N Grill",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "luxury",
+      "hours": "12:00 PM – 10:00 PM",
+      "nearby_landmarks": [
+        "Namsan Tower, Seoul"
+      ],
+      "highlights": [
+        "Korean buffet at the tower"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "N Grill",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Fine Dining"
+      ],
+      "price_range": "luxury",
+      "hours": "12:00 PM – 10:00 PM",
+      "nearby_landmarks": [
+        "Namsan Tower, Seoul"
+      ],
+      "highlights": [
+        "Fine dining at the top of Namsan Tower",
+        "Revolving views"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Wangbijip Myeongdong Main store",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "hours": "11:30 AM – 10:00 PM",
+      "area": "Myeongdong",
+      "highlights": [
+        "Korean BBQ Restaurant"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Din Tai Fung Myeongdong",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Chinese"
+      ],
+      "hours": "11:00 AM – 8:00 PM",
+      "area": "Myeongdong",
+      "highlights": [
+        "Famous for Xiao Long Bao - soup dumplings"
+      ],
+      "must_try_dishes": [
+        "Xiao Long Bao"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "943 King's Cross",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "budget",
+      "hours": "11:00 AM – 10:00 PM",
+      "area": "Hongdae",
+      "highlights": [
+        "Harry Potter-themed café"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Stylenanda Pink Pool Café",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "mid-range",
+      "hours": "11:00 AM – 10:00 PM",
+      "area": "Myeongdong",
+      "highlights": [
+        "Chic café inside a fashion store",
+        "Pink pool-themed interior"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Arriate Café",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "budget",
+      "hours": "11:00 AM – 10:00 PM",
+      "area": "Hongdae",
+      "highlights": [
+        "Floral-themed café",
+        "Hanging flowers",
+        "Perfect for vibrant photos"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Café Layered",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "budget",
+      "hours": "10:00 AM – 10:00 PM",
+      "area": "Bukchon",
+      "highlights": [
+        "British-style café",
+        "Known for scones",
+        "Vintage decor"
+      ],
+      "must_try_dishes": [
+        "Scones"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Urban Space",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "budget",
+      "hours": "11:00 AM – 11:00 PM",
+      "area": "Seongsu",
+      "highlights": [
+        "Industrial-themed café",
+        "Swing seats",
+        "Spacious interior"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "C. Through Café",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "budget",
+      "hours": "10:00 AM – 10:00 PM",
+      "area": "Itaewon",
+      "highlights": [
+        "Famous for barista's artistic cream art on coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Lotte Department Store Myeongdong Food Court",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Multiple"
+      ],
+      "price_range": "mid-range",
+      "hours": "10:30 AM – 8:00 PM",
+      "ambience": "Modern food hall",
+      "area": "Myeongdong",
+      "highlights": [
+        "Multiple vegetarian-friendly counters",
+        "Variety and comfort"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Osulloc Tea House Bukchon",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Tea House"
+      ],
+      "price_range": "luxury",
+      "hours": "11:00 AM – 8:00 PM",
+      "area": "Bukchon",
+      "highlights": [
+        "Modern Korean tea house",
+        "Elegant matcha desserts",
+        "Minimalist setting"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "London Bagel Museum Anguk",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Bakery"
+      ],
+      "price_range": "luxury",
+      "hours": "7:00 AM – 6:00 PM",
+      "area": "Anguk",
+      "highlights": [
+        "Rustic European-style bakery",
+        "Photogenic bagels",
+        "Cozy interiors"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sulbing",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Dessert"
+      ],
+      "price_range": "mid-range",
+      "hours": "11:00 AM – 11:00 PM",
+      "area": "Myeongdong",
+      "highlights": [
+        "Popular dessert café",
+        "Beautifully presented Korean shaved ice"
+      ],
+      "must_try_dishes": [
+        "Bingsu"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "COEX Mall Food Court",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Multiple"
+      ],
+      "price_range": "mid-range",
+      "hours": "10:30 AM – 10:00 PM",
+      "ambience": "Modern food hall",
+      "area": "Gangnam",
+      "nearby_landmarks": [
+        "COEX Mall, Seoul"
+      ],
+      "highlights": [
+        "Multiple vegetarian-friendly counters"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Lotte World Mall Food Court",
+      "city": "Seoul",
+      "cuisine_type": [
+        "Multiple"
+      ],
+      "price_range": "mid-range",
+      "hours": "10:30 AM – 10:00 PM",
+      "ambience": "Casual food hall",
+      "area": "Jamsil",
+      "nearby_landmarks": [
+        "Lotte World, Seoul"
+      ],
+      "highlights": [
+        "Multiple cuisines with vegetarian selections"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Lotte World Adventure",
+      "city": "Seoul",
+      "description": "One of the world's largest indoor theme parks with thrilling rides",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Lotte Aquarium",
+      "city": "Seoul",
+      "description": "Home to penguins, sharks, and coral reef displays",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Seoul Sky (Lotte World Tower)",
+      "city": "Seoul",
+      "description": "Stunning city views from South Korea's tallest building",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Lotte World Mall",
+      "city": "Seoul",
+      "description": "Great for shopping, dining, and cinema",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Olympic Park",
+      "city": "Seoul",
+      "description": "Lovely to stroll around and see 1988 Olympic monuments",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Gyeongbokgung Palace",
+      "city": "Seoul",
+      "description": "The grandest of Seoul's five royal palaces with vast courtyards and ornate pavilions",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf",
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ],
+      "hours": "9:00 AM – 6:00 PM",
+      "entry_fee": "~INR 200",
+      "recommended_duration": "2-3 hours"
+    },
+    {
+      "name": "Bukchon Hanok Village",
+      "city": "Seoul",
+      "description": "Picturesque neighbourhood of traditional Korean homes with narrow lanes, tiled roofs, art galleries, and tea houses",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf",
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ],
+      "hours": "Open area",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours"
+    },
+    {
+      "name": "DMZ",
+      "city": "Seoul",
+      "description": "Demilitarized Zone with key highlights: Dora Observatory, 3rd Infiltration Tunnel, Dorasan Station, Unification Village",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Gwangjang Market",
+      "city": "Seoul",
+      "description": "One of Seoul's oldest traditional markets with lively atmosphere, rows of food stalls and local vendors",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf",
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ],
+      "hours": "9:00 AM – 10:30 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours"
+    },
+    {
+      "name": "Hongdae",
+      "city": "Seoul",
+      "description": "Vibrant youth district known for street performances, indie fashion, themed cafés, and lively nightlife",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf",
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ],
+      "hours": "Best after 6:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours"
+    },
+    {
+      "name": "Myeongdong",
+      "city": "Seoul",
+      "description": "Paradise for shopaholics and food lovers with global cosmetics brands, boutique clothing stores, and Korean street food",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Namsan Tower",
+      "city": "Seoul",
+      "description": "Panoramic night views over the city from the observatory and the famous Love Locks",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Trick Eye Museum",
+      "city": "Seoul",
+      "description": "Fun photo ops in Hongdae area",
+      "source_files": [
+        "South Korea/All Inclusive Guide-South Korea.pdf"
+      ]
+    },
+    {
+      "name": "Insadong",
+      "city": "Seoul",
+      "description": "Seoul's cultural street filled with handicraft stores, traditional souvenirs, calligraphy shops, and local snack stalls",
+      "hours": "Most shops: 10:00 AM – 8:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Itaewon",
+      "city": "Seoul",
+      "description": "Seoul's most international neighbourhood with multicultural vibe, independent boutiques, lifestyle stores, and global cafés",
+      "hours": "Shops & cafés: 10:00 AM onwards",
+      "entry_fee": "Free",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ikseon-dong Hanok Village",
+      "city": "Seoul",
+      "description": "Traditional hanok houses restored into boutique cafés, dessert spots, and craft stores with narrow alleys and creative interiors",
+      "hours": "Most cafés: 11:00 AM – 9:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Cheonggyecheon Stream",
+      "city": "Seoul",
+      "description": "Peaceful urban waterway through central Seoul, especially beautiful in the evening with soft lights reflecting on water",
+      "hours": "Open area",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "DMZ (Demilitarized Zone)",
+      "city": "Seoul",
+      "description": "Historically significant area offering glimpse into Korean Peninsula history with Dora Observatory, 3rd Infiltration Tunnel, and Dorasan Station",
+      "hours": "Tour duration: 8 hours",
+      "entry_fee": "As per booking",
+      "recommended_duration": "8 hours",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Lotte World",
+      "city": "Seoul",
+      "description": "One of the world's largest indoor theme parks with mix of indoor and outdoor rides, themed zones, and live performances",
+      "hours": "10:00 AM – 9:00 PM",
+      "entry_fee": "~INR 3,500–4,500",
+      "recommended_duration": "6-8 hours",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Seoul Sky Observatory",
+      "city": "Seoul",
+      "description": "Observatory in South Korea's tallest building offering spectacular panoramic views of the city",
+      "hours": "10:30 AM – 10:00 PM",
+      "entry_fee": "~INR 1,800–2,200",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bukhansan National Park",
+      "city": "Seoul",
+      "description": "Mountain hiking destination with granite peaks, wooded trails, temples, and panoramic views over Seoul",
+      "hours": "Sunrise to sunset",
+      "entry_fee": "Free",
+      "recommended_duration": "4-6 hours",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "COEX Mall",
+      "city": "Seoul",
+      "description": "One of Asia's largest underground shopping complexes featuring the stunning Starfield Library",
+      "hours": "10:30 AM – 10:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Dongdaemun Design Plaza (DDP)",
+      "city": "Seoul",
+      "description": "Futuristic landmark designed by Zaha Hadid, hub for design exhibitions and creative markets",
+      "hours": "Open area; exhibition hours vary",
+      "entry_fee": "Free for outdoor areas",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "L7 Myeongdong Hotel",
+      "city": "Seoul",
+      "location": "Myeongdong",
+      "_source_file": "South Korea/All Inclusive Guide-South Korea.pdf",
+      "_source_mtime": 1772384286.0845513
+    },
+    {
+      "name": "Hotel Skypark Central Myeongdong",
+      "city": "Seoul",
+      "location": "Myeongdong",
+      "_source_file": "South Korea/All Inclusive Guide-South Korea.pdf",
+      "_source_mtime": 1772384286.0845513
+    },
+    {
+      "name": "Metro Hotel Myeongdong",
+      "city": "Seoul",
+      "location": "Myeongdong",
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Bibimbap",
+      "city": "Seoul",
+      "description": "Colorful bowl of rice topped with sautéed vegetables, gochujang (chili paste), and often a fried egg",
+      "vegetarian": true,
+      "where_to_try": "Various restaurants",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Jajangmyeon",
+      "city": "Seoul",
+      "description": "Thick wheat noodles coated in a rich, mildly sweet black bean sauce",
+      "vegetarian": true,
+      "where_to_try": "Various restaurants",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Vegetable Pajeon",
+      "city": "Seoul",
+      "description": "Crispy Korean-style pancake filled with scallions and vegetables",
+      "vegetarian": true,
+      "where_to_try": "Gwangjang Market",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tteokbokki",
+      "city": "Seoul",
+      "description": "Chewy rice cakes simmered in a sweet-spicy chili sauce",
+      "vegetarian": true,
+      "where_to_try": "Myeongdong Street Food Area",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kimbap",
+      "city": "Seoul",
+      "description": "Rice and fillings wrapped in seaweed - Korea's grab-and-go favorite",
+      "vegetarian": true,
+      "where_to_try": "Convenience stores",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sundubu Jjigae",
+      "city": "Seoul",
+      "description": "Comforting hot stew made with silky tofu and vegetables in a light chili broth",
+      "vegetarian": true,
+      "where_to_try": "Various restaurants",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bingsu",
+      "city": "Seoul",
+      "description": "Feather-light shaved ice topped with condensed milk and sweet toppings",
+      "vegetarian": true,
+      "where_to_try": "Sulbing",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Vegetable Mandu",
+      "city": "Seoul",
+      "description": "Steamed or lightly fried dumplings filled with vegetables and glass noodles",
+      "vegetarian": true,
+      "where_to_try": "Various restaurants",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Hotteok",
+      "city": "Seoul",
+      "description": "Sweet filled pancakes",
+      "vegetarian": true,
+      "where_to_try": "Myeongdong Street Food Area",
+      "source_files": [
+        "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Korean Skincare & Cosmetics",
+      "city": "Seoul",
+      "category": "Beauty",
+      "where_to_buy": [
+        "Myeongdong",
+        "Olive Young stores"
+      ],
+      "_source_file": "South Korea/All Inclusive Guide-South Korea.pdf",
+      "_source_mtime": 1772384286.0845513
+    },
+    {
+      "item": "K-pop Merchandise",
+      "city": "Seoul",
+      "category": "Entertainment",
+      "where_to_buy": [
+        "COEX underground shopping mall",
+        "Hongdae"
+      ],
+      "_source_file": "South Korea/All Inclusive Guide-South Korea.pdf",
+      "_source_mtime": 1772384286.0845513
+    },
+    {
+      "item": "Traditional Crafts",
+      "city": "Seoul",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Insadong"
+      ],
+      "_source_file": "South Korea/All Inclusive Guide-South Korea.pdf",
+      "_source_mtime": 1772384286.0845513
+    },
+    {
+      "item": "Korean Skincare & Cosmetics",
+      "city": "Seoul",
+      "category": "Beauty",
+      "where_to_buy": [
+        "Myeongdong shopping streets",
+        "Olive Young stores"
+      ],
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0
+    },
+    {
+      "item": "K-pop Merchandise",
+      "city": "Seoul",
+      "category": "Entertainment",
+      "where_to_buy": [
+        "Hongdae",
+        "COEX underground shopping mall"
+      ],
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0
+    },
+    {
+      "item": "Traditional Korean Souvenirs",
+      "city": "Seoul",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Insadong"
+      ],
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0
+    },
+    {
+      "item": "Korean Snacks & Instant Noodles",
+      "city": "Seoul",
+      "category": "Food",
+      "where_to_buy": [
+        "Lotte Department Store Myeongdong",
+        "Major supermarkets"
+      ],
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0
+    },
+    {
+      "item": "Trendy Fashion & Cute Accessories",
+      "city": "Seoul",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Hongdae"
+      ],
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0
+    },
+    {
+      "item": "Premium Food & Tea Gifts",
+      "city": "Seoul",
+      "category": "Food",
+      "where_to_buy": [
+        "Lotte Department Store Myeongdong",
+        "COEX Mall"
+      ],
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Seoul",
+      "service": "Indian Embassy",
+      "number": "+82 2-798-4257",
+      "notes": "Open Mon–Fri, located at 101, Hannam-daero, Yongsan-gu, Seoul",
+      "_source_file": "South Korea/All Inclusive Guide-South Korea.pdf",
+      "_source_mtime": 1772384286.0845513
+    },
+    {
+      "city": "Seoul",
+      "service": "Indian Embassy",
+      "number": "+82 2-798-4257",
+      "notes": "101, Hannam-daero, Yongsan-gu, Seoul. Open Monday – Friday (business hours)",
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0
+    }
+  ],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Seoul",
+      "mode": "Airport Railroad Express (AREX)",
+      "description": "Express train from Incheon International Airport to Seoul Station",
+      "cost": "Approximately INR 450",
+      "_source_file": "South Korea/All Inclusive Guide-South Korea.pdf",
+      "_source_mtime": 1772384286.0845513
+    },
+    {
+      "city": "Seoul",
+      "mode": "Subway",
+      "description": "Clean, safe trains with English signage. Avoid rush hours (8–9 AM, 6–7 PM)",
+      "_source_file": "South Korea/All Inclusive Guide-South Korea.pdf",
+      "_source_mtime": 1772384286.0845513
+    },
+    {
+      "city": "Seoul",
+      "mode": "Metro",
+      "description": "Extensive subway system covering all major attractions and areas",
+      "recommended_pass": "T-Money Card",
+      "cost": "Card cost: ~4,000 KRW, estimate 60,000–75,000 KRW per person for 11-day trip",
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0
+    },
+    {
+      "city": "Seoul",
+      "mode": "AREX Express Train",
+      "description": "Direct train connection from Incheon Airport to Seoul Station",
+      "cost": "~INR 450 per person, ~45-50 mins duration",
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0
+    },
+    {
+      "city": "Seoul",
+      "mode": "KTX high-speed train",
+      "description": "High-speed rail connection between Seoul and Busan with comfortable reserved seating",
+      "cost": "2.5-3 hours duration",
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "South Korea/All Inclusive Guide-South Korea.pdf",
+    "South Korea/Kiran-South Korea-All Inclusive Guide.docx"
+  ]
+}

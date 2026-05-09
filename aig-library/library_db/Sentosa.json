@@ -1,0 +1,238 @@
+{
+  "restaurants": [
+    {
+      "name": "Native Kitchen",
+      "city": "Sentosa",
+      "cuisine_type": [
+        "Local"
+      ],
+      "hours": "Not specified",
+      "area": "Village Hotel Sentosa",
+      "highlights": [],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf"
+      ]
+    },
+    {
+      "name": "Mess Hall",
+      "city": "Sentosa",
+      "cuisine_type": [
+        "Local"
+      ],
+      "hours": "Not specified",
+      "area": "Far East Mall",
+      "highlights": [],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf"
+      ]
+    },
+    {
+      "name": "Coastes – Beach Bar & Restaurant",
+      "city": "Sentosa",
+      "cuisine_type": [
+        "Continental"
+      ],
+      "hours": "11am-9pm",
+      "area": "Siloso Beach Walk",
+      "highlights": [
+        "Beach bar and restaurant"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf"
+      ]
+    },
+    {
+      "name": "Good Old Days",
+      "city": "Sentosa",
+      "cuisine_type": [
+        "Singaporean"
+      ],
+      "hours": "10am-10pm",
+      "area": "Siloso Beach Walk",
+      "highlights": [
+        "Local Singaporean cuisine"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf"
+      ]
+    },
+    {
+      "name": "Trapizza",
+      "city": "Sentosa",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "12pm-9pm",
+      "area": "Siloso Beach Walk",
+      "must_try_dishes": [
+        "Pizzas",
+        "Gnocchi"
+      ],
+      "highlights": [
+        "Make a reservation"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf"
+      ]
+    },
+    {
+      "name": "Chifa!",
+      "city": "Sentosa",
+      "cuisine_type": [
+        "Peruvian",
+        "Asian"
+      ],
+      "hours": "12-3pm, 6-11pm, Wed-closed",
+      "area": "Sentosa World Resorts",
+      "must_try_dishes": [
+        "Dimsums",
+        "Baos",
+        "Cocktails"
+      ],
+      "highlights": [
+        "Make a reservation"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf"
+      ]
+    },
+    {
+      "name": "Tanjong Beach Club",
+      "city": "Sentosa",
+      "cuisine_type": [
+        "Bar",
+        "European"
+      ],
+      "hours": "10am-8pm, Closed on Thursday",
+      "area": "Tanjong Beach Walk",
+      "must_try_dishes": [
+        "Truffle fries",
+        "Beer",
+        "Cocktails"
+      ],
+      "highlights": [
+        "Make a reservation"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf"
+      ]
+    },
+    {
+      "name": "The Kitchen Table",
+      "city": "Sentosa",
+      "cuisine_type": [
+        "European",
+        "Asian"
+      ],
+      "hours": "12-3pm, 6-10pm",
+      "area": "W Hotel",
+      "highlights": [
+        "Make a reservation"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf"
+      ]
+    },
+    {
+      "name": "Casserole",
+      "city": "Sentosa",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "hours": "6-10pm",
+      "area": "Shangri La Rasa",
+      "must_try_dishes": [
+        "Rendang",
+        "Middle Eastern Spiced Kebab & Falafel"
+      ],
+      "highlights": [
+        "Meat-free dining",
+        "Make a reservation"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Skyline Luge",
+      "city": "Sentosa",
+      "description": "Funicular adventure",
+      "hours": "Not specified",
+      "recommended_duration": "Not specified",
+      "source_files": [
+        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf"
+      ]
+    },
+    {
+      "name": "Siloso Beach",
+      "city": "Sentosa",
+      "description": "Beach for relaxing evening",
+      "hours": "Not specified",
+      "recommended_duration": "Not specified",
+      "source_files": [
+        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf"
+      ]
+    },
+    {
+      "name": "Wings of Time",
+      "city": "Sentosa",
+      "description": "Show at 7:40 or 8:40pm",
+      "hours": "7:40pm or 8:40pm",
+      "recommended_duration": "Not specified",
+      "source_files": [
+        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf"
+      ]
+    },
+    {
+      "name": "Universal Studios",
+      "city": "Sentosa",
+      "description": "Theme park",
+      "hours": "10am to 7pm",
+      "recommended_duration": "4-8 hours",
+      "source_files": [
+        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf"
+      ]
+    },
+    {
+      "name": "Sea Aquarium",
+      "city": "Sentosa",
+      "description": "Aquarium at Sentosa Island",
+      "hours": "10am to 7pm",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Amara Sanctuary Sentosa",
+      "city": "Sentosa",
+      "location": "Sentosa",
+      "_source_file": "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
+      "_source_mtime": 1772384350.0941875
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf"
+  ]
+}

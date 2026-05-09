@@ -1,0 +1,467 @@
+{
+  "restaurants": [
+    {
+      "name": "Top Station Multicuisine Restaurant",
+      "city": "Munnar",
+      "cuisine_type": [
+        "Indian",
+        "Chinese",
+        "Continental"
+      ],
+      "price_range": "₹400-600",
+      "hours": "7:00 am – 10:00 pm",
+      "ambience": "Casual atmosphere with stunning views",
+      "highlights": [
+        "Known for stunning views"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Saravana Bhavan",
+      "city": "Munnar",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "₹1-200",
+      "hours": "7:15 am- 09:30 pm",
+      "ambience": "Renowned chain of South Indian veg restaurants",
+      "highlights": [
+        "Renowned chain",
+        "Great for idlis, dosas, filter coffee"
+      ],
+      "must_try_dishes": [
+        "Idlis",
+        "Dosas",
+        "Filter coffee",
+        "idlis",
+        "dosas",
+        "filter coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "The Hornbill Restaurant By Blackberry Hills Munnar Nature Resort & Spa",
+      "city": "Munnar",
+      "cuisine_type": [
+        "Indian",
+        "Continental",
+        "Asian"
+      ],
+      "price_range": "₹400-600",
+      "hours": "8:00am – 9:30 pm",
+      "ambience": "Luxurious ambiance and fine dining experience with beautiful view of surrounding hills and valleys",
+      "highlights": [
+        "Known for luxurious ambiance",
+        "Extensive wine list",
+        "Beautiful view of hills and valleys"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Parakkat Spice Merchant Restaurant",
+      "city": "Munnar",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹400-600",
+      "hours": "7:30 pm- 10:00 pm",
+      "ambience": "Known for delicious food and stunning views",
+      "highlights": [
+        "Known for delicious food",
+        "Stunning views"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Prakrithi Multi Cuisine Restaurant",
+      "city": "Munnar",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹200-400",
+      "hours": "11:30 am – 10:00pm",
+      "ambience": "Welcoming atmosphere",
+      "highlights": [
+        "Known for fresh ingredients",
+        "Known for authentic flavors"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Eravikulam National Park",
+      "city": "Munnar",
+      "description": "Home to the endangered Nilgiri Tahr and stunning hill views",
+      "hours": "8:00 am to 4:00 pm",
+      "entry_fee": "₹200 for Indian adults",
+      "recommended_duration": "Half day",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Tea Museum by Tata",
+      "city": "Munnar",
+      "description": "Discover Munnar's tea heritage and enjoy a fresh brew",
+      "hours": "09:00 AM to 5:00 PM",
+      "entry_fee": "₹75 for adults, ₹35 for children, ₹20 for camera use",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Mattupetty Dam",
+      "city": "Munnar",
+      "description": "A scenic spot ideal for photography and boating",
+      "hours": "9:30 AM to 5:00 PM",
+      "entry_fee": "₹10 per person",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Echo Point",
+      "city": "Munnar",
+      "description": "Shout out and hear nature reply amidst misty hills",
+      "hours": "7:00 AM to 6:00/6:30 PM",
+      "entry_fee": "₹30 for adults, ₹15 for children",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Kundala Lake",
+      "city": "Munnar",
+      "description": "A tranquil lake surrounded by rolling tea gardens and lush greenery",
+      "hours": "9:00 AM to 5:00 PM",
+      "entry_fee": "free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Anakulam Jeep Safari",
+      "city": "Munnar",
+      "description": "A scenic off-road adventure where you might spot wild elephants bathing in the river",
+      "hours": "Morning",
+      "entry_fee": null,
+      "recommended_duration": "Half day",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+      ]
+    },
+    {
+      "name": "Rose Garden",
+      "city": "Munnar",
+      "description": "Meticulously maintained garden nestled amidst rolling hills with stunning collection of roses in various hues and sizes. Features other flowering plants with winding paths and panoramic views of tea gardens and mist-covered mountains",
+      "hours": "10am- 5pm",
+      "entry_fee": "Rs. 20 per person",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
+      ]
+    },
+    {
+      "name": "Kolukkumalai Tea Estate",
+      "city": "Munnar",
+      "description": "Perched high in Theni district of Tamil Nadu near Munnar, renowned for producing world's highest-elevation tea. Visitors can witness traditional tea processing methods and sample distinct flavorful tea",
+      "hours": "7am to 6 pm Mon- Saturday. Closed on Sundays",
+      "entry_fee": "Rs. 100 per person for tea factory visit",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
+      ]
+    },
+    {
+      "name": "Attukad Waterfalls",
+      "city": "Munnar",
+      "description": "Majestic cascade nestled amidst lush greenery of Munnar. Viewpoint offers stunning panoramic vistas. Road leading to falls can be rough",
+      "hours": "10 am to 6 pm",
+      "entry_fee": "No entrance fee",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Eden Wood Resort and Spa",
+      "city": "Munnar",
+      "location": "Munnar",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+      "_source_mtime": 1772384277.134858
+    },
+    {
+      "name": "Eden Wood Resort and Spa",
+      "city": "Munnar",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+      "_source_mtime": 1760845480.0
+    },
+    {
+      "name": "Blanket Hotel and Spa",
+      "city": "Munnar",
+      "location": "Munnar",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136
+    },
+    {
+      "name": "Eden Wood Resort and Spa",
+      "city": "Munnar",
+      "location": "Munnar",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
+      "_source_mtime": 1772384279.852176
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Tea",
+      "city": "Munnar",
+      "category": "Food",
+      "where_to_buy": [
+        "Tea factories",
+        "Local shops",
+        "Kolukkumalai Tea Estate"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+      "_source_mtime": 1772384277.134858
+    },
+    {
+      "item": "Spices",
+      "city": "Munnar",
+      "category": "Food",
+      "where_to_buy": [
+        "Munnar Market",
+        "Spice Plantations",
+        "Jewish Market/Spice markets in Mattancherry"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+      "_source_mtime": 1772384277.134858
+    },
+    {
+      "item": "Homemade Chocolate",
+      "city": "Munnar",
+      "category": "Food",
+      "where_to_buy": [
+        "Krishna Home Made Chocolates and Cookies"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+      "_source_mtime": 1772384277.134858
+    },
+    {
+      "item": "Essential Oils",
+      "city": "Munnar",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Munnar Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+      "_source_mtime": 1772384277.134858
+    },
+    {
+      "item": "Tea",
+      "city": "Munnar",
+      "category": "Food",
+      "where_to_buy": [
+        "Kolukkumalai Tea Estate",
+        "Local shops"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+      "_source_mtime": 1760845480.0
+    },
+    {
+      "item": "Spices",
+      "city": "Munnar",
+      "category": "Food",
+      "where_to_buy": [
+        "Munnar Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+      "_source_mtime": 1760845480.0
+    },
+    {
+      "item": "Homemade Chocolate",
+      "city": "Munnar",
+      "category": "Food",
+      "where_to_buy": [
+        "Krishna Home Made Chocolates and Cookies"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+      "_source_mtime": 1760845480.0
+    },
+    {
+      "item": "Essential Oils",
+      "city": "Munnar",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Munnar Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+      "_source_mtime": 1760845480.0
+    },
+    {
+      "item": "Tea",
+      "city": "Munnar",
+      "category": "Food",
+      "where_to_buy": [
+        "Kolukkumalai Tea Estate",
+        "tea factories",
+        "local shops"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136
+    },
+    {
+      "item": "Spices",
+      "city": "Munnar",
+      "category": "Food",
+      "where_to_buy": [
+        "Munnar Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136
+    },
+    {
+      "item": "Homemade Chocolate",
+      "city": "Munnar",
+      "category": "Food",
+      "where_to_buy": [
+        "Krishna Home Made Chocolates and Cookies"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136
+    },
+    {
+      "item": "Essential Oils",
+      "city": "Munnar",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Munnar Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136
+    },
+    {
+      "item": "Tea",
+      "city": "Munnar",
+      "category": "Food",
+      "where_to_buy": [
+        "Kolukkumalai Tea Estate",
+        "tea factories",
+        "local shops"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
+      "_source_mtime": 1772384279.852176
+    },
+    {
+      "item": "Spices",
+      "city": "Munnar",
+      "category": "Food",
+      "where_to_buy": [
+        "Munnar Market",
+        "Spice Plantations",
+        "Jewish Market/Spice markets in Mattancherry"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
+      "_source_mtime": 1772384279.852176
+    },
+    {
+      "item": "Homemade Chocolate",
+      "city": "Munnar",
+      "category": "Food",
+      "where_to_buy": [
+        "Krishna Home Made Chocolates and Cookies"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
+      "_source_mtime": 1772384279.852176
+    },
+    {
+      "item": "Essential Oils",
+      "city": "Munnar",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Munnar Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
+      "_source_mtime": 1772384279.852176
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+  ]
+}

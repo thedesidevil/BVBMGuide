@@ -1,0 +1,368 @@
+{
+  "restaurants": [
+    {
+      "name": "Lazy Goose",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "₹900-1000",
+      "hours": "12pm- 12 am",
+      "ambience": "Beautiful riverside location",
+      "area": "Nerul",
+      "highlights": [
+        "Riverside location",
+        "Wide variety of seafood options"
+      ],
+      "source_files": [
+        "Goa/Ankush_Goa Guide.pdf"
+      ]
+    },
+    {
+      "name": "St. Anthony's",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Goan",
+        "Seafood",
+        "Indian"
+      ],
+      "price_range": "₹300-500",
+      "hours": "12:00 PM - 11:00 PM",
+      "ambience": "Welcoming atmosphere and relaxed beach vibe",
+      "area": "Baga",
+      "highlights": [
+        "Beachfront location",
+        "Traditional Goan seafood"
+      ],
+      "source_files": [
+        "Goa/Ankush_Goa Guide.pdf"
+      ]
+    },
+    {
+      "name": "Brittos",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Goan",
+        "Seafood",
+        "Continental",
+        "Chinese"
+      ],
+      "price_range": "₹500-800",
+      "hours": "9:00 AM - 12:00 AM",
+      "ambience": "Vibrant, friendly ambiance right next to the beach",
+      "area": "Baga",
+      "highlights": [
+        "Beachfront location",
+        "Wide selection of seafood"
+      ],
+      "source_files": [
+        "Goa/Ankush_Goa Guide.pdf"
+      ]
+    },
+    {
+      "name": "Jamun",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Regional Indian"
+      ],
+      "price_range": "₹1,200–₹1,800 per person",
+      "hours": "12:00 PM to 3:30 PM (4:15 PM Fri-Sun), 7 PM - 11:30 PM",
+      "ambience": "Set in a vibrant and cozy space with purple-hued decor inspired by jamun fruit. A casual yet elegant vibe",
+      "highlights": [
+        "Purple-hued decor",
+        "Jamun fruit inspiration",
+        "Coastal flavors"
+      ],
+      "must_try_dishes": [
+        "Goan curry"
+      ],
+      "source_files": [
+        "Goa/Ankush_Goa Guide.pdf",
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ],
+      "best_for": [
+        "regional cuisine"
+      ],
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Gunpowder",
+      "city": "North Goa",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "₹800–1500 per person",
+      "hours": "12:00 PM – 3:30 PM & 7:00 PM – 11:00 PM",
+      "ambience": "Rustic, heritage-style restaurant set in a Portuguese villa with garden seating",
+      "highlights": [
+        "Heritage-style",
+        "Portuguese villa",
+        "Garden seating"
+      ],
+      "source_files": [
+        "Goa/Ankush_Goa Guide.pdf",
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ],
+      "must_try_dishes": [
+        "South Indian veg curries",
+        "appams",
+        "vegetable stews"
+      ],
+      "nearby_landmarks": [
+        "Fort Aguada, North Goa"
+      ],
+      "best_for": [
+        "unique dining"
+      ],
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Literati Bookstore & Café",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹500–800 per person",
+      "hours": "10:00 AM – 6:30 PM (Saturday, Sunday closed)",
+      "ambience": "A charming bookstore café set inside a restored Goan villa, filled with books, greenery, and cozy corners",
+      "area": "Calangute/Candolim belt",
+      "highlights": [
+        "Bookstore café",
+        "Restored Goan villa",
+        "Curated book collection"
+      ],
+      "best_for": [
+        "casual",
+        "reading"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mojigao",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Vegetarian"
+      ],
+      "price_range": "₹800–1200 per person",
+      "hours": "8:00 AM – 3:30 PM",
+      "ambience": "A lush, garden-style café known for its earthy vibe and beautifully plated vegetarian-friendly dishes",
+      "highlights": [
+        "Garden-style café",
+        "Earthy vibe",
+        "Tropical oasis setting"
+      ],
+      "best_for": [
+        "brunch",
+        "mindful dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Artjuna",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Mediterranean",
+        "Healthy"
+      ],
+      "price_range": "₹800–1500 per person",
+      "hours": "7:30 AM – 10:30 PM",
+      "ambience": "Spacious bohemian café with outdoor seating, boutique store, and relaxed community vibe",
+      "highlights": [
+        "Bohemian café",
+        "Boutique store",
+        "Community vibe"
+      ],
+      "must_try_dishes": [
+        "Falafel platter",
+        "hummus",
+        "shakshuka (veg)",
+        "smoothie bowls"
+      ],
+      "best_for": [
+        "healthy dining",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Prana Café",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Vegan",
+        "Wellness"
+      ],
+      "price_range": "₹700–1200 per person",
+      "hours": "8:00 AM – 10:30 PM",
+      "ambience": "Wellness-focused café with a calm, minimal, and conscious dining atmosphere",
+      "highlights": [
+        "Wellness-focused",
+        "Conscious dining",
+        "Minimal design"
+      ],
+      "must_try_dishes": [
+        "Vegan bowls",
+        "salads",
+        "smoothies",
+        "plant-based desserts"
+      ],
+      "best_for": [
+        "healthy dining",
+        "mindful eating"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Fisherman's Wharf",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Goan"
+      ],
+      "price_range": "₹1200–1800 per person",
+      "hours": "12:00 PM – 11:30 PM",
+      "ambience": "Riverside restaurant with a lively Goan vibe and live music ambiance",
+      "highlights": [
+        "Riverside location",
+        "Live music",
+        "Lively Goan vibe"
+      ],
+      "must_try_dishes": [
+        "Veg recheado-style dishes",
+        "Goan veg curries",
+        "starters & mocktails"
+      ],
+      "best_for": [
+        "lively dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pisco by the Beach",
+      "city": "North Goa",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "₹1500–2500 per person",
+      "hours": "12:30 PM – 12:00 AM",
+      "ambience": "Beachfront restaurant known for stunning sunset views and chic open-air vibe",
+      "nearby_landmarks": [
+        "Fort Aguada, North Goa"
+      ],
+      "highlights": [
+        "Beachfront location",
+        "Stunning sunset views",
+        "Chic open-air vibe"
+      ],
+      "must_try_dishes": [
+        "tres leches dessert",
+        "cocktails (Pisco specials)"
+      ],
+      "best_for": [
+        "sunset dining",
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pousada by the Beach – Calangute",
+      "city": "North Goa",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "₹1200–2000 per person",
+      "hours": "12:00 PM – 11:00 PM",
+      "ambience": "Beachfront restaurant known for peaceful vibe & direct sunset views",
+      "area": "Calangute",
+      "nearby_landmarks": [
+        "Fort Aguada, North Goa"
+      ],
+      "highlights": [
+        "Family-friendly",
+        "Kid-friendly",
+        "Calm setting",
+        "Direct sunset views"
+      ],
+      "must_try_dishes": [
+        "veg starters",
+        "serradura dessert"
+      ],
+      "best_for": [
+        "family",
+        "sunset dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bawri",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹1,500–₹2,000 per person",
+      "hours": "12:00 PM to 3:30 PM, 7 PM - 11:30 PM",
+      "ambience": "Beautifully designed space with low wooden tables, cushioned seating, woven chandeliers, and a serene pond. The setting evokes nostalgia for traditional Indian kitchens",
+      "highlights": [
+        "Traditional Indian kitchen design",
+        "Slow-cooked dishes",
+        "Serene pond setting"
+      ],
+      "must_try_dishes": [
+        "Dal Makhani",
+        "Noolputtu with Wild Mango Curry"
+      ],
+      "best_for": [
+        "traditional dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Fort Aguada",
+      "city": "North Goa",
+      "description": "One of Goa's most iconic forts, offering panoramic views of the Arabian Sea and Sinquerim coastline",
+      "hours": "9:30 AM – 6:00 PM",
+      "entry_fee": "₹50 per person",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Goa/Oishee_Goa_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Goa/Ankush_Goa Guide.pdf",
+    "Goa/Oishee_Goa_All Inclusive Guide.docx"
+  ]
+}

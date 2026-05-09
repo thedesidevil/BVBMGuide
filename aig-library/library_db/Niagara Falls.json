@@ -1,0 +1,96 @@
+{
+  "restaurants": [
+    {
+      "name": "Tha Dhaba on the Falls",
+      "city": "Niagara Falls",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "12pm - 12am",
+      "must_try_dishes": [
+        "Gol gappe",
+        "veg biryani",
+        "amritsari kulcha"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Indian Kitchen King",
+      "city": "Niagara Falls",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "11am - 10pm",
+      "must_try_dishes": [
+        "Paneer curries"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Zaica Indian Cuisine Niagara Falls",
+      "city": "Niagara Falls",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "12pm - 9:30pm",
+      "highlights": [
+        "Offers buffet options"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    },
+    {
+      "name": "Bombay Palace Eatery",
+      "city": "Niagara Falls",
+      "cuisine_type": [
+        "Indian",
+        "North Indian"
+      ],
+      "hours": "9:30am - 10:30pm",
+      "vegetarian_friendly": true,
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Niagara Falls",
+      "city": "Niagara Falls",
+      "description": "Cave of the winds and maid of the mist 5 hrs tour",
+      "hours": "9 am start",
+      "recommended_duration": "5 hours",
+      "source_files": [
+        "USA/ALL INCLUSIVE GUIDE USA.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Comfort Inn The Pointe",
+      "city": "Niagara Falls",
+      "location": "Niagara Falls",
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.pdf",
+      "_source_mtime": 1772384246.3359978
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "USA/ALL INCLUSIVE GUIDE USA.pdf"
+  ]
+}

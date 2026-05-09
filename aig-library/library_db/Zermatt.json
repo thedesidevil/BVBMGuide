@@ -1,0 +1,223 @@
+{
+  "restaurants": [
+    {
+      "name": "The Omnia Restaurant Zermatt",
+      "city": "Zermatt",
+      "cuisine_type": [
+        "Contemporary"
+      ],
+      "price_range": "₹4,000–6,000 per person",
+      "hours": "7:00 PM – 10:00 PM",
+      "must_try_dishes": [
+        "Seasonal vegetarian dishes"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Walliserkanne Zermatt",
+      "city": "Zermatt",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "₹2,500–4,000 per person",
+      "hours": "11:30 AM – 11:00 PM",
+      "must_try_dishes": [
+        "Veg rösti",
+        "pasta"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Fuchs Bakery & Bistro",
+      "city": "Zermatt",
+      "cuisine_type": [
+        "Bakery",
+        "Cafe"
+      ],
+      "price_range": "₹800–1,500 per person",
+      "hours": "7:00 AM – 6:30 PM",
+      "must_try_dishes": [
+        "Fresh sandwiches",
+        "pastries",
+        "coffee"
+      ],
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Petit Royal Café Zermatt",
+      "city": "Zermatt",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "₹1,000–2,000 per person",
+      "hours": "8:00 AM – 6:00 PM",
+      "must_try_dishes": [
+        "Cakes",
+        "quiche",
+        "coffee"
+      ],
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Cup's Italian Coffee House Zermatt",
+      "city": "Zermatt",
+      "cuisine_type": [
+        "Italian",
+        "Cafe"
+      ],
+      "price_range": "₹1,000–2,000 per person",
+      "hours": "7:30 AM – 5:00 PM",
+      "must_try_dishes": [
+        "Paninis",
+        "desserts",
+        "coffee"
+      ],
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Riffelhaus 1853 Restaurant",
+      "city": "Zermatt",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "₹2,500–4,000 per person",
+      "hours": "11:30 AM – 3:30 PM",
+      "area": "Riffelberg area",
+      "must_try_dishes": [
+        "Rösti",
+        "vegetarian pasta",
+        "soups"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Restaurant Alphitta Riffelalp",
+      "city": "Zermatt",
+      "cuisine_type": [
+        "Alpine"
+      ],
+      "price_range": "₹2,500–4,000 per person",
+      "hours": "9:00 AM – 5:00 PM",
+      "area": "Riffelalp area",
+      "must_try_dishes": [
+        "Light vegetarian dishes",
+        "salads"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Matterhorn",
+      "city": "Zermatt",
+      "description": "Iconic mountain peak with various viewpoints accessible by lifts",
+      "recommended_duration": "Full day",
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Bahnhofstrasse Zermatt",
+      "city": "Zermatt",
+      "description": "Main street of car-free Zermatt with shops and restaurants",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Matterhorn Viewpoint Zermatt",
+      "city": "Zermatt",
+      "description": "Viewpoint offering stunning views of the iconic Matterhorn peak",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Matterhorn Museum - Zermatlantis",
+      "city": "Zermatt",
+      "description": "Museum showcasing the cultural history of Zermatt and the Matterhorn",
+      "hours": "3:00 PM – 6:00 PM",
+      "entry_fee": "₹1,500 per person",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Gornergrat Summit",
+      "city": "Zermatt",
+      "description": "Mountain summit offering 360° views of 29 peaks and massive glaciers including the Matterhorn",
+      "hours": "Open all day",
+      "entry_fee": "₹6,000–8,000 per person (discounted with Swiss Pass)",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Gornergrat Observation Platform",
+      "city": "Zermatt",
+      "description": "Observation platform with sweeping views of alpine peaks and glaciers",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Riffelsee Lake",
+      "city": "Zermatt",
+      "description": "Mountain lake offering perfect Matterhorn reflections on clear days",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Hotel Alphubel Zermatt",
+      "city": "Zermatt",
+      "location": "Near Zermatt Station",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_mtime": 1776834870.0
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+    "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+    "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+    "Italy/Tejas - Europe All Inclusive Guide.pdf"
+  ]
+}

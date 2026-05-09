@@ -1,0 +1,264 @@
+{
+  "restaurants": [
+    {
+      "name": "丸天",
+      "city": "Mt. Fuji",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹800–1,500 per person",
+      "hours": "11 AM–2:30 PM",
+      "area": "Oshino Hakkai",
+      "nearby_landmarks": [
+        "Oshino Hakkai Village, Mt. Fuji"
+      ],
+      "highlights": [
+        "Inside Oshino Hakkai area"
+      ],
+      "must_try_dishes": [
+        "Tempura udon",
+        "soba",
+        "grilled trout set"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Oshokujidokoro Irori",
+      "city": "Mt. Fuji",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹1,000–2,000 per person",
+      "hours": "11:30 AM–1:30 PM, 6–10 PM (closed on Tuesday)",
+      "area": "Oshino Hakkai",
+      "nearby_landmarks": [
+        "Oshino Hakkai Village, Mt. Fuji"
+      ],
+      "highlights": [
+        "Traditional Japanese restaurant"
+      ],
+      "must_try_dishes": [
+        "Charcoal grilled fish",
+        "vegetable sides",
+        "traditional set meals"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "御食事処はんのき食堂",
+      "city": "Mt. Fuji",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹800–1,500 per person",
+      "hours": "11 AM–3 PM (closed on Thursday)",
+      "area": "Oshino Hakkai",
+      "nearby_landmarks": [
+        "Oshino Hakkai Village, Mt. Fuji"
+      ],
+      "highlights": [
+        "Very central location"
+      ],
+      "must_try_dishes": [
+        "Soba noodles",
+        "local molokheiya soba (veg)",
+        "light tempura"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Hoto Fudo Kawaguchiko",
+      "city": "Mt. Fuji",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹1,200–2,000 per person",
+      "hours": "11:00 AM – 7:00 PM",
+      "area": "Kawaguchiko",
+      "highlights": [
+        "Local specialty dining"
+      ],
+      "must_try_dishes": [
+        "Hoto noodles",
+        "tempura"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Lake Side Café Ku",
+      "city": "Mt. Fuji",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "11:00 AM – 5:00 PM",
+      "area": "Kawaguchiko",
+      "ambience": "Scenic lakeside café",
+      "highlights": [
+        "Scenic lakeside café"
+      ],
+      "must_try_dishes": [
+        "Seafood pasta",
+        "sandwiches"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Hotokura Funari",
+      "city": "Mt. Fuji",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "11:00 AM – 8:30 PM",
+      "area": "Kawaguchiko",
+      "ambience": "Rustic Japanese dining",
+      "highlights": [
+        "Rustic Japanese dining"
+      ],
+      "must_try_dishes": [
+        "Chicken dishes",
+        "tempura"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Chureito Pagoda",
+      "city": "Mt. Fuji",
+      "description": "One of Japan's most iconic views- a five-story pagoda framed with cherry blossoms and Mt. Fuji in the background",
+      "hours": "9 AM – 4 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
+        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
+      ]
+    },
+    {
+      "name": "Oshino Hakkai",
+      "city": "Mt. Fuji",
+      "description": "Picturesque village with crystal-clear ponds fed by Mt. Fuji's snowmelt",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "45 mins",
+      "source_files": [
+        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
+        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
+        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Lake Kawaguchiko",
+      "city": "Mt. Fuji",
+      "description": "Wide open views of the lake with Mt. Fuji rising in the background",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
+        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
+      ]
+    },
+    {
+      "name": "Oishi Park",
+      "city": "Mt. Fuji",
+      "description": "One of the most scenic viewpoints of Mt. Fuji, especially during flower seasons",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "40 mins",
+      "source_files": [
+        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
+        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
+        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mt. Fuji Panoramic Ropeway",
+      "city": "Mt. Fuji",
+      "description": "A short cable car ride offering elevated views of Lake Kawaguchiko and surrounding mountains",
+      "hours": "9 AM – 5 PM",
+      "entry_fee": "~¥900",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kitaguchi hongo shrine",
+      "city": "Mt. Fuji",
+      "description": "Beautiful shrine located at the foot of Mount Fuji",
+      "source_files": [
+        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
+      ]
+    },
+    {
+      "name": "Mt Kachi kachi ropeway",
+      "city": "Mt. Fuji",
+      "description": "Ropeway from Lake Kawaguchi shores. Takes three minutes to reach the top, 1,075 meters above sea level",
+      "source_files": [
+        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Hoto noodles",
+      "city": "Mt. Fuji",
+      "description": "Local specialty noodles",
+      "vegetarian": false,
+      "where_to_try": "Hoto Fudo Kawaguchiko",
+      "source_files": [
+        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
+        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
+    "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
+    "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+  ]
+}

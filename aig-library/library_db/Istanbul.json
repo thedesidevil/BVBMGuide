@@ -1,0 +1,348 @@
+{
+  "restaurants": [
+    {
+      "name": "Garden 1897 Restaurant",
+      "city": "Istanbul",
+      "cuisine_type": [
+        "Turkish",
+        "Ottoman"
+      ],
+      "price_range": "€10-20 per person",
+      "hours": "12:30 PM - 11:30 PM",
+      "ambience": "Elegant garden terrace and indoor seating in a restored 19th‑century Ottoman‑style house; serene greenery, live music in the evening",
+      "area": "Sultanhamet",
+      "nearby_landmarks": [
+        "Hagia Sophia, Istanbul",
+        "Blue Mosque, Istanbul"
+      ],
+      "highlights": [
+        "Restored 19th-century Ottoman house",
+        "Live music in evening",
+        "Serene greenery"
+      ],
+      "must_try_dishes": [
+        "Ali Nazik kebab",
+        "Adana kebab",
+        "Moutancana (eggplant stew)",
+        "moussaka",
+        "stuffed chicken",
+        "baklava",
+        "sütlaç (rice pudding)",
+        "kunafa"
+      ],
+      "best_for": [
+        "elegant",
+        "live music"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Sirvan Sofrasi",
+      "city": "Istanbul",
+      "cuisine_type": [
+        "Turkish"
+      ],
+      "price_range": "€10-15 per person",
+      "hours": "09:00 AM - 1:00 PM",
+      "ambience": "Family‑owned with stone & wood‑oven cooking; warm, hospitable vibe",
+      "area": "Sultanhamet",
+      "highlights": [
+        "Family-owned",
+        "Stone & wood-oven cooking",
+        "Vegetarian set menu"
+      ],
+      "must_try_dishes": [
+        "Wide range of kebabs",
+        "pide",
+        "Turkish wines"
+      ],
+      "best_for": [
+        "family-owned",
+        "hospitable"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Turko Baba Restaurant and Cafe",
+      "city": "Istanbul",
+      "cuisine_type": [
+        "Turkish"
+      ],
+      "price_range": "€10-20 per person",
+      "hours": "10:00 AM - 10:00 PM",
+      "ambience": "Cozy, family‑run café with just one staff who cooks, serves, and converses with guests; street‑side tables, welcoming and relaxed atmosphere",
+      "area": "Sultanhamet",
+      "highlights": [
+        "Family-run",
+        "One staff member does everything",
+        "Welcoming atmosphere"
+      ],
+      "must_try_dishes": [
+        "Chicken schnitzel",
+        "prawn casserole",
+        "Greek salad",
+        "mezze platter",
+        "lyula kebab",
+        "lentil soup",
+        "dolma",
+        "rice pudding",
+        "Turkish coffee"
+      ],
+      "best_for": [
+        "family-run",
+        "relaxed"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Old Balat Cafe and Kitchen",
+      "city": "Istanbul",
+      "cuisine_type": [
+        "Turkish"
+      ],
+      "price_range": "€5-12 per person",
+      "hours": "8:00 AM - 11:30 PM",
+      "ambience": "Cozy, rustic atmosphere with exposed brick, vintage furniture, and a welcoming vibe that feels like a local kitchen",
+      "area": "Balat",
+      "highlights": [
+        "Cozy rustic atmosphere",
+        "Feels like a local kitchen"
+      ],
+      "must_try_dishes": [
+        "Testi kebab (clay-pot kebab)",
+        "Gözleme pancakes",
+        "Slow-cooked lamb shank in rich tomato sauce"
+      ],
+      "best_for": [
+        "cozy",
+        "rustic"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Balat Antik Cafe",
+      "city": "Istanbul",
+      "cuisine_type": [
+        "Turkish",
+        "Cafe"
+      ],
+      "price_range": "€2-5 per person",
+      "hours": "8:00 AM - 12:00 AM",
+      "ambience": "Extremely photogenic and vibrant, with umbrella canopies over outdoor seating—perfect for Insta-worthy shots",
+      "area": "Balat",
+      "highlights": [
+        "Extremely photogenic",
+        "Perfect for Instagram shots"
+      ],
+      "must_try_dishes": [
+        "Turkish coffee or tea",
+        "turkish delight",
+        "light pastries"
+      ],
+      "best_for": [
+        "photogenic",
+        "instagram"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Forno",
+      "city": "Istanbul",
+      "cuisine_type": [
+        "Turkish"
+      ],
+      "price_range": "€10-30 per person",
+      "hours": "9:00 AM - 10:00 PM",
+      "ambience": "Cozy café with exposed brick walls, bright tiles, and a stone-oven at its heart",
+      "area": "Balat",
+      "highlights": [
+        "Stone-oven cooking",
+        "Exposed brick walls"
+      ],
+      "must_try_dishes": [
+        "Crispy lahmacun",
+        "variety of pides",
+        "stone‑oven eggs",
+        "lentil soup",
+        "shepherd's salad",
+        "apricot souffle"
+      ],
+      "best_for": [
+        "stone-oven",
+        "cozy"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Hafiz Mustafa",
+      "city": "Istanbul",
+      "cuisine_type": [
+        "Turkish",
+        "Dessert"
+      ],
+      "price_range": "€5-15 per person",
+      "hours": "12:00 AM - 11:59 PM",
+      "ambience": "Classic Ottoman‑style patisserie with elegant display counters",
+      "area": "Taksim",
+      "highlights": [
+        "Classic Ottoman-style patisserie",
+        "Elegant display counters"
+      ],
+      "must_try_dishes": [
+        "Fig and almond sweets",
+        "artisanal Turkish delights",
+        "Pistachio and milk muhallebi",
+        "Baklava",
+        "classic sütlaç"
+      ],
+      "best_for": [
+        "desserts",
+        "Ottoman style"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Vihana Kahvesi",
+      "city": "Istanbul",
+      "cuisine_type": [
+        "Turkish",
+        "Cafe"
+      ],
+      "price_range": "€10-15 per person",
+      "hours": "7:00 AM - 2:00 AM",
+      "ambience": "Stylish café blending Viennese and Turkish coffee culture; light, modern-chic interior and outdoor seating with views of Galata Tower",
+      "area": "Taksim",
+      "nearby_landmarks": [
+        "Galata Tower, Istanbul"
+      ],
+      "highlights": [
+        "Blends Viennese and Turkish coffee culture",
+        "Views of Galata Tower"
+      ],
+      "must_try_dishes": [
+        "San Sebastián (Basque-style) cheesecake",
+        "Classic Turkish coffee",
+        "cappuccino",
+        "teas"
+      ],
+      "best_for": [
+        "coffee culture",
+        "views"
+      ],
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Hagia Sophia",
+      "city": "Istanbul",
+      "description": "Stunning mosaics and huge dome",
+      "hours": "9:00 AM - 7:30 PM",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Blue Mosque",
+      "city": "Istanbul",
+      "description": "Iconic blue tiles & architecture",
+      "hours": "9:00 AM - 6:00 PM",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Topkapi Palace",
+      "city": "Istanbul",
+      "description": "Historic palace",
+      "hours": "Wednesday to Monday, 9:00 AM to 6:00 PM. Closed on Tuesdays. Last entry is one hour before closing time",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Balat",
+      "city": "Istanbul",
+      "description": "Offbeat, local neighborhood with colorful buildings, great photo spots and Turkish coffee cafés",
+      "hours": "24 hours a day",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Taksim Square & Istiklal Street",
+      "city": "Istanbul",
+      "description": "Lively shopping and food boulevard",
+      "hours": "24 hours a day",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Galata Tower",
+      "city": "Istanbul",
+      "description": "Historic tower with views",
+      "hours": "8:30 AM - 11:00 PM",
+      "source_files": [
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Athens",
+        "Istanbul"
+      ],
+      "tip": "Check local news or apps (like Google Alerts or Smart Traveler) for protests or strikes",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "cities": [
+        "Istanbul"
+      ],
+      "tip": "Taxis without Meters - Always insist on using the meter. In Istanbul, use BiTaksi app (like Uber)",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "cities": [
+        "Athens",
+        "Istanbul"
+      ],
+      "tip": "Check local news or apps (like Google Alerts or Smart Traveler) for protests or strikes",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    }
+  ],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "England and Scotland/Edlyn London.pdf",
+    "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+  ]
+}

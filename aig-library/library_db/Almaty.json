@@ -1,0 +1,1421 @@
+{
+  "restaurants": [
+    {
+      "name": "The Shakespeare Pub",
+      "city": "Almaty",
+      "cuisine_type": [
+        "British",
+        "Indian"
+      ],
+      "price_range": "KZT 3000-4000 per person",
+      "hours": "12:00 PM - 12:30 AM",
+      "ambience": "British pub helmed by an Indian chef",
+      "highlights": [
+        "Serves top-notch curries",
+        "Curry night Wednesdays"
+      ],
+      "must_try_dishes": [
+        "Channa Masala"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ],
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Tandoor Indian Restaurant",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "KZT 2000-6000 per person",
+      "hours": "11:00 AM - 12:00 AM",
+      "ambience": "Casual Indian Restaurant",
+      "must_try_dishes": [
+        "dal makhani",
+        "paneer dishes",
+        "biryani"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "DAWAT",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "KZT 3000-5000 per person",
+      "hours": "12:00 AM - 11:00 PM",
+      "ambience": "Cozy, full-service Indian restaurant with friendly, attentive staff. Relaxed and welcoming atmosphere",
+      "highlights": [
+        "Great for family dinners",
+        "Great for casual outings"
+      ],
+      "must_try_dishes": [
+        "Chana masala",
+        "palak paneer",
+        "garlic naan"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "U Rybaka Cholpon Ata",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Central Asian"
+      ],
+      "price_range": "KZT 1500-3000 per person",
+      "hours": "8:30 AM - 11:00 PM",
+      "ambience": "Lakeside café with straightforward, relaxed vibe",
+      "nearby_landmarks": [
+        "Issyk Lake, Almaty"
+      ],
+      "must_try_dishes": [
+        "Lagman without meat",
+        "Steamed vegetable side dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf"
+      ]
+    },
+    {
+      "name": "Barashek Cholpon Ata",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Local"
+      ],
+      "price_range": "KZT 2000-3500 per person",
+      "hours": "9:00 AM - 3:00 AM",
+      "ambience": "Cozy café on Sovetskaya Street popular for its pleasant atmosphere",
+      "must_try_dishes": [
+        "Vegetable soups",
+        "seasonal veggie platters"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf"
+      ]
+    },
+    {
+      "name": "Tsentr Otdykha Raduga",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Local"
+      ],
+      "price_range": "KZT 4000-7000 per person",
+      "hours": "2:00 PM - 11:00 AM",
+      "ambience": "Resort-style dining with lake views",
+      "must_try_dishes": [
+        "fresh salads",
+        "Pick-your-own veggie wraps or sides"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf"
+      ]
+    },
+    {
+      "name": "Amrita Vegetarian Cafe",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Vegetarian"
+      ],
+      "price_range": "KZT 2000-3500 per person",
+      "hours": "9:00 AM - 10:00 PM",
+      "area": "Gogol street",
+      "ambience": "Cozy, peaceful vegetarian café with a light, spiritual vibe",
+      "highlights": [
+        "Prepares fresh, satvik (onion/garlic-free) dishes to order"
+      ],
+      "must_try_dishes": [
+        "Thali",
+        "Aloo Baingan Sabzi"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Govinda's Vegetarian Cafe",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Vegetarian"
+      ],
+      "price_range": "KZT 2000-3500 per person",
+      "hours": "11:00 AM - 8:00 PM",
+      "area": "Abylai Khan Ave 39",
+      "ambience": "Hare Krishna-style café",
+      "must_try_dishes": [
+        "Thali",
+        "Saag Paneer",
+        "Malai Kofta",
+        "Mixed Vegetable Pakoras & Samosas",
+        "Mixed Vegetable Pakoras",
+        "Samosas"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Spice Mantra",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Indian",
+        "Thai",
+        "Chinese"
+      ],
+      "price_range": "KZT 2500-4000 per person",
+      "hours": "12:00 PM - 11:30 PM",
+      "ambience": "Mix of Indian/Thai/Chinese cuisines with South‑Indian brunch specials",
+      "must_try_dishes": [
+        "masala dosa",
+        "bhature & dal makhani",
+        "bhature",
+        "dal makhani"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ],
+      "highlights": [
+        "South-Indian brunch specials"
+      ]
+    },
+    {
+      "name": "Paul",
+      "city": "Almaty",
+      "cuisine_type": [
+        "French"
+      ],
+      "price_range": "KZT 100-2500 per person",
+      "hours": "8:00 AM - 10:00 PM",
+      "area": "улица Керей-Жанибек Хандар 640А",
+      "ambience": "Cosy mountain café right at the top station. Wooden interiors, candlelit ambiance, and panoramic views",
+      "nearby_landmarks": [
+        "Shymbulak Mountain Resort, Almaty"
+      ],
+      "must_try_dishes": [
+        "Hot soups (e.g., French onion or creamy vegetable)",
+        "Hot soups (French onion or creamy vegetable)"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ],
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Syn32",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Local"
+      ],
+      "price_range": "KZT 1500-3000 per person",
+      "hours": "10:00 AM - 4:00 PM",
+      "area": "улица Керей-Жанибек Хандар 662",
+      "ambience": "Yurt-style pop-up cafés or tents at mid-station—informal, rustic, and alpine-themed",
+      "nearby_landmarks": [
+        "Shymbulak Mountain Resort, Almaty"
+      ],
+      "must_try_dishes": [
+        "Vegetable soups",
+        "salads"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Namaste Indian Restaurant",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "KZT 3500-6000 per person",
+      "hours": "11:00 AM - 11:00 PM",
+      "ambience": "Cozy and authentically decorated, with warm lighting and attentive service. Homemade feel with owner and chef personally engaging with guests",
+      "highlights": [
+        "Frequently praised for friendly hospitality",
+        "Homemade feel",
+        "Owner and chef personally engage with guests"
+      ],
+      "must_try_dishes": [
+        "Vegetable Pakoras",
+        "Dal Makhani"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Magic Masala",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "KZT 3500-6500 per person",
+      "hours": "11:00 AM - 11:00 PM",
+      "ambience": "Cozy, relaxed restaurant with friendly staff and authentic Delhi-style décor",
+      "highlights": [
+        "Fresh, made-to-order dishes"
+      ],
+      "must_try_dishes": [
+        "Signature Thali with lachha parantha"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Silver Spoon",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "KZT 4000-7000 per person",
+      "hours": "12:00 PM - 11:00 PM",
+      "ambience": "Modern, peaceful ambiance with Hindi-speaking staff and meticulous attention to flavor",
+      "highlights": [
+        "Rated as one of the finest Indian venues in town"
+      ],
+      "must_try_dishes": [
+        "Chur Chur Naan & Lacha Parantha",
+        "Chur Chur Naan",
+        "Lacha Parantha"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Narsharab",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Azerbaijani"
+      ],
+      "price_range": "KZT 8000-12000 per person",
+      "hours": "12:00 PM - 12:00 AM",
+      "ambience": "Elegant, spacious restaurant with warm Azerbaijani-inspired decor. Features live music and dance",
+      "highlights": [
+        "Live music and dance",
+        "Ideal for celebrations"
+      ],
+      "must_try_dishes": [
+        "cream lentil soup",
+        "Khachapuri"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Lukum Turkish Cuisine",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Turkish"
+      ],
+      "price_range": "KZT 500-2000 per person",
+      "hours": "8:00 AM - 12:00 AM",
+      "ambience": "Modern, comfortable Turkish restaurant with indoor seating and outdoor table options—family-friendly and relaxed",
+      "highlights": [
+        "Family‑friendly",
+        "Relaxed atmosphere"
+      ],
+      "must_try_dishes": [
+        "Samsa",
+        "chebureki",
+        "khychiny"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Tsekh",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "KZT 4000-8000 per person",
+      "hours": "11:00 AM - 12:00 AM",
+      "ambience": "Trendy multi-cuisine bistro/pub offering indoor and outdoor seating, with a wide selection of beers and small plates. Casual, social atmosphere",
+      "highlights": [
+        "Wide selection of beers",
+        "Small plates"
+      ],
+      "must_try_dishes": [
+        "Appetizer/small plates"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Eastern Gate Indian Restaurant",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "5,000 – 10,000 KZT per person",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "A highly rated restaurant serving authentic Indian cuisine, popular among travelers looking for familiar flavors",
+      "must_try_dishes": [
+        "Paneer Tikka",
+        "Mango Lassi",
+        "Naan",
+        "Butter Chicken",
+        "Garlic Naan",
+        "Vegetable Biryani"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ],
+      "highlights": [
+        "Smoke-free ambiance"
+      ]
+    },
+    {
+      "name": "Namo Indian Restaurant",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "KZT 2500-5000 per person",
+      "hours": "12:00 PM - 11:00 PM",
+      "ambience": "Warm and inviting, run by Chef-Owner Mr. Vijay (ex-Taj India Hotel). Combines North and South Indian flavors in a cozy, contemporary space",
+      "highlights": [
+        "Best South-Indian cuisine in the city",
+        "Run by ex-Taj Hotel chef"
+      ],
+      "must_try_dishes": [
+        "South Indian"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Jump-in-Goat Coffee",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "4,000 – 6,000 KZT per person",
+      "hours": "8:00 AM – 9:00 PM",
+      "ambience": "A highly rated specialty coffee shop known for quality beans and excellent brewing techniques",
+      "must_try_dishes": [
+        "Sandwiches",
+        "light wraps",
+        "pastries",
+        "specialty coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Bowler Coffee Roasters",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "4,000 – 7,000 KZT per person",
+      "hours": "8:00 AM – 7:00 PM",
+      "ambience": "A popular specialty coffee shop known for its high-quality beans and minimalist interior",
+      "must_try_dishes": [
+        "Sandwiches",
+        "toasties",
+        "pastries",
+        "cappuccino",
+        "espresso"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Big Apple Coffee Shop",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "4,000 – 8,000 KZT per person",
+      "hours": "7:00 AM – 10:00 PM",
+      "ambience": "A relaxed café located near the city center, offering a good selection of coffee, pastries, and light café-style dishes",
+      "must_try_dishes": [
+        "Sandwiches",
+        "wraps",
+        "croissants",
+        "coffee",
+        "tea"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Darejani",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Georgian"
+      ],
+      "price_range": "7,500 – 10,000 KZT per person",
+      "hours": "10:00 AM – 12:00 AM",
+      "ambience": "A well-known Georgian restaurant popular for its rich flavors, hearty dishes, and welcoming ambiance",
+      "must_try_dishes": [
+        "Khachapuri (cheese bread)",
+        "Khinkali Dumplings",
+        "Grilled Vegetables"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Noodles",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Asian",
+        "International"
+      ],
+      "price_range": "5,000 – 10,000 KZT per person",
+      "hours": "12–6 AM, 8 AM–12 AM",
+      "ambience": "A stylish restaurant located inside Kazakhstan Hotel, offering a mix of Asian and international dishes",
+      "area": "Hotel Kazakhstan",
+      "must_try_dishes": [
+        "Asian Noodles",
+        "Wok-Fried Dishes",
+        "Dumplings"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Tarkhun National Cuisine",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Kazakh"
+      ],
+      "price_range": "6,000 – 10,000 KZT per person",
+      "hours": "10:00 AM – 1:00 AM",
+      "ambience": "A welcoming restaurant that focuses on classic regional recipes prepared with fresh local ingredients, offering travelers a chance to experience the rich culinary traditions of Kazakhstan",
+      "must_try_dishes": [
+        "Beshbarmak (Kazakhstan's national dish)",
+        "Manty dumplings",
+        "Lagman noodles",
+        "Baursak (traditional fried bread)"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Namaste Kolsai",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Local"
+      ],
+      "price_range": "3,000 – 6,000 KZT per person",
+      "hours": "9:00 AM – 8:00 PM",
+      "ambience": "A simple and welcoming eatery located near Kolsai Lake, offering a comfortable stop amidst nature",
+      "nearby_landmarks": [
+        "Kolsai Lake, Almaty"
+      ],
+      "must_try_dishes": [
+        "Hot soups",
+        "local meals",
+        "rice dishes",
+        "tea",
+        "light comfort food"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Sandyq Restaurant",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Kazakh"
+      ],
+      "price_range": "8,000 – 12,000 KZT per person",
+      "hours": "12:00 PM – 12:00 AM",
+      "ambience": "A popular restaurant specializing in traditional Kazakh cuisine with a refined presentation and cultural ambiance",
+      "must_try_dishes": [
+        "Beshbarmak (traditional Kazakh meat dish)",
+        "Horse-meat sausages",
+        "Manty Dumplings"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Restaurant \"Khoroshiy God\"",
+      "city": "Almaty",
+      "cuisine_type": [
+        "European",
+        "Fusion"
+      ],
+      "price_range": "10,000 – 15,000 KZT per person",
+      "hours": "10:00 AM – 12:00 AM",
+      "ambience": "A trendy restaurant with a modern atmosphere offering European and fusion cuisine. It's well-known for creative dishes and stylish interiors",
+      "must_try_dishes": [
+        "Grilled Steak",
+        "Seafood Risotto",
+        "Signature Cocktails"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Vahtanguri Georgian Restaurant",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Georgian"
+      ],
+      "price_range": "7,000 – 11,000 KZT per person",
+      "hours": "Monday – Thursday: 12:00 PM – 1:00 AM, Friday – Saturday: 12:00 PM – 2:00 AM",
+      "ambience": "A lively Georgian restaurant known for hearty dishes and a vibrant dining atmosphere",
+      "must_try_dishes": [
+        "Khachapuri (cheese bread)",
+        "Khinkali Dumplings",
+        "Grilled Meat Platters"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Cream Cafe & Terrace",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "4,000 – 8,000 KZT per person",
+      "hours": "9:00 AM – 9:00 PM",
+      "ambience": "A stylish terrace café with views of the surrounding greenery, making it a pleasant stop before or after visiting Kok-Tobe Hill",
+      "nearby_landmarks": [
+        "Kok-Tobe Hill, Almaty"
+      ],
+      "must_try_dishes": [
+        "Sandwiches",
+        "wraps",
+        "pastries",
+        "coffee",
+        "tea"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Vanilla Handmade Coffee",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "4,000 – 7,000 KZT per person",
+      "hours": "8:00 AM – 9:30 PM (Daily)",
+      "ambience": "A popular specialty coffee café known for high-quality roasted beans and minimalist café interiors",
+      "must_try_dishes": [
+        "Sandwiches",
+        "croissants",
+        "pastries",
+        "specialty coffee",
+        "tea"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Big Apple Coffee Терренкур",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "3,500 – 7,000 KZT per person",
+      "hours": "7:30 AM – 10:00 PM",
+      "ambience": "A cozy coffee stand located along the Terrenkur walking trail, a popular scenic promenade in Almaty",
+      "area": "Terrenkur walking trail",
+      "must_try_dishes": [
+        "Sandwiches",
+        "croissants",
+        "pastries",
+        "coffee",
+        "tea"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Beefeater Dostyk",
+      "city": "Almaty",
+      "cuisine_type": [
+        "European"
+      ],
+      "price_range": "20,000+ KZT per person",
+      "hours": "Monday – Thursday: 12:00 PM – 12:00 AM, Friday – Saturday: 12:00 PM – 1:00 AM",
+      "ambience": "A well-known steakhouse offering premium grilled meats and European dishes in a stylish setting",
+      "must_try_dishes": [
+        "Ribeye Steak",
+        "Grilled Vegetables",
+        "Beef Burger"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Tyubeteyka",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Central Asian"
+      ],
+      "price_range": "10,000 – 15,000 KZT per person",
+      "hours": "12:00 PM – 12:00 AM",
+      "ambience": "A traditional Central Asian restaurant with beautiful interior décor inspired by Silk Road culture",
+      "must_try_dishes": [
+        "Uzbek Plov",
+        "Manty Dumplings",
+        "Lagman"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "U Afanasicha",
+      "city": "Almaty",
+      "cuisine_type": [
+        "Local"
+      ],
+      "price_range": "5,000 – 10,000 KZT per person",
+      "hours": "Monday – Friday: 10:00 AM – 2:00 AM, Saturday – Sunday: 9:00 AM – 2:00 AM",
+      "ambience": "A lively restaurant and pub popular with locals for hearty food and a wide selection of drinks",
+      "must_try_dishes": [
+        "Grilled Sausages",
+        "Roast Chicken",
+        "Beer Platters"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Park of 28 Panfilov Guardsmen",
+      "city": "Almaty",
+      "description": "A beautiful, serene park in the city center",
+      "hours": "Open 24 hours",
+      "entry_fee": "No entrance fees",
+      "recommended_duration": null,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf"
+      ]
+    },
+    {
+      "name": "Zenkov Cathedral (Ascension Cathedral)",
+      "city": "Almaty",
+      "description": "A stunning wooden Russian Orthodox cathedral located within Panfilov Park, known for its vibrant colors and unique architecture",
+      "hours": "7:00 AM - 6:00 PM",
+      "entry_fee": "No entrance fees",
+      "recommended_duration": null,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf"
+      ]
+    },
+    {
+      "name": "Dostyk Avenue",
+      "city": "Almaty",
+      "description": "Iconic avenue showcasing Almaty's evolution from Soviet-era city to contemporary metropolis",
+      "hours": "10:00 AM - 10:00 PM",
+      "entry_fee": null,
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Issyk Lake",
+      "city": "Almaty",
+      "description": "Stunning mountain lake known for its turquoise waters and serene surroundings",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": "4 hours",
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Abay Kazakh State Academic Opera and Ballet Theater",
+      "city": "Almaty",
+      "description": "Cultural venue for opera and ballet performances",
+      "hours": "10:00 AM to 2:00 PM, and again from 3:00 PM to 6:00 PM",
+      "entry_fee": "KZT 2000 to 4500",
+      "recommended_duration": "3 hours",
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Arbat Street",
+      "city": "Almaty",
+      "description": "Vibrant street featuring local artisans, street performers, and quaint shops",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Medeu",
+      "city": "Almaty",
+      "description": "World's highest Olympic-sized speed skating rink with picturesque mountain backdrop",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Shymbulak Mountain Resort",
+      "city": "Almaty",
+      "description": "Mountain resort offering fresh mountain air, magnificent panoramic views, and cafes with views",
+      "hours": "9:00 AM - 6:00 PM",
+      "entry_fee": null,
+      "recommended_duration": "6 hours",
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Kok Tobe Hill",
+      "city": "Almaty",
+      "description": "A scenic hill located on the edge of the city offering some of the best panoramic views of Almaty",
+      "hours": "10:00 AM – 9:00 PM",
+      "entry_fee": "3,500 tenge for a one-way trip and 6,000 tenge for a round trip per person",
+      "recommended_duration": "3 hours",
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Green Bazaar (Zelyony Bazaar)",
+      "city": "Almaty",
+      "description": "Bustling indoor market offering vibrant sensory experience with fresh produce, spices, local delicacies, and souvenirs",
+      "hours": "9:00 AM - 7:00 PM",
+      "entry_fee": "No entrance fees",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Central State Museum of Kazakhstan",
+      "city": "Almaty",
+      "description": "One of Kazakhstan's largest and oldest museums, offering a deep dive into the country's rich history and cultural heritage",
+      "hours": "9:00 AM - 6:00 PM",
+      "entry_fee": "500 tenge",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "First President's Park",
+      "city": "Almaty",
+      "description": "Serene expanse honoring Nursultan Nazarbayev, set against the breathtaking Alatau Mountains",
+      "hours": "6:00 AM - 11:00 PM",
+      "entry_fee": "No entrance fees",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Almaty International Airport (ALA)",
+      "city": "Almaty",
+      "description": "Main international airport serving Almaty",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Republic Square",
+      "city": "Almaty",
+      "description": "One of the most important public squares in Kazakhstan, Republic Square is home to the impressive Independence Monument",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ],
+      "hours": "24 hours"
+    },
+    {
+      "name": "Panfilov Park",
+      "city": "Almaty",
+      "description": "This beautiful green park is dedicated to the Panfilov soldiers, heroes of World War II. It is one of Almaty's most beloved public parks",
+      "hours": "24 hours",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Zenkov Cathedral",
+      "city": "Almaty",
+      "description": "One of the world's tallest wooden buildings, remarkable for its intricate architecture and vibrant colors",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Kok Tobe Hill Gondola Cableway",
+      "city": "Almaty",
+      "description": "Cable car offering panoramic views of Almaty and the surrounding mountains",
+      "hours": "10:00 AM - 12:00 AM",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Big Almaty Lake",
+      "city": "Almaty",
+      "description": "Turquoise lake surrounded by snow-capped mountains",
+      "hours": "Best to visit between 9 AM and 5 PM",
+      "recommended_duration": "4 hours",
+      "source_files": [
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Tamgaly Tas Petroglyphs",
+      "city": "Almaty",
+      "description": "Open-air UNESCO-listed rock art site on the Ili River",
+      "hours": "Open 24 hours",
+      "entry_fee": "200 KZT per person",
+      "recommended_duration": "4 hours",
+      "source_files": [
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Gorky Park",
+      "city": "Almaty",
+      "description": "Green heart of Almaty for relaxation",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Dostyk Plaza",
+      "city": "Almaty",
+      "description": "Luxury shopping mall offering international brands and designer boutiques",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Mega Mall",
+      "city": "Almaty",
+      "description": "Shopping mall featuring diverse selection of stores alongside entertainment options",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Esentai Mall",
+      "city": "Almaty",
+      "description": "High-end shopping mall with exclusive brands, gourmet dining, and panoramic city skyline views",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Abay Metro Station",
+      "city": "Almaty",
+      "description": "One of the most beautifully designed stations on the Almaty Metro. Each station in Almaty is uniquely themed and decorated, reflecting Kazakhstan's culture, history, and artistic traditions",
+      "hours": "6:20 AM – 11:30 PM",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Ascension Cathedral",
+      "city": "Almaty",
+      "description": "Located inside Panfilov Park, the Ascension Cathedral is one of the most beautiful landmarks in Almaty. Built entirely of wood in 1907, one of the tallest wooden buildings in the world",
+      "hours": "7:00 AM – 6:00 PM",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Green Bazaar",
+      "city": "Almaty",
+      "description": "One of the most famous markets in Kazakhstan, Green Bazaar is a vibrant and colorful marketplace where locals shop for fresh produce, spices, dried fruits, meats, and traditional snacks",
+      "hours": "9:00 AM – 7:00 PM (Monday closed)",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Charyn Canyon",
+      "city": "Almaty",
+      "description": "Often called the \"Grand Canyon of Central Asia,\" Charyn Canyon stretches over 150 kilometers and features dramatic red sandstone formations",
+      "hours": "9 AM–6 PM",
+      "recommended_duration": "4 hours",
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    },
+    {
+      "name": "Lower Kolsai Lake",
+      "city": "Almaty",
+      "description": "Often referred to as the \"Pearls of the Tian Shan,\" the Kolsai Lakes are a series of crystal-clear alpine lakes surrounded by pine forests and dramatic mountain peaks",
+      "hours": "24/7",
+      "recommended_duration": "3 hours",
+      "source_files": [
+        "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Kazakhstan Hotel",
+      "city": "Almaty",
+      "location": "Almaty",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "name": "Kazakhstan Hotel",
+      "city": "Almaty",
+      "location": "Central Almaty",
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "name": "Hotel Kazakhstan",
+      "city": "Almaty",
+      "location": "Heart of Almaty",
+      "_source_file": "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx",
+      "_source_mtime": 1775604640.0
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Baursak",
+      "city": "Almaty",
+      "description": "Fried dough balls (like savory donuts); delicious with jam or tea",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Kuurdak (veg version)",
+      "city": "Almaty",
+      "description": "Can be made with potatoes and onions",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Plov (veg)",
+      "city": "Almaty",
+      "description": "Rice pilaf with carrots and sometimes chickpeas; ask for 'no meat'",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Lagman (veg)",
+      "city": "Almaty",
+      "description": "Hand-pulled noodles in a broth with vegetables (request without meat)",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Manti (veg)",
+      "city": "Almaty",
+      "description": "Dumplings, usually with meat, but Korean or Uyghur places offer veg versions (pumpkin, potato)",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Beshbarmak (veg)",
+      "city": "Almaty",
+      "description": "Rare, but some restaurants serve vegetarian versions with noodles and mushrooms",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+        "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Felt Crafts (Tekemet & Tuskiiz)",
+      "city": "Almaty",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Green Bazaar"
+      ],
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "item": "Kazakh Jewelry (National Motifs)",
+      "city": "Almaty",
+      "category": "Fashion",
+      "where_to_buy": [
+        "artisan boutiques in Dostyk Plaza"
+      ],
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "item": "Kazakh Tea Sets & Ceramics",
+      "city": "Almaty",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "item": "Local Spices & Dried Goods",
+      "city": "Almaty",
+      "category": "Food",
+      "where_to_buy": [
+        "Green Bazaar"
+      ],
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "item": "Embroidery & Traditional Clothing",
+      "city": "Almaty",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Kok Tobe"
+      ],
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "item": "Books, Folk Art & Mini Yurts",
+      "city": "Almaty",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "item": "Natural Skincare & Beauty Products",
+      "city": "Almaty",
+      "category": "Beauty",
+      "where_to_buy": [
+        "pharmacies"
+      ],
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "item": "Kazakh Chocolates & Local Wine",
+      "city": "Almaty",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "item": "Felt Crafts (Tekemet & Tuskiiz)",
+      "city": "Almaty",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Green Bazaar"
+      ],
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "item": "Kazakh Jewelry (National Motifs)",
+      "city": "Almaty",
+      "category": "Fashion",
+      "where_to_buy": [
+        "artisan boutiques in Dostyk Plaza"
+      ],
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "item": "Kazakh Tea Sets & Ceramics",
+      "city": "Almaty",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "item": "Local Spices & Dried Goods",
+      "city": "Almaty",
+      "category": "Food",
+      "where_to_buy": [
+        "Green Bazaar"
+      ],
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "item": "Embroidery & Traditional Clothing",
+      "city": "Almaty",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Kok Tobe"
+      ],
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "item": "Books, Folk Art & Mini Yurts",
+      "city": "Almaty",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "item": "Natural Skincare & Beauty Products",
+      "city": "Almaty",
+      "category": "Fashion",
+      "where_to_buy": [
+        "pharmacies"
+      ],
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    },
+    {
+      "item": "Kazakh Chocolates & Local Wine",
+      "city": "Almaty",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+      "_source_mtime": 1772384307.0588992
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Almaty",
+      "mode": "Taxi",
+      "description": "Use official taxis or ride apps like Yandex Go or inDrive",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    },
+    {
+      "city": "Almaty",
+      "mode": "Gondola",
+      "description": "Cable car to Shymbulak Mountain Resort and Kok Tobe Hill",
+      "recommended_pass": null,
+      "cost": "3,500 tenge one-way, 6,000 tenge round trip to Kok Tobe",
+      "_source_file": "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+      "_source_mtime": 1752036576.0
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf",
+    "Almaty Kazakhstan/Vineet_Final_All inclusive guide.pdf",
+    "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx"
+  ]
+}

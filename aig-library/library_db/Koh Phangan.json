@@ -1,0 +1,181 @@
+{
+  "restaurants": [
+    {
+      "name": "Nira's Home Bakery & Deli",
+      "city": "Koh Phangan",
+      "cuisine_type": [
+        "Bakery"
+      ],
+      "price_range": "฿40-฿150",
+      "hours": "7AM to 5PM",
+      "ambience": "Low budget snacks, nice bakery vibe",
+      "highlights": [
+        "Nice bakery vibe",
+        "Low budget snacks"
+      ],
+      "must_try_dishes": [
+        "Bagel with smoked salmon & cream cheese"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Life Style Restaurant",
+      "city": "Koh Phangan",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "฿50–฿120",
+      "hours": "10AM to 9PM",
+      "area": "Ao Ban Khai",
+      "ambience": "Street-side local spot, very budget-friendly, good for simple meals",
+      "highlights": [
+        "Very budget-friendly",
+        "Good for simple meals"
+      ],
+      "must_try_dishes": [
+        "Stir-fried pork or chicken with basil"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Mama kop",
+      "city": "Koh Phangan",
+      "cuisine_type": [
+        "Thai",
+        "Seafood"
+      ],
+      "price_range": "฿40-฿150",
+      "hours": "11AM to 11PM",
+      "ambience": "Local Thai / seafood-focused but generally affordable",
+      "highlights": [
+        "Seafood-focused",
+        "Generally affordable"
+      ],
+      "must_try_dishes": [
+        "Fish curry",
+        "grilled seafood"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Thai Food Stall (Haad Rin)",
+      "city": "Koh Phangan",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "฿50–฿90",
+      "hours": "11AM to 8PM",
+      "area": "Haad Rin",
+      "ambience": "Street food vibe, quick, cheap, authentic",
+      "highlights": [
+        "Street food vibe",
+        "Quick and cheap",
+        "Authentic"
+      ],
+      "must_try_dishes": [
+        "Pork or chicken basil stir-fry with rice"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Haad Rin Beach",
+      "city": "Koh Phangan",
+      "description": "Experience the world-famous Full Moon Party. Dance under the moonlight till sunrise, enjoy fire shows, neon body paint, beach bars, and live DJs.",
+      "hours": "Daily",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Haad Yuan Beach",
+      "city": "Koh Phangan",
+      "description": "A secluded, picturesque beach on Koh Phangan known for its crystal-clear waters, relaxed vibe and boat-only access making it a peaceful contrast to the party zones",
+      "hours": "Open daily",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Amsterdam Bar",
+      "city": "Koh Phangan",
+      "description": "Sunset drinks location",
+      "hours": "Daily from 12:00 PM to 1:00 AM",
+      "entry_fee": "100 THB per person",
+      "recommended_duration": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Full Moon Party at Haad Rin Beach",
+      "city": "Koh Phangan",
+      "description": "Experience the world-famous Full Moon Party. Dance under the moonlight till sunrise, enjoy fire shows, neon body paint, beach bars, and live DJs, connect with travelers from all over the world",
+      "hours": null,
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Rin Beach Resort",
+      "city": "Koh Phangan",
+      "location": "35min by public transport & 23min by car from Airport",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "name": "Rin Beach Resort",
+      "city": "Koh Phangan",
+      "location": "Koh Phangan",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+    "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+  ]
+}

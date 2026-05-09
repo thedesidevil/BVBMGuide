@@ -1,0 +1,312 @@
+{
+  "restaurants": [
+    {
+      "name": "Full Moon Café",
+      "city": "Havelock Island",
+      "cuisine_type": [
+        "Seafood",
+        "Continental",
+        "Indian"
+      ],
+      "price_range": "₹300–400 per person",
+      "hours": "8:00 AM – 10:30 PM",
+      "ambience": "Relaxed, beachside café popular with travellers for its easygoing vibe and island-style meals",
+      "area": "Govind Nagar / Vijaynagar area",
+      "highlights": [
+        "Beachside location",
+        "Popular with travellers",
+        "Island-style meals"
+      ],
+      "must_try_dishes": [
+        "Grilled fish",
+        "seafood platters",
+        "Indian & continental dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Anju Coco",
+      "city": "Havelock Island",
+      "cuisine_type": [
+        "Indian",
+        "Seafood"
+      ],
+      "price_range": "₹200–400 per person",
+      "hours": "8:00 AM – 10:30 PM",
+      "ambience": "Reliable local favourite with a wide menu and comfortable seating",
+      "area": "Govind Nagar / Vijaynagar area",
+      "highlights": [
+        "Wide menu",
+        "Local favourite",
+        "Comfortable seating"
+      ],
+      "must_try_dishes": [
+        "Indian curries",
+        "seafood",
+        "vegetarian options"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Nemo Café",
+      "city": "Havelock Island",
+      "cuisine_type": [
+        "Continental",
+        "Café"
+      ],
+      "price_range": "₹300–400 per person",
+      "hours": "Open 24 hours",
+      "ambience": "Laid-back café perfect for a relaxed lunch, light bites, or even just coffee and desserts",
+      "highlights": [
+        "24-hour operation",
+        "Light meals",
+        "Coffee and desserts"
+      ],
+      "must_try_dishes": [
+        "Sandwiches",
+        "burgers",
+        "coffee",
+        "light meals"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Bonova Café & Pub",
+      "city": "Havelock Island",
+      "cuisine_type": [
+        "Continental",
+        "Seafood"
+      ],
+      "price_range": "₹250–350 per person",
+      "hours": "11:00 AM – 10:30 PM",
+      "ambience": "Casual, social spot with a lively yet relaxed atmosphere",
+      "highlights": [
+        "Lively atmosphere",
+        "Cocktails available"
+      ],
+      "must_try_dishes": [
+        "Continental dishes",
+        "seafood",
+        "cocktails"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Radhanagar Beach (Beach No. 7)",
+      "city": "Havelock Island",
+      "description": "Frequently ranked among Asia's most beautiful beaches, known for its powder-soft white sand, crystal-clear water, and long, uncrowded shoreline",
+      "hours": "Open all day",
+      "entry_fee": "Free entry",
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Nemo Reef",
+      "city": "Havelock Island",
+      "description": "Known for its calm waters and vibrant coral gardens, ideal for beginners and first-time snorkellers. Float over colourful corals while schools of reef fish glide beneath you",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Haywizz Resort",
+      "city": "Havelock Island",
+      "location": "Havelock Island",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Respect local marine rules — do not touch/damage coral; use reef-safe sunscreen where possible",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "For snorkeling/diving: always follow guide instructions. Bring motion-sickness meds if you're prone to seasickness",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Carry prescription meds in original packaging + scan of prescriptions",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Drink bottled water or ask hotels about drinking water",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Shell Crafts & Sea-Themed Souvenirs",
+      "city": "Havelock Island",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Gov.-run handicraft shops near Beach No. 2 & 3"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Coconut & Cane Handicrafts",
+      "city": "Havelock Island",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Beachside markets (especially Govind Nagar)"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Spices & Island Flavours",
+      "city": "Havelock Island",
+      "category": "Food",
+      "where_to_buy": [
+        "Local supermarkets around Beach No. 3"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Local Art & Marine-Themed Paintings",
+      "city": "Havelock Island",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Boutique art stores near Beach No. 5"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Apparel & Island Wear",
+      "city": "Havelock Island",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Beach No. 2 & 5 markets"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Organic Beauty & Wellness Products",
+      "city": "Havelock Island",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Boutique wellness stores in Govind Nagar"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Fridge Magnets, Keychains & Miniature Boats",
+      "city": "Havelock Island",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Beach stalls"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "item": "Packaged Snacks Made Locally",
+      "city": "Havelock Island",
+      "category": "Food",
+      "where_to_buy": [
+        "Small bakeries near the market junction"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Carry seasickness tablets (important for ferry rides between islands)",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Carry prescription medicines in sufficient stock",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Pack mosquito repellent for protection against insects",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996
+    }
+  ],
+  "source_files": [
+    "Andamans/Neha_All Inclusive Guide_Andamans.pdf"
+  ]
+}

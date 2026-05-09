@@ -1,0 +1,71 @@
+{
+  "restaurants": [
+    {
+      "name": "Martins Corner",
+      "city": "Betalbatim",
+      "cuisine_type": [
+        "Goan"
+      ],
+      "price_range": "₹700-1000",
+      "hours": "11:30 am- 4pm; 6:30pm- 11:30 pm",
+      "ambience": "Spacious eatery adorned with Mario Miranda's iconic artwork",
+      "highlights": [
+        "Known for king crab",
+        "Batter-fried calamari",
+        "Vindaloo, xacuti, and recheado masalas"
+      ],
+      "must_try_dishes": [
+        "King crab",
+        "Batter-fried calamari",
+        "Vindaloo",
+        "Xacuti",
+        "Recheado masalas"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Goa/Goa All Inclusive Guide - Rashi and Rajnesh.pdf",
+        "Goa/Goa- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Cota Cozinha",
+      "city": "Betalbatim",
+      "cuisine_type": [
+        "Goan",
+        "Portuguese"
+      ],
+      "price_range": "₹800-1000",
+      "hours": "12pm- 3pm; 7pm- 11pm. Closed on Tues",
+      "ambience": "Cozy ambiance with Portuguese inspired cuisine",
+      "highlights": [
+        "Seafood specialties",
+        "Traditional Goan curries"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Goa/Goa All Inclusive Guide - Rashi and Rajnesh.pdf",
+        "Goa/Goa- All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Goa/Goa All Inclusive Guide - Rashi and Rajnesh.pdf",
+    "Goa/Goa- All Inclusive Guide.pdf"
+  ]
+}

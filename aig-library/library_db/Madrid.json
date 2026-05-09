@@ -1,0 +1,193 @@
+{
+  "restaurants": [
+    {
+      "name": "Restaurante Botín",
+      "city": "Madrid",
+      "cuisine_type": [
+        "Traditional Spanish"
+      ],
+      "price_range": "€35-45 per person",
+      "highlights": [
+        "World's oldest restaurant"
+      ],
+      "must_try_dishes": [
+        "Roast suckling pig",
+        "Roast lamb"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Las Cuevas de Luis Candelas",
+      "city": "Madrid",
+      "cuisine_type": [
+        "Castilian"
+      ],
+      "price_range": "€30-40 per person",
+      "highlights": [
+        "Traditional Castilian cuisine"
+      ],
+      "must_try_dishes": [
+        "Roast meats",
+        "Hearty stews"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Casa Lucio",
+      "city": "Madrid",
+      "cuisine_type": [
+        "Traditional Madrid"
+      ],
+      "price_range": "€30-40 per person",
+      "highlights": [
+        "Classic Madrid institution",
+        "Famous for huevos rotos"
+      ],
+      "must_try_dishes": [
+        "Huevos rotos",
+        "Meat dishes"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Emma Cocina",
+      "city": "Madrid",
+      "cuisine_type": [
+        "Modern Spanish"
+      ],
+      "price_range": "€25-35 per person",
+      "highlights": [
+        "Modern Spanish comfort food"
+      ],
+      "must_try_dishes": [
+        "Oxtail",
+        "Croquettes",
+        "Hearty mains"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Mesón de la Tortilla",
+      "city": "Madrid",
+      "cuisine_type": [
+        "Spanish"
+      ],
+      "price_range": "€20-25 per person",
+      "highlights": [
+        "Spanish omelette",
+        "Hearty comfort food"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "El Cardeña",
+      "city": "Madrid",
+      "cuisine_type": [
+        "Traditional Madrid"
+      ],
+      "price_range": "€20-30 per person",
+      "highlights": [
+        "Classic Madrid tavern"
+      ],
+      "must_try_dishes": [
+        "Meatballs",
+        "Salmorejo",
+        "Pork dishes"
+      ],
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Royal Palace of Madrid",
+      "city": "Madrid",
+      "description": "Europe's largest functioning royal palace with lavish halls, armory & ceremonial rooms",
+      "recommended_duration": "1-1.5 hours",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Almudena Cathedral",
+      "city": "Madrid",
+      "description": "Neo-classical interior with a modern crypt",
+      "recommended_duration": "20-30 minutes",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Plaza Mayor",
+      "city": "Madrid",
+      "description": "Historic square surrounded by arcades",
+      "recommended_duration": "Varies",
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Hotel Porcel Ganivet",
+      "city": "Madrid",
+      "location": "Central Madrid",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Cochinillo Asado",
+      "city": "Madrid",
+      "description": "Roast suckling pig",
+      "vegetarian": false,
+      "source_files": [
+        "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Leather goods",
+      "city": "Madrid",
+      "category": "Crafts",
+      "where_to_buy": [
+        "El Rastro",
+        "Gourmet Experience"
+      ],
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Madrid",
+      "mode": "Metro, Bus",
+      "description": "Comprehensive metro and bus system",
+      "recommended_pass": "10-Trip MetroBus Ticket (Metrobús)",
+      "cost": "€12",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384285.5745559
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Spain/Sharlene_Spain_All Inclusive Guide.pdf"
+  ]
+}

@@ -1,0 +1,1795 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Jackfruit curry (polos)",
+      "city": "Sri Lanka",
+      "description": "Traditional Sri Lankan curry made with jackfruit",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Dhal Curry (Parippu)",
+      "city": "Sri Lanka",
+      "description": "Red lentils cooked with coconut milk, turmeric, onions, and mild spices, paired with Pol roti, string hoppers, or plain rice",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Pol Sambol",
+      "city": "Sri Lanka",
+      "description": "A spicy coconut relish made with freshly grated coconut, red chili, lime juice, and onions. Paired with hoppers or rice",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Hoppers (Appa)",
+      "city": "Sri Lanka",
+      "description": "Crispy, bowl-shaped pancakes made from fermented rice flour and coconut milk",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "String Hoppers (Idiyappam)",
+      "city": "Sri Lanka",
+      "description": "Delicate rice noodle nests, typically served with dhal, coconut sambol, and vegetable curries",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Kiribath (Milk Rice)",
+      "city": "Sri Lanka",
+      "description": "Coconut milk rice cut into diamond shapes, often eaten for breakfast or special occasions. Paired with Lunu miris (chili-onion paste) or jaggery for a sweet version",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Vegetable Roti",
+      "city": "Sri Lanka",
+      "description": "Flatbread pockets filled with spiced vegetables, onions, and potatoes, then grilled or fried",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Eggplant Moju (Brinjal Moju)",
+      "city": "Sri Lanka",
+      "description": "Sweet, tangy, and spicy pickle-style eggplant dish, often served with rice and curry",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Gotukola Sambol",
+      "city": "Sri Lanka",
+      "description": "A refreshing herbal salad made from finely chopped gotukola (pennywort leaves), coconut, and lime",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Coconut Roti (Pol Roti)",
+      "city": "Sri Lanka",
+      "description": "Flatbread made from grated coconut, flour, and salt — lightly grilled and served with sambol or dhal",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Watalappan",
+      "city": "Sri Lanka",
+      "description": "A creamy steamed pudding made with coconut milk, jaggery, eggs, and cardamom — Sri Lanka's take on crème caramel",
+      "vegetarian": false,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Coconut Pancakes (Pol Pani Pancakes)",
+      "city": "Sri Lanka",
+      "description": "Sweet coconut and jaggery filling rolled in a soft crepe — perfect evening snack",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+        "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Rice & Veg Curry",
+      "city": "Sri Lanka",
+      "description": "Sri Lanka's classic meal — steamed rice served with a variety of vegetable curries like pumpkin, beetroot, beans, jackfruit, brinjal, and dhal.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf"
+      ]
+    },
+    {
+      "name": "Hoppers",
+      "city": "Sri Lanka",
+      "description": "Sri Lankan answer to the pancake made from fermented rice flour, coconut milk and sugar",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Vegetable Kottu",
+      "city": "Sri Lanka",
+      "description": "Chopped roti stir-fried with vegetables, egg (optional), and spices.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf"
+      ]
+    },
+    {
+      "name": "Parippu (Dhal Curry)",
+      "city": "Sri Lanka",
+      "description": "Creamy red lentil curry cooked in coconut milk and tempered spices. Comforting and widely available.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf"
+      ]
+    },
+    {
+      "name": "Brinjal (Eggplant) Moju",
+      "city": "Sri Lanka",
+      "description": "Sweet, tangy, and slightly spicy caramelized eggplant pickle. A flavorful side dish.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf"
+      ]
+    },
+    {
+      "name": "Mallung",
+      "city": "Sri Lanka",
+      "description": "Finely chopped leafy greens (like gotu kola or spinach) mixed with coconut and mild spices. Light, healthy, and very traditional.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf"
+      ]
+    },
+    {
+      "name": "Jackfruit Curry (Polos / Kos)",
+      "city": "Sri Lanka",
+      "description": "Young jackfruit cooked in rich spices and coconut milk. Has a texture similar to pulled meat — very filling.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf"
+      ]
+    },
+    {
+      "name": "Sri Lanka Rice and Curry",
+      "city": "Sri Lanka",
+      "description": "The quintessential dish of the island and usually is eaten at lunchtime",
+      "vegetarian": false,
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Fish ambul thiyal",
+      "city": "Sri Lanka",
+      "description": "Sour fish curry - fish cut into cubes, sauteed in spices including black pepper, cinnamon, turmeric, garlic, pandan leaves and curry leaves with dried goraka",
+      "vegetarian": false,
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Kottu",
+      "city": "Sri Lanka",
+      "description": "Made with godamba roti (flat, crispy bread) that is fried and chopped with selected ingredients",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Kukul mas curry",
+      "city": "Sri Lanka",
+      "description": "Chicken curry with spices like fennel seeds, cardamom, cloves and cinnamon sticks tempered in hot oil",
+      "vegetarian": false,
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Parippu",
+      "city": "Sri Lanka",
+      "description": "Dhal curry - the most common curry in all of Sri Lankan cuisine",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Lamprais",
+      "city": "Sri Lanka",
+      "description": "Combination of meat, rice and sambol chili sauce, wrapped into a banana leaf packet and steamed",
+      "vegetarian": false,
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Polos",
+      "city": "Sri Lanka",
+      "description": "Green jackfruit curry - fruit sliced and boiled, cooked with onions, garlic, ginger and spices",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Wambatu moju",
+      "city": "Sri Lanka",
+      "description": "Eggplant/brinjals pickle - extremely flavorful candied eggplant pickle served with rice and curries",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Gotu kola sambol",
+      "city": "Sri Lanka",
+      "description": "Pennywort salad - medicinal herb shredded and combined with shallots, tomatoes, fresh grated coconut and chili",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Pol Roti",
+      "city": "Sri Lanka",
+      "description": "Similar taste to naan, made with wheat flour and scraped coconut, served warm",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Ceylon Tea",
+      "city": "Sri Lanka",
+      "description": "Tea usually served black with milk and kithul jaggery - a cube of brown refined sugar",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Kola Kanda",
+      "city": "Sri Lanka",
+      "description": "Traditional green, herby concoction believed to help digestion, enhance immune system and reduce cholesterol levels",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Toddy and Arrack",
+      "city": "Sri Lanka",
+      "description": "Toddy is alcoholic drink from palm tree sap, Arrack is further fermented version of Toddy",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    },
+    {
+      "name": "Asmi",
+      "city": "Sri Lanka",
+      "description": "Rice flour with milk, kneaded and made into batter with coconut milk and cinnamon leaves, deep fried and garnished with treacle syrup",
+      "vegetarian": true,
+      "source_files": [
+        "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Sri Lanka",
+      "english": "Hello / Welcome",
+      "local": "Ayubowan (Sinhala) / Vanakkam (Tamil)",
+      "category": "greeting",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "How are you?",
+      "local": "Kohomada? / Neenga eppadi irukeenga?",
+      "category": "polite",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "I'm fine, thank you",
+      "local": "Mama hondai, sthuthiyi / Naanum nandraaga irukken",
+      "category": "polite",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "Good morning",
+      "local": "Subha udēsanak / Kaalai vanakkam",
+      "category": "greeting",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "Good night",
+      "local": "Subha raathriyāk / Iniya iravu",
+      "category": "greeting",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "Goodbye",
+      "local": "Gihilla ennang / Pai",
+      "category": "greeting",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "Hello",
+      "local": "Ayubowan",
+      "category": "greeting",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "Thank you",
+      "local": "Istuti",
+      "category": "polite",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "Yes",
+      "local": "OW",
+      "category": "polite",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "No",
+      "local": "Nae",
+      "category": "polite",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "Please",
+      "local": "Karunakara",
+      "category": "polite",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "How much?",
+      "local": "Keeyada?",
+      "category": "food",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "Hello / Welcome",
+      "local": "Ayubowan (Sinhala) / Vanakkam (Tamil)",
+      "category": "greeting",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "How are you?",
+      "local": "Kohomada? / Neenga eppadi irukeenga?",
+      "category": "polite",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "I'm fine, thank you",
+      "local": "Mama hondai, sthuthiyi / Naanum nandraaga irukken",
+      "category": "polite",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "Good morning",
+      "local": "Subha udēsanak / Kaalai vanakkam",
+      "category": "greeting",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "Good night",
+      "local": "Subha raathriyāk / Iniya iravu",
+      "category": "greeting",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "Goodbye",
+      "local": "Gihilla ennang / Pai",
+      "category": "greeting",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "Hello",
+      "local": "ayubowan",
+      "category": "greeting",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "How are you?",
+      "local": "Kohomada sahpa sah neepa",
+      "category": "greeting",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "Thank you",
+      "local": "Bohoma istouti",
+      "category": "polite",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "Yes",
+      "local": "Ovou",
+      "category": "polite",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "No",
+      "local": "Nehe",
+      "category": "polite",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "Sorry",
+      "local": "Samaava",
+      "category": "polite",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "city": "Sri Lanka",
+      "english": "Goodbye",
+      "local": "Ayubowan",
+      "category": "greeting",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Carry a copy of your passport; keep the original in a hotel safe",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Avoid displaying expensive jewelry or electronics in public",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Be cautious with street food — eat at clean, busy stalls",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Be aware of your surroundings in crowded places and tourist spots",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Keep cash and cards in separate pouches; avoid carrying large amounts",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Follow local laws and customs — respect religious sites and dress codes",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Use bottled or filtered water; avoid tap water",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Take precautions against mosquitoes — wear repellent",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Keep emergency contacts handy (local police, embassy, hotel)",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Avoid swimming in unmonitored beaches during rough seas or rainy seasons",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Taxi or tuk-tuk overcharging – always agree on a fare beforehand or use a meter/app",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Fake gem shops – some tourists are lured to overpriced \"official\" shops",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Street hawkers overcharging – be cautious when buying souvenirs or crafts",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Money exchange scams – always use authorized money changers or banks",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Timeshare / holiday club pitches – often aggressive at beaches and tourist spots",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Fake charity or donation requests – especially near temples or popular sites",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "\"Free\" tours or services – may lead to forced purchases later",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Pickpocketing – common in crowded places, markets, and buses",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Overpriced guided tours – compare prices and check reviews before booking",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Fake police or officials asking for fines – ask for proper ID before paying",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Dress modestly, especially when visiting temples — cover shoulders and knees",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Remove shoes and hats before entering religious sites",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Greet with a smile and use \"Ayubowan\" (palms together) as a respectful hello",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Ask permission before taking photos of people, especially monks",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Use your right hand (or both hands) for giving or receiving items",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Respect Buddhist symbols — treat statues and images of Buddha with reverence",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Don't touch or pose with your back to Buddha statues — it's considered disrespectful",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Don't point your feet toward people, statues, or sacred objects",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Don't take photos of military or government buildings",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Don't litter — Sri Lanka is known for its natural beauty, so keep it clean",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Don't compare Sri Lanka to India or discuss sensitive political topics",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Don't buy or carry Buddha tattoos or souvenirs showing Buddha's image below the waist (can cause trouble at customs)",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Avoid isolated beaches or streets late at night.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Use registered taxis or hotel-arranged transport.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Keep valuables discreet and use hotel safes.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Carry small denominations of cash.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Exchange money at authorized counters or banks.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Always check change carefully.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Politely decline unsolicited help at ATMs.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Be aware of taxi / tuk-tuk overcharging.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Beware of 'Temple is Closed' scam where unofficial guides approach tourists and later demand high payment.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Avoid gemstone scams: fake or overpriced stones sold without certification.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Check prices for beach & water sports before service to avoid overpricing.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Check bar & club bills carefully for extra items added.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Carry a copy of your passport; keep the original in a hotel safe",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Avoid displaying expensive jewelry or electronics in public",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Be cautious with street food — eat at clean, busy stalls",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Be aware of your surroundings in crowded places and tourist spots",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Keep cash and cards in separate pouches; avoid carrying large amounts",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Follow local laws and customs — respect religious sites and dress codes",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Use bottled or filtered water; avoid tap water",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Take precautions against mosquitoes — wear repellent",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Keep emergency contacts handy (local police, embassy, hotel)",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Avoid swimming in unmonitored beaches during rough seas or rainy seasons",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Taxi or tuk-tuk overcharging – always agree on a fare beforehand or use a meter/app",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Fake gem shops – some tourists are lured to overpriced official shops",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Street hawkers overcharging – be cautious when buying souvenirs or crafts",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Money exchange scams – always use authorized money changers or banks",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Timeshare / holiday club pitches – often aggressive at beaches and tourist spots",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Fake charity or donation requests – especially near temples or popular sites",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Free tours or services – may lead to forced purchases later",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Pickpocketing – common in crowded places, markets, and buses",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Overpriced guided tours – compare prices and check reviews before booking",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Fake police or officials asking for fines – ask for proper ID before paying",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Ayurvedic Oils & Natural Skincare",
+      "city": "Sri Lanka",
+      "category": "Health & Beauty",
+      "where_to_buy": [
+        "Spa Ceylon stores in Colombo, Kandy, and Bentota"
+      ],
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "item": "Ceylon Cinnamon & Vanilla",
+      "city": "Sri Lanka",
+      "category": "Food",
+      "where_to_buy": [
+        "Cargills Food City",
+        "Keells"
+      ],
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "item": "Local Snacks & Sweets (Kalu Dodol, Milk Toffee, Cashews)",
+      "city": "Sri Lanka",
+      "category": "Food",
+      "where_to_buy": [
+        "Perera & Sons bakery outlets",
+        "roadside cashew stalls near Minneriya and Kurunegala"
+      ],
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "item": "Ceylon Tea",
+      "city": "Sri Lanka",
+      "category": "Food",
+      "where_to_buy": [
+        "Tea estates in Nuwara Eliya",
+        "Tea Museum in Kandy",
+        "Mlesna Tea Centre"
+      ],
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "item": "Gemstones & Jewellery",
+      "city": "Sri Lanka",
+      "category": "Jewelry",
+      "where_to_buy": [
+        "Ratnapura (the City of Gems)",
+        "Certified gem stores in Colombo and Kandy"
+      ],
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "item": "Hand-Carved Wooden Masks",
+      "city": "Sri Lanka",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Ambalangoda (famous for mask-making)",
+        "Local handicraft shops"
+      ],
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "item": "Batik & Handloom Fabrics",
+      "city": "Sri Lanka",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Boutiques in Galle Fort",
+        "Shopping areas in Colombo"
+      ],
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "item": "Sri Lankan Spices",
+      "city": "Sri Lanka",
+      "category": "Food",
+      "where_to_buy": [
+        "Spice gardens in Matale",
+        "Local supermarkets for neatly packed options"
+      ],
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "item": "Ayurvedic Products",
+      "city": "Sri Lanka",
+      "category": "Health",
+      "where_to_buy": [
+        "Certified Ayurvedic stores in Colombo",
+        "Reputed spa boutiques"
+      ],
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "item": "Handmade Crafts & Home Décor",
+      "city": "Sri Lanka",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Laksala (government handicraft store)",
+        "Local artisan markets"
+      ],
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "item": "Sri Lankan Sweets",
+      "city": "Sri Lanka",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets in Colombo",
+        "Local sweet shops before departure"
+      ],
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "item": "Ceylon Cinnamon & Vanilla",
+      "city": "Sri Lanka",
+      "category": "Food",
+      "where_to_buy": [
+        "Cargills Food City",
+        "Keells"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "item": "Local Snacks & Sweets (Kalu Dodol, Milk Toffee, Cashews)",
+      "city": "Sri Lanka",
+      "category": "Food",
+      "where_to_buy": [
+        "Perera & Sons bakery outlets",
+        "Roadside cashew stalls near Minneriya and Kurunegala"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "item": "Ceylon cinnamon",
+      "city": "Sri Lanka",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "item": "Sri Lankan Jaggery",
+      "city": "Sri Lanka",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Sri Lanka",
+      "service": "Police",
+      "number": "119",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Ambulance / Medical Emergencies",
+      "number": "1990",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Tourist Police",
+      "number": "1912",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Airport Emergency / Colombo Bandaranaike Airport",
+      "number": "+94 11 226 1850",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Emergency Consular Services (For Indian nationals)",
+      "number": "+94 77 3727832",
+      "notes": "Available 24/7",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "General Emergency",
+      "number": "112",
+      "notes": null,
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Police",
+      "number": "119",
+      "notes": null,
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Ambulance",
+      "number": "110",
+      "notes": null,
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Fire Department",
+      "number": "110",
+      "notes": null,
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Tourist Police",
+      "number": "1912",
+      "notes": "English-speaking",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Embassy of India",
+      "number": "+94-11-2327587",
+      "notes": "36-38, Galle Road, Colombo 03, Sri Lanka",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Assistant High Commission of India - Kandy",
+      "number": "+94-81-2222652",
+      "notes": "No. 42, Hilpankandura Mawatha, Ampitiya Road, Kandy, Sri Lanka",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Police",
+      "number": "119",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Ambulance / Medical Emergencies",
+      "number": "1990",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Tourist Police",
+      "number": "1912",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Airport Emergency / Colombo Bandaranaike Airport",
+      "number": "+94 11 226 1850",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Indian Embassy Emergency Consular Services",
+      "number": "+94 77 3727832",
+      "notes": "Available 24/7 for Indian nationals seeking emergency assistance",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Police",
+      "number": "118/119",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Ambulance",
+      "number": "110",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "city": "Sri Lanka",
+      "service": "Accident Service-General Hospital, Colombo",
+      "number": "011-2691111",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Dialog has largest coverage nationwide",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Mobitel offers strong rural and hill area coverage",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Airtel has affordable plans with good urban coverage",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Hutch is budget-friendly but has limited remote coverage",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "SIM cards available at Colombo Airport, city stores, and official outlets",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Requirements for SIM card: Passport (original), sometimes visa",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Prepaid SIM cost ~ LKR 200–500; data packs extra",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Short-term tourist packs: 1–7 days: ~1–5 GB (LKR 500–1000), 30 days: ~5–10 GB (LKR 1500–3000)",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Top-up available at stores, kiosks, or apps",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Wi-Fi is common, but mobile data is more reliable",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Carry a power bank for long trips or safaris",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "eSIM-friendly providers include Dialog Axiata, Mobitel (SLT-Mobitel), Hutch & Airtel.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Buy SIM cards at Bandaranaike International Airport arrivals - official kiosks for Dialog, Mobitel, Airtel, Hutch.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Retail stores in cities like Colombo, Kandy, Galle sell tourist SIMs at telecom outlets and electronics shops.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Passport required for SIM registration (mandatory).",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Dialog has largest coverage nationwide",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Mobitel has strong rural and hill area coverage",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Airtel offers affordable plans with good urban coverage",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Hutch is budget-friendly but has limited remote coverage",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "SIM cards available at Colombo Airport, city stores, and official outlets",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Requirements for SIM: Passport (original), sometimes visa",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Prepaid SIM costs ~ LKR 200–500; data packs extra",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Short-term tourist packs: 1–7 days: ~1–5 GB (LKR 500–1000)",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "30-day packs: ~5–10 GB (LKR 1500–3000)",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Top-up available at stores, kiosks, or apps",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Wi-Fi is common, but mobile data is more reliable",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Carry a power bank for long trips or safaris",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "There are 3 main SIM Card providers in Sri Lanka, but Dialog is recommended for better coverage. Best place to buy a sim card is at the airport kiosks. Expect to pay 1,800 LKR for a Dialog Sim which comes with 30 GB of data with a validity period of 30 days.",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Even if you do not purchase an international roaming plan for your current India number, remember to activate roaming so that you receive messages (important for things like OTPs).",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Keep routine vaccines up to date (MMR, DTP, Polio)",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Recommended vaccines: Hepatitis A & B, Typhoid, Rabies (if animal contact), Tetanus booster",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Drink bottled/filtered water; avoid street food if unsure",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Use mosquito repellent to prevent dengue, chikungunya, malaria",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Protect from sun: sunscreen, hat, sunglasses",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Carry basic medicines and first-aid kit",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Travel insurance is strongly advised",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Emergency contacts: Ambulance 1990, Red Cross +94 11 268 6090",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Carry prescriptions in original packaging + digital copy",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Pack basic medicines (fever, allergy, stomach upset).",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Bring motion sickness tablets for hill routes like Ella.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Use mosquito repellent - important for tropical climate.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Pack sunscreen & after-sun gel for sun protection.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Carry hand sanitizer and ORS sachets.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Sri Lanka has good private healthcare facilities in cities like Colombo and Kandy.",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Keep routine vaccines up to date (MMR, DTP, Polio)",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Drink bottled/filtered water; avoid street food if unsure",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Use mosquito repellent to prevent dengue, chikungunya, malaria",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Protect from sun: sunscreen, hat, sunglasses",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Carry basic medicines and first-aid kit",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Travel insurance is strongly advised",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Carry prescriptions in original packaging + digital copy",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Travel Insurance recommended - TATA AIG. Carry doctors prescriptions/travel prescriptions for medicines (except over the counter meds).",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    },
+    {
+      "cities": [
+        "Sri Lanka"
+      ],
+      "tip": "Carry mosquito repellent as recommended item.",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.pdf",
+      "_source_mtime": 1772384327.2775693
+    }
+  ],
+  "source_files": [
+    "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+    "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+    "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+    "Srilanka/All Inclusive Guide- Sri Lanka.pdf"
+  ]
+}

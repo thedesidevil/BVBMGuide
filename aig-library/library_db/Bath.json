@@ -1,0 +1,201 @@
+{
+  "restaurants": [
+    {
+      "name": "The Scallop Shell",
+      "city": "Bath",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "INR 2500 pp",
+      "hours": "12:00 PM – 2:30 PM, then 4:30 PM – 9:30 PM",
+      "highlights": [
+        "Fresh seafood",
+        "local catch"
+      ],
+      "must_try_dishes": [
+        "Fish & chips",
+        "scallops"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ],
+      "ambience": "Fresh seafood, local catch"
+    },
+    {
+      "name": "Noya's Kitchen",
+      "city": "Bath",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 2200 pp",
+      "hours": "12:00 pm – 3:00 pm",
+      "highlights": [
+        "Vietnamese with homestyle flair"
+      ],
+      "must_try_dishes": [
+        "Pho",
+        "turmeric fish",
+        "banh xeo"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ],
+      "ambience": "Vietnamese with homestyle flair"
+    },
+    {
+      "name": "Café Lucca",
+      "city": "Bath",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "INR 1800 pp",
+      "hours": "9:00 am – 5:00 pm",
+      "highlights": [
+        "Bright",
+        "stylish all-day café"
+      ],
+      "must_try_dishes": [
+        "Goat cheese salad",
+        "frittata"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ],
+      "ambience": "Bright, stylish all-day café"
+    },
+    {
+      "name": "Sotto Sotto",
+      "city": "Bath",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "INR 3000 pp",
+      "hours": "5:00 pm – 10:30 pm",
+      "ambience": "Intimate underground Italian",
+      "highlights": [
+        "Intimate underground Italian"
+      ],
+      "must_try_dishes": [
+        "Sea bass",
+        "lasagna"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "The Olive Tree",
+      "city": "Bath",
+      "cuisine_type": [
+        "British"
+      ],
+      "price_range": "INR 5000 pp",
+      "hours": "6:00 pm – 9:30 pm",
+      "ambience": "Michelin-listed, elegant modern British",
+      "highlights": [
+        "Michelin-listed",
+        "elegant modern British"
+      ],
+      "must_try_dishes": [
+        "Tasting menu",
+        "Cornish cod"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Raphael Restaurant",
+      "city": "Bath",
+      "cuisine_type": [
+        "French"
+      ],
+      "price_range": "INR 3200 pp",
+      "hours": "6:00 pm – 10:00 pm",
+      "ambience": "French-inspired, romantic setting",
+      "highlights": [
+        "French-inspired",
+        "romantic setting"
+      ],
+      "must_try_dishes": [
+        "Lamb rump",
+        "duck breast"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Bath",
+      "city": "Bath",
+      "description": "Designated as a UNESCO World Heritage Site, celebrated for its Roman baths, Georgian architecture, and rich cultural heritage",
+      "hours": "9:00 am to 6:00 pm",
+      "entry_fee": "Adult tickets are approximately £27.00",
+      "recommended_duration": null,
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/Edlyn London.pdf",
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    },
+    {
+      "name": "Roman Baths",
+      "city": "Bath",
+      "description": "One of the best-preserved ancient spas in the world",
+      "hours": "Daily: 9:00 am – 6:00 pm",
+      "entry_fee": "Adults £27 | Family (2+2): £74 | Audio guide included",
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Victoria Sponge Cake",
+      "city": "Bath",
+      "description": "Light sponge cake with jam and cream layers — named after Queen Victoria",
+      "vegetarian": true,
+      "where_to_try": "Sally Lunn's",
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "England and Scotland/london.pdf",
+    "England and Scotland/Edlyn London.pdf",
+    "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+    "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+  ]
+}

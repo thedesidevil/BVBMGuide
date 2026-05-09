@@ -1,0 +1,117 @@
+{
+  "restaurants": [
+    {
+      "name": "Bagels & Beans Zaandam",
+      "city": "Zaanse Schans",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹800–1,200",
+      "hours": "8:30 AM – 5:30 PM",
+      "ambience": "Cozy café",
+      "highlights": [
+        "Quick, relaxed lunch"
+      ],
+      "must_try_dishes": [
+        "Veg bagels",
+        "coffee"
+      ],
+      "best_for": [
+        "quick",
+        "relaxed"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "De Kraai Pancake House",
+      "city": "Zaanse Schans",
+      "cuisine_type": [
+        "Dutch"
+      ],
+      "price_range": "₹1,200–1,800",
+      "hours": "9 AM – 6 PM",
+      "ambience": "Traditional Dutch setting",
+      "area": "Zaanse Schans",
+      "highlights": [
+        "Local experience"
+      ],
+      "must_try_dishes": [
+        "Veg Dutch pancakes"
+      ],
+      "best_for": [
+        "local experience"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "BackWERK Zaandam",
+      "city": "Zaanse Schans",
+      "cuisine_type": [
+        "Bakery"
+      ],
+      "price_range": "₹500–900",
+      "hours": "9 AM – 5 PM",
+      "ambience": "Casual bakery-style café",
+      "highlights": [
+        "Quick, budget-friendly bite"
+      ],
+      "must_try_dishes": [
+        "Veg sandwiches",
+        "pretzels",
+        "coffee"
+      ],
+      "best_for": [
+        "quick",
+        "budget-friendly"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Zaanse Schans",
+      "city": "Zaanse Schans",
+      "description": "Historic windmills, wooden houses, and quiet canals like an open-air museum",
+      "hours": "All day",
+      "source_files": [
+        "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+        "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf",
+        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+      ],
+      "recommended_duration": "3-4 hours",
+      "entry_fee": "Free (small fees for windmill visits)"
+    },
+    {
+      "name": "Zaans Museum",
+      "city": "Zaanse Schans",
+      "description": "Museum in Zaanse Schans",
+      "hours": null,
+      "source_files": [
+        "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+    "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf",
+    "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+  ]
+}

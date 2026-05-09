@@ -1,0 +1,230 @@
+{
+  "restaurants": [
+    {
+      "name": "Full Moon Café",
+      "city": "Havelock (Swaraj Dweep)",
+      "cuisine_type": [
+        "Seafood",
+        "Fusion"
+      ],
+      "price_range": "₹300-400 pp",
+      "hours": "8 AM to 10:30 PM",
+      "ambience": "Established beachside café",
+      "area": "Govind Nagar",
+      "nearby_landmarks": [
+        "Symphony Palms Beach Resort, Havelock"
+      ],
+      "highlights": [
+        "Beachside location",
+        "Popular with visitors",
+        "Seafood and fusion dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Andamans/Tushar_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Anju Coco",
+      "city": "Havelock (Swaraj Dweep)",
+      "cuisine_type": [
+        "Indian",
+        "Seafood"
+      ],
+      "price_range": "₹200-400 pp",
+      "hours": "8 AM to 10:30 PM",
+      "ambience": "Local favourite for family dining",
+      "area": "Govind Nagar",
+      "nearby_landmarks": [
+        "Symphony Palms Beach Resort, Havelock"
+      ],
+      "highlights": [
+        "Local favourite",
+        "Wide Indian & seafood menu"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Andamans/Tushar_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Bonova Café & Pub",
+      "city": "Havelock (Swaraj Dweep)",
+      "cuisine_type": [
+        "Casual"
+      ],
+      "price_range": "₹250-350 pp",
+      "hours": "11 AM to 10:30 PM",
+      "ambience": "Casual dining & drinks",
+      "area": "Govind Nagar",
+      "nearby_landmarks": [
+        "Symphony Palms Beach Resort, Havelock"
+      ],
+      "highlights": [
+        "Serves drinks",
+        "Casual dining"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Andamans/Tushar_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Nemo Café",
+      "city": "Havelock (Swaraj Dweep)",
+      "cuisine_type": [
+        "Light meals",
+        "Coffee"
+      ],
+      "price_range": "₹300-400 pp",
+      "hours": "Opens 24 hrs",
+      "ambience": "Light meals & coffee",
+      "area": "Govind Nagar",
+      "nearby_landmarks": [
+        "Symphony Palms Beach Resort, Havelock"
+      ],
+      "highlights": [
+        "24 hour service",
+        "Light meals & coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Andamans/Tushar_All Inclusive Guide_Andamans.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Radhanagar Beach (Beach No. 7)",
+      "city": "Havelock (Swaraj Dweep)",
+      "description": "One of Asia's famed beaches with white sand, turquoise water, sunset viewpoint",
+      "hours": "24 hrs Open",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Andamans/Tushar_All Inclusive Guide_Andamans.pdf"
+      ]
+    },
+    {
+      "name": "Elephant Beach",
+      "city": "Havelock (Swaraj Dweep)",
+      "description": "Well known for clear water, coral, and snorkeling with complimentary 10-minute snorkeling included",
+      "hours": "6:30 AM to 7:30 PM",
+      "entry_fee": "₹1,000 – 1,200 per person",
+      "recommended_duration": "3–4 hours",
+      "source_files": [
+        "Andamans/Tushar_All Inclusive Guide_Andamans.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Symphony Palms Beach Resort",
+      "city": "Havelock (Swaraj Dweep)",
+      "location": "Govind Nagar / Beach No.5",
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Shell Crafts & Sea-Themed Souvenirs",
+      "city": "Havelock (Swaraj Dweep)",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Gov.-run handicraft shops near Beach No. 2 & 3"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "item": "Coconut & Cane Handicrafts",
+      "city": "Havelock (Swaraj Dweep)",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Beachside markets (especially Govind Nagar)"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "item": "Spices & Island Flavours",
+      "city": "Havelock (Swaraj Dweep)",
+      "category": "Food",
+      "where_to_buy": [
+        "Local supermarkets around Beach No. 3"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "item": "Local Art & Marine-Themed Paintings",
+      "city": "Havelock (Swaraj Dweep)",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Boutique art stores near Beach No. 5"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "item": "Apparel & Island Wear",
+      "city": "Havelock (Swaraj Dweep)",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Beach No. 2 & 5 markets"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "item": "Organic Beauty & Wellness Products",
+      "city": "Havelock (Swaraj Dweep)",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Boutique wellness stores in Govind Nagar"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "item": "Fridge Magnets, Keychains & Miniature Boats",
+      "city": "Havelock (Swaraj Dweep)",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Beach stalls"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    },
+    {
+      "item": "Packaged Snacks Made Locally",
+      "city": "Havelock (Swaraj Dweep)",
+      "category": "Food",
+      "where_to_buy": [
+        "Small bakeries near the market junction"
+      ],
+      "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.8226933
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Andamans/Tushar_All Inclusive Guide_Andamans.pdf"
+  ]
+}

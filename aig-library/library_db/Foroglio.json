@@ -1,0 +1,69 @@
+{
+  "restaurants": [
+    {
+      "name": "Ristorante La Froda",
+      "city": "Foroglio",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "CHF 30 per person",
+      "ambience": "A rustic grotto-style restaurant perched right by the village's iconic 110 m waterfall. Part of Foroglio's charm lies in its electricity-free, alpine simplicity—enjoy dining in a setting dominated by stones, wood, mountain air, and the soothing roar of water",
+      "nearby_landmarks": [
+        "Foroglio waterfall"
+      ],
+      "highlights": [
+        "Only option in town",
+        "Electricity-free alpine setting"
+      ],
+      "must_try_dishes": [
+        "Polenta with cheese"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Foroglio Waterfall",
+      "city": "Foroglio",
+      "description": "Iconic 110m waterfall in stone village",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Polenta with cheese",
+      "city": "Foroglio",
+      "description": "Traditional Swiss dish with cheese",
+      "vegetarian": true,
+      "where_to_try": "Ristorante La Froda",
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+    "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+    "Italy/Tejas - Europe All Inclusive Guide.pdf"
+  ]
+}

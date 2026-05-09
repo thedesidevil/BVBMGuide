@@ -1,0 +1,661 @@
+{
+  "restaurants": [
+    {
+      "name": "Trattoria Madonnina",
+      "city": "Milan",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "EUR 20-40 per person",
+      "hours": "12 PM - 3 PM",
+      "ambience": "Retro-charming with checkered tablecloths, rustic décor, and a modest outdoor seating area—relaxed and quintessentially Milanese",
+      "area": "Milan",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Retro-charming",
+        "Quintessentially Milanese"
+      ],
+      "must_try_dishes": [
+        "Risotto alla Milanese",
+        "risotto con ossobuco",
+        "Creamy Risotto alla Milanese"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Osteria del Binari",
+      "city": "Milan",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "EUR 30-40 per person",
+      "hours": "12:30 PM - 3:30 PM",
+      "ambience": "Charming, intimate osteria ideal for cozy dinners—classic ambiance in the heart of Navigli",
+      "area": "Navigli",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Charming and intimate",
+        "Classic ambiance"
+      ],
+      "must_try_dishes": [
+        "Mezzelune ortolane su vellutata di rapa rossa allo zenzero"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ],
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Ai Balestrari Sul Naviglio Pavese",
+      "city": "Milan",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "EUR 20-30 per person",
+      "hours": "12 PM - 3 PM",
+      "ambience": "Rustic, tavern-style with outdoor tables overlooking the Naviglio Pavese—romantic and relaxed",
+      "area": "Navigli",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Rustic tavern-style",
+        "Overlooks Naviglio Pavese"
+      ],
+      "must_try_dishes": [
+        "Cacio e pepe",
+        "wood-oven pizzas",
+        "supplì",
+        "supplì (fried rice balls)"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Obicà Mozzarella Bar – Duomo",
+      "city": "Milan",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "EUR 25-35 per person",
+      "hours": "10:15 AM - 12 AM",
+      "ambience": "Modern and stylish with sleek interiors and a stunning Duomo rooftop view, known for fresh mozzarella, simple Italian classics, and sharing plates",
+      "area": "Duomo",
+      "nearby_landmarks": [
+        "Duomo di Milano, Milan"
+      ],
+      "highlights": [
+        "Duomo rooftop view",
+        "Known for fresh mozzarella"
+      ],
+      "must_try_dishes": [
+        "Caprese salad with buffalo mozzarella",
+        "Pizza Margherita with bufala",
+        "Spaghetti alle cozze"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Al Cantinone",
+      "city": "Milan",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "EUR 30-40 per person",
+      "hours": "6 AM - 1 AM",
+      "ambience": "Traditional Milanese osteria tucked near Galleria Vittorio Emanuele, with vaulted ceilings, stone walls, and a cozy rustic charm",
+      "nearby_landmarks": [
+        "Galleria Vittorio Emanuele II, Milan"
+      ],
+      "must_try_dishes": [
+        "Risotto alla Milanese con funghi",
+        "Petto di pollo alla griglia",
+        "Tagliolini al salmone"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ],
+      "area": "Near Galleria Vittorio Emanuele"
+    },
+    {
+      "name": "Ristorante Galleria",
+      "city": "Milan",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "EUR 35-45 per person",
+      "hours": "10 AM - 10 PM",
+      "ambience": "Elegant and historic, located right inside the Galleria Vittorio Emanuele II, offering both people-watching terrace seats and refined interiors",
+      "area": "Galleria Vittorio Emanuele II",
+      "nearby_landmarks": [
+        "Galleria Vittorio Emanuele II, Milan"
+      ],
+      "must_try_dishes": [
+        "Insalata Caprese",
+        "Sea bass fillet with lemon sauce",
+        "Chicken scaloppine al vino bianco"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Mag Café",
+      "city": "Milan",
+      "cuisine_type": [
+        "Bar"
+      ],
+      "price_range": "EUR 10-12 per drink",
+      "hours": "6-9 pm",
+      "ambience": "Retro, creative cocktail bar right on the Naviglio Grande — cozy, trendy, and a Milanese favorite",
+      "area": "Navigli",
+      "nearby_landmarks": [
+        "Naviglio Grande, Milan"
+      ],
+      "must_try_dishes": [
+        "Inventive cocktails",
+        "Negroni",
+        "Spritz"
+      ],
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Spritz Navigli",
+      "city": "Milan",
+      "cuisine_type": [
+        "Bar"
+      ],
+      "price_range": "EUR 8-10 per drink",
+      "hours": "6-9 pm",
+      "ambience": "Laid-back and fun, overlooking the canal — casual but buzzing with locals",
+      "area": "Navigli",
+      "must_try_dishes": [
+        "Aperol spritz",
+        "Campari spritz",
+        "wine",
+        "beers"
+      ],
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Manhattan Navigli",
+      "city": "Milan",
+      "cuisine_type": [
+        "Bar"
+      ],
+      "price_range": "EUR 10-12 per drink",
+      "hours": "6:30-9:30 pm",
+      "ambience": "Trendy bar with both indoor seating and a canal-side terrace",
+      "area": "Navigli",
+      "must_try_dishes": [
+        "Signature cocktails",
+        "spritzes"
+      ],
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Obicà Mozzarella Bar",
+      "city": "Milan",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "9:30 AM – 7:30 PM",
+      "ambience": "Chic Italian restaurant",
+      "area": "Serravalle Outlet area",
+      "highlights": [
+        "Chic Italian dining"
+      ],
+      "must_try_dishes": [
+        "Burrata salad",
+        "vegetarian focaccia",
+        "pesto pasta"
+      ],
+      "best_for": [
+        "chic dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Duomo di Milano",
+      "city": "Milan",
+      "description": "Gothic cathedral with optional terrace climb",
+      "hours": "Slots available every half hour until 1:30pm (direct) or 3pm (tours)",
+      "entry_fee": "EUR 10 + EUR 14-16 for terraces",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Italy- Final Itinerary with booking links.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Galleria Vittoria Emanuele II",
+      "city": "Milan",
+      "description": "A 19th century shopping arcade, famed for its glass dome, luxury boutiques, and cafés",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "France/Paris, Switzerland and Italy.pdf",
+        "Switzerland/Paris, Switzerland and Italy.pdf",
+        "Italy/Paris, Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Galleria Vittorio Emanuele II",
+      "city": "Milan",
+      "description": "Stunning glass-roofed shopping arcade",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Italy- Final Itinerary with booking links.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Navigli District",
+      "city": "Milan",
+      "description": "Charming canals designed by Leonardo da Vinci with cafés and art studios",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Serravalle Designer Outlet",
+      "city": "Milan",
+      "description": "One of Europe's largest luxury outlet destinations with Italian-style architecture, designer boutiques, and premium international brands",
+      "entry_fee": "Free Entry",
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "La Scala",
+      "city": "Milan",
+      "description": "World-renowned opera house with guided tours",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Italy/Italy- Final Itinerary with booking links.pdf"
+      ]
+    },
+    {
+      "name": "Castello Sforzesco",
+      "city": "Milan",
+      "description": "Grand castle that has served as fortress, palace, and museum",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Italy/Italy- Final Itinerary with booking links.pdf"
+      ]
+    },
+    {
+      "name": "Parco Sempione",
+      "city": "Milan",
+      "description": "Beautiful park perfect for picnic or leisurely stroll",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Italy/Italy- Final Itinerary with booking links.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Heart Hotel",
+      "city": "Milan",
+      "location": "Near Milano Centrale",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0
+    },
+    {
+      "name": "Heart Hotel",
+      "city": "Milan",
+      "location": "Milan",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "name": "Heart Hotel",
+      "city": "Milan",
+      "location": "Near Milano Centrale",
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "name": "Residenza Cenisio",
+      "city": "Milan",
+      "location": "Near Cenisio Metro Station",
+      "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1777872516.0
+    },
+    {
+      "name": "Heart Hotel",
+      "city": "Milan",
+      "location": "Milan",
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Risotto alla Milanese",
+      "city": "Milan",
+      "description": "Traditional Milanese saffron risotto",
+      "vegetarian": true,
+      "where_to_try": "Al Cantinone",
+      "source_files": [
+        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Panettone",
+      "city": "Milan",
+      "category": "Food",
+      "where_to_buy": [
+        "Local bakeries"
+      ],
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0
+    },
+    {
+      "item": "Panettone",
+      "city": "Milan",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Gourmet coffee",
+      "city": "Milan",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Risotto rice (Carnaroli/Arborio)",
+      "city": "Milan",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "High-fashion accessories",
+      "city": "Milan",
+      "category": "Fashion",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Leather goods",
+      "city": "Milan",
+      "category": "Fashion",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Designer scarves",
+      "city": "Milan",
+      "category": "Fashion",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Sleek stationery",
+      "city": "Milan",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379
+    },
+    {
+      "item": "Panettone",
+      "city": "Milan",
+      "category": "Food",
+      "where_to_buy": [
+        "Local bakeries"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Gourmet coffee",
+      "city": "Milan",
+      "category": "Food",
+      "where_to_buy": [
+        "Local shops"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Risotto rice",
+      "city": "Milan",
+      "category": "Food",
+      "where_to_buy": [
+        "Gourmet stores"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Leather goods",
+      "city": "Milan",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Fashion district"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Designer scarves",
+      "city": "Milan",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Fashion district"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898
+    },
+    {
+      "item": "Panettone",
+      "city": "Milan",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Gourmet coffee",
+      "city": "Milan",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Risotto rice (Carnaroli/Arborio)",
+      "city": "Milan",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "High-fashion accessories",
+      "city": "Milan",
+      "category": "Fashion",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Leather goods",
+      "city": "Milan",
+      "category": "Fashion",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Designer scarves",
+      "city": "Milan",
+      "category": "Fashion",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Sleek stationery",
+      "city": "Milan",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Franciacorta (Lombardy)",
+      "city": "Milan",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Milan",
+      "mode": "Tram",
+      "description": "Public transport connections to various districts",
+      "_source_file": "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384290.512721
+    },
+    {
+      "city": "Milan",
+      "mode": "Metro",
+      "description": "Metro network connecting Milano Centrale to city areas like Cenisio M5 Line",
+      "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1777872516.0
+    },
+    {
+      "city": "Milan",
+      "mode": "Shuttle",
+      "description": "Direct shuttle services from Milano Centrale to Serravalle Designer Outlet",
+      "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1777872516.0
+    },
+    {
+      "city": "Milan",
+      "mode": "Metro/Tram",
+      "description": "Public transport connecting major attractions and districts",
+      "_source_file": "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384308.452988
+    },
+    {
+      "city": "Milan",
+      "mode": "Metro/Tram",
+      "description": "Public transport system connecting major attractions",
+      "_source_file": "Italy/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384338.18424
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+    "France/Paris, Switzerland and Italy.pdf",
+    "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+    "Switzerland/Paris, Switzerland and Italy.pdf",
+    "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+    "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+    "Italy/Italy- Final Itinerary with booking links.pdf",
+    "Italy/Tejas - Europe All Inclusive Guide.pdf",
+    "Italy/Paris, Switzerland and Italy.pdf"
+  ]
+}

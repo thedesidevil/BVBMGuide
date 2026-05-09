@@ -139,7 +139,6 @@ class Restaurant(BaseModel):
     must_try_dishes: list[str] = Field(default_factory=list)
     hours: Optional[str] = None
     google_maps_link: Optional[str] = None
-    distance_from_hotel: Optional[str] = None
     best_for: list[str] = Field(default_factory=list)
     vegetarian_friendly: bool = False
     is_curated: bool = False  # True if not from library
@@ -199,7 +198,6 @@ class ImportantPlace(BaseModel):
     category: str  # "grocery" | "pharmacy" | "hospital"
     address: Optional[str] = None
     hours: Optional[str] = None
-    distance_from_hotel: Optional[str] = None
     google_maps_link: Optional[str] = None
     phone: Optional[str] = None
 

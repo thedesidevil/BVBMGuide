@@ -1,0 +1,545 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Fish & Chips",
+      "city": "UK",
+      "description": "Crispy battered fish with golden chips, served with mushy peas or tartar sauce",
+      "vegetarian": false,
+      "where_to_try": "The Red Lion – Parliament Street, London",
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    },
+    {
+      "name": "Cornish Pasty",
+      "city": "UK",
+      "description": "A handheld pastry filled with meat, potatoes, and vegetables — originally for miners",
+      "vegetarian": false,
+      "where_to_try": "Pieminister – Borough Market, London",
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    },
+    {
+      "name": "Sausage Roll",
+      "city": "UK",
+      "description": "Puff pastry wrapped around seasoned sausage meat",
+      "vegetarian": false,
+      "where_to_try": "Greggs – Edinburgh High Street",
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    },
+    {
+      "name": "Sunday Roast with Yorkshire Pudding",
+      "city": "UK",
+      "description": "A traditional roast (often beef or chicken) served with roast potatoes, vegetables, gravy, and airy Yorkshire pudding",
+      "vegetarian": false,
+      "where_to_try": "The Hawksmoor Seven Dials, London",
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    },
+    {
+      "name": "Sticky Toffee Pudding",
+      "city": "UK",
+      "description": "A moist sponge cake with dates, drenched in toffee sauce, served with cream or ice cream",
+      "vegetarian": true,
+      "where_to_try": "Lambs of Sheep Street, Stratford-upon-Avon",
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    },
+    {
+      "name": "Victoria Sponge Cake",
+      "city": "UK",
+      "description": "Light sponge cake with jam and cream layers — named after Queen Victoria",
+      "vegetarian": true,
+      "where_to_try": "Sally Lunn's, Bath",
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "UK",
+      "english": "Thank you",
+      "local": "Cheers",
+      "category": "polite",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "city": "UK",
+      "english": "Bathroom",
+      "local": "Loo",
+      "category": "polite",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "city": "UK",
+      "english": "Watch your step",
+      "local": "Mind the gap",
+      "category": "polite",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "city": "UK",
+      "english": "Would you like some tea?",
+      "local": "Fancy a cuppa?",
+      "category": "polite",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "city": "UK",
+      "english": "Thank you / a toast",
+      "local": "Cheers",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "city": "UK",
+      "english": "Bathroom",
+      "local": "Loo",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "city": "UK",
+      "english": "Watch your step",
+      "local": "Mind the gap",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "city": "UK",
+      "english": "Would you like some tea?",
+      "local": "Fancy a cuppa?",
+      "category": "food",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "city": "UK",
+      "english": "Thank you",
+      "local": "Cheers",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "city": "UK",
+      "english": "Bathroom",
+      "local": "Loo",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "city": "UK",
+      "english": "Watch your step",
+      "local": "Mind the gap",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "city": "UK",
+      "english": "Would you like some tea?",
+      "local": "Fancy a cuppa?",
+      "category": "food",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Keep valuables zipped and close on public transport. Avoid late-night Tube travel alone if unfamiliar",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Remember cars drive on the left; look both ways before stepping out",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "UK sidewalks get slippery during wet spells — wear shoes with grip",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Keep valuables zipped and close on public transport. Avoid late-night Tube travel alone if unfamiliar.",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Remember cars drive on the left; look both ways before stepping out.",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Major spots like Borough Market, Covent Garden, and Edinburgh Castle can be busy — stay aware in pickpocket-prone areas.",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "UK sidewalks get slippery during wet spells — wear shoes with grip.",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Keep valuables zipped and close on public transport. Avoid late-night Tube travel alone if unfamiliar",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Remember cars drive on the left; look both ways before stepping out",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "UK sidewalks get slippery during wet spells — wear shoes with grip",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    }
+  ],
+  "souvenirs": [],
+  "emergency_contacts": [
+    {
+      "city": "UK",
+      "service": "Emergency services",
+      "number": "999",
+      "_source_file": "England and Scotland/All Inclusive Guide-Edinburgh.pdf",
+      "_source_mtime": 1748948387.0
+    },
+    {
+      "city": "UK",
+      "service": "Police Non Emergency Number",
+      "number": "101",
+      "_source_file": "England and Scotland/All Inclusive Guide-Edinburgh.pdf",
+      "_source_mtime": 1748948387.0
+    },
+    {
+      "city": "UK",
+      "service": "NHS Emergency number",
+      "number": "111",
+      "notes": "24/7",
+      "_source_file": "England and Scotland/All Inclusive Guide-Edinburgh.pdf",
+      "_source_mtime": 1748948387.0
+    },
+    {
+      "city": "UK",
+      "service": "Emergency services",
+      "number": "999",
+      "_source_file": "England and Scotland/Edinburgh- All Inclusive Guide.docx.pdf",
+      "_source_mtime": 1760623034.0
+    },
+    {
+      "city": "UK",
+      "service": "Police Non Emergency Number",
+      "number": "101",
+      "_source_file": "England and Scotland/Edinburgh- All Inclusive Guide.docx.pdf",
+      "_source_mtime": 1760623034.0
+    },
+    {
+      "city": "UK",
+      "service": "NHS Emergency number",
+      "number": "111",
+      "notes": "24/7",
+      "_source_file": "England and Scotland/Edinburgh- All Inclusive Guide.docx.pdf",
+      "_source_mtime": 1760623034.0
+    },
+    {
+      "city": "UK",
+      "service": "Emergency Services",
+      "number": "999",
+      "notes": "Police, Fire, Ambulance",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "city": "UK",
+      "service": "Non-emergency Police",
+      "number": "101",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "city": "UK",
+      "service": "NHS Medical Helpline",
+      "number": "111",
+      "notes": "non-life-threatening issues",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "city": "UK",
+      "service": "Emergency Services",
+      "number": "999",
+      "notes": "Police, Fire, Ambulance",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "city": "UK",
+      "service": "Non-emergency Police",
+      "number": "101",
+      "notes": "Non-emergency Police enquiries",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "city": "UK",
+      "service": "NHS Medical Helpline",
+      "number": "111",
+      "notes": "non-life-threatening issues",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "city": "UK",
+      "service": "Emergency Services",
+      "number": "999",
+      "notes": "Police, Fire, Ambulance",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "city": "UK",
+      "service": "Non-emergency Police",
+      "number": "101",
+      "notes": "Non-emergency enquiries",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "city": "UK",
+      "service": "NHS Medical Helpline",
+      "number": "111",
+      "notes": "Non-life-threatening issues",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "There are many SIM Card providers in the UK. I would recommend Three. The best place to buy a sim card is at the airport kiosks. Even if you do not purchase an international roaming plan for your current India number, remember to activate roaming so that you receive messages (important for things like OTPs).",
+      "_source_file": "England and Scotland/All Inclusive Guide-Edinburgh.pdf",
+      "_source_mtime": 1748948387.0
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "There are many SIM Card providers in the UK. I would recommend Three. The best place to buy a sim card is at the airport kiosks. Even if you do not purchase an international roaming plan for your current India number, remember to activate roaming so that you receive messages (important for things like OTPs).",
+      "_source_file": "England and Scotland/Edinburgh- All Inclusive Guide.docx.pdf",
+      "_source_mtime": 1760623034.0
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Three UK offers best balance of data and price with free roaming in many destinations. Plans from £10–£25 with 12–50GB data",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "EE has strongest national coverage, especially in rural areas. Plans from £15+",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Vodafone UK has good nationwide reach and is popular for international calling plans. Plans from £10–£30",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Buy SIM cards at airport kiosks (Heathrow, Gatwick, Edinburgh) for convenient, quick setup or high-street stores",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "eSIM options available through Airalo or Holafly - installable before arrival, no physical swap. Plans from £7–£20 for 5–20GB",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Three UK offers best balance of data and price with free roaming in many destinations. Plans from £10–£25 with 12–50GB data.",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "EE has strongest national coverage, especially in rural areas. Plans from £15+.",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Vodafone UK has good nationwide reach and is popular for international calling plans. Plans from £10–£30.",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Buy SIM cards at airport kiosks (Heathrow, Gatwick, Edinburgh) for convenient, quick setup or high-street stores in areas like Oxford Street, Princes Street.",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "eSIM options available through Airalo or Holafly - installable before arrival, no physical swap. Plans from £7–£20 for 5–20GB.",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Three UK offers best balance of data and price with free roaming in many destinations. Plans from £10–£25 with 12–50GB data",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "EE has strongest national coverage, especially in rural areas. Plans from £15+",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Vodafone UK offers good nationwide reach and popular for international calling plans. Plans from £10–£30",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Airport kiosks at Heathrow, Gatwick, Edinburgh offer convenient, quick setup for SIM cards",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "eSIM options available through Airalo or Holafly - installable before arrival, no physical swap. Plans from £7–£20 for 5–20GB",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Expect 4G in urban areas and 3G/occasional dead zones in remote countryside (e.g. Cotswolds hills)",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "cities": [
+        "UK"
+      ],
+      "tip": "Wi-Fi is free in most cafés, trains, and attractions — but often requires email registration",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "UK",
+      "mode": "Train",
+      "description": "Direct trains available between major cities like London to Edinburgh",
+      "cost": "Duration: ~4.5 hours London to Edinburgh",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "city": "UK",
+      "mode": "Car",
+      "description": "Useful for Cotswolds exploration and day trips",
+      "cost": "Approx. 2–2.5 hours by car from London to Cotswolds",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "England and Scotland/All Inclusive Guide-Edinburgh.pdf",
+    "England and Scotland/Edinburgh- All Inclusive Guide.docx.pdf",
+    "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+    "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+    "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+  ]
+}

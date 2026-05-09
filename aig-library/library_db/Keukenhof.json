@@ -1,0 +1,102 @@
+{
+  "restaurants": [
+    {
+      "name": "Restaurant De Vier Seizoenen",
+      "city": "Keukenhof",
+      "cuisine_type": [
+        "European"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "10:00 AM – 10:00 PM",
+      "nearby_landmarks": [
+        "Keukenhof Gardens, Netherlands"
+      ],
+      "must_try_dishes": [
+        "Grilled vegetables",
+        "seasonal soups",
+        "fresh salads"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "De Hofboerderij",
+      "city": "Keukenhof",
+      "cuisine_type": [
+        "European"
+      ],
+      "price_range": "₹1,000–1,800 per person",
+      "hours": "10:00 AM – 5:00 PM",
+      "nearby_landmarks": [
+        "Keukenhof Gardens, Netherlands"
+      ],
+      "must_try_dishes": [
+        "Sandwiches",
+        "vegetarian quiche",
+        "soups"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Restaurant Hanami",
+      "city": "Keukenhof",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹1,200–2,000 per person",
+      "hours": "12:00 PM – 10:00 PM",
+      "nearby_landmarks": [
+        "Keukenhof Gardens, Netherlands"
+      ],
+      "must_try_dishes": [
+        "Veg sushi",
+        "noodles",
+        "stir-fried vegetables"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Keukenhof Tulip Gardens",
+      "city": "Keukenhof",
+      "description": "Vibrant colors of the blooming flowers",
+      "hours": "8:00 AM TO 7:00 PM",
+      "source_files": [
+        "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+        "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf"
+      ],
+      "recommended_duration": "Half day"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+    "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf",
+    "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+  ]
+}

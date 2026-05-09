@@ -1,0 +1,96 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Wiener Schnitzel",
+      "city": "Austria",
+      "description": "Breaded and pan-fried veal or pork cutlet",
+      "vegetarian": false,
+      "where_to_try": "Fischerhäusl",
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Tyrolean Gröstl",
+      "city": "Austria",
+      "description": "Traditional Tyrolean dish with potato, bacon, and egg",
+      "vegetarian": false,
+      "where_to_try": "Stiftskeller Innsbruck",
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Salzburg Nockerl",
+      "city": "Austria",
+      "description": "Sweet soufflé dessert from Salzburg",
+      "vegetarian": true,
+      "where_to_try": "St. Peter Stiftskulinarium",
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Sachertorte",
+      "city": "Austria",
+      "description": "Famous Austrian chocolate cake with apricot jam",
+      "vegetarian": true,
+      "where_to_try": "Café Central Vienna",
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Kaiserschmarrn",
+      "city": "Austria",
+      "description": "Shredded pancake served with plum compote or powdered sugar",
+      "vegetarian": true,
+      "where_to_try": "Plachutta Wollzeile",
+      "source_files": [
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Austria",
+      "mode": "Highway Vignette",
+      "description": "Required toll sticker for Austrian highways, available at petrol stations near borders",
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    },
+    {
+      "city": "Austria",
+      "mode": "Train",
+      "description": "Efficient rail system connecting cities and regions",
+      "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    },
+    {
+      "city": "Austria",
+      "mode": "Highway",
+      "description": "Highway system requiring vignette (toll sticker) for Austrian highways",
+      "cost": "Purchase at petrol stations",
+      "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+  ]
+}

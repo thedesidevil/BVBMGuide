@@ -1,0 +1,235 @@
+{
+  "restaurants": [
+    {
+      "name": "Rizzi The Restaurant",
+      "city": "Baden-Baden",
+      "cuisine_type": [
+        "European"
+      ],
+      "price_range": "₹₹₹₹",
+      "hours": "12 PM – 10 PM",
+      "ambience": "Chic modern European dining",
+      "area": "Old Town",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Chic modern European dining",
+        "Stylish evening"
+      ],
+      "must_try_dishes": [
+        "Mediterranean mains",
+        "seasonal plates"
+      ],
+      "best_for": [
+        "stylish"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Wallstreet im Hamilton",
+      "city": "Baden-Baden",
+      "cuisine_type": [
+        "Steakhouse"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12 PM – 11 PM",
+      "ambience": "Relaxed steakhouse atmosphere",
+      "area": "Old Town",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Relaxed steakhouse atmosphere",
+        "Casual comfort dining"
+      ],
+      "must_try_dishes": [
+        "Grilled meats",
+        "hearty mains"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Schneider's Weinstube",
+      "city": "Baden-Baden",
+      "cuisine_type": [
+        "German"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12 PM – 10 PM",
+      "ambience": "Traditional German tavern ambience",
+      "area": "Old Town",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Traditional German tavern ambience",
+        "Authentic local experience"
+      ],
+      "must_try_dishes": [
+        "Schnitzel",
+        "regional wines"
+      ],
+      "best_for": [
+        "authentic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Caracalla Thermal Spa",
+      "city": "Baden-Baden",
+      "description": "Relaxing thermal spa with indoor and outdoor pools",
+      "hours": "Typically 9 AM – 10 PM",
+      "entry_fee": "Approx. INR 3,000–4,000 per person (2–3 hrs access)",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Merkur Funicular Railway",
+      "city": "Baden-Baden",
+      "description": "Funicular to Mount Merkur with panoramic views",
+      "hours": "10 AM – 10 PM (season dependent)",
+      "entry_fee": "Approx. INR 600–800 per person",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Merkur Funicular",
+      "city": "Baden-Baden",
+      "description": "Funicular railway to Mount Merkur with Black Forest views",
+      "hours": "10 AM – 10 PM (season dependent)",
+      "entry_fee": "Approx. INR 600–800 per person",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Rebenhof",
+      "city": "Baden-Baden",
+      "location": "Baden-Baden",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "name": "Rebenhof",
+      "city": "Baden-Baden",
+      "location": "Town Centre",
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Spa skincare products",
+      "city": "Baden-Baden",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Baden-Baden Old Town",
+        "Boutique stores near Caracalla Spa"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Local Baden wines",
+      "city": "Baden-Baden",
+      "category": "Food",
+      "where_to_buy": [
+        "Baden-Baden Old Town"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Herbal teas",
+      "city": "Baden-Baden",
+      "category": "Food",
+      "where_to_buy": [
+        "Baden-Baden Old Town"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Premium German winter scarves",
+      "city": "Baden-Baden",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Baden-Baden Old Town"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Spa skincare products (thermal-based)",
+      "city": "Baden-Baden",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Baden-Baden Old Town",
+        "Boutique stores near Caracalla Spa"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "item": "Local Baden wines",
+      "city": "Baden-Baden",
+      "category": "Food",
+      "where_to_buy": [
+        "Baden-Baden Old Town"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "item": "Herbal teas",
+      "city": "Baden-Baden",
+      "category": "Food",
+      "where_to_buy": [
+        "Baden-Baden Old Town"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "item": "Premium German winter scarves",
+      "city": "Baden-Baden",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Baden-Baden Old Town"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "France/Tanya and Shovit_All Inclusive Guide.pdf",
+    "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+  ]
+}

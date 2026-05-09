@@ -1,0 +1,3261 @@
+{
+  "restaurants": [
+    {
+      "name": "Thestaycafe Indian Touch",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "THB 200–350 pp",
+      "hours": "11:00 AM – 11:00 PM",
+      "highlights": [
+        "Hidden gem North Indian restaurant"
+      ],
+      "must_try_dishes": [
+        "Butter paneer",
+        "garlic naan",
+        "mango lassi",
+        "Garlic naan",
+        "butter chicken",
+        "butter paneer"
+      ],
+      "best_for": [
+        "comfort"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/Eating Out Guide_ Bangkok_New.pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Indian Spices Restaurant",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "THB 280–350 pp",
+      "hours": "10:00 AM – 12:00 AM",
+      "highlights": [
+        "Authentic North Indian flavors",
+        "Rich gravies & generous portions"
+      ],
+      "must_try_dishes": [
+        "Mixed veg curry",
+        "naan",
+        "biryani",
+        "Indian curries"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/Eating Out Guide_ Bangkok_New.pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Himalaya Restaurant Pratu Nam",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Nepalese"
+      ],
+      "price_range": "Moderately priced",
+      "hours": "11am-11:30 pm",
+      "highlights": [
+        "Nepalese cuisine"
+      ],
+      "must_try_dishes": [
+        "Veg thali",
+        "lentil soup",
+        "cheese naan",
+        "masala tea",
+        "Lentil Soup",
+        "Veg Thali",
+        "Masala Tea",
+        "Naan with Cheese"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/Eating Out Guide_ Bangkok_New.pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ],
+      "ambience": "Indoor, Casual",
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Thip Samai Bangkok",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "THB 250–500 pp",
+      "hours": "9:00 AM – 12:00 AM",
+      "highlights": [
+        "Bangkok's most iconic Pad Thai kitchen",
+        "Legendary Thai street flavour in a clean setting"
+      ],
+      "must_try_dishes": [
+        "Vegetarian pad thai"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "SookSiam ICONSIAM",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "THB 150–350 pp",
+      "hours": "10:00 AM – 10:00 PM",
+      "highlights": [
+        "Indoor floating-market style food zone",
+        "Cultural food experience under one roof"
+      ],
+      "must_try_dishes": [
+        "Veg pad thai",
+        "mango sticky rice",
+        "Thai iced tea"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Blue Elephant Bangkok",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "THB 200–1000 pp",
+      "hours": "11:30 AM – 2:30 PM | 5:30 PM – 10:00 PM",
+      "highlights": [
+        "Elegant royal Thai fine-dining"
+      ],
+      "must_try_dishes": [
+        "Vegetarian Thai curries"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Broccoli Revolution",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai",
+        "International",
+        "Vegan"
+      ],
+      "price_range": "THB 400–600 pp",
+      "hours": "8 AM – 9 PM",
+      "ambience": "Trendy plant-based café",
+      "area": "Sukhumvit 11",
+      "highlights": [
+        "Plant-based café serving Thai and international vegan fare"
+      ],
+      "must_try_dishes": [
+        "Green curry quinoa bowl",
+        "Pumpkin burger",
+        "Cold-pressed juice",
+        "Vegan dumplings",
+        "pumpkin burger",
+        "cold-pressed juice"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide_Khyati_Thailand(1).pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Govinda Italian Restaurant & Pizzeria",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Italian",
+        "Vegetarian"
+      ],
+      "price_range": "THB 400–600 pp",
+      "hours": "12 PM – 11 PM",
+      "ambience": "Pure-vegetarian Italian eatery",
+      "area": "Sukhumvit",
+      "highlights": [
+        "Serves eggless and eggetarian pastas on request"
+      ],
+      "must_try_dishes": [
+        "Eggplant parmigiana",
+        "Four-cheese pizza",
+        "Tiramisu",
+        "Spinach ravioli",
+        "Truffle pizza",
+        "four-cheese pizza",
+        "tiramisu"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide_Khyati_Thailand(1).pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Dosa King Vegetarian Indian Restaurant",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Indian",
+        "South Indian",
+        "Vegetarian"
+      ],
+      "price_range": "THB 200–400 pp",
+      "hours": "11 AM – 10:30 PM",
+      "ambience": "Well-known South Indian spot",
+      "area": "Sukhumvit Zone",
+      "highlights": [
+        "Well-known South Indian spot with wide vegetarian menu"
+      ],
+      "must_try_dishes": [
+        "Masala dosa",
+        "Veg thali",
+        "Filter coffee",
+        "veg thali",
+        "filter coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide_Khyati_Thailand(1).pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "May Veggie Home",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai",
+        "Asian",
+        "Vegan"
+      ],
+      "price_range": "THB 200–400 pp",
+      "hours": "10 AM – 9 PM",
+      "ambience": "Clean, minimalist setting",
+      "area": "Central Bangkok Zone",
+      "nearby_landmarks": [
+        "Asiatique The Riverfront, Bangkok"
+      ],
+      "highlights": [
+        "Vegan Thai and Asian favorites"
+      ],
+      "must_try_dishes": [
+        "Tofu satay",
+        "Pad thai with tofu",
+        "Vegan ice-cream",
+        "Spicy basil rice",
+        "Coconut milk ice cream",
+        "pad thai with tofu",
+        "vegan ice-cream"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide_Khyati_Thailand(1).pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Bonita Cafe and Social Club",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Western",
+        "Vegan"
+      ],
+      "price_range": "THB 400–600 pp",
+      "hours": "10 AM – 8:30 PM",
+      "ambience": "Homely vegan café",
+      "area": "Silom",
+      "highlights": [
+        "Western breakfast and pasta options"
+      ],
+      "must_try_dishes": [
+        "Vegan omelet",
+        "Spaghetti pomodoro",
+        "Brownie sundae",
+        "spaghetti pomodoro",
+        "brownie sundae"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide_Khyati_Thailand(1).pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Anotai Vegetarian Restaurant",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai",
+        "Fusion",
+        "Vegetarian"
+      ],
+      "price_range": "THB 300–600 pp",
+      "hours": "11 AM – 9:00 PM",
+      "ambience": "Boutique vegetarian spot",
+      "area": "Central Bangkok Zone",
+      "highlights": [
+        "Organic Thai and fusion menu"
+      ],
+      "must_try_dishes": [
+        "Pumpkin soup",
+        "Pad see ew with tofu",
+        "Chocolate cake",
+        "pad see ew with tofu",
+        "chocolate cake"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide_Khyati_Thailand(1).pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Veganerie Concept",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Vegan",
+        "Dessert"
+      ],
+      "price_range": "THB 250–450 pp",
+      "hours": "10 AM – 9:15 PM",
+      "ambience": "Bright vegan dessert and brunch bar",
+      "area": "Siam Paragon",
+      "nearby_landmarks": [
+        "Siam Paragon, Bangkok"
+      ],
+      "highlights": [
+        "Vegan dessert and brunch bar inside the mall"
+      ],
+      "must_try_dishes": [
+        "Pancakes",
+        "Vegan brownie sundae",
+        "Thai iced coffee",
+        "vegan brownie sundae"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide_Khyati_Thailand(1).pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Broccoli Revolution ICONSIAM Pop-Up",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Asian",
+        "Vegan"
+      ],
+      "price_range": "THB 300–600 pp",
+      "hours": "11 AM – 9:30 PM",
+      "ambience": "Riverside branch",
+      "area": "ICONSIAM",
+      "nearby_landmarks": [
+        "ICONSIAM, Bangkok"
+      ],
+      "highlights": [
+        "Plant-forward Asian bowls"
+      ],
+      "must_try_dishes": [
+        "Tofu pad thai",
+        "Vegan dumplings",
+        "Matcha latte",
+        "vegan dumplings",
+        "matcha latte"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide_Khyati_Thailand(1).pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Amrita Garden",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Japanese",
+        "Thai",
+        "Vegetarian"
+      ],
+      "price_range": "THB 250–500 pp",
+      "hours": "24hrs",
+      "ambience": "Home-style vegetarian restaurant",
+      "area": "Central Bangkok Zone",
+      "highlights": [
+        "Japanese-Thai fusion touches"
+      ],
+      "must_try_dishes": [
+        "Tofu katsu don",
+        "Omelet rice",
+        "Brown-rice bowls",
+        "omelet rice",
+        "brown-rice bowls"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide_Khyati_Thailand(1).pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Everest Kitchen Bangkok",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Indian",
+        "Nepalese"
+      ],
+      "price_range": "฿620 – ฿1,117 per person",
+      "hours": "11:00am-11:00pm",
+      "ambience": "cozy, family-run restaurant",
+      "area": "Victory Monument",
+      "highlights": [
+        "Known for flavorful momo, curry and biryani",
+        "Approachable prices",
+        "Friendly service"
+      ],
+      "must_try_dishes": [
+        "Momos",
+        "tikka masala"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Eating Out Guide_ Bangkok_New.pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Vietnam Authentic Food",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "฿175–฿225",
+      "hours": "10:30am-12:00am",
+      "highlights": [
+        "Broth simmered over 18 hours with 95 cm–tall pots",
+        "Loved by Vietnamese diners for authentic flavor"
+      ],
+      "must_try_dishes": [
+        "Pho",
+        "bun bo"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Thailand/Eating Out Guide_ Bangkok_New.pdf",
+        "Thailand/Arpita Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ],
+      "ambience": "Praised for faithful Northern Vietnamese pho with 18-hour simmered broth",
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Sugam South Indian Veg Restaurant",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "₹250-750 per person",
+      "hours": "11:30am-11:30pm",
+      "highlights": [
+        "Vegetarian restaurant"
+      ],
+      "must_try_dishes": [
+        "Dosas"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Eating Out Guide_ Bangkok_New.pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ],
+      "ambience": "Indoor, Casual, no frills"
+    },
+    {
+      "name": "Thip Samai",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "₹250-750 per person",
+      "hours": "9am-12am (closed on Tues)",
+      "highlights": [
+        "Said to have the best Pad Thai",
+        "Original restaurant location"
+      ],
+      "must_try_dishes": [
+        "Pad Thai"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Thailand/Eating Out Guide_ Bangkok_New.pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ],
+      "ambience": "Indoor, Casual"
+    },
+    {
+      "name": "Baan Somtum",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "฿300–฿400",
+      "hours": "11am-10pm",
+      "ambience": "Indoor, cosy",
+      "highlights": [
+        "Famous for their green papaya salad",
+        "Over 10 outlets"
+      ],
+      "must_try_dishes": [
+        "Green Papaya salad",
+        "Tom Yum"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Thailand/Eating Out Guide_ Bangkok_New.pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Blue Elephant",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "About ₹2000 per person",
+      "hours": "11:30-2:30pm, 5:30-10:00pm",
+      "ambience": "Upscale",
+      "highlights": [
+        "They sell packaged curry pastes as souvenirs"
+      ],
+      "must_try_dishes": [
+        "Thai curries"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "Thailand/Eating Out Guide_ Bangkok_New.pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ],
+      "area": "South Sathorn road"
+    },
+    {
+      "name": "Sunrise Tacos",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Mexican"
+      ],
+      "price_range": "Moderately priced",
+      "highlights": [
+        "Located in Terminal 21 mall"
+      ],
+      "must_try_dishes": [
+        "Nachos",
+        "Burritos",
+        "Mexican meals"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Eating Out Guide_ Bangkok_New.pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ],
+      "ambience": "Indoor setting",
+      "area": "Terminal 21"
+    },
+    {
+      "name": "Monsoon",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "Moderately priced",
+      "hours": "7am-11pm",
+      "ambience": "Has outdoor seating",
+      "highlights": [
+        "Range of dishes",
+        "Outdoor seating available"
+      ],
+      "must_try_dishes": [
+        "Range of dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Eating Out Guide_ Bangkok_New.pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ],
+      "area": "Sukhumvit Soi 8"
+    },
+    {
+      "name": "Safari Park Restaurant",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai",
+        "Vegetarian"
+      ],
+      "price_range": "THB 200–350 pp",
+      "hours": "11 AM – 2 PM",
+      "nearby_landmarks": [
+        "Safari World Bangkok, Bangkok"
+      ],
+      "highlights": [
+        "Limited but workable veg choices"
+      ],
+      "must_try_dishes": [
+        "Stir-fried vegetables with rice",
+        "Veg noodles",
+        "Fruit platters"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Siam India – Asiatique",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "THB 200-400 per person",
+      "hours": "3:00 PM – 11:00 PM",
+      "ambience": "Open-air or semi-open-air setting with views/walkways of the Asiatique night market, offering a relaxed but lively atmosphere, especially in the evenings",
+      "area": "Asiatique The Riverfront",
+      "nearby_landmarks": [
+        "Asiatique The Riverfront, Bangkok"
+      ],
+      "highlights": [
+        "Indian curries",
+        "rotis",
+        "rice"
+      ],
+      "must_try_dishes": [
+        "Indian curries",
+        "rotis",
+        "rice"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Sirimahannop The Heritage – Asiatique",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "THB 600-900 per person",
+      "hours": "4:00 pm - 12:00 am",
+      "ambience": "Heritage style décor, somewhat more upscale; elegant interior & river-front setting. Great for a more relaxed, slightly dressier evening meal",
+      "area": "Asiatique The Riverfront",
+      "nearby_landmarks": [
+        "Asiatique The Riverfront, Bangkok"
+      ],
+      "highlights": [
+        "Upscale dining",
+        "River-front setting"
+      ],
+      "must_try_dishes": [
+        "Genovese Noodle",
+        "Vegetarian Taco",
+        "Spicy Eggplant Curry",
+        "Peanut & Turmeric Tofu",
+        "Beetroot Salad",
+        "Green Papaya Fried"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Sutunthip Vegetarian Restaurant",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai",
+        "Vegetarian"
+      ],
+      "price_range": "THB 200-400 per person",
+      "hours": "9:30 AM to 9:00 PM",
+      "ambience": "Very casual, homely and local feel. Many dishes are in Thai style, with a focus on vegetable-based cooking",
+      "highlights": [
+        "Vegetarian-focused",
+        "Thai-style cooking"
+      ],
+      "must_try_dishes": [
+        "Thai-style vegetarian stir-fries with tofu"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Savoey @Tha Maharaj",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai",
+        "Vegan"
+      ],
+      "price_range": "THB 250-400 per person",
+      "hours": "10:00 AM – 10:00 PM",
+      "ambience": "Modern café overlooking the Chao Phraya River",
+      "highlights": [
+        "River views",
+        "Has vegan options"
+      ],
+      "must_try_dishes": [
+        "Vegan Thai green curry",
+        "Coconut pancakes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Pad Thai Kratong Thong by ama",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai",
+        "Buddhist Vegetarian"
+      ],
+      "price_range": "THB 80-150 per person",
+      "hours": "10:00 AM to 5:30 PM",
+      "ambience": "Small, casual, family-run restaurant with Buddhist vegetarian dishes",
+      "highlights": [
+        "Buddhist vegetarian dishes",
+        "Family-run"
+      ],
+      "must_try_dishes": [
+        "Vegetarian noodle soup",
+        "Fried tofu with basil"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Dosa King Express – ICONSIAM Food Court",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Indian",
+        "Vegetarian"
+      ],
+      "price_range": "THB 250-400 per person",
+      "hours": "10am-10pm",
+      "ambience": "Casual riverside food court setting offering pure vegetarian Indian fare",
+      "area": "ICONSIAM",
+      "nearby_landmarks": [
+        "ICONSIAM, Bangkok"
+      ],
+      "highlights": [
+        "Pure vegetarian Indian fare",
+        "Branch of beloved Dosa King brand"
+      ],
+      "must_try_dishes": [
+        "Masala dosa",
+        "paneer butter masala",
+        "veg biryani"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "SookSiam (Food Zone inside ICONSIAM)",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "THB 150-350 per person",
+      "hours": "10:00 AM to 10:00 PM",
+      "ambience": "Vibrant indoor floating market–style food hall representing all 77 provinces of Thailand. Beautifully designed market-style area with traditional boats, wooden décor, and regional Thai music",
+      "area": "ICONSIAM",
+      "nearby_landmarks": [
+        "ICONSIAM, Bangkok"
+      ],
+      "highlights": [
+        "Indoor floating market style",
+        "Represents all 77 provinces of Thailand",
+        "Has vegetarian-friendly stalls"
+      ],
+      "must_try_dishes": [
+        "Veg pad Thai",
+        "mango sticky rice",
+        "Thai iced tea"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Pier 21 Food Court",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai",
+        "International"
+      ],
+      "price_range": "THB 35-70 per dish",
+      "hours": "10am-10pm",
+      "ambience": "Casual, food court setting with a variety of seating options",
+      "area": "Terminal 21",
+      "nearby_landmarks": [
+        "Terminal 21 Mall, Bangkok"
+      ],
+      "highlights": [
+        "Food court",
+        "Has veg options"
+      ],
+      "must_try_dishes": [
+        "stir-fries",
+        "curries",
+        "tofu",
+        "mock meats",
+        "fritters"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Ponn Cafe, Terminal 21",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "THB 100-175 per dish",
+      "hours": "10:00 AM – 9:00 PM",
+      "ambience": "Warm and inviting, with a home-like atmosphere",
+      "area": "Terminal 21",
+      "nearby_landmarks": [
+        "Terminal 21 Mall, Bangkok"
+      ],
+      "highlights": [
+        "Home-like atmosphere"
+      ],
+      "must_try_dishes": [
+        "red curry",
+        "stir-fried vegetables",
+        "fried rice"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Govinda Vegetarian Restaurant Bangkok",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Vegetarian",
+        "Indian"
+      ],
+      "price_range": "THB250-400 per person",
+      "hours": "12:00 PM – 11:00 PM",
+      "ambience": "Simple yet vibrant décor with a calm, family-friendly atmosphere",
+      "highlights": [
+        "Vegetarian restaurant",
+        "Family-friendly"
+      ],
+      "must_try_dishes": [
+        "Lentil Soup",
+        "Indian gravies",
+        "rotis and rice"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Mango Vegetarian & Vegan",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai",
+        "Vegetarian",
+        "Vegan"
+      ],
+      "price_range": "THB 200- 400 per person",
+      "hours": "9:00 AM – 10:00 PM",
+      "ambience": "Artistic, creative space combining dining with a mini art gallery",
+      "highlights": [
+        "Vegetarian and vegan",
+        "Art gallery setting"
+      ],
+      "must_try_dishes": [
+        "Thai Green Curry with Tofu",
+        "Pad thai",
+        "Vegan Spring Rolls",
+        "mango sticky rice"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Alpine Restaurant",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹250-500 per person",
+      "hours": "7am-11:30pm",
+      "ambience": "Indoor, Casual",
+      "highlights": [
+        "Indian curries"
+      ],
+      "must_try_dishes": [
+        "Indian curries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Black and Milk at Rimkhobfa Bookstore",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "THB 100-200",
+      "hours": "9:30 AM - 9:30 PM",
+      "ambience": "A beautifully renovated bookstore-café with airy, bright interiors and a dramatic \"Tower\" wall architectural feature",
+      "nearby_landmarks": [
+        "Wat Pho, Bangkok"
+      ],
+      "highlights": [
+        "Bookstore-café",
+        "Dramatic architectural feature"
+      ],
+      "must_try_dishes": [
+        "BAM 02 – A unique blend of fresh orange juice, cream, and espresso",
+        "Banana Bread Cream Cheese"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "The Cassette Coffee Bar",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "฿350–฿650",
+      "hours": null,
+      "ambience": "Step into a Wes Anderson set—salmon-pink walls, retro accents, and playful design",
+      "nearby_landmarks": [
+        "Jim Thompson House, Bangkok"
+      ],
+      "highlights": [
+        "Wes Anderson aesthetic",
+        "Retro design"
+      ],
+      "must_try_dishes": [
+        "Chocolate Pillow Cake",
+        "Pecan Pie",
+        "Rootbeer Float"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Wallflowers Cafe",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "฿150-300",
+      "hours": "10 AM - 6 PM",
+      "ambience": "A lush wonderland of vintage furniture, colorful flora, and elegant chandeliers. Part coffeehouse, part floral escape—charming by day, a speakeasy by night",
+      "highlights": [
+        "Vintage furniture",
+        "Floral theme",
+        "Speakeasy by night"
+      ],
+      "must_try_dishes": [
+        "floral-themed cakes crowned with edible flowers",
+        "The Old-Fashioned Boy",
+        "Toasted Negroni"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "The Blooming Gallery",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "฿150-300",
+      "hours": "8 AM - 10 PM",
+      "ambience": "A serene glasshouse filled with hanging ferns and fragrant floral displays—an oasis in Thonglor",
+      "area": "Thonglor",
+      "highlights": [
+        "Glasshouse setting",
+        "Hanging ferns",
+        "Fragrant floral displays"
+      ],
+      "must_try_dishes": [
+        "tea inspired by Monet's palette",
+        "pistachio chocolate lava cake with gelato"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Floral Cafe at Napasorn",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "฿150-300",
+      "hours": "9 AM - 7 PM",
+      "ambience": "Located above Bangkok's historic flower market, this café is filled with seasonal blooms, warm lighting, and an enchanting garden-like interior",
+      "highlights": [
+        "Above historic flower market",
+        "Seasonal blooms",
+        "Garden-like interior"
+      ],
+      "must_try_dishes": [
+        "sourdough toast with butter and strawberry jam"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "SookSiam",
+      "city": "Bangkok",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "THB 150-350 per person",
+      "hours": "10:00 AM to 10:00 PM",
+      "area": "ICONSIAM",
+      "ambience": "Vibrant indoor floating market–style food hall with traditional boats, wooden décor, and regional Thai music",
+      "nearby_landmarks": [
+        "ICONSIAM, Bangkok"
+      ],
+      "highlights": [
+        "Represents all 77 provinces of Thailand",
+        "Several vegetarian-friendly stalls",
+        "Beautiful market-style area"
+      ],
+      "must_try_dishes": [
+        "Veg pad Thai",
+        "mango sticky rice",
+        "Thai iced tea"
+      ],
+      "best_for": [
+        "cultural"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Safari World Bangkok",
+      "city": "Bangkok",
+      "description": "Thailand's premier open-zoo and marine entertainment park, divided into Safari Park (drive-through experience with Bengal tigers, giraffes, zebras, rhinos) and Marine Park (dolphin shows, spy war stunt shows, bird shows).",
+      "hours": "9:00 AM – 5:00 PM",
+      "recommended_duration": "4–5 hours",
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Wat Pho",
+      "city": "Bangkok",
+      "description": "The Temple of the Reclining Buddha",
+      "hours": "8:00 AM – 6:30 PM",
+      "recommended_duration": "60–75 minutes",
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Wat Arun",
+      "city": "Bangkok",
+      "description": "Temple of Dawn",
+      "hours": "8am-6pm",
+      "recommended_duration": "45–60 minutes",
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ],
+      "entry_fee": "100 Baht per person"
+    },
+    {
+      "name": "Gems Gallery Bangkok",
+      "city": "Bangkok",
+      "description": "Elegant showroom showcasing Thailand's world-renowned rubies, sapphires, and custom-crafted gemstone jewellery with guided explanation of Thai gem craftsmanship.",
+      "hours": "9:00 AM – 5:30 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "45 minutes",
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Chao Phraya Princess River Cruise",
+      "city": "Bangkok",
+      "description": "Evening cruise along the Chao Phraya River, passing glittering landmarks like the Grand Palace, Wat Arun, and luxury riverside hotels. Features soft live music, open-air decks, and city reflections in the water.",
+      "hours": "7:30 PM – 9:30 PM",
+      "source_files": [
+        "Thailand/Divya_All Inclusive Guide_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Asiatique The Riverfront",
+      "city": "Bangkok",
+      "description": "Riverside area with twinkling lights, boutiques, and Ferris wheel",
+      "hours": "4 PM – 12 AM",
+      "entry_fee": "Free entry",
+      "source_files": [
+        "Thailand/All Inclusive Guide_Khyati_Thailand(1).pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "SEA LIFE Bangkok Ocean World",
+      "city": "Bangkok",
+      "description": "Thailand's largest aquarium with sharks, penguins, and colorful corals",
+      "hours": "10 AM – 8 PM",
+      "entry_fee": "THB 700–1,000 pp",
+      "source_files": [
+        "Thailand/All Inclusive Guide_Khyati_Thailand(1).pdf",
+        "Thailand/All Inclusive Guide_Khyati_Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Grand Palace",
+      "city": "Bangkok",
+      "description": "Bangkok's most iconic royal complex showcasing traditional Thai architecture and sacred sites. Historic royal complex and Thailand's spiritual-heart royal landmark",
+      "hours": "Daily 8:30 AM – 3:30 PM",
+      "entry_fee": "500 THB",
+      "recommended_duration": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Grand Palace & Wat Phra Kaew",
+      "city": "Bangkok",
+      "description": "Thailand's most sacred royal complex and spiritual landmark — combining exquisite architecture, religious reverence, and the historic heart of Bangkok",
+      "hours": "8:30 AM to 4:30 PM daily; ticket sales end at 3:30 PM",
+      "entry_fee": "500 Baht per person (covers access to the Grand Palace, Wat Phra Kaew, and Queen Sirikit Museum of Textiles); children under 120 cm enter free",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Wat Pho (Reclining Buddha)",
+      "city": "Bangkok",
+      "description": "Wat Pho in Bangkok is famous for its magnificent 46-meter-long Reclining Buddha covered in gold leaf. It's also Thailand's oldest temple complex and a center for traditional Thai massage and healing",
+      "hours": "8 AM - 6:30 PM",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "ICONSIAM",
+      "city": "Bangkok",
+      "description": "Bangkok's premier riverside mega mall and cultural hub, blending luxury retail, entertainment, Thai artisan markets, and riverside ambiance on the banks of the Chao Phraya",
+      "hours": "Daily from 10:00 AM to 10:00 PM (shops, restaurants)",
+      "entry_fee": "Free",
+      "recommended_duration": "4-5 hours",
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+        "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Safari World & Marine Park",
+      "city": "Bangkok",
+      "description": "Major wildlife & entertainment complex in Bangkok that combines a drive-through open safari experience and marine animal shows to offer a full animal adventure",
+      "hours": "9:00 AM – 5:00 PM & Mondays (park is closed)",
+      "entry_fee": "Free",
+      "recommended_duration": "Full day",
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "KidZania Bangkok",
+      "city": "Bangkok",
+      "description": "Interactive 'edutainment' indoor city where children engage in role-play of real-world professions (doctor, firefighter, chef, etc.) to learn about responsibility, commerce, teamwork, and societal roles",
+      "hours": "Monday – Friday(10:00 AM-5:00 PM) & Saturday, Sunday & Public Holidays(10:30 AM-8:30 PM)",
+      "entry_fee": "Children(ages 4–14)-THB 1,100 to THB 1,350, Adults (15+ yrs above)-THB 640 to THB 800, Toddlers (ages 2–3)- THB 700 to THB 875",
+      "recommended_duration": "4-6 hours",
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Or Tor Kor Market",
+      "city": "Bangkok",
+      "description": "Bangkok's premier 'gourmet' fresh food market, known for its high-quality produce, tropical fruits (especially durian & mango), and clean, well-organized layout — ranked by CNN among the world's top fresh markets",
+      "hours": "Generally 06:30 AM to 18:00 (6:00 PM) daily",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Lumphini Park",
+      "city": "Bangkok",
+      "description": "The iconic central park in Bangkok, offering lush greenery, a large lake, jogging tracks, public exercise spaces, and a green oasis amid the city's bustle",
+      "hours": "4:30 AM to 9:00 PM daily",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Science Centre for Education (Bangkok Planetarium)",
+      "city": "Bangkok",
+      "description": "Major educational complex combining science exhibits, a planetarium dome, natural history displays, an aquarium, and interactive learning — aimed at inspiring curiosity in science and space",
+      "hours": "Tuesday to Sunday 9:00 AM to 4:30 PM(closed Mondays & public holidays)",
+      "entry_fee": "Adult Price-30 THB, Child / Student Price-20 THB",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Art in Paradise 3D Museum",
+      "city": "Bangkok",
+      "description": "Fun and interactive 3D art museum featuring over 150 optical illusion artworks across six themed zones, offering visitors a unique opportunity to step into and become part of the art",
+      "hours": "Open daily: 9:00 AM – 10:30 PM",
+      "entry_fee": "Adults (foreign visitors): THB 400, Children (height 100–130 cm): THB 200",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Terminal 21 Mall",
+      "city": "Bangkok",
+      "description": "Creatively themed shopping mall where each floor represents a different international city, offering a diverse shopping and dining experience",
+      "hours": "Open daily: 10:00 AM – 10:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Ayutthaya Historical Park",
+      "city": "Bangkok",
+      "description": "UNESCO World Heritage site preserving the ruins of the ancient capital of the Kingdom of Siam (founded in 1351), showcasing historic temples, palaces, Buddha statues, and reflecting Thailand's rich cultural and architectural legacy",
+      "hours": "Opens daily at 8:00 AM to 6:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "Full day",
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Museum of Siam",
+      "city": "Bangkok",
+      "description": "Engaging 'learning museum' that explores Thai identity, history, culture, and traditions through interactive, multimedia exhibits — a fun way for both kids and adults to understand 'Thainess'",
+      "hours": "Tuesday – Sunday(10:00 AM – 6:00 PM) Monday Closed",
+      "entry_fee": "Adults-100 THB, Students- 50THB",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "JODD FAIRS night market",
+      "city": "Bangkok",
+      "description": "Bustling, modern night market combining food, fashion, entertainment, and local culture — a reincarnation of the famed Ratchada Train Night Market with a more convenient city-center location",
+      "hours": "Open daily from about 4:00 PM to 12:00 AM (midnight)",
+      "entry_fee": "Free",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Grand Palace and Wat Phra Kaew",
+      "city": "Bangkok",
+      "description": "Temple of the Emerald Buddha",
+      "hours": "8:30am-3:30pm daily",
+      "entry_fee": "500 TBT per person",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Jim Thompson House",
+      "city": "Bangkok",
+      "description": "Residence turned Museum",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "River cruise on Chao Phraya",
+      "city": "Bangkok",
+      "description": "River cruise experience with vegetarian options available",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Mahanakhon Skywalk",
+      "city": "Bangkok",
+      "description": "Skywalk experience",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Chinatown",
+      "city": "Bangkok",
+      "description": "Historic Chinatown area",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Khao San Road",
+      "city": "Bangkok",
+      "description": "Backpackers paradise",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Siam Paragon",
+      "city": "Bangkok",
+      "description": "One of the most luxurious malls in Bangkok, with a wide range of high-end brands",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Central World",
+      "city": "Bangkok",
+      "description": "Everything from fashion and electronics to home goods and gourmet food. It also has a large department store and a rooftop observatory",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Icon Siam",
+      "city": "Bangkok",
+      "description": "This luxurious mall is located on the banks of the Chao Phraya River and offers stunning views of the city. It has a wide range of high-end brands, as well as a traditional Thai market and a floating market",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Terminal 21",
+      "city": "Bangkok",
+      "description": "This unique mall is themed after different cities around the world, with each floor representing a different destination. It's a great place to shop for souvenirs and local products",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "MBK Centre",
+      "city": "Bangkok",
+      "description": "This is a great place to find affordable electronics, fashion, and souvenirs",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Chatuchak Weekend Market",
+      "city": "Bangkok",
+      "description": "Street market",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Asiatique Riverfront",
+      "city": "Bangkok",
+      "description": "Night market",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Zoom Sky Bar",
+      "city": "Bangkok",
+      "description": "Sky bar",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Sky Bar at Lebua",
+      "city": "Bangkok",
+      "description": "Sky bar",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Onyx",
+      "city": "Bangkok",
+      "description": "Nightclub",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Levels Club",
+      "city": "Bangkok",
+      "description": "Nightclub",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Octave Rooftop Lounge and Bar",
+      "city": "Bangkok",
+      "description": "Rooftop lounge and bar",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf"
+      ]
+    },
+    {
+      "name": "Chao Phraya River Cruise",
+      "city": "Bangkok",
+      "description": "The Chao Phraya River, known as the \"River of Kings,\" flows through Bangkok and is the city's lifeline, lined with historic temples, markets, and modern skyscrapers. A river cruise offers a scenic way to experience Thailand's culture and charm",
+      "hours": "7 AM - 6:25 PM",
+      "entry_fee": "THB 134.90 for day pass, around ₹1,927 or USD 30.35 for dinner cruises",
+      "recommended_duration": null,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Grand Palace & Wat Phra Kaew (Temple of the Emerald Buddha)",
+      "city": "Bangkok",
+      "description": "The Grand Palace in Bangkok is a dazzling former royal residence, renowned for its ornate architecture and rich history. Within its grounds lies Wat Phra Kaew, home to the revered Emerald Buddha, Thailand's most sacred religious icon",
+      "hours": "8:30 AM - 3:30 PM",
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Asiatique Night Market",
+      "city": "Bangkok",
+      "description": "Night market for shopping and dining",
+      "hours": "4 PM - 12 AM",
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Chao Phraya Princess with Dinner",
+      "city": "Bangkok",
+      "description": "Evening dinner cruise",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Grand Palace (Emerald Buddha)",
+      "city": "Bangkok",
+      "description": "Historic palace complex with Emerald Buddha temple",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    },
+    {
+      "name": "Wat Arun - Temple of Dawn",
+      "city": "Bangkok",
+      "description": "Historic Buddhist temple",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "The Ecotel Bangkok",
+      "city": "Bangkok",
+      "location": "Bangkok",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "name": "Nysa Hotel Bangkok Sukhumvit 11",
+      "city": "Bangkok",
+      "location": "Sukhumvit",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand(1).pdf",
+      "_source_mtime": 1772384354.5086627
+    },
+    {
+      "name": "Nysa Hotel Bangkok Sukhumvit 11",
+      "city": "Bangkok",
+      "location": "Sukhumvit 11",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "name": "Jam Hostel",
+      "city": "Bangkok",
+      "location": "38min car drive from Suvarnabhumi International Airport",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "name": "Mad Monkey hostel bangkok",
+      "city": "Bangkok",
+      "location": null,
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "name": "Mercure Siam Hotel",
+      "city": "Bangkok",
+      "location": "Central Bangkok",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "name": "Akara Hotel",
+      "city": "Bangkok",
+      "location": "Bangkok",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+      "_source_mtime": 1772384362.8231447
+    },
+    {
+      "name": "Rembrandt Bangkok",
+      "city": "Bangkok",
+      "location": null,
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    },
+    {
+      "name": "Seasons Siam Hotel",
+      "city": "Bangkok",
+      "location": "Bangkok city center",
+      "_source_file": "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+      "_source_mtime": 1772384351.8248296
+    },
+    {
+      "name": "Jam Hostel",
+      "city": "Bangkok",
+      "location": "Bangkok",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "name": "Mad Monkey hostel bangkok",
+      "city": "Bangkok",
+      "location": "Bangkok",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Pad Thai",
+      "city": "Bangkok",
+      "description": "Thailand's most famous stir-fried noodle dish with shrimp or chicken, bean sprouts, peanuts & tamarind sauce. Try 'Pad Thai Kung' (with shrimp) for the classic flavor.",
+      "vegetarian": false,
+      "where_to_try": "Thip Samai, Bangkok",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Green Curry",
+      "city": "Bangkok",
+      "description": "Spicy coconut milk curry with chicken or beef, eggplants, and basil — iconic Thai comfort food. Pair with jasmine rice for balance.",
+      "vegetarian": false,
+      "where_to_try": "Krua Apsorn, Bangkok",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Moo Ping",
+      "city": "Bangkok",
+      "description": "Charcoal-grilled pork skewers — one of Thailand's best street snacks. Eat with sticky rice ('Khao Niew') for the true local combo.",
+      "vegetarian": false,
+      "where_to_try": "Chatuchak Weekend Market or Soi Rambuttri",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Tom Yum Goong",
+      "city": "Bangkok",
+      "description": "Thailand's signature hot and sour soup made with shrimp, lemongrass, lime, and chili paste. The creamy version (with evaporated milk) is richer and more flavorful.",
+      "vegetarian": false,
+      "where_to_try": "Pe Aor Tom Yum Kung, Bangkok",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Khao Man Gai",
+      "city": "Bangkok",
+      "description": "Thai-style Hainanese chicken rice with aromatic rice, boiled chicken, and spicy ginger sauce. Great for breakfast or a light lunch.",
+      "vegetarian": false,
+      "where_to_try": "Go-Ang Kaomunkai Pratunam, Bangkok",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Som Tam with Grilled Chicken",
+      "city": "Bangkok",
+      "description": "Spicy papaya salad paired with juicy grilled chicken — a signature Isaan (northeast Thai) combo. Ask for medium spice — Thai 'spicy' can be intense!",
+      "vegetarian": false,
+      "where_to_try": "Som Tam Jay Soi 5, Bangkok",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Massaman Curry",
+      "city": "Bangkok",
+      "description": "Mild, rich curry with beef or chicken, potatoes, and peanuts — Persian-influenced southern Thai dish. Perfect for those who prefer less spicy curries.",
+      "vegetarian": false,
+      "where_to_try": "Blue Elephant Restaurant, Bangkok or Phuket",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Pla Pao",
+      "city": "Bangkok",
+      "description": "Whole fish stuffed with lemongrass, coated in salt, and grilled over charcoal. Best enjoyed with spicy seafood dipping sauce.",
+      "vegetarian": false,
+      "where_to_try": "Rod Fai Night Market, Bangkok",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Khao Pad",
+      "city": "Bangkok",
+      "description": "Classic Thai fried rice with chicken, shrimp, or crab — simple yet flavorful. Add chili-fish sauce ('Nam Pla Prik') for extra punch.",
+      "vegetarian": false,
+      "where_to_try": "Any street stall in Bangkok or Phuket",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Panang Curry",
+      "city": "Bangkok",
+      "description": "Creamy red curry with chicken or beef, thickened with coconut milk and peanuts. Sweeter and milder than red curry — perfect for curry beginners.",
+      "vegetarian": false,
+      "where_to_try": "Supanniga Eating Room, Bangkok",
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf"
+      ]
+    },
+    {
+      "name": "Pad Thai Jay",
+      "city": "Bangkok",
+      "description": "Stir-fried rice noodles with tofu, peanuts, bean sprouts, and tamarind sauce (vegetarian version).",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Green Curry with Tofu (Gaeng Keow Wan Jay)",
+      "city": "Bangkok",
+      "description": "Spicy Thai green curry with vegetables and tofu.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Red Curry with Vegetables (Gaeng Daeng Jay)",
+      "city": "Bangkok",
+      "description": "Creamy coconut curry with seasonal vegetables and tofu.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Massaman Curry with Tofu (Gaeng Massaman Jay)",
+      "city": "Bangkok",
+      "description": "Mild, slightly sweet curry with potatoes, peanuts, and tofu.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Tom Yum Soup (Vegetarian Version)",
+      "city": "Bangkok",
+      "description": "Hot and sour soup with mushrooms, lemongrass, lime, and tofu.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Som Tam Jay",
+      "city": "Bangkok",
+      "description": "Green papaya salad, often served without fish sauce for the vegetarian version.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Spring Rolls (Poh Pia Jay)",
+      "city": "Bangkok",
+      "description": "Crispy vegetable-filled spring rolls.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Stir-Fried Morning Glory (Pad Pak Boong Jay)",
+      "city": "Bangkok",
+      "description": "Spicy stir-fried water spinach with garlic and soy sauce.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Mango Sticky Rice (Khao Niew Mamuang)",
+      "city": "Bangkok",
+      "description": "Sweet dessert of sticky rice with coconut milk and fresh mango.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Fried Tofu with Peanut Sauce",
+      "city": "Bangkok",
+      "description": "Crispy tofu served with a rich peanut dipping sauce.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Vegetable Fried Rice (Khao Pad Jay)",
+      "city": "Bangkok",
+      "description": "Thai-style fried rice with assorted vegetables and tofu.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Thai Sweet Corn Cakes (Tod Man Khao Pod Jay)",
+      "city": "Bangkok",
+      "description": "Crispy corn fritters, usually vegetarian-friendly.",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+        "Thailand/Kiran_Bangkok-All inclusive guide.pdf"
+      ]
+    },
+    {
+      "name": "Roti Gluay or fried banana pancakes",
+      "city": "Bangkok",
+      "description": "The warm, crispy pancakes filled with slices of ripe banana, drizzled with condensed milk and chocolate sauce are a sweet treat that you'll love",
+      "vegetarian": true,
+      "where_to_try": "Sukhumvit Soi 38 and Soi Rangnam",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Roti Gluay (Fried Banana Pancakes)",
+      "city": "Bangkok",
+      "description": "Warm, crispy pancakes filled with banana slices, drizzled with condensed milk and chocolate sauce",
+      "vegetarian": true,
+      "where_to_try": "Sukhumvit Soi 38 and Soi Rangnam",
+      "source_files": [
+        "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Bangkok",
+      "english": "Hello / Hi",
+      "local": "Sawasdee krub/kha (krub = male, kha = female)",
+      "category": "greeting",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "english": "Thank you",
+      "local": "Khob khun krub/kha",
+      "category": "polite",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "english": "Yes",
+      "local": "Chai",
+      "category": "polite",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "english": "No",
+      "local": "Mai",
+      "category": "polite",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "english": "Excuse me / Sorry",
+      "local": "Khor thot krub/kha",
+      "category": "polite",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Respect the monarchy – Always show respect; avoid negative remarks about the royal family.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Dress appropriately – Cover shoulders and knees when visiting temples.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Use polite gestures – Wai (pressing palms together) is a common greeting.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Bargain politely – Bargaining is common in markets; keep it friendly.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Keep your shoes off – Remove shoes before entering temples and some homes.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Don't touch someone's head – The head is considered sacred in Thai culture.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Don't point your feet – Feet are considered the lowest part of the body; avoid pointing them at people or religious objects.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Don't raise your voice – Loud arguments or confrontations are frowned upon.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Don't litter – Bangkok fines littering; use bins wherever possible.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Don't disrespect monks – Women should not touch monks.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Don't engage in illegal drugs – Strict penalties, including imprisonment.",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Stay aware of your surroundings – Pickpocketing can happen in crowded areas and markets",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Use reputable transport – Prefer metered taxis, Grab app, BTS/MRT, or licensed tuk-tuks",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Keep valuables secure – Use a money belt or hidden pouch for cash, passport, and cards",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Avoid unlicensed tours – Book excursions through trusted operators or your hotel",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Be cautious with street food – Eat from busy stalls with high turnover for freshness",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Avoid scams – Watch out for tuk-tuk scams, gem scams, and overly 'helpful' strangers",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Stay hydrated and protected from the sun – Carry water, wear sunscreen and a hat",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Follow local laws – Drug offenses and disrespecting the monarchy carry severe penalties",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Keep emergency contacts handy – Local police, embassy, and hospital numbers",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Avoid isolated areas at night – Stick to well-lit and populated streets",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Respect the monarchy – Always show respect; avoid negative remarks about the royal family",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Dress appropriately – Cover shoulders and knees when visiting temples",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Use polite gestures – Wai (pressing palms together) is a common greeting",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Don't touch someone's head – The head is considered sacred in Thai culture",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Don't point your feet – Feet are considered the lowest part of the body; avoid pointing them at people or religious objects",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Don't raise your voice – Loud arguments or confrontations are frowned upon",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Don't disrespect monks – Women should not touch monks",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Thai Silk Products",
+      "city": "Bangkok",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Jim Thompson House",
+        "Chatuchak Market",
+        "MBK Center"
+      ],
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "item": "Handmade Jewelry & Accessories",
+      "city": "Bangkok",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Chatuchak Weekend Market",
+        "Silom Night Market"
+      ],
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "item": "Thai Spices & Curry Pastes",
+      "city": "Bangkok",
+      "category": "Food",
+      "where_to_buy": [
+        "Or Tor Kor Market",
+        "Chatuchak Market",
+        "Tops Supermarket"
+      ],
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "item": "Thai Snacks & Dried Fruits",
+      "city": "Bangkok",
+      "category": "Food",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "7-Eleven",
+        "street markets"
+      ],
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "item": "Wood Carvings & Handicrafts",
+      "city": "Bangkok",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "Asiatique",
+        "Suan Lum Night Bazaar"
+      ],
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "item": "Traditional Thai Clothing",
+      "city": "Bangkok",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Pratunam Market",
+        "MBK Center",
+        "Chatuchak"
+      ],
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "item": "Ceramics & Pottery",
+      "city": "Bangkok",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "River City Bangkok",
+        "Chatuchak Ceramics Section"
+      ],
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "item": "Thai Herbal Products",
+      "city": "Bangkok",
+      "category": "Health",
+      "where_to_buy": [
+        "Local apothecaries",
+        "health stores",
+        "Chatuchak"
+      ],
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "item": "Miniature Tuk-Tuks & Elephants",
+      "city": "Bangkok",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "MBK Center",
+        "Asiatique",
+        "street markets"
+      ],
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "item": "Artwork & Prints",
+      "city": "Bangkok",
+      "category": "Art",
+      "where_to_buy": [
+        "Silom Art Market",
+        "River City Bangkok",
+        "Chatuchak Art Zone"
+      ],
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "item": "Packaged curry pastes",
+      "city": "Bangkok",
+      "category": "Food",
+      "where_to_buy": [
+        "Blue Elephant"
+      ],
+      "_source_file": "Thailand/Eating Out Guide_ Bangkok_New.pdf",
+      "_source_mtime": 1772384359.1016243
+    },
+    {
+      "item": "Thai Silk Products",
+      "city": "Bangkok",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Jim Thompson House",
+        "Chatuchak Market",
+        "MBK Center"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "item": "Handmade Jewelry & Accessories",
+      "city": "Bangkok",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Chatuchak Weekend Market",
+        "Silom Night Market"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "item": "Thai Spices & Curry Pastes",
+      "city": "Bangkok",
+      "category": "Food",
+      "where_to_buy": [
+        "Or Tor Kor Market",
+        "Chatuchak Market",
+        "Tops Supermarket"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "item": "Thai Snacks & Dried Fruits",
+      "city": "Bangkok",
+      "category": "Food",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "7-Eleven",
+        "street markets"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "item": "Wood Carvings & Handicrafts",
+      "city": "Bangkok",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "Asiatique",
+        "Suan Lum Night Bazaar"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "item": "Traditional Thai Clothing",
+      "city": "Bangkok",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Pratunam Market",
+        "MBK Center",
+        "Chatuchak"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "item": "Ceramics & Pottery",
+      "city": "Bangkok",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "River City Bangkok",
+        "Chatuchak Ceramics Section"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "item": "Thai Herbal Products",
+      "city": "Bangkok",
+      "category": "Health",
+      "where_to_buy": [
+        "Local apothecaries",
+        "health stores",
+        "Chatuchak"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "item": "Miniature Tuk-Tuks & Elephants",
+      "city": "Bangkok",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "MBK Center",
+        "Asiatique",
+        "street markets"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "item": "Artwork & Prints",
+      "city": "Bangkok",
+      "category": "Art",
+      "where_to_buy": [
+        "Silom Art Market",
+        "River City Bangkok",
+        "Chatuchak Art Zone"
+      ],
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "item": "Thai Silk Products",
+      "city": "Bangkok",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Jim Thompson House",
+        "Chatuchak Market",
+        "MBK Center"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "item": "Handmade Jewelry & Accessories",
+      "city": "Bangkok",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Chatuchak Weekend Market",
+        "Silom Night Market"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "item": "Thai Spices & Curry Pastes",
+      "city": "Bangkok",
+      "category": "Food",
+      "where_to_buy": [
+        "Or Tor Kor Market",
+        "Chatuchak Market",
+        "Tops supermarkets"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "item": "Thai Snacks & Dried Fruits",
+      "city": "Bangkok",
+      "category": "Food",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "local convenience stores",
+        "street markets"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "item": "Wood Carvings & Handicrafts",
+      "city": "Bangkok",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "Asiatique",
+        "Suan Lum Night Bazaar"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "item": "Traditional Thai Clothing",
+      "city": "Bangkok",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "MBK Center",
+        "Pratunam Market"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "item": "Ceramics & Pottery",
+      "city": "Bangkok",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "River City Bangkok"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "item": "Thai Herbal Products",
+      "city": "Bangkok",
+      "category": "Health",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "local apothecaries",
+        "health stores"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "item": "Miniature Tuk-Tuks & Elephants",
+      "city": "Bangkok",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "MBK Center",
+        "street markets",
+        "Asiatique"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "item": "Artwork & Prints",
+      "city": "Bangkok",
+      "category": "Art",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "Silom Art Market",
+        "River City Bangkok"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "item": "Thai Silk Products",
+      "city": "Bangkok",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Jim Thompson House",
+        "Chatuchak Market",
+        "MBK Center"
+      ],
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "item": "Handmade Jewelry & Accessories",
+      "city": "Bangkok",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Chatuchak Weekend Market",
+        "Silom Night Market"
+      ],
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "item": "Thai Spices & Curry Pastes",
+      "city": "Bangkok",
+      "category": "Food",
+      "where_to_buy": [
+        "Or Tor Kor Market",
+        "Chatuchak Market",
+        "Tops supermarkets"
+      ],
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "item": "Thai Snacks & Dried Fruits",
+      "city": "Bangkok",
+      "category": "Food",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "local convenience stores",
+        "street markets"
+      ],
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "item": "Wood Carvings & Handicrafts",
+      "city": "Bangkok",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "Asiatique",
+        "Suan Lum Night Bazaar"
+      ],
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "item": "Traditional Thai Clothing",
+      "city": "Bangkok",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "MBK Center",
+        "Pratunam Market"
+      ],
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "item": "Ceramics & Pottery",
+      "city": "Bangkok",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "River City Bangkok"
+      ],
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "item": "Thai Herbal Products",
+      "city": "Bangkok",
+      "category": "Health & Beauty",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "local apothecaries",
+        "health stores"
+      ],
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "item": "Miniature Tuk-Tuks & Elephants",
+      "city": "Bangkok",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "MBK Center",
+        "street markets",
+        "Asiatique"
+      ],
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "item": "Artwork & Prints",
+      "city": "Bangkok",
+      "category": "Art",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "Silom Art Market",
+        "River City Bangkok"
+      ],
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "item": "Thai Silk Products",
+      "city": "Bangkok",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Jim Thompson House",
+        "Chatuchak Market",
+        "MBK Center"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "item": "Handmade Jewelry & Accessories",
+      "city": "Bangkok",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Chatuchak Weekend Market",
+        "Silom Night Market"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "item": "Thai Spices & Curry Pastes",
+      "city": "Bangkok",
+      "category": "Food",
+      "where_to_buy": [
+        "Or Tor Kor Market",
+        "Chatuchak Market",
+        "Tops supermarkets"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "item": "Thai Snacks & Dried Fruits",
+      "city": "Bangkok",
+      "category": "Food",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "local convenience stores",
+        "street markets"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "item": "Wood Carvings & Handicrafts",
+      "city": "Bangkok",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "Asiatique",
+        "Suan Lum Night Bazaar"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "item": "Traditional Thai Clothing",
+      "city": "Bangkok",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "MBK Center",
+        "Pratunam Market"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "item": "Ceramics & Pottery",
+      "city": "Bangkok",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "River City Bangkok"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "item": "Thai Herbal Products",
+      "city": "Bangkok",
+      "category": "Health",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "local apothecaries",
+        "health stores"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "item": "Miniature Tuk-Tuks & Elephants",
+      "city": "Bangkok",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "MBK Center",
+        "street markets",
+        "Asiatique"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "item": "Artwork & Prints",
+      "city": "Bangkok",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Chatuchak Market",
+        "Silom Art Market",
+        "River City Bangkok"
+      ],
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Bangkok",
+      "service": "Bangkok Hospital (Major Private Hospital)",
+      "number": "+66 2 310 3000",
+      "_source_file": "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+      "_source_mtime": 1772384360.2079942
+    },
+    {
+      "city": "Bangkok",
+      "service": "Bangkok Hospital",
+      "number": "+66 2 310 3000",
+      "notes": "Major Private Hospital",
+      "_source_file": "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+      "_source_mtime": 1772384355.8837447
+    },
+    {
+      "city": "Bangkok",
+      "service": "Tourist Police",
+      "number": "1155",
+      "notes": null,
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "city": "Bangkok",
+      "service": "General Police",
+      "number": "191",
+      "notes": null,
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "city": "Bangkok",
+      "service": "Fire Department",
+      "number": "199",
+      "notes": null,
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "city": "Bangkok",
+      "service": "Ambulance / Medical Emergency",
+      "number": "1669",
+      "notes": null,
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "city": "Bangkok",
+      "service": "Bangkok Hospital",
+      "number": "+66 2 310 3000",
+      "notes": "Major Private Hospital",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "city": "Bangkok",
+      "service": "Police Assistance for Foreigners",
+      "number": "+66 2 134 5999",
+      "notes": null,
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "city": "Bangkok",
+      "service": "Indian Embassy",
+      "number": "+66 2 341 2000",
+      "notes": null,
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "city": "Bangkok",
+      "service": "Tourist Police English Hotline",
+      "number": "+66 2 205 9999",
+      "notes": "English-speaking",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "city": "Bangkok",
+      "service": "High Commission of India Emergency",
+      "number": "+66 81 442 9580",
+      "notes": "24/7 Emergency Contact",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+      "_source_mtime": 1772384358.4995723
+    },
+    {
+      "city": "Bangkok",
+      "service": "Tourist Police",
+      "number": "1155",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "service": "General Police",
+      "number": "191",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "service": "Fire Department",
+      "number": "199",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "service": "Ambulance / Medical Emergency",
+      "number": "1669",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "service": "Bangkok Hospital",
+      "number": "+66 2 310 3000",
+      "notes": "Major Private Hospital",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "service": "Police Assistance for Foreigners",
+      "number": "+66 2 134 5999",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "service": "Indian Embassy",
+      "number": "+66 2 341 2000",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "service": "Tourist Police English Hotline",
+      "number": "+66 2 205 9999",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "service": "Indian Embassy Emergency",
+      "number": "+66 81 442 9580",
+      "notes": "24/7 emergency contact",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "service": "Bangkok Hospital",
+      "number": "+66 2 310 3000",
+      "notes": "Major Private Hospital",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "city": "Bangkok",
+      "service": "Indian Embassy",
+      "number": "+66 2 341 2000",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    },
+    {
+      "city": "Bangkok",
+      "service": "Indian Embassy Emergency",
+      "number": "+66 81 442 9580",
+      "notes": "24/7 Contact",
+      "_source_file": "Thailand/Cloy_Thailand-All inclusive guide.pdf",
+      "_source_mtime": 1772384361.6248572
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "AIS (Advanced Info Service) – Widely used, good coverage across the city and tourist areas",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "DTAC (Total Access Communication) – Strong urban coverage, competitive tourist SIM packages",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "TrueMove H – Fast 4G/5G network, popular among travelers and locals",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Buy SIM cards at Airports (Suvarnabhumi & Don Mueang), 7-Eleven, FamilyMart, mobile network stores (AIS, DTAC, TrueMove H)",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Passport required for SIM card registration",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Prepaid tourist SIMs available with data, call, and text packages",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Top-ups / Reloads available at convenience stores, network stores, or online",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Bangkok",
+      "mode": "BTS/MRT",
+      "description": "Sky train and metro system covering major tourist areas and shopping districts",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "mode": "Grab app",
+      "description": "Ride-sharing app popular with tourists for reliable transport",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "mode": "Metered taxis",
+      "description": "Licensed taxis with meters for fair pricing",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "mode": "Tuk-tuks",
+      "description": "Traditional three-wheeled vehicles, negotiate fare before riding",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "city": "Bangkok",
+      "mode": "Chao Phraya Tourist Boat",
+      "description": "Scenic way to experience Thailand's culture and charm along the river",
+      "recommended_pass": "Chao Phraya Tourist Boat day pass",
+      "cost": "THB 134.90",
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Ensure you are up to date on MMR, DTP, polio, and influenza vaccinations",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Hepatitis A recommended for most travelers",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Hepatitis B recommended if you might have medical procedures or close contact with locals",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Typhoid recommended, especially if eating street food",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Consider rabies vaccination if you'll have contact with animals or rural travel",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Japanese Encephalitis for long-term travelers or those visiting rural areas",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Drink bottled or filtered water; avoid tap water",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Eat cooked food and fruits you can peel; avoid raw salads from street vendors",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Use insect repellent to prevent mosquito-borne diseases (dengue, chikungunya, Zika)",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Stay hydrated and protect yourself from heat and sun exposure",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Carry a basic first-aid kit and personal medications",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    },
+    {
+      "cities": [
+        "Bangkok"
+      ],
+      "tip": "Purchase travel insurance covering medical emergencies",
+      "_source_file": "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+      "_source_mtime": 1772384353.2257369
+    }
+  ],
+  "source_files": [
+    "Thailand/Divya_All Inclusive Guide_Thailand.pdf",
+    "Thailand/All Inclusive Guide_Khyati_Thailand(1).pdf",
+    "Thailand/Eating Out Guide_ Bangkok_New.pdf",
+    "Thailand/All Inclusive Guide_Khyati_Thailand.pdf",
+    "Thailand/Cloy_Thailand-All inclusive guide(1).pdf",
+    "Thailand/Kiran_Bangkok-All inclusive guide.pdf",
+    "Thailand/All Inclusive Guide for Pattaya and Bangkok.pdf",
+    "Thailand/Arpita Thailand.pdf",
+    "Thailand/All Inclusive Guide for Bangkok and Pattaya.pdf",
+    "Thailand/Cloy_Thailand-All inclusive guide.pdf"
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "restaurants": [
+    {
+      "name": "Argan Moroccan Cuisine",
+      "city": "Doha",
+      "cuisine_type": [
+        "Moroccan"
+      ],
+      "price_range": "QR 25 per person",
+      "hours": "12:30 PM - 11:30 PM",
+      "ambience": "Traditional Moroccan ambiance with warm colors, terrace seating, and a cozy atmosphere",
+      "must_try_dishes": [
+        "Vegetable Couscous",
+        "Harira Soup",
+        "Zaalouk",
+        "Chicken Tagine with olives & lemon"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ],
+      "area": "Souq Waqif"
+    },
+    {
+      "name": "Damasca One",
+      "city": "Doha",
+      "cuisine_type": [
+        "Syrian"
+      ],
+      "price_range": "QR 19-30 per person",
+      "hours": "12 PM - 1 AM",
+      "ambience": "Vibrant Syrian décor, lively street-view seating, perfect for groups or families",
+      "must_try_dishes": [
+        "Falafel",
+        "Hummus with Pita",
+        "Fattoush Salad",
+        "Vegetarian Mezze",
+        "Shish Taouk"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ],
+      "area": "Souq Waqif"
+    },
+    {
+      "name": "Dokya",
+      "city": "Doha",
+      "cuisine_type": [
+        "Turkish"
+      ],
+      "price_range": "QR 30-40 per person",
+      "hours": "8 AM - 2 AM",
+      "ambience": "Stylish, light-filled space in a restored Qatari house, blending heritage with a modern vibe",
+      "must_try_dishes": [
+        "Gavurdağ Salad",
+        "Borek with Cheese or Pastrami",
+        "Seafood Mezze",
+        "Muhallabia"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ],
+      "area": "Souq Waqif"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Doha Corniche",
+      "city": "Doha",
+      "description": "A scenic 7 km waterfront promenade with views of Doha's skyline",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Museum of Islamic Art",
+      "city": "Doha",
+      "description": "Iconic I.M. Pei architecture with world-class collection",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Souq Waqif",
+      "city": "Doha",
+      "description": "Traditional market with spice shops, handicrafts, falcons, and perfumes",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "City Centre Doha Mall",
+      "city": "Doha",
+      "description": "Shopping mall near JW Marriott hotel",
+      "hours": "10 AM - 10 PM",
+      "source_files": [
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "JW Marriott Marquis City Center",
+      "city": "Doha",
+      "location": "City Center",
+      "_source_file": "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384290.512721
+    },
+    {
+      "name": "JW Marriott Marquis City Center",
+      "city": "Doha",
+      "location": "15 min car drive from doha airport",
+      "_source_file": "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384308.452988
+    },
+    {
+      "name": "JW Marriott Marquis City Center",
+      "city": "Doha",
+      "location": "City Center",
+      "_source_file": "Italy/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384338.18424
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Vegetable Couscous",
+      "city": "Doha",
+      "description": "Traditional Moroccan dish with vegetables",
+      "vegetarian": true,
+      "where_to_try": "Argan Moroccan Cuisine",
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Harira Soup",
+      "city": "Doha",
+      "description": "Vegetarian/lentil soup",
+      "vegetarian": true,
+      "where_to_try": "Argan Moroccan Cuisine",
+      "source_files": [
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Falafel",
+      "city": "Doha",
+      "description": "Middle Eastern fried chickpea balls",
+      "vegetarian": true,
+      "where_to_try": "Damasca One",
+      "source_files": [
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Zaalouk",
+      "city": "Doha",
+      "description": "Eggplant dip",
+      "vegetarian": true,
+      "where_to_try": "Argan Moroccan Cuisine",
+      "source_files": [
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+    "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+    "Italy/Tejas - Europe All Inclusive Guide.pdf"
+  ]
+}

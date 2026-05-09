@@ -1,0 +1,308 @@
+{
+  "restaurants": [
+    {
+      "name": "1820 Restaurant and Cocktails Bar",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "10am-12am",
+      "must_try_dishes": [
+        "Risotto",
+        "pastas",
+        "salads",
+        "pizzas"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Switzerland/Where to eat in Switzerland.pdf"
+      ]
+    },
+    {
+      "name": "Mayfair House",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "hours": "7:30am1-12am",
+      "highlights": [
+        "Shisha also available"
+      ],
+      "must_try_dishes": [
+        "Fondue"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Switzerland/Where to eat in Switzerland.pdf"
+      ]
+    },
+    {
+      "name": "Restaurant Le Museum",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "hours": "6-11:30pm, Mon closed",
+      "must_try_dishes": [
+        "Raclette",
+        "Gratin",
+        "Meringue"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Switzerland/Where to eat in Switzerland.pdf"
+      ]
+    },
+    {
+      "name": "Montreux Jazz Café",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Multicuisine"
+      ],
+      "must_try_dishes": [
+        "Caesars salad",
+        "lobster risotto",
+        "cheesecake"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Switzerland/Where to eat in Switzerland.pdf"
+      ]
+    },
+    {
+      "name": "Le Palais Oriental",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Middle Eastern"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:30 PM – 9:30 PM (Saturday 11:30 am–10 pm, Sunday 12–9 pm)",
+      "ambience": "Elegant Middle Eastern restaurant in beautifully designed setting near the lake",
+      "must_try_dishes": [
+        "Falafel platter",
+        "hummus",
+        "vegetable tagine"
+      ],
+      "best_for": [
+        "gourmet dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ],
+      "highlights": [
+        "Refined vegetarian dishes",
+        "Elegant setting"
+      ]
+    },
+    {
+      "name": "Restaurant Dolce",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:00 AM – 9:30 PM",
+      "ambience": "Elegant Italian dining spot with refined lakeside charm",
+      "must_try_dishes": [
+        "Truffle pasta",
+        "wood-fired vegetarian pizza",
+        "tiramisu"
+      ],
+      "best_for": [
+        "slow dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ],
+      "highlights": [
+        "Fresh vegetarian pastas",
+        "Refined lakeside charm"
+      ]
+    },
+    {
+      "name": "Huit Sushi",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:30 AM – 2:30 PM | 6:00 PM - 10:00 PM",
+      "ambience": "Sleek Japanese restaurant with contemporary interiors",
+      "must_try_dishes": [
+        "Avocado sushi rolls",
+        "vegetable tempura",
+        "miso soup"
+      ],
+      "best_for": [
+        "contemporary dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [
+        "Freddie Mercury Statue, Montreux"
+      ],
+      "highlights": [
+        "Beautifully plated vegetarian sushi",
+        "Contemporary interiors"
+      ]
+    },
+    {
+      "name": "Tandoori Restaurant Montreux",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:30 AM – 10:00 PM",
+      "ambience": "Cozy Indian restaurant",
+      "must_try_dishes": [
+        "Malai kofta",
+        "dal makhani",
+        "butter naan"
+      ],
+      "best_for": [
+        "comfort food"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [
+        "Freddie Mercury Statue, Montreux"
+      ],
+      "highlights": [
+        "Comforting vegetarian dinner",
+        "Familiar Indian cuisine"
+      ]
+    },
+    {
+      "name": "La Rouvenaz",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12:00 PM - 3:00 PM | 6:00 PM – 10:30 PM",
+      "ambience": "Lively lakeside Italian restaurant with relaxed European atmosphere",
+      "must_try_dishes": [
+        "Vegetarian pizza",
+        "fresh pasta",
+        "tiramisu"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Château de Chillon",
+      "city": "Montreux",
+      "description": "One of Switzerland's most iconic landmarks, medieval castle sitting dramatically along Lake Geneva shores",
+      "hours": "9:00 AM – 7:00 PM",
+      "entry_fee": "Approx. INR 1,600–2,000 per person",
+      "recommended_duration": "1.5–2 hours",
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Montreux Lakeside Promenade",
+      "city": "Montreux",
+      "description": "Iconic flower-lined promenade stretching beside Lake Geneva, framed by snow-capped peaks and elegant Belle Époque architecture",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Montreux Old Town",
+      "city": "Montreux",
+      "description": "Quieter side of Swiss Riviera with cobblestone streets, historic homes, flower-filled balconies, and sweeping lake views",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Rochers-de-Naye",
+      "city": "Montreux",
+      "description": "Scenic cogwheel train destination with panoramic views across Lake Geneva, alpine peaks, and vineyards",
+      "hours": "Approx. 9:00 AM – 5:00 PM",
+      "entry_fee": "Approx. INR 6,000–8,000 per person (round trip)",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Freddie Mercury Statue",
+      "city": "Montreux",
+      "description": "Iconic landmark standing dramatically beside Lake Geneva, especially atmospheric during sunset hours",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "The Freddie Mercury Hotel",
+      "city": "Montreux",
+      "location": "Stylish lakeside stay",
+      "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "name": "The Freddie Mercury Hotel",
+      "city": "Montreux",
+      "location": "Stylish lakeside stay",
+      "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1777872516.0
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Switzerland/Where to eat in Switzerland.pdf",
+    "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+    "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+  ]
+}

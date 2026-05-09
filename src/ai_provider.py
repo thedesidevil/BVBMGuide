@@ -52,7 +52,8 @@ class AIClient:
         # Initialize OpenAI client (works with any OpenAI-compatible endpoint)
         self._client = OpenAI(
             api_key=self.api_key,
-            base_url=self.base_url
+            base_url=self.base_url,
+            timeout=300.0,
         )
     
     def complete(

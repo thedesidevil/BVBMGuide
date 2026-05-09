@@ -1,0 +1,88 @@
+{
+  "restaurants": [
+    {
+      "name": "Pizza and Coffee Koh Larrn",
+      "city": "Koh Larn",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "THB 200-350 per person",
+      "hours": "10 AM - 9 PM",
+      "ambience": "A relaxed spot conveniently situated just off Na Baan Pier—perfect for grabbing a bite right after arriving by ferry. Casual, laid-back vibe with Italian-style café touches",
+      "nearby_landmarks": [
+        "Na Baan Pier, Koh Larn"
+      ],
+      "highlights": [
+        "Near ferry pier",
+        "Italian-style café"
+      ],
+      "must_try_dishes": [
+        "Italian-style pizzas",
+        "Coffee and café-style beverages"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    },
+    {
+      "name": "Sunset Restaurant Koh Larn",
+      "city": "Koh Larn",
+      "cuisine_type": [
+        "Seafood",
+        "Thai"
+      ],
+      "price_range": "THB 350-550 per person",
+      "hours": "11 AM - 10 PM",
+      "ambience": "Located near Na Baan Pier on the way to Ta Yai Beach. A charming, water-front spot—perfect for sunset dining with tranquil vibes",
+      "nearby_landmarks": [
+        "Na Baan Pier, Koh Larn",
+        "Ta Yai Beach, Koh Larn"
+      ],
+      "highlights": [
+        "Water-front location",
+        "Sunset dining"
+      ],
+      "must_try_dishes": [
+        "Seafood",
+        "Thai fare",
+        "vegetable-friendly curries"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Coral Island (Koh Larn)",
+      "city": "Koh Larn",
+      "description": "Coral Island (Koh Larn) is a tropical getaway near Pattaya, known for its white sandy beaches, clear turquoise waters, and vibrant coral reefs. It's perfect for swimming, snorkeling, and water sports in a laid-back island setting",
+      "hours": "8 AM - 6 PM",
+      "entry_fee": "600 to 1,200 Thai Baht",
+      "recommended_duration": null,
+      "source_files": [
+        "Thailand/Arpita Thailand.pdf"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Thailand/Arpita Thailand.pdf"
+  ]
+}

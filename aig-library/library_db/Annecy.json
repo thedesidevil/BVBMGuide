@@ -1,0 +1,267 @@
+{
+  "restaurants": [
+    {
+      "name": "Le Freti",
+      "city": "Annecy",
+      "cuisine_type": [
+        "Savoyard"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12–2 PM | 7–10 PM",
+      "ambience": "Savoyard speciality restaurant",
+      "area": "Old Town",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Savoyard speciality restaurant",
+        "Authentic Alpine cuisine"
+      ],
+      "must_try_dishes": [
+        "Cheese fondue",
+        "raclette"
+      ],
+      "best_for": [
+        "authentic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "L'Etage",
+      "city": "Annecy",
+      "cuisine_type": [
+        "French"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12–2 PM | 7–10 PM",
+      "ambience": "Cosy wood-beamed dining room",
+      "area": "Old Town",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Cosy wood-beamed dining room",
+        "Traditional regional dishes"
+      ],
+      "must_try_dishes": [
+        "Tartiflette",
+        "grilled meats"
+      ],
+      "best_for": [
+        "traditional"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "La Table d'Élise",
+      "city": "Annecy",
+      "cuisine_type": [
+        "French"
+      ],
+      "price_range": "₹₹₹₹",
+      "hours": "7 PM onwards",
+      "ambience": "Elegant, refined French dining",
+      "area": "Lakeside",
+      "nearby_landmarks": [
+        "Lake Annecy, Annecy"
+      ],
+      "highlights": [
+        "Elegant, refined French dining",
+        "Beautiful lakeside dinner"
+      ],
+      "must_try_dishes": [
+        "Seasonal French mains"
+      ],
+      "best_for": [
+        "elegant",
+        "romantic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Annecy Old Town",
+      "city": "Annecy",
+      "description": "Venice of the Alps with pastel houses over turquoise canals",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free to explore",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Lake Annecy",
+      "city": "Annecy",
+      "description": "Clear mountain lake with alpine views",
+      "hours": "Typically 10 AM – 5 PM (season dependent)",
+      "entry_fee": "Approx. INR 1,800–3,000 per person",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Château d'Annecy",
+      "city": "Annecy",
+      "description": "Castle with sweeping views of town and lake",
+      "hours": "10 AM – 5 PM (may vary seasonally)",
+      "entry_fee": "Approx. INR 800–1,000 per adult",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "France/Tanya and Shovit_All Inclusive Guide.pdf",
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Lake Annecy Boat Experience",
+      "city": "Annecy",
+      "description": "Peaceful lake cruise with clear water and alpine peaks",
+      "hours": "Typically 10 AM – 5 PM (season dependent)",
+      "entry_fee": "Approx. INR 1,800–3,000 per person",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Splendid Hotel Lac d'Annecy",
+      "city": "Annecy",
+      "location": "Lakeside",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "name": "Splendid Hotel Lac d'Annecy",
+      "city": "Annecy",
+      "location": "Lakeside",
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Savoy Cheese",
+      "city": "Annecy",
+      "category": "Food",
+      "where_to_buy": [
+        "Fromagerie shops in Vieille Ville"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Alpine handmade chocolates",
+      "city": "Annecy",
+      "category": "Food",
+      "where_to_buy": [
+        "Annecy Old Town"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Local herbal teas",
+      "city": "Annecy",
+      "category": "Food",
+      "where_to_buy": [
+        "Annecy Old Town"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Lake Annecy art prints",
+      "city": "Annecy",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Lakeside gift stores near Lake Annecy"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Cosy alpine knitwear",
+      "city": "Annecy",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Annecy Old Town"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094
+    },
+    {
+      "item": "Savoy Cheese",
+      "city": "Annecy",
+      "category": "Food",
+      "where_to_buy": [
+        "Fromagerie shops in Vieille Ville"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "item": "Alpine handmade chocolates",
+      "city": "Annecy",
+      "category": "Food",
+      "where_to_buy": [
+        "Annecy Old Town"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "item": "Local herbal teas",
+      "city": "Annecy",
+      "category": "Food",
+      "where_to_buy": [
+        "Artisan boutiques"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "item": "Lake Annecy art prints",
+      "city": "Annecy",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Lakeside gift stores near Lake Annecy"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    },
+    {
+      "item": "Cosy alpine knitwear",
+      "city": "Annecy",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Annecy Old Town"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "France/Tanya and Shovit_All Inclusive Guide.pdf",
+    "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+  ]
+}

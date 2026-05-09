@@ -1,0 +1,107 @@
+{
+  "restaurants": [
+    {
+      "name": "Mystik Lifestyle",
+      "city": "North Mauritius",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "6:30–10pm",
+      "highlights": [
+        "Chic vibes with modern seafood"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "Mauritius/Mauritius All Inclusive Guide - Roma.pdf",
+        "Mauritius/Mauritius All Inclusive Guide - bak.pdf"
+      ]
+    },
+    {
+      "name": "Kumin",
+      "city": "North Mauritius",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "6:30–10:30pm",
+      "highlights": [
+        "Indian fine-dining inside Westin"
+      ],
+      "nearby_landmarks": [
+        "The Westin Turtle Bay Resort & Spa, North Mauritius"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "Mauritius/Mauritius All Inclusive Guide - Roma.pdf",
+        "Mauritius/Mauritius All Inclusive Guide - bak.pdf"
+      ],
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Le Pescatore",
+      "city": "North Mauritius",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "₹₹₹₹",
+      "hours": "12–2pm, 7–10pm",
+      "highlights": [
+        "Gourmet seafood by the beach"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "Mauritius/Mauritius All Inclusive Guide - Roma.pdf",
+        "Mauritius/Mauritius All Inclusive Guide - bak.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Blue Safari Submarine Tour",
+      "city": "North Mauritius",
+      "description": "A unique underwater experience allowing you to explore the vibrant marine life and coral reefs without getting wet in a real submarine, providing a safe and comfortable environment to witness the underwater world",
+      "hours": "Afternoon slots, advance booking recommended",
+      "entry_fee": "Rs. 4500–5500 pp",
+      "recommended_duration": "1-1.5 hours",
+      "source_files": [
+        "Mauritius/Mauritius All Inclusive Guide - Roma.pdf",
+        "Mauritius/Mauritius All Inclusive Guide - bak.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "The Westin Turtle Bay Resort & Spa",
+      "city": "North Mauritius",
+      "location": "North Mauritius",
+      "_source_file": "Mauritius/Mauritius All Inclusive Guide - Roma.pdf",
+      "_source_mtime": 1772384263.959312
+    },
+    {
+      "name": "The Westin Turtle Bay Resort & Spa",
+      "city": "North Mauritius",
+      "location": "North Mauritius",
+      "_source_file": "Mauritius/Mauritius All Inclusive Guide - bak.pdf",
+      "_source_mtime": 1772384264.4327457
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Mauritius/Mauritius All Inclusive Guide - Roma.pdf",
+    "Mauritius/Mauritius All Inclusive Guide - bak.pdf"
+  ]
+}

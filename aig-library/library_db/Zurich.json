@@ -1,0 +1,1251 @@
+{
+  "restaurants": [
+    {
+      "name": "Terrasse Restaurant",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "CHF 35-50 per person",
+      "hours": "11:30 AM - 11 PM",
+      "ambience": "A classic Swiss setting under grand trees just steps from Bellevueplatz—elegant and calm with views of Lake Zurich",
+      "area": "Bellevueplatz",
+      "nearby_landmarks": [
+        "Lake Zurich"
+      ],
+      "must_try_dishes": [
+        "Fresh salads",
+        "veggie-forward dishes",
+        "regional Swiss mains"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Pumpstation",
+      "city": "Zurich",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "CHF 25-40 per person",
+      "hours": "11:30 AM - 11 PM",
+      "ambience": "A conversion of a former pumping station into a buzzing restaurant—garden seating with a cozy yet vibrant atmosphere",
+      "must_try_dishes": [
+        "Grilled specialties",
+        "hearty salads"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "LaSalle",
+      "city": "Zurich",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "CHF 35-55 per person",
+      "hours": "11:30 AM - 2:30 PM",
+      "ambience": "Romantic and lakeside, LaSalle features both indoor panoramic views and an al fresco terrace—seasonal cuisine inspired by local and international flavors",
+      "must_try_dishes": [
+        "Seasonal fish dishes",
+        "vegetarian starters",
+        "pasta",
+        "fresh light plates",
+        "vegetarian starters or pasta"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Tadka",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "CHF 25-35 per person",
+      "hours": "11:30 AM - 2 PM; 5 PM- 11PM",
+      "ambience": "Indian cuisine blend; casual, comfortable, good for lighter and healthy fare",
+      "must_try_dishes": [
+        "Palak Paneer",
+        "Dal Makhani",
+        "Paneer Tikka Masala",
+        "Aloo Palak"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Storchen Z�rich: La R�tisserie",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Fine Dining"
+      ],
+      "price_range": "INR 5,000–7,000 per person",
+      "hours": "11:45 AM –2:00 PM, 6:00 PM - 10:00 PM",
+      "ambience": "Elegant riverside fine dining",
+      "must_try_dishes": [
+        "Lobster bisque",
+        "sorbet trio",
+        "lamb saddle",
+        "Seafood platter",
+        "gourmet cheese course",
+        "Gourmet cheese course"
+      ],
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Restaurant Swiss Chuchi",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "INR 2,500–4,000",
+      "hours": "2:00 PM –11:00 PM",
+      "highlights": [
+        "Known for fondue and raclette"
+      ],
+      "must_try_dishes": [
+        "Moitié-moitié fondue",
+        "rösti",
+        "nut cake"
+      ],
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ],
+      "ambience": "Known for classic Swiss fondue and raclette",
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Zunfthaus zur Waag",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "18:00–23:00",
+      "ambience": "Historic guild hall turned Swiss restaurant",
+      "must_try_dishes": [
+        "seasonal soup",
+        "apple tart",
+        "Zurich-style veal",
+        "cheese fondue",
+        "nut tart",
+        "Cheese fondue",
+        "Nut tart"
+      ],
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ],
+      "highlights": [
+        "Historic guild hall",
+        "Refined service"
+      ],
+      "best_for": [
+        "traditional dining"
+      ]
+    },
+    {
+      "name": "Restaurant zum Kropf",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "CHF 35-50 per person",
+      "hours": "11:30 AM - 2 PM",
+      "ambience": "A cozy, traditional Swiss-European restaurant hidden in a quiet alley near Paradeplatz—warm, unpretentious, and charming",
+      "area": "Paradeplatz",
+      "nearby_landmarks": [
+        "Paradeplatz, Zurich"
+      ],
+      "must_try_dishes": [
+        "Herb-spiced vegetable gratin",
+        "creamy mushroom risotto",
+        "Chicken breast with seasonal sauce and sides",
+        "Chicken breast with seasonal sauce"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Ristorante La Pasta",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "CHF 25-35 per person",
+      "hours": "11:30 AM - 2 PM",
+      "ambience": "Centrally located on Niederdorfstrasse, this Italian-Mediterranean spot offers a cozy yet vibrant atmosphere—great for both casual meals and evening dinners",
+      "area": "Niederdorf",
+      "must_try_dishes": [
+        "Classic pasta al pomodoro",
+        "penne arrabbiata",
+        "Spaghetti alle vongole",
+        "seafood linguine",
+        "pasta al pomodoro"
+      ],
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Frisk Fisk Zürich",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "CHF 30-40 per person",
+      "hours": "5 PM - 10 PM",
+      "ambience": "A small, seafood-focused eatery on Niederdorfstrasse—fresh and to-the-point, ideal for lovers of fish dishes in a casual setting",
+      "area": "Niederdorf",
+      "highlights": [
+        "Seafood-focused"
+      ],
+      "must_try_dishes": [
+        "Fresh fish plates"
+      ],
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "New Bombay",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "CHF 25-35 per person",
+      "hours": "11:30 AM - 10:30 PM",
+      "ambience": "Historic building by Predigerkirche in Niederdorf—warm, laid-back, and family-run, with indoor and terrace seating",
+      "area": "Niederdorf",
+      "nearby_landmarks": [
+        "Predigerkirche, Zurich"
+      ],
+      "highlights": [
+        "Family-run"
+      ],
+      "must_try_dishes": [
+        "Veg Thali",
+        "classic paneer dishes",
+        "Tandoori Chicken",
+        "chicken curry",
+        "paneer dishes"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Alexis Restaurant & Winebar",
+      "city": "Zurich",
+      "cuisine_type": [
+        "European"
+      ],
+      "price_range": "CHF 45-55 per person",
+      "hours": "11:AM - 12 AM",
+      "ambience": "Elegant and lively European-style bistro on Niederdorfstrasse—with a refined yet friendly vibe and a good wine selection",
+      "area": "Niederdorf",
+      "highlights": [
+        "Good wine selection"
+      ],
+      "must_try_dishes": [
+        "Fish filet with seasonal sides",
+        "creamy fish pasta",
+        "Seasonal risotto",
+        "inventive vegetable mains"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Zeughauskeller",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Swiss",
+        "Beer Hall"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:30–23:00",
+      "ambience": "Lively beer hall in a former armory",
+      "highlights": [
+        "Historic beer hall",
+        "Former armory"
+      ],
+      "must_try_dishes": [
+        "Sausage sampler",
+        "Zürich-style veal",
+        "rösti",
+        "Sausage platter",
+        "Zurich-style veal",
+        "Rosti",
+        "traditional swiss dishes",
+        "Rösti"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/Where to eat in Switzerland.pdf",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Kronenhalle",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Fine Dining",
+        "Swiss"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12:00–14:00",
+      "ambience": "Elegant fine dining surrounded by original artwork from Picasso & Chagall",
+      "highlights": [
+        "Original artwork from Picasso & Chagall",
+        "Gourmet dining"
+      ],
+      "must_try_dishes": [
+        "Veal Zurich-style",
+        "steak with herb butter",
+        "Steak with herb butter"
+      ],
+      "best_for": [
+        "gourmet dining"
+      ],
+      "source_files": [
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Cantinetta Antinori",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Italian",
+        "Tuscan"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:30–14:30",
+      "ambience": "Stylish Tuscan restaurant run by the Antinori wine family",
+      "highlights": [
+        "Run by Antinori wine family",
+        "Antinori wines"
+      ],
+      "must_try_dishes": [
+        "Handmade pasta",
+        "grilled octopus",
+        "Antinori wines",
+        "Grilled octopus"
+      ],
+      "best_for": [
+        "Italian cuisine"
+      ],
+      "source_files": [
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Haus Hiltl",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Vegetarian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "8:00 AM – 11:00 PM",
+      "ambience": "Sophisticated vegetarian dining institution in elegant urban setting",
+      "highlights": [
+        "Gourmet vegetarian cuisine",
+        "Sophisticated dining institution"
+      ],
+      "must_try_dishes": [
+        "Vegan butter chicken",
+        "lentil dhansak",
+        "fruit tarts",
+        "dhansak",
+        "Swiss lentil soup",
+        "Thai curry",
+        "vegetarian tartare",
+        "desserts",
+        "Lentil dhansak",
+        "Fruit tarts"
+      ],
+      "best_for": [
+        "refined dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ],
+      "area": "Zurich Old Town"
+    },
+    {
+      "name": "Café Sprüngli (Bahnhofstrasse)",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹₹₹",
+      "ambience": "Artful pastel cakes and macarons in a polished tea salon",
+      "area": "Bahnhofstrasse",
+      "highlights": [
+        "Artful pastel cakes and macarons in a polished tea salon"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf"
+      ]
+    },
+    {
+      "name": "The flave of Zurich",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Multicuisine"
+      ],
+      "hours": "7am-11pm",
+      "ambience": "Restaurant and bar",
+      "highlights": [
+        "Cocktails",
+        "burgers",
+        "sandwiches",
+        "pastas"
+      ],
+      "must_try_dishes": [
+        "Cocktails",
+        "burgers",
+        "sandwiches",
+        "pastas"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Switzerland/Where to eat in Switzerland.pdf"
+      ]
+    },
+    {
+      "name": "Bills Burger",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Burgers"
+      ],
+      "hours": "11am-2pm, Closed on sat and sun",
+      "highlights": [
+        "Jamaican Jerk Chicken Burger"
+      ],
+      "must_try_dishes": [
+        "Jamaican Jerk Chicken Burger"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Switzerland/Where to eat in Switzerland.pdf"
+      ]
+    },
+    {
+      "name": "Restaurant Lunch 5 Gmbh",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Cafeteria"
+      ],
+      "hours": "7am-3pm, Closed on sat and sun",
+      "ambience": "Cafeteria style lunch",
+      "highlights": [
+        "Reasonable food option",
+        "Buffet offering"
+      ],
+      "must_try_dishes": [
+        "schnitzel",
+        "salad bar",
+        "fish"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Switzerland/Where to eat in Switzerland.pdf"
+      ]
+    },
+    {
+      "name": "Nooch Asian Kitchen",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Asian"
+      ],
+      "hours": "11am-11pm, Sun- 12-10pm",
+      "highlights": [
+        "Noodles",
+        "soups",
+        "sushi"
+      ],
+      "must_try_dishes": [
+        "Noodles",
+        "soups",
+        "sushi"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Switzerland/Where to eat in Switzerland.pdf"
+      ]
+    },
+    {
+      "name": "Alexi's",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "hours": "11am-12am, Sun 4-10pm",
+      "highlights": [
+        "Fondue",
+        "Soups",
+        "Reservations required"
+      ],
+      "must_try_dishes": [
+        "Fondue",
+        "soups"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Switzerland/Where to eat in Switzerland.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Zum Weissen Kreuz",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "hours": "11:30am-2pm, 5:30pm-12am, Closed on Sat and Sun",
+      "must_try_dishes": [
+        "Rosti"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Switzerland/Where to eat in Switzerland.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ],
+      "highlights": [
+        "Rosti"
+      ],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Veltlinerkeller",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "hours": "11:30am-2pm, 6:30pm-11pm, Closed on Sat and Sun",
+      "ambience": "High-end, carved-wood restaurant, opened 1551 in former wine cellar, serving classic local cuisine",
+      "highlights": [
+        "Zueri Geschnetzelte",
+        "Pastas",
+        "Reservations required"
+      ],
+      "must_try_dishes": [
+        "Zueri Geschnetzelte",
+        "Pastas"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "Switzerland/Where to eat in Switzerland.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ],
+      "vegetarian_friendly": false
+    },
+    {
+      "name": "Roots",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Vegetarian",
+        "Healthy"
+      ],
+      "price_range": "₹₹",
+      "hours": "9:00 AM – 4:30 PM",
+      "ambience": "Modern vegetarian-friendly café with minimalist contemporary interiors",
+      "must_try_dishes": [
+        "Falafel bowl",
+        "avocado toast",
+        "fresh smoothies"
+      ],
+      "best_for": [
+        "healthy dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [
+        "Lindt Home of Chocolate, Zurich"
+      ],
+      "highlights": [
+        "Fresh seasonal bowls",
+        "Healthy dishes",
+        "Minimalist contemporary interiors"
+      ]
+    },
+    {
+      "name": "Tibits Seefeld",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Vegetarian"
+      ],
+      "price_range": "₹₹₣",
+      "hours": "8:00 AM – 11:30 PM",
+      "ambience": "Stylish vegetarian restaurant with buffet-style dining",
+      "must_try_dishes": [
+        "Asian curries",
+        "salads",
+        "vegetarian desserts"
+      ],
+      "best_for": [
+        "elegant dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [
+        "Lindt Home of Chocolate, Zurich"
+      ],
+      "highlights": [
+        "Buffet-style dining",
+        "Beautifully curated global vegetarian dishes"
+      ]
+    },
+    {
+      "name": "Himalaya Restaurant Zurich",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Indian",
+        "Nepali"
+      ],
+      "price_range": "₹₹₣",
+      "hours": "11:30 AM – 2:00 PM, 6:00 PM – 10:30 PM",
+      "ambience": "Cozy Indian and Nepali restaurant in warm relaxed atmosphere",
+      "must_try_dishes": [
+        "Vegetable momo",
+        "paneer curry",
+        "dal fry"
+      ],
+      "best_for": [
+        "comfort food"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [
+        "Lindt Home of Chocolate, Zurich"
+      ],
+      "highlights": [
+        "Comforting vegetarian dishes",
+        "Warm relaxed atmosphere"
+      ]
+    },
+    {
+      "name": "KLE Zurich",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Fine Dining",
+        "Vegetarian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "6:00 PM – 10:00 PM",
+      "ambience": "Modern fine-dining vegetarian restaurant focused on seasonal ingredients",
+      "area": "Zurich Old Town",
+      "must_try_dishes": [
+        "Seasonal tasting plates",
+        "handmade pasta",
+        "desserts"
+      ],
+      "best_for": [
+        "fine dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ],
+      "highlights": [
+        "Seasonal ingredients",
+        "Beautifully presented dishes"
+      ]
+    },
+    {
+      "name": "Restaurant TAO'S Zurich",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Asian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "6:00 PM – 10:30 PM",
+      "ambience": "Cozy Asian fusion restaurant in stylish and intimate setting",
+      "area": "Zurich Old Town",
+      "must_try_dishes": [
+        "Thai curry",
+        "tofu bowls",
+        "vegetable noodles"
+      ],
+      "best_for": [
+        "relaxed dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ],
+      "highlights": [
+        "Flavorful vegetarian dishes",
+        "Stylish and intimate setting"
+      ]
+    },
+    {
+      "name": "Bocca Buona",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "7am-10am, 7pm-10pm",
+      "highlights": [
+        "Pizza",
+        "Ravioli"
+      ],
+      "must_try_dishes": [
+        "Pizza",
+        "Ravioli"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Subway",
+      "city": "Zurich",
+      "cuisine_type": [
+        "Fast Food"
+      ],
+      "hours": "8:30am-11pm",
+      "highlights": [
+        "Subs"
+      ],
+      "must_try_dishes": [
+        "Subs"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Bahnhofstrasse",
+      "city": "Zurich",
+      "description": "Iconic luxury shopping boulevard lined with elegant boutiques, cafés, chocolatiers, and designer stores",
+      "source_files": [
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+      ],
+      "hours": "Open throughout the day",
+      "entry_fee": "Free to explore",
+      "recommended_duration": "1-2 hours"
+    },
+    {
+      "name": "Lindenhof Hill",
+      "city": "Zurich",
+      "description": "Serene overlook offering panoramic views over the Limmat River and historic rooftops",
+      "source_files": [
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Grossmünster",
+      "city": "Zurich",
+      "description": "Romanesque-style church with twin towers and scenic tower climb",
+      "source_files": [
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Fraumünster",
+      "city": "Zurich",
+      "description": "Church known for its stained-glass windows by Marc Chagall",
+      "source_files": [
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Lake Zurich Promenade",
+      "city": "Zurich",
+      "description": "Peaceful waterfront with evening reflections, swans, and elegant views creating calm and refined atmosphere",
+      "source_files": [
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+      ],
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours"
+    },
+    {
+      "name": "Uetliberg Mountain",
+      "city": "Zurich",
+      "description": "Zurich's local peak accessible by train for sunset views over the Alps",
+      "source_files": [
+        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Lake Zurich",
+      "city": "Zurich",
+      "description": "A short walk by the lake offers a calm introduction to Zurich- fresh air, scenic views, and a peaceful atmosphere",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Zurich Old Town (Altstadt)",
+      "city": "Zurich",
+      "description": "Elegant Old Town with historic streets, boutique stores, riverside cafés, and beautifully lit medieval buildings",
+      "hours": "Open throughout the evening",
+      "entry_fee": "Free",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+      ],
+      "recommended_duration": "2-3 hours"
+    },
+    {
+      "name": "Bahnhofstrasse Zurich",
+      "city": "Zurich",
+      "description": "One of Europe's most elegant shopping avenues lined with luxury boutiques, cafés, and beautifully maintained storefronts",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Grossmünster Church",
+      "city": "Zurich",
+      "description": "Impressive church with twin towers standing as one of Zurich's most iconic symbols",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Fraumünster Church",
+      "city": "Zurich",
+      "description": "Serene church celebrated for its breathtaking stained-glass windows designed by Marc Chagall",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Polyterrasse ETH Zurich",
+      "city": "Zurich",
+      "description": "Sweeping views over Zurich's rooftops, the Limmat River, and on clear days, the distant Alpine skyline",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Rhine Falls",
+      "city": "Zurich",
+      "description": "Europe's largest waterfall with roaring cascades, mist, and panoramic viewing platforms positioned dramatically close to the falls",
+      "hours": "9:00 AM – 6:00 PM",
+      "entry_fee": "Viewing access free | Boat rides extra",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ],
+      "recommended_duration": "2-3 hours"
+    },
+    {
+      "name": "Swiss National Museum Zurich",
+      "city": "Zurich",
+      "description": "Switzerland's history and culture through beautifully curated exhibits housed in a castle-like structure",
+      "hours": "10:00 AM – 5:00 PM",
+      "entry_fee": "₹1,500 per person",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Lindenhof Hill Zurich",
+      "city": "Zurich",
+      "description": "Quiet, elevated viewpoint offering scenic city views",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Rieterpark Zurich",
+      "city": "Zurich",
+      "description": "Zurich's largest park with expansive green spaces and peaceful walking trails",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "source_files": [
+        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Lindt Home of Chocolate",
+      "city": "Zurich",
+      "description": "Interactive exhibits, chocolate tasting experiences, and world's tallest free-standing chocolate fountain",
+      "hours": "Booked Entry: 3:30 PM",
+      "entry_fee": "CHF 15",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+        "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+      ]
+    },
+    {
+      "name": "Uetliberg",
+      "city": "Zurich",
+      "description": "Mountain viewpoint accessible from Zurich",
+      "source_files": [
+        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ],
+      "recommended_duration": "Half day"
+    },
+    {
+      "name": "Munot Fortress",
+      "city": "Zurich",
+      "description": "16th century fortress offering panoramic views of Schaffausen and Rhine Falls",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    },
+    {
+      "name": "Lindt Home",
+      "city": "Zurich",
+      "description": "Chocolate factory and museum",
+      "source_files": [
+        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Sheraton Zurich",
+      "city": "Zurich",
+      "location": "City Center",
+      "_source_file": "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384290.512721
+    },
+    {
+      "name": "Kameha Grand Zurich – Autograph Collection",
+      "city": "Zurich",
+      "location": "Dufaux-Strasse 1, 8152 Glattpark, Zurich",
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    },
+    {
+      "name": "THE FLAG Zurich",
+      "city": "Zurich",
+      "location": "Stylish Zurich stay",
+      "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "name": "THE FLAG Zurich",
+      "city": "Zurich",
+      "location": "Stylish Zurich stay",
+      "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1777872516.0
+    },
+    {
+      "name": "Sheraton Zurich",
+      "city": "Zurich",
+      "location": "11 min from Zurich station by public transport",
+      "_source_file": "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384308.452988
+    },
+    {
+      "name": "Holiday Inn Express Zürich Airport",
+      "city": "Zurich",
+      "location": "Airport area",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "name": "Sheraton Zurich",
+      "city": "Zurich",
+      "location": "Near city center",
+      "_source_file": "Italy/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384338.18424
+    },
+    {
+      "name": "Kameha Grand Zurich – Autograph Collection",
+      "city": "Zurich",
+      "location": "Dufaux-Strasse 1, 8152 Glattpark",
+      "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Zürcher Geschnetzeltes",
+      "city": "Zurich",
+      "description": "Thinly sliced meat in a creamy white wine and mushroom sauce. Often served with Rösti",
+      "vegetarian": false,
+      "where_to_try": "Zurich",
+      "source_files": [
+        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+        "Switzerland/Where to eat in Switzerland.pdf",
+        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf"
+      ]
+    },
+    {
+      "name": "Rösti",
+      "city": "Zurich",
+      "description": "Swiss potato dish, often served with various toppings",
+      "vegetarian": true,
+      "where_to_try": "Various Swiss restaurants",
+      "source_files": [
+        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Watches",
+      "city": "Zurich",
+      "category": "Fashion",
+      "where_to_buy": [
+        "IWC",
+        "Omega",
+        "Hublot"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624
+    },
+    {
+      "item": "Lindt chocolates",
+      "city": "Zurich",
+      "category": "Food",
+      "where_to_buy": [
+        "Lindt Home of Chocolate"
+      ],
+      "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Zurich",
+      "mode": "Train",
+      "description": "Efficient rail connections throughout Switzerland and to neighboring countries",
+      "_source_file": "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384290.512721
+    },
+    {
+      "city": "Zurich",
+      "mode": "S-Bahn",
+      "description": "Train service from Zurich Airport to Winterthur Hauptbahnhof",
+      "cost": "~30 mins",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+      "_source_mtime": 1751904816.0
+    },
+    {
+      "city": "Zurich",
+      "mode": "Train",
+      "description": "Efficient train network connecting to Zurich airport and other Swiss cities",
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0
+    },
+    {
+      "city": "Zurich",
+      "mode": "Train",
+      "description": "EuroCity train service from Zurich to Milan passing through dramatic alpine landscapes",
+      "cost": "Train journey duration ~3 hrs 47 mins",
+      "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Zurich",
+      "mode": "Train",
+      "description": "EuroCity train from Zurich to Milan passing through dramatic alpine landscapes",
+      "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1777872516.0
+    },
+    {
+      "city": "Zurich",
+      "mode": "Train",
+      "description": "Efficient rail connections to various Swiss cities and international destinations",
+      "_source_file": "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384308.452988
+    },
+    {
+      "city": "Zurich",
+      "mode": "Train",
+      "description": "Extensive rail network connecting to various destinations",
+      "recommended_pass": "Swiss Travel Pass",
+      "_source_file": "Italy/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384338.18424
+    },
+    {
+      "city": "Zurich",
+      "mode": "Train",
+      "description": "Train service from Interlaken Ost Station to Zurich Hauptbahnhof, trains every 30 minutes",
+      "cost": "CHF 25–55 (~INR 2,300–5,000) one-way",
+      "_source_file": "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1772384364.4304612
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+    "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+    "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+    "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
+    "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+    "Switzerland/Where to eat in Switzerland.pdf",
+    "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+    "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
+    "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+    "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+    "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+    "Italy/Tejas - Europe All Inclusive Guide.pdf",
+    "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+  ]
+}

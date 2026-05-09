@@ -1,0 +1,2210 @@
+{
+  "restaurants": [
+    {
+      "name": "Mels Café",
+      "city": "London",
+      "cuisine_type": [
+        "Café"
+      ],
+      "hours": "6am-4pm",
+      "highlights": [
+        "Breakfast option"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Greggs",
+      "city": "London",
+      "cuisine_type": [
+        "Bakery"
+      ],
+      "hours": "6:30am-7pm",
+      "highlights": [
+        "Bakery and cake shop for quick pickup"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Mikos Gyros",
+      "city": "London",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "speciality": "Portobello mushroom gyros",
+      "highlights": [
+        "Has veg and vegan options"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "The Warehouse Café SE16",
+      "city": "London",
+      "cuisine_type": [
+        "Café"
+      ],
+      "speciality": "Mediterranean breakfast, sandwiches",
+      "hours": "6:30am-3pm, Sun 9am-3pm",
+      "vegetarian_friendly": false,
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Good Grub Club",
+      "city": "London",
+      "cuisine_type": [
+        "American"
+      ],
+      "speciality": "Burgers, wings",
+      "hours": "11am-2:30pm, 5pm-2am",
+      "vegetarian_friendly": false,
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Covent Garden- Seven Dials market",
+      "city": "London",
+      "cuisine_type": [
+        "Multicuisine"
+      ],
+      "speciality": "Turkish dumplings, hand pulled noodles",
+      "hours": "12pm-10pm",
+      "area": "Covent Garden",
+      "nearby_landmarks": [
+        "Trafalgar Square, London"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Dishoom Covent Garden",
+      "city": "London",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "speciality": "Curries, rotis",
+      "hours": "8am-11pm",
+      "area": "Covent Garden",
+      "vegetarian_friendly": false,
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "O Neill's Watford",
+      "city": "London",
+      "cuisine_type": [
+        "Pub"
+      ],
+      "speciality": "Veg Tapas",
+      "hours": "10am-12am",
+      "area": "Watford",
+      "highlights": [
+        "Veg Tapas available"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Borough Market",
+      "city": "London",
+      "cuisine_type": [
+        "Food market"
+      ],
+      "hours": "Tues-fri 10am-5pm, Sat 9am-5pm, Sun 10am-4pm, Closed Monday",
+      "area": "Borough",
+      "nearby_landmarks": [
+        "Tower Bridge, London"
+      ],
+      "must_try_dishes": [
+        "Strawberries with chocolate",
+        "Fresh cheese from Bath Cheese Shop",
+        "Oysters from Richard Haward",
+        "Seafood Paella from Bomba Paella",
+        "Crumbles from Humble Crumble",
+        "Fish and chips from FishBoroughmarket",
+        "Sticky toffee pudding from Davys of London",
+        "Fresh cheese"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Vicinity",
+      "city": "London",
+      "cuisine_type": [
+        "Global"
+      ],
+      "speciality": "Cocktails, afternoon tea",
+      "hours": "12pm-11pm",
+      "area": "Tower Bridge",
+      "nearby_landmarks": [
+        "Tower Bridge, London",
+        "Thames, London"
+      ],
+      "highlights": [
+        "On the banks of Thames"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Zizi- St. Katherine Docks",
+      "city": "London",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "speciality": "Pizzas and calzones",
+      "hours": "11:30am-10pm",
+      "area": "St. Katherine Docks",
+      "nearby_landmarks": [
+        "Tower Bridge, London"
+      ],
+      "highlights": [
+        "Has veg options"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ],
+      "must_try_dishes": [
+        "Pizzas",
+        "Calzones"
+      ]
+    },
+    {
+      "name": "Emilia's crafted pasta",
+      "city": "London",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "speciality": "Pasta",
+      "hours": "12pm-9:30pm",
+      "nearby_landmarks": [
+        "Tower Bridge, London"
+      ],
+      "highlights": [
+        "Has veg options"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ],
+      "must_try_dishes": [
+        "Pasta"
+      ]
+    },
+    {
+      "name": "Dishoom Canary Wharf",
+      "city": "London",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "speciality": "Curries, rotis",
+      "hours": "8am-11pm",
+      "area": "Canary Wharf",
+      "vegetarian_friendly": false,
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Dishoom Carnaby",
+      "city": "London",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "speciality": "Curries, rotis",
+      "hours": "8am-11pm",
+      "area": "Carnaby",
+      "vegetarian_friendly": false,
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Camden Market",
+      "city": "London",
+      "cuisine_type": [
+        "Food market"
+      ],
+      "hours": "10am-6pm",
+      "area": "Camden",
+      "nearby_landmarks": [
+        "Regents Park, London"
+      ],
+      "must_try_dishes": [
+        "Pizzas from Purezza",
+        "Asian from Mildreds",
+        "Mediterranean from What the pitta",
+        "Pizzas",
+        "Asian cuisine",
+        "Mediterranean"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "China Town",
+      "city": "London",
+      "cuisine_type": [
+        "Chinese"
+      ],
+      "speciality": "Dumplings and noodles, stirfrys",
+      "hours": "Most eateries open 11am-11pm",
+      "area": "China Town",
+      "highlights": [
+        "Colourful area with many chinese eateries"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ],
+      "must_try_dishes": [
+        "Dumplings",
+        "Noodles",
+        "Stir-frys"
+      ]
+    },
+    {
+      "name": "Mercato Metropolitano",
+      "city": "London",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "hours": "12 pm – 1 am",
+      "area": "Near accommodation",
+      "highlights": [
+        "Food market with various multicuisine food stalls",
+        "Has Manuelina Focacceria for fresh focaccia",
+        "Fiordilatte & Friends for cheese",
+        "Tortellino & Co. for pasta",
+        "Badiani for gelato",
+        "The Italian Job for craft beers and wine"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Kebab Addiction",
+      "city": "London",
+      "cuisine_type": [
+        "Turkish"
+      ],
+      "hours": "11:30 am – 12 am",
+      "area": "Near accommodation",
+      "highlights": [
+        "Known for Doner kebabs"
+      ],
+      "must_try_dishes": [
+        "Doner kebabs"
+      ],
+      "source_files": [
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Duke of York",
+      "city": "London",
+      "cuisine_type": [
+        "British"
+      ],
+      "hours": "11 am – 11 pm",
+      "area": "Near accommodation",
+      "highlights": [
+        "British pub grub"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Costa Azul",
+      "city": "London",
+      "cuisine_type": [
+        "Ecuadorian"
+      ],
+      "hours": "12pm- 6 pm",
+      "area": "Near accommodation",
+      "highlights": [
+        "Known for seafood"
+      ],
+      "must_try_dishes": [
+        "Seafood"
+      ],
+      "source_files": [
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Seven Dials market",
+      "city": "London",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "hours": "12pm-10pm",
+      "area": "Covent Garden",
+      "nearby_landmarks": [
+        "Covent Garden, London"
+      ],
+      "highlights": [
+        "Several restaurants",
+        "Good for lunch"
+      ],
+      "source_files": [
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "The Red Lion",
+      "city": "London",
+      "cuisine_type": [
+        "British"
+      ],
+      "price_range": "INR 2000 pp",
+      "hours": "10:00 am – 11:00 pm",
+      "area": "Parliament Street",
+      "nearby_landmarks": [
+        "Westminster"
+      ],
+      "highlights": [
+        "Historic British pub near Westminster"
+      ],
+      "must_try_dishes": [
+        "Fish & chips",
+        "steak & ale pie"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ],
+      "ambience": "Historic British pub"
+    },
+    {
+      "name": "The Blue Boar",
+      "city": "London",
+      "cuisine_type": [
+        "British"
+      ],
+      "price_range": "INR 2500 pp",
+      "hours": "12:00 pm – 10:00 pm",
+      "area": "Westminster",
+      "nearby_landmarks": [
+        "Westminster",
+        "Big Ben, London",
+        "Houses of Parliament, London"
+      ],
+      "highlights": [
+        "Modern British, chic yet pub-inspired"
+      ],
+      "must_try_dishes": [
+        "Blue Boar burger",
+        "smoked haddock fishcake"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ],
+      "ambience": "Modern British, chic yet pub-inspired"
+    },
+    {
+      "name": "The Admiralty",
+      "city": "London",
+      "cuisine_type": [
+        "British"
+      ],
+      "price_range": "INR 2200 pp",
+      "hours": "12:00 pm – 10:30 pm",
+      "area": "Trafalgar Square",
+      "nearby_landmarks": [
+        "Trafalgar Square"
+      ],
+      "highlights": [
+        "Classic British pub"
+      ],
+      "must_try_dishes": [
+        "Steak & ale pie",
+        "battered haddock"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ],
+      "ambience": "Classic British pub"
+    },
+    {
+      "name": "Roast – Borough Market",
+      "city": "London",
+      "cuisine_type": [
+        "British"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12:00 pm – 9:30 pm",
+      "area": "Borough Market",
+      "nearby_landmarks": [
+        "Borough Market, London"
+      ],
+      "highlights": [
+        "Refined British dining overlooking market stalls"
+      ],
+      "must_try_dishes": [
+        "Pork belly",
+        "Yorkshire pudding"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    },
+    {
+      "name": "Padella – Borough",
+      "city": "London",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹₹",
+      "hours": "12:00 pm – 3:45 pm, 5:00 pm – 10:00 pm",
+      "area": "Borough Market",
+      "highlights": [
+        "Handmade pasta",
+        "cult favorite"
+      ],
+      "must_try_dishes": [
+        "Pici cacio e pepe",
+        "beef shin ragu"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    },
+    {
+      "name": "Skylon – Southbank",
+      "city": "London",
+      "cuisine_type": [
+        "Modern"
+      ],
+      "price_range": "₹₹₹₹",
+      "hours": "5:30 pm – 10:00 pm",
+      "area": "Southbank",
+      "highlights": [
+        "Elegant riverside views"
+      ],
+      "must_try_dishes": [
+        "Grilled sea bass",
+        "truffle mash"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    },
+    {
+      "name": "The Ivy Tower Bridge",
+      "city": "London",
+      "cuisine_type": [
+        "British"
+      ],
+      "price_range": "INR 3000 pp",
+      "hours": "5:00 pm – 11:00 pm",
+      "area": "Tower Bridge",
+      "nearby_landmarks": [
+        "Tower Bridge"
+      ],
+      "highlights": [
+        "Glamorous setting near the bridge"
+      ],
+      "must_try_dishes": [
+        "Shepherd's pie",
+        "Ivy hamburger"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ],
+      "ambience": "Glamorous setting near the bridge"
+    },
+    {
+      "name": "The Delaunay",
+      "city": "London",
+      "cuisine_type": [
+        "Viennese"
+      ],
+      "price_range": "INR 3200 pp",
+      "hours": "11:30 am – 3:30 pm",
+      "area": "Covent Garden",
+      "nearby_landmarks": [
+        "Covent Garden, London"
+      ],
+      "highlights": [
+        "Viennese-inspired grand café"
+      ],
+      "must_try_dishes": [
+        "Wiener schnitzel",
+        "apple strudel"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ],
+      "ambience": "Viennese-inspired grand café"
+    },
+    {
+      "name": "J Sheekey",
+      "city": "London",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "INR 4000 pp",
+      "hours": "12:00 pm – 11:00 pm",
+      "area": "Leicester Square",
+      "nearby_landmarks": [
+        "Leicester Square"
+      ],
+      "highlights": [
+        "Iconic seafood dining"
+      ],
+      "must_try_dishes": [
+        "Sheekey's fish pie",
+        "oysters"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ],
+      "ambience": "Iconic seafood dining behind Leicester Square"
+    },
+    {
+      "name": "Cafe Murano – Covent Garden",
+      "city": "London",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12:00 pm – 2:30 pm",
+      "area": "Covent Garden",
+      "nearby_landmarks": [
+        "Covent Garden, London"
+      ],
+      "highlights": [
+        "Angela Hartnett's refined Italian spot"
+      ],
+      "must_try_dishes": [
+        "Wild boar ragu",
+        "burrata"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    },
+    {
+      "name": "The Barbary – Neal's Yard",
+      "city": "London",
+      "cuisine_type": [
+        "Levantine-Mediterranean"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "5:00 pm – 10:30 pm",
+      "area": "Neal's Yard",
+      "highlights": [
+        "Levantine-Mediterranean at a lively bar counter"
+      ],
+      "must_try_dishes": [
+        "Charred octopus",
+        "Jerusalem bagel"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    },
+    {
+      "name": "Clos Maggiore",
+      "city": "London",
+      "cuisine_type": [
+        "French"
+      ],
+      "price_range": "INR 4200 pp",
+      "hours": "5:00 pm – 11:00 pm",
+      "highlights": [
+        "Romantic setting with floral canopy"
+      ],
+      "must_try_dishes": [
+        "Duck breast",
+        "soufflé"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ],
+      "ambience": "Romantic setting with floral canopy"
+    },
+    {
+      "name": "Parsons",
+      "city": "London",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "INR 2800 pp",
+      "hours": "6:00 pm – 10:00 pm",
+      "highlights": [
+        "Cozy seafood spot",
+        "fresh daily menu"
+      ],
+      "must_try_dishes": [
+        "Cornish plaice",
+        "shellfish stew"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ],
+      "ambience": "Cozy seafood spot, fresh daily menu"
+    },
+    {
+      "name": "The Cinnamon Club",
+      "city": "London",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "INR 3500 pp",
+      "hours": "12:00–2:45 pm, 6:00–10:45 pm",
+      "ambience": "Elegant Indian fine dining in an old library",
+      "area": "Westminster",
+      "highlights": [
+        "Elegant Indian fine dining in an old library"
+      ],
+      "must_try_dishes": [
+        "Tandoori lamb fillet",
+        "seared sea bass"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Dishoom",
+      "city": "London",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "INR 2500 pp",
+      "hours": "12:00 pm – 11:00 pm",
+      "ambience": "Bombay-style café with retro charm",
+      "area": "Covent Garden",
+      "nearby_landmarks": [
+        "Leicester Square"
+      ],
+      "highlights": [
+        "Bombay-style café with retro charm"
+      ],
+      "must_try_dishes": [
+        "Black daal",
+        "lamb chops"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Hawksmoor Seven Dials",
+      "city": "London",
+      "cuisine_type": [
+        "British"
+      ],
+      "price_range": "INR 4000 pp",
+      "hours": "12:00 pm – 10:30 pm",
+      "ambience": "Top-tier British steakhouse",
+      "area": "Seven Dials",
+      "highlights": [
+        "Top-tier British steakhouse"
+      ],
+      "must_try_dishes": [
+        "Fillet steak",
+        "sticky toffee pudding"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Barrafina",
+      "city": "London",
+      "cuisine_type": [
+        "Spanish"
+      ],
+      "price_range": "INR 3000 pp",
+      "hours": "12:00 pm – 10:30 pm",
+      "ambience": "Spanish tapas, counter-dining energy",
+      "area": "Dean Street",
+      "highlights": [
+        "Spanish tapas",
+        "counter-dining energy"
+      ],
+      "must_try_dishes": [
+        "Tortilla",
+        "prawn skewers"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Pearl Liang",
+      "city": "London",
+      "cuisine_type": [
+        "Chinese"
+      ],
+      "price_range": "INR 3000 pp",
+      "hours": "12:00 pm – 10:30 pm",
+      "ambience": "Upscale Chinese dining",
+      "area": "Paddington Central",
+      "highlights": [
+        "Upscale Chinese dining"
+      ],
+      "must_try_dishes": [
+        "Dim sum",
+        "black cod in miso"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Roast",
+      "city": "London",
+      "cuisine_type": [
+        "British"
+      ],
+      "price_range": "INR 3000 pp",
+      "hours": "12:00 pm – 9:30 pm",
+      "ambience": "Refined British dining overlooking market stalls",
+      "area": "Borough Market",
+      "nearby_landmarks": [
+        "Borough Market"
+      ],
+      "highlights": [
+        "Refined British dining overlooking market stalls"
+      ],
+      "must_try_dishes": [
+        "Pork belly",
+        "Yorkshire pudding"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Padella",
+      "city": "London",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "INR 1800 pp",
+      "hours": "12:00 pm – 3:45 pm, 5:00 pm – 10:00 pm",
+      "ambience": "Handmade pasta, cult favorite",
+      "area": "Borough",
+      "nearby_landmarks": [
+        "Borough Market"
+      ],
+      "highlights": [
+        "Handmade pasta",
+        "cult favorite"
+      ],
+      "must_try_dishes": [
+        "Pici cacio e pepe",
+        "beef shin ragu"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Skylon",
+      "city": "London",
+      "cuisine_type": [
+        "British"
+      ],
+      "price_range": "INR 4000 pp",
+      "hours": "5:30 pm – 10:00 pm",
+      "ambience": "Elegant riverside views",
+      "area": "Southbank",
+      "highlights": [
+        "Elegant riverside views"
+      ],
+      "must_try_dishes": [
+        "Grilled sea bass",
+        "truffle mash"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Cafe Murano",
+      "city": "London",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "INR 3000 pp",
+      "hours": "12:00 pm – 2:30 pm",
+      "ambience": "Angela Hartnett's refined Italian spot",
+      "area": "Covent Garden",
+      "highlights": [
+        "Angela Hartnett's refined Italian spot"
+      ],
+      "must_try_dishes": [
+        "Wild boar ragu",
+        "burrata"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "The Barbary",
+      "city": "London",
+      "cuisine_type": [
+        "Levantine-Mediterranean"
+      ],
+      "price_range": "INR 3000 pp",
+      "hours": "5:00 pm – 10:30 pm",
+      "ambience": "Levantine-Mediterranean at a lively bar counter",
+      "area": "Neal's Yard",
+      "highlights": [
+        "Levantine-Mediterranean",
+        "lively bar counter"
+      ],
+      "must_try_dishes": [
+        "Charred octopus",
+        "Jerusalem bagel"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Sketch",
+      "city": "London",
+      "cuisine_type": [
+        "British"
+      ],
+      "ambience": "Iconic pink interiors, gallery walls, ultra-quirky decor",
+      "area": "Mayfair",
+      "highlights": [
+        "Iconic pink interiors",
+        "gallery walls",
+        "ultra-quirky decor"
+      ],
+      "must_try_dishes": [
+        "Afternoon tea",
+        "truffle croquettes"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Avobar",
+      "city": "London",
+      "cuisine_type": [
+        "Healthy"
+      ],
+      "ambience": "Tropical, bright, influencer-friendly plates",
+      "area": "Covent Garden",
+      "highlights": [
+        "Tropical",
+        "bright",
+        "influencer-friendly plates"
+      ],
+      "must_try_dishes": [
+        "Avo toast",
+        "matcha pancakes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "The Ivy Asia",
+      "city": "London",
+      "cuisine_type": [
+        "Asian"
+      ],
+      "ambience": "Luxurious neon, green jade floors, views of St. Paul's",
+      "area": "St. Paul's",
+      "nearby_landmarks": [
+        "St. Paul's Cathedral"
+      ],
+      "highlights": [
+        "Luxurious neon",
+        "green jade floors"
+      ],
+      "must_try_dishes": [
+        "Duck salad",
+        "tempura prawns"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Elan Café",
+      "city": "London",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "ambience": "Floral walls, pink everything, dreamy dessert bar",
+      "area": "Knightsbridge",
+      "highlights": [
+        "Floral walls",
+        "pink everything",
+        "dreamy dessert bar"
+      ],
+      "must_try_dishes": [
+        "Rose pistachio cake",
+        "iced lattes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Big Ben",
+      "city": "London",
+      "description": "Famous clock tower",
+      "hours": "Monday to Friday, 9:00 am – 4:30 pm",
+      "recommended_duration": null,
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/Edlyn London.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf",
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Houses of Parliament",
+      "city": "London",
+      "description": "The seat of the UK Parliament, a UNESCO World Heritage Site, and a global symbol of democracy and governance",
+      "hours": "Most weekdays and Saturdays, typically 9:00 am – 5:00 pm",
+      "entry_fee": "Self-guided tours from £25.50 (adult), £11 (child 5–15)",
+      "recommended_duration": null,
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/Edlyn London.pdf",
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Westminster Abbey",
+      "city": "London",
+      "description": "Historic abbey",
+      "hours": "Monday–Friday 9:30 am – 3:30 pm, Saturday 9:00 am – 3:00 pm, closed for sightseeing on Sunday",
+      "entry_fee": "Adults £29, Students/Seniors £26, Children (6–17) £13, under-5s free",
+      "recommended_duration": null,
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/Edlyn London.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf",
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Leicester Square Christmas Market",
+      "city": "London",
+      "description": "One of Central London's most festive and atmospheric seasonal highlights, combining traditional Christmas market stalls with performances, food & drink in the heart of the West End",
+      "hours": "Usually 10:00 am to 10:00 pm",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/Edlyn London.pdf",
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Stonehenge",
+      "city": "London",
+      "description": "A UNESCO World Heritage site, a prehistoric monument that continues to captivate visitors with its mysterious origins and astronomical alignments",
+      "hours": "9:30 am–5:00 pm",
+      "entry_fee": "Adults £21.80, Children (5–17) £13.00, Concessions £19.60",
+      "recommended_duration": null,
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/Edlyn London.pdf"
+      ]
+    },
+    {
+      "name": "Changing of the Guard at Buckingham Palace",
+      "city": "London",
+      "description": "This ceremony is a centuries-old military tradition embodying the continuity of the monarchy, discipline of the Foot Guards, and symbolic protection of the Sovereign & royal palaces.",
+      "hours": "Mondays, Wednesdays, Fridays and Sundays at 11:00 am",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    },
+    {
+      "name": "St. James's Park",
+      "city": "London",
+      "description": "The oldest of London's eight Royal Parks, offering a tranquil escape with picturesque lake views, historic landmarks, and a rich history dating back to 1603",
+      "hours": null,
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/Edlyn London.pdf",
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Trafalgar Square",
+      "city": "London",
+      "description": "Famous London square",
+      "hours": "Open 24/7",
+      "entry_fee": "Free",
+      "recommended_duration": "15-30 minutes",
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/Edlyn London.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf",
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    },
+    {
+      "name": "Tower Bridge",
+      "city": "London",
+      "description": "Iconic London bridge with glass skywalk and inner rooms",
+      "hours": "Daily: 9:30 am – 6:00 pm",
+      "entry_fee": "Free entry to bridge, paid entry for glass skywalk and inner rooms",
+      "recommended_duration": null,
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/Edlyn London.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf",
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Borough Market",
+      "city": "London",
+      "description": "Established in the 12th century, one of London's oldest and largest food markets, renowned for its diverse selection of high-quality, specialty foods",
+      "hours": "Tuesday to Friday: 10:00 am – 5:00 pm, Saturday: 9:00 am – 5:00 pm, Sunday: 10:00 am – 4:00 pm",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/Edlyn London.pdf",
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Covent Garden Christmas Market",
+      "city": "London",
+      "description": "Renowned for its festive atmosphere, featuring a 60-foot Christmas tree, daily 'snow' showers, and a variety of seasonal stalls and entertainment",
+      "hours": "Monday to Saturday: 10:00 am – 9:00 pm, Sunday: 12:00 pm – 5:00 pm",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/Edlyn London.pdf",
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Covent Garden",
+      "city": "London",
+      "description": "A vibrant cultural and shopping district in London's West End, renowned for its historic market, street performances, and proximity to world-class theatres",
+      "hours": "Shops: Monday to Saturday 10:00 am to 8:00 pm; Sunday 11:00 am to 6:00 pm",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/Edlyn London.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf",
+        "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf"
+      ]
+    },
+    {
+      "name": "Chinatown London",
+      "city": "London",
+      "description": "Established in the 1950s, serves as a vibrant cultural enclave, offering a rich tapestry of East and Southeast Asian cuisine, festivals, and traditions in the heart of the West End",
+      "hours": "Individual businesses vary",
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "England and Scotland/london.pdf"
+      ]
+    },
+    {
+      "name": "West End Theatre",
+      "city": "London",
+      "description": "London's premier theatre district, renowned for its world-class productions, iconic venues, and rich theatrical history",
+      "hours": "Evening shows typically start at 7:30 pm, matinees usually at 2:30 pm",
+      "entry_fee": "Prices vary by show, The Phantom of the Opera starts at £32, Mamma Mia! begins at £19",
+      "recommended_duration": null,
+      "source_files": [
+        "England and Scotland/london.pdf"
+      ]
+    },
+    {
+      "name": "Warner Brothers Studio Tour",
+      "city": "London",
+      "description": "Harry Potter studio tour",
+      "hours": "Closes by 20:00",
+      "recommended_duration": "3-4 hours",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Tower of London",
+      "city": "London",
+      "description": "Historic castle",
+      "recommended_duration": "3 hours",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "London Eye",
+      "city": "London",
+      "description": "Giant observation wheel",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Palace of Westminster",
+      "city": "London",
+      "description": "Houses of Parliament",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Buckingham Palace",
+      "city": "London",
+      "description": "Royal palace",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/Edlyn London.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf",
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "St. James Park",
+      "city": "London",
+      "description": "Royal park near Buckingham Palace",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Hyde Park",
+      "city": "London",
+      "description": "Large central London park with food stalls",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Sky Garden",
+      "city": "London",
+      "description": "High-rise garden with views",
+      "entry_fee": "Free ticket required",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Garden at 120",
+      "city": "London",
+      "description": "Rooftop garden",
+      "entry_fee": "No booking required",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Winter Wonderland",
+      "city": "London",
+      "description": "One of the biggest Christmas markets in London with over 100 wooden cabins, UK's biggest outdoor ice rink, giant observation wheel and shows",
+      "recommended_duration": "Several hours",
+      "source_files": [
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Horizon 22",
+      "city": "London",
+      "description": "Viewing area with limited walk-in tickets available from 10 am",
+      "source_files": [
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "St. Paul's Cathedral",
+      "city": "London",
+      "description": "Historic cathedral",
+      "hours": "8am-4:30 pm",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Natural History Museum",
+      "city": "London",
+      "description": "Museum with natural history exhibits",
+      "hours": "10am- 5:50 pm",
+      "entry_fee": "Free",
+      "recommended_duration": "4-5 hours",
+      "source_files": [
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "National Gallery",
+      "city": "London",
+      "description": "Home to masterpieces by Van Gogh, Turner, and da Vinci",
+      "hours": "Daily 10:00 am – 6:00 pm | Fri until 9:00 pm",
+      "entry_fee": "Free entry",
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "DoubleTree by Hilton, London Ealing",
+      "city": "London",
+      "location": "Ealing",
+      "_source_file": "England and Scotland/Edinburgh- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384252.273998
+    },
+    {
+      "name": "DoubleTree by Hilton, London Ealing",
+      "city": "London",
+      "location": "Ealing",
+      "_source_file": "England and Scotland/All Inclusive Guide-Edinburgh.pdf",
+      "_source_mtime": 1748948387.0
+    },
+    {
+      "name": "DoubleTree by Hilton, London Ealing",
+      "city": "London",
+      "location": "Ealing",
+      "_source_file": "England and Scotland/Edinburgh- All Inclusive Guide.docx.pdf",
+      "_source_mtime": 1760623034.0
+    },
+    {
+      "name": "Airbnb",
+      "city": "London",
+      "location": "Penarth street",
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Pasty's",
+      "city": "London",
+      "description": "Baked shell of pastry with variety of ingredients inside, originates from Cornwall",
+      "vegetarian": true,
+      "where_to_try": "Pubs and food markets",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Fish and Chips",
+      "city": "London",
+      "description": "Classic combination of breaded fish and fried potatoes",
+      "vegetarian": false,
+      "where_to_try": "Pubs and food markets",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Sunday Roast",
+      "city": "London",
+      "description": "Roast chicken",
+      "vegetarian": false,
+      "where_to_try": "Pubs",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Bubble and Squeak",
+      "city": "London",
+      "description": "Mix of cooked potatoes, cabbage and other vegetables, all mixed together and fried",
+      "vegetarian": true,
+      "where_to_try": "Pubs",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Yorkshire Pudding",
+      "city": "London",
+      "description": "Traditional food made from eggs, flour, and milk, best served with gravy",
+      "vegetarian": true,
+      "where_to_try": "Pubs",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Victoria Sponge",
+      "city": "London",
+      "description": "Vanilla sponge sandwiching jam and buttercream filling",
+      "vegetarian": true,
+      "where_to_try": "Pubs and food markets",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Crumpets",
+      "city": "London",
+      "description": "Small spongy, cake-like treats made from unsweetened batter",
+      "vegetarian": true,
+      "where_to_try": "Breakfast, afternoon tea",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Parkin",
+      "city": "London",
+      "description": "Traditional ginger cake from Yorkshire made from molasses, oatmeal, and spices",
+      "vegetarian": true,
+      "where_to_try": "Pubs and food markets",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Cheese and Pickle Sandwich",
+      "city": "London",
+      "description": "Traditional English lunch food",
+      "vegetarian": true,
+      "where_to_try": "Pubs and food markets",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Onion Rings",
+      "city": "London",
+      "description": "Originated in England, found as side on many menus",
+      "vegetarian": true,
+      "where_to_try": "Pubs and food markets",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Bread and Butter Pudding",
+      "city": "London",
+      "description": "Traditional pudding made from slices of buttered bread, raisins, covered in egg custard mixture",
+      "vegetarian": true,
+      "where_to_try": "Pubs and food markets",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Stilton",
+      "city": "London",
+      "description": "English cheese made from cow's milk, has blueish-green mould and strong flavour",
+      "vegetarian": true,
+      "where_to_try": "Pubs and food markets",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf"
+      ]
+    },
+    {
+      "name": "Sticky Toffee Pudding",
+      "city": "London",
+      "description": "English dessert made of moist sponge cake flavoured with dates, covered in toffee sauce",
+      "vegetarian": true,
+      "where_to_try": "Pubs and food markets",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Cauliflower Cheese",
+      "city": "London",
+      "description": "Florets of boiled cauliflower covered in milk-based cheese sauce and baked",
+      "vegetarian": true,
+      "where_to_try": "Pubs and food markets",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Scones",
+      "city": "London",
+      "description": "Sweet treats often eaten with jam and cream as part of afternoon tea",
+      "vegetarian": true,
+      "where_to_try": "Afternoon tea",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Mushy peas",
+      "city": "London",
+      "description": "Prepared by boiling marrowfat peas with soda bicarbonate, resulting in thick pea soup",
+      "vegetarian": true,
+      "where_to_try": "Pubs and food markets",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Beans on toast",
+      "city": "London",
+      "description": "Classic, straightforward dish often associated with British cuisine",
+      "vegetarian": true,
+      "where_to_try": "Pubs and food markets",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Trifle",
+      "city": "London",
+      "description": "Traditional English dessert with layers of fruit, cream, and cake",
+      "vegetarian": true,
+      "where_to_try": "Pubs and food markets",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Eatons mess",
+      "city": "London",
+      "description": "Meringue, cream and fruit",
+      "vegetarian": true,
+      "where_to_try": "Pubs and food markets",
+      "source_files": [
+        "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Shepherds pie",
+      "city": "London",
+      "description": "Made with lamb and topped with mashed potatoes",
+      "vegetarian": false,
+      "source_files": [
+        "England and Scotland/London- All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Fish & Chips",
+      "city": "London",
+      "description": "Crispy battered fish with golden chips, served with mushy peas or tartar sauce",
+      "vegetarian": false,
+      "where_to_try": "The Red Lion – Parliament Street",
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Cornish Pasty",
+      "city": "London",
+      "description": "A handheld pastry filled with meat, potatoes, and vegetables — originally for miners",
+      "vegetarian": false,
+      "where_to_try": "Pieminister – Borough Market",
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    },
+    {
+      "name": "Sunday Roast with Yorkshire Pudding",
+      "city": "London",
+      "description": "A traditional roast (often beef or chicken) served with roast potatoes, vegetables, gravy, and airy Yorkshire pudding",
+      "vegetarian": false,
+      "where_to_try": "The Hawksmoor Seven Dials",
+      "source_files": [
+        "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+      ]
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "London",
+        "Edinburgh"
+      ],
+      "tip": "Major spots like Borough Market, Covent Garden, and Edinburgh Castle can be busy — stay aware in pickpocket-prone areas",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Tea",
+      "city": "London",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Fortnum and Mason",
+        "Supermarkets all across UK"
+      ],
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "item": "London Dry Gin",
+      "city": "London",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets across London"
+      ],
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "item": "Cadbury Chocolate",
+      "city": "London",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets across UK"
+      ],
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "item": "Fresh Cheese",
+      "city": "London",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Borough market",
+        "Supermarkets across UK"
+      ],
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "item": "Tunnock's Tea cakes",
+      "city": "London",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets all across the UK"
+      ],
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "item": "Shortbread",
+      "city": "London",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets all across the UK"
+      ],
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "item": "Sticky Toffee Pudding",
+      "city": "London",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets all across the UK"
+      ],
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "item": "Scotch Whisky",
+      "city": "London",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Supermarkets all across the UK"
+      ],
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "item": "Colognes and perfumes",
+      "city": "London",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Jo Malone's Regent Street"
+      ],
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "item": "Typical souvenirs like magnets, bottle openers with images",
+      "city": "London",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Souvenir shops all across the UK"
+      ],
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "item": "Harry Potter Merchandise",
+      "city": "London",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Harry Potter stores at Kings cross and Covent Garden",
+        "Warner Brothers Studio"
+      ],
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "item": "Football accessories",
+      "city": "London",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "New Oxford Street"
+      ],
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "item": "Beatles memorabilia",
+      "city": "London",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "London Beatles Store"
+      ],
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "item": "Tea",
+      "city": "London",
+      "category": "Food",
+      "where_to_buy": [
+        "Fortnum and Mason",
+        "Supermarkets all across UK"
+      ],
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "item": "London Dry Gin",
+      "city": "London",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets across London"
+      ],
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "item": "Cadbury Chocolate",
+      "city": "London",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets across UK"
+      ],
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "item": "Fresh Cheese",
+      "city": "London",
+      "category": "Food",
+      "where_to_buy": [
+        "Borough market",
+        "Supermarkets across UK"
+      ],
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "item": "Tunnock's Tea cakes",
+      "city": "London",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets all across the UK"
+      ],
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "item": "Shortbread",
+      "city": "London",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets all across the UK"
+      ],
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "item": "Sticky Toffee Pudding",
+      "city": "London",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets all across the UK"
+      ],
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "item": "Colognes and perfumes",
+      "city": "London",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Jo Malone's Regent Street"
+      ],
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "item": "Typical souvenirs like magnets, bottle openers with images like the double decker bus, Buckingham palace guards, Paddington bear, Big Ben, London eye, Lake district pictures, Cotswold cottages, Scottish Highlands, Edinburgh Castle, Loch Ness",
+      "city": "London",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Souvenir shops all across"
+      ],
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "item": "Harry Potter Merchandise",
+      "city": "London",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Harry Potter stores at Kings cross and Covent Garden"
+      ],
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "item": "Football accessories",
+      "city": "London",
+      "category": "Fashion",
+      "where_to_buy": [
+        "New Oxford Street"
+      ],
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "item": "Beatles memorabilia",
+      "city": "London",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "London Beatles Store"
+      ],
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "item": "Beefeater keychains & miniature red buses",
+      "city": "London",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "London shops"
+      ],
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "item": "English tea & biscuits",
+      "city": "London",
+      "category": "Food",
+      "where_to_buy": [
+        "Fortnum & Mason",
+        "Harrods"
+      ],
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "item": "Liberty London scarves",
+      "city": "London",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Liberty London"
+      ],
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "item": "Books",
+      "city": "London",
+      "category": "Books",
+      "where_to_buy": [
+        "Hatchards"
+      ],
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "item": "Beefeater keychains & miniature red buses",
+      "city": "London",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "Fortnum & Mason",
+        "Camden Market",
+        "Liberty London"
+      ],
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "item": "English tea & biscuits",
+      "city": "London",
+      "category": "Food",
+      "where_to_buy": [
+        "Fortnum & Mason",
+        "Harrods"
+      ],
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "item": "Liberty London scarves",
+      "city": "London",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Liberty London"
+      ],
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "item": "Books",
+      "city": "London",
+      "category": "Books",
+      "where_to_buy": [
+        "Hatchards"
+      ],
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "London",
+      "service": "Embassy Emergency",
+      "number": "00 44 (0)7768765035",
+      "_source_file": "England and Scotland/Edinburgh- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384252.273998
+    },
+    {
+      "city": "London",
+      "service": "Embassy Emergency",
+      "number": "00 44 (0)7768765035",
+      "_source_file": "England and Scotland/All Inclusive Guide-Edinburgh.pdf",
+      "_source_mtime": 1748948387.0
+    },
+    {
+      "city": "London",
+      "service": "Embassy Emergency",
+      "number": "00 44 (0)7768765035",
+      "_source_file": "England and Scotland/Edinburgh- All Inclusive Guide.docx.pdf",
+      "_source_mtime": 1760623034.0
+    },
+    {
+      "city": "London",
+      "service": "Emergency services",
+      "number": "999",
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "city": "London",
+      "service": "Police Non Emergency",
+      "number": "101",
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "city": "London",
+      "service": "NHS Emergency",
+      "number": "111",
+      "notes": "24/7",
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "city": "London",
+      "service": "Embassy Emergency",
+      "number": "00 44 (0)7768765035",
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "city": "London",
+      "service": "Emergency services",
+      "number": "999",
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "city": "London",
+      "service": "Police Non Emergency",
+      "number": "101",
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "city": "London",
+      "service": "NHS Emergency",
+      "number": "111",
+      "notes": "24/7",
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "city": "London",
+      "service": "Embassy Emergency",
+      "number": "00 44 (0)7768765035",
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "city": "London",
+      "service": "Indian Embassy",
+      "number": "+44 (0)7768 765035",
+      "notes": "emergency contact",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686
+    },
+    {
+      "city": "London",
+      "service": "Indian Embassy",
+      "number": "+44 (0)7768 765035",
+      "notes": "Emergency contact",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "London"
+      ],
+      "tip": "Three is recommended as SIM Card provider. Best place to buy a sim card is at the airport kiosks. Activate roaming to receive messages even without international plan for OTPs.",
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "London",
+      "mode": "Oyster Card",
+      "description": "Cheapest way to travel on bus, Tube, tram, DLR, London Overground and most National Rail services",
+      "recommended_pass": "Oyster card",
+      "cost": "£7 refundable deposit",
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "city": "London",
+      "mode": "Eurail card",
+      "description": "Can be used to travel to Warner Brothers",
+      "_source_file": "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384257.1524382
+    },
+    {
+      "city": "London",
+      "mode": "Oyster card",
+      "description": "Cheapest way to travel around London on the bus, Tube, tram, DLR, London Overground and most National Rail services",
+      "recommended_pass": "Oyster card",
+      "cost": "£7 refundable deposit",
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "city": "London",
+      "mode": "Taxi",
+      "description": "Book an Uber if you need a taxi",
+      "_source_file": "England and Scotland/London- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384251.428277
+    },
+    {
+      "city": "London",
+      "mode": "Public transport",
+      "description": "Recommended for getting around central London and from Iver",
+      "cost": "~1 hr 10 min by public transport from Iver",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    },
+    {
+      "city": "London",
+      "mode": "Tube",
+      "description": "Underground metro system covering central London",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "England and Scotland/Edinburgh- All Inclusive Guide.pdf",
+    "England and Scotland/london.pdf",
+    "England and Scotland/All Inclusive Guide-Edinburgh.pdf",
+    "England and Scotland/Edinburgh- All Inclusive Guide.docx.pdf",
+    "England and Scotland/1. England- Final Detailed Itinerary.pdf",
+    "England and Scotland/Edlyn London.pdf",
+    "England and Scotland/London- All Inclusive Guide.pdf",
+    "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+    "England and Scotland/Edlyn London - All Inclusive Guide.pdf"
+  ]
+}

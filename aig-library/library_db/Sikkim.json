@@ -1,0 +1,630 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Momos",
+      "city": "Sikkim",
+      "description": "Soft steamed or crispy fried dumplings filled with vegetables, chicken, or meat, served with spicy chutney",
+      "vegetarian": false,
+      "where_to_try": "Available at most restaurants",
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Thukpa",
+      "city": "Sikkim",
+      "description": "Comforting noodle soup with vegetables or meat, perfect for cold mountain weather",
+      "vegetarian": false,
+      "where_to_try": "Available at most restaurants",
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Shayaphaley",
+      "city": "Sikkim",
+      "description": "Deep-fried Tibetan bread stuffed with juicy meat or vegetable filling, crispy outside and soft inside",
+      "vegetarian": false,
+      "where_to_try": "Taste of Tibet",
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Phagshapa",
+      "city": "Sikkim",
+      "description": "Traditional Sikkimese dish made with pork, radish, and dried chillies, known for rich and earthy flavours",
+      "vegetarian": false,
+      "where_to_try": "Doma Restaurant Since 1963",
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Butter Tea",
+      "city": "Sikkim",
+      "description": "Unique Himalayan beverage made with tea, butter, and salt, rich and warming in cold climates",
+      "vegetarian": true,
+      "where_to_try": "Local tea shops",
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tongba",
+      "city": "Sikkim",
+      "description": "Traditional fermented millet drink served warm, offering distinctive local drinking experience",
+      "vegetarian": true,
+      "where_to_try": "Local restaurants",
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Churpi",
+      "city": "Sikkim",
+      "description": "Traditional yak milk-based snack that is chewy and long-lasting",
+      "vegetarian": true,
+      "where_to_try": "Local markets",
+      "source_files": [
+        "Northeast India/Amit- Sikkim_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Veg Momos",
+      "city": "Sikkim",
+      "description": "Steamed dumplings filled with cabbage, carrots & paneer/soy",
+      "vegetarian": true,
+      "source_files": [
+        "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf"
+      ]
+    },
+    {
+      "name": "Gundruk Soup",
+      "city": "Sikkim",
+      "description": "Fermented leafy green vegetable soup with a tangy, earthy flavour",
+      "vegetarian": true,
+      "source_files": [
+        "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf"
+      ]
+    },
+    {
+      "name": "Thukpa (Veg)",
+      "city": "Sikkim",
+      "description": "Warm noodle soup loaded with vegetables",
+      "vegetarian": true,
+      "source_files": [
+        "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf"
+      ]
+    },
+    {
+      "name": "Kinema Curry",
+      "city": "Sikkim",
+      "description": "Fermented soybean curry rich in protein",
+      "vegetarian": true,
+      "source_files": [
+        "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf"
+      ]
+    },
+    {
+      "name": "Chicken Thukpa",
+      "city": "Sikkim",
+      "description": "Hearty noodle soup with chicken pieces",
+      "vegetarian": false,
+      "source_files": [
+        "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf"
+      ]
+    },
+    {
+      "name": "Pork Momos",
+      "city": "Sikkim",
+      "description": "Popular dumplings packed with juicy pork mince",
+      "vegetarian": false,
+      "source_files": [
+        "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Sikkim",
+      "english": "Hello",
+      "local": "Namaste",
+      "category": "greeting",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "city": "Sikkim",
+      "english": "Thank you",
+      "local": "Dhanyabaad",
+      "category": "polite",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "city": "Sikkim",
+      "english": "How are you?",
+      "local": "Tapai lai kasto chha?",
+      "category": "greeting",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "city": "Sikkim",
+      "english": "How much is this?",
+      "local": "Kati ho?",
+      "category": "food",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "city": "Sikkim",
+      "english": "Please give a lower price",
+      "local": "Ali sasto dinus",
+      "category": "food",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Stick to planned routes - mountain roads can be unpredictable; always follow your driver's guidance",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Keep valuables secure - carry minimal cash when stepping out",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Avoid walking in poorly lit or deserted areas late at night",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Always wear seatbelts where available; mountain roads can be steep and winding",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "At high altitude (Tsongmo & Nathula) - walk slowly and avoid sudden exertion due to lower oxygen levels",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Stay hydrated - drink water regularly, even if you don't feel thirsty at high altitude",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Avoid alcohol & smoking at high altitude - can worsen altitude discomfort",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Watch for altitude symptoms - headache, dizziness, or nausea - inform driver immediately if unwell",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Carry valid ID & permits for restricted areas (Nathu La, Tsomgo, North Sikkim)",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Respect monasteries—remove shoes, stay quiet, dress modestly",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Stay hydrated—high-altitude areas can cause fatigue",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Do not litter—strictly prohibited in many areas",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "cities": [
+        "Sikkim",
+        "West Bengal"
+      ],
+      "tip": "Stay aware of your surroundings—avoid isolated areas, especially at night",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "cities": [
+        "Sikkim",
+        "West Bengal"
+      ],
+      "tip": "Keep valuables close—use a money belt or secure bag",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "cities": [
+        "Sikkim",
+        "West Bengal"
+      ],
+      "tip": "Use registered taxis / app-based cabs",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Handwoven Woollens & Himalayan Textiles",
+      "city": "Sikkim",
+      "category": "Fashion",
+      "where_to_buy": [
+        "MG Marg (Gangtok)",
+        "Kalimpong Market (Haat Bazaar)"
+      ],
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "item": "Dalle Chilli Pickles & Spicy Condiments",
+      "city": "Sikkim",
+      "category": "Food",
+      "where_to_buy": [
+        "Lal Bazaar (Gangtok)",
+        "MG Marg local stores"
+      ],
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "item": "Churpi (Himalayan Hard Cheese)",
+      "city": "Sikkim",
+      "category": "Food",
+      "where_to_buy": [
+        "Lal Bazaar (Gangtok)",
+        "Roadside shops enroute Gangtok–Kalimpong"
+      ],
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "item": "Darjeeling & Sikkim Organic Tea Packs",
+      "city": "Sikkim",
+      "category": "Food",
+      "where_to_buy": [
+        "MG Marg boutiques (Gangtok)",
+        "Kalimpong Cafe & small tea shops"
+      ],
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "item": "Buddhist Prayer Flags & Spiritual Keepsakes",
+      "city": "Sikkim",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Do Drul Chorten area shops (Gangtok)",
+        "MG Marg souvenir stores"
+      ],
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "item": "Handcrafted Wooden & Bamboo Decor Items",
+      "city": "Sikkim",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kalimpong Market",
+        "MG Marg handicraft stores"
+      ],
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "item": "Thangka Paintings & Tibetan Art",
+      "city": "Sikkim",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "MG Marg (Gangtok)",
+        "Namgyal Institute area shops"
+      ],
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "item": "Local Sweets & Honey (Wild Forest Varieties)",
+      "city": "Sikkim",
+      "category": "Food",
+      "where_to_buy": [
+        "Lal Bazaar (Gangtok)",
+        "Kalimpong local shops"
+      ],
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "item": "Thangka Paintings",
+      "city": "Sikkim",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "MG Marg, Gangtok",
+        "Directorate of Handicrafts & Handloom (Gangtok)"
+      ],
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "item": "Prayer Flags & Prayer Wheels",
+      "city": "Sikkim",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "MG Marg, Gangtok",
+        "Directorate of Handicrafts & Handloom (Gangtok)"
+      ],
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "item": "Handmade Woollen Shawls & Stoles",
+      "city": "Sikkim",
+      "category": "Fashion",
+      "where_to_buy": [
+        "MG Marg, Gangtok",
+        "Lachung / Lachen Local Markets"
+      ],
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "item": "Sikkimese Tea",
+      "city": "Sikkim",
+      "category": "Food",
+      "where_to_buy": [
+        "Temi Tea Garden",
+        "Ravangla & Pelling Shops"
+      ],
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "item": "Organic Spices",
+      "city": "Sikkim",
+      "category": "Food",
+      "where_to_buy": [
+        "MG Marg, Gangtok"
+      ],
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "item": "Chhurpi (Hard Cheese)",
+      "city": "Sikkim",
+      "category": "Food",
+      "where_to_buy": [
+        "MG Marg, Gangtok"
+      ],
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "item": "Bamboo Crafts",
+      "city": "Sikkim",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "MG Marg, Gangtok",
+        "Directorate of Handicrafts & Handloom (Gangtok)"
+      ],
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Sikkim",
+      "service": "Police",
+      "number": "100",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "city": "Sikkim",
+      "service": "Ambulance",
+      "number": "102",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "city": "Sikkim",
+      "service": "Fire",
+      "number": "101",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "city": "Sikkim",
+      "service": "General Emergency",
+      "number": "112",
+      "notes": "All services: police/fire/ambulance",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "city": "Sikkim",
+      "service": "Police",
+      "number": "100",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "city": "Sikkim",
+      "service": "Ambulance / Medical Emergency",
+      "number": "102",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "city": "Sikkim",
+      "service": "Helicopter / Rescue Service",
+      "number": "03592-202634 / 202352",
+      "notes": "For remote or high-altitude emergencies",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    }
+  ],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Stay hydrated - mountain travel and long drives can be dehydrating, especially at higher altitudes",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Eat fresh & hot meals - prefer freshly cooked food, especially in remote or high-altitude areas",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Maintain basic hygiene - carry hand sanitiser and wash hands regularly while travelling",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Ensure routine vaccinations (like tetanus, measles, etc.) are up to date",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Hepatitis A vaccination recommended for most travellers due to food and water exposure",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Typhoid vaccination advisable, especially when trying local food across different areas",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Carry basic medicines for headache, motion sickness (important for mountain drives), cold, and digestion",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Use sunscreen (SPF 30–50) - strong sun exposure at higher altitudes",
+      "_source_file": "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+      "_source_mtime": 1776749442.0
+    },
+    {
+      "cities": [
+        "Sikkim",
+        "West Bengal"
+      ],
+      "tip": "Carry a basic first-aid kit (painkillers, band-aids, ORS, antiseptic, motion-sickness tablets)",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "If travelling to mountain regions, keep diamox or doctor-advised altitude medication (only if prescribed)",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "cities": [
+        "Sikkim",
+        "West Bengal"
+      ],
+      "tip": "Drink safe, bottled or purified water; avoid tap water",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Ascend slowly — let your body adapt to altitude",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    },
+    {
+      "cities": [
+        "Sikkim"
+      ],
+      "tip": "Avoid alcohol and heavy meals at high altitude",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005
+    }
+  ],
+  "source_files": [
+    "Northeast India/Amit- Sikkim_All Inclusive Guide.docx",
+    "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf"
+  ]
+}

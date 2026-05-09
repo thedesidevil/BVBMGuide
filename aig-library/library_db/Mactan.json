@@ -1,0 +1,657 @@
+{
+  "restaurants": [
+    {
+      "name": "Abalone Restaurant – JPark",
+      "city": "Mactan",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "10:00 AM – 10:00 PM",
+      "ambience": "International buffet with wide vegetarian choices and customizable dishes",
+      "area": "JPark Island Resort",
+      "highlights": [
+        "International buffet",
+        "Wide vegetarian choices",
+        "Customizable dishes"
+      ],
+      "must_try_dishes": [
+        "Veg fried rice",
+        "stir-fried vegetables",
+        "noodles"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pizzeria Delfino's",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹700–1,200 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Casual Italian spot known for pizzas and pasta, with good vegetarian flexibility",
+      "highlights": [
+        "Known for pizzas and pasta",
+        "Good vegetarian flexibility"
+      ],
+      "must_try_dishes": [
+        "Veg pizza",
+        "pasta",
+        "garlic bread"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Galo Grill & Bar – JPark",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Grill",
+        "Indian"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "12:00 PM – 10:00 PM",
+      "ambience": "Open-air grill with a relaxed resort vibe and some Indian-influenced dishes",
+      "area": "JPark Island Resort",
+      "highlights": [
+        "Open-air grill",
+        "Relaxed resort vibe",
+        "Indian-influenced dishes"
+      ],
+      "must_try_dishes": [
+        "Grilled vegetables",
+        "veg rice dishes",
+        "Indian-style sides"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Maru Korean Restaurant – JPark",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "₹1,200–2,000 per person",
+      "hours": "10:00 AM – 10:00 PM",
+      "ambience": "Lively Korean dining with customizable vegetarian options",
+      "area": "JPark Island Resort",
+      "highlights": [
+        "Lively Korean dining",
+        "Customizable vegetarian options"
+      ],
+      "must_try_dishes": [
+        "Veg bibimbap",
+        "tofu dishes",
+        "vegetable sides"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Azure Beach Club",
+      "city": "Mactan",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "10:00 AM – 12:00 AM",
+      "ambience": "A chic beachfront lounge with fairy lights, ocean breeze, and a relaxed tropical vibe—perfect after a long sightseeing day. The music is upbeat yet not overwhelming, making it ideal for unwinding.",
+      "highlights": [
+        "Chic beachfront lounge",
+        "Fairy lights",
+        "Ocean breeze",
+        "Upbeat music"
+      ],
+      "must_try_dishes": [
+        "Veg pizza",
+        "truffle fries",
+        "mocktails"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "LIKE A LOCAL RESTAURANT",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Filipino"
+      ],
+      "price_range": "mid-range",
+      "hours": "11 AM–11:59 PM",
+      "ambience": "A vibrant, modern Filipino dining spot that blends local flavours with a contemporary, upbeat setting. The atmosphere is energetic yet comfortable—great for a relaxed but slightly lively dinner.",
+      "highlights": [
+        "Modern Filipino dining",
+        "Contemporary setting",
+        "Energetic yet comfortable"
+      ],
+      "must_try_dishes": [
+        "Veg-friendly stir-fried vegetables",
+        "rice bowls"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Coco Cebu Restaurant",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Tropical"
+      ],
+      "price_range": "mid-range",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "A charming tropical-style restaurant with warm lighting and relaxed island vibes. The setting feels laid-back and scenic, making it ideal for unwinding after a full day.",
+      "highlights": [
+        "Tropical-style",
+        "Warm lighting",
+        "Relaxed island vibes"
+      ],
+      "must_try_dishes": [
+        "Veg noodles",
+        "fried rice",
+        "sautéed vegetables"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Sails Restaurant – Mövenpick Mactan",
+      "city": "Mactan",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "6:00 AM – 11:00 PM",
+      "ambience": "Breezy seaside restaurant offering a calm, refined setting after a morning at sea",
+      "highlights": [
+        "Breezy seaside location",
+        "Calm refined setting"
+      ],
+      "must_try_dishes": [
+        "Veg pasta",
+        "grilled vegetables",
+        "fresh salads"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Cafe Engelberg",
+      "city": "Mactan",
+      "cuisine_type": [
+        "European"
+      ],
+      "price_range": "₹600–1,200 per person",
+      "hours": "7:30 AM – 10:00 PM",
+      "ambience": "Cozy European-style café with a quiet atmosphere and simple, satisfying vegetarian options",
+      "highlights": [
+        "European-style",
+        "Quiet atmosphere",
+        "Simple satisfying options"
+      ],
+      "must_try_dishes": [
+        "Veg sandwiches",
+        "pasta",
+        "pancakes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Acqua Gazebo – Shangri-La Mactan",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹1,500–2,800 per person",
+      "hours": "6–10:30 AM, 12–2:30 PM, 6–10 PM",
+      "ambience": "Poolside Italian dining with a relaxed luxury vibe and tropical surroundings",
+      "highlights": [
+        "Poolside dining",
+        "Relaxed luxury vibe",
+        "Tropical surroundings"
+      ],
+      "must_try_dishes": [
+        "Margherita pizza",
+        "risotto",
+        "vegetable antipasti"
+      ],
+      "best_for": [
+        "luxury"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Labuyo Native Restaurant",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Filipino"
+      ],
+      "price_range": "₹800–1,500 per person",
+      "hours": "10:30 AM – 9:00 PM",
+      "ambience": "A rustic, open-air Filipino restaurant with a relaxed island feel, surrounded by greenery and native-style décor. It's a great place to experience local flavours in an authentic yet comfortable setting after your island hopping day.",
+      "highlights": [
+        "Rustic open-air",
+        "Relaxed island feel",
+        "Native-style décor",
+        "Authentic local flavours"
+      ],
+      "must_try_dishes": [
+        "Chopsuey",
+        "garlic rice",
+        "grilled vegetables"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Lantaw Floating Native Restaurant Cordova",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Filipino"
+      ],
+      "price_range": "₹800–1,500 per person",
+      "hours": "10:00 AM – 10:00 PM",
+      "ambience": "A unique dining experience set over the water, offering beautiful sunset views and a breezy, open-air ambiance. The serene surroundings and traditional setup make it a memorable dinner spot.",
+      "highlights": [
+        "Unique over-water dining",
+        "Beautiful sunset views",
+        "Traditional setup"
+      ],
+      "must_try_dishes": [
+        "Vegetable kare-kare",
+        "chopsuey",
+        "rice"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Olive Italian Restaurant – JPark",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹1,200–2,000 per person",
+      "hours": "9:00 AM – 10:00 PM",
+      "ambience": "Warm, relaxed dining space offering comforting Italian flavours with vegetarian flexibility",
+      "area": "JPark Island Resort",
+      "highlights": [
+        "Warm relaxed dining",
+        "Comforting Italian flavours"
+      ],
+      "must_try_dishes": [
+        "Veg pasta",
+        "Margherita pizza",
+        "garlic bread"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Oriental Spice Gourmet",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Asian",
+        "Indian"
+      ],
+      "price_range": "₹1,000–1,800 per person",
+      "hours": "11:00 AM – 9:00 PM",
+      "ambience": "A refined yet cozy dining spot offering a mix of Asian and Indian flavours, perfect for vegetarians looking for variety. The ambience is calm and comfortable—ideal for a relaxed lunch post check-in.",
+      "highlights": [
+        "Mix of Asian and Indian flavours",
+        "Calm and comfortable"
+      ],
+      "must_try_dishes": [
+        "Veg curry",
+        "stir-fried vegetables",
+        "fried rice"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Cafe Soom Mactan",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "₹600–1,200 per person",
+      "hours": "8:00 AM – 12:00 AM",
+      "ambience": "A minimalist Korean-style café with clean interiors and a peaceful vibe—great for a light, aesthetic lunch. Perfect if you want something easy and refreshing.",
+      "highlights": [
+        "Minimalist Korean-style",
+        "Clean interiors",
+        "Peaceful vibe"
+      ],
+      "must_try_dishes": [
+        "Veg sandwiches",
+        "pasta",
+        "coffee",
+        "desserts"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Fiji Restaurant – Plantation Bay",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Polynesian"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "1:00 PM – 10:00 PM (closed on Sunday & Monday)",
+      "ambience": "Polynesian-inspired open-air restaurant overlooking the lagoon with a relaxed island ambiance",
+      "area": "Plantation Bay Resort",
+      "highlights": [
+        "Polynesian-inspired",
+        "Open-air",
+        "Overlooks lagoon"
+      ],
+      "must_try_dishes": [
+        "Veg stir-fry",
+        "grilled vegetables",
+        "rice dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kilimanjaro Kafé",
+      "city": "Mactan",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "₹1,000–1,800 per person",
+      "hours": "Open 24/7",
+      "ambience": "Casual dining spot offering a mix of global comfort food with vegetarian-friendly options",
+      "highlights": [
+        "Open 24/7",
+        "Global comfort food"
+      ],
+      "must_try_dishes": [
+        "Veg pasta",
+        "sandwiches",
+        "light meals"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Palermo Restaurant",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "5:00 PM – 10:00 PM (closed on Tuesday & Wednesday)",
+      "ambience": "Italian restaurant with a cozy setting and reliable vegetarian options",
+      "highlights": [
+        "Cozy setting",
+        "Reliable vegetarian options"
+      ],
+      "must_try_dishes": [
+        "Margherita pizza",
+        "pasta",
+        "vegetable sides"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Rico's Lechon Cordova",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Filipino"
+      ],
+      "price_range": "₹600–1,200 per person",
+      "hours": "10:00 AM – 9:30 PM",
+      "ambience": "A popular local dining spot known for Cebuano flavours, but also offers simple vegetarian sides and rice meals—good for a quick, casual lunch nearby.",
+      "highlights": [
+        "Popular local dining",
+        "Known for Cebuano flavours"
+      ],
+      "must_try_dishes": [
+        "Garlic rice",
+        "vegetable sides"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Cove Live Seafood Restaurant",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "₹800–1,500 per person",
+      "hours": "11 AM–3 PM, 6–10 PM",
+      "ambience": "A relaxed waterfront restaurant with sunset views and breezy seating—great for a laid-back evening close to the resort.",
+      "highlights": [
+        "Waterfront",
+        "Sunset views",
+        "Breezy seating"
+      ],
+      "must_try_dishes": [
+        "Stir-fried vegetables",
+        "rice",
+        "noodles"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "10,000 Roses Cafe Cordova",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "₹800–1,500 per person",
+      "hours": "2:00 – 10:00 PM",
+      "ambience": "A visually stunning café with glowing LED roses by the sea—perfect for a slightly early dinner with a unique ambiance.",
+      "highlights": [
+        "Visually stunning",
+        "Glowing LED roses",
+        "By the sea"
+      ],
+      "must_try_dishes": [
+        "Pasta",
+        "fries",
+        "coffee",
+        "desserts"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "La Vie Parisienne Mactan",
+      "city": "Mactan",
+      "cuisine_type": [
+        "French"
+      ],
+      "price_range": "₹1,200–2,000 per person",
+      "hours": "10:00 AM – 12:00 AM",
+      "ambience": "A charming French-style café with vineyard aesthetics, fairy lights, and a cozy European vibe—ideal for a relaxed dinner outing.",
+      "highlights": [
+        "French-style",
+        "Vineyard aesthetics",
+        "Fairy lights",
+        "Cozy European vibe"
+      ],
+      "must_try_dishes": [
+        "Veg pizza",
+        "croissants",
+        "pasta"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tymad Bistro",
+      "city": "Mactan",
+      "cuisine_type": [
+        "Garden"
+      ],
+      "price_range": "₹800–1,500 per person",
+      "hours": "8:00 AM – 5:00 PM (closed on Monday)",
+      "ambience": "A hidden garden-style café with lush greenery and soft natural light—perfect for relaxed, aesthetic brunch moments",
+      "highlights": [
+        "Hidden garden-style",
+        "Lush greenery",
+        "Soft natural light"
+      ],
+      "must_try_dishes": [
+        "Veg pasta",
+        "salads",
+        "coffee"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [],
+  "hotels": [
+    {
+      "name": "JPark Island Resort and Waterpark",
+      "city": "Mactan",
+      "location": "Mactan Island",
+      "_source_file": "Philippines/Megha_Philippines_All Inclusive Guide.docx",
+      "_source_mtime": 1773790224.0
+    },
+    {
+      "name": "Plantation Bay Resort and Spa",
+      "city": "Mactan",
+      "location": "Marigondon Zone",
+      "_source_file": "Philippines/Megha_Philippines_All Inclusive Guide.docx",
+      "_source_mtime": 1773790224.0
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "source_files": [
+    "Philippines/Megha_Philippines_All Inclusive Guide.docx"
+  ]
+}

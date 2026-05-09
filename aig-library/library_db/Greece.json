@@ -1,0 +1,961 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Tzatziki",
+      "city": "Greece",
+      "description": "A cool, creamy dip made from Greek yogurt, cucumber, garlic, and olive oil. Best enjoyed with warm pita",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/Edlyn London.pdf",
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Melitzanosalata",
+      "city": "Greece",
+      "description": "Smoky roasted eggplant blended with garlic and lemon—similar to baba ghanoush, but uniquely Greek",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/Edlyn London.pdf"
+      ]
+    },
+    {
+      "name": "Moussaka",
+      "city": "Greece",
+      "description": "Greece's national comfort food: layers of eggplant, ground beef (or lamb), and creamy béchamel sauce",
+      "vegetarian": false,
+      "where_to_try": null,
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/Edlyn London.pdf",
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Souvlaki",
+      "city": "Greece",
+      "description": "Grilled meat skewers, typically pork or chicken, served with pita, fries, and tzatziki",
+      "vegetarian": false,
+      "where_to_try": null,
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/Edlyn London.pdf",
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Baklava",
+      "city": "Greece",
+      "description": "Layers of filo pastry with chopped nuts and honey syrup. Crunchy, sticky, and irresistible",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "England and Scotland/london.pdf",
+        "England and Scotland/Edlyn London.pdf",
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    },
+    {
+      "name": "Ouzo",
+      "city": "Greece",
+      "description": "An anise-flavored spirit served with ice or water, ideal for sipping alongside salty bites",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [
+        "England and Scotland/Edlyn London.pdf",
+        "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Greece",
+      "english": "Hello",
+      "local": "Yassas (formal) / Yia sou (casual)",
+      "category": "greeting",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "city": "Greece",
+      "english": "Good morning",
+      "local": "Kalimera",
+      "category": "greeting",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "city": "Greece",
+      "english": "Thank you",
+      "local": "Efcharistó",
+      "category": "polite",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "city": "Greece",
+      "english": "Please",
+      "local": "Parakaló",
+      "category": "polite",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "city": "Greece",
+      "english": "Yes",
+      "local": "Né",
+      "category": "polite",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "city": "Greece",
+      "english": "No",
+      "local": "Óchi",
+      "category": "polite",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "city": "Greece",
+      "english": "How much is it?",
+      "local": "Póso kostízei?",
+      "category": "food",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "city": "Greece",
+      "english": "Hello",
+      "local": "Yassas (formal) / Yia sou (casual)",
+      "category": "greeting",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "city": "Greece",
+      "english": "Good morning",
+      "local": "Kalimera",
+      "category": "greeting",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "city": "Greece",
+      "english": "Good evening",
+      "local": "Kalispera",
+      "category": "greeting",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "city": "Greece",
+      "english": "Thank you",
+      "local": "Efcharistó",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "city": "Greece",
+      "english": "Please / You're welcome",
+      "local": "Parakaló",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "city": "Greece",
+      "english": "Yes / No",
+      "local": "Né / Óchi",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "city": "Greece",
+      "english": "Excuse me / Sorry",
+      "local": "Signómi",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "city": "Greece",
+      "english": "How much is it?",
+      "local": "Póso kostízei?",
+      "category": "food",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "city": "Greece",
+      "english": "Hello (formal)",
+      "local": "Yassas",
+      "category": "greeting",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "city": "Greece",
+      "english": "Hello (casual)",
+      "local": "Yia sou",
+      "category": "greeting",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "city": "Greece",
+      "english": "Good morning",
+      "local": "Kalimera",
+      "category": "greeting",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "city": "Greece",
+      "english": "Good evening",
+      "local": "Kalispera",
+      "category": "greeting",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "city": "Greece",
+      "english": "Thank you",
+      "local": "Efcharistó",
+      "category": "polite",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "city": "Greece",
+      "english": "Please / You're welcome",
+      "local": "Parakaló",
+      "category": "polite",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "city": "Greece",
+      "english": "Yes",
+      "local": "Né",
+      "category": "polite",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "city": "Greece",
+      "english": "No",
+      "local": "Óchi",
+      "category": "polite",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "city": "Greece",
+      "english": "Excuse me / Sorry",
+      "local": "Signómi",
+      "category": "polite",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "city": "Greece",
+      "english": "How much is it?",
+      "local": "Póso kostízei?",
+      "category": "food",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Keep valuables secure and out of sight in busy areas",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Use a money belt or neck pouch for passports and extra cash",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Carry copies of travel documents (digital and paper)",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Avoid isolated alleys or beaches late at night",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "cities": [
+        "Greece"
+      ],
+      "tip": "Beware of 'Friendship Bracelets' Scam in Monastiraki Square (Athens), Santorini viewpoints",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "cities": [
+        "Greece"
+      ],
+      "tip": "Restaurant Price Switch - check your receipt and ask for a menu in advance",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Keep valuables secure and out of sight in busy areas",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Use a money belt or neck pouch for passports and extra cash",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Carry copies of travel documents (digital and paper)",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Avoid isolated alleys or beaches late at night",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "In mosques/churches: dress modestly and be respectful",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "cities": [
+        "Greece"
+      ],
+      "tip": "Friendship Bracelets Scam - Someone tries to tie a bracelet on your wrist 'as a gift,' then demands payment. Common in Monastiraki Square (Athens), Santorini viewpoints",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "cities": [
+        "Greece"
+      ],
+      "tip": "Restaurant Price Switch - Menus without prices or switched bills—check your receipt and ask for a menu in advance",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "cities": [
+        "Greece"
+      ],
+      "tip": "Taxi Overcharging - Insist on the meter. Avoid taxis parked in front of touristy spots; use apps like Beat",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Keep valuables secure and out of sight in busy areas",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Use a money belt or neck pouch for passports and extra cash",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Carry copies of travel documents (digital and paper)",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Avoid isolated alleys or beaches late at night",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "In mosques/churches: dress modestly and be respectful",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "cities": [
+        "Greece"
+      ],
+      "tip": "Beware of 'Friendship Bracelets' Scam - Someone tries to tie a bracelet on your wrist 'as a gift,' then demands payment. Common in Monastiraki Square (Athens), Santorini viewpoints",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "cities": [
+        "Greece"
+      ],
+      "tip": "Restaurant Price Switch- Menus without prices or switched bills—check your receipt and ask for a menu in advance",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "cities": [
+        "Greece"
+      ],
+      "tip": "Taxi Overcharging- Insist on the meter. Avoid taxis parked in front of touristy spots; use apps like Beat",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Handmade Ceramics & Pottery",
+      "city": "Greece",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kerameikos District of Athens"
+      ],
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "item": "Greek Leather Sandals",
+      "city": "Greece",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Melissinos Art -The Poet Sandal Maker shop in Athens"
+      ],
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "item": "Organic honey and olive oil",
+      "city": "Greece",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets all over Greece"
+      ],
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "item": "Komboloi (Worry Beads)",
+      "city": "Greece",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kombologadiko in Athens"
+      ],
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "item": "Santorini Wine",
+      "city": "Greece",
+      "category": "Food",
+      "where_to_buy": [
+        "supermarkets in Santorini"
+      ],
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "item": "Volcani Lava Jewellery",
+      "city": "Greece",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "MATI Art Gallery in Fira, Santorini"
+      ],
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "item": "Handmade Ceramics & Pottery",
+      "city": "Greece",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kerameikos District of Athens"
+      ],
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "item": "Greek Leather Sandals",
+      "city": "Greece",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Melissinos Art -The Poet Sandal Maker shop in Athens"
+      ],
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "item": "Organic honey and olive oil",
+      "city": "Greece",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets all over Greece"
+      ],
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "item": "Komboloi (Worry Beads)",
+      "city": "Greece",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kombologadiko in Athens"
+      ],
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "item": "Natural Soaps & Skincare",
+      "city": "Greece",
+      "category": "Fashion",
+      "where_to_buy": [
+        "supermarkets in Greece"
+      ],
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "item": "Santorini Wine",
+      "city": "Greece",
+      "category": "Food",
+      "where_to_buy": [
+        "supermarkets in Santorini"
+      ],
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "item": "Volcani Lava Jewellery",
+      "city": "Greece",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "MATI Art Gallery in Fira, Santorini"
+      ],
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "item": "Handmade Ceramics & Pottery",
+      "city": "Greece",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kerameikos District of Athens"
+      ],
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "item": "Greek Leather Sandals",
+      "city": "Greece",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Melissinos Art -The Poet Sandal Maker shop in Athens"
+      ],
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "item": "Organic honey and olive oil",
+      "city": "Greece",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets all over Greece"
+      ],
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "item": "Komboloi (Worry Beads)",
+      "city": "Greece",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kombologadiko in Athens"
+      ],
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "item": "Natural Soaps & Skincare",
+      "city": "Greece",
+      "category": "Beauty",
+      "where_to_buy": [
+        "supermarkets in Greece"
+      ],
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "item": "Santorini Wine",
+      "city": "Greece",
+      "category": "Food",
+      "where_to_buy": [
+        "supermarkets in Santorini"
+      ],
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "item": "Volcani Lava Jewellery",
+      "city": "Greece",
+      "category": "Jewelry",
+      "where_to_buy": [
+        "MATI Art Gallery in Fira, Santorini"
+      ],
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Greece",
+      "service": "General Emergency",
+      "number": "112",
+      "notes": null,
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "city": "Greece",
+      "service": "Police",
+      "number": "100",
+      "notes": null,
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "city": "Greece",
+      "service": "Ambulance",
+      "number": "166",
+      "notes": null,
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "city": "Greece",
+      "service": "Fire Department",
+      "number": "199",
+      "notes": null,
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "city": "Greece",
+      "service": "Tourist Police",
+      "number": "1571",
+      "notes": "English-speaking",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "city": "Greece",
+      "service": "General Emergency",
+      "number": "112",
+      "notes": null,
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "city": "Greece",
+      "service": "Police",
+      "number": "100",
+      "notes": null,
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "city": "Greece",
+      "service": "Ambulance",
+      "number": "166",
+      "notes": null,
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "city": "Greece",
+      "service": "Fire Department",
+      "number": "199",
+      "notes": null,
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "city": "Greece",
+      "service": "Tourist Police",
+      "number": "1571",
+      "notes": "English-speaking",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "city": "Greece",
+      "service": "Indian Embassy",
+      "number": "+30 210 721 6227",
+      "notes": "3, Kleanthous Street, 10674 Athens",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "city": "Greece",
+      "service": "Indian Embassy Emergency",
+      "number": "+30 6945 354 045",
+      "notes": "For Indian citizens only",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "city": "Greece",
+      "service": "General Emergency",
+      "number": "112",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "city": "Greece",
+      "service": "Police",
+      "number": "100",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "city": "Greece",
+      "service": "Ambulance",
+      "number": "166",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "city": "Greece",
+      "service": "Fire Department",
+      "number": "199",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "city": "Greece",
+      "service": "Tourist Police",
+      "number": "1571",
+      "notes": "English-speaking",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "city": "Greece",
+      "service": "Embassy of India, Athens",
+      "number": "+30 210 721 6227",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "city": "Greece",
+      "service": "Embassy of India Emergency",
+      "number": "+30 6945 354 045",
+      "notes": "for Indian citizens only",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "eSIM-Friendly Providers good for traveling to multiple countries: Airalo, Holafly",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "cities": [
+        "Greece"
+      ],
+      "tip": "Paper SIMs: COSMOTE. Airport kiosks often have higher prices—buy in city stores if possible",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "eSIM-Friendly Providers good for traveling to multiple countries: Airalo, Holafly",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "cities": [
+        "Greece"
+      ],
+      "tip": "Paper SIM: COSMOTE. Airport kiosks often have higher prices—buy in city stores if possible",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "eSIM-Friendly Providers good for traveling to multiple countries: Airalo, Holafly",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "cities": [
+        "Greece"
+      ],
+      "tip": "Paper SIMs (Local): COSMOTE. Airport kiosks often have higher prices—buy in city stores if possible",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "No vaccines are mandatory for entry, but routine vaccinations and a few travel-related vaccines are recommended",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "cities": [
+        "Greece"
+      ],
+      "tip": "Tap water is safe to drink in most parts of Greece, but not recommended on some Greek islands like Santorini or Mykonos",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Carry prescriptions in original packaging + digital copy",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "No vaccines are mandatory for entry, but routine vaccinations and a few travel-related vaccines are recommended",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "cities": [
+        "Greece"
+      ],
+      "tip": "Tap water is safe to drink in most parts of Greece, but not recommended on some Greek islands like Santorini or Mykonos",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Carry prescriptions in original packaging + digital copy",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "No vaccines are mandatory for entry, but routine vaccinations and a few travel-related vaccines are recommended",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "cities": [
+        "Greece"
+      ],
+      "tip": "Tap water is safe to drink in most parts of Greece, but not recommended on some Greek islands like Santorini or Mykonos",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Carry prescriptions in original packaging + digital copy",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0
+    }
+  ],
+  "source_files": [
+    "England and Scotland/london.pdf",
+    "England and Scotland/Edlyn London.pdf",
+    "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+  ]
+}

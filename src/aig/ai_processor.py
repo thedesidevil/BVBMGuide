@@ -3,8 +3,8 @@
 import json
 from typing import Optional
 
-from .models import FoodPreferences, Restaurant, DiningStyle
-from .ai_provider import AIClient, get_ai_client
+from src.common.models import FoodPreferences, Restaurant, DiningStyle
+from src.common.ai_provider import AIClient, get_ai_client
 
 
 class AIProcessor:

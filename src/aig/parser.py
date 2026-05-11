@@ -8,10 +8,10 @@ from typing import TYPE_CHECKING, Optional
 
 import fitz  # PyMuPDF
 
-from .models import DayActivity, HotelStay, ItineraryData, ItineraryDay
+from src.common.models import DayActivity, HotelStay, ItineraryData, ItineraryDay
 
 if TYPE_CHECKING:
-    from .ai_provider import AIClient
+    from src.common.ai_provider import AIClient
 
 # Invisible / zero-width characters to strip from PDF text
 _INVISIBLE = "​‌‍﻿­"

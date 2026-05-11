@@ -12,20 +12,40 @@ BVBMGuide is a Python CLI tool that generates All Inclusive Guides (AIGs) — pe
 # Install dependencies
 pip install -r requirements.txt
 
-# Generate an AIG from an itinerary PDF
-python -m src.cli generate <itinerary_pdf> [--library aig-library] [--output output.docx]
+# --- Library Management (python -m src.library) ---
 
-# Parse only (no full guide generation)
-python -m src.cli parse <itinerary_pdf>
+# Build/rebuild the library database from aig-library/ files
+python -m src.library build [--library aig-library] [--force] [--workers 5]
 
-# List restaurants for a destination from the library
-python -m src.cli list_restaurants <destination> [--library aig-library]
-
-# Build/rebuild the restaurant JSON database from library files
-python -m src.cli build_library [--library aig-library]
+# Classify and move new AIGs into the library
+python -m src.library ingest --input <folder>
 
 # View library statistics
-python -m src.cli library_stats [--library aig-library]
+python -m src.library stats [--library aig-library]
+
+# Find which library folders cover specific cities
+python -m src.library find "Amsterdam, Florence, Rome"
+
+# Run verification checks on the library database
+python -m src.library verify [--library aig-library]
+
+# Run comprehensive QC (structural + optional source verification)
+python -m src.library qc [--verify-sources] [--spot-check]
+
+# Clean contaminated or duplicate entries
+python -m src.library clean --dump contaminated.tsv
+python -m src.library clean --apply contaminated.tsv
+
+# Inspect a single AIG file (re-extract without modifying DB)
+python -m src.library inspect <file.pdf> [--field restaurants]
+
+# --- AIG Generation (python -m src.aig) ---
+
+# Parse an itinerary and show found/missing summary
+python -m src.aig parse <input_dir_or_pdf> [--days]
+
+# Generate an All Inclusive Guide (section logic being built incrementally)
+python -m src.aig generate <input_dir_or_pdf> [--library aig-library] [--output output.docx]
 ```
 
 No test suite exists. No lint/format tooling is configured.
@@ -38,27 +58,37 @@ Requires a `.env` file with:
 - `AI_MODEL` — model name (e.g., `claude-opus-4-5`)
 - `GOOGLE_MAPS_API_KEY` — for geocoding/proximity calculations
 
-## Architecture: Processing Pipeline
+## Architecture
 
-The core flow is a sequential pipeline in `src/`:
+The codebase is split into three packages under `src/`:
 
 ```
-PDF Input → pdf_parser.py → user_input.py → ai_processor.py → library_builder.py → aig_generator.py → .docx Output
+src/
+  common/          — shared utilities (ai_provider, models, maps)
+  library/         — library database management (build, ingest, QC)
+  aig/             — AIG generation (parse, validate, generate sections)
+    sections/      — one module per AIG section (built incrementally)
 ```
 
-1. **`pdf_parser.py`** — Extracts structured data (destination, client name, days, activities) from the itinerary PDF using PyMuPDF
-2. **`user_input.py`** — Collects interactive input (hotel, food preferences, dates) via `rich` terminal UI
-3. **`ai_processor.py`** — Uses LLM to parse free-text food preferences into structured JSON (`FoodPreferences` model) and generate activity descriptions/supplementary content
-4. **`library_builder.py`** — Builds and queries `library_db.json`, the indexed restaurant database derived from the AIG library; `LibraryDatabase` is used at runtime to look up restaurants by destination
-5. **`aig_generator.py`** — Assembles the final `.docx` with day sections, restaurant recommendations (2 options per meal), packing lists, cultural notes, etc.
-
-Supporting modules:
-- **`ai_provider.py`** — Unified client wrapping `openai.OpenAI` to support both Anthropic and OpenAI endpoints
+### src/common/
+- **`ai_provider.py`** — Unified client wrapping `openai.OpenAI` to support any OpenAI-compatible endpoint
 - **`models.py`** — Pydantic v2 models: `ItineraryData`, `UserInputs`, `FoodPreferences`, `Restaurant`, `AIGDocument`
+- **`maps.py`** — Google Maps search URL builder (no API key needed)
+
+### src/library/
+- **`builder.py`** — `LibraryBuilder` (AI extraction from DOCX/PDF) and `LibraryDatabase` (sharded DB reader)
+- **`ingester.py`** — Classifies new AIGs into correct destination folders
+- **`qc.py`** — `LibraryQC` structural checks, contamination cleanup, deduplication
+
+### src/aig/
+- **`parser.py`** — AI-first itinerary parser (regex fallback) extracting structured data from PDFs
+- **`ai_processor.py`** — Food preference parsing + restaurant ranking via AI
+- **`validator.py`** — Found/missing check with go/abort gate
+- **`sections/`** — One module per AIG section, each exporting `build(context)` (being built incrementally)
 
 ## Data: The AIG Library
 
-`aig-library/` contains 91 reference guides (DOCX/PDF) organized in destination folders. This is both the source of restaurant data and the style reference for output documents. `library_db.json` (inside `aig-library/`) is the pre-indexed version — rebuild it with `build_library` after adding new guides.
+`aig-library/` contains reference guides (DOCX/PDF) organized in destination folders. `aig-library/library_db/` is the sharded database — one JSON file per destination city, plus `_index.json` with metadata and coverage index. Rebuild with `python -m src.library build --force`.
 
 ## AIG Output Requirements (from `docs/AIG_QC_CHECK.md`)
 
@@ -81,4 +111,4 @@ Key generation rules:
 - `AIG_QC_CHECK.md` — Final QC checklist and quality rules for every generated AIG
 - `CUSTOMGPT_INSTRUCTIONS.md` — Original GPT system prompt this tool replaces
 - `INSTRUCTION_ANALYSIS.md` — Rules for restaurant selection, content generation
-- `LIBRARY_INVENTORY.md` — Catalog of all 91 reference AIGs with destinations
+- `LIBRARY_INVENTORY.md` — Catalog of all reference AIGs with destinations

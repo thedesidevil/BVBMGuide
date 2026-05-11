@@ -9,7 +9,7 @@ import fitz
 from docx import Document
 from rich.console import Console
 
-from ..ai_provider import get_ai_client
+from src.common.ai_provider import get_ai_client
 
 console = Console()
 

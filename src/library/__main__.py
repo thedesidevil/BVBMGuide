@@ -24,7 +24,12 @@ def build(
     library_path: Path = typer.Option(
         Path("aig-library"),
         "--library", "-l",
-        help="Path to the AIG library directory",
+        help="Path to the AIG library directory (source files)",
+    ),
+    db_path: Path = typer.Option(
+        Path("library_db"),
+        "--db",
+        help="Output database path (sharded directory)",
     ),
     force: bool = typer.Option(
         False,
@@ -37,11 +42,6 @@ def build(
         help="Number of parallel AI extraction workers",
         min=1,
         max=20,
-    ),
-    output: Optional[Path] = typer.Option(
-        None,
-        "--output", "-o",
-        help="Output database path — directory for sharded format (default: <library>/library_db)",
     ),
     api_key: Optional[str] = typer.Option(
         None,
@@ -63,7 +63,7 @@ def build(
     try:
         builder = LibraryBuilder(library_path, api_key=api_key, workers=workers)
         console.print(f"[dim]Using AI: {builder.client}[/dim]\n")
-        builder.build_database(force=force, output_path=output)
+        builder.build_database(force=force, output_path=db_path)
     except ValueError as e:
         console.print(f"\n[red]Error:[/red] {e}")
         raise typer.Exit(1)
@@ -120,16 +120,15 @@ def ingest(
 
 @app.command()
 def stats(
-    library_path: Path = typer.Option(
-        Path("aig-library"),
-        "--library", "-l",
-        help="Path to the AIG library directory",
+    db_path: Path = typer.Option(
+        Path("library_db"),
+        "--db",
+        help="Path to the library database directory",
     ),
 ):
     """Show statistics about the library database."""
     from rich.table import Table
 
-    db_path = library_path / "library_db"
     if not db_path.exists():
         console.print("[red]Database not found.[/red] Run 'build' first.")
         raise typer.Exit(1)
@@ -172,10 +171,15 @@ def stats(
 
 @app.command()
 def verify(
+    db_path: Path = typer.Option(
+        Path("library_db"),
+        "--db",
+        help="Path to the library database directory",
+    ),
     library_path: Path = typer.Option(
         Path("aig-library"),
         "--library", "-l",
-        help="Path to the AIG library directory",
+        help="Path to the AIG library directory (for file accounting check)",
     ),
     sample_size: int = typer.Option(
         10,
@@ -187,7 +191,6 @@ def verify(
     import random
     from rich.table import Table
 
-    db_path = library_path / "library_db"
     if not db_path.exists():
         console.print("[red]Database not found.[/red] Run 'build' first.")
         raise typer.Exit(1)
@@ -301,16 +304,15 @@ def find(
         ...,
         help="Comma-separated list of cities (e.g. 'Amsterdam, Florence, Rome')",
     ),
-    library_path: Path = typer.Option(
-        Path("aig-library"),
-        "--library", "-l",
-        help="Path to the AIG library directory",
+    db_path: Path = typer.Option(
+        Path("library_db"),
+        "--db",
+        help="Path to the library database directory",
     ),
 ):
     """Find which library folders cover a set of cities."""
     from rich.table import Table
 
-    db_path = library_path / "library_db"
     if not db_path.exists():
         console.print("[red]Database not found.[/red] Run 'build' first.")
         raise typer.Exit(1)
@@ -348,10 +350,15 @@ def find(
 
 @app.command()
 def qc(
+    db_path: Path = typer.Option(
+        Path("library_db"),
+        "--db",
+        help="Path to the library database directory",
+    ),
     library_path: Path = typer.Option(
         Path("aig-library"),
         "--library", "-l",
-        help="Path to the AIG library directory",
+        help="Path to the AIG library directory (for source verification)",
     ),
     verify_sources: bool = typer.Option(
         False,
@@ -392,7 +399,6 @@ def qc(
     """Run comprehensive quality checks on the library database."""
     from .qc import print_report, print_spot_check
 
-    db_path = library_path / "library_db"
     if not db_path.exists():
         console.print("[red]Database not found.[/red] Run 'build' first.")
         raise typer.Exit(1)
@@ -438,6 +444,11 @@ def qc(
 
 @app.command()
 def clean(
+    db_path: Path = typer.Option(
+        Path("library_db"),
+        "--db",
+        help="Path to the library database directory",
+    ),
     dump: Optional[Path] = typer.Option(
         None,
         "--dump",
@@ -463,16 +474,10 @@ def clean(
         "--fix-city-variants",
         help="Deduplicate city name variants in the coverage index",
     ),
-    library_path: Path = typer.Option(
-        Path("aig-library"),
-        "--library", "-l",
-        help="Path to the AIG library directory",
-    ),
 ):
     """Clean contaminated or duplicate entries from the library database."""
     from .qc import dump_contamination, apply_cleanup, dump_duplicates, apply_dedup as _apply_dedup, dedup_city_coverage
 
-    db_path = library_path / "library_db"
     if not db_path.exists():
         console.print("[red]Database not found.[/red] Run 'build' first.")
         raise typer.Exit(1)
@@ -524,6 +529,11 @@ def inspect(
         "--field", "-f",
         help="Show only this field (restaurants, attractions, hotels, etc.)",
     ),
+    library_path: Path = typer.Option(
+        Path("aig-library"),
+        "--library", "-l",
+        help="Path to the AIG library directory",
+    ),
     api_key: Optional[str] = typer.Option(
         None,
         "--api-key",
@@ -534,7 +544,7 @@ def inspect(
     import json as _json
 
     try:
-        builder = LibraryBuilder(Path("aig-library"), api_key=api_key)
+        builder = LibraryBuilder(library_path, api_key=api_key)
     except ValueError as e:
         console.print(f"[red]Error:[/red] {e}")
         raise typer.Exit(1)

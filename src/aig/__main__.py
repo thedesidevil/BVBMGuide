@@ -192,10 +192,10 @@ def generate(
         help="Path to the input directory or itinerary PDF",
         exists=True,
     ),
-    library_path: Path = typer.Option(
-        Path("aig-library"),
-        "--library", "-l",
-        help="Path to the AIG library directory",
+    db_path: Path = typer.Option(
+        Path("library_db"),
+        "--db",
+        help="Path to the library database directory",
     ),
     output: Optional[Path] = typer.Option(
         None,

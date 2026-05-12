@@ -259,7 +259,7 @@ class LibraryBuilder:
         with an unchanged mtime (unless force=True).
         """
         if output_path is None:
-            output_path = self.library_path / "library_db"
+            output_path = Path("library_db")
 
         existing_db = None
         processed_files: dict = {}

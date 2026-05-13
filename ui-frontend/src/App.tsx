@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Layout } from "./components/Layout";
 import { Sidebar } from "./components/Sidebar";
+import { CityView } from "./components/CityView";
 import { TreeData } from "./types";
 import { api } from "./api/client";
 
@@ -35,11 +36,10 @@ export default function App() {
         />
       }
     >
-      <div className="text-slate-400 text-center py-20">
-        {selectedCity && <p>City view for <strong>{selectedCity}</strong> — next task</p>}
-        {selectedCountry && <p>Country view for <strong>{selectedCountry}</strong> — next task</p>}
-        {!selectedCity && !selectedCountry && <p>Select a city or country from the sidebar</p>}
-      </div>
+      {mode === "city" && selectedCity && <CityView cityName={selectedCity} onRefreshTree={() => api.getTree().then((data) => setTree(data as TreeData))} />}
+      {mode === "city" && selectedCountry && <div className="text-slate-400 text-center py-20">Country view for <strong>{selectedCountry}</strong> — next task</div>}
+      {mode === "city" && !selectedCity && !selectedCountry && <div className="text-slate-400 text-center py-20">Select a city or country from the sidebar</div>}
+      {mode === "sweep" && <div className="text-slate-400 text-center py-20">Sweep mode — next task</div>}
     </Layout>
   );
 }

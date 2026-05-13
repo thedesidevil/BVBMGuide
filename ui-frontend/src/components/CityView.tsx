@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { api } from "../api/client";
 import { EditableTable } from "./EditableTable";
 import { useUndoStack } from "../hooks/useUndoStack";
-import { CityData } from "../types";
+import type { CityData } from "../types";
 
 const CATEGORIES = [
   { key: "restaurants", label: "Restaurants" },

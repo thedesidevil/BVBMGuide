@@ -40,4 +40,11 @@ def create_app(db_path: Path) -> FastAPI:
     app.include_router(sweep.router, prefix="/api")
     app.include_router(audit.router, prefix="/api")
 
+    # Serve built frontend if it exists (must come last so API routes take priority)
+    from fastapi.staticfiles import StaticFiles
+
+    dist_path = Path(__file__).parent.parent.parent.parent / "ui-frontend" / "dist"
+    if dist_path.exists():
+        app.mount("/", StaticFiles(directory=str(dist_path), html=True), name="frontend")
+
     return app

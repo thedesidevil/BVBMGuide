@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { TreeData } from "../types";
+import type { TreeData } from "../types";
 
 interface SidebarProps {
   tree: TreeData;

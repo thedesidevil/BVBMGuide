@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { api } from "../api/client";
-import { SweepResult } from "../types";
+import type { SweepResult } from "../types";
 
 const SWEEP_CATEGORIES = ["restaurants", "attractions", "hotels", "local_dishes", "transport_options"];
 const SWEEP_FIELDS: Record<string, string[]> = {
@@ -37,7 +37,7 @@ export function SweepMode() {
     runSweep();
   };
 
-  const grouped = (result?.items || []).reduce<Record<string, typeof result.items>>((acc, item) => {
+  const grouped = (result?.items || []).reduce<Record<string, SweepResult["items"]>>((acc, item) => {
     if (!acc[item.city]) acc[item.city] = [];
     acc[item.city].push(item);
     return acc;

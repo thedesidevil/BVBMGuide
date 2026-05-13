@@ -4,7 +4,7 @@ import { Sidebar } from "./components/Sidebar";
 import { CityView } from "./components/CityView";
 import { CountryView } from "./components/CountryView";
 import { SweepMode } from "./components/SweepMode";
-import { TreeData } from "./types";
+import type { TreeData } from "./types";
 import { api } from "./api/client";
 
 export default function App() {

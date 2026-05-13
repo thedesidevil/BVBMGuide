@@ -257,7 +257,8 @@ class IngestService:
 
             session.update_file(file_id, {
                 "state": "classified",
-                "folder": folder,
+                "assigned_folder": folder,
+                "is_new_folder": folder not in existing_folders if folder else False,
             })
             results[file_id] = folder
 
@@ -329,7 +330,7 @@ class IngestService:
                 "file_id": file_id,
                 "filename": entry.get("filename"),
                 "state": entry.get("state"),
-                "folder": entry.get("folder"),
+                "assigned_folder": entry.get("assigned_folder"),
             }
 
             extracted_path = session.get_extracted_path(file_id)
@@ -354,18 +355,20 @@ class IngestService:
     # Persist
     # ------------------------------------------------------------------
 
-    def persist(self, session: IngestSession):
+    def persist(self, session: IngestSession) -> dict:
         """Merge extracted data into city shards, move files to aig-library, clean up."""
         from src.library.ui.services.db_service import LibraryDBService
 
         db_service = LibraryDBService(self.db_path)
         files = session.get_files()
+        persisted_count = 0
+        affected_cities: set[str] = set()
 
         for file_id, entry in files.items():
             if entry.get("excluded"):
                 continue
 
-            folder = entry.get("folder")
+            folder = entry.get("assigned_folder")
             if not folder:
                 continue
 
@@ -397,6 +400,7 @@ class IngestService:
 
                     db_service.save_city_data(city, city_data)
                     db_service.set_review_status(city, "pending")
+                    affected_cities.add(city)
 
             # Merge multi-city fields
             for field in self._MULTI_CITY_FIELDS:
@@ -417,6 +421,7 @@ class IngestService:
                         city_data.setdefault(field, []).append(item)
                         db_service.save_city_data(city, city_data)
                         db_service.set_review_status(city, "pending")
+                        affected_cities.add(city)
 
             # Move source file to aig-library/{folder}/
             upload_path = session.get_upload_path(file_id)
@@ -427,8 +432,15 @@ class IngestService:
                 if not dest_file.exists():
                     shutil.move(str(upload_path), dest_file)
 
+            persisted_count += 1
+
         # Clean up staging
         session.cleanup()
+
+        return {
+            "persisted_files": persisted_count,
+            "affected_cities": sorted(affected_cities),
+        }
 
     # ------------------------------------------------------------------
     # Internal helpers

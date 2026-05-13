@@ -20,6 +20,8 @@ console = Console()
 
 DB_VERSION = "1.2"
 CHECKPOINT_EVERY = 10
+SINGLE_PASS_LIMIT = 120000
+CHUNK_OVERLAP = 2000
 
 
 def _repair_truncated_json(text: str) -> Optional[dict]:
@@ -111,6 +113,14 @@ def _checkpoint_save(database: dict, output_path: Path) -> None:
 
 _INCLUDED_PATTERN = re.compile(r'\bincluded\b|\bcovered\b|\bcomplementary\b|\bfree of charge\b|\bbooked\b|\bpre-booked\b', re.IGNORECASE)
 _HAS_PRICE = re.compile(r'[$€£¥₹₩฿]|\b\d+\s*(USD|EUR|GBP|JPY|KZT|TRY|CHF|INR|AED|SGD|THB|MYR|IDR)\b', re.IGNORECASE)
+
+
+_UNSAFE_UNICODE_RE = re.compile(r'[\U0001FA00-\U0001FFFF\U000E0000-\U000EFFFF\U000F0000-\U0010FFFF]')
+
+
+def _sanitize_text(text: str) -> str:
+    """Remove newer/private-use Unicode characters that API gateways may reject."""
+    return _UNSAFE_UNICODE_RE.sub('', text)
 
 
 def _clean_entry_fees(data: dict) -> None:
@@ -500,35 +510,138 @@ class LibraryBuilder:
             console.print(f"[dim]Text extraction failed for {file_path.name}: {e}[/dim]")
             return None
 
+        full_text = _sanitize_text(full_text)
+
         if len(full_text) < 200:
             return None
 
-        if len(full_text) > 50000:
-            full_text = full_text[:50000] + "\n...[truncated]"
+        if len(full_text) <= SINGLE_PASS_LIMIT:
+            prompt = _EXTRACTION_PROMPT.format(text=full_text)
+            result = self._call_and_parse(prompt, file_path.name)
+            return result
 
-        prompt = _EXTRACTION_PROMPT.format(text=full_text)
+        # Multi-pass chunked extraction for large documents
+        chunks = self._split_into_chunks(full_text)
+        console.print(f"[dim]{file_path.name}: {len(full_text):,} chars → {len(chunks)} chunks[/dim]")
 
+        chunk_results = []
+        for i, chunk in enumerate(chunks):
+            prompt = _EXTRACTION_PROMPT.format(text=chunk)
+            result = self._call_and_parse(prompt, f"{file_path.name} chunk {i+1}/{len(chunks)}")
+            if result:
+                chunk_results.append(result)
+
+        if not chunk_results:
+            console.print(f"[dim]AI extraction failed for {file_path.name}: all chunks failed[/dim]")
+            return None
+
+        if len(chunk_results) == 1:
+            return chunk_results[0]
+
+        return self._merge_extraction_results(chunk_results)
+
+    def _call_and_parse(self, prompt: str, label: str) -> Optional[dict]:
+        """Send prompt to AI and parse the JSON response."""
         try:
-            result_text = self.client.complete(prompt, max_tokens=32000)
-            result_text = result_text.strip()
-            if result_text.startswith("```"):
-                result_text = result_text.split("```")[1]
-                if result_text.startswith("json"):
-                    result_text = result_text[4:]
-            if result_text.endswith("```"):
-                result_text = result_text[:-3]
-            result_text = result_text.strip()
+            raw = self.client.complete(prompt, max_tokens=32000)
+            raw = raw.strip()
+            if raw.startswith("```"):
+                raw = raw.split("```")[1]
+                if raw.startswith("json"):
+                    raw = raw[4:]
+            if raw.endswith("```"):
+                raw = raw[:-3]
+            raw = raw.strip()
             try:
-                result = json.loads(result_text)
+                result = json.loads(raw)
             except json.JSONDecodeError:
-                result = _repair_truncated_json(result_text)
+                result = _repair_truncated_json(raw)
                 if not result:
-                    raise
+                    console.print(f"[dim]JSON parse failed for {label}[/dim]")
+                    return None
             _clean_entry_fees(result)
             return result
         except Exception as e:
-            console.print(f"[dim]AI extraction failed for {file_path.name}: {e}[/dim]")
+            console.print(f"[dim]AI extraction failed for {label}: {e}[/dim]")
             return None
+
+    def _split_into_chunks(self, text: str, max_chunk_size: int = SINGLE_PASS_LIMIT, overlap: int = CHUNK_OVERLAP) -> list[str]:
+        """Split text into chunks, preferring paragraph boundaries."""
+        if len(text) <= max_chunk_size:
+            return [text]
+
+        chunks = []
+        start = 0
+        while start < len(text):
+            end = start + max_chunk_size
+            if end >= len(text):
+                chunks.append(text[start:])
+                break
+
+            # Try to split at a paragraph boundary within the last 5K chars
+            split_zone_start = end - 5000
+            split_zone = text[split_zone_start:end]
+            last_para_break = split_zone.rfind("\n\n")
+
+            if last_para_break != -1:
+                end = split_zone_start + last_para_break
+            else:
+                last_newline = split_zone.rfind("\n")
+                if last_newline != -1:
+                    end = split_zone_start + last_newline
+
+            chunks.append(text[start:end])
+            start = end - overlap
+
+        return chunks
+
+    _DEDUP_KEYS = {
+        "restaurants": "name",
+        "attractions": "name",
+        "hotels": "name",
+        "local_dishes": "name",
+        "phrases": "english",
+        "safety_tips": "tip",
+        "souvenirs": "item",
+        "emergency_contacts": "number",
+        "connectivity_tips": "tip",
+        "transport_options": "mode",
+        "health_tips": "tip",
+    }
+
+    def _merge_extraction_results(self, results: list[dict]) -> dict:
+        """Merge multiple chunk extraction results, deduplicating by field-specific keys."""
+        merged: dict = {}
+
+        # covered_cities: union
+        all_cities: list[str] = []
+        for r in results:
+            for city in (r.get("covered_cities") or []):
+                if city not in all_cities:
+                    all_cities.append(city)
+        merged["covered_cities"] = all_cities
+
+        for field, key in self._DEDUP_KEYS.items():
+            combined: list[dict] = []
+            seen: set[str] = set()
+            for r in results:
+                for item in (r.get(field) or []):
+                    if not isinstance(item, dict):
+                        continue
+                    if field == "transport_options":
+                        dedup_val = (item.get("city", "").lower().strip() + "|" +
+                                     item.get(key, "").lower().strip())
+                    else:
+                        dedup_val = item.get(key, "").lower().strip()
+                    if dedup_val and dedup_val in seen:
+                        continue
+                    if dedup_val:
+                        seen.add(dedup_val)
+                    combined.append(item)
+            if combined:
+                merged[field] = combined
+
+        return merged
 
     def _extract_text_from_docx(self, docx_path: Path) -> str:
         doc = Document(docx_path)

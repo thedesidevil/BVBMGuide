@@ -54,36 +54,50 @@ const COLUMNS: Record<Category, { key: string; label: string; type: "text" | "ch
   ],
   hotels: [
     { key: "name", label: "Name", type: "text" },
-    { key: "description", label: "Description", type: "text" },
+    { key: "city", label: "City", type: "text" },
+    { key: "location", label: "Location", type: "text" },
   ],
   local_dishes: [
     { key: "name", label: "Name", type: "text" },
+    { key: "city", label: "City", type: "text" },
     { key: "description", label: "Description", type: "text" },
+    { key: "vegetarian", label: "Vegetarian", type: "checkbox" },
+    { key: "where_to_try", label: "Where to Try", type: "text" },
   ],
   souvenirs: [
-    { key: "name", label: "Name", type: "text" },
-    { key: "description", label: "Description", type: "text" },
+    { key: "item", label: "Item", type: "text" },
+    { key: "city", label: "City", type: "text" },
+    { key: "category", label: "Category", type: "text" },
+    { key: "where_to_buy", label: "Where to Buy", type: "text" },
   ],
   phrases: [
     { key: "english", label: "English", type: "text" },
     { key: "local", label: "Local", type: "text" },
+    { key: "category", label: "Category", type: "text" },
   ],
   safety_tips: [
     { key: "tip", label: "Tip", type: "text" },
+    { key: "cities", label: "Cities", type: "text" },
   ],
   connectivity_tips: [
     { key: "tip", label: "Tip", type: "text" },
+    { key: "cities", label: "Cities", type: "text" },
   ],
   transport_options: [
-    { key: "name", label: "Name", type: "text" },
+    { key: "city", label: "City", type: "text" },
+    { key: "mode", label: "Mode", type: "text" },
     { key: "description", label: "Description", type: "text" },
+    { key: "cost", label: "Cost", type: "text" },
   ],
   health_tips: [
     { key: "tip", label: "Tip", type: "text" },
+    { key: "cities", label: "Cities", type: "text" },
   ],
   emergency_contacts: [
-    { key: "name", label: "Name", type: "text" },
-    { key: "description", label: "Description", type: "text" },
+    { key: "service", label: "Service", type: "text" },
+    { key: "city", label: "City", type: "text" },
+    { key: "number", label: "Number", type: "text" },
+    { key: "notes", label: "Notes", type: "text" },
   ],
 };
 

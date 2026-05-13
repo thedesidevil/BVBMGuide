@@ -18,6 +18,8 @@ interface EditableTableProps {
 export function EditableTable({ columns, data, onDataChange, onDelete }: EditableTableProps) {
   const [editingRow, setEditingRow] = useState<number | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<{ index: number; name: string } | null>(null);
+  const [sortKey, setSortKey] = useState<string | null>(null);
+  const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
 
   const handleFieldChange = (rowIndex: number, key: string, value: any) => {
     const updated = [...data];
@@ -25,21 +27,52 @@ export function EditableTable({ columns, data, onDataChange, onDelete }: Editabl
     onDataChange(updated);
   };
 
+  const handleSort = (key: string) => {
+    if (sortKey === key) {
+      setSortDir(sortDir === "asc" ? "desc" : "asc");
+    } else {
+      setSortKey(key);
+      setSortDir("asc");
+    }
+    setEditingRow(null);
+  };
+
+  const sortedIndices = (() => {
+    const indices = data.map((_, i) => i);
+    if (!sortKey) return indices;
+    return indices.sort((a, b) => {
+      const av = data[a][sortKey];
+      const bv = data[b][sortKey];
+      const aStr = Array.isArray(av) ? av.join(", ") : String(av ?? "");
+      const bStr = Array.isArray(bv) ? bv.join(", ") : String(bv ?? "");
+      const cmp = aStr.localeCompare(bStr, undefined, { numeric: true, sensitivity: "base" });
+      return sortDir === "asc" ? cmp : -cmp;
+    });
+  })();
+
   return (
     <>
       <table className="w-full text-sm">
         <thead>
           <tr className="bg-slate-50 border-b-2 border-slate-200">
             {columns.map((col) => (
-              <th key={col.key} className="text-left px-3 py-3 text-xs font-semibold text-slate-500 uppercase">
+              <th
+                key={col.key}
+                onClick={() => handleSort(col.key)}
+                className="text-left px-3 py-3 text-xs font-semibold text-slate-500 uppercase cursor-pointer select-none hover:text-slate-700"
+              >
                 {col.label}
+                {sortKey === col.key && (
+                  <span className="ml-1">{sortDir === "asc" ? "↑" : "↓"}</span>
+                )}
               </th>
             ))}
             <th className="w-10"></th>
           </tr>
         </thead>
         <tbody>
-          {data.map((row, rowIdx) => {
+          {sortedIndices.map((rowIdx) => {
+            const row = data[rowIdx];
             const isEditing = editingRow === rowIdx;
             const isMissing = columns.some(
               (c) => c.type === "text" && !row[c.key] && ["name", "cuisine_type", "hours"].includes(c.key)

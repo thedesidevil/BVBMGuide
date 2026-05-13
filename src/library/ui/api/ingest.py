@@ -116,7 +116,6 @@ def update_file(session_id: str, file_id: str, body: FileUpdateRequest, request:
 
     if body.assigned_folder is not None:
         updates["assigned_folder"] = body.assigned_folder
-        updates["folder"] = body.assigned_folder
         updates["state"] = "classified"
         # Determine whether this is a new (not yet existing) folder
         library_path = Path(request.app.state.library_path)

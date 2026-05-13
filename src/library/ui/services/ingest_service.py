@@ -432,9 +432,27 @@ class IngestService:
                 if not dest_file.exists():
                     shutil.move(str(upload_path), dest_file)
 
+            # Register in _index.json
+            rel_key = f"{folder}/{entry.get('filename', '')}"
+            covered = data.get("covered_cities", [])
+            db_service._index.setdefault("_processed_files", {})[rel_key] = {
+                "mtime": datetime.now(timezone.utc).timestamp(),
+                "destination": folder,
+                "covered_cities": covered,
+                "processed_at": datetime.now(timezone.utc).isoformat(),
+            }
+            # Update folder coverage
+            folder_coverage = db_service._index.setdefault("_folder_coverage", {})
+            existing_cities = folder_coverage.get(folder, [])
+            for city in covered:
+                if city not in existing_cities:
+                    existing_cities.append(city)
+            folder_coverage[folder] = existing_cities
+
             persisted_count += 1
 
-        # Clean up staging
+        # Save updated index and clean up staging
+        db_service._save_index()
         session.cleanup()
 
         return {

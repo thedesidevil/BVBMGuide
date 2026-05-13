@@ -85,4 +85,6 @@ export const api = {
     request<{ persisted_files: number; affected_cities: string[] }>(`/ingest/${sessionId}/persist`, { method: "POST" }),
   ingestFolders: () =>
     request<{ folders: string[] }>("/ingest/folders"),
+  ingestHistory: () =>
+    request<{ files: { filename: string; destination: string; covered_cities: string[]; ingested_at: string }[] }>("/ingest/history"),
 };

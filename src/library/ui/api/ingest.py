@@ -221,3 +221,34 @@ def list_folders(request: Request):
         if entry.is_dir()
     )
     return {"folders": folders}
+
+
+# ---------------------------------------------------------------------------
+# History
+# ---------------------------------------------------------------------------
+
+@router.get("/history")
+def ingest_history(request: Request):
+    """Return all previously ingested/processed files with metadata."""
+    import json
+
+    db_path = Path(request.app.state.db_path)
+    index_path = db_path / "_index.json"
+    if not index_path.exists():
+        return {"files": []}
+
+    with open(index_path, "r", encoding="utf-8") as f:
+        index = json.load(f)
+
+    processed = index.get("_processed_files", {})
+    files = []
+    for filename, meta in processed.items():
+        files.append({
+            "filename": filename,
+            "destination": meta.get("destination", ""),
+            "covered_cities": meta.get("covered_cities", []),
+            "ingested_at": meta.get("processed_at", ""),
+        })
+
+    files.sort(key=lambda x: x["ingested_at"] or "", reverse=True)
+    return {"files": files}

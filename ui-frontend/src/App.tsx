@@ -5,11 +5,12 @@ import { CityView } from "./components/CityView";
 import { CountryView } from "./components/CountryView";
 import { SweepMode } from "./components/SweepMode";
 import { IngestWizard } from "./components/IngestWizard";
+import { IngestHistory } from "./components/IngestHistory";
 import type { TreeData } from "./types";
 import { api } from "./api/client";
 
 export default function App() {
-  const [mode, setMode] = useState<"city" | "sweep" | "ingest">("city");
+  const [mode, setMode] = useState<"city" | "sweep" | "ingest" | "history">("city");
   const [tree, setTree] = useState<TreeData>({});
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
@@ -50,6 +51,7 @@ export default function App() {
       )}
       {mode === "sweep" && <SweepMode />}
       {mode === "ingest" && <IngestWizard onDone={() => { setMode("city"); api.getTree().then((data) => setTree(data as TreeData)); }} />}
+      {mode === "history" && <IngestHistory />}
     </Layout>
   );
 }

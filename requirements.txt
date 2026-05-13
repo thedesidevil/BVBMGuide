@@ -25,3 +25,4 @@ requests>=2.31.0
 # QC UI
 fastapi>=0.115.0
 uvicorn>=0.30.0
+python-multipart>=0.0.9

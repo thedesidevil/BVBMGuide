@@ -60,7 +60,7 @@ export function EditableTable({ columns, data, onDataChange, onDelete }: Editabl
                       <textarea
                         value={Array.isArray(row[col.key]) ? row[col.key].join(", ") : (row[col.key] ?? "")}
                         onChange={(e) => {
-                          const val = col.key === "cuisine_type" || col.key === "must_try_dishes"
+                          const val = ["cuisine_type", "must_try_dishes", "where_to_buy", "where_to_try"].includes(col.key)
                             ? e.target.value.split(",").map((s: string) => s.trim())
                             : e.target.value;
                           handleFieldChange(rowIdx, col.key, val);
@@ -125,7 +125,7 @@ export function EditableTable({ columns, data, onDataChange, onDelete }: Editabl
                 ))}
                 <td className="px-2">
                   <button
-                    onClick={(e) => { e.stopPropagation(); setDeleteTarget({ index: rowIdx, name: row.name || "item" }); }}
+                    onClick={(e) => { e.stopPropagation(); setDeleteTarget({ index: rowIdx, name: row.name || row.item || "item" }); }}
                     className="text-red-400 hover:text-red-600 hover:bg-red-50 rounded p-1"
                     title="Delete"
                   >🗑</button>

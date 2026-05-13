@@ -31,9 +31,30 @@ const ATTRACTION_COLUMNS = [
   { key: "recommended_duration", label: "Duration", type: "text" as const },
 ];
 
+const HOTEL_COLUMNS = [
+  { key: "name", label: "Name", type: "text" as const },
+  { key: "location", label: "Location", type: "text" as const },
+];
+
+const LOCAL_DISH_COLUMNS = [
+  { key: "name", label: "Name", type: "text" as const },
+  { key: "description", label: "Description", type: "text" as const },
+  { key: "vegetarian", label: "Vegetarian", type: "checkbox" as const },
+  { key: "where_to_try", label: "Where to Try", type: "text" as const },
+];
+
+const SOUVENIR_COLUMNS = [
+  { key: "item", label: "Item", type: "text" as const },
+  { key: "category", label: "Category", type: "text" as const },
+  { key: "where_to_buy", label: "Where to Buy", type: "text" as const },
+];
+
 function getColumns(category: string) {
   if (category === "restaurants") return RESTAURANT_COLUMNS;
   if (category === "attractions") return ATTRACTION_COLUMNS;
+  if (category === "hotels") return HOTEL_COLUMNS;
+  if (category === "local_dishes") return LOCAL_DISH_COLUMNS;
+  if (category === "souvenirs") return SOUVENIR_COLUMNS;
   return [{ key: "name", label: "Name", type: "text" as const }];
 }
 

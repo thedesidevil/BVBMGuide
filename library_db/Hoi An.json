@@ -769,6 +769,58 @@
       "source_files": [
         "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf"
       ]
+    },
+    {
+      "name": "Baba's Kitchen Indian Restaurant - Hoian",
+      "city": "Hoi An",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "INR 700–1,500 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Cozy, welcoming, family-friendly Indian restaurant",
+      "area": "Ancient Town",
+      "highlights": [
+        "Authentic flavours",
+        "Generous portions",
+        "Extensive vegetarian-friendly menu"
+      ],
+      "must_try_dishes": [
+        "Chana masala",
+        "vegetable biryani",
+        "masala dosa",
+        "samosas",
+        "mango lassi"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Indian Ganga Dining & Lounge Hoi an - Indian Restaurant Hoi an",
+      "city": "Hoi An",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "INR 800–1,600 per person",
+      "hours": "11:00 AM – 11:30 PM",
+      "ambience": "Modern, relaxed, lounge-style Indian restaurant",
+      "highlights": [
+        "Rich North Indian flavours",
+        "Relaxed lounge-style atmosphere"
+      ],
+      "must_try_dishes": [
+        "Paneer tikka masala",
+        "dal tadka",
+        "veg pulao",
+        "butter naan",
+        "mango smoothie"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true
     }
   ],
   "attractions": [
@@ -1113,6 +1165,13 @@
       "source_files": [
         "Vietnam/Eating Out Guide_ Vietnam.pdf"
       ]
+    },
+    {
+      "name": "Cao Lầu (Hoi An Noodles)",
+      "city": "Hoi An",
+      "description": "Thick chewy noodles with herbs, crispy croutons, greens, and seafood or chicken toppings, unique to Hoi An",
+      "vegetarian": false,
+      "where_to_try": "Morning Glory Signature Hoi An, Vy's Market Restaurant Hoi An"
     }
   ],
   "phrases": [],
@@ -1860,6 +1919,16 @@
       ],
       "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
       "_source_mtime": 1772384367.6328678
+    },
+    {
+      "item": "Handmade Lanterns",
+      "city": "Hoi An",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Hoi An Night Market",
+        "Nguyen Hoang Street lantern shops",
+        "Reaching Out Arts & Crafts"
+      ]
     }
   ],
   "emergency_contacts": [],

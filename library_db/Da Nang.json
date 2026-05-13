@@ -1733,6 +1733,35 @@
       "source_files": [
         "Vietnam/Eating Out Guide_ Vietnam.pdf"
       ]
+    },
+    {
+      "name": "ISH - The Indian Restaurant",
+      "city": "Da Nang",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "INR 700–1,500 per person",
+      "hours": "11:30 AM – 11:00 PM daily",
+      "ambience": "Modern riverside restaurant with relaxed vibes",
+      "nearby_landmarks": [
+        "Dragon Bridge, Da Nang",
+        "Han River, Da Nang"
+      ],
+      "highlights": [
+        "Overlooking the Han River",
+        "Authentic Indian cuisine"
+      ],
+      "must_try_dishes": [
+        "Aloo palak",
+        "paneer butter masala",
+        "tandoori roti",
+        "veg biryani",
+        "masala chai"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true
     }
   ],
   "attractions": [
@@ -2354,6 +2383,13 @@
       "source_files": [
         "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf"
       ]
+    },
+    {
+      "name": "Mì Quảng",
+      "city": "Da Nang",
+      "description": "Central Vietnamese noodle dish with turmeric noodles, prawns, chicken, herbs and concentrated broth",
+      "vegetarian": false,
+      "where_to_try": "Mi Quang Ba Mua Da Nang"
     }
   ],
   "phrases": [],

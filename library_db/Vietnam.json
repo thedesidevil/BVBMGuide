@@ -279,6 +279,76 @@
         "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
         "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf"
       ]
+    },
+    {
+      "name": "Phở Gà",
+      "city": "Vietnam",
+      "description": "Vietnamese chicken noodle soup with slow-simmered broth, rice noodles, tender chicken and herbs",
+      "vegetarian": false,
+      "where_to_try": "Pho 10 Ly Quoc Su, Pho Thin Hanoi"
+    },
+    {
+      "name": "Gỏi Cuốn",
+      "city": "Vietnam",
+      "description": "Fresh spring rolls with rice paper, prawns, vermicelli noodles, herbs and peanut dipping sauce",
+      "vegetarian": false,
+      "where_to_try": "Home Hoi An Vietnamese Restaurant, Madame Hien Restaurant Hanoi"
+    },
+    {
+      "name": "Bánh Xèo Hải Sản",
+      "city": "Vietnam",
+      "description": "Crispy turmeric-infused pancake filled with seafood, bean sprouts and herbs",
+      "vegetarian": false,
+      "where_to_try": "Banh Xeo Ba Duong Da Nang, Vy's Market Restaurant Hoi An"
+    },
+    {
+      "name": "Coconut Coffee",
+      "city": "Vietnam",
+      "description": "Vietnamese coffee topped with creamy coconut foam",
+      "vegetarian": true,
+      "where_to_try": "Cong Caphe Hanoi, NAM House Cafe Da Nang"
+    },
+    {
+      "name": "Fresh Sugarcane Juice",
+      "city": "Vietnam",
+      "description": "Refreshing drink made from freshly pressed sugarcane juice served chilled over ice",
+      "vegetarian": true,
+      "where_to_try": "Street stalls in Old Quarter, Hoi An Night Market, Da Nang beachside food streets"
+    },
+    {
+      "name": "Phở Gà (Vietnamese Chicken Noodle Soup)",
+      "city": "Vietnam",
+      "description": "Slow-simmered broth with silky rice noodles, tender shredded chicken, and fragrant herbs",
+      "vegetarian": false,
+      "where_to_try": "Pho 10 Ly Quoc Su, Pho Thin Hanoi"
+    },
+    {
+      "name": "Bánh Mì Gà / Hải Sản (Vietnamese Baguette Sandwich)",
+      "city": "Vietnam",
+      "description": "Crisp baguette filled with grilled chicken or seafood, pickled vegetables, fresh herbs, pâté, and bold sauces",
+      "vegetarian": false,
+      "where_to_try": "Banh Mi 25 Hanoi, Madam Khanh Hoi An"
+    },
+    {
+      "name": "Gỏi Cuốn (Fresh Spring Rolls)",
+      "city": "Vietnam",
+      "description": "Light rice paper rolls filled with prawns, vermicelli noodles, herbs, lettuce, served with peanut dipping sauce",
+      "vegetarian": false,
+      "where_to_try": "Home Hoi An Vietnamese Restaurant, Madame Hien Restaurant Hanoi"
+    },
+    {
+      "name": "Bánh Xèo Hải Sản (Vietnamese Savory Pancake)",
+      "city": "Vietnam",
+      "description": "Crispy turmeric-infused pancake filled with seafood, bean sprouts, and herbs, wrapped in greens",
+      "vegetarian": false,
+      "where_to_try": "Banh Xeo Ba Duong Da Nang, Vy's Market Restaurant Hoi An"
+    },
+    {
+      "name": "Fresh Sugarcane Juice (Nước Mía)",
+      "city": "Vietnam",
+      "description": "Refreshing drink made from freshly pressed sugarcane juice served chilled over ice",
+      "vegetarian": true,
+      "where_to_try": "Hanoi Old Quarter street stalls, Hoi An Night Market, Da Nang beachside food streets"
     }
   ],
   "phrases": [
@@ -713,6 +783,102 @@
       "category": "polite",
       "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
       "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "english": "Hello",
+      "local": "Xin chào (Sin Chow)",
+      "category": "greeting"
+    },
+    {
+      "city": "Vietnam",
+      "english": "Thank you",
+      "local": "Cảm ơn (Gahm Un)",
+      "category": "polite"
+    },
+    {
+      "city": "Vietnam",
+      "english": "Yes",
+      "local": "Vâng (Vung)",
+      "category": "polite"
+    },
+    {
+      "city": "Vietnam",
+      "english": "No",
+      "local": "Không (Khong)",
+      "category": "polite"
+    },
+    {
+      "city": "Vietnam",
+      "english": "Excuse me / Sorry",
+      "local": "Xin lỗi (Sin Loy)",
+      "category": "polite"
+    },
+    {
+      "city": "Vietnam",
+      "english": "How much is this?",
+      "local": "Bao nhiêu tiền? (Bao Nyew Tien)",
+      "category": "food"
+    },
+    {
+      "city": "Vietnam",
+      "english": "Delicious",
+      "local": "Ngon quá (Ngon Kwa)",
+      "category": "food"
+    },
+    {
+      "city": "Vietnam",
+      "english": "Goodbye",
+      "local": "Tạm biệt (Tam Byet)",
+      "category": "greeting"
+    },
+    {
+      "city": "Vietnam",
+      "english": "Hello",
+      "local": "Xin chào (Sin Chow)",
+      "category": "greeting"
+    },
+    {
+      "city": "Vietnam",
+      "english": "Thank you",
+      "local": "Cảm ơn (Gahm Un)",
+      "category": "polite"
+    },
+    {
+      "city": "Vietnam",
+      "english": "Yes",
+      "local": "Vâng (Vung)",
+      "category": "polite"
+    },
+    {
+      "city": "Vietnam",
+      "english": "No",
+      "local": "Không (Khong)",
+      "category": "polite"
+    },
+    {
+      "city": "Vietnam",
+      "english": "Excuse me / Sorry",
+      "local": "Xin lỗi (Sin Loy)",
+      "category": "polite"
+    },
+    {
+      "city": "Vietnam",
+      "english": "How much is this?",
+      "local": "Bao nhiêu tiền? (Bao Nyew Tien)",
+      "category": "food"
+    },
+    {
+      "city": "Vietnam",
+      "english": "Delicious",
+      "local": "Ngon quá (Ngon Kwa)",
+      "category": "food"
+    },
+    {
+      "city": "Vietnam",
+      "english": "Goodbye",
+      "local": "Tạm biệt (Tam Byet)",
+      "category": "greeting"
     }
   ],
   "safety_tips": [
@@ -939,6 +1105,108 @@
       "tip": "Unless particularly known for their veg or chicken/seafood options, avoid visiting the sidewalk restaurants",
       "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
       "_source_mtime": 1772384367.6328678
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Avoid nighttime travel in isolated or poorly lit areas, especially outside busy tourist zones"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Beaches after dark – Stick to well-lit areas and avoid secluded sections late at night"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Busy roads and motorbike traffic – Traffic can be chaotic; cross roads slowly and steadily rather than rushing"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Avoid taxi meter rigging – Use trusted ride-hailing apps like Grab for transparent pricing"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Currency confusion – Vietnamese Dong has large denominations. Always double-check the amount before paying"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Overpriced souvenirs in tourist markets – Bargaining is normal in markets; compare prices and negotiate politely"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Avoid carrying all cash and cards in one place"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Use the hotel safe for passports and valuables"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry a printed or digital copy of your passport while exploring"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Avoid nighttime travel in isolated or poorly lit areas, especially outside busy tourist zones"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Be cautious on beaches after dark – stick to well-lit areas and avoid secluded sections late at night"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Traffic can be chaotic with busy roads and motorbike traffic – cross roads slowly and steadily rather than rushing"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Avoid unmarked taxis and use trusted ride-hailing apps like Grab for transparent pricing"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Vietnamese Dong has large denominations – always double-check the amount before paying"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Bargaining is normal in markets – compare prices and negotiate politely to avoid overpriced souvenirs"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Don't carry all cash and cards in one place and use hotel safe for passports and valuables"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry a printed or digital copy of your passport while exploring"
     }
   ],
   "souvenirs": [
@@ -1070,6 +1338,86 @@
       ],
       "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
       "_source_mtime": 1772384367.6328678
+    },
+    {
+      "item": "Silk Products & Tailoring",
+      "city": "Vietnam",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Hang Gai Street (Silk Street)",
+        "Yaly Couture Hoi An",
+        "Bebe Tailor Hoi An"
+      ]
+    },
+    {
+      "item": "Lacquerware & Handcrafted Art",
+      "city": "Vietnam",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Dong Xuan Market",
+        "Hanoi Old Quarter art boutiques",
+        "Hoi An artisan galleries"
+      ]
+    },
+    {
+      "item": "Vietnamese Spices & Sauces",
+      "city": "Vietnam",
+      "category": "Food",
+      "where_to_buy": [
+        "Dong Xuan Market",
+        "Hoi An Central Market",
+        "Lotte Mart Da Nang"
+      ]
+    },
+    {
+      "item": "Bamboo & Handwoven Crafts",
+      "city": "Vietnam",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Hoi An Night Market",
+        "Hanoi weekend markets",
+        "local artisan stores"
+      ]
+    },
+    {
+      "item": "Vietnamese Chocolates",
+      "city": "Vietnam",
+      "category": "Food",
+      "where_to_buy": [
+        "Maison Marou Hanoi",
+        "Pheva Chocolate Da Nang",
+        "Lotte Mart Da Nang"
+      ]
+    },
+    {
+      "item": "Natural Skincare & Essential Oils",
+      "city": "Vietnam",
+      "category": "Health & Beauty",
+      "where_to_buy": [
+        "Hoi An boutique stores",
+        "L'Apothiquaire Vietnam",
+        "Anam QT Spa product stores"
+      ]
+    },
+    {
+      "item": "Vietnamese Conical Hats (Nón Lá)",
+      "city": "Vietnam",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Dong Xuan Market",
+        "Hoi An Night Market",
+        "Hanoi Old Quarter"
+      ]
+    },
+    {
+      "item": "Ceramics & Pottery",
+      "city": "Vietnam",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Bat Trang Ceramic Village",
+        "Hanoi artisan stores",
+        "boutique home décor shops"
+      ]
     }
   ],
   "emergency_contacts": [
@@ -1537,6 +1885,48 @@
       "number": "115",
       "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
       "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "service": "Police",
+      "number": "113"
+    },
+    {
+      "city": "Vietnam",
+      "service": "Ambulance",
+      "number": "115"
+    },
+    {
+      "city": "Vietnam",
+      "service": "Fire Department",
+      "number": "114"
+    },
+    {
+      "city": "Vietnam",
+      "service": "Indian Embassy",
+      "number": "+84 24 3824 4989",
+      "notes": "58-60 Tran Hung Dao Street, Hoan Kiem District, Hanoi. Monday – Friday: 9:00 AM – 5:30 PM"
+    },
+    {
+      "city": "Vietnam",
+      "service": "Police",
+      "number": "113"
+    },
+    {
+      "city": "Vietnam",
+      "service": "Ambulance",
+      "number": "115"
+    },
+    {
+      "city": "Vietnam",
+      "service": "Fire Department",
+      "number": "114"
+    },
+    {
+      "city": "Vietnam",
+      "service": "Indian Embassy Hanoi",
+      "number": "+84 24 3824 4989",
+      "notes": "58-60 Tran Hung Dao Street, Hoan Kiem District, Hanoi. Monday – Friday: 9:00 AM – 5:30 PM"
     }
   ],
   "connectivity_tips": [
@@ -1931,6 +2321,72 @@
       "tip": "Even if you do not purchase an international roaming plan for your current India number, remember to activate roaming so that you receive messages (important for things like OTPs)",
       "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
       "_source_mtime": 1772384367.6328678
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Strong network coverage across cities like Da Nang, Hoi An, Hanoi, and Ninh Binh"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "4G is widely available; 5G is limited to select urban zones"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Recommended SIM providers: Viettel (best coverage), Vinaphone (reliable in cities), Mobifone (good urban performance)"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "SIM cards available at airports, official telecom stores, and local mobile shops. Passport required for registration"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "SIM card cost: ₹500 – ₹1,000 per SIM (7–15 days validity) with 5–10 GB data + local calls"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "eSIM option available via Airalo or Nomad, can be activated before arrival"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Strong network coverage across cities like Da Nang, Hoi An, Hanoi, and Ninh Binh with 4G widely available"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Recommended SIM providers: Viettel (best coverage), Vinaphone (reliable in cities), Mobifone (good urban performance)"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "SIM cards available at Da Nang/Hanoi airports, official telecom stores, and local mobile shops. Passport required for registration"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "SIM cards cost ₹500–₹1,000 for 7–15 days validity, typically include 5–10 GB data plus local calls"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "eSIM options available via providers like Airalo or Nomad, can be activated before arrival"
     }
   ],
   "transport_options": [
@@ -2336,6 +2792,28 @@
       "description": "Public transport option available",
       "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
       "_source_mtime": 1772384367.6328678
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Grab",
+      "description": "Vietnam's most reliable and widely used ride-hailing app available in major cities",
+      "cost": "International cards usually work, cash payment also accepted"
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Walking",
+      "description": "Many tourist areas are walkable including Hanoi Old Quarter, Hoan Kiem Lake, Hoi An Ancient Town"
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Grab",
+      "description": "Most reliable and widely used ride-hailing app available in Hanoi, Da Nang, Hoi An area, and most tourist cities",
+      "cost": "International cards usually work, cash payment also accepted"
+    },
+    {
+      "city": "Vietnam",
+      "mode": "Walking",
+      "description": "Many tourist areas are very walkable including Hanoi Old Quarter, Hoan Kiem Lake, Hoi An Ancient Town, night markets, and Dragon Bridge riverside area"
     }
   ],
   "health_tips": [
@@ -2690,6 +3168,60 @@
       "tip": "Carry doctors prescriptions/travel prescriptions for medicines (except over the counter meds)",
       "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
       "_source_mtime": 1772384367.6328678
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Recommended vaccinations: Hepatitis A, Typhoid, Tetanus, and routine immunizations (MMR, Polio, DPT)"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Consult your doctor 4–6 weeks before travel regarding vaccinations"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Stay well hydrated, especially in warm and humid coastal cities"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Use sunscreen, sunglasses, and a hat when sightseeing during the day"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry a small personal medical kit while traveling"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Recommended vaccinations include Hepatitis A, Typhoid, Tetanus, and routine immunizations like MMR, Polio, and DPT. Consult doctor 4–6 weeks before travel"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Stay well hydrated, especially in warm and humid coastal cities like Da Nang"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Use sunscreen, sunglasses, and a hat when sightseeing during the day"
+    },
+    {
+      "cities": [
+        "Vietnam"
+      ],
+      "tip": "Carry a small personal medical kit while traveling and take it slow during the first day to adjust to climate and travel fatigue"
     }
   ],
   "source_files": [

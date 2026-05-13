@@ -1681,6 +1681,128 @@
       "source_files": [
         "Vietnam/Eating Out Guide_ Vietnam.pdf"
       ]
+    },
+    {
+      "name": "Indian Dasco Kitchen & Cafe",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "INR 600–1,200 per person",
+      "hours": "10:30 AM – 10:30 PM",
+      "ambience": "Casual, homely, relaxed Indian café",
+      "area": "Old Quarter",
+      "highlights": [
+        "Authentic North Indian flavours",
+        "Vegetarian-friendly"
+      ],
+      "must_try_dishes": [
+        "Paneer butter masala",
+        "dal tadka",
+        "veg biryani",
+        "garlic naan",
+        "masala chai"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "The Pizza Company Vincom Times City",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "INR 500–1,200 per person",
+      "hours": "10:00 AM – 10:00 PM",
+      "ambience": "Modern, casual, family-friendly restaurant",
+      "area": "Times City Mall",
+      "highlights": [
+        "Italian-style pizza chain",
+        "Vegetarian-friendly"
+      ],
+      "must_try_dishes": [
+        "Margherita pizza",
+        "veggie deluxe pizza",
+        "truffle mushroom pasta",
+        "garlic bread",
+        "cheese wedges"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Thai Express Vincom Times City",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "INR 700–1,500 per person",
+      "hours": "10:00 AM – 10:00 PM",
+      "ambience": "Contemporary, lively, family-friendly Thai restaurant",
+      "area": "Times City Mall",
+      "highlights": [
+        "Thai restaurant chain",
+        "Vegetarian-friendly"
+      ],
+      "must_try_dishes": [
+        "Vegetable pad thai",
+        "green curry with rice",
+        "tofu tom yum soup",
+        "mango sticky rice",
+        "Thai milk tea"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true
+    },
+    {
+      "name": "Tung's Kitchen",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 700–1,500 per person",
+      "hours": "10:00 AM – 10:30 PM",
+      "ambience": "Casual local dining",
+      "highlights": [
+        "Highly rated local favourite",
+        "Warm hospitality"
+      ],
+      "must_try_dishes": [
+        "Stir-fried seafood noodles",
+        "grilled chicken",
+        "fresh spring rolls"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    {
+      "name": "Essence Restaurant Hanoi",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 1,000–2,200 per person",
+      "hours": "6:30 AM – 10:00 AM | 11:30 AM - 10 PM",
+      "ambience": "Elegant Vietnamese dining",
+      "highlights": [
+        "Refined Vietnamese flavours",
+        "Excellent service"
+      ],
+      "must_try_dishes": [
+        "Lemongrass chicken",
+        "seafood claypot",
+        "pho"
+      ],
+      "best_for": [
+        "family"
+      ]
     }
   ],
   "attractions": [
@@ -2194,6 +2316,11 @@
       "location": "45 min drive from the airport",
       "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
       "_source_mtime": 1772384367.6328678
+    },
+    {
+      "name": "The Legend Hanoi Hotel",
+      "city": "Hanoi",
+      "location": "Old Quarter"
     }
   ],
   "local_dishes": [
@@ -2332,6 +2459,20 @@
       "source_files": [
         "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
       ]
+    },
+    {
+      "name": "Chả Cá (Turmeric Fish with Dill)",
+      "city": "Hanoi",
+      "description": "Turmeric-marinated fish grilled with dill and spring onions, served with rice noodles and herbs",
+      "vegetarian": false,
+      "where_to_try": "Cha Ca Thang Long Hanoi"
+    },
+    {
+      "name": "Vietnamese Egg Coffee (Cà Phê Trứng)",
+      "city": "Hanoi",
+      "description": "Whipped egg cream layered over strong Vietnamese coffee, rich and creamy texture",
+      "vegetarian": true,
+      "where_to_try": "Loading T Cafe Hanoi, The Note Coffee Hanoi"
     }
   ],
   "phrases": [],

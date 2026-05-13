@@ -141,6 +141,7 @@ class Restaurant(BaseModel):
     google_maps_link: Optional[str] = None
     best_for: list[str] = Field(default_factory=list)
     vegetarian_friendly: bool = False
+    pure_vegetarian: bool = False  # Entire restaurant is vegetarian (no meat/fish served)
     is_curated: bool = False  # True if not from library
     source_file: Optional[str] = None  # Which library file it came from
 

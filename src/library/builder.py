@@ -266,8 +266,14 @@ class LibraryBuilder:
 
         if output_path.exists() and not force:
             try:
-                with open(output_path, 'r', encoding='utf-8') as f:
-                    existing_db = json.load(f)
+                if output_path.suffix == '.json':
+                    with open(output_path, 'r', encoding='utf-8') as f:
+                        existing_db = json.load(f)
+                else:
+                    index_path = output_path / '_index.json'
+                    if index_path.exists():
+                        with open(index_path, 'r', encoding='utf-8') as f:
+                            existing_db = json.load(f)
                 processed_files = existing_db.get("_processed_files", {})
                 console.print(f"[dim]Found existing database with {len(processed_files)} processed files[/dim]")
             except Exception:
@@ -280,6 +286,8 @@ class LibraryBuilder:
             "_processed_files": processed_files,
             "_folder_coverage": existing_db.get("_folder_coverage", {}) if existing_db else {},
         }
+        if existing_db and "_review_status" in existing_db:
+            database["_review_status"] = existing_db["_review_status"]
 
         # Discover all DOCX/PDF files (skip failed-processing/)
         all_files = [
@@ -399,6 +407,19 @@ class LibraryBuilder:
             dest_data["local_dishes"] = self._deduplicate_by_name(dest_data["local_dishes"])
 
         self._build_folder_coverage(database)
+
+        # Reset review status to pending for any cities that were rebuilt
+        affected_cities = {
+            meta.get("destination", "")
+            for rel_key, meta in database["_processed_files"].items()
+            if rel_key in {str(fp.relative_to(self.library_path)) for fp in files_to_process}
+        }
+        review_status = database.get("_review_status", {})
+        if review_status:
+            for city in affected_cities:
+                if city in review_status:
+                    review_status[city] = {"status": "pending"}
+            database["_review_status"] = review_status
 
         _checkpoint_save(database, output_path)
 

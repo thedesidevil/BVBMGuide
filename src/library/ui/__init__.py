@@ -33,11 +33,11 @@ def create_app(db_path: Path) -> FastAPI:
 
     app.state.db_path = db_path
 
-    app.include_router(tree.router, prefix="/api/tree", tags=["tree"])
-    app.include_router(city.router, prefix="/api/city", tags=["city"])
-    app.include_router(country.router, prefix="/api/country", tags=["country"])
-    app.include_router(review.router, prefix="/api/review", tags=["review"])
-    app.include_router(sweep.router, prefix="/api/sweep", tags=["sweep"])
-    app.include_router(audit.router, prefix="/api/audit", tags=["audit"])
+    app.include_router(tree.router, prefix="/api")
+    app.include_router(city.router, prefix="/api")
+    app.include_router(country.router, prefix="/api")
+    app.include_router(review.router, prefix="/api")
+    app.include_router(sweep.router, prefix="/api")
+    app.include_router(audit.router, prefix="/api")
 
     return app

@@ -21,3 +21,7 @@ python-dotenv>=1.0.0
 
 # HTTP Client (for geocoding)
 requests>=2.31.0
+
+# QC UI
+fastapi>=0.115.0
+uvicorn>=0.30.0

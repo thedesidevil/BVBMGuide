@@ -570,6 +570,40 @@ def inspect(
     print(_json.dumps(output, indent=2, ensure_ascii=False))
 
 
+@app.command()
+def ui(
+    db_path: Path = typer.Option(
+        Path("library_db"),
+        "--db",
+        help="Path to the library database directory",
+    ),
+    host: str = typer.Option(
+        "127.0.0.1",
+        "--host",
+        help="Host address to bind to",
+    ),
+    port: int = typer.Option(
+        8765,
+        "--port",
+        help="Port number to listen on",
+    ),
+):
+    """Start the Library QC web UI."""
+    if not db_path.exists():
+        console.print(f"[red]Database not found:[/red] {db_path}\nRun 'build' first.")
+        raise typer.Exit(1)
+
+    console.print(Panel.fit(
+        "[bold blue]Library QC UI[/bold blue]\n"
+        f"[dim]Serving at http://{host}:{port}[/dim]",
+        border_style="blue",
+    ))
+    console.print(f"Open [link=http://{host}:{port}]http://{host}:{port}[/link] in your browser.\n")
+
+    from .ui.server import run
+    run(db_path=db_path, host=host, port=port)
+
+
 def main():
     app()
 

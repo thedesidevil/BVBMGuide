@@ -577,6 +577,11 @@ def ui(
         "--db",
         help="Path to the library database directory",
     ),
+    library_path: Path = typer.Option(
+        Path("aig-library"),
+        "--library", "-l",
+        help="Path to the AIG library directory",
+    ),
     host: str = typer.Option(
         "127.0.0.1",
         "--host",
@@ -601,7 +606,7 @@ def ui(
     console.print(f"Open [link=http://{host}:{port}]http://{host}:{port}[/link] in your browser.\n")
 
     from .ui.server import run
-    run(db_path=db_path, host=host, port=port)
+    run(db_path=db_path, library_path=library_path, host=host, port=port)
 
 
 def main():

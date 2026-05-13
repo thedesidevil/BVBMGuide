@@ -5,10 +5,10 @@ from pathlib import Path
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .api import tree, city, country, review, sweep, audit
+from .api import tree, city, country, review, sweep, audit, ingest
 
 
-def create_app(db_path: Path) -> FastAPI:
+def create_app(db_path: Path, library_path: Path = Path("aig-library")) -> FastAPI:
     """Create and configure the FastAPI application.
 
     Args:
@@ -32,6 +32,7 @@ def create_app(db_path: Path) -> FastAPI:
     )
 
     app.state.db_path = db_path
+    app.state.library_path = library_path
 
     app.include_router(tree.router, prefix="/api")
     app.include_router(city.router, prefix="/api")
@@ -39,6 +40,7 @@ def create_app(db_path: Path) -> FastAPI:
     app.include_router(review.router, prefix="/api")
     app.include_router(sweep.router, prefix="/api")
     app.include_router(audit.router, prefix="/api")
+    app.include_router(ingest.router, prefix="/api")
 
     # Serve built frontend if it exists (must come last so API routes take priority)
     from fastapi.staticfiles import StaticFiles

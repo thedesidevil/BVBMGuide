@@ -77,3 +77,28 @@ export interface AuditEntry {
   deleted_at: string;
   item_snapshot: Record<string, any>;
 }
+
+// --- Ingest types ---
+
+export interface IngestFile {
+  id: string;
+  filename: string;
+  size: number;
+  type: "pdf" | "docx";
+  state: "uploaded" | "classified" | "extracted" | "excluded" | "persisted" | "failed";
+  assigned_folder: string | null;
+  is_new_folder: boolean;
+  excluded: boolean;
+  error?: string;
+  data?: Record<string, any>;
+}
+
+export interface IngestSession {
+  session_id: string;
+  files: IngestFile[];
+}
+
+export interface PersistResult {
+  persisted_files: number;
+  affected_cities: string[];
+}

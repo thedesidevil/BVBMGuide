@@ -4,11 +4,12 @@ import { Sidebar } from "./components/Sidebar";
 import { CityView } from "./components/CityView";
 import { CountryView } from "./components/CountryView";
 import { SweepMode } from "./components/SweepMode";
+import { IngestWizard } from "./components/IngestWizard";
 import type { TreeData } from "./types";
 import { api } from "./api/client";
 
 export default function App() {
-  const [mode, setMode] = useState<"city" | "sweep">("city");
+  const [mode, setMode] = useState<"city" | "sweep" | "ingest">("city");
   const [tree, setTree] = useState<TreeData>({});
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
@@ -48,6 +49,7 @@ export default function App() {
         <div className="text-slate-400 text-center py-20">Select a city or country from the sidebar</div>
       )}
       {mode === "sweep" && <SweepMode />}
+      {mode === "ingest" && <IngestWizard onDone={() => { setMode("city"); api.getTree().then((data) => setTree(data as TreeData)); }} />}
     </Layout>
   );
 }

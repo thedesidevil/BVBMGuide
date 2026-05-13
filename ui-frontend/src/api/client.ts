@@ -49,4 +49,40 @@ export const api = {
       method: "POST",
       body: JSON.stringify({ city, category, item_name: itemName, reason, item_snapshot: itemSnapshot, deleted_by: deletedBy }),
     }),
+
+  // --- Ingest ---
+  ingestUpload: async (files: File[]): Promise<{ session_id: string; files: any[] }> => {
+    const formData = new FormData();
+    for (const file of files) {
+      formData.append("files", file);
+    }
+    const res = await fetch(`${BASE}/ingest/upload`, { method: "POST", body: formData });
+    if (!res.ok) throw new Error(`Upload failed: ${res.status} ${await res.text()}`);
+    return res.json();
+  },
+  ingestUploadMore: async (sessionId: string, files: File[]): Promise<{ session_id: string; files: any[] }> => {
+    const formData = new FormData();
+    for (const file of files) {
+      formData.append("files", file);
+    }
+    const res = await fetch(`${BASE}/ingest/${sessionId}/upload`, { method: "POST", body: formData });
+    if (!res.ok) throw new Error(`Upload failed: ${res.status} ${await res.text()}`);
+    return res.json();
+  },
+  ingestDeleteFile: (sessionId: string, fileId: string) =>
+    request<{ status: string; files: any[] }>(`/ingest/${sessionId}/files/${fileId}`, { method: "DELETE" }),
+  ingestUpdateFile: (sessionId: string, fileId: string, updates: { assigned_folder?: string; excluded?: boolean }) =>
+    request<any>(`/ingest/${sessionId}/files/${fileId}`, { method: "PUT", body: JSON.stringify(updates) }),
+  ingestClassify: (sessionId: string) =>
+    request<{ files: any[] }>(`/ingest/${sessionId}/classify`, { method: "POST" }),
+  ingestExtract: (sessionId: string) =>
+    request<{ status: string }>(`/ingest/${sessionId}/extract`, { method: "POST" }),
+  ingestStatus: (sessionId: string) =>
+    request<{ files: any[] }>(`/ingest/${sessionId}/extract/status`),
+  ingestSaveData: (sessionId: string, fileId: string, data: any) =>
+    request(`/ingest/${sessionId}/files/${fileId}/data`, { method: "PUT", body: JSON.stringify(data) }),
+  ingestPersist: (sessionId: string) =>
+    request<{ persisted_files: number; affected_cities: string[] }>(`/ingest/${sessionId}/persist`, { method: "POST" }),
+  ingestFolders: () =>
+    request<{ folders: string[] }>("/ingest/folders"),
 };

@@ -44,4 +44,9 @@ export const api = {
     request("/sweep", { method: "PUT", body: JSON.stringify({ edits }) }),
   getAudit: (limit?: number) =>
     request<any[]>(`/audit${limit ? `?limit=${limit}` : ""}`),
+  logDeletion: (city: string, category: string, itemName: string, reason: string, itemSnapshot: any, deletedBy: string) =>
+    request("/audit", {
+      method: "POST",
+      body: JSON.stringify({ city, category, item_name: itemName, reason, item_snapshot: itemSnapshot, deleted_by: deletedBy }),
+    }),
 };

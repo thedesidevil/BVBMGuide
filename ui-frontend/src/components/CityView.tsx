@@ -73,6 +73,8 @@ export function CityView({ cityName, onRefreshTree }: CityViewProps) {
     api.getCity(cityName).then((d) => { setData(d as CityData); setUnsavedChanges(0); undo.clear(); });
   }, [cityName]);
 
+  const [pendingDeletions, setPendingDeletions] = useState<{ category: string; item: any; reason: string }[]>([]);
+
   if (!data) return <div className="text-slate-400 py-10 text-center">Loading...</div>;
 
   const handleDataChange = (category: string, newItems: any[]) => {
@@ -82,17 +84,29 @@ export function CityView({ cityName, onRefreshTree }: CityViewProps) {
     setUnsavedChanges((n) => n + 1);
   };
 
-  const handleDelete = async (category: string, index: number, reason: string) => {
+  const handleDelete = (category: string, index: number, reason: string) => {
     const item = (data as any)[category][index];
     const prev = [...(data as any)[category]];
-    await api.deleteItem(cityName, category, index, reason, "marina");
+    const prevDeletions = [...pendingDeletions];
     const newItems = prev.filter((_, i) => i !== index);
-    undo.push({ description: `Delete ${item.name}`, undo: () => setData((d) => d ? { ...d, [category]: prev } : d) });
+    setPendingDeletions((d) => [...d, { category, item, reason }]);
+    undo.push({
+      description: `Delete ${item.name || item.item}`,
+      undo: () => {
+        setData((d) => d ? { ...d, [category]: prev } : d);
+        setPendingDeletions(prevDeletions);
+      },
+    });
     setData({ ...data, [category]: newItems });
+    setUnsavedChanges((n) => n + 1);
   };
 
   const handleSave = async () => {
+    for (const del of pendingDeletions) {
+      await api.logDeletion(cityName, del.category, del.item.name || del.item.item || "unknown", del.reason, del.item, "marina");
+    }
     await api.saveCity(cityName, data);
+    setPendingDeletions([]);
     setUnsavedChanges(0);
     onRefreshTree();
   };

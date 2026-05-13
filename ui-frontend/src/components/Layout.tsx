@@ -1,0 +1,46 @@
+import { ReactNode } from "react";
+
+interface LayoutProps {
+  mode: "city" | "sweep";
+  onModeChange: (mode: "city" | "sweep") => void;
+  reviewedCount: number;
+  totalCount: number;
+  sidebar: ReactNode;
+  children: ReactNode;
+}
+
+export function Layout({ mode, onModeChange, reviewedCount, totalCount, sidebar, children }: LayoutProps) {
+  return (
+    <div className="h-screen flex flex-col overflow-hidden">
+      <header className="bg-white border-b border-slate-200 px-6 py-3 flex items-center gap-6 shadow-sm">
+        <span className="font-bold text-base text-slate-900">Library QC</span>
+        <div className="flex gap-1">
+          <button
+            onClick={() => onModeChange("city")}
+            className={`px-4 py-2 rounded-md text-sm font-medium ${mode === "city" ? "bg-blue-50 text-blue-600" : "text-slate-500 hover:bg-slate-50"}`}
+          >
+            City View
+          </button>
+          <button
+            onClick={() => onModeChange("sweep")}
+            className={`px-4 py-2 rounded-md text-sm font-medium ${mode === "sweep" ? "bg-blue-50 text-blue-600" : "text-slate-500 hover:bg-slate-50"}`}
+          >
+            Sweep Mode
+          </button>
+        </div>
+        <div className="ml-auto text-sm text-slate-500">
+          {reviewedCount} / {totalCount} cities reviewed
+        </div>
+      </header>
+
+      <div className="flex flex-1 overflow-hidden">
+        <aside className="w-[260px] bg-white border-r border-slate-200 overflow-y-auto flex-shrink-0">
+          {sidebar}
+        </aside>
+        <main className="flex-1 overflow-y-auto p-6 bg-slate-50">
+          {children}
+        </main>
+      </div>
+    </div>
+  );
+}

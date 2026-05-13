@@ -5,11 +5,11 @@ import { useUndoStack } from "../hooks/useUndoStack";
 import type { CityData } from "../types";
 
 const CATEGORIES = [
-  { key: "restaurants", label: "Restaurants" },
-  { key: "attractions", label: "Attractions" },
-  { key: "hotels", label: "Hotels" },
-  { key: "local_dishes", label: "Local Dishes" },
-  { key: "souvenirs", label: "Souvenirs" },
+  { key: "restaurants", label: "Restaurants", singular: "Restaurant" },
+  { key: "attractions", label: "Attractions", singular: "Attraction" },
+  { key: "hotels", label: "Hotels", singular: "Hotel" },
+  { key: "local_dishes", label: "Local Dishes", singular: "Local Dish" },
+  { key: "souvenirs", label: "Souvenirs", singular: "Souvenir" },
 ];
 
 const RESTAURANT_COLUMNS = [
@@ -133,7 +133,7 @@ export function CityView({ cityName, onRefreshTree }: CityViewProps) {
       <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4">
         <div className="flex items-center gap-3 mb-4">
           <button className="px-4 py-2 text-sm font-medium border border-slate-200 rounded-md hover:bg-slate-50">
-            + Add {CATEGORIES.find((c) => c.key === activeTab)?.label.slice(0, -1)}
+            + Add {CATEGORIES.find((c) => c.key === activeTab)?.singular}
           </button>
           <button onClick={undo.undo} disabled={!undo.canUndo} className="px-4 py-2 text-sm font-medium border border-blue-300 text-blue-600 rounded-md hover:bg-blue-50 disabled:opacity-40 disabled:cursor-not-allowed">
             ↩ Undo

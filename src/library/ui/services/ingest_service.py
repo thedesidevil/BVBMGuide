@@ -1,49 +1,41 @@
 """Ingest service: session management, classify, extract, and persist for the ingest wizard."""
 
 import json
-import shutil
-import tempfile
 import uuid
-import zipfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Optional
+from typing import TYPE_CHECKING, Optional
+
+if TYPE_CHECKING:
+    from ..storage import StorageBackend
 
 
 class IngestSession:
-    """Manages one ingest session's staging directory."""
+    """Manages one ingest session's staging data via StorageBackend."""
 
-    def __init__(self, session_id: str, staging_root: Path):
+    def __init__(self, session_id: str, backend: 'StorageBackend'):
         self.session_id = session_id
-        self.root = staging_root / session_id
-        self.uploads_dir = self.root / "uploads"
-        self.extracted_dir = self.root / "extracted"
-        self.meta_path = self.root / "meta.json"
+        self.backend = backend
+        self._prefix = f"_staging/{session_id}"
 
-    def ensure_dirs(self):
-        """Create uploads/ and extracted/ subdirs."""
-        self.uploads_dir.mkdir(parents=True, exist_ok=True)
-        self.extracted_dir.mkdir(parents=True, exist_ok=True)
+    def _key(self, subpath: str) -> str:
+        return f"{self._prefix}/{subpath}"
 
     def load_meta(self) -> dict:
-        """Read meta.json; return default skeleton if missing."""
-        if self.meta_path.exists():
-            with open(self.meta_path, "r", encoding="utf-8") as f:
-                return json.load(f)
+        data = self.backend.read_json(self._key("meta.json"))
+        if data:
+            return data
         return {
             "session_id": self.session_id,
-            "created_at": datetime.now(timezone.utc).isoformat(),
+            "created_at": "",
             "files": {},
         }
 
     def save_meta(self, meta: dict):
-        """Write meta dict to meta.json."""
-        with open(self.meta_path, "w", encoding="utf-8") as f:
-            json.dump(meta, f, indent=2, ensure_ascii=False)
+        self.backend.write_json(self._key("meta.json"), meta)
 
     def add_file(self, file_id: str, filename: str, size: int, file_type: str) -> dict:
-        """Add a file entry with state='uploaded' and persist."""
         meta = self.load_meta()
         entry = {
             "file_id": file_id,
@@ -57,59 +49,46 @@ class IngestSession:
         return entry
 
     def remove_file(self, file_id: str):
-        """Remove file entry from meta and delete physical files."""
         meta = self.load_meta()
         entry = meta["files"].pop(file_id, None)
         self.save_meta(meta)
-
         if entry:
-            # Remove uploaded file
-            upload_path = self.get_upload_path(file_id)
-            if upload_path.exists():
-                upload_path.unlink()
-
-        # Remove extracted file if present
-        extracted_path = self.get_extracted_path(file_id)
-        if extracted_path.exists():
-            extracted_path.unlink()
+            self.backend.delete(self._key(f"uploads/{file_id}{self._ext(entry)}"))
+        self.backend.delete(self._key(f"extracted/{file_id}.json"))
 
     def get_files(self) -> dict:
-        """Return the files dict from meta."""
         return self.load_meta().get("files", {})
 
     def get_file(self, file_id: str) -> Optional[dict]:
-        """Return a single file entry, or None if not found."""
         return self.get_files().get(file_id)
 
     def update_file(self, file_id: str, updates: dict):
-        """Merge updates dict into the file entry and persist."""
         meta = self.load_meta()
         if file_id in meta["files"]:
             meta["files"][file_id].update(updates)
             self.save_meta(meta)
 
-    def get_upload_path(self, file_id: str) -> Path:
-        """Return Path to uploads/{file_id}.{ext}."""
+    def get_upload_key(self, file_id: str) -> str:
+        """Return the storage key for an uploaded file."""
         entry = self.get_file(file_id)
-        if entry:
-            return self.uploads_dir / f"{file_id}{self._ext(entry)}"
-        # Fallback: check for any matching file
-        for candidate in self.uploads_dir.glob(f"{file_id}.*"):
-            return candidate
-        return self.uploads_dir / file_id
+        ext = self._ext(entry) if entry else ""
+        return self._key(f"uploads/{file_id}{ext}")
 
-    def get_extracted_path(self, file_id: str) -> Path:
-        """Return Path to extracted/{file_id}.json."""
-        return self.extracted_dir / f"{file_id}.json"
+    def get_extracted_key(self, file_id: str) -> str:
+        """Return the storage key for extracted JSON."""
+        return self._key(f"extracted/{file_id}.json")
 
     def cleanup(self):
-        """Remove the entire session staging directory."""
-        if self.root.exists():
-            shutil.rmtree(self.root)
+        """Remove all staging data for this session."""
+        if hasattr(self.backend, "delete_prefix"):
+            self.backend.delete_prefix(self._prefix + "/")
+        else:
+            keys = self.backend.list_keys(self._prefix + "/")
+            for key in keys:
+                self.backend.delete(key)
 
     def _ext(self, entry: dict) -> str:
-        """Return '.{type}' extension from entry dict (e.g. '.pdf', '.docx')."""
-        file_type = entry.get("type", "")
+        file_type = entry.get("type", "") if entry else ""
         if not file_type:
             return ""
         if not file_type.startswith("."):
@@ -120,28 +99,17 @@ class IngestSession:
 class IngestService:
     """Orchestrates upload, classify, extract, and persist for the ingest wizard."""
 
-    # Fields that are city-level (item has a "city" key)
     _CITY_FIELDS = {"restaurants", "attractions", "hotels", "local_dishes", "souvenirs"}
-
-    # Fields that are multi-city (item has a "cities" list)
     _MULTI_CITY_FIELDS = {"safety_tips", "connectivity_tips", "health_tips", "phrases",
                           "emergency_contacts", "transport_options"}
 
-    def __init__(self, db_path: str | Path, library_path: str | Path):
-        self.db_path = Path(db_path)
-        self.library_path = Path(library_path)
-        self._staging_root = self.db_path / "_staging"
-        self._staging_root.mkdir(parents=True, exist_ok=True)
-
-    # ------------------------------------------------------------------
-    # Session management
-    # ------------------------------------------------------------------
+    def __init__(self, backend: 'StorageBackend', library_path: Optional[Path] = None):
+        self.backend = backend
+        self.library_path = library_path
 
     def create_session(self) -> IngestSession:
-        """Create a new UUID session with staging directories."""
         session_id = str(uuid.uuid4())
-        session = IngestSession(session_id, self._staging_root)
-        session.ensure_dirs()
+        session = IngestSession(session_id, self.backend)
         meta = {
             "session_id": session_id,
             "created_at": datetime.now(timezone.utc).isoformat(),
@@ -151,21 +119,12 @@ class IngestService:
         return session
 
     def get_session(self, session_id: str) -> Optional[IngestSession]:
-        """Load an existing session, or return None if it doesn't exist."""
-        session = IngestSession(session_id, self._staging_root)
-        if not session.meta_path.exists():
+        session = IngestSession(session_id, self.backend)
+        if not self.backend.exists(session._key("meta.json")):
             return None
         return session
 
-    # ------------------------------------------------------------------
-    # Upload
-    # ------------------------------------------------------------------
-
     def save_upload(self, session: IngestSession, filename: str, content: bytes) -> list[dict]:
-        """Save file bytes to staging. Handles ZIP extraction.
-
-        Returns a list of file entry dicts (one per file saved, multiple for ZIPs).
-        """
         suffix = Path(filename).suffix.lower()
 
         if suffix == ".zip":
@@ -177,17 +136,14 @@ class IngestService:
         file_id = str(uuid.uuid4())
         file_type = suffix.lstrip(".")
         entry = session.add_file(file_id, filename, len(content), file_type)
-
-        dest = session.get_upload_path(file_id)
-        with open(dest, "wb") as f:
-            f.write(content)
-
+        self.backend.write_bytes(session.get_upload_key(file_id), content)
         return [entry]
 
     def _handle_zip(self, session: IngestSession, zip_filename: str, content: bytes) -> list[dict]:
-        """Extract pdf/docx from a ZIP archive; skip __MACOSX entries."""
-        entries = []
+        import tempfile
+        import zipfile
 
+        entries = []
         with tempfile.NamedTemporaryFile(suffix=".zip", delete=False) as tmp:
             tmp.write(content)
             tmp_path = Path(tmp.name)
@@ -196,7 +152,6 @@ class IngestService:
             with zipfile.ZipFile(tmp_path, "r") as zf:
                 for member in zf.infolist():
                     name = member.filename
-                    # Skip Mac metadata directories
                     if "__MACOSX" in name or name.startswith("."):
                         continue
                     suffix = Path(name).suffix.lower()
@@ -209,34 +164,21 @@ class IngestService:
                     file_bytes = zf.read(member)
 
                     entry = session.add_file(file_id, inner_filename, len(file_bytes), file_type)
-
-                    dest = session.get_upload_path(file_id)
-                    with open(dest, "wb") as f:
-                        f.write(file_bytes)
-
+                    self.backend.write_bytes(session.get_upload_key(file_id), file_bytes)
                     entries.append(entry)
         finally:
             tmp_path.unlink(missing_ok=True)
 
         return entries
 
-    # ------------------------------------------------------------------
-    # Classify
-    # ------------------------------------------------------------------
-
     def classify_all(self, session: IngestSession) -> dict:
-        """Classify each non-excluded file using LibraryIngester.
-
-        Returns a mapping of file_id -> folder name.
-        """
         from src.library.ingester import LibraryIngester
 
         existing_folders = sorted(
             f.name for f in self.library_path.iterdir() if f.is_dir()
-        ) if self.library_path.exists() else []
+        ) if self.library_path and self.library_path.exists() else []
 
         ingester = LibraryIngester(library_path=self.library_path)
-
         results: dict[str, str] = {}
         files = session.get_files()
 
@@ -244,16 +186,24 @@ class IngestService:
             if entry.get("excluded"):
                 continue
 
-            upload_path = session.get_upload_path(file_id)
-            if not upload_path.exists():
+            file_bytes = self.backend.read_bytes(session.get_upload_key(file_id))
+            if not file_bytes:
                 continue
 
+            import tempfile
+            ext = entry.get("type", "pdf")
+            with tempfile.NamedTemporaryFile(suffix=f".{ext}", delete=False) as tmp:
+                tmp.write(file_bytes)
+                tmp_path = Path(tmp.name)
+
             try:
-                folder = ingester._classify_file(upload_path, existing_folders)
+                folder = ingester._classify_file(tmp_path, existing_folders)
                 if folder and folder not in existing_folders:
                     existing_folders.append(folder)
             except Exception:
                 folder = None
+            finally:
+                tmp_path.unlink(missing_ok=True)
 
             session.update_file(file_id, {
                 "state": "classified",
@@ -264,36 +214,36 @@ class IngestService:
 
         return results
 
-    # ------------------------------------------------------------------
-    # Extract
-    # ------------------------------------------------------------------
-
     def extract_all(self, session: IngestSession, workers: int = 5) -> dict:
-        """Run AI extraction on each classified file using LibraryBuilder.
-
-        Saves results to extracted/{file_id}.json.
-        Returns a mapping of file_id -> "extracted" | "failed".
-        """
         from src.library.builder import LibraryBuilder
 
         builder = LibraryBuilder(library_path=self.library_path)
-
         files = session.get_files()
         candidates = {
-            fid: entry
-            for fid, entry in files.items()
-            if not entry.get("excluded") and session.get_upload_path(fid).exists()
+            fid: entry for fid, entry in files.items()
+            if not entry.get("excluded")
         }
 
         results: dict[str, str] = {}
 
         def _extract_one(file_id: str, entry: dict) -> tuple[str, str, Optional[dict]]:
-            upload_path = session.get_upload_path(file_id)
+            file_bytes = self.backend.read_bytes(session.get_upload_key(file_id))
+            if not file_bytes:
+                return file_id, "failed", {"error": "File not found in storage"}
+
+            import tempfile
+            ext = entry.get("type", "pdf")
+            with tempfile.NamedTemporaryFile(suffix=f".{ext}", delete=False) as tmp:
+                tmp.write(file_bytes)
+                tmp_path = Path(tmp.name)
+
             try:
-                data = builder._process_file(upload_path)
+                data = builder._process_file(tmp_path)
                 return file_id, "extracted", data
             except Exception as e:
                 return file_id, "failed", {"error": str(e)}
+            finally:
+                tmp_path.unlink(missing_ok=True)
 
         with ThreadPoolExecutor(max_workers=workers) as executor:
             future_map = {
@@ -303,17 +253,13 @@ class IngestService:
 
             for future in as_completed(future_map):
                 file_id, status, data = future.result()
-                extracted_path = session.get_extracted_path(file_id)
 
                 if status == "extracted" and data:
-                    with open(extracted_path, "w", encoding="utf-8") as f:
-                        json.dump(data, f, indent=2, ensure_ascii=False)
+                    self.backend.write_json(session.get_extracted_key(file_id), data)
                     session.update_file(file_id, {"state": "extracted"})
                 else:
-                    # Write error info to extracted path for inspection
                     if data:
-                        with open(extracted_path, "w", encoding="utf-8") as f:
-                            json.dump(data, f, indent=2, ensure_ascii=False)
+                        self.backend.write_json(session.get_extracted_key(file_id), data)
                     session.update_file(file_id, {"state": "failed"})
 
                 results[file_id] = status
@@ -321,7 +267,6 @@ class IngestService:
         return results
 
     def get_extraction_status(self, session: IngestSession) -> dict:
-        """Return per-file status with extracted data if available."""
         files = session.get_files()
         status: dict[str, dict] = {}
 
@@ -332,34 +277,19 @@ class IngestService:
                 "state": entry.get("state"),
                 "assigned_folder": entry.get("assigned_folder"),
             }
-
-            extracted_path = session.get_extracted_path(file_id)
-            if extracted_path.exists():
-                try:
-                    with open(extracted_path, "r", encoding="utf-8") as f:
-                        record["data"] = json.load(f)
-                except Exception:
-                    record["data"] = None
-
+            data = self.backend.read_json(session.get_extracted_key(file_id))
+            record["data"] = data
             status[file_id] = record
 
         return status
 
     def save_extracted_edits(self, session: IngestSession, file_id: str, data: dict):
-        """Overwrite extracted JSON for a file with user-edited data."""
-        extracted_path = session.get_extracted_path(file_id)
-        with open(extracted_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-
-    # ------------------------------------------------------------------
-    # Persist
-    # ------------------------------------------------------------------
+        self.backend.write_json(session.get_extracted_key(file_id), data)
 
     def persist(self, session: IngestSession) -> dict:
-        """Merge extracted data into city shards, move files to aig-library, clean up."""
         from src.library.ui.services.db_service import LibraryDBService
 
-        db_service = LibraryDBService(self.db_path)
+        db_service = LibraryDBService(self.backend)
         files = session.get_files()
         persisted_count = 0
         affected_cities: set[str] = set()
@@ -367,22 +297,14 @@ class IngestService:
         for file_id, entry in files.items():
             if entry.get("excluded"):
                 continue
-
             folder = entry.get("assigned_folder")
             if not folder:
                 continue
 
-            extracted_path = session.get_extracted_path(file_id)
-            if not extracted_path.exists():
+            data = self.backend.read_json(session.get_extracted_key(file_id))
+            if not data:
                 continue
 
-            try:
-                with open(extracted_path, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-            except Exception:
-                continue
-
-            # Merge city-level fields
             for field in self._CITY_FIELDS:
                 for item in data.get(field) or []:
                     if not isinstance(item, dict):
@@ -402,7 +324,6 @@ class IngestService:
                     db_service.set_review_status(city, "pending")
                     affected_cities.add(city)
 
-            # Merge multi-city fields
             for field in self._MULTI_CITY_FIELDS:
                 for item in data.get(field) or []:
                     if not isinstance(item, dict):
@@ -423,16 +344,16 @@ class IngestService:
                         db_service.set_review_status(city, "pending")
                         affected_cities.add(city)
 
-            # Move source file to aig-library/{folder}/
-            upload_path = session.get_upload_path(file_id)
-            if upload_path.exists():
-                dest_dir = self.library_path / folder
-                dest_dir.mkdir(parents=True, exist_ok=True)
-                dest_file = dest_dir / entry.get("filename", upload_path.name)
-                if not dest_file.exists():
-                    shutil.move(str(upload_path), dest_file)
+            # Move source file to aig-library (only on local filesystem)
+            if self.library_path:
+                file_bytes = self.backend.read_bytes(session.get_upload_key(file_id))
+                if file_bytes:
+                    dest_dir = self.library_path / folder
+                    dest_dir.mkdir(parents=True, exist_ok=True)
+                    dest_file = dest_dir / entry.get("filename", f"{file_id}.pdf")
+                    if not dest_file.exists():
+                        dest_file.write_bytes(file_bytes)
 
-            # Register in _index.json
             rel_key = f"{folder}/{entry.get('filename', '')}"
             covered = data.get("covered_cities", [])
             db_service._index.setdefault("_processed_files", {})[rel_key] = {
@@ -441,7 +362,6 @@ class IngestService:
                 "covered_cities": covered,
                 "processed_at": datetime.now(timezone.utc).isoformat(),
             }
-            # Update folder coverage
             folder_coverage = db_service._index.setdefault("_folder_coverage", {})
             existing_cities = folder_coverage.get(folder, [])
             for city in covered:
@@ -451,7 +371,6 @@ class IngestService:
 
             persisted_count += 1
 
-        # Save updated index and clean up staging
         db_service._save_index()
         session.cleanup()
 
@@ -460,12 +379,7 @@ class IngestService:
             "affected_cities": sorted(affected_cities),
         }
 
-    # ------------------------------------------------------------------
-    # Internal helpers
-    # ------------------------------------------------------------------
-
     def _empty_city_shard(self) -> dict:
-        """Return a template city shard with all empty lists."""
         return {
             "restaurants": [],
             "attractions": [],
@@ -482,7 +396,6 @@ class IngestService:
         }
 
     def _is_duplicate(self, existing_items: list, new_item: dict, field: str = "name") -> bool:
-        """Check if new_item already exists in the list by matching the given field key."""
         new_val = (new_item.get(field) or "").strip().lower()
         if not new_val:
             return False

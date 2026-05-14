@@ -1,11 +1,15 @@
 """FastAPI application factory for the Library QC UI."""
 
+import os
 from pathlib import Path
 from typing import Optional
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
+from starlette.middleware.sessions import SessionMiddleware
 
+from . import google_auth as ga
 from .api import tree, city, country, review, sweep, audit, ingest
 from .storage import LocalStorageBackend, StorageBackend
 
@@ -36,6 +40,16 @@ def create_app(
         allow_headers=["*"],
     )
 
+    if ga.auth_enabled():
+        app.add_middleware(ga.RequireGoogleAuthMiddleware)
+        app.add_middleware(
+            SessionMiddleware,
+            secret_key=ga.session_secret(),
+            session_cookie="session",
+            same_site="lax",
+            https_only=os.getenv("SESSION_HTTPS_ONLY", "").lower() in ("1", "true", "yes"),
+        )
+
     if storage_backend is None:
         if db_path is None:
             db_path = Path("library_db")
@@ -43,6 +57,68 @@ def create_app(
 
     app.state.storage_backend = storage_backend
     app.state.library_path = library_path
+
+    @app.get("/login")
+    async def login(request: Request):
+        if not ga.auth_enabled():
+            return RedirectResponse(url="/", status_code=303)
+        redirect_uri = str(request.url_for("auth_callback"))
+        next_path = request.query_params.get("next") or "/"
+        if not next_path.startswith("/"):
+            next_path = "/"
+        request.session["oauth_next"] = next_path
+        return await ga.oauth.google.authorize_redirect(request, redirect_uri)
+
+    @app.get("/auth/callback", name="auth_callback")
+    async def auth_callback(request: Request):
+        if not ga.auth_enabled():
+            return RedirectResponse(url="/", status_code=303)
+        try:
+            token = await ga.oauth.google.authorize_access_token(request)
+        except Exception as e:
+            return JSONResponse(
+                {"error": "oauth_failed", "detail": str(e)},
+                status_code=400,
+            )
+        userinfo: dict = {}
+        if isinstance(token, dict):
+            userinfo = token.get("userinfo") or {}
+            if not userinfo.get("email") and token.get("access_token"):
+                import httpx
+
+                async with httpx.AsyncClient() as client:
+                    r = await client.get(
+                        "https://openidconnect.googleapis.com/v1/userinfo",
+                        headers={"Authorization": f"Bearer {token['access_token']}"},
+                    )
+                    if r.status_code == 200:
+                        userinfo = r.json()
+        email = (userinfo or {}).get("email", "") or ""
+        name = (userinfo or {}).get("name", "") or ""
+        if not ga.allowed_user(email):
+            request.session.clear()
+            return HTMLResponse(
+                "<h1>Access denied</h1><p>This Google account is not authorized to use this app.</p>"
+                '<p><a href="/logout">Sign out</a></p>',
+                status_code=403,
+            )
+        request.session["user"] = {"email": email, "name": name}
+        next_path = request.session.pop("oauth_next", "/")
+        if not isinstance(next_path, str) or not next_path.startswith("/"):
+            next_path = "/"
+        return RedirectResponse(url=next_path, status_code=303)
+
+    @app.get("/logout")
+    async def logout(request: Request):
+        request.session.clear()
+        return RedirectResponse(url="/login", status_code=303)
+
+    @app.get("/api/me")
+    async def me(request: Request):
+        user = ga.user_session(request)
+        if user:
+            return user
+        return JSONResponse({"user": None}, status_code=401)
 
     app.include_router(tree.router, prefix="/api")
     app.include_router(city.router, prefix="/api")

@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 interface LayoutProps {
   mode: "city" | "sweep" | "ingest" | "history";
@@ -10,6 +10,15 @@ interface LayoutProps {
 }
 
 export function Layout({ mode, onModeChange, reviewedCount, totalCount, sidebar, children }: LayoutProps) {
+  const [userEmail, setUserEmail] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch("/api/me", { credentials: "same-origin" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => { if (data?.email) setUserEmail(data.email); })
+      .catch(() => {});
+  }, []);
+
   return (
     <div className="h-screen flex flex-col overflow-hidden">
       <header className="bg-white border-b border-slate-200 px-6 py-3 flex items-center gap-6 shadow-sm">
@@ -40,8 +49,14 @@ export function Layout({ mode, onModeChange, reviewedCount, totalCount, sidebar,
             History
           </button>
         </div>
-        <div className="ml-auto text-sm text-slate-500">
-          {reviewedCount} / {totalCount} cities reviewed
+        <div className="ml-auto flex items-center gap-4 text-sm text-slate-500">
+          <span>{reviewedCount} / {totalCount} cities reviewed</span>
+          {userEmail && (
+            <>
+              <span className="text-slate-400">{userEmail}</span>
+              <a href="/logout" className="text-blue-500 hover:text-blue-700 font-medium">Sign out</a>
+            </>
+          )}
         </div>
       </header>
 

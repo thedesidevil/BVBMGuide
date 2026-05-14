@@ -1,5 +1,6 @@
 """Ingest wizard API endpoints."""
 
+import uuid
 from pathlib import Path
 from typing import Optional
 
@@ -22,6 +23,10 @@ def _get_service(request: Request) -> IngestService:
 class FileUpdateRequest(BaseModel):
     assigned_folder: Optional[str] = None
     excluded: Optional[bool] = None
+
+
+class PresignedUploadRequest(BaseModel):
+    files: list[dict]  # [{"filename": "foo.pdf", "size": 12345, "content_type": "application/pdf"}]
 
 
 # ---------------------------------------------------------------------------
@@ -75,6 +80,62 @@ async def upload_to_session(
         all_entries.extend(entries)
 
     return {"session_id": session_id, "files": all_entries}
+
+
+@router.post("/upload/presigned")
+def get_presigned_upload_urls(request: Request, body: PresignedUploadRequest):
+    """Generate presigned PUT URLs for direct-to-S3 upload.
+
+    Falls back to None URLs if backend doesn't support presigned (local dev).
+    """
+    backend = request.app.state.storage_backend
+    service = _get_service(request)
+    session = service.create_session()
+
+    files_info = []
+    for file_spec in body.files:
+        filename = file_spec["filename"]
+        content_type = file_spec.get("content_type", "application/octet-stream")
+        suffix = Path(filename).suffix.lower()
+        file_type = suffix.lstrip(".")
+        file_id = str(uuid.uuid4())
+
+        size = file_spec.get("size", 0)
+        session.add_file(file_id, filename, size, file_type)
+
+        upload_key = session.get_upload_key(file_id)
+        presigned_url = backend.generate_presigned_put(upload_key, content_type=content_type)
+
+        files_info.append({
+            "file_id": file_id,
+            "filename": filename,
+            "presigned_url": presigned_url,
+            "upload_key": upload_key,
+        })
+
+    return {
+        "session_id": session.session_id,
+        "files": files_info,
+        "use_presigned": files_info[0]["presigned_url"] is not None if files_info else False,
+    }
+
+
+@router.post("/{session_id}/upload/confirm")
+def confirm_presigned_upload(session_id: str, request: Request):
+    """Confirm that presigned uploads completed. Updates file states."""
+    service = _get_service(request)
+    session = service.get_session(session_id)
+    if session is None:
+        raise HTTPException(status_code=404, detail="Session not found")
+
+    backend = request.app.state.storage_backend
+    files = session.get_files()
+    for file_id, entry in files.items():
+        key = session.get_upload_key(file_id)
+        if backend.exists(key):
+            session.update_file(file_id, {"state": "uploaded"})
+
+    return {"session_id": session_id, "files": list(session.get_files().values())}
 
 
 # ---------------------------------------------------------------------------

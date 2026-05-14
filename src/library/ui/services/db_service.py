@@ -1,24 +1,21 @@
-import json
-from pathlib import Path
+from datetime import datetime, timezone
 from typing import Optional
+
+from ..storage import StorageBackend
 
 
 class LibraryDBService:
-    def __init__(self, db_path: str | Path):
-        self.db_path = Path(db_path)
+    def __init__(self, backend: StorageBackend):
+        self.backend = backend
         self._index: dict = {}
         self._load_index()
 
     def _load_index(self):
-        index_path = self.db_path / "_index.json"
-        if index_path.exists():
-            with open(index_path, "r", encoding="utf-8") as f:
-                self._index = json.load(f)
+        data = self.backend.read_json("_index.json")
+        self._index = data if data else {}
 
     def _save_index(self):
-        index_path = self.db_path / "_index.json"
-        with open(index_path, "w", encoding="utf-8") as f:
-            json.dump(self._index, f, indent=2, ensure_ascii=False)
+        self.backend.write_json("_index.json", self._index)
 
     def get_folder_coverage(self) -> dict[str, list[str]]:
         return self._index.get("_folder_coverage", {})
@@ -29,7 +26,6 @@ class LibraryDBService:
     def set_review_status(self, name: str, status: str, reviewed_by: str = "unknown"):
         if "_review_status" not in self._index:
             self._index["_review_status"] = {}
-        from datetime import datetime, timezone
         now = datetime.now(timezone.utc).isoformat()
         if status == "reviewed":
             self._index["_review_status"][name] = {
@@ -47,36 +43,26 @@ class LibraryDBService:
         self._save_index()
 
     def get_city_data(self, city: str) -> Optional[dict]:
-        city_path = self.db_path / f"{city}.json"
-        if not city_path.exists():
-            return None
-        with open(city_path, "r", encoding="utf-8") as f:
-            return json.load(f)
+        return self.backend.read_json(f"{city}.json")
 
     def save_city_data(self, city: str, data: dict):
-        city_path = self.db_path / f"{city}.json"
-        with open(city_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
+        self.backend.write_json(f"{city}.json", data)
 
     def get_country_data(self, country: str) -> Optional[dict]:
-        country_path = self.db_path / "_country" / f"{country}.json"
-        if not country_path.exists():
-            return None
-        with open(country_path, "r", encoding="utf-8") as f:
-            return json.load(f)
+        return self.backend.read_json(f"_country/{country}.json")
 
     def save_country_data(self, country: str, data: dict):
-        country_dir = self.db_path / "_country"
-        country_dir.mkdir(exist_ok=True)
-        country_path = country_dir / f"{country}.json"
-        with open(country_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
+        self.backend.write_json(f"_country/{country}.json", data)
 
     def get_all_city_names(self) -> list[str]:
-        return [
-            f.stem for f in sorted(self.db_path.glob("*.json"))
-            if f.name not in ("_index.json", "_audit.json")
-        ]
+        all_keys = self.backend.list_keys("")
+        names = []
+        for key in sorted(all_keys):
+            if "/" in key:
+                continue
+            if key.endswith(".json") and key not in ("_index.json", "_audit.json"):
+                names.append(key[:-5])
+        return names
 
     def get_tree(self) -> dict:
         coverage = self.get_folder_coverage()

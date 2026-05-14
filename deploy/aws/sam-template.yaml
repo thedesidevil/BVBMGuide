@@ -1,0 +1,44 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Library QC UI (FastAPI + Mangum)
+
+Globals:
+  Function:
+    Timeout: 900
+    MemorySize: 1024
+
+Resources:
+  LibraryQCFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src.library.ui.lambda_handler.handler
+      Runtime: python3.14
+      Architectures:
+        - arm64
+      EphemeralStorage:
+        Size: 512
+      Environment:
+        Variables:
+          LIBRARY_S3_BUCKET: bvbm-library
+          LIBRARY_S3_PREFIX: library_db
+      FunctionUrlConfig:
+        AuthType: NONE
+        Cors:
+          AllowOrigins:
+            - '*'
+          AllowMethods:
+            - '*'
+          AllowHeaders:
+            - '*'
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - S3CrudPolicy:
+            BucketName: bvbm-library
+
+Outputs:
+  FunctionName:
+    Description: Lambda function name
+    Value: !Ref LibraryQCFunction
+  FunctionUrl:
+    Description: Public HTTPS URL
+    Value: !GetAtt LibraryQCFunctionUrl.FunctionUrl

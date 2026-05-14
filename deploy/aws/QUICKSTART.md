@@ -38,17 +38,17 @@ cd ui-frontend && npm run build && cd ..
 
 ```bash
 aws lambda create-function \
-  --function-name library-qc \
-  --runtime python3.14 \
-  --architectures arm64 \
-  --handler src.library.ui.lambda_handler.handler \
-  --role arn:aws:iam::ACCOUNT_ID:role/lambda-library-qc \
-  --zip-file fileb://build/function.zip \
-  --timeout 900 \
-  --memory-size 1024 \
-  --environment "Variables={LIBRARY_S3_BUCKET=bvbm-aig-library,LIBRARY_S3_PREFIX=library_db,AI_API_KEY=...,AI_BASE_URL=...,AI_MODEL=claude-sonnet-4-20250514}" \
-  --region ap-south-1 \
-  --profile bvbm
+    --function-name library-builder \
+    --runtime python3.14 \
+    --architectures arm64 \
+    --handler src.library.ui.lambda_handler.handler \
+    --role arn:aws:iam::822127610689:role/lambda-library-builder \
+    --code S3Bucket=bvbm-code,S3Key=aig-library-builder/function-4695d6f-20260514T115802Z.zip \
+    --timeout 900 \
+    --memory-size 512 \
+    --environment "Variables={LIBRARY_S3_BUCKET=bvbm-aig-library,LIBRARY_S3_PREFIX=library_db,AI_API_KEY=123,AI_BASE_URL=123,AI_MODEL=gpt-4o-mini}" \
+    --region ap-south-1 \
+    --profile bvbm
 ```
 
 ### 6. Create Function URL

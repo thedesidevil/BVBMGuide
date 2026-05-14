@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# Wrapper that syncs library_db from S3 (source of truth) then runs a local command.
+#
+# Usage:
+#   ./lib aig generate input/itinerary.pdf
+#   ./lib library stats
+#   ./lib library find "Amsterdam, Rome"
+#
+# Equivalent to:
+#   aws s3 sync s3://bvbm-aig-library/library_db/ library_db/
+#   python -m src.<args>
+
+set -euo pipefail
+
+AWS_PROFILE="${AWS_PROFILE:-bvbm}"
+AWS_REGION="${AWS_REGION:-ap-south-1}"
+S3_BUCKET="${LIBRARY_S3_BUCKET:-bvbm-aig-library}"
+S3_PREFIX="${LIBRARY_S3_PREFIX:-library_db}"
+LOCAL_DB="${LOCAL_LIBRARY_DB:-library_db}"
+
+if [[ $# -lt 1 ]]; then
+  echo "Usage: ./lib <module> [args...]"
+  echo "  e.g. ./lib aig generate input/itinerary.pdf"
+  echo "       ./lib library stats"
+  exit 1
+fi
+
+echo "==> Syncing ${LOCAL_DB}/ from s3://${S3_BUCKET}/${S3_PREFIX}/..."
+aws s3 sync "s3://${S3_BUCKET}/${S3_PREFIX}/" "${LOCAL_DB}/" \
+  --profile "$AWS_PROFILE" --region "$AWS_REGION" --quiet
+echo "==> Sync complete. Running: python -m src.$*"
+
+exec python -m "src.$@"

@@ -1,27 +1,23 @@
-import json
 from datetime import datetime, timezone
-from pathlib import Path
 from typing import Optional
+
+from ..storage import StorageBackend
 
 
 class AuditService:
-    """Manages the deletion audit trail at library_db/_audit.json."""
+    """Manages the deletion audit trail at _audit.json."""
 
-    def __init__(self, db_path: str | Path):
-        self.audit_path = Path(db_path) / "_audit.json"
+    def __init__(self, backend: StorageBackend):
+        self.backend = backend
         self._entries: list[dict] = []
         self._load()
 
     def _load(self):
-        if self.audit_path.exists():
-            with open(self.audit_path, "r", encoding="utf-8") as f:
-                self._entries = json.load(f)
-        else:
-            self._entries = []
+        data = self.backend.read_json("_audit.json")
+        self._entries = data if isinstance(data, list) else []
 
     def _save(self):
-        with open(self.audit_path, "w", encoding="utf-8") as f:
-            json.dump(self._entries, f, indent=2, ensure_ascii=False)
+        self.backend.write_json("_audit.json", self._entries)
 
     def log_deletion(
         self,
@@ -46,7 +42,7 @@ class AuditService:
         self._save()
 
     def get_entries(self, limit: Optional[int] = None) -> list[dict]:
-        entries = list(reversed(self._entries))  # newest first
+        entries = list(reversed(self._entries))
         if limit:
             return entries[:limit]
         return entries

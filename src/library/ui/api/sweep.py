@@ -14,7 +14,7 @@ def get_sweep(
     field: Optional[str] = Query(None, description="e.g. vegetarian_friendly, hours"),
     filter: Optional[str] = Query(None, description="all, missing, unchecked, checked"),
 ):
-    db = LibraryDBService(request.app.state.db_path)
+    db = LibraryDBService(request.app.state.storage_backend)
     results = []
 
     all_cities = db.get_all_city_names()
@@ -54,7 +54,7 @@ class SweepSaveRequest(BaseModel):
 
 @router.put("/sweep")
 def save_sweep(request: Request, body: SweepSaveRequest):
-    db = LibraryDBService(request.app.state.db_path)
+    db = LibraryDBService(request.app.state.storage_backend)
     affected_cities: set[str] = set()
 
     for edit in body.edits:

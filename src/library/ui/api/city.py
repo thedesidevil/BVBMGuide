@@ -14,7 +14,7 @@ class DeleteItemRequest(BaseModel):
 
 @router.get("/city/{name}")
 def get_city(name: str, request: Request):
-    db = LibraryDBService(request.app.state.db_path)
+    db = LibraryDBService(request.app.state.storage_backend)
     data = db.get_city_data(name)
     if data is None:
         raise HTTPException(status_code=404, detail=f"City '{name}' not found")
@@ -23,7 +23,7 @@ def get_city(name: str, request: Request):
 
 @router.put("/city/{name}")
 def save_city(name: str, request: Request, body: dict):
-    db = LibraryDBService(request.app.state.db_path)
+    db = LibraryDBService(request.app.state.storage_backend)
     existing = db.get_city_data(name)
     if existing is None:
         raise HTTPException(status_code=404, detail=f"City '{name}' not found")
@@ -34,7 +34,7 @@ def save_city(name: str, request: Request, body: dict):
 
 @router.delete("/city/{name}/{category}/{index}")
 def delete_item(name: str, category: str, index: int, request: Request, body: DeleteItemRequest):
-    db = LibraryDBService(request.app.state.db_path)
+    db = LibraryDBService(request.app.state.storage_backend)
     data = db.get_city_data(name)
     if data is None:
         raise HTTPException(status_code=404, detail=f"City '{name}' not found")
@@ -45,7 +45,7 @@ def delete_item(name: str, category: str, index: int, request: Request, body: De
     deleted_item = items.pop(index)
     db.save_city_data(name, data)
 
-    audit = AuditService(request.app.state.db_path)
+    audit = AuditService(request.app.state.storage_backend)
     audit.log_deletion(
         category=category,
         city=name,

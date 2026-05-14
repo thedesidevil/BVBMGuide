@@ -14,11 +14,8 @@ MAX_FILE_SIZE = 50 * 1024 * 1024  # 50MB
 
 
 def _get_service(request: Request) -> IngestService:
-    from ..storage import LocalStorageBackend
-
-    db_path = Path(request.app.state.db_path)
+    backend = request.app.state.storage_backend
     library_path = Path(request.app.state.library_path)
-    backend = LocalStorageBackend(db_path)
     return IngestService(backend, library_path)
 
 
@@ -233,10 +230,7 @@ def list_folders(request: Request):
 @router.get("/history")
 def ingest_history(request: Request):
     """Return all previously ingested/processed files with metadata."""
-    from ..storage import LocalStorageBackend
-
-    db_path = Path(request.app.state.db_path)
-    backend = LocalStorageBackend(db_path)
+    backend = request.app.state.storage_backend
     index = backend.read_json("_index.json")
     if not index:
         return {"files": []}

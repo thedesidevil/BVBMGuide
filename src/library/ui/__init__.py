@@ -1,21 +1,26 @@
 """FastAPI application factory for the Library QC UI."""
 
 from pathlib import Path
+from typing import Optional
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .api import tree, city, country, review, sweep, audit, ingest
+from .storage import LocalStorageBackend, StorageBackend
 
 
-def create_app(db_path: Path, library_path: Path = Path("aig-library")) -> FastAPI:
+def create_app(
+    db_path: Optional[Path] = None,
+    library_path: Path = Path("aig-library"),
+    storage_backend: Optional[StorageBackend] = None,
+) -> FastAPI:
     """Create and configure the FastAPI application.
 
     Args:
-        db_path: Path to the library database directory.
-
-    Returns:
-        Configured FastAPI application instance.
+        db_path: Path to the library database directory (local dev).
+        library_path: Path to the AIG library directory.
+        storage_backend: Pre-configured storage backend (Lambda). Overrides db_path.
     """
     app = FastAPI(
         title="Library QC UI",
@@ -31,7 +36,12 @@ def create_app(db_path: Path, library_path: Path = Path("aig-library")) -> FastA
         allow_headers=["*"],
     )
 
-    app.state.db_path = db_path
+    if storage_backend is None:
+        if db_path is None:
+            db_path = Path("library_db")
+        storage_backend = LocalStorageBackend(db_path)
+
+    app.state.storage_backend = storage_backend
     app.state.library_path = library_path
 
     app.include_router(tree.router, prefix="/api")
@@ -42,7 +52,6 @@ def create_app(db_path: Path, library_path: Path = Path("aig-library")) -> FastA
     app.include_router(audit.router, prefix="/api")
     app.include_router(ingest.router, prefix="/api")
 
-    # Serve built frontend if it exists (must come last so API routes take priority)
     from fastapi.staticfiles import StaticFiles
 
     dist_path = Path(__file__).parent.parent.parent.parent / "ui-frontend" / "dist"

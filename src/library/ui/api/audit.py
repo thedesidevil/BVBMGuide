@@ -18,13 +18,13 @@ class AuditLogRequest(BaseModel):
 
 @router.get("/audit")
 def get_audit(request: Request, limit: Optional[int] = Query(None)):
-    audit = AuditService(request.app.state.db_path)
+    audit = AuditService(request.app.state.storage_backend)
     return audit.get_entries(limit=limit)
 
 
 @router.post("/audit")
 def log_audit(request: Request, body: AuditLogRequest):
-    audit = AuditService(request.app.state.db_path)
+    audit = AuditService(request.app.state.storage_backend)
     audit.log_deletion(
         category=body.category,
         city=body.city,

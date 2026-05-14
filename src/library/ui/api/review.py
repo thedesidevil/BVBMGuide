@@ -12,13 +12,13 @@ class ReviewRequest(BaseModel):
 
 @router.post("/city/{name}/review")
 def review_city(name: str, request: Request, body: ReviewRequest):
-    db = LibraryDBService(request.app.state.db_path)
+    db = LibraryDBService(request.app.state.storage_backend)
     db.set_review_status(name, "reviewed", reviewed_by=body.reviewed_by)
     return {"status": "reviewed"}
 
 
 @router.post("/country/{name}/review")
 def review_country(name: str, request: Request, body: ReviewRequest):
-    db = LibraryDBService(request.app.state.db_path)
+    db = LibraryDBService(request.app.state.storage_backend)
     db.set_review_status(name, "reviewed", reviewed_by=body.reviewed_by)
     return {"status": "reviewed"}

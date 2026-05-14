@@ -51,7 +51,52 @@ export const api = {
     }),
 
   // --- Ingest ---
+  ingestPresignedUpload: async (files: File[]): Promise<{ session_id: string; files: any[]; use_presigned: boolean }> => {
+    const fileSpecs = files.map(f => ({
+      filename: f.name,
+      size: f.size,
+      content_type: f.type || "application/octet-stream",
+    }));
+    return request(`/ingest/upload/presigned`, {
+      method: "POST",
+      body: JSON.stringify({ files: fileSpecs }),
+    });
+  },
+
+  ingestUploadToPresigned: async (presignedUrl: string, file: File): Promise<void> => {
+    const res = await fetch(presignedUrl, {
+      method: "PUT",
+      body: file,
+      headers: { "Content-Type": file.type || "application/octet-stream" },
+    });
+    if (!res.ok) throw new Error(`Presigned upload failed: ${res.status}`);
+  },
+
+  ingestConfirmUpload: (sessionId: string) =>
+    request<{ session_id: string; files: any[] }>(`/ingest/${sessionId}/upload/confirm`, { method: "POST" }),
+
   ingestUpload: async (files: File[]): Promise<{ session_id: string; files: any[] }> => {
+    // Try presigned upload first (works on Lambda with S3 backend)
+    try {
+      const presignedResp = await api.ingestPresignedUpload(files);
+      if (presignedResp.use_presigned) {
+        const filesByName = Object.fromEntries(files.map(f => [f.name, f]));
+        await Promise.all(
+          presignedResp.files.map(info => {
+            const file = filesByName[info.filename];
+            if (file && info.presigned_url) {
+              return api.ingestUploadToPresigned(info.presigned_url, file);
+            }
+            return Promise.resolve();
+          })
+        );
+        return api.ingestConfirmUpload(presignedResp.session_id);
+      }
+    } catch {
+      // Fall through to FormData upload
+    }
+
+    // Fallback: direct FormData upload (local dev)
     const formData = new FormData();
     for (const file of files) {
       formData.append("files", file);

@@ -4,20 +4,20 @@
 
 - AWS CLI configured with profile `bvbm` (region `ap-south-1`)
 - Python 3.14+, Node.js 18+ (for frontend build)
-- S3 bucket `bvbm-library` created in `ap-south-1`
+- S3 bucket `bvbm-aig-library` created in `ap-south-1`
 
 ## Initial Setup
 
 ### 1. Create S3 bucket
 
 ```bash
-aws s3 mb s3://bvbm-library --region ap-south-1 --profile bvbm
+aws s3 mb s3://bvbm-aig-library --region ap-south-1 --profile bvbm
 ```
 
 ### 2. Upload existing library_db
 
 ```bash
-aws s3 sync library_db/ s3://bvbm-library/library_db/ \
+aws s3 sync library_db/ s3://bvbm-aig-library/library_db/ \
   --exclude "_staging/*" \
   --profile bvbm --region ap-south-1
 ```
@@ -46,7 +46,7 @@ aws lambda create-function \
   --zip-file fileb://build/function.zip \
   --timeout 900 \
   --memory-size 1024 \
-  --environment "Variables={LIBRARY_S3_BUCKET=bvbm-library,LIBRARY_S3_PREFIX=library_db,AI_API_KEY=...,AI_BASE_URL=...,AI_MODEL=claude-sonnet-4-20250514}" \
+  --environment "Variables={LIBRARY_S3_BUCKET=bvbm-aig-library,LIBRARY_S3_PREFIX=library_db,AI_API_KEY=...,AI_BASE_URL=...,AI_MODEL=claude-sonnet-4-20250514}" \
   --region ap-south-1 \
   --profile bvbm
 ```
@@ -85,15 +85,15 @@ aws lambda add-permission \
 
 The Lambda execution role (`lambda-library-qc`) needs:
 - `AWSLambdaBasicExecutionRole` (CloudWatch logs)
-- S3 access to `bvbm-library` bucket:
+- S3 access to `bvbm-aig-library` bucket:
 
 ```json
 {
   "Effect": "Allow",
   "Action": ["s3:GetObject", "s3:PutObject", "s3:DeleteObject", "s3:ListBucket"],
   "Resource": [
-    "arn:aws:s3:::bvbm-library",
-    "arn:aws:s3:::bvbm-library/*"
+    "arn:aws:s3:::bvbm-aig-library",
+    "arn:aws:s3:::bvbm-aig-library/*"
   ]
 }
 ```

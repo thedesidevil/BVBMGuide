@@ -70,7 +70,7 @@ Single bucket, prefix-based separation:
 | `library_db/` | City JSON shards + `_index.json` |
 | `library_db/_staging/{session_id}/` | Ingest wizard uploads + meta |
 
-Bucket: `bvbm-library` (or reuse existing `bvbm-code` with a `library/` prefix)
+Bucket: `bvbm-aig-library` (or reuse existing `bvbm-code` with a `library/` prefix)
 
 ### 4. Frontend
 
@@ -191,7 +191,7 @@ handler = Mangum(app)
 
 | Variable | Value | Purpose |
 |----------|-------|---------|
-| `LIBRARY_S3_BUCKET` | `bvbm-library` | S3 bucket for all data |
+| `LIBRARY_S3_BUCKET` | `bvbm-aig-library` | S3 bucket for all data |
 | `LIBRARY_S3_PREFIX` | `library_db` | Prefix for city shards |
 | `AI_API_KEY` | (secret) | For classification/extraction AI calls |
 | `AI_BASE_URL` | (endpoint) | OpenAI-compatible API endpoint |
@@ -252,7 +252,7 @@ Resources:
         Size: 512
       Environment:
         Variables:
-          LIBRARY_S3_BUCKET: bvbm-library
+          LIBRARY_S3_BUCKET: bvbm-aig-library
           LIBRARY_S3_PREFIX: library_db
       FunctionUrlConfig:
         AuthType: NONE
@@ -263,7 +263,7 @@ Resources:
       Policies:
         - AWSLambdaBasicExecutionRole
         - S3CrudPolicy:
-            BucketName: bvbm-library
+            BucketName: bvbm-aig-library
 
 Outputs:
   FunctionUrl:
@@ -277,7 +277,7 @@ Outputs:
 One-time script to sync local `library_db/` to S3:
 
 ```bash
-aws s3 sync library_db/ s3://bvbm-library/library_db/ \
+aws s3 sync library_db/ s3://bvbm-aig-library/library_db/ \
   --exclude "_staging/*" \
   --profile bvbm --region ap-south-1
 ```

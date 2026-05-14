@@ -19,7 +19,7 @@ Resources:
         Size: 512
       Environment:
         Variables:
-          LIBRARY_S3_BUCKET: bvbm-library
+          LIBRARY_S3_BUCKET: bvbm-aig-library
           LIBRARY_S3_PREFIX: library_db
       FunctionUrlConfig:
         AuthType: NONE
@@ -33,7 +33,7 @@ Resources:
       Policies:
         - AWSLambdaBasicExecutionRole
         - S3CrudPolicy:
-            BucketName: bvbm-library
+            BucketName: bvbm-aig-library
 
 Outputs:
   FunctionName:

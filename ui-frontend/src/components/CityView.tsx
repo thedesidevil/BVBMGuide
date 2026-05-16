@@ -94,6 +94,7 @@ export function CityView({ cityName, onRefreshTree, userEmail }: CityViewProps) 
       setData(cityData);
       setOriginalData(JSON.parse(JSON.stringify(cityData)));
       setDirtyFields(new Set());
+      setPendingDeletions([]);
       undo.clear();
     });
   }, [cityName]);

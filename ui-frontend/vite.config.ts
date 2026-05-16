@@ -7,6 +7,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': 'http://127.0.0.1:8765',
+      '/login': 'http://127.0.0.1:8765',
+      '/logout': 'http://127.0.0.1:8765',
+      '/auth': 'http://127.0.0.1:8765',
     },
   },
 })

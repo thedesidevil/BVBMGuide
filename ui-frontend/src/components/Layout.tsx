@@ -1,23 +1,16 @@
-import { useEffect, useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 interface LayoutProps {
-  mode: "city" | "sweep" | "ingest" | "history";
-  onModeChange: (mode: "city" | "sweep" | "ingest" | "history") => void;
+  mode: "city" | "sweep" | "ingest" | "history" | "audit";
+  onModeChange: (mode: "city" | "sweep" | "ingest" | "history" | "audit") => void;
   reviewedCount: number;
   totalCount: number;
   sidebar: ReactNode;
   children: ReactNode;
+  userEmail: string | null;
 }
 
-export function Layout({ mode, onModeChange, reviewedCount, totalCount, sidebar, children }: LayoutProps) {
-  const [userEmail, setUserEmail] = useState<string | null>(null);
-
-  useEffect(() => {
-    fetch("/api/me", { credentials: "same-origin" })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((data) => { if (data?.email) setUserEmail(data.email); })
-      .catch(() => {});
-  }, []);
+export function Layout({ mode, onModeChange, reviewedCount, totalCount, sidebar, children, userEmail }: LayoutProps) {
 
   return (
     <div className="h-screen flex flex-col overflow-hidden">

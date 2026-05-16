@@ -10,10 +10,23 @@ import type { TreeData } from "./types";
 import { api } from "./api/client";
 
 export default function App() {
-  const [mode, setMode] = useState<"city" | "sweep" | "ingest" | "history">("city");
+  const [mode, setMode] = useState<"city" | "sweep" | "ingest" | "history" | "audit">("city");
   const [tree, setTree] = useState<TreeData>({});
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
+  const [userEmail, setUserEmail] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch("/api/me", { credentials: "same-origin" })
+      .then((r) => {
+        if (r.ok) return r.json();
+        return null;
+      })
+      .then((data) => {
+        if (data?.email) setUserEmail(data.email);
+      })
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     api.getTree().then((data) => setTree(data as TreeData));
@@ -30,6 +43,7 @@ export default function App() {
       onModeChange={setMode}
       reviewedCount={reviewedCount}
       totalCount={totalCount}
+      userEmail={userEmail}
       sidebar={
         <Sidebar
           tree={tree}

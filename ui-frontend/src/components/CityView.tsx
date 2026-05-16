@@ -173,7 +173,7 @@ export function CityView({ cityName, onRefreshTree, userEmail }: CityViewProps) 
     for (const del of pendingDeletions) {
       await api.logDeletion(cityName, del.category, del.item.name || del.item.item || "unknown", del.reason, del.item, userEmail || "Mayur Local");
     }
-    await api.saveCity(cityName, data);
+    await api.saveCity(cityName, data, userEmail || "Mayur Local");
     setPendingDeletions([]);
     setOriginalData(JSON.parse(JSON.stringify(data)));
     setDirtyFields(new Set());

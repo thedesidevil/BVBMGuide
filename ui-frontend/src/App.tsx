@@ -7,6 +7,7 @@ import { CountryView } from "./components/CountryView";
 import { SweepMode } from "./components/SweepMode";
 import { IngestWizard } from "./components/IngestWizard";
 import { IngestHistory } from "./components/IngestHistory";
+import { AuditLog } from "./components/AuditLog";
 import type { TreeData } from "./types";
 import { api } from "./api/client";
 
@@ -73,6 +74,7 @@ export default function App() {
         {mode === "sweep" && <SweepMode />}
         {mode === "ingest" && <IngestWizard onDone={() => { setMode("city"); api.getTree().then((data) => setTree(data as TreeData)); }} />}
         {mode === "history" && <IngestHistory />}
+        {mode === "audit" && <AuditLog />}
       </Layout>
     </>
   );

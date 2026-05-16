@@ -49,6 +49,23 @@ const SOUVENIR_COLUMNS = [
   { key: "where_to_buy", label: "Where to Buy", type: "text" as const },
 ];
 
+function emptyRow(category: string): Record<string, any> {
+  switch (category) {
+    case "restaurants":
+      return { name: "", cuisine_type: [], hours: "", price_range: "", vegetarian_friendly: false, pure_vegetarian: false, must_try_dishes: "", best_for: [] };
+    case "attractions":
+      return { name: "", description: "", hours: "", entry_fee: "", recommended_duration: "" };
+    case "hotels":
+      return { name: "", location: "" };
+    case "local_dishes":
+      return { name: "", description: "", vegetarian: false, where_to_try: "" };
+    case "souvenirs":
+      return { item: "", category: "", where_to_buy: "" };
+    default:
+      return { name: "" };
+  }
+}
+
 function getColumns(category: string) {
   if (category === "restaurants") return RESTAURANT_COLUMNS;
   if (category === "attractions") return ATTRACTION_COLUMNS;
@@ -198,7 +215,15 @@ export function CityView({ cityName, onRefreshTree, userEmail }: CityViewProps) 
 
       <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4">
         <div className="flex items-center gap-3 mb-4">
-          <button className="px-4 py-2 text-sm font-medium border border-slate-200 rounded-md hover:bg-slate-50">
+          <button
+            onClick={() => {
+              const newItem = emptyRow(activeTab);
+              const currentItems = (data as any)[activeTab] || [];
+              const newItems = [...currentItems, newItem];
+              handleDataChange(activeTab, newItems);
+            }}
+            className="px-4 py-2 text-sm font-medium border border-slate-200 rounded-md hover:bg-slate-50"
+          >
             + Add {CATEGORIES.find((c) => c.key === activeTab)?.singular}
           </button>
           <button onClick={undo.undo} disabled={!undo.canUndo} className="px-4 py-2 text-sm font-medium border border-blue-300 text-blue-600 rounded-md hover:bg-blue-50 disabled:opacity-40 disabled:cursor-not-allowed">

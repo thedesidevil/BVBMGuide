@@ -33,6 +33,9 @@ settings.local.json
 # Superpowers brainstorming sessions
 .superpowers/
 
+# Build artifacts
+build/
+
 # Frontend
 ui-frontend/node_modules/
 ui-frontend/dist/

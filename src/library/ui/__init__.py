@@ -67,7 +67,9 @@ def create_app(
         if not next_path.startswith("/"):
             next_path = "/"
         request.session["oauth_next"] = next_path
-        return await ga.oauth.google.authorize_redirect(request, redirect_uri)
+        prompt = request.query_params.get("prompt")
+        extra = {"prompt": prompt} if prompt else {}
+        return await ga.oauth.google.authorize_redirect(request, redirect_uri, **extra)
 
     @app.get("/auth/callback", name="auth_callback")
     async def auth_callback(request: Request):
@@ -111,7 +113,15 @@ def create_app(
     @app.get("/logout")
     async def logout(request: Request):
         request.session.clear()
-        return RedirectResponse(url="/login", status_code=303)
+        return HTMLResponse(
+            '<html><body style="font-family:system-ui;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;background:#f8fafc">'
+            '<div style="text-align:center">'
+            "<h2>Signed out</h2>"
+            '<p style="color:#64748b">You have been logged out.</p>'
+            '<a href="/login?prompt=select_account" style="color:#2563eb">Sign in again</a>'
+            "</div></body></html>",
+            status_code=200,
+        )
 
     @app.get("/api/me")
     async def me(request: Request):

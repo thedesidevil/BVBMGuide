@@ -61,27 +61,74 @@ function getColumns(category: string) {
 interface CityViewProps {
   cityName: string;
   onRefreshTree: () => void;
+  userEmail: string | null;
 }
 
-export function CityView({ cityName, onRefreshTree }: CityViewProps) {
+export function CityView({ cityName, onRefreshTree, userEmail }: CityViewProps) {
   const [data, setData] = useState<CityData | null>(null);
   const [activeTab, setActiveTab] = useState("restaurants");
-  const [unsavedChanges, setUnsavedChanges] = useState(0);
+  const [originalData, setOriginalData] = useState<CityData | null>(null);
+  const [dirtyFields, setDirtyFields] = useState<Set<string>>(new Set());
   const undo = useUndoStack();
 
   useEffect(() => {
-    api.getCity(cityName).then((d) => { setData(d as CityData); setUnsavedChanges(0); undo.clear(); });
+    api.getCity(cityName).then((d) => {
+      const cityData = d as CityData;
+      setData(cityData);
+      setOriginalData(JSON.parse(JSON.stringify(cityData)));
+      setDirtyFields(new Set());
+      undo.clear();
+    });
   }, [cityName]);
 
   const [pendingDeletions, setPendingDeletions] = useState<{ category: string; item: any; reason: string }[]>([]);
 
   if (!data) return <div className="text-slate-400 py-10 text-center">Loading...</div>;
 
+  const recalcDirty = (currentData: CityData, deletions: typeof pendingDeletions) => {
+    if (!originalData) return;
+    const dirty = new Set<string>();
+    for (const cat of CATEGORIES) {
+      const orig = (originalData as any)[cat.key] || [];
+      const curr = (currentData as any)[cat.key] || [];
+      // Detect added rows
+      if (curr.length > orig.length) {
+        for (let i = orig.length; i < curr.length; i++) {
+          dirty.add(`added:${cat.key}:${i}`);
+        }
+      }
+      // Detect field-level edits
+      const minLen = Math.min(orig.length, curr.length);
+      for (let i = 0; i < minLen; i++) {
+        for (const col of getColumns(cat.key)) {
+          const ov = JSON.stringify(orig[i]?.[col.key] ?? "");
+          const cv = JSON.stringify(curr[i]?.[col.key] ?? "");
+          if (ov !== cv) {
+            dirty.add(`${cat.key}:${i}:${col.key}`);
+          }
+        }
+      }
+    }
+    // Include pending deletions
+    for (const del of deletions) {
+      dirty.add(`deleted:${del.category}:${del.item.name || del.item.item}`);
+    }
+    setDirtyFields(dirty);
+  };
+
   const handleDataChange = (category: string, newItems: any[]) => {
     const prev = [...(data as any)[category]];
-    undo.push({ description: `Edit ${category}`, undo: () => setData((d) => d ? { ...d, [category]: prev } : d) });
-    setData({ ...data, [category]: newItems });
-    setUnsavedChanges((n) => n + 1);
+    undo.push({
+      description: `Edit ${category}`,
+      undo: () => {
+        const restored = { ...data!, [category]: prev };
+        setData(restored);
+        recalcDirty(restored, pendingDeletions);
+      },
+    });
+    const newData = { ...data!, [category]: newItems };
+    setData(newData);
+    recalcDirty(newData, pendingDeletions);
   };
 
   const handleDelete = (category: string, index: number, reason: string) => {
@@ -89,25 +136,30 @@ export function CityView({ cityName, onRefreshTree }: CityViewProps) {
     const prev = [...(data as any)[category]];
     const prevDeletions = [...pendingDeletions];
     const newItems = prev.filter((_, i) => i !== index);
-    setPendingDeletions((d) => [...d, { category, item, reason }]);
+    const newDeletions = [...pendingDeletions, { category, item, reason }];
+    setPendingDeletions(newDeletions);
     undo.push({
       description: `Delete ${item.name || item.item}`,
       undo: () => {
-        setData((d) => d ? { ...d, [category]: prev } : d);
+        const restored = { ...data!, [category]: prev };
+        setData(restored);
         setPendingDeletions(prevDeletions);
+        recalcDirty(restored, prevDeletions);
       },
     });
-    setData({ ...data, [category]: newItems });
-    setUnsavedChanges((n) => n + 1);
+    const newData = { ...data!, [category]: newItems };
+    setData(newData);
+    recalcDirty(newData, newDeletions);
   };
 
   const handleSave = async () => {
     for (const del of pendingDeletions) {
-      await api.logDeletion(cityName, del.category, del.item.name || del.item.item || "unknown", del.reason, del.item, "marina");
+      await api.logDeletion(cityName, del.category, del.item.name || del.item.item || "unknown", del.reason, del.item, userEmail || "Mayur Local");
     }
     await api.saveCity(cityName, data);
     setPendingDeletions([]);
-    setUnsavedChanges(0);
+    setOriginalData(JSON.parse(JSON.stringify(data)));
+    setDirtyFields(new Set());
     onRefreshTree();
   };
 
@@ -153,7 +205,7 @@ export function CityView({ cityName, onRefreshTree }: CityViewProps) {
             ↩ Undo
           </button>
           <span className="flex-1" />
-          {unsavedChanges > 0 && <span className="text-sm text-slate-500">{unsavedChanges} unsaved changes</span>}
+          {dirtyFields.size > 0 && <span className="text-sm text-slate-500">{dirtyFields.size} unsaved changes</span>}
           <button onClick={handleSave} className="px-4 py-2 text-sm font-medium text-white bg-emerald-600 rounded-md hover:bg-emerald-700">
             Save
           </button>

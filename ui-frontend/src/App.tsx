@@ -55,7 +55,7 @@ export default function App() {
       }
     >
       {mode === "city" && selectedCity && (
-        <CityView cityName={selectedCity} onRefreshTree={() => api.getTree().then((data) => setTree(data as TreeData))} />
+        <CityView cityName={selectedCity} onRefreshTree={() => api.getTree().then((data) => setTree(data as TreeData))} userEmail={userEmail} />
       )}
       {mode === "city" && selectedCountry && (
         <CountryView countryName={selectedCountry} onRefreshTree={() => api.getTree().then((data) => setTree(data as TreeData))} />

@@ -15,16 +15,33 @@ interface EditableTableProps {
   onDelete: (index: number, reason: string) => void;
 }
 
+const ARRAY_FIELDS = ["cuisine_type", "must_try_dishes", "where_to_buy", "where_to_try"];
+
 export function EditableTable({ columns, data, onDataChange, onDelete }: EditableTableProps) {
   const [editingRow, setEditingRow] = useState<number | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<{ index: number; name: string } | null>(null);
   const [sortKey, setSortKey] = useState<string | null>(null);
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
+  const [editingText, setEditingText] = useState<Record<string, string>>({});
 
   const handleFieldChange = (rowIndex: number, key: string, value: any) => {
     const updated = [...data];
     updated[rowIndex] = { ...updated[rowIndex], [key]: value };
     onDataChange(updated);
+  };
+
+  const commitArrayFields = (rowIndex: number) => {
+    const updated = [...data];
+    let changed = false;
+    for (const key of ARRAY_FIELDS) {
+      const textKey = `${rowIndex}:${key}`;
+      if (textKey in editingText) {
+        updated[rowIndex] = { ...updated[rowIndex], [key]: editingText[textKey].split(",").map(s => s.trim()).filter(Boolean) };
+        changed = true;
+      }
+    }
+    if (changed) onDataChange(updated);
+    setEditingText({});
   };
 
   const handleSort = (key: string) => {
@@ -80,7 +97,12 @@ export function EditableTable({ columns, data, onDataChange, onDelete }: Editabl
             return (
               <tr
                 key={rowIdx}
-                onClick={() => setEditingRow(rowIdx)}
+                onClick={() => {
+                  if (editingRow !== null && editingRow !== rowIdx) {
+                    commitArrayFields(editingRow);
+                  }
+                  setEditingRow(rowIdx);
+                }}
                 className={`border-b border-slate-100 cursor-pointer transition-colors ${
                   isEditing ? "bg-blue-50 border-l-4 border-l-blue-500" :
                   isMissing ? "bg-amber-50 border-l-4 border-l-amber-400" :
@@ -89,14 +111,27 @@ export function EditableTable({ columns, data, onDataChange, onDelete }: Editabl
               >
                 {columns.map((col) => (
                   <td key={col.key} className="px-3 py-3">
-                    {isEditing && col.type === "text" && (
+                    {isEditing && col.type === "text" && ARRAY_FIELDS.includes(col.key) && (
                       <textarea
-                        value={Array.isArray(row[col.key]) ? row[col.key].join(", ") : (row[col.key] ?? "")}
+                        value={`${rowIdx}:${col.key}` in editingText
+                          ? editingText[`${rowIdx}:${col.key}`]
+                          : (Array.isArray(row[col.key]) ? row[col.key].join(", ") : (row[col.key] ?? ""))}
                         onChange={(e) => {
-                          const val = ["cuisine_type", "must_try_dishes", "where_to_buy", "where_to_try"].includes(col.key)
-                            ? e.target.value.split(",").map((s: string) => s.trim())
-                            : e.target.value;
-                          handleFieldChange(rowIdx, col.key, val);
+                          setEditingText(prev => ({ ...prev, [`${rowIdx}:${col.key}`]: e.target.value }));
+                        }}
+                        onBlur={(e) => {
+                          const trimmed = e.target.value.split(",").map(s => s.trim()).filter(Boolean);
+                          handleFieldChange(rowIdx, col.key, trimmed);
+                          setEditingText(prev => { const next = { ...prev }; delete next[`${rowIdx}:${col.key}`]; return next; });
+                        }}
+                        className="w-full min-h-[32px] px-2 py-1 border border-slate-300 rounded-md resize-both text-sm focus:outline-none focus:border-blue-400"
+                      />
+                    )}
+                    {isEditing && col.type === "text" && !ARRAY_FIELDS.includes(col.key) && (
+                      <textarea
+                        value={row[col.key] ?? ""}
+                        onChange={(e) => {
+                          handleFieldChange(rowIdx, col.key, e.target.value);
                         }}
                         className="w-full min-h-[32px] px-2 py-1 border border-slate-300 rounded-md resize-both text-sm focus:outline-none focus:border-blue-400"
                       />

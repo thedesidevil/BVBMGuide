@@ -15,38 +15,51 @@ class DeleteItemRequest(BaseModel):
     deleted_by: str = "unknown"
 
 
+def _item_key(item: dict) -> str:
+    return item.get("name") or item.get("item") or ""
+
+
 def _diff_city(existing: dict, incoming: dict, changed_by: str, city: str, audit: AuditService):
     """Compare existing vs incoming city data and log edits/additions."""
     for category in AUDITED_CATEGORIES:
         orig_items = existing.get(category, [])
         new_items = incoming.get(category, [])
 
-        min_len = min(len(orig_items), len(new_items))
-        for i in range(min_len):
+        orig_by_key = {_item_key(item): item for item in orig_items}
+        new_by_key = {_item_key(item): item for item in new_items}
+
+        # Detect edits (items present in both, matched by name)
+        for key, new_item in new_by_key.items():
+            if not key or key not in orig_by_key:
+                continue
+            orig_item = orig_by_key[key]
             changes = []
-            for key in set(list(orig_items[i].keys()) + list(new_items[i].keys())):
-                old_val = orig_items[i].get(key)
-                new_val = new_items[i].get(key)
+            for field in set(list(orig_item.keys()) + list(new_item.keys())):
+                if field.startswith("_"):
+                    continue
+                old_val = orig_item.get(field)
+                new_val = new_item.get(field)
                 if json.dumps(old_val, sort_keys=True, default=str) != json.dumps(new_val, sort_keys=True, default=str):
-                    changes.append({"field": key, "old": old_val, "new": new_val})
+                    changes.append({"field": field, "old": old_val, "new": new_val})
             if changes:
-                item_name = new_items[i].get("name") or new_items[i].get("item") or f"item_{i}"
                 audit.log_edit(
                     category=category,
                     city=city,
-                    item_name=item_name,
+                    item_name=key,
                     changes=changes,
                     changed_by=changed_by,
                 )
 
-        # New items added at end
-        for i in range(min_len, len(new_items)):
-            item_name = new_items[i].get("name") or new_items[i].get("item") or f"item_{i}"
+        # Detect additions (items in new but not in original)
+        for key, new_item in new_by_key.items():
+            if key and key in orig_by_key:
+                continue
+            item_name = key or f"item_{new_items.index(new_item)}"
             audit.log_add(
                 category=category,
                 city=city,
                 item_name=item_name,
-                item_snapshot=new_items[i],
+                item_snapshot=new_item,
                 changed_by=changed_by,
             )
 

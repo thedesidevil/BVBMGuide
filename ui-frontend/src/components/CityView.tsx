@@ -107,22 +107,32 @@ export function CityView({ cityName, onRefreshTree, userEmail }: CityViewProps) 
     if (!originalData) return;
     const dirty = new Set<string>();
     for (const cat of CATEGORIES) {
-      const orig = (originalData as any)[cat.key] || [];
-      const curr = (currentData as any)[cat.key] || [];
-      // Detect added rows
-      if (curr.length > orig.length) {
-        for (let i = orig.length; i < curr.length; i++) {
-          dirty.add(`added:${cat.key}:${i}`);
-        }
+      const orig: any[] = (originalData as any)[cat.key] || [];
+      const curr: any[] = (currentData as any)[cat.key] || [];
+      const nameKey = cat.key === "souvenirs" ? "item" : "name";
+
+      // Build a map of original items by name for matching
+      const origByName = new Map<string, any>();
+      for (const item of orig) {
+        const k = item[nameKey] || "";
+        if (k) origByName.set(k, item);
       }
-      // Detect field-level edits
-      const minLen = Math.min(orig.length, curr.length);
-      for (let i = 0; i < minLen; i++) {
-        for (const col of getColumns(cat.key)) {
-          const ov = JSON.stringify(orig[i]?.[col.key] ?? "");
-          const cv = JSON.stringify(curr[i]?.[col.key] ?? "");
-          if (ov !== cv) {
-            dirty.add(`${cat.key}:${i}:${col.key}`);
+
+      // Check each current item against its original by name
+      for (let i = 0; i < curr.length; i++) {
+        const k = curr[i][nameKey] || "";
+        const origItem = k ? origByName.get(k) : undefined;
+        if (!origItem) {
+          // New item (not in original)
+          dirty.add(`added:${cat.key}:${i}`);
+        } else {
+          // Compare fields
+          for (const col of getColumns(cat.key)) {
+            const ov = JSON.stringify(origItem[col.key] ?? "");
+            const cv = JSON.stringify(curr[i][col.key] ?? "");
+            if (ov !== cv) {
+              dirty.add(`${cat.key}:${k}:${col.key}`);
+            }
           }
         }
       }
@@ -220,7 +230,7 @@ export function CityView({ cityName, onRefreshTree, userEmail }: CityViewProps) 
             onClick={() => {
               const newItem = emptyRow(activeTab);
               const currentItems = (data as any)[activeTab] || [];
-              const newItems = [...currentItems, newItem];
+              const newItems = [newItem, ...currentItems];
               handleDataChange(activeTab, newItems);
             }}
             className="px-4 py-2 text-sm font-medium border border-slate-200 rounded-md hover:bg-slate-50"

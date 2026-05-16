@@ -3,9 +3,11 @@ from typing import Optional
 
 from ..storage import StorageBackend
 
+MAX_AUDIT_ENTRIES = 200
+
 
 class AuditService:
-    """Manages the deletion audit trail at _audit.json."""
+    """Manages the audit trail at _audit.json."""
 
     def __init__(self, backend: StorageBackend):
         self.backend = backend
@@ -17,7 +19,12 @@ class AuditService:
         self._entries = data if isinstance(data, list) else []
 
     def _save(self):
+        if len(self._entries) > MAX_AUDIT_ENTRIES:
+            self._entries = self._entries[-MAX_AUDIT_ENTRIES:]
         self.backend.write_json("_audit.json", self._entries)
+
+    def _now(self) -> str:
+        return datetime.now(timezone.utc).isoformat()
 
     def log_deletion(
         self,
@@ -34,9 +41,49 @@ class AuditService:
             "city": city,
             "item_name": item_name,
             "reason": reason,
-            "deleted_by": deleted_by,
-            "deleted_at": datetime.now(timezone.utc).isoformat(),
+            "changed_by": deleted_by,
+            "changed_at": self._now(),
             "item_snapshot": item_snapshot,
+        }
+        self._entries.append(entry)
+        self._save()
+
+    def log_edit(
+        self,
+        category: str,
+        city: str,
+        item_name: str,
+        changes: list[dict],
+        changed_by: str = "unknown",
+    ):
+        entry = {
+            "action": "edit",
+            "category": category,
+            "city": city,
+            "item_name": item_name,
+            "changes": changes,
+            "changed_by": changed_by,
+            "changed_at": self._now(),
+        }
+        self._entries.append(entry)
+        self._save()
+
+    def log_add(
+        self,
+        category: str,
+        city: str,
+        item_name: str,
+        item_snapshot: dict,
+        changed_by: str = "unknown",
+    ):
+        entry = {
+            "action": "add",
+            "category": category,
+            "city": city,
+            "item_name": item_name,
+            "item_snapshot": item_snapshot,
+            "changed_by": changed_by,
+            "changed_at": self._now(),
         }
         self._entries.append(entry)
         self._save()

@@ -1,0 +1,177 @@
+[
+  {
+    "action": "add",
+    "category": "restaurants",
+    "city": "Samarkand",
+    "item_name": "MJ Test 2",
+    "item_snapshot": {
+      "name": "MJ Test 2",
+      "cuisine_type": [
+        "Test"
+      ],
+      "hours": "10 AM - 12 AM",
+      "price_range": "INR 300-INR 900",
+      "vegetarian_friendly": true,
+      "pure_vegetarian": false,
+      "must_try_dishes": [
+        "Hello test",
+        "         "
+      ],
+      "best_for": []
+    },
+    "changed_by": "Mayur Local",
+    "changed_at": "2026-05-16T16:56:12.714312+00:00"
+  },
+  {
+    "action": "edit",
+    "category": "restaurants",
+    "city": "Samarkand",
+    "item_name": "MJ Test 2",
+    "changes": [
+      {
+        "field": "vegetarian_friendly",
+        "old": true,
+        "new": false
+      }
+    ],
+    "changed_by": "Mayur Local",
+    "changed_at": "2026-05-16T16:56:27.761848+00:00"
+  },
+  {
+    "action": "delete",
+    "category": "restaurants",
+    "city": "Samarkand",
+    "item_name": "MJ Test 2",
+    "reason": "it was a test, deleting it",
+    "changed_by": "Mayur Local",
+    "changed_at": "2026-05-16T16:58:05.799862+00:00",
+    "item_snapshot": {
+      "name": "MJ Test 2",
+      "cuisine_type": [
+        "Test"
+      ],
+      "hours": "10 AM - 12 AM",
+      "price_range": "INR 300-INR 900",
+      "vegetarian_friendly": false,
+      "pure_vegetarian": false,
+      "must_try_dishes": [
+        "Hello test"
+      ],
+      "best_for": []
+    }
+  },
+  {
+    "action": "add",
+    "category": "restaurants",
+    "city": "Apollo Bay",
+    "item_name": "Bay test 1",
+    "item_snapshot": {
+      "name": "Bay test 1",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "hours": "12:00 PM - 4:00 PM ",
+      "price_range": "Expensive",
+      "vegetarian_friendly": false,
+      "pure_vegetarian": false,
+      "must_try_dishes": [
+        "Fish and Chips",
+        "Salsa"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    },
+    "changed_by": "Mayur Local",
+    "changed_at": "2026-05-16T16:59:09.951566+00:00"
+  },
+  {
+    "action": "delete",
+    "category": "restaurants",
+    "city": "Apollo Bay",
+    "item_name": "Bay test 1",
+    "reason": "deleting the test",
+    "changed_by": "Mayur Local",
+    "changed_at": "2026-05-16T16:59:32.923642+00:00",
+    "item_snapshot": {
+      "name": "Bay test 1",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "hours": "12:00 PM - 4:00 PM ",
+      "price_range": "Expensive",
+      "vegetarian_friendly": false,
+      "pure_vegetarian": false,
+      "must_try_dishes": [
+        "Fish and Chips",
+        "Salsa"
+      ],
+      "best_for": [
+        "casual"
+      ]
+    }
+  },
+  {
+    "action": "add",
+    "category": "attractions",
+    "city": "Cairns",
+    "item_name": "Koala Viewing",
+    "item_snapshot": {
+      "name": "Koala Viewing",
+      "description": "By the waterfall, what an amazing place",
+      "hours": "24 hrs",
+      "entry_fee": "$12",
+      "recommended_duration": "2 hrs"
+    },
+    "changed_by": "Mayur Local",
+    "changed_at": "2026-05-16T17:01:05.796039+00:00"
+  },
+  {
+    "action": "delete",
+    "category": "attractions",
+    "city": "Cairns",
+    "item_name": "Koala Viewing",
+    "reason": "was a test",
+    "changed_by": "Mayur Local",
+    "changed_at": "2026-05-16T17:01:33.479631+00:00",
+    "item_snapshot": {
+      "name": "Koala Viewing",
+      "description": "By the waterfall, what an amazing place",
+      "hours": "24 hrs",
+      "entry_fee": "$12",
+      "recommended_duration": "2 hrs"
+    }
+  },
+  {
+    "action": "delete",
+    "category": "hotels",
+    "city": "Cairns",
+    "item_name": "Airbnb",
+    "reason": "airbnb, doesn't make sense",
+    "changed_by": "Mayur Local",
+    "changed_at": "2026-05-16T17:01:52.512003+00:00",
+    "item_snapshot": {
+      "name": "Airbnb",
+      "city": "Cairns",
+      "location": "4 min drive from Airport",
+      "_source_file": "Australia/Australia- All Inclusive Guide(1).pdf",
+      "_source_mtime": 1772384287.136402
+    }
+  },
+  {
+    "action": "delete",
+    "category": "hotels",
+    "city": "Cairns",
+    "item_name": "Airbnb",
+    "reason": "airbnb, doesn't make sense",
+    "changed_by": "Mayur Local",
+    "changed_at": "2026-05-16T17:01:52.518953+00:00",
+    "item_snapshot": {
+      "name": "Airbnb",
+      "city": "Cairns",
+      "location": "4 min drive from Airport",
+      "_source_file": "Australia/Australia- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384288.440096
+    }
+  }
+]

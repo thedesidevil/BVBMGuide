@@ -68,14 +68,15 @@ export interface SweepResult {
 }
 
 export interface AuditEntry {
-  action: string;
+  action: "edit" | "delete" | "add";
   category: string;
   city: string;
   item_name: string;
-  reason: string;
-  deleted_by: string;
-  deleted_at: string;
-  item_snapshot: Record<string, any>;
+  changes?: { field: string; old: any; new: any }[];
+  reason?: string;
+  item_snapshot?: Record<string, any>;
+  changed_by: string;
+  changed_at: string;
 }
 
 // --- Ingest types ---

@@ -14,8 +14,8 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
 export const api = {
   getTree: () => request<Record<string, any>>("/tree"),
   getCity: (name: string) => request<Record<string, any>>(`/city/${encodeURIComponent(name)}`),
-  saveCity: (name: string, data: any) =>
-    request(`/city/${encodeURIComponent(name)}`, { method: "PUT", body: JSON.stringify(data) }),
+  saveCity: (name: string, data: any, changedBy?: string) =>
+    request(`/city/${encodeURIComponent(name)}`, { method: "PUT", body: JSON.stringify({ ...data, changed_by: changedBy || "unknown" }) }),
   deleteItem: (city: string, category: string, index: number, reason: string, deletedBy: string) =>
     request(`/city/${encodeURIComponent(city)}/${category}/${index}`, {
       method: "DELETE",

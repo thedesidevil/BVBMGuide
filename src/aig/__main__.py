@@ -59,7 +59,7 @@ def _parse_folder(folder: Path, show_days: bool, api_key: Optional[str]) -> None
         console.print("[red]AI API key required for multi-file parsing. Set AI_API_KEY in .env[/red]")
         raise typer.Exit(1)
 
-    supported = sorted(folder.glob("*.pdf")) + sorted(folder.glob("*.docx"))
+    supported = sorted(f for f in folder.iterdir() if f.suffix.lower() in {".pdf", ".docx"})
     if not supported:
         console.print(f"[red]No PDF or DOCX files found in {folder}[/red]")
         raise typer.Exit(1)
@@ -281,6 +281,7 @@ def generate(
         ...,
         help="Path to the input directory containing trip_facts.json",
         exists=True,
+        file_okay=False,
     ),
     db_path: Path = typer.Option(
         Path("library_db"),

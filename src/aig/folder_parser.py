@@ -4,7 +4,7 @@ import base64
 import json
 import re
 from pathlib import Path
-from typing import Optional
+from typing import Callable, Optional
 
 import pdfplumber
 from docx import Document as DocxDocument
@@ -179,30 +179,51 @@ class FolderParser:
         text = "\n".join(p.text for p in doc.paragraphs).strip()
         return text if text else None
 
-    def parse(self, folder: Path) -> tuple[TripFacts, list[str]]:
+    def parse(
+        self,
+        folder: Path,
+        log: Optional[Callable[[str], None]] = None,
+    ) -> tuple[TripFacts, list[str]]:
         """
         Parse all supported files in folder.
         Returns (TripFacts, warnings) where warnings is a list of filenames
         that could not be read even after attempting vision fallback.
+        Optional log callback receives human-readable status strings.
         """
+        _log = log or (lambda _: None)
         files = self._find_files(folder)
         warnings: list[str] = []
         partials: list[tuple[str, dict]] = []
 
         for file in files:
+            _log(f"  {file.name}")
             text = self._extract_text(file)
             if text is None:
                 if file.suffix.lower() == ".pdf":
-                    # Text layer absent — try AI vision on rendered page images
-                    raw = self._extract_facts_via_vision(file)
-                    if raw is None:
+                    _log(f"    text layer: none — trying vision OCR")
+                    images = self._render_pdf_pages(file)
+                    if not images:
+                        _log(f"    vision: could not render pages — skipped")
                         warnings.append(file.name)
                         continue
+                    _log(f"    vision: {len(images)} page(s) rendered, calling AI")
+                    raw = self._parse_json_response(
+                        self._ai.complete_with_images(
+                            _VISION_EXTRACTION_PROMPT.format(filename=file.name),
+                            images=images,
+                            max_tokens=4096,
+                            temperature=0.1,
+                        )
+                    )
+                    _log(f"    vision: facts extracted")
                 else:
+                    _log(f"    could not read file — skipped")
                     warnings.append(file.name)
                     continue
             else:
+                _log(f"    text layer: {len(text):,} chars — calling AI")
                 raw = self._extract_facts_from_file(text, file.name)
+                _log(f"    text: facts extracted")
             partials.append((file.name, raw))
 
         if not partials:
@@ -211,7 +232,9 @@ class FolderParser:
         if len(partials) == 1:
             facts = self._dict_to_trip_facts(partials[0][1])
         else:
+            _log(f"  merging facts from {len(partials)} file(s)...")
             facts = self._merge_facts(partials)
+            _log(f"  merge complete")
 
         return facts, warnings
 
@@ -229,15 +252,6 @@ class FolderParser:
             return images
         except Exception:
             return []
-
-    def _extract_facts_via_vision(self, file: Path) -> Optional[dict]:
-        """Extract facts from an image-based PDF using AI vision."""
-        images = self._render_pdf_pages(file)
-        if not images:
-            return None
-        prompt = _VISION_EXTRACTION_PROMPT.format(filename=file.name)
-        response = self._ai.complete_with_images(prompt, images=images, max_tokens=4096, temperature=0.1)
-        return self._parse_json_response(response)
 
     def _extract_facts_from_file(self, text: str, filename: str) -> dict:
         prompt = _EXTRACTION_PROMPT.format(filename=filename, text=text[:40000])

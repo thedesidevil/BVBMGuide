@@ -6,7 +6,6 @@ from typing import Optional
 import typer
 from rich.console import Console
 from rich.panel import Panel
-from rich.progress import Progress, SpinnerColumn, TextColumn
 from rich.rule import Rule
 
 from src.common.ai_provider import get_ai_client
@@ -70,14 +69,11 @@ def _parse_folder(folder: Path, show_days: bool, api_key: Optional[str]) -> None
         console.print(f"  [dim]✓ {f.name}[/dim]")
     console.print()
 
-    with Progress(SpinnerColumn(), TextColumn("[progress.description]{task.description}"), console=console) as progress:
-        task = progress.add_task("Extracting facts with AI...", total=None)
-        parser = FolderParser(ai_client=ai_client)
-        facts, warnings = parser.parse(folder)
-        progress.update(task, completed=True)
-
-    for w in warnings:
-        console.print(f"  [yellow]⚠ Could not read {w} (text and vision both failed) — skipped[/yellow]")
+    console.print(Rule("[dim]  PARSING  [/dim]", style="dim"))
+    console.print()
+    parser = FolderParser(ai_client=ai_client)
+    facts, warnings = parser.parse(folder, log=console.print)
+    console.print()
 
     _print_trip_facts_summary(facts)
 

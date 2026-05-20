@@ -104,7 +104,9 @@ class TestExtractFactsFromFile:
         long_text = "x" * 100_000
         parser._extract_facts_from_file(long_text, "big.pdf")
         prompt_used = mock_ai.complete.call_args[0][0]
-        assert len(prompt_used) < 90_000  # text was truncated
+        # Prompt template overhead is ~1 500 chars; text is capped at 40 000.
+        # If truncation were removed, prompt would be ~101 500 chars.
+        assert len(prompt_used) < 42_000
 
 
 class TestMergeFacts:
@@ -126,6 +128,13 @@ class TestMergeFacts:
         prompt = mock_ai.complete.call_args[0][0]
         assert "a.pdf" in prompt
         assert "b.pdf" in prompt
+
+    def test_merge_returns_empty_facts_on_garbage_response(self, parser, mock_ai):
+        mock_ai.complete.return_value = "not json at all {{{"
+        partials = [("a.pdf", MINIMAL_FACTS_DICT), ("b.pdf", MINIMAL_FACTS_DICT)]
+        result = parser._merge_facts(partials)
+        assert isinstance(result, TripFacts)
+        assert result.client_names == []
 
 
 class TestParse:

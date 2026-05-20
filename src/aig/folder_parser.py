@@ -174,12 +174,21 @@ class FolderParser:
 
     def _parse_json_response(self, response: str) -> dict:
         text = response.strip()
+        # Strip markdown code fences
         text = re.sub(r"^```(?:json)?\s*", "", text)
         text = re.sub(r"\s*```$", "", text)
         try:
             return json.loads(text)
         except json.JSONDecodeError:
-            return {}
+            pass
+        # Fallback: extract JSON object embedded in prose
+        match = re.search(r"\{.*\}", text, re.DOTALL)
+        if match:
+            try:
+                return json.loads(match.group())
+            except json.JSONDecodeError:
+                pass
+        return {}
 
     def _dict_to_trip_facts(self, data: dict) -> TripFacts:
         hotels = [

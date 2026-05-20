@@ -18,10 +18,11 @@ class FolderParser:
         self._ai = ai_client if ai_client is not None else get_ai_client()
 
     def _find_files(self, folder: Path) -> list[Path]:
-        files: list[Path] = []
-        for ext in self.SUPPORTED_EXTENSIONS:
-            files.extend(folder.glob(f"*{ext}"))
-        return sorted(files)
+        seen: set[Path] = set()
+        for f in folder.iterdir():
+            if f.suffix.lower() in self.SUPPORTED_EXTENSIONS:
+                seen.add(f)
+        return sorted(seen)
 
     def _extract_text(self, file: Path) -> Optional[str]:
         try:
@@ -33,10 +34,12 @@ class FolderParser:
             pass
         return None
 
-    def _extract_pdf_text(self, file: Path) -> str:
+    def _extract_pdf_text(self, file: Path) -> Optional[str]:
         with pdfplumber.open(file) as pdf:
-            return "\n".join(page.extract_text() or "" for page in pdf.pages)
+            text = "\n".join(page.extract_text() or "" for page in pdf.pages).strip()
+        return text if text else None
 
-    def _extract_docx_text(self, file: Path) -> str:
+    def _extract_docx_text(self, file: Path) -> Optional[str]:
         doc = DocxDocument(str(file))
-        return "\n".join(p.text for p in doc.paragraphs)
+        text = "\n".join(p.text for p in doc.paragraphs).strip()
+        return text if text else None

@@ -245,3 +245,65 @@ class AIGDocument(BaseModel):
     # Unresolved QC issues — written as final page in DOCX if non-empty
     unresolved_qc_issues: list[QCIssue] = Field(default_factory=list)
 
+
+class TripDay(BaseModel):
+    """One day in the trip, for human-editable trip_facts.json."""
+    day_number: int
+    date: Optional[str] = None           # ISO YYYY-MM-DD
+    title: Optional[str] = None
+    overnight_city: Optional[str] = None
+    overnight_hotel: Optional[str] = None
+    activities: list[str] = Field(default_factory=list)
+
+
+class TripHotel(BaseModel):
+    """A hotel stay, for human-editable trip_facts.json."""
+    city: str
+    hotel_name: str
+    check_in: Optional[str] = None       # ISO YYYY-MM-DD
+    check_out: Optional[str] = None      # ISO YYYY-MM-DD
+
+
+class TransportLeg(BaseModel):
+    """One transport leg between destinations."""
+    from_city: str
+    to_city: str
+    mode: str                            # flight, train, cruise, bus, car
+    date: Optional[str] = None          # ISO YYYY-MM-DD
+
+
+class TripFacts(BaseModel):
+    """All facts needed to generate an AIG. Saved as trip_facts.json for user review."""
+    client_names: list[str] = Field(default_factory=list)
+    num_guests: Optional[str] = None    # free text e.g. "2 adults, 2 kids (10, 8)"
+    departure_city: Optional[str] = None
+    destinations: list[str] = Field(default_factory=list)
+    trip_start_date: Optional[str] = None   # ISO YYYY-MM-DD
+    trip_end_date: Optional[str] = None     # ISO YYYY-MM-DD
+    hotels: list[TripHotel] = Field(default_factory=list)
+    transport_modes: list[TransportLeg] = Field(default_factory=list)
+    days: list[TripDay] = Field(default_factory=list)
+    dietary_restrictions: list[str] = Field(default_factory=list)
+    food_allergies: list[str] = Field(default_factory=list)
+    cuisine_preferences: list[str] = Field(default_factory=list)
+
+    def missing_required(self) -> list[str]:
+        """Return names of required fields that are empty or null."""
+        missing = []
+        if not self.client_names:
+            missing.append("client_names")
+        if not self.destinations:
+            missing.append("destinations")
+        if not self.trip_start_date:
+            missing.append("trip_start_date")
+        if not self.trip_end_date:
+            missing.append("trip_end_date")
+        if not self.days:
+            missing.append("days")
+        if not self.hotels:
+            missing.append("hotels")
+        return missing
+
+    def is_ready_for_generation(self) -> bool:
+        return len(self.missing_required()) == 0
+

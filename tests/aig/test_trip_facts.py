@@ -86,3 +86,22 @@ class TestTripFacts:
             hotels=[TripHotel(city="Paris", hotel_name="Hotel de Ville")],
         )
         assert facts.is_ready_for_generation() is True
+
+    def test_missing_required_partial_state(self):
+        facts = TripFacts(
+            client_names=["Ana"],
+            destinations=["Paris"],
+            # trip_start_date, trip_end_date, days, hotels intentionally absent
+        )
+        missing = facts.missing_required()
+        assert "client_names" not in missing
+        assert "destinations" not in missing
+        assert "trip_start_date" in missing
+        assert "trip_end_date" in missing
+        assert "days" in missing
+        assert "hotels" in missing
+        assert len(missing) == 4
+
+    def test_num_guests_rejects_int(self):
+        with pytest.raises(Exception):
+            TripFacts(num_guests=2)

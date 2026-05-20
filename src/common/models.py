@@ -254,6 +254,7 @@ class TripDay(BaseModel):
     overnight_city: Optional[str] = None
     overnight_hotel: Optional[str] = None
     activities: list[str] = Field(default_factory=list)
+    transport_note: Optional[str] = None  # day-specific transport override
 
 
 class TripHotel(BaseModel):
@@ -283,6 +284,7 @@ class TripFacts(BaseModel):
     hotels: list[TripHotel] = Field(default_factory=list)
     transport_modes: list[TransportLeg] = Field(default_factory=list)
     days: list[TripDay] = Field(default_factory=list)
+    local_transport: Optional[str] = None  # trip-level default e.g. "Public Transport"
     dietary_restrictions: list[str] = Field(default_factory=list)
     food_allergies: list[str] = Field(default_factory=list)
     cuisine_preferences: list[str] = Field(default_factory=list)

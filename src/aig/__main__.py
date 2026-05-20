@@ -118,6 +118,8 @@ def _print_trip_facts_summary(facts: TripFacts) -> None:
         console.print(f"  [bold]{'hotels':<22}[/bold] {len(facts.hotels)} properties")
     if facts.transport_modes:
         console.print(f"  [bold]{'transport_modes':<22}[/bold] {len(facts.transport_modes)} legs")
+    if facts.local_transport:
+        console.print(f"  [bold]{'local_transport':<22}[/bold] {facts.local_transport}")
     if facts.dietary_restrictions:
         console.print(f"  [bold]{'dietary_restrictions':<22}[/bold] {', '.join(facts.dietary_restrictions)}")
     if facts.food_allergies:
@@ -128,7 +130,7 @@ def _print_trip_facts_summary(facts: TripFacts) -> None:
     all_fields = [
         "client_names", "num_guests", "departure_city", "destinations",
         "trip_start_date", "trip_end_date", "days", "hotels",
-        "transport_modes", "dietary_restrictions", "food_allergies", "cuisine_preferences",
+        "transport_modes", "local_transport", "dietary_restrictions", "food_allergies", "cuisine_preferences",
     ]
     required = facts.missing_required()
     optional_missing = [

@@ -25,6 +25,7 @@ Read the document and return ONLY a JSON object with these exact fields:
   "trip_end_date": null,
   "hotels": [],
   "transport_modes": [],
+  "local_transport": null,
   "days": [],
   "dietary_restrictions": [],
   "food_allergies": [],
@@ -38,16 +39,17 @@ Field notes:
 - destinations: ordered list of destination cities visited
 - trip_start_date / trip_end_date: ISO YYYY-MM-DD (infer year from context; default to 2025 or 2026)
 - hotels: list of {{"city": str, "hotel_name": str, "check_in": "YYYY-MM-DD"|null, "check_out": "YYYY-MM-DD"|null}}
-- transport_modes: list of {{"from_city": str, "to_city": str, "mode": "flight"|"train"|"cruise"|"bus"|"car", "date": "YYYY-MM-DD"|null}}
-- days: list of {{"day_number": int, "date": "YYYY-MM-DD"|null, "title": str|null, "overnight_city": str|null, "overnight_hotel": str|null, "activities": [str]}}
+- transport_modes: list of inter-city legs: {{"from_city": str, "to_city": str, "mode": "flight"|"train"|"cruise"|"bus"|"car", "date": "YYYY-MM-DD"|null}}
+- local_transport: trip-level default for how travellers get around within each city — free-text string e.g. "Public Transport", "Taxi + Walking", "Rental car" — null if not mentioned
+- days: list of {{"day_number": int, "date": "YYYY-MM-DD"|null, "title": str|null, "overnight_city": str|null, "overnight_hotel": str|null, "activities": [str], "transport_note": str|null}}
 - activities: plain strings e.g. "Visit Anne Frank House", "Check in to hotel"
+- transport_note: day-specific transport override or detail — use when the day mentions something different from the trip-level default, e.g. "Taxi from airport to hotel", "Pre-arranged day trip, driver picks up from hotel at 8am", "Private transfer to port" — null if no day-specific transport info
 - dietary_restrictions: e.g. "vegetarian", "halal", "Jain", "no pork"
 - food_allergies: e.g. "nuts", "shellfish", "gluten", "dairy"
 - cuisine_preferences: e.g. "local cuisine", "seafood", "Italian"
 
 Rules:
-- Return null for any field you cannot find in the document
-- Return [] for empty lists
+- Return null for scalar fields you cannot find in the document; return [] for list fields
 - Do NOT guess — only return facts explicitly stated in the document
 - Return only valid JSON with no markdown fences and no explanation
 
@@ -74,6 +76,7 @@ Merge into a single JSON object using this schema:
   "trip_end_date": null,
   "hotels": [],
   "transport_modes": [],
+  "local_transport": null,
   "days": [],
   "dietary_restrictions": [],
   "food_allergies": [],
@@ -81,10 +84,10 @@ Merge into a single JSON object using this schema:
 }}
 
 Merge rules:
-- For scalar conflicts, prefer facts from the file with the most days (that is the main itinerary)
+- For scalar conflicts, prefer facts from the dict with the most entries in days (that is the main itinerary)
 - Deduplicate hotels and transport legs by meaning (e.g. "Marriott Amsterdam" == "Amsterdam Marriott")
-- Combine dietary_restrictions, food_allergies, cuisine_preferences from all files (union, no duplicates)
-- days must come from the file with the most complete day-by-day itinerary
+- Combine dietary_restrictions, food_allergies, cuisine_preferences from all dicts (union, no duplicates)
+- days must come from the dict with the most complete day-by-day itinerary; preserve transport_note on each day
 - Return only valid JSON with no markdown fences and no explanation"""
 
 
@@ -219,6 +222,7 @@ class FolderParser:
                 overnight_city=d.get("overnight_city"),
                 overnight_hotel=d.get("overnight_hotel"),
                 activities=[str(a) for a in (d.get("activities") or [])],
+                transport_note=d.get("transport_note") or None,
             )
             for i, d in enumerate(data.get("days") or [])
             if isinstance(d, dict)
@@ -232,6 +236,7 @@ class FolderParser:
             trip_end_date=data.get("trip_end_date") or None,
             hotels=hotels,
             transport_modes=transport,
+            local_transport=data.get("local_transport") or None,
             days=days,
             dietary_restrictions=[str(r) for r in (data.get("dietary_restrictions") or []) if r],
             food_allergies=[str(a) for a in (data.get("food_allergies") or []) if a],

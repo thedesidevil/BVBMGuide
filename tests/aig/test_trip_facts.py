@@ -30,6 +30,20 @@ class TestTripFacts:
         assert restored.days[0].activities == ["Check-in", "Canal walk"]
         assert restored.transport_modes[0].from_city == "Amsterdam"
 
+    def test_local_transport_and_day_transport_note(self):
+        facts = TripFacts(
+            local_transport="Public Transport",
+            days=[
+                TripDay(day_number=1, activities=[], transport_note="Taxi from airport to hotel"),
+                TripDay(day_number=2, activities=[]),  # no override
+            ],
+        )
+        data = json.loads(facts.model_dump_json())
+        restored = TripFacts.model_validate(data)
+        assert restored.local_transport == "Public Transport"
+        assert restored.days[0].transport_note == "Taxi from airport to hotel"
+        assert restored.days[1].transport_note is None
+
     def test_num_guests_is_string(self):
         facts = TripFacts(num_guests="2 adults, 2 kids (ages 10, 8)")
         assert isinstance(facts.num_guests, str)

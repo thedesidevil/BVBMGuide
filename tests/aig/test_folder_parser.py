@@ -20,9 +20,11 @@ MINIMAL_FACTS_DICT = {
                 "check_in": "2025-06-01", "check_out": "2025-06-07"}],
     "transport_modes": [{"from_city": "Mumbai", "to_city": "Paris",
                          "mode": "flight", "date": "2025-06-01"}],
+    "local_transport": "Public Transport",
     "days": [{"day_number": 1, "date": "2025-06-01", "title": "Arrival",
               "overnight_city": "Paris", "overnight_hotel": "Hotel Paris",
-              "activities": ["Check-in"]}],
+              "activities": ["Check-in"],
+              "transport_note": "Taxi from airport to hotel"}],
     "dietary_restrictions": [],
     "food_allergies": [],
     "cuisine_preferences": [],
@@ -104,9 +106,9 @@ class TestExtractFactsFromFile:
         long_text = "x" * 100_000
         parser._extract_facts_from_file(long_text, "big.pdf")
         prompt_used = mock_ai.complete.call_args[0][0]
-        # Prompt template overhead is ~1 500 chars; text is capped at 40 000.
-        # If truncation were removed, prompt would be ~101 500 chars.
-        assert len(prompt_used) < 42_000
+        # Prompt template overhead is ~2 500 chars; text is capped at 40 000.
+        # If truncation were removed, prompt would be ~102 500 chars.
+        assert len(prompt_used) < 43_000
 
 
 class TestMergeFacts:

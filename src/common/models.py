@@ -266,11 +266,18 @@ class TripHotel(BaseModel):
 
 
 class TransportLeg(BaseModel):
-    """One transport leg between destinations."""
+    """One transport leg between destinations, with full ticket details."""
     from_city: str
     to_city: str
-    mode: str                            # flight, train, cruise, bus, car
-    date: Optional[str] = None          # ISO YYYY-MM-DD
+    mode: str                                # flight, train, cruise, bus, car
+    date: Optional[str] = None              # ISO YYYY-MM-DD
+    operator: Optional[str] = None          # airline, cruise line, train operator
+    ticket_number: Optional[str] = None     # flight no., train no., ship name, etc.
+    departure_time: Optional[str] = None    # HH:MM local time
+    arrival_time: Optional[str] = None      # HH:MM local time
+    from_terminal: Optional[str] = None     # airport/station name or terminal
+    to_terminal: Optional[str] = None       # airport/station name or terminal
+    booking_reference: Optional[str] = None # PNR, confirmation number
 
 
 class TripFacts(BaseModel):

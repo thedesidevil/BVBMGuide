@@ -39,7 +39,15 @@ Field notes:
 - destinations: ordered list of destination cities visited
 - trip_start_date / trip_end_date: ISO YYYY-MM-DD (infer year from context; default to 2025 or 2026)
 - hotels: list of {{"city": str, "hotel_name": str, "check_in": "YYYY-MM-DD"|null, "check_out": "YYYY-MM-DD"|null}}
-- transport_modes: list of inter-city legs: {{"from_city": str, "to_city": str, "mode": "flight"|"train"|"cruise"|"bus"|"car", "date": "YYYY-MM-DD"|null}}
+- transport_modes: list of inter-city legs — extract as much ticket detail as you can find:
+  {{"from_city": str, "to_city": str, "mode": "flight"|"train"|"cruise"|"bus"|"car", "date": "YYYY-MM-DD"|null,
+    "operator": str|null, "ticket_number": str|null, "departure_time": "HH:MM"|null, "arrival_time": "HH:MM"|null,
+    "from_terminal": str|null, "to_terminal": str|null, "booking_reference": str|null}}
+  - operator: airline name, cruise line, train operator (e.g. "Qatar Airways", "MSC Cruises", "Trenitalia")
+  - ticket_number: flight number, train number, ship name (e.g. "QR 552", "Frecciarossa 9601")
+  - departure_time / arrival_time: local time in HH:MM (24h) at origin / destination
+  - from_terminal / to_terminal: full airport or station name, include terminal if stated (e.g. "Mumbai Chhatrapati Shivaji International Airport T2", "Amsterdam Airport Schiphol")
+  - booking_reference: PNR or confirmation number
 - local_transport: trip-level default for how travellers get around within each city — free-text string e.g. "Public Transport", "Taxi + Walking", "Rental car" — null if not mentioned
 - days: list of {{"day_number": int, "date": "YYYY-MM-DD"|null, "title": str|null, "overnight_city": str|null, "overnight_hotel": str|null, "activities": [str], "transport_note": str|null}}
 - activities: plain strings e.g. "Visit Anne Frank House", "Check in to hotel"
@@ -85,7 +93,8 @@ Merge into a single JSON object using this schema:
 
 Merge rules:
 - For scalar conflicts, prefer facts from the dict with the most entries in days (that is the main itinerary)
-- Deduplicate hotels and transport legs by meaning (e.g. "Marriott Amsterdam" == "Amsterdam Marriott")
+- Deduplicate transport legs by route (from_city + to_city + date) — when duplicates exist, merge their fields: prefer the entry with more non-null ticket details (operator, ticket_number, times, terminals, booking_reference)
+- Deduplicate hotels by meaning (e.g. "Marriott Amsterdam" == "Amsterdam Marriott")
 - Combine dietary_restrictions, food_allergies, cuisine_preferences from all dicts (union, no duplicates)
 - days must come from the dict with the most complete day-by-day itinerary; preserve transport_note on each day
 - Return only valid JSON with no markdown fences and no explanation"""
@@ -210,6 +219,13 @@ class FolderParser:
                 to_city=t.get("to_city", ""),
                 mode=t.get("mode", "flight"),
                 date=t.get("date"),
+                operator=t.get("operator") or None,
+                ticket_number=t.get("ticket_number") or None,
+                departure_time=t.get("departure_time") or None,
+                arrival_time=t.get("arrival_time") or None,
+                from_terminal=t.get("from_terminal") or None,
+                to_terminal=t.get("to_terminal") or None,
+                booking_reference=t.get("booking_reference") or None,
             )
             for t in (data.get("transport_modes") or [])
             if isinstance(t, dict) and t.get("from_city") and t.get("to_city")

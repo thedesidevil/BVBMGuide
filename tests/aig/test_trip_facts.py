@@ -30,6 +30,26 @@ class TestTripFacts:
         assert restored.days[0].activities == ["Check-in", "Canal walk"]
         assert restored.transport_modes[0].from_city == "Amsterdam"
 
+    def test_transport_leg_ticket_details_roundtrip(self):
+        leg = TransportLeg(
+            from_city="Mumbai", to_city="Amsterdam", mode="flight", date="2025-04-19",
+            operator="Qatar Airways", ticket_number="QR 552",
+            departure_time="23:45", arrival_time="06:30",
+            from_terminal="Mumbai CSIA T2", to_terminal="Amsterdam Schiphol",
+            booking_reference="ABC123",
+        )
+        facts = TripFacts(transport_modes=[leg])
+        data = json.loads(facts.model_dump_json())
+        restored = TripFacts.model_validate(data)
+        r = restored.transport_modes[0]
+        assert r.operator == "Qatar Airways"
+        assert r.ticket_number == "QR 552"
+        assert r.departure_time == "23:45"
+        assert r.arrival_time == "06:30"
+        assert r.from_terminal == "Mumbai CSIA T2"
+        assert r.to_terminal == "Amsterdam Schiphol"
+        assert r.booking_reference == "ABC123"
+
     def test_local_transport_and_day_transport_note(self):
         facts = TripFacts(
             local_transport="Public Transport",

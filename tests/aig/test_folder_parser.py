@@ -81,3 +81,95 @@ class TestExtractText:
 
     def test_returns_none_on_nonexistent_file(self, tmp_path, parser):
         assert parser._extract_text(tmp_path / "ghost.pdf") is None
+
+
+class TestExtractFactsFromFile:
+    def test_returns_parsed_dict(self, parser, mock_ai):
+        result = parser._extract_facts_from_file("some travel text", "itinerary.pdf")
+        assert result["client_names"] == ["Ana"]
+        assert result["destinations"] == ["Paris"]
+        mock_ai.complete.assert_called_once()
+
+    def test_handles_json_with_code_fences(self, parser, mock_ai):
+        mock_ai.complete.return_value = f"```json\n{json.dumps(MINIMAL_FACTS_DICT)}\n```"
+        result = parser._extract_facts_from_file("text", "file.pdf")
+        assert result["client_names"] == ["Ana"]
+
+    def test_returns_empty_dict_on_bad_json(self, parser, mock_ai):
+        mock_ai.complete.return_value = "not valid json at all {{{"
+        result = parser._extract_facts_from_file("text", "file.pdf")
+        assert result == {}
+
+    def test_truncates_long_text_to_40000_chars(self, parser, mock_ai):
+        long_text = "x" * 100_000
+        parser._extract_facts_from_file(long_text, "big.pdf")
+        prompt_used = mock_ai.complete.call_args[0][0]
+        assert len(prompt_used) < 90_000  # text was truncated
+
+
+class TestMergeFacts:
+    def test_returns_trip_facts_instance(self, parser, mock_ai):
+        partials = [
+            ("itinerary.pdf", MINIMAL_FACTS_DICT),
+            ("flight.pdf", {"client_names": [], "num_guests": None, "departure_city": "Mumbai",
+                            "destinations": [], "trip_start_date": None, "trip_end_date": None,
+                            "hotels": [], "transport_modes": [], "days": [],
+                            "dietary_restrictions": [], "food_allergies": [], "cuisine_preferences": []}),
+        ]
+        result = parser._merge_facts(partials)
+        assert isinstance(result, TripFacts)
+        mock_ai.complete.assert_called_once()
+
+    def test_merge_prompt_includes_all_filenames(self, parser, mock_ai):
+        partials = [("a.pdf", MINIMAL_FACTS_DICT), ("b.pdf", MINIMAL_FACTS_DICT)]
+        parser._merge_facts(partials)
+        prompt = mock_ai.complete.call_args[0][0]
+        assert "a.pdf" in prompt
+        assert "b.pdf" in prompt
+
+
+class TestParse:
+    def test_empty_folder_returns_empty_facts(self, tmp_path, mock_ai):
+        p = FolderParser(ai_client=mock_ai)
+        facts, warnings = p.parse(tmp_path)
+        assert isinstance(facts, TripFacts)
+        assert facts.client_names == []
+        assert warnings == []
+        mock_ai.complete.assert_not_called()
+
+    def test_single_file_extracts_without_merge(self, tmp_path, mock_ai):
+        doc = Document()
+        doc.add_paragraph("Trip content")
+        doc.save(str(tmp_path / "itinerary.docx"))
+        p = FolderParser(ai_client=mock_ai)
+        facts, warnings = p.parse(tmp_path)
+        assert isinstance(facts, TripFacts)
+        assert warnings == []
+        assert mock_ai.complete.call_count == 1  # extract only, no merge
+
+    def test_multiple_files_calls_merge(self, tmp_path, mock_ai):
+        for name in ("a.docx", "b.docx"):
+            doc = Document()
+            doc.add_paragraph("content")
+            doc.save(str(tmp_path / name))
+        p = FolderParser(ai_client=mock_ai)
+        p.parse(tmp_path)
+        assert mock_ai.complete.call_count == 3  # 2 extractions + 1 merge
+
+    def test_unreadable_file_added_to_warnings(self, tmp_path, mock_ai):
+        (tmp_path / "bad.pdf").write_bytes(b"not a pdf")
+        doc = Document()
+        doc.add_paragraph("Good content")
+        doc.save(str(tmp_path / "good.docx"))
+        p = FolderParser(ai_client=mock_ai)
+        facts, warnings = p.parse(tmp_path)
+        assert "bad.pdf" in warnings
+        assert mock_ai.complete.call_count == 1  # only good.docx extracted
+
+    def test_all_files_unreadable_returns_empty_facts(self, tmp_path, mock_ai):
+        (tmp_path / "bad.pdf").write_bytes(b"not a pdf")
+        p = FolderParser(ai_client=mock_ai)
+        facts, warnings = p.parse(tmp_path)
+        assert facts.client_names == []
+        assert "bad.pdf" in warnings
+        mock_ai.complete.assert_not_called()

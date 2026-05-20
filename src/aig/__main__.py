@@ -77,7 +77,7 @@ def _parse_folder(folder: Path, show_days: bool, api_key: Optional[str]) -> None
         progress.update(task, completed=True)
 
     for w in warnings:
-        console.print(f"  [yellow]⚠ Could not extract text from {w} — skipped[/yellow]")
+        console.print(f"  [yellow]⚠ Could not read {w} (text and vision both failed) — skipped[/yellow]")
 
     _print_trip_facts_summary(facts)
 

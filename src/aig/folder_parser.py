@@ -1,5 +1,6 @@
 """Parse all documents in an input folder and extract trip facts via AI."""
 
+import base64
 import json
 import re
 from pathlib import Path
@@ -100,6 +101,49 @@ Merge rules:
 - Return only valid JSON with no markdown fences and no explanation"""
 
 
+_VISION_EXTRACTION_PROMPT = """\
+You are extracting travel facts from images of a travel document.
+
+Look at all the provided page images and return ONLY a JSON object with these exact fields:
+{{
+  "client_names": [],
+  "num_guests": null,
+  "departure_city": null,
+  "destinations": [],
+  "trip_start_date": null,
+  "trip_end_date": null,
+  "hotels": [],
+  "transport_modes": [],
+  "local_transport": null,
+  "days": [],
+  "dietary_restrictions": [],
+  "food_allergies": [],
+  "cuisine_preferences": []
+}}
+
+Field notes (same as for text documents):
+- client_names: list of traveller names
+- num_guests: free-text string e.g. "2 adults, 2 kids (ages 10, 8)" — null if not mentioned
+- departure_city: home city they are travelling FROM — null if not mentioned
+- destinations: ordered list of destination cities visited
+- trip_start_date / trip_end_date: ISO YYYY-MM-DD
+- hotels: list of {{"city": str, "hotel_name": str, "check_in": "YYYY-MM-DD"|null, "check_out": "YYYY-MM-DD"|null}}
+- transport_modes: extract all ticket details visible in the images:
+  {{"from_city": str, "to_city": str, "mode": "flight"|"train"|"cruise"|"bus"|"car", "date": "YYYY-MM-DD"|null,
+    "operator": str|null, "ticket_number": str|null, "departure_time": "HH:MM"|null, "arrival_time": "HH:MM"|null,
+    "from_terminal": str|null, "to_terminal": str|null, "booking_reference": str|null}}
+- local_transport: trip-level ground transport default — null if not mentioned
+- days: list of {{"day_number": int, "date": "YYYY-MM-DD"|null, "title": str|null, "overnight_city": str|null, "overnight_hotel": str|null, "activities": [str], "transport_note": str|null}}
+- dietary_restrictions, food_allergies, cuisine_preferences: lists of strings
+
+Rules:
+- Return null for scalar fields you cannot find; return [] for list fields
+- Do NOT guess — only return facts explicitly visible in the document images
+- Return only valid JSON with no markdown fences and no explanation
+
+Document filename: {filename}"""
+
+
 class FolderParser:
     """Parses all documents in a folder and returns consolidated TripFacts."""
 
@@ -139,7 +183,7 @@ class FolderParser:
         """
         Parse all supported files in folder.
         Returns (TripFacts, warnings) where warnings is a list of filenames
-        that could not be read.
+        that could not be read even after attempting vision fallback.
         """
         files = self._find_files(folder)
         warnings: list[str] = []
@@ -148,9 +192,17 @@ class FolderParser:
         for file in files:
             text = self._extract_text(file)
             if text is None:
-                warnings.append(file.name)
-                continue
-            raw = self._extract_facts_from_file(text, file.name)
+                if file.suffix.lower() == ".pdf":
+                    # Text layer absent — try AI vision on rendered page images
+                    raw = self._extract_facts_via_vision(file)
+                    if raw is None:
+                        warnings.append(file.name)
+                        continue
+                else:
+                    warnings.append(file.name)
+                    continue
+            else:
+                raw = self._extract_facts_from_file(text, file.name)
             partials.append((file.name, raw))
 
         if not partials:
@@ -162,6 +214,30 @@ class FolderParser:
             facts = self._merge_facts(partials)
 
         return facts, warnings
+
+    def _render_pdf_pages(self, file: Path, max_pages: int = 10) -> list[str]:
+        """Render PDF pages to base64-encoded PNG strings for vision extraction."""
+        try:
+            import fitz  # PyMuPDF
+            doc = fitz.open(str(file))
+            images = []
+            for i, page in enumerate(doc):
+                if i >= max_pages:
+                    break
+                pix = page.get_pixmap(dpi=150)
+                images.append(base64.b64encode(pix.tobytes("png")).decode())
+            return images
+        except Exception:
+            return []
+
+    def _extract_facts_via_vision(self, file: Path) -> Optional[dict]:
+        """Extract facts from an image-based PDF using AI vision."""
+        images = self._render_pdf_pages(file)
+        if not images:
+            return None
+        prompt = _VISION_EXTRACTION_PROMPT.format(filename=file.name)
+        response = self._ai.complete_with_images(prompt, images=images, max_tokens=4096, temperature=0.1)
+        return self._parse_json_response(response)
 
     def _extract_facts_from_file(self, text: str, filename: str) -> dict:
         prompt = _EXTRACTION_PROMPT.format(filename=filename, text=text[:40000])

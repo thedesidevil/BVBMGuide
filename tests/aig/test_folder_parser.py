@@ -38,6 +38,7 @@ MINIMAL_FACTS_DICT = {
 def mock_ai():
     client = MagicMock()
     client.complete.return_value = json.dumps(MINIMAL_FACTS_DICT)
+    client.complete_with_images.return_value = json.dumps(MINIMAL_FACTS_DICT)
     return client
 
 
@@ -187,3 +188,75 @@ class TestParse:
         assert facts.client_names == []
         assert "bad.pdf" in warnings
         mock_ai.complete.assert_not_called()
+
+
+class TestRenderPdfPages:
+    def test_returns_empty_list_for_corrupt_pdf(self, tmp_path, parser):
+        bad = tmp_path / "corrupt.pdf"
+        bad.write_bytes(b"not a pdf")
+        result = parser._render_pdf_pages(bad)
+        assert result == []
+
+    def test_returns_empty_list_for_nonexistent_file(self, tmp_path, parser):
+        result = parser._render_pdf_pages(tmp_path / "missing.pdf")
+        assert result == []
+
+
+class TestExtractFactsViaVision:
+    def test_returns_none_when_no_pages_rendered(self, parser, mock_ai, monkeypatch):
+        monkeypatch.setattr(parser, "_render_pdf_pages", lambda f, **kw: [])
+        result = parser._extract_facts_via_vision(Path("ticket.pdf"))
+        assert result is None
+        mock_ai.complete_with_images.assert_not_called()
+
+    def test_calls_ai_with_images_and_returns_dict(self, parser, mock_ai, monkeypatch):
+        monkeypatch.setattr(parser, "_render_pdf_pages", lambda f, **kw: ["base64data"])
+        result = parser._extract_facts_via_vision(Path("ticket.pdf"))
+        assert result is not None
+        assert result["client_names"] == ["Ana"]
+        mock_ai.complete_with_images.assert_called_once()
+        call_kwargs = mock_ai.complete_with_images.call_args
+        assert call_kwargs[1]["images"] == ["base64data"]
+
+    def test_filename_included_in_prompt(self, parser, mock_ai, monkeypatch):
+        monkeypatch.setattr(parser, "_render_pdf_pages", lambda f, **kw: ["base64data"])
+        parser._extract_facts_via_vision(Path("my_flight_ticket.pdf"))
+        prompt = mock_ai.complete_with_images.call_args[0][0]
+        assert "my_flight_ticket.pdf" in prompt
+
+    def test_returns_none_on_bad_vision_response(self, parser, mock_ai, monkeypatch):
+        monkeypatch.setattr(parser, "_render_pdf_pages", lambda f, **kw: ["base64data"])
+        mock_ai.complete_with_images.return_value = "not valid json {{{"
+        result = parser._extract_facts_via_vision(Path("ticket.pdf"))
+        assert result == {}
+
+
+class TestParseWithVisionFallback:
+    def test_vision_used_for_image_only_pdf(self, tmp_path, mock_ai, monkeypatch):
+        (tmp_path / "ticket.pdf").write_bytes(b"fake image pdf")
+        p = FolderParser(ai_client=mock_ai)
+        monkeypatch.setattr(p, "_render_pdf_pages", lambda f, **kw: ["base64img"])
+        facts, warnings = p.parse(tmp_path)
+        assert warnings == []
+        assert facts.client_names == ["Ana"]
+        mock_ai.complete_with_images.assert_called_once()
+        mock_ai.complete.assert_not_called()
+
+    def test_warning_when_vision_also_fails(self, tmp_path, mock_ai, monkeypatch):
+        (tmp_path / "ticket.pdf").write_bytes(b"fake image pdf")
+        p = FolderParser(ai_client=mock_ai)
+        monkeypatch.setattr(p, "_render_pdf_pages", lambda f, **kw: [])
+        facts, warnings = p.parse(tmp_path)
+        assert "ticket.pdf" in warnings
+        mock_ai.complete_with_images.assert_not_called()
+
+    def test_docx_does_not_attempt_vision(self, tmp_path, mock_ai, monkeypatch):
+        from docx import Document
+        doc = Document()
+        # Empty paragraph — pdfplumber won't be called but docx text will be blank
+        doc.save(str(tmp_path / "empty.docx"))
+        p = FolderParser(ai_client=mock_ai)
+        vision_called = []
+        monkeypatch.setattr(p, "_extract_facts_via_vision", lambda f: vision_called.append(f) or None)
+        p.parse(tmp_path)
+        assert vision_called == []

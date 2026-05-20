@@ -56,6 +56,34 @@ class AIClient:
             timeout=300.0,
         )
     
+    def complete_with_images(
+        self,
+        prompt: str,
+        images: list[str],
+        max_tokens: int = 4096,
+        temperature: float = 0.1,
+    ) -> str:
+        """Generate a completion from images + a text prompt (vision models).
+
+        Args:
+            prompt: Text instruction to accompany the images
+            images: List of base64-encoded PNG strings (one per page)
+            max_tokens: Maximum tokens in the response
+            temperature: Sampling temperature
+        """
+        content: list[dict] = [
+            {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{img}"}}
+            for img in images
+        ]
+        content.append({"type": "text", "text": prompt})
+        response = self._client.chat.completions.create(
+            model=self.model,
+            max_tokens=max_tokens,
+            temperature=temperature,
+            messages=[{"role": "user", "content": content}],
+        )
+        return response.choices[0].message.content.strip()
+
     def complete(
         self,
         prompt: str,

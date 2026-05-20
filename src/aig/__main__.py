@@ -10,6 +10,7 @@ from rich.progress import Progress, SpinnerColumn, TextColumn
 from rich.rule import Rule
 
 from src.common.ai_provider import get_ai_client
+from src.common.models import TripFacts
 from .parser import parse_itinerary
 
 app = typer.Typer(
@@ -23,7 +24,7 @@ console = Console()
 def parse(
     input_dir: Path = typer.Argument(
         ...,
-        help="Path to the input directory or itinerary PDF",
+        help="Path to the input directory (multi-file) or a single itinerary PDF",
         exists=True,
     ),
     days: bool = typer.Option(
@@ -37,33 +38,128 @@ def parse(
         help="AI API key (uses AI_API_KEY from .env if not set)",
     ),
 ):
-    """Parse input files and show a found/missing summary."""
+    """Parse input files and show a found/missing summary.
 
-    # Determine the itinerary file
-    if input_dir.is_file():
-        itinerary_pdf = input_dir
+    When given a directory, all PDF and DOCX files are parsed and facts are
+    saved to trip_facts.json inside that directory.
+    When given a single file, the existing single-file parser runs (unchanged).
+    """
+    if input_dir.is_dir():
+        _parse_folder(input_dir, show_days=days, api_key=api_key)
     else:
-        pdfs = list(input_dir.glob("*.pdf"))
-        if not pdfs:
-            console.print(f"[red]No PDF files found in {input_dir}[/red]")
-            raise typer.Exit(1)
-        itinerary_pdf = pdfs[0]
-        if len(pdfs) > 1:
-            console.print(f"[dim]Multiple PDFs found, using: {itinerary_pdf.name}[/dim]")
+        _parse_single_file(input_dir, show_days=days, api_key=api_key)
 
+
+def _parse_folder(folder: Path, show_days: bool, api_key: Optional[str]) -> None:
+    from .folder_parser import FolderParser
+
+    try:
+        ai_client = get_ai_client(api_key=api_key)
+    except ValueError:
+        console.print("[red]AI API key required for multi-file parsing. Set AI_API_KEY in .env[/red]")
+        raise typer.Exit(1)
+
+    supported = sorted(folder.glob("*.pdf")) + sorted(folder.glob("*.docx"))
+    if not supported:
+        console.print(f"[red]No PDF or DOCX files found in {folder}[/red]")
+        raise typer.Exit(1)
+
+    console.print()
+    console.print(f"Scanning {folder}/ — {len(supported)} file(s) found")
+    for f in supported:
+        console.print(f"  [dim]✓ {f.name}[/dim]")
+    console.print()
+
+    with Progress(SpinnerColumn(), TextColumn("[progress.description]{task.description}"), console=console) as progress:
+        task = progress.add_task("Extracting facts with AI...", total=None)
+        parser = FolderParser(ai_client=ai_client)
+        facts, warnings = parser.parse(folder)
+        progress.update(task, completed=True)
+
+    for w in warnings:
+        console.print(f"  [yellow]⚠ Could not extract text from {w} — skipped[/yellow]")
+
+    _print_trip_facts_summary(facts)
+
+    if show_days and facts.days:
+        console.print(Rule("[dim]  ACTIVITIES  [/dim]", style="dim"))
+        console.print()
+        for day in facts.days:
+            console.print(f"  [bold cyan]Day {day.day_number}[/bold cyan] [{day.date or ''}]: {day.title or ''}")
+            for act in day.activities[:4]:
+                console.print(f"    [dim]·[/dim] {act}")
+            if len(day.activities) > 4:
+                console.print(f"    [dim]... and {len(day.activities) - 4} more[/dim]")
+            console.print()
+
+    out_path = folder / "trip_facts.json"
+    out_path.write_text(facts.model_dump_json(indent=2), encoding="utf-8")
+    console.print(f"\n[green]Saved →[/green] {out_path}")
+
+
+def _print_trip_facts_summary(facts: TripFacts) -> None:
+    console.print(Rule("[green bold]  FOUND  [/green bold]", style="green"))
+    console.print()
+    if facts.client_names:
+        console.print(f"  [bold]{'client_names':<22}[/bold] {', '.join(facts.client_names)}")
+    if facts.num_guests:
+        console.print(f"  [bold]{'num_guests':<22}[/bold] {facts.num_guests}")
+    if facts.departure_city:
+        console.print(f"  [bold]{'departure_city':<22}[/bold] {facts.departure_city}")
+    if facts.destinations:
+        console.print(f"  [bold]{'destinations':<22}[/bold] {' → '.join(facts.destinations)}")
+    if facts.trip_start_date:
+        console.print(f"  [bold]{'trip_start_date':<22}[/bold] {facts.trip_start_date}")
+    if facts.trip_end_date:
+        console.print(f"  [bold]{'trip_end_date':<22}[/bold] {facts.trip_end_date}")
+    if facts.days:
+        console.print(f"  [bold]{'days':<22}[/bold] {len(facts.days)} days extracted")
+    if facts.hotels:
+        console.print(f"  [bold]{'hotels':<22}[/bold] {len(facts.hotels)} properties")
+    if facts.transport_modes:
+        console.print(f"  [bold]{'transport_modes':<22}[/bold] {len(facts.transport_modes)} legs")
+    if facts.dietary_restrictions:
+        console.print(f"  [bold]{'dietary_restrictions':<22}[/bold] {', '.join(facts.dietary_restrictions)}")
+    if facts.food_allergies:
+        console.print(f"  [bold]{'food_allergies':<22}[/bold] {', '.join(facts.food_allergies)}")
+    if facts.cuisine_preferences:
+        console.print(f"  [bold]{'cuisine_preferences':<22}[/bold] {', '.join(facts.cuisine_preferences)}")
+
+    all_fields = [
+        "client_names", "num_guests", "departure_city", "destinations",
+        "trip_start_date", "trip_end_date", "days", "hotels",
+        "transport_modes", "dietary_restrictions", "food_allergies", "cuisine_preferences",
+    ]
+    required = facts.missing_required()
+    optional_missing = [
+        f for f in all_fields
+        if not getattr(facts, f) and f not in required
+    ]
+
+    if required or optional_missing:
+        console.print()
+        console.print(Rule("[yellow bold]  MISSING  [/yellow bold]", style="yellow"))
+        console.print()
+        for field in required:
+            console.print(f"  [red]✗[/red]  [bold]{field:<26}[/bold] [red](required for generation)[/red]")
+        for field in optional_missing:
+            console.print(f"  [yellow]·[/yellow]  [bold]{field:<26}[/bold] [dim](optional — saved as null/[])[/dim]")
+    console.print()
+
+
+def _parse_single_file(file: Path, show_days: bool, api_key: Optional[str]) -> None:
     try:
         ai_client = get_ai_client(api_key=api_key)
     except ValueError:
         ai_client = None
         console.print("[dim]No AI API key — using regex parser[/dim]")
 
-    itinerary = parse_itinerary(itinerary_pdf, ai_client=ai_client)
+    itinerary = parse_itinerary(file, ai_client=ai_client)
 
     console.print()
     console.print(Panel.fit("[bold]PARSED ITINERARY SUMMARY[/bold]", border_style="blue"))
     console.print()
 
-    # FOUND section
     console.print(Rule("[green bold]  FOUND IN ITINERARY  [/green bold]", style="green"))
     console.print()
 
@@ -112,9 +208,7 @@ def parse(
 
     console.print()
 
-    # MISSING section
     missing: list[tuple[str, str]] = []
-
     if not itinerary.client_name:
         missing.append(("Client name", "not found in PDF"))
     if not itinerary.num_guests:
@@ -140,7 +234,6 @@ def parse(
             console.print(f"  [yellow]x[/yellow]  [bold]{field:<22}[/bold] — {reason}")
         console.print()
 
-    # Overnight breakdown
     if itinerary.days:
         from rich.table import Table
 
@@ -157,21 +250,18 @@ def parse(
             date_str = day.date or ""
             city = day.overnight_city or "[dim]—[/dim]"
             hotel = day.overnight_hotel or "[dim]—[/dim]"
-
             if day.overnight_city == "Departure day":
                 city = "[dim]Departure[/dim]"
                 hotel = "[dim]no overnight[/dim]"
             elif day.overnight_city == "On Cruise":
                 city = "[blue]On Cruise[/blue]"
                 hotel = "[dim]—[/dim]"
-
             table.add_row(f"Day {day.day_number}", date_str, city, hotel)
 
         console.print(table)
         console.print()
 
-    # Activity detail
-    if days and itinerary.days:
+    if show_days and itinerary.days:
         console.print(Rule("[dim]  ACTIVITIES  [/dim]", style="dim"))
         console.print()
         for day in itinerary.days:
@@ -189,7 +279,7 @@ def parse(
 def generate(
     input_dir: Path = typer.Argument(
         ...,
-        help="Path to the input directory or itinerary PDF",
+        help="Path to the input directory containing trip_facts.json",
         exists=True,
     ),
     db_path: Path = typer.Option(
@@ -208,49 +298,45 @@ def generate(
         help="API key (uses AI_API_KEY from .env if not set)",
     ),
 ):
-    """Generate an All Inclusive Guide from input files.
+    """Generate an All Inclusive Guide from trip_facts.json.
 
-    Input can be a directory containing itinerary PDF, booking confirmations,
-    and flight details, or a single itinerary PDF file.
+    Run 'parse <input_dir>' first to extract and save trip facts.
     """
-
     console.print(Panel.fit(
         "[bold blue]AIG Generator[/bold blue]\n"
         "[dim]Bon Voyage by Marina[/dim]",
         border_style="blue",
     ))
 
-    # Determine the itinerary file
     if input_dir.is_file():
-        itinerary_pdf = input_dir
-    else:
-        pdfs = list(input_dir.glob("*.pdf"))
-        if not pdfs:
-            console.print(f"[red]No PDF files found in {input_dir}[/red]")
-            raise typer.Exit(1)
-        itinerary_pdf = pdfs[0]
-        if len(pdfs) > 1:
-            console.print(f"[dim]Multiple PDFs found, using: {itinerary_pdf.name}[/dim]")
+        console.print("[red]generate requires a directory, not a file.[/red]")
+        raise typer.Exit(1)
 
-    # Step 1: Parse
-    with Progress(SpinnerColumn(), TextColumn("[progress.description]{task.description}"), console=console) as progress:
-        task = progress.add_task("Parsing itinerary...", total=None)
-        try:
-            ai_client = get_ai_client(api_key=api_key)
-        except ValueError:
-            ai_client = None
-        itinerary = parse_itinerary(itinerary_pdf, ai_client=ai_client)
-        progress.update(task, completed=True)
+    facts_path = input_dir / "trip_facts.json"
+    if not facts_path.exists():
+        console.print(
+            f"[red]trip_facts.json not found in {input_dir}[/red]\n"
+            f"Run [bold]python -m src.aig parse {input_dir}[/bold] first."
+        )
+        raise typer.Exit(1)
 
-    console.print("[green]Parsed.[/green]")
+    facts = TripFacts.model_validate_json(facts_path.read_text(encoding="utf-8"))
 
-    # Step 2: Validate — show found/missing
-    from .validator import validate_and_confirm
-    if not validate_and_confirm(itinerary, console):
-        console.print("\n[yellow]Aborted.[/yellow] Update your input files and re-run.")
+    _print_trip_facts_summary(facts)
+
+    missing = facts.missing_required()
+    if missing:
+        console.print(
+            f"[red]Cannot generate: required fields are missing:[/red] {', '.join(missing)}\n"
+            f"Edit [bold]{facts_path}[/bold] and fill them in."
+        )
+        raise typer.Exit(1)
+
+    confirmed = typer.confirm("Proceed with generation?")
+    if not confirmed:
+        console.print("[yellow]Aborted.[/yellow]")
         raise typer.Exit(0)
 
-    # Step 3: Generate sections (not yet implemented)
     console.print("\n[yellow]Section generation not yet implemented.[/yellow]")
     console.print("[dim]Sections will be built incrementally in future sessions.[/dim]")
 

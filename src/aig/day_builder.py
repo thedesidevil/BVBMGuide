@@ -1,5 +1,7 @@
 """Build enriched day content from TripFacts + library and save to JSON."""
 
+import json
+import re as _re
 from pathlib import Path
 from typing import Optional
 
@@ -99,3 +101,75 @@ def _match_attraction(activity_name: str, attractions: list[dict]) -> Optional[d
         if attr_name and (attr_name in name_lower or name_lower in attr_name):
             return attr
     return None
+
+
+# ── AI enrichment ─────────────────────────────────────────────────────────────
+
+_ENRICHMENT_PROMPT = """\
+You are enriching a travel day for {client_names} in {city}.
+Default transport mode: {local_transport}
+
+For each activity below, provide:
+- "vivid_description": 2–3 vivid, immersive, sensory sentences. Be specific, not generic.
+- "travel_leg": how to travel TO this activity from the given from_location:
+  - "mode": most practical transport. Use "walk" for distances under ~500m regardless of default.
+  - "duration": estimated time e.g. "~20 min"
+  - "tip": one practical tip (platform, app, route), or null
+
+Activities (process in EXACTLY this order, never reorder):
+{activities_json}
+
+Return a JSON array of exactly {n} objects. Each object must include the original "name" unchanged.
+No markdown fences. No explanation."""
+
+
+def _enrich_activities_with_ai(
+    activities: list[dict],
+    city: str,
+    local_transport: str,
+    ai_client,
+) -> list[dict]:
+    """Call AI to add vivid_description and travel_leg to each activity dict."""
+    client_names = "travellers"
+    prompt = _ENRICHMENT_PROMPT.format(
+        client_names=client_names,
+        city=city,
+        local_transport=local_transport,
+        activities_json=json.dumps(activities, ensure_ascii=False, indent=2),
+        n=len(activities),
+    )
+    raw = ai_client.complete(prompt, max_tokens=4096, temperature=0.3)
+    enriched = _parse_json_list(raw)
+    if not enriched or len(enriched) != len(activities):
+        return activities  # fallback: return unenriched
+    # Re-sort by original order using name matching
+    name_to_enriched = {item.get("name", ""): item for item in enriched}
+    result = []
+    for original in activities:
+        merged = dict(original)
+        match = name_to_enriched.get(original["name"])
+        if match:
+            merged["vivid_description"] = match.get("vivid_description", "")
+            merged["travel_leg"] = match.get("travel_leg")
+        result.append(merged)
+    return result
+
+
+def _parse_json_list(text: str) -> list:
+    """Parse a JSON array from text, stripping markdown fences if present."""
+    text = text.strip()
+    text = _re.sub(r"^```(?:json)?\s*", "", text)
+    text = _re.sub(r"\s*```$", "", text)
+    try:
+        result = json.loads(text)
+        if isinstance(result, list):
+            return result
+    except json.JSONDecodeError:
+        pass
+    match = _re.search(r"\[.*\]", text, _re.DOTALL)
+    if match:
+        try:
+            return json.loads(match.group())
+        except json.JSONDecodeError:
+            pass
+    return []

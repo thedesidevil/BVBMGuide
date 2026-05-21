@@ -115,3 +115,73 @@ class TestIsCruiseDay:
         day = TripDay(day_number=9, activities=["At Sea | Relax"], overnight_city=None,
                       title="At Sea | Relax Day")
         assert _is_cruise_day(day) is True
+
+
+import json as _json
+from src.aig.day_builder import _enrich_activities_with_ai
+
+
+AI_RESPONSE = _json.dumps([
+    {
+        "name": "Visit Anne Frank House",
+        "vivid_description": "A house that stood still while time moved on around it.",
+        "travel_leg": {
+            "from_location": "Hotel V Nesplein",
+            "mode": "walk",
+            "duration": "~18 min",
+            "tip": "Follow Prinsengracht canal north"
+        }
+    },
+    {
+        "name": "Walk to Rijksmuseum",
+        "vivid_description": "Centuries of Dutch mastery hang in gilded frames.",
+        "travel_leg": {
+            "from_location": "Visit Anne Frank House",
+            "mode": "walk",
+            "duration": "~20 min",
+            "tip": None
+        }
+    },
+])
+
+
+class TestEnrichActivitiesWithAI:
+    def test_returns_enriched_list_in_order(self):
+        mock_ai = MagicMock()
+        mock_ai.complete.return_value = AI_RESPONSE
+        activities = [
+            {"name": "Visit Anne Frank House", "from_location": "Hotel V Nesplein",
+             "hours": "9:00 AM TO 10:00 PM", "entry_fee": "€16"},
+            {"name": "Walk to Rijksmuseum", "from_location": "Visit Anne Frank House",
+             "hours": "9 AM – 6 PM", "entry_fee": "€22"},
+        ]
+        result = _enrich_activities_with_ai(activities, "Amsterdam", "Public Transport", mock_ai)
+        assert len(result) == 2
+        assert result[0]["name"] == "Visit Anne Frank House"
+        assert result[0]["vivid_description"] != ""
+        assert result[0]["travel_leg"]["mode"] == "walk"
+
+    def test_order_preserved_even_if_ai_reorders(self):
+        # AI returns items in wrong order — we re-sort by original index
+        mock_ai = MagicMock()
+        reversed_response = _json.dumps([
+            {"name": "Walk to Rijksmuseum", "vivid_description": "Museums.", "travel_leg": None},
+            {"name": "Visit Anne Frank House", "vivid_description": "House.", "travel_leg": None},
+        ])
+        mock_ai.complete.return_value = reversed_response
+        activities = [
+            {"name": "Visit Anne Frank House", "from_location": "Hotel V"},
+            {"name": "Walk to Rijksmuseum", "from_location": "Visit Anne Frank House"},
+        ]
+        result = _enrich_activities_with_ai(activities, "Amsterdam", "Public Transport", mock_ai)
+        assert result[0]["name"] == "Visit Anne Frank House"
+        assert result[1]["name"] == "Walk to Rijksmuseum"
+
+    def test_falls_back_gracefully_on_bad_ai_response(self):
+        mock_ai = MagicMock()
+        mock_ai.complete.return_value = "not json {{{"
+        activities = [{"name": "Anne Frank House", "from_location": "Hotel V"}]
+        result = _enrich_activities_with_ai(activities, "Amsterdam", "walk", mock_ai)
+        assert len(result) == 1
+        assert result[0]["name"] == "Anne Frank House"
+        assert result[0].get("vivid_description", "") == ""

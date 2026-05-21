@@ -71,3 +71,61 @@ class TestGettingAround:
         result = getting_around.build(_make_context())
         modes = [t["mode"] for t in result["cities"][0]["options"]]
         assert "metro" in modes
+
+
+import json as _json
+from unittest.mock import patch
+import src.aig.sections.cultural_etiquette as cult_etiquette
+import src.aig.sections.mobile_connectivity as connectivity
+import src.aig.sections.safety_contacts as safety
+import src.aig.sections.health_vaccination as health
+
+
+def _make_context_with_ai(library_field, library_value, ai_response):
+    """Helper: context where one library field is set (or empty) and AI returns ai_response."""
+    ctx = _make_context({library_field: library_value})
+    ctx.ai_client = MagicMock()
+    ctx.ai_client.complete.return_value = ai_response
+    ctx.db_path = Path("/fake/db")
+    return ctx
+
+
+class TestCulturalEtiquette:
+    def test_uses_library_when_available(self):
+        ctx = _make_context_with_ai("phrases", [{"phrase": "Dank je", "meaning": "Thank you"}], "ignored")
+        result = cult_etiquette.build(ctx)
+        assert result["cities"][0]["phrases"] == [{"phrase": "Dank je", "meaning": "Thank you"}]
+        ctx.ai_client.complete.assert_not_called()
+
+    def test_calls_ai_when_library_empty(self, tmp_path):
+        ctx = _make_context_with_ai("phrases", [], '["Dank je — Thank you", "Alsjeblieft — Please"]')
+        ctx.db_path = tmp_path
+        (tmp_path / "Amsterdam.json").write_text('{"phrases": []}')
+        result = cult_etiquette.build(ctx)
+        assert result["cities"][0]["ai_generated"] is True
+        ctx.ai_client.complete.assert_called_once()
+
+    def test_writes_back_to_library_when_ai_generated(self, tmp_path):
+        ctx = _make_context_with_ai("phrases", [], '["Dank je — Thank you"]')
+        ctx.db_path = tmp_path
+        (tmp_path / "Amsterdam.json").write_text('{"phrases": []}')
+        cult_etiquette.build(ctx)
+        data = _json.loads((tmp_path / "Amsterdam.json").read_text())
+        assert len(data.get("_audit", [])) == 1
+
+
+class TestSafetyContacts:
+    def test_uses_library_when_available(self):
+        ctx = _make_context_with_ai(
+            "safety_tips", ["Do not leave bags unattended"], "ignored"
+        )
+        result = safety.build(ctx)
+        assert result["cities"][0]["tips"] == ["Do not leave bags unattended"]
+        ctx.ai_client.complete.assert_not_called()
+
+    def test_calls_ai_when_empty(self, tmp_path):
+        ctx = _make_context_with_ai("safety_tips", [], '["Keep valuables hidden"]')
+        ctx.db_path = tmp_path
+        (tmp_path / "Amsterdam.json").write_text('{"safety_tips": []}')
+        result = safety.build(ctx)
+        assert result["cities"][0]["ai_generated"] is True

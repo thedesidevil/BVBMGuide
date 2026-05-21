@@ -11,7 +11,6 @@ import logging
 from pathlib import Path
 
 from docx import Document
-from docx.oxml.ns import qn
 
 from src.aig.styles import ensure_styles
 
@@ -29,8 +28,8 @@ def _load(path: Path) -> dict:
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
         return data if isinstance(data, dict) else {}
-    except Exception:
-        log.warning("Failed to load %s", path)
+    except (OSError, json.JSONDecodeError, UnicodeDecodeError) as exc:
+        log.warning("Failed to load %s: %s", path, exc)
         return {}
 
 
@@ -114,13 +113,6 @@ def _render_day(doc: Document, data: dict) -> None:
     date = data.get("date", "")
     title = data.get("title", "")
 
-    heading_parts = [f"Day {day_number}"]
-    if date:
-        heading_parts.append(date)
-    if title:
-        heading_parts.append(title)
-    heading = ": ".join(heading_parts[:2]) + (" — " + title if title else "")
-    # Simpler: Day N: date — title
     if date and title:
         heading = f"Day {day_number}: {date} — {title}"
     elif date:

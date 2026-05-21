@@ -201,7 +201,7 @@ def _render_day(doc: Document, data: dict) -> None:
 
     overnight_city = data.get("overnight_city", "")
     overnight_hotel = data.get("overnight_hotel", "")
-    overnight_label = overnight_hotel or overnight_city
+    overnight_label = overnight_city or overnight_hotel
     if overnight_label:
         _add(doc, f"✅ Overnight in {overnight_label}", "AIG Overnight")
 

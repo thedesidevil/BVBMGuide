@@ -113,6 +113,14 @@ def _render_day(doc: Document, data: dict) -> None:
     date = data.get("date", "")
     title = data.get("title", "")
 
+    if date:
+        try:
+            from datetime import datetime
+            parsed = datetime.strptime(date, "%Y-%m-%d")
+            date = parsed.strftime("%a, %b %-d")
+        except ValueError:
+            pass
+
     if date and title:
         heading = f"Day {day_number}: {date} — {title}"
     elif date:

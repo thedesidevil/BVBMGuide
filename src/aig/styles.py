@@ -1,6 +1,7 @@
 """Named paragraph styles for AIG documents."""
 
 from docx import Document
+from docx.enum.style import WD_STYLE_TYPE
 from docx.shared import Pt, RGBColor
 
 # (name, size_pt, bold, (r, g, b))
@@ -24,7 +25,7 @@ def ensure_styles(doc: Document) -> None:
     existing = {s.name for s in doc.styles}
     for name, pt, bold, (r, g, b) in AIG_STYLES:
         if name not in existing:
-            style = doc.styles.add_style(name, 1)  # 1 = WD_STYLE_TYPE.PARAGRAPH
+            style = doc.styles.add_style(name, WD_STYLE_TYPE.PARAGRAPH)
         else:
             style = doc.styles[name]
         style.font.name = "Calibri"

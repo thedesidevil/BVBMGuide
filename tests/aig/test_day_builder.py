@@ -200,3 +200,131 @@ class TestEnrichActivitiesWithAI:
         result = _enrich_activities_with_ai(activities, "City", "walk", mock_ai)
         assert result[0]["vivid_description"] == "First museum visit."
         assert result[1]["vivid_description"] == "Second museum visit."
+
+
+from src.aig.day_builder import _select_restaurants, build_day
+
+
+class TestSelectRestaurants:
+    def _make_context(self, restaurants):
+        ctx = MagicMock(spec=AIGContext)
+        ctx.facts = FACTS
+        lib = MagicMock()
+        lib.restaurants = restaurants
+        ctx.library = {"Amsterdam": lib}
+        return ctx
+
+    def test_lunch_matches_nearby_landmarks(self):
+        ctx = self._make_context(AMSTERDAM_LIBRARY.restaurants)
+        lunch, _ = _select_restaurants(
+            city="Amsterdam",
+            context=ctx,
+            morning_activities=["Visit Anne Frank House"],
+            day_number=1,
+            used_restaurants={},
+        )
+        names = [r.name for r in lunch]
+        assert "Pancake Bakery" in names
+
+    def test_dietary_filter_excludes_non_vegetarian(self):
+        facts = FACTS.model_copy(update={"dietary_restrictions": ["vegetarian"]})
+        ctx = self._make_context(AMSTERDAM_LIBRARY.restaurants)
+        ctx.facts = facts
+        _, dinner = _select_restaurants(
+            city="Amsterdam",
+            context=ctx,
+            morning_activities=[],
+            day_number=1,
+            used_restaurants={},
+        )
+        for card in dinner:
+            assert card.source != "library" or "Broodje Bert" not in card.name
+
+    def test_rotation_excludes_restaurant_used_twice_in_window(self):
+        used = {"Pancake Bakery": [1, 2]}  # used on days 1 and 2
+        ctx = self._make_context(AMSTERDAM_LIBRARY.restaurants)
+        lunch, _ = _select_restaurants(
+            city="Amsterdam",
+            context=ctx,
+            morning_activities=["Visit Anne Frank House"],
+            day_number=3,
+            used_restaurants=used,
+        )
+        assert all(r.name != "Pancake Bakery" for r in lunch)
+
+    def test_restaurant_within_rotation_window_allowed_once(self):
+        used = {"Pancake Bakery": [1]}   # used only once in window
+        ctx = self._make_context(AMSTERDAM_LIBRARY.restaurants)
+        lunch, _ = _select_restaurants(
+            city="Amsterdam",
+            context=ctx,
+            morning_activities=["Visit Anne Frank House"],
+            day_number=2,
+            used_restaurants=used,
+        )
+        assert any(r.name == "Pancake Bakery" for r in lunch)
+
+
+class TestBuildDay:
+    def test_saves_day_json_to_input_days(self, tmp_path):
+        mock_ai = MagicMock()
+        mock_ai.complete.return_value = json.dumps([
+            {"name": act, "vivid_description": "Lovely.", "travel_leg": None}
+            for act in FACTS.days[0].activities
+        ])
+        ctx = AIGContext(
+            facts=FACTS,
+            library={"Amsterdam": AMSTERDAM_LIBRARY},
+            db_path=tmp_path,
+            ai_client=mock_ai,
+        )
+        build_day(ctx, day_number=1, input_dir=tmp_path)
+        day_file = tmp_path / "days" / "day_01.json"
+        assert day_file.exists()
+        data = json.loads(day_file.read_text())
+        assert data["day_number"] == 1
+
+    def test_activity_order_preserved(self, tmp_path):
+        mock_ai = MagicMock()
+        mock_ai.complete.return_value = json.dumps([
+            {"name": act, "vivid_description": "X.", "travel_leg": None}
+            for act in FACTS.days[0].activities
+        ])
+        ctx = AIGContext(
+            facts=FACTS,
+            library={"Amsterdam": AMSTERDAM_LIBRARY},
+            db_path=tmp_path,
+            ai_client=mock_ai,
+        )
+        build_day(ctx, day_number=1, input_dir=tmp_path)
+        data = json.loads((tmp_path / "days" / "day_01.json").read_text())
+        names = [a["name"] for a in data["activities"]]
+        assert names == FACTS.days[0].activities
+
+    def test_cruise_day_skips_restaurant_lookup(self, tmp_path):
+        cruise_facts = TripFacts(
+            client_names=["Ana"],
+            destinations=["Mediterranean"],
+            trip_start_date="2026-04-26",
+            trip_end_date="2026-04-27",
+            hotels=[],
+            days=[TripDay(
+                day_number=8,
+                title="At Sea | Relax",
+                overnight_city=None,
+                activities=["Relax on deck", "Spa treatment"],
+            )],
+        )
+        mock_ai = MagicMock()
+        mock_ai.complete.return_value = json.dumps([
+            {"name": a, "vivid_description": "Sea.", "travel_leg": None}
+            for a in cruise_facts.days[0].activities
+        ])
+        ctx = AIGContext(
+            facts=cruise_facts, library={}, db_path=tmp_path, ai_client=mock_ai,
+        )
+        build_day(ctx, day_number=8, input_dir=tmp_path)
+        data = json.loads((tmp_path / "days" / "day_08.json").read_text())
+        assert data["is_cruise_day"] is True
+        assert data["lunch"] == []
+        assert data["dinner"] == []

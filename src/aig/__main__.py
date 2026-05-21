@@ -1,5 +1,6 @@
 """CLI for AIG generation: parse inputs and generate guides."""
 
+import json
 from pathlib import Path
 from typing import Optional
 
@@ -336,8 +337,178 @@ def generate(
         console.print("[yellow]Aborted.[/yellow]")
         raise typer.Exit(0)
 
-    console.print("\n[yellow]Section generation not yet implemented.[/yellow]")
-    console.print("[dim]Sections will be built incrementally in future sessions.[/dim]")
+    try:
+        ai_client = get_ai_client(api_key=api_key)
+    except ValueError:
+        console.print("[red]AI API key required. Set AI_API_KEY in .env[/red]")
+        raise typer.Exit(1)
+
+    from .context import build_context
+    from .day_builder import build_day
+    from .assembler import assemble
+    import src.aig.sections.client_info as _client_info
+    import src.aig.sections.cover as _cover
+    import src.aig.sections.must_try_dishes as _must_try
+    import src.aig.sections.souvenir_guide as _souvenirs
+    import src.aig.sections.getting_around as _getting_around
+    import src.aig.sections.cultural_etiquette as _etiquette
+    import src.aig.sections.mobile_connectivity as _connectivity
+    import src.aig.sections.safety_contacts as _safety
+    import src.aig.sections.health_vaccination as _health
+    import src.aig.sections.packing_list as _packing
+    import src.aig.sections.thank_you as _thank_you
+
+    console.print(Rule("[dim]  BUILDING CONTEXT  [/dim]", style="dim"))
+    ctx = build_context(facts, db_path, ai_client)
+    console.print(f"  Library loaded for: {', '.join(ctx.library.keys()) or 'no cities matched'}")
+
+    sections_dir = input_dir / "sections"
+    sections_dir.mkdir(exist_ok=True)
+
+    def save_section(name: str, data: dict) -> None:
+        (sections_dir / f"{name}.json").write_text(
+            json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
+
+    console.print(Rule("[dim]  GENERATING SECTIONS  [/dim]", style="dim"))
+    save_section("cover", _cover.build(ctx)); console.print("  ✓ cover")
+    save_section("client_info", _client_info.build(ctx)); console.print("  ✓ client_info")
+    save_section("must_try_dishes", _must_try.build(ctx)); console.print("  ✓ must_try_dishes")
+    save_section("souvenir_guide", _souvenirs.build(ctx)); console.print("  ✓ souvenir_guide")
+    save_section("getting_around", _getting_around.build(ctx)); console.print("  ✓ getting_around")
+    save_section("cultural_etiquette", _etiquette.build(ctx)); console.print("  ✓ cultural_etiquette")
+    save_section("mobile_connectivity", _connectivity.build(ctx)); console.print("  ✓ mobile_connectivity")
+    save_section("safety_contacts", _safety.build(ctx)); console.print("  ✓ safety_contacts")
+    save_section("health_vaccination", _health.build(ctx)); console.print("  ✓ health_vaccination")
+    save_section("packing_list", _packing.build(ctx)); console.print("  ✓ packing_list")
+    save_section("thank_you", _thank_you.build(ctx)); console.print("  ✓ thank_you")
+
+    console.print(Rule("[dim]  GENERATING DAYS  [/dim]", style="dim"))
+    for day in facts.days:
+        console.print(f"  Day {day.day_number}: {day.title or ''}")
+        build_day(ctx, day.day_number, input_dir)
+    console.print()
+
+    if output is None:
+        names = "_".join(facts.client_names[:1]) or "guide"
+        output = input_dir / f"AIG_{names}.docx"
+
+    console.print(Rule("[dim]  ASSEMBLING DOCX  [/dim]", style="dim"))
+    assemble(input_dir, output)
+    console.print(f"\n[green bold]✓ Guide saved →[/green bold] {output}")
+
+
+@app.command(name="redo-day")
+def redo_day(
+    input_dir: Path = typer.Argument(..., exists=True, file_okay=False),
+    day: int = typer.Option(..., "--day", "-d", help="Day number to regenerate"),
+    note: Optional[str] = typer.Option(None, "--note", help="Override transport note"),
+    db_path: Path = typer.Option(Path("library_db"), "--db"),
+    output: Optional[Path] = typer.Option(None, "--output", "-o"),
+    api_key: Optional[str] = typer.Option(None, "--api-key"),
+):
+    """Regenerate one day and reassemble the guide."""
+    facts_path = input_dir / "trip_facts.json"
+    if not facts_path.exists():
+        console.print(f"[red]trip_facts.json not found in {input_dir}[/red]")
+        raise typer.Exit(1)
+    facts = TripFacts.model_validate_json(facts_path.read_text(encoding="utf-8"))
+    try:
+        ai_client = get_ai_client(api_key=api_key)
+    except ValueError:
+        console.print("[red]AI API key required.[/red]")
+        raise typer.Exit(1)
+    from .context import build_context
+    from .day_builder import build_day
+    from .assembler import assemble
+    ctx = build_context(facts, db_path, ai_client)
+    overrides = {"transport": note} if note else {}
+    console.print(f"Regenerating Day {day}...")
+    build_day(ctx, day, input_dir, overrides=overrides)
+    if output is None:
+        names = "_".join(facts.client_names[:1]) or "guide"
+        output = input_dir / f"AIG_{names}.docx"
+    assemble(input_dir, output)
+    console.print(f"[green]✓ Day {day} regenerated → {output}[/green]")
+
+
+@app.command(name="redo-section")
+def redo_section(
+    input_dir: Path = typer.Argument(..., exists=True, file_okay=False),
+    section: str = typer.Option(..., "--section", "-s",
+                                help="Section name e.g. packing-list, cultural-etiquette"),
+    db_path: Path = typer.Option(Path("library_db"), "--db"),
+    output: Optional[Path] = typer.Option(None, "--output", "-o"),
+    api_key: Optional[str] = typer.Option(None, "--api-key"),
+):
+    """Regenerate one supplementary section and reassemble."""
+    _SECTION_MAP = {
+        "cover": "cover", "client-info": "client_info",
+        "must-try-dishes": "must_try_dishes", "souvenir-guide": "souvenir_guide",
+        "getting-around": "getting_around", "cultural-etiquette": "cultural_etiquette",
+        "mobile-connectivity": "mobile_connectivity", "safety-contacts": "safety_contacts",
+        "health-vaccination": "health_vaccination", "packing-list": "packing_list",
+        "thank-you": "thank_you",
+    }
+    if section not in _SECTION_MAP:
+        console.print(f"[red]Unknown section '{section}'. Options: {', '.join(_SECTION_MAP)}[/red]")
+        raise typer.Exit(1)
+    facts = TripFacts.model_validate_json((input_dir / "trip_facts.json").read_text(encoding="utf-8"))
+    try:
+        ai_client = get_ai_client(api_key=api_key)
+    except ValueError:
+        console.print("[red]AI API key required.[/red]")
+        raise typer.Exit(1)
+    from .context import build_context
+    from .assembler import assemble
+    import importlib
+    ctx = build_context(facts, db_path, ai_client)
+    mod = importlib.import_module(f"src.aig.sections.{_SECTION_MAP[section]}")
+    data = mod.build(ctx)
+    sections_dir = input_dir / "sections"
+    sections_dir.mkdir(exist_ok=True)
+    (sections_dir / f"{_SECTION_MAP[section]}.json").write_text(
+        json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    if output is None:
+        names = "_".join(facts.client_names[:1]) or "guide"
+        output = input_dir / f"AIG_{names}.docx"
+    assemble(input_dir, output)
+    console.print(f"[green]✓ Section '{section}' regenerated → {output}[/green]")
+
+
+@app.command(name="assemble")
+def assemble_cmd(
+    input_dir: Path = typer.Argument(..., exists=True, file_okay=False),
+    output: Optional[Path] = typer.Option(None, "--output", "-o"),
+):
+    """Re-render DOCX from existing day and section JSONs (no AI calls)."""
+    from .assembler import assemble
+    facts_path = input_dir / "trip_facts.json"
+    facts = TripFacts.model_validate_json(facts_path.read_text(encoding="utf-8"))
+    if output is None:
+        names = "_".join(facts.client_names[:1]) or "guide"
+        output = input_dir / f"AIG_{names}.docx"
+    assemble(input_dir, output)
+    console.print(f"[green]✓ Assembled → {output}[/green]")
+
+
+@app.command(name="build-styles")
+def build_styles_cmd(
+    output: Path = typer.Option(
+        Path("AIG_style_sample.docx"), "--output", "-o",
+        help="Path for sample DOCX showing all AIG styles",
+    ),
+):
+    """Generate a sample DOCX demonstrating all AIG paragraph styles."""
+    from docx import Document
+    from .styles import ensure_styles, AIG_STYLES
+    doc = Document()
+    ensure_styles(doc)
+    for name, *_ in AIG_STYLES:
+        doc.add_paragraph(f"Sample text in style: {name}", style=name)
+    doc.save(str(output))
+    console.print(f"[green]✓ Style sample saved → {output}[/green]")
 
 
 def main():

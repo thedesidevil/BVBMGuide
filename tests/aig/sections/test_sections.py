@@ -129,3 +129,58 @@ class TestSafetyContacts:
         (tmp_path / "Amsterdam.json").write_text('{"safety_tips": []}')
         result = safety.build(ctx)
         assert result["cities"][0]["ai_generated"] is True
+
+
+import json as _json2
+import src.aig.sections.cover as cover
+import src.aig.sections.packing_list as packing
+import src.aig.sections.thank_you as thank_you
+
+
+class TestCover:
+    def test_returns_title_and_subtitle(self):
+        ctx = _make_context()
+        ctx.ai_client = MagicMock()
+        ctx.ai_client.complete.return_value = _json2.dumps({
+            "title": "Windmills and Canals",
+            "subtitle": "A 3-Night Amsterdam Adventure"
+        })
+        result = cover.build(ctx)
+        assert "title" in result
+        assert "subtitle" in result
+        assert result["title"] != ""
+
+    def test_falls_back_on_bad_ai_response(self):
+        ctx = _make_context()
+        ctx.ai_client = MagicMock()
+        ctx.ai_client.complete.return_value = "not json"
+        result = cover.build(ctx)
+        assert "title" in result  # fallback title generated from destinations
+
+
+class TestPackingList:
+    def test_calls_ai_with_trip_context(self):
+        ctx = _make_context()
+        ctx.ai_client = MagicMock()
+        ctx.ai_client.complete.return_value = _json2.dumps(["Comfortable walking shoes", "Rain jacket"])
+        result = packing.build(ctx)
+        assert "items" in result
+        assert len(result["items"]) >= 1
+        prompt_used = ctx.ai_client.complete.call_args[0][0]
+        assert "Amsterdam" in prompt_used
+
+    def test_trip_dates_in_prompt(self):
+        ctx = _make_context()
+        ctx.ai_client = MagicMock()
+        ctx.ai_client.complete.return_value = "[]"
+        packing.build(ctx)
+        prompt = ctx.ai_client.complete.call_args[0][0]
+        assert "2026-04-19" in prompt
+
+
+class TestThankYou:
+    def test_returns_static_text(self):
+        ctx = _make_context()
+        result = thank_you.build(ctx)
+        assert "text" in result
+        assert "Bon Voyage by Marina" in result["text"]

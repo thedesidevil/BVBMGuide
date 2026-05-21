@@ -119,7 +119,7 @@ For each activity below, provide:
 Activities (process in EXACTLY this order, never reorder):
 {activities_json}
 
-Return a JSON array of exactly {n} objects. Each object must include the original "name" unchanged.
+Return a JSON array of exactly {n} objects IN THE SAME ORDER AS THE INPUT.
 No markdown fences. No explanation."""
 
 
@@ -142,15 +142,16 @@ def _enrich_activities_with_ai(
     enriched = _parse_json_list(raw)
     if not enriched or len(enriched) != len(activities):
         return activities  # fallback: return unenriched
-    # Re-sort by original order using name matching
-    name_to_enriched = {item.get("name", ""): item for item in enriched}
+    # Use positional indexing — AI is instructed to return items in input order,
+    # so index i in enriched corresponds to index i in activities.
+    # This also correctly handles duplicate activity names.
     result = []
-    for original in activities:
+    for i, original in enumerate(activities):
         merged = dict(original)
-        match = name_to_enriched.get(original["name"])
-        if match:
-            merged["vivid_description"] = match.get("vivid_description", "")
-            merged["travel_leg"] = match.get("travel_leg")
+        if i < len(enriched):
+            enriched_item = enriched[i]
+            merged["vivid_description"] = enriched_item.get("vivid_description", "")
+            merged["travel_leg"] = enriched_item.get("travel_leg")
         result.append(merged)
     return result
 

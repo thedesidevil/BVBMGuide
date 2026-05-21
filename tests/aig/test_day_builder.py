@@ -185,3 +185,18 @@ class TestEnrichActivitiesWithAI:
         assert len(result) == 1
         assert result[0]["name"] == "Anne Frank House"
         assert result[0].get("vivid_description", "") == ""
+
+    def test_duplicate_activity_names_use_positional_order(self):
+        mock_ai = MagicMock()
+        response = _json.dumps([
+            {"name": "Visit Museum", "vivid_description": "First museum visit.", "travel_leg": None},
+            {"name": "Visit Museum", "vivid_description": "Second museum visit.", "travel_leg": None},
+        ])
+        mock_ai.complete.return_value = response
+        activities = [
+            {"name": "Visit Museum", "from_location": "Hotel"},
+            {"name": "Visit Museum", "from_location": "First Museum"},
+        ]
+        result = _enrich_activities_with_ai(activities, "City", "walk", mock_ai)
+        assert result[0]["vivid_description"] == "First museum visit."
+        assert result[1]["vivid_description"] == "Second museum visit."

@@ -20,6 +20,29 @@ app = typer.Typer(
 console = Console()
 
 
+def _default_output_path(facts: TripFacts, input_dir: Path) -> Path:
+    names = "_".join(facts.client_names[:1]) or "guide"
+    return input_dir / f"AIG_{names}.docx"
+
+
+def _get_ai_client_or_exit(api_key: Optional[str]):
+    try:
+        return get_ai_client(api_key=api_key)
+    except ValueError:
+        console.print("[red]AI API key required. Set AI_API_KEY in .env[/red]")
+        raise typer.Exit(1)
+
+
+_SECTION_MAP = {
+    "cover": "cover", "client-info": "client_info",
+    "must-try-dishes": "must_try_dishes", "souvenir-guide": "souvenir_guide",
+    "getting-around": "getting_around", "cultural-etiquette": "cultural_etiquette",
+    "mobile-connectivity": "mobile_connectivity", "safety-contacts": "safety_contacts",
+    "health-vaccination": "health_vaccination", "packing-list": "packing_list",
+    "thank-you": "thank_you",
+}
+
+
 @app.command()
 def parse(
     input_dir: Path = typer.Argument(
@@ -337,11 +360,7 @@ def generate(
         console.print("[yellow]Aborted.[/yellow]")
         raise typer.Exit(0)
 
-    try:
-        ai_client = get_ai_client(api_key=api_key)
-    except ValueError:
-        console.print("[red]AI API key required. Set AI_API_KEY in .env[/red]")
-        raise typer.Exit(1)
+    ai_client = _get_ai_client_or_exit(api_key)
 
     from .context import build_context
     from .day_builder import build_day
@@ -390,8 +409,7 @@ def generate(
     console.print()
 
     if output is None:
-        names = "_".join(facts.client_names[:1]) or "guide"
-        output = input_dir / f"AIG_{names}.docx"
+        output = _default_output_path(facts, input_dir)
 
     console.print(Rule("[dim]  ASSEMBLING DOCX  [/dim]", style="dim"))
     assemble(input_dir, output)
@@ -413,11 +431,10 @@ def redo_day(
         console.print(f"[red]trip_facts.json not found in {input_dir}[/red]")
         raise typer.Exit(1)
     facts = TripFacts.model_validate_json(facts_path.read_text(encoding="utf-8"))
-    try:
-        ai_client = get_ai_client(api_key=api_key)
-    except ValueError:
-        console.print("[red]AI API key required.[/red]")
+    if day < 1 or day > len(facts.days):
+        console.print(f"[red]Day {day} out of range — trip has {len(facts.days)} days.[/red]")
         raise typer.Exit(1)
+    ai_client = _get_ai_client_or_exit(api_key)
     from .context import build_context
     from .day_builder import build_day
     from .assembler import assemble
@@ -426,8 +443,7 @@ def redo_day(
     console.print(f"Regenerating Day {day}...")
     build_day(ctx, day, input_dir, overrides=overrides)
     if output is None:
-        names = "_".join(facts.client_names[:1]) or "guide"
-        output = input_dir / f"AIG_{names}.docx"
+        output = _default_output_path(facts, input_dir)
     assemble(input_dir, output)
     console.print(f"[green]✓ Day {day} regenerated → {output}[/green]")
 
@@ -442,23 +458,15 @@ def redo_section(
     api_key: Optional[str] = typer.Option(None, "--api-key"),
 ):
     """Regenerate one supplementary section and reassemble."""
-    _SECTION_MAP = {
-        "cover": "cover", "client-info": "client_info",
-        "must-try-dishes": "must_try_dishes", "souvenir-guide": "souvenir_guide",
-        "getting-around": "getting_around", "cultural-etiquette": "cultural_etiquette",
-        "mobile-connectivity": "mobile_connectivity", "safety-contacts": "safety_contacts",
-        "health-vaccination": "health_vaccination", "packing-list": "packing_list",
-        "thank-you": "thank_you",
-    }
     if section not in _SECTION_MAP:
         console.print(f"[red]Unknown section '{section}'. Options: {', '.join(_SECTION_MAP)}[/red]")
         raise typer.Exit(1)
-    facts = TripFacts.model_validate_json((input_dir / "trip_facts.json").read_text(encoding="utf-8"))
-    try:
-        ai_client = get_ai_client(api_key=api_key)
-    except ValueError:
-        console.print("[red]AI API key required.[/red]")
+    facts_path = input_dir / "trip_facts.json"
+    if not facts_path.exists():
+        console.print(f"[red]trip_facts.json not found in {input_dir}[/red]")
         raise typer.Exit(1)
+    facts = TripFacts.model_validate_json(facts_path.read_text(encoding="utf-8"))
+    ai_client = _get_ai_client_or_exit(api_key)
     from .context import build_context
     from .assembler import assemble
     import importlib
@@ -471,8 +479,7 @@ def redo_section(
         json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8"
     )
     if output is None:
-        names = "_".join(facts.client_names[:1]) or "guide"
-        output = input_dir / f"AIG_{names}.docx"
+        output = _default_output_path(facts, input_dir)
     assemble(input_dir, output)
     console.print(f"[green]✓ Section '{section}' regenerated → {output}[/green]")
 
@@ -485,10 +492,12 @@ def assemble_cmd(
     """Re-render DOCX from existing day and section JSONs (no AI calls)."""
     from .assembler import assemble
     facts_path = input_dir / "trip_facts.json"
+    if not facts_path.exists():
+        console.print(f"[red]trip_facts.json not found in {input_dir}[/red]")
+        raise typer.Exit(1)
     facts = TripFacts.model_validate_json(facts_path.read_text(encoding="utf-8"))
     if output is None:
-        names = "_".join(facts.client_names[:1]) or "guide"
-        output = input_dir / f"AIG_{names}.docx"
+        output = _default_output_path(facts, input_dir)
     assemble(input_dir, output)
     console.print(f"[green]✓ Assembled → {output}[/green]")
 

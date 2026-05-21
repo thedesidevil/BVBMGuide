@@ -184,3 +184,51 @@ class TestThankYou:
         result = thank_you.build(ctx)
         assert "text" in result
         assert "Bon Voyage by Marina" in result["text"]
+
+
+import src.aig.sections.client_info as client_info
+
+
+class TestClientInfo:
+    def _make_multi_hotel_context(self):
+        facts = TripFacts(
+            client_names=["Ana", "Raj"],
+            num_guests="2 adults",
+            departure_city="Mumbai",
+            destinations=["Amsterdam", "Florence"],
+            trip_start_date="2026-04-19",
+            trip_end_date="2026-04-25",
+            local_transport="Public Transport",
+            dietary_restrictions=["vegetarian"],
+            hotels=[
+                TripHotel(city="Amsterdam", hotel_name="Hotel V", check_in="2026-04-19", check_out="2026-04-22"),
+                TripHotel(city="Florence", hotel_name="Hotel Alex", check_in="2026-04-22", check_out="2026-04-25"),
+            ],
+            days=[TripDay(day_number=1, activities=[])],
+        )
+        ctx = _make_context()
+        ctx.facts = facts
+        ctx.library = {}
+        return ctx
+
+    def test_client_names_in_result(self):
+        result = client_info.build(self._make_multi_hotel_context())
+        assert result["client_names"] == ["Ana", "Raj"]
+
+    def test_one_row_per_hotel(self):
+        result = client_info.build(self._make_multi_hotel_context())
+        assert len(result["trip_summary"]) == 2
+
+    def test_hotel_row_has_maps_link(self):
+        result = client_info.build(self._make_multi_hotel_context())
+        for row in result["trip_summary"]:
+            assert row["hotel_maps_link"].startswith("https://www.google.com/maps")
+
+    def test_transport_summary_from_local_transport(self):
+        result = client_info.build(self._make_multi_hotel_context())
+        for row in result["trip_summary"]:
+            assert "Public Transport" in row["transport"]
+
+    def test_dietary_preferences_included(self):
+        result = client_info.build(self._make_multi_hotel_context())
+        assert "vegetarian" in result["dietary_preferences"]

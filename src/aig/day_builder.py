@@ -1,7 +1,5 @@
 """Build enriched day content from TripFacts + library and save to JSON."""
 
-import json
-import re
 from pathlib import Path
 from typing import Optional
 

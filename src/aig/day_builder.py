@@ -151,7 +151,10 @@ def _enrich_activities_with_ai(
         if i < len(enriched):
             enriched_item = enriched[i]
             merged["vivid_description"] = enriched_item.get("vivid_description", "")
-            merged["travel_leg"] = enriched_item.get("travel_leg")
+            travel_leg = enriched_item.get("travel_leg")
+            if travel_leg and isinstance(travel_leg, dict) and "from_location" not in travel_leg:
+                travel_leg["from_location"] = original.get("from_location", "")
+            merged["travel_leg"] = travel_leg
         result.append(merged)
     return result
 

@@ -825,3 +825,24 @@ class LibraryDatabase:
             if dest.lower() == dest_lower:
                 return data.get('restaurants', [])
         return []
+
+    def get_city_data(self, city: str) -> dict:
+        """Return all library data for a city, or {} if not found."""
+        if self._sharded:
+            if self._index is None:
+                self.load()
+            # Direct city-named shard (primary path)
+            city_file = self.db_path / f'{city}.json'
+            if city_file.exists():
+                return self._load_dest(city)
+            # Fallback: folder coverage (city stored under a country shard)
+            city_lower = city.lower()
+            coverage = self._index.get('_folder_coverage', {})
+            for folder, covered_cities in coverage.items():
+                if any(c.lower() == city_lower for c in covered_cities):
+                    return self._load_dest(folder)
+            return {}
+        for dest, data in self.data.get('destinations', {}).items():
+            if dest.lower() == city.lower():
+                return data
+        return {}

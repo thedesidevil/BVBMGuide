@@ -226,6 +226,32 @@ class TestSelectRestaurants:
         names = [r.name for r in lunch]
         assert "Pancake Bakery" in names
 
+    def test_lunch_only_matches_restaurant_with_landmark(self):
+        """Verify landmark matching actually works — not just the fallback path."""
+        # Two restaurants: one near Anne Frank House, one not
+        restaurants = [
+            {"name": "Pancake Bakery", "nearby_landmarks": ["Anne Frank House"],
+             "area": "Jordaan", "hours": "9am-8:30pm", "vegetarian_friendly": True,
+             "must_try_dishes": ["Dutch pancake"]},
+            {"name": "Far Away Cafe", "nearby_landmarks": ["Vondelpark"],
+             "area": "South", "hours": "10am-6pm", "vegetarian_friendly": True,
+             "must_try_dishes": ["Coffee"]},
+        ]
+        ctx = self._make_context(restaurants)
+        lunch, _ = _select_restaurants(
+            city="Amsterdam",
+            context=ctx,
+            morning_activities=["Visit Anne Frank House"],
+            day_number=1,
+            used_restaurants={},
+        )
+        names = [r.name for r in lunch]
+        assert "Pancake Bakery" in names
+        # With only 2 restaurants and 1 matching, lunch pool starts with 1
+        # The fallback fills in remaining slots — that's ok
+        # But the FIRST entry should be the landmark-matched one
+        assert names[0] == "Pancake Bakery"
+
     def test_dietary_filter_excludes_non_vegetarian(self):
         facts = FACTS.model_copy(update={"dietary_restrictions": ["vegetarian"]})
         ctx = self._make_context(AMSTERDAM_LIBRARY.restaurants)

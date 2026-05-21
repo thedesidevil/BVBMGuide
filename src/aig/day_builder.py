@@ -211,12 +211,15 @@ def _select_restaurants(
         )
 
     # Lunch: prefer restaurants near morning attractions
-    morning_lower = {a.lower() for a in morning_activities}
+    morning_lower = [a.lower() for a in morning_activities]
     lunch_pool = [
         r for r in all_rests
         if is_allowed(r) and rotation_ok(r["name"])
-        and any(lm.lower() in morning_lower or any(ml in lm.lower() for ml in morning_lower)
-                for lm in r.get("nearby_landmarks", []))
+        and any(
+            lm.lower() in act or act in lm.lower()
+            for lm in r.get("nearby_landmarks", [])
+            for act in morning_lower
+        )
     ]
     if len(lunch_pool) < 3:
         extras = [r for r in all_rests if is_allowed(r) and rotation_ok(r["name"])
@@ -231,10 +234,11 @@ def _select_restaurants(
         if h.city.lower() == city.lower():
             hotel_name = h.hotel_name
             break
+    used_lunch_names = {r["name"] for r in lunch_pool[:3]}
     dinner_pool = [
         r for r in all_rests
         if is_allowed(r) and rotation_ok(r["name"])
-        and r not in lunch_pool[:3]
+        and r["name"] not in used_lunch_names
     ]
     dinner_cards = [to_card(r, f"near {hotel_name or city}") for r in dinner_pool[:3]]
 
@@ -255,7 +259,7 @@ def _load_used_restaurants(input_dir: Path) -> dict[str, list[int]]:
                 name = meal.get("name", "")
                 if name:
                     used.setdefault(name, []).append(day_num)
-        except Exception:
+        except (json.JSONDecodeError, OSError, KeyError, ValueError):
             pass
     return used
 

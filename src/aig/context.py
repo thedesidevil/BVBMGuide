@@ -4,8 +4,6 @@ import json
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
-
 from pydantic import BaseModel, Field
 
 from src.common.ai_provider import AIClient
@@ -39,7 +37,7 @@ class AIGContext:
 def build_context(
     facts: TripFacts,
     db_path: Path,
-    ai_client: Any,
+    ai_client: AIClient,
 ) -> AIGContext:
     db = LibraryDatabase(db_path)
     db.load()
@@ -59,14 +57,14 @@ def _extract_cities(facts: TripFacts) -> list[str]:
     for dest in facts.destinations:
         cities.add(dest.split("(")[0].split(",")[0].strip())
     for hotel in facts.hotels:
-        cities.add(hotel.city)
+        cities.add(hotel.city.split("(")[0].split(",")[0].strip())
     return sorted(cities)
 
 
 def write_back_to_library(
     db_path: Path,
     city: str,
-    field: str,
+    field_name: str,
     value: list,
     updated_by: str,
 ) -> None:
@@ -75,10 +73,10 @@ def write_back_to_library(
     if not city_file.exists():
         return
     data = json.loads(city_file.read_text(encoding="utf-8"))
-    data[field] = value
+    data[field_name] = value
     data.setdefault("_audit", []).append({
         "updated_by": updated_by,
-        "field": field,
+        "field": field_name,
         "timestamp": datetime.now(timezone.utc).isoformat(),
     })
     city_file.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")

@@ -5,9 +5,15 @@ from unittest.mock import MagicMock
 
 from src.aig.context import AIGContext, CityLibraryData
 from src.aig.day_builder import (
-    _match_attraction, _compute_chain, _is_cruise_day,
+    _match_attraction,
+    _is_cruise_day,
+    _city_matches,
+    _filter_sectionable,
+    _extract_meal_location,
+    _build_flight_details,
+    build_day,
 )
-from src.common.models import TripFacts, TripDay, TripHotel
+from src.common.models import TripFacts, TripDay, TripHotel, TransportLeg
 
 
 AMSTERDAM_LIBRARY = CityLibraryData(
@@ -46,6 +52,7 @@ FACTS = TripFacts(
             "Walk to Rijksmuseum",
             "Return to hotel to freshen up",
             "Evening stroll at Vondelpark",
+            "Early dinner near Museumplein",
         ],
     )],
     dietary_restrictions=[],
@@ -69,39 +76,6 @@ class TestMatchAttraction:
         assert result is None
 
 
-class TestComputeChain:
-    def test_first_activity_departs_from_hotel(self):
-        chain = _compute_chain(
-            ["See Eiffel Tower", "Visit Louvre"],
-            hotel_name="Hotel Ibis Paris",
-        )
-        assert chain[0] == "Hotel Ibis Paris"
-
-    def test_second_activity_departs_from_previous(self):
-        chain = _compute_chain(
-            ["See Eiffel Tower", "Visit Louvre"],
-            hotel_name="Hotel Ibis Paris",
-        )
-        assert chain[1] == "See Eiffel Tower"
-
-    def test_reset_on_return_to_hotel(self):
-        chain = _compute_chain(
-            ["Anne Frank House", "Return to hotel to freshen up", "Vondelpark"],
-            hotel_name="Hotel V",
-        )
-        # After "Return to hotel..." resets, next departs from hotel
-        assert chain[2] == "Hotel V"
-
-    def test_no_reset_on_regular_activity(self):
-        chain = _compute_chain(
-            ["Anne Frank House", "Rijksmuseum", "Vondelpark"],
-            hotel_name="Hotel V",
-        )
-        assert chain[0] == "Hotel V"
-        assert chain[1] == "Anne Frank House"
-        assert chain[2] == "Rijksmuseum"
-
-
 class TestIsCruiseDay:
     def test_overnight_city_none_is_cruise(self):
         day = TripDay(day_number=8, activities=["At Sea | Enjoy Cruise"], overnight_city=None)
@@ -116,188 +90,135 @@ class TestIsCruiseDay:
                       title="At Sea | Relax Day")
         assert _is_cruise_day(day) is True
 
-
-import json as _json
-from src.aig.day_builder import _enrich_activities_with_ai
-
-
-AI_RESPONSE = _json.dumps([
-    {
-        "name": "Visit Anne Frank House",
-        "vivid_description": "A house that stood still while time moved on around it.",
-        "travel_leg": {
-            "from_location": "Hotel V Nesplein",
-            "mode": "walk",
-            "duration": "~18 min",
-            "tip": "Follow Prinsengracht canal north"
-        }
-    },
-    {
-        "name": "Walk to Rijksmuseum",
-        "vivid_description": "Centuries of Dutch mastery hang in gilded frames.",
-        "travel_leg": {
-            "from_location": "Visit Anne Frank House",
-            "mode": "walk",
-            "duration": "~20 min",
-            "tip": None
-        }
-    },
-])
+    def test_canal_cruise_is_not_cruise_day(self):
+        day = TripDay(day_number=1, activities=["Evening Canal Cruise"], overnight_city="Amsterdam")
+        assert _is_cruise_day(day) is False
 
 
-class TestEnrichActivitiesWithAI:
-    def test_returns_enriched_list_in_order(self):
-        mock_ai = MagicMock()
-        mock_ai.complete.return_value = AI_RESPONSE
-        activities = [
-            {"name": "Visit Anne Frank House", "from_location": "Hotel V Nesplein",
-             "hours": "9:00 AM TO 10:00 PM", "entry_fee": "€16"},
-            {"name": "Walk to Rijksmuseum", "from_location": "Visit Anne Frank House",
-             "hours": "9 AM – 6 PM", "entry_fee": "€22"},
+class TestCityMatches:
+    def test_exact_match(self):
+        assert _city_matches("Amsterdam", "Amsterdam") is True
+
+    def test_case_insensitive(self):
+        assert _city_matches("amsterdam", "Amsterdam") is True
+
+    def test_partial_terminal_name(self):
+        assert _city_matches("Amsterdam Schiphol", "Amsterdam") is True
+
+    def test_no_match(self):
+        assert _city_matches("Paris", "Amsterdam") is False
+
+    def test_empty_strings(self):
+        assert _city_matches("", "Amsterdam") is False
+
+
+class TestFilterSectionable:
+    def test_removes_arrival_activities(self):
+        activities = ["Arrival and hotel check-in", "Visit Rijksmuseum"]
+        result = _filter_sectionable(activities)
+        assert result == ["Visit Rijksmuseum"]
+
+    def test_removes_meal_activities(self):
+        activities = ["Visit Rijksmuseum", "Lunch near canal", "Evening stroll"]
+        result = _filter_sectionable(activities)
+        assert "Lunch near canal" not in result
+        assert "Visit Rijksmuseum" in result
+
+    def test_keeps_canal_cruise(self):
+        activities = ["Evening Canal Cruise", "Check in"]
+        result = _filter_sectionable(activities)
+        assert "Evening Canal Cruise" in result
+        assert "Check in" not in result
+
+    def test_empty_list(self):
+        assert _filter_sectionable([]) == []
+
+
+class TestExtractMealLocation:
+    def test_extracts_near_location(self):
+        activities = ["Arrival", "Early dinner near canals"]
+        result = _extract_meal_location(activities)
+        assert result == "canals"
+
+    def test_returns_none_when_no_meal(self):
+        activities = ["Visit museum", "Walk in park"]
+        result = _extract_meal_location(activities)
+        assert result is None
+
+    def test_returns_none_when_no_near(self):
+        activities = ["Early dinner at the hotel"]
+        result = _extract_meal_location(activities)
+        assert result is None
+
+
+class TestBuildFlightDetails:
+    def _make_legs(self):
+        return [
+            TransportLeg(
+                from_city="Mumbai", to_city="Doha", mode="flight",
+                operator="Qatar Airways", ticket_number="QR557",
+                departure_time="04:10", arrival_time="05:45",
+                from_terminal="Mumbai T2", to_terminal="Doha HIA",
+                booking_reference="ABC123",
+            ),
+            TransportLeg(
+                from_city="Doha", to_city="Amsterdam", mode="flight",
+                operator="Qatar Airways", ticket_number="QR273",
+                departure_time="07:50", arrival_time="14:55",
+                from_terminal="Doha HIA", to_terminal="Amsterdam Schiphol",
+                booking_reference="ABC123",
+            ),
         ]
-        result = _enrich_activities_with_ai(activities, "Amsterdam", "Public Transport", mock_ai)
-        assert len(result) == 2
-        assert result[0]["name"] == "Visit Anne Frank House"
-        assert result[0]["vivid_description"] != ""
-        assert result[0]["travel_leg"]["mode"] == "walk"
 
-    def test_order_preserved_even_if_ai_reorders(self):
-        # AI returns items in wrong order — we re-sort by original index
-        mock_ai = MagicMock()
-        reversed_response = _json.dumps([
-            {"name": "Walk to Rijksmuseum", "vivid_description": "Museums.", "travel_leg": None},
-            {"name": "Visit Anne Frank House", "vivid_description": "House.", "travel_leg": None},
-        ])
-        mock_ai.complete.return_value = reversed_response
-        activities = [
-            {"name": "Visit Anne Frank House", "from_location": "Hotel V"},
-            {"name": "Walk to Rijksmuseum", "from_location": "Visit Anne Frank House"},
-        ]
-        result = _enrich_activities_with_ai(activities, "Amsterdam", "Public Transport", mock_ai)
-        assert result[0]["name"] == "Visit Anne Frank House"
-        assert result[1]["name"] == "Walk to Rijksmuseum"
+    def test_returns_flight_details_for_arrival_city(self):
+        legs = self._make_legs()
+        result = _build_flight_details(legs, "Amsterdam")
+        assert result is not None
+        assert result.airline == "Qatar Airways"
+        assert len(result.sectors) == 2
 
-    def test_falls_back_gracefully_on_bad_ai_response(self):
-        mock_ai = MagicMock()
-        mock_ai.complete.return_value = "not json {{{"
-        activities = [{"name": "Anne Frank House", "from_location": "Hotel V"}]
-        result = _enrich_activities_with_ai(activities, "Amsterdam", "walk", mock_ai)
-        assert len(result) == 1
-        assert result[0]["name"] == "Anne Frank House"
-        assert result[0].get("vivid_description", "") == ""
+    def test_sectors_labeled_correctly(self):
+        legs = self._make_legs()
+        result = _build_flight_details(legs, "Amsterdam")
+        assert result.sectors[0].label == "Sector 1"
+        assert result.sectors[1].label == "Sector 2"
 
-    def test_duplicate_activity_names_use_positional_order(self):
-        mock_ai = MagicMock()
-        response = _json.dumps([
-            {"name": "Visit Museum", "vivid_description": "First museum visit.", "travel_leg": None},
-            {"name": "Visit Museum", "vivid_description": "Second museum visit.", "travel_leg": None},
-        ])
-        mock_ai.complete.return_value = response
-        activities = [
-            {"name": "Visit Museum", "from_location": "Hotel"},
-            {"name": "Visit Museum", "from_location": "First Museum"},
-        ]
-        result = _enrich_activities_with_ai(activities, "City", "walk", mock_ai)
-        assert result[0]["vivid_description"] == "First museum visit."
-        assert result[1]["vivid_description"] == "Second museum visit."
+    def test_sector_terminals_correct(self):
+        legs = self._make_legs()
+        result = _build_flight_details(legs, "Amsterdam")
+        assert result.sectors[0].from_terminal == "Mumbai T2"
+        assert result.sectors[1].to_terminal == "Amsterdam Schiphol"
 
-
-from src.aig.day_builder import _select_restaurants, build_day
-
-
-class TestSelectRestaurants:
-    def _make_context(self, restaurants):
-        ctx = MagicMock(spec=AIGContext)
-        ctx.facts = FACTS
-        lib = MagicMock()
-        lib.restaurants = restaurants
-        ctx.library = {"Amsterdam": lib}
-        return ctx
-
-    def test_lunch_matches_nearby_landmarks(self):
-        ctx = self._make_context(AMSTERDAM_LIBRARY.restaurants)
-        lunch, _ = _select_restaurants(
-            city="Amsterdam",
-            context=ctx,
-            morning_activities=["Visit Anne Frank House"],
-            day_number=1,
-            used_restaurants={},
-        )
-        names = [r.name for r in lunch]
-        assert "Pancake Bakery" in names
-
-    def test_lunch_only_matches_restaurant_with_landmark(self):
-        """Verify landmark matching actually works — not just the fallback path."""
-        # Two restaurants: one near Anne Frank House, one not
-        restaurants = [
-            {"name": "Pancake Bakery", "nearby_landmarks": ["Anne Frank House"],
-             "area": "Jordaan", "hours": "9am-8:30pm", "vegetarian_friendly": True,
-             "must_try_dishes": ["Dutch pancake"]},
-            {"name": "Far Away Cafe", "nearby_landmarks": ["Vondelpark"],
-             "area": "South", "hours": "10am-6pm", "vegetarian_friendly": True,
-             "must_try_dishes": ["Coffee"]},
-        ]
-        ctx = self._make_context(restaurants)
-        lunch, _ = _select_restaurants(
-            city="Amsterdam",
-            context=ctx,
-            morning_activities=["Visit Anne Frank House"],
-            day_number=1,
-            used_restaurants={},
-        )
-        names = [r.name for r in lunch]
-        assert "Pancake Bakery" in names
-        # With only 2 restaurants and 1 matching, lunch pool starts with 1
-        # The fallback fills in remaining slots — that's ok
-        # But the FIRST entry should be the landmark-matched one
-        assert names[0] == "Pancake Bakery"
-
-    def test_dietary_filter_excludes_non_vegetarian(self):
-        facts = FACTS.model_copy(update={"dietary_restrictions": ["vegetarian"]})
-        ctx = self._make_context(AMSTERDAM_LIBRARY.restaurants)
-        ctx.facts = facts
-        _, dinner = _select_restaurants(
-            city="Amsterdam",
-            context=ctx,
-            morning_activities=[],
-            day_number=1,
-            used_restaurants={},
-        )
-        for card in dinner:
-            assert card.source != "library" or "Broodje Bert" not in card.name
-
-    def test_rotation_excludes_restaurant_used_twice_in_window(self):
-        used = {"Pancake Bakery": [1, 2]}  # used on days 1 and 2
-        ctx = self._make_context(AMSTERDAM_LIBRARY.restaurants)
-        lunch, _ = _select_restaurants(
-            city="Amsterdam",
-            context=ctx,
-            morning_activities=["Visit Anne Frank House"],
-            day_number=3,
-            used_restaurants=used,
-        )
-        assert all(r.name != "Pancake Bakery" for r in lunch)
-
-    def test_restaurant_within_rotation_window_allowed_once(self):
-        used = {"Pancake Bakery": [1]}   # used only once in window
-        ctx = self._make_context(AMSTERDAM_LIBRARY.restaurants)
-        lunch, _ = _select_restaurants(
-            city="Amsterdam",
-            context=ctx,
-            morning_activities=["Visit Anne Frank House"],
-            day_number=2,
-            used_restaurants=used,
-        )
-        assert any(r.name == "Pancake Bakery" for r in lunch)
+    def test_returns_none_for_non_arrival_city(self):
+        legs = self._make_legs()
+        result = _build_flight_details(legs, "Paris")
+        assert result is None
 
 
 class TestBuildDay:
-    def test_saves_day_json_to_input_days(self, tmp_path):
+    def _make_mock_ai(self):
         mock_ai = MagicMock()
-        mock_ai.complete.return_value = json.dumps([
-            {"name": act, "vivid_description": "Lovely.", "travel_leg": None}
-            for act in FACTS.days[0].activities
-        ])
+        # sections enrichment
+        mock_ai.complete.side_effect = [
+            json.dumps([
+                {"section_title": "🌄 Morning- Anne Frank House", "place_name": "Anne Frank House",
+                 "travel_info": "⏱️ ~18 mins walk from hotel", "hours": "9:00 AM - 10:00 PM",
+                 "cost": "₹1,400 per person", "description": "A profound journey."},
+                {"section_title": "☀️ Afternoon- Rijksmuseum", "place_name": "Rijksmuseum",
+                 "travel_info": "⏱️ ~20 mins walk from Anne Frank House", "hours": "9 AM - 6 PM",
+                 "cost": "₹1,800 per person", "description": "Dutch masters."},
+            ]),
+            # return instructions
+            json.dumps({"instructions": "Head back to hotel.", "travel_note": "⏱️ ~15 mins 💡 Trams run late."}),
+            # restaurant enrichment
+            json.dumps([
+                {"name": "Pancake Bakery", "ambience": "Cozy Dutch.", "price_inr": "₹800-1,200 per person", "travel_note": "~5 mins walk"},
+            ]),
+        ]
+        return mock_ai
+
+    def test_saves_day_json_to_input_days(self, tmp_path):
+        mock_ai = self._make_mock_ai()
         ctx = AIGContext(
             facts=FACTS,
             library={"Amsterdam": AMSTERDAM_LIBRARY},
@@ -310,12 +231,8 @@ class TestBuildDay:
         data = json.loads(day_file.read_text())
         assert data["day_number"] == 1
 
-    def test_activity_order_preserved(self, tmp_path):
-        mock_ai = MagicMock()
-        mock_ai.complete.return_value = json.dumps([
-            {"name": act, "vivid_description": "X.", "travel_leg": None}
-            for act in FACTS.days[0].activities
-        ])
+    def test_output_has_sections_not_activities(self, tmp_path):
+        mock_ai = self._make_mock_ai()
         ctx = AIGContext(
             facts=FACTS,
             library={"Amsterdam": AMSTERDAM_LIBRARY},
@@ -324,10 +241,10 @@ class TestBuildDay:
         )
         build_day(ctx, day_number=1, input_dir=tmp_path)
         data = json.loads((tmp_path / "days" / "day_01.json").read_text())
-        names = [a["name"] for a in data["activities"]]
-        assert names == FACTS.days[0].activities
+        assert "sections" in data
+        assert "activities" not in data
 
-    def test_cruise_day_skips_restaurant_lookup(self, tmp_path):
+    def test_cruise_day_has_no_sections_or_restaurants(self, tmp_path):
         cruise_facts = TripFacts(
             client_names=["Ana"],
             destinations=["Mediterranean"],
@@ -342,15 +259,12 @@ class TestBuildDay:
             )],
         )
         mock_ai = MagicMock()
-        mock_ai.complete.return_value = json.dumps([
-            {"name": a, "vivid_description": "Sea.", "travel_leg": None}
-            for a in cruise_facts.days[0].activities
-        ])
         ctx = AIGContext(
             facts=cruise_facts, library={}, db_path=tmp_path, ai_client=mock_ai,
         )
         build_day(ctx, day_number=8, input_dir=tmp_path)
         data = json.loads((tmp_path / "days" / "day_08.json").read_text())
         assert data["is_cruise_day"] is True
-        assert data["lunch"] == []
+        assert data["sections"] == []
         assert data["dinner"] == []
+        mock_ai.complete.assert_not_called()

@@ -168,11 +168,44 @@
     }
   ],
   "local_dishes": [],
-  "phrases": [],
-  "safety_tips": [],
+  "phrases": [
+    "Buongiorno — Good morning/Good day",
+    "Grazie — Thank you",
+    "Prego — You're welcome/Please/After you",
+    "Scusi — Excuse me (formal)",
+    "Parla inglese? — Do you speak English?",
+    "Dress modestly when visiting churches and religious sites - cover shoulders and knees",
+    "Greet shopkeepers and restaurant staff when entering and leaving establishments",
+    "Avoid climbing on or touching the Leaning Tower during photos - it's strictly prohibited and heavily monitored"
+  ],
+  "safety_tips": [
+    "INDIAN EMBASSY DETAILS: Indian Embassy in Rome (covers Pisa) - Address: Via XX Settembre 5, 00187 Rome | Phone: +39-06-4884642/4884643 | Emergency: +39-348-0013684 | Email: cons1.rome@mea.gov.in | Website: www.eoirome.gov.in",
+    "EMERGENCY CONTACTS: Police (Carabinieri): 112 | Ambulance/Medical Emergency: 118 | Fire Department: 115 | European Emergency Number: 112 | Tourist Police: +39-050-583511",
+    "COMMON SCAMS TO AVOID: Fake petition signers near tourist sites who pickpocket while you're distracted | Overcharging at restaurants near Leaning Tower - always check menu prices | Fake gold ring scam where someone 'finds' jewelry and offers to sell it cheap | Taxi drivers taking longer routes - use meter or agree on fare beforehand",
+    "PICKPOCKET HOTSPOTS: Around Leaning Tower and Piazza dei Miracoli | Pisa Centrale train station | Crowded buses and trams | Restaurant areas along Arno River | Always keep valuables in front pockets or money belt",
+    "DOCUMENT SAFETY: Keep passport copies separate from originals | Store digital copies in cloud storage | Carry passport copy and keep original in hotel safe | Register with Indian Embassy upon arrival for longer stays",
+    "TRANSPORTATION SAFETY: Validate train tickets to avoid fines | Be cautious of unofficial taxi drivers | Use official taxi stands or call licensed companies | Keep luggage secure and visible on trains | Avoid empty train compartments late at night",
+    "HEALTH PRECAUTIONS: Carry European Health Insurance Card if available | Know location of nearest hospital: Ospedale Santa Chiara, Via Roma 67 | Pharmacies (Farmacia) display green cross - some open 24/7 | Tap water is safe to drink",
+    "MONEY SAFETY: Use ATMs inside banks when possible | Notify your Indian bank before traveling | Keep emergency cash in multiple locations | Be aware of card skimming devices | Exchange money at authorized dealers only",
+    "CULTURAL AWARENESS: Dress modestly when visiting churches | Tipping 10% is appreciated but not mandatory | Shops close during afternoon siesta (1-4 PM) | Learn basic Italian phrases for emergencies",
+    "ACCOMMODATION SAFETY: Verify hotel bookings and addresses | Keep hotel contact card with you | Use hotel safes for valuables | Check room locks and emergency exits | Be cautious of fake booking confirmation emails",
+    "FOOD SAFETY: Eat at busy restaurants with high turnover | Be cautious of street food if you have sensitive stomach | Check restaurant bills carefully for added charges | Avoid restaurants with no visible prices",
+    "COMMUNICATION: Download offline maps and translation apps | Keep phone charged and carry portable charger | Save important numbers in local format | Consider local SIM card for longer stays | Know your hotel address in Italian"
+  ],
   "souvenirs": [],
   "emergency_contacts": [],
-  "connectivity_tips": [],
+  "connectivity_tips": [
+    "Purchase a TIM (Telecom Italia Mobile) SIM card at Pisa Airport or city center stores for €15-25 with 20-50GB data. TIM offers excellent coverage throughout Italy including rural areas around Pisa.",
+    "Vodafone Italy prepaid SIMs are available at tabacchi (tobacco shops), supermarkets, and Vodafone stores for €10-20 with 30-100GB data plans. Coverage is reliable in Pisa and surrounding Tuscany region.",
+    "WindTre offers competitive tourist SIM packages for €15-30 with unlimited calls and 50-100GB data. Buy at their stores near Pisa Centrale station or at electronics shops like MediaWorld.",
+    "Consider eSIM options like Airalo, Holafly, or Nomad for instant activation. Italy eSIM plans cost $8-25 for 1-30GB valid for 7-30 days, perfect for short visits without needing physical stores.",
+    "EU roaming regulations apply, so any Italian SIM works across Europe at no extra cost. This is beneficial if you're visiting multiple European countries during your trip.",
+    "Free WiFi is widely available at Pisa Airport, major hotels, restaurants, and tourist attractions including the Leaning Tower area, reducing your mobile data needs.",
+    "Bring your passport/ID when purchasing any SIM card in Italy as registration is mandatory. Some stores may require proof of Italian address, so tourist-specific plans are recommended.",
+    "Coverage quality in Pisa city center and tourist areas is excellent with 4G/5G speeds of 20-100 Mbps. Rural areas between cities may have slower 3G connectivity.",
+    "Top-up (ricarica) your prepaid plan at tabacchi shops, ATMs, or online apps. Most plans auto-renew monthly, so monitor usage to avoid unexpected charges.",
+    "Download offline maps and translation apps before arrival, and consider keeping your Indian SIM active for important calls while using Italian SIM for data to manage costs effectively."
+  ],
   "transport_options": [
     {
       "city": "Pisa",
@@ -189,11 +222,46 @@
       "_source_mtime": 1772384343.3418624
     }
   ],
-  "health_tips": [],
+  "health_tips": [
+    "Required vaccines: None specifically required for travel from India to Italy/Pisa unless arriving from yellow fever endemic areas",
+    "Recommended routine vaccines: Ensure you're up-to-date with MMR (measles-mumps-rubella), DPT (diphtheria-pertussis-tetanus), chickenpox, polio, and yearly flu shot",
+    "Additional recommended vaccines: Hepatitis A and B (especially if you plan extended stay or have underlying health conditions)",
+    "Consider Typhoid vaccine if you plan to eat at local street vendors or smaller establishments, though risk is generally low in Italy",
+    "Food safety: Italian tap water is safe to drink. Restaurant food is generally safe due to good hygiene standards and food regulations",
+    "Avoid unpasteurized dairy products and ensure meat is well-cooked, though food safety standards in Pisa are high",
+    "Pack basic medications: Bring any prescription medicines in original containers, plus basic pain relievers and anti-diarrheal medication",
+    "Travel insurance: Ensure you have comprehensive travel health insurance as medical costs can be expensive for non-EU residents",
+    "Sun protection: Pack sunscreen and stay hydrated, especially during summer months when temperatures can reach 30-35°C",
+    "Emergency contacts: Keep European emergency number 112 saved in your phone for medical emergencies",
+    "Pharmacy access: Pharmacies (farmacia) are widely available and pharmacists can help with minor health issues and over-the-counter medications",
+    "No special disease risks: Italy has no endemic tropical diseases, and standard European health precautions apply"
+  ],
   "source_files": [
     "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
     "Italy/Italy- Final Itinerary with booking links.pdf",
     "Italy/4. Italy- Final Detailed Itinerary.pdf",
     "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+  ],
+  "_audit": [
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "phrases",
+      "timestamp": "2026-05-21T11:57:52.718549+00:00"
+    },
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "connectivity_tips",
+      "timestamp": "2026-05-21T11:58:48.402117+00:00"
+    },
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "safety_tips",
+      "timestamp": "2026-05-21T12:00:34.587226+00:00"
+    },
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "health_tips",
+      "timestamp": "2026-05-21T12:01:33.431191+00:00"
+    }
   ]
 }

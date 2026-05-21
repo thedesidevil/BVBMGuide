@@ -1142,8 +1142,26 @@
       ]
     }
   ],
-  "phrases": [],
-  "safety_tips": [],
+  "phrases": [
+    "Buongiorno — Good morning/Good day",
+    "Buonasera — Good evening",
+    "Grazie — Thank you",
+    "Prego — You're welcome/Please/After you",
+    "Scusi — Excuse me (formal)",
+    "Dress modestly when visiting churches and religious sites - cover shoulders and knees",
+    "Greet shopkeepers and restaurant staff when entering and leaving establishments",
+    "Avoid eating or drinking near fountains and monuments - it's prohibited and can result in fines"
+  ],
+  "safety_tips": [
+    "Indian Embassy in Rome: Address - Via XX Settembre 5, 00187 Rome | Phone: +39-06-4884642/4884643 | Emergency: +39-348-0101777 | Email: cons.rome@mea.gov.in | Working Hours: Monday-Friday 9:00-17:30",
+    "Emergency Numbers: Police (Carabinieri) - 112 | Ambulance/Medical Emergency - 118 | Fire Department - 115 | Tourist Police - 06-46861 | European Emergency Number - 112",
+    "Common Scams to Avoid: Fake petition signers near tourist sites who pickpocket while you're distracted | 'Gold ring' scam where someone claims you dropped expensive jewelry | Overcharging at restaurants near tourist areas - always check menu prices | Fake police asking to check your wallet for counterfeit money | Street vendors selling 'designer' goods at inflated prices",
+    "Transportation Safety: Use official white taxis with taxi signs and meters | Validate public transport tickets to avoid fines | Be cautious of pickpockets on crowded buses and metro, especially lines A and B | Keep bags in front of you in crowded areas | Avoid unlicensed tour guides and transportation",
+    "Money and Document Safety: Keep passport copies separate from originals | Use hotel safes for valuables | Carry minimal cash and use ATMs inside banks when possible | Be aware that some establishments may not accept cards - carry some euros | Report lost/stolen documents to police and embassy immediately",
+    "Tourist Area Precautions: Be extra vigilant around Colosseum, Trevi Fountain, Spanish Steps, and Vatican - high pickpocket areas | Avoid street games like 'shell game' or card tricks | Don't accept 'free' bracelets or flowers from street vendors | Be cautious of people dressed as gladiators or centurions demanding payment for photos",
+    "Health and Medical: European Health Insurance Card (EHIC) may not cover Indian citizens - ensure travel insurance | Pharmacies (Farmacia) are marked with green cross signs | Tap water is safe to drink | Emergency rooms: Policlinico Umberto I (+39-06-49971) | Bambino Gesù Hospital (+39-06-68591)",
+    "General Safety Tips: Stay in well-lit areas at night, especially around Termini Station | Learn basic Italian phrases for emergencies | Keep emergency contacts saved in Italian | Dress modestly when visiting religious sites | Be aware that many shops close during afternoon hours (riposo) | Trust your instincts and avoid situations that feel unsafe"
+  ],
   "souvenirs": [
     {
       "item": "Pecorino romano cheese",
@@ -1545,7 +1563,20 @@
       "_source_mtime": 1772384339.4136398
     }
   ],
-  "connectivity_tips": [],
+  "connectivity_tips": [
+    "Buy a local Italian SIM card from TIM, Vodafone, or WindTre at Rome Fiumicino or Ciampino airports immediately upon arrival - costs around €15-25 for tourist plans with 20-50GB data",
+    "Purchase SIM cards from authorized stores like TIM stores, Vodafone shops, or electronics retailers like MediaWorld and Unieuro throughout Rome city center",
+    "Consider eSIM options like Airalo, Holafly, or Nomad which offer Italy/Europe plans starting from €4-8 for 1-7 days with 1-10GB data - activate before departure from India",
+    "TIM offers the best coverage in Rome and rural areas, followed by Vodafone and WindTre - all three provide excellent 4G/5G coverage in the city",
+    "Bring your passport/ID proof when buying physical SIM cards as it's mandatory for registration in Italy",
+    "Tourist SIM plans typically include unlimited calls within Italy and to major countries including India, plus generous data allowances",
+    "Free WiFi is available at major tourist spots, cafes, and hotels, but having mobile data ensures connectivity while navigating Rome's streets",
+    "Download offline maps on Google Maps or Maps.me before traveling to reduce data usage while exploring Rome's attractions",
+    "EU roaming regulations don't apply to Indian SIM cards, so avoid using your Indian SIM to prevent bill shock - charges can be ₹500-1000 per day",
+    "Tabacchi shops (tobacco stores with 'T' signs) throughout Rome also sell SIM cards and top-up vouchers at competitive prices",
+    "For stays longer than 15 days, consider monthly plans from Italian operators which offer better value than tourist-specific packages",
+    "Test your SIM card connectivity at the purchase location before leaving to ensure proper activation and network registration"
+  ],
   "transport_options": [
     {
       "city": "Rome",
@@ -1582,7 +1613,23 @@
       "_source_mtime": 1772384343.3418624
     }
   ],
-  "health_tips": [],
+  "health_tips": [
+    "No vaccines are required for entry to Italy from India unless you're arriving from a yellow fever endemic area (which India is not).",
+    "Recommended routine vaccines: Ensure you're up-to-date with MMR (measles-mumps-rubella), DPT (diphtheria-pertussis-tetanus), chickenpox, polio, and yearly flu shot.",
+    "Consider Hepatitis A vaccine if you haven't been vaccinated - recommended for all travelers to Southern Europe, especially if you plan to eat at local establishments.",
+    "Hepatitis B vaccine is recommended if you might have intimate contact with locals or need medical procedures.",
+    "Typhoid vaccine may be considered if you plan to eat at smaller local establishments or street food, though risk is low in Rome.",
+    "Rome's tap water is safe to drink - the city has excellent water quality and numerous public fountains with potable water.",
+    "Food safety is generally high in Rome. Stick to busy restaurants and avoid food that's been sitting out for long periods.",
+    "Be cautious with gelato and dairy products from smaller vendors during hot summer months - choose busy places with high turnover.",
+    "Carry hand sanitizer and use it before eating, especially when trying street food or after using public transport.",
+    "Summer heat can be intense (June-August) - stay hydrated, wear sunscreen, and take breaks in shade during midday hours.",
+    "Pharmacies (farmacia) are widely available for basic medications. Bring prescription medications in original packaging with a doctor's letter if needed.",
+    "European Health Insurance Card (EHIC) won't apply to Indian citizens - ensure you have comprehensive travel insurance covering medical emergencies.",
+    "Rome has excellent healthcare facilities. Emergency number is 112. Major hospitals include Policlinico Umberto I and Ospedale San Camillo.",
+    "Mosquito-borne diseases are not a significant concern in Rome, but use repellent during summer evenings near the Tiber River if sensitive to bites.",
+    "Walking on cobblestones and uneven ancient surfaces is common - bring comfortable, supportive shoes to prevent injuries."
+  ],
   "source_files": [
     "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
     "France/Paris, Switzerland and Italy.pdf",
@@ -1592,5 +1639,27 @@
     "Italy/4. Italy- Final Detailed Itinerary.pdf",
     "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
     "Italy/Paris, Switzerland and Italy.pdf"
+  ],
+  "_audit": [
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "phrases",
+      "timestamp": "2026-05-21T11:57:55.784510+00:00"
+    },
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "connectivity_tips",
+      "timestamp": "2026-05-21T11:58:56.164119+00:00"
+    },
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "safety_tips",
+      "timestamp": "2026-05-21T12:00:43.818523+00:00"
+    },
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "health_tips",
+      "timestamp": "2026-05-21T12:01:41.498664+00:00"
+    }
   ]
 }

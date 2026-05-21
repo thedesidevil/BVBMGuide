@@ -143,14 +143,86 @@
   ],
   "hotels": [],
   "local_dishes": [],
-  "phrases": [],
-  "safety_tips": [],
+  "phrases": [
+    "Merhaba — Hello",
+    "Teşekkür ederim — Thank you",
+    "Lütfen — Please",
+    "Özür dilerim — Excuse me/I'm sorry",
+    "Ne kadar? — How much?",
+    "Hesap, lütfen — The bill, please",
+    "Remove shoes when entering homes and some restaurants",
+    "Dress modestly when visiting mosques - cover shoulders, arms, and legs",
+    "Bargaining is expected in bazaars and markets, but not in regular shops",
+    "Use your right hand for eating and greeting - the left hand is considered unclean",
+    "Show respect during prayer times - avoid loud conversations near mosques",
+    "Tipping 10-15% is customary in restaurants and for services"
+  ],
+  "safety_tips": [
+    "INDIAN EMBASSY DETAILS: Indian Consulate General in Istanbul - Address: Cumhuriyet Caddesi No. 57, Harbiye, Istanbul. Phone: +90-212-296-2131/32. Email: cons.istanbul@mea.gov.in. For emergencies, contact 24/7 helpline: +90-532-421-4442",
+    "EMERGENCY CONTACTS: Police - 155, Ambulance - 112, Fire Department - 110, Tourist Police - 527-1776, Coast Guard - 158, General Emergency (all services) - 112",
+    "COMMON SCAMS: Fake carpet/jewelry shops offering 'special Indian prices', overcharging at restaurants without posted prices, taxi drivers taking longer routes, fake police asking for passport checks, street vendors selling counterfeit goods, timeshare presentation scams",
+    "TRANSPORTATION SAFETY: Use official taxis with meters, agree on dolmuş (shared taxi) fares beforehand, avoid unlicensed tour operators, keep copies of transport tickets, use reputable car rental companies only",
+    "ACCOMMODATION SAFETY: Book through verified platforms, check hotel reviews from Indian travelers, keep valuables in hotel safe, verify hotel pickup services, avoid sharing room details with strangers",
+    "MONEY SAFETY: Use ATMs inside banks or hotels, carry limited cash, inform your Indian bank about travel dates, avoid currency exchange on streets, keep emergency cash in multiple locations",
+    "DOCUMENT SECURITY: Keep passport copies separate from originals, register with Indian Consulate if staying long-term, carry hotel business cards, keep digital copies of important documents in cloud storage",
+    "HEALTH PRECAUTIONS: Drink bottled water, eat at busy restaurants, carry basic medications from India, get travel insurance, know location of nearest hospital: Kusadasi State Hospital - +90-256-618-1010",
+    "CULTURAL SENSITIVITY: Dress modestly when visiting mosques, remove shoes before entering religious sites, respect Ramadan customs if traveling during the period, learn basic Turkish phrases for emergencies",
+    "BEACH AND WATER SAFETY: Swim only in designated areas, be cautious of strong currents, use sunscreen frequently, stay hydrated, avoid isolated beaches after dark, rent equipment from licensed vendors only",
+    "SHOPPING PRECAUTIONS: Bargain is expected in bazaars, get receipts for expensive purchases, verify authenticity certificates for leather goods, avoid pressure sales tactics, compare prices at multiple shops",
+    "COMMUNICATION: Download offline translation apps, keep Indian SIM card active for banking OTPs, buy local SIM card for emergencies, share daily itinerary with family in India, use WhatsApp for free international messaging"
+  ],
   "souvenirs": [],
   "emergency_contacts": [],
-  "connectivity_tips": [],
+  "connectivity_tips": [
+    "Purchase a Turkcell prepaid SIM card at Istanbul Airport or Sabiha Gokcen Airport before traveling to Kusadasi - costs around 100-150 Turkish Lira with 10-20GB data and offers excellent coverage throughout Turkey",
+    "Vodafone Turkey SIM cards are available at Kusadasi town center, near the cruise port, and at local electronics shops - expect to pay 80-120 TL for tourist packages with good 4G coverage in the resort areas",
+    "Turk Telekom offers competitive rates with SIM cards available at PTT offices (Turkish Post) in Kusadasi center - approximately 90-130 TL for 15-day tourist plans with reliable coverage",
+    "Consider eSIM options like Airalo or Nomad before departure from India - Turkey eSIM plans cost $8-15 USD for 1-10GB and work immediately upon arrival without needing physical stores",
+    "Bring your passport when purchasing any SIM card in Turkey as it's mandatory for registration - the process takes 5-10 minutes at authorized dealers",
+    "Coverage quality in Kusadasi town, beaches, and major hotels is excellent with 4G speeds, but may be weaker in mountainous areas around Dilek Peninsula National Park",
+    "Free WiFi is widely available at hotels, restaurants, and cafes in Kusadasi, but having mobile data is essential for navigation and translation apps while exploring",
+    "If staying less than 7 days, international roaming with Indian carriers like Airtel or Jio might be cost-effective - check Turkey roaming rates before departure",
+    "Local electronics shops near Kusadasi Marina and Grand Bazaar sell SIM cards with English-speaking staff who can help with setup and plan selection",
+    "Download offline maps and translation apps before arrival, and consider purchasing SIM cards with longer validity (30 days) if planning to visit other Turkish cities from Kusadasi"
+  ],
   "transport_options": [],
-  "health_tips": [],
+  "health_tips": [
+    "Required vaccines: None specifically mandated for Turkey entry from India, but ensure routine vaccinations (MMR, DPT, flu, COVID-19) are up to date",
+    "Recommended vaccines: Hepatitis A and B (especially important given different food/water sources), Typhoid (oral or injection), and Tetanus booster if due",
+    "Consider Rabies pre-exposure vaccination if planning extensive outdoor activities or animal contact, though not essential for typical tourist visits",
+    "Food safety: Stick to bottled or boiled water, avoid tap water and ice cubes. Choose hot, freshly cooked meals from busy restaurants",
+    "Avoid raw or undercooked seafood, salads, and street food initially until your stomach adjusts. Peel fruits yourself",
+    "Kusadasi specific: Beach and swimming safety - check local conditions and flags. Mediterranean waters are generally safe but be aware of currents",
+    "Sun protection essential: Use high SPF sunscreen, wear hats and protective clothing. Turkish summer sun can be intense, especially near the coast",
+    "Carry basic medical kit: Anti-diarrheal medication, oral rehydration salts, pain relievers, any personal prescription medications with extra supply",
+    "Travel insurance strongly recommended covering medical evacuation. Turkey has good healthcare but costs can be high for foreigners",
+    "Pharmacy access: Turkish pharmacies (eczane) are well-stocked and pharmacists knowledgeable. Many speak English in tourist areas like Kusadasi",
+    "Emergency numbers: 112 for general emergencies, 155 for police. Tourist police available in Kusadasi during peak season",
+    "No special disease risks in Kusadasi area. Standard Mediterranean coastal precautions apply. Enjoy your trip with basic common sense health measures"
+  ],
   "source_files": [
     "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+  ],
+  "_audit": [
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "phrases",
+      "timestamp": "2026-05-21T11:57:49.866422+00:00"
+    },
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "connectivity_tips",
+      "timestamp": "2026-05-21T11:58:38.919643+00:00"
+    },
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "safety_tips",
+      "timestamp": "2026-05-21T12:00:16.481324+00:00"
+    },
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "health_tips",
+      "timestamp": "2026-05-21T12:01:27.242815+00:00"
+    }
   ]
 }

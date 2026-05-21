@@ -8,9 +8,13 @@ from __future__ import annotations
 
 import json
 import logging
+from datetime import datetime
 from pathlib import Path
 
 from docx import Document
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
+from docx.shared import Pt, RGBColor
 
 from src.aig.styles import ensure_styles
 
@@ -47,11 +51,63 @@ def _add(doc: Document, text: str, style: str) -> None:
     doc.add_paragraph(text, style=style)
 
 
+def _add_hr(doc: Document) -> None:
+    """Add a thin horizontal rule (paragraph with bottom border)."""
+    p = doc.add_paragraph()
+    pPr = p._element.get_or_add_pPr()
+    pBdr = OxmlElement("w:pBdr")
+    bottom = OxmlElement("w:bottom")
+    bottom.set(qn("w:val"), "single")
+    bottom.set(qn("w:sz"), "6")        # 0.75pt
+    bottom.set(qn("w:space"), "1")
+    bottom.set(qn("w:color"), "000000")
+    pBdr.append(bottom)
+    pPr.append(pBdr)
+
+
+def _add_bullet_labeled(doc: Document, label: str, value: str, level: int = 0) -> None:
+    """Add a bullet where label is bold and value is normal: 'label: value'."""
+    style = "List Bullet 2" if level == 0 else "List Bullet 3"
+    p = doc.add_paragraph(style=style)
+    r1 = p.add_run(label + ": ")
+    r1.font.name = "Arial"
+    r1.font.size = Pt(11)
+    r1.font.bold = True
+    r1.font.color.rgb = RGBColor(0, 0, 0)
+    r2 = p.add_run(value)
+    r2.font.name = "Arial"
+    r2.font.size = Pt(11)
+    r2.font.bold = False
+    r2.font.color.rgb = RGBColor(0, 0, 0)
+
+
+def _add_bullet(doc: Document, text: str, level: int = 0, bold: bool = False) -> None:
+    """Add an Arial 11pt black bullet paragraph.
+
+    level=0 → indented bullet (List Bullet 2)
+    level=1 → double-indented sub-bullet (List Bullet 3)
+    """
+    style = "List Bullet 2" if level == 0 else "List Bullet 3"
+    p = doc.add_paragraph(style=style)
+    run = p.add_run(text)
+    run.font.name = "Arial"
+    run.font.size = Pt(11)
+    run.font.bold = bold
+    run.font.color.rgb = RGBColor(0, 0, 0)
+
+
 def _format_date(date_str: str) -> str:
     """Format YYYY-MM-DD as 'Sat, Apr 19'. Returns original string if unparseable."""
-    from datetime import datetime
     try:
         return datetime.strptime(date_str, "%Y-%m-%d").strftime("%a, %b %-d")
+    except (ValueError, TypeError):
+        return date_str or ""
+
+
+def _format_date_long(date_str: str) -> str:
+    """Format YYYY-MM-DD as 'Sun, April 19' (weekday + full month name). Returns original if unparseable."""
+    try:
+        return datetime.strptime(date_str, "%Y-%m-%d").strftime("%a, %B %-d")
     except (ValueError, TypeError):
         return date_str or ""
 
@@ -118,117 +174,210 @@ def _render_client_info(doc: Document, data: dict) -> None:
             _add(doc, " | ".join(line_parts), "AIG Detail")
 
 
+# ---------------------------------------------------------------------------
+# Day renderers
+# ---------------------------------------------------------------------------
+
+def _render_flight_details(doc: Document, flight: dict) -> None:
+    airline = flight.get("airline", "")
+    if airline:
+        _add(doc, "Flight Details:", "AIG Body Bold")
+        _add_bullet_labeled(doc, "Airline", airline, level=0)
+
+    for sector in (flight.get("sectors") or []):
+        label = sector.get("label", "Sector")
+        from_t = sector.get("from_terminal", "")
+        to_t = sector.get("to_terminal", "")
+        dep = sector.get("departure_time", "")
+        arr = sector.get("arrival_time", "")
+        dur = sector.get("duration")
+
+        _add_bullet(doc, label + ":", level=0, bold=True)
+        if from_t:
+            _add_bullet(doc, f"📍 {from_t} →", level=1)
+        if to_t:
+            _add_bullet(doc, f"📍 {to_t}", level=1)
+        if dep:
+            _add_bullet(doc, f"Departure: {dep}", level=1)
+        if arr:
+            _add_bullet(doc, f"Arrival: {arr}", level=1)
+        if dur:
+            _add_bullet(doc, f"Duration: {dur}", level=1)
+
+
+def _render_transfer_instructions(doc: Document, transfer: dict) -> None:
+    intro = transfer.get("intro", "")
+    if intro:
+        _add(doc, intro, "AIG Body")
+
+    tip = transfer.get("headline_tip", "")
+    if tip:
+        _add(doc, tip, "AIG Body Bold")
+
+    route_steps = transfer.get("route_steps") or []
+    if route_steps:
+        _add(doc, "Route:", "AIG Body Bold")
+        for step in route_steps:
+            _add_bullet(doc, step, level=0)
+
+    time_info = transfer.get("total_travel_time", "")
+    cost = transfer.get("cost_inr", "")
+    if time_info or cost:
+        parts = []
+        if time_info:
+            parts.append(f"⏱️ Total travel time: {time_info}")
+        if cost:
+            parts.append(f"💰 {cost}")
+        _add(doc, "  ".join(parts), "AIG Body")
+
+    note = transfer.get("settle_in_note", "")
+    if note:
+        _add(doc, note, "AIG Body")
+
+
+def _render_activity_section(doc: Document, section: dict) -> None:
+    title = section.get("section_title", "")
+    if title:
+        _add(doc, title, "AIG Day Section")
+
+    desc = section.get("description", "")
+    if desc:
+        _add(doc, desc, "AIG Body")
+
+    place = section.get("place_name")
+    maps_url_val = section.get("maps_url", "")
+    if place:
+        place_text = f"📍{place}"
+        if maps_url_val:
+            place_text += f"  ({maps_url_val})"
+        _add(doc, place_text, "AIG Body")
+
+    travel_info = section.get("travel_info")
+    if travel_info:
+        _add_bullet(doc, travel_info, level=0)
+
+    hours = section.get("hours")
+    if hours:
+        _add_bullet(doc, f"⏰ {hours}", level=0)
+
+    cost = section.get("cost")
+    if cost:
+        _add_bullet(doc, f"💰 {cost}", level=0)
+
+
+def _render_return_instructions(doc: Document, return_inst: dict) -> None:
+    instructions = return_inst.get("instructions", "")
+    if instructions:
+        _add(doc, instructions, "AIG Body")
+
+    travel_note = return_inst.get("travel_note", "")
+    if travel_note:
+        _add(doc, travel_note, "AIG Body")
+
+
+def _render_restaurant(doc: Document, r: dict) -> None:
+    name = r.get("name", "")
+    if name:
+        maps_url_val = r.get("maps_url", "")
+        name_line = f"🍴 {name}"
+        if maps_url_val:
+            name_line += f"  ({maps_url_val})"
+        _add(doc, name_line, "AIG Body")
+
+    ambience = r.get("ambience")
+    if ambience:
+        _add_bullet(doc, ambience, level=0)
+
+    must_try = r.get("must_try_dishes") or r.get("must_try") or []
+    if must_try:
+        if isinstance(must_try, list):
+            _add_bullet(doc, "Must try: " + ", ".join(str(d) for d in must_try), level=0)
+        else:
+            _add_bullet(doc, f"Must try: {must_try}", level=0)
+
+    hours = r.get("hours")
+    if hours:
+        _add_bullet(doc, f"⏰ {hours}", level=0)
+
+    price_inr = r.get("price_inr")
+    if price_inr:
+        _add_bullet(doc, f"💰 {price_inr}", level=0)
+
+    travel_note = r.get("travel_note")
+    if travel_note:
+        _add_bullet(doc, f"⏱️ {travel_note}", level=0)
+
+
 def _render_day(doc: Document, data: dict) -> None:
     day_number = data.get("day_number", "?")
     date = data.get("date", "")
     title = data.get("title", "")
 
-    date = _format_date(date) if date else ""
-
-    if date and title:
-        heading = f"Day {day_number}: {date} — {title}"
-    elif date:
-        heading = f"Day {day_number}: {date}"
+    # Day heading: "Day 1: April 19- Arrival in Amsterdam"
+    date_str = _format_date_long(date) if date else ""
+    if date_str and title:
+        heading = f"Day {day_number}: {date_str}- {title}"
+    elif date_str:
+        heading = f"Day {day_number}: {date_str}"
     elif title:
         heading = f"Day {day_number}: {title}"
     else:
         heading = f"Day {day_number}"
 
     _add(doc, heading, "AIG Day Heading")
+    _add_hr(doc)
 
     is_cruise = data.get("is_cruise_day", False)
     if is_cruise:
+        doc.add_paragraph()
         _add(doc, "At Sea — enjoy the cruise amenities and relax on board.", "AIG Body")
     else:
-        activities = data.get("activities") or []
-        for act in activities:
-            travel_leg = act.get("travel_leg")
-            if travel_leg:
-                from_loc = travel_leg.get("from_location", "")
-                mode = travel_leg.get("mode", "")
-                duration = travel_leg.get("duration", "")
-                tip = travel_leg.get("tip")
-                leg_parts = []
-                if from_loc:
-                    leg_parts.append(f"From {from_loc}")
-                if mode:
-                    leg_parts.append(f"by {mode}")
-                if duration:
-                    leg_parts.append(f"({duration})")
-                if tip:
-                    leg_parts.append(f"— {tip}")
-                if leg_parts:
-                    _add(doc, " ".join(leg_parts), "AIG Detail")
+        overnight_city = data.get("overnight_city", "")
 
-            name = act.get("name", "")
-            if name:
-                _add(doc, name, "AIG Subsection")
+        # Flight section (arrival days)
+        flight = data.get("flight_details")
+        if flight:
+            doc.add_paragraph()
+            _add(doc, f"✈️ Arrival & Journey to {overnight_city}", "AIG Day Section")
+            _render_flight_details(doc, flight)
 
-            desc = act.get("vivid_description", "")
-            if desc:
-                _add(doc, desc, "AIG Body")
+        # Transfer section
+        transfer = data.get("transfer_instructions")
+        if transfer:
+            _add_hr(doc)
+            _add(doc, "🚆 Transfer to Hotel", "AIG Day Section")
+            _render_transfer_instructions(doc, transfer)
 
-            hours = act.get("hours")
-            entry_fee = act.get("entry_fee")
-            duration_str = act.get("recommended_duration")
-            maps_url = act.get("maps_url")
+        # Activity sections
+        for section in (data.get("sections") or []):
+            _add_hr(doc)
+            _render_activity_section(doc, section)
 
-            if hours:
-                _add(doc, f"Hours: {hours}", "AIG Detail")
-            if entry_fee:
-                _add(doc, f"Entry fee: {entry_fee}", "AIG Detail")
-            if duration_str:
-                _add(doc, f"Recommended duration: {duration_str}", "AIG Detail")
-            if maps_url:
-                _add(doc, f"Map: {maps_url}", "AIG Detail")
-
-            source = act.get("source", "")
-            if source == "ai_estimated":
-                _add(doc, "Note: Details are AI-estimated and should be verified locally.", "AIG Note")
-
-        # Restaurants
-        lunch = data.get("lunch") or []
-        if lunch:
-            _add(doc, "Lunch Options", "AIG Subsection")
-            for r in lunch:
-                _render_restaurant(doc, r)
-
+        # Dinner section
         dinner = data.get("dinner") or []
         if dinner:
-            _add(doc, "Dinner Options", "AIG Subsection")
+            loc = data.get("dinner_location", "")
+            section_title = f"🍽️ Dinner Recommendations{' Near ' + loc.title() if loc else ''}"
+            _add_hr(doc)
+            _add(doc, section_title, "AIG Day Section")
             for r in dinner:
+                doc.add_paragraph()
                 _render_restaurant(doc, r)
 
-    transport_note = data.get("transport_note")
-    if transport_note:
-        _add(doc, f"Transport: {transport_note}", "AIG Detail")
+        # Return to hotel section
+        return_inst = data.get("return_instructions")
+        if return_inst:
+            _add_hr(doc)
+            _add(doc, "🌙 Return to Hotel", "AIG Day Section")
+            _render_return_instructions(doc, return_inst)
 
+    # Overnight
     overnight_city = data.get("overnight_city", "")
     overnight_hotel = data.get("overnight_hotel", "")
     overnight_label = overnight_city or overnight_hotel
     if overnight_label:
+        doc.add_paragraph()
         _add(doc, f"✅ Overnight in {overnight_label}", "AIG Overnight")
-
-
-def _render_restaurant(doc: Document, r: dict) -> None:
-    name = r.get("name", "")
-    if name:
-        _add(doc, name, "AIG Restaurant Name")
-    must_try = r.get("must_try_dishes") or r.get("must_try") or []
-    if must_try:
-        if isinstance(must_try, list):
-            _add(doc, "Must try: " + ", ".join(str(d) for d in must_try), "AIG Detail")
-        else:
-            _add(doc, f"Must try: {must_try}", "AIG Detail")
-    hours = r.get("hours")
-    if hours:
-        _add(doc, f"Hours: {hours}", "AIG Detail")
-    travel_note = r.get("travel_note")
-    if travel_note:
-        _add(doc, f"Getting there: {travel_note}", "AIG Detail")
-    maps_url = r.get("maps_url")
-    if maps_url:
-        _add(doc, f"Map: {maps_url}", "AIG Detail")
 
 
 def _render_list_section(doc: Document, heading: str, data: dict) -> None:
@@ -254,10 +403,8 @@ def _render_list_section(doc: Document, heading: str, data: dict) -> None:
 def _render_packing_list(doc: Document, data: dict) -> None:
     """Render packing list: heading + bullet items (no city grouping)."""
     _add(doc, "Tailored Packing List", "AIG Section Heading")
-    # Accept either top-level 'items' list or 'cities' grouped structure
     items = data.get("items") or []
     if not items:
-        # Try cities grouping as fallback
         cities = data.get("cities") or []
         for city_block in cities:
             city_name = city_block.get("city", "")

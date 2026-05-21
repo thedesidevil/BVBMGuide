@@ -502,6 +502,35 @@ def assemble_cmd(
     console.print(f"[green]✓ Assembled → {output}[/green]")
 
 
+@app.command(name="preview-day")
+def preview_day(
+    input_dir: Path = typer.Argument(..., exists=True, file_okay=False),
+    day: int = typer.Option(..., "--day", "-d", help="Day number to preview"),
+    output: Optional[Path] = typer.Option(None, "--output", "-o"),
+):
+    """Generate a standalone DOCX for a single day (no AI calls — uses existing day JSON)."""
+    day_file = input_dir / "days" / f"day_{day:02d}.json"
+    if not day_file.exists():
+        console.print(f"[red]Day {day} JSON not found at {day_file}[/red]")
+        console.print(f"Run [bold]redo-day {input_dir} --day {day}[/bold] first.")
+        raise typer.Exit(1)
+
+    from docx import Document
+    from .assembler import _render_day, _remove_initial_empty_paragraphs
+    from .styles import ensure_styles
+
+    data = json.loads(day_file.read_text(encoding="utf-8"))
+    doc = Document()
+    ensure_styles(doc)
+    _remove_initial_empty_paragraphs(doc)
+    _render_day(doc, data)
+
+    if output is None:
+        output = input_dir / f"day_{day:02d}_preview.docx"
+    doc.save(str(output))
+    console.print(f"[green]✓ Day {day} preview → {output}[/green]")
+
+
 @app.command(name="build-styles")
 def build_styles_cmd(
     output: Path = typer.Option(

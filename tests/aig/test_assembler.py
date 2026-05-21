@@ -13,12 +13,37 @@ def _write_fixture_days(tmp_path: Path):
         "day_number": 1, "date": "2026-04-19", "title": "Arrival in Amsterdam",
         "overnight_city": "Amsterdam", "overnight_hotel": "Hotel V",
         "is_cruise_day": False,
-        "activities": [{"name": "Check in", "vivid_description": "Cozy hotel.", "hours": None,
-                        "entry_fee": None, "recommended_duration": None,
-                        "source": "ai_estimated", "maps_url": "https://maps.google.com",
-                        "travel_leg": {"from_location": "Airport", "mode": "taxi",
-                                       "duration": "~30 min", "tip": None}}],
-        "lunch": [], "dinner": [], "transport_note": None,
+        "flight_details": {
+            "airline": "Qatar Airways",
+            "sectors": [{"label": "Sector 1", "from_terminal": "Mumbai T2",
+                         "to_terminal": "Amsterdam Schiphol",
+                         "departure_time": "07:50", "arrival_time": "14:55"}],
+        },
+        "transfer_instructions": {
+            "intro": "After arriving at 📍 Amsterdam Schiphol, make your way to Hotel V.",
+            "headline_tip": "Follow signs for Trains → Schiphol Plaza",
+            "route_steps": ["Take Sprinter to Amsterdam Centraal (~17 min)"],
+            "total_travel_time": "~30 mins", "cost_inr": "₹600-800 per person",
+            "settle_in_note": "Take some time to rest before exploring.",
+        },
+        "sections": [
+            {"section_title": "🌆 Evening- Dam Square Walk (Optional)",
+             "place_name": "Dam Square", "maps_url": "https://goo.gl/maps/dam",
+             "travel_info": "⏱️ ~10 mins walk from hotel",
+             "hours": "Open 24 hours", "cost": "Free",
+             "description": "The heart of Amsterdam awaits."},
+        ],
+        "dinner_location": "canals",
+        "lunch": [],
+        "dinner": [{"name": "Pancake Bakery", "maps_url": "https://goo.gl/maps/pb",
+                    "ambience": "Cozy Dutch eatery.", "must_try_dishes": ["Dutch pancake"],
+                    "hours": "9am-8pm", "price_inr": "₹800-1,200 per person",
+                    "travel_note": "~5 mins walk from canals", "source": "library"}],
+        "return_instructions": {
+            "instructions": "Head back to the hotel via tram.",
+            "travel_note": "⏱️ Travel time: ~15 mins 💡 Trams run till midnight.",
+        },
+        "transport_note": None,
     }))
 
 

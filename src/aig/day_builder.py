@@ -68,7 +68,7 @@ def _is_cruise_day(day: TripDay) -> bool:
     if day.overnight_city is None:
         return True
     combined = " ".join([day.title or ""] + day.activities).lower()
-    return "at sea" in combined or "cruise" in combined
+    return "at sea" in combined
 
 
 def _compute_chain(activities: list[str], hotel_name: str) -> list[str]:

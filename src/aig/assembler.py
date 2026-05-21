@@ -47,6 +47,15 @@ def _add(doc: Document, text: str, style: str) -> None:
     doc.add_paragraph(text, style=style)
 
 
+def _format_date(date_str: str) -> str:
+    """Format YYYY-MM-DD as 'Sat, Apr 19'. Returns original string if unparseable."""
+    from datetime import datetime
+    try:
+        return datetime.strptime(date_str, "%Y-%m-%d").strftime("%a, %b %-d")
+    except (ValueError, TypeError):
+        return date_str or ""
+
+
 def _remove_initial_empty_paragraphs(doc: Document) -> None:
     """Remove the default empty paragraph python-docx adds to new documents."""
     for p in list(doc.paragraphs):
@@ -93,7 +102,8 @@ def _render_client_info(doc: Document, data: dict) -> None:
         _add(doc, "Trip Summary", "AIG Subsection")
         for row in trip_summary:
             city = row.get("city", "")
-            dates = row.get("dates", "")
+            raw_dates = row.get("dates", "")
+            dates = " – ".join(_format_date(p.strip()) for p in raw_dates.split(" – ")) if raw_dates else ""
             hotel = row.get("hotel", "")
             hotel_link = row.get("hotel_maps_link", "")
             transport = row.get("transport", "")
@@ -113,13 +123,7 @@ def _render_day(doc: Document, data: dict) -> None:
     date = data.get("date", "")
     title = data.get("title", "")
 
-    if date:
-        try:
-            from datetime import datetime
-            parsed = datetime.strptime(date, "%Y-%m-%d")
-            date = parsed.strftime("%a, %b %-d")
-        except ValueError:
-            pass
+    date = _format_date(date) if date else ""
 
     if date and title:
         heading = f"Day {day_number}: {date} — {title}"

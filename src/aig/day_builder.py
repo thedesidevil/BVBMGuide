@@ -88,6 +88,18 @@ def _compute_chain(activities: list[str], hotel_name: str) -> list[str]:
     return chain
 
 
+def _find_arrival_terminal(transport_modes: list, city: str) -> Optional[str]:
+    """Return the arrival terminal for any transport leg arriving in this city."""
+    city_lower = city.lower()
+    for leg in transport_modes:
+        to_city = getattr(leg, "to_city", "") or ""
+        if to_city.lower() == city_lower:
+            terminal = getattr(leg, "to_terminal", "") or ""
+            if terminal:
+                return terminal
+    return None
+
+
 def _match_attraction(activity_name: str, attractions: list[dict]) -> Optional[dict]:
     """Fuzzy-match an activity string to a library attraction record."""
     name_lower = activity_name.lower()
@@ -111,6 +123,10 @@ Default transport mode: {local_transport}
 
 For each activity below, provide:
 - "vivid_description": 2–3 vivid, immersive, sensory sentences. Be specific, not generic.
+- "place_name": the canonical name of the specific place or attraction (e.g. "Dam Square" for \
+"Relaxed walk around Dam Square & canals", "Anne Frank House" for "Visit Anne Frank House"). \
+Use null if this is not a specific visitable place (e.g. "Arrival and hotel check-in", \
+"Return to hotel", "Early dinner near canals").
 - "travel_leg": how to travel TO this activity from the given from_location:
   - "mode": most practical transport. Use "walk" for distances under ~500m regardless of default.
   - "duration": estimated time e.g. "~20 min"
@@ -155,6 +171,8 @@ def _enrich_activities_with_ai(
             if travel_leg and isinstance(travel_leg, dict) and "from_location" not in travel_leg:
                 travel_leg["from_location"] = original.get("from_location", "")
             merged["travel_leg"] = travel_leg
+            place_name = enriched_item.get("place_name")
+            merged["maps_url"] = maps_url(place_name, city) if place_name else ""
         result.append(merged)
     return result
 
@@ -294,6 +312,11 @@ def build_day(
 
     # Build activity list with from_location chain
     chain = _compute_chain(day.activities, hotel_name)
+    # For arrival days, override the chain start with the arrival terminal
+    if chain and context.facts.transport_modes:
+        arrival = _find_arrival_terminal(context.facts.transport_modes, city)
+        if arrival:
+            chain[0] = arrival
     lib = context.library.get(city)
     attraction_list = lib.attractions if lib else []
 
@@ -307,7 +330,7 @@ def build_day(
             "entry_fee": attr.get("entry_fee") if attr else None,
             "recommended_duration": attr.get("recommended_duration") if attr else None,
             "source": "library" if attr else "ai_estimated",
-            "maps_url": maps_url(activity, city),
+            "maps_url": maps_url(attr["name"], city) if attr else "",
         }
         activity_dicts.append(d)
 

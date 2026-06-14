@@ -10,6 +10,14 @@ Mistakes cause bad client experiences and damage the business's reputation.
 - Be thorough — do not stop at the first issue in any category. Check EVERY venue, EVERY day, EVERY section.
 - Accuracy is critical. If you are not sure, flag it as YELLOW rather than skipping it.
 
+**GLOBAL RULE — VERIFY BEFORE FLAGGING**
+Many checks require external knowledge (opening days, sunset times, seasonal windows, reservation requirements, transport pass rules, travel times). Apply this rule to all such findings:
+- Flag as **RED** only if you are highly confident the information is wrong.
+- Flag as **YELLOW** if you have reasonable doubt but are not certain.
+- If uncertain, add "— verify before sending" to the issue description.
+
+Do not invent facts. A false positive is almost as harmful as a missed issue — it wastes the team's time and erodes trust in the QC process.
+
 ---
 
 ## Severity levels
@@ -132,9 +140,10 @@ Example: Claiming the Nozomi shinkansen is covered by a standard JR Pass (it his
 Flag any transport pass claims that appear incorrect.
 
 **[A21] ACTIVITY DAY-OF-WEEK VALIDATION — RED**
-Many attractions are closed on specific weekdays. Cross-reference the day of the week in each day heading against the opening hours listed for that day's attractions.
-Flag any attraction scheduled on a day it is explicitly closed, or any weekly market/event listed on a day it does not operate.
-Evidence: Quote the day heading and the conflicting closure day or hours.
+If the guide lists opening days for an attraction, verify they include the scheduled day of the week.
+If opening days are not listed in the guide but you know with high confidence that the attraction is closed on that day (e.g., a well-known museum closed Mondays), flag it.
+Do not flag if you are merely guessing — apply the confidence rule above.
+Evidence: Quote the day heading and the attraction's closure information.
 
 **[A23] ARRIVAL / DEPARTURE DAY LOGIC — RED**
 Arrival day: Is the activity schedule compatible with the arrival time? If the client arrives in the afternoon, a packed morning itinerary is wrong.
@@ -165,9 +174,10 @@ For each hotel in the itinerary, does the Important Places Around Your Stay sect
 Flag any hotel stay where one or more requirements is missing or insufficient.
 
 **[A22] RESERVATION DEPENDENCIES — RED**
-Some attractions require advance booking, timed-entry tickets, or reservations. If the guide recommends such a venue without telling the client to book in advance, flag it.
-Examples that typically require pre-booking: popular museums with timed entry, hot air balloon rides, glacier walks, cooking classes, high-demand restaurants, cable cars with limited slots, iconic experiences (Ghibli Museum, TeamLab, Colosseum, etc.).
-Use your knowledge of the destination to identify which venues commonly require pre-booking.
+Flag venues where advance booking is KNOWN to be required or strongly recommended — not merely popular.
+Do NOT flag open-entry attractions, free temples, street markets, or general-access sights.
+Examples that genuinely require pre-booking: capacity-limited experiences (hot air balloon, glacier walk, cooking class), timed-entry monuments (Ghibli Museum, TeamLab, Colosseum), high-demand restaurants with no walk-in policy, cable cars or ferries with fixed departure slots.
+Do NOT flag: Eiffel Tower walkable floors, Senso-ji Temple, busy bazaars, or any attraction where booking is optional rather than required.
 Evidence: Quote the venue recommendation and confirm there is no booking note.
 
 ---
@@ -228,6 +238,25 @@ Example of an error: a lunch venue saying "18 min from Museum B" when Museum B h
 ---
 
 ## SECTION 6 — Sanity Check
+
+**[A26] PREMIUM FINISH — YELLOW**
+This is a luxury travel guide going to a paying client. Flag any of the following finish issues:
+- Spelling or grammatical errors in the guide text
+- Broken or garbled characters (e.g., "family￾friendly", "caf?" instead of "café")
+- Inconsistent capitalisation (e.g., "Day 3" in one heading, "day 3" in another)
+- Inconsistent emoji usage (some venue entries have 🍴 ⏰ 💰, others have none, with no clear pattern)
+- Obvious formatting problems: extra blank lines mid-paragraph, section headings mid-sentence, misaligned content
+Evidence: Quote the specific text that has the issue.
+
+**[A27] DAY FLOW LOGIC — RED**
+Review each day's activity sequence for practical geographic and logistical flow:
+- Do activities follow a logical geographic order, or does the route backtrack unnecessarily (north side of city in morning, south for lunch, north again for afternoon)?
+- Are travel times between consecutive activities realistic?
+- Is there sufficient buffer time between activities, meals, and transit?
+- Is the energy pacing reasonable (not 6 major sites before lunch, then nothing)?
+- Can the full day realistically be completed given opening times, travel times, and meal stops?
+Flag days where the sequence would leave a real client frustrated, exhausted, or unable to complete the plan.
+Evidence: Quote the day heading and the specific sequence or timing that creates the problem.
 
 **[A25] REAL-WORLD EXECUTABILITY — RED**
 Review each day as if you were personally taking this trip as a client. Flag anything that is technically possible but practically unreasonable:

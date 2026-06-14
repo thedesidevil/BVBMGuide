@@ -418,6 +418,15 @@ Return ONLY findings where an issue is present — do not list passing checks.
 Every finding MUST include an "evidence" field: a verbatim quote from the document (max 300 chars) \
 that supports the finding. If you cannot find direct supporting text, do not include the finding.
 
+--- GLOBAL RULE: CONFIDENCE CALIBRATION ---
+Many checks require you to apply external knowledge (opening days, sunset times, seasonal windows, \
+reservation requirements, transport pass rules, travel times, etc.). Apply this rule to ALL such findings:
+- Use severity RED only when you are HIGHLY CONFIDENT the information is wrong.
+- Use severity YELLOW when you have reasonable doubt but are not certain.
+- If uncertain, add the phrase "— verify before sending" to the description.
+Do NOT invent facts. A false positive erodes trust in this QC process. If you cannot find \
+direct evidence or are not confident in your external knowledge, do not include the finding.
+
 --- CHECKS ---
 
 [A1] DIETARY VIOLATIONS — severity: RED
@@ -521,18 +530,22 @@ E.g., "18 min from Attraction B" for a lunch listed before visiting Attraction B
 Evidence: Quote the distance claim in context.
 
 [A21] ACTIVITY DAY-OF-WEEK VALIDATION — severity: RED
-Many attractions are closed on specific weekdays. Cross-reference the day of the week stated in each day heading \
-against the opening hours for that day's attractions. Flag any attraction scheduled on a day it is closed, \
-or any weekly market/event scheduled on a day it does not operate.
-Evidence: Quote the day heading and the conflicting hours or closure note.
+If the guide lists opening days for an attraction, verify they include the scheduled day of the week. \
+If opening days are not listed in the guide but you know with high confidence that the attraction is \
+closed on that day (e.g., a well-known museum closed Mondays), flag it. \
+Do not flag if you are merely guessing — apply the confidence rule above.
+Evidence: Quote the day heading and the attraction's closure information.
 
 [A22] RESERVATION DEPENDENCIES — severity: RED
-Some attractions, experiences, and restaurants require advance booking, timed-entry tickets, or reservations. \
-If the guide recommends such a venue without telling the client to book in advance, flag it. \
-Examples that typically require advance booking: popular museums with timed entry, limited-capacity experiences \
-(hot air balloon, glacier walk, cooking class), high-demand restaurants, cable cars with limited slots, \
-iconic experiences like Ghibli Museum, TeamLab, Colosseum skip-the-line, etc. \
-Use your knowledge of the destination to identify which recommended venues commonly require pre-booking.
+Some attractions require advance booking, timed-entry tickets, or reservations. If the guide recommends \
+such a venue without telling the client to book in advance, flag it. \
+Flag only venues where reservations are KNOWN to be required or strongly recommended — not merely popular. \
+Do NOT flag open-entry attractions, free temples, street markets, or general-access sights. \
+Examples that genuinely require pre-booking: capacity-limited experiences (hot air balloon, glacier walk, \
+cooking class), timed-entry monuments (Ghibli Museum, TeamLab, Colosseum), high-demand restaurants \
+with no walk-in policy, cable cars or ferries with fixed departure slots. \
+Do NOT flag: Eiffel Tower (walkable floors are open-access), Senso-ji Temple (free, open-access), \
+busy bazaars, or any attraction where advance booking is optional rather than required.
 Evidence: Quote the venue recommendation and confirm there is no booking note.
 
 [A23] ARRIVAL / DEPARTURE DAY LOGIC — severity: RED
@@ -551,6 +564,28 @@ Examples of failures: tulip fields in Amsterdam in July (peak is April), autumn 
 cherry blossoms in Japan in July (peak is late March–April), whale watching in a location that is off-season. \
 Use your knowledge of seasonal windows to flag recommendations that would disappoint or mislead the client.
 Evidence: Quote the recommendation and state why it conflicts with the travel month.
+
+[A26] PREMIUM FINISH — severity: YELLOW
+This is a luxury travel guide going to a paying client. Flag any of the following finish issues:
+- Spelling mistakes or grammatical errors in the guide text
+- Broken or garbled characters (e.g., "family￾friendly", "caf?" instead of "café")
+- Inconsistent capitalisation (e.g., "Day 3" in one place, "day 3" in another)
+- Inconsistent emoji usage (some venues have 🍴 and ⏰, others have none, with no pattern)
+- Obvious formatting problems: extra blank lines mid-paragraph, misaligned sections, section headings \
+  that appear mid-sentence
+- Any text that looks unpolished or rushed for a premium client document
+Evidence: Quote the specific text that has the issue.
+
+[A27] DAY FLOW LOGIC — severity: RED
+Review each day's activity sequence for practical geographic and logistical flow:
+- Do activities follow a logical geographic order, or does the route backtrack unnecessarily \
+  (e.g., north side of city in morning, south for lunch, north again for afternoon)?
+- Are travel times between consecutive activities realistic and included where needed?
+- Is there sufficient buffer time between activities, meals, and transit?
+- Is the energy pacing reasonable (e.g., not 6 major sites before lunch, then nothing)?
+- Can the full day realistically be completed given opening times, travel times, and meal stops?
+Flag days where the sequence would leave a real client frustrated, exhausted, or unable to complete the plan.
+Evidence: Quote the day heading and the specific activity sequence or timing that creates the problem.
 
 [A25] REAL-WORLD EXECUTABILITY — severity: RED
 Review each day as if you were personally taking this trip as a client. \
@@ -657,7 +692,7 @@ def verify(docx_bytes: bytes) -> VerifyResult:
         "R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10",
         "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10",
         "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20",
-        "A21", "A22", "A23", "A24", "A25",
+        "A21", "A22", "A23", "A24", "A25", "A26", "A27",
     }
     failed_ids = {f.check_id for f in all_findings}
     passed_count = len(all_check_ids - failed_ids)

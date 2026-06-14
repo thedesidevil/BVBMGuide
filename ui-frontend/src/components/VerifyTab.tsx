@@ -40,6 +40,8 @@ const CHECK_DESCRIPTIONS: Record<string, { label: string; severity: "RED" | "YEL
   A23: { label: "Arrival/departure day logic sound",      severity: "RED"    },
   A24: { label: "Seasonal experiences accurate",          severity: "RED"    },
   A25: { label: "Day itineraries practically executable", severity: "RED"    },
+  A26: { label: "Spelling, grammar & formatting clean",   severity: "YELLOW" },
+  A27: { label: "Day flow logical and well-paced",        severity: "RED"    },
 };
 
 const NARRATIVE_TABS: { key: TabKey; label: string }[] = [
@@ -101,7 +103,7 @@ function Results({ result, onReset }: { result: VerifyResult; onReset: () => voi
     "R1","R2","R3","R4","R5","R6","R7","R8","R9","R10",
     "A1","A2","A3","A4","A5","A6","A7","A8","A9","A10",
     "A11","A12","A13","A14","A15","A16","A17","A18","A19","A20",
-    "A21","A22","A23","A24","A25",
+    "A21","A22","A23","A24","A25","A26","A27",
   ];
 
   // When R3 flags a section as missing, AI checks for that section had no

@@ -475,12 +475,11 @@ Are there coherence issues: missing day narratives, broken sentences, duplicate 
 Evidence: Quote the problematic text.
 
 [A13] HOURS LOGIC — severity: RED
-Flag any of the following hours anomalies:
-1. End time is before start time in the same AM/PM period — e.g., "11 PM – 10 PM", "3:00 PM – 1:00 PM".
-2. Opening time starts at midnight or early AM (12:xx AM, 1:xx AM) for a restaurant or attraction — this is almost always a typo for the PM equivalent. "12:30 AM – 10:30 PM" should be flagged; the intended hours are almost certainly "12:30 PM – 10:30 PM".
-3. Identical start and end time — e.g., "11:30 PM – 11:30 PM" implies a zero-duration or 24-hour operation; either is a likely typo.
-Check EVERY venue's hours string — do not stop at the first issue found.
-Evidence: Quote the exact hours string for each anomaly.
+Flag time ranges where the end time is BEFORE the start time within the same AM/PM period. \
+E.g., "11 PM – 10 PM", "3:00 PM – 1:00 PM", "9:00 AM – 7:00 AM". \
+Note: midnight starts (12:xx AM) and identical start/end times are already caught by separate rule checks — do NOT duplicate those findings here. Only flag end-before-start in the same AM/PM period.
+Check EVERY venue's hours string — do not stop at the first issue.
+Evidence: Quote the exact hours string.
 
 [A14] DINNER VENUE HOURS — severity: RED
 For every venue under "Dinner Recommendations", do hours extend past 7 PM? \
@@ -502,9 +501,14 @@ on standard JR Passes — "covered under JR Pass" for Nozomi should be flagged.
 Evidence: Quote the pass coverage claim.
 
 [A18] IMPORTANT PLACES COMPLETENESS — severity: RED
-For each hotel in the itinerary, does Important Places Around Your Stay include a nearby \
-grocery store, pharmacy, and hospital (ideally with hours and a Maps link)?
-Evidence: Quote what is present for the hotel, or note what is missing.
+For each hotel in the itinerary, does Important Places Around Your Stay include ALL of the following?
+- Grocery store (with opening hours)
+- Pharmacy — preferably 24-hour; if not, note the hours explicitly so clients know when it closes
+- Hospital or emergency clinic capable of handling serious medical situations (not just a GP clinic)
+- Distance or travel time from the hotel for each essential service
+- A Google Maps link for each essential service (missing links on hospitals/pharmacies is a safety issue)
+Flag any hotel stay where one or more of these requirements is absent or insufficient.
+Evidence: Quote what is present, and specify exactly what is missing.
 
 [A19] VENUE TYPE FOR MEAL — severity: YELLOW
 Are dinner/lunch recommendations appropriate for that meal? A coffee café or dessert shop listed \
@@ -515,6 +519,49 @@ Evidence: Quote the venue description and the meal slot it appears under.
 Are distance/time references anchored to the correct preceding attraction or hotel? \
 E.g., "18 min from Attraction B" for a lunch listed before visiting Attraction B in that day's sequence.
 Evidence: Quote the distance claim in context.
+
+[A21] ACTIVITY DAY-OF-WEEK VALIDATION — severity: RED
+Many attractions are closed on specific weekdays. Cross-reference the day of the week stated in each day heading \
+against the opening hours for that day's attractions. Flag any attraction scheduled on a day it is closed, \
+or any weekly market/event scheduled on a day it does not operate.
+Evidence: Quote the day heading and the conflicting hours or closure note.
+
+[A22] RESERVATION DEPENDENCIES — severity: RED
+Some attractions, experiences, and restaurants require advance booking, timed-entry tickets, or reservations. \
+If the guide recommends such a venue without telling the client to book in advance, flag it. \
+Examples that typically require advance booking: popular museums with timed entry, limited-capacity experiences \
+(hot air balloon, glacier walk, cooking class), high-demand restaurants, cable cars with limited slots, \
+iconic experiences like Ghibli Museum, TeamLab, Colosseum skip-the-line, etc. \
+Use your knowledge of the destination to identify which recommended venues commonly require pre-booking.
+Evidence: Quote the venue recommendation and confirm there is no booking note.
+
+[A23] ARRIVAL / DEPARTURE DAY LOGIC — severity: RED
+Arrival day: Check whether the planned activities are realistic given the stated or implied arrival time. \
+If the client arrives in the afternoon or evening, a packed morning of sightseeing is wrong. \
+Departure day: Check whether activities leave sufficient time to reach the airport or station. \
+If a flight is at 6 PM and the last activity ends at 4 PM with a 1-hour transfer, that is dangerously tight. \
+Flag any arrival or departure day where the activity schedule is incompatible with travel logistics.
+Evidence: Quote the arrival/departure information and the conflicting activity schedule.
+
+[A24] SEASONAL ACCURACY — severity: RED
+Verify that seasonal experiences, natural phenomena, festivals, and weather-dependent recommendations \
+align with the actual travel month stated in the itinerary. \
+Examples of failures: tulip fields in Amsterdam in July (peak is April), autumn foliage in Japan in September \
+(peak is late October–November), Northern Lights in Iceland in June (midnight sun, no aurora visible), \
+cherry blossoms in Japan in July (peak is late March–April), whale watching in a location that is off-season. \
+Use your knowledge of seasonal windows to flag recommendations that would disappoint or mislead the client.
+Evidence: Quote the recommendation and state why it conflicts with the travel month.
+
+[A25] REAL-WORLD EXECUTABILITY — severity: RED
+Review each day as if you were personally taking this trip as a client. \
+Flag anything that is technically possible but practically unreasonable for a real traveller: \
+- Walking 40+ minutes to a dinner venue when alternatives exist nearby \
+- Scheduling 6 or more major attractions in a single day with no realistic time buffer \
+- Excessive backtracking across a city (visiting north, then south, then north again) \
+- An activity sequence where travel time between consecutive venues makes the schedule unworkable \
+- Recommending a venue that requires significant effort (long drive, permit, physical difficulty) without flagging it \
+This is the check that catches itineraries that look fine on paper but would frustrate a real client.
+Evidence: Quote the specific day, activity sequence, or venue that creates the problem.
 
 --- OUTPUT ---
 Return JSON only — no prose before or after.
@@ -610,6 +657,7 @@ def verify(docx_bytes: bytes) -> VerifyResult:
         "R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10",
         "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10",
         "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20",
+        "A21", "A22", "A23", "A24", "A25",
     }
     failed_ids = {f.check_id for f in all_findings}
     passed_count = len(all_check_ids - failed_ids)

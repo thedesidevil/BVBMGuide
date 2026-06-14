@@ -49,7 +49,7 @@ Confirm the following sections exist in the guide. Flag any that are missing:
 - Health & Vaccination Guidance
 - Thank You page
 
-**[R4 / R10] DAY NUMBERING — RED**
+**[R4] DAY NUMBERING — RED**
 Are the day headings numbered sequentially without gaps or duplicates?
 E.g., if the trip is 7 days, there should be Day 1 through Day 7 with no Day 4 missing or two Day 3s.
 
@@ -58,9 +58,9 @@ Each day heading should follow the format: `Day X: Weekday, Date – Title`
 Example: `Day 1: Monday, 12 Jan – Arrival in Tokyo`
 Flag headings that are missing the day of the week (Monday, Tuesday, etc.).
 
-**[R6] GOOGLE MAPS LINKS — YELLOW**
-Every hotel, restaurant, attraction, and essential service should have a Google Maps link.
-Check for the presence of Maps links throughout the guide. Flag if a significant number of venues are missing them.
+**[R6] GOOGLE MAPS LINKS — RED / YELLOW**
+- **RED**: Hotels, hospitals, pharmacies, and grocery stores must each have a Google Maps link. Missing a hospital link when a client has a medical emergency at night is a serious safety gap.
+- **YELLOW**: Restaurants and attractions should have Maps links. Flag if a significant number are missing.
 
 **[R7] RESTAURANT COUNT PER DAY — RED**
 Every day (except cruise/at-sea days and transit-only days) should have at least 3 restaurant recommendations.
@@ -70,8 +70,8 @@ Flag any day with fewer than 3.
 
 ## SECTION 2 — Opening Hours & Time Accuracy
 
-**[R8] TIME FORMAT — RED**
-Check ALL opening hours in the guide for these errors:
+**[R8 / A13] OPENING HOURS VALIDATION — RED**
+Check ALL opening hours in the guide for any of the following errors. Check EVERY venue — do not stop at the first issue.
 
 1. **Missing AM/PM on opening time** — e.g., `12:00 – 11:00 PM` (is 12:00 noon or midnight?)
    Should be: `12:00 PM – 11:00 PM`
@@ -82,15 +82,10 @@ Check ALL opening hours in the guide for these errors:
 
 3. **Identical start and end time** — e.g., `11:30 PM – 11:30 PM`
    This implies zero duration or 24-hour operation. Almost certainly a typo (likely `11:30 AM – 11:30 PM`).
-   Flag the venue name and the hours.
 
-**[A13] HOURS LOGIC — RED**
-Check ALL venues for illogical time ranges:
-1. End time before start time in the same AM/PM period — e.g., `11 PM – 10 PM`, `3:00 PM – 1:00 PM`
-2. Midnight or early-AM opening times (12:xx AM, 1:xx AM) for a restaurant — almost always a typo for PM
-3. Identical start and end time — e.g., `11:30 PM – 11:30 PM`
+4. **End time before start time in the same AM/PM period** — e.g., `11 PM – 10 PM`, `3:00 PM – 1:00 PM`
 
-Check EVERY venue. Do not stop at the first issue.
+For each issue, quote the venue name and the exact hours string.
 
 **[A14] DINNER VENUE HOURS — RED**
 For every venue listed under "Dinner Recommendations", confirm the opening hours extend past 7:00 PM.
@@ -104,7 +99,7 @@ Use your knowledge of approximate seasonal sunset times by region to check this.
 
 ---
 
-## SECTION 3 — Content Accuracy
+## SECTION 3 — Real-World Accuracy
 
 **[A1] DIETARY VIOLATIONS — RED**
 Look at the dietary preferences stated in the Client Information section (e.g., vegetarian, vegan, halal, allergies).
@@ -136,9 +131,48 @@ Are transport pass coverage claims accurate?
 Example: Claiming the Nozomi shinkansen is covered by a standard JR Pass (it historically requires a supplement).
 Flag any transport pass claims that appear incorrect.
 
+**[A21] ACTIVITY DAY-OF-WEEK VALIDATION — RED**
+Many attractions are closed on specific weekdays. Cross-reference the day of the week in each day heading against the opening hours listed for that day's attractions.
+Flag any attraction scheduled on a day it is explicitly closed, or any weekly market/event listed on a day it does not operate.
+Evidence: Quote the day heading and the conflicting closure day or hours.
+
+**[A23] ARRIVAL / DEPARTURE DAY LOGIC — RED**
+Arrival day: Is the activity schedule compatible with the arrival time? If the client arrives in the afternoon, a packed morning itinerary is wrong.
+Departure day: Is there sufficient time to reach the airport or station? If the flight is at 6 PM and the last activity ends at 4 PM with a 1-hour transfer, that is dangerously tight.
+Flag any arrival or departure day where the activity schedule conflicts with travel logistics.
+
+**[A24] SEASONAL ACCURACY — RED**
+Verify that seasonal experiences align with the actual travel month in the itinerary.
+Examples of failures:
+- Tulip fields in Amsterdam in July (peak is April)
+- Autumn foliage in Japan in September (peak is late October–November)
+- Northern Lights in Iceland in June (midnight sun, aurora not visible)
+- Cherry blossoms in Japan in July (peak is late March–April)
+Use your knowledge of seasonal windows to flag recommendations that would disappoint clients.
+
 ---
 
-## SECTION 4 — Content Quality
+## SECTION 4 — Logistics & Safety
+
+**[A18] IMPORTANT PLACES COMPLETENESS — RED**
+For each hotel in the itinerary, does the Important Places Around Your Stay section include ALL of the following?
+- Grocery store (with opening hours)
+- Pharmacy — preferably 24-hour; if not, the hours must be stated explicitly
+- Hospital or emergency clinic capable of handling serious medical situations (not just a GP clinic)
+- Distance or travel time from the hotel for each service
+- A Google Maps link for each service
+
+Flag any hotel stay where one or more requirements is missing or insufficient.
+
+**[A22] RESERVATION DEPENDENCIES — RED**
+Some attractions require advance booking, timed-entry tickets, or reservations. If the guide recommends such a venue without telling the client to book in advance, flag it.
+Examples that typically require pre-booking: popular museums with timed entry, hot air balloon rides, glacier walks, cooking classes, high-demand restaurants, cable cars with limited slots, iconic experiences (Ghibli Museum, TeamLab, Colosseum, etc.).
+Use your knowledge of the destination to identify which venues commonly require pre-booking.
+Evidence: Quote the venue recommendation and confirm there is no booking note.
+
+---
+
+## SECTION 5 — Content Quality
 
 **[A4] GUIDE TITLE — YELLOW**
 Is the guide title creative and destination-specific?
@@ -180,15 +214,7 @@ Are there any coherence issues in the guide?
 - Incomplete sentences or paragraphs that end abruptly
 - Duplicate paragraphs (same content appearing twice)
 - Days with very thin content (just a heading and one or two lines)
-- Text that clearly doesn't belong (e.g., a heading for Day 4 content under Day 2)
-
-**[A18] IMPORTANT PLACES COMPLETENESS — RED**
-For each hotel in the itinerary, does the Important Places Around Your Stay section include:
-- A nearby grocery store (with hours)
-- A nearby pharmacy (with hours)
-- A nearby hospital or clinic
-
-Flag any hotel stay where one or more of these essential services is missing.
+- Text that clearly doesn't belong (e.g., Day 4 content under Day 2)
 
 **[A19] VENUE TYPE FOR MEAL — YELLOW**
 Are dinner and lunch recommendations appropriate for that meal?
@@ -197,7 +223,22 @@ Flag venues where the type of establishment doesn't suit the meal it's listed un
 
 **[A20] DISTANCE REFERENCE ANCHORING — YELLOW**
 Are distance and travel time references anchored to the correct place?
-Example of an error: a lunch venue saying "18 min from Museum B" when Museum B hasn't been visited yet that day — the reference should be from the previous location.
+Example of an error: a lunch venue saying "18 min from Museum B" when Museum B hasn't been visited yet that day.
+
+---
+
+## SECTION 6 — Sanity Check
+
+**[A25] REAL-WORLD EXECUTABILITY — RED**
+Review each day as if you were personally taking this trip as a client. Flag anything that is technically possible but practically unreasonable:
+- Walking 40+ minutes to a dinner venue when closer alternatives exist
+- Scheduling 6 or more major attractions in a single day with no realistic time buffer
+- Excessive backtracking across a city (north → south → north again)
+- An activity sequence where travel time between consecutive venues makes the schedule unworkable
+- A venue that requires significant effort (long drive, advance permits, physical difficulty) with no warning to the client
+
+This is the check that catches itineraries that look fine on paper but would frustrate a real client on the ground.
+Evidence: Quote the specific day, activity sequence, or venue that creates the problem.
 
 ---
 

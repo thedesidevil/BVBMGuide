@@ -103,3 +103,34 @@ export interface PersistResult {
   persisted_files: number;
   affected_cities: string[];
 }
+
+// --- Verify types ---
+
+export interface VerifyFinding {
+  check_id: string;
+  layer: "rule" | "ai";
+  severity: "RED" | "YELLOW";
+  section: string;
+  description: string;
+  evidence: string;
+}
+
+export interface VerifyNarratives {
+  overall: string;
+  days: string;
+  restaurants: string;
+  static_sections: string;
+}
+
+export interface VerifyMeta {
+  red_count: number;
+  yellow_count: number;
+  passed_count: number;
+  model: string;
+}
+
+export interface VerifyResult {
+  findings: VerifyFinding[];
+  narratives: VerifyNarratives;
+  meta: VerifyMeta;
+}

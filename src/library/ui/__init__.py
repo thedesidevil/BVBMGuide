@@ -4,13 +4,13 @@ import os
 from pathlib import Path
 from typing import Optional
 
-from fastapi import FastAPI, Request
+from fastapi import Depends, FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from starlette.middleware.sessions import SessionMiddleware
 
 from . import google_auth as ga
-from .api import tree, city, country, review, sweep, audit, ingest
+from .api import tree, city, country, review, sweep, audit, ingest, verify
 from .storage import LocalStorageBackend, StorageBackend
 
 
@@ -127,16 +127,20 @@ def create_app(
     async def me(request: Request):
         user = ga.user_session(request)
         if user:
-            return user
+            return {**user, "is_admin": ga.is_admin(user.get("email", ""))}
+        if not ga.auth_enabled():
+            return {"email": None, "name": None, "is_admin": True}
         return JSONResponse({"user": None}, status_code=401)
 
-    app.include_router(tree.router, prefix="/api")
-    app.include_router(city.router, prefix="/api")
-    app.include_router(country.router, prefix="/api")
-    app.include_router(review.router, prefix="/api")
-    app.include_router(sweep.router, prefix="/api")
-    app.include_router(audit.router, prefix="/api")
-    app.include_router(ingest.router, prefix="/api")
+    _admin = [Depends(ga.require_admin)]
+    app.include_router(tree.router, prefix="/api", dependencies=_admin)
+    app.include_router(city.router, prefix="/api", dependencies=_admin)
+    app.include_router(country.router, prefix="/api", dependencies=_admin)
+    app.include_router(review.router, prefix="/api", dependencies=_admin)
+    app.include_router(sweep.router, prefix="/api", dependencies=_admin)
+    app.include_router(audit.router, prefix="/api", dependencies=_admin)
+    app.include_router(ingest.router, prefix="/api", dependencies=_admin)
+    app.include_router(verify.router, prefix="/api")  # all authenticated users
 
     from fastapi.staticfiles import StaticFiles
 

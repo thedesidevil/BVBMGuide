@@ -1,0 +1,126 @@
+{
+  "day_number": 6,
+  "date": "2025-04-24",
+  "title": null,
+  "overnight_city": "Florence",
+  "overnight_hotel": null,
+  "activities": [
+    {
+      "name": "Day trip to Pisa (Leaning Tower)",
+      "vivid_description": "The iconic white marble tower tilts dramatically against the azure Tuscan sky, its eight stories of Romanesque arches creating mesmerizing shadows that shift throughout the day. Tourists gather on the emerald lawn of the Piazza dei Miracoli, striking playful poses as they pretend to push or hold up the world's most famous architectural mistake. The sweet scent of gelato mingles with the warm limestone dust as you climb the 294 spiraling steps, feeling the tower's subtle sway while panoramic views of terracotta rooftops stretch toward the Mediterranean horizon.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Leaning+Tower+of+Pisa+Florence",
+      "travel_leg": {
+        "from_location": "Hotel Alex",
+        "mode": "train",
+        "duration": "~1 hour 30 min",
+        "tip": "Take the regional train from Florence Santa Maria Novella to Pisa Centrale, then walk 20 minutes or take bus LAM Rossa to the tower"
+      }
+    },
+    {
+      "name": "Evening back in Florence",
+      "vivid_description": "Golden hour bathes Florence's terracotta rooftops in honey-colored light as you return from your Tuscan adventure, the familiar silhouette of Brunelleschi's dome welcoming you home like an old friend. The evening air carries the melodic chatter of locals gathering at wine bars and the rich aroma of ragù simmering in nearby trattorias. Cobblestone streets echo with the gentle clip-clop of evening strollers as the city transforms from tourist destination to living, breathing neighborhood where Florentines reclaim their ancient streets.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "",
+      "travel_leg": {
+        "from_location": "Day trip to Pisa (Leaning Tower)",
+        "mode": "train",
+        "duration": "~1 hour 30 min",
+        "tip": "Return trains run frequently from Pisa Centrale to Florence SMN until late evening"
+      }
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Il Vegano Firenze",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Il+Vegano+Firenze+Florence",
+      "ambience": null,
+      "must_try_dishes": [
+        "Vegan lasagna",
+        "bowls",
+        "desserts"
+      ],
+      "hours": "12 PM - 2:30 PM | 7:00 PM – 11:30 PM",
+      "price_range": null,
+      "travel_note": "near None",
+      "source": "library"
+    },
+    {
+      "name": "Pizzeria San Jacopino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Pizzeria+San+Jacopino+Florence",
+      "ambience": null,
+      "must_try_dishes": [
+        "Classic veg pizzas",
+        "focaccia"
+      ],
+      "hours": "12 PM - 2:30 PM | 7:00 PM – 11:30 PM",
+      "price_range": null,
+      "travel_note": "near None",
+      "source": "library"
+    },
+    {
+      "name": "Il Vegetariano",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Il+Vegetariano+Florence",
+      "ambience": null,
+      "must_try_dishes": [
+        "Veg lasagna",
+        "soups",
+        "buffet-style dishes"
+      ],
+      "hours": "12:30 PM – 2:30 PM | 7:30 PM – 10:30 PM",
+      "price_range": null,
+      "travel_note": "near Near Duomo",
+      "source": "library"
+    }
+  ],
+  "dinner": [
+    {
+      "name": "Trattoria 13 Gobbi",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Trattoria+13+Gobbi+Florence",
+      "ambience": null,
+      "must_try_dishes": [
+        "Cheesy rigatoni",
+        "vegetarian pasta dishes",
+        "Cheesy Rigatoni"
+      ],
+      "hours": "12:00 PM – 3:00 PM, 7:00 PM – 11:00 PM",
+      "price_range": null,
+      "travel_note": "near Hotel Alex",
+      "source": "library"
+    },
+    {
+      "name": "La Giostra Firenze",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=La+Giostra+Firenze+Florence",
+      "ambience": null,
+      "must_try_dishes": [
+        "Pear ravioli (signature dish)",
+        "Pear Ravioli"
+      ],
+      "hours": "12:00 PM – 2:30 PM, 6:30 PM – 12:30 AM(weekdays), 6:30 PM – 12:30 AM (weekends)",
+      "price_range": null,
+      "travel_note": "near Hotel Alex",
+      "source": "library"
+    },
+    {
+      "name": "I' Girone De' Ghiotti Firenze",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=I%27+Girone+De%27+Ghiotti+Firenze+Florence",
+      "ambience": null,
+      "must_try_dishes": [
+        "Fresh vegetarian sandwiches",
+        "focaccia"
+      ],
+      "hours": "11:30 AM – 8:00 PM",
+      "price_range": null,
+      "travel_note": "near Hotel Alex",
+      "source": "library"
+    }
+  ],
+  "is_cruise_day": false,
+  "transport_note": null
+}

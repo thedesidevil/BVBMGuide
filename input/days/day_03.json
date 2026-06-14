@@ -1,0 +1,139 @@
+{
+  "day_number": 3,
+  "date": "2025-04-21",
+  "title": "Amsterdam Culture & Museums",
+  "overnight_city": "Amsterdam",
+  "overnight_hotel": null,
+  "activities": [
+    {
+      "name": "Visit Van Gogh Museum",
+      "vivid_description": "Step into the world's largest collection of Van Gogh masterpieces, where swirling brushstrokes of 'The Starry Night' seem to dance before your eyes in the museum's pristine white galleries. The afternoon light streaming through floor-to-ceiling windows illuminates the vibrant yellows of his sunflower paintings, while interactive displays reveal the tortured genius behind each bold, impasto stroke. You'll find yourself mere inches from original canvases where you can almost feel the artist's passionate energy radiating from every thick layer of paint.",
+      "hours": "9 AM – 6 PM",
+      "entry_fee": "₹2,000–2,500",
+      "recommended_duration": "2-3 hours",
+      "source": "library",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Van+Gogh+Museum+Amsterdam",
+      "travel_leg": {
+        "from_location": "Amsterdam Schiphol",
+        "mode": "public transport",
+        "duration": "~45 min",
+        "tip": "Take the 397 bus from Schiphol to Museumplein, buy GVB day pass for unlimited city transport"
+      }
+    },
+    {
+      "name": "Optional: Heineken Experience or Nemo Science Museum",
+      "vivid_description": "At NEMO's distinctive green copper ship-shaped building, the sound of delighted children echoes through five floors of hands-on scientific wonder. Your fingers tingle as you generate electricity on massive Van de Graaff generators, while the scent of soap bubbles fills the air as you create enormous spheres that shimmer with rainbow colors. From the rooftop terrace, Amsterdam's historic canal ring spreads below like a living map, with red-tiled roofs and church spires piercing the afternoon sky.",
+      "hours": "10 AM – 5:30 PM",
+      "entry_fee": "₹1,800–2,200",
+      "recommended_duration": "2-3 hours",
+      "source": "library",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=NEMO+Science+Museum+Amsterdam",
+      "travel_leg": {
+        "from_location": "Visit Van Gogh Museum",
+        "mode": "public transport",
+        "duration": "~25 min",
+        "tip": "Take tram 2 or 5 from Museumplein to Central Station, then walk 10 minutes to NEMO"
+      }
+    },
+    {
+      "name": "shopping",
+      "vivid_description": "The narrow cobblestone streets of the Nine Streets (De Negen Straatjes) buzz with the gentle chime of bicycle bells and the rustle of shopping bags filled with Dutch design treasures. Vintage boutiques spill their colorful wares onto sidewalks where the aroma of fresh stroopwafels mingles with the earthy scent of aged leather from local shoe shops. Canal-side windows display everything from handcrafted jewelry to quirky Dutch souvenirs, their reflections dancing on the dark water as boats glide silently past.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "",
+      "travel_leg": {
+        "from_location": "Optional: Heineken Experience or Nemo Science Museum",
+        "mode": "walk",
+        "duration": "~15 min",
+        "tip": "Head southwest from NEMO toward Nieuwmarkt, then continue to the Nine Streets shopping area"
+      }
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Fabel Friet",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Fabel+Friet+Amsterdam",
+      "ambience": null,
+      "must_try_dishes": [
+        "Amsterdam fries"
+      ],
+      "hours": "11am-9pm",
+      "price_range": null,
+      "travel_note": "near Near Dam Square/Royal palace",
+      "source": "library"
+    },
+    {
+      "name": "Breadwinner",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Breadwinner+Amsterdam",
+      "ambience": null,
+      "must_try_dishes": [
+        "Sourdough bagel sandwiches",
+        "cream cheese bagels"
+      ],
+      "hours": "9:30 AM – 3:00 PM",
+      "price_range": null,
+      "travel_note": "near Museumplein / Central Zone",
+      "source": "library"
+    },
+    {
+      "name": "Vlaams Friteshuis Vleminckx",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Vlaams+Friteshuis+Vleminckx+Amsterdam",
+      "ambience": null,
+      "must_try_dishes": [
+        "Amsterdam fries",
+        "Dutch fries with multiple sauces"
+      ],
+      "hours": "11:00 AM – 7:00 PM, 11:00 AM – 8:00 PM (Tuesdays)",
+      "price_range": null,
+      "travel_note": "near Near Dam Square/Royal palace",
+      "source": "library"
+    }
+  ],
+  "dinner": [
+    {
+      "name": "Van Wonderen Stroopwafels",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Van+Wonderen+Stroopwafels+Amsterdam",
+      "ambience": null,
+      "must_try_dishes": [
+        "Stroopwafel",
+        "Fresh stroopwafels with toppings"
+      ],
+      "hours": "8:30am-10pm",
+      "price_range": null,
+      "travel_note": "near Holiday Inn Express Almere by IHG",
+      "source": "library"
+    },
+    {
+      "name": "Caldi e Freddi",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Caldi+e+Freddi+Amsterdam",
+      "ambience": null,
+      "must_try_dishes": [
+        "Homemade Italian Panini sandwiches",
+        "pizzas and pasta",
+        "Panini sandwiches",
+        "pizzas",
+        "pasta"
+      ],
+      "hours": "8:30am-5:30pm",
+      "price_range": null,
+      "travel_note": "near Holiday Inn Express Almere by IHG",
+      "source": "library"
+    },
+    {
+      "name": "Moeders",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Moeders+Amsterdam",
+      "ambience": null,
+      "must_try_dishes": [
+        "Veg stamppot"
+      ],
+      "hours": "5:00 PM – 11:30 PM",
+      "price_range": null,
+      "travel_note": "near Holiday Inn Express Almere by IHG",
+      "source": "library"
+    }
+  ],
+  "is_cruise_day": false,
+  "transport_note": null
+}

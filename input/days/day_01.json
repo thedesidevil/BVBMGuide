@@ -1,0 +1,106 @@
+{
+  "day_number": 1,
+  "date": "2025-04-19",
+  "title": "Arrival in Amsterdam | Easy Start",
+  "overnight_city": "Amsterdam",
+  "overnight_hotel": null,
+  "is_cruise_day": false,
+  "transport_note": null,
+  "flight_details": {
+    "airline": "Qatar Airways",
+    "sectors": [
+      {
+        "label": "Sector 1",
+        "from_terminal": "Mumbai Chhatrapati Shivaji Maharaj International Airport Terminal 2",
+        "to_terminal": "Doha Hamad International Airport",
+        "departure_time": "04:10",
+        "arrival_time": "05:45",
+        "duration": null
+      },
+      {
+        "label": "Sector 2",
+        "from_terminal": "Doha Hamad International Airport",
+        "to_terminal": "Amsterdam Schiphol",
+        "departure_time": "07:50",
+        "arrival_time": "14:55",
+        "duration": null
+      }
+    ]
+  },
+  "transfer_instructions": {
+    "intro": "After arriving at 📍 Amsterdam Schiphol Airport, make your way to your hotel in Almere.",
+    "headline_tip": "**Follow signs for Trains → Schiphol Plaza → NS Dutch Railways**",
+    "route_steps": [
+      "Take NS Intercity train from Schiphol Airport to Amsterdam Centraal (€4.90 ticket from machines)",
+      "Journey takes 17 minutes with trains every 10-15 minutes throughout the day",
+      "Transfer to NS train towards Lelystad and alight at Almere Centrum (additional €6.20), then take bus 1 or 2 to Almere Stad for 8 minutes"
+    ],
+    "total_travel_time": "~50-65 mins",
+    "cost_inr": "₹900-1,100 per person",
+    "settle_in_note": "Once you've checked in, take some time to relax and enjoy the modern amenities before exploring the charming planned city of Almere."
+  },
+  "sections": [
+    {
+      "section_title": "☀️ Afternoon- Dam Square & Canals Walk",
+      "place_name": "Dam Square",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Dam+Square+Amsterdam",
+      "travel_info": "⏱️ ~45 mins train + tram from Amsterdam Schiphol",
+      "hours": "Open 24 hours",
+      "cost": "Free",
+      "description": "Step into the beating heart of Amsterdam at Dam Square, where centuries of history unfold beneath your feet amid bustling cafes and street performers. Wander through the enchanting network of UNESCO-listed canals, where elegant 17th-century merchant houses lean gracefully over mirror-like waters. Let the gentle lapping of canal boats and the soft chime of bicycle bells create the perfect soundtrack to your first Amsterdam adventure."
+    },
+    {
+      "section_title": "🌆 Evening- Canal Cruise",
+      "place_name": "Amsterdam Canal Cruises",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Amsterdam+Canal+Cruises+Amsterdam",
+      "travel_info": "⏱️ ~5 mins walk from Dam Square",
+      "hours": null,
+      "cost": null,
+      "description": "Glide through Amsterdam's golden-lit waterways as the city transforms into a fairy-tale landscape of twinkling bridges and illuminated gabled houses. Watch locals cycling home along the canal banks while you sip a drink aboard your floating vessel, experiencing the city from the unique perspective that has enchanted visitors for centuries. The gentle motion of the boat and the warm glow of historic buildings create an unforgettable introduction to Amsterdam's romantic evening atmosphere."
+    }
+  ],
+  "dinner_location": "canals",
+  "lunch": [],
+  "dinner": [
+    {
+      "name": "The pancake bakery",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=The+pancake+bakery+Amsterdam",
+      "ambience": "Cozy traditional Dutch eatery with rustic wooden interiors and a warm, family-friendly atmosphere perfect for leisurely canal-side dining.",
+      "must_try_dishes": [
+        "Dutch pancake"
+      ],
+      "hours": "9am-8:30pm",
+      "price_inr": "₹800-1,200 per person",
+      "travel_note": "~5 mins walk from canals",
+      "source": "library"
+    },
+    {
+      "name": "Winkel 43",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Winkel+43+Amsterdam",
+      "ambience": "Bustling corner café with large windows overlooking Noordermarkt, offering a lively local vibe that transitions from morning coffee spot to evening hangout.",
+      "must_try_dishes": [
+        "Apple pie"
+      ],
+      "hours": "8am-1am",
+      "price_inr": "₹600-900 per person",
+      "travel_note": "~3 mins walk from canals",
+      "source": "library"
+    },
+    {
+      "name": "Saint Jean Baker",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Saint+Jean+Baker+Amsterdam",
+      "ambience": "Charming French-style bakery with minimalist décor and the enticing aroma of fresh pastries, creating an intimate neighborhood café experience.",
+      "must_try_dishes": [
+        "Hazelnut chocolate danish"
+      ],
+      "hours": "8am-5pm",
+      "price_inr": "₹400-700 per person",
+      "travel_note": "~8 mins walk from canals",
+      "source": "library"
+    }
+  ],
+  "return_instructions": {
+    "instructions": "From Amsterdam Canal Cruises, walk to Amsterdam Centraal station (5-10 minutes) and take the train to Almere Centrum station (about 20 minutes). From Almere Centrum, it's a short walk or local bus ride to Holiday Inn Express Almere.",
+    "travel_note": "⏱️ Travel time: ~35-45 mins 💡 Trains to Almere run frequently (every 10-15 minutes) throughout the day"
+  }
+}

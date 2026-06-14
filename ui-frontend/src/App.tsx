@@ -8,11 +8,15 @@ import { SweepMode } from "./components/SweepMode";
 import { IngestWizard } from "./components/IngestWizard";
 import { IngestHistory } from "./components/IngestHistory";
 import { AuditLog } from "./components/AuditLog";
+import { VerifyTab } from "./components/VerifyTab";
 import type { TreeData } from "./types";
 import { api } from "./api/client";
 
+type Mode = "city" | "sweep" | "ingest" | "history" | "audit" | "verify";
+
 export default function App() {
-  const [mode, setMode] = useState<"city" | "sweep" | "ingest" | "history" | "audit">("city");
+  const [isAdmin, setIsAdmin] = useState<boolean>(true);
+  const [mode, setMode] = useState<Mode>("verify");
   const [tree, setTree] = useState<TreeData>({});
   const [treeLoaded, setTreeLoaded] = useState(false);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
@@ -27,16 +31,20 @@ export default function App() {
       })
       .then((data) => {
         if (data?.email) setUserEmail(data.email);
+        const admin = data?.is_admin ?? true;
+        setIsAdmin(admin);
+        setMode(admin ? "city" : "verify");
       })
       .catch(() => {});
   }, []);
 
   useEffect(() => {
+    if (!isAdmin) return;
     api.getTree().then((data) => {
       setTree(data as TreeData);
       setTreeLoaded(true);
     });
-  }, []);
+  }, [isAdmin]);
 
   const reviewedCount = Object.values(tree).reduce(
     (sum, n) => sum + n.cities.filter((c) => c.status === "reviewed").length, 0
@@ -45,10 +53,11 @@ export default function App() {
 
   return (
     <>
-      <LoadingScreen loaded={treeLoaded} />
+      <LoadingScreen loaded={isAdmin ? treeLoaded : true} />
       <Layout
         mode={mode}
         onModeChange={setMode}
+        isAdmin={isAdmin}
         reviewedCount={reviewedCount}
         totalCount={totalCount}
         userEmail={userEmail}
@@ -75,6 +84,7 @@ export default function App() {
         {mode === "ingest" && <IngestWizard onDone={() => { setMode("city"); api.getTree().then((data) => setTree(data as TreeData)); }} />}
         {mode === "history" && <IngestHistory />}
         {mode === "audit" && <AuditLog />}
+        {mode === "verify" && <VerifyTab />}
       </Layout>
     </>
   );

@@ -132,4 +132,16 @@ export const api = {
     request<{ folders: string[] }>("/ingest/folders"),
   ingestHistory: () =>
     request<{ files: { filename: string; destination: string; covered_cities: string[]; ingested_at: string }[] }>("/ingest/history"),
+
+  // --- Verify ---
+  verifyAig: async (file: File): Promise<import("../types").VerifyResult> => {
+    const formData = new FormData();
+    formData.append("file", file);
+    const res = await fetch(`${BASE}/verify`, { method: "POST", body: formData });
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Verification failed: ${res.status} ${text}`);
+    }
+    return res.json();
+  },
 };

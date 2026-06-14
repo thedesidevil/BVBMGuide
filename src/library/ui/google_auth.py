@@ -77,6 +77,33 @@ def user_session(request: Request) -> dict | None:
     return u if isinstance(u, dict) else None
 
 
+def is_admin(email: str) -> bool:
+    """Return True if email has admin privileges.
+
+    When ADMIN_EMAILS is not set, all allowed users are admins (backward compat).
+    When set, only listed emails are admins.
+    """
+    if not email:
+        return False
+    email_l = email.strip().lower()
+    raw_emails = os.getenv("ADMIN_EMAILS", "").strip()
+    if not raw_emails:
+        return allowed_user(email)
+    admins = {e.strip().lower() for e in raw_emails.split(",") if e.strip()}
+    return email_l in admins
+
+
+def require_admin(request: Request) -> dict | None:
+    """FastAPI dependency: passes when auth is disabled (dev) or user is admin."""
+    if not auth_enabled():
+        return None
+    user = user_session(request)
+    if not user or not is_admin(user.get("email", "")):
+        from fastapi import HTTPException
+        raise HTTPException(status_code=403, detail="Admin access required")
+    return user
+
+
 class RequireGoogleAuthMiddleware(BaseHTTPMiddleware):
     PUBLIC_PREFIXES = ("/static",)
     PUBLIC_PATHS = frozenset({"/login", "/auth/callback", "/logout", "/favicon.ico"})

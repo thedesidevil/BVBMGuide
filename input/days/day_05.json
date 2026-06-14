@@ -1,0 +1,133 @@
+{
+  "day_number": 5,
+  "date": "2025-04-23",
+  "title": "Florence Highlights",
+  "overnight_city": "Florence",
+  "overnight_hotel": null,
+  "activities": [
+    {
+      "name": "Visit Duomo (Cathedral + Square)",
+      "vivid_description": "The massive dome of Brunelleschi rises before you like a terracotta crown against the Tuscan sky, while the intricate white, pink and green marble facade of the cathedral gleams in the morning light. Tourists crane their necks upward, cameras clicking, as the bells chime across the bustling piazza where street artists sketch portraits and the aroma of fresh cornetti drifts from nearby cafés.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Duomo+di+Firenze+Florence",
+      "travel_leg": {
+        "from_location": "Hotel Alex",
+        "mode": "public transport",
+        "duration": "~15 min",
+        "tip": "Take bus line C2 from Via Fiume near the hotel directly to Duomo"
+      }
+    },
+    {
+      "name": "Walk to Piazza della Signoria & Palazzo Vecchio",
+      "vivid_description": "The imposing crenellated tower of Palazzo Vecchio dominates the L-shaped piazza like a medieval fortress, its rough stone walls casting dramatic shadows over the open-air sculpture gallery below. Neptune's fountain gurgles nearby while tourists weave between the marble statues, their footsteps echoing off the ancient stones as pigeons flutter around Cellini's Perseus holding Medusa's severed head.",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "~8 mins walk from Duomo",
+      "source": "library",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Piazza+della+Signoria+Florence",
+      "travel_leg": {
+        "from_location": "Visit Duomo (Cathedral + Square)",
+        "mode": "walk",
+        "duration": "~8 min",
+        "tip": "Follow Via dei Calzaiuoli south from the Duomo - it's the main pedestrian street"
+      }
+    },
+    {
+      "name": "Explore Ponte Vecchio",
+      "vivid_description": "Golden jewelry glints in tiny shop windows that have hung over the Arno for centuries, their wooden shutters creaking in the river breeze as you squeeze through crowds of visitors on the narrow medieval bridge. The scent of leather goods mingles with the earthy smell of the muddy Arno below, while vendors call out prices for handcrafted rings and the ancient stones beneath your feet are worn smooth by millions of footsteps.",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "~5 mins walk",
+      "source": "library",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Ponte+Vecchio+Florence",
+      "travel_leg": {
+        "from_location": "Walk to Piazza della Signoria & Palazzo Vecchio",
+        "mode": "walk",
+        "duration": "~5 min",
+        "tip": "Head south from Piazza della Signoria via Via Por Santa Maria"
+      }
+    },
+    {
+      "name": "Sunset at Piazzale Michelangelo",
+      "vivid_description": "The entire city of Florence spreads out below like a Renaissance painting come to life, with the Duomo's dome glowing amber in the golden hour light and the Arno snaking through terracotta rooftops. Couples share bottles of wine on the stone steps while street musicians play violin, and the warm evening breeze carries the distant sound of church bells as the sun melts into the Tuscan hills.",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "~20 mins by taxi / ~30 mins bus",
+      "source": "library",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Piazzale+Michelangelo+Florence",
+      "travel_leg": {
+        "from_location": "Explore Ponte Vecchio",
+        "mode": "public transport",
+        "duration": "~25 min",
+        "tip": "Take bus line 12 or 13 from Ponte alle Grazie (near Ponte Vecchio) up the hill"
+      }
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Ristorante Pizzeria Il Poggetto",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Ristorante+Pizzeria+Il+Poggetto+Florence",
+      "ambience": null,
+      "must_try_dishes": [
+        "Vegetarian pizza",
+        "pasta"
+      ],
+      "hours": "6:30 PM – 11:30 PM",
+      "price_range": null,
+      "travel_note": "near None",
+      "source": "library"
+    },
+    {
+      "name": "Da Tommy Firenze",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Da+Tommy+Firenze+Florence",
+      "ambience": null,
+      "must_try_dishes": [
+        "Pasta",
+        "grilled vegetables"
+      ],
+      "hours": "7:00 PM – 5:00 AM",
+      "price_range": null,
+      "travel_note": "near None",
+      "source": "library"
+    },
+    {
+      "name": "Capatoast",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Capatoast+Florence",
+      "ambience": null,
+      "must_try_dishes": [],
+      "hours": "8am-10pm, Opens at 11 on Sun",
+      "price_range": null,
+      "travel_note": "near Florence",
+      "source": "library"
+    }
+  ],
+  "dinner": [
+    {
+      "name": "Trattoria Giovanni",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Trattoria+Giovanni+Florence",
+      "ambience": null,
+      "must_try_dishes": [
+        "Pomodoro with burrata"
+      ],
+      "hours": "12-10:30pm",
+      "price_range": null,
+      "travel_note": "near Hotel Alex",
+      "source": "library"
+    },
+    {
+      "name": "4 Leoni",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=4+Leoni+Florence",
+      "ambience": null,
+      "must_try_dishes": [],
+      "hours": "12pm-11pm",
+      "price_range": null,
+      "travel_note": "near Hotel Alex",
+      "source": "library"
+    }
+  ],
+  "is_cruise_day": false,
+  "transport_note": null
+}

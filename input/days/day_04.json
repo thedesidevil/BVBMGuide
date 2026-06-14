@@ -1,0 +1,133 @@
+{
+  "day_number": 4,
+  "date": "2025-04-22",
+  "title": "Amsterdam → Florence | Travel Day",
+  "overnight_city": "Florence",
+  "overnight_hotel": null,
+  "activities": [
+    {
+      "name": "Leisure canal-side exploration",
+      "vivid_description": "Sunlight dances on the rippling water as you stroll along cobblestone paths beside Amsterdam's historic canals, where centuries-old merchant houses lean gracefully over the water's edge. The gentle lapping of canal boats mingles with the distant chime of church bells, while cyclists glide past on tree-lined streets dotted with floating houseboats adorned with colorful flower boxes.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "",
+      "travel_leg": {
+        "from_location": "Hotel Alex",
+        "mode": "walk",
+        "duration": "~5 min",
+        "tip": "Head towards Prinsengracht or Herengracht for the most picturesque canal views"
+      }
+    },
+    {
+      "name": "Transfer to Eindhoven Airport",
+      "vivid_description": "The sleek airport express train glides smoothly through Dutch countryside, passing windmills and green polders as you settle into comfortable seats for the journey south. Modern Eindhoven Airport's glass terminals come into view, bustling with efficient check-in counters and the familiar blue and yellow Ryanair signage guiding passengers toward departure gates.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Eindhoven+Airport+Florence",
+      "travel_leg": {
+        "from_location": "Leisure canal-side exploration",
+        "mode": "train",
+        "duration": "~1h 45min",
+        "tip": "Take the direct train from Amsterdam Centraal to Eindhoven, then bus 401 to the airport"
+      }
+    },
+    {
+      "name": "Flight at 7 PM to Florence (Ryanair)",
+      "vivid_description": "The Ryanair aircraft climbs into the evening sky as Amsterdam's lights twinkle below, while flight attendants serve refreshments during the smooth southward journey over the Alps. Through small windows, the Italian landscape unfolds in golden hues as you descend toward Florence's compact Peretola Airport, where the warm Mediterranean air greets you upon landing.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Florence+Airport+Florence",
+      "travel_leg": {
+        "from_location": "Transfer to Eindhoven Airport",
+        "mode": "flight",
+        "duration": "~2h 15min",
+        "tip": "Check in online 24 hours before departure to avoid airport queues"
+      }
+    },
+    {
+      "name": "Late arrival & hotel check-in",
+      "vivid_description": "Florence's narrow medieval streets glow under amber streetlights as you navigate cobblestones worn smooth by centuries of footsteps, the scent of Italian leather and evening espresso drifting from late-night shops. Hotel reception welcomes you with warm lighting and marble floors, while through tall windows you catch glimpses of the illuminated Duomo's magnificent dome rising majestically against the Tuscan night sky.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "",
+      "travel_leg": {
+        "from_location": "Flight at 7 PM to Florence (Ryanair)",
+        "mode": "taxi",
+        "duration": "~25 min",
+        "tip": "Use the official taxi stand outside arrivals or book a hotel shuttle in advance"
+      }
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Ristorante Pizzeria Il Poggetto",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Ristorante+Pizzeria+Il+Poggetto+Florence",
+      "ambience": null,
+      "must_try_dishes": [
+        "Vegetarian pizza",
+        "pasta"
+      ],
+      "hours": "6:30 PM – 11:30 PM",
+      "price_range": null,
+      "travel_note": "near None",
+      "source": "library"
+    },
+    {
+      "name": "Da Tommy Firenze",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Da+Tommy+Firenze+Florence",
+      "ambience": null,
+      "must_try_dishes": [
+        "Pasta",
+        "grilled vegetables"
+      ],
+      "hours": "7:00 PM – 5:00 AM",
+      "price_range": null,
+      "travel_note": "near None",
+      "source": "library"
+    },
+    {
+      "name": "Capatoast",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Capatoast+Florence",
+      "ambience": null,
+      "must_try_dishes": [],
+      "hours": "8am-10pm, Opens at 11 on Sun",
+      "price_range": null,
+      "travel_note": "near Florence",
+      "source": "library"
+    }
+  ],
+  "dinner": [
+    {
+      "name": "Trattoria Giovanni",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Trattoria+Giovanni+Florence",
+      "ambience": null,
+      "must_try_dishes": [
+        "Pomodoro with burrata"
+      ],
+      "hours": "12-10:30pm",
+      "price_range": null,
+      "travel_note": "near Hotel Alex",
+      "source": "library"
+    },
+    {
+      "name": "4 Leoni",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=4+Leoni+Florence",
+      "ambience": null,
+      "must_try_dishes": [],
+      "hours": "12pm-11pm",
+      "price_range": null,
+      "travel_note": "near Hotel Alex",
+      "source": "library"
+    }
+  ],
+  "is_cruise_day": false,
+  "transport_note": "Transfer to Eindhoven Airport"
+}

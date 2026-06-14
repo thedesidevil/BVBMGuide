@@ -28,7 +28,13 @@ database/
 restaurant_db.json
 # aig-library/library_db.json
 
+# Ingest staging area (ephemeral session data)
+library_db/_staging/
+
 settings.local.json
+
+# Claude Code local session data
+.claude/
 
 # Superpowers brainstorming sessions
 .superpowers/
@@ -39,3 +45,5 @@ build/
 # Frontend
 ui-frontend/node_modules/
 ui-frontend/dist/
+
+input/

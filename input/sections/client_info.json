@@ -1,0 +1,33 @@
+{
+  "client_names": [
+    "Anurag Rajendra Kumar Agarwal",
+    "Pooja Agarwal",
+    "Sanvi Agarwal"
+  ],
+  "num_guests": "3 travelers",
+  "departure_city": "Mumbai",
+  "dietary_preferences": "vegetarian",
+  "trip_summary": [
+    {
+      "city": "Amsterdam",
+      "dates": "",
+      "hotel": "Holiday Inn Express Almere by IHG",
+      "hotel_maps_link": "https://www.google.com/maps/search/?api=1&query=Holiday+Inn+Express+Almere+by+IHG+Amsterdam",
+      "transport": "Public transport"
+    },
+    {
+      "city": "Florence",
+      "dates": "",
+      "hotel": "Hotel Alex",
+      "hotel_maps_link": "https://www.google.com/maps/search/?api=1&query=Hotel+Alex+Florence",
+      "transport": "Public transport"
+    },
+    {
+      "city": "Rome",
+      "dates": "",
+      "hotel": "Camplus Guest Rome Casa per Ferie",
+      "hotel_maps_link": "https://www.google.com/maps/search/?api=1&query=Camplus+Guest+Rome+Casa+per+Ferie+Rome",
+      "transport": "Public transport"
+    }
+  ]
+}

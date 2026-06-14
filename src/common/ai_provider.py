@@ -14,6 +14,26 @@ from dotenv import load_dotenv
 # Load .env file
 load_dotenv()
 
+# (prefix, input $/1M tokens, output $/1M tokens) — prefix-matched against model name
+_MODEL_PRICING: list[tuple[str, float, float]] = [
+    ("claude-fable-5",   10.00, 50.00),
+    ("claude-mythos-5",  10.00, 50.00),
+    ("claude-opus-4",     5.00, 25.00),
+    ("claude-sonnet-4",   3.00, 15.00),
+    ("claude-haiku-4",    1.00,  5.00),
+    ("o4-mini",           1.10,  4.40),
+    ("gpt-4o-mini",       0.15,  0.60),
+    ("gpt-4o",            2.50, 10.00),
+]
+
+
+def _lookup_pricing(model: str) -> Optional[tuple[float, float]]:
+    m = model.lower()
+    for prefix, in_price, out_price in _MODEL_PRICING:
+        if m.startswith(prefix):
+            return (in_price, out_price)
+    return None
+
 
 class AIClient:
     """AI client using OpenAI-compatible API.
@@ -55,7 +75,38 @@ class AIClient:
             base_url=self.base_url,
             timeout=300.0,
         )
+
+        # Accumulated token counts across all complete_json() calls on this instance
+        self.usage: dict[str, int] = {"prompt_tokens": 0, "completion_tokens": 0}
     
+    def complete_with_images(
+        self,
+        prompt: str,
+        images: list[str],
+        max_tokens: int = 4096,
+        temperature: float = 0.1,
+    ) -> str:
+        """Generate a completion from images + a text prompt (vision models).
+
+        Args:
+            prompt: Text instruction to accompany the images
+            images: List of base64-encoded PNG strings (one per page)
+            max_tokens: Maximum tokens in the response
+            temperature: Sampling temperature
+        """
+        content: list[dict] = [
+            {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{img}"}}
+            for img in images
+        ]
+        content.append({"type": "text", "text": prompt})
+        response = self._client.chat.completions.create(
+            model=self.model,
+            max_tokens=max_tokens,
+            temperature=temperature,
+            messages=[{"role": "user", "content": content}],
+        )
+        return response.choices[0].message.content.strip()
+
     def complete(
         self,
         prompt: str,
@@ -63,12 +114,12 @@ class AIClient:
         temperature: float = 0.7
     ) -> str:
         """Generate a completion from the AI model.
-        
+
         Args:
             prompt: The prompt to send to the model
             max_tokens: Maximum tokens in the response
             temperature: Sampling temperature (0-1)
-            
+
         Returns:
             The model's response text
         """
@@ -79,7 +130,61 @@ class AIClient:
             messages=[{"role": "user", "content": prompt}]
         )
         return response.choices[0].message.content.strip()
-    
+
+    def complete_json(
+        self,
+        prompt: str,
+        max_tokens: int = 8000,
+        system: Optional[str] = None,
+    ) -> str:
+        """Generate a JSON-mode completion.
+
+        Uses response_format=json_object and temperature=0. Reasoning models
+        (e.g. claude-opus-4-8, o4-mini) reject the temperature parameter, so
+        this method retries without it on that failure.
+
+        Args:
+            prompt: User-turn message
+            max_tokens: Maximum tokens in the response
+            system: Optional system prompt prepended before the user message
+
+        Returns:
+            The model's response text (valid JSON string).
+        """
+        messages = []
+        if system:
+            messages.append({"role": "system", "content": system})
+        messages.append({"role": "user", "content": prompt})
+        kwargs = dict(
+            model=self.model,
+            max_tokens=max_tokens,
+            response_format={"type": "json_object"},
+            messages=messages,
+        )
+        try:
+            response = self._client.chat.completions.create(temperature=0, **kwargs)
+        except Exception as e:
+            if "temperature" in str(e).lower():
+                response = self._client.chat.completions.create(**kwargs)
+            else:
+                raise
+        if response.usage:
+            self.usage["prompt_tokens"]     += response.usage.prompt_tokens or 0
+            self.usage["completion_tokens"] += response.usage.completion_tokens or 0
+        return response.choices[0].message.content.strip()
+
+    @property
+    def cost_usd(self) -> Optional[float]:
+        """Estimated cost in USD based on accumulated usage. None if model pricing is unknown."""
+        pricing = _lookup_pricing(self.model)
+        if pricing is None:
+            return None
+        in_price, out_price = pricing
+        return (
+            self.usage["prompt_tokens"]     * in_price   / 1_000_000 +
+            self.usage["completion_tokens"] * out_price  / 1_000_000
+        )
+
     def __repr__(self):
         base = self.base_url or "https://api.openai.com/v1"
         # Truncate base URL for display

@@ -188,15 +188,87 @@
   ],
   "hotels": [],
   "local_dishes": [],
-  "phrases": [],
-  "safety_tips": [],
+  "phrases": [
+    "Γεια σας (YAH-sahs) — Hello (formal)",
+    "Ευχαριστώ (ef-khah-ree-STOH) — Thank you",
+    "Παρακαλώ (pah-rah-kah-LOH) — Please/You're welcome",
+    "Συγνώμη (see-GHNO-mee) — Excuse me/Sorry",
+    "Dress modestly when visiting churches and monasteries - cover shoulders and knees",
+    "Greeks typically eat dinner very late (9-11 PM), so restaurants may seem empty early in the evening",
+    "Tipping 10-15% is appreciated at restaurants, and rounding up for taxi drivers is common",
+    "Avoid pointing with your index finger - use an open hand instead, as pointing is considered rude"
+  ],
+  "safety_tips": [
+    "INDIAN EMBASSY DETAILS: Indian Embassy in Athens covers Santorini. Address: 2-4 Kleanthous Street, 10675 Athens. Phone: +30-210-7257200. Emergency: +30-6944-101010. Email: cons.athens@mea.gov.in",
+    "EMERGENCY NUMBERS: Police: 100, Ambulance/Medical Emergency: 166, Fire Department: 199, Tourist Police: 171, European Emergency Number: 112",
+    "LOCAL POLICE: Santorini Police Station - Fira: +30-22860-22649. Always carry passport/ID and keep copies separate from originals",
+    "MEDICAL FACILITIES: Santorini General Hospital, Fira: +30-22860-23000. Private clinics available in Fira and Oia. Ensure travel insurance covers medical evacuation",
+    "COMMON SCAMS: Overcharging at restaurants (always check prices), fake jewelry sellers, taxi meter manipulation, accommodation booking scams online, ATM skimming devices",
+    "TRANSPORTATION SAFETY: Use licensed taxis with meters, avoid unlicensed ATV rentals, be cautious on narrow cliff roads, wear helmets on scooters/ATVs",
+    "WATER SAFETY: Strong currents at beaches, no lifeguards at many locations, avoid swimming alone, check weather conditions before boat trips",
+    "CLIFF SAFETY: Stay on marked paths near caldera cliffs, avoid cliff edges during windy weather, be extra careful during sunset viewing in crowded areas",
+    "MONEY SAFETY: Use ATMs inside banks when possible, notify your bank of travel plans, carry backup payment methods, avoid displaying large amounts of cash",
+    "ACCOMMODATION SAFETY: Book through reputable platforms, verify property exists before arrival, keep valuables in hotel safe, check emergency exits",
+    "FOOD SAFETY: Drink bottled water, eat at busy restaurants with high turnover, be cautious with seafood in extreme heat, check food hygiene ratings",
+    "CULTURAL CONSIDERATIONS: Dress modestly when visiting churches/monasteries, respect photography restrictions, be mindful of noise levels in residential areas",
+    "NATURAL HAZARDS: Volcanic island with occasional seismic activity, strong winds especially in summer, flash floods possible during rare heavy rains",
+    "COMMUNICATION: Download offline maps, learn basic Greek phrases, keep embassy contact info saved, inform family of your itinerary and check-in regularly"
+  ],
   "souvenirs": [],
   "emergency_contacts": [],
-  "connectivity_tips": [],
+  "connectivity_tips": [
+    "Purchase a Cosmote prepaid SIM card at Athens airport or Santorini airport for €10-15 with 5-10GB data. Cosmote has the best coverage across Greek islands including Santorini.",
+    "Wind Hellas offers competitive prepaid plans starting at €8 for 4GB data. Available at Wind stores in Fira and Oia, or purchase online before arrival.",
+    "Vodafone Greece provides reliable coverage in Santorini with prepaid plans from €10 for 6GB. Buy SIM cards at Vodafone stores in Fira or at the airport.",
+    "Consider eSIM options like Airalo or Holafly for convenience - no physical SIM needed. Plans start at $4.50 for 1GB valid for 7 days, perfect for short trips.",
+    "Orange Holiday Europe eSIM covers Greece and 30+ European countries for €24.99 with 8GB data, ideal if visiting multiple European destinations.",
+    "Coverage quality is excellent in main towns like Fira, Oia, and Kamari. Expect slower speeds in remote areas like Akrotiri archaeological site or secluded beaches.",
+    "Buy SIM cards at Athens airport duty-free shops, Santorini airport, or mobile operator stores in Fira. Avoid hotel purchases as they charge premium rates.",
+    "Bring your passport for SIM card registration - it's mandatory in Greece. The activation process takes 5-10 minutes at official stores.",
+    "Free WiFi is widely available at hotels, restaurants, and cafes in tourist areas. Use WiFi for heavy data usage and mobile data for navigation and emergencies.",
+    "Download offline maps on Google Maps before arriving to save data. Santorini's compact size means you can navigate most areas without constant internet access.",
+    "Consider roaming add-on packs from Indian carriers like Airtel (€3-5 per day) or Jio (€4-6 per day) for short stays under 5 days to avoid SIM card hassles.",
+    "Top-up credit at convenience stores, supermarkets, or online. Most plans offer unlimited local calls and SMS within Greece along with data allowances."
+  ],
   "transport_options": [],
-  "health_tips": [],
+  "health_tips": [
+    "No specific vaccinations are required for Indian travelers entering Greece/Santorini, as Greece does not mandate any vaccines for visitors from India",
+    "Ensure routine vaccinations are up-to-date: MMR (measles-mumps-rubella), DPT (diphtheria-pertussis-tetanus), chickenpox, polio, and yearly flu shot",
+    "Recommended vaccines: Hepatitis A and B (especially Hep A for food/water protection), and Typhoid if you plan to eat at local tavernas frequently",
+    "Consider Tick-borne Encephalitis vaccine only if planning extensive hiking or camping in rural areas during spring/summer months",
+    "Tap water in Santorini is generally safe but heavily chlorinated and may taste unpleasant - bottled water is widely available and recommended",
+    "Be cautious with seafood during hot summer months - choose busy restaurants with high turnover and avoid raw or undercooked fish",
+    "Pack sunscreen (SPF 30+), hat, and sunglasses - the Aegean sun is intense, especially when reflected off white buildings and sea",
+    "Bring basic medications from India as familiar brands may not be available - include anti-diarrheal, pain relievers, and any prescription medicines",
+    "Summer temperatures can reach 35°C+ - stay hydrated, seek shade during midday (11am-4pm), and wear light, breathable clothing",
+    "Santorini has excellent medical facilities and pharmacies - European Health Insurance Card not applicable to Indian citizens, so ensure comprehensive travel insurance",
+    "Swimming safety: beaches have strong currents and winds - swim at organized beaches with lifeguards when possible",
+    "No malaria risk in Greece - mosquito-borne diseases are minimal, but pack insect repellent for evening outdoor dining"
+  ],
   "source_files": [
     "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
     "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf"
+  ],
+  "_audit": [
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "phrases",
+      "timestamp": "2026-05-21T11:57:59.384164+00:00"
+    },
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "connectivity_tips",
+      "timestamp": "2026-05-21T11:59:10.255873+00:00"
+    },
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "safety_tips",
+      "timestamp": "2026-05-21T12:00:53.199355+00:00"
+    },
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "health_tips",
+      "timestamp": "2026-05-21T12:01:48.334525+00:00"
+    }
   ]
 }

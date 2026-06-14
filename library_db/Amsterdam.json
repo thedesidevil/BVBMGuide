@@ -1175,8 +1175,43 @@
       ]
     }
   ],
-  "phrases": [],
-  "safety_tips": [],
+  "phrases": [
+    "Hallo — Hello",
+    "Dank je wel — Thank you very much",
+    "Excuseer me — Excuse me",
+    "Spreekt u Engels? — Do you speak English?",
+    "Proost! — Cheers!",
+    "Always ring your bike bell when approaching pedestrians or other cyclists",
+    "Don't walk in the red bike lanes - they're for bicycles only and cyclists have right of way",
+    "Tipping 10% is appreciated but not mandatory; rounding up the bill is common practice"
+  ],
+  "safety_tips": [
+    "EMERGENCY CONTACTS: Police, Fire, Ambulance: 112 (free from any phone)",
+    "Indian Embassy in Netherlands: Address - Buitenrustweg 2, 2517 KD The Hague, Phone: +31-70-346-9771, Email: hoc.hague@mea.gov.in",
+    "Indian Embassy Emergency Contact: +31-6-5340-9801 (24/7 emergency helpline)",
+    "Non-emergency Police: 0900-8844, Tourist Police: Available at Central Station and major tourist areas",
+    "Medical Emergency: If you need medical help, go to nearest hospital or call 112. Major hospitals include Amsterdam UMC and OLVG",
+    "COMMON SCAMS: Fake police asking for passport/wallet checks - real police show ID and don't handle money",
+    "Bicycle rental scams: Only rent from official shops, avoid street vendors offering cheap deals",
+    "Pickpocketing hotspots: Trams, Central Station, Dam Square, Red Light District - keep valuables secure",
+    "ATM skimming: Use ATMs inside banks, cover PIN entry, check for unusual attachments on card slot",
+    "Overcharging at restaurants/bars: Check prices before ordering, especially in tourist areas",
+    "Fake drug dealers: Avoid anyone offering drugs on street - it's illegal and often fake/dangerous substances",
+    "PRACTICAL SAFETY: Always carry ID (passport or copy), keep originals in hotel safe",
+    "Transportation safety: Validate tickets on trams/buses, be aware of pickpockets during rush hours",
+    "Cycling safety: Follow bike lanes, use lights at night, lock bikes properly with two locks",
+    "Water safety: Don't swim in canals - they're polluted and have strong currents",
+    "Weather preparedness: Carry umbrella/rain jacket, weather changes quickly",
+    "Money safety: Use contactless payments when possible, don't carry large amounts of cash",
+    "Accommodation: Book through verified platforms, check reviews, confirm booking before arrival",
+    "Red Light District: Stay on main streets, don't take photos of workers, be extra cautious at night",
+    "Drug policy awareness: Cannabis is tolerated in coffee shops but illegal elsewhere, hard drugs are strictly prohibited",
+    "Tourist Information: VVV Amsterdam tourist offices can help with directions and legitimate services",
+    "Language: Most Dutch speak English, but learn basic Dutch phrases for emergencies",
+    "Insurance: Ensure travel insurance covers medical emergencies and theft",
+    "Cultural sensitivity: Respect local customs, don't block bike lanes while walking",
+    "Emergency apps: Download 112NL app for location-based emergency services"
+  ],
   "souvenirs": [
     {
       "item": "Delft Pottery",
@@ -1509,7 +1544,20 @@
     }
   ],
   "emergency_contacts": [],
-  "connectivity_tips": [],
+  "connectivity_tips": [
+    "Purchase a prepaid SIM card from major Dutch providers like KPN, Vodafone NL, or T-Mobile Netherlands at Amsterdam Schiphol Airport upon arrival - available at official stores in arrivals hall",
+    "KPN offers excellent coverage across Netherlands with tourist SIM cards starting from €15-20 for 1GB data valid for 30 days, available at KPN stores and authorized retailers",
+    "Vodafone Netherlands provides prepaid SIM cards from €10-25 with data packages ranging from 1GB to unlimited, purchasable at Vodafone stores, supermarkets like Albert Heijn, and electronics stores",
+    "T-Mobile NL offers competitive prepaid plans starting €15 for 2GB monthly data with good 4G/5G coverage in Amsterdam and major cities",
+    "Consider eSIM options like Airalo, Holafly, or Nomad which offer Netherlands/Europe plans from €4-15 for 1-10GB, easily activated before or during travel without visiting physical stores",
+    "Buy SIM cards at convenience stores, supermarkets (Albert Heijn, Jumbo), electronics retailers (MediaMarkt, Coolblue), or mobile operator stores throughout Amsterdam city center",
+    "All major providers offer excellent 4G coverage in Amsterdam with 5G available in most areas - expect consistent speeds of 20-100 Mbps in urban areas",
+    "European roaming is included in most Dutch plans, making it convenient if you plan to visit other EU countries during your trip",
+    "Lebara and Lycamobile offer budget-friendly options specifically for international travelers, with SIM cards available at tobacco shops and convenience stores for €5-10",
+    "Free WiFi is widely available in Amsterdam at cafes, restaurants, public libraries, and many tourist attractions, reducing dependency on mobile data for basic connectivity",
+    "Purchase SIM cards from official stores or authorized retailers to avoid activation issues - carry your passport as ID verification is required for SIM card registration",
+    "Consider buying a European multi-country eSIM if visiting multiple countries, with providers like Orange Holiday Europe offering 20GB for €39.99 valid across 30+ European countries"
+  ],
   "transport_options": [
     {
       "city": "Amsterdam",
@@ -1609,11 +1657,49 @@
       "_source_mtime": 1778114484.0
     }
   ],
-  "health_tips": [],
+  "health_tips": [
+    "No vaccines are required for Indian travelers entering the Netherlands unless arriving from a yellow fever endemic area within 6 days of travel",
+    "Routine vaccines should be up-to-date: MMR (measles-mumps-rubella), DPT (diphtheria-pertussis-tetanus), chickenpox, polio, and yearly flu shot",
+    "Recommended vaccines include Hepatitis A and B, especially if you plan extended stays or have underlying health conditions",
+    "Consider Typhoid vaccination if you plan to visit rural areas or stay with friends/relatives in less developed accommodations",
+    "Tap water in Amsterdam is safe to drink and meets high EU standards - no need for bottled water or purification tablets",
+    "Food safety standards are excellent in the Netherlands - restaurants and street food are generally safe to consume",
+    "Wash hands regularly, especially before eating and after using public transport",
+    "Pack a basic first aid kit with pain relievers, anti-diarrheal medication, and any personal prescription medicines",
+    "Bring extra prescription medications in original containers, along with a copy of your prescription",
+    "European Health Insurance Card (EHIC) is not valid for Indian citizens - ensure you have comprehensive travel health insurance",
+    "Emergency medical care is available by calling 112 - hospitals in Amsterdam have English-speaking staff",
+    "Pharmacies (apotheek) are widely available for minor health issues and over-the-counter medications",
+    "No special precautions needed for mosquito-borne diseases - standard insect repellent sufficient for comfort",
+    "Weather can be unpredictable - pack layers and rain gear to avoid getting cold and wet",
+    "Air quality in Amsterdam is generally good, but those with respiratory conditions should monitor daily air quality reports"
+  ],
   "source_files": [
     "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
     "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf",
     "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
     "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+  ],
+  "_audit": [
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "phrases",
+      "timestamp": "2026-05-21T11:57:33.050533+00:00"
+    },
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "connectivity_tips",
+      "timestamp": "2026-05-21T11:58:07.578353+00:00"
+    },
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "safety_tips",
+      "timestamp": "2026-05-21T11:59:27.740009+00:00"
+    },
+    {
+      "updated_by": "AI while building Anurag Rajendra Kumar Agarwal, Pooja Agarwal, Sanvi Agarwal guide 2026-04-19",
+      "field": "health_tips",
+      "timestamp": "2026-05-21T12:00:59.797316+00:00"
+    }
   ]
 }

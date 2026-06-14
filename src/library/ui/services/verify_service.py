@@ -278,17 +278,6 @@ def _r7_restaurant_count(text: str, findings: list[Finding]) -> None:
             ))
 
 
-# Captures walk/travel time mentions: "40 minutes walk", "40-minute walk", "approx. 40 min on foot"
-# Group 1 = number of minutes
-_WALK_TIME_RE = re.compile(
-    r"(?:approx\.?\s+)?(\d+)[- ]?(?:minute[s]?|min[s]?)\s+(?:walk|on\s+foot)",
-    re.IGNORECASE,
-)
-_TRAVEL_TIME_RE = re.compile(
-    r"(?:approx\.?\s+)?(\d+)[- ]?(?:minute[s]?|min[s]?)\s+(?:by\s+(?:taxi|cab|car|auto|rickshaw|bus|metro|train|transit)|drive|taxi\s+ride|cab\s+ride)",
-    re.IGNORECASE,
-)
-
 _TIME_RANGE_RE = re.compile(
     r"\b(\d{1,2}:\d{2})\s*(AM|PM)?\s*[–\-]\s*(\d{1,2}:\d{2})\s*(AM|PM)\b",
     re.IGNORECASE,
@@ -304,14 +293,7 @@ _OPENING_TIME_RE = re.compile(
     r"\b(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\s*[–\-]\s*\d{1,2}(?::\d{2})?\s*(?:AM|PM)\b",
     re.IGNORECASE,
 )
-# Marks the end of any meal section
-_MEAL_SECTION_END_RE = re.compile(
-    r"^[^\n]*(?:Day \d+\s*[:|\-–]|(?:Lunch|Dinner|Breakfast|Brunch)\s+Recommendation|"
-    r"Important\s+Places|Souvenir\s+Shopping|Must.Try\s+Local|Getting\s+Around|"
-    r"Cultural\s+Etiquette|Tailored\s+Packing|Mobile\s+Connectivity|Safety\s*&|"
-    r"Health\s*&|Thank\s+You)[^\n]*$",
-    re.MULTILINE | re.IGNORECASE,
-)
+
 _MIDNIGHT_START_RE = re.compile(r"\b12:\d{2}\s*AM\s*[–\-]", re.IGNORECASE)
 _SAME_TIME_RE = re.compile(
     r"\b(\d{1,2}:\d{2}\s*(?:AM|PM))\s*[–\-]\s*(\d{1,2}:\d{2}\s*(?:AM|PM))\b",
@@ -477,53 +459,45 @@ def _r11_meal_timing(meal_venues: list[dict], findings: list[Finding]) -> None:
         ))
 
 
-def _r12_excessive_walking(text: str, findings: list[Finding]) -> None:
-    """Flag restaurant recommendations with walk times ≥ 20 min or travel times ≥ 30 min."""
-    all_meal_headings = re.compile(
-        r"^[^\n]*\b(?:Dinner|Lunch|Breakfast|Brunch)\s+Recommendations?\b[^\n]*$",
-        re.MULTILINE | re.IGNORECASE,
-    )
-    for dm in all_meal_headings.finditer(text):
-        section_name = dm.group().strip()[:80]
-        block_start = dm.end()
-        nm = _MEAL_SECTION_END_RE.search(text, block_start)
-        block = text[block_start: nm.start() if nm else len(text)]
+def _r12_excessive_walking(meal_venues: list[dict], findings: list[Finding]) -> None:
+    """Flag meal venues with walk times ≥ 20 min or travel times ≥ 30 min.
 
-        for m in _WALK_TIME_RE.finditer(block):
-            mins = int(m.group(1))
-            if mins >= 20:
-                venue = _venue_name_from_block(block, m.start())
-                desc = (
-                    f"{venue}: {mins}-minute walk is too far for a meal recommendation — keep within 20 minutes on foot"
-                    if venue else
-                    f"{mins}-minute walk listed for a meal recommendation — keep within 20 minutes on foot"
-                )
-                findings.append(Finding(
-                    check_id="R12",
-                    layer="rule",
-                    severity="YELLOW",
-                    section=section_name,
-                    description=desc,
-                    evidence=block[max(0, m.start() - 150): m.end() + 50].strip(),
-                ))
+    Uses AI-extracted structured data so venue names are reliable regardless
+    of AIG formatting conventions.
+    """
+    for venue in meal_venues:
+        name = venue.get("name", "")
+        section = venue.get("meal_section", "Meal")
 
-        for m in _TRAVEL_TIME_RE.finditer(block):
-            mins = int(m.group(1))
-            if mins >= 30:
-                venue = _venue_name_from_block(block, m.start())
-                desc = (
-                    f"{venue}: {mins}-minute travel time is too far for a meal recommendation — keep within 30 minutes by any mode"
-                    if venue else
-                    f"{mins}-minute travel listed for a meal recommendation — keep within 30 minutes by any mode"
-                )
-                findings.append(Finding(
-                    check_id="R12",
-                    layer="rule",
-                    severity="YELLOW",
-                    section=section_name,
-                    description=desc,
-                    evidence=block[max(0, m.start() - 150): m.end() + 50].strip(),
-                ))
+        walk = venue.get("walk_minutes")
+        if walk is not None and walk >= 20:
+            findings.append(Finding(
+                check_id="R12",
+                layer="rule",
+                severity="YELLOW",
+                section=f"{section} Recommendations",
+                description=(
+                    f"{name}: {walk}-minute walk is too far for a meal recommendation — keep within 20 minutes on foot"
+                    if name else
+                    f"{walk}-minute walk listed for a meal recommendation — keep within 20 minutes on foot"
+                ),
+                evidence=f"{name}  Walk: {walk} minutes" if name else f"Walk: {walk} minutes",
+            ))
+
+        travel = venue.get("travel_minutes")
+        if travel is not None and travel >= 30:
+            findings.append(Finding(
+                check_id="R12",
+                layer="rule",
+                severity="YELLOW",
+                section=f"{section} Recommendations",
+                description=(
+                    f"{name}: {travel}-minute travel time is too far for a meal recommendation — keep within 30 minutes by any mode"
+                    if name else
+                    f"{travel}-minute travel listed for a meal recommendation — keep within 30 minutes by any mode"
+                ),
+                evidence=f"{name}  Travel: {travel} minutes" if name else f"Travel: {travel} minutes",
+            ))
 
 
 def _r9_encoding(text: str, findings: list[Finding]) -> None:
@@ -561,7 +535,7 @@ def run_rule_engine(
     _r8_time_format(text, findings)
     _r9_encoding(text, findings)
     _r11_meal_timing(meal_venues or [], findings)
-    _r12_excessive_walking(text, findings)
+    _r12_excessive_walking(meal_venues or [], findings)
     return findings
 
 

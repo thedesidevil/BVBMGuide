@@ -352,14 +352,18 @@ Return a JSON object with exactly this structure:
     {{
       "name": "Venue name exactly as written",
       "meal_section": "Breakfast" | "Lunch" | "Dinner",
-      "opening_hours": "Exact hours string, e.g. 10:30 AM – 5:00 PM or 11 AM–3 PM | 5 PM–10 PM"
+      "opening_hours": "Exact hours string, e.g. 10:30 AM – 5:00 PM or 11 AM–3 PM | 5 PM–10 PM",
+      "walk_minutes": 15,
+      "travel_minutes": 35
     }}
   ]
 }}
 
 Rules:
 - Extract EVERY restaurant/café/eatery listed under Breakfast, Lunch, or Dinner headings
-- meal_section must be exactly one of: Breakfast, Lunch, Dinner — infer from the section heading the venue appears under
-- opening_hours: copy the exact hours string from the document, including split-session formats like "11 AM–3 PM | 5 PM–10 PM". If no hours are given, omit the field
-- name: copy the venue name exactly as it appears in the document — do not normalise or translate
+- meal_section: exactly one of Breakfast, Lunch, Dinner — infer from the section heading the venue appears under
+- opening_hours: copy the exact hours string from the document, including split-session formats like "11 AM–3 PM | 5 PM–10 PM". Omit if not stated
+- name: copy the venue name exactly as it appears — do not normalise or translate
+- walk_minutes: integer — extract only if the document explicitly states a walking time to this venue (e.g. "15 min walk", "approx. 20 minutes on foot"). Omit if not stated
+- travel_minutes: integer — extract only if the document states a travel time by taxi, transit, car, bus, or any non-walking mode (e.g. "25 min by taxi", "30 min metro ride"). Omit if not stated
 - Return ONLY valid JSON, no explanation"""

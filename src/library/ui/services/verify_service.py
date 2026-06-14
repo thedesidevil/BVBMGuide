@@ -314,6 +314,8 @@ def _venue_name_before(text: str, pos: int) -> str:
         clean = _ALL_EMOJI_RE.sub("", line).strip()
         if not clean:
             continue
+        if not any(c.isalnum() for c in clean):
+            continue
         if ":" in clean[:50]:
             continue
         if re.match(r"^(A |An |The |Approx)", clean):

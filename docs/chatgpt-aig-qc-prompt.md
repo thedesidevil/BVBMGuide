@@ -74,6 +74,22 @@ Flag headings that are missing the day of the week (Monday, Tuesday, etc.).
 Every day (except cruise/at-sea days and transit-only days) should have at least 3 restaurant recommendations.
 Flag any day with fewer than 3.
 
+**[R11] MEAL VENUE HOURS — RED**
+Check meal venues against these thresholds:
+- **Dinner** venues must close at **9:00 PM or later**
+- **Lunch** venues must close at **2:00 PM or later**
+- **Breakfast** venues must open at **8:00 AM or earlier**
+Check EVERY venue under every meal section — do not stop at the first issue.
+For split-hours venues (e.g. `11 AM–3 PM | 5 PM–10 PM`), use the best session: latest close for dinner/lunch, earliest open for breakfast.
+Quote the venue name and its exact hours for any failures.
+
+**[R12] EXCESSIVE WALKING TO MEAL VENUE — YELLOW**
+Flag any meal recommendation (dinner, lunch, or breakfast) where:
+- The stated walking time is **20 minutes or more on foot**, or
+- The stated travel time is **30 minutes or more** by any mode (taxi, transit, etc.)
+Examples: "Approx. 40 minutes walk from hostel", "25 min walk from hotel", "35 min by taxi".
+Quote the venue name and the exact distance or time claim.
+
 ---
 
 ## SECTION 2 — Opening Hours & Time Accuracy
@@ -205,8 +221,11 @@ Entries that only say "Open daily" or "Mon–Sun" without actual times fail.
 
 **[A7] MEAL PROXIMITY — YELLOW**
 Are lunch recommendations near the day's attractions, and dinner recommendations near the hotel?
-Flag any dinner recommendation where the stated walking time is 20 minutes or more — that is not "near the hotel". Examples: "40-minute walk", "25 min walk", "20 min on foot". Also flag travel times of 30 minutes or more by any mode (taxi, transit, etc.).
-Also flag lunch venues clearly on the opposite side of the city from that day's attractions.
+Thresholds:
+- Walking: flag any meal venue stated as **20 minutes or more on foot**
+- Any other mode: flag travel times of **30 minutes or more** (taxi, transit, etc.)
+Also flag lunch venues that are clearly on the opposite side of the city from that day's attractions, even if no explicit distance is given.
+Note: explicit walk/travel times are caught automatically — focus A7 on cases where the distance is implied or described without a number (e.g. "located in a different neighbourhood from the hotel").
 
 **[A8] MUST-TRY DISHES COVERAGE — YELLOW**
 Does the Must-Try Local Dishes section cover every destination city in the itinerary?

@@ -277,6 +277,17 @@ def _r7_restaurant_count(text: str, findings: list[Finding]) -> None:
             ))
 
 
+# Captures walk/travel time mentions: "40 minutes walk", "40-minute walk", "approx. 40 min on foot"
+# Group 1 = number of minutes
+_WALK_TIME_RE = re.compile(
+    r"(?:approx\.?\s+)?(\d+)[- ]?(?:minute[s]?|min[s]?)\s+(?:walk|on\s+foot)",
+    re.IGNORECASE,
+)
+_TRAVEL_TIME_RE = re.compile(
+    r"(?:approx\.?\s+)?(\d+)[- ]?(?:minute[s]?|min[s]?)\s+(?:by\s+(?:taxi|cab|car|auto|rickshaw|bus|metro|train|transit)|drive|taxi\s+ride|cab\s+ride)",
+    re.IGNORECASE,
+)
+
 _TIME_RANGE_RE = re.compile(
     r"\b(\d{1,2}:\d{2})\s*(AM|PM)?\s*[–\-]\s*(\d{1,2}:\d{2})\s*(AM|PM)\b",
     re.IGNORECASE,
@@ -400,11 +411,31 @@ def _to_minutes(hour: int, minute: int, period: str) -> int:
     return hour * 60 + minute
 
 
+_EMOJI_VENUE_RE = re.compile(r"🍴\s*(.+)")
+
+
+def _venue_name_from_block(block: str, pos: int) -> str:
+    """Return the nearest restaurant name before pos in a meal section block.
+    Looks for a '🍴 Name' line first; falls back to _venue_name_before heuristic."""
+    window = block[max(0, pos - 600):pos]
+    # Prefer '🍴 Name' lines — most AIG venues use this pattern
+    for line in reversed(window.splitlines()):
+        m = _EMOJI_VENUE_RE.match(line.strip())
+        if m:
+            return m.group(1).strip()
+    return _venue_name_before(block, pos)
+
+
 def _r11_meal_timing(text: str, findings: list[Finding]) -> None:
     """Deterministic meal timing checks:
       - Dinner venues must close at or after 9 PM (21:00)
       - Lunch venues must close at or after 2 PM (14:00)
       - Breakfast venues must open at or before 8 AM (08:00)
+
+    For split-hours venues (e.g. "11 AM–3 PM | 5 PM–10 PM") the best
+    closing/opening time across all sessions on the same line is used,
+    so a restaurant open 5 PM–10 PM is not falsely flagged for its
+    11 AM–3 PM session.
     """
     configs = [
         {
@@ -432,36 +463,96 @@ def _r11_meal_timing(text: str, findings: list[Finding]) -> None:
             re.MULTILINE | re.IGNORECASE,
         )
         time_re = _CLOSING_TIME_RE if cfg["check"] == "closing" else _OPENING_TIME_RE
+        is_closing = cfg["check"] == "closing"
         for dm in heading_re.finditer(text):
             section_name = dm.group().strip()[:80]
             block_start = dm.end()
             nm = _MEAL_SECTION_END_RE.search(text, block_start)
             block = text[block_start: nm.start() if nm else len(text)]
-            for m in time_re.finditer(block):
-                mins = _to_minutes(int(m.group(1)), int(m.group(2)), m.group(3))
-                failed = (
-                    mins < cfg["threshold"] if cfg["check"] == "closing"
-                    else mins > cfg["threshold"]
-                )
-                if not failed:
-                    continue
-                venue = _venue_name_before(block, m.start())
-                time_str = f"{m.group(1)}:{m.group(2)} {m.group(3).upper()}"
-                action = "closes" if cfg["check"] == "closing" else "opens"
+
+            # Process line-by-line: a venue's hours may have multiple sessions
+            # on one line (split hours). Only flag if the BEST session still fails.
+            line_offset = 0
+            for line in block.splitlines(keepends=True):
+                matches = list(time_re.finditer(line))
+                if matches:
+                    all_mins = [
+                        _to_minutes(int(m.group(1)), int(m.group(2)), m.group(3))
+                        for m in matches
+                    ]
+                    best = min(all_mins) if is_closing else max(all_mins)
+                    # For closing: best = latest session close; for opening: best = earliest open
+                    best = max(all_mins) if is_closing else min(all_mins)
+                    failed = best < cfg["threshold"] if is_closing else best > cfg["threshold"]
+                    if failed:
+                        abs_pos = line_offset + matches[0].start()
+                        venue = _venue_name_from_block(block, abs_pos)
+                        worst_m = matches[all_mins.index(min(all_mins) if is_closing else max(all_mins))]
+                        time_str = f"{worst_m.group(1)}:{worst_m.group(2)} {worst_m.group(3).upper()}"
+                        action = "closes" if is_closing else "opens"
+                        desc = (
+                            f"{venue} {action} at {time_str} but is listed as a {cfg['label']}"
+                            if venue else
+                            f"Venue {action} at {time_str} — listed as a {cfg['label']}"
+                        )
+                        findings.append(Finding(
+                            check_id="R11",
+                            layer="rule",
+                            severity="RED",
+                            section=section_name,
+                            description=desc,
+                            evidence=block[max(0, abs_pos - 120): abs_pos + len(line)].strip(),
+                        ))
+                line_offset += len(line)
+
+
+def _r12_excessive_walking(text: str, findings: list[Finding]) -> None:
+    """Flag restaurant recommendations with walk times ≥ 20 min or travel times ≥ 30 min."""
+    all_meal_headings = re.compile(
+        r"^[^\n]*\b(?:Dinner|Lunch|Breakfast|Brunch)\s+Recommendations?\b[^\n]*$",
+        re.MULTILINE | re.IGNORECASE,
+    )
+    for dm in all_meal_headings.finditer(text):
+        section_name = dm.group().strip()[:80]
+        block_start = dm.end()
+        nm = _MEAL_SECTION_END_RE.search(text, block_start)
+        block = text[block_start: nm.start() if nm else len(text)]
+
+        for m in _WALK_TIME_RE.finditer(block):
+            mins = int(m.group(1))
+            if mins >= 20:
+                venue = _venue_name_from_block(block, m.start())
                 desc = (
-                    f"{venue} {action} at {time_str} but is listed as a {cfg['label']}"
+                    f"{venue}: {mins}-minute walk is too far for a meal recommendation — keep within 20 minutes on foot"
                     if venue else
-                    f"Venue {action} at {time_str} — listed as a {cfg['label']}"
+                    f"{mins}-minute walk listed for a meal recommendation — keep within 20 minutes on foot"
                 )
                 findings.append(Finding(
-                    check_id="R11",
+                    check_id="R12",
                     layer="rule",
-                    severity="RED",
+                    severity="YELLOW",
                     section=section_name,
                     description=desc,
-                    evidence=block[max(0, m.start() - 120): m.end() + 20].strip(),
+                    evidence=block[max(0, m.start() - 150): m.end() + 50].strip(),
                 ))
 
+        for m in _TRAVEL_TIME_RE.finditer(block):
+            mins = int(m.group(1))
+            if mins >= 30:
+                venue = _venue_name_from_block(block, m.start())
+                desc = (
+                    f"{venue}: {mins}-minute travel time is too far for a meal recommendation — keep within 30 minutes by any mode"
+                    if venue else
+                    f"{mins}-minute travel listed for a meal recommendation — keep within 30 minutes by any mode"
+                )
+                findings.append(Finding(
+                    check_id="R12",
+                    layer="rule",
+                    severity="YELLOW",
+                    section=section_name,
+                    description=desc,
+                    evidence=block[max(0, m.start() - 150): m.end() + 50].strip(),
+                ))
 
 
 def _r9_encoding(text: str, findings: list[Finding]) -> None:
@@ -495,6 +586,7 @@ def run_rule_engine(paragraphs: list[dict], maps_count: int = 0) -> list[Finding
     _r8_time_format(text, findings)
     _r9_encoding(text, findings)
     _r11_meal_timing(text, findings)
+    _r12_excessive_walking(text, findings)
     return findings
 
 
@@ -819,7 +911,7 @@ def verify(docx_bytes: bytes) -> VerifyResult:
 
     # Checks that passed = total checks - findings with issues
     all_check_ids = {
-        "R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11",
+        "R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12",
         "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10",
         "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20",
         "A21", "A22", "A23", "A24", "A25", "A26", "A27",

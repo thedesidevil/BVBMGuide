@@ -449,14 +449,24 @@ def _r11_meal_timing(meal_venues: list[dict], findings: list[Finding]) -> None:
             if name else
             f"Venue {action} at {time_str} — listed as a {cfg['label']}"
         )
+        section_label = _meal_section_label(section, venue)
         findings.append(Finding(
             check_id="R11",
             layer="rule",
             severity="RED",
-            section=f"{section} Recommendations",
+            section=section_label,
             description=desc,
             evidence=f"{name}  Opening Hours: {hours_str}",
         ))
+
+
+def _meal_section_label(meal_section: str, venue: dict) -> str:
+    """Build a rich section label: 'Day 3 – Dinner Recommendations (Near Shibuya)'."""
+    day = venue.get("day_number")
+    area = venue.get("area", "")
+    day_part  = f"Day {day} – " if day else ""
+    area_part = f" ({area})" if area else ""
+    return f"{day_part}{meal_section} Recommendations{area_part}"
 
 
 def _r12_excessive_walking(meal_venues: list[dict], findings: list[Finding]) -> None:
@@ -467,7 +477,8 @@ def _r12_excessive_walking(meal_venues: list[dict], findings: list[Finding]) -> 
     """
     for venue in meal_venues:
         name = venue.get("name", "")
-        section = venue.get("meal_section", "Meal")
+        meal_section = venue.get("meal_section", "Meal")
+        section_label = _meal_section_label(meal_section, venue)
 
         walk = venue.get("walk_minutes")
         if walk is not None and walk >= 20:
@@ -475,7 +486,7 @@ def _r12_excessive_walking(meal_venues: list[dict], findings: list[Finding]) -> 
                 check_id="R12",
                 layer="rule",
                 severity="YELLOW",
-                section=f"{section} Recommendations",
+                section=section_label,
                 description=(
                     f"{name}: {walk}-minute walk is too far for a meal recommendation — keep within 20 minutes on foot"
                     if name else
@@ -490,7 +501,7 @@ def _r12_excessive_walking(meal_venues: list[dict], findings: list[Finding]) -> 
                 check_id="R12",
                 layer="rule",
                 severity="YELLOW",
-                section=f"{section} Recommendations",
+                section=section_label,
                 description=(
                     f"{name}: {travel}-minute travel time is too far for a meal recommendation — keep within 30 minutes by any mode"
                     if name else
@@ -864,6 +875,7 @@ def verify(docx_bytes: bytes) -> VerifyResult:
     failed_ids = {f.check_id for f in all_findings}
     passed_count = len(all_check_ids - failed_ids)
 
+    cost = client.cost_usd
     return VerifyResult(
         findings=all_findings,
         narratives=narratives,
@@ -872,5 +884,8 @@ def verify(docx_bytes: bytes) -> VerifyResult:
             "yellow_count": yellow_count,
             "passed_count": passed_count,
             "model": client.model,
+            "prompt_tokens": client.usage["prompt_tokens"],
+            "completion_tokens": client.usage["completion_tokens"],
+            "cost_usd": cost,
         },
     )

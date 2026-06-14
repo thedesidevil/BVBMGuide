@@ -158,6 +158,14 @@ function Results({ result, onReset }: { result: VerifyResult; onReset: () => voi
             {result.meta.passed_count} passed
           </span>
           <span className="text-xs text-slate-400">{result.meta.model}</span>
+          {result.meta.cost_usd != null && (
+            <span
+              className="text-xs text-slate-500 tabular-nums"
+              title={`${(result.meta.prompt_tokens ?? 0).toLocaleString()} in + ${(result.meta.completion_tokens ?? 0).toLocaleString()} out tokens`}
+            >
+              ${result.meta.cost_usd.toFixed(4)}
+            </span>
+          )}
         </div>
         <button
           onClick={onReset}

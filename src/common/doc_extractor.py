@@ -352,6 +352,8 @@ Return a JSON object with exactly this structure:
     {{
       "name": "Venue name exactly as written",
       "meal_section": "Breakfast" | "Lunch" | "Dinner",
+      "day_number": 3,
+      "area": "Near Shibuya",
       "opening_hours": "Exact hours string, e.g. 10:30 AM – 5:00 PM or 11 AM–3 PM | 5 PM–10 PM",
       "walk_minutes": 15,
       "travel_minutes": 35
@@ -362,6 +364,8 @@ Return a JSON object with exactly this structure:
 Rules:
 - Extract EVERY restaurant/café/eatery listed under Breakfast, Lunch, or Dinner headings
 - meal_section: exactly one of Breakfast, Lunch, Dinner — infer from the section heading the venue appears under
+- day_number: integer — the day number from the Day heading this venue falls under (e.g. if under "Day 3: Monday, 12 Jan – Arrival in Tokyo", set day_number to 3). Omit if not inside a day section
+- area: the area, neighbourhood, or location mentioned in the meal section heading (e.g. "Near Shibuya", "Kawaguchiko", "Tokyo Station area", "Old Town"). Infer from headings like "Dinner Options Near Shibuya" or "Lunch Recommendations – Kawaguchiko". Omit if the heading contains no location
 - opening_hours: copy the exact hours string from the document, including split-session formats like "11 AM–3 PM | 5 PM–10 PM". Omit if not stated
 - name: copy the venue name exactly as it appears — do not normalise or translate
 - walk_minutes: integer — extract only if the document explicitly states a walking time to this venue (e.g. "15 min walk", "approx. 20 minutes on foot"). Omit if not stated

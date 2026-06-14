@@ -14,6 +14,26 @@ from dotenv import load_dotenv
 # Load .env file
 load_dotenv()
 
+# (prefix, input $/1M tokens, output $/1M tokens) — prefix-matched against model name
+_MODEL_PRICING: list[tuple[str, float, float]] = [
+    ("claude-fable-5",   10.00, 50.00),
+    ("claude-mythos-5",  10.00, 50.00),
+    ("claude-opus-4",     5.00, 25.00),
+    ("claude-sonnet-4",   3.00, 15.00),
+    ("claude-haiku-4",    1.00,  5.00),
+    ("o4-mini",           1.10,  4.40),
+    ("gpt-4o-mini",       0.15,  0.60),
+    ("gpt-4o",            2.50, 10.00),
+]
+
+
+def _lookup_pricing(model: str) -> Optional[tuple[float, float]]:
+    m = model.lower()
+    for prefix, in_price, out_price in _MODEL_PRICING:
+        if m.startswith(prefix):
+            return (in_price, out_price)
+    return None
+
 
 class AIClient:
     """AI client using OpenAI-compatible API.
@@ -55,6 +75,9 @@ class AIClient:
             base_url=self.base_url,
             timeout=300.0,
         )
+
+        # Accumulated token counts across all complete_json() calls on this instance
+        self.usage: dict[str, int] = {"prompt_tokens": 0, "completion_tokens": 0}
     
     def complete_with_images(
         self,
@@ -145,8 +168,23 @@ class AIClient:
                 response = self._client.chat.completions.create(**kwargs)
             else:
                 raise
+        if response.usage:
+            self.usage["prompt_tokens"]     += response.usage.prompt_tokens or 0
+            self.usage["completion_tokens"] += response.usage.completion_tokens or 0
         return response.choices[0].message.content.strip()
-    
+
+    @property
+    def cost_usd(self) -> Optional[float]:
+        """Estimated cost in USD based on accumulated usage. None if model pricing is unknown."""
+        pricing = _lookup_pricing(self.model)
+        if pricing is None:
+            return None
+        in_price, out_price = pricing
+        return (
+            self.usage["prompt_tokens"]     * in_price   / 1_000_000 +
+            self.usage["completion_tokens"] * out_price  / 1_000_000
+        )
+
     def __repr__(self):
         base = self.base_url or "https://api.openai.com/v1"
         # Truncate base URL for display

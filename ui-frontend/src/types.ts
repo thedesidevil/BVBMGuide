@@ -127,6 +127,9 @@ export interface VerifyMeta {
   yellow_count: number;
   passed_count: number;
   model: string;
+  prompt_tokens?: number;
+  completion_tokens?: number;
+  cost_usd?: number | null;
 }
 
 export interface VerifyResult {

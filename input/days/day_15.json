@@ -1,0 +1,152 @@
+{
+  "day_number": 15,
+  "date": "2025-05-03",
+  "title": "Vatican + Rome Highlights",
+  "overnight_city": "Rome",
+  "overnight_hotel": null,
+  "activities": [
+    {
+      "name": "Visit Vatican Museums & Sistine Chapel",
+      "vivid_description": "Step into the world's most extraordinary art collection as you wind through endless corridors lined with Renaissance masterpieces, ancient Roman sculptures casting dramatic shadows in the marble halls. The anticipation builds as you approach Michelangelo's Sistine Chapel, where the iconic ceiling frescoes seem to breathe life into biblical scenes above hushed, awestruck crowds.",
+      "hours": "8:00 AM – 8:00 PM",
+      "entry_fee": "~₹2,500–3,500 (skip-the-line recommended)",
+      "recommended_duration": "~30–40 mins via metro + short walk",
+      "source": "library",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Vatican+Museums+Rome",
+      "travel_leg": {
+        "from_location": "Camplus Guest Rome Casa per Ferie",
+        "mode": "metro",
+        "duration": "~35 min",
+        "tip": "Take Metro A to Ottaviano-San Pietro, then 5-min walk to entrance"
+      }
+    },
+    {
+      "name": "St. Peter's Basilica",
+      "vivid_description": "Emerge into the vast embrace of St. Peter's Square, where Bernini's colonnade creates a theatrical embrace leading to the basilica's towering dome. Inside, golden light filters through stained glass onto Michelangelo's Pietà, while the sheer scale of the nave makes visitors appear as tiny figures beneath soaring marble columns and ornate papal altars.",
+      "hours": "7:00 AM – 7:10 PM",
+      "entry_fee": "Free entry",
+      "recommended_duration": "~10 mins walk from museum exit",
+      "source": "library",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=St.+Peter%27s+Basilica+Rome",
+      "travel_leg": {
+        "from_location": "Visit Vatican Museums & Sistine Chapel",
+        "mode": "walk",
+        "duration": "~10 min",
+        "tip": "Exit Vatican Museums and follow signs through Vatican walls to basilica entrance"
+      }
+    },
+    {
+      "name": "Optional: Castel Sant'Angelo / shopping streets",
+      "vivid_description": "Cross the ancient Ponte Sant'Angelo where marble angels seem to guide you toward the imposing cylindrical fortress, its weathered travertine walls rising dramatically above the Tiber River. Climb the spiral ramp once used by emperors, now leading to panoramic terraces offering sweeping views across Rome's terracotta rooftops and distant hills.",
+      "hours": "9:00 AM – 7:30 PM",
+      "entry_fee": "~₹1,200–1,800",
+      "recommended_duration": "~10 mins from Vatican",
+      "source": "library",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Castel+Sant%27Angelo+Rome",
+      "travel_leg": {
+        "from_location": "St. Peter's Basilica",
+        "mode": "walk",
+        "duration": "~12 min",
+        "tip": "Walk along Via della Conciliazione, then cross Ponte Sant'Angelo for scenic approach"
+      }
+    },
+    {
+      "name": "Relaxed evening",
+      "vivid_description": "As twilight paints Rome's ancient stones in warm amber hues, find a cozy trattoria where the clink of wine glasses mingles with animated Italian conversations. Savor creamy carbonara or rich cacio e pepe while watching locals stroll past illuminated fountains, the day's Vatican treasures still vivid in your memory.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "",
+      "travel_leg": {
+        "from_location": "Optional: Castel Sant'Angelo / shopping streets",
+        "mode": "walk",
+        "duration": "~5 min",
+        "tip": "Explore nearby Borgo or Prati neighborhoods for authentic local dining"
+      }
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Trattoria Vecchia Roma",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Trattoria+Vecchia+Roma+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Pasta",
+        "vegetarian Roman dishes"
+      ],
+      "hours": "12:30 PM – 3:00 PM | 7:00 PM – 11:30 PM",
+      "price_range": null,
+      "travel_note": "near Roma Termini Area",
+      "source": "library"
+    },
+    {
+      "name": "Veg Joy Rome",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Veg+Joy+Rome+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Asian vegetarian bowls",
+        "noodles"
+      ],
+      "hours": "12:30 AM – 3:30 PM (Monday & Tuesday Closed)",
+      "price_range": null,
+      "travel_note": "near None",
+      "source": "library"
+    },
+    {
+      "name": "Flower Burger Rome",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Flower+Burger+Rome+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Gourmet vegetarian burgers"
+      ],
+      "hours": "12:30 AM – 3:00 PM | 7:00 PM - 10:30 PM",
+      "price_range": null,
+      "travel_note": "near None",
+      "source": "library"
+    }
+  ],
+  "dinner": [
+    {
+      "name": "Il Margutta Veggy Food & Art",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Il+Margutta+Veggy+Food+%26+Art+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Gourmet vegetarian dishes"
+      ],
+      "hours": "12:30 PM – 3:00 PM | 7:00 PM - 10:30 PM",
+      "price_range": null,
+      "travel_note": "near Camplus Guest Rome Casa per Ferie",
+      "source": "library"
+    },
+    {
+      "name": "Ma Va'? Trastevere",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Ma+Va%27%3F+Trastevere+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Pizza",
+        "vegetarian pasta"
+      ],
+      "hours": "12:30 PM – 3:00 PM | 7:30 PM - 11:00 PM",
+      "price_range": null,
+      "travel_note": "near Camplus Guest Rome Casa per Ferie",
+      "source": "library"
+    },
+    {
+      "name": "Ginger Sapori e Salute",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Ginger+Sapori+e+Salute+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Fresh salads",
+        "vegetarian bowls",
+        "juices"
+      ],
+      "hours": "9:30 AM – 11:30 PM",
+      "price_range": null,
+      "travel_note": "near Camplus Guest Rome Casa per Ferie",
+      "source": "library"
+    }
+  ],
+  "is_cruise_day": false,
+  "transport_note": null
+}

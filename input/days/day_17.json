@@ -1,0 +1,33 @@
+{
+  "day_number": 17,
+  "date": "2025-05-05",
+  "title": "Departure ✈",
+  "overnight_city": null,
+  "overnight_hotel": null,
+  "activities": [
+    {
+      "name": "Transfer to airport",
+      "vivid_description": "",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "",
+      "travel_leg": null
+    },
+    {
+      "name": "Fly back home",
+      "vivid_description": "",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "",
+      "travel_leg": null
+    }
+  ],
+  "lunch": [],
+  "dinner": [],
+  "is_cruise_day": true,
+  "transport_note": "Transfer to airport"
+}

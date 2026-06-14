@@ -1,0 +1,155 @@
+{
+  "day_number": 16,
+  "date": "2025-05-04",
+  "title": "Leisure + Last Day in Rome",
+  "overnight_city": "Rome",
+  "overnight_hotel": null,
+  "activities": [
+    {
+      "name": "Trevi Fountain+ Spanish steps",
+      "vivid_description": "The thunderous cascade of Trevi Fountain fills the air as you toss a coin over your shoulder, the baroque Neptune commanding his tritons amid the crystalline spray. Climbing the elegant travertine steps to Trinità dei Monti, the Spanish Steps unfold below you like a grand theater, with fashionable Romans and tourists creating a living tapestry against the honey-colored stone.",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "~20 mins from Colosseum",
+      "source": "library",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Trevi+Fountain+Rome",
+      "travel_leg": {
+        "from_location": "Camplus Guest Rome Casa per Ferie",
+        "mode": "metro",
+        "duration": "~25 min",
+        "tip": "Take Metro A to Barberini station, then 5-minute walk downhill to the fountain"
+      }
+    },
+    {
+      "name": "Free time / shopping",
+      "vivid_description": "Via del Corso buzzes with the energy of Roman shoppers ducking into boutiques and gelaterias, while the narrow cobblestone streets around Pantheon reveal hidden artisan workshops where leather craftsmen tap rhythmically at their benches. The aroma of fresh espresso mingles with the scent of handmade soaps from local shops as you weave through the medieval alleyways.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "",
+      "travel_leg": {
+        "from_location": "Trevi Fountain+ Spanish steps",
+        "mode": "walk",
+        "duration": "~2 min",
+        "tip": "Head toward Via del Corso for major shopping or explore side streets for unique boutiques"
+      }
+    },
+    {
+      "name": "Pack & relax",
+      "vivid_description": "Back in your room, you fold clothes still carrying the faint scent of Roman stone dust and gelato, while the late afternoon sun streams through your window casting long shadows across your travel memories. The distant hum of Vespa engines and animated Italian conversations drift up from the street below as you prepare for departure.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "",
+      "travel_leg": {
+        "from_location": "Free time / shopping",
+        "mode": "metro",
+        "duration": "~30 min",
+        "tip": "Take Metro A from Spagna to Termini, then Metro B to Ponte Mammolo for your accommodation"
+      }
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Cantina e Cucina",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Cantina+e+Cucina+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Cacio e pepe with artichokes",
+        "Homemade ravioli",
+        "classic Italian pastas"
+      ],
+      "hours": "11:00 AM – 11:30 PM",
+      "price_range": null,
+      "travel_note": "near Piazza Navona Area",
+      "source": "library"
+    },
+    {
+      "name": "Bernini",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Bernini+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Tonnarelli cacio e pepe with zucchini and squash blossoms",
+        "Ravioli Alfredo stuffed with guanciale, spinach, and mushrooms",
+        "Risotto",
+        "Italian mains (veg options available)",
+        "Rissotto"
+      ],
+      "hours": "10:00 AM – 11:00 PM",
+      "price_range": null,
+      "travel_note": "near Piazza Navona",
+      "source": "library"
+    },
+    {
+      "name": "Vivi Bistrot",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Vivi+Bistrot+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Organic salads",
+        "healthy soups",
+        "vegan burgers",
+        "Mediterranean fare",
+        "pizzas",
+        "Healthy bowls",
+        "pastas",
+        "continental dishes"
+      ],
+      "hours": "10:00 AM – 11:30 PM (Closed Mondays)",
+      "price_range": null,
+      "travel_note": "near Piazza Navona",
+      "source": "library"
+    }
+  ],
+  "dinner": [
+    {
+      "name": "Two Sizes",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Two+Sizes+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Tiramisu",
+        "pistachio",
+        "peanut butter flavors",
+        "tarts",
+        "cannoli",
+        "sfogliatella",
+        "Tiramisu available in two sizes",
+        "Tiramisu (one of the best in Rome)"
+      ],
+      "hours": "11:00 AM – 10:00 PM (Closed Mondays)",
+      "price_range": null,
+      "travel_note": "near Camplus Guest Rome Casa per Ferie",
+      "source": "library"
+    },
+    {
+      "name": "Rifugio Romano",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Rifugio+Romano+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Vegan Roman pasta",
+        "plant-based mains"
+      ],
+      "hours": "11:00 AM – 11:00 PM",
+      "price_range": null,
+      "travel_note": "near Camplus Guest Rome Casa per Ferie",
+      "source": "library"
+    },
+    {
+      "name": "Ops! Roma",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Ops%21+Roma+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Vegetarian buffet",
+        "salads",
+        "pasta"
+      ],
+      "hours": "12:30 PM – 4:00 PM | 7:30 PM - 11:00 PM",
+      "price_range": null,
+      "travel_note": "near Camplus Guest Rome Casa per Ferie",
+      "source": "library"
+    }
+  ],
+  "is_cruise_day": false,
+  "transport_note": null
+}

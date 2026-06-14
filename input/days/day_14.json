@@ -1,0 +1,167 @@
+{
+  "day_number": 14,
+  "date": "2025-05-02",
+  "title": "Arrival in Rome (6 AM) | Explore Eternal City",
+  "overnight_city": "Rome",
+  "overnight_hotel": null,
+  "activities": [
+    {
+      "name": "Disembark + transfer to hotel",
+      "vivid_description": "Your taxi weaves through Rome's bustling streets as ancient monuments blur past the windows, the driver gesturing animatedly while navigating narrow cobblestone lanes. The hotel's welcoming lobby offers a cool respite from the Mediterranean heat, with marble floors echoing your footsteps as you approach the reception desk adorned with fresh Italian flowers.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "",
+      "travel_leg": {
+        "from_location": "Camplus Guest Rome Casa per Ferie",
+        "mode": "taxi",
+        "duration": "~30-45 min",
+        "tip": "Use the official white taxis or book through the hotel - avoid unmarked vehicles at the airport"
+      }
+    },
+    {
+      "name": "Visit: Colosseum (pre-book skip-the-line)",
+      "vivid_description": "The massive stone arches of the Colosseum loom before you, their weathered travertine surfaces glowing golden in the morning light as tourists gather beneath the towering walls. Inside, the ancient arena floor spreads out below while the scent of old stone mingles with the excited chatter of visitors echoing through the underground chambers where gladiators once prepared for battle.",
+      "hours": "8:30 AM – 4:30 PM",
+      "entry_fee": "~₹2,000–3,000 (skip-the-line recommended)",
+      "recommended_duration": "~20–25 mins from hotel",
+      "source": "library",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Colosseum+Rome",
+      "travel_leg": {
+        "from_location": "Disembark + transfer to hotel",
+        "mode": "metro",
+        "duration": "~25 min",
+        "tip": "Take Metro Line B to Colosseo station - buy tickets before entering the platform"
+      }
+    },
+    {
+      "name": "Roman Forum",
+      "vivid_description": "Crumbling marble columns stretch endlessly across the Forum's sprawling ruins, their broken capitals catching shadows as you walk along the ancient Via Sacra where Roman emperors once paraded. Wild herbs sprout between weathered stones while the distant hum of modern Rome contrasts sharply with the profound silence of these 2,000-year-old temples and basilicas.",
+      "hours": "9:00 AM – 4:30 PM",
+      "entry_fee": null,
+      "recommended_duration": "Adjacent to Colosseum",
+      "source": "library",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Roman+Forum+Rome",
+      "travel_leg": {
+        "from_location": "Visit: Colosseum (pre-book skip-the-line)",
+        "mode": "walk",
+        "duration": "~5 min",
+        "tip": "Use the same ticket from Colosseum - entrance is directly adjacent"
+      }
+    },
+    {
+      "name": "Trevi Fountain + Pantheon",
+      "vivid_description": "The thunderous cascade of Trevi Fountain fills your ears as coins glint beneath the turquoise water, while baroque statues of Neptune and Triton command the scene from their rocky grotto. At the Pantheon, shafts of sunlight stream through the perfect circular oculus above, illuminating the ancient dome's coffered ceiling as your footsteps echo across the polished marble floor where Raphael lies entombed.",
+      "hours": "9:00 AM – 7:00 PM",
+      "entry_fee": "~₹500–1,000",
+      "recommended_duration": "~10 mins walk from Trevi",
+      "source": "library",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Pantheon+Rome",
+      "travel_leg": {
+        "from_location": "Roman Forum",
+        "mode": "walk",
+        "duration": "~15 min",
+        "tip": "Walk via Via dei Fori Imperiali then Via del Corso - both fountains are free but Pantheon may have entry queues"
+      }
+    },
+    {
+      "name": "Evening in Trastevere",
+      "vivid_description": "Narrow medieval streets wind through Trastevere as golden light spills from trattorias where the aroma of garlic, basil, and simmering tomatoes drifts into the evening air. Ivy-covered buildings lean over cobblestone alleys while locals gather around outdoor tables, their animated conversations mixing with the gentle splash of fountains and the distant strum of street musicians' guitars.",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "~15 mins from Pantheon",
+      "source": "library",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Trastevere+Rome",
+      "travel_leg": {
+        "from_location": "Trevi Fountain + Pantheon",
+        "mode": "walk",
+        "duration": "~20 min",
+        "tip": "Cross Ponte Sant'Angelo then follow the Tiber south - the walk along the river is scenic at sunset"
+      }
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Trattoria Vecchia Roma",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Trattoria+Vecchia+Roma+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Pasta",
+        "vegetarian Roman dishes"
+      ],
+      "hours": "12:30 PM – 3:00 PM | 7:00 PM – 11:30 PM",
+      "price_range": null,
+      "travel_note": "near Roma Termini Area",
+      "source": "library"
+    },
+    {
+      "name": "Veg Joy Rome",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Veg+Joy+Rome+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Asian vegetarian bowls",
+        "noodles"
+      ],
+      "hours": "12:30 AM – 3:30 PM (Monday & Tuesday Closed)",
+      "price_range": null,
+      "travel_note": "near None",
+      "source": "library"
+    },
+    {
+      "name": "Flower Burger Rome",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Flower+Burger+Rome+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Gourmet vegetarian burgers"
+      ],
+      "hours": "12:30 AM – 3:00 PM | 7:00 PM - 10:30 PM",
+      "price_range": null,
+      "travel_note": "near None",
+      "source": "library"
+    }
+  ],
+  "dinner": [
+    {
+      "name": "Il Margutta Veggy Food & Art",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Il+Margutta+Veggy+Food+%26+Art+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Gourmet vegetarian dishes"
+      ],
+      "hours": "12:30 PM – 3:00 PM | 7:00 PM - 10:30 PM",
+      "price_range": null,
+      "travel_note": "near Camplus Guest Rome Casa per Ferie",
+      "source": "library"
+    },
+    {
+      "name": "Ma Va'? Trastevere",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Ma+Va%27%3F+Trastevere+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Pizza",
+        "vegetarian pasta"
+      ],
+      "hours": "12:30 PM – 3:00 PM | 7:30 PM - 11:00 PM",
+      "price_range": null,
+      "travel_note": "near Camplus Guest Rome Casa per Ferie",
+      "source": "library"
+    },
+    {
+      "name": "Ginger Sapori e Salute",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Ginger+Sapori+e+Salute+Rome",
+      "ambience": null,
+      "must_try_dishes": [
+        "Fresh salads",
+        "vegetarian bowls",
+        "juices"
+      ],
+      "hours": "9:30 AM – 11:30 PM",
+      "price_range": null,
+      "travel_note": "near Camplus Guest Rome Casa per Ferie",
+      "source": "library"
+    }
+  ],
+  "is_cruise_day": false,
+  "transport_note": "Disembark + transfer to hotel"
+}

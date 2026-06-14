@@ -1,0 +1,348 @@
+{
+  "client_names": [
+    "Anurag Rajendra Kumar Agarwal",
+    "Pooja Agarwal",
+    "Sanvi Agarwal"
+  ],
+  "num_guests": "3 travelers",
+  "departure_city": "Mumbai",
+  "destinations": [
+    "Amsterdam",
+    "Florence",
+    "Rome",
+    "Civitavecchia (for Rome), Italy",
+    "Amalfi Coast (Salerno), Italy",
+    "Santorini, Greece",
+    "Kusadasi, Turkey (for Ephesus)",
+    "Katakolon (for Olympia), Greece",
+    "Doha",
+    "Pisa"
+  ],
+  "trip_start_date": "2026-04-19",
+  "trip_end_date": "2026-05-06",
+  "hotels": [
+    {
+      "city": "Amsterdam",
+      "hotel_name": "Holiday Inn Express Almere by IHG",
+      "check_in": null,
+      "check_out": null
+    },
+    {
+      "city": "Florence",
+      "hotel_name": "Hotel Alex",
+      "check_in": null,
+      "check_out": null
+    },
+    {
+      "city": "Rome",
+      "hotel_name": "Camplus Guest Rome Casa per Ferie",
+      "check_in": null,
+      "check_out": null
+    }
+  ],
+  "transport_modes": [
+    {
+      "from_city": "Mumbai",
+      "to_city": "Doha",
+      "mode": "flight",
+      "date": "2026-04-19",
+      "operator": "Qatar Airways",
+      "ticket_number": "QR557",
+      "departure_time": "04:10",
+      "arrival_time": "05:45",
+      "from_terminal": "Mumbai Chhatrapati Shivaji Maharaj International Airport Terminal 2",
+      "to_terminal": "Doha Hamad International Airport",
+      "booking_reference": "9C5OE7"
+    },
+    {
+      "from_city": "Doha",
+      "to_city": "Amsterdam",
+      "mode": "flight",
+      "date": "2026-04-19",
+      "operator": "Qatar Airways",
+      "ticket_number": "QR273",
+      "departure_time": "07:50",
+      "arrival_time": "14:55",
+      "from_terminal": "Doha Hamad International Airport",
+      "to_terminal": "Amsterdam Schiphol",
+      "booking_reference": "9C5OE7"
+    },
+    {
+      "from_city": "Eindhoven",
+      "to_city": "Pisa",
+      "mode": "flight",
+      "date": "2026-04-22",
+      "operator": "Ryanair",
+      "ticket_number": "FR9937",
+      "departure_time": "19:35",
+      "arrival_time": "21:20",
+      "from_terminal": "EIN",
+      "to_terminal": "PSA",
+      "booking_reference": "DSUZWC"
+    },
+    {
+      "from_city": "Civitavecchia",
+      "to_city": "Civitavecchia",
+      "mode": "cruise",
+      "date": "2026-04-25",
+      "operator": "Princess Cruises",
+      "ticket_number": "ANURAG/241125/17968",
+      "departure_time": "18:00",
+      "arrival_time": "06:00",
+      "from_terminal": "CIV",
+      "to_terminal": "ROM",
+      "booking_reference": "ANURAG/241125/17968"
+    },
+    {
+      "from_city": "Rome",
+      "to_city": "Doha",
+      "mode": "flight",
+      "date": "2026-05-05",
+      "operator": "Qatar Airways",
+      "ticket_number": "QR - 116",
+      "departure_time": "09:25",
+      "arrival_time": "15:50",
+      "from_terminal": "3",
+      "to_terminal": "NA",
+      "booking_reference": "95FXKF"
+    },
+    {
+      "from_city": "Doha",
+      "to_city": "Mumbai",
+      "mode": "flight",
+      "date": "2026-05-05",
+      "operator": "Qatar Airways",
+      "ticket_number": "QR - 556",
+      "departure_time": "20:35",
+      "arrival_time": "02:40",
+      "from_terminal": "NA",
+      "to_terminal": "2",
+      "booking_reference": "95FXKF"
+    }
+  ],
+  "days": [
+    {
+      "day_number": 1,
+      "date": "2025-04-19",
+      "title": "Arrival in Amsterdam | Easy Start",
+      "overnight_city": "Amsterdam",
+      "overnight_hotel": null,
+      "activities": [
+        "Arrival and hotel check-in",
+        "Relaxed walk around Dam Square & canals",
+        "Evening Canal Cruise",
+        "Early dinner near canals"
+      ],
+      "transport_note": null
+    },
+    {
+      "day_number": 2,
+      "date": "2025-04-20",
+      "title": "Keukenhof Gardens + Zaanse Schans",
+      "overnight_city": "Amsterdam",
+      "overnight_hotel": null,
+      "activities": [
+        "Morning visit to Keukenhof Gardens",
+        "Afternoon: Zaanse Schans",
+        "Quick stop at Zaandam",
+        "Return to Amsterdam by evening"
+      ],
+      "transport_note": null
+    },
+    {
+      "day_number": 3,
+      "date": "2025-04-21",
+      "title": "Amsterdam Culture & Museums",
+      "overnight_city": "Amsterdam",
+      "overnight_hotel": null,
+      "activities": [
+        "Visit Van Gogh Museum",
+        "Optional: Heineken Experience or Nemo Science Museum",
+        "shopping"
+      ],
+      "transport_note": null
+    },
+    {
+      "day_number": 4,
+      "date": "2025-04-22",
+      "title": "Amsterdam → Florence | Travel Day",
+      "overnight_city": "Florence",
+      "overnight_hotel": null,
+      "activities": [
+        "Leisure canal-side exploration",
+        "Transfer to Eindhoven Airport",
+        "Flight at 7 PM to Florence (Ryanair)",
+        "Late arrival & hotel check-in"
+      ],
+      "transport_note": "Transfer to Eindhoven Airport"
+    },
+    {
+      "day_number": 5,
+      "date": "2025-04-23",
+      "title": "Florence Highlights",
+      "overnight_city": "Florence",
+      "overnight_hotel": null,
+      "activities": [
+        "Visit Duomo (Cathedral + Square)",
+        "Walk to Piazza della Signoria & Palazzo Vecchio",
+        "Explore Ponte Vecchio",
+        "Sunset at Piazzale Michelangelo"
+      ],
+      "transport_note": null
+    },
+    {
+      "day_number": 6,
+      "date": "2025-04-24",
+      "title": null,
+      "overnight_city": "Florence",
+      "overnight_hotel": null,
+      "activities": [
+        "Day trip to Pisa (Leaning Tower)",
+        "Evening back in Florence"
+      ],
+      "transport_note": null
+    },
+    {
+      "day_number": 7,
+      "date": "2025-04-25",
+      "title": "Florence → Cruise Boarding",
+      "overnight_city": null,
+      "overnight_hotel": null,
+      "activities": [
+        "Free morning (shopping / café time)",
+        "Transfer to cruise port (Civitavecchia)",
+        "Board cruise by ~3 PM",
+        "Evening onboard orientation"
+      ],
+      "transport_note": "Transfer to cruise port (Civitavecchia)"
+    },
+    {
+      "day_number": 8,
+      "date": "2025-04-26",
+      "title": "Amalfi Coast (Salerno Stop | 4–5 hrs)",
+      "overnight_city": null,
+      "overnight_hotel": null,
+      "activities": [
+        "Option A: Amalfi town (quick ferry/taxi)",
+        "Option B (Easier): Salerno promenade + old town",
+        "Gelato + coastal views"
+      ],
+      "transport_note": null
+    },
+    {
+      "day_number": 9,
+      "date": "2025-04-27",
+      "title": "At Sea | Enjoy Cruise",
+      "overnight_city": null,
+      "overnight_hotel": null,
+      "activities": [],
+      "transport_note": null
+    },
+    {
+      "day_number": 10,
+      "date": "2025-04-28",
+      "title": "Santorini (4–5 hrs stop)",
+      "overnight_city": null,
+      "overnight_hotel": null,
+      "activities": [
+        "Cable car up to Fira",
+        "Quick transfer to Oia (best views)",
+        "Return early to avoid cable car queues"
+      ],
+      "transport_note": null
+    },
+    {
+      "day_number": 11,
+      "date": "2025-04-29",
+      "title": "Kusadasi (3-4 hrs stop)",
+      "overnight_city": null,
+      "overnight_hotel": null,
+      "activities": [
+        "Option A: Quick guided visit to Ephesus",
+        "Option B Kusadasi bazaar + waterfront"
+      ],
+      "transport_note": null
+    },
+    {
+      "day_number": 12,
+      "date": "2025-04-30",
+      "title": "Katakolon, Greece (3-4 hrs stop)",
+      "overnight_city": null,
+      "overnight_hotel": null,
+      "activities": [
+        "Option A: Quick trip to Olympia ruins",
+        "Option B: relaxed port town + beach café"
+      ],
+      "transport_note": null
+    },
+    {
+      "day_number": 13,
+      "date": "2025-05-01",
+      "title": "At Sea | Relax",
+      "overnight_city": null,
+      "overnight_hotel": null,
+      "activities": [],
+      "transport_note": null
+    },
+    {
+      "day_number": 14,
+      "date": "2025-05-02",
+      "title": "Arrival in Rome (6 AM) | Explore Eternal City",
+      "overnight_city": "Rome",
+      "overnight_hotel": null,
+      "activities": [
+        "Disembark + transfer to hotel",
+        "Visit: Colosseum (pre-book skip-the-line)",
+        "Roman Forum",
+        "Trevi Fountain + Pantheon",
+        "Evening in Trastevere"
+      ],
+      "transport_note": "Disembark + transfer to hotel"
+    },
+    {
+      "day_number": 15,
+      "date": "2025-05-03",
+      "title": "Vatican + Rome Highlights",
+      "overnight_city": "Rome",
+      "overnight_hotel": null,
+      "activities": [
+        "Visit Vatican Museums & Sistine Chapel",
+        "St. Peter's Basilica",
+        "Optional: Castel Sant'Angelo / shopping streets",
+        "Relaxed evening"
+      ],
+      "transport_note": null
+    },
+    {
+      "day_number": 16,
+      "date": "2025-05-04",
+      "title": "Leisure + Last Day in Rome",
+      "overnight_city": "Rome",
+      "overnight_hotel": null,
+      "activities": [
+        "Trevi Fountain+ Spanish steps",
+        "Free time / shopping",
+        "Pack & relax"
+      ],
+      "transport_note": null
+    },
+    {
+      "day_number": 17,
+      "date": "2025-05-05",
+      "title": "Departure ✈",
+      "overnight_city": null,
+      "overnight_hotel": null,
+      "activities": [
+        "Transfer to airport",
+        "Fly back home"
+      ],
+      "transport_note": "Transfer to airport"
+    }
+  ],
+  "local_transport": "Public transport",
+  "dietary_restrictions": [
+    "vegetarian"
+  ],
+  "food_allergies": [],
+  "cuisine_preferences": []
+}

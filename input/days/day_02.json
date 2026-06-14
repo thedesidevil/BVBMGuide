@@ -1,0 +1,147 @@
+{
+  "day_number": 2,
+  "date": "2025-04-20",
+  "title": "Keukenhof Gardens + Zaanse Schans",
+  "overnight_city": "Amsterdam",
+  "overnight_hotel": null,
+  "activities": [
+    {
+      "name": "Morning visit to Keukenhof Gardens",
+      "vivid_description": "Step into a living canvas of seven million tulips, daffodils, and hyacinths stretching across 79 acres of meticulously manicured gardens. The sweet fragrance of blooming flowers mingles with the crisp Dutch spring air as you wander past vibrant ribbons of color that seem to flow like painted rivers through the landscape. Ancient beech and oak trees provide a stately backdrop to the spectacular floral displays, while the gentle sound of fountains and the buzz of busy bees create nature's perfect symphony.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Keukenhof+Gardens+Amsterdam",
+      "travel_leg": {
+        "from_location": "Amsterdam Schiphol",
+        "mode": "bus",
+        "duration": "~45 min",
+        "tip": "Take bus 858 directly from Schiphol to Keukenhof - runs frequently during flower season"
+      }
+    },
+    {
+      "name": "Afternoon: Zaanse Schans",
+      "vivid_description": "Historic wooden windmills creak and groan as their massive sails catch the afternoon breeze, casting long shadows across the cobblestone paths of this living museum. The rich aroma of aged cheese wafts from traditional dairy shops while the rhythmic clacking of wooden clogs echoes from the craftsman's workshop. Green-painted houses with white trim line the Zaan River, their reflections shimmering in the water as traditional boats glide silently past.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Zaanse+Schans+Amsterdam",
+      "travel_leg": {
+        "from_location": "Morning visit to Keukenhof Gardens",
+        "mode": "bus",
+        "duration": "~90 min",
+        "tip": "Take bus 858 back to Schiphol, then train to Amsterdam Centraal, then bus 391 to Zaanse Schans"
+      }
+    },
+    {
+      "name": "Quick stop at Zaandam",
+      "vivid_description": "Marvel at the whimsical fairy-tale architecture of colorful stacked houses that seem to defy gravity, their playful design inspired by traditional Zaan region buildings but reimagined in vibrant blues, greens, and reds. The modern shopping center buzzes with locals going about their daily routines while the historic Czar Peter House stands as a testament to the area's rich connection to Russian royalty. The scent of fresh stroopwafels from nearby cafés mingles with the crisp river air.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Zaandam+Amsterdam",
+      "travel_leg": {
+        "from_location": "Afternoon: Zaanse Schans",
+        "mode": "walk",
+        "duration": "~15 min",
+        "tip": "Follow the clearly marked pedestrian path along the Zaan River from Zaanse Schans"
+      }
+    },
+    {
+      "name": "Return to Amsterdam by evening",
+      "vivid_description": "Watch the Dutch countryside gradually give way to Amsterdam's urban landscape as your train glides past neat rows of houses with terracotta roofs and glimpses of famous canals. The familiar silhouette of Amsterdam Centraal Station grows larger through the window while the golden hour light bathes the city's historic architecture in a warm, honeyed glow. The gentle rocking of the train and the soft chatter of fellow travelers creates a peaceful end to your day of exploration.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source": "ai_estimated",
+      "maps_url": "",
+      "travel_leg": {
+        "from_location": "Quick stop at Zaandam",
+        "mode": "train",
+        "duration": "~20 min",
+        "tip": "Take the direct train from Zaandam station to Amsterdam Centraal - runs every 15 minutes"
+      }
+    }
+  ],
+  "lunch": [
+    {
+      "name": "The pancake bakery",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=The+pancake+bakery+Amsterdam",
+      "ambience": null,
+      "must_try_dishes": [
+        "Dutch pancake"
+      ],
+      "hours": "9am-8:30pm",
+      "price_range": null,
+      "travel_note": "near Near Anne Frank House",
+      "source": "library"
+    },
+    {
+      "name": "Winkel 43",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Winkel+43+Amsterdam",
+      "ambience": null,
+      "must_try_dishes": [
+        "Apple pie"
+      ],
+      "hours": "8am-1am",
+      "price_range": null,
+      "travel_note": "near Near Anne Frank House",
+      "source": "library"
+    },
+    {
+      "name": "Saint Jean Baker",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Saint+Jean+Baker+Amsterdam",
+      "ambience": null,
+      "must_try_dishes": [
+        "Hazelnut chocolate danish"
+      ],
+      "hours": "8am-5pm",
+      "price_range": null,
+      "travel_note": "near Near Anne Frank House",
+      "source": "library"
+    }
+  ],
+  "dinner": [
+    {
+      "name": "Lourens",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Lourens+Amsterdam",
+      "ambience": null,
+      "must_try_dishes": [
+        "crookie"
+      ],
+      "hours": "8am-7pm",
+      "price_range": null,
+      "travel_note": "near Holiday Inn Express Almere by IHG",
+      "source": "library"
+    },
+    {
+      "name": "Salvo Bakehouse",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Salvo+Bakehouse+Amsterdam",
+      "ambience": null,
+      "must_try_dishes": [
+        "Italian pastries and coffee"
+      ],
+      "hours": "9am-4pm",
+      "price_range": null,
+      "travel_note": "near Holiday Inn Express Almere by IHG",
+      "source": "library"
+    },
+    {
+      "name": "Chun Café",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Chun+Caf%C3%A9+Amsterdam",
+      "ambience": null,
+      "must_try_dishes": [
+        "Korean fluffy toasts and boba tea"
+      ],
+      "hours": "10am-6:30pm",
+      "price_range": null,
+      "travel_note": "near Holiday Inn Express Almere by IHG",
+      "source": "library"
+    }
+  ],
+  "is_cruise_day": false,
+  "transport_note": null
+}

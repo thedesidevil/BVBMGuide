@@ -1,0 +1,354 @@
+{
+  "cities": [
+    {
+      "city": "Amsterdam",
+      "dishes": [
+        {
+          "name": "Stamppot",
+          "city": "Amsterdam",
+          "description": "Comforting mashed potatoes mixed with vegetables like kale or carrots",
+          "vegetarian": true,
+          "where_to_try": "Moeders",
+          "source_files": [
+            "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+            "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf",
+            "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Kaaskroketten",
+          "city": "Amsterdam",
+          "description": "Cheese Croquettes",
+          "vegetarian": true,
+          "source_files": [
+            "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+            "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf"
+          ],
+          "where_to_try": "Dutch restaurants"
+        },
+        {
+          "name": "Stroopwafels",
+          "city": "Amsterdam",
+          "description": "Thin waffle cookies filled with warm caramel syrup; best enjoyed fresh from street stalls",
+          "vegetarian": true,
+          "where_to_try": "Van Wonderen Stroopwafels",
+          "source_files": [
+            "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+            "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf",
+            "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Pannenkoeken",
+          "city": "Amsterdam",
+          "description": "Dutch Crepes",
+          "vegetarian": true,
+          "where_to_try": "The pancake bakery, De carrousel pannekoeken",
+          "source_files": [
+            "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+            "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf"
+          ]
+        },
+        {
+          "name": "Patatje Oorlog",
+          "city": "Amsterdam",
+          "description": "French fries with mayonnaise and peanut butter sauce",
+          "vegetarian": true,
+          "source_files": [
+            "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+            "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf"
+          ],
+          "where_to_try": "Fabel Friet, Vlaams Friteshuis Vleminckx"
+        },
+        {
+          "name": "Poffertjes (Mini Dutch Pancakes)",
+          "city": "Amsterdam",
+          "description": "Small, fluffy pancakes served with butter and powdered sugar — light, slightly crispy outside and soft inside",
+          "vegetarian": true,
+          "where_to_try": "Amsterdam cafés",
+          "source_files": [
+            "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Stroopwafels (Caramel Waffles)",
+          "city": "Amsterdam",
+          "description": "Two thin waffle layers with warm caramel syrup in between — best enjoyed fresh and slightly gooey",
+          "vegetarian": true,
+          "where_to_try": "Van Wonderen Stroopwafels",
+          "source_files": [
+            "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Avocado Toast & Brunch Plates",
+          "city": "Amsterdam",
+          "description": "Amsterdam does brunch exceptionally well — fresh, vibrant, and beautifully plated",
+          "vegetarian": true,
+          "where_to_try": "Amsterdam brunch cafés",
+          "source_files": [
+            "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Falafel & Middle Eastern Bowls",
+          "city": "Amsterdam",
+          "description": "A staple vegetarian option in Amsterdam — flavourful, filling, and widely available",
+          "vegetarian": true,
+          "where_to_try": "d&a hummus bistro",
+          "source_files": [
+            "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Dutch Coffee Culture",
+          "city": "Amsterdam",
+          "description": "Smooth, strong coffee served in cozy cafés — perfect for canal-side breaks",
+          "vegetarian": true,
+          "where_to_try": "Amsterdam cafés",
+          "source_files": [
+            "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Dutch Cheese (Gouda & Edam)",
+          "city": "Amsterdam",
+          "description": "Creamy, rich cheeses ranging from mild to aged, often sampled at local cheese shops",
+          "vegetarian": true,
+          "where_to_try": "Local cheese shops",
+          "source_files": [
+            "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Poffertjes",
+          "city": "Amsterdam",
+          "description": "Mini fluffy pancakes served with powdered sugar and butter; light, airy, and addictive",
+          "vegetarian": true,
+          "where_to_try": "Street stalls",
+          "source_files": [
+            "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Dutch Fries (Patat)",
+          "city": "Amsterdam",
+          "description": "Thick-cut fries served in cones with sauces like mayo, satay, or curry ketchup",
+          "vegetarian": true,
+          "where_to_try": "Vlaams Friteshuis Vleminckx",
+          "source_files": [
+            "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Broodje Kaas",
+          "city": "Amsterdam",
+          "description": "Simple yet delicious Dutch cheese sandwich, often with fresh bread and mustard",
+          "vegetarian": true,
+          "where_to_try": "Local cafés",
+          "source_files": [
+            "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Appeltaart",
+          "city": "Amsterdam",
+          "description": "Dense, cinnamon-spiced apple pie with a buttery crust, often served with whipped cream",
+          "vegetarian": true,
+          "where_to_try": "Local bakeries",
+          "source_files": [
+            "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+          ]
+        }
+      ]
+    },
+    {
+      "city": "Civitavecchia",
+      "dishes": []
+    },
+    {
+      "city": "Doha",
+      "dishes": [
+        {
+          "name": "Vegetable Couscous",
+          "city": "Doha",
+          "description": "Traditional Moroccan dish with vegetables",
+          "vegetarian": true,
+          "where_to_try": "Argan Moroccan Cuisine",
+          "source_files": [
+            "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+            "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+            "Italy/Tejas - Europe All Inclusive Guide.pdf"
+          ]
+        },
+        {
+          "name": "Harira Soup",
+          "city": "Doha",
+          "description": "Vegetarian/lentil soup",
+          "vegetarian": true,
+          "where_to_try": "Argan Moroccan Cuisine",
+          "source_files": [
+            "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+            "Italy/Tejas - Europe All Inclusive Guide.pdf"
+          ]
+        },
+        {
+          "name": "Falafel",
+          "city": "Doha",
+          "description": "Middle Eastern fried chickpea balls",
+          "vegetarian": true,
+          "where_to_try": "Damasca One",
+          "source_files": [
+            "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+          ]
+        },
+        {
+          "name": "Zaalouk",
+          "city": "Doha",
+          "description": "Eggplant dip",
+          "vegetarian": true,
+          "where_to_try": "Argan Moroccan Cuisine",
+          "source_files": [
+            "Italy/Tejas - Europe All Inclusive Guide.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "city": "Florence",
+      "dishes": [
+        {
+          "name": "Pasta",
+          "city": "Florence",
+          "description": "Fresh, handmade pasta with simple, rich sauces — think tomato, truffle, or butter-sage",
+          "vegetarian": true,
+          "where_to_try": "Florentine restaurants",
+          "source_files": [
+            "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Neapolitan-Style Pizza (Veg Options)",
+          "city": "Florence",
+          "description": "Soft, airy crust with fresh toppings — simple but incredibly flavourful",
+          "vegetarian": true,
+          "where_to_try": "Pizzeria San Jacopino",
+          "source_files": [
+            "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Schiacciata (Tuscan Flatbread Sandwich)",
+          "city": "Florence",
+          "description": "Crispy outside, soft inside — filled with cheeses, vegetables, and spreads",
+          "vegetarian": true,
+          "where_to_try": "Florentine bakeries",
+          "source_files": [
+            "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Gelato (Authentic Italian Ice Cream)",
+          "city": "Florence",
+          "description": "Creamier and richer than regular ice cream — made fresh daily",
+          "vegetarian": true,
+          "where_to_try": "Italian gelaterias",
+          "source_files": [
+            "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+          ]
+        }
+      ]
+    },
+    {
+      "city": "Katakolon",
+      "dishes": []
+    },
+    {
+      "city": "Kusadasi",
+      "dishes": []
+    },
+    {
+      "city": "Pisa",
+      "dishes": []
+    },
+    {
+      "city": "Rome",
+      "dishes": [
+        {
+          "name": "Cacio e Pepe (Vegetarian Roman Pasta)",
+          "city": "Rome",
+          "description": "A simple yet iconic dish made with pecorino cheese and black pepper — creamy, bold, and comforting",
+          "vegetarian": true,
+          "where_to_try": "Roman restaurants",
+          "source_files": [
+            "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Amatriciana (Veg Version Available)",
+          "city": "Rome",
+          "description": "Traditionally meat-based, but many places offer vegetarian adaptations with rich tomato sauces",
+          "vegetarian": true,
+          "where_to_try": "Roman restaurants",
+          "source_files": [
+            "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Roman Thin-Crust Pizza",
+          "city": "Rome",
+          "description": "Crispier and lighter than Neapolitan — perfect for dinner",
+          "vegetarian": true,
+          "where_to_try": "Pizzeria Ai Marmi",
+          "source_files": [
+            "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Supplì (Vegetarian Option)",
+          "city": "Rome",
+          "description": "Fried rice balls (veg versions available) — crispy outside, soft and cheesy inside",
+          "vegetarian": true,
+          "where_to_try": "Roman street food",
+          "source_files": [
+            "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Gelato (Must-Have in Rome)",
+          "city": "Rome",
+          "description": "Fresh, intensely flavoured, and widely available — a daily ritual here",
+          "vegetarian": true,
+          "where_to_try": "Gelateria del Teatro",
+          "source_files": [
+            "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Italian Espresso / Cappuccino",
+          "city": "Rome",
+          "description": "Quick, strong, and part of everyday life — often enjoyed standing at the counter",
+          "vegetarian": true,
+          "where_to_try": "Sant'Eustachio Il Caffè",
+          "source_files": [
+            "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+          ]
+        },
+        {
+          "name": "Maritozzo",
+          "city": "Rome",
+          "description": "Traditional Roman pastry",
+          "vegetarian": true,
+          "where_to_try": "Regoli Pasticceria",
+          "source_files": [
+            "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "city": "Santorini",
+      "dishes": []
+    }
+  ]
+}

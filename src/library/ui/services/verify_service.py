@@ -1,15 +1,16 @@
-"""AIG verification service — two-layer pipeline (rule engine + GPT AI pass)."""
+"""AIG verification service — two-layer pipeline (rule engine + AI pass)."""
 
 from __future__ import annotations
 
 import io
 import json
-import os
 import re
 from dataclasses import dataclass, field, asdict
 
 from docx import Document
-from openai import OpenAI
+
+from src.common.ai_provider import get_ai_client, AIClient
+from src.common.doc_extractor import extract_from_text, VERIFY_EXTRACTION_PROMPT
 
 
 # ---------------------------------------------------------------------------
@@ -292,14 +293,15 @@ _TIME_RANGE_RE = re.compile(
     r"\b(\d{1,2}:\d{2})\s*(AM|PM)?\s*[–\-]\s*(\d{1,2}:\d{2})\s*(AM|PM)\b",
     re.IGNORECASE,
 )
-# Captures only the closing side of a time range (groups 1=hour, 2=min, 3=period)
+# Captures only the closing side of a time range (groups 1=hour, 2=min or None, 3=period)
+# Handles both "HH:MM AM/PM" and "H AM/PM" (no minutes) on either side
 _CLOSING_TIME_RE = re.compile(
-    r"\b\d{1,2}:\d{2}\s*(?:AM|PM)\s*[–\-]\s*(\d{1,2}):(\d{2})\s*(AM|PM)\b",
+    r"\b\d{1,2}(?::\d{2})?\s*(?:AM|PM)\s*[–\-]\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\b",
     re.IGNORECASE,
 )
-# Captures only the opening side of a time range (groups 1=hour, 2=min, 3=period)
+# Captures only the opening side of a time range (groups 1=hour, 2=min or None, 3=period)
 _OPENING_TIME_RE = re.compile(
-    r"\b(\d{1,2}):(\d{2})\s*(AM|PM)\s*[–\-]\s*\d{1,2}:\d{2}\s*(?:AM|PM)\b",
+    r"\b(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\s*[–\-]\s*\d{1,2}(?::\d{2})?\s*(?:AM|PM)\b",
     re.IGNORECASE,
 )
 # Marks the end of any meal section
@@ -315,30 +317,30 @@ _SAME_TIME_RE = re.compile(
     r"\b(\d{1,2}:\d{2}\s*(?:AM|PM))\s*[–\-]\s*(\d{1,2}:\d{2}\s*(?:AM|PM))\b",
     re.IGNORECASE,
 )
-def _venue_name_before(text: str, pos: int) -> str:
-    """Return the nearest venue-name line before `pos`.
+_ALL_EMOJI_RE = re.compile(r"[\U00010000-\U0010FFFF☀-⟿️‍]", re.UNICODE)
 
-    Venue names are standalone proper-noun lines: start with a capital letter,
-    no leading emoji/symbol (any char > U+2000), no colon in the first 30 chars
-    (which would indicate a label like "Best For: ..."), and not a description
-    sentence starting with an article.
+
+def _venue_name_before(text: str, pos: int) -> str:
+    """Return the nearest venue-name line before pos (used by R8/R12).
+
+    Strips emojis, skips label lines (contain a colon), prose sentences, and
+    long description lines. Does not require a capital letter — venue names can
+    start with a number (e.g. '3 Coins') or lowercase letter.
     """
     window = text[max(0, pos - 400):pos]
-    lines = [l.strip() for l in window.splitlines()]
-    for line in reversed(lines):
-        if not line:
+    for line in reversed(window.splitlines()):
+        clean = _ALL_EMOJI_RE.sub("", line).strip()
+        if not clean:
             continue
-        if ord(line[0]) > 0x2000:          # emoji / special symbol prefix → skip
+        if ":" in clean[:50]:
             continue
-        if not line[0].isupper():           # must start with a capital letter
+        if re.match(r"^(A |An |The |Approx)", clean):
             continue
-        if ":" in line[:30]:               # label line like "Best For: ..."
+        if clean.endswith(".") or clean.endswith("!"):
             continue
-        if re.match(r"^(A |An |The )", line):  # description sentence starting with article
+        if len(clean) > 80:
             continue
-        if line.endswith(".") or line.endswith("!"):  # prose sentence
-            continue
-        return line
+        return clean
     return ""
 
 
@@ -401,109 +403,78 @@ def _r8_time_format(text: str, findings: list[Finding]) -> None:
 _ENC_RE = re.compile(r'[�-￾﻿]')
 
 
-def _to_minutes(hour: int, minute: int, period: str) -> int:
-    """Convert 12-hour time to minutes since midnight."""
+def _to_minutes(hour: int, minute: int | None, period: str) -> int:
+    """Convert 12-hour time to minutes since midnight. minute may be None if not present."""
+    m = minute or 0
     p = period.upper()
     if p == "PM" and hour != 12:
-        return (hour + 12) * 60 + minute
+        return (hour + 12) * 60 + m
     if p == "AM" and hour == 12:
-        return minute
-    return hour * 60 + minute
+        return m
+    return hour * 60 + m
 
 
-_EMOJI_VENUE_RE = re.compile(r"🍴\s*(.+)")
+def _r11_meal_timing(meal_venues: list[dict], findings: list[Finding]) -> None:
+    """Check meal venue opening hours against meal-time thresholds.
 
+    Uses AI-extracted structured data (name, meal_section, opening_hours) so
+    venue names and hours are reliable regardless of AIG formatting conventions.
 
-def _venue_name_from_block(block: str, pos: int) -> str:
-    """Return the nearest restaurant name before pos in a meal section block.
-    Looks for a '🍴 Name' line first; falls back to _venue_name_before heuristic."""
-    window = block[max(0, pos - 600):pos]
-    # Prefer '🍴 Name' lines — most AIG venues use this pattern
-    for line in reversed(window.splitlines()):
-        m = _EMOJI_VENUE_RE.match(line.strip())
-        if m:
-            return m.group(1).strip()
-    return _venue_name_before(block, pos)
+    Thresholds:
+      Dinner  — closing time must be ≥ 9 PM (21:00)
+      Lunch   — closing time must be ≥ 2 PM (14:00)
+      Breakfast — opening time must be ≤ 8 AM (08:00)
 
-
-def _r11_meal_timing(text: str, findings: list[Finding]) -> None:
-    """Deterministic meal timing checks:
-      - Dinner venues must close at or after 9 PM (21:00)
-      - Lunch venues must close at or after 2 PM (14:00)
-      - Breakfast venues must open at or before 8 AM (08:00)
-
-    For split-hours venues (e.g. "11 AM–3 PM | 5 PM–10 PM") the best
-    closing/opening time across all sessions on the same line is used,
-    so a restaurant open 5 PM–10 PM is not falsely flagged for its
-    11 AM–3 PM session.
+    For split-hours venues (e.g. "11 AM–3 PM | 5 PM–10 PM") the best session
+    is used: latest close for dinner/lunch, earliest open for breakfast.
     """
-    configs = [
-        {
-            "keyword": "Dinner",
-            "check": "closing",
-            "threshold": 21 * 60,   # 9 PM
-            "label": "dinner recommendation — dinner venues should be open until at least 9 PM",
-        },
-        {
-            "keyword": "Lunch",
-            "check": "closing",
-            "threshold": 14 * 60,   # 2 PM
-            "label": "lunch recommendation — lunch venues should be open until at least 2 PM",
-        },
-        {
-            "keyword": "Breakfast",
-            "check": "opening",
-            "threshold": 8 * 60,    # 8 AM
-            "label": "breakfast recommendation — breakfast venues should open by 8 AM",
-        },
-    ]
-    for cfg in configs:
-        heading_re = re.compile(
-            rf"^[^\n]*\b{cfg['keyword']}\s+Recommendations?\b[^\n]*$",
-            re.MULTILINE | re.IGNORECASE,
-        )
-        time_re = _CLOSING_TIME_RE if cfg["check"] == "closing" else _OPENING_TIME_RE
-        is_closing = cfg["check"] == "closing"
-        for dm in heading_re.finditer(text):
-            section_name = dm.group().strip()[:80]
-            block_start = dm.end()
-            nm = _MEAL_SECTION_END_RE.search(text, block_start)
-            block = text[block_start: nm.start() if nm else len(text)]
+    configs = {
+        "Dinner":    {"check": "closing",  "threshold": 21 * 60, "label": "dinner recommendation — dinner venues should be open until at least 9 PM"},
+        "Lunch":     {"check": "closing",  "threshold": 14 * 60, "label": "lunch recommendation — lunch venues should be open until at least 2 PM"},
+        "Breakfast": {"check": "opening",  "threshold":  8 * 60, "label": "breakfast recommendation — breakfast venues should open by 8 AM"},
+    }
+    for venue in meal_venues:
+        name = venue.get("name", "")
+        hours_str = venue.get("opening_hours", "")
+        section = venue.get("meal_section", "")
+        cfg = configs.get(section)
+        if not cfg or not hours_str:
+            continue
 
-            # Process line-by-line: a venue's hours may have multiple sessions
-            # on one line (split hours). Only flag if the BEST session still fails.
-            line_offset = 0
-            for line in block.splitlines(keepends=True):
-                matches = list(time_re.finditer(line))
-                if matches:
-                    all_mins = [
-                        _to_minutes(int(m.group(1)), int(m.group(2)), m.group(3))
-                        for m in matches
-                    ]
-                    best = min(all_mins) if is_closing else max(all_mins)
-                    # For closing: best = latest session close; for opening: best = earliest open
-                    best = max(all_mins) if is_closing else min(all_mins)
-                    failed = best < cfg["threshold"] if is_closing else best > cfg["threshold"]
-                    if failed:
-                        abs_pos = line_offset + matches[0].start()
-                        venue = _venue_name_from_block(block, abs_pos)
-                        worst_m = matches[all_mins.index(min(all_mins) if is_closing else max(all_mins))]
-                        time_str = f"{worst_m.group(1)}:{worst_m.group(2)} {worst_m.group(3).upper()}"
-                        action = "closes" if is_closing else "opens"
-                        desc = (
-                            f"{venue} {action} at {time_str} but is listed as a {cfg['label']}"
-                            if venue else
-                            f"Venue {action} at {time_str} — listed as a {cfg['label']}"
-                        )
-                        findings.append(Finding(
-                            check_id="R11",
-                            layer="rule",
-                            severity="RED",
-                            section=section_name,
-                            description=desc,
-                            evidence=block[max(0, abs_pos - 120): abs_pos + len(line)].strip(),
-                        ))
-                line_offset += len(line)
+        is_closing = cfg["check"] == "closing"
+        time_re = _CLOSING_TIME_RE if is_closing else _OPENING_TIME_RE
+        matches = list(time_re.finditer(hours_str))
+        if not matches:
+            continue
+
+        all_mins = [
+            _to_minutes(int(m.group(1)), int(m.group(2)) if m.group(2) else None, m.group(3))
+            for m in matches
+        ]
+        best_idx = all_mins.index(max(all_mins) if is_closing else min(all_mins))
+        best = all_mins[best_idx]
+        if is_closing and best >= cfg["threshold"]:
+            continue
+        if not is_closing and best <= cfg["threshold"]:
+            continue
+
+        best_m = matches[best_idx]
+        min_str = f":{best_m.group(2)}" if best_m.group(2) else ":00"
+        time_str = f"{best_m.group(1)}{min_str} {best_m.group(3).upper()}"
+        action = "closes" if is_closing else "opens"
+        desc = (
+            f"{name} {action} at {time_str} but is listed as a {cfg['label']}"
+            if name else
+            f"Venue {action} at {time_str} — listed as a {cfg['label']}"
+        )
+        findings.append(Finding(
+            check_id="R11",
+            layer="rule",
+            severity="RED",
+            section=f"{section} Recommendations",
+            description=desc,
+            evidence=f"{name}  Opening Hours: {hours_str}",
+        ))
 
 
 def _r12_excessive_walking(text: str, findings: list[Finding]) -> None:
@@ -572,7 +543,11 @@ def _r9_encoding(text: str, findings: list[Finding]) -> None:
             evidence=snippet or "Non-standard characters found",
         ))
 
-def run_rule_engine(paragraphs: list[dict], maps_count: int = 0) -> list[Finding]:
+def run_rule_engine(
+    paragraphs: list[dict],
+    maps_count: int = 0,
+    meal_venues: list[dict] | None = None,
+) -> list[Finding]:
     """Run all deterministic rule checks. Returns only failing checks."""
     text = paragraphs_to_text(paragraphs)
     findings: list[Finding] = []
@@ -585,7 +560,7 @@ def run_rule_engine(paragraphs: list[dict], maps_count: int = 0) -> list[Finding
     _r7_restaurant_count(text, findings)
     _r8_time_format(text, findings)
     _r9_encoding(text, findings)
-    _r11_meal_timing(text, findings)
+    _r11_meal_timing(meal_venues or [], findings)
     _r12_excessive_walking(text, findings)
     return findings
 
@@ -847,24 +822,12 @@ Full response shape:
 """
 
 
-def run_ai_pass(text: str) -> tuple[list[Finding], dict]:
-    """Run GPT verification pass. Returns (findings, narratives)."""
-    api_key = os.environ.get("AI_API_KEY") or os.environ.get("OPENAI_API_KEY")
-    base_url = os.environ.get("AI_BASE_URL") or None
-    model = os.environ.get("AI_MODEL", "gpt-4o-mini")
+def run_ai_pass(text: str, client: AIClient | None = None) -> tuple[list[Finding], dict]:
+    """Run AI verification pass. Returns (findings, narratives)."""
+    if client is None:
+        client = get_ai_client()
 
-    client = OpenAI(api_key=api_key, base_url=base_url, timeout=120.0)
-
-    response = client.chat.completions.create(
-        model=model,
-        response_format={"type": "json_object"},
-        messages=[
-            {"role": "system", "content": _SYSTEM_PROMPT},
-            {"role": "user", "content": text},
-        ],
-    )
-
-    raw = response.choices[0].message.content.strip()
+    raw = client.complete_json(text, max_tokens=8000, system=_SYSTEM_PROMPT)
     try:
         data = json.loads(raw)
     except json.JSONDecodeError as e:
@@ -902,8 +865,15 @@ def verify(docx_bytes: bytes) -> VerifyResult:
     text = paragraphs_to_text(paragraphs)
     maps_count = _count_maps_hyperlinks(docx_bytes)
 
-    rule_findings = run_rule_engine(paragraphs, maps_count=maps_count)
-    ai_findings, narratives = run_ai_pass(text)
+    # One shared client for both extraction passes
+    client = get_ai_client()
+
+    # Extract structured meal venue data for R11 (reliable names + hours from AI)
+    meal_data = extract_from_text(client, text, VERIFY_EXTRACTION_PROMPT)
+    meal_venues = meal_data.get("restaurants", [])
+
+    rule_findings = run_rule_engine(paragraphs, maps_count=maps_count, meal_venues=meal_venues)
+    ai_findings, narratives = run_ai_pass(text, client=client)
 
     all_findings = rule_findings + ai_findings
     red_count = sum(1 for f in all_findings if f.severity == "RED")
@@ -920,9 +890,6 @@ def verify(docx_bytes: bytes) -> VerifyResult:
     failed_ids = {f.check_id for f in all_findings}
     passed_count = len(all_check_ids - failed_ids)
 
-    import os as _os
-    model = _os.environ.get("AI_MODEL", "gpt-4o-mini")
-
     return VerifyResult(
         findings=all_findings,
         narratives=narratives,
@@ -930,6 +897,6 @@ def verify(docx_bytes: bytes) -> VerifyResult:
             "red_count": red_count,
             "yellow_count": yellow_count,
             "passed_count": passed_count,
-            "model": model,
+            "model": client.model,
         },
     )

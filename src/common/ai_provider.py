@@ -91,12 +91,12 @@ class AIClient:
         temperature: float = 0.7
     ) -> str:
         """Generate a completion from the AI model.
-        
+
         Args:
             prompt: The prompt to send to the model
             max_tokens: Maximum tokens in the response
             temperature: Sampling temperature (0-1)
-            
+
         Returns:
             The model's response text
         """
@@ -106,6 +106,45 @@ class AIClient:
             temperature=temperature,
             messages=[{"role": "user", "content": prompt}]
         )
+        return response.choices[0].message.content.strip()
+
+    def complete_json(
+        self,
+        prompt: str,
+        max_tokens: int = 8000,
+        system: Optional[str] = None,
+    ) -> str:
+        """Generate a JSON-mode completion.
+
+        Uses response_format=json_object and temperature=0. Reasoning models
+        (e.g. claude-opus-4-8, o4-mini) reject the temperature parameter, so
+        this method retries without it on that failure.
+
+        Args:
+            prompt: User-turn message
+            max_tokens: Maximum tokens in the response
+            system: Optional system prompt prepended before the user message
+
+        Returns:
+            The model's response text (valid JSON string).
+        """
+        messages = []
+        if system:
+            messages.append({"role": "system", "content": system})
+        messages.append({"role": "user", "content": prompt})
+        kwargs = dict(
+            model=self.model,
+            max_tokens=max_tokens,
+            response_format={"type": "json_object"},
+            messages=messages,
+        )
+        try:
+            response = self._client.chat.completions.create(temperature=0, **kwargs)
+        except Exception as e:
+            if "temperature" in str(e).lower():
+                response = self._client.chat.completions.create(**kwargs)
+            else:
+                raise
         return response.choices[0].message.content.strip()
     
     def __repr__(self):

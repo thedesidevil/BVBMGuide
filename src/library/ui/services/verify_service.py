@@ -281,6 +281,24 @@ _TIME_RANGE_RE = re.compile(
     r"\b(\d{1,2}:\d{2})\s*(AM|PM)?\s*[–\-]\s*(\d{1,2}:\d{2})\s*(AM|PM)\b",
     re.IGNORECASE,
 )
+# Captures only the closing side of a time range (groups 1=hour, 2=min, 3=period)
+_CLOSING_TIME_RE = re.compile(
+    r"\b\d{1,2}:\d{2}\s*(?:AM|PM)\s*[–\-]\s*(\d{1,2}):(\d{2})\s*(AM|PM)\b",
+    re.IGNORECASE,
+)
+# Captures only the opening side of a time range (groups 1=hour, 2=min, 3=period)
+_OPENING_TIME_RE = re.compile(
+    r"\b(\d{1,2}):(\d{2})\s*(AM|PM)\s*[–\-]\s*\d{1,2}:\d{2}\s*(?:AM|PM)\b",
+    re.IGNORECASE,
+)
+# Marks the end of any meal section
+_MEAL_SECTION_END_RE = re.compile(
+    r"^[^\n]*(?:Day \d+\s*[:|\-–]|(?:Lunch|Dinner|Breakfast|Brunch)\s+Recommendation|"
+    r"Important\s+Places|Souvenir\s+Shopping|Must.Try\s+Local|Getting\s+Around|"
+    r"Cultural\s+Etiquette|Tailored\s+Packing|Mobile\s+Connectivity|Safety\s*&|"
+    r"Health\s*&|Thank\s+You)[^\n]*$",
+    re.MULTILINE | re.IGNORECASE,
+)
 _MIDNIGHT_START_RE = re.compile(r"\b12:\d{2}\s*AM\s*[–\-]", re.IGNORECASE)
 _SAME_TIME_RE = re.compile(
     r"\b(\d{1,2}:\d{2}\s*(?:AM|PM))\s*[–\-]\s*(\d{1,2}:\d{2}\s*(?:AM|PM))\b",
@@ -372,6 +390,80 @@ def _r8_time_format(text: str, findings: list[Finding]) -> None:
 _ENC_RE = re.compile(r'[�-￾﻿]')
 
 
+def _to_minutes(hour: int, minute: int, period: str) -> int:
+    """Convert 12-hour time to minutes since midnight."""
+    p = period.upper()
+    if p == "PM" and hour != 12:
+        return (hour + 12) * 60 + minute
+    if p == "AM" and hour == 12:
+        return minute
+    return hour * 60 + minute
+
+
+def _r11_meal_timing(text: str, findings: list[Finding]) -> None:
+    """Deterministic meal timing checks:
+      - Dinner venues must close at or after 9 PM (21:00)
+      - Lunch venues must close at or after 2 PM (14:00)
+      - Breakfast venues must open at or before 8 AM (08:00)
+    """
+    configs = [
+        {
+            "keyword": "Dinner",
+            "check": "closing",
+            "threshold": 21 * 60,   # 9 PM
+            "label": "dinner recommendation — dinner venues should be open until at least 9 PM",
+        },
+        {
+            "keyword": "Lunch",
+            "check": "closing",
+            "threshold": 14 * 60,   # 2 PM
+            "label": "lunch recommendation — lunch venues should be open until at least 2 PM",
+        },
+        {
+            "keyword": "Breakfast",
+            "check": "opening",
+            "threshold": 8 * 60,    # 8 AM
+            "label": "breakfast recommendation — breakfast venues should open by 8 AM",
+        },
+    ]
+    for cfg in configs:
+        heading_re = re.compile(
+            rf"^[^\n]*\b{cfg['keyword']}\s+Recommendations?\b[^\n]*$",
+            re.MULTILINE | re.IGNORECASE,
+        )
+        time_re = _CLOSING_TIME_RE if cfg["check"] == "closing" else _OPENING_TIME_RE
+        for dm in heading_re.finditer(text):
+            section_name = dm.group().strip()[:80]
+            block_start = dm.end()
+            nm = _MEAL_SECTION_END_RE.search(text, block_start)
+            block = text[block_start: nm.start() if nm else len(text)]
+            for m in time_re.finditer(block):
+                mins = _to_minutes(int(m.group(1)), int(m.group(2)), m.group(3))
+                failed = (
+                    mins < cfg["threshold"] if cfg["check"] == "closing"
+                    else mins > cfg["threshold"]
+                )
+                if not failed:
+                    continue
+                venue = _venue_name_before(block, m.start())
+                time_str = f"{m.group(1)}:{m.group(2)} {m.group(3).upper()}"
+                action = "closes" if cfg["check"] == "closing" else "opens"
+                desc = (
+                    f"{venue} {action} at {time_str} but is listed as a {cfg['label']}"
+                    if venue else
+                    f"Venue {action} at {time_str} — listed as a {cfg['label']}"
+                )
+                findings.append(Finding(
+                    check_id="R11",
+                    layer="rule",
+                    severity="RED",
+                    section=section_name,
+                    description=desc,
+                    evidence=block[max(0, m.start() - 120): m.end() + 20].strip(),
+                ))
+
+
+
 def _r9_encoding(text: str, findings: list[Finding]) -> None:
     # � = Unicode replacement char (garbled byte during conversion)
     # - = Word/Symbol private-use glyphs (Wingdings etc.) that survive DOCX extraction
@@ -402,6 +494,7 @@ def run_rule_engine(paragraphs: list[dict], maps_count: int = 0) -> list[Finding
     _r7_restaurant_count(text, findings)
     _r8_time_format(text, findings)
     _r9_encoding(text, findings)
+    _r11_meal_timing(text, findings)
     return findings
 
 
@@ -460,7 +553,10 @@ Evidence: Quote an entry with incomplete hours.
 
 [A7] MEAL PROXIMITY — severity: YELLOW
 Are lunch places near the day's attractions, and dinner places near the hotel? \
-Flag clear mismatches (e.g., "45 min from hotel" for a dinner recommendation).
+Flag any dinner recommendation where the stated walking time is 20 minutes or more — \
+that is not "near the hotel". Examples: "40-minute walk", "25 min walk", "20 min on foot". \
+Also flag travel times of 30 minutes or more by any mode (taxi, transit, etc.). \
+Also flag lunch venues clearly on the opposite side of the city from that day's attractions.
 Evidence: Quote the proximity claim.
 
 [A8] MUST-TRY DISHES COVERAGE — severity: YELLOW
@@ -486,14 +582,19 @@ Evidence: Quote the problematic text.
 [A13] HOURS LOGIC — severity: RED
 Flag time ranges where the end time is BEFORE the start time within the same AM/PM period. \
 E.g., "11 PM – 10 PM", "3:00 PM – 1:00 PM", "9:00 AM – 7:00 AM". \
+Also flag hours strings that look malformed or self-contradictory — e.g., \
+"9:00 AM – 10:30 PM | 11:30 PM – 5 PM" (the second session ends before it starts in PM). \
 Note: midnight starts (12:xx AM) and identical start/end times are already caught by separate rule checks — do NOT duplicate those findings here. Only flag end-before-start in the same AM/PM period.
 Check EVERY venue's hours string — do not stop at the first issue.
 Evidence: Quote the exact hours string.
 
-[A14] DINNER VENUE HOURS — severity: RED
-For every venue under "Dinner Recommendations", do hours extend past 7 PM? \
-A dinner venue closing at 5 PM or 5:30 PM is a timing conflict.
-Evidence: Quote the venue name and its hours.
+[A14] MEAL VENUE HOURS — severity: RED
+Check meal venues across all three meal types against these thresholds:
+- DINNER (any heading containing "Dinner"): closing time must be 9:00 PM or later. A dinner venue closing before 9 PM is a timing conflict.
+- LUNCH (any heading containing "Lunch"): closing time must be 2:00 PM or later. A lunch venue closing at 1 PM or earlier is a timing conflict.
+- BREAKFAST (any heading containing "Breakfast"): opening time must be 8:00 AM or earlier. A breakfast venue that doesn't open until 9 AM or later is a timing conflict.
+Check EVERY venue under every meal section — do not stop at the first issue.
+Evidence: Quote the venue name and its exact hours.
 
 [A15] SUNSET / TIME-OF-DAY ACCURACY — severity: RED
 Are sunset viewing times, golden hour visits, and similar recommendations accurate for the destination \
@@ -505,8 +606,10 @@ Are stated travel times between named locations realistic given the actual geogr
 Evidence: Quote the exact travel time claim.
 
 [A17] TRANSPORT PASS ACCURACY — severity: RED
-Are transport pass coverage claims accurate? E.g., Nozomi bullet trains historically require a supplement \
-on standard JR Passes — "covered under JR Pass" for Nozomi should be flagged.
+Are transport pass coverage claims accurate? E.g., Nozomi and Mizuho bullet trains historically require \
+a supplement on standard JR Passes — any claim that these are "covered under JR Pass" must be flagged, \
+even if qualified with "(if applicable)". The "(if applicable)" hedge is NOT sufficient — \
+the client needs explicit guidance on whether their booking requires a supplement, not a vague disclaimer.
 Evidence: Quote the pass coverage claim.
 
 [A18] IMPORTANT PLACES COMPLETENESS — severity: RED
@@ -599,6 +702,32 @@ Flag anything that is technically possible but practically unreasonable for a re
 This is the check that catches itineraries that look fine on paper but would frustrate a real client.
 Evidence: Quote the specific day, activity sequence, or venue that creates the problem.
 
+[A28] DAY DATE CONTINUITY — severity: YELLOW
+Check that consecutive day headings have dates that follow in sequence without unexplained gaps. \
+If Day 0 is June 13 and Day 1 jumps to July 4 (21 days later) with no explanation, that will confuse \
+the client — flag it. A gap is acceptable only if the guide explicitly labels it (e.g., "Educational Program", \
+"Pre-Trip Arrival"). A 1-day gap between days is normal (travel day with no separate heading); \
+flag gaps of 3 or more days that have no contextual explanation in the guide.
+Evidence: Quote the two day headings with their dates.
+
+[A29] IRRELEVANT CONTENT FOR TRIP MODE — severity: YELLOW
+Does the guide include content that doesn't apply to how this client is actually travelling? \
+Examples: parking availability and driving directions throughout an itinerary that uses only public transport; \
+car rental suggestions when the client has no vehicle; cruise-specific sections in a land-only tour. \
+If the client's transport mode is clear from the itinerary, flag venue entries or sections that \
+assume a different mode without explanation.
+Evidence: Quote the irrelevant content and specify the mismatch.
+
+[A30] RESTAURANT DESTINATION-CULTURE FIT — severity: YELLOW
+Are the restaurant recommendations culturally matched to the destination? \
+If a client is visiting Japan, Italy, or Morocco for 7+ days and the majority of dinner recommendations \
+are from a completely different cuisine (e.g., predominantly Indian or generic "international" options \
+throughout a Japan itinerary), the guide is not giving the client an authentic local experience. \
+Exception: if the client has dietary restrictions (vegetarian, vegan, halal, allergy) that genuinely \
+limit local options, a higher proportion of non-local venues is acceptable — do not flag in those cases. \
+Flag only when there is a clear and systematic over-reliance on non-local cuisines with no dietary justification.
+Evidence: List the proportion of non-local vs local restaurant recommendations across the guide.
+
 --- OUTPUT ---
 Return JSON only — no prose before or after.
 The "description" field must be a specific, actionable sentence naming the exact venue/section/value that failed and why — never a generic statement like "there is an issue here". The "evidence" field must be a verbatim copy-paste from the document, not a paraphrase.
@@ -690,10 +819,11 @@ def verify(docx_bytes: bytes) -> VerifyResult:
 
     # Checks that passed = total checks - findings with issues
     all_check_ids = {
-        "R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10",
+        "R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11",
         "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10",
         "A11", "A12", "A13", "A14", "A15", "A16", "A17", "A18", "A19", "A20",
         "A21", "A22", "A23", "A24", "A25", "A26", "A27",
+        "A28", "A29", "A30",
     }
     failed_ids = {f.check_id for f in all_findings}
     passed_count = len(all_check_ids - failed_ids)

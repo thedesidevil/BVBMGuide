@@ -93,12 +93,17 @@ Check ALL opening hours in the guide for any of the following errors. Check EVER
 
 4. **End time before start time in the same AM/PM period** — e.g., `11 PM – 10 PM`, `3:00 PM – 1:00 PM`
 
+5. **Malformed multi-session hours strings** — e.g., `9:00 AM – 10:30 PM | 11:30 PM – 5 PM` where the second session's end time (5 PM) is before its start (11:30 PM). Flag the whole string as requiring verification.
+
 For each issue, quote the venue name and the exact hours string.
 
-**[A14] DINNER VENUE HOURS — RED**
-For every venue listed under "Dinner Recommendations", confirm the opening hours extend past 7:00 PM.
-A dinner venue that closes at 5:00 PM or 5:30 PM is a timing conflict — clients will arrive after it has closed.
-Quote the venue name and its hours for any failures.
+**[A14] MEAL VENUE HOURS — RED**
+Check meal venues across all three meal types against these thresholds:
+- **Dinner** (any heading containing "Dinner"): closing time must be **9:00 PM or later**. A dinner venue closing before 9 PM is a timing conflict.
+- **Lunch** (any heading containing "Lunch"): closing time must be **2:00 PM or later**. A lunch venue closing at 1 PM or earlier is a timing conflict.
+- **Breakfast** (any heading containing "Breakfast"): opening time must be **8:00 AM or earlier**. A breakfast venue that doesn't open until 9 AM or later is a timing conflict.
+Check EVERY venue under every meal section — do not stop at the first issue.
+Quote the venue name and its exact hours for any failures.
 
 **[A15] SUNSET / TIME-OF-DAY ACCURACY — RED**
 If the guide recommends visiting a location for sunset or golden hour, is the suggested time accurate for the destination and the travel month?
@@ -136,7 +141,7 @@ Use your geographic knowledge to flag implausible claims.
 
 **[A17] TRANSPORT PASS ACCURACY — RED**
 Are transport pass coverage claims accurate?
-Example: Claiming the Nozomi shinkansen is covered by a standard JR Pass (it historically requires a supplement).
+Example: Nozomi and Mizuho bullet trains historically require a supplement on standard JR Passes — any claim that these are "covered under JR Pass" must be flagged, even if qualified with "(if applicable)". The "(if applicable)" hedge is NOT sufficient — the client needs explicit guidance on whether their booking requires a supplement, not a vague disclaimer.
 Flag any transport pass claims that appear incorrect.
 
 **[A21] ACTIVITY DAY-OF-WEEK VALIDATION — RED**
@@ -200,7 +205,8 @@ Entries that only say "Open daily" or "Mon–Sun" without actual times fail.
 
 **[A7] MEAL PROXIMITY — YELLOW**
 Are lunch recommendations near the day's attractions, and dinner recommendations near the hotel?
-Flag clear mismatches — e.g., a dinner venue described as "45 minutes from the hotel."
+Flag any dinner recommendation where the stated walking time is 20 minutes or more — that is not "near the hotel". Examples: "40-minute walk", "25 min walk", "20 min on foot". Also flag travel times of 30 minutes or more by any mode (taxi, transit, etc.).
+Also flag lunch venues clearly on the opposite side of the city from that day's attractions.
 
 **[A8] MUST-TRY DISHES COVERAGE — YELLOW**
 Does the Must-Try Local Dishes section cover every destination city in the itinerary?
@@ -269,6 +275,30 @@ Review each day as if you were personally taking this trip as a client. Flag any
 
 This is the check that catches itineraries that look fine on paper but would frustrate a real client on the ground.
 Evidence: Quote the specific day, activity sequence, or venue that creates the problem.
+
+---
+
+## SECTION 7 — Itinerary Coherence
+
+**[A28] DAY DATE CONTINUITY — YELLOW**
+Check that consecutive day headings have dates that follow in sequence without unexplained gaps.
+If Day 0 is June 13 and Day 1 jumps to July 4 (21 days later) with no explanation, that will confuse the client — flag it.
+A gap is acceptable only if the guide explicitly labels the intervening period (e.g., "Educational Program", "Pre-Trip Arrival").
+A 1–2 day gap is normal (travel day with no separate heading); flag gaps of 3 or more days that have no contextual explanation.
+Evidence: Quote the two consecutive day headings with their dates.
+
+**[A29] IRRELEVANT CONTENT FOR TRIP MODE — YELLOW**
+Does the guide include content that doesn't apply to how this client is actually travelling?
+Examples: parking availability and driving directions throughout an itinerary that uses only public transport; car rental suggestions when the client has no vehicle; cruise-specific content in a land-only tour.
+If the client's transport mode is clear from the itinerary, flag venue entries or sections that assume a different mode without explanation.
+Evidence: Quote the irrelevant content and specify the mismatch with the trip's actual transport mode.
+
+**[A30] RESTAURANT DESTINATION-CULTURE FIT — YELLOW**
+Are the restaurant recommendations culturally matched to the destination?
+If a client is visiting Japan, Italy, or Morocco for 7+ days and the majority of dinner recommendations are from a completely different cuisine (e.g., predominantly Indian or generic "international" options throughout a Japan itinerary), the guide is not giving the client an authentic local experience.
+Exception: if the client has dietary restrictions (vegetarian, vegan, halal, allergy) that genuinely limit local options, a higher proportion of non-local venues is acceptable — do not flag in those cases.
+Flag only when there is a clear and systematic over-reliance on non-local cuisines with no dietary justification.
+Evidence: List the proportion of non-local vs local restaurant recommendations across the guide.
 
 ---
 

@@ -15,6 +15,7 @@ const CHECK_DESCRIPTIONS: Record<string, { label: string; severity: "RED" | "YEL
   R8:  { label: "Time ranges include AM/PM",         severity: "RED"    },
   R9:  { label: "No encoding artefacts",             severity: "YELLOW" },
   R10: { label: "Day count matches itinerary",       severity: "RED"    },
+  R11: { label: "Meal venue hours match meal times",  severity: "RED"    },
   A1:  { label: "No dietary violations",             severity: "RED"    },
   A2:  { label: "Real emergency contacts",           severity: "RED"    },
   A3:  { label: "No wrong-destination content",      severity: "RED"    },
@@ -42,6 +43,9 @@ const CHECK_DESCRIPTIONS: Record<string, { label: string; severity: "RED" | "YEL
   A25: { label: "Day itineraries practically executable", severity: "RED"    },
   A26: { label: "Spelling, grammar & formatting clean",   severity: "YELLOW" },
   A27: { label: "Day flow logical and well-paced",        severity: "RED"    },
+  A28: { label: "Day dates follow in sequence",           severity: "YELLOW" },
+  A29: { label: "No irrelevant content for trip mode",    severity: "YELLOW" },
+  A30: { label: "Restaurants match destination cuisine",  severity: "YELLOW" },
 };
 
 const NARRATIVE_TABS: { key: TabKey; label: string }[] = [
@@ -100,10 +104,11 @@ function Results({ result, onReset }: { result: VerifyResult; onReset: () => voi
   const yellowFindings = result.findings.filter((f) => f.severity === "YELLOW");
 
   const ALL_CHECK_IDS = [
-    "R1","R2","R3","R4","R5","R6","R7","R8","R9","R10",
+    "R1","R2","R3","R4","R5","R6","R7","R8","R9","R10","R11",
     "A1","A2","A3","A4","A5","A6","A7","A8","A9","A10",
     "A11","A12","A13","A14","A15","A16","A17","A18","A19","A20",
     "A21","A22","A23","A24","A25","A26","A27",
+    "A28","A29","A30",
   ];
 
   // When R3 flags a section as missing, AI checks for that section had no

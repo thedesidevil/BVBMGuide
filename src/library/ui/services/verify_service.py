@@ -574,6 +574,7 @@ This is a luxury travel guide going to a paying client. Flag any of the followin
 - Obvious formatting problems: extra blank lines mid-paragraph, misaligned sections, section headings \
   that appear mid-sentence
 - Any text that looks unpolished or rushed for a premium client document
+Do NOT use A26 for: opening hours errors (AM/PM issues, midnight times, wrong durations) — those belong in R8/A13.
 Evidence: Quote the specific text that has the issue.
 
 [A27] DAY FLOW LOGIC — severity: RED

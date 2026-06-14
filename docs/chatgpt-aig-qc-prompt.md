@@ -246,6 +246,7 @@ This is a luxury travel guide going to a paying client. Flag any of the followin
 - Inconsistent capitalisation (e.g., "Day 3" in one heading, "day 3" in another)
 - Inconsistent emoji usage (some venue entries have 🍴 ⏰ 💰, others have none, with no clear pattern)
 - Obvious formatting problems: extra blank lines mid-paragraph, section headings mid-sentence, misaligned content
+Do NOT use A26 for: opening hours errors (AM/PM issues, midnight times, wrong durations) — those belong in R8/A13.
 Evidence: Quote the specific text that has the issue.
 
 **[A27] DAY FLOW LOGIC — RED**

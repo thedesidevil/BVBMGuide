@@ -142,4 +142,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
                 online_price=online,
             ))
 
+    # Flush the last open plan — it may have no trailing summary row
+    _flush(_make_dummy_row())
+
     return ParseResult(plans=plans, unknown_codes=unknown_codes, not_found=[])

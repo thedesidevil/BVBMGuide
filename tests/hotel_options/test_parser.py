@@ -86,3 +86,19 @@ def test_unknown_code_flagged():
     result = parse_excel(buf.getvalue(), CODES)
     assert len(result.unknown_codes) == 1
     assert result.unknown_codes[0].code == "xy"
+
+
+def test_last_plan_no_trailing_summary_is_included():
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws["A1"] = "PLAN A"
+    ws["A2"] = "Hotel Alpha"; ws["B2"] = "3-Star"; ws["C2"] = "Twin"; ws["I2"] = 10000.0; ws["J2"] = 9000.0
+    ws["I3"] = 10000.0; ws["J3"] = 9000.0; ws["L3"] = 500.0; ws["M3"] = 9500.0; ws["N3"] = 5.0
+    ws["A4"] = "PLAN B"
+    ws["A5"] = "Hotel Beta"; ws["B5"] = "4-Star"; ws["C5"] = "Double"; ws["I5"] = 20000.0; ws["J5"] = 18000.0
+    # No summary row for Plan B — sheet ends here
+    buf = io.BytesIO(); wb.save(buf); xlsx = buf.getvalue()
+    result = parse_excel(xlsx, {})
+    assert len(result.plans) == 2
+    assert result.plans[1].label == "Plan B"
+    assert result.plans[1].hotels[0].name == "Hotel Beta"

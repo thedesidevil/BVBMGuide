@@ -44,6 +44,8 @@ async def generate_hotel_options(
     if not file.filename or not file.filename.lower().endswith(".xlsx"):
         raise HTTPException(status_code=400, detail="Only .xlsx files are accepted")
     content = await file.read()
+    if len(content) < 2 or content[:2] != _XLSX_MAGIC:
+        raise HTTPException(status_code=400, detail="File does not appear to be a valid Excel file")
     try:
         codes_dict = json.loads(resolved_codes)
         overrides_dict = json.loads(overrides)

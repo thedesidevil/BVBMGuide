@@ -58,11 +58,18 @@ def parse_file(
             )
             not_found.append({"sheet_name": name, "plan_label": plan_label})
 
+    seen_codes: set[str] = set()
+    deduped_codes = []
+    for u in result.unknown_codes:
+        if u.code not in seen_codes:
+            seen_codes.add(u.code)
+            deduped_codes.append(u)
+
     return {
         "client_name": client_name,
         "destination": destination,
         "plans": [_plan_to_dict(p) for p in result.plans],
-        "unknown_codes": [asdict(u) for u in result.unknown_codes],
+        "unknown_codes": [asdict(u) for u in deduped_codes],
         "not_found": not_found,
     }
 
@@ -91,6 +98,13 @@ def generate_doc(
     for name in list(existence_map):
         if existence_map[name] is None and name in overrides:
             existence_map[name] = _enricher.place_id_from_maps_url(overrides[name])
+
+    unparseable = [name for name in overrides if existence_map.get(name) is None]
+    if unparseable:
+        raise ValueError(
+            f"Could not extract place_id from Maps URL for: {', '.join(unparseable)}. "
+            "Please paste a full Google Maps URL containing the place details."
+        )
 
     ai_client = get_ai_client()
     enriched_map = {}

@@ -15,13 +15,12 @@ _GREY     = RGBColor(0x66, 0x66, 0x66)
 _GREEN    = RGBColor(0x2E, 0x7D, 0x32)
 _WHITE    = RGBColor(0xFF, 0xFF, 0xFF)
 
-_SERIF = "Georgia"
-_BODY  = "Calibri"       # Aptos with Calibri as fallback
+_FONT = "Arial"
 
-_LIGHT_GREY = "F2F2F2"  # recommendation box background
-_ROW_ALT    = "F7F7F7"  # alternate row in summary table
-_RULE_COLOR = "CCCCCC"  # horizontal rules and thin borders
-_HDR_BG     = "2D2D2D"  # summary table header background
+_LIGHT_GREY = "F2F2F2"
+_ROW_ALT    = "F7F7F7"
+_RULE_COLOR = "CCCCCC"
+_HDR_BG     = "2D2D2D"
 
 _MARGIN = Inches(0.75)
 
@@ -52,22 +51,69 @@ def _set_margins(doc: Document) -> None:
         section.right_margin  = _MARGIN
 
 
+def _configure_styles(doc: Document) -> None:
+    """Set Arial as the universal font and define heading hierarchy."""
+    normal = doc.styles["Normal"]
+    normal.font.name  = _FONT
+    normal.font.size  = Pt(11)
+    normal.font.color.rgb = _CHARCOAL
+    normal.paragraph_format.space_after      = Pt(8)
+    normal.paragraph_format.line_spacing_rule = WD_LINE_SPACING.MULTIPLE
+    normal.paragraph_format.line_spacing      = 1.15
+
+    # Title — cover page title (26 pt bold centered)
+    title = doc.styles["Title"]
+    title.font.name  = _FONT
+    title.font.size  = Pt(26)
+    title.font.bold  = True
+    title.font.color.rgb = _CHARCOAL
+    title.paragraph_format.alignment   = WD_ALIGN_PARAGRAPH.CENTER
+    title.paragraph_format.space_after = Pt(10)
+
+    # Heading 1 — major sections: Executive Summary, Plan A / B / C …
+    h1 = doc.styles["Heading 1"]
+    h1.font.name  = _FONT
+    h1.font.size  = Pt(16)
+    h1.font.bold  = True
+    h1.font.color.rgb = _CHARCOAL
+    h1.paragraph_format.space_before = Pt(0)
+    h1.paragraph_format.space_after  = Pt(4)
+
+    # Heading 2 — hotel names
+    h2 = doc.styles["Heading 2"]
+    h2.font.name  = _FONT
+    h2.font.size  = Pt(14)
+    h2.font.bold  = True
+    h2.font.color.rgb = _CHARCOAL
+    h2.paragraph_format.space_before = Pt(4)
+    h2.paragraph_format.space_after  = Pt(6)
+
+    # Heading 3 — sub-labels (cover subtitle, etc.)
+    h3 = doc.styles["Heading 3"]
+    h3.font.name   = _FONT
+    h3.font.size   = Pt(12)
+    h3.font.bold   = False
+    h3.font.italic = True
+    h3.font.color.rgb = _GREY
+    h3.paragraph_format.alignment   = WD_ALIGN_PARAGRAPH.CENTER
+    h3.paragraph_format.space_after = Pt(8)
+
+
 def _spacing(para, before: float = 0, after: float = 8) -> None:
     fmt = para.paragraph_format
-    fmt.space_before         = Pt(before)
-    fmt.space_after          = Pt(after)
-    fmt.line_spacing_rule    = WD_LINE_SPACING.MULTIPLE
-    fmt.line_spacing         = 1.15
+    fmt.space_before      = Pt(before)
+    fmt.space_after       = Pt(after)
+    fmt.line_spacing_rule = WD_LINE_SPACING.MULTIPLE
+    fmt.line_spacing      = 1.15
 
 
 def _body_run(para, text: str, *, bold=False, italic=False,
-              size: float = 10.5, font: str = _BODY,
-              color: RGBColor = _CHARCOAL) -> None:
+              size: float = 11, color: RGBColor = _CHARCOAL) -> None:
     r = para.add_run(text)
-    r.bold        = bold
-    r.italic      = italic
-    r.font.name   = font
-    r.font.size   = Pt(size)
+    r.bold           = bold
+    r.italic         = italic
+    r.font.name      = _FONT
+    r.font.size      = Pt(size)
     r.font.color.rgb = color
 
 
@@ -130,7 +176,7 @@ def _thin_borders(table) -> None:
 
 
 def _add_hyperlink(para, text: str, url: str) -> None:
-    """Hotel name as a charcoal Georgia hyperlink (no default blue)."""
+    """Hotel name hyperlink: Arial 14pt bold charcoal, no underline."""
     r_id = para.part.relate_to(
         url,
         "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
@@ -141,11 +187,10 @@ def _add_hyperlink(para, text: str, url: str) -> None:
     r = OxmlElement("w:r")
     rpr = OxmlElement("w:rPr")
     fonts = OxmlElement("w:rFonts")
-    fonts.set(qn("w:ascii"), _SERIF)
-    fonts.set(qn("w:hAnsi"), _SERIF)
+    fonts.set(qn("w:ascii"), _FONT)
+    fonts.set(qn("w:hAnsi"), _FONT)
     rpr.append(fonts)
-    bold = OxmlElement("w:b")
-    rpr.append(bold)
+    rpr.append(OxmlElement("w:b"))
     sz = OxmlElement("w:sz")
     sz.set(qn("w:val"), "28")   # 14 pt
     rpr.append(sz)
@@ -155,7 +200,6 @@ def _add_hyperlink(para, text: str, url: str) -> None:
     color = OxmlElement("w:color")
     color.set(qn("w:val"), "2D2D2D")
     rpr.append(color)
-    # remove underline
     u = OxmlElement("w:u")
     u.set(qn("w:val"), "none")
     rpr.append(u)
@@ -165,81 +209,6 @@ def _add_hyperlink(para, text: str, url: str) -> None:
     r.append(t)
     hl.append(r)
     para._p.append(hl)
-
-
-def _fld_run(para, instruction: str, size_pt: float, color: RGBColor) -> None:
-    """Append a PAGE / NUMPAGES field run to para._p."""
-    hex_color = f"{color[0]:02X}{color[1]:02X}{color[2]:02X}"
-    half_pt = str(int(size_pt * 2))
-
-    def _rpr():
-        rpr = OxmlElement("w:rPr")
-        fonts = OxmlElement("w:rFonts")
-        fonts.set(qn("w:ascii"), _BODY)
-        fonts.set(qn("w:hAnsi"), _BODY)
-        rpr.append(fonts)
-        sz = OxmlElement("w:sz")
-        sz.set(qn("w:val"), half_pt)
-        rpr.append(sz)
-        col = OxmlElement("w:color")
-        col.set(qn("w:val"), hex_color)
-        rpr.append(col)
-        return rpr
-
-    r_begin = OxmlElement("w:r")
-    r_begin.append(_rpr())
-    fc = OxmlElement("w:fldChar")
-    fc.set(qn("w:fldCharType"), "begin")
-    r_begin.append(fc)
-
-    r_instr = OxmlElement("w:r")
-    r_instr.append(_rpr())
-    instr = OxmlElement("w:instrText")
-    instr.set(qn("xml:space"), "preserve")
-    instr.text = f" {instruction} "
-    r_instr.append(instr)
-
-    r_end = OxmlElement("w:r")
-    r_end.append(_rpr())
-    fc_end = OxmlElement("w:fldChar")
-    fc_end.set(qn("w:fldCharType"), "end")
-    r_end.append(fc_end)
-
-    para._p.append(r_begin)
-    para._p.append(r_instr)
-    para._p.append(r_end)
-
-
-# ── Footer ────────────────────────────────────────────────────────────────────
-
-def _add_footer(doc: Document) -> None:
-    """Footer on every page except the cover (first page)."""
-    section = doc.sections[0]
-    section.different_first_page_header_footer = True
-
-    footer = section.footer
-    footer.is_linked_to_previous = False
-
-    p = footer.paragraphs[0] if footer.paragraphs else footer.add_paragraph()
-    p.clear()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-
-    # Thin line above footer text
-    ppr = p._p.get_or_add_pPr()
-    pbdr = OxmlElement("w:pBdr")
-    top = OxmlElement("w:top")
-    top.set(qn("w:val"), "single")
-    top.set(qn("w:sz"), "4")
-    top.set(qn("w:space"), "1")
-    top.set(qn("w:color"), _RULE_COLOR)
-    pbdr.append(top)
-    ppr.append(pbdr)
-
-    _body_run(p, "Bon Voyage By Marina  ·  Crafting Unforgettable Journeys  ·  Page ",
-              size=8, color=_GREY)
-    _fld_run(p, "PAGE", 8, _GREY)
-    _body_run(p, " of ", size=8, color=_GREY)
-    _fld_run(p, "NUMPAGES", 8, _GREY)
 
 
 # ── Cover page ────────────────────────────────────────────────────────────────
@@ -253,46 +222,29 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
 
     blank(8)
 
-    # Title
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    _spacing(p, 0, 10)
-    r = p.add_run(f"{destination.upper()} HOTEL OPTIONS")
-    r.bold        = True
-    r.font.name   = _SERIF
-    r.font.size   = Pt(26)
-    r.font.color.rgb = _CHARCOAL
+    # Title — uses "Title" style (Arial 26pt bold centered)
+    title_para = doc.add_paragraph(f"{destination.upper()} HOTEL OPTIONS",
+                                   style="Title")
+    _spacing(title_para, 0, 10)
 
-    # Subtitle
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    _spacing(p, 0, 8)
-    r = p.add_run("Curated Accommodation Recommendations")
-    r.italic      = True
-    r.font.name   = _SERIF
-    r.font.size   = Pt(12)
-    r.font.color.rgb = _GREY
+    # Subtitle — uses "Heading 3" style (Arial 12pt italic centered grey)
+    sub = doc.add_paragraph("Curated Accommodation Recommendations",
+                            style="Heading 3")
+    _spacing(sub, 0, 8)
 
     blank(4)
 
-    # "Prepared Exclusively For"
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     _spacing(p, 0, 4)
-    _body_run(p, "Prepared Exclusively For", size=10.5, color=_GREY)
+    _body_run(p, "Prepared Exclusively For", color=_GREY)
 
-    # Client name
     if client_name:
-        p = doc.add_paragraph()
-        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _spacing(p, 0, 6)
-        r = p.add_run(client_name.upper())
-        r.bold        = True
-        r.font.name   = _SERIF
-        r.font.size   = Pt(14)
-        r.font.color.rgb = _CHARCOAL
+        # Client name — uses "Heading 1" but centered
+        cp = doc.add_paragraph(client_name.upper(), style="Heading 1")
+        cp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _spacing(cp, 0, 6)
 
-    # Requirements
     if requirements:
         p = doc.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -319,23 +271,14 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
 
 def _build_executive_summary(doc: Document, plans: list[Plan],
                               enriched_map: dict[str, EnrichedHotel]) -> None:
-    # Heading
-    p = doc.add_paragraph()
-    _spacing(p, 0, 6)
-    r = p.add_run("Executive Summary")
-    r.bold        = True
-    r.font.name   = _SERIF
-    r.font.size   = Pt(16)
-    r.font.color.rgb = _CHARCOAL
-
+    # Heading 1
+    doc.add_heading("Executive Summary", level=1)
     _thin_rule(doc, before=2, after=10)
 
     p = doc.add_paragraph()
     _spacing(p, 0, 12)
-    _body_run(p, "Compare all accommodation options at a glance.",
-              size=10.5, color=_GREY)
+    _body_run(p, "Compare all accommodation options at a glance.", color=_GREY)
 
-    # Determine highlight indices
     prices  = [pl.pricing.discounted_price for pl in plans]
     savings = [pl.pricing.customer_discount for pl in plans]
     pcts    = [pl.pricing.discount_pct for pl in plans]
@@ -347,7 +290,6 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
                   "Cancellation", "Breakfast"]
     table = doc.add_table(rows=1 + len(plans), cols=len(col_labels))
 
-    # Header row
     for i, label in enumerate(col_labels):
         cell = table.rows[0].cells[i]
         _shade_cell(cell, _HDR_BG)
@@ -355,12 +297,10 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         _body_run(p, label, bold=True, size=9, color=_WHITE)
 
-    # Data rows
     for row_idx, plan in enumerate(plans):
         row = table.rows[row_idx + 1]
         bg = "FFFFFF" if row_idx % 2 == 0 else _ROW_ALT
 
-        # Cancellation: prefer "free cancellation" entry, else first available
         cancel_raw = next(
             (h.cancellation for h in plan.hotels
              if h.cancellation and "free" in h.cancellation.lower()),
@@ -385,15 +325,15 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
             f"  ({plan.pricing.discount_pct:.1f}% off)"
         )
 
-        # col idx:  0=Plan  1=Hotels  2=BestOnline  3=OurPrice  4=YouSave  5=Cancel  6=Breakfast
+        # col: 0=Plan 1=Hotels 2=BestOnline 3=OurPrice 4=YouSave 5=Cancel 6=Breakfast
         col_configs = [
-            (plan.label,                                           WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
-            (None,                                                 WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),  # hotels — built below
-            (format_indian_number(plan.pricing.total_online_price), WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
-            (format_indian_number(plan.pricing.discounted_price),   WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
-            (you_save_str,                                          WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
-            (cancellation,                                          WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
-            (breakfast,                                             WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
+            (plan.label,                                             WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
+            (None,                                                   WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
+            (format_indian_number(plan.pricing.total_online_price),  WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
+            (format_indian_number(plan.pricing.discounted_price),    WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
+            (you_save_str,                                           WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
+            (cancellation,                                           WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
+            (breakfast,                                              WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
         ]
 
         for col_idx, (text, align, color, bold) in enumerate(col_configs):
@@ -403,7 +343,6 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
             p.alignment = align
 
             if col_idx == 1:
-                # Bullet list of hotel names
                 for h_idx, hotel in enumerate(plan.hotels):
                     bp = p if h_idx == 0 else cell.add_paragraph()
                     bp.alignment = WD_ALIGN_PARAGRAPH.LEFT
@@ -440,11 +379,11 @@ def _add_key_facts(doc: Document, enriched: EnrichedHotel) -> None:
         p = doc.add_paragraph()
         _spacing(p, 1, 2)
         _body_run(p, f"{label}:  ", bold=True, size=9, color=_GREY)
-        _body_run(p, value, size=10.5, color=_CHARCOAL)
+        _body_run(p, value, size=11, color=_CHARCOAL)
 
 
 def _add_hotel_card(doc: Document, enriched: EnrichedHotel) -> None:
-    """Image → Name (hyperlink) → Key Facts → Description."""
+    """Image → Heading 2 name → Key Facts → Description."""
     if enriched.photo_bytes:
         p = doc.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -456,8 +395,8 @@ def _add_hotel_card(doc: Document, enriched: EnrichedHotel) -> None:
         _spacing(p, 8, 6)
         _body_run(p, "[ Image not available ]", size=9, color=_GREY)
 
-    # Hotel name
-    name_para = doc.add_paragraph()
+    # Hotel name — Heading 2 paragraph, hyperlink run
+    name_para = doc.add_paragraph(style="Heading 2")
     _spacing(name_para, 4, 6)
     _add_hyperlink(name_para,
                    enriched.official_name or enriched.address or "Hotel",
@@ -468,104 +407,33 @@ def _add_hotel_card(doc: Document, enriched: EnrichedHotel) -> None:
     if enriched.description:
         p = doc.add_paragraph()
         _spacing(p, 6, 8)
-        _body_run(p, enriched.description, size=10.5)
+        _body_run(p, enriched.description)
 
 
 # ── Pricing block ─────────────────────────────────────────────────────────────
 
 def _add_pricing_block(doc: Document, plan: Plan) -> None:
     """Three-row pricing table: Online Price / Our Price / You Save."""
-    p = plan.pricing
+    pr = plan.pricing
     table = doc.add_table(rows=3, cols=2)
     _no_borders(table)
 
     rows_data = [
-        ("Online Price",
-         format_indian_number(p.total_online_price),
-         False, _GREY, _CHARCOAL, 10.5),
-        ("Our Price",
-         format_indian_number(p.discounted_price),
-         True, _GREY, _CHARCOAL, 13),
+        ("Online Price", format_indian_number(pr.total_online_price),
+         False, _GREY, _CHARCOAL, 11),
+        ("Our Price",    format_indian_number(pr.discounted_price),
+         True,  _GREY, _CHARCOAL, 13),
         ("You Save",
-         f"{format_indian_number(p.customer_discount)}  ({p.discount_pct:.1f}% off best online prices)",
+         f"{format_indian_number(pr.customer_discount)}  ({pr.discount_pct:.1f}% off best online prices)",
          True, _GREY, _GREEN, 11),
     ]
 
     for i, (label, value, bold, lbl_color, val_color, val_size) in enumerate(rows_data):
         lp = table.rows[i].cells[0].paragraphs[0]
-        _body_run(lp, label, size=10.5, color=lbl_color)
+        _body_run(lp, label, size=11, color=lbl_color)
         vp = table.rows[i].cells[1].paragraphs[0]
         vp.alignment = WD_ALIGN_PARAGRAPH.RIGHT
         _body_run(vp, value, bold=bold, size=val_size, color=val_color)
-
-
-# ── Recommendation box ────────────────────────────────────────────────────────
-
-def _recommendation_bullets(plan: Plan,
-                             enriched_hotels: list[EnrichedHotel]) -> list[str]:
-    bullets: list[str] = []
-
-    high_rated = [h for h in enriched_hotels if h.rating and h.rating >= 4.3]
-    if high_rated and len(high_rated) == len(enriched_hotels):
-        bullets.append("Consistently well-rated hotels across the stay")
-    elif high_rated:
-        bullets.append("Includes a highly rated property")
-
-    free_cancel = any(
-        h.cancellation and "free" in h.cancellation.lower()
-        for h in enriched_hotels
-    )
-    non_refund = any(
-        h.cancellation and "non-refundable" in h.cancellation.lower()
-        for h in enriched_hotels
-    )
-    if free_cancel:
-        bullets.append("Flexible cancellation — peace of mind if plans change")
-    elif non_refund:
-        bullets.append("Non-refundable rate secures the best available price")
-
-    has_breakfast = any(
-        h.meal_type and "breakfast" in h.meal_type.lower()
-        for h in enriched_hotels
-    )
-    if has_breakfast:
-        bullets.append("Breakfast included — no daily add-on costs")
-
-    if plan.pricing.discount_pct >= 7:
-        bullets.append(
-            f"Savings of {plan.pricing.discount_pct:.1f}% over best available online prices"
-        )
-
-    if len(plan.hotels) >= 2:
-        bullets.append("Curated hotel mix to suit different legs of the trip")
-
-    return (bullets or ["Thoughtfully curated for this itinerary"])[:5]
-
-
-def _add_recommendation_box(doc: Document, plan: Plan,
-                             enriched_hotels: list[EnrichedHotel]) -> None:
-    bullets = _recommendation_bullets(plan, enriched_hotels)
-
-    p = doc.add_paragraph()
-    _spacing(p, 12, 4)
-
-    table = doc.add_table(rows=1, cols=1)
-    _no_borders(table)
-    cell = table.rows[0].cells[0]
-    _shade_cell(cell, _LIGHT_GREY)
-
-    hp = cell.paragraphs[0]
-    _spacing(hp, 8, 6)
-    _body_run(hp, "WHY WE RECOMMEND THIS OPTION",
-              bold=True, size=9, color=_CHARCOAL)
-
-    for bullet in bullets:
-        bp = cell.add_paragraph()
-        _spacing(bp, 2, 2)
-        _body_run(bp, f"•  {bullet}", size=10.5, color=_CHARCOAL)
-
-    pp = cell.add_paragraph()
-    _spacing(pp, 6, 2)
 
 
 # ── Main entry point ──────────────────────────────────────────────────────────
@@ -579,6 +447,7 @@ def build_document(
 ) -> bytes:
     doc = Document()
     _set_margins(doc)
+    _configure_styles(doc)
 
     # Cover page
     _build_cover_page(doc, destination, client_name, requirements)
@@ -593,14 +462,8 @@ def build_document(
         if plan_idx > 0:
             _page_break(doc)
 
-        # Plan heading
-        p = doc.add_paragraph()
-        _spacing(p, 0, 4)
-        r = p.add_run(plan.label.upper())
-        r.bold        = True
-        r.font.name   = _SERIF
-        r.font.size   = Pt(16)
-        r.font.color.rgb = _CHARCOAL
+        # Plan heading — Heading 1
+        doc.add_heading(plan.label.upper(), level=1)
         _thin_rule(doc, before=2, after=8)
 
         # Hotel cards
@@ -614,7 +477,7 @@ def build_document(
                 p = doc.add_paragraph()
                 _spacing(p, 8, 8)
                 _body_run(p, f"[ {hotel.name} — details not available ]",
-                          size=10.5, color=_GREY)
+                          color=_GREY)
 
         # Pricing
         _thin_rule(doc, before=12, after=8)

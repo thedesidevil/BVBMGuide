@@ -97,12 +97,17 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
 
     for row in ws.iter_rows():
         cell_a = row[0]
+
+        # Skip any row where col A carries strikethrough — covers PLAN headers,
+        # hotel rows, and section headers regardless of how the format was applied.
+        row_dim = ws.row_dimensions.get(cell_a.row)
+        if (cell_a.font and cell_a.font.strike) or (row_dim and row_dim.font and row_dim.font.strike):
+            continue
+
         val_a = cell_a.value
         str_a = str(val_a).strip() if val_a is not None else ""
 
         if val_a and _PLAN_RE.match(str_a):
-            if cell_a.font and cell_a.font.strike:
-                continue
             past_first_plan = True
             if current_label is not None:
                 _flush(_make_dummy_row())
@@ -131,10 +136,8 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
                 current_section_dates = m.group(1).strip()
             continue
 
-        # Hotel row: col A non-empty, col I numeric, no strikethrough
+        # Hotel row: col A non-empty, col I numeric
         if val_a and _numeric(col_i_val) is not None:
-            if cell_a.font and cell_a.font.strike:
-                continue
 
             col_h_val = row[7].value if len(row) > 7 else None
             decoded = decode_col_h(str(col_h_val) if col_h_val is not None else None, codes)

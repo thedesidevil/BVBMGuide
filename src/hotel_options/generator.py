@@ -343,7 +343,7 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
     max_savings_idx = savings.index(max(savings))
     best_value_idx  = pcts.index(max(pcts)) if max(pcts) > 0 else -1
 
-    col_labels = ["Plan", "Hotels", "Our Price", "You Save",
+    col_labels = ["Plan", "Hotels", "Best Online Price", "Our Price", "You Save",
                   "Cancellation", "Breakfast"]
     table = doc.add_table(rows=1 + len(plans), cols=len(col_labels))
 
@@ -371,8 +371,6 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
         meal_types = [h.meal_type for h in plan.hotels if h.meal_type]
         breakfast  = "Included" if any("breakfast" in m.lower() for m in meal_types) else "Not included"
 
-        hotels_str = "\n".join(h.name for h in plan.hotels)
-
         badges: list[str] = []
         if row_idx == min_price_idx:
             badges.append("LOWEST COST")
@@ -382,23 +380,36 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
                 and row_idx not in (min_price_idx, max_savings_idx):
             badges.append("BEST VALUE")
 
-        cells_data = [
-            (plan.label, WD_ALIGN_PARAGRAPH.CENTER),
-            (hotels_str, WD_ALIGN_PARAGRAPH.LEFT),
-            (format_indian_number(plan.pricing.discounted_price), WD_ALIGN_PARAGRAPH.CENTER),
-            (format_indian_number(plan.pricing.customer_discount), WD_ALIGN_PARAGRAPH.CENTER),
-            (cancellation, WD_ALIGN_PARAGRAPH.CENTER),
-            (breakfast, WD_ALIGN_PARAGRAPH.CENTER),
+        you_save_str = (
+            f"{format_indian_number(plan.pricing.customer_discount)}"
+            f"  ({plan.pricing.discount_pct:.1f}% off)"
+        )
+
+        # col idx:  0=Plan  1=Hotels  2=BestOnline  3=OurPrice  4=YouSave  5=Cancel  6=Breakfast
+        col_configs = [
+            (plan.label,                                           WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
+            (None,                                                 WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),  # hotels — built below
+            (format_indian_number(plan.pricing.total_online_price), WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
+            (format_indian_number(plan.pricing.discounted_price),   WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
+            (you_save_str,                                          WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
+            (cancellation,                                          WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
+            (breakfast,                                             WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
         ]
 
-        for col_idx, (text, align) in enumerate(cells_data):
+        for col_idx, (text, align, color, bold) in enumerate(col_configs):
             cell = row.cells[col_idx]
             _shade_cell(cell, bg)
             p = cell.paragraphs[0]
             p.alignment = align
-            color = _GREEN if col_idx == 3 else _CHARCOAL
-            bold  = col_idx in (0, 3)
-            _body_run(p, text, bold=bold, size=9, color=color)
+
+            if col_idx == 1:
+                # Bullet list of hotel names
+                for h_idx, hotel in enumerate(plan.hotels):
+                    bp = p if h_idx == 0 else cell.add_paragraph()
+                    bp.alignment = WD_ALIGN_PARAGRAPH.LEFT
+                    _body_run(bp, f"• {hotel.name}", size=9, color=_CHARCOAL)
+            else:
+                _body_run(p, text, bold=bold, size=9, color=color)
 
             if col_idx == 0 and badges:
                 for badge in badges:
@@ -412,25 +423,22 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
 # ── Hotel card ────────────────────────────────────────────────────────────────
 
 def _add_key_facts(doc: Document, enriched: EnrichedHotel) -> None:
-    """Key facts block — no emojis, clean label: value format."""
     facts: list[tuple[str, str]] = []
     if enriched.address:
-        facts.append(("Location", enriched.address))
+        facts.append(("📍 Location", enriched.address))
     if enriched.rating:
-        facts.append(("Guest Rating",
+        facts.append(("⭐ Guest Rating",
                        f"{enriched.rating} / 5  ({enriched.rating_count:,} reviews)"))
     if enriched.dates:
-        facts.append(("Check-in / Check-out", enriched.dates))
+        facts.append(("📅 Check-in / Check-out", enriched.dates))
     if enriched.cancellation:
-        label = "Cancellation"
-        facts.append((label, enriched.cancellation))
+        facts.append(("🔄 Cancellation", enriched.cancellation))
     if enriched.meal_type:
-        facts.append(("Breakfast", enriched.meal_type))
+        facts.append(("🍳 Breakfast", enriched.meal_type))
 
     for label, value in facts:
         p = doc.add_paragraph()
         _spacing(p, 1, 2)
-        # Label in grey, value in charcoal on the same line
         _body_run(p, f"{label}:  ", bold=True, size=9, color=_GREY)
         _body_run(p, value, size=10.5, color=_CHARCOAL)
 
@@ -571,7 +579,6 @@ def build_document(
 ) -> bytes:
     doc = Document()
     _set_margins(doc)
-    _add_footer(doc)
 
     # Cover page
     _build_cover_page(doc, destination, client_name, requirements)
@@ -612,11 +619,6 @@ def build_document(
         # Pricing
         _thin_rule(doc, before=12, after=8)
         _add_pricing_block(doc, plan)
-
-        # Recommendation box
-        enriched_hotels = [enriched_map[h.name] for h in plan.hotels
-                           if h.name in enriched_map]
-        _add_recommendation_box(doc, plan, enriched_hotels)
 
     buf = io.BytesIO()
     doc.save(buf)

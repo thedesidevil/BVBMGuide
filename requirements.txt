@@ -8,6 +8,7 @@ anthropic>=0.39.0
 
 # Document Generation
 python-docx>=1.1.0
+openpyxl>=3.1.0
 
 # Data Processing
 pydantic>=2.0.0

@@ -4,6 +4,7 @@ import io
 from docx import Document
 from docx.shared import Inches, Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_LINE_SPACING
+from docx.enum.table import WD_ALIGN_VERTICAL
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
@@ -20,7 +21,7 @@ _FONT = "Arial"
 _LIGHT_GREY = "F2F2F2"
 _ROW_ALT    = "F7F7F7"
 _RULE_COLOR = "CCCCCC"
-_HDR_BG     = "2D2D2D"
+_HDR_BG     = "1F497D"  # dark navy blue
 
 _MARGIN = Inches(0.75)
 
@@ -97,6 +98,22 @@ def _configure_styles(doc: Document) -> None:
     h3.font.color.rgb = _GREY
     h3.paragraph_format.alignment   = WD_ALIGN_PARAGRAPH.CENTER
     h3.paragraph_format.space_after = Pt(8)
+
+
+def _fix_fonts(para) -> None:
+    """Force Arial on every run — overrides Calibri theme font from template."""
+    for run in para.runs:
+        run.font.name = _FONT
+
+
+def _heading(doc: Document, text: str, level: int,
+             align: WD_ALIGN_PARAGRAPH | None = None):
+    """Add a heading paragraph with guaranteed Arial font on all runs."""
+    p = doc.add_heading(text, level=level)
+    if align is not None:
+        p.alignment = align
+    _fix_fonts(p)
+    return p
 
 
 def _spacing(para, before: float = 0, after: float = 8) -> None:
@@ -191,11 +208,13 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
     title_para = doc.add_paragraph(f"{destination.upper()} HOTEL OPTIONS",
                                    style="Title")
     _spacing(title_para, 0, 10)
+    _fix_fonts(title_para)
 
     # Subtitle — uses "Heading 3" style (Arial 12pt italic centered grey)
     sub = doc.add_paragraph("Curated Accommodation Recommendations",
                             style="Heading 3")
     _spacing(sub, 0, 8)
+    _fix_fonts(sub)
 
     blank(4)
 
@@ -205,10 +224,10 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
     _body_run(p, "Prepared Exclusively For", color=_GREY)
 
     if client_name:
-        # Client name — uses "Heading 1" but centered
         cp = doc.add_paragraph(client_name.upper(), style="Heading 1")
         cp.alignment = WD_ALIGN_PARAGRAPH.CENTER
         _spacing(cp, 0, 6)
+        _fix_fonts(cp)
 
     if requirements:
         p = doc.add_paragraph()
@@ -216,29 +235,12 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
         _spacing(p, 2, 0)
         _body_run(p, requirements, size=10, color=_GREY)
 
-    blank(7)
-    _thin_rule(doc, before=2, after=8)
-
-    for line, bold in [
-        ("Bon Voyage By Marina", True),
-        ("Crafting Unforgettable Journeys", False),
-        ("+91 86000 15316", False),
-        ("@bonvoyagebymarina", False),
-    ]:
-        p = doc.add_paragraph()
-        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _spacing(p, 2, 2)
-        _body_run(p, line, bold=bold, size=10,
-                  color=_CHARCOAL if bold else _GREY)
-
 
 # ── Executive Summary ─────────────────────────────────────────────────────────
 
 def _build_executive_summary(doc: Document, plans: list[Plan],
                               enriched_map: dict[str, EnrichedHotel]) -> None:
-    # Heading 1
-    doc.add_heading("Executive Summary", level=1)
-    _thin_rule(doc, before=2, after=10)
+    _heading(doc, "Executive Summary", level=1)
 
     p = doc.add_paragraph()
     _spacing(p, 0, 12)
@@ -258,6 +260,7 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
     for i, label in enumerate(col_labels):
         cell = table.rows[0].cells[i]
         _shade_cell(cell, _HDR_BG)
+        cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
         p = cell.paragraphs[0]
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         _body_run(p, label, bold=True, size=9, color=_WHITE)
@@ -304,6 +307,7 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
         for col_idx, (text, align, color, bold) in enumerate(col_configs):
             cell = row.cells[col_idx]
             _shade_cell(cell, bg)
+            cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
             p = cell.paragraphs[0]
             p.alignment = align
 
@@ -318,6 +322,7 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
             if col_idx == 0 and badges:
                 for badge in badges:
                     p2 = cell.add_paragraph()
+                    p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
                     _spacing(p2, 1, 1)
                     _body_run(p2, badge, bold=True, size=7.5, color=_GREEN)
 
@@ -330,6 +335,8 @@ def _add_key_facts(doc: Document, enriched: EnrichedHotel) -> None:
     facts: list[tuple[str, str]] = []
     if enriched.address:
         facts.append(("📍 Location", enriched.address))
+    if enriched.phone:
+        facts.append(("📞 Phone", enriched.phone))
     if enriched.rating:
         facts.append(("⭐ Guest Rating",
                        f"{enriched.rating} / 5  ({enriched.rating_count:,} reviews)"))
@@ -343,7 +350,7 @@ def _add_key_facts(doc: Document, enriched: EnrichedHotel) -> None:
     for label, value in facts:
         p = doc.add_paragraph()
         _spacing(p, 1, 2)
-        _body_run(p, f"{label}:  ", bold=True, size=9, color=_GREY)
+        _body_run(p, f"{label}:  ", bold=True, size=11, color=_GREY)
         _body_run(p, value, size=11, color=_CHARCOAL)
 
 
@@ -366,6 +373,7 @@ def _add_hotel_card(doc: Document, enriched: EnrichedHotel) -> None:
         style="Heading 2",
     )
     _spacing(name_para, 4, 6)
+    _fix_fonts(name_para)
 
     _add_key_facts(doc, enriched)
 
@@ -428,7 +436,7 @@ def build_document(
             _page_break(doc)
 
         # Plan heading — Heading 1
-        doc.add_heading(plan.label.upper(), level=1)
+        _heading(doc, plan.label.upper(), level=1)
         _thin_rule(doc, before=2, after=8)
 
         # Hotel cards

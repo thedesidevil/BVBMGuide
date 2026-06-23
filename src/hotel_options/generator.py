@@ -175,41 +175,6 @@ def _thin_borders(table) -> None:
             tcPr.append(tcBorders)
 
 
-def _add_hyperlink(para, text: str, url: str) -> None:
-    """Hotel name hyperlink: Arial 14pt bold charcoal, no underline."""
-    r_id = para.part.relate_to(
-        url,
-        "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
-        is_external=True,
-    )
-    hl = OxmlElement("w:hyperlink")
-    hl.set(qn("r:id"), r_id)
-    r = OxmlElement("w:r")
-    rpr = OxmlElement("w:rPr")
-    fonts = OxmlElement("w:rFonts")
-    fonts.set(qn("w:ascii"), _FONT)
-    fonts.set(qn("w:hAnsi"), _FONT)
-    rpr.append(fonts)
-    rpr.append(OxmlElement("w:b"))
-    sz = OxmlElement("w:sz")
-    sz.set(qn("w:val"), "28")   # 14 pt
-    rpr.append(sz)
-    szCs = OxmlElement("w:szCs")
-    szCs.set(qn("w:val"), "28")
-    rpr.append(szCs)
-    color = OxmlElement("w:color")
-    color.set(qn("w:val"), "2D2D2D")
-    rpr.append(color)
-    u = OxmlElement("w:u")
-    u.set(qn("w:val"), "none")
-    rpr.append(u)
-    r.append(rpr)
-    t = OxmlElement("w:t")
-    t.text = text
-    r.append(t)
-    hl.append(r)
-    para._p.append(hl)
-
 
 # ── Cover page ────────────────────────────────────────────────────────────────
 
@@ -395,12 +360,12 @@ def _add_hotel_card(doc: Document, enriched: EnrichedHotel) -> None:
         _spacing(p, 8, 6)
         _body_run(p, "[ Image not available ]", size=9, color=_GREY)
 
-    # Hotel name — Heading 2 paragraph, hyperlink run
-    name_para = doc.add_paragraph(style="Heading 2")
+    # Hotel name — Heading 2
+    name_para = doc.add_paragraph(
+        enriched.official_name or enriched.address or "Hotel",
+        style="Heading 2",
+    )
     _spacing(name_para, 4, 6)
-    _add_hyperlink(name_para,
-                   enriched.official_name or enriched.address or "Hotel",
-                   enriched.maps_url)
 
     _add_key_facts(doc, enriched)
 

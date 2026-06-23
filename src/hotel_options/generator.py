@@ -312,19 +312,37 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
     _add_advisor_note(doc, destination)
 
     # 7. Bottom branding
-    blank(2)
+    blank(1)
     _thin_rule(doc, before=4, after=6)
-    for line, bold in [
-        ("Bon Voyage By Marina", True),
-        ("Crafting Unforgettable Journeys", False),
-        ("+91 86000 15316", False),
-        ("@bonvoyagebymarina", False),
-    ]:
-        p = doc.add_paragraph()
-        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _spacing(p, 1, 1)
-        _body_run(p, line, bold=bold, size=9,
-                  color=_CHARCOAL if bold else _GREY)
+
+    # Replicate BVBM Company Letterhead exactly: Arial 11pt, centered
+    # Line 1: bold
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _spacing(p, 12, 12)
+    _body_run(p, "Bon Voyage By Marina", bold=True, size=11, color=_CHARCOAL)
+
+    # Line 2: italic tagline
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _spacing(p, 12, 12)
+    _body_run(p, "Bespoke Travel Planning • Premium Stays • Seamless Experiences",
+              italic=True, size=11, color=_CHARCOAL)
+
+    # Line 3: contact info
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _spacing(p, 12, 12)
+    _body_run(p, "\U0001f4de +91 86000 15316 | \U0001f4f8 @bonvoyagebymarina | \U0001f310 www.bonvoyagebymarina.com",
+              size=11, color=_CHARCOAL)
+
+    # Line 4: emoji (plain) + italic tagline
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _spacing(p, 12, 12)
+    _body_run(p, "✈️ ", size=11, color=_CHARCOAL)
+    _body_run(p, "Crafting unforgettable journeys, one trip at a time.",
+              italic=True, size=11, color=_CHARCOAL)
 
 
 # ── Executive Summary ─────────────────────────────────────────────────────────
@@ -344,8 +362,7 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
     max_savings_idx = savings.index(max(savings))
     best_value_idx  = pcts.index(max(pcts)) if max(pcts) > 0 else -1
 
-    col_labels = ["Plan", "Hotels", "Best Online Price", "Our Price", "You Save",
-                  "Cancellation", "Breakfast"]
+    col_labels = ["Plan", "Hotels", "Best Online Price", "Our Price", "You Save"]
     table = doc.add_table(rows=1 + len(plans), cols=len(col_labels))
 
     for i, label in enumerate(col_labels):
@@ -359,16 +376,6 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
     for row_idx, plan in enumerate(plans):
         row = table.rows[row_idx + 1]
         bg = "FFFFFF" if row_idx % 2 == 0 else _ROW_ALT
-
-        cancel_raw = next(
-            (h.cancellation for h in plan.hotels
-             if h.cancellation and "free" in h.cancellation.lower()),
-            next((h.cancellation for h in plan.hotels if h.cancellation), "—"),
-        )
-        cancellation = (cancel_raw[:27] + "…") if len(cancel_raw) > 30 else cancel_raw
-
-        meal_types = [h.meal_type for h in plan.hotels if h.meal_type]
-        breakfast  = "Included" if any("breakfast" in m.lower() for m in meal_types) else "Not included"
 
         badges: list[str] = []
         if row_idx == min_price_idx:
@@ -384,15 +391,13 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
             f"  ({plan.pricing.discount_pct:.1f}% off)"
         )
 
-        # col: 0=Plan 1=Hotels 2=BestOnline 3=OurPrice 4=YouSave 5=Cancel 6=Breakfast
+        # col: 0=Plan 1=Hotels 2=BestOnline 3=OurPrice 4=YouSave
         col_configs = [
             (plan.label,                                             WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
             (None,                                                   WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
             (format_indian_number(plan.pricing.total_online_price),  WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
             (format_indian_number(plan.pricing.discounted_price),    WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
             (you_save_str,                                           WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
-            (cancellation,                                           WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
-            (breakfast,                                              WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
         ]
 
         for col_idx, (text, align, color, bold) in enumerate(col_configs):
@@ -441,7 +446,7 @@ def _add_key_facts(doc: Document, enriched: EnrichedHotel) -> None:
     for label, value in facts:
         p = doc.add_paragraph()
         _spacing(p, 1, 2)
-        _body_run(p, f"{label}: ", bold=True, size=11, color=_GREY)
+        _body_run(p, f"{label}: ", size=11, color=_GREY)
         _body_run(p, value, size=11, color=_CHARCOAL)
 
 
@@ -460,7 +465,7 @@ def _add_hotel_card(doc: Document, enriched: EnrichedHotel) -> None:
 
     # Hotel name — Georgia 16pt Bold, 12pt above, thin divider below
     name_para = doc.add_paragraph()
-    _spacing(name_para, 12, 4)
+    _spacing(name_para, 12, 0)
     r = name_para.add_run(enriched.official_name or enriched.address or "Hotel")
     r.bold           = True
     r.font.name      = "Georgia"

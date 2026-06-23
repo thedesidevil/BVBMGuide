@@ -146,6 +146,7 @@ export interface HotelOptionsHotel {
   room_type: string;
   cancellation: string;
   meal_type: string;
+  dates: string;
 }
 
 export interface HotelOptionsPricing {
@@ -175,7 +176,9 @@ export interface HotelOptionsNotFound {
 export interface HotelOptionsParseResult {
   client_name: string;
   destination: string;
+  requirements: string;
   plans: HotelOptionsPlan[];
   unknown_codes: HotelOptionsUnknownCode[];
   not_found: HotelOptionsNotFound[];
+  maps_api_calls: number;
 }

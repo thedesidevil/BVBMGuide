@@ -24,6 +24,7 @@ def _plan_to_dict(plan: Plan) -> dict:
                 "room_type": h.room_type,
                 "cancellation": h.cancellation,
                 "meal_type": h.meal_type,
+                "dates": h.dates,
             }
             for h in plan.hotels
         ],
@@ -72,6 +73,7 @@ def parse_file(
         "plans": [_plan_to_dict(p) for p in result.plans],
         "unknown_codes": [asdict(u) for u in deduped_codes],
         "not_found": not_found,
+        "maps_api_calls": len(unique_names),
     }
 
 
@@ -119,4 +121,7 @@ def generate_doc(
                     hotel, place_id, destination, api_key, ai_client
                 )
 
-    return build_document(result.plans, enriched_map, client_name, destination, _LETTERHEAD, result.requirements)
+    docx_bytes = build_document(result.plans, enriched_map, client_name, destination, _LETTERHEAD, result.requirements)
+    enriched_count = len(enriched_map)
+    maps_calls = len(unique_names) + enriched_count * 2  # Text Search + Place Details + Photo per hotel
+    return docx_bytes, ai_client.cost_usd, maps_calls

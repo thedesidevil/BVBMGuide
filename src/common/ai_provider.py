@@ -129,6 +129,9 @@ class AIClient:
             temperature=temperature,
             messages=[{"role": "user", "content": prompt}]
         )
+        if response.usage:
+            self.usage["prompt_tokens"]     += response.usage.prompt_tokens or 0
+            self.usage["completion_tokens"] += response.usage.completion_tokens or 0
         return response.choices[0].message.content.strip()
 
     def complete_json(

@@ -15,6 +15,8 @@ export function HotelOptionsTab() {
   const [resolvedCodes, setResolvedCodes] = useState<Record<string, string>>({});
   const [overrides, setOverrides] = useState<Record<string, string>>({});
   const [docBlob, setDocBlob] = useState<Blob | null>(null);
+  const [aiCostUsd, setAiCostUsd] = useState<number | null>(null);
+  const [mapsApiCallsGenerate, setMapsApiCallsGenerate] = useState<number>(0);
   const [error, setError] = useState<string>("");
   const [parsing, setParsing] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -31,6 +33,8 @@ export function HotelOptionsTab() {
     setResolvedCodes({});
     setOverrides({});
     setDocBlob(null);
+    setAiCostUsd(null);
+    setMapsApiCallsGenerate(0);
     setError("");
   }
 
@@ -53,8 +57,10 @@ export function HotelOptionsTab() {
     if (!file || !parseResult) return;
     setState("generating");
     try {
-      const blob = await api.generateHotelOptions(file, resolvedCodes, overrides);
+      const { blob, aiCostUsd: cost, mapsApiCalls } = await api.generateHotelOptions(file, resolvedCodes, overrides);
       setDocBlob(blob);
+      setAiCostUsd(cost);
+      setMapsApiCallsGenerate(mapsApiCalls);
       setState("done");
     } catch (e: any) {
       setError(e.message || "Generation failed");
@@ -126,6 +132,14 @@ export function HotelOptionsTab() {
     return (
       <div className="max-w-xl mx-auto py-16 text-center space-y-4">
         <p className="text-green-600 font-medium">Document ready!</p>
+        <div className="flex justify-center gap-6 text-xs text-slate-500">
+          {aiCostUsd !== null && (
+            <span>AI cost: <span className="font-medium text-slate-700">${aiCostUsd.toFixed(4)}</span></span>
+          )}
+          {mapsApiCallsGenerate > 0 && (
+            <span>Maps lookups: <span className="font-medium text-slate-700">{mapsApiCallsGenerate}</span></span>
+          )}
+        </div>
         <button
           onClick={downloadDoc}
           className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-sm font-medium"
@@ -163,23 +177,42 @@ export function HotelOptionsTab() {
   return (
     <div className="max-w-2xl mx-auto space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-lg font-semibold text-slate-800">
-          {result.client_name ? `${result.client_name} — ` : ""}
-          {result.destination}
-        </h2>
-        <button onClick={reset} className="text-sm text-blue-500 hover:text-blue-700 underline">
-          Upload a different file
-        </button>
+        <div>
+          <h2 className="text-lg font-semibold text-slate-800">
+            {result.client_name ? `${result.client_name} — ` : ""}
+            {result.destination}
+          </h2>
+          {result.requirements && (
+            <p className="text-xs text-slate-500 mt-0.5">{result.requirements}</p>
+          )}
+        </div>
+        <div className="flex flex-col items-end gap-1">
+          {result.maps_api_calls > 0 && (
+            <span className="text-xs text-slate-400">{result.maps_api_calls} Google Places lookups</span>
+          )}
+          <button onClick={reset} className="text-sm text-blue-500 hover:text-blue-700 underline">
+            Upload a different file
+          </button>
+        </div>
       </div>
 
       {result.plans.map((plan) => (
         <div key={plan.label} className="bg-white border border-slate-200 rounded-xl p-4">
-          <h3 className="font-semibold text-slate-700 mb-2">{plan.label}</h3>
-          <ul className="text-sm text-slate-600 space-y-0.5 mb-3">
+          <h3 className="font-semibold text-slate-700 mb-3">{plan.label}</h3>
+          <div className="space-y-3 mb-3">
             {plan.hotels.map((h) => (
-              <li key={h.name}>{h.name} — {h.category}</li>
+              <div key={h.name} className="text-sm border-l-2 border-slate-200 pl-3 space-y-0.5">
+                <p className="font-medium text-slate-800">{h.name}</p>
+                <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs text-slate-500">
+                  {h.dates && <span>📅 {h.dates}</span>}
+                  {h.category && <span>🏨 {h.category}</span>}
+                  {h.room_type && <span>🛏 {h.room_type}</span>}
+                  {h.meal_type && <span>🍽 {h.meal_type}</span>}
+                  {h.cancellation && <span>🔄 {h.cancellation}</span>}
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
           <p className="text-xs text-slate-500">
             Online: ₹{plan.pricing.total_online_price.toLocaleString("en-IN")} ·{" "}
             Our price: ₹{plan.pricing.discounted_price.toLocaleString("en-IN")}

@@ -53,7 +53,7 @@ async def generate_hotel_options(
         raise HTTPException(status_code=400, detail=f"Invalid JSON in form fields: {e}")
     api_key = _api_key()
     try:
-        docx_bytes = generate_doc(
+        docx_bytes, ai_cost_usd, maps_calls = generate_doc(
             content, file.filename, codes_dict, overrides_dict,
             request.app.state.storage_backend, api_key,
         )
@@ -62,7 +62,12 @@ async def generate_hotel_options(
     return Response(
         content=docx_bytes,
         media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        headers={"Content-Disposition": "attachment; filename=hotel_options.docx"},
+        headers={
+            "Content-Disposition": "attachment; filename=hotel_options.docx",
+            "X-AI-Cost-USD": str(round(ai_cost_usd, 4)) if ai_cost_usd is not None else "0",
+            "X-Maps-API-Calls": str(maps_calls),
+            "Access-Control-Expose-Headers": "X-AI-Cost-USD, X-Maps-API-Calls",
+        },
     )
 
 

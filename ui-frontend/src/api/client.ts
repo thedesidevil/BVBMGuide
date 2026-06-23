@@ -161,7 +161,7 @@ export const api = {
     file: File,
     resolvedCodes: Record<string, string>,
     overrides: Record<string, string>
-  ): Promise<Blob> => {
+  ): Promise<{ blob: Blob; aiCostUsd: number | null; mapsApiCalls: number }> => {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("resolved_codes", JSON.stringify(resolvedCodes));
@@ -171,7 +171,13 @@ export const api = {
       const text = await res.text();
       throw new Error(`Generation failed: ${res.status} ${text}`);
     }
-    return res.blob();
+    const aiCostStr = res.headers.get("X-AI-Cost-USD");
+    const mapsCallsStr = res.headers.get("X-Maps-API-Calls");
+    return {
+      blob: await res.blob(),
+      aiCostUsd: aiCostStr ? parseFloat(aiCostStr) : null,
+      mapsApiCalls: mapsCallsStr ? parseInt(mapsCallsStr) : 0,
+    };
   },
 
   saveHotelCode: (code: string, meaning: string): Promise<{ ok: boolean }> =>

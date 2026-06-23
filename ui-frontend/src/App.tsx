@@ -9,10 +9,11 @@ import { IngestWizard } from "./components/IngestWizard";
 import { IngestHistory } from "./components/IngestHistory";
 import { AuditLog } from "./components/AuditLog";
 import { VerifyTab } from "./components/VerifyTab";
+import { HotelOptionsTab } from "./components/HotelOptionsTab";
 import type { TreeData } from "./types";
 import { api } from "./api/client";
 
-type Mode = "city" | "sweep" | "ingest" | "history" | "audit" | "verify";
+type Mode = "city" | "sweep" | "ingest" | "history" | "audit" | "verify" | "hotel_options";
 
 export default function App() {
   const [isAdmin, setIsAdmin] = useState<boolean>(true);
@@ -85,6 +86,7 @@ export default function App() {
         {mode === "history" && <IngestHistory />}
         {mode === "audit" && <AuditLog />}
         {mode === "verify" && <VerifyTab />}
+        {mode === "hotel_options" && <HotelOptionsTab />}
       </Layout>
     </>
   );

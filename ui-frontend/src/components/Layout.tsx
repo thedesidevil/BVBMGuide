@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-type Mode = "city" | "sweep" | "ingest" | "history" | "audit" | "verify";
+type Mode = "city" | "sweep" | "ingest" | "history" | "audit" | "verify" | "hotel_options";
 
 interface LayoutProps {
   mode: Mode;
@@ -24,7 +24,7 @@ function Tab({ label, active, onClick }: { label: string; active: boolean; onCli
   );
 }
 
-const NO_SIDEBAR_MODES: Mode[] = ["ingest", "history", "audit", "verify"];
+const NO_SIDEBAR_MODES: Mode[] = ["ingest", "history", "audit", "verify", "hotel_options"];
 
 export function Layout({ mode, onModeChange, isAdmin, reviewedCount, totalCount, sidebar, children, userEmail }: LayoutProps) {
   return (
@@ -43,6 +43,7 @@ export function Layout({ mode, onModeChange, isAdmin, reviewedCount, totalCount,
             </>
           )}
           <Tab label="Verify AIG" active={mode === "verify"} onClick={() => onModeChange("verify")} />
+          <Tab label="Hotel Options" active={mode === "hotel_options"} onClick={() => onModeChange("hotel_options")} />
         </div>
         <div className="ml-auto flex items-center gap-4 text-sm text-slate-500">
           {isAdmin && <span>{reviewedCount} / {totalCount} cities reviewed</span>}

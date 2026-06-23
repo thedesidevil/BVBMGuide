@@ -33,6 +33,32 @@ def _plan_to_dict(plan: Plan) -> dict:
     }
 
 
+_STAY_REQ_PROMPT = """\
+The following is raw text from a travel booking spreadsheet describing stay requirements.
+Extract only the stay preferences (NOT the number of travellers) and rewrite them as 2-4 short,
+clean, capitalized phrases separated by " • ".
+Be concise and professional. Examples of good output:
+  "Breakfast Included • Free Cancellation"
+  "Refundable Booking • Breakfast Included • Central Location"
+
+Raw text: {raw}
+
+Output only the formatted string, nothing else."""
+
+
+def _format_stay_requirements(requirements: str, ai_client) -> str:
+    import re
+    lines = [l.strip() for l in re.split(r'[\n,]+', requirements) if l.strip()]
+    stay_lines = [l for l in lines if not re.search(r'^\d+\s+adult', l, re.I)]
+    if not stay_lines:
+        return ""
+    raw = ", ".join(stay_lines)
+    try:
+        return ai_client.complete(_STAY_REQ_PROMPT.format(raw=raw)).strip()
+    except Exception:
+        return raw
+
+
 def parse_file(
     xlsx_bytes: bytes,
     filename: str,
@@ -118,8 +144,10 @@ def generate_doc(
                 )
 
     destination_photo = _enricher.fetch_destination_photo(destination, api_key)
+    stay_requirements = _format_stay_requirements(result.requirements, ai_client)
     docx_bytes = build_document(result.plans, enriched_map, client_name, destination,
-                                result.requirements, destination_photo=destination_photo)
+                                result.requirements, destination_photo=destination_photo,
+                                stay_requirements=stay_requirements)
     enriched_count = len(enriched_map)
     maps_calls = len(unique_names) + enriched_count * 2  # Text Search + Place Details + Photo per hotel
     return docx_bytes, ai_client.cost_usd, maps_calls

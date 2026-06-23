@@ -211,18 +211,16 @@ def _georgia(para, text: str, size: float, bold=False, italic=False,
 
 
 def _add_trip_snapshot(doc: Document, destination: str, requirements: str,
-                       plans_count: int) -> None:
+                       stay_requirements: str = "") -> None:
     import re as _re
-    req_lines = [r.strip() for r in _re.split(r'[\n,]+', requirements) if r.strip()]
+    req_lines  = [r.strip() for r in _re.split(r'[\n,]+', requirements) if r.strip()]
     travellers = next((l for l in req_lines if _re.search(r'\d+\s+adult', l, _re.I)), "")
-    stay_reqs  = [l for l in req_lines if l != travellers]
 
     rows: list[tuple[str, str]] = [("Destination", destination)]
     if travellers:
         rows.append(("Travellers", travellers))
-    if stay_reqs:
-        rows.append(("Stay Requirements", "  •  ".join(stay_reqs)))
-    rows.append(("Accommodation Plans Evaluated", str(plans_count)))
+    if stay_requirements:
+        rows.append(("Stay Requirements", stay_requirements))
 
     table = doc.add_table(rows=1 + len(rows), cols=2)
     _no_borders(table)
@@ -267,7 +265,7 @@ def _add_advisor_note(doc: Document, destination: str) -> None:
 # ── Cover page ────────────────────────────────────────────────────────────────
 
 def _build_cover_page(doc: Document, destination: str, client_name: str,
-                      requirements: str, plans_count: int,
+                      requirements: str, stay_requirements: str = "",
                       destination_photo: bytes | None = None) -> None:
     def blank(n: int = 1) -> None:
         for _ in range(n):
@@ -311,7 +309,7 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
         _georgia(p, client_name.upper(), size=14, bold=True)
 
     # 5. Trip Snapshot box
-    _add_trip_snapshot(doc, destination, requirements, plans_count)
+    _add_trip_snapshot(doc, destination, requirements, stay_requirements)
 
     # 6. Advisor Note
     _add_advisor_note(doc, destination)
@@ -528,6 +526,7 @@ def build_document(
     destination: str,
     requirements: str = "",
     destination_photo: bytes | None = None,
+    stay_requirements: str = "",
 ) -> bytes:
     doc = Document()
     _set_margins(doc)
@@ -535,7 +534,7 @@ def build_document(
 
     # Cover page
     _build_cover_page(doc, destination, client_name, requirements,
-                      plans_count=len(plans),
+                      stay_requirements=stay_requirements,
                       destination_photo=destination_photo)
     _page_break(doc)
 
@@ -587,20 +586,12 @@ def _build_thank_you_page(doc: Document, destination: str,
             p = doc.add_paragraph()
             _spacing(p, 0, 0)
 
-    # Optional destination image — narrow strip at top (~1.4")
-    if destination_photo:
-        p = doc.add_paragraph()
-        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _spacing(p, 0, 0)
-        p.add_run().add_picture(io.BytesIO(destination_photo), width=Inches(7.0),
-                                height=Inches(1.4))
-
     # Generous whitespace to push content toward middle of page
     blank(6)
 
-    # Heading — Arial 20pt Bold, centered
+    # Heading — Arial 20pt Bold, left-aligned
     p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
     _spacing(p, 0, 28)
     r = p.add_run("Thank You")
     r.bold           = True
@@ -608,7 +599,7 @@ def _build_thank_you_page(doc: Document, destination: str,
     r.font.size      = Pt(20)
     r.font.color.rgb = _CHARCOAL
 
-    # Body text — Arial 11pt centered, destination-personalised
+    # Body text — Arial 11pt left-aligned, destination-personalised
     body_lines = [
         f"Thank you for giving Bon Voyage By Marina the opportunity to assist with your {destination} journey.",
         f"We hope the accommodation options in this document help you find the stay that best matches your travel style, preferences, and budget.",
@@ -616,36 +607,48 @@ def _build_thank_you_page(doc: Document, destination: str,
     ]
     for line in body_lines:
         p = doc.add_paragraph()
-        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
         _spacing(p, 0, 6)
         _body_run(p, line, size=11, color=_CHARCOAL)
 
     blank(1)
 
-    # Closing — Arial 11pt italic centered
+    # Closing — Arial 11pt italic, left-aligned
     p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
     _spacing(p, 18, 24)
     _body_run(p, f"We look forward to helping create an unforgettable {destination} experience for you.",
               italic=True, size=11, color=_CHARCOAL)
 
-    # Signature — letterhead fonts, left-aligned (same as cover page block)
-    for text, bold, italic in [
-        ("Warm regards,",                  False, False),
-        ("",                               False, False),
-        ("Bon Voyage By Marina",           True,  False),
-        ("Crafting Unforgettable Journeys", False, True),
-    ]:
-        p = doc.add_paragraph()
-        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-        _spacing(p, 0, 4)
-        if text:
-            _body_run(p, text, bold=bold, italic=italic, size=11, color=_CHARCOAL)
+    # Signature — "Warm regards," then full letterhead block, left-aligned
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    _spacing(p, 0, 12)
+    _body_run(p, "Warm regards,", size=11, color=_CHARCOAL)
 
-    # Contact info — Arial 10pt left-aligned
     blank(1)
-    for line in ["+91 86000 15316", "@bonvoyagebymarina"]:
-        p = doc.add_paragraph()
-        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-        _spacing(p, 0, 3)
-        _body_run(p, line, size=10, color=_GREY)
+
+    # Full letterhead block — same fonts/styling as cover page, left-aligned
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    _spacing(p, 12, 12)
+    _body_run(p, "Bon Voyage By Marina", bold=True, size=11, color=_CHARCOAL)
+
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    _spacing(p, 12, 12)
+    _body_run(p, "Bespoke Travel Planning • Premium Stays • Seamless Experiences",
+              italic=True, size=11, color=_CHARCOAL)
+
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    _spacing(p, 12, 12)
+    _body_run(p, "\U0001f4de +91 86000 15316 | \U0001f4f8 @bonvoyagebymarina | \U0001f310 www.bonvoyagebymarina.com",
+              size=11, color=_CHARCOAL)
+
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    _spacing(p, 12, 12)
+    _body_run(p, "✈️ ", size=11, color=_CHARCOAL)
+    _body_run(p, "Crafting unforgettable journeys, one trip at a time.",
+              italic=True, size=11, color=_CHARCOAL)

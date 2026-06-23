@@ -1,7 +1,5 @@
 from __future__ import annotations
-import os
 from dataclasses import asdict
-from pathlib import Path
 
 from src.hotel_options.codes import CodeStore
 import src.hotel_options.enricher as _enricher
@@ -10,8 +8,6 @@ from src.hotel_options.models import Plan
 from src.hotel_options.parser import parse_excel, extract_filename_meta
 from src.common.ai_provider import get_ai_client
 from src.library.ui.storage import StorageBackend
-
-_LETTERHEAD = Path(os.getenv("LETTERHEAD_PATH", "input/BVBM Company Letterhead.docx"))
 
 
 def _plan_to_dict(plan: Plan) -> dict:
@@ -121,7 +117,7 @@ def generate_doc(
                     hotel, place_id, destination, api_key, ai_client
                 )
 
-    docx_bytes = build_document(result.plans, enriched_map, client_name, destination, _LETTERHEAD, result.requirements)
+    docx_bytes = build_document(result.plans, enriched_map, client_name, destination, result.requirements)
     enriched_count = len(enriched_map)
     maps_calls = len(unique_names) + enriched_count * 2  # Text Search + Place Details + Photo per hotel
     return docx_bytes, ai_client.cost_usd, maps_calls

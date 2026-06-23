@@ -1,6 +1,5 @@
 from __future__ import annotations
 import io
-from pathlib import Path
 
 from docx import Document
 from docx.shared import Inches, Pt
@@ -163,11 +162,9 @@ def build_document(
     enriched_map: dict[str, EnrichedHotel],
     client_name: str,
     destination: str,
-    letterhead_path: str | Path,
     requirements: str = "",
 ) -> bytes:
-    path = Path(letterhead_path)
-    doc = Document(str(path)) if path.exists() else Document()
+    doc = Document()
 
     _add_horizontal_rule(doc)
 

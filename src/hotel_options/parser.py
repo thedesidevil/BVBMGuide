@@ -164,4 +164,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
     # Flush the last open plan — it may have no trailing summary row
     _flush(_make_dummy_row())
 
+    # Drop any plans that ended up with no hotels (e.g. duplicate PLAN headers in Excel)
+    plans = [p for p in plans if p.hotels]
+
     return ParseResult(plans=plans, unknown_codes=unknown_codes, not_found=[], requirements=requirements)

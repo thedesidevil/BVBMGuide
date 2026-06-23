@@ -10,6 +10,7 @@ class HotelRow:
     cancellation: str
     meal_type: str
     online_price: float
+    dates: str = ""
 
 
 @dataclass
@@ -40,6 +41,7 @@ class ParseResult:
     plans: list[Plan]
     unknown_codes: list[UnknownCode]
     not_found: list[dict]
+    requirements: str = ""
 
 
 @dataclass
@@ -55,3 +57,4 @@ class EnrichedHotel:
     cancellation: str
     meal_type: str
     category: str
+    dates: str = ""

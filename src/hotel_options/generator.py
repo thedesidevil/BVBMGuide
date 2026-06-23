@@ -91,26 +91,6 @@ def _remove_table_borders(table) -> None:
     tbl_pr.append(tbl_borders)
 
 
-def _copy_letterhead(doc: Document, letterhead_path: str | Path) -> None:
-    path = Path(letterhead_path)
-    if not path.exists():
-        return
-    src = Document(str(path))
-    for src_para in src.paragraphs:
-        if not src_para.text.strip() and not src_para.runs:
-            continue
-        dst_para = doc.add_paragraph()
-        dst_para.alignment = src_para.alignment
-        for src_run in src_para.runs:
-            dst_run = dst_para.add_run(src_run.text)
-            dst_run.bold = src_run.bold
-            dst_run.italic = src_run.italic
-            if src_run.font.name:
-                dst_run.font.name = src_run.font.name
-            if src_run.font.size:
-                dst_run.font.size = src_run.font.size
-
-
 def _add_hotel_card(doc: Document, enriched: EnrichedHotel) -> None:
     if enriched.photo_bytes:
         img_para = doc.add_paragraph()
@@ -127,6 +107,11 @@ def _add_hotel_card(doc: Document, enriched: EnrichedHotel) -> None:
     rating_para = doc.add_paragraph(f"⭐ {enriched.rating} · {enriched.rating_count:,} reviews")
     if rating_para.runs:
         rating_para.runs[0].font.size = Pt(11)
+
+    if enriched.dates:
+        dates_para = doc.add_paragraph(f"📅 {enriched.dates}")
+        if dates_para.runs:
+            dates_para.runs[0].font.size = Pt(11)
 
     addr_parts = []
     if enriched.address:
@@ -168,7 +153,7 @@ def _add_pricing_table(doc: Document, plan: Plan) -> None:
             for run in para.runs:
                 run.bold = True
 
-    savings = f"{format_indian_number(p.customer_discount)} · {p.discount_pct:.1f}% off"
+    savings = f"{format_indian_number(p.customer_discount)} · a {p.discount_pct:.1f}% discount over best online prices"
     table.rows[2].cells[0].text = "Your Savings"
     table.rows[2].cells[1].text = savings
 
@@ -179,10 +164,11 @@ def build_document(
     client_name: str,
     destination: str,
     letterhead_path: str | Path,
+    requirements: str = "",
 ) -> bytes:
-    doc = Document()
+    path = Path(letterhead_path)
+    doc = Document(str(path)) if path.exists() else Document()
 
-    _copy_letterhead(doc, letterhead_path)
     _add_horizontal_rule(doc)
 
     title = doc.add_paragraph()
@@ -194,6 +180,11 @@ def build_document(
         sub = doc.add_paragraph(f"Prepared for: {client_name}")
         if sub.runs:
             sub.runs[0].font.size = Pt(12)
+
+    if requirements:
+        req = doc.add_paragraph(f"Requirements: {requirements}")
+        if req.runs:
+            req.runs[0].font.size = Pt(11)
 
     for plan in plans:
         _add_page_break(doc)

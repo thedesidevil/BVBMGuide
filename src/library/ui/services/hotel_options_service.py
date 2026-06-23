@@ -68,6 +68,7 @@ def parse_file(
     return {
         "client_name": client_name,
         "destination": destination,
+        "requirements": result.requirements,
         "plans": [_plan_to_dict(p) for p in result.plans],
         "unknown_codes": [asdict(u) for u in deduped_codes],
         "not_found": not_found,
@@ -118,4 +119,4 @@ def generate_doc(
                     hotel, place_id, destination, api_key, ai_client
                 )
 
-    return build_document(result.plans, enriched_map, client_name, destination, _LETTERHEAD)
+    return build_document(result.plans, enriched_map, client_name, destination, _LETTERHEAD, result.requirements)

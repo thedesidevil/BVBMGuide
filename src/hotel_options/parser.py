@@ -10,6 +10,7 @@ from src.hotel_options.models import (
 )
 
 _PLAN_RE = re.compile(r'^PLAN\s+[A-Z]$', re.IGNORECASE)
+_SECTION_DATE_RE = re.compile(r'\(([^)]+)\)')
 _FILENAME_RE = re.compile(
     r'(?:DO NOT SHARE_\s*)?([^_]+)_Accommodation Options_([^_.]+)\.xlsx$',
     re.IGNORECASE,
@@ -42,17 +43,27 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
     wb = openpyxl.load_workbook(io.BytesIO(xlsx_bytes), data_only=True)
     ws = wb.active
 
+    a1 = ws.cell(1, 1).value
+    requirements = str(a1).strip() if a1 is not None else ""
+
     plans: list[Plan] = []
     unknown_codes: list[UnknownCode] = []
 
     current_label: str | None = None
     current_hotels: list[HotelRow] = []
+    current_section_dates: str = ""
     running_online = 0.0
     running_b2b = 0.0
 
     def _flush(summary_row) -> None:
         nonlocal current_label, current_hotels, running_online, running_b2b
         if current_label is None:
+            return
+        if not current_hotels:
+            current_label = None
+            current_hotels = []
+            running_online = 0.0
+            running_b2b = 0.0
             return
         col_i = _numeric(summary_row[8].value) if len(summary_row) > 8 else None
         col_j = _numeric(summary_row[9].value) if len(summary_row) > 9 else None
@@ -91,11 +102,11 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
 
         if val_a and _PLAN_RE.match(str_a):
             past_first_plan = True
-            # Flush previous plan before starting new one (handles missing summary row)
             if current_label is not None:
                 _flush(_make_dummy_row())
-            current_label = str_a.title()  # "PLAN A" → "Plan A"
+            current_label = str_a.title()
             current_hotels = []
+            current_section_dates = ""
             running_online = 0.0
             running_b2b = 0.0
             continue
@@ -109,6 +120,13 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
         # Plan summary: col A blank, col I or col L numeric
         if not val_a and (_numeric(col_i_val) is not None or _numeric(col_l_val) is not None):
             _flush(row)
+            continue
+
+        # Section header: col A non-empty, col I blank — extract dates if present
+        if val_a and _numeric(col_i_val) is None:
+            m = _SECTION_DATE_RE.search(str_a)
+            if m:
+                current_section_dates = m.group(1).strip()
             continue
 
         # Hotel row: col A non-empty, col I numeric, no strikethrough
@@ -140,9 +158,10 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
                 cancellation=decoded.cancellation,
                 meal_type=decoded.meal_type,
                 online_price=online,
+                dates=current_section_dates,
             ))
 
     # Flush the last open plan — it may have no trailing summary row
     _flush(_make_dummy_row())
 
-    return ParseResult(plans=plans, unknown_codes=unknown_codes, not_found=[])
+    return ParseResult(plans=plans, unknown_codes=unknown_codes, not_found=[], requirements=requirements)

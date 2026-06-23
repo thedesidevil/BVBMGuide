@@ -143,7 +143,7 @@ def create_app(
     app.include_router(verify.router, prefix="/api")  # all authenticated users
 
     from .api import hotel_options as _hotel_options_api
-    app.include_router(_hotel_options_api.router, prefix="/api", dependencies=_admin)
+    app.include_router(_hotel_options_api.router, prefix="/api")
 
     from fastapi.staticfiles import StaticFiles
 

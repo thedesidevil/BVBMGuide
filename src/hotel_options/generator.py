@@ -134,16 +134,21 @@ def _body_run(para, text: str, *, bold=False, italic=False,
     r.font.color.rgb = color
 
 
-def _thin_rule(doc: Document, before: float = 4, after: float = 4) -> None:
+def _thin_rule(doc: Document, before: float = 4, after: float = 4,
+               color: str = _RULE_COLOR) -> None:
     p = doc.add_paragraph()
-    _spacing(p, before, after)
+    fmt = p.paragraph_format
+    fmt.space_before      = Pt(before)
+    fmt.space_after       = Pt(after)
+    fmt.line_spacing_rule = WD_LINE_SPACING.EXACTLY
+    fmt.line_spacing      = Pt(1)
     ppr = p._p.get_or_add_pPr()
     pbdr = OxmlElement("w:pBdr")
     bottom = OxmlElement("w:bottom")
     bottom.set(qn("w:val"), "single")
     bottom.set(qn("w:sz"), "4")
     bottom.set(qn("w:space"), "1")
-    bottom.set(qn("w:color"), _RULE_COLOR)
+    bottom.set(qn("w:color"), color)
     pbdr.append(bottom)
     ppr.append(pbdr)
 
@@ -313,7 +318,7 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
 
     # 7. Bottom branding
     blank(1)
-    _thin_rule(doc, before=4, after=6)
+    _thin_rule(doc, before=4, after=6, color=_HDR_BG)
 
     # Replicate BVBM Company Letterhead exactly: Arial 11pt, centered
     # Line 1: bold
@@ -363,7 +368,13 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
     best_value_idx  = pcts.index(max(pcts)) if max(pcts) > 0 else -1
 
     col_labels = ["Plan", "Hotels", "Best Online Price", "Our Price", "You Save"]
+    # Column widths sum to 7.0" (page width minus 0.75" margins each side)
+    col_widths = [Inches(0.65), Inches(3.0), Inches(1.05), Inches(1.05), Inches(1.25)]
     table = doc.add_table(rows=1 + len(plans), cols=len(col_labels))
+    table.autofit = False
+    for i, w in enumerate(col_widths):
+        for row in table.rows:
+            row.cells[i].width = w
 
     for i, label in enumerate(col_labels):
         cell = table.rows[0].cells[i]
@@ -371,6 +382,7 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
         cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
         p = cell.paragraphs[0]
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _spacing(p, 0, 0)
         _body_run(p, label, bold=True, size=9, color=_WHITE)
 
     for row_idx, plan in enumerate(plans):
@@ -538,7 +550,7 @@ def build_document(
 
         # Plan heading — Heading 1
         _heading(doc, plan.label.upper(), level=1)
-        _thin_rule(doc, before=2, after=8)
+        _thin_rule(doc, before=2, after=8, color=_HDR_BG)
 
         # Hotel cards
         for i, hotel in enumerate(plan.hotels):
@@ -557,6 +569,83 @@ def build_document(
         _thin_rule(doc, before=12, after=8)
         _add_pricing_block(doc, plan)
 
+    # Final thank you page
+    _page_break(doc)
+    _build_thank_you_page(doc, destination, destination_photo)
+
     buf = io.BytesIO()
     doc.save(buf)
     return buf.getvalue()
+
+
+# ── Thank You page ────────────────────────────────────────────────────────────
+
+def _build_thank_you_page(doc: Document, destination: str,
+                          destination_photo: bytes | None = None) -> None:
+    def blank(n: int = 1) -> None:
+        for _ in range(n):
+            p = doc.add_paragraph()
+            _spacing(p, 0, 0)
+
+    # Optional destination image — narrow strip at top (~1.4")
+    if destination_photo:
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _spacing(p, 0, 0)
+        p.add_run().add_picture(io.BytesIO(destination_photo), width=Inches(7.0),
+                                height=Inches(1.4))
+
+    # Generous whitespace to push content toward middle of page
+    blank(6)
+
+    # Heading — Arial 20pt Bold, centered
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _spacing(p, 0, 28)
+    r = p.add_run("Thank You")
+    r.bold           = True
+    r.font.name      = _FONT
+    r.font.size      = Pt(20)
+    r.font.color.rgb = _CHARCOAL
+
+    # Body text — Arial 11pt centered, destination-personalised
+    body_lines = [
+        f"Thank you for giving Bon Voyage By Marina the opportunity to assist with your {destination} journey.",
+        f"We hope the accommodation options in this document help you find the stay that best matches your travel style, preferences, and budget.",
+        f"Should you wish to explore additional options, alternative locations, upgraded room categories, or other travel arrangements, we would be delighted to assist.",
+    ]
+    for line in body_lines:
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _spacing(p, 0, 6)
+        _body_run(p, line, size=11, color=_CHARCOAL)
+
+    blank(1)
+
+    # Closing — Arial 11pt italic centered
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _spacing(p, 18, 24)
+    _body_run(p, f"We look forward to helping create an unforgettable {destination} experience for you.",
+              italic=True, size=11, color=_CHARCOAL)
+
+    # Signature — letterhead fonts, left-aligned (same as cover page block)
+    for text, bold, italic in [
+        ("Warm regards,",                  False, False),
+        ("",                               False, False),
+        ("Bon Voyage By Marina",           True,  False),
+        ("Crafting Unforgettable Journeys", False, True),
+    ]:
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        _spacing(p, 0, 4)
+        if text:
+            _body_run(p, text, bold=bold, italic=italic, size=11, color=_CHARCOAL)
+
+    # Contact info — Arial 10pt left-aligned
+    blank(1)
+    for line in ["+91 86000 15316", "@bonvoyagebymarina"]:
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        _spacing(p, 0, 3)
+        _body_run(p, line, size=10, color=_GREY)

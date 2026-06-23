@@ -193,47 +193,138 @@ def _thin_borders(table) -> None:
 
 
 
+# ── Cover page helpers ────────────────────────────────────────────────────────
+
+def _georgia(para, text: str, size: float, bold=False, italic=False,
+             color: RGBColor = _CHARCOAL) -> None:
+    r = para.add_run(text)
+    r.bold           = bold
+    r.italic         = italic
+    r.font.name      = "Georgia"
+    r.font.size      = Pt(size)
+    r.font.color.rgb = color
+
+
+def _add_trip_snapshot(doc: Document, destination: str, requirements: str,
+                       plans_count: int) -> None:
+    import re as _re
+    req_lines = [r.strip() for r in _re.split(r'[\n,]+', requirements) if r.strip()]
+    travellers = next((l for l in req_lines if _re.search(r'\d+\s+adult', l, _re.I)), "")
+    stay_reqs  = [l for l in req_lines if l != travellers]
+
+    rows: list[tuple[str, str]] = [("Destination", destination)]
+    if travellers:
+        rows.append(("Travellers", travellers))
+    if stay_reqs:
+        rows.append(("Stay Requirements", "  •  ".join(stay_reqs)))
+    rows.append(("Accommodation Plans Evaluated", str(plans_count)))
+
+    table = doc.add_table(rows=1 + len(rows), cols=2)
+    _no_borders(table)
+
+    # Header row — merged, "TRIP SNAPSHOT"
+    hdr = table.rows[0].cells[0].merge(table.rows[0].cells[1])
+    hp = hdr.paragraphs[0]
+    hp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _spacing(hp, 8, 6)
+    _body_run(hp, "TRIP SNAPSHOT", bold=True, size=9, color=_CHARCOAL)
+
+    for i, (label, value) in enumerate(rows):
+        lc = table.rows[i + 1].cells[0]
+        vc = table.rows[i + 1].cells[1]
+        lp = lc.paragraphs[0]
+        _spacing(lp, 3, 3)
+        _body_run(lp, label, bold=True, size=9, color=_GREY)
+        vp = vc.paragraphs[0]
+        _spacing(vp, 3, 3)
+        _body_run(vp, value, size=9, color=_CHARCOAL)
+
+    _thin_borders(table)
+
+
+def _add_advisor_note(doc: Document, destination: str) -> None:
+    p = doc.add_paragraph()
+    _spacing(p, 14, 6)
+    _georgia(p, "A NOTE FROM BON VOYAGE BY MARINA", size=12, bold=True)
+
+    note = (
+        f"Thank you for giving us the opportunity to assist with your "
+        f"{destination} journey. "
+        f"The options in this document have been carefully reviewed and shortlisted "
+        f"based on your preferences, location requirements, flexibility, and overall value. "
+        f"We hope this guide helps you choose the stay that is right for you."
+    )
+    p = doc.add_paragraph()
+    _spacing(p, 0, 8)
+    _body_run(p, note, size=10.5, color=_GREY)
+
+
 # ── Cover page ────────────────────────────────────────────────────────────────
 
 def _build_cover_page(doc: Document, destination: str, client_name: str,
-                      requirements: str) -> None:
+                      requirements: str, plans_count: int,
+                      destination_photo: bytes | None = None) -> None:
     def blank(n: int = 1) -> None:
         for _ in range(n):
             p = doc.add_paragraph()
             _spacing(p, 0, 0)
 
-    blank(8)
-
-    # Title — uses "Title" style (Arial 26pt bold centered)
-    title_para = doc.add_paragraph(f"{destination.upper()} HOTEL OPTIONS",
-                                   style="Title")
-    _spacing(title_para, 0, 10)
-    _fix_fonts(title_para)
-
-    # Subtitle — uses "Heading 3" style (Arial 12pt italic centered grey)
-    sub = doc.add_paragraph("Curated Accommodation Recommendations",
-                            style="Heading 3")
-    _spacing(sub, 0, 8)
-    _fix_fonts(sub)
-
-    blank(4)
-
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    _spacing(p, 0, 4)
-    _body_run(p, "Prepared Exclusively For", color=_GREY)
-
-    if client_name:
-        cp = doc.add_paragraph(client_name.upper(), style="Heading 1")
-        cp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _spacing(cp, 0, 6)
-        _fix_fonts(cp)
-
-    if requirements:
+    # 1. Destination image — full width, ~2.25" tall
+    if destination_photo:
         p = doc.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _spacing(p, 2, 0)
-        _body_run(p, requirements, size=10, color=_GREY)
+        _spacing(p, 0, 0)
+        p.add_run().add_picture(io.BytesIO(destination_photo), width=Inches(7.0))
+    else:
+        blank(4)
+
+    blank(2)
+
+    # 2. Title — Georgia 26pt Bold Centered
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _spacing(p, 0, 8)
+    _georgia(p, f"{destination.upper()} ACCOMMODATION RECOMMENDATIONS",
+             size=26, bold=True)
+
+    # 3. Subtitle — Georgia 12pt Italic Centered
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _spacing(p, 0, 20)
+    _georgia(p, "Curated by Bon Voyage By Marina", size=12, italic=True, color=_GREY)
+
+    # 4. Personalization
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _spacing(p, 0, 6)
+    _georgia(p, "Prepared Exclusively For", size=14, color=_GREY)
+
+    if client_name:
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _spacing(p, 0, 20)
+        _georgia(p, client_name.upper(), size=14, bold=True)
+
+    # 5. Trip Snapshot box
+    _add_trip_snapshot(doc, destination, requirements, plans_count)
+
+    # 6. Advisor Note
+    _add_advisor_note(doc, destination)
+
+    # 7. Bottom branding
+    blank(2)
+    _thin_rule(doc, before=4, after=6)
+    for line, bold in [
+        ("Bon Voyage By Marina", True),
+        ("Crafting Unforgettable Journeys", False),
+        ("+91 86000 15316", False),
+        ("@bonvoyagebymarina", False),
+    ]:
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _spacing(p, 1, 1)
+        _body_run(p, line, bold=bold, size=9,
+                  color=_CHARCOAL if bold else _GREY)
 
 
 # ── Executive Summary ─────────────────────────────────────────────────────────
@@ -419,13 +510,16 @@ def build_document(
     client_name: str,
     destination: str,
     requirements: str = "",
+    destination_photo: bytes | None = None,
 ) -> bytes:
     doc = Document()
     _set_margins(doc)
     _configure_styles(doc)
 
     # Cover page
-    _build_cover_page(doc, destination, client_name, requirements)
+    _build_cover_page(doc, destination, client_name, requirements,
+                      plans_count=len(plans),
+                      destination_photo=destination_photo)
     _page_break(doc)
 
     # Executive Summary

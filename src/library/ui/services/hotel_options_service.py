@@ -117,7 +117,9 @@ def generate_doc(
                     hotel, place_id, destination, api_key, ai_client
                 )
 
-    docx_bytes = build_document(result.plans, enriched_map, client_name, destination, result.requirements)
+    destination_photo = _enricher.fetch_destination_photo(destination, api_key)
+    docx_bytes = build_document(result.plans, enriched_map, client_name, destination,
+                                result.requirements, destination_photo=destination_photo)
     enriched_count = len(enriched_map)
     maps_calls = len(unique_names) + enriched_count * 2  # Text Search + Place Details + Photo per hotel
     return docx_bytes, ai_client.cost_usd, maps_calls

@@ -27,6 +27,32 @@ def place_id_from_maps_url(url: str) -> str | None:
     return m.group(0) if m else None
 
 
+def fetch_destination_photo(destination: str, api_key: str) -> bytes | None:
+    """Fetch a representative panoramic photo for the destination city."""
+    try:
+        resp = httpx.get(
+            f"{_PLACES_BASE}/textsearch/json",
+            params={"query": f"{destination} architecture street", "key": api_key},
+            timeout=10,
+        )
+        results = resp.json().get("results", [])
+        if not results:
+            return None
+        photos = results[0].get("photos", [])
+        if not photos:
+            return None
+        ref = photos[0]["photo_reference"]
+        photo_resp = httpx.get(
+            f"{_PLACES_BASE}/photo",
+            params={"maxwidth": 1200, "photo_reference": ref, "key": api_key},
+            follow_redirects=True,
+            timeout=10,
+        )
+        return photo_resp.content if photo_resp.status_code == 200 else None
+    except Exception:
+        return None
+
+
 def check_hotels_exist(
     hotel_names: list[str], destination: str, api_key: str
 ) -> dict[str, str | None]:

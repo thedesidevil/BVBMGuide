@@ -94,6 +94,9 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
         running_b2b = 0.0
 
     past_first_plan = False
+    # Maps (hotel_name, online_price) → date-range string from pre-amble section headers.
+    # Used as fallback when plan sections have no inline section-date header.
+    preamble_dates: dict[tuple[str, float], str] = {}
 
     for row in ws.iter_rows():
         cell_a = row[0]
@@ -119,6 +122,16 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
             continue
 
         if not past_first_plan:
+            # Collect (hotel, price) → dates from pre-amble so plan rows can use them.
+            col_i_val = row[8].value if len(row) > 8 else None
+            if val_a and _numeric(col_i_val) is None:
+                m = _SECTION_DATE_RE.search(str_a)
+                if m:
+                    current_section_dates = m.group(1).strip()
+            elif val_a and _numeric(col_i_val) is not None and current_section_dates:
+                price = _numeric(col_i_val)
+                if price is not None:
+                    preamble_dates[(str_a, price)] = current_section_dates
             continue
 
         col_i_val = row[8].value if len(row) > 8 else None
@@ -156,6 +169,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
             running_online += online
             running_b2b += b2b
 
+            dates = current_section_dates or preamble_dates.get((str_a, online), "")
             current_hotels.append(HotelRow(
                 name=str_a,
                 category=str(row[1].value).strip() if row[1].value else "",
@@ -163,7 +177,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
                 cancellation=decoded.cancellation,
                 meal_type=decoded.meal_type,
                 online_price=online,
-                dates=current_section_dates,
+                dates=dates,
             ))
 
     # Flush the last open plan — it may have no trailing summary row

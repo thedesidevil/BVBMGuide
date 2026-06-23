@@ -136,21 +136,71 @@ def _body_run(para, text: str, *, bold=False, italic=False,
 
 def _thin_rule(doc: Document, before: float = 4, after: float = 4,
                color: str = _RULE_COLOR) -> None:
-    p = doc.add_paragraph()
-    fmt = p.paragraph_format
-    fmt.space_before      = Pt(before)
-    fmt.space_after       = Pt(after)
+    """Table-based horizontal rule — survives copy-paste into Google Docs."""
+    def _spacer(pts: float) -> None:
+        p = doc.add_paragraph()
+        fmt = p.paragraph_format
+        fmt.space_before      = Pt(0)
+        fmt.space_after       = Pt(pts)
+        fmt.line_spacing_rule = WD_LINE_SPACING.EXACTLY
+        fmt.line_spacing      = Pt(1)
+
+    if before > 0:
+        _spacer(before)
+
+    table = doc.add_table(rows=1, cols=1)
+    table.autofit = False
+    _no_borders(table)
+
+    # Minimal row height
+    trPr = table.rows[0]._tr.get_or_add_trPr()
+    trh = OxmlElement("w:trHeight")
+    trh.set(qn("w:val"), "1")
+    trh.set(qn("w:hRule"), "exact")
+    trPr.append(trh)
+
+    cell = table.rows[0].cells[0]
+    cell.width = Inches(7.0)
+
+    tc = cell._tc
+    tcPr = tc.get_or_add_tcPr()
+
+    # Zero cell margins
+    tcMar = OxmlElement("w:tcMar")
+    for side in ("top", "left", "bottom", "right"):
+        m = OxmlElement(f"w:{side}")
+        m.set(qn("w:w"), "0")
+        m.set(qn("w:type"), "dxa")
+        tcMar.append(m)
+    tcPr.append(tcMar)
+
+    # Only bottom border visible
+    tcBorders = OxmlElement("w:tcBorders")
+    for side in ("top", "left", "right"):
+        el = OxmlElement(f"w:{side}")
+        el.set(qn("w:val"), "none")
+        el.set(qn("w:sz"), "0")
+        el.set(qn("w:space"), "0")
+        el.set(qn("w:color"), "auto")
+        tcBorders.append(el)
+    b = OxmlElement("w:bottom")
+    b.set(qn("w:val"), "single")
+    b.set(qn("w:sz"), "4")
+    b.set(qn("w:space"), "0")
+    b.set(qn("w:color"), color)
+    tcBorders.append(b)
+    tcPr.append(tcBorders)
+
+    # Minimal paragraph inside cell
+    cp = cell.paragraphs[0]
+    fmt = cp.paragraph_format
+    fmt.space_before      = Pt(0)
+    fmt.space_after       = Pt(0)
     fmt.line_spacing_rule = WD_LINE_SPACING.EXACTLY
     fmt.line_spacing      = Pt(1)
-    ppr = p._p.get_or_add_pPr()
-    pbdr = OxmlElement("w:pBdr")
-    bottom = OxmlElement("w:bottom")
-    bottom.set(qn("w:val"), "single")
-    bottom.set(qn("w:sz"), "4")
-    bottom.set(qn("w:space"), "1")
-    bottom.set(qn("w:color"), color)
-    pbdr.append(bottom)
-    ppr.append(pbdr)
+
+    if after > 0:
+        _spacer(after)
 
 
 def _page_break(doc: Document) -> None:
@@ -259,7 +309,7 @@ def _add_advisor_note(doc: Document, destination: str) -> None:
     )
     p = doc.add_paragraph()
     _spacing(p, 0, 8)
-    _body_run(p, note, size=10.5, color=_GREY)
+    _body_run(p, note, size=10.5, color=_CHARCOAL)
 
 
 # ── Cover page ────────────────────────────────────────────────────────────────
@@ -277,7 +327,7 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
         p = doc.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         _spacing(p, 0, 0)
-        p.add_run().add_picture(io.BytesIO(destination_photo), width=Inches(7.0))
+        p.add_run().add_picture(io.BytesIO(destination_photo), width=Inches(6.5))
     else:
         blank(4)
 
@@ -311,7 +361,8 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
     # 5. Trip Snapshot box
     _add_trip_snapshot(doc, destination, requirements, stay_requirements)
 
-    # 6. Advisor Note
+    # 6. Advisor Note — starts on its own page
+    _page_break(doc)
     _add_advisor_note(doc, destination)
 
     # 7. Bottom branding
@@ -466,7 +517,7 @@ def _add_hotel_card(doc: Document, enriched: EnrichedHotel) -> None:
         p = doc.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         _spacing(p, 8, 6)
-        p.add_run().add_picture(io.BytesIO(enriched.photo_bytes), width=Inches(5.5))
+        p.add_run().add_picture(io.BytesIO(enriched.photo_bytes), width=Inches(5.0))
     else:
         p = doc.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER

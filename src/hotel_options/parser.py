@@ -31,6 +31,13 @@ def _numeric(v) -> float | None:
     return None
 
 
+def _make_dummy_row(length: int = 14) -> tuple:
+    """Create a synthetic row with all None values for flushing without a real summary."""
+    class NoneCell:
+        value = None
+    return tuple(NoneCell() for _ in range(length))
+
+
 def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
     wb = openpyxl.load_workbook(io.BytesIO(xlsx_bytes), data_only=True)
     ws = wb.active
@@ -84,6 +91,9 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
 
         if val_a and _PLAN_RE.match(str_a):
             past_first_plan = True
+            # Flush previous plan before starting new one (handles missing summary row)
+            if current_label is not None:
+                _flush(_make_dummy_row())
             current_label = str_a.title()  # "PLAN A" → "Plan A"
             current_hotels = []
             running_online = 0.0
@@ -116,10 +126,12 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
                     plan_label=current_label or "",
                 ))
 
-            online = _numeric(col_i_val) or 0.0
-            b2b = _numeric(row[9].value) if len(row) > 9 else None
+            online_raw = _numeric(col_i_val)
+            online = online_raw if online_raw is not None else 0.0
+            b2b_raw = _numeric(row[9].value) if len(row) > 9 else None
+            b2b = b2b_raw if b2b_raw is not None else 0.0
             running_online += online
-            running_b2b += (b2b or 0.0)
+            running_b2b += b2b
 
             current_hotels.append(HotelRow(
                 name=str_a,

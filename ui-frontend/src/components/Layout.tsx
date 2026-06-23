@@ -11,6 +11,7 @@ interface LayoutProps {
   sidebar: ReactNode;
   children: ReactNode;
   userEmail: string | null;
+  serverVersion?: string;
 }
 
 function Tab({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) {
@@ -26,7 +27,7 @@ function Tab({ label, active, onClick }: { label: string; active: boolean; onCli
 
 const NO_SIDEBAR_MODES: Mode[] = ["ingest", "history", "audit", "verify", "hotel_options"];
 
-export function Layout({ mode, onModeChange, isAdmin, reviewedCount, totalCount, sidebar, children, userEmail }: LayoutProps) {
+export function Layout({ mode, onModeChange, isAdmin, reviewedCount, totalCount, sidebar, children, userEmail, serverVersion }: LayoutProps) {
   return (
     <div className="h-screen flex flex-col overflow-hidden">
       <header className="bg-white border-b border-slate-200 px-6 py-3 flex items-center gap-6 shadow-sm">
@@ -47,6 +48,11 @@ export function Layout({ mode, onModeChange, isAdmin, reviewedCount, totalCount,
         </div>
         <div className="ml-auto flex items-center gap-4 text-sm text-slate-500">
           {isAdmin && <span>{reviewedCount} / {totalCount} cities reviewed</span>}
+          {serverVersion && (
+            <span className="font-mono text-xs text-slate-300" title="Server git commit">
+              {serverVersion}
+            </span>
+          )}
           {userEmail && (
             <>
               <span className="text-slate-400">{userEmail}</span>

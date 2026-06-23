@@ -123,6 +123,23 @@ def create_app(
             status_code=200,
         )
 
+    @app.get("/api/version")
+    async def version():
+        import subprocess
+        try:
+            commit = subprocess.check_output(
+                ["git", "rev-parse", "--short", "HEAD"],
+                stderr=subprocess.DEVNULL, text=True,
+            ).strip()
+            dirty = bool(subprocess.check_output(
+                ["git", "status", "--porcelain"],
+                stderr=subprocess.DEVNULL, text=True,
+            ).strip())
+        except Exception:
+            commit = "unknown"
+            dirty = False
+        return {"commit": commit, "dirty": dirty}
+
     @app.get("/api/me")
     async def me(request: Request):
         user = ga.user_session(request)

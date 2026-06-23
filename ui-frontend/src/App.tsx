@@ -23,6 +23,16 @@ export default function App() {
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [serverVersion, setServerVersion] = useState<string>("");
+
+  useEffect(() => {
+    fetch("/api/version")
+      .then((r) => r.ok ? r.json() : null)
+      .then((data) => {
+        if (data?.commit) setServerVersion(data.commit + (data.dirty ? "*" : ""));
+      })
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     fetch("/api/me", { credentials: "same-origin" })
@@ -62,6 +72,7 @@ export default function App() {
         reviewedCount={reviewedCount}
         totalCount={totalCount}
         userEmail={userEmail}
+        serverVersion={serverVersion}
         sidebar={
           <Sidebar
             tree={tree}

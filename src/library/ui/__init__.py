@@ -10,7 +10,7 @@ from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from starlette.middleware.sessions import SessionMiddleware
 
 from . import google_auth as ga
-from .api import tree, city, country, review, sweep, audit, ingest, verify
+from .api import tree, city, country, review, sweep, audit, ingest, verify, hotel_options
 from .storage import LocalStorageBackend, StorageBackend
 
 
@@ -123,6 +123,23 @@ def create_app(
             status_code=200,
         )
 
+    @app.get("/api/version")
+    async def version():
+        import subprocess
+        try:
+            commit = subprocess.check_output(
+                ["git", "rev-parse", "--short", "HEAD"],
+                stderr=subprocess.DEVNULL, text=True,
+            ).strip()
+            dirty = bool(subprocess.check_output(
+                ["git", "status", "--porcelain"],
+                stderr=subprocess.DEVNULL, text=True,
+            ).strip())
+        except Exception:
+            commit = "unknown"
+            dirty = False
+        return {"commit": commit, "dirty": dirty}
+
     @app.get("/api/me")
     async def me(request: Request):
         user = ga.user_session(request)
@@ -141,6 +158,7 @@ def create_app(
     app.include_router(audit.router, prefix="/api", dependencies=_admin)
     app.include_router(ingest.router, prefix="/api", dependencies=_admin)
     app.include_router(verify.router, prefix="/api")  # all authenticated users
+    app.include_router(hotel_options.router, prefix="/api")  # all authenticated users
 
     from fastapi.staticfiles import StaticFiles
 

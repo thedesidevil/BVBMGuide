@@ -1,8 +1,13 @@
 """Uvicorn server runner for the Library QC UI."""
 
+import sys
 from pathlib import Path
 
 import uvicorn
+
+# Prevent Python from writing .pyc bytecode cache files so a stale cache
+# can never cause the server to run old code after source edits.
+sys.dont_write_bytecode = True
 
 from . import create_app
 

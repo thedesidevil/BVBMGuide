@@ -9,10 +9,11 @@ import { IngestWizard } from "./components/IngestWizard";
 import { IngestHistory } from "./components/IngestHistory";
 import { AuditLog } from "./components/AuditLog";
 import { VerifyTab } from "./components/VerifyTab";
+import { HotelOptionsTab } from "./components/HotelOptionsTab";
 import type { TreeData } from "./types";
 import { api } from "./api/client";
 
-type Mode = "city" | "sweep" | "ingest" | "history" | "audit" | "verify";
+type Mode = "city" | "sweep" | "ingest" | "history" | "audit" | "verify" | "hotel_options";
 
 export default function App() {
   const [isAdmin, setIsAdmin] = useState<boolean>(true);
@@ -22,6 +23,16 @@ export default function App() {
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [serverVersion, setServerVersion] = useState<string>("");
+
+  useEffect(() => {
+    fetch("/api/version")
+      .then((r) => r.ok ? r.json() : null)
+      .then((data) => {
+        if (data?.commit) setServerVersion(data.commit + (data.dirty ? "*" : ""));
+      })
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     fetch("/api/me", { credentials: "same-origin" })
@@ -61,6 +72,7 @@ export default function App() {
         reviewedCount={reviewedCount}
         totalCount={totalCount}
         userEmail={userEmail}
+        serverVersion={serverVersion}
         sidebar={
           <Sidebar
             tree={tree}
@@ -85,6 +97,7 @@ export default function App() {
         {mode === "history" && <IngestHistory />}
         {mode === "audit" && <AuditLog />}
         {mode === "verify" && <VerifyTab />}
+        {mode === "hotel_options" && <HotelOptionsTab />}
       </Layout>
     </>
   );

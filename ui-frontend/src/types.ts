@@ -137,3 +137,48 @@ export interface VerifyResult {
   narratives: VerifyNarratives;
   meta: VerifyMeta;
 }
+
+// --- Hotel Options types ---
+
+export interface HotelOptionsHotel {
+  name: string;
+  category: string;
+  room_type: string;
+  cancellation: string;
+  meal_type: string;
+  dates: string;
+}
+
+export interface HotelOptionsPricing {
+  total_online_price: number;
+  customer_discount: number;
+  discounted_price: number;
+  discount_pct: number;
+}
+
+export interface HotelOptionsPlan {
+  label: string;
+  hotels: HotelOptionsHotel[];
+  pricing: HotelOptionsPricing;
+}
+
+export interface HotelOptionsUnknownCode {
+  code: string;
+  hotel_name: string;
+  plan_label: string;
+}
+
+export interface HotelOptionsNotFound {
+  sheet_name: string;
+  plan_label: string;
+}
+
+export interface HotelOptionsParseResult {
+  client_name: string;
+  destination: string;
+  requirements: string;
+  plans: HotelOptionsPlan[];
+  unknown_codes: HotelOptionsUnknownCode[];
+  not_found: HotelOptionsNotFound[];
+  maps_api_calls: number;
+}

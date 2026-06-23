@@ -599,56 +599,55 @@ def _build_thank_you_page(doc: Document, destination: str,
     r.font.size      = Pt(20)
     r.font.color.rgb = _CHARCOAL
 
-    # Body text — Arial 11pt left-aligned, destination-personalised
-    body_lines = [
-        f"Thank you for giving Bon Voyage By Marina the opportunity to assist with your {destination} journey.",
-        f"We hope the accommodation options in this document help you find the stay that best matches your travel style, preferences, and budget.",
-        f"Should you wish to explore additional options, alternative locations, upgraded room categories, or other travel arrangements, we would be delighted to assist.",
-    ]
-    for line in body_lines:
-        p = doc.add_paragraph()
-        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-        _spacing(p, 0, 6)
-        _body_run(p, line, size=11, color=_CHARCOAL)
+    # Body — lines 1 and 2 in same paragraph, line 3 separate
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    _spacing(p, 0, 6)
+    _body_run(p, (
+        f"Thank you for giving Bon Voyage By Marina the opportunity to assist with your {destination} journey. "
+        f"We hope the accommodation options in this document help you find the stay that best matches your travel style, preferences, and budget."
+    ), size=11, color=_CHARCOAL)
 
-    blank(1)
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    _spacing(p, 0, 6)
+    _body_run(p, "Should you wish to explore additional options, alternative locations, upgraded room categories, or other travel arrangements, we would be delighted to assist.",
+              size=11, color=_CHARCOAL)
 
-    # Closing — Arial 11pt italic, left-aligned
+    # Closing — regular (not italic)
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.LEFT
     _spacing(p, 18, 24)
     _body_run(p, f"We look forward to helping create an unforgettable {destination} experience for you.",
-              italic=True, size=11, color=_CHARCOAL)
+              size=11, color=_CHARCOAL)
 
-    # Signature — "Warm regards," then full letterhead block, left-aligned
+    # Signature — "Warm regards," directly followed by letterhead block, no gap
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    _spacing(p, 0, 12)
+    _spacing(p, 0, 4)
     _body_run(p, "Warm regards,", size=11, color=_CHARCOAL)
 
-    blank(1)
-
-    # Full letterhead block — same fonts/styling as cover page, left-aligned
+    # Full letterhead block — compact spacing matching the letterhead document
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    _spacing(p, 12, 12)
+    _spacing(p, 4, 2)
     _body_run(p, "Bon Voyage By Marina", bold=True, size=11, color=_CHARCOAL)
 
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    _spacing(p, 12, 12)
+    _spacing(p, 0, 2)
     _body_run(p, "Bespoke Travel Planning • Premium Stays • Seamless Experiences",
               italic=True, size=11, color=_CHARCOAL)
 
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    _spacing(p, 12, 12)
+    _spacing(p, 0, 2)
     _body_run(p, "\U0001f4de +91 86000 15316 | \U0001f4f8 @bonvoyagebymarina | \U0001f310 www.bonvoyagebymarina.com",
               size=11, color=_CHARCOAL)
 
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    _spacing(p, 12, 12)
+    _spacing(p, 0, 2)
     _body_run(p, "✈️ ", size=11, color=_CHARCOAL)
     _body_run(p, "Crafting unforgettable journeys, one trip at a time.",
               italic=True, size=11, color=_CHARCOAL)

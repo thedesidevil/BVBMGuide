@@ -339,7 +339,7 @@ def _add_key_facts(doc: Document, enriched: EnrichedHotel) -> None:
         facts.append(("📞 Phone", enriched.phone))
     if enriched.rating:
         facts.append(("⭐ Guest Rating",
-                       f"{enriched.rating} / 5  ({enriched.rating_count:,} reviews)"))
+                       f"{enriched.rating}/5 ({enriched.rating_count:,} reviews)"))
     if enriched.dates:
         facts.append(("📅 Check-in / Check-out", enriched.dates))
     if enriched.cancellation:
@@ -350,7 +350,7 @@ def _add_key_facts(doc: Document, enriched: EnrichedHotel) -> None:
     for label, value in facts:
         p = doc.add_paragraph()
         _spacing(p, 1, 2)
-        _body_run(p, f"{label}:  ", bold=True, size=11, color=_GREY)
+        _body_run(p, f"{label}: ", bold=True, size=11, color=_GREY)
         _body_run(p, value, size=11, color=_CHARCOAL)
 
 

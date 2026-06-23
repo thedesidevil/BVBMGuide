@@ -127,7 +127,9 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
             if val_a and _numeric(col_i_val) is None:
                 m = _SECTION_DATE_RE.search(str_a)
                 if m:
-                    current_section_dates = m.group(1).strip()
+                    raw = m.group(1).strip()
+                    # Ensure space before hyphen: "Jun 28- Jul 4" → "Jun 28 - Jul 4"
+                    current_section_dates = re.sub(r'(\S)-', r'\1 -', raw)
             elif val_a and _numeric(col_i_val) is not None and current_section_dates:
                 price = _numeric(col_i_val)
                 if price is not None:
@@ -146,7 +148,8 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
         if val_a and _numeric(col_i_val) is None:
             m = _SECTION_DATE_RE.search(str_a)
             if m:
-                current_section_dates = m.group(1).strip()
+                raw = m.group(1).strip()
+                current_section_dates = re.sub(r'(\S)-', r'\1 -', raw)
             continue
 
         # Hotel row: col A non-empty, col I numeric

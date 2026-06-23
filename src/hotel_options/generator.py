@@ -46,6 +46,9 @@ def _add_hyperlink(paragraph, text: str, url: str) -> None:
     sz = OxmlElement("w:sz")
     sz.set(qn("w:val"), "28")  # 14pt = 28 half-points
     rpr.append(sz)
+    szCs = OxmlElement("w:szCs")
+    szCs.set(qn("w:val"), "28")  # 14pt = 28 half-points
+    rpr.append(szCs)
     run_elem.append(rpr)
     t = OxmlElement("w:t")
     t.text = text
@@ -78,6 +81,8 @@ def _add_page_break(doc: Document) -> None:
 def _remove_table_borders(table) -> None:
     tbl = table._tbl
     tbl_pr = tbl.tblPr
+    for existing in tbl_pr.findall(qn("w:tblBorders")):
+        tbl_pr.remove(existing)
     tbl_borders = OxmlElement("w:tblBorders")
     for name in ("top", "left", "bottom", "right", "insideH", "insideV"):
         border = OxmlElement(f"w:{name}")

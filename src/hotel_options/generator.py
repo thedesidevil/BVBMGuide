@@ -367,13 +367,15 @@ def _add_hotel_card(doc: Document, enriched: EnrichedHotel) -> None:
         _spacing(p, 8, 6)
         _body_run(p, "[ Image not available ]", size=9, color=_GREY)
 
-    # Hotel name — Heading 2
-    name_para = doc.add_paragraph(
-        enriched.official_name or enriched.address or "Hotel",
-        style="Heading 2",
-    )
-    _spacing(name_para, 4, 6)
-    _fix_fonts(name_para)
+    # Hotel name — Georgia 16pt Bold, 12pt above, thin divider below
+    name_para = doc.add_paragraph()
+    _spacing(name_para, 12, 4)
+    r = name_para.add_run(enriched.official_name or enriched.address or "Hotel")
+    r.bold           = True
+    r.font.name      = "Georgia"
+    r.font.size      = Pt(16)
+    r.font.color.rgb = _CHARCOAL
+    _thin_rule(doc, before=0, after=6)
 
     _add_key_facts(doc, enriched)
 

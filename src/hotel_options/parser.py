@@ -101,6 +101,8 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
         str_a = str(val_a).strip() if val_a is not None else ""
 
         if val_a and _PLAN_RE.match(str_a):
+            if cell_a.font and cell_a.font.strike:
+                continue
             past_first_plan = True
             if current_label is not None:
                 _flush(_make_dummy_row())

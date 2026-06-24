@@ -186,3 +186,7 @@ def test_no_plans_flat_all_hotels_in_one_plan():
     assert len(result.plans) == 1
     assert result.plans[0].label == "All Hotels"
     assert len(result.plans[0].hotels) == 3
+    assert result.plans[0].pricing.total_online_price == 90000.0
+    assert result.plans[0].pricing.customer_discount == 0.0
+    assert result.plans[0].pricing.discounted_price == 90000.0
+    assert result.plans[0].pricing.discount_pct == 0.0

@@ -192,6 +192,34 @@ def test_no_plans_flat_all_hotels_in_one_plan():
     assert result.plans[0].pricing.discount_pct == 0.0
 
 
+def test_no_plans_string_prices_in_col_i():
+    """Col I contains string-formatted currency values (e.g. '1,50,000' or '₹50,000')."""
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.cell(1, 1).value = "2 adults\nrefundable with breakfast"
+    ws.cell(2, 1).value = "London"
+    ws.cell(3, 1).value = "Hotel Alpha"
+    ws.cell(3, 2).value = "4-Star"
+    ws.cell(3, 3).value = "Deluxe"
+    ws.cell(3, 8).value = "nr"
+    ws.cell(3, 9).value = "1,50,000"   # Indian thousands-separated string
+    ws.cell(4, 1).value = "Hotel Beta"
+    ws.cell(4, 2).value = "3-Star"
+    ws.cell(4, 3).value = "Standard"
+    ws.cell(4, 8).value = "br"
+    ws.cell(4, 9).value = "₹2,00,000"  # With rupee symbol
+    buf = io.BytesIO()
+    wb.save(buf)
+    result = parse_excel(buf.getvalue(), codes={})
+    assert result.grouped_by_sections is True
+    assert len(result.plans) == 1
+    assert result.plans[0].label == "London"
+    assert len(result.plans[0].hotels) == 2
+    assert result.plans[0].hotels[0].online_price == 150000.0
+    assert result.plans[0].hotels[1].online_price == 200000.0
+    assert result.plans[0].pricing.total_online_price == 350000.0
+
+
 def test_no_plans_empty_section_between_real_sections():
     """A section header with no hotels before the next header is silently dropped."""
     wb = openpyxl.Workbook()

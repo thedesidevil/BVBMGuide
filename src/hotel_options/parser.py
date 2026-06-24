@@ -29,6 +29,13 @@ def extract_filename_meta(filename: str) -> tuple[str, str]:
 def _numeric(v) -> float | None:
     if isinstance(v, (int, float)):
         return float(v)
+    if isinstance(v, str):
+        clean = v.strip().lstrip('₹$€£¥').replace(',', '').strip()
+        try:
+            result = float(clean)
+            return result if result > 0 else None
+        except (ValueError, TypeError):
+            return None
     return None
 
 

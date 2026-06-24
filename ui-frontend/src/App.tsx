@@ -18,6 +18,7 @@ type Mode = "city" | "sweep" | "ingest" | "history" | "audit" | "verify" | "hote
 export default function App() {
   const [isAdmin, setIsAdmin] = useState<boolean>(true);
   const [mode, setMode] = useState<Mode>("verify");
+  const [lastLibraryMode, setLastLibraryMode] = useState<"city" | "sweep" | "ingest" | "history" | "audit">("city");
   const [tree, setTree] = useState<TreeData>({});
   const [treeLoaded, setTreeLoaded] = useState(false);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
@@ -62,12 +63,21 @@ export default function App() {
   );
   const totalCount = Object.values(tree).reduce((sum, n) => sum + n.cities.length, 0);
 
+  const handleModeChange = (newMode: Mode) => {
+    const libraryModes = ["city", "sweep", "ingest", "history", "audit"] as const;
+    if ((libraryModes as readonly string[]).includes(newMode)) {
+      setLastLibraryMode(newMode as typeof libraryModes[number]);
+    }
+    setMode(newMode);
+  };
+
   return (
     <>
       <LoadingScreen loaded={isAdmin ? treeLoaded : true} />
       <Layout
         mode={mode}
-        onModeChange={setMode}
+        onModeChange={handleModeChange}
+        lastLibraryMode={lastLibraryMode}
         isAdmin={isAdmin}
         reviewedCount={reviewedCount}
         totalCount={totalCount}

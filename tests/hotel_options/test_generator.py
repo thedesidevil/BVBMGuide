@@ -102,6 +102,46 @@ def test_build_document_grouped_by_sections_has_city_dates_header():
     assert "Hotel B" in all_text
 
 
+def test_build_document_grouped_sections_per_hotel_pricing():
+    """Each hotel in the sections body gets its own pricing block (Our Price row)."""
+    doc_bytes = build_document(
+        plans=_make_section_plans(),
+        enriched_map={},
+        client_name="Alice",
+        destination="London",
+        grouped_by_sections=True,
+    )
+    import io as _io
+    from docx import Document as _Doc
+    doc = _Doc(_io.BytesIO(doc_bytes))
+    all_text = "\n".join(
+        cell.text for table in doc.tables for row in table.rows for cell in row.cells
+    )
+    # 3 per-hotel pricing blocks + 1 "Our Price" header in exec summary table = 4
+    assert all_text.count("Our Price") == 4
+
+
+def test_build_document_plan_path_unchanged():
+    """The PLAN A/B path must still use plan-level pricing (not per-hotel)."""
+    doc_bytes = build_document(
+        plans=[_make_plan()],
+        enriched_map={"Test Hotel": _make_enriched()},
+        client_name="Bob",
+        destination="London",
+        grouped_by_sections=False,
+    )
+    import io as _io
+    from docx import Document as _Doc
+    doc = _Doc(_io.BytesIO(doc_bytes))
+    full_text = "\n".join(p.text for p in doc.paragraphs)
+    table_text = "\n".join(
+        cell.text for table in doc.tables for row in table.rows for cell in row.cells
+    )
+    assert "PLAN A" in full_text
+    assert "Our Price" in table_text
+    assert "City / Dates" not in table_text
+
+
 def test_build_document_no_plan_column_when_grouped():
     """When grouped_by_sections=True, exec summary has 'City / Dates' not 'Plan'."""
     doc_bytes = build_document(

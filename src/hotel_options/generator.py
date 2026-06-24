@@ -648,6 +648,32 @@ def _add_pricing_block(doc: Document, plan: Plan) -> None:
         _body_run(vp, value, bold=bold, size=val_size, color=val_color)
 
 
+def _add_hotel_pricing_block(doc: Document, hotel) -> None:
+    """Per-hotel pricing table using HotelRow discount fields."""
+    our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
+    if hotel.customer_discount > 0:
+        save_str = (f"{format_indian_number(hotel.customer_discount)}"
+                    f"  ({hotel.discount_pct:.1f}% off best online prices)")
+        save_color = _GREEN
+    else:
+        save_str = "—"
+        save_color = _GREY
+
+    table = doc.add_table(rows=3, cols=2)
+    _no_borders(table)
+    rows_data = [
+        ("Online Price", format_indian_number(hotel.online_price), False, _GREY, _CHARCOAL, 11),
+        ("Our Price",    format_indian_number(our_price),          True,  _GREY, _CHARCOAL, 13),
+        ("You Save",     save_str,                                 True,  _GREY, save_color, 11),
+    ]
+    for i, (label, value, bold, lbl_color, val_color, val_size) in enumerate(rows_data):
+        lp = table.rows[i].cells[0].paragraphs[0]
+        _body_run(lp, label, size=11, color=lbl_color)
+        vp = table.rows[i].cells[1].paragraphs[0]
+        vp.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+        _body_run(vp, value, bold=bold, size=val_size, color=val_color)
+
+
 # ── Main entry point ──────────────────────────────────────────────────────────
 
 def build_document(
@@ -674,31 +700,54 @@ def build_document(
     _build_executive_summary(doc, plans, enriched_map, grouped_by_sections=grouped_by_sections)
     _page_break(doc)
 
-    # One page per plan
-    for plan_idx, plan in enumerate(plans):
-        if plan_idx > 0:
-            _page_break(doc)
+    # Detail sections
+    if grouped_by_sections:
+        # Section = city/dates group. Each hotel within a section gets its own
+        # card + individual pricing block. One page break between sections.
+        for plan_idx, plan in enumerate(plans):
+            if plan_idx > 0:
+                _page_break(doc)
 
-        # Plan heading — Heading 1
-        _heading(doc, plan.label.upper(), level=1)
-        _thin_rule(doc, before=2, after=8, color=_HDR_BG)
+            _heading(doc, plan.label.upper(), level=1)
+            _thin_rule(doc, before=2, after=8, color=_HDR_BG)
 
-        # Hotel cards
-        for i, hotel in enumerate(plan.hotels):
-            if i > 0:
-                _thin_rule(doc, before=8, after=4)
-            enriched = enriched_map.get(hotel.name)
-            if enriched:
-                _add_hotel_card(doc, enriched)
-            else:
-                p = doc.add_paragraph()
-                _spacing(p, 8, 8)
-                _body_run(p, f"[ {hotel.name} — details not available ]",
-                          color=_GREY)
+            for i, hotel in enumerate(plan.hotels):
+                if i > 0:
+                    _thin_rule(doc, before=8, after=4)
+                enriched = enriched_map.get(hotel.name)
+                if enriched:
+                    _add_hotel_card(doc, enriched)
+                else:
+                    p = doc.add_paragraph()
+                    _spacing(p, 8, 4)
+                    _body_run(p, hotel.name, bold=True, size=13, color=_CHARCOAL)
+                    _thin_rule(doc, before=0, after=6)
 
-        # Pricing
-        _thin_rule(doc, before=12, after=8)
-        _add_pricing_block(doc, plan)
+                _thin_rule(doc, before=12, after=8)
+                _add_hotel_pricing_block(doc, hotel)
+    else:
+        # Original plan-based layout — one page per plan, shared pricing block.
+        for plan_idx, plan in enumerate(plans):
+            if plan_idx > 0:
+                _page_break(doc)
+
+            _heading(doc, plan.label.upper(), level=1)
+            _thin_rule(doc, before=2, after=8, color=_HDR_BG)
+
+            for i, hotel in enumerate(plan.hotels):
+                if i > 0:
+                    _thin_rule(doc, before=8, after=4)
+                enriched = enriched_map.get(hotel.name)
+                if enriched:
+                    _add_hotel_card(doc, enriched)
+                else:
+                    p = doc.add_paragraph()
+                    _spacing(p, 8, 8)
+                    _body_run(p, f"[ {hotel.name} — details not available ]",
+                              color=_GREY)
+
+            _thin_rule(doc, before=12, after=8)
+            _add_pricing_block(doc, plan)
 
     # Final thank you page
     _page_break(doc)

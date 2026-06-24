@@ -42,6 +42,7 @@ class ParseResult:
     unknown_codes: list[UnknownCode]
     not_found: list[dict]
     requirements: str = ""
+    grouped_by_sections: bool = False
 
 
 @dataclass

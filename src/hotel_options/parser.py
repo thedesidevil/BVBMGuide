@@ -39,6 +39,81 @@ def _make_dummy_row(length: int = 14) -> tuple:
     return tuple(NoneCell() for _ in range(length))
 
 
+def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode]]:
+    """Group hotels by section headers when no PLAN markers found.
+    Returns (plans, unknown_codes). If no section headers, one "All Hotels" plan."""
+    all_plans: list[Plan] = []
+    unknown_codes: list[UnknownCode] = []
+    current_label: str | None = None
+    current_hotels: list[HotelRow] = []
+    running_online = 0.0
+    running_b2b = 0.0
+
+    def _flush():
+        nonlocal current_label, current_hotels, running_online, running_b2b
+        if not current_hotels:
+            current_label = None
+            current_hotels = []
+            running_online = 0.0
+            running_b2b = 0.0
+            return
+        pricing = PlanPricing(
+            total_online_price=running_online,
+            total_b2b_price=running_b2b,
+            customer_discount=0.0,
+            discounted_price=running_online,
+            discount_pct=0.0,
+        )
+        all_plans.append(Plan(
+            label=current_label if current_label is not None else "All Hotels",
+            hotels=list(current_hotels),
+            pricing=pricing,
+        ))
+        current_label = None
+        current_hotels = []
+        running_online = 0.0
+        running_b2b = 0.0
+
+    for row in ws.iter_rows():
+        cell_a = row[0]
+        row_dim = ws.row_dimensions.get(cell_a.row)
+        if (cell_a.font and cell_a.font.strike) or (row_dim and row_dim.font and row_dim.font.strike):
+            continue
+
+        val_a = cell_a.value
+        str_a = str(val_a).strip() if val_a is not None else ""
+        col_i_val = row[8].value if len(row) > 8 else None
+
+        # Section header: col A non-empty, col I blank, not a PLAN header, not A1
+        if val_a and _numeric(col_i_val) is None and not _PLAN_RE.match(str_a) and cell_a.row > 1:
+            _flush()
+            current_label = str_a
+            continue
+
+        # Hotel row: col A non-empty, col I numeric
+        if val_a and _numeric(col_i_val) is not None:
+            col_h_val = row[7].value if len(row) > 7 else None
+            decoded = decode_col_h(str(col_h_val) if col_h_val is not None else None, codes)
+            for unk in decoded.unknowns:
+                unknown_codes.append(UnknownCode(code=unk, hotel_name=str_a, plan_label=current_label or ""))
+            online = _numeric(col_i_val) or 0.0
+            b2b = (_numeric(row[9].value) if len(row) > 9 else None) or 0.0
+            running_online += online
+            running_b2b += b2b
+            current_hotels.append(HotelRow(
+                name=str_a,
+                category=str(row[1].value).strip() if row[1].value else "",
+                room_type=str(row[2].value).strip() if row[2].value else "",
+                cancellation=decoded.cancellation,
+                meal_type=decoded.meal_type,
+                online_price=online,
+                dates="",
+            ))
+
+    _flush()
+    return all_plans, unknown_codes
+
+
 def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
     wb = openpyxl.load_workbook(io.BytesIO(xlsx_bytes), data_only=True)
     ws = wb.active
@@ -185,8 +260,18 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
 
     # Flush the last open plan — it may have no trailing summary row
     _flush(_make_dummy_row())
-
-    # Drop any plans that ended up with no hotels (e.g. duplicate PLAN headers in Excel)
     plans = [p for p in plans if p.hotels]
 
-    return ParseResult(plans=plans, unknown_codes=unknown_codes, not_found=[], requirements=requirements)
+    grouped_by_sections = False
+    if not plans:
+        plans, extra_codes = _parse_no_plans(ws, codes)
+        unknown_codes.extend(extra_codes)
+        grouped_by_sections = bool(plans)
+
+    return ParseResult(
+        plans=plans,
+        unknown_codes=unknown_codes,
+        not_found=[],
+        requirements=requirements,
+        grouped_by_sections=grouped_by_sections,
+    )

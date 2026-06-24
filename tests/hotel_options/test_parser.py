@@ -190,3 +190,34 @@ def test_no_plans_flat_all_hotels_in_one_plan():
     assert result.plans[0].pricing.customer_discount == 0.0
     assert result.plans[0].pricing.discounted_price == 90000.0
     assert result.plans[0].pricing.discount_pct == 0.0
+
+
+def test_no_plans_empty_section_between_real_sections():
+    """A section header with no hotels before the next header is silently dropped."""
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.cell(1, 1).value = "Any requirement"
+    # Section 1: "Empty" — no hotels
+    ws.cell(2, 1).value = "Empty Section"
+    # Section 2: "Active" — two hotels
+    ws.cell(3, 1).value = "Active Section"
+    ws.cell(4, 1).value = "Hotel One"
+    ws.cell(4, 2).value = "4-Star"
+    ws.cell(4, 3).value = "Double"
+    ws.cell(4, 8).value = "nr"
+    ws.cell(4, 9).value = 50000.0
+    ws.cell(4, 10).value = 45000.0
+    ws.cell(5, 1).value = "Hotel Two"
+    ws.cell(5, 2).value = "3-Star"
+    ws.cell(5, 3).value = "Standard"
+    ws.cell(5, 8).value = "br"
+    ws.cell(5, 9).value = 40000.0
+    ws.cell(5, 10).value = 36000.0
+    buf = io.BytesIO()
+    wb.save(buf)
+    result = parse_excel(buf.getvalue(), codes={})
+    assert result.grouped_by_sections is True
+    assert len(result.plans) == 1
+    assert result.plans[0].label == "Active Section"
+    assert len(result.plans[0].hotels) == 2
+    assert result.plans[0].pricing.total_online_price == 90000.0

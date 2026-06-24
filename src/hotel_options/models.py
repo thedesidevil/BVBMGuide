@@ -11,6 +11,9 @@ class HotelRow:
     meal_type: str
     online_price: float
     dates: str = ""
+    customer_discount: float = 0.0
+    discounted_price: float = 0.0
+    discount_pct: float = 0.0
 
 
 @dataclass

@@ -233,7 +233,8 @@ def generate_doc(
     stay_requirements = _format_stay_requirements(result.requirements, ai_client)
     docx_bytes = build_document(result.plans, enriched_map, client_name, destination,
                                 result.requirements, destination_photo=destination_photo,
-                                stay_requirements=stay_requirements)
+                                stay_requirements=stay_requirements,
+                                grouped_by_sections=result.grouped_by_sections)
     enriched_count = len(enriched_map)
     maps_calls = len(unique_names) + enriched_count * 2  # Text Search + Place Details + Photo per hotel
     return docx_bytes, ai_client.cost_usd, maps_calls

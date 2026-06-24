@@ -105,6 +105,12 @@ def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode]]:
                 unknown_codes.append(UnknownCode(code=unk, hotel_name=str_a, plan_label=current_label or ""))
             online = _numeric(col_i_val) or 0.0
             b2b = (_numeric(row[9].value) if len(row) > 9 else None) or 0.0
+            col_l = (_numeric(row[11].value) if len(row) > 11 else None) or 0.0
+            col_m = _numeric(row[12].value) if len(row) > 12 else None
+            col_n = _numeric(row[13].value) if len(row) > 13 else None
+            discount = col_l
+            discounted = col_m if col_m is not None else (online - discount)
+            pct = col_n if col_n is not None else (discount / online * 100 if online else 0.0)
             running_online += online
             running_b2b += b2b
             current_hotels.append(HotelRow(
@@ -115,6 +121,9 @@ def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode]]:
                 meal_type=decoded.meal_type,
                 online_price=online,
                 dates="",
+                customer_discount=discount,
+                discounted_price=discounted,
+                discount_pct=pct,
             ))
 
     _flush()

@@ -192,6 +192,32 @@ def test_no_plans_flat_all_hotels_in_one_plan():
     assert result.plans[0].pricing.discount_pct == 0.0
 
 
+def test_no_plans_per_hotel_pricing():
+    """Cols L/M/N are captured as per-hotel discount data."""
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.cell(1, 1).value = "Breakfast included"
+    ws.cell(2, 1).value = "London (Jul 1 - Jul 4)"
+    ws.cell(3, 1).value = "Hotel Alpha"
+    ws.cell(3, 2).value = "4-Star"
+    ws.cell(3, 3).value = "Double"
+    ws.cell(3, 8).value = "nr"
+    ws.cell(3, 9).value = 100000.0   # col I online
+    ws.cell(3, 10).value = 90000.0   # col J b2b
+    ws.cell(3, 12).value = 5000.0    # col L customer_discount
+    ws.cell(3, 13).value = 95000.0   # col M discounted_price
+    ws.cell(3, 14).value = 5.0       # col N discount_pct
+    buf = io.BytesIO()
+    wb.save(buf)
+    result = parse_excel(buf.getvalue(), codes={})
+    assert len(result.plans) == 1
+    hotel = result.plans[0].hotels[0]
+    assert hotel.online_price == 100000.0
+    assert hotel.customer_discount == 5000.0
+    assert hotel.discounted_price == 95000.0
+    assert hotel.discount_pct == 5.0
+
+
 def test_no_plans_string_prices_in_col_i():
     """Col I contains string-formatted currency values (e.g. '1,50,000' or '₹50,000')."""
     wb = openpyxl.Workbook()

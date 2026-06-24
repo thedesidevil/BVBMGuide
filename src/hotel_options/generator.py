@@ -402,7 +402,8 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
 # ── Executive Summary ─────────────────────────────────────────────────────────
 
 def _build_executive_summary(doc: Document, plans: list[Plan],
-                              enriched_map: dict[str, EnrichedHotel]) -> None:
+                              enriched_map: dict[str, EnrichedHotel],
+                              grouped_by_sections: bool = False) -> None:
     if not plans:
         return
     _heading(doc, "Executive Summary", level=1)
@@ -411,6 +412,87 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
     _spacing(p, 0, 12)
     _body_run(p, "Compare all accommodation options at a glance.", color=_GREY)
 
+    if grouped_by_sections:
+        _build_exec_summary_by_hotel(doc, plans)
+    else:
+        _build_exec_summary_by_plan(doc, plans)
+
+    _thin_borders(doc.tables[-1])
+
+
+def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
+    """One row per hotel. Used when the file has section headers instead of PLAN markers."""
+    # Flatten to (section_label, hotel) pairs
+    hotel_rows = [(plan.label, hotel) for plan in plans for hotel in plan.hotels]
+
+    col_labels = ["City / Dates", "Hotel", "Online Price", "Our Price", "You Save"]
+    col_widths = [Inches(1.55), Inches(2.55), Inches(0.9), Inches(0.9), Inches(1.1)]
+
+    table = doc.add_table(rows=1 + len(hotel_rows), cols=len(col_labels))
+    table.autofit = False
+    for i, w in enumerate(col_widths):
+        for row in table.rows:
+            row.cells[i].width = w
+
+    for i, label in enumerate(col_labels):
+        cell = table.rows[0].cells[i]
+        _shade_cell(cell, _HDR_BG)
+        cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+        p = cell.paragraphs[0]
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _spacing(p, 0, 0)
+        _body_run(p, label, bold=True, size=9, color=_WHITE)
+
+    # Per-section: track cheapest hotel for BEST PRICE badge
+    section_cheapest: dict[str, float] = {}
+    for label, hotel in hotel_rows:
+        price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
+        if label not in section_cheapest or price < section_cheapest[label]:
+            section_cheapest[label] = price
+
+    # Alternate shading by section group, not by row index
+    section_colors: dict[str, str] = {}
+    _palette = ["FFFFFF", _ROW_ALT]
+    for label, _ in hotel_rows:
+        if label not in section_colors:
+            section_colors[label] = _palette[len(section_colors) % 2]
+
+    for row_idx, (section_label, hotel) in enumerate(hotel_rows):
+        row = table.rows[row_idx + 1]
+        bg = section_colors[section_label]
+        our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
+        is_cheapest = abs(our_price - section_cheapest[section_label]) < 0.01
+
+        you_save_str = (
+            f"{format_indian_number(hotel.customer_discount)}  ({hotel.discount_pct:.1f}% off)"
+            if hotel.customer_discount > 0 else "—"
+        )
+
+        col_configs = [
+            (section_label,                             WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
+            (hotel.name,                                WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
+            (format_indian_number(hotel.online_price),  WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
+            (format_indian_number(our_price),           WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
+            (you_save_str,                              WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
+        ]
+
+        for col_idx, (text, align, color, bold) in enumerate(col_configs):
+            cell = row.cells[col_idx]
+            _shade_cell(cell, bg)
+            cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+            p = cell.paragraphs[0]
+            p.alignment = align
+            _spacing(p, 2, 2)
+            _body_run(p, text, bold=bold, size=9, color=color)
+            if col_idx == 3 and is_cheapest:
+                p2 = cell.add_paragraph()
+                p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                _spacing(p2, 1, 1)
+                _body_run(p2, "BEST PRICE", bold=True, size=7.5, color=_GREEN)
+
+
+def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
+    """One row per plan. Used when the file has explicit PLAN A / PLAN B markers."""
     prices  = [pl.pricing.discounted_price for pl in plans]
     savings = [pl.pricing.customer_discount for pl in plans]
     pcts    = [pl.pricing.discount_pct for pl in plans]
@@ -419,7 +501,6 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
     best_value_idx  = pcts.index(max(pcts)) if max(pcts) > 0 else -1
 
     col_labels = ["Plan", "Hotels", "Best Online Price", "Our Price", "You Save"]
-    # Column widths sum to 7.0" (page width minus 0.75" margins each side)
     col_widths = [Inches(0.65), Inches(3.0), Inches(1.05), Inches(1.05), Inches(1.25)]
     table = doc.add_table(rows=1 + len(plans), cols=len(col_labels))
     table.autofit = False
@@ -454,7 +535,6 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
             f"  ({plan.pricing.discount_pct:.1f}% off)"
         )
 
-        # col: 0=Plan 1=Hotels 2=BestOnline 3=OurPrice 4=YouSave
         col_configs = [
             (plan.label,                                             WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
             (None,                                                   WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
@@ -484,8 +564,6 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
                     p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
                     _spacing(p2, 1, 1)
                     _body_run(p2, badge, bold=True, size=7.5, color=_GREEN)
-
-    _thin_borders(table)
 
 
 # ── Hotel card ────────────────────────────────────────────────────────────────
@@ -580,6 +658,7 @@ def build_document(
     requirements: str = "",
     destination_photo: bytes | None = None,
     stay_requirements: str = "",
+    grouped_by_sections: bool = False,
 ) -> bytes:
     doc = Document()
     _set_margins(doc)
@@ -592,7 +671,7 @@ def build_document(
     _page_break(doc)
 
     # Executive Summary
-    _build_executive_summary(doc, plans, enriched_map)
+    _build_executive_summary(doc, plans, enriched_map, grouped_by_sections=grouped_by_sections)
     _page_break(doc)
 
     # One page per plan

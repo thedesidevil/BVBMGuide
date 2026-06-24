@@ -1,6 +1,13 @@
+import io
+import openpyxl
 import pytest
 from unittest.mock import MagicMock, patch
-from src.library.ui.services.hotel_options_service import _normalize_section_labels
+from src.library.ui.services.hotel_options_service import (
+    _normalize_section_labels,
+    _plan_to_dict,
+    _infer_destination_from_labels,
+)
+from src.hotel_options.models import HotelRow, PlanPricing, Plan
 
 
 def test_normalize_section_labels_happy_path():
@@ -39,3 +46,60 @@ def test_normalize_section_labels_ai_wrong_length_falls_back():
     mock_client.complete.return_value = '["Only One"]'
     result = _normalize_section_labels(["London (Jun 28- Jul 1)", "Paris (Jul 6)"], mock_client)
     assert result == ["London (Jun 28 - Jul 1)", "Paris (Jul 6)"]
+
+
+def _make_plan_with_pricing() -> Plan:
+    hotel = HotelRow(
+        name="Hotel Alpha", category="4-Star", room_type="Double",
+        cancellation="Free", meal_type="Breakfast",
+        online_price=100000.0, customer_discount=5000.0,
+        discounted_price=95000.0, discount_pct=5.0,
+    )
+    pricing = PlanPricing(
+        total_online_price=100000.0, total_b2b_price=90000.0,
+        customer_discount=5000.0, discounted_price=95000.0, discount_pct=5.0,
+    )
+    return Plan(label="London (Jul 1 - Jul 5)", hotels=[hotel], pricing=pricing)
+
+
+def test_plan_to_dict_includes_per_hotel_pricing():
+    """_plan_to_dict must include online_price, customer_discount, discounted_price, discount_pct per hotel."""
+    plan = _make_plan_with_pricing()
+    d = _plan_to_dict(plan)
+    hotel_d = d["hotels"][0]
+    assert hotel_d["online_price"] == 100000.0
+    assert hotel_d["customer_discount"] == 5000.0
+    assert hotel_d["discounted_price"] == 95000.0
+    assert hotel_d["discount_pct"] == 5.0
+
+
+def test_infer_destination_from_labels_ai_path():
+    """AI returns city name from neighbourhood-level section headers."""
+    mock_client = MagicMock()
+    mock_client.complete.return_value = "London"
+    result = _infer_destination_from_labels(
+        ["Wimbledon (Jun 28 - Jul 4)", "Central London (Jul 5 - Jul 8)"],
+        mock_client,
+    )
+    assert result == "London"
+
+
+def test_infer_destination_from_labels_regex_fallback():
+    """AI fails — strip date ranges and return first unique location."""
+    mock_client = MagicMock()
+    mock_client.complete.side_effect = RuntimeError("API error")
+    result = _infer_destination_from_labels(
+        ["Paris (Jul 1 - Jul 5)", "Paris (Jul 6 - Jul 10)"],
+        mock_client,
+    )
+    assert result == "Paris"
+
+
+def test_plan_to_dict_plan_fields_intact():
+    """_plan_to_dict still includes label, pricing, and basic hotel fields."""
+    plan = _make_plan_with_pricing()
+    d = _plan_to_dict(plan)
+    assert d["label"] == "London (Jul 1 - Jul 5)"
+    assert d["pricing"]["total_online_price"] == 100000.0
+    assert d["hotels"][0]["name"] == "Hotel Alpha"
+    assert d["hotels"][0]["cancellation"] == "Free"

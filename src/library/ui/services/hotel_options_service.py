@@ -59,6 +59,10 @@ def _plan_to_dict(plan: Plan) -> dict:
                 "cancellation": h.cancellation,
                 "meal_type": h.meal_type,
                 "dates": h.dates,
+                "online_price": h.online_price,
+                "customer_discount": h.customer_discount,
+                "discounted_price": h.discounted_price,
+                "discount_pct": h.discount_pct,
             }
             for h in plan.hotels
         ],
@@ -69,6 +73,35 @@ def _plan_to_dict(plan: Plan) -> dict:
             "discount_pct": plan.pricing.discount_pct,
         },
     }
+
+
+_INFER_DESTINATION_PROMPT = """\
+Given these section headers from a hotel accommodation spreadsheet, identify the primary travel destination.
+The headers may include neighbourhood or area names — return the umbrella city or region.
+Examples: "Wimbledon (Jun 28 - Jul 4)" → "London", "Shibuya (Jul 1 - Jul 5)" → "Tokyo".
+Reply with just the destination name, nothing else.
+
+Headers: {labels}
+"""
+
+
+def _infer_destination_from_labels(labels: list[str], ai_client) -> str:
+    """Infer the primary destination from section labels; regex-strip dates as fallback."""
+    import re
+
+    def _regex_fallback() -> str:
+        locations = [re.sub(r'\s*\([^)]*\)', '', label).strip() for label in labels]
+        unique = list(dict.fromkeys(loc for loc in locations if loc))
+        return unique[0] if unique else ""
+
+    try:
+        prompt = _INFER_DESTINATION_PROMPT.format(labels=_json.dumps(labels))
+        resp = ai_client.complete(prompt).strip()
+        if resp:
+            return resp
+    except Exception:
+        pass
+    return _regex_fallback()
 
 
 _STAY_REQ_PROMPT = """\
@@ -139,12 +172,19 @@ def parse_file(
             ),
             "_debug_rows": debug_rows,
         }
+    ai_client_for_labels = None
     if result.grouped_by_sections:
-        norm_client = get_ai_client()
-        cleaned = _normalize_section_labels([p.label for p in result.plans], norm_client)
+        ai_client_for_labels = get_ai_client()
+        cleaned = _normalize_section_labels([p.label for p in result.plans], ai_client_for_labels)
         for plan, label in zip(result.plans, cleaned):
             plan.label = label
     client_name, destination = extract_filename_meta(filename)
+    if result.grouped_by_sections and not client_name:
+        # Non-standard filename — destination from filename is unreliable; infer from labels
+        destination = _infer_destination_from_labels(
+            [p.label for p in result.plans],
+            ai_client_for_labels or get_ai_client(),
+        )
 
     unique_names = list({h.name for plan in result.plans for h in plan.hotels})
     existence_map = _enricher.check_hotels_exist(unique_names, destination, api_key)
@@ -173,6 +213,7 @@ def parse_file(
         "unknown_codes": [asdict(u) for u in deduped_codes],
         "not_found": not_found,
         "maps_api_calls": len(unique_names),
+        "grouped_by_sections": result.grouped_by_sections,
         "_debug_rows": debug_rows,
     }
 
@@ -204,6 +245,8 @@ def generate_doc(
         for plan, label in zip(result.plans, cleaned):
             plan.label = label
     client_name, destination = extract_filename_meta(filename)
+    if result.grouped_by_sections and not client_name:
+        destination = _infer_destination_from_labels([p.label for p in result.plans], ai_client)
 
     unique_names = list({h.name for plan in result.plans for h in plan.hotels})
     existence_map = _enricher.check_hotels_exist(unique_names, destination, api_key)

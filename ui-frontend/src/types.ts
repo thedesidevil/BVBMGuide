@@ -147,6 +147,10 @@ export interface HotelOptionsHotel {
   cancellation: string;
   meal_type: string;
   dates: string;
+  online_price: number;
+  customer_discount: number;
+  discounted_price: number;
+  discount_pct: number;
 }
 
 export interface HotelOptionsPricing {
@@ -181,4 +185,5 @@ export interface HotelOptionsParseResult {
   unknown_codes: HotelOptionsUnknownCode[];
   not_found: HotelOptionsNotFound[];
   maps_api_calls: number;
+  grouped_by_sections: boolean;
 }

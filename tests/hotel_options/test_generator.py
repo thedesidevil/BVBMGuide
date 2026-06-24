@@ -39,7 +39,6 @@ def test_build_document_returns_bytes():
         enriched_map={"Test Hotel": _make_enriched()},
         client_name="Alice",
         destination="London",
-        letterhead_path="/nonexistent/letterhead.docx",
     )
     assert isinstance(doc_bytes, bytes)
     assert len(doc_bytes) > 0
@@ -51,13 +50,12 @@ def test_build_document_contains_plan_and_destination():
         enriched_map={"Test Hotel": _make_enriched()},
         client_name="Alice",
         destination="London",
-        letterhead_path="/nonexistent/letterhead.docx",
     )
     doc = Document(io.BytesIO(doc_bytes))
     full_text = "\n".join(p.text for p in doc.paragraphs)
-    assert "Plan A" in full_text
+    assert "PLAN A" in full_text
     assert "London" in full_text
-    assert "Alice" in full_text
+    assert "ALICE" in full_text
 
 
 def test_format_indian_number_small():

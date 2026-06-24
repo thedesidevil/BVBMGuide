@@ -463,9 +463,13 @@ def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
         our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
         is_cheapest = abs(our_price - section_cheapest[section_label]) < 0.01
 
-        you_save_str = (
-            f"{format_indian_number(hotel.customer_discount)}  ({hotel.discount_pct:.1f}% off)"
+        you_save_amount = (
+            format_indian_number(hotel.customer_discount)
             if hotel.customer_discount > 0 else "—"
+        )
+        you_save_pct = (
+            f"({hotel.discount_pct:.1f}% off)"
+            if hotel.customer_discount > 0 else None
         )
 
         col_configs = [
@@ -473,7 +477,7 @@ def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
             (hotel.name,                                WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
             (format_indian_number(hotel.online_price),  WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
             (format_indian_number(our_price),           WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
-            (you_save_str,                              WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
+            (you_save_amount,                           WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
         ]
 
         for col_idx, (text, align, color, bold) in enumerate(col_configs):
@@ -484,6 +488,11 @@ def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
             p.alignment = align
             _spacing(p, 2, 2)
             _body_run(p, text, bold=bold, size=9, color=color)
+            if col_idx == 4 and you_save_pct:
+                p2 = cell.add_paragraph()
+                p2.alignment = align
+                _spacing(p2, 0, 2)
+                _body_run(p2, you_save_pct, bold=False, size=8, color=color)
             if col_idx == 3 and is_cheapest:
                 p2 = cell.add_paragraph()
                 p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -530,9 +539,13 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
                 and row_idx not in (min_price_idx, max_savings_idx):
             badges.append("BEST VALUE")
 
-        you_save_str = (
-            f"{format_indian_number(plan.pricing.customer_discount)}"
-            f"  ({plan.pricing.discount_pct:.1f}% off)"
+        you_save_amount = (
+            format_indian_number(plan.pricing.customer_discount)
+            if plan.pricing.customer_discount > 0 else "—"
+        )
+        you_save_pct = (
+            f"({plan.pricing.discount_pct:.1f}% off)"
+            if plan.pricing.customer_discount > 0 else None
         )
 
         col_configs = [
@@ -540,7 +553,7 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
             (None,                                                   WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
             (format_indian_number(plan.pricing.total_online_price),  WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
             (format_indian_number(plan.pricing.discounted_price),    WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
-            (you_save_str,                                           WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
+            (you_save_amount,                                        WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
         ]
 
         for col_idx, (text, align, color, bold) in enumerate(col_configs):
@@ -557,6 +570,12 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
                     _body_run(bp, f"• {hotel.name}", size=9, color=_CHARCOAL)
             else:
                 _body_run(p, text, bold=bold, size=9, color=color)
+
+            if col_idx == 4 and you_save_pct:
+                p2 = cell.add_paragraph()
+                p2.alignment = align
+                _spacing(p2, 0, 2)
+                _body_run(p2, you_save_pct, bold=False, size=8, color=color)
 
             if col_idx == 0 and badges:
                 for badge in badges:
@@ -636,7 +655,7 @@ def _add_pricing_block(doc: Document, plan: Plan) -> None:
         ("Our Price",    format_indian_number(pr.discounted_price),
          True,  _GREY, _CHARCOAL, 13),
         ("You Save",
-         f"{format_indian_number(pr.customer_discount)}  ({pr.discount_pct:.1f}% off best online prices)",
+         f"{format_indian_number(pr.customer_discount)} ({pr.discount_pct:.1f}% off best online prices)",
          True, _GREY, _GREEN, 11),
     ]
 
@@ -653,7 +672,7 @@ def _add_hotel_pricing_block(doc: Document, hotel) -> None:
     our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
     if hotel.customer_discount > 0:
         save_str = (f"{format_indian_number(hotel.customer_discount)}"
-                    f"  ({hotel.discount_pct:.1f}% off best online prices)")
+                    f" ({hotel.discount_pct:.1f}% off best online prices)")
         save_color = _GREEN
     else:
         save_str = "—"

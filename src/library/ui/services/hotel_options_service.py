@@ -14,8 +14,12 @@ from src.library.ui.storage import StorageBackend
 
 _NORMALIZE_LABELS_PROMPT = """\
 Below is a JSON array of raw section header strings from a hotel comparison spreadsheet.
-Each string may contain a location name mixed with date ranges or other details.
-Clean each one to just the location/area name: remove date ranges, parentheses, dashes, and extra whitespace.
+Each string may contain a location name and optionally a date range.
+Clean each string as follows:
+- Fix spacing around hyphens in date ranges (e.g. "Jun 28- Jul 4" → "Jun 28 - Jul 4")
+- Remove extra whitespace
+- Keep the date range if present — it is meaningful context for multi-stop itineraries
+- Do NOT remove the parentheses around dates
 Return ONLY a JSON array of strings in the same order, no other text.
 
 Input: {labels}
@@ -28,7 +32,8 @@ def _normalize_section_labels(raw_labels: list[str], ai_client) -> list[str]:
         return []
 
     def _regex_fallback():
-        return [_re.sub(r'\s*\([^)]+\)', '', label).strip() for label in raw_labels]
+        # Just clean up spacing around hyphens in date ranges; keep everything else
+        return [_re.sub(r'(\S)-\s*', r'\1 - ', label).strip() for label in raw_labels]
 
     try:
         prompt = _NORMALIZE_LABELS_PROMPT.format(labels=_json.dumps(raw_labels))
@@ -92,6 +97,24 @@ def _format_stay_requirements(requirements: str, ai_client) -> str:
         return raw
 
 
+def _sheet_debug(xlsx_bytes: bytes) -> list[dict]:
+    """Return first 30 rows with non-None cell values, for diagnosing parser issues."""
+    import io as _io
+    import openpyxl as _openpyxl
+    wb = _openpyxl.load_workbook(_io.BytesIO(xlsx_bytes), data_only=True)
+    ws = wb.active
+    rows = []
+    for row in ws.iter_rows(max_row=30):
+        cells = {}
+        for i, cell in enumerate(row):
+            if cell.value is not None:
+                col = chr(ord('A') + i) if i < 26 else f"col{i}"
+                cells[col] = f"{repr(cell.value)} ({type(cell.value).__name__})"
+        if cells:
+            rows.append({"row": row[0].row, "cells": cells})
+    return rows
+
+
 def parse_file(
     xlsx_bytes: bytes,
     filename: str,
@@ -100,6 +123,7 @@ def parse_file(
 ) -> dict:
     codes = CodeStore(storage).load()
     result = parse_excel(xlsx_bytes, codes)
+    debug_rows = _sheet_debug(xlsx_bytes)
     if not result.plans:
         return {
             "client_name": "",
@@ -113,6 +137,7 @@ def parse_file(
                 "No hotel rows found. Ensure hotel names are in column A "
                 "and prices are numeric values in column I."
             ),
+            "_debug_rows": debug_rows,
         }
     if result.grouped_by_sections:
         norm_client = get_ai_client()
@@ -148,6 +173,7 @@ def parse_file(
         "unknown_codes": [asdict(u) for u in deduped_codes],
         "not_found": not_found,
         "maps_api_calls": len(unique_names),
+        "_debug_rows": debug_rows,
     }
 
 

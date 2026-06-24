@@ -403,6 +403,8 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
 
 def _build_executive_summary(doc: Document, plans: list[Plan],
                               enriched_map: dict[str, EnrichedHotel]) -> None:
+    if not plans:
+        return
     _heading(doc, "Executive Summary", level=1)
 
     p = doc.add_paragraph()

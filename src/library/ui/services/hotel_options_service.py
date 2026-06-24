@@ -100,6 +100,20 @@ def parse_file(
 ) -> dict:
     codes = CodeStore(storage).load()
     result = parse_excel(xlsx_bytes, codes)
+    if not result.plans:
+        return {
+            "client_name": "",
+            "destination": "",
+            "requirements": result.requirements,
+            "plans": [],
+            "unknown_codes": [],
+            "not_found": [],
+            "maps_api_calls": 0,
+            "parse_warning": (
+                "No hotel rows found. Ensure hotel names are in column A "
+                "and prices are numeric values in column I."
+            ),
+        }
     if result.grouped_by_sections:
         norm_client = get_ai_client()
         cleaned = _normalize_section_labels([p.label for p in result.plans], norm_client)
@@ -153,6 +167,11 @@ def generate_doc(
 
     codes = store.load()
     result = parse_excel(xlsx_bytes, codes)
+    if not result.plans:
+        raise ValueError(
+            "No hotel rows found in this file. "
+            "Ensure hotel names are in column A and prices are numeric values in column I."
+        )
     ai_client = get_ai_client()
     if result.grouped_by_sections:
         cleaned = _normalize_section_labels([p.label for p in result.plans], ai_client)

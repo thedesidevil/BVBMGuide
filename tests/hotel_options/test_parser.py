@@ -252,6 +252,46 @@ def test_no_plans_string_prices_in_col_i():
     assert result.plans[0].pricing.total_online_price == 350000.0
 
 
+def test_recommended_flag_on_hotel_no_plans():
+    """'(Recommended)' suffix in col A sets recommended=True and is stripped from name."""
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.cell(1, 1).value = "Breakfast included"
+    ws.cell(2, 1).value = "London"
+    ws.cell(3, 1).value = "Hotel Alpha (Recommended)"
+    ws.cell(3, 2).value = "4-Star"; ws.cell(3, 3).value = "Double"
+    ws.cell(3, 8).value = "nr"; ws.cell(3, 9).value = 50000.0
+    ws.cell(4, 1).value = "Hotel Beta"
+    ws.cell(4, 2).value = "3-Star"; ws.cell(4, 3).value = "Standard"
+    ws.cell(4, 8).value = "br"; ws.cell(4, 9).value = 40000.0
+    buf = io.BytesIO(); wb.save(buf)
+    result = parse_excel(buf.getvalue(), codes={})
+    hotels = result.plans[0].hotels
+    assert hotels[0].name == "Hotel Alpha"
+    assert hotels[0].recommended is True
+    assert hotels[1].recommended is False
+
+
+def test_recommended_flag_on_plan():
+    """'(Recommended)' in PLAN header sets plan.recommended=True and is stripped from label."""
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws["A1"] = "PLAN A (Recommended)"
+    ws["A2"] = "Hilton London"; ws["B2"] = "5-Star"; ws["C2"] = "King"
+    ws["H2"] = "nr"; ws["I2"] = 50000.0; ws["J2"] = 45000.0
+    ws["I3"] = 50000.0; ws["J3"] = 45000.0; ws["L3"] = 3000.0; ws["M3"] = 47000.0; ws["N3"] = 6.0
+    ws["A4"] = "PLAN B"
+    ws["A5"] = "Marriott"; ws["B5"] = "4-Star"; ws["C5"] = "Double"
+    ws["H5"] = "nr"; ws["I5"] = 60000.0; ws["J5"] = 55000.0
+    ws["I6"] = 60000.0; ws["J6"] = 55000.0; ws["L6"] = 0.0; ws["M6"] = 60000.0; ws["N6"] = 0.0
+    buf = io.BytesIO(); wb.save(buf)
+    result = parse_excel(buf.getvalue(), codes={})
+    assert result.plans[0].label == "Plan A"
+    assert result.plans[0].recommended is True
+    assert result.plans[1].label == "Plan B"
+    assert result.plans[1].recommended is False
+
+
 def test_no_plans_empty_section_between_real_sections():
     """A section header with no hotels before the next header is silently dropped."""
     wb = openpyxl.Workbook()

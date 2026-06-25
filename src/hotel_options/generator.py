@@ -14,6 +14,7 @@ from src.hotel_options.models import Plan, EnrichedHotel
 _CHARCOAL = RGBColor(0x2D, 0x2D, 0x2D)
 _GREY     = RGBColor(0x66, 0x66, 0x66)
 _GREEN    = RGBColor(0x2E, 0x7D, 0x32)
+_AMBER    = RGBColor(0xC7, 0x78, 0x00)
 _WHITE    = RGBColor(0xFF, 0xFF, 0xFF)
 
 _FONT = "Arial"
@@ -420,6 +421,21 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
     _thin_borders(doc.tables[-1])
 
 
+def _recommended_badge_para(cell, align=WD_ALIGN_PARAGRAPH.LEFT) -> None:
+    """Add a small ★ RECOMMENDED line to a table cell."""
+    p = cell.add_paragraph()
+    p.alignment = align
+    _spacing(p, 2, 0)
+    _body_run(p, "★  RECOMMENDED", bold=True, size=7.5, color=_AMBER)
+
+
+def _recommended_badge_doc(doc: Document) -> None:
+    """Add a small ★ RECOMMENDED paragraph to the document body."""
+    p = doc.add_paragraph()
+    _spacing(p, 0, 6)
+    _body_run(p, "★  RECOMMENDED", bold=True, size=9, color=_AMBER)
+
+
 def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
     """One row per hotel. Used when the file has section headers instead of PLAN markers."""
     # Flatten to (section_label, hotel) pairs
@@ -488,6 +504,8 @@ def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
             p.alignment = align
             _spacing(p, 2, 2)
             _body_run(p, text, bold=bold, size=9, color=color)
+            if col_idx == 1 and hotel.recommended:
+                _recommended_badge_para(cell, align)
             if col_idx == 4 and you_save_pct:
                 p2 = cell.add_paragraph()
                 p2.alignment = align
@@ -549,6 +567,9 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
                     _body_run(bp, f"• {hotel.name}", size=9, color=_CHARCOAL)
             else:
                 _body_run(p, text, bold=bold, size=9, color=color)
+
+            if col_idx == 0 and plan.recommended:
+                _recommended_badge_para(cell, WD_ALIGN_PARAGRAPH.CENTER)
 
             if col_idx == 4 and you_save_pct:
                 p2 = cell.add_paragraph()
@@ -705,6 +726,8 @@ def build_document(
             for i, hotel in enumerate(plan.hotels):
                 if i > 0:
                     _thin_rule(doc, before=8, after=4)
+                if hotel.recommended:
+                    _recommended_badge_doc(doc)
                 enriched = enriched_map.get(hotel.name)
                 if enriched:
                     _add_hotel_card(doc, enriched)
@@ -723,6 +746,8 @@ def build_document(
                 _page_break(doc)
 
             _heading(doc, plan.label.upper(), level=1)
+            if plan.recommended:
+                _recommended_badge_doc(doc)
             _thin_rule(doc, before=2, after=8, color=_HDR_BG)
 
             for i, hotel in enumerate(plan.hotels):

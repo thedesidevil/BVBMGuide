@@ -142,6 +142,44 @@ def test_build_document_plan_path_unchanged():
     assert "City / Dates" not in table_text
 
 
+def test_recommended_badge_appears_in_grouped_exec_summary():
+    """★ RECOMMENDED appears in exec summary for a recommended hotel."""
+    from src.hotel_options.models import HotelRow, PlanPricing, Plan
+    hotel_rec = HotelRow(name="Hotel A", category="4-Star", room_type="Double",
+                         cancellation="Free", meal_type="Breakfast",
+                         online_price=100000.0, recommended=True)
+    hotel_reg = HotelRow(name="Hotel B", category="3-Star", room_type="Twin",
+                         cancellation="Free", meal_type="Breakfast",
+                         online_price=80000.0, recommended=False)
+    plans = [Plan(label="London (Jul 1-4)", hotels=[hotel_rec, hotel_reg],
+                  pricing=PlanPricing(180000, 160000, 0, 180000, 0))]
+    doc_bytes = build_document(plans=plans, enriched_map={}, client_name="Alice",
+                               destination="London", grouped_by_sections=True)
+    import io as _io
+    from docx import Document as _Doc
+    doc = _Doc(_io.BytesIO(doc_bytes))
+    all_text = "\n".join(cell.text for t in doc.tables for r in t.rows for cell in r.cells)
+    assert "RECOMMENDED" in all_text
+
+
+def test_recommended_badge_appears_in_plan_exec_summary():
+    """★ RECOMMENDED appears in exec summary for a recommended plan."""
+    from src.hotel_options.models import HotelRow, PlanPricing, Plan
+    hotel = HotelRow(name="Hotel A", category="4-Star", room_type="Double",
+                     cancellation="Free", meal_type="Breakfast", online_price=50000.0)
+    plan_rec = Plan(label="Plan A", hotels=[hotel],
+                    pricing=PlanPricing(50000, 45000, 3000, 47000, 6.0), recommended=True)
+    plan_reg = Plan(label="Plan B", hotels=[hotel],
+                    pricing=PlanPricing(50000, 45000, 0, 50000, 0), recommended=False)
+    doc_bytes = build_document(plans=[plan_rec, plan_reg], enriched_map={},
+                               client_name="Bob", destination="London")
+    import io as _io
+    from docx import Document as _Doc
+    doc = _Doc(_io.BytesIO(doc_bytes))
+    all_text = "\n".join(cell.text for t in doc.tables for r in t.rows for cell in r.cells)
+    assert "RECOMMENDED" in all_text
+
+
 def test_build_document_no_plan_column_when_grouped():
     """When grouped_by_sections=True, exec summary has 'City / Dates' not 'Plan'."""
     doc_bytes = build_document(

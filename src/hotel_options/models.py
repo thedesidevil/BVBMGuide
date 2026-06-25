@@ -14,6 +14,7 @@ class HotelRow:
     customer_discount: float = 0.0
     discounted_price: float = 0.0
     discount_pct: float = 0.0
+    recommended: bool = False
 
 
 @dataclass
@@ -30,6 +31,7 @@ class Plan:
     label: str
     hotels: list[HotelRow]
     pricing: PlanPricing
+    recommended: bool = False
 
 
 @dataclass

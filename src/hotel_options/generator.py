@@ -747,9 +747,9 @@ def build_document(
             if plan_idx > 0:
                 _page_break(doc)
 
-            _heading(doc, plan.label.upper(), level=1)
+            p = _heading(doc, plan.label.upper(), level=1)
             if plan.recommended:
-                _recommended_badge_doc(doc)
+                _body_run(p, "  ★  RECOMMENDED", bold=True, size=9, color=_AMBER)
             _thin_rule(doc, before=2, after=8, color=_HDR_BG)
 
             for i, hotel in enumerate(plan.hotels):

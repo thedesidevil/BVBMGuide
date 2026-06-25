@@ -21,6 +21,7 @@ export default function App() {
   const [lastLibraryMode, setLastLibraryMode] = useState<"city" | "sweep" | "ingest" | "history" | "audit">("city");
   const [tree, setTree] = useState<TreeData>({});
   const [treeLoaded, setTreeLoaded] = useState(false);
+  const [libraryRequested, setLibraryRequested] = useState(false);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);
@@ -50,12 +51,12 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (!isAdmin) return;
+    if (!isAdmin || !libraryRequested || treeLoaded) return;
     api.getTree().then((data) => {
       setTree(data as TreeData);
       setTreeLoaded(true);
     });
-  }, [isAdmin]);
+  }, [isAdmin, libraryRequested]);
 
   const reviewedCount = Object.values(tree).reduce(
     (sum, n) => sum + n.cities.filter((c) => c.status === "reviewed").length, 0
@@ -66,13 +67,14 @@ export default function App() {
     const libraryModes = ["city", "sweep", "ingest", "history", "audit"] as const;
     if ((libraryModes as readonly string[]).includes(newMode)) {
       setLastLibraryMode(newMode as typeof libraryModes[number]);
+      setLibraryRequested(true);
     }
     setMode(newMode);
   };
 
   return (
     <>
-      <LoadingScreen loaded={isAdmin ? treeLoaded : true} />
+      <LoadingScreen loaded={!libraryRequested || treeLoaded} />
       <Layout
         mode={mode}
         onModeChange={handleModeChange}

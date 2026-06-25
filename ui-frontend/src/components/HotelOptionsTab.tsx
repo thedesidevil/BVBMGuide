@@ -202,39 +202,17 @@ export function HotelOptionsTab() {
               <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide px-1">
                 {plan.label}
               </h3>
-              {plan.hotels.map((h) => {
-                const ourPrice = h.discounted_price > 0 ? h.discounted_price : h.online_price;
-                const savings = h.customer_discount > 0 ? h.customer_discount : null;
-                return (
-                  <div key={h.name} className="bg-white border border-slate-200 rounded-xl p-4">
-                    <p className="font-semibold text-slate-800 mb-1">{h.name}</p>
-                    <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs text-slate-500 mb-3">
-                      {h.category && <span>{h.category}</span>}
-                      {h.room_type && <span>{h.room_type}</span>}
-                      {h.meal_type && <span>{h.meal_type}</span>}
-                      {h.cancellation && <span>{h.cancellation}</span>}
-                    </div>
-                    <div className="flex gap-4 text-xs">
-                      <div>
-                        <span className="text-slate-400 block">Online Price</span>
-                        <span className="text-slate-600">₹{h.online_price.toLocaleString("en-IN")}</span>
-                      </div>
-                      <div>
-                        <span className="text-slate-400 block">Our Price</span>
-                        <span className="font-semibold text-slate-800">₹{ourPrice.toLocaleString("en-IN")}</span>
-                      </div>
-                      {savings && (
-                        <div>
-                          <span className="text-slate-400 block">You Save</span>
-                          <span className="text-green-600 font-medium">
-                            ₹{savings.toLocaleString("en-IN")} ({h.discount_pct.toFixed(1)}% off)
-                          </span>
-                        </div>
-                      )}
-                    </div>
+              {plan.hotels.map((h) => (
+                <div key={h.name} className="text-sm border-l-2 border-slate-200 pl-3 space-y-0.5">
+                  <p className="font-medium text-slate-800">{h.name}</p>
+                  <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs text-slate-500">
+                    {h.category && <span>{h.category}</span>}
+                    {h.room_type && <span>{h.room_type}</span>}
+                    {h.meal_type && <span>{h.meal_type}</span>}
+                    {h.cancellation && <span>{h.cancellation}</span>}
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           ))
         : result.plans.map((plan) => (

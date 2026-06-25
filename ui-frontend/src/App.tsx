@@ -45,7 +45,6 @@ export default function App() {
         if (data?.email) setUserEmail(data.email);
         const admin = data?.is_admin ?? true;
         setIsAdmin(admin);
-        setMode(admin ? "city" : "verify");
       })
       .catch(() => {});
   }, []);

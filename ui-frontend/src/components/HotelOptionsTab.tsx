@@ -208,10 +208,10 @@ export function HotelOptionsTab() {
                   <div key={h.name} className="text-sm border-l-2 border-slate-200 pl-3 space-y-0.5">
                     <p className="font-medium text-slate-800">{h.name}</p>
                     <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs text-slate-500">
-                      {h.category && <span>{h.category}</span>}
-                      {h.room_type && <span>{h.room_type}</span>}
-                      {h.meal_type && <span>{h.meal_type}</span>}
-                      {h.cancellation && <span>{h.cancellation}</span>}
+                      {h.category && <span>🏨 {h.category}</span>}
+                      {h.room_type && <span>🛏 {h.room_type}</span>}
+                      {h.meal_type && <span>🍽 {h.meal_type}</span>}
+                      {h.cancellation && <span>🔄 {h.cancellation}</span>}
                     </div>
                     <p className="text-xs text-slate-500">
                       Online: ₹{h.online_price.toLocaleString("en-IN")} · Our price: ₹{ourPrice.toLocaleString("en-IN")}

@@ -17,7 +17,7 @@ type Mode = "city" | "sweep" | "ingest" | "history" | "audit" | "verify" | "hote
 
 export default function App() {
   const [isAdmin, setIsAdmin] = useState<boolean>(true);
-  const [mode, setMode] = useState<Mode>("verify");
+  const [mode, setMode] = useState<Mode>("hotel_options");
   const [lastLibraryMode, setLastLibraryMode] = useState<"city" | "sweep" | "ingest" | "history" | "audit">("city");
   const [tree, setTree] = useState<TreeData>({});
   const [treeLoaded, setTreeLoaded] = useState(false);

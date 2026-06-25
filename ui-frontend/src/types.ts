@@ -151,6 +151,7 @@ export interface HotelOptionsHotel {
   customer_discount: number;
   discounted_price: number;
   discount_pct: number;
+  recommended: boolean;
 }
 
 export interface HotelOptionsPricing {
@@ -164,6 +165,7 @@ export interface HotelOptionsPlan {
   label: string;
   hotels: HotelOptionsHotel[];
   pricing: HotelOptionsPricing;
+  recommended: boolean;
 }
 
 export interface HotelOptionsUnknownCode {

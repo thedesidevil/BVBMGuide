@@ -63,6 +63,7 @@ def _plan_to_dict(plan: Plan) -> dict:
                 "customer_discount": h.customer_discount,
                 "discounted_price": h.discounted_price,
                 "discount_pct": h.discount_pct,
+                "recommended": h.recommended,
             }
             for h in plan.hotels
         ],
@@ -72,6 +73,7 @@ def _plan_to_dict(plan: Plan) -> dict:
             "discounted_price": plan.pricing.discounted_price,
             "discount_pct": plan.pricing.discount_pct,
         },
+        "recommended": plan.recommended,
     }
 
 

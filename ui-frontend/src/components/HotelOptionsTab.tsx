@@ -206,7 +206,10 @@ export function HotelOptionsTab() {
                 const ourPrice = h.discounted_price > 0 ? h.discounted_price : h.online_price;
                 return (
                   <div key={h.name} className="text-sm border-l-2 border-slate-200 pl-3 space-y-0.5">
-                    <p className="font-medium text-slate-800">{h.name}</p>
+                    <p className="font-medium text-slate-800">
+                      {h.name}
+                      {h.recommended && <span className="ml-2 text-xs font-bold text-amber-600">★ RECOMMENDED</span>}
+                    </p>
                     <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs text-slate-500">
                       {h.category && <span>🏨 {h.category}</span>}
                       {h.room_type && <span>🛏 {h.room_type}</span>}
@@ -224,7 +227,10 @@ export function HotelOptionsTab() {
           ))
         : result.plans.map((plan) => (
             <div key={plan.label} className="bg-white border border-slate-200 rounded-xl p-4">
-              <h3 className="font-semibold text-slate-700 mb-3">{plan.label}</h3>
+              <h3 className="font-semibold text-slate-700 mb-3">
+                {plan.label}
+                {plan.recommended && <span className="ml-2 text-xs font-bold text-amber-600">★ RECOMMENDED</span>}
+              </h3>
               <div className="space-y-3 mb-3">
                 {plan.hotels.map((h) => (
                   <div key={h.name} className="text-sm border-l-2 border-slate-200 pl-3 space-y-0.5">

@@ -22,8 +22,11 @@ def extract_filename_meta(filename: str) -> tuple[str, str]:
     if m:
         return m.group(1).strip(), m.group(2).strip()
     stem = filename.rsplit(".", 1)[0]
-    parts = stem.split("_")
-    return "", parts[-1].strip() if parts else ""
+    parts = [p.strip() for p in stem.split("_") if p.strip()]
+    # "DO NOT SHARE_ Name_something" → parts[0]="DO NOT SHARE", parts[1]=Name
+    if len(parts) >= 2 and "DO NOT SHARE" in parts[0].upper():
+        return parts[1], parts[-1]
+    return "", parts[-1] if parts else ""
 
 
 def _numeric(v) -> float | None:

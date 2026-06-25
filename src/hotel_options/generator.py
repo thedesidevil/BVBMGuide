@@ -493,22 +493,10 @@ def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
                 p2.alignment = align
                 _spacing(p2, 0, 2)
                 _body_run(p2, you_save_pct, bold=False, size=8, color=color)
-            if col_idx == 3 and is_cheapest:
-                p2 = cell.add_paragraph()
-                p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
-                _spacing(p2, 1, 1)
-                _body_run(p2, "BEST PRICE", bold=True, size=7.5, color=_GREEN)
 
 
 def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
     """One row per plan. Used when the file has explicit PLAN A / PLAN B markers."""
-    prices  = [pl.pricing.discounted_price for pl in plans]
-    savings = [pl.pricing.customer_discount for pl in plans]
-    pcts    = [pl.pricing.discount_pct for pl in plans]
-    min_price_idx   = prices.index(min(prices))
-    max_savings_idx = savings.index(max(savings))
-    best_value_idx  = pcts.index(max(pcts)) if max(pcts) > 0 else -1
-
     col_labels = ["Plan", "Hotels", "Best Online Price", "Our Price", "You Save"]
     col_widths = [Inches(0.65), Inches(3.0), Inches(1.05), Inches(1.05), Inches(1.25)]
     table = doc.add_table(rows=1 + len(plans), cols=len(col_labels))
@@ -529,15 +517,6 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
     for row_idx, plan in enumerate(plans):
         row = table.rows[row_idx + 1]
         bg = "FFFFFF" if row_idx % 2 == 0 else _ROW_ALT
-
-        badges: list[str] = []
-        if row_idx == min_price_idx:
-            badges.append("LOWEST COST")
-        if row_idx == max_savings_idx and row_idx != min_price_idx:
-            badges.append("HIGHEST SAVINGS")
-        if best_value_idx >= 0 and row_idx == best_value_idx \
-                and row_idx not in (min_price_idx, max_savings_idx):
-            badges.append("BEST VALUE")
 
         you_save_amount = (
             format_indian_number(plan.pricing.customer_discount)
@@ -576,13 +555,6 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
                 p2.alignment = align
                 _spacing(p2, 0, 2)
                 _body_run(p2, you_save_pct, bold=False, size=8, color=color)
-
-            if col_idx == 0 and badges:
-                for badge in badges:
-                    p2 = cell.add_paragraph()
-                    p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
-                    _spacing(p2, 1, 1)
-                    _body_run(p2, badge, bold=True, size=7.5, color=_GREEN)
 
 
 # ── Hotel card ────────────────────────────────────────────────────────────────

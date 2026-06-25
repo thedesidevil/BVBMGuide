@@ -32,6 +32,12 @@ def test_extract_filename_meta_standard():
     assert dest == "London"
 
 
+def test_extract_filename_meta_no_plans_filename():
+    name, dest = extract_filename_meta("DO NOT SHARE_ Bushan_no plans.xlsx")
+    assert name == "Bushan"
+    assert dest == "no plans"
+
+
 def test_extract_filename_meta_fallback():
     _, dest = extract_filename_meta("some_random_file.xlsx")
     assert dest == "file"

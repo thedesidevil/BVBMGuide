@@ -603,7 +603,7 @@ def _add_key_facts(doc: Document, enriched: EnrichedHotel) -> None:
         _body_run(p, value, size=11, color=_CHARCOAL)
 
 
-def _add_hotel_card(doc: Document, enriched: EnrichedHotel) -> None:
+def _add_hotel_card(doc: Document, enriched: EnrichedHotel, recommended: bool = False) -> None:
     """Image → Heading 2 name → Key Facts → Description."""
     if enriched.photo_bytes:
         p = doc.add_paragraph()
@@ -624,6 +624,8 @@ def _add_hotel_card(doc: Document, enriched: EnrichedHotel) -> None:
     r.font.name      = "Georgia"
     r.font.size      = Pt(16)
     r.font.color.rgb = _CHARCOAL
+    if recommended:
+        _body_run(name_para, "  ★  RECOMMENDED", bold=True, size=9, color=_AMBER)
     _thin_rule(doc, before=0, after=6)
 
     _add_key_facts(doc, enriched)
@@ -726,15 +728,15 @@ def build_document(
             for i, hotel in enumerate(plan.hotels):
                 if i > 0:
                     _thin_rule(doc, before=8, after=4)
-                if hotel.recommended:
-                    _recommended_badge_doc(doc)
                 enriched = enriched_map.get(hotel.name)
                 if enriched:
-                    _add_hotel_card(doc, enriched)
+                    _add_hotel_card(doc, enriched, recommended=hotel.recommended)
                 else:
                     p = doc.add_paragraph()
                     _spacing(p, 8, 4)
                     _body_run(p, hotel.name, bold=True, size=13, color=_CHARCOAL)
+                    if hotel.recommended:
+                        _body_run(p, "  ★  RECOMMENDED", bold=True, size=9, color=_AMBER)
                     _thin_rule(doc, before=0, after=6)
 
                 _thin_rule(doc, before=12, after=8)

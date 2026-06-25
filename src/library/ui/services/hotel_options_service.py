@@ -179,8 +179,9 @@ def parse_file(
         for plan, label in zip(result.plans, cleaned):
             plan.label = label
     client_name, destination = extract_filename_meta(filename)
-    if result.grouped_by_sections and not client_name:
-        # Non-standard filename — destination from filename is unreliable; infer from labels
+    if result.grouped_by_sections:
+        # Destination from section labels is always more reliable than the filename
+        # for no-plans files (filenames often say "no plans" not a city name)
         destination = _infer_destination_from_labels(
             [p.label for p in result.plans],
             ai_client_for_labels or get_ai_client(),
@@ -245,7 +246,7 @@ def generate_doc(
         for plan, label in zip(result.plans, cleaned):
             plan.label = label
     client_name, destination = extract_filename_meta(filename)
-    if result.grouped_by_sections and not client_name:
+    if result.grouped_by_sections:
         destination = _infer_destination_from_labels([p.label for p in result.plans], ai_client)
 
     unique_names = list({h.name for plan in result.plans for h in plan.hotels})

@@ -14,6 +14,7 @@ from src.hotel_options.models import Plan, EnrichedHotel
 _CHARCOAL = RGBColor(0x2D, 0x2D, 0x2D)
 _GREY     = RGBColor(0x66, 0x66, 0x66)
 _GREEN    = RGBColor(0x2E, 0x7D, 0x32)
+_AMBER    = RGBColor(0xC7, 0x78, 0x00)
 _WHITE    = RGBColor(0xFF, 0xFF, 0xFF)
 
 _FONT = "Arial"
@@ -402,22 +403,119 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
 # ── Executive Summary ─────────────────────────────────────────────────────────
 
 def _build_executive_summary(doc: Document, plans: list[Plan],
-                              enriched_map: dict[str, EnrichedHotel]) -> None:
+                              enriched_map: dict[str, EnrichedHotel],
+                              grouped_by_sections: bool = False) -> None:
+    if not plans:
+        return
     _heading(doc, "Executive Summary", level=1)
 
     p = doc.add_paragraph()
     _spacing(p, 0, 12)
     _body_run(p, "Compare all accommodation options at a glance.", color=_GREY)
 
-    prices  = [pl.pricing.discounted_price for pl in plans]
-    savings = [pl.pricing.customer_discount for pl in plans]
-    pcts    = [pl.pricing.discount_pct for pl in plans]
-    min_price_idx   = prices.index(min(prices))
-    max_savings_idx = savings.index(max(savings))
-    best_value_idx  = pcts.index(max(pcts)) if max(pcts) > 0 else -1
+    if grouped_by_sections:
+        _build_exec_summary_by_hotel(doc, plans)
+    else:
+        _build_exec_summary_by_plan(doc, plans)
 
+    _thin_borders(doc.tables[-1])
+
+
+def _recommended_badge_para(cell, align=WD_ALIGN_PARAGRAPH.LEFT) -> None:
+    """Add a small ★ RECOMMENDED line to a table cell."""
+    p = cell.add_paragraph()
+    p.alignment = align
+    _spacing(p, 2, 0)
+    _body_run(p, "★ RECOMMENDED", bold=True, size=7.5, color=_AMBER)
+
+
+def _recommended_badge_doc(doc: Document) -> None:
+    """Add a small ★ RECOMMENDED paragraph to the document body."""
+    p = doc.add_paragraph()
+    _spacing(p, 0, 6)
+    _body_run(p, "★ RECOMMENDED", bold=True, size=9, color=_AMBER)
+
+
+def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
+    """One row per hotel. Used when the file has section headers instead of PLAN markers."""
+    # Flatten to (section_label, hotel) pairs
+    hotel_rows = [(plan.label, hotel) for plan in plans for hotel in plan.hotels]
+
+    col_labels = ["City / Dates", "Hotel", "Online Price", "Our Price", "You Save"]
+    col_widths = [Inches(1.55), Inches(2.55), Inches(0.9), Inches(0.9), Inches(1.1)]
+
+    table = doc.add_table(rows=1 + len(hotel_rows), cols=len(col_labels))
+    table.autofit = False
+    for i, w in enumerate(col_widths):
+        for row in table.rows:
+            row.cells[i].width = w
+
+    for i, label in enumerate(col_labels):
+        cell = table.rows[0].cells[i]
+        _shade_cell(cell, _HDR_BG)
+        cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+        p = cell.paragraphs[0]
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _spacing(p, 0, 0)
+        _body_run(p, label, bold=True, size=9, color=_WHITE)
+
+    # Per-section: track cheapest hotel for BEST PRICE badge
+    section_cheapest: dict[str, float] = {}
+    for label, hotel in hotel_rows:
+        price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
+        if label not in section_cheapest or price < section_cheapest[label]:
+            section_cheapest[label] = price
+
+    # Alternate shading by section group, not by row index
+    section_colors: dict[str, str] = {}
+    _palette = ["FFFFFF", _ROW_ALT]
+    for label, _ in hotel_rows:
+        if label not in section_colors:
+            section_colors[label] = _palette[len(section_colors) % 2]
+
+    for row_idx, (section_label, hotel) in enumerate(hotel_rows):
+        row = table.rows[row_idx + 1]
+        bg = section_colors[section_label]
+        our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
+        is_cheapest = abs(our_price - section_cheapest[section_label]) < 0.01
+
+        you_save_amount = (
+            format_indian_number(hotel.customer_discount)
+            if hotel.customer_discount > 0 else "—"
+        )
+        you_save_pct = (
+            f"({hotel.discount_pct:.1f}% off)"
+            if hotel.customer_discount > 0 else None
+        )
+
+        col_configs = [
+            (section_label,                             WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
+            (hotel.name,                                WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
+            (format_indian_number(hotel.online_price),  WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
+            (format_indian_number(our_price),           WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
+            (you_save_amount,                           WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
+        ]
+
+        for col_idx, (text, align, color, bold) in enumerate(col_configs):
+            cell = row.cells[col_idx]
+            _shade_cell(cell, bg)
+            cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+            p = cell.paragraphs[0]
+            p.alignment = align
+            _spacing(p, 2, 2)
+            _body_run(p, text, bold=bold, size=9, color=color)
+            if col_idx == 1 and hotel.recommended:
+                _recommended_badge_para(cell, align)
+            if col_idx == 4 and you_save_pct:
+                p2 = cell.add_paragraph()
+                p2.alignment = align
+                _spacing(p2, 0, 2)
+                _body_run(p2, you_save_pct, bold=False, size=8, color=color)
+
+
+def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
+    """One row per plan. Used when the file has explicit PLAN A / PLAN B markers."""
     col_labels = ["Plan", "Hotels", "Best Online Price", "Our Price", "You Save"]
-    # Column widths sum to 7.0" (page width minus 0.75" margins each side)
     col_widths = [Inches(0.65), Inches(3.0), Inches(1.05), Inches(1.05), Inches(1.25)]
     table = doc.add_table(rows=1 + len(plans), cols=len(col_labels))
     table.autofit = False
@@ -438,27 +536,21 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
         row = table.rows[row_idx + 1]
         bg = "FFFFFF" if row_idx % 2 == 0 else _ROW_ALT
 
-        badges: list[str] = []
-        if row_idx == min_price_idx:
-            badges.append("LOWEST COST")
-        if row_idx == max_savings_idx and row_idx != min_price_idx:
-            badges.append("HIGHEST SAVINGS")
-        if best_value_idx >= 0 and row_idx == best_value_idx \
-                and row_idx not in (min_price_idx, max_savings_idx):
-            badges.append("BEST VALUE")
-
-        you_save_str = (
-            f"{format_indian_number(plan.pricing.customer_discount)}"
-            f"  ({plan.pricing.discount_pct:.1f}% off)"
+        you_save_amount = (
+            format_indian_number(plan.pricing.customer_discount)
+            if plan.pricing.customer_discount > 0 else "—"
+        )
+        you_save_pct = (
+            f"({plan.pricing.discount_pct:.1f}% off)"
+            if plan.pricing.customer_discount > 0 else None
         )
 
-        # col: 0=Plan 1=Hotels 2=BestOnline 3=OurPrice 4=YouSave
         col_configs = [
             (plan.label,                                             WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
             (None,                                                   WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
             (format_indian_number(plan.pricing.total_online_price),  WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
             (format_indian_number(plan.pricing.discounted_price),    WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
-            (you_save_str,                                           WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
+            (you_save_amount,                                        WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
         ]
 
         for col_idx, (text, align, color, bold) in enumerate(col_configs):
@@ -476,14 +568,14 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
             else:
                 _body_run(p, text, bold=bold, size=9, color=color)
 
-            if col_idx == 0 and badges:
-                for badge in badges:
-                    p2 = cell.add_paragraph()
-                    p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
-                    _spacing(p2, 1, 1)
-                    _body_run(p2, badge, bold=True, size=7.5, color=_GREEN)
+            if col_idx == 0 and plan.recommended:
+                _recommended_badge_para(cell, WD_ALIGN_PARAGRAPH.CENTER)
 
-    _thin_borders(table)
+            if col_idx == 4 and you_save_pct:
+                p2 = cell.add_paragraph()
+                p2.alignment = align
+                _spacing(p2, 0, 2)
+                _body_run(p2, you_save_pct, bold=False, size=8, color=color)
 
 
 # ── Hotel card ────────────────────────────────────────────────────────────────
@@ -511,7 +603,7 @@ def _add_key_facts(doc: Document, enriched: EnrichedHotel) -> None:
         _body_run(p, value, size=11, color=_CHARCOAL)
 
 
-def _add_hotel_card(doc: Document, enriched: EnrichedHotel) -> None:
+def _add_hotel_card(doc: Document, enriched: EnrichedHotel, recommended: bool = False) -> None:
     """Image → Heading 2 name → Key Facts → Description."""
     if enriched.photo_bytes:
         p = doc.add_paragraph()
@@ -532,6 +624,8 @@ def _add_hotel_card(doc: Document, enriched: EnrichedHotel) -> None:
     r.font.name      = "Georgia"
     r.font.size      = Pt(16)
     r.font.color.rgb = _CHARCOAL
+    if recommended:
+        _body_run(name_para, " ★ RECOMMENDED", bold=True, size=9, color=_AMBER)
     _thin_rule(doc, before=0, after=6)
 
     _add_key_facts(doc, enriched)
@@ -556,10 +650,36 @@ def _add_pricing_block(doc: Document, plan: Plan) -> None:
         ("Our Price",    format_indian_number(pr.discounted_price),
          True,  _GREY, _CHARCOAL, 13),
         ("You Save",
-         f"{format_indian_number(pr.customer_discount)}  ({pr.discount_pct:.1f}% off best online prices)",
+         f"{format_indian_number(pr.customer_discount)} ({pr.discount_pct:.1f}% off best online prices)",
          True, _GREY, _GREEN, 11),
     ]
 
+    for i, (label, value, bold, lbl_color, val_color, val_size) in enumerate(rows_data):
+        lp = table.rows[i].cells[0].paragraphs[0]
+        _body_run(lp, label, size=11, color=lbl_color)
+        vp = table.rows[i].cells[1].paragraphs[0]
+        vp.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+        _body_run(vp, value, bold=bold, size=val_size, color=val_color)
+
+
+def _add_hotel_pricing_block(doc: Document, hotel) -> None:
+    """Per-hotel pricing table using HotelRow discount fields."""
+    our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
+    if hotel.customer_discount > 0:
+        save_str = (f"{format_indian_number(hotel.customer_discount)}"
+                    f" ({hotel.discount_pct:.1f}% off best online prices)")
+        save_color = _GREEN
+    else:
+        save_str = "—"
+        save_color = _GREY
+
+    table = doc.add_table(rows=3, cols=2)
+    _no_borders(table)
+    rows_data = [
+        ("Online Price", format_indian_number(hotel.online_price), False, _GREY, _CHARCOAL, 11),
+        ("Our Price",    format_indian_number(our_price),          True,  _GREY, _CHARCOAL, 13),
+        ("You Save",     save_str,                                 True,  _GREY, save_color, 11),
+    ]
     for i, (label, value, bold, lbl_color, val_color, val_size) in enumerate(rows_data):
         lp = table.rows[i].cells[0].paragraphs[0]
         _body_run(lp, label, size=11, color=lbl_color)
@@ -578,6 +698,7 @@ def build_document(
     requirements: str = "",
     destination_photo: bytes | None = None,
     stay_requirements: str = "",
+    grouped_by_sections: bool = False,
 ) -> bytes:
     doc = Document()
     _set_margins(doc)
@@ -590,34 +711,61 @@ def build_document(
     _page_break(doc)
 
     # Executive Summary
-    _build_executive_summary(doc, plans, enriched_map)
+    _build_executive_summary(doc, plans, enriched_map, grouped_by_sections=grouped_by_sections)
     _page_break(doc)
 
-    # One page per plan
-    for plan_idx, plan in enumerate(plans):
-        if plan_idx > 0:
-            _page_break(doc)
+    # Detail sections
+    if grouped_by_sections:
+        # Section = city/dates group. Each hotel within a section gets its own
+        # card + individual pricing block. One page break between sections.
+        for plan_idx, plan in enumerate(plans):
+            if plan_idx > 0:
+                _page_break(doc)
 
-        # Plan heading — Heading 1
-        _heading(doc, plan.label.upper(), level=1)
-        _thin_rule(doc, before=2, after=8, color=_HDR_BG)
+            _heading(doc, plan.label.upper(), level=1)
+            _thin_rule(doc, before=2, after=8, color=_HDR_BG)
 
-        # Hotel cards
-        for i, hotel in enumerate(plan.hotels):
-            if i > 0:
-                _thin_rule(doc, before=8, after=4)
-            enriched = enriched_map.get(hotel.name)
-            if enriched:
-                _add_hotel_card(doc, enriched)
-            else:
-                p = doc.add_paragraph()
-                _spacing(p, 8, 8)
-                _body_run(p, f"[ {hotel.name} — details not available ]",
-                          color=_GREY)
+            for i, hotel in enumerate(plan.hotels):
+                if i > 0:
+                    _thin_rule(doc, before=8, after=4)
+                enriched = enriched_map.get(hotel.name)
+                if enriched:
+                    _add_hotel_card(doc, enriched, recommended=hotel.recommended)
+                else:
+                    p = doc.add_paragraph()
+                    _spacing(p, 8, 4)
+                    _body_run(p, hotel.name, bold=True, size=13, color=_CHARCOAL)
+                    if hotel.recommended:
+                        _body_run(p, " ★ RECOMMENDED", bold=True, size=9, color=_AMBER)
+                    _thin_rule(doc, before=0, after=6)
 
-        # Pricing
-        _thin_rule(doc, before=12, after=8)
-        _add_pricing_block(doc, plan)
+                _thin_rule(doc, before=12, after=8)
+                _add_hotel_pricing_block(doc, hotel)
+    else:
+        # Original plan-based layout — one page per plan, shared pricing block.
+        for plan_idx, plan in enumerate(plans):
+            if plan_idx > 0:
+                _page_break(doc)
+
+            p = _heading(doc, plan.label.upper(), level=1)
+            if plan.recommended:
+                _body_run(p, " ★ RECOMMENDED", bold=True, size=9, color=_AMBER)
+            _thin_rule(doc, before=2, after=8, color=_HDR_BG)
+
+            for i, hotel in enumerate(plan.hotels):
+                if i > 0:
+                    _thin_rule(doc, before=8, after=4)
+                enriched = enriched_map.get(hotel.name)
+                if enriched:
+                    _add_hotel_card(doc, enriched)
+                else:
+                    p = doc.add_paragraph()
+                    _spacing(p, 8, 8)
+                    _body_run(p, f"[ {hotel.name} — details not available ]",
+                              color=_GREY)
+
+            _thin_rule(doc, before=12, after=8)
+            _add_pricing_block(doc, plan)
 
     # Final thank you page
     _page_break(doc)

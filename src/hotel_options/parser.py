@@ -9,8 +9,16 @@ from src.hotel_options.models import (
     HotelRow, PlanPricing, Plan, UnknownCode, ParseResult,
 )
 
-_PLAN_RE = re.compile(r'^PLAN\s+[A-Z]$', re.IGNORECASE)
+_PLAN_RE = re.compile(r'^PLAN\s+[A-Z](?:\s*\(recommended\))?\s*$', re.IGNORECASE)
 _SECTION_DATE_RE = re.compile(r'\(([^)]+)\)')
+_RECOMMENDED_RE = re.compile(r'\s*\(recommended\)\s*$', re.IGNORECASE)
+
+
+def _strip_recommended(s: str) -> tuple[str, bool]:
+    """Return (cleaned_string, recommended_flag)."""
+    if _RECOMMENDED_RE.search(s):
+        return _RECOMMENDED_RE.sub('', s).strip(), True
+    return s, False
 _FILENAME_RE = re.compile(
     r'(?:DO NOT SHARE_\s*)?([^_]+)_Accommodation Options_([^_.]+)\.xlsx$',
     re.IGNORECASE,
@@ -22,13 +30,23 @@ def extract_filename_meta(filename: str) -> tuple[str, str]:
     if m:
         return m.group(1).strip(), m.group(2).strip()
     stem = filename.rsplit(".", 1)[0]
-    parts = stem.split("_")
-    return "", parts[-1].strip() if parts else ""
+    parts = [p.strip() for p in stem.split("_") if p.strip()]
+    # "DO NOT SHARE_ Name_something" → parts[0]="DO NOT SHARE", parts[1]=Name
+    if len(parts) >= 2 and "DO NOT SHARE" in parts[0].upper():
+        return parts[1], parts[-1]
+    return "", parts[-1] if parts else ""
 
 
 def _numeric(v) -> float | None:
     if isinstance(v, (int, float)):
         return float(v)
+    if isinstance(v, str):
+        clean = v.strip().lstrip('₹$€£¥').replace(',', '').strip()
+        try:
+            result = float(clean)
+            return result if result > 0 else None
+        except (ValueError, TypeError):
+            return None
     return None
 
 
@@ -37,6 +55,92 @@ def _make_dummy_row(length: int = 14) -> tuple:
     class NoneCell:
         value = None
     return tuple(NoneCell() for _ in range(length))
+
+
+def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode]]:
+    """Group hotels by section headers when no PLAN markers found.
+    Returns (plans, unknown_codes). If no section headers, one "All Hotels" plan."""
+    all_plans: list[Plan] = []
+    unknown_codes: list[UnknownCode] = []
+    current_label: str | None = None
+    current_hotels: list[HotelRow] = []
+    running_online = 0.0
+    running_b2b = 0.0
+
+    def _flush():
+        nonlocal current_label, current_hotels, running_online, running_b2b
+        if not current_hotels:
+            current_label = None
+            current_hotels = []
+            running_online = 0.0
+            running_b2b = 0.0
+            return
+        pricing = PlanPricing(
+            total_online_price=running_online,
+            total_b2b_price=running_b2b,
+            customer_discount=0.0,
+            discounted_price=running_online,
+            discount_pct=0.0,
+        )
+        all_plans.append(Plan(
+            label=current_label if current_label is not None else "All Hotels",
+            hotels=list(current_hotels),
+            pricing=pricing,
+        ))
+        current_label = None
+        current_hotels = []
+        running_online = 0.0
+        running_b2b = 0.0
+
+    for row in ws.iter_rows():
+        cell_a = row[0]
+        row_dim = ws.row_dimensions.get(cell_a.row)
+        if (cell_a.font and cell_a.font.strike) or (row_dim and row_dim.font and row_dim.font.strike):
+            continue
+
+        val_a = cell_a.value
+        str_a = str(val_a).strip() if val_a is not None else ""
+        col_i_val = row[8].value if len(row) > 8 else None
+
+        # Section header: col A non-empty, col I blank, not a PLAN header, not A1
+        if val_a and _numeric(col_i_val) is None and not _PLAN_RE.match(str_a) and cell_a.row > 1:
+            _flush()
+            current_label = str_a
+            continue
+
+        # Hotel row: col A non-empty, col I numeric
+        if val_a and _numeric(col_i_val) is not None:
+            col_h_val = row[7].value if len(row) > 7 else None
+            decoded = decode_col_h(str(col_h_val) if col_h_val is not None else None, codes)
+            hotel_name, is_recommended = _strip_recommended(str_a)
+            for unk in decoded.unknowns:
+                unknown_codes.append(UnknownCode(code=unk, hotel_name=hotel_name, plan_label=current_label or ""))
+            online = _numeric(col_i_val) or 0.0
+            b2b = (_numeric(row[9].value) if len(row) > 9 else None) or 0.0
+            col_l = (_numeric(row[11].value) if len(row) > 11 else None) or 0.0
+            col_m = _numeric(row[12].value) if len(row) > 12 else None
+            col_n = _numeric(row[13].value) if len(row) > 13 else None
+            discount = col_l
+            discounted = col_m if col_m is not None else (online - discount)
+            pct = col_n if col_n is not None else (discount / online * 100 if online else 0.0)
+            running_online += online
+            running_b2b += b2b
+            current_hotels.append(HotelRow(
+                name=hotel_name,
+                category=str(row[1].value).strip() if row[1].value else "",
+                room_type=str(row[2].value).strip() if row[2].value else "",
+                cancellation=decoded.cancellation,
+                meal_type=decoded.meal_type,
+                online_price=online,
+                dates="",
+                customer_discount=discount,
+                discounted_price=discounted,
+                discount_pct=pct,
+                recommended=is_recommended,
+            ))
+
+    _flush()
+    return all_plans, unknown_codes
 
 
 def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
@@ -50,17 +154,19 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
     unknown_codes: list[UnknownCode] = []
 
     current_label: str | None = None
+    current_recommended: bool = False
     current_hotels: list[HotelRow] = []
     current_section_dates: str = ""
     running_online = 0.0
     running_b2b = 0.0
 
     def _flush(summary_row) -> None:
-        nonlocal current_label, current_hotels, running_online, running_b2b
+        nonlocal current_label, current_recommended, current_hotels, running_online, running_b2b
         if current_label is None:
             return
         if not current_hotels:
             current_label = None
+            current_recommended = False
             current_hotels = []
             running_online = 0.0
             running_b2b = 0.0
@@ -87,8 +193,10 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
                 discounted_price=discounted,
                 discount_pct=pct,
             ),
+            recommended=current_recommended,
         ))
         current_label = None
+        current_recommended = False
         current_hotels = []
         running_online = 0.0
         running_b2b = 0.0
@@ -114,7 +222,8 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
             past_first_plan = True
             if current_label is not None:
                 _flush(_make_dummy_row())
-            current_label = str_a.title()
+            raw_label, current_recommended = _strip_recommended(str_a.title())
+            current_label = raw_label
             current_hotels = []
             current_section_dates = ""
             running_online = 0.0
@@ -185,8 +294,18 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
 
     # Flush the last open plan — it may have no trailing summary row
     _flush(_make_dummy_row())
-
-    # Drop any plans that ended up with no hotels (e.g. duplicate PLAN headers in Excel)
     plans = [p for p in plans if p.hotels]
 
-    return ParseResult(plans=plans, unknown_codes=unknown_codes, not_found=[], requirements=requirements)
+    grouped_by_sections = False
+    if not plans:
+        plans, extra_codes = _parse_no_plans(ws, codes)
+        unknown_codes.extend(extra_codes)
+        grouped_by_sections = bool(plans)
+
+    return ParseResult(
+        plans=plans,
+        unknown_codes=unknown_codes,
+        not_found=[],
+        requirements=requirements,
+        grouped_by_sections=grouped_by_sections,
+    )

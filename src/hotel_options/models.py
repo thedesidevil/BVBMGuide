@@ -11,6 +11,10 @@ class HotelRow:
     meal_type: str
     online_price: float
     dates: str = ""
+    customer_discount: float = 0.0
+    discounted_price: float = 0.0
+    discount_pct: float = 0.0
+    recommended: bool = False
 
 
 @dataclass
@@ -27,6 +31,7 @@ class Plan:
     label: str
     hotels: list[HotelRow]
     pricing: PlanPricing
+    recommended: bool = False
 
 
 @dataclass
@@ -42,6 +47,7 @@ class ParseResult:
     unknown_codes: list[UnknownCode]
     not_found: list[dict]
     requirements: str = ""
+    grouped_by_sections: bool = False
 
 
 @dataclass

@@ -3,7 +3,7 @@ import json
 import os
 
 from fastapi import APIRouter, File, Form, HTTPException, Request, UploadFile
-from fastapi.responses import Response
+from fastapi.responses import HTMLResponse, Response
 
 from src.hotel_options.codes import CodeStore
 from src.library.ui.services.hotel_options_service import parse_file, generate_doc
@@ -69,6 +69,44 @@ async def generate_hotel_options(
             "Access-Control-Expose-Headers": "X-AI-Cost-USD, X-Maps-API-Calls",
         },
     )
+
+
+@router.get("/hotel-options/debug-structure", response_class=HTMLResponse)
+async def debug_hotel_structure_form():
+    return """<html><body style="font-family:monospace;padding:20px">
+<h2>Debug: Excel Structure Inspector</h2>
+<form method="post" enctype="multipart/form-data">
+  <input type="file" name="file" accept=".xlsx" required>
+  <button type="submit">Inspect</button>
+</form></body></html>"""
+
+
+@router.post("/hotel-options/debug-structure")
+async def debug_hotel_structure(file: UploadFile = File(...)):
+    """Return raw cell values from first 25 rows to diagnose parser issues."""
+    import io
+    import openpyxl
+    if not file.filename or not file.filename.lower().endswith(".xlsx"):
+        raise HTTPException(status_code=400, detail="Only .xlsx files are accepted")
+    content = await file.read()
+    try:
+        wb = openpyxl.load_workbook(io.BytesIO(content), data_only=True)
+        ws = wb.active
+        table_rows = ""
+        for row in ws.iter_rows(max_row=30):
+            cells = [(chr(ord('A') + i) if i < 26 else f"col{i}", cell.value, type(cell.value).__name__)
+                     for i, cell in enumerate(row) if cell.value is not None]
+            if cells:
+                cols = " | ".join(f"<b>{c}</b>=<code>{repr(v)}</code> <small>({t})</small>" for c, v, t in cells)
+                table_rows += f"<tr><td style='padding:2px 8px;border:1px solid #ccc'>row {row[0].row}</td><td style='padding:2px 8px;border:1px solid #ccc'>{cols}</td></tr>"
+        return HTMLResponse(f"""<html><body style="font-family:monospace;padding:20px">
+<h2>Structure: {file.filename}</h2>
+<p>Dimensions: {ws.max_row} rows × {ws.max_column} cols</p>
+<table style="border-collapse:collapse;font-size:13px">{table_rows}</table>
+<br><a href="/hotel-options/debug-structure">← Upload another</a>
+</body></html>""")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Debug failed: {e}")
 
 
 @router.post("/hotel-options/codes")

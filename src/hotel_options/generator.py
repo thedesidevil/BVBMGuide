@@ -426,14 +426,14 @@ def _recommended_badge_para(cell, align=WD_ALIGN_PARAGRAPH.LEFT) -> None:
     p = cell.add_paragraph()
     p.alignment = align
     _spacing(p, 2, 0)
-    _body_run(p, "★  RECOMMENDED", bold=True, size=7.5, color=_AMBER)
+    _body_run(p, "★ RECOMMENDED", bold=True, size=7.5, color=_AMBER)
 
 
 def _recommended_badge_doc(doc: Document) -> None:
     """Add a small ★ RECOMMENDED paragraph to the document body."""
     p = doc.add_paragraph()
     _spacing(p, 0, 6)
-    _body_run(p, "★  RECOMMENDED", bold=True, size=9, color=_AMBER)
+    _body_run(p, "★ RECOMMENDED", bold=True, size=9, color=_AMBER)
 
 
 def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
@@ -625,7 +625,7 @@ def _add_hotel_card(doc: Document, enriched: EnrichedHotel, recommended: bool = 
     r.font.size      = Pt(16)
     r.font.color.rgb = _CHARCOAL
     if recommended:
-        _body_run(name_para, "  ★  RECOMMENDED", bold=True, size=9, color=_AMBER)
+        _body_run(name_para, " ★ RECOMMENDED", bold=True, size=9, color=_AMBER)
     _thin_rule(doc, before=0, after=6)
 
     _add_key_facts(doc, enriched)
@@ -736,7 +736,7 @@ def build_document(
                     _spacing(p, 8, 4)
                     _body_run(p, hotel.name, bold=True, size=13, color=_CHARCOAL)
                     if hotel.recommended:
-                        _body_run(p, "  ★  RECOMMENDED", bold=True, size=9, color=_AMBER)
+                        _body_run(p, " ★ RECOMMENDED", bold=True, size=9, color=_AMBER)
                     _thin_rule(doc, before=0, after=6)
 
                 _thin_rule(doc, before=12, after=8)
@@ -749,7 +749,7 @@ def build_document(
 
             p = _heading(doc, plan.label.upper(), level=1)
             if plan.recommended:
-                _body_run(p, "  ★  RECOMMENDED", bold=True, size=9, color=_AMBER)
+                _body_run(p, " ★ RECOMMENDED", bold=True, size=9, color=_AMBER)
             _thin_rule(doc, before=2, after=8, color=_HDR_BG)
 
             for i, hotel in enumerate(plan.hotels):

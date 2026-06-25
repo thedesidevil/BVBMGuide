@@ -23,7 +23,7 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 S3_DEPLOY_BUCKET="bvbm-code"
 S3_DEPLOY_PREFIX="aig-library-builder"
 
-LAMBDA_FUNCTION_NAME="${LAMBDA_FUNCTION_NAME:-}"
+LAMBDA_FUNCTION_NAME="${LAMBDA_FUNCTION_NAME:-library-builder}"
 
 read_package_version() {
   if [[ -f "$REPO_ROOT/VERSION" ]]; then

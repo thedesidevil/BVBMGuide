@@ -78,7 +78,7 @@ aws lambda add-permission \
 ## Subsequent Deploys
 
 ```bash
-./deploy/aws/build-deploy-lambda.sh --deploy --function-name library-qc
+./deploy/aws/build-deploy-lambda.sh --deploy
 ```
 
 ## IAM Role

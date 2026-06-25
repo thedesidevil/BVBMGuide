@@ -14,13 +14,14 @@ export function LoadingScreen({ loaded }: LoadingScreenProps) {
       const timer = setTimeout(() => setVisible(false), 400);
       return () => clearTimeout(timer);
     }
-    // Animate to 90% over 3 seconds using intervals
+    // Reset and animate when loading starts (or restarts)
+    setVisible(true);
+    setProgress(0);
     const start = Date.now();
     const duration = 3000;
     const interval = setInterval(() => {
       const elapsed = Date.now() - start;
       const fraction = Math.min(elapsed / duration, 1);
-      // Ease-out curve: fast start, slow finish
       const eased = 1 - Math.pow(1 - fraction, 3);
       setProgress(Math.round(eased * 90));
     }, 50);

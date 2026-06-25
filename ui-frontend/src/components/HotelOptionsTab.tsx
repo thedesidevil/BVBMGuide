@@ -202,17 +202,24 @@ export function HotelOptionsTab() {
               <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide px-1">
                 {plan.label}
               </h3>
-              {plan.hotels.map((h) => (
-                <div key={h.name} className="text-sm border-l-2 border-slate-200 pl-3 space-y-0.5">
-                  <p className="font-medium text-slate-800">{h.name}</p>
-                  <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs text-slate-500">
-                    {h.category && <span>{h.category}</span>}
-                    {h.room_type && <span>{h.room_type}</span>}
-                    {h.meal_type && <span>{h.meal_type}</span>}
-                    {h.cancellation && <span>{h.cancellation}</span>}
+              {plan.hotels.map((h) => {
+                const ourPrice = h.discounted_price > 0 ? h.discounted_price : h.online_price;
+                return (
+                  <div key={h.name} className="text-sm border-l-2 border-slate-200 pl-3 space-y-0.5">
+                    <p className="font-medium text-slate-800">{h.name}</p>
+                    <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs text-slate-500">
+                      {h.category && <span>{h.category}</span>}
+                      {h.room_type && <span>{h.room_type}</span>}
+                      {h.meal_type && <span>{h.meal_type}</span>}
+                      {h.cancellation && <span>{h.cancellation}</span>}
+                    </div>
+                    <p className="text-xs text-slate-500">
+                      Online: ₹{h.online_price.toLocaleString("en-IN")} · Our price: ₹{ourPrice.toLocaleString("en-IN")}
+                      {h.customer_discount > 0 && ` · Save ₹${h.customer_discount.toLocaleString("en-IN")} (${h.discount_pct.toFixed(1)}% off)`}
+                    </p>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           ))
         : result.plans.map((plan) => (

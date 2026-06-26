@@ -14,7 +14,7 @@ BVBMGuide/
 ├── library_db/           # Sharded JSON database (one file per destination city)
 ├── input/                # Place letterhead DOCX and hotel comparison XLSXs here
 ├── src/
-│   ├── common/           # Shared utilities (AI provider, Pydantic models, Maps)
+│   ├── common/           # Shared utilities (AI provider, brand voice, Pydantic models, Maps)
 │   ├── library/          # Library DB management + web UI
 │   │   └── ui/           # FastAPI server + React frontend
 │   ├── hotel_options/    # Hotel comparison document generator
@@ -27,7 +27,7 @@ BVBMGuide/
 
 ```bash
 pip install -r requirements.txt
-cp .env.example .env   # fill in AI_API_KEY, AI_BASE_URL, AI_MODEL, GOOGLE_MAPS_API_KEY
+# Create a .env file at the project root — see Environment Configuration below
 ```
 
 ### Library Web UI
@@ -85,9 +85,8 @@ Create a `.env` file at the project root:
 ```
 AI_API_KEY=<your Anthropic or OpenAI-compatible key>
 AI_BASE_URL=<API endpoint>
-AI_MODEL=<model name, e.g. claude-opus-4-5>
+AI_MODEL=<model name, e.g. gpt-4o-mini>
 GOOGLE_MAPS_API_KEY=<your Google Maps key>
-LETTERHEAD_PATH=input/BVBM Company Letterhead.docx   # optional, defaults to this path
 ```
 
 ## Hotel Options Generator

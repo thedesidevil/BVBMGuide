@@ -1,5 +1,6 @@
 from __future__ import annotations
 import io
+import re
 
 from docx import Document
 from docx.shared import Inches, Pt, RGBColor
@@ -25,6 +26,12 @@ _RULE_COLOR = "CCCCCC"
 _HDR_BG     = "1F497D"  # dark navy blue
 
 _MARGIN = Inches(0.75)
+
+
+def _star_suffix(category: str) -> str:
+    """Return ' (4*)' from a category string like '4-Star Hotel', or '' if no digit found."""
+    m = re.search(r'(\d)', category or "")
+    return f" ({m.group(1)}*)" if m else ""
 
 
 # ── Low-level helpers ─────────────────────────────────────────────────────────
@@ -489,11 +496,11 @@ def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
         )
 
         col_configs = [
-            (section_label,                             WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
-            (hotel.name,                                WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
-            (format_indian_number(hotel.online_price),  WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
-            (format_indian_number(our_price),           WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
-            (you_save_amount,                           WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
+            (section_label,                                              WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
+            (hotel.name + _star_suffix(hotel.category),                  WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
+            (format_indian_number(hotel.online_price),                   WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
+            (format_indian_number(our_price),                            WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
+            (you_save_amount,                                            WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
         ]
 
         for col_idx, (text, align, color, bold) in enumerate(col_configs):
@@ -564,7 +571,7 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
                 for h_idx, hotel in enumerate(plan.hotels):
                     bp = p if h_idx == 0 else cell.add_paragraph()
                     bp.alignment = WD_ALIGN_PARAGRAPH.LEFT
-                    _body_run(bp, f"• {hotel.name}", size=9, color=_CHARCOAL)
+                    _body_run(bp, f"• {hotel.name}{_star_suffix(hotel.category)}", size=9, color=_CHARCOAL)
             else:
                 _body_run(p, text, bold=bold, size=9, color=color)
 
@@ -584,6 +591,8 @@ def _add_key_facts(doc: Document, enriched: EnrichedHotel) -> None:
     facts: list[tuple[str, str]] = []
     if enriched.address:
         facts.append(("📍 Location", enriched.address))
+    if enriched.category:
+        facts.append(("🏨 Category", enriched.category))
     if enriched.phone:
         facts.append(("📞 Phone", enriched.phone))
     if enriched.rating:

@@ -134,5 +134,15 @@ if "$DEPLOY_LAMBDA"; then
     --s3-bucket "$S3_DEPLOY_BUCKET" \
     --s3-key "$S3_KEY" \
     --region "$AWS_REGION"
+  echo "==> Waiting for update to complete..."
+  aws lambda wait function-updated \
+    --function-name "$LAMBDA_FUNCTION_NAME" \
+    --region "$AWS_REGION"
+  echo "==> Stamping description: ${ZIP_BASENAME}"
+  aws lambda update-function-configuration \
+    --function-name "$LAMBDA_FUNCTION_NAME" \
+    --description "${ZIP_BASENAME}" \
+    --region "$AWS_REGION" \
+    --output text --query 'Description'
   echo "==> Done."
 fi

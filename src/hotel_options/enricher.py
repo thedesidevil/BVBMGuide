@@ -3,23 +3,22 @@ import re
 import httpx
 
 from src.hotel_options.models import HotelRow, EnrichedHotel
+from src.common.brand_voice import HOTEL_DESCRIPTION_SYSTEM
 
 _PLACES_BASE = "https://maps.googleapis.com/maps/api/place"
 _PLACE_ID_RE = re.compile(r'ChIJ[A-Za-z0-9_\-]+')
 
 _DESCRIPTION_PROMPT = """\
-Write 40-60 words about this hotel as a concise advisor note for a client travel document.
-Be factual and direct — location, what makes it stand out, and one practical note.
-No marketing language. No superlatives. No filler phrases like "nestled" or "boasts".
+Write a hotel description for a client accommodation proposal.
 
 Hotel: {name}
 Category: {category}
 Address: {address}
-Rating: {rating} ({rating_count} reviews)
-Cancellation: {cancellation}
-Meal: {meal_type}
+Rating: {rating}/5 ({rating_count} reviews)
+Cancellation policy: {cancellation}
+Meal plan: {meal_type}
 
-Output only the note, nothing else."""
+Output only the description, nothing else."""
 
 
 def place_id_from_maps_url(url: str) -> str | None:
@@ -117,7 +116,12 @@ def enrich_hotel(
         cancellation=hotel.cancellation or "Not specified",
         meal_type=hotel.meal_type or "Not specified",
     )
-    description = ai_client.complete(prompt)
+    description = ai_client.complete(
+        prompt,
+        max_tokens=300,
+        temperature=0.4,
+        system=HOTEL_DESCRIPTION_SYSTEM,
+    )
 
     return EnrichedHotel(
         official_name=official_name,

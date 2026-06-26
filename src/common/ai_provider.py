@@ -111,7 +111,8 @@ class AIClient:
         self,
         prompt: str,
         max_tokens: int = 4096,
-        temperature: float = 0.7
+        temperature: float = 0.7,
+        system: Optional[str] = None,
     ) -> str:
         """Generate a completion from the AI model.
 
@@ -119,15 +120,20 @@ class AIClient:
             prompt: The prompt to send to the model
             max_tokens: Maximum tokens in the response
             temperature: Sampling temperature (0-1)
+            system: Optional system prompt prepended before the user message
 
         Returns:
             The model's response text
         """
+        messages = []
+        if system:
+            messages.append({"role": "system", "content": system})
+        messages.append({"role": "user", "content": prompt})
         response = self._client.chat.completions.create(
             model=self.model,
             max_tokens=max_tokens,
             temperature=temperature,
-            messages=[{"role": "user", "content": prompt}]
+            messages=messages,
         )
         if response.usage:
             self.usage["prompt_tokens"]     += response.usage.prompt_tokens or 0

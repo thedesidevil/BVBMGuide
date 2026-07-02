@@ -136,4 +136,5 @@ def enrich_hotel(
         meal_type=hotel.meal_type,
         category=hotel.category,
         dates=hotel.dates,
+        room_type=hotel.room_type,
     )

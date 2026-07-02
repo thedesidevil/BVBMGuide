@@ -15,6 +15,7 @@ class HotelRow:
     discounted_price: float = 0.0
     discount_pct: float = 0.0
     recommended: bool = False
+    why_recommend: str = ""
 
 
 @dataclass
@@ -32,6 +33,7 @@ class Plan:
     hotels: list[HotelRow]
     pricing: PlanPricing
     recommended: bool = False
+    why_recommend: str = ""
 
 
 @dataclass
@@ -64,3 +66,4 @@ class EnrichedHotel:
     meal_type: str
     category: str
     dates: str = ""
+    room_type: str = ""

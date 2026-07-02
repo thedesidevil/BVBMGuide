@@ -593,6 +593,8 @@ def _add_key_facts(doc: Document, enriched: EnrichedHotel) -> None:
         facts.append(("📍 Location", enriched.address))
     if enriched.category:
         facts.append(("🏨 Category", enriched.category))
+    if enriched.room_type:
+        facts.append(("🛏️ Room", enriched.room_type))
     if enriched.phone:
         facts.append(("📞 Phone", enriched.phone))
     if enriched.rating:
@@ -610,6 +612,15 @@ def _add_key_facts(doc: Document, enriched: EnrichedHotel) -> None:
         _spacing(p, 1, 2)
         _body_run(p, f"{label}: ", size=11, color=_GREY)
         _body_run(p, value, size=11, color=_CHARCOAL)
+
+
+def _add_why_recommend(doc: Document, why: str) -> None:
+    if not why:
+        return
+    p = doc.add_paragraph()
+    _spacing(p, 6, 4)
+    _body_run(p, "Why we recommend it: ", bold=True, size=10.5, color=_AMBER)
+    _body_run(p, why, size=10.5, color=_CHARCOAL)
 
 
 def _add_hotel_card(doc: Document, enriched: EnrichedHotel, recommended: bool = False) -> None:
@@ -747,7 +758,13 @@ def build_document(
                     if hotel.recommended:
                         _body_run(p, " ★ RECOMMENDED", bold=True, size=9, color=_AMBER)
                     _thin_rule(doc, before=0, after=6)
+                    if hotel.room_type:
+                        p2 = doc.add_paragraph()
+                        _spacing(p2, 1, 2)
+                        _body_run(p2, "🛏️ Room: ", size=11, color=_GREY)
+                        _body_run(p2, hotel.room_type, size=11, color=_CHARCOAL)
 
+                _add_why_recommend(doc, hotel.why_recommend)
                 _thin_rule(doc, before=12, after=8)
                 _add_hotel_pricing_block(doc, hotel)
     else:
@@ -761,6 +778,9 @@ def build_document(
                 _body_run(p, " ★ RECOMMENDED", bold=True, size=9, color=_AMBER)
             _thin_rule(doc, before=2, after=8, color=_HDR_BG)
 
+            if plan.why_recommend:
+                _add_why_recommend(doc, plan.why_recommend)
+
             for i, hotel in enumerate(plan.hotels):
                 if i > 0:
                     _thin_rule(doc, before=8, after=4)
@@ -772,6 +792,7 @@ def build_document(
                     _spacing(p, 8, 8)
                     _body_run(p, f"[ {hotel.name} — details not available ]",
                               color=_GREY)
+                _add_why_recommend(doc, hotel.why_recommend)
 
             _thin_rule(doc, before=12, after=8)
             _add_pricing_block(doc, plan)

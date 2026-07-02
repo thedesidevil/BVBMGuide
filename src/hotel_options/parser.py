@@ -20,21 +20,30 @@ def _strip_recommended(s: str) -> tuple[str, bool]:
         return _RECOMMENDED_RE.sub('', s).strip(), True
     return s, False
 _FILENAME_RE = re.compile(
-    r'(?:DO NOT SHARE_\s*)?([^_]+)_Accommodation Options_([^_.]+)\.xlsx$',
+    r'(?:DO NOT SHARE[\s_]+)?([^_]+)_Accommodation Options_([^_.]+)',
     re.IGNORECASE,
 )
+_TRAILING_COPY_NUM_RE = re.compile(r'\s*\(\d+\)\s*$')
 
 
 def extract_filename_meta(filename: str) -> tuple[str, str]:
     m = _FILENAME_RE.search(filename)
     if m:
-        return m.group(1).strip(), m.group(2).strip()
+        client_name = m.group(1).strip()
+        destination = _TRAILING_COPY_NUM_RE.sub('', m.group(2)).strip()
+        return client_name, destination
     stem = filename.rsplit(".", 1)[0]
     parts = [p.strip() for p in stem.split("_") if p.strip()]
-    # "DO NOT SHARE_ Name_something" → parts[0]="DO NOT SHARE", parts[1]=Name
-    if len(parts) >= 2 and "DO NOT SHARE" in parts[0].upper():
-        return parts[1], parts[-1]
-    return "", parts[-1] if parts else ""
+    client_name = ""
+    if parts:
+        first = parts[0]
+        cleaned = re.sub(r'^DO NOT SHARE[\s_]*', '', first, flags=re.IGNORECASE).strip()
+        if cleaned:
+            client_name = cleaned
+        elif len(parts) >= 2:
+            client_name = parts[1]
+    destination = _TRAILING_COPY_NUM_RE.sub('', parts[-1]).strip() if parts else ""
+    return client_name, destination
 
 
 def _numeric(v) -> float | None:
@@ -125,6 +134,7 @@ def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode]]:
             pct = col_n if col_n is not None else (discount / online * 100 if online else 0.0)
             running_online += online
             running_b2b += b2b
+            why = str(row[17].value).strip() if len(row) > 17 and row[17].value else ""
             current_hotels.append(HotelRow(
                 name=hotel_name,
                 category=str(row[1].value).strip() if row[1].value else "",
@@ -137,6 +147,7 @@ def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode]]:
                 discounted_price=discounted,
                 discount_pct=pct,
                 recommended=is_recommended,
+                why_recommend=why,
             ))
 
     _flush()
@@ -155,18 +166,20 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
 
     current_label: str | None = None
     current_recommended: bool = False
+    current_why: str = ""
     current_hotels: list[HotelRow] = []
     current_section_dates: str = ""
     running_online = 0.0
     running_b2b = 0.0
 
     def _flush(summary_row) -> None:
-        nonlocal current_label, current_recommended, current_hotels, running_online, running_b2b
+        nonlocal current_label, current_recommended, current_why, current_hotels, running_online, running_b2b
         if current_label is None:
             return
         if not current_hotels:
             current_label = None
             current_recommended = False
+            current_why = ""
             current_hotels = []
             running_online = 0.0
             running_b2b = 0.0
@@ -194,9 +207,11 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
                 discount_pct=pct,
             ),
             recommended=current_recommended,
+            why_recommend=current_why,
         ))
         current_label = None
         current_recommended = False
+        current_why = ""
         current_hotels = []
         running_online = 0.0
         running_b2b = 0.0
@@ -224,6 +239,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
                 _flush(_make_dummy_row())
             raw_label, current_recommended = _strip_recommended(str_a.title())
             current_label = raw_label
+            current_why = str(row[17].value).strip() if len(row) > 17 and row[17].value else ""
             current_hotels = []
             current_section_dates = ""
             running_online = 0.0
@@ -282,6 +298,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
             running_b2b += b2b
 
             dates = current_section_dates or preamble_dates.get((str_a, online), "")
+            why = str(row[17].value).strip() if len(row) > 17 and row[17].value else ""
             current_hotels.append(HotelRow(
                 name=str_a,
                 category=str(row[1].value).strip() if row[1].value else "",
@@ -290,6 +307,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
                 meal_type=decoded.meal_type,
                 online_price=online,
                 dates=dates,
+                why_recommend=why,
             ))
 
     # Flush the last open plan — it may have no trailing summary row

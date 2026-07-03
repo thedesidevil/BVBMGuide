@@ -1,6 +1,7 @@
 from __future__ import annotations
 import io
 import re
+import urllib.parse
 
 from docx import Document
 from docx.shared import Inches, Pt, RGBColor
@@ -587,16 +588,60 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
 
 # ── Hotel card ────────────────────────────────────────────────────────────────
 
+def _add_hyperlink(para, text: str, url: str, *,
+                   font_name: str = _FONT, size: float = 16,
+                   bold: bool = True, color: RGBColor = _CHARCOAL) -> None:
+    """Append a clickable hyperlink run to an existing paragraph."""
+    part = para.part
+    r_id = part.relate_to(
+        url,
+        "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+        is_external=True,
+    )
+    hl = OxmlElement("w:hyperlink")
+    hl.set(qn("r:id"), r_id)
+
+    r = OxmlElement("w:r")
+    rPr = OxmlElement("w:rPr")
+
+    rFonts = OxmlElement("w:rFonts")
+    rFonts.set(qn("w:ascii"), font_name)
+    rFonts.set(qn("w:hAnsi"), font_name)
+    rPr.append(rFonts)
+
+    if bold:
+        rPr.append(OxmlElement("w:b"))
+
+    sz = OxmlElement("w:sz")
+    sz.set(qn("w:val"), str(int(size * 2)))
+    rPr.append(sz)
+
+    col_el = OxmlElement("w:color")
+    col_el.set(qn("w:val"), f"{color[0]:02X}{color[1]:02X}{color[2]:02X}")
+    rPr.append(col_el)
+
+    u = OxmlElement("w:u")
+    u.set(qn("w:val"), "single")
+    rPr.append(u)
+
+    r.append(rPr)
+    t = OxmlElement("w:t")
+    t.text = text
+    r.append(t)
+    hl.append(r)
+    para._p.append(hl)
+
+
+def _google_search_url(name: str, destination: str) -> str:
+    return "https://www.google.com/search?q=" + urllib.parse.quote_plus(f"{name} {destination}")
+
+
 def _add_key_facts(doc: Document, enriched: EnrichedHotel) -> None:
     facts: list[tuple[str, str]] = []
-    if enriched.address:
-        facts.append(("📍 Location", enriched.address))
     if enriched.category:
         facts.append(("🏨 Category", enriched.category))
     if enriched.room_type:
         facts.append(("🛏️ Room", enriched.room_type))
-    if enriched.phone:
-        facts.append(("📞 Phone", enriched.phone))
     if enriched.rating:
         facts.append(("⭐ Guest Rating",
                        f"{enriched.rating}/5 ({enriched.rating_count:,} reviews)"))
@@ -623,8 +668,9 @@ def _add_why_recommend(doc: Document, why: str) -> None:
     _body_run(p, why, size=10.5, color=_CHARCOAL)
 
 
-def _add_hotel_card(doc: Document, enriched: EnrichedHotel, recommended: bool = False) -> None:
-    """Image → Heading 2 name → Key Facts → Description."""
+def _add_hotel_card(doc: Document, enriched: EnrichedHotel,
+                    recommended: bool = False, destination: str = "") -> None:
+    """Image → Heading 2 name (hyperlinked) → Key Facts → Description."""
     if enriched.photo_bytes:
         p = doc.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -636,14 +682,20 @@ def _add_hotel_card(doc: Document, enriched: EnrichedHotel, recommended: bool = 
         _spacing(p, 8, 6)
         _body_run(p, "[ Image not available ]", size=9, color=_GREY)
 
-    # Hotel name — Georgia 16pt Bold, 12pt above, thin divider below
+    # Hotel name — Georgia 16pt Bold, hyperlinked to Google search
     name_para = doc.add_paragraph()
     _spacing(name_para, 12, 0)
-    r = name_para.add_run(enriched.official_name or enriched.address or "Hotel")
-    r.bold           = True
-    r.font.name      = "Georgia"
-    r.font.size      = Pt(16)
-    r.font.color.rgb = _CHARCOAL
+    hotel_name = enriched.official_name or "Hotel"
+    url = _google_search_url(hotel_name, destination) if destination else ""
+    if url:
+        _add_hyperlink(name_para, hotel_name, url,
+                       font_name="Georgia", size=16, bold=True, color=_CHARCOAL)
+    else:
+        r = name_para.add_run(hotel_name)
+        r.bold           = True
+        r.font.name      = "Georgia"
+        r.font.size      = Pt(16)
+        r.font.color.rgb = _CHARCOAL
     if recommended:
         _body_run(name_para, " ★ RECOMMENDED", bold=True, size=9, color=_AMBER)
     _thin_rule(doc, before=0, after=6)
@@ -750,7 +802,8 @@ def build_document(
                     _thin_rule(doc, before=8, after=4)
                 enriched = enriched_map.get(hotel.name)
                 if enriched:
-                    _add_hotel_card(doc, enriched, recommended=hotel.recommended)
+                    _add_hotel_card(doc, enriched, recommended=hotel.recommended,
+                                    destination=destination)
                 else:
                     p = doc.add_paragraph()
                     _spacing(p, 8, 4)
@@ -786,7 +839,7 @@ def build_document(
                     _thin_rule(doc, before=8, after=4)
                 enriched = enriched_map.get(hotel.name)
                 if enriched:
-                    _add_hotel_card(doc, enriched)
+                    _add_hotel_card(doc, enriched, destination=destination)
                 else:
                     p = doc.add_paragraph()
                     _spacing(p, 8, 8)

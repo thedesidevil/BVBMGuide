@@ -798,13 +798,16 @@ def build_document(
             _heading(doc, plan.label.upper(), level=1)
             _thin_rule(doc, before=2, after=8, color=_HDR_BG)
 
+            # Use the city portion of the section label (strip dates) for the search URL
+            city = re.sub(r'\s*\(.*\)\s*$', '', plan.label).strip() or destination
+
             for i, hotel in enumerate(plan.hotels):
                 if i > 0:
                     _thin_rule(doc, before=8, after=4)
                 enriched = enriched_map.get(hotel.name)
                 if enriched:
                     _add_hotel_card(doc, enriched, recommended=hotel.recommended,
-                                    destination=destination)
+                                    destination=city)
                 else:
                     p = doc.add_paragraph()
                     _spacing(p, 8, 4)

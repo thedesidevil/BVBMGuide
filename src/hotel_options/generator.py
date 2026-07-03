@@ -638,15 +638,15 @@ def _google_search_url(name: str, destination: str) -> str:
 
 def _add_key_facts(doc: Document, enriched: EnrichedHotel) -> None:
     facts: list[tuple[str, str]] = []
-    if enriched.category:
-        facts.append(("🏨 Category", enriched.category))
     if enriched.room_type:
         facts.append(("🛏️ Room", enriched.room_type))
+    if enriched.dates:
+        facts.append(("📅 Check-in / Check-out", enriched.dates))
+    if enriched.category:
+        facts.append(("🏨 Category", enriched.category))
     if enriched.rating:
         facts.append(("⭐ Guest Rating",
                        f"{enriched.rating}/5 ({enriched.rating_count:,} reviews)"))
-    if enriched.dates:
-        facts.append(("📅 Check-in / Check-out", enriched.dates))
     if enriched.cancellation:
         facts.append(("🔄 Cancellation", enriched.cancellation))
     if enriched.meal_type:

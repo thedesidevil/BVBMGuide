@@ -218,9 +218,10 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
         running_b2b = 0.0
 
     past_first_plan = False
-    # Maps (hotel_name, online_price) → date-range string from pre-amble section headers.
+    # Maps (hotel_name, online_price) → date-range / city from pre-amble section headers.
     # Used as fallback when plan sections have no inline section-date header.
     preamble_dates: dict[tuple[str, float], str] = {}
+    preamble_cities: dict[tuple[str, float], str] = {}
 
     for row in ws.iter_rows():
         cell_a = row[0]
@@ -249,7 +250,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
             continue
 
         if not past_first_plan:
-            # Collect (hotel, price) → dates from pre-amble so plan rows can use them.
+            # Collect (hotel, price) → dates/city from pre-amble so plan rows can use them.
             col_i_val = row[8].value if len(row) > 8 else None
             if val_a and _numeric(col_i_val) is None:
                 m = _SECTION_DATE_RE.search(str_a)
@@ -257,10 +258,12 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
                     raw = m.group(1).strip()
                     # Ensure space before hyphen: "Jun 28- Jul 4" → "Jun 28 - Jul 4"
                     current_section_dates = re.sub(r'(\S)-', r'\1 -', raw)
+                    current_city = re.sub(r'\s*\(.*\)\s*$', '', str_a).strip()
             elif val_a and _numeric(col_i_val) is not None and current_section_dates:
                 price = _numeric(col_i_val)
                 if price is not None:
                     preamble_dates[(str_a, price)] = current_section_dates
+                    preamble_cities[(str_a, price)] = current_city
             continue
 
         col_i_val = row[8].value if len(row) > 8 else None
@@ -301,6 +304,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
             running_b2b += b2b
 
             dates = current_section_dates or preamble_dates.get((str_a, online), "")
+            city = current_city or preamble_cities.get((str_a, online), "")
             why = str(row[17].value).strip() if len(row) > 17 and row[17].value else ""
             current_hotels.append(HotelRow(
                 name=str_a,
@@ -311,7 +315,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
                 online_price=online,
                 dates=dates,
                 why_recommend=why,
-                city=current_city,
+                city=city,
             ))
 
     # Flush the last open plan — it may have no trailing summary row

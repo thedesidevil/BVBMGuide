@@ -16,6 +16,7 @@ class HotelRow:
     discount_pct: float = 0.0
     recommended: bool = False
     why_recommend: str = ""
+    city: str = ""
 
 
 @dataclass

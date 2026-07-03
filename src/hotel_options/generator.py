@@ -843,7 +843,8 @@ def build_document(
                     _thin_rule(doc, before=8, after=4)
                 enriched = enriched_map.get(hotel.name)
                 if enriched:
-                    _add_hotel_card(doc, enriched, destination=destination)
+                    _add_hotel_card(doc, enriched,
+                                    destination=hotel.city or destination)
                 else:
                     p = doc.add_paragraph()
                     _spacing(p, 8, 8)

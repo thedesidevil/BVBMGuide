@@ -169,6 +169,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
     current_why: str = ""
     current_hotels: list[HotelRow] = []
     current_section_dates: str = ""
+    current_city: str = ""
     running_online = 0.0
     running_b2b = 0.0
 
@@ -242,6 +243,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
             current_why = str(row[17].value).strip() if len(row) > 17 and row[17].value else ""
             current_hotels = []
             current_section_dates = ""
+            current_city = ""
             running_online = 0.0
             running_b2b = 0.0
             continue
@@ -269,12 +271,13 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
             _flush(row)
             continue
 
-        # Section header: col A non-empty, col I blank — extract dates if present
+        # Section header: col A non-empty, col I blank — extract dates and city if present
         if val_a and _numeric(col_i_val) is None:
             m = _SECTION_DATE_RE.search(str_a)
             if m:
                 raw = m.group(1).strip()
                 current_section_dates = re.sub(r'(\S)-', r'\1 -', raw)
+                current_city = re.sub(r'\s*\(.*\)\s*$', '', str_a).strip()
             continue
 
         # Hotel row: col A non-empty, col I numeric
@@ -308,6 +311,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
                 online_price=online,
                 dates=dates,
                 why_recommend=why,
+                city=current_city,
             ))
 
     # Flush the last open plan — it may have no trailing summary row

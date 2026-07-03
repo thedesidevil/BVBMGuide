@@ -65,6 +65,7 @@ def _plan_to_dict(plan: Plan) -> dict:
                 "discount_pct": h.discount_pct,
                 "recommended": h.recommended,
                 "why_recommend": h.why_recommend,
+                "city": h.city,
             }
             for h in plan.hotels
         ],

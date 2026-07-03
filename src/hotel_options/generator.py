@@ -17,6 +17,7 @@ _CHARCOAL = RGBColor(0x2D, 0x2D, 0x2D)
 _GREY     = RGBColor(0x66, 0x66, 0x66)
 _GREEN    = RGBColor(0x2E, 0x7D, 0x32)
 _AMBER    = RGBColor(0xC7, 0x78, 0x00)
+_LINK     = RGBColor(0x11, 0x55, 0xCC)
 _WHITE    = RGBColor(0xFF, 0xFF, 0xFF)
 
 _FONT = "Arial"
@@ -689,7 +690,7 @@ def _add_hotel_card(doc: Document, enriched: EnrichedHotel,
     url = _google_search_url(hotel_name, destination) if destination else ""
     if url:
         _add_hyperlink(name_para, hotel_name, url,
-                       font_name="Georgia", size=16, bold=True, color=_CHARCOAL)
+                       font_name="Georgia", size=16, bold=True, color=_LINK)
     else:
         r = name_para.add_run(hotel_name)
         r.bold           = True

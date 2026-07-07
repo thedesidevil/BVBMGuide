@@ -652,6 +652,187 @@ def _add_why_recommend_box(doc: Document, plan: Plan) -> None:
     _run(p, plan.why_recommend, size=10, color=_NAVY)
 
 
+# ── Executive summary ─────────────────────────────────────────────────────────
+
+def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
+    col_widths = [Inches(0.74), Inches(3.32), Inches(1.07), Inches(0.94), Inches(0.93)]
+    col_labels = ["Plan", "Hotels", "Best Online Price", "Our Price", "You Save"]
+    _HDR = "1F3A5F"
+
+    table = doc.add_table(rows=1 + len(plans), cols=5)
+    table.autofit = False
+    for i, w in enumerate(col_widths):
+        for row in table.rows:
+            row.cells[i].width = w
+
+    for i, label in enumerate(col_labels):
+        cell = table.rows[0].cells[i]
+        _shade_cell(cell, _HDR)
+        cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+        p = cell.paragraphs[0]
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _sp(p, 0, 0)
+        _run(p, label, size=10, bold=True, color=_WHITE)
+
+    for row_idx, plan in enumerate(plans):
+        row = table.rows[row_idx + 1]
+        bg = "FFFFFF" if row_idx % 2 == 0 else "F7F7F7"
+        t = _theme(row_idx)
+        pr = plan.pricing
+
+        you_save_str = (format_indian_number(pr.customer_discount)
+                        if pr.customer_discount > 0 else "—")
+        you_save_pct = (f"({pr.discount_pct:.1f}% off)"
+                        if pr.customer_discount > 0 else None)
+
+        # Plan column
+        pc = row.cells[0]
+        _shade_cell(pc, bg)
+        pc.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+        pp = pc.paragraphs[0]
+        pp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _sp(pp, 0, 0)
+        _run(pp, plan.label, size=10, bold=True, color=t.primary)
+        if plan.recommended:
+            rp = pc.add_paragraph()
+            rp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            _sp(rp, 2, 0)
+            _run(rp, "★ RECOMMENDED", size=10, bold=True, color=t.accent)
+
+        # Hotels column
+        hc = row.cells[1]
+        _shade_cell(hc, bg)
+        hc.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+        for h_idx, hotel in enumerate(plan.hotels):
+            hp = hc.paragraphs[0] if h_idx == 0 else hc.add_paragraph()
+            hp.alignment = WD_ALIGN_PARAGRAPH.LEFT
+            fmt = hp.paragraph_format
+            fmt.space_before      = Pt(10)
+            fmt.space_after       = Pt(10 if h_idx == len(plan.hotels) - 1 else 0)
+            fmt.line_spacing_rule = WD_LINE_SPACING.SINGLE
+            star = _star_category(hotel.category)
+            suffix = f" ({star[0]}*)" if star else ""
+            _run(hp, f"{hotel.name}{suffix}", size=10, color=t.primary)
+
+        # Price columns
+        for col_idx, (val, bold, color) in enumerate([
+            (format_indian_number(pr.total_online_price), True, t.primary),
+            (format_indian_number(pr.discounted_price),   True, t.primary),
+            (you_save_str,                                True, _GREEN),
+        ]):
+            cell = row.cells[2 + col_idx]
+            _shade_cell(cell, bg)
+            cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+            p = cell.paragraphs[0]
+            p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            _sp(p, 0, 0)
+            _run(p, val, size=10, bold=bold, color=color)
+            if col_idx == 2 and you_save_pct:
+                p2 = cell.add_paragraph()
+                p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                _sp(p2, 0, 2)
+                _run(p2, you_save_pct, size=10, bold=True, color=_GREEN)
+
+    _thin_borders(table)
+
+
+def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
+    col_widths = [Inches(1.55), Inches(2.55), Inches(0.9), Inches(0.9), Inches(1.1)]
+    col_labels = ["City / Dates", "Hotel", "Online Price", "Our Price", "You Save"]
+    _HDR = "1F3A5F"
+
+    hotel_rows = [(plan.label, hotel) for plan in plans for hotel in plan.hotels]
+
+    table = doc.add_table(rows=1 + len(hotel_rows), cols=5)
+    table.autofit = False
+    for i, w in enumerate(col_widths):
+        for row in table.rows:
+            row.cells[i].width = w
+
+    for i, label in enumerate(col_labels):
+        cell = table.rows[0].cells[i]
+        _shade_cell(cell, _HDR)
+        cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+        p = cell.paragraphs[0]
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _sp(p, 0, 0)
+        _run(p, label, size=10, bold=True, color=_WHITE)
+
+    # Track theme index per hotel within its section
+    section_hotel_counts: dict[str, int] = {}
+    for row_idx, (section_label, hotel) in enumerate(hotel_rows):
+        if section_label not in section_hotel_counts:
+            section_hotel_counts[section_label] = 0
+        theme_idx = section_hotel_counts[section_label]
+        section_hotel_counts[section_label] += 1
+
+        row = table.rows[row_idx + 1]
+        t = _theme(theme_idx)
+        bg = t.light_hex
+        our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
+        you_save_str = (format_indian_number(hotel.customer_discount)
+                        if hotel.customer_discount > 0 else "—")
+        you_save_pct = (f"({hotel.discount_pct:.1f}% off)"
+                        if hotel.customer_discount > 0 else None)
+
+        star = _star_category(hotel.category)
+        suffix = f" ({star[0]}*)" if star else ""
+
+        for col_idx, (text, align, color, bold) in enumerate([
+            (section_label,                            WD_ALIGN_PARAGRAPH.LEFT,   t.primary, False),
+            (hotel.name + suffix,                      WD_ALIGN_PARAGRAPH.LEFT,   t.primary, False),
+            (format_indian_number(hotel.online_price), WD_ALIGN_PARAGRAPH.CENTER, t.primary, False),
+            (format_indian_number(our_price),          WD_ALIGN_PARAGRAPH.CENTER, t.primary, True),
+            (you_save_str,                             WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
+        ]):
+            cell = row.cells[col_idx]
+            _shade_cell(cell, bg)
+            cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+            p = cell.paragraphs[0]
+            p.alignment = align
+            _sp(p, 2, 2)
+            _run(p, text, size=9, bold=bold, color=color)
+            if col_idx == 4 and you_save_pct:
+                p2 = cell.add_paragraph()
+                p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                _sp(p2, 0, 2)
+                _run(p2, you_save_pct, size=8, color=_GREEN)
+
+    _thin_borders(table)
+
+
+def _build_executive_summary(doc: Document, plans: list[Plan],
+                              grouped_by_sections: bool = False) -> None:
+    if not plans:
+        return
+
+    p = doc.add_paragraph()
+    _sp(p, 0, 4)
+    _run(p, "Executive Summary", size=16, bold=True)
+
+    p = doc.add_paragraph()
+    _sp(p, 0, 12)
+    _run(p, (
+        "A client-ready comparison of both accommodation plans, "
+        "highlighting value, comfort, and the recommended option."
+    ), size=11, color=RGBColor(0x1F, 0x3A, 0x5F))
+
+    if not grouped_by_sections:
+        rec_plan = next((pl for pl in plans if pl.recommended), None)
+        if rec_plan and rec_plan.why_recommend:
+            p = doc.add_paragraph()
+            _sp(p, 0, 6)
+            _add_recommended_choice_banner(doc, rec_plan.label, rec_plan.why_recommend)
+
+    p = doc.add_paragraph()
+    _sp(p, 8, 4)
+
+    if grouped_by_sections:
+        _build_exec_summary_by_hotel(doc, plans)
+    else:
+        _build_exec_summary_by_plan(doc, plans)
+
+
 # ── Stub (replaced in Task 6) ─────────────────────────────────────────────────
 
 def build_document(

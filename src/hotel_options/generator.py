@@ -55,8 +55,10 @@ _CHARCOAL     = RGBColor(0x2D, 0x2D, 0x2D)
 _GREY         = RGBColor(0x66, 0x66, 0x66)
 _GREEN        = RGBColor(0x2E, 0x7D, 0x32)
 _WHITE        = RGBColor(0xFF, 0xFF, 0xFF)
+_NAVY         = RGBColor(0x1F, 0x3A, 0x5F)
 _SAVINGS_BG   = "EAF4EA"
 _REC_BANNER_BG = "FBF6EA"
+_WHITE_BG     = "FFFFFF"
 _RULE_COLOR   = "CCCCCC"
 _FONT         = "Arial"
 _MARGIN       = Inches(0.75)
@@ -577,7 +579,7 @@ def _add_plan_price_summary(doc: Document, plan: Plan, theme: Theme) -> None:
         # (bg, label, label_bold, value, value_size, value_bold, value_color, extra_pct)
         (theme.light_hex, "BEST ONLINE PRICE", False,
          format_indian_number(pr.total_online_price), 15, False, theme.primary, None),
-        ("FFFFFF", "OUR PRICE", True,
+        (_WHITE_BG, "OUR PRICE", True,
          format_indian_number(pr.discounted_price), 18, True, theme.primary, None),
         (_SAVINGS_BG, "YOU SAVE", True,
          you_save_str, 18, True, _GREEN, you_save_pct),
@@ -627,8 +629,8 @@ def _add_recommended_choice_banner(doc: Document, plan_label: str,
     p = cell.paragraphs[0]
     _sp(p, 0, 0)
     _run(p, f"Recommended choice: {plan_label}. ", size=11, bold=True,
-         color=RGBColor(0x1F, 0x3A, 0x5F))
-    _run(p, why_text, size=11, color=RGBColor(0x1F, 0x3A, 0x5F))
+         color=_NAVY)
+    _run(p, why_text, size=11, color=_NAVY)
 
 
 def _add_why_recommend_box(doc: Document, plan: Plan) -> None:
@@ -646,8 +648,8 @@ def _add_why_recommend_box(doc: Document, plan: Plan) -> None:
     p = cell.paragraphs[0]
     _sp(p, 0, 0)
     _run(p, f"Why we recommend {plan.label}: ", size=10, bold=True,
-         color=RGBColor(0x1F, 0x3A, 0x5F))
-    _run(p, plan.why_recommend, size=10, color=RGBColor(0x1F, 0x3A, 0x5F))
+         color=_NAVY)
+    _run(p, plan.why_recommend, size=10, color=_NAVY)
 
 
 # ── Stub (replaced in Task 6) ─────────────────────────────────────────────────

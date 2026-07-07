@@ -11,7 +11,7 @@ from docx.enum.table import WD_ALIGN_VERTICAL
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
-from src.hotel_options.models import Plan, EnrichedHotel
+from src.hotel_options.models import Plan, EnrichedHotel, HotelRow
 
 
 # ── Theme system ──────────────────────────────────────────────────────────────
@@ -358,6 +358,189 @@ def _build_thank_you_page(doc: Document, destination: str) -> None:
     _sp(p, 18, 4)
     _run(p, "Warm regards,", size=11)
     _add_letterhead_footer(doc, centered=False)
+
+
+# ── Hotel card components ─────────────────────────────────────────────────────
+
+def _add_hotel_name_card(doc: Document, hotel_name: str, city: str,
+                         category: str, theme: Theme) -> None:
+    """Full-width themed name card: hotel name (Georgia 14pt bold) + • City • X-star (10pt)."""
+    table = doc.add_table(rows=1, cols=1)
+    table.autofit = False
+    _no_borders(table)
+    cell = table.rows[0].cells[0]
+    cell.width = Inches(7.0)
+    _shade_cell(cell, theme.light_hex)
+    _set_cell_margins(cell, 6, 6, 6, 6)
+
+    p = cell.paragraphs[0]
+    _sp(p, 0, 2)
+    r = p.add_run(hotel_name)
+    r.font.name      = "Georgia"
+    r.font.size      = Pt(14)
+    r.font.bold      = True
+    r.font.color.rgb = theme.primary
+
+    star = _star_category(category)
+    parts = " • ".join(x for x in [city, star] if x)
+    if parts:
+        r2 = p.add_run(f"  •  {parts}")
+        r2.font.size      = Pt(10)
+        r2.font.color.rgb = theme.secondary
+
+
+def _add_hotel_photo(doc: Document, photo_bytes: bytes | None) -> None:
+    """Full-width hotel photo (7.0"), or placeholder text if unavailable."""
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _sp(p, 0, 0)
+    if photo_bytes:
+        p.add_run().add_picture(io.BytesIO(photo_bytes), width=Inches(7.0))
+    else:
+        _run(p, "[ Photo not available ]", size=9, color=_GREY)
+
+
+def _add_hotel_details_table(doc: Document, enriched: EnrichedHotel,
+                              theme: Theme) -> None:
+    """2-col HOTEL DETAILS table: Stay/Rating/Flexibility/Includes left, Room/Address/Phone right."""
+    table = doc.add_table(rows=2, cols=2)
+    table.autofit = False
+    _no_borders(table)
+    for row in table.rows:
+        for cell in row.cells:
+            cell.width = Inches(3.5)
+
+    hdr = table.rows[0].cells[0].merge(table.rows[0].cells[1])
+    _shade_cell(hdr, theme.header_hex)
+    _set_cell_margins(hdr, 7.2, 7.2, 7.2, 7.2)
+    hp = hdr.paragraphs[0]
+    _sp(hp, 0, 0)
+    _run(hp, "HOTEL DETAILS", size=10, color=_WHITE)
+
+    left  = table.rows[1].cells[0]
+    right = table.rows[1].cells[1]
+    _set_cell_margins(left,  0, 5.4, 0, 5.4)
+    _set_cell_margins(right, 0, 5.4, 0, 5.4)
+
+    left_rows = [
+        ("Stay",        enriched.dates or "—"),
+        ("Rating",      f"{enriched.rating}/5 from {enriched.rating_count:,} reviews"
+                        if enriched.rating else "—"),
+        ("Flexibility", enriched.cancellation or "—"),
+        ("Includes",    enriched.meal_type or "—"),
+    ]
+    for i, (label, value) in enumerate(left_rows):
+        p = left.paragraphs[0] if i == 0 else left.add_paragraph()
+        _sp(p, 10 if i == 0 else 0, 10 if i == len(left_rows) - 1 else 0)
+        _line_spacing_15(p)
+        _run(p, f"{label}: ", size=10, bold=True, color=theme.primary)
+        _run(p, value, size=10, color=theme.primary)
+
+    right_rows = [
+        ("Room",    enriched.room_type or "—"),
+        ("Address", enriched.address or "—"),
+        ("Phone",   enriched.phone or "—"),
+    ]
+    for i, (label, value) in enumerate(right_rows):
+        p = right.paragraphs[0] if i == 0 else right.add_paragraph()
+        _sp(p, 10 if i == 0 else 0, 10 if i == len(right_rows) - 1 else 0)
+        _line_spacing_15(p)
+        _run(p, f"{label}: ", size=10, bold=True, color=theme.primary)
+        _run(p, value, size=10, color=theme.primary)
+
+
+def _add_hotel_details_table_unenriched(doc: Document, hotel: HotelRow,
+                                         theme: Theme) -> None:
+    """Fallback 2-col details table when Google Places enrichment is unavailable."""
+    table = doc.add_table(rows=2, cols=2)
+    table.autofit = False
+    _no_borders(table)
+    for row in table.rows:
+        for cell in row.cells:
+            cell.width = Inches(3.5)
+
+    hdr = table.rows[0].cells[0].merge(table.rows[0].cells[1])
+    _shade_cell(hdr, theme.header_hex)
+    _set_cell_margins(hdr, 7.2, 7.2, 7.2, 7.2)
+    hp = hdr.paragraphs[0]
+    _sp(hp, 0, 0)
+    _run(hp, "HOTEL DETAILS", size=10, color=_WHITE)
+
+    left  = table.rows[1].cells[0]
+    right = table.rows[1].cells[1]
+    _set_cell_margins(left,  0, 5.4, 0, 5.4)
+    _set_cell_margins(right, 0, 5.4, 0, 5.4)
+
+    left_rows = [
+        ("Stay",        hotel.dates or "—"),
+        ("Flexibility", hotel.cancellation or "—"),
+        ("Includes",    hotel.meal_type or "—"),
+    ]
+    for i, (label, value) in enumerate(left_rows):
+        p = left.paragraphs[0] if i == 0 else left.add_paragraph()
+        _sp(p, 10 if i == 0 else 0, 10 if i == len(left_rows) - 1 else 0)
+        _line_spacing_15(p)
+        _run(p, f"{label}: ", size=10, bold=True, color=theme.primary)
+        _run(p, value, size=10, color=theme.primary)
+
+    p = right.paragraphs[0]
+    _sp(p, 10, 10)
+    _line_spacing_15(p)
+    _run(p, "Room: ", size=10, bold=True, color=theme.primary)
+    _run(p, hotel.room_type or "—", size=10, color=theme.primary)
+
+
+def _add_marinas_take(doc: Document, description: str, theme: Theme) -> None:
+    """Full-width themed description box labelled "Marina's Take:"."""
+    if not description:
+        return
+    table = doc.add_table(rows=1, cols=1)
+    table.autofit = False
+    _no_borders(table)
+    cell = table.rows[0].cells[0]
+    cell.width = Inches(7.0)
+    _shade_cell(cell, theme.marinas_hex)
+    _set_cell_margins(cell, 6, 6, 6, 6)
+
+    p = cell.paragraphs[0]
+    _sp(p, 0, 2)
+    _run(p, "Marina's Take: ", size=10, bold=True, color=theme.primary)
+    _run(p, description, size=10, color=theme.primary)
+
+
+def _add_why_recommend_hotel_box(doc: Document, why: str, theme: Theme) -> None:
+    """Per-hotel 'Why we recommend this hotel' box — grouped layout only."""
+    if not why:
+        return
+    table = doc.add_table(rows=1, cols=1)
+    table.autofit = False
+    _no_borders(table)
+    cell = table.rows[0].cells[0]
+    cell.width = Inches(7.0)
+    _shade_cell(cell, theme.light_hex)
+    _set_cell_margins(cell, 6, 6, 6, 6)
+
+    p = cell.paragraphs[0]
+    _sp(p, 0, 0)
+    _run(p, "Why we recommend this hotel: ", size=10, bold=True, color=theme.primary)
+    _run(p, why, size=10, color=theme.primary)
+
+
+def _add_hotel_card(doc: Document, row: HotelRow,
+                    enriched: EnrichedHotel | None,
+                    theme_index: int = 0) -> None:
+    """Compose a complete hotel card: name → photo → details → marina's take → why-recommend."""
+    theme = _theme(theme_index)
+    hotel_name = (enriched.official_name if enriched else None) or row.name
+    _add_hotel_name_card(doc, hotel_name, row.city, row.category, theme)
+    if enriched:
+        _add_hotel_photo(doc, enriched.photo_bytes)
+        _add_hotel_details_table(doc, enriched, theme)
+        _add_marinas_take(doc, enriched.description, theme)
+    else:
+        _add_hotel_details_table_unenriched(doc, row, theme)
+    if row.why_recommend:
+        _add_why_recommend_hotel_box(doc, row.why_recommend, theme)
 
 
 # ── Stub (replaced in Task 6) ─────────────────────────────────────────────────

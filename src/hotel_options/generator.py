@@ -891,8 +891,7 @@ def _build_grouped_sections(doc: Document, plans: list[Plan],
         # Section heading
         p = doc.add_paragraph()
         _sp(p, 0, 8)
-        _run(p, plan.label.upper(), size=16, bold=True,
-             color=RGBColor(0x1F, 0x3A, 0x5F))
+        _run(p, plan.label.upper(), size=16, bold=True, color=_NAVY)
 
         for hotel_idx, hotel in enumerate(plan.hotels):
             if hotel_idx > 0:
@@ -914,7 +913,7 @@ def _build_grouped_sections(doc: Document, plans: list[Plan],
 
         # Per-section price summary on its own page (navy theme)
         _page_break(doc)
-        _add_plan_price_summary(doc, plan, _theme(0))
+        _add_price_summary(doc, plan, theme_index=0)
 
 
 def build_document(

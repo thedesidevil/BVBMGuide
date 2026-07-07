@@ -56,6 +56,7 @@ _GREY         = RGBColor(0x66, 0x66, 0x66)
 _GREEN        = RGBColor(0x2E, 0x7D, 0x32)
 _WHITE        = RGBColor(0xFF, 0xFF, 0xFF)
 _NAVY         = RGBColor(0x1F, 0x3A, 0x5F)
+_AMBER        = RGBColor(0xC7, 0x78, 0x00)
 _SAVINGS_BG   = "EAF4EA"
 _REC_BANNER_BG = "FBF6EA"
 _WHITE_BG     = "FFFFFF"
@@ -657,7 +658,7 @@ def _add_why_recommend_box(doc: Document, plan: Plan) -> None:
 def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
     col_widths = [Inches(0.74), Inches(3.32), Inches(1.07), Inches(0.94), Inches(0.93)]
     col_labels = ["Plan", "Hotels", "Best Online Price", "Our Price", "You Save"]
-    _HDR = "1F3A5F"
+    _HDR = _THEME_NAVY.header_hex
 
     table = doc.add_table(rows=1 + len(plans), cols=5)
     table.autofit = False
@@ -692,12 +693,12 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
         pp = pc.paragraphs[0]
         pp.alignment = WD_ALIGN_PARAGRAPH.CENTER
         _sp(pp, 0, 0)
-        _run(pp, plan.label, size=10, bold=True, color=t.primary)
+        _run(pp, plan.label, size=10, bold=True, color=_NAVY)
         if plan.recommended:
             rp = pc.add_paragraph()
             rp.alignment = WD_ALIGN_PARAGRAPH.CENTER
             _sp(rp, 2, 0)
-            _run(rp, "★ RECOMMENDED", size=10, bold=True, color=t.accent)
+            _run(rp, "★ RECOMMENDED", size=9, bold=True, color=_AMBER)
 
         # Hotels column
         hc = row.cells[1]
@@ -712,24 +713,24 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
             fmt.line_spacing_rule = WD_LINE_SPACING.SINGLE
             star = _star_category(hotel.category)
             suffix = f" ({star[0]}*)" if star else ""
-            _run(hp, f"{hotel.name}{suffix}", size=10, color=t.primary)
+            _run(hp, f"{hotel.name}{suffix}", size=10, color=_NAVY)
 
         # Price columns
         for col_idx, (val, bold, color) in enumerate([
-            (format_indian_number(pr.total_online_price), True, t.primary),
-            (format_indian_number(pr.discounted_price),   True, t.primary),
-            (you_save_str,                                True, _GREEN),
+            (format_indian_number(pr.total_online_price), False, t.primary),
+            (format_indian_number(pr.discounted_price),   True,  t.primary),
+            (you_save_str,                                True,  _GREEN),
         ]):
             cell = row.cells[2 + col_idx]
             _shade_cell(cell, bg)
             cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
             p = cell.paragraphs[0]
-            p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
             _sp(p, 0, 0)
             _run(p, val, size=10, bold=bold, color=color)
             if col_idx == 2 and you_save_pct:
                 p2 = cell.add_paragraph()
-                p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                p2.alignment = WD_ALIGN_PARAGRAPH.RIGHT
                 _sp(p2, 0, 2)
                 _run(p2, you_save_pct, size=10, bold=True, color=_GREEN)
 
@@ -739,7 +740,7 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
 def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
     col_widths = [Inches(1.55), Inches(2.55), Inches(0.9), Inches(0.9), Inches(1.1)]
     col_labels = ["City / Dates", "Hotel", "Online Price", "Our Price", "You Save"]
-    _HDR = "1F3A5F"
+    _HDR = _THEME_NAVY.header_hex
 
     hotel_rows = [(plan.label, hotel) for plan in plans for hotel in plan.hotels]
 
@@ -811,11 +812,12 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
     _run(p, "Executive Summary", size=16, bold=True)
 
     p = doc.add_paragraph()
-    _sp(p, 0, 12)
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _sp(p, 0, 6)
     _run(p, (
         "A client-ready comparison of both accommodation plans, "
         "highlighting value, comfort, and the recommended option."
-    ), size=11, color=RGBColor(0x1F, 0x3A, 0x5F))
+    ), size=11, italic=True, color=_NAVY)
 
     if not grouped_by_sections:
         rec_plan = next((pl for pl in plans if pl.recommended), None)

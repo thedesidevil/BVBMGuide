@@ -835,7 +835,68 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
         _build_exec_summary_by_plan(doc, plans)
 
 
-# ── Stub (replaced in Task 6) ─────────────────────────────────────────────────
+# ── Plans layout (Task 6) ─────────────────────────────────────────────────────
+
+def _build_plans_layout(doc: Document, plans: list[Plan],
+                        enriched_map: dict[str, EnrichedHotel],
+                        destination: str) -> None:
+    for plan_idx, plan in enumerate(plans):
+        t = _theme(plan_idx)
+
+        # Transition "why recommend" box before this plan (for plans after the first)
+        if plan_idx > 0 and plan.why_recommend:
+            _add_why_recommend_box(doc, plan)
+            p = doc.add_paragraph()
+            _sp(p, 8, 0)
+
+        # Plan heading
+        p = doc.add_paragraph()
+        _sp(p, 0, 0)
+        r = p.add_run(plan.label.upper())
+        r.font.name      = "Georgia"
+        r.font.size      = Pt(20)
+        r.font.color.rgb = t.primary
+        if plan.recommended:
+            r2 = p.add_run("  ★ RECOMMENDED")
+            r2.font.size      = Pt(12.5)
+            r2.font.color.rgb = t.accent
+
+        # One page per hotel
+        for hotel in plan.hotels:
+            _page_break(doc)
+            enriched = enriched_map.get(hotel.name)
+            h_name = enriched.official_name if enriched else hotel.name
+            h_city = hotel.city or destination
+            h_cat  = enriched.category if enriched else hotel.category
+
+            _add_hotel_name_card(doc, h_name, h_city, h_cat, t)
+            _add_hotel_photo(doc, enriched.photo_bytes if enriched else None)
+            if enriched:
+                _add_hotel_details_table(doc, enriched, t)
+                _add_marinas_take(doc, enriched.description, t)
+            else:
+                _add_hotel_details_table_unenriched(doc, hotel, t)
+
+        # Price summary on its own page
+        _page_break(doc)
+        _add_plan_price_summary(doc, plan, t)
+
+        # For plan 0: show its own why_recommend after price summary
+        if plan_idx == 0 and plan.why_recommend:
+            p = doc.add_paragraph()
+            _sp(p, 8, 0)
+            _add_why_recommend_box(doc, plan)
+
+        if plan_idx < len(plans) - 1:
+            _page_break(doc)
+
+
+def _build_grouped_sections(doc: Document, plans: list[Plan],
+                             enriched_map: dict[str, EnrichedHotel],
+                             destination: str) -> None:
+    # Implemented in Task 7
+    pass
+
 
 def build_document(
     plans: list[Plan],
@@ -850,9 +911,23 @@ def build_document(
     doc = Document()
     _set_margins(doc)
     _configure_styles(doc)
+
     _build_cover_page(doc, destination, client_name, requirements,
                       stay_requirements=stay_requirements,
                       destination_photo=destination_photo)
+    _page_break(doc)
+
+    _build_executive_summary(doc, plans, grouped_by_sections=grouped_by_sections)
+    _page_break(doc)
+
+    if grouped_by_sections:
+        _build_grouped_sections(doc, plans, enriched_map, destination)
+    else:
+        _build_plans_layout(doc, plans, enriched_map, destination)
+
+    _page_break(doc)
+    _build_thank_you_page(doc, destination)
+
     buf = io.BytesIO()
     doc.save(buf)
     return buf.getvalue()

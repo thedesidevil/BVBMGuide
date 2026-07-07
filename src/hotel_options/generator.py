@@ -884,8 +884,37 @@ def _build_plans_layout(doc: Document, plans: list[Plan],
 def _build_grouped_sections(doc: Document, plans: list[Plan],
                              enriched_map: dict[str, EnrichedHotel],
                              destination: str) -> None:
-    # Implemented in Task 7
-    pass
+    for section_idx, plan in enumerate(plans):
+        if section_idx > 0:
+            _page_break(doc)
+
+        # Section heading
+        p = doc.add_paragraph()
+        _sp(p, 0, 8)
+        _run(p, plan.label.upper(), size=16, bold=True,
+             color=RGBColor(0x1F, 0x3A, 0x5F))
+
+        for hotel_idx, hotel in enumerate(plan.hotels):
+            if hotel_idx > 0:
+                _page_break(doc)
+            t = _theme(hotel_idx)
+            enriched = enriched_map.get(hotel.name)
+            h_name = (enriched.official_name if enriched else None) or hotel.name
+            h_city = hotel.city or re.sub(r'\s*\(.*\)\s*$', '', plan.label).strip() or destination
+            h_cat  = (enriched.category if enriched else None) or hotel.category
+
+            _add_hotel_name_card(doc, h_name, h_city, h_cat, t)
+            _add_hotel_photo(doc, enriched.photo_bytes if enriched else None)
+            if enriched:
+                _add_hotel_details_table(doc, enriched, t)
+                _add_marinas_take(doc, enriched.description, t)
+            else:
+                _add_hotel_details_table_unenriched(doc, hotel, t)
+            _add_why_recommend_hotel_box(doc, hotel.why_recommend, t)
+
+        # Per-section price summary on its own page (navy theme)
+        _page_break(doc)
+        _add_plan_price_summary(doc, plan, _theme(0))
 
 
 def build_document(

@@ -543,6 +543,113 @@ def _add_hotel_card(doc: Document, row: HotelRow,
         _add_why_recommend_hotel_box(doc, row.why_recommend, theme)
 
 
+# ── Pricing + recommendation boxes ───────────────────────────────────────────
+
+def _add_plan_price_summary(doc: Document, plan: Plan, theme: Theme) -> None:
+    """3-col price summary: BEST ONLINE PRICE | OUR PRICE | YOU SAVE (accepts Theme)."""
+    pr = plan.pricing
+    label = plan.label.upper()
+    header_text = f"{label} PRICE SUMMARY"
+    if plan.recommended:
+        header_text += " • RECOMMENDED"
+
+    table = doc.add_table(rows=2, cols=3)
+    table.autofit = False
+    _no_borders(table)
+    col_w = Inches(7.0 / 3)
+    for row in table.rows:
+        for cell in row.cells:
+            cell.width = col_w
+
+    hdr = table.rows[0].cells[0].merge(table.rows[0].cells[2])
+    _shade_cell(hdr, theme.header_hex)
+    _set_cell_margins(hdr, 7.2, 7.2, 7.2, 7.2)
+    hp = hdr.paragraphs[0]
+    hp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _sp(hp, 10, 10)
+    _run(hp, header_text, size=12, color=_WHITE)
+
+    you_save = pr.customer_discount > 0
+    you_save_str = format_indian_number(pr.customer_discount) if you_save else "—"
+    you_save_pct = f"{pr.discount_pct:.1f}% off best online prices" if you_save else ""
+
+    cols_data = [
+        # (bg, label, label_bold, value, value_size, value_bold, value_color, extra_pct)
+        (theme.light_hex, "BEST ONLINE PRICE", False,
+         format_indian_number(pr.total_online_price), 15, False, theme.primary, None),
+        ("FFFFFF", "OUR PRICE", True,
+         format_indian_number(pr.discounted_price), 18, True, theme.primary, None),
+        (_SAVINGS_BG, "YOU SAVE", True,
+         you_save_str, 18, True, _GREEN, you_save_pct),
+    ]
+
+    for col_idx, (bg, lbl, lbl_bold, val, val_sz, val_bold, val_color, extra) in enumerate(cols_data):
+        cell = table.rows[1].cells[col_idx]
+        _shade_cell(cell, bg)
+        _set_cell_margins(cell, 7.2, 7.2, 7.2, 7.2)
+
+        lp = cell.paragraphs[0]
+        lp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        lbl_color = _GREEN if col_idx == 2 else theme.primary
+        _sp(lp, 10 if col_idx == 2 else 0, 3)
+        _run(lp, lbl, size=9, bold=lbl_bold, color=lbl_color)
+
+        vp = cell.add_paragraph()
+        vp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _sp(vp, 0, 0)
+        _run(vp, val, size=val_sz, bold=val_bold, color=val_color)
+
+        if extra:
+            ep = cell.add_paragraph()
+            ep.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            _sp(ep, 0, 10)
+            _run(ep, extra, size=9, bold=True, color=_GREEN)
+
+
+def _add_price_summary(doc: Document, plan: Plan, theme_index: int = 0) -> None:
+    """3-col price summary: BEST ONLINE PRICE | OUR PRICE | YOU SAVE (accepts theme_index)."""
+    _add_plan_price_summary(doc, plan, _theme(theme_index))
+
+
+def _add_recommended_choice_banner(doc: Document, plan_label: str,
+                                   why_text: str) -> None:
+    """Cream banner shown before the exec summary table when a plan is recommended."""
+    if not why_text:
+        return
+    table = doc.add_table(rows=1, cols=1)
+    table.autofit = False
+    _no_borders(table)
+    cell = table.rows[0].cells[0]
+    cell.width = Inches(7.0)
+    _shade_cell(cell, _REC_BANNER_BG)
+    _set_cell_margins(cell, 6, 6, 6, 6)
+
+    p = cell.paragraphs[0]
+    _sp(p, 0, 0)
+    _run(p, f"Recommended choice: {plan_label}. ", size=11, bold=True,
+         color=RGBColor(0x1F, 0x3A, 0x5F))
+    _run(p, why_text, size=11, color=RGBColor(0x1F, 0x3A, 0x5F))
+
+
+def _add_why_recommend_box(doc: Document, plan: Plan) -> None:
+    """Transition box placed before a plan's heading."""
+    if not plan.why_recommend:
+        return
+    table = doc.add_table(rows=1, cols=1)
+    table.autofit = False
+    _no_borders(table)
+    cell = table.rows[0].cells[0]
+    cell.width = Inches(7.0)
+    _shade_cell(cell, _REC_BANNER_BG)
+    _set_cell_margins(cell, 6, 6, 6, 6)
+
+    p = cell.paragraphs[0]
+    _sp(p, 0, 0)
+    _run(p, f"Why we recommend {plan.label}: ", size=10, bold=True,
+         color=RGBColor(0x1F, 0x3A, 0x5F))
+    _run(p, plan.why_recommend, size=10, color=RGBColor(0x1F, 0x3A, 0x5F))
+
+
 # ── Stub (replaced in Task 6) ─────────────────────────────────────────────────
 
 def build_document(

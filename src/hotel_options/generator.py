@@ -865,21 +865,11 @@ def _build_plans_layout(doc: Document, plans: list[Plan],
         for hotel in plan.hotels:
             _page_break(doc)
             enriched = enriched_map.get(hotel.name)
-            h_name = enriched.official_name if enriched else hotel.name
-            h_city = hotel.city or destination
-            h_cat  = enriched.category if enriched else hotel.category
-
-            _add_hotel_name_card(doc, h_name, h_city, h_cat, t)
-            _add_hotel_photo(doc, enriched.photo_bytes if enriched else None)
-            if enriched:
-                _add_hotel_details_table(doc, enriched, t)
-                _add_marinas_take(doc, enriched.description, t)
-            else:
-                _add_hotel_details_table_unenriched(doc, hotel, t)
+            _add_hotel_card(doc, hotel, enriched, theme_index=plan_idx)
 
         # Price summary on its own page
         _page_break(doc)
-        _add_plan_price_summary(doc, plan, t)
+        _add_price_summary(doc, plan, theme_index=plan_idx)
 
         # For plan 0: show its own why_recommend after price summary
         if plan_idx == 0 and plan.why_recommend:

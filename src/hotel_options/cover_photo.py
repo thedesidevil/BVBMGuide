@@ -1,5 +1,4 @@
 from __future__ import annotations
-import re
 import httpx
 
 _MONTH_TO_SEASON = {
@@ -22,10 +21,13 @@ _MONTH_LABELS = {
 
 
 def _infer_month(travel_dates: list[str]) -> int | None:
+    import re as _re
     earliest = None
     for d in travel_dates:
-        for abbr, num in _MONTH_NAMES.items():
-            if abbr in d.lower():
+        tokens = _re.split(r'[^a-zA-Z]+', d.lower())
+        for token in tokens:
+            num = _MONTH_NAMES.get(token[:3])
+            if num is not None:
                 if earliest is None or num < earliest:
                     earliest = num
     return earliest
@@ -58,7 +60,9 @@ def _fetch_unsplash(query: str, key: str) -> bytes | None:
         results = resp.json().get("results", [])
         if not results:
             return None
-        url = results[0]["urls"]["regular"]
+        url = (results[0].get("urls") or {}).get("regular")
+        if url is None:
+            return None
         photo = httpx.get(url, timeout=15, follow_redirects=True)
         return photo.content if photo.status_code == 200 else None
     except Exception:
@@ -76,7 +80,9 @@ def _fetch_pexels(query: str, key: str) -> bytes | None:
         photos = resp.json().get("photos", [])
         if not photos:
             return None
-        url = photos[0]["src"]["large2x"]
+        url = (photos[0].get("src") or {}).get("large2x")
+        if url is None:
+            return None
         photo = httpx.get(url, timeout=15, follow_redirects=True)
         return photo.content if photo.status_code == 200 else None
     except Exception:

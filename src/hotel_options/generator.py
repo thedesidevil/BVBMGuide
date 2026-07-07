@@ -21,6 +21,8 @@ class Theme:
     header_hex: str
     light_hex: str
     marinas_hex: str
+    border_hex: str
+    details_right_hex: str
     primary: RGBColor
     secondary: RGBColor
     accent: RGBColor
@@ -30,6 +32,8 @@ _THEME_NAVY = Theme(
     header_hex="1F3A5F",
     light_hex="F3F7FB",
     marinas_hex="F3F7FB",
+    border_hex="B8C7D9",
+    details_right_hex="FAFCFE",
     primary=RGBColor(0x1F, 0x3A, 0x5F),
     secondary=RGBColor(0x5E, 0x78, 0x9A),
     accent=RGBColor(0x2E, 0x86, 0xC1),
@@ -39,6 +43,8 @@ _THEME_GOLD = Theme(
     header_hex="8A6D2F",
     light_hex="FBF6EA",
     marinas_hex="FFFDF7",
+    border_hex="E5D6B8",
+    details_right_hex="FFFDF7",
     primary=RGBColor(0x8A, 0x6D, 0x2F),
     secondary=RGBColor(0xC7, 0x78, 0x00),
     accent=RGBColor(0xC7, 0x78, 0x00),
@@ -57,10 +63,13 @@ _GREEN        = RGBColor(0x2E, 0x7D, 0x32)
 _WHITE        = RGBColor(0xFF, 0xFF, 0xFF)
 _NAVY         = RGBColor(0x1F, 0x3A, 0x5F)
 _AMBER        = RGBColor(0xC7, 0x78, 0x00)
-_SAVINGS_BG   = "EAF4EA"
-_REC_BANNER_BG = "FBF6EA"
-_WHITE_BG     = "FFFFFF"
-_RULE_COLOR   = "CCCCCC"
+_SAVINGS_BG      = "EAF4EA"
+_REC_BANNER_BG   = "FBF6EA"
+_WHITE_BG        = "FFFFFF"
+_RULE_COLOR      = "CCCCCC"
+_OUTER_BORDER_HEX = "95B3D7"
+_AMBER_BORDER_HEX = "C77800"
+_SNAP_CELL_BORDER = "D9D2C3"
 _FONT         = "Arial"
 _MARGIN       = Inches(0.75)
 
@@ -181,6 +190,8 @@ def _thin_borders(table) -> None:
     for row in table.rows:
         for cell in row.cells:
             tcPr = cell._tc.get_or_add_tcPr()
+            for existing in tcPr.findall(qn("w:tcBorders")):
+                tcPr.remove(existing)
             tcBorders = OxmlElement("w:tcBorders")
             for side in ("top", "left", "bottom", "right"):
                 b = OxmlElement(f"w:{side}")
@@ -189,6 +200,42 @@ def _thin_borders(table) -> None:
                 b.set(qn("w:color"), _RULE_COLOR)
                 tcBorders.append(b)
             tcPr.append(tcBorders)
+
+
+def _tbl_outer_borders(table, hex_color: str = "95B3D7", sz: int = 4) -> None:
+    """Apply table-level single borders on all sides and inside grid lines."""
+    tbl_pr = table._tbl.tblPr
+    for existing in tbl_pr.findall(qn("w:tblBorders")):
+        tbl_pr.remove(existing)
+    tbl_borders = OxmlElement("w:tblBorders")
+    for name in ("top", "left", "bottom", "right", "insideH", "insideV"):
+        b = OxmlElement(f"w:{name}")
+        b.set(qn("w:val"), "single")
+        b.set(qn("w:sz"), str(sz))
+        b.set(qn("w:color"), hex_color)
+        tbl_borders.append(b)
+    tbl_pr.append(tbl_borders)
+
+
+def _cell_borders(cell, top=None, bottom=None, left=None, right=None) -> None:
+    """Set cell-level borders. Each side: 'nil' = no border, (sz, hex) = single, None = skip."""
+    tcPr = cell._tc.get_or_add_tcPr()
+    for existing in tcPr.findall(qn("w:tcBorders")):
+        tcPr.remove(existing)
+    tb = OxmlElement("w:tcBorders")
+    for side, spec in [("top", top), ("bottom", bottom), ("left", left), ("right", right)]:
+        b = OxmlElement(f"w:{side}")
+        if spec == "nil":
+            b.set(qn("w:val"), "nil")
+            tb.append(b)
+        elif spec is not None:
+            sz, color = spec
+            b.set(qn("w:val"), "single")
+            b.set(qn("w:sz"), str(sz))
+            b.set(qn("w:color"), color)
+            tb.append(b)
+    if len(tb):
+        tcPr.append(tb)
 
 
 def _page_break(doc: Document) -> None:
@@ -232,11 +279,12 @@ def _add_trip_snapshot(doc: Document, destination: str, requirements: str,
     _SNAP_LBL = RGBColor(0x8A, 0x6D, 0x2F)
 
     table = doc.add_table(rows=2, cols=4)
-    _no_borders(table)
+    _tbl_outer_borders(table, _OUTER_BORDER_HEX, sz=4)
 
     hdr = table.rows[0].cells[0].merge(table.rows[0].cells[3])
     _shade_cell(hdr, _SNAP_HDR)
     _set_cell_margins(hdr, 7.2, 7.2, 7.2, 7.2)
+    _cell_borders(hdr, (6, _SNAP_HDR), (6, _SNAP_HDR), (6, _SNAP_HDR), (6, _SNAP_HDR))
     hp = hdr.paragraphs[0]
     hp.alignment = WD_ALIGN_PARAGRAPH.CENTER
     _sp(hp, 0, 0)
@@ -246,6 +294,8 @@ def _add_trip_snapshot(doc: Document, destination: str, requirements: str,
         cell = table.rows[1].cells[col_idx]
         bg = _SNAP_ALT if col_idx % 2 == 0 else "FFFFFF"
         _shade_cell(cell, bg)
+        _cell_borders(cell, (6, _SNAP_CELL_BORDER), (6, _SNAP_CELL_BORDER),
+                      (6, _SNAP_CELL_BORDER), (6, _SNAP_CELL_BORDER))
         lp = cell.paragraphs[0]
         _sp(lp, 0, 2)
         lp.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -375,6 +425,8 @@ def _add_hotel_name_card(doc: Document, hotel_name: str, city: str,
     cell.width = Inches(7.0)
     _shade_cell(cell, theme.light_hex)
     _set_cell_margins(cell, 6, 6, 6, 6)
+    _cell_borders(cell, (8, theme.header_hex), (8, theme.header_hex),
+                  (36, theme.header_hex), (8, theme.header_hex))
 
     p = cell.paragraphs[0]
     _sp(p, 0, 2)
@@ -408,7 +460,7 @@ def _add_hotel_details_table(doc: Document, enriched: EnrichedHotel,
     """2-col HOTEL DETAILS table: Stay/Rating/Flexibility/Includes left, Room/Address/Phone right."""
     table = doc.add_table(rows=2, cols=2)
     table.autofit = False
-    _no_borders(table)
+    _tbl_outer_borders(table, _OUTER_BORDER_HEX, sz=4)
     for row in table.rows:
         for cell in row.cells:
             cell.width = Inches(3.5)
@@ -416,14 +468,20 @@ def _add_hotel_details_table(doc: Document, enriched: EnrichedHotel,
     hdr = table.rows[0].cells[0].merge(table.rows[0].cells[1])
     _shade_cell(hdr, theme.header_hex)
     _set_cell_margins(hdr, 7.2, 7.2, 7.2, 7.2)
+    _cell_borders(hdr, (8, theme.header_hex), (8, theme.header_hex),
+                  (8, theme.header_hex), (8, theme.header_hex))
     hp = hdr.paragraphs[0]
     _sp(hp, 0, 0)
     _run(hp, "HOTEL DETAILS", size=10, color=_WHITE)
 
     left  = table.rows[1].cells[0]
     right = table.rows[1].cells[1]
+    _shade_cell(left,  theme.light_hex)
+    _shade_cell(right, theme.details_right_hex)
     _set_cell_margins(left,  0, 5.4, 0, 5.4)
     _set_cell_margins(right, 0, 5.4, 0, 5.4)
+    _cell_borders(left,  "nil", (8, theme.border_hex), (8, theme.border_hex), (8, theme.border_hex))
+    _cell_borders(right, "nil", (8, theme.border_hex), "nil",                 (8, theme.border_hex))
 
     left_rows = [
         ("Stay",        enriched.dates or "—"),
@@ -436,7 +494,7 @@ def _add_hotel_details_table(doc: Document, enriched: EnrichedHotel,
         p = left.paragraphs[0] if i == 0 else left.add_paragraph()
         _sp(p, 10 if i == 0 else 0, 10 if i == len(left_rows) - 1 else 0)
         _line_spacing_15(p)
-        _run(p, f"{label}: ", size=10, bold=True, color=theme.primary)
+        _run(p, f"{label}: ", size=10, bold=False, color=theme.primary)
         _run(p, value, size=10, color=theme.primary)
 
     right_rows = [
@@ -457,7 +515,7 @@ def _add_hotel_details_table_unenriched(doc: Document, hotel: HotelRow,
     """Fallback 2-col details table when Google Places enrichment is unavailable."""
     table = doc.add_table(rows=2, cols=2)
     table.autofit = False
-    _no_borders(table)
+    _tbl_outer_borders(table, _OUTER_BORDER_HEX, sz=4)
     for row in table.rows:
         for cell in row.cells:
             cell.width = Inches(3.5)
@@ -465,14 +523,20 @@ def _add_hotel_details_table_unenriched(doc: Document, hotel: HotelRow,
     hdr = table.rows[0].cells[0].merge(table.rows[0].cells[1])
     _shade_cell(hdr, theme.header_hex)
     _set_cell_margins(hdr, 7.2, 7.2, 7.2, 7.2)
+    _cell_borders(hdr, (8, theme.header_hex), (8, theme.header_hex),
+                  (8, theme.header_hex), (8, theme.header_hex))
     hp = hdr.paragraphs[0]
     _sp(hp, 0, 0)
     _run(hp, "HOTEL DETAILS", size=10, color=_WHITE)
 
     left  = table.rows[1].cells[0]
     right = table.rows[1].cells[1]
+    _shade_cell(left,  theme.light_hex)
+    _shade_cell(right, theme.details_right_hex)
     _set_cell_margins(left,  0, 5.4, 0, 5.4)
     _set_cell_margins(right, 0, 5.4, 0, 5.4)
+    _cell_borders(left,  "nil", (8, theme.border_hex), (8, theme.border_hex), (8, theme.border_hex))
+    _cell_borders(right, "nil", (8, theme.border_hex), "nil",                 (8, theme.border_hex))
 
     left_rows = [
         ("Stay",        hotel.dates or "—"),
@@ -483,7 +547,7 @@ def _add_hotel_details_table_unenriched(doc: Document, hotel: HotelRow,
         p = left.paragraphs[0] if i == 0 else left.add_paragraph()
         _sp(p, 10 if i == 0 else 0, 10 if i == len(left_rows) - 1 else 0)
         _line_spacing_15(p)
-        _run(p, f"{label}: ", size=10, bold=True, color=theme.primary)
+        _run(p, f"{label}: ", size=10, bold=False, color=theme.primary)
         _run(p, value, size=10, color=theme.primary)
 
     p = right.paragraphs[0]
@@ -504,11 +568,12 @@ def _add_marinas_take(doc: Document, description: str, theme: Theme) -> None:
     cell.width = Inches(7.0)
     _shade_cell(cell, theme.marinas_hex)
     _set_cell_margins(cell, 6, 6, 6, 6)
+    _cell_borders(cell, "nil", "nil", (18, theme.header_hex), "nil")
 
     p = cell.paragraphs[0]
     _sp(p, 0, 2)
-    _run(p, "Marina's Take: ", size=10, bold=True, color=theme.primary)
-    _run(p, description, size=10, color=theme.primary)
+    _run(p, "Marina's Take: ", size=10, bold=True, italic=True, color=theme.primary)
+    _run(p, description, size=10, color=_NAVY)
 
 
 def _add_why_recommend_hotel_box(doc: Document, why: str, theme: Theme) -> None:
@@ -522,6 +587,8 @@ def _add_why_recommend_hotel_box(doc: Document, why: str, theme: Theme) -> None:
     cell.width = Inches(7.0)
     _shade_cell(cell, theme.light_hex)
     _set_cell_margins(cell, 6, 6, 6, 6)
+    _cell_borders(cell, (8, _AMBER_BORDER_HEX), (8, _AMBER_BORDER_HEX),
+                  (8, _AMBER_BORDER_HEX), (8, _AMBER_BORDER_HEX))
 
     p = cell.paragraphs[0]
     _sp(p, 0, 0)
@@ -558,7 +625,7 @@ def _add_plan_price_summary(doc: Document, plan: Plan, theme: Theme) -> None:
 
     table = doc.add_table(rows=2, cols=3)
     table.autofit = False
-    _no_borders(table)
+    _tbl_outer_borders(table, _OUTER_BORDER_HEX, sz=4)
     col_w = Inches(7.0 / 3)
     for row in table.rows:
         for cell in row.cells:
@@ -567,6 +634,8 @@ def _add_plan_price_summary(doc: Document, plan: Plan, theme: Theme) -> None:
     hdr = table.rows[0].cells[0].merge(table.rows[0].cells[2])
     _shade_cell(hdr, theme.header_hex)
     _set_cell_margins(hdr, 7.2, 7.2, 7.2, 7.2)
+    _cell_borders(hdr, (6, theme.header_hex), (6, theme.header_hex),
+                  (6, theme.header_hex), (6, theme.header_hex))
     hp = hdr.paragraphs[0]
     hp.alignment = WD_ALIGN_PARAGRAPH.CENTER
     _sp(hp, 10, 10)
@@ -579,7 +648,7 @@ def _add_plan_price_summary(doc: Document, plan: Plan, theme: Theme) -> None:
     cols_data = [
         # (bg, label, label_bold, value, value_size, value_bold, value_color, extra_pct)
         (theme.light_hex, "BEST ONLINE PRICE", False,
-         format_indian_number(pr.total_online_price), 15, False, theme.primary, None),
+         format_indian_number(pr.total_online_price), 15, False, _NAVY, None),
         (_WHITE_BG, "OUR PRICE", True,
          format_indian_number(pr.discounted_price), 18, True, theme.primary, None),
         (_SAVINGS_BG, "YOU SAVE", True,
@@ -590,10 +659,12 @@ def _add_plan_price_summary(doc: Document, plan: Plan, theme: Theme) -> None:
         cell = table.rows[1].cells[col_idx]
         _shade_cell(cell, bg)
         _set_cell_margins(cell, 7.2, 7.2, 7.2, 7.2)
+        _cell_borders(cell, (6, theme.border_hex), (6, theme.border_hex),
+                      (6, theme.border_hex), (6, theme.border_hex))
 
         lp = cell.paragraphs[0]
         lp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        lbl_color = _GREEN if col_idx == 2 else theme.primary
+        lbl_color = _GREEN if col_idx == 2 else (_NAVY if col_idx == 0 else theme.primary)
         _sp(lp, 10 if col_idx == 2 else 0, 3)
         _run(lp, lbl, size=9, bold=lbl_bold, color=lbl_color)
 
@@ -626,6 +697,8 @@ def _add_recommended_choice_banner(doc: Document, plan_label: str,
     cell.width = Inches(7.0)
     _shade_cell(cell, _REC_BANNER_BG)
     _set_cell_margins(cell, 6, 6, 6, 6)
+    _cell_borders(cell, (8, _AMBER_BORDER_HEX), (8, _AMBER_BORDER_HEX),
+                  (8, _AMBER_BORDER_HEX), (8, _AMBER_BORDER_HEX))
 
     p = cell.paragraphs[0]
     _sp(p, 0, 0)
@@ -645,6 +718,8 @@ def _add_why_recommend_box(doc: Document, plan: Plan) -> None:
     cell.width = Inches(7.0)
     _shade_cell(cell, _REC_BANNER_BG)
     _set_cell_margins(cell, 6, 6, 6, 6)
+    _cell_borders(cell, (8, _AMBER_BORDER_HEX), (8, _AMBER_BORDER_HEX),
+                  (8, _AMBER_BORDER_HEX), (8, _AMBER_BORDER_HEX))
 
     p = cell.paragraphs[0]
     _sp(p, 0, 0)

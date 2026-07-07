@@ -655,7 +655,7 @@ def _add_why_recommend_box(doc: Document, plan: Plan) -> None:
 
 # ── Executive summary ─────────────────────────────────────────────────────────
 
-def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
+def _build_exec_summary_by_plan(doc: Document, plans: list[Plan], enriched_map: dict) -> None:
     col_widths = [Inches(0.74), Inches(3.32), Inches(1.07), Inches(0.94), Inches(0.93)]
     col_labels = ["Plan", "Hotels", "Best Online Price", "Our Price", "You Save"]
     _HDR = _THEME_NAVY.header_hex
@@ -713,7 +713,9 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
             fmt.line_spacing_rule = WD_LINE_SPACING.SINGLE
             star = _star_category(hotel.category)
             suffix = f" ({star[0]}*)" if star else ""
-            _run(hp, f"{hotel.name}{suffix}", size=10, color=_NAVY)
+            _enriched = enriched_map.get(hotel.name)
+            h_name = (_enriched.official_name if _enriched and _enriched.official_name else None) or hotel.name
+            _run(hp, f"{h_name}{suffix}", size=10, color=_NAVY)
 
         # Price columns
         for col_idx, (val, bold, color) in enumerate([
@@ -737,7 +739,7 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
     _thin_borders(table)
 
 
-def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
+def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan], enriched_map: dict) -> None:
     col_widths = [Inches(1.55), Inches(2.55), Inches(0.9), Inches(0.9), Inches(1.1)]
     col_labels = ["City / Dates", "Hotel", "Online Price", "Our Price", "You Save"]
     _HDR = _THEME_NAVY.header_hex
@@ -759,51 +761,53 @@ def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
         _sp(p, 0, 0)
         _run(p, label, size=10, bold=True, color=_WHITE)
 
-    # Track theme index per hotel within its section
-    section_hotel_counts: dict[str, int] = {}
-    for row_idx, (section_label, hotel) in enumerate(hotel_rows):
-        if section_label not in section_hotel_counts:
-            section_hotel_counts[section_label] = 0
-        theme_idx = section_hotel_counts[section_label]
-        section_hotel_counts[section_label] += 1
+    row_idx = 0
+    for plan in plans:
+        section_label = plan.label
+        for hotel_idx, hotel in enumerate(plan.hotels):
+            t = _theme(hotel_idx)
+            bg = t.light_hex
 
-        row = table.rows[row_idx + 1]
-        t = _theme(theme_idx)
-        bg = t.light_hex
-        our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
-        you_save_str = (format_indian_number(hotel.customer_discount)
-                        if hotel.customer_discount > 0 else "—")
-        you_save_pct = (f"({hotel.discount_pct:.1f}% off)"
-                        if hotel.customer_discount > 0 else None)
+            row = table.rows[row_idx + 1]
+            row_idx += 1
 
-        star = _star_category(hotel.category)
-        suffix = f" ({star[0]}*)" if star else ""
+            our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
+            you_save_str = (format_indian_number(hotel.customer_discount)
+                            if hotel.customer_discount > 0 else "—")
+            you_save_pct = (f"({hotel.discount_pct:.1f}% off)"
+                            if hotel.customer_discount > 0 else None)
 
-        for col_idx, (text, align, color, bold) in enumerate([
-            (section_label,                            WD_ALIGN_PARAGRAPH.LEFT,   t.primary, False),
-            (hotel.name + suffix,                      WD_ALIGN_PARAGRAPH.LEFT,   t.primary, False),
-            (format_indian_number(hotel.online_price), WD_ALIGN_PARAGRAPH.CENTER, t.primary, False),
-            (format_indian_number(our_price),          WD_ALIGN_PARAGRAPH.CENTER, t.primary, True),
-            (you_save_str,                             WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
-        ]):
-            cell = row.cells[col_idx]
-            _shade_cell(cell, bg)
-            cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
-            p = cell.paragraphs[0]
-            p.alignment = align
-            _sp(p, 2, 2)
-            _run(p, text, size=9, bold=bold, color=color)
-            if col_idx == 4 and you_save_pct:
-                p2 = cell.add_paragraph()
-                p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
-                _sp(p2, 0, 2)
-                _run(p2, you_save_pct, size=8, color=_GREEN)
+            star = _star_category(hotel.category)
+            suffix = f" ({star[0]}*)" if star else ""
+            _enriched = enriched_map.get(hotel.name)
+            h_name = (_enriched.official_name if _enriched and _enriched.official_name else None) or hotel.name
+
+            for col_idx, (text, align, color, bold) in enumerate([
+                (section_label,                            WD_ALIGN_PARAGRAPH.LEFT,   t.primary, False),
+                (h_name + suffix,                          WD_ALIGN_PARAGRAPH.LEFT,   _NAVY,     False),
+                (format_indian_number(hotel.online_price), WD_ALIGN_PARAGRAPH.CENTER, t.primary, False),
+                (format_indian_number(our_price),          WD_ALIGN_PARAGRAPH.CENTER, t.primary, True),
+                (you_save_str,                             WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
+            ]):
+                cell = row.cells[col_idx]
+                _shade_cell(cell, bg)
+                cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+                p = cell.paragraphs[0]
+                p.alignment = align
+                _sp(p, 2, 2)
+                _run(p, text, size=9, bold=bold, color=color)
+                if col_idx == 4 and you_save_pct:
+                    p2 = cell.add_paragraph()
+                    p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                    _sp(p2, 0, 2)
+                    _run(p2, you_save_pct, size=8, color=_GREEN)
 
     _thin_borders(table)
 
 
 def _build_executive_summary(doc: Document, plans: list[Plan],
-                              grouped_by_sections: bool = False) -> None:
+                              grouped_by_sections: bool = False,
+                              enriched_map: dict | None = None) -> None:
     if not plans:
         return
 
@@ -829,10 +833,11 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
     p = doc.add_paragraph()
     _sp(p, 8, 4)
 
+    em = enriched_map or {}
     if grouped_by_sections:
-        _build_exec_summary_by_hotel(doc, plans)
+        _build_exec_summary_by_hotel(doc, plans, em)
     else:
-        _build_exec_summary_by_plan(doc, plans)
+        _build_exec_summary_by_plan(doc, plans, em)
 
 
 # ── Plans layout (Task 6) ─────────────────────────────────────────────────────
@@ -903,8 +908,8 @@ def _build_grouped_sections(doc: Document, plans: list[Plan],
             h_cat  = (enriched.category if enriched else None) or hotel.category
 
             _add_hotel_name_card(doc, h_name, h_city, h_cat, t)
-            _add_hotel_photo(doc, enriched.photo_bytes if enriched else None)
             if enriched:
+                _add_hotel_photo(doc, enriched.photo_bytes)
                 _add_hotel_details_table(doc, enriched, t)
                 _add_marinas_take(doc, enriched.description, t)
             else:
@@ -935,7 +940,8 @@ def build_document(
                       destination_photo=destination_photo)
     _page_break(doc)
 
-    _build_executive_summary(doc, plans, grouped_by_sections=grouped_by_sections)
+    _build_executive_summary(doc, plans, grouped_by_sections=grouped_by_sections,
+                             enriched_map=enriched_map)
     _page_break(doc)
 
     if grouped_by_sections:

@@ -9,7 +9,10 @@ from src.hotel_options.models import (
     HotelRow, PlanPricing, Plan, UnknownCode, ParseResult,
 )
 
-_PLAN_RE = re.compile(r'^PLAN\s+[A-Z](?:\s*\(recommended\))?\s*$', re.IGNORECASE)
+_PLAN_RE = re.compile(
+    r'^(?:PLAN\s+\w+|.*\bPlan)(?:\s*\(recommended\))?\s*$',
+    re.IGNORECASE,
+)
 _SECTION_DATE_RE = re.compile(r'\(([^)]+)\)')
 _RECOMMENDED_RE = re.compile(r'\s*\(recommended\)\s*$', re.IGNORECASE)
 
@@ -172,9 +175,10 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
     current_city: str = ""
     running_online = 0.0
     running_b2b = 0.0
+    current_plan_inclusions: str = ""
 
     def _flush(summary_row) -> None:
-        nonlocal current_label, current_recommended, current_why, current_hotels, running_online, running_b2b
+        nonlocal current_label, current_recommended, current_why, current_hotels, running_online, running_b2b, current_plan_inclusions
         if current_label is None:
             return
         if not current_hotels:
@@ -184,6 +188,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
             current_hotels = []
             running_online = 0.0
             running_b2b = 0.0
+            current_plan_inclusions = ""
             return
         col_i = _numeric(summary_row[8].value) if len(summary_row) > 8 else None
         col_j = _numeric(summary_row[9].value) if len(summary_row) > 9 else None
@@ -209,6 +214,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
             ),
             recommended=current_recommended,
             why_recommend=current_why,
+            inclusions=current_plan_inclusions,
         ))
         current_label = None
         current_recommended = False
@@ -216,6 +222,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
         current_hotels = []
         running_online = 0.0
         running_b2b = 0.0
+        current_plan_inclusions = ""
 
     past_first_plan = False
     # Maps (hotel_name, online_price) → date-range / city from pre-amble section headers.
@@ -269,8 +276,17 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
         col_i_val = row[8].value if len(row) > 8 else None
         col_l_val = row[11].value if len(row) > 11 else None
 
-        # Plan summary: col A blank, col I or col L numeric
-        if not val_a and (_numeric(col_i_val) is not None or _numeric(col_l_val) is not None):
+        if str_a.lower() == "transfers":
+            continue
+
+        # Plan summary: col A blank, col I or col L numeric — or explicit Total row
+        is_total_row = str_a.lower() == "total"
+        is_blank_summary = not val_a
+        if (is_total_row or is_blank_summary) and (
+            _numeric(col_i_val) is not None or _numeric(col_l_val) is not None
+        ):
+            if is_total_row and len(row) > 18 and row[18].value:
+                current_plan_inclusions = str(row[18].value).strip()
             _flush(row)
             continue
 

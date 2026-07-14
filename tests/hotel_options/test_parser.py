@@ -321,3 +321,71 @@ def test_no_plans_empty_section_between_real_sections():
     assert result.plans[0].label == "Active Section"
     assert len(result.plans[0].hotels) == 2
     assert result.plans[0].pricing.total_online_price == 90000.0
+
+
+def _make_star_plan_xlsx() -> bytes:
+    """Two plans named '4-Star Plan' and '5-Star Plan' with a Transfers row and Total summary."""
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    # Plan 1
+    ws["A1"] = "4-Star Plan"
+    ws["A2"] = "Adaaran Resort"
+    ws["B2"] = "4-Star"
+    ws["C2"] = "Beach Villa"
+    ws["H2"] = "Free cancellation before 23 Nov, All Inclusive"
+    ws["I2"] = 1000000.0
+    ws["A3"] = "Transfers"
+    ws["I3"] = 50000.0       # should be ignored
+    ws["A4"] = "Total"
+    ws["I4"] = 1000000.0
+    ws["J4"] = 900000.0
+    ws["L4"] = 50000.0
+    ws["M4"] = 950000.0
+    ws["N4"] = 5.0
+    ws["S4"] = "With airport transfer - Shared Speedboat"
+    # Plan 2
+    ws["A6"] = "5-Star Plan"
+    ws["A7"] = "Centara Grand"
+    ws["B7"] = "5-Star"
+    ws["C7"] = "Overwater Villa"
+    ws["H7"] = "nr. br"
+    ws["I7"] = 2000000.0
+    ws["A8"] = "Total"
+    ws["I8"] = 2000000.0
+    ws["J8"] = 1800000.0
+    ws["L8"] = 100000.0
+    ws["M8"] = 1900000.0
+    ws["N8"] = 5.0
+    ws["S8"] = "With airport transfer - Seaplane"
+    buf = io.BytesIO()
+    wb.save(buf)
+    return buf.getvalue()
+
+
+def test_star_plan_headers_parsed():
+    result = parse_excel(_make_star_plan_xlsx(), {"nr": "Non-refundable", "br": "Breakfast included"})
+    assert len(result.plans) == 2
+    assert result.plans[0].label == "4-Star Plan"
+    assert result.plans[1].label == "5-Star Plan"
+
+
+def test_transfers_row_skipped():
+    result = parse_excel(_make_star_plan_xlsx(), {})
+    hotels = result.plans[0].hotels
+    assert len(hotels) == 1
+    assert hotels[0].name == "Adaaran Resort"
+
+
+def test_total_row_triggers_plan_flush():
+    result = parse_excel(_make_star_plan_xlsx(), {})
+    assert len(result.plans) == 2
+    assert result.plans[0].pricing.total_online_price == 1000000.0
+    assert result.plans[0].pricing.customer_discount == 50000.0
+    assert result.plans[0].pricing.discounted_price == 950000.0
+    assert result.plans[0].pricing.discount_pct == 5.0
+
+
+def test_plan_inclusions_from_total_row():
+    result = parse_excel(_make_star_plan_xlsx(), {})
+    assert result.plans[0].inclusions == "With airport transfer - Shared Speedboat"
+    assert result.plans[1].inclusions == "With airport transfer - Seaplane"

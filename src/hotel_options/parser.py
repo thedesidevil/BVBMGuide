@@ -10,9 +10,13 @@ from src.hotel_options.models import (
 )
 
 _PLAN_RE = re.compile(
-    r'^(?:PLAN\s+\w+|.*\bPlan)(?:\s*\(recommended\))?\s*$',
+    r'^(?:PLAN\s+\w+|\d+[-\s]?Star\s+Plan)(?:\s*\(recommended\))?\s*$',
     re.IGNORECASE,
 )
+# Strict variant: only matches explicit "PLAN <word>" markers (e.g. "PLAN A", "PLAN B").
+# Used in _parse_no_plans so that section labels like "Romantic Plan" or "Standard Plan"
+# are never treated as plan-header rows inside that function.
+_PLAN_RE_STRICT = re.compile(r'^PLAN\s+\w+', re.IGNORECASE)
 _SECTION_DATE_RE = re.compile(r'\(([^)]+)\)')
 _RECOMMENDED_RE = re.compile(r'\s*\(recommended\)\s*$', re.IGNORECASE)
 _NAME_DATE_RE = re.compile(r'^(.+?)\s*\(([^)]+)\)\s*$')
@@ -119,8 +123,10 @@ def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode]]:
         str_a = str(val_a).strip() if val_a is not None else ""
         col_i_val = row[8].value if len(row) > 8 else None
 
-        # Section header: col A non-empty, col I blank, not a PLAN header, not A1
-        if val_a and _numeric(col_i_val) is None and not _PLAN_RE.match(str_a) and cell_a.row > 1:
+        # Section header: col A non-empty, col I blank, not an explicit PLAN marker, not A1.
+        # Use _PLAN_RE_STRICT here (not the widened _PLAN_RE) so that labels ending in
+        # "Plan" (e.g. "Romantic Plan", "Standard Plan") are treated as section headers.
+        if val_a and _numeric(col_i_val) is None and not _PLAN_RE_STRICT.match(str_a) and cell_a.row > 1:
             _flush()
             current_label = str_a
             continue
@@ -262,6 +268,9 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
             continue
 
         if not past_first_plan:
+            # Skip Transfers rows in the preamble just as in the post-plan path.
+            if str_a.lower() == "transfers":
+                continue
             # Collect (hotel, price) → dates/city from pre-amble so plan rows can use them.
             col_i_val = row[8].value if len(row) > 8 else None
             if val_a and _numeric(col_i_val) is None:

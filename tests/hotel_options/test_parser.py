@@ -450,3 +450,64 @@ def test_extract_filename_meta_dash_without_do_not_share():
     name, dest = extract_filename_meta("Alice- Greece.xlsx")
     assert name == "Alice"
     assert dest == "Greece"
+
+
+def test_no_plans_section_label_ending_in_plan_is_section_header():
+    """Section label like 'Romantic Plan' must not be swallowed by _PLAN_RE in _parse_no_plans."""
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.cell(1, 1).value = "Breakfast included"
+    # Section header: col A text ending in "Plan", col I blank
+    ws.cell(2, 1).value = "Romantic Plan"
+    ws.cell(3, 1).value = "Hotel Alpha"
+    ws.cell(3, 2).value = "4-Star"
+    ws.cell(3, 3).value = "Deluxe"
+    ws.cell(3, 8).value = "nr"
+    ws.cell(3, 9).value = 50000.0
+    ws.cell(4, 1).value = "Hotel Beta"
+    ws.cell(4, 2).value = "3-Star"
+    ws.cell(4, 3).value = "Standard"
+    ws.cell(4, 8).value = "br"
+    ws.cell(4, 9).value = 40000.0
+    buf = io.BytesIO()
+    wb.save(buf)
+    result = parse_excel(buf.getvalue(), codes={})
+    assert result.grouped_by_sections is True
+    assert len(result.plans) == 1
+    assert result.plans[0].label == "Romantic Plan"
+    assert len(result.plans[0].hotels) == 2
+
+
+def test_preamble_transfers_row_ignored():
+    """Transfers row in preamble (before first plan, with numeric price) is skipped."""
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    # Preamble section header with dates
+    ws.cell(1, 1).value = "Maldives (Dec 22 - Dec 28)"
+    # Transfers row in preamble — col I has a price; must NOT enter preamble_dates
+    ws.cell(2, 1).value = "Transfers"
+    ws.cell(2, 9).value = 50000.0
+    # Real hotel row in preamble
+    ws.cell(3, 1).value = "Adaaran Resort"
+    ws.cell(3, 9).value = 1000000.0
+    # Plan marker
+    ws.cell(4, 1).value = "4-Star Plan"
+    ws.cell(5, 1).value = "Adaaran Resort"
+    ws.cell(5, 2).value = "4-Star"
+    ws.cell(5, 3).value = "Beach Villa"
+    ws.cell(5, 9).value = 1000000.0
+    ws.cell(5, 10).value = 900000.0
+    ws.cell(6, 1).value = "Total"
+    ws.cell(6, 9).value = 1000000.0
+    ws.cell(6, 10).value = 900000.0
+    ws.cell(6, 12).value = 0.0
+    ws.cell(6, 13).value = 1000000.0
+    ws.cell(6, 14).value = 0.0
+    buf = io.BytesIO()
+    wb.save(buf)
+    result = parse_excel(buf.getvalue(), codes={})
+    # Transfers must not appear as a hotel
+    all_names = [h.name for p in result.plans for h in p.hotels]
+    assert "Transfers" not in all_names
+    # Real hotel still gets dates from preamble
+    assert result.plans[0].hotels[0].dates == "Dec 22 - Dec 28"

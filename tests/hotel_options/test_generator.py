@@ -306,6 +306,35 @@ def test_plan_inclusions_in_document():
     assert "Shared Speedboat" in full_text
 
 
+def test_single_segment_inclusions_exclusions_rendered():
+    """Single-segment hotel: HotelRow.inclusions/exclusions are rendered below key facts."""
+    hotel = HotelRow(
+        name="Test Hotel", category="4-Star", room_type="Deluxe",
+        cancellation="Free", meal_type="Breakfast included", online_price=50000.0,
+        inclusions="Breakfast and airport transfer",
+        exclusions="Visa fees",
+    )
+    pricing = PlanPricing(50000.0, 45000.0, 0.0, 50000.0, 0.0)
+    plan = Plan(label="Plan A", hotels=[hotel], pricing=pricing)
+    enriched = EnrichedHotel(
+        official_name="Test Hotel Official", address="123 Test St",
+        phone="", rating=4.1, rating_count=500,
+        maps_url="https://maps.google.com/?cid=1", photo_bytes=None,
+        description="A great hotel.", cancellation="Free",
+        meal_type="Breakfast included", category="4-Star",
+    )
+    doc_bytes = build_document(
+        plans=[plan],
+        enriched_map={"Test Hotel": enriched},
+        client_name="Alice",
+        destination="London",
+    )
+    doc = Document(io.BytesIO(doc_bytes))
+    full_text = "\n".join(p.text for p in doc.paragraphs)
+    assert "Breakfast and airport transfer" in full_text
+    assert "Visa fees" in full_text
+
+
 def test_exec_summary_hotel_listed_once_for_multi_segment():
     plan = _make_multi_segment_plan()
     enriched = _make_multi_segment_enriched()
@@ -318,4 +347,4 @@ def test_exec_summary_hotel_listed_once_for_multi_segment():
     doc = Document(io.BytesIO(doc_bytes))
     full_text = "\n".join(p.text for p in doc.paragraphs)
     # Hotel name should appear in exec summary exactly once (not twice for two HotelRows)
-    assert full_text.count("Beach Resort") >= 1
+    assert full_text.count("Beach Resort") == 1

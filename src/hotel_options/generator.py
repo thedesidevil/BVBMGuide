@@ -730,7 +730,8 @@ def _add_room_segment(doc: Document, seg) -> None:
 
 
 def _add_hotel_card(doc: Document, enriched: EnrichedHotel,
-                    recommended: bool = False, destination: str = "") -> None:
+                    recommended: bool = False, destination: str = "",
+                    inclusions: str = "", exclusions: str = "") -> None:
     """Hotel name → (multi-segment or single photo + key facts) → Description."""
     # Hotel name — always shown once
     name_para = doc.add_paragraph()
@@ -777,6 +778,8 @@ def _add_hotel_card(doc: Document, enriched: EnrichedHotel,
             _spacing(p, 8, 6)
             _body_run(p, "[ Image not available ]", size=9, color=_GREY)
         _add_key_facts(doc, enriched)
+        # Render per-hotel inclusions/exclusions (non-empty only) below key facts.
+        _add_inclusions_exclusions(doc, inclusions, exclusions)
 
     if enriched.description:
         p = doc.add_paragraph()
@@ -930,7 +933,9 @@ def build_document(
                 enriched = enriched_map.get(hotel.name)
                 if enriched:
                     _add_hotel_card(doc, enriched,
-                                    destination=hotel.city or destination)
+                                    destination=hotel.city or destination,
+                                    inclusions=hotel.inclusions,
+                                    exclusions=hotel.exclusions)
                 else:
                     p = doc.add_paragraph()
                     _spacing(p, 8, 8)

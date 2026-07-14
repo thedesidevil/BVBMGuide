@@ -17,6 +17,8 @@ class HotelRow:
     recommended: bool = False
     why_recommend: str = ""
     city: str = ""
+    inclusions: str = ""
+    exclusions: str = ""
 
 
 @dataclass
@@ -35,6 +37,7 @@ class Plan:
     pricing: PlanPricing
     recommended: bool = False
     why_recommend: str = ""
+    inclusions: str = ""
 
 
 @dataclass
@@ -42,6 +45,16 @@ class UnknownCode:
     code: str
     hotel_name: str
     plan_label: str
+
+
+@dataclass
+class RoomSegment:
+    room_type: str
+    dates: str
+    online_price: float
+    photo_bytes: bytes | None = None
+    inclusions: str = ""
+    exclusions: str = ""
 
 
 @dataclass
@@ -68,3 +81,4 @@ class EnrichedHotel:
     category: str
     dates: str = ""
     room_type: str = ""
+    room_segments: list[RoomSegment] = field(default_factory=list)

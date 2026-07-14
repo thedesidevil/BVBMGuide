@@ -1,5 +1,5 @@
 from src.hotel_options.models import (
-    HotelRow, PlanPricing, Plan, UnknownCode, ParseResult, EnrichedHotel,
+    HotelRow, PlanPricing, Plan, UnknownCode, ParseResult, EnrichedHotel, RoomSegment,
 )
 
 def test_hotel_row_fields():
@@ -43,3 +43,36 @@ def test_enriched_hotel_photo_optional():
         category="5-Star",
     )
     assert e.photo_bytes is None
+
+def test_hotel_row_new_fields_default_empty():
+    h = HotelRow(
+        name="Test", category="4-Star", room_type="Double",
+        cancellation="Free", meal_type="Breakfast", online_price=50000.0,
+    )
+    assert h.inclusions == ""
+    assert h.exclusions == ""
+
+def test_plan_inclusions_default_empty():
+    p = Plan(
+        label="Plan A",
+        hotels=[],
+        pricing=PlanPricing(0, 0, 0, 0, 0),
+    )
+    assert p.inclusions == ""
+
+def test_room_segment_fields():
+    seg = RoomSegment(room_type="Beach Villa", dates="Dec 22-25", online_price=1178668.0)
+    assert seg.room_type == "Beach Villa"
+    assert seg.dates == "Dec 22-25"
+    assert seg.online_price == 1178668.0
+    assert seg.photo_bytes is None
+    assert seg.inclusions == ""
+    assert seg.exclusions == ""
+
+def test_enriched_hotel_room_segments_default_empty():
+    e = EnrichedHotel(
+        official_name="Test", address="", phone="", rating=4.0,
+        rating_count=100, maps_url="", photo_bytes=None,
+        description="", cancellation="", meal_type="", category="",
+    )
+    assert e.room_segments == []

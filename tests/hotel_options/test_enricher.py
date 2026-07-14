@@ -69,3 +69,71 @@ def test_enrich_hotel_builds_enriched():
     assert result.photo_bytes == b"JPEG_BYTES"
     assert result.description == "A fine hotel."
     assert result.cancellation == "Non-refundable"
+
+
+from src.hotel_options.enricher import enrich_hotel_multi_segment
+
+
+def test_enrich_hotel_multi_segment_builds_segments():
+    details_resp = MagicMock()
+    details_resp.raise_for_status = MagicMock()
+    details_resp.json.return_value = {
+        "result": {
+            "name": "Adaaran Select Hudhuranfushi",
+            "formatted_address": "North Male Atoll, Maldives",
+            "international_phone_number": "+960 664 0088",
+            "rating": 4.5,
+            "user_ratings_total": 1200,
+            "photos": [
+                {"photo_reference": "ref_beach"},
+                {"photo_reference": "ref_ocean"},
+            ],
+        }
+    }
+
+    def mock_get(url, **kwargs):
+        resp = MagicMock()
+        resp.raise_for_status = MagicMock()
+        resp.status_code = 200
+        params = kwargs.get("params", {})
+        ref = params.get("photo_reference", "")
+        resp.content = f"PHOTO_{ref}".encode()
+        resp.json.return_value = {}
+        return resp
+
+    ai_client = MagicMock()
+    ai_client.complete.return_value = "A stunning overwater resort."
+
+    hotels = [
+        HotelRow(
+            name="Adaaran Select Hudhuranfushi", category="4-Star",
+            room_type="Beach Villa", cancellation="Free cancellation",
+            meal_type="All Inclusive", online_price=1178668.0,
+            dates="Dec 22-25", inclusions="Airport transfer", exclusions="Visa fees",
+        ),
+        HotelRow(
+            name="Adaaran Select Hudhuranfushi", category="4-Star",
+            room_type="Ocean Villa", cancellation="Free cancellation",
+            meal_type="All Inclusive", online_price=451983.0,
+            dates="Dec 25-26", inclusions="", exclusions="",
+        ),
+    ]
+
+    with patch("httpx.get", side_effect=[details_resp, mock_get, mock_get]):
+        with patch("src.hotel_options.enricher.httpx.get", side_effect=[details_resp,
+                    MagicMock(status_code=200, content=b"PHOTO_beach"),
+                    MagicMock(status_code=200, content=b"PHOTO_ocean")]):
+            result = enrich_hotel_multi_segment(hotels, "ChIJ_test", "Maldives", "fake_key", ai_client)
+
+    assert result.official_name == "Adaaran Select Hudhuranfushi"
+    assert result.rating == 4.5
+    assert result.photo_bytes is None         # superseded by segments
+    assert len(result.room_segments) == 2
+    assert result.room_segments[0].room_type == "Beach Villa"
+    assert result.room_segments[0].dates == "Dec 22-25"
+    assert result.room_segments[0].online_price == 1178668.0
+    assert result.room_segments[0].inclusions == "Airport transfer"
+    assert result.room_segments[0].exclusions == "Visa fees"
+    assert result.room_segments[1].room_type == "Ocean Villa"
+    assert result.room_segments[1].dates == "Dec 25-26"
+    assert result.description == "A stunning overwater resort."

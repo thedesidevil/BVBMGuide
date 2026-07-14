@@ -15,6 +15,7 @@ _PLAN_RE = re.compile(
 )
 _SECTION_DATE_RE = re.compile(r'\(([^)]+)\)')
 _RECOMMENDED_RE = re.compile(r'\s*\(recommended\)\s*$', re.IGNORECASE)
+_NAME_DATE_RE = re.compile(r'^(.+?)\s*\(([^)]+)\)\s*$')
 
 
 def _strip_recommended(s: str) -> tuple[str, bool]:
@@ -37,6 +38,10 @@ def extract_filename_meta(filename: str) -> tuple[str, str]:
         return client_name, destination
     stem = filename.rsplit(".", 1)[0]
     parts = [p.strip() for p in stem.split("_") if p.strip()]
+    # If underscore split gives only one token (no underscores), try dash split.
+    # Pattern: "DO NOT SHARE- Vinay- Maldives" → dash followed by whitespace
+    if len(parts) <= 1:
+        parts = [p.strip() for p in re.split(r'\s*-\s+', stem) if p.strip()]
     client_name = ""
     if parts:
         first = parts[0]
@@ -269,8 +274,11 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
             elif val_a and _numeric(col_i_val) is not None and current_section_dates:
                 price = _numeric(col_i_val)
                 if price is not None:
-                    preamble_dates[(str_a, price)] = current_section_dates
-                    preamble_cities[(str_a, price)] = current_city
+                    pm = _NAME_DATE_RE.match(str_a)
+                    key_name = pm.group(1).strip() if pm else str_a
+                    key_name, _ = _strip_recommended(key_name)
+                    preamble_dates[(key_name, price)] = current_section_dates
+                    preamble_cities[(key_name, price)] = current_city
             continue
 
         col_i_val = row[8].value if len(row) > 8 else None
@@ -301,6 +309,16 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
 
         # Hotel row: col A non-empty, col I numeric
         if val_a and _numeric(col_i_val) is not None:
+            # Extract optional inline dates from hotel name: "Hotel Name (Dec 22-25)"
+            name_match = _NAME_DATE_RE.match(str_a)
+            if name_match:
+                raw_hotel_name = name_match.group(1).strip()
+                inline_dates = name_match.group(2).strip()
+            else:
+                raw_hotel_name = str_a
+                inline_dates = ""
+
+            hotel_name, is_recommended = _strip_recommended(raw_hotel_name)
 
             col_h_val = row[7].value if len(row) > 7 else None
             decoded = decode_col_h(str(col_h_val) if col_h_val is not None else None, codes)
@@ -308,7 +326,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
             for unk in decoded.unknowns:
                 unknown_codes.append(UnknownCode(
                     code=unk,
-                    hotel_name=str_a,
+                    hotel_name=hotel_name,
                     plan_label=current_label or "",
                 ))
 
@@ -319,11 +337,14 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
             running_online += online
             running_b2b += b2b
 
-            dates = current_section_dates or preamble_dates.get((str_a, online), "")
-            city = current_city or preamble_cities.get((str_a, online), "")
+            dates = inline_dates or current_section_dates or preamble_dates.get((hotel_name, online), "")
+            city = current_city or preamble_cities.get((hotel_name, online), "")
             why = str(row[17].value).strip() if len(row) > 17 and row[17].value else ""
+            inclusions = str(row[18].value).strip() if len(row) > 18 and row[18].value else ""
+            exclusions = str(row[19].value).strip() if len(row) > 19 and row[19].value else ""
+
             current_hotels.append(HotelRow(
-                name=str_a,
+                name=hotel_name,
                 category=str(row[1].value).strip() if row[1].value else "",
                 room_type=str(row[2].value).strip() if row[2].value else "",
                 cancellation=decoded.cancellation,
@@ -332,6 +353,9 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
                 dates=dates,
                 why_recommend=why,
                 city=city,
+                recommended=is_recommended,
+                inclusions=inclusions,
+                exclusions=exclusions,
             ))
 
     # Flush the last open plan — it may have no trailing summary row

@@ -389,3 +389,64 @@ def test_plan_inclusions_from_total_row():
     result = parse_excel(_make_star_plan_xlsx(), {})
     assert result.plans[0].inclusions == "With airport transfer - Shared Speedboat"
     assert result.plans[1].inclusions == "With airport transfer - Seaplane"
+
+
+def _make_multi_segment_xlsx() -> bytes:
+    """One plan, same hotel name with two date-segments."""
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws["A1"] = "4-Star Plan"
+    ws["A2"] = "Adaaran Resort (Dec 22-25)"
+    ws["B2"] = "4-Star"
+    ws["C2"] = "Beach Villa"
+    ws["H2"] = "Free cancellation, All Inclusive"
+    ws["I2"] = 1178668.0
+    ws["S2"] = "Airport transfer"
+    ws["T2"] = "Visa fees"
+    ws["A3"] = "Adaaran Resort (Dec 25-26)"
+    ws["B3"] = "4-Star"
+    ws["C3"] = "Ocean Villa"
+    ws["H3"] = "Free cancellation, All Inclusive"
+    ws["I3"] = 451983.0
+    ws["A4"] = "Total"
+    ws["I4"] = 1630651.0
+    ws["J4"] = 1400000.0
+    ws["L4"] = 80000.0
+    ws["M4"] = 1550651.0
+    ws["N4"] = 4.9
+    buf = io.BytesIO()
+    wb.save(buf)
+    return buf.getvalue()
+
+
+def test_hotel_name_date_stripped():
+    result = parse_excel(_make_multi_segment_xlsx(), {})
+    hotels = result.plans[0].hotels
+    assert hotels[0].name == "Adaaran Resort"
+    assert hotels[1].name == "Adaaran Resort"
+
+
+def test_hotel_inline_dates_extracted():
+    result = parse_excel(_make_multi_segment_xlsx(), {})
+    hotels = result.plans[0].hotels
+    assert hotels[0].dates == "Dec 22-25"
+    assert hotels[1].dates == "Dec 25-26"
+
+
+def test_hotel_inclusions_exclusions_from_cols():
+    result = parse_excel(_make_multi_segment_xlsx(), {})
+    h = result.plans[0].hotels[0]
+    assert h.inclusions == "Airport transfer"
+    assert h.exclusions == "Visa fees"
+
+
+def test_extract_filename_meta_dash_separated():
+    name, dest = extract_filename_meta("DO NOT SHARE- Vinay- Maldives.xlsx")
+    assert name == "Vinay"
+    assert dest == "Maldives"
+
+
+def test_extract_filename_meta_dash_without_do_not_share():
+    name, dest = extract_filename_meta("Alice- Greece.xlsx")
+    assert name == "Alice"
+    assert dest == "Greece"

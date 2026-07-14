@@ -103,3 +103,41 @@ def test_plan_to_dict_plan_fields_intact():
     assert d["pricing"]["total_online_price"] == 100000.0
     assert d["hotels"][0]["name"] == "Hotel Alpha"
     assert d["hotels"][0]["cancellation"] == "Free"
+
+
+from src.library.ui.services.hotel_options_service import _group_hotels
+
+
+def _hr(name: str) -> HotelRow:
+    return HotelRow(
+        name=name, category="4-Star", room_type="Double",
+        cancellation="Free", meal_type="Breakfast", online_price=100000.0,
+    )
+
+
+def test_group_hotels_single_entries():
+    hotels = [_hr("Hotel A"), _hr("Hotel B"), _hr("Hotel C")]
+    groups = _group_hotels(hotels)
+    assert len(groups) == 3
+    assert groups[0] == [hotels[0]]
+    assert groups[1] == [hotels[1]]
+    assert groups[2] == [hotels[2]]
+
+
+def test_group_hotels_consecutive_same_name():
+    hotels = [_hr("Resort X"), _hr("Resort X"), _hr("Hotel B")]
+    groups = _group_hotels(hotels)
+    assert len(groups) == 2
+    assert len(groups[0]) == 2
+    assert groups[0][0].name == "Resort X"
+    assert groups[1][0].name == "Hotel B"
+
+
+def test_group_hotels_non_consecutive_same_name_not_merged():
+    hotels = [_hr("Hotel A"), _hr("Hotel B"), _hr("Hotel A")]
+    groups = _group_hotels(hotels)
+    assert len(groups) == 3
+
+
+def test_group_hotels_empty():
+    assert _group_hotels([]) == []

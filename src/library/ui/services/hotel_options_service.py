@@ -122,6 +122,22 @@ Raw text: {raw}
 Output only the formatted string, nothing else."""
 
 
+def _group_hotels(hotels: list) -> list:
+    """Group consecutive HotelRows with the same name. Returns list of lists."""
+    if not hotels:
+        return []
+    groups = []
+    current = [hotels[0]]
+    for hotel in hotels[1:]:
+        if hotel.name == current[0].name:
+            current.append(hotel)
+        else:
+            groups.append(current)
+            current = [hotel]
+    groups.append(current)
+    return groups
+
+
 def _format_stay_requirements(requirements: str, ai_client) -> str:
     import re
     lines = [l.strip() for l in re.split(r'[\n,]+', requirements) if l.strip()]
@@ -269,13 +285,20 @@ def generate_doc(
         )
     enriched_map = {}
     for plan in result.plans:
-        for hotel in plan.hotels:
-            if hotel.name in enriched_map:
+        for group in _group_hotels(plan.hotels):
+            name = group[0].name
+            if name in enriched_map:
                 continue
-            place_id = existence_map.get(hotel.name)
-            if place_id:
-                enriched_map[hotel.name] = _enricher.enrich_hotel(
-                    hotel, place_id, destination, api_key, ai_client
+            place_id = existence_map.get(name)
+            if not place_id:
+                continue
+            if len(group) == 1:
+                enriched_map[name] = _enricher.enrich_hotel(
+                    group[0], place_id, destination, api_key, ai_client
+                )
+            else:
+                enriched_map[name] = _enricher.enrich_hotel_multi_segment(
+                    group, place_id, destination, api_key, ai_client
                 )
 
     destination_photo = _enricher.fetch_destination_photo(destination, api_key)

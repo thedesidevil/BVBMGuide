@@ -119,11 +119,10 @@ def test_enrich_hotel_multi_segment_builds_segments():
         ),
     ]
 
-    with patch("httpx.get", side_effect=[details_resp, mock_get, mock_get]):
-        with patch("src.hotel_options.enricher.httpx.get", side_effect=[details_resp,
-                    MagicMock(status_code=200, content=b"PHOTO_beach"),
-                    MagicMock(status_code=200, content=b"PHOTO_ocean")]):
-            result = enrich_hotel_multi_segment(hotels, "ChIJ_test", "Maldives", "fake_key", ai_client)
+    with patch("src.hotel_options.enricher.httpx.get", side_effect=[details_resp,
+                MagicMock(status_code=200, content=b"PHOTO_beach"),
+                MagicMock(status_code=200, content=b"PHOTO_ocean")]):
+        result = enrich_hotel_multi_segment(hotels, "ChIJ_test", "Maldives", "fake_key", ai_client)
 
     assert result.official_name == "Adaaran Select Hudhuranfushi"
     assert result.rating == 4.5
@@ -137,3 +136,52 @@ def test_enrich_hotel_multi_segment_builds_segments():
     assert result.room_segments[1].room_type == "Ocean Villa"
     assert result.room_segments[1].dates == "Dec 25-26"
     assert result.description == "A stunning overwater resort."
+
+
+def test_enrich_hotel_multi_segment_photo_fallback_single_photo():
+    """When gallery has 1 photo but there are 2 segments, both get photo_bytes from the same photo."""
+    details_resp = MagicMock()
+    details_resp.raise_for_status = MagicMock()
+    details_resp.json.return_value = {
+        "result": {
+            "name": "Adaaran Select Hudhuranfushi",
+            "formatted_address": "North Male Atoll, Maldives",
+            "international_phone_number": "+960 664 0088",
+            "rating": 4.5,
+            "user_ratings_total": 1200,
+            "photos": [
+                {"photo_reference": "ref_only"},
+            ],
+        }
+    }
+
+    ai_client = MagicMock()
+    ai_client.complete.return_value = "A stunning overwater resort."
+
+    hotels = [
+        HotelRow(
+            name="Adaaran Select Hudhuranfushi", category="4-Star",
+            room_type="Beach Villa", cancellation="Free cancellation",
+            meal_type="All Inclusive", online_price=1178668.0,
+            dates="Dec 22-25",
+        ),
+        HotelRow(
+            name="Adaaran Select Hudhuranfushi", category="4-Star",
+            room_type="Ocean Villa", cancellation="Free cancellation",
+            meal_type="All Inclusive", online_price=451983.0,
+            dates="Dec 25-26",
+        ),
+    ]
+
+    # 1 photo reference → photo fetch is called twice (once per segment),
+    # both times using the same ref (last-photo fallback).
+    with patch("src.hotel_options.enricher.httpx.get", side_effect=[
+        details_resp,
+        MagicMock(status_code=200, content=b"PHOTO_only"),
+        MagicMock(status_code=200, content=b"PHOTO_only"),
+    ]):
+        result = enrich_hotel_multi_segment(hotels, "ChIJ_test", "Maldives", "fake_key", ai_client)
+
+    assert len(result.room_segments) == 2
+    assert result.room_segments[0].photo_bytes == b"PHOTO_only"
+    assert result.room_segments[1].photo_bytes == b"PHOTO_only"

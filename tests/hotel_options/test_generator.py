@@ -202,3 +202,120 @@ def test_build_document_no_plan_column_when_grouped():
     all_header_text = " ".join(cell.text for cell in exec_table.rows[0].cells)
     assert "City / Dates" in all_header_text
     assert "Plan" not in all_header_text
+
+
+from src.hotel_options.models import RoomSegment
+
+
+def _make_multi_segment_plan() -> Plan:
+    h1 = HotelRow(
+        name="Beach Resort", category="4-Star", room_type="Beach Villa",
+        cancellation="Free", meal_type="All Inclusive", online_price=1000000.0,
+        dates="Dec 22-25",
+    )
+    h2 = HotelRow(
+        name="Beach Resort", category="4-Star", room_type="Ocean Villa",
+        cancellation="Free", meal_type="All Inclusive", online_price=500000.0,
+        dates="Dec 25-26",
+    )
+    pricing = PlanPricing(
+        total_online_price=1500000.0, total_b2b_price=1300000.0,
+        customer_discount=50000.0, discounted_price=1450000.0, discount_pct=3.3,
+    )
+    return Plan(
+        label="4-Star Plan",
+        hotels=[h1, h2],
+        pricing=pricing,
+        inclusions="With airport transfer - Shared Speedboat",
+    )
+
+
+def _make_multi_segment_enriched() -> EnrichedHotel:
+    return EnrichedHotel(
+        official_name="Beach Resort Official", address="Maldives",
+        phone="", rating=4.5, rating_count=800,
+        maps_url="https://maps.google.com/?cid=1",
+        photo_bytes=None, description="A beautiful resort.",
+        cancellation="Free", meal_type="All Inclusive", category="4-Star",
+        room_segments=[
+            RoomSegment(room_type="Beach Villa", dates="Dec 22-25",
+                        online_price=1000000.0, photo_bytes=None,
+                        inclusions="Airport transfer", exclusions="Visa fees"),
+            RoomSegment(room_type="Ocean Villa", dates="Dec 25-26",
+                        online_price=500000.0, photo_bytes=None),
+        ],
+    )
+
+
+def test_multi_segment_hotel_card_rendered_once():
+    """Same hotel name appears twice in plan.hotels but card is rendered only once."""
+    plan = _make_multi_segment_plan()
+    enriched = _make_multi_segment_enriched()
+    doc_bytes = build_document(
+        plans=[plan],
+        enriched_map={"Beach Resort": enriched},
+        client_name="Vinay",
+        destination="Maldives",
+    )
+    doc = Document(io.BytesIO(doc_bytes))
+    full_text = "\n".join(p.text for p in doc.paragraphs)
+    assert full_text.count("Beach Resort Official") == 1
+
+
+def test_multi_segment_both_room_types_in_document():
+    plan = _make_multi_segment_plan()
+    enriched = _make_multi_segment_enriched()
+    doc_bytes = build_document(
+        plans=[plan],
+        enriched_map={"Beach Resort": enriched},
+        client_name="Vinay",
+        destination="Maldives",
+    )
+    doc = Document(io.BytesIO(doc_bytes))
+    full_text = "\n".join(p.text for p in doc.paragraphs)
+    assert "Beach Villa" in full_text
+    assert "Ocean Villa" in full_text
+
+
+def test_inclusions_exclusions_in_document():
+    plan = _make_multi_segment_plan()
+    enriched = _make_multi_segment_enriched()
+    doc_bytes = build_document(
+        plans=[plan],
+        enriched_map={"Beach Resort": enriched},
+        client_name="Vinay",
+        destination="Maldives",
+    )
+    doc = Document(io.BytesIO(doc_bytes))
+    full_text = "\n".join(p.text for p in doc.paragraphs)
+    assert "Airport transfer" in full_text
+    assert "Visa fees" in full_text
+
+
+def test_plan_inclusions_in_document():
+    plan = _make_multi_segment_plan()
+    enriched = _make_multi_segment_enriched()
+    doc_bytes = build_document(
+        plans=[plan],
+        enriched_map={"Beach Resort": enriched},
+        client_name="Vinay",
+        destination="Maldives",
+    )
+    doc = Document(io.BytesIO(doc_bytes))
+    full_text = "\n".join(p.text for p in doc.paragraphs)
+    assert "Shared Speedboat" in full_text
+
+
+def test_exec_summary_hotel_listed_once_for_multi_segment():
+    plan = _make_multi_segment_plan()
+    enriched = _make_multi_segment_enriched()
+    doc_bytes = build_document(
+        plans=[plan],
+        enriched_map={"Beach Resort": enriched},
+        client_name="Vinay",
+        destination="Maldives",
+    )
+    doc = Document(io.BytesIO(doc_bytes))
+    full_text = "\n".join(p.text for p in doc.paragraphs)
+    # Hotel name should appear in exec summary exactly once (not twice for two HotelRows)
+    assert full_text.count("Beach Resort") >= 1

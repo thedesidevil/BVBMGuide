@@ -425,7 +425,7 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
     if grouped_by_sections:
         _build_exec_summary_by_hotel(doc, plans)
     else:
-        _build_exec_summary_by_plan(doc, plans)
+        _build_exec_summary_by_plan(doc, plans, enriched_map)
 
     _thin_borders(doc.tables[-1])
 
@@ -522,7 +522,8 @@ def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
                 _body_run(p2, you_save_pct, bold=False, size=8, color=color)
 
 
-def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
+def _build_exec_summary_by_plan(doc: Document, plans: list[Plan],
+                                 enriched_map: dict | None = None) -> None:
     """One row per plan. Used when the file has explicit PLAN A / PLAN B markers."""
     col_labels = ["Plan", "Hotels", "Best Online Price", "Our Price", "You Save"]
     col_widths = [Inches(0.65), Inches(3.0), Inches(1.05), Inches(1.05), Inches(1.25)]
@@ -570,10 +571,25 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
             p.alignment = align
 
             if col_idx == 1:
-                for h_idx, hotel in enumerate(plan.hotels):
-                    bp = p if h_idx == 0 else cell.add_paragraph()
+                seen_names: set[str] = set()
+                h_idx_visible = 0
+                for hotel in plan.hotels:
+                    if hotel.name in seen_names:
+                        continue
+                    seen_names.add(hotel.name)
+                    bp = p if h_idx_visible == 0 else cell.add_paragraph()
                     bp.alignment = WD_ALIGN_PARAGRAPH.LEFT
-                    _body_run(bp, f"• {hotel.name}{_star_suffix(hotel.category)}", size=9, color=_CHARCOAL)
+                    enriched = enriched_map.get(hotel.name) if enriched_map else None
+                    if enriched and enriched.room_segments:
+                        # Multi-segment: show hotel name then room types as sub-bullets
+                        _body_run(bp, f"• {hotel.name}{_star_suffix(hotel.category)}", size=9, color=_CHARCOAL)
+                        for seg in enriched.room_segments:
+                            sub = cell.add_paragraph()
+                            sub.alignment = WD_ALIGN_PARAGRAPH.LEFT
+                            _body_run(sub, f"   – {seg.room_type} ({seg.dates})", size=8, color=_GREY)
+                    else:
+                        _body_run(bp, f"• {hotel.name}{_star_suffix(hotel.category)}", size=9, color=_CHARCOAL)
+                    h_idx_visible += 1
             else:
                 _body_run(p, text, bold=bold, size=9, color=color)
 
@@ -669,21 +685,54 @@ def _add_why_recommend(doc: Document, why: str) -> None:
     _body_run(p, why, size=10.5, color=_CHARCOAL)
 
 
-def _add_hotel_card(doc: Document, enriched: EnrichedHotel,
-                    recommended: bool = False, destination: str = "") -> None:
-    """Image → Heading 2 name (hyperlinked) → Key Facts → Description."""
-    if enriched.photo_bytes:
+def _add_inclusions_exclusions(doc: Document, inclusions: str, exclusions: str) -> None:
+    if inclusions:
+        p = doc.add_paragraph()
+        _spacing(p, 4, 2)
+        _body_run(p, "✓ Inclusions: ", bold=True, size=10.5, color=_GREEN)
+        _body_run(p, inclusions, size=10.5, color=_CHARCOAL)
+    if exclusions:
+        p = doc.add_paragraph()
+        _spacing(p, 2, 4)
+        _body_run(p, "✗ Exclusions: ", bold=True, size=10.5, color=_GREY)
+        _body_run(p, exclusions, size=10.5, color=_CHARCOAL)
+
+
+def _add_room_segment(doc: Document, seg) -> None:
+    """Render one room segment: photo + room type + dates + price."""
+    if seg.photo_bytes:
         p = doc.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _spacing(p, 8, 6)
-        p.add_run().add_picture(io.BytesIO(enriched.photo_bytes), width=Inches(5.0))
+        _spacing(p, 6, 4)
+        p.add_run().add_picture(io.BytesIO(seg.photo_bytes), width=Inches(4.5))
     else:
         p = doc.add_paragraph()
-        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _spacing(p, 8, 6)
+        _spacing(p, 6, 4)
         _body_run(p, "[ Image not available ]", size=9, color=_GREY)
 
-    # Hotel name — Georgia 16pt Bold, hyperlinked to Google search
+    p = doc.add_paragraph()
+    _spacing(p, 2, 1)
+    _body_run(p, f"🛏️ Room: ", size=11, color=_GREY)
+    _body_run(p, seg.room_type, size=11, bold=True, color=_CHARCOAL)
+
+    if seg.dates:
+        p = doc.add_paragraph()
+        _spacing(p, 1, 1)
+        _body_run(p, f"📅 Dates: ", size=11, color=_GREY)
+        _body_run(p, seg.dates, size=11, color=_CHARCOAL)
+
+    p = doc.add_paragraph()
+    _spacing(p, 1, 2)
+    _body_run(p, f"Online price: ", size=11, color=_GREY)
+    _body_run(p, format_indian_number(seg.online_price), size=11, color=_CHARCOAL)
+
+    _add_inclusions_exclusions(doc, seg.inclusions, seg.exclusions)
+
+
+def _add_hotel_card(doc: Document, enriched: EnrichedHotel,
+                    recommended: bool = False, destination: str = "") -> None:
+    """Hotel name → (multi-segment or single photo + key facts) → Description."""
+    # Hotel name — always shown once
     name_para = doc.add_paragraph()
     _spacing(name_para, 12, 0)
     hotel_name = enriched.official_name or "Hotel"
@@ -701,7 +750,33 @@ def _add_hotel_card(doc: Document, enriched: EnrichedHotel,
         _body_run(name_para, " ★ RECOMMENDED", bold=True, size=9, color=_AMBER)
     _thin_rule(doc, before=0, after=6)
 
-    _add_key_facts(doc, enriched)
+    if enriched.room_segments:
+        # Multi-segment: one sub-section per room type
+        for seg in enriched.room_segments:
+            _add_room_segment(doc, seg)
+        # Shared facts (category, rating, cancellation, meal)
+        shared = EnrichedHotel(
+            official_name=enriched.official_name, address=enriched.address,
+            phone=enriched.phone, rating=enriched.rating,
+            rating_count=enriched.rating_count, maps_url=enriched.maps_url,
+            photo_bytes=None, description="",
+            cancellation=enriched.cancellation, meal_type=enriched.meal_type,
+            category=enriched.category, dates="", room_type="",
+        )
+        _add_key_facts(doc, shared)
+    else:
+        # Single-segment: original layout
+        if enriched.photo_bytes:
+            p = doc.add_paragraph()
+            p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            _spacing(p, 8, 6)
+            p.add_run().add_picture(io.BytesIO(enriched.photo_bytes), width=Inches(5.0))
+        else:
+            p = doc.add_paragraph()
+            p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            _spacing(p, 8, 6)
+            _body_run(p, "[ Image not available ]", size=9, color=_GREY)
+        _add_key_facts(doc, enriched)
 
     if enriched.description:
         p = doc.add_paragraph()
@@ -835,10 +910,21 @@ def build_document(
                 _body_run(p, " ★ RECOMMENDED", bold=True, size=9, color=_AMBER)
             _thin_rule(doc, before=2, after=8, color=_HDR_BG)
 
+            # Plan-level inclusions (e.g. transfer type)
+            if plan.inclusions:
+                p = doc.add_paragraph()
+                _spacing(p, 0, 8)
+                _body_run(p, "📋 Includes: ", bold=False, size=10, color=_GREY, italic=True)
+                _body_run(p, plan.inclusions, size=10, color=_GREY, italic=True)
+
             if plan.why_recommend:
                 _add_why_recommend(doc, plan.why_recommend)
 
+            rendered: set[str] = set()
             for i, hotel in enumerate(plan.hotels):
+                if hotel.name in rendered:
+                    continue
+                rendered.add(hotel.name)
                 if i > 0:
                     _thin_rule(doc, before=8, after=4)
                 enriched = enriched_map.get(hotel.name)

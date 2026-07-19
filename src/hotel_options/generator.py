@@ -71,7 +71,7 @@ _RULE_COLOR      = "CCCCCC"
 _OUTER_BORDER_HEX = "95B3D7"
 _AMBER_BORDER_HEX = "C77800"
 _SNAP_CELL_BORDER = "D9D2C3"
-_FONT         = "Arial"
+_FONT         = "Georgia"
 _MARGIN       = Inches(0.75)
 
 

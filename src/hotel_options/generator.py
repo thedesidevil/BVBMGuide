@@ -119,12 +119,12 @@ def _configure_styles(doc: Document) -> None:
     normal.paragraph_format.line_spacing = 1.15
 
     h1 = doc.styles["Heading 1"]
-    h1.font.name  = _FONT
-    h1.font.size  = Pt(16)
-    h1.font.bold  = True
-    h1.font.color.rgb = _CHARCOAL
+    h1.font.name  = "Georgia"
+    h1.font.size  = Pt(20)
+    h1.font.bold  = False
+    h1.font.color.rgb = _NAVY
     h1.paragraph_format.space_before = Pt(0)
-    h1.paragraph_format.space_after  = Pt(4)
+    h1.paragraph_format.space_after  = Pt(6)
 
 
 # ── Low-level helpers ─────────────────────────────────────────────────────────
@@ -968,20 +968,20 @@ def _build_plans_layout(doc: Document, plans: list[Plan],
             _sp(p, 8, 0)
 
         # Plan heading
-        p = doc.add_paragraph()
-        _sp(p, 0, 0)
+        p = doc.add_paragraph(style="Heading 1")
         r = p.add_run(plan.label.upper())
         r.font.name      = "Georgia"
-        r.font.size      = Pt(20)
         r.font.color.rgb = t.primary
         if plan.recommended:
             r2 = p.add_run("  ★ RECOMMENDED")
+            r2.font.name      = "Georgia"
             r2.font.size      = Pt(12.5)
             r2.font.color.rgb = t.accent
 
-        # One page per hotel
-        for hotel in plan.hotels:
-            _page_break(doc)
+        # Hotels: no break before first (stays on same page as heading); break between hotels
+        for hotel_idx, hotel in enumerate(plan.hotels):
+            if hotel_idx > 0:
+                _page_break(doc)
             enriched = enriched_map.get(hotel.name)
             _add_hotel_card(doc, hotel, enriched, theme_index=plan_idx)
 

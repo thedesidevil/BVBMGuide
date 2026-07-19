@@ -773,8 +773,16 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan], enriched_map: 
         for row in table.rows:
             row.cells[i].width = w
 
+    hdr_row = table.rows[0]
+    tr = hdr_row._tr
+    trPr = OxmlElement("w:trPr")
+    trHeight = OxmlElement("w:trHeight")
+    trHeight.set(qn("w:val"), str(int(35 * 20)))  # 35pt in twips
+    trPr.append(trHeight)
+    tr.insert(0, trPr)
+
     for i, label in enumerate(col_labels):
-        cell = table.rows[0].cells[i]
+        cell = hdr_row.cells[i]
         _shade_cell(cell, _HDR)
         cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
         p = cell.paragraphs[0]
@@ -805,7 +813,7 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan], enriched_map: 
             rp = pc.add_paragraph()
             rp.alignment = WD_ALIGN_PARAGRAPH.CENTER
             _sp(rp, 2, 0)
-            _run(rp, "★ RECOMMENDED", size=9, bold=True, color=_AMBER)
+            _run(rp, "★ RECOMMENDED", size=10, bold=True, color=_AMBER)
 
         # Hotels column
         hc = row.cells[1]
@@ -826,8 +834,8 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan], enriched_map: 
 
         # Price columns
         for col_idx, (val, bold, color) in enumerate([
-            (format_indian_number(pr.total_online_price), False, t.primary),
-            (format_indian_number(pr.discounted_price),   True,  t.primary),
+            (format_indian_number(pr.total_online_price), True,  _NAVY),
+            (format_indian_number(pr.discounted_price),   True,  _NAVY),
             (you_save_str,                                True,  _GREEN),
         ]):
             cell = row.cells[2 + col_idx]
@@ -918,17 +926,15 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
     if not plans:
         return
 
-    p = doc.add_paragraph()
-    _sp(p, 0, 4)
-    _run(p, "Executive Summary", size=16, bold=True)
+    p = doc.add_paragraph(style="Heading 1")
+    p.add_run("Executive Summary")
 
     p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     _sp(p, 0, 6)
     _run(p, (
         "A client-ready comparison of both accommodation plans, "
         "highlighting value, comfort, and the recommended option."
-    ), size=11, italic=True, color=_NAVY)
+    ), size=11, color=_NAVY)
 
     if not grouped_by_sections:
         rec_plan = next((pl for pl in plans if pl.recommended), None)

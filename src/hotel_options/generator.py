@@ -62,6 +62,7 @@ _GREY         = RGBColor(0x66, 0x66, 0x66)
 _GREEN        = RGBColor(0x2E, 0x7D, 0x32)
 _WHITE        = RGBColor(0xFF, 0xFF, 0xFF)
 _NAVY         = RGBColor(0x1F, 0x3A, 0x5F)
+_GOLD         = RGBColor(0x8A, 0x6D, 0x2F)
 _AMBER        = RGBColor(0xC7, 0x78, 0x00)
 _SAVINGS_BG      = "EAF4EA"
 _REC_BANNER_BG   = "FBF6EA"
@@ -263,7 +264,12 @@ def _georgia(para, text: str, size: float, bold: bool = False,
 def _add_trip_snapshot(doc: Document, destination: str, requirements: str,
                        stay_requirements: str = "") -> None:
     import re as _re
-    req_lines  = [r.strip() for r in _re.split(r'[\n,]+', requirements) if r.strip()]
+    # Split on newlines/commas first, then also on dash-separated list items
+    # e.g. "1 room- 2 adults + 1child" → ["1 room", "2 adults + 1child"]
+    raw_parts = [r.strip() for r in _re.split(r'[\n,]+', requirements) if r.strip()]
+    req_lines = []
+    for part in raw_parts:
+        req_lines.extend(s.strip() for s in _re.split(r'\s*-\s+', part) if s.strip())
     travellers = next((l for l in req_lines if _re.search(r'\d+\s+adult', l, _re.I)), "")
     rooms      = next((l for l in req_lines if _re.search(r'\d+\s+room', l, _re.I)), "")
 
@@ -288,7 +294,7 @@ def _add_trip_snapshot(doc: Document, destination: str, requirements: str,
     hp = hdr.paragraphs[0]
     hp.alignment = WD_ALIGN_PARAGRAPH.CENTER
     _sp(hp, 0, 0)
-    _run(hp, "TRIP SNAPSHOT", size=10, color=_WHITE)
+    _run(hp, "TRIP SNAPSHOT", font="Georgia", size=10, color=_WHITE)
 
     for col_idx, (label, value) in enumerate(data):
         cell = table.rows[1].cells[col_idx]
@@ -296,14 +302,15 @@ def _add_trip_snapshot(doc: Document, destination: str, requirements: str,
         _shade_cell(cell, bg)
         _cell_borders(cell, (6, _SNAP_CELL_BORDER), (6, _SNAP_CELL_BORDER),
                       (6, _SNAP_CELL_BORDER), (6, _SNAP_CELL_BORDER))
+        _set_cell_margins(cell, 7.2, 7.2, 7.2, 7.2)
         lp = cell.paragraphs[0]
         _sp(lp, 0, 2)
         lp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _run(lp, label, size=9, bold=True, color=_SNAP_LBL)
+        _run(lp, label, font="Georgia", size=9, bold=True, color=_SNAP_LBL)
         vp = cell.add_paragraph()
         _sp(vp, 0, 2)
         vp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _run(vp, value, size=9, color=_CHARCOAL)
+        _run(vp, value, font="Georgia", size=9, color=_CHARCOAL)
 
 
 def _add_advisor_note(doc: Document, destination: str) -> None:
@@ -356,24 +363,24 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
 
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    _sp(p, 0, 8)
-    _georgia(p, f"{destination.upper()} ACCOMMODATION RECOMMENDATIONS", size=26, bold=True)
+    _sp(p, 0, 10)
+    _georgia(p, f"{destination.upper()} ACCOMMODATION RECOMMENDATIONS", size=26, bold=True, color=_NAVY)
 
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    _sp(p, 0, 20)
-    _georgia(p, "Curated by Bon Voyage By Marina", size=12, italic=True, color=_GREY)
+    _sp(p, 0, 18)
+    _georgia(p, "Curated by Bon Voyage By Marina", size=13, italic=True, color=_GOLD)
 
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    _sp(p, 0, 6)
-    _georgia(p, "PREPARED EXCLUSIVELY FOR", size=14, color=_GREY)
+    _sp(p, 0, 4)
+    _georgia(p, "PREPARED EXCLUSIVELY FOR", size=10, color=_GREY)
 
     if client_name:
         p = doc.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _sp(p, 0, 20)
-        _georgia(p, client_name.upper(), size=14, bold=True)
+        _sp(p, 0, 22)
+        _georgia(p, client_name.upper(), size=18, bold=True, color=_NAVY)
 
     _add_trip_snapshot(doc, destination, requirements, stay_requirements)
 

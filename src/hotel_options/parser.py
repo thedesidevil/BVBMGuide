@@ -20,7 +20,7 @@ def _strip_recommended(s: str) -> tuple[str, bool]:
         return _RECOMMENDED_RE.sub('', s).strip(), True
     return s, False
 _FILENAME_RE = re.compile(
-    r'(?:copy\s+of\s+)?(?:DO NOT SHARE[\s_]+)?([^_]+)_Accommodation Options_([^_.]+)',
+    r'(?:copy\s+of\s+)?(?:DO NOT SHARE[\s_]+)?(?:Plans?\s+)?([^_]+)_Accommodation Options_([^_.]+)',
     re.IGNORECASE,
 )
 _TRAILING_COPY_NUM_RE = re.compile(r'\s*\(\d+\)\s*$')

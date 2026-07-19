@@ -137,18 +137,22 @@ def _blank(doc: Document, n: int = 1) -> None:
 
 def _sp(para, before: float = 0, after: float = 0) -> None:
     fmt = para.paragraph_format
-    fmt.space_before = Pt(before)
-    fmt.space_after  = Pt(after)
+    if before:
+        fmt.space_before = Pt(before)
+    fmt.space_after = Pt(after)
 
 
-def _run(para, text: str, *, font: str = _FONT, size: float = 11,
+def _run(para, text: str, *, font: str = _FONT, size: float | None = None,
          bold: bool = False, italic: bool = False,
          color: RGBColor = _CHARCOAL) -> None:
     r = para.add_run(text)
-    r.bold           = bold
-    r.italic         = italic
+    if bold:
+        r.bold = True
+    if italic:
+        r.italic = True
     r.font.name      = font
-    r.font.size      = Pt(size)
+    if size is not None:
+        r.font.size = Pt(size)
     r.font.color.rgb = color
 
 
@@ -410,8 +414,11 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
     _page_break(doc)
     _add_advisor_note(doc, destination)
     _blank(doc, 1)
+    p = doc.add_paragraph()
+    _sp(p, 0, 4)
     _add_separator_rule(doc)
-    _blank(doc, 1)
+    p = doc.add_paragraph()
+    _sp(p, 0, 6)
     _add_letterhead_footer(doc, centered=True)
 
 
@@ -734,9 +741,8 @@ def _add_recommended_choice_banner(doc: Document, plan_label: str,
 
     p = cell.paragraphs[0]
     _sp(p, 0, 0)
-    _run(p, f"Recommended choice: {plan_label}. ", size=11, bold=True,
-         color=_NAVY)
-    _run(p, why_text, size=11, color=_NAVY)
+    _run(p, f"Recommended choice: {plan_label}. ", bold=True, color=_NAVY)
+    _run(p, why_text, color=_NAVY)
 
 
 def _add_why_recommend_box(doc: Document, plan: Plan) -> None:
@@ -927,24 +933,22 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
         return
 
     p = doc.add_paragraph(style="Heading 1")
-    p.add_run("Executive Summary")
+    r = p.add_run("Executive Summary")
+    r.font.name = "Georgia"
 
     p = doc.add_paragraph()
-    _sp(p, 0, 6)
     _run(p, (
         "A client-ready comparison of both accommodation plans, "
         "highlighting value, comfort, and the recommended option."
-    ), size=11, color=_NAVY)
+    ), color=_NAVY)
 
     if not grouped_by_sections:
         rec_plan = next((pl for pl in plans if pl.recommended), None)
         if rec_plan and rec_plan.why_recommend:
-            p = doc.add_paragraph()
-            _sp(p, 0, 6)
             _add_recommended_choice_banner(doc, rec_plan.label, rec_plan.why_recommend)
 
     p = doc.add_paragraph()
-    _sp(p, 8, 4)
+    _sp(p, 0, 4)
 
     em = enriched_map or {}
     if grouped_by_sections:

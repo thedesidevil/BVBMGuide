@@ -1,5 +1,7 @@
 from __future__ import annotations
+import io
 import httpx
+from PIL import Image
 
 _MONTH_TO_SEASON = {
     1: "winter", 2: "winter", 3: "spring",
@@ -89,6 +91,25 @@ def _fetch_pexels(query: str, key: str) -> bytes | None:
         return None
 
 
+def crop_panoramic(img_bytes: bytes, target_ratio: float = 3.0) -> bytes:
+    """Center-crop image bytes to a wide panoramic aspect ratio (default 3:1).
+
+    At 7 inches wide, 3:1 gives ~2.3 inches of height — roughly half a
+    standard 3:2 landscape photo.
+    """
+    img = Image.open(io.BytesIO(img_bytes))
+    w, h = img.size
+    target_h = int(w / target_ratio)
+    if target_h >= h:
+        return img_bytes  # already wider than target — return as-is
+    top = (h - target_h) // 2
+    cropped = img.crop((0, top, w, top + target_h))
+    buf = io.BytesIO()
+    fmt = img.format or "JPEG"
+    cropped.save(buf, format=fmt)
+    return buf.getvalue()
+
+
 def fetch_cover_photo(
     destination: str,
     travel_dates: list[str],
@@ -101,9 +122,9 @@ def fetch_cover_photo(
     if unsplash_key:
         result = _fetch_unsplash(query, unsplash_key)
         if result:
-            return result
+            return crop_panoramic(result)
     if pexels_key:
         result = _fetch_pexels(query, pexels_key)
         if result:
-            return result
+            return crop_panoramic(result)
     return None

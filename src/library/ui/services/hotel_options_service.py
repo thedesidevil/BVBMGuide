@@ -6,7 +6,7 @@ from dataclasses import asdict
 
 from src.hotel_options.codes import CodeStore
 import src.hotel_options.enricher as _enricher
-from src.hotel_options.cover_photo import fetch_cover_photo as _fetch_cover_photo
+from src.hotel_options.cover_photo import fetch_cover_photo as _fetch_cover_photo, crop_panoramic as _crop_panoramic
 from src.hotel_options.generator import build_document
 from src.hotel_options.models import Plan
 from src.hotel_options.parser import parse_excel, extract_filename_meta
@@ -289,7 +289,8 @@ def generate_doc(
         pexels_key=_os.getenv("PEXELS_API_KEY", ""),
     )
     if destination_photo is None:
-        destination_photo = _enricher.fetch_destination_photo(destination, api_key)
+        raw = _enricher.fetch_destination_photo(destination, api_key)
+        destination_photo = _crop_panoramic(raw) if raw else None
     stay_requirements = _format_stay_requirements(result.requirements, ai_client)
     docx_bytes = build_document(result.plans, enriched_map, client_name, destination,
                                 result.requirements, destination_photo=destination_photo,

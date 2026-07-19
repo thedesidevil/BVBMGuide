@@ -313,10 +313,34 @@ def _add_trip_snapshot(doc: Document, destination: str, requirements: str,
         _run(vp, value, font="Georgia", size=9, color=_CHARCOAL)
 
 
+def _add_separator_rule(doc: Document) -> None:
+    """Thin horizontal rule — 1×1 full-width table with a navy bottom border."""
+    table = doc.add_table(rows=1, cols=1)
+    tr = table.rows[0]._tr
+    trPr = OxmlElement("w:trPr")
+    trHeight = OxmlElement("w:trHeight")
+    trHeight.set(qn("w:val"), "1")  # 1 twip — minimal visible height
+    trPr.append(trHeight)
+    tr.insert(0, trPr)
+    cell = table.rows[0].cells[0]
+    tcPr = cell._tc.get_or_add_tcPr()
+    # Bottom border only
+    tcBorders = OxmlElement("w:tcBorders")
+    bottom = OxmlElement("w:bottom")
+    bottom.set(qn("w:val"), "single")
+    bottom.set(qn("w:sz"), "4")
+    bottom.set(qn("w:space"), "0")
+    bottom.set(qn("w:color"), "1F497D")
+    tcBorders.append(bottom)
+    tcPr.append(tcBorders)
+    # Zero cell margins so border sits flush
+    _set_cell_margins(cell, 0, 0, 0, 0)
+
+
 def _add_advisor_note(doc: Document, destination: str) -> None:
     p = doc.add_paragraph()
     _sp(p, 14, 6)
-    _georgia(p, "A NOTE FROM BON VOYAGE BY MARINA", size=12, bold=True)
+    _georgia(p, "A NOTE FROM BON VOYAGE BY MARINA", size=12, bold=True, color=_NAVY)
 
     note = (
         f"Thank you for giving us the opportunity to assist with your "
@@ -326,26 +350,25 @@ def _add_advisor_note(doc: Document, destination: str) -> None:
         f"We hope this guide helps you choose the stay that is right for you."
     )
     p = doc.add_paragraph()
-    _sp(p, 0, 8)
-    _run(p, note, size=10.5)
+    _run(p, note, font="Georgia", color=_NAVY)
 
 
 def _add_letterhead_footer(doc: Document, centered: bool = True) -> None:
     align = WD_ALIGN_PARAGRAPH.CENTER if centered else WD_ALIGN_PARAGRAPH.LEFT
-    for text, bold, italic in [
-        ("Bon Voyage By Marina", True, False),
-        ("Bespoke Travel Planning • Premium Stays • Seamless Experiences", False, True),
-        ("\U0001f4de +91 86000 15316 | \U0001f4f8 @bonvoyagebymarina | \U0001f310 www.bonvoyagebymarina.com", False, False),
+    for text, size, bold, italic in [
+        ("Bon Voyage By Marina", 12, True, False),
+        ("Bespoke Travel Planning • Premium Stays • Seamless Experiences", 11, False, True),
+        ("\U0001f4de +91 86000 15316 | \U0001f4f8 @bonvoyagebymarina | \U0001f310 www.bonvoyagebymarina.com", 11, False, False),
     ]:
         p = doc.add_paragraph()
         p.alignment = align
-        _sp(p, 4, 2)
-        _run(p, text, size=11, bold=bold, italic=italic)
+        _sp(p, 12, 12)
+        _run(p, text, font="Georgia", size=size, bold=bold, italic=italic, color=_NAVY)
     p = doc.add_paragraph()
     p.alignment = align
-    _sp(p, 0, 2)
-    _run(p, "✈️ ", size=11)
-    _run(p, "Crafting unforgettable journeys, one trip at a time.", size=11, italic=True)
+    _sp(p, 12, 12)
+    _run(p, "✈️ ", font="Georgia", size=11, color=_NAVY)
+    _run(p, "Crafting unforgettable journeys, one trip at a time.", font="Georgia", size=11, italic=True, color=_NAVY)
 
 
 def _build_cover_page(doc: Document, destination: str, client_name: str,
@@ -386,6 +409,8 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
 
     _page_break(doc)
     _add_advisor_note(doc, destination)
+    _blank(doc, 1)
+    _add_separator_rule(doc)
     _blank(doc, 1)
     _add_letterhead_footer(doc, centered=True)
 

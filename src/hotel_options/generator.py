@@ -862,7 +862,7 @@ def _build_exec_summary_by_plan(doc: Document, plans: list[Plan], enriched_map: 
             suffix = f" ({star[0]}*)" if star else ""
             _enriched = enriched_map.get(hotel.name)
             h_name = (_enriched.official_name if _enriched and _enriched.official_name else None) or hotel.name
-            _run(hp, f"{h_name}{suffix}", size=10, color=_NAVY)
+            _run(hp, f"❖ {h_name}{suffix}", size=10, color=_NAVY)
 
         # Price columns
         for col_idx, (val, bold, color) in enumerate([

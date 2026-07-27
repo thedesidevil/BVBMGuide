@@ -268,12 +268,14 @@ def _cell_borders(cell, top=None, bottom=None, left=None, right=None) -> None:
 
 
 def _micro_gap(doc: Document) -> None:
-    """Near-invisible separator paragraph matching the INPUT's line=20(auto) spacer."""
+    """Near-zero-height separator between adjacent tables; suppresses all spacing."""
     p = doc.add_paragraph()
     pPr = p._p.get_or_add_pPr()
     sp = OxmlElement("w:spacing")
-    sp.set(qn("w:line"), "20")
-    sp.set(qn("w:lineRule"), "auto")
+    sp.set(qn("w:before"), "0")
+    sp.set(qn("w:after"), "0")
+    sp.set(qn("w:line"), "1")
+    sp.set(qn("w:lineRule"), "exact")
     pPr.append(sp)
 
 

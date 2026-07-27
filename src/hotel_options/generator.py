@@ -298,9 +298,13 @@ def _page_break(doc: Document) -> None:
 
 
 def _line_spacing_15(para) -> None:
-    fmt = para.paragraph_format
-    fmt.line_spacing_rule = WD_LINE_SPACING.ONE_POINT_FIVE
-    fmt.line_spacing = None
+    pPr = para._p.get_or_add_pPr()
+    sp = pPr.find(qn("w:spacing"))
+    if sp is None:
+        sp = OxmlElement("w:spacing")
+        pPr.append(sp)
+    sp.set(qn("w:line"), "360")
+    sp.set(qn("w:lineRule"), "auto")
 
 
 # ── Cover page helpers ────────────────────────────────────────────────────────
@@ -576,7 +580,7 @@ def _add_hotel_details_table(doc: Document, enriched: EnrichedHotel,
     ]
     for i, (label, value) in enumerate(left_rows):
         p = left.paragraphs[0] if i == 0 else left.add_paragraph()
-        _sp(p, 10 if i == 0 else 0, 10 if i == len(left_rows) - 1 else 0)
+        _sp(p, 10 if i == 0 else 0, 0)
         _line_spacing_15(p)
         _run(p, f"{label}: ", size=10, bold=False, color=theme.primary)
         _run(p, value, size=10, color=theme.primary)
@@ -588,7 +592,7 @@ def _add_hotel_details_table(doc: Document, enriched: EnrichedHotel,
     ]
     for i, (label, value) in enumerate(right_rows):
         p = right.paragraphs[0] if i == 0 else right.add_paragraph()
-        _sp(p, 10 if i == 0 else 0, 10 if i == len(right_rows) - 1 else 0)
+        _sp(p, 10 if i == 0 else 0, 0)
         _line_spacing_15(p)
         _run(p, f"{label}: ", size=10, bold=True, color=theme.primary)
         _run(p, value, size=10, color=theme.primary)
@@ -629,13 +633,13 @@ def _add_hotel_details_table_unenriched(doc: Document, hotel: HotelRow,
     ]
     for i, (label, value) in enumerate(left_rows):
         p = left.paragraphs[0] if i == 0 else left.add_paragraph()
-        _sp(p, 10 if i == 0 else 0, 10 if i == len(left_rows) - 1 else 0)
+        _sp(p, 10 if i == 0 else 0, 0)
         _line_spacing_15(p)
         _run(p, f"{label}: ", size=10, bold=False, color=theme.primary)
         _run(p, value, size=10, color=theme.primary)
 
     p = right.paragraphs[0]
-    _sp(p, 10, 10)
+    _sp(p, 10, 0)
     _line_spacing_15(p)
     _run(p, "Room: ", size=10, bold=True, color=theme.primary)
     _run(p, hotel.room_type or "—", size=10, color=theme.primary)

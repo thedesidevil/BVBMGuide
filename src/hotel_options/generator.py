@@ -267,6 +267,16 @@ def _cell_borders(cell, top=None, bottom=None, left=None, right=None) -> None:
         tcPr.append(tb)
 
 
+def _micro_gap(doc: Document) -> None:
+    """Near-invisible separator paragraph matching the INPUT's line=20(auto) spacer."""
+    p = doc.add_paragraph()
+    pPr = p._p.get_or_add_pPr()
+    sp = OxmlElement("w:spacing")
+    sp.set(qn("w:line"), "20")
+    sp.set(qn("w:lineRule"), "auto")
+    pPr.append(sp)
+
+
 def _page_break(doc: Document) -> None:
     p = doc.add_paragraph()
     _sp(p, 0, 0)
@@ -511,7 +521,7 @@ def _add_hotel_photo(doc: Document, photo_bytes: bytes | None) -> None:
     """Centred hotel photo (5.0") matching the hand-curated reference layout."""
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    _sp(p, 0, 0)
+    _sp(p, 8, 6)
     if photo_bytes:
         p.add_run().add_picture(io.BytesIO(photo_bytes), width=Inches(5.0))
     else:
@@ -669,6 +679,7 @@ def _add_hotel_card(doc: Document, row: HotelRow,
     if enriched:
         _add_hotel_photo(doc, enriched.photo_bytes)
         _add_hotel_details_table(doc, enriched, theme)
+        _micro_gap(doc)
         _add_marinas_take(doc, enriched.description, theme)
     else:
         _add_hotel_details_table_unenriched(doc, row, theme)
@@ -1069,6 +1080,7 @@ def _build_grouped_sections(doc: Document, plans: list[Plan],
             if enriched:
                 _add_hotel_photo(doc, enriched.photo_bytes)
                 _add_hotel_details_table(doc, enriched, t)
+                _micro_gap(doc)
                 _add_marinas_take(doc, enriched.description, t)
             else:
                 _add_hotel_details_table_unenriched(doc, hotel, t)

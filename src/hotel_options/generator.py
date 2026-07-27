@@ -117,7 +117,8 @@ def _configure_styles(doc: Document) -> None:
     normal.font.name  = _FONT
     normal.font.size  = Pt(11)
     normal.font.color.rgb = _CHARCOAL
-    normal.paragraph_format.space_after = Pt(0)
+    normal.paragraph_format.space_after  = Pt(0)
+    normal.paragraph_format.left_indent  = Pt(0)
     normal.paragraph_format.line_spacing_rule = WD_LINE_SPACING.MULTIPLE
     normal.paragraph_format.line_spacing = 1.15
 
@@ -957,10 +958,12 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
         return
 
     p = doc.add_paragraph(style="Heading 1")
+    p.paragraph_format.left_indent = Pt(0)
     r = p.add_run("Executive Summary")
     r.font.name = "Georgia"
 
     p = doc.add_paragraph()
+    p.paragraph_format.left_indent = Pt(0)
     _run(p, (
         "A client-ready comparison of both accommodation plans, "
         "highlighting value, comfort, and the recommended option."

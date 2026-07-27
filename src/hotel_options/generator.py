@@ -209,7 +209,7 @@ def _no_borders(table) -> None:
     tbl_borders = OxmlElement("w:tblBorders")
     for name in ("top", "left", "bottom", "right", "insideH", "insideV"):
         b = OxmlElement(f"w:{name}")
-        b.set(qn("w:val"), "none")
+        b.set(qn("w:val"), "nil")
         tbl_borders.append(b)
     tbl_pr.append(tbl_borders)
 
@@ -260,6 +260,7 @@ def _cell_borders(cell, top=None, bottom=None, left=None, right=None) -> None:
             sz, color = spec
             b.set(qn("w:val"), "single")
             b.set(qn("w:sz"), str(sz))
+            b.set(qn("w:space"), "0")
             b.set(qn("w:color"), color)
             tb.append(b)
     if len(tb):
@@ -968,6 +969,7 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
         "A client-ready comparison of both accommodation plans, "
         "highlighting value, comfort, and the recommended option."
     ), color=_NAVY)
+    _sp(p, 0, 8)
 
     if not grouped_by_sections:
         rec_plan = next((pl for pl in plans if pl.recommended), None)

@@ -23,6 +23,7 @@ class Theme:
     marinas_hex: str
     border_hex: str
     details_right_hex: str
+    secondary_hex: str
     primary: RGBColor
     secondary: RGBColor
     accent: RGBColor
@@ -34,6 +35,7 @@ _THEME_NAVY = Theme(
     marinas_hex="F3F7FB",
     border_hex="B8C7D9",
     details_right_hex="FAFCFE",
+    secondary_hex="5E789A",
     primary=RGBColor(0x1F, 0x3A, 0x5F),
     secondary=RGBColor(0x5E, 0x78, 0x9A),
     accent=RGBColor(0x2E, 0x86, 0xC1),
@@ -45,6 +47,7 @@ _THEME_GOLD = Theme(
     marinas_hex="FFFDF7",
     border_hex="E5D6B8",
     details_right_hex="FFFDF7",
+    secondary_hex="C77800",
     primary=RGBColor(0x8A, 0x6D, 0x2F),
     secondary=RGBColor(0xC7, 0x78, 0x00),
     accent=RGBColor(0xC7, 0x78, 0x00),
@@ -125,6 +128,7 @@ def _configure_styles(doc: Document) -> None:
     h1.font.color.rgb = _NAVY
     h1.paragraph_format.space_before = Pt(0)
     h1.paragraph_format.space_after  = Pt(6)
+    h1.paragraph_format.left_indent  = Pt(0)
 
 
 # ── Low-level helpers ─────────────────────────────────────────────────────────
@@ -177,6 +181,24 @@ def _set_cell_margins(cell, top: float, left: float,
         m.set(qn("w:type"), "dxa")
         tcMar.append(m)
     tcPr.append(tcMar)
+
+
+def _pin_table_left(table) -> None:
+    """Set explicit tblW + tblInd=0 so the table left-aligns with body text.
+    tblInd must precede tblBorders in the schema, so insert at position 1."""
+    tbl_pr = table._tbl.tblPr
+    for existing in tbl_pr.findall(qn("w:tblW")):
+        tbl_pr.remove(existing)
+    tblW = OxmlElement("w:tblW")
+    tblW.set(qn("w:w"), "10080")  # 7.0 in × 1440 dxa/in = full text column
+    tblW.set(qn("w:type"), "dxa")
+    tbl_pr.insert(0, tblW)
+    for existing in tbl_pr.findall(qn("w:tblInd")):
+        tbl_pr.remove(existing)
+    tblInd = OxmlElement("w:tblInd")
+    tblInd.set(qn("w:w"), "0")
+    tblInd.set(qn("w:type"), "dxa")
+    tbl_pr.insert(1, tblInd)  # must come before tblBorders per OOXML schema
 
 
 def _no_borders(table) -> None:
@@ -484,12 +506,12 @@ def _add_hotel_name_card(doc: Document, hotel_name: str, city: str,
 
 
 def _add_hotel_photo(doc: Document, photo_bytes: bytes | None) -> None:
-    """Full-width hotel photo (7.0"), or placeholder text if unavailable."""
+    """Centred hotel photo (5.0") matching the hand-curated reference layout."""
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     _sp(p, 0, 0)
     if photo_bytes:
-        p.add_run().add_picture(io.BytesIO(photo_bytes), width=Inches(7.0))
+        p.add_run().add_picture(io.BytesIO(photo_bytes), width=Inches(5.0))
     else:
         _run(p, "[ Photo not available ]", size=9, color=_GREY)
 
@@ -732,6 +754,7 @@ def _add_recommended_choice_banner(doc: Document, plan_label: str,
     table = doc.add_table(rows=1, cols=1)
     table.autofit = False
     _no_borders(table)
+    _pin_table_left(table)
     cell = table.rows[0].cells[0]
     cell.width = Inches(7.0)
     _shade_cell(cell, _REC_BANNER_BG)
@@ -752,6 +775,7 @@ def _add_why_recommend_box(doc: Document, plan: Plan) -> None:
     table = doc.add_table(rows=1, cols=1)
     table.autofit = False
     _no_borders(table)
+    _pin_table_left(table)
     cell = table.rows[0].cells[0]
     cell.width = Inches(7.0)
     _shade_cell(cell, _REC_BANNER_BG)
@@ -974,13 +998,25 @@ def _build_plans_layout(doc: Document, plans: list[Plan],
         # Plan heading
         p = doc.add_paragraph(style="Heading 1")
         r = p.add_run(plan.label.upper())
-        r.font.name      = "Georgia"
-        r.font.color.rgb = t.primary
+        r.font.name = "Georgia"
         if plan.recommended:
             r2 = p.add_run("  ★ RECOMMENDED")
             r2.font.name      = "Georgia"
             r2.font.size      = Pt(12.5)
             r2.font.color.rgb = t.accent
+
+        # Horizontal rule under plan heading
+        p = doc.add_paragraph()
+        _sp(p, 0, 4)
+        pPr = p._p.get_or_add_pPr()
+        pBdr = OxmlElement("w:pBdr")
+        top_border = OxmlElement("w:top")
+        top_border.set(qn("w:val"), "single")
+        top_border.set(qn("w:sz"), "18")
+        top_border.set(qn("w:space"), "0")
+        top_border.set(qn("w:color"), t.secondary_hex)
+        pBdr.append(top_border)
+        pPr.append(pBdr)
 
         # Hotels: no break before first (stays on same page as heading); break between hotels
         for hotel_idx, hotel in enumerate(plan.hotels):
@@ -1068,6 +1104,24 @@ def build_document(
 
     _page_break(doc)
     _build_thank_you_page(doc, destination)
+
+    # Pin every table to the left text margin so they align with body paragraphs
+    for tbl_elem in doc.element.body.findall(qn("w:tbl")):
+        tblPr = tbl_elem.find(qn("w:tblPr"))
+        if tblPr is None:
+            continue
+        for existing in tblPr.findall(qn("w:tblW")):
+            tblPr.remove(existing)
+        tblW = OxmlElement("w:tblW")
+        tblW.set(qn("w:w"), "10080")
+        tblW.set(qn("w:type"), "dxa")
+        tblPr.insert(0, tblW)
+        for existing in tblPr.findall(qn("w:tblInd")):
+            tblPr.remove(existing)
+        tblInd = OxmlElement("w:tblInd")
+        tblInd.set(qn("w:w"), "0")
+        tblInd.set(qn("w:type"), "dxa")
+        tblPr.insert(1, tblInd)  # must come before tblBorders per OOXML schema
 
     buf = io.BytesIO()
     doc.save(buf)

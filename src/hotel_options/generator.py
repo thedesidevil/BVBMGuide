@@ -694,7 +694,7 @@ def _add_hotel_card(doc: Document, row: HotelRow,
     if enriched:
         _add_hotel_photo(doc, enriched.photo_bytes)
         _add_hotel_details_table(doc, enriched, theme)
-        _micro_gap(doc)
+        doc.add_paragraph()
         _add_marinas_take(doc, enriched.description, theme)
     else:
         _add_hotel_details_table_unenriched(doc, row, theme)
@@ -1095,7 +1095,7 @@ def _build_grouped_sections(doc: Document, plans: list[Plan],
             if enriched:
                 _add_hotel_photo(doc, enriched.photo_bytes)
                 _add_hotel_details_table(doc, enriched, t)
-                _micro_gap(doc)
+                doc.add_paragraph()
                 _add_marinas_take(doc, enriched.description, t)
             else:
                 _add_hotel_details_table_unenriched(doc, hotel, t)

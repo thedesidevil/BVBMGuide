@@ -1077,6 +1077,32 @@ def _build_grouped_sections(doc: Document, plans: list[Plan],
         _add_price_summary(doc, plan, theme_index=0)
 
 
+def _fix_compat_settings(doc: Document) -> None:
+    """Set compatibilityMode=15 (Word 2013+) and remove useFELayout.
+
+    python-docx's default template ships with compatibilityMode=14 (Word 2010)
+    and useFELayout. Word 2010 compat mode shifts paragraph indentation relative
+    to tables, causing heading/subtitle text to appear right of the table border.
+    Mode 15 matches the hand-curated reference document.
+    """
+    settings_elem = doc.settings.element
+    compat_ns = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+    ms_uri = "http://schemas.microsoft.com/office/word"
+
+    # Remove useFELayout
+    fe = settings_elem.find(qn("w:useFELayout"))
+    if fe is not None:
+        settings_elem.remove(fe)
+
+    # Set compatibilityMode to 15
+    compat = settings_elem.find(qn("w:compat"))
+    if compat is not None:
+        for cs in compat.findall(qn("w:compatSetting")):
+            if cs.get(qn("w:name")) == "compatibilityMode":
+                cs.set(qn("w:val"), "15")
+                break
+
+
 def build_document(
     plans: list[Plan],
     enriched_map: dict[str, EnrichedHotel],
@@ -1090,6 +1116,7 @@ def build_document(
     doc = Document()
     _set_margins(doc)
     _configure_styles(doc)
+    _fix_compat_settings(doc)
 
     _build_cover_page(doc, destination, client_name, requirements,
                       stay_requirements=stay_requirements,

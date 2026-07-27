@@ -277,6 +277,15 @@ def _micro_gap(doc: Document) -> None:
     sp.set(qn("w:line"), "1")
     sp.set(qn("w:lineRule"), "exact")
     pPr.append(sp)
+    # 1pt paragraph-mark font eliminates Word's font-size floor on exact line height
+    rPr = OxmlElement("w:rPr")
+    sz = OxmlElement("w:sz")
+    sz.set(qn("w:val"), "2")
+    szCs = OxmlElement("w:szCs")
+    szCs.set(qn("w:val"), "2")
+    rPr.append(sz)
+    rPr.append(szCs)
+    pPr.append(rPr)
 
 
 def _page_break(doc: Document) -> None:

@@ -582,7 +582,7 @@ def _add_hotel_details_table(doc: Document, enriched: EnrichedHotel,
         p = left.paragraphs[0] if i == 0 else left.add_paragraph()
         _sp(p, 10 if i == 0 else 0, 0)
         _line_spacing_15(p)
-        _run(p, f"{label}: ", size=10, bold=False, color=theme.primary)
+        _run(p, f"{label}: ", size=10, bold=True, color=theme.primary)
         _run(p, value, size=10, color=theme.primary)
 
     right_rows = [
@@ -635,7 +635,7 @@ def _add_hotel_details_table_unenriched(doc: Document, hotel: HotelRow,
         p = left.paragraphs[0] if i == 0 else left.add_paragraph()
         _sp(p, 10 if i == 0 else 0, 0)
         _line_spacing_15(p)
-        _run(p, f"{label}: ", size=10, bold=False, color=theme.primary)
+        _run(p, f"{label}: ", size=10, bold=True, color=theme.primary)
         _run(p, value, size=10, color=theme.primary)
 
     p = right.paragraphs[0]

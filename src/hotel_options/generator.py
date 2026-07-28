@@ -288,6 +288,23 @@ def _micro_gap(doc: Document) -> None:
     pPr.append(rPr)
 
 
+def _spaced_gap(doc: Document, after_pts: float) -> None:
+    """Zero-height paragraph producing exactly `after_pts` of vertical space after itself."""
+    p = doc.add_paragraph()
+    pPr = p._p.get_or_add_pPr()
+    sp = OxmlElement("w:spacing")
+    sp.set(qn("w:before"), "0")
+    sp.set(qn("w:after"), str(int(after_pts * 20)))
+    sp.set(qn("w:line"), "1")
+    sp.set(qn("w:lineRule"), "exact")
+    pPr.append(sp)
+    rPr = OxmlElement("w:rPr")
+    sz = OxmlElement("w:sz"); sz.set(qn("w:val"), "2")
+    szCs = OxmlElement("w:szCs"); szCs.set(qn("w:val"), "2")
+    rPr.append(sz); rPr.append(szCs)
+    pPr.append(rPr)
+
+
 def _page_break(doc: Document) -> None:
     p = doc.add_paragraph()
     _sp(p, 0, 0)
@@ -324,12 +341,20 @@ def _add_trip_snapshot(doc: Document, destination: str, requirements: str,
     for part in raw_parts:
         req_lines.extend(s.strip() for s in _re.split(r'\s*-\s+', part) if s.strip())
     travellers = next((l for l in req_lines if _re.search(r'\d+\s+adult', l, _re.I)), "")
-    rooms      = next((l for l in req_lines if _re.search(r'\d+\s+room', l, _re.I)), "")
+    _room_match = next(
+        (_re.search(r'(\d+)\s+rooms?', l, _re.I) for l in req_lines
+         if _re.search(r'\d+\s+rooms?', l, _re.I)), None
+    )
+    if _room_match:
+        _n = int(_room_match.group(1))
+        rooms = f"{_n} Room{'s' if _n != 1 else ''}"
+    else:
+        rooms = "1 Room"
 
     data = [
         ("DESTINATION", destination),
         ("TRAVELLERS",  travellers or "—"),
-        ("ROOMS",       rooms or "—"),
+        ("ROOMS",       rooms),
         ("PREFERENCES", stay_requirements or "—"),
     ]
 
@@ -547,7 +572,7 @@ def _add_hotel_photo(doc: Document, photo_bytes: bytes | None) -> None:
 
 
 def _add_hotel_details_table(doc: Document, enriched: EnrichedHotel,
-                              theme: Theme):
+                              theme: Theme) -> None:
     """2-col HOTEL DETAILS table: Stay/Rating/Flexibility/Includes left, Room/Address/Phone right."""
     table = doc.add_table(rows=2, cols=2)
     table.autofit = False
@@ -600,11 +625,9 @@ def _add_hotel_details_table(doc: Document, enriched: EnrichedHotel,
         _run(p, f"{label}: ", size=10, bold=True, color=theme.primary)
         _run(p, value, size=10, color=theme.primary)
 
-    return table
-
 
 def _add_hotel_details_table_unenriched(doc: Document, hotel: HotelRow,
-                                         theme: Theme):
+                                         theme: Theme) -> None:
     """Fallback 2-col details table when Google Places enrichment is unavailable."""
     table = doc.add_table(rows=2, cols=2)
     table.autofit = False
@@ -649,33 +672,54 @@ def _add_hotel_details_table_unenriched(doc: Document, hotel: HotelRow,
     _run(p, "Room: ", size=10, bold=True, color=theme.primary)
     _run(p, hotel.room_type or "—", size=10, color=theme.primary)
 
-    return table
 
+def _add_pricing_summary_table(doc: Document, hotel: HotelRow, theme: Theme) -> None:
+    """Separate PRICING SUMMARY table: themed header + 3-column price row."""
+    table = doc.add_table(rows=2, cols=3)
+    table.autofit = False
+    _tbl_outer_borders(table, _OUTER_BORDER_HEX, sz=4)
+    col_w = Inches(7.0 / 3)
+    for row in table.rows:
+        for cell in row.cells:
+            cell.width = col_w
 
-def _append_price_row(table, hotel: HotelRow, theme: Theme) -> None:
-    """Append a full-width price row to an existing hotel details table."""
-    price_row = table.add_row()
-    price_cell = price_row.cells[0].merge(price_row.cells[1])
-    _shade_cell(price_cell, theme.light_hex)
-    _set_cell_margins(price_cell, 5.4, 5.4, 7.2, 5.4)
-    _cell_borders(price_cell,
-                  (4, theme.border_hex), (8, theme.border_hex),
-                  (8, theme.border_hex), (8, theme.border_hex))
+    hdr = table.rows[0].cells[0].merge(table.rows[0].cells[2])
+    _shade_cell(hdr, theme.header_hex)
+    _set_cell_margins(hdr, 7.2, 7.2, 0, 7.2)
+    _cell_borders(hdr, (8, theme.header_hex), (8, theme.header_hex),
+                  (8, theme.header_hex), (8, theme.header_hex))
+    hp = hdr.paragraphs[0]
+    _sp(hp, 0, 0)
+    _run(hp, "PRICING SUMMARY", size=10, color=_WHITE)
 
     our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
-    pp = price_cell.paragraphs[0]
-    _sp(pp, 0, 0)
-    _line_spacing_15(pp)
-    _run(pp, "Best Online Price: ", size=10, bold=True, color=theme.primary)
-    _run(pp, format_indian_number(hotel.online_price), size=10, color=theme.primary)
-    _run(pp, "   •   ", size=10, color=theme.secondary)
-    _run(pp, "Our Price: ", size=10, bold=True, color=theme.primary)
-    _run(pp, format_indian_number(our_price), size=10, color=theme.primary)
-    if hotel.customer_discount > 0:
-        _run(pp, "   •   ", size=10, color=theme.secondary)
-        _run(pp, "You Save: ", size=10, bold=True, color=theme.primary)
-        _run(pp, f"{format_indian_number(hotel.customer_discount)} ({hotel.discount_pct:.1f}% off)",
-             size=10, color=theme.primary)
+    you_save_str = (
+        f"{format_indian_number(hotel.customer_discount)} ({hotel.discount_pct:.1f}% off)"
+        if hotel.customer_discount > 0 else "—"
+    )
+    row1 = table.rows[1]
+    cols_data = [
+        (row1.cells[0], "Best Online Price", format_indian_number(hotel.online_price),
+         theme.light_hex, True, False, theme.primary),
+        (row1.cells[1], "Our Price", format_indian_number(our_price),
+         theme.details_right_hex, False, False, theme.primary),
+        (row1.cells[2], "You Save", you_save_str,
+         theme.light_hex, False, True,
+         _GREEN if hotel.customer_discount > 0 else theme.primary),
+    ]
+
+    for cell, label, value, bg, is_first, is_last, val_color in cols_data:
+        _shade_cell(cell, bg)
+        _set_cell_margins(cell, 5.4, 5.4, 7.2, 5.4)
+        left_b  = (8, theme.border_hex) if is_first else "nil"
+        right_b = (8, theme.border_hex) if is_last  else (4, theme.border_hex)
+        _cell_borders(cell, "nil", (8, theme.border_hex), left_b, right_b)
+
+        pp = cell.paragraphs[0]
+        _sp(pp, 0, 0)
+        _line_spacing_15(pp)
+        _run(pp, f"{label}: ", size=10, bold=True, color=theme.primary)
+        _run(pp, value, size=10, bold=(val_color == _GREEN), color=val_color)
 
 
 def _add_marinas_take(doc: Document, description: str, theme: Theme) -> None:
@@ -1142,14 +1186,15 @@ def _build_grouped_sections(doc: Document, plans: list[Plan],
                                  recommended=hotel.recommended)
             if enriched:
                 _add_hotel_photo(doc, enriched.photo_bytes)
-                details_tbl = _add_hotel_details_table(doc, enriched, t)
-                _append_price_row(details_tbl, hotel, t)
-                p = doc.add_paragraph()
-                _sp(p, 4, 0)
+                _add_hotel_details_table(doc, enriched, t)
+                _spaced_gap(doc, 6)
+                _add_pricing_summary_table(doc, hotel, t)
+                _spaced_gap(doc, 6)
                 _add_marinas_take(doc, enriched.description, t)
             else:
-                details_tbl = _add_hotel_details_table_unenriched(doc, hotel, t)
-                _append_price_row(details_tbl, hotel, t)
+                _add_hotel_details_table_unenriched(doc, hotel, t)
+                _spaced_gap(doc, 6)
+                _add_pricing_summary_table(doc, hotel, t)
             if hotel.why_recommend:
                 p = doc.add_paragraph()
                 _sp(p, 6, 0)

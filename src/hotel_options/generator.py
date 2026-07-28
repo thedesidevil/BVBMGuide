@@ -604,7 +604,7 @@ def _add_hotel_details_table(doc: Document, enriched: EnrichedHotel,
 def _add_hotel_details_table_unenriched(doc: Document, hotel: HotelRow,
                                          theme: Theme) -> None:
     """Fallback 2-col details table when Google Places enrichment is unavailable."""
-    table = doc.add_table(rows=2, cols=2)
+    table = doc.add_table(rows=3, cols=2)
     table.autofit = False
     _tbl_outer_borders(table, _OUTER_BORDER_HEX, sz=4)
     for row in table.rows:
@@ -646,6 +646,29 @@ def _add_hotel_details_table_unenriched(doc: Document, hotel: HotelRow,
     _line_spacing_15(p)
     _run(p, "Room: ", size=10, bold=True, color=theme.primary)
     _run(p, hotel.room_type or "—", size=10, color=theme.primary)
+
+    # Price row — full-width, separated by a thin top border
+    price_cell = table.rows[2].cells[0].merge(table.rows[2].cells[1])
+    _shade_cell(price_cell, theme.light_hex)
+    _set_cell_margins(price_cell, 5.4, 5.4, 7.2, 5.4)
+    _cell_borders(price_cell,
+                  (4, theme.border_hex), (8, theme.border_hex),
+                  (8, theme.border_hex), (8, theme.border_hex))
+
+    our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
+    pp = price_cell.paragraphs[0]
+    _sp(pp, 0, 0)
+    _line_spacing_15(pp)
+    _run(pp, "Best Online Price: ", size=10, bold=True, color=theme.primary)
+    _run(pp, format_indian_number(hotel.online_price), size=10, color=theme.primary)
+    _run(pp, "   •   ", size=10, color=theme.secondary)
+    _run(pp, "Our Price: ", size=10, bold=True, color=theme.primary)
+    _run(pp, format_indian_number(our_price), size=10, color=theme.primary)
+    if hotel.customer_discount > 0:
+        _run(pp, "   •   ", size=10, color=theme.secondary)
+        _run(pp, "You Save: ", size=10, bold=True, color=theme.primary)
+        _run(pp, f"{format_indian_number(hotel.customer_discount)} ({hotel.discount_pct:.1f}% off)",
+             size=10, color=theme.primary)
 
 
 def _add_marinas_take(doc: Document, description: str, theme: Theme) -> None:
@@ -1123,9 +1146,6 @@ def _build_grouped_sections(doc: Document, plans: list[Plan],
                 _sp(p, 6, 0)
                 _add_why_recommend_hotel_box(doc, hotel.why_recommend, t)
 
-        # Per-section price summary on its own page (navy theme)
-        _page_break(doc)
-        _add_price_summary(doc, plan, theme_index=0)
 
 
 def _fix_compat_settings(doc: Document) -> None:

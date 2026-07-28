@@ -20,7 +20,7 @@ def _strip_recommended(s: str) -> tuple[str, bool]:
         return _RECOMMENDED_RE.sub('', s).strip(), True
     return s, False
 _FILENAME_RE = re.compile(
-    r'(?:copy\s+of\s+)?(?:DO NOT SHARE[\s_]+)?([^_]+)_Accommodation Options_([^_.]+)',
+    r'(?:copy\s+of\s+)?(?:DO NOT SHARE[\s_]+)?(?:Plans?\s+)?([^_]+)_Accommodation Options_([^_.]+)',
     re.IGNORECASE,
 )
 _TRAILING_COPY_NUM_RE = re.compile(r'\s*\(\d+\)\s*$')
@@ -73,23 +73,33 @@ def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode]]:
     unknown_codes: list[UnknownCode] = []
     current_label: str | None = None
     current_hotels: list[HotelRow] = []
+    current_section_dates: str = ""
+    current_city: str = ""
     running_online = 0.0
     running_b2b = 0.0
+    running_discount = 0.0
+    running_discounted = 0.0
 
     def _flush():
-        nonlocal current_label, current_hotels, running_online, running_b2b
+        nonlocal current_label, current_hotels, current_section_dates, current_city
+        nonlocal running_online, running_b2b, running_discount, running_discounted
         if not current_hotels:
             current_label = None
             current_hotels = []
+            current_section_dates = ""
+            current_city = ""
             running_online = 0.0
             running_b2b = 0.0
+            running_discount = 0.0
+            running_discounted = 0.0
             return
+        pct = (running_discount / running_online * 100) if running_online else 0.0
         pricing = PlanPricing(
             total_online_price=running_online,
             total_b2b_price=running_b2b,
-            customer_discount=0.0,
-            discounted_price=running_online,
-            discount_pct=0.0,
+            customer_discount=running_discount,
+            discounted_price=running_discounted,
+            discount_pct=pct,
         )
         all_plans.append(Plan(
             label=current_label if current_label is not None else "All Hotels",
@@ -98,8 +108,12 @@ def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode]]:
         ))
         current_label = None
         current_hotels = []
+        current_section_dates = ""
+        current_city = ""
         running_online = 0.0
         running_b2b = 0.0
+        running_discount = 0.0
+        running_discounted = 0.0
 
     for row in ws.iter_rows():
         cell_a = row[0]
@@ -115,6 +129,14 @@ def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode]]:
         if val_a and _numeric(col_i_val) is None and not _PLAN_RE.match(str_a) and cell_a.row > 1:
             _flush()
             current_label = str_a
+            m = _SECTION_DATE_RE.search(str_a)
+            if m:
+                raw = m.group(1).strip()
+                current_section_dates = re.sub(r'(\S)-', r'\1 -', raw)
+                current_city = re.sub(r'\s*\(.*\)\s*$', '', str_a).strip()
+            else:
+                current_section_dates = ""
+                current_city = str_a
             continue
 
         # Hotel row: col A non-empty, col I numeric
@@ -134,6 +156,8 @@ def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode]]:
             pct = col_n if col_n is not None else (discount / online * 100 if online else 0.0)
             running_online += online
             running_b2b += b2b
+            running_discount += discount
+            running_discounted += discounted
             why = str(row[17].value).strip() if len(row) > 17 and row[17].value else ""
             current_hotels.append(HotelRow(
                 name=hotel_name,
@@ -142,7 +166,8 @@ def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode]]:
                 cancellation=decoded.cancellation,
                 meal_type=decoded.meal_type,
                 online_price=online,
-                dates="",
+                dates=current_section_dates,
+                city=current_city,
                 customer_discount=discount,
                 discounted_price=discounted,
                 discount_pct=pct,

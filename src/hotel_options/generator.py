@@ -2,6 +2,7 @@ from __future__ import annotations
 import io
 import re
 import urllib.parse
+from dataclasses import dataclass
 
 from docx import Document
 from docx.shared import Inches, Pt, RGBColor
@@ -10,33 +11,74 @@ from docx.enum.table import WD_ALIGN_VERTICAL
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
-from src.hotel_options.models import Plan, EnrichedHotel
-
-# ── Design constants ──────────────────────────────────────────────────────────
-_CHARCOAL = RGBColor(0x2D, 0x2D, 0x2D)
-_GREY     = RGBColor(0x66, 0x66, 0x66)
-_GREEN    = RGBColor(0x2E, 0x7D, 0x32)
-_AMBER    = RGBColor(0xC7, 0x78, 0x00)
-_LINK     = RGBColor(0x11, 0x55, 0xCC)
-_WHITE    = RGBColor(0xFF, 0xFF, 0xFF)
-
-_FONT = "Arial"
-
-_LIGHT_GREY = "F2F2F2"
-_ROW_ALT    = "F7F7F7"
-_RULE_COLOR = "CCCCCC"
-_HDR_BG     = "1F497D"  # dark navy blue
-
-_MARGIN = Inches(0.75)
+from src.hotel_options.models import Plan, EnrichedHotel, HotelRow
 
 
-def _star_suffix(category: str) -> str:
-    """Return ' (4*)' from a category string like '4-Star Hotel', or '' if no digit found."""
-    m = re.search(r'(\d)', category or "")
-    return f" ({m.group(1)}*)" if m else ""
+# ── Theme system ──────────────────────────────────────────────────────────────
+
+@dataclass
+class Theme:
+    header_hex: str
+    light_hex: str
+    marinas_hex: str
+    border_hex: str
+    details_right_hex: str
+    secondary_hex: str
+    primary: RGBColor
+    secondary: RGBColor
+    accent: RGBColor
 
 
-# ── Low-level helpers ─────────────────────────────────────────────────────────
+_THEME_NAVY = Theme(
+    header_hex="1F3A5F",
+    light_hex="F3F7FB",
+    marinas_hex="F3F7FB",
+    border_hex="B8C7D9",
+    details_right_hex="FAFCFE",
+    secondary_hex="5E789A",
+    primary=RGBColor(0x1F, 0x3A, 0x5F),
+    secondary=RGBColor(0x5E, 0x78, 0x9A),
+    accent=RGBColor(0x2E, 0x86, 0xC1),
+)
+
+_THEME_GOLD = Theme(
+    header_hex="8A6D2F",
+    light_hex="FBF6EA",
+    marinas_hex="FFFDF7",
+    border_hex="E5D6B8",
+    details_right_hex="FFFDF7",
+    secondary_hex="C77800",
+    primary=RGBColor(0x8A, 0x6D, 0x2F),
+    secondary=RGBColor(0xC7, 0x78, 0x00),
+    accent=RGBColor(0xC7, 0x78, 0x00),
+)
+
+
+def _theme(index: int) -> Theme:
+    return _THEME_NAVY if index % 2 == 0 else _THEME_GOLD
+
+
+# ── Shared constants ──────────────────────────────────────────────────────────
+
+_CHARCOAL     = RGBColor(0x2D, 0x2D, 0x2D)
+_GREY         = RGBColor(0x66, 0x66, 0x66)
+_GREEN        = RGBColor(0x2E, 0x7D, 0x32)
+_WHITE        = RGBColor(0xFF, 0xFF, 0xFF)
+_NAVY         = RGBColor(0x1F, 0x3A, 0x5F)
+_GOLD         = RGBColor(0x8A, 0x6D, 0x2F)
+_AMBER        = RGBColor(0xC7, 0x78, 0x00)
+_SAVINGS_BG      = "EAF4EA"
+_REC_BANNER_BG   = "FBF6EA"
+_WHITE_BG        = "FFFFFF"
+_RULE_COLOR      = "CCCCCC"
+_OUTER_BORDER_HEX = "95B3D7"
+_AMBER_BORDER_HEX = "C77800"
+_SNAP_CELL_BORDER = "D9D2C3"
+_FONT         = "Georgia"
+_MARGIN       = Inches(0.75)
+
+
+# ── Number formatting ─────────────────────────────────────────────────────────
 
 def format_indian_number(amount: float) -> str:
     n = int(round(amount))
@@ -54,6 +96,14 @@ def format_indian_number(amount: float) -> str:
     return f"₹{','.join(groups)},{last3}"
 
 
+def _star_category(category: str) -> str:
+    """'4-Star Hotel' → '4-star', '3 Star' → '3-star', else ''."""
+    m = re.search(r'(\d)', category or "")
+    return f"{m.group(1)}-star" if m else ""
+
+
+# ── Document setup ────────────────────────────────────────────────────────────
+
 def _set_margins(doc: Document) -> None:
     for section in doc.sections:
         section.top_margin    = _MARGIN
@@ -63,163 +113,52 @@ def _set_margins(doc: Document) -> None:
 
 
 def _configure_styles(doc: Document) -> None:
-    """Set Arial as the universal font and define heading hierarchy."""
     normal = doc.styles["Normal"]
     normal.font.name  = _FONT
     normal.font.size  = Pt(11)
     normal.font.color.rgb = _CHARCOAL
-    normal.paragraph_format.space_after      = Pt(8)
+    normal.paragraph_format.space_after  = Pt(0)
+    normal.paragraph_format.left_indent  = Pt(0)
     normal.paragraph_format.line_spacing_rule = WD_LINE_SPACING.MULTIPLE
-    normal.paragraph_format.line_spacing      = 1.15
+    normal.paragraph_format.line_spacing = 1.15
 
-    # Title — cover page title (26 pt bold centered)
-    title = doc.styles["Title"]
-    title.font.name  = _FONT
-    title.font.size  = Pt(26)
-    title.font.bold  = True
-    title.font.color.rgb = _CHARCOAL
-    title.paragraph_format.alignment   = WD_ALIGN_PARAGRAPH.CENTER
-    title.paragraph_format.space_after = Pt(10)
-
-    # Heading 1 — major sections: Executive Summary, Plan A / B / C …
     h1 = doc.styles["Heading 1"]
-    h1.font.name  = _FONT
-    h1.font.size  = Pt(16)
-    h1.font.bold  = True
-    h1.font.color.rgb = _CHARCOAL
+    h1.font.name  = "Georgia"
+    h1.font.size  = Pt(20)
+    h1.font.bold  = False
+    h1.font.color.rgb = _NAVY
     h1.paragraph_format.space_before = Pt(0)
-    h1.paragraph_format.space_after  = Pt(4)
-
-    # Heading 2 — hotel names
-    h2 = doc.styles["Heading 2"]
-    h2.font.name  = _FONT
-    h2.font.size  = Pt(14)
-    h2.font.bold  = True
-    h2.font.color.rgb = _CHARCOAL
-    h2.paragraph_format.space_before = Pt(4)
-    h2.paragraph_format.space_after  = Pt(6)
-
-    # Heading 3 — sub-labels (cover subtitle, etc.)
-    h3 = doc.styles["Heading 3"]
-    h3.font.name   = _FONT
-    h3.font.size   = Pt(12)
-    h3.font.bold   = False
-    h3.font.italic = True
-    h3.font.color.rgb = _GREY
-    h3.paragraph_format.alignment   = WD_ALIGN_PARAGRAPH.CENTER
-    h3.paragraph_format.space_after = Pt(8)
+    h1.paragraph_format.space_after  = Pt(6)
+    h1.paragraph_format.left_indent  = Pt(0)
 
 
-def _fix_fonts(para) -> None:
-    """Force Arial on every run — overrides Calibri theme font from template."""
-    for run in para.runs:
-        run.font.name = _FONT
+# ── Low-level helpers ─────────────────────────────────────────────────────────
 
-
-def _heading(doc: Document, text: str, level: int,
-             align: WD_ALIGN_PARAGRAPH | None = None):
-    """Add a heading paragraph with guaranteed Arial font on all runs."""
-    p = doc.add_heading(text, level=level)
-    if align is not None:
-        p.alignment = align
-    _fix_fonts(p)
-    return p
-
-
-def _spacing(para, before: float = 0, after: float = 8) -> None:
-    fmt = para.paragraph_format
-    fmt.space_before      = Pt(before)
-    fmt.space_after       = Pt(after)
-    fmt.line_spacing_rule = WD_LINE_SPACING.MULTIPLE
-    fmt.line_spacing      = 1.15
-
-
-def _body_run(para, text: str, *, bold=False, italic=False,
-              size: float = 11, color: RGBColor = _CHARCOAL) -> None:
-    r = para.add_run(text)
-    r.bold           = bold
-    r.italic         = italic
-    r.font.name      = _FONT
-    r.font.size      = Pt(size)
-    r.font.color.rgb = color
-
-
-def _thin_rule(doc: Document, before: float = 4, after: float = 4,
-               color: str = _RULE_COLOR) -> None:
-    """Table-based horizontal rule — survives copy-paste into Google Docs."""
-    def _spacer(pts: float) -> None:
+def _blank(doc: Document, n: int = 1) -> None:
+    for _ in range(n):
         p = doc.add_paragraph()
-        fmt = p.paragraph_format
-        fmt.space_before      = Pt(0)
-        fmt.space_after       = Pt(pts)
-        fmt.line_spacing_rule = WD_LINE_SPACING.EXACTLY
-        fmt.line_spacing      = Pt(1)
-
-    if before > 0:
-        _spacer(before)
-
-    table = doc.add_table(rows=1, cols=1)
-    table.autofit = False
-    _no_borders(table)
-
-    # Minimal row height
-    trPr = table.rows[0]._tr.get_or_add_trPr()
-    trh = OxmlElement("w:trHeight")
-    trh.set(qn("w:val"), "1")
-    trh.set(qn("w:hRule"), "exact")
-    trPr.append(trh)
-
-    cell = table.rows[0].cells[0]
-    cell.width = Inches(7.0)
-
-    tc = cell._tc
-    tcPr = tc.get_or_add_tcPr()
-
-    # Zero cell margins
-    tcMar = OxmlElement("w:tcMar")
-    for side in ("top", "left", "bottom", "right"):
-        m = OxmlElement(f"w:{side}")
-        m.set(qn("w:w"), "0")
-        m.set(qn("w:type"), "dxa")
-        tcMar.append(m)
-    tcPr.append(tcMar)
-
-    # Only bottom border visible
-    tcBorders = OxmlElement("w:tcBorders")
-    for side in ("top", "left", "right"):
-        el = OxmlElement(f"w:{side}")
-        el.set(qn("w:val"), "none")
-        el.set(qn("w:sz"), "0")
-        el.set(qn("w:space"), "0")
-        el.set(qn("w:color"), "auto")
-        tcBorders.append(el)
-    b = OxmlElement("w:bottom")
-    b.set(qn("w:val"), "single")
-    b.set(qn("w:sz"), "4")
-    b.set(qn("w:space"), "0")
-    b.set(qn("w:color"), color)
-    tcBorders.append(b)
-    tcPr.append(tcBorders)
-
-    # Minimal paragraph inside cell
-    cp = cell.paragraphs[0]
-    fmt = cp.paragraph_format
-    fmt.space_before      = Pt(0)
-    fmt.space_after       = Pt(0)
-    fmt.line_spacing_rule = WD_LINE_SPACING.EXACTLY
-    fmt.line_spacing      = Pt(1)
-
-    if after > 0:
-        _spacer(after)
+        _sp(p, 0, 0)
 
 
-def _page_break(doc: Document) -> None:
-    p = doc.add_paragraph()
-    _spacing(p, 0, 0)
-    run = p.add_run()
-    br = OxmlElement("w:br")
-    br.set(qn("w:type"), "page")
-    run._r.append(br)
+def _sp(para, before: float = 0, after: float = 0) -> None:
+    fmt = para.paragraph_format
+    if before:
+        fmt.space_before = Pt(before)
+    fmt.space_after = Pt(after)
+
+
+def _run(para, text: str, *, font: str = _FONT, size: float | None = None,
+         bold: bool = False, italic: bool = False,
+         color: RGBColor = _CHARCOAL) -> None:
+    r = para.add_run(text)
+    if bold:
+        r.bold = True
+    if italic:
+        r.italic = True
+    r.font.name      = font
+    if size is not None:
+        r.font.size = Pt(size)
+    r.font.color.rgb = color
 
 
 def _shade_cell(cell, hex_color: str) -> None:
@@ -231,6 +170,38 @@ def _shade_cell(cell, hex_color: str) -> None:
     tcPr.append(shd)
 
 
+def _set_cell_margins(cell, top: float, left: float,
+                      bottom: float, right: float) -> None:
+    """Set cell padding in pt (converted to twips internally)."""
+    tcPr = cell._tc.get_or_add_tcPr()
+    tcMar = OxmlElement("w:tcMar")
+    for side, val in [("top", top), ("left", left),
+                      ("bottom", bottom), ("right", right)]:
+        m = OxmlElement(f"w:{side}")
+        m.set(qn("w:w"), str(int(val * 20)))
+        m.set(qn("w:type"), "dxa")
+        tcMar.append(m)
+    tcPr.append(tcMar)
+
+
+def _pin_table_left(table) -> None:
+    """Set explicit tblW + tblInd=0 so the table left-aligns with body text.
+    tblInd must precede tblBorders in the schema, so insert at position 1."""
+    tbl_pr = table._tbl.tblPr
+    for existing in tbl_pr.findall(qn("w:tblW")):
+        tbl_pr.remove(existing)
+    tblW = OxmlElement("w:tblW")
+    tblW.set(qn("w:w"), "10080")  # 7.0 in × 1440 dxa/in = full text column
+    tblW.set(qn("w:type"), "dxa")
+    tbl_pr.insert(0, tblW)
+    for existing in tbl_pr.findall(qn("w:tblInd")):
+        tbl_pr.remove(existing)
+    tblInd = OxmlElement("w:tblInd")
+    tblInd.set(qn("w:w"), "0")
+    tblInd.set(qn("w:type"), "dxa")
+    tbl_pr.insert(1, tblInd)  # must come before tblBorders per OOXML schema
+
+
 def _no_borders(table) -> None:
     tbl_pr = table._tbl.tblPr
     for existing in tbl_pr.findall(qn("w:tblBorders")):
@@ -238,7 +209,7 @@ def _no_borders(table) -> None:
     tbl_borders = OxmlElement("w:tblBorders")
     for name in ("top", "left", "bottom", "right", "insideH", "insideV"):
         b = OxmlElement(f"w:{name}")
-        b.set(qn("w:val"), "none")
+        b.set(qn("w:val"), "nil")
         tbl_borders.append(b)
     tbl_pr.append(tbl_borders)
 
@@ -247,6 +218,8 @@ def _thin_borders(table) -> None:
     for row in table.rows:
         for cell in row.cells:
             tcPr = cell._tc.get_or_add_tcPr()
+            for existing in tcPr.findall(qn("w:tcBorders")):
+                tcPr.remove(existing)
             tcBorders = OxmlElement("w:tcBorders")
             for side in ("top", "left", "bottom", "right"):
                 b = OxmlElement(f"w:{side}")
@@ -257,58 +230,195 @@ def _thin_borders(table) -> None:
             tcPr.append(tcBorders)
 
 
+def _tbl_outer_borders(table, hex_color: str = "95B3D7", sz: int = 4) -> None:
+    """Apply table-level single borders on all sides and inside grid lines."""
+    tbl_pr = table._tbl.tblPr
+    for existing in tbl_pr.findall(qn("w:tblBorders")):
+        tbl_pr.remove(existing)
+    tbl_borders = OxmlElement("w:tblBorders")
+    for name in ("top", "left", "bottom", "right", "insideH", "insideV"):
+        b = OxmlElement(f"w:{name}")
+        b.set(qn("w:val"), "single")
+        b.set(qn("w:sz"), str(sz))
+        b.set(qn("w:color"), hex_color)
+        tbl_borders.append(b)
+    tbl_pr.append(tbl_borders)
+
+
+def _cell_borders(cell, top=None, bottom=None, left=None, right=None) -> None:
+    """Set cell-level borders. Each side: 'nil' = no border, (sz, hex) = single, None = skip."""
+    tcPr = cell._tc.get_or_add_tcPr()
+    for existing in tcPr.findall(qn("w:tcBorders")):
+        tcPr.remove(existing)
+    tb = OxmlElement("w:tcBorders")
+    for side, spec in [("top", top), ("bottom", bottom), ("left", left), ("right", right)]:
+        b = OxmlElement(f"w:{side}")
+        if spec == "nil":
+            b.set(qn("w:val"), "nil")
+            tb.append(b)
+        elif spec is not None:
+            sz, color = spec
+            b.set(qn("w:val"), "single")
+            b.set(qn("w:sz"), str(sz))
+            b.set(qn("w:space"), "0")
+            b.set(qn("w:color"), color)
+            tb.append(b)
+    if len(tb):
+        tcPr.append(tb)
+
+
+def _micro_gap(doc: Document) -> None:
+    """Near-zero-height separator between adjacent tables; suppresses all spacing."""
+    p = doc.add_paragraph()
+    pPr = p._p.get_or_add_pPr()
+    sp = OxmlElement("w:spacing")
+    sp.set(qn("w:before"), "0")
+    sp.set(qn("w:after"), "0")
+    sp.set(qn("w:line"), "1")
+    sp.set(qn("w:lineRule"), "exact")
+    pPr.append(sp)
+    # 1pt paragraph-mark font eliminates Word's font-size floor on exact line height
+    rPr = OxmlElement("w:rPr")
+    sz = OxmlElement("w:sz")
+    sz.set(qn("w:val"), "2")
+    szCs = OxmlElement("w:szCs")
+    szCs.set(qn("w:val"), "2")
+    rPr.append(sz)
+    rPr.append(szCs)
+    pPr.append(rPr)
+
+
+def _spaced_gap(doc: Document, after_pts: float) -> None:
+    """Zero-height paragraph producing exactly `after_pts` of vertical space after itself."""
+    p = doc.add_paragraph()
+    pPr = p._p.get_or_add_pPr()
+    sp = OxmlElement("w:spacing")
+    sp.set(qn("w:before"), "0")
+    sp.set(qn("w:after"), str(int(after_pts * 20)))
+    sp.set(qn("w:line"), "1")
+    sp.set(qn("w:lineRule"), "exact")
+    pPr.append(sp)
+    rPr = OxmlElement("w:rPr")
+    sz = OxmlElement("w:sz"); sz.set(qn("w:val"), "2")
+    szCs = OxmlElement("w:szCs"); szCs.set(qn("w:val"), "2")
+    rPr.append(sz); rPr.append(szCs)
+    pPr.append(rPr)
+
+
+def _page_break(doc: Document) -> None:
+    p = doc.add_paragraph()
+    _sp(p, 0, 0)
+    run = p.add_run()
+    br = OxmlElement("w:br")
+    br.set(qn("w:type"), "page")
+    run._r.append(br)
+
+
+def _line_spacing_15(para) -> None:
+    pPr = para._p.get_or_add_pPr()
+    sp = pPr.find(qn("w:spacing"))
+    if sp is None:
+        sp = OxmlElement("w:spacing")
+        pPr.append(sp)
+    sp.set(qn("w:line"), "360")
+    sp.set(qn("w:lineRule"), "auto")
+
 
 # ── Cover page helpers ────────────────────────────────────────────────────────
 
-def _georgia(para, text: str, size: float, bold=False, italic=False,
-             color: RGBColor = _CHARCOAL) -> None:
-    r = para.add_run(text)
-    r.bold           = bold
-    r.italic         = italic
-    r.font.name      = "Georgia"
-    r.font.size      = Pt(size)
-    r.font.color.rgb = color
+def _georgia(para, text: str, size: float, bold: bool = False,
+             italic: bool = False, color: RGBColor = _CHARCOAL) -> None:
+    _run(para, text, font="Georgia", size=size, bold=bold, italic=italic, color=color)
 
 
 def _add_trip_snapshot(doc: Document, destination: str, requirements: str,
                        stay_requirements: str = "") -> None:
     import re as _re
-    req_lines  = [r.strip() for r in _re.split(r'[\n,]+', requirements) if r.strip()]
+    # Split on newlines/commas first, then also on dash-separated list items
+    # e.g. "1 room- 2 adults + 1child" → ["1 room", "2 adults + 1child"]
+    raw_parts = [r.strip() for r in _re.split(r'[\n,]+', requirements) if r.strip()]
+    req_lines = []
+    for part in raw_parts:
+        req_lines.extend(s.strip() for s in _re.split(r'\s*-\s+', part) if s.strip())
     travellers = next((l for l in req_lines if _re.search(r'\d+\s+adult', l, _re.I)), "")
+    _room_match = next(
+        (_re.search(r'(\d+)\s+rooms?', l, _re.I) for l in req_lines
+         if _re.search(r'\d+\s+rooms?', l, _re.I)), None
+    )
+    if _room_match:
+        _n = int(_room_match.group(1))
+        rooms = f"{_n} Room{'s' if _n != 1 else ''}"
+    else:
+        rooms = "1 Room"
 
-    rows: list[tuple[str, str]] = [("Destination", destination)]
-    if travellers:
-        rows.append(("Travellers", travellers))
-    if stay_requirements:
-        rows.append(("Stay Requirements", stay_requirements))
+    data = [
+        ("DESTINATION", destination),
+        ("TRAVELLERS",  travellers or "—"),
+        ("ROOMS",       rooms),
+        ("PREFERENCES", stay_requirements or "—"),
+    ]
 
-    table = doc.add_table(rows=1 + len(rows), cols=2)
-    _no_borders(table)
+    _SNAP_HDR = "1F3A5F"
+    _SNAP_ALT = "F7F3EA"
+    _SNAP_LBL = RGBColor(0x8A, 0x6D, 0x2F)
 
-    # Header row — merged, "TRIP SNAPSHOT"
-    hdr = table.rows[0].cells[0].merge(table.rows[0].cells[1])
+    table = doc.add_table(rows=2, cols=4)
+    _tbl_outer_borders(table, _OUTER_BORDER_HEX, sz=4)
+
+    hdr = table.rows[0].cells[0].merge(table.rows[0].cells[3])
+    _shade_cell(hdr, _SNAP_HDR)
+    _set_cell_margins(hdr, 7.2, 7.2, 7.2, 7.2)
+    _cell_borders(hdr, (6, _SNAP_HDR), (6, _SNAP_HDR), (6, _SNAP_HDR), (6, _SNAP_HDR))
     hp = hdr.paragraphs[0]
     hp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    _spacing(hp, 8, 6)
-    _body_run(hp, "TRIP SNAPSHOT", bold=True, size=9, color=_CHARCOAL)
+    _sp(hp, 0, 0)
+    _run(hp, "TRIP SNAPSHOT", font="Georgia", size=10, bold=True, color=_WHITE)
 
-    for i, (label, value) in enumerate(rows):
-        lc = table.rows[i + 1].cells[0]
-        vc = table.rows[i + 1].cells[1]
-        lp = lc.paragraphs[0]
-        _spacing(lp, 3, 3)
-        _body_run(lp, label, bold=True, size=9, color=_GREY)
-        vp = vc.paragraphs[0]
-        _spacing(vp, 3, 3)
-        _body_run(vp, value, size=9, color=_CHARCOAL)
+    for col_idx, (label, value) in enumerate(data):
+        cell = table.rows[1].cells[col_idx]
+        bg = _SNAP_ALT if col_idx % 2 == 0 else "FFFFFF"
+        _shade_cell(cell, bg)
+        _cell_borders(cell, (6, _SNAP_CELL_BORDER), (6, _SNAP_CELL_BORDER),
+                      (6, _SNAP_CELL_BORDER), (6, _SNAP_CELL_BORDER))
+        _set_cell_margins(cell, 7.2, 7.2, 7.2, 7.2)
+        lp = cell.paragraphs[0]
+        _sp(lp, 0, 2)
+        lp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _run(lp, label, font="Georgia", size=9, bold=True, color=_SNAP_LBL)
+        vp = cell.add_paragraph()
+        _sp(vp, 0, 2)
+        vp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _run(vp, value, font="Georgia", size=9, color=_CHARCOAL)
 
-    _thin_borders(table)
+
+def _add_separator_rule(doc: Document) -> None:
+    """Thin horizontal rule — 1×1 full-width table with a navy bottom border."""
+    table = doc.add_table(rows=1, cols=1)
+    tr = table.rows[0]._tr
+    trPr = OxmlElement("w:trPr")
+    trHeight = OxmlElement("w:trHeight")
+    trHeight.set(qn("w:val"), "1")  # 1 twip — minimal visible height
+    trPr.append(trHeight)
+    tr.insert(0, trPr)
+    cell = table.rows[0].cells[0]
+    tcPr = cell._tc.get_or_add_tcPr()
+    # Bottom border only
+    tcBorders = OxmlElement("w:tcBorders")
+    bottom = OxmlElement("w:bottom")
+    bottom.set(qn("w:val"), "single")
+    bottom.set(qn("w:sz"), "4")
+    bottom.set(qn("w:space"), "0")
+    bottom.set(qn("w:color"), "1F497D")
+    tcBorders.append(bottom)
+    tcPr.append(tcBorders)
+    # Zero cell margins so border sits flush
+    _set_cell_margins(cell, 0, 0, 0, 0)
 
 
 def _add_advisor_note(doc: Document, destination: str) -> None:
     p = doc.add_paragraph()
-    _spacing(p, 14, 6)
-    _georgia(p, "A NOTE FROM BON VOYAGE BY MARINA", size=12, bold=True)
+    _sp(p, 14, 6)
+    _georgia(p, "A NOTE FROM BON VOYAGE BY MARINA", size=12, bold=True, color=_NAVY)
 
     note = (
         f"Thank you for giving us the opportunity to assist with your "
@@ -318,450 +428,803 @@ def _add_advisor_note(doc: Document, destination: str) -> None:
         f"We hope this guide helps you choose the stay that is right for you."
     )
     p = doc.add_paragraph()
-    _spacing(p, 0, 8)
-    _body_run(p, note, size=10.5, color=_CHARCOAL)
+    _run(p, note, font="Georgia", color=_NAVY)
 
 
-# ── Cover page ────────────────────────────────────────────────────────────────
+def _add_letterhead_footer(doc: Document, centered: bool = True) -> None:
+    align = WD_ALIGN_PARAGRAPH.CENTER if centered else WD_ALIGN_PARAGRAPH.LEFT
+    for text, size, bold, italic in [
+        ("Bon Voyage By Marina", 12, True, False),
+        ("Bespoke Travel Planning • Premium Stays • Seamless Experiences", 11, False, True),
+        ("\U0001f4de +91 86000 15316 | \U0001f4f8 @bonvoyagebymarina | \U0001f310 www.bonvoyagebymarina.com", 11, False, False),
+    ]:
+        p = doc.add_paragraph()
+        p.alignment = align
+        _sp(p, 12, 12)
+        _run(p, text, font="Georgia", size=size, bold=bold, italic=italic, color=_NAVY)
+    p = doc.add_paragraph()
+    p.alignment = align
+    _sp(p, 12, 12)
+    _run(p, "✈️ ", font="Georgia", size=11, color=_NAVY)
+    _run(p, "Crafting unforgettable journeys, one trip at a time.", font="Georgia", size=11, italic=True, color=_NAVY)
+
 
 def _build_cover_page(doc: Document, destination: str, client_name: str,
                       requirements: str, stay_requirements: str = "",
                       destination_photo: bytes | None = None) -> None:
-    def blank(n: int = 1) -> None:
-        for _ in range(n):
-            p = doc.add_paragraph()
-            _spacing(p, 0, 0)
-
-    # 1. Destination image — full width, ~2.25" tall
     if destination_photo:
         p = doc.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _spacing(p, 0, 0)
-        p.add_run().add_picture(io.BytesIO(destination_photo), width=Inches(6.5))
+        _sp(p, 0, 0)
+        p.add_run().add_picture(io.BytesIO(destination_photo), width=Inches(7.0))
     else:
-        blank(4)
+        _blank(doc, 4)
 
-    blank(2)
+    _blank(doc, 2)
 
-    # 2. Title — Georgia 26pt Bold Centered
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    _spacing(p, 0, 8)
-    _georgia(p, f"{destination.upper()} ACCOMMODATION RECOMMENDATIONS",
-             size=26, bold=True)
+    _sp(p, 0, 10)
+    _georgia(p, f"{destination.upper()} ACCOMMODATION RECOMMENDATIONS", size=26, bold=True, color=_NAVY)
 
-    # 3. Subtitle — Georgia 12pt Italic Centered
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    _spacing(p, 0, 20)
-    _georgia(p, "Curated by Bon Voyage By Marina", size=12, italic=True, color=_GREY)
+    _sp(p, 0, 18)
+    _georgia(p, "Curated by Bon Voyage By Marina", size=13, italic=True, color=_GOLD)
 
-    # 4. Personalization
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    _spacing(p, 0, 6)
-    _georgia(p, "Prepared Exclusively For", size=14, color=_GREY)
+    _sp(p, 0, 4)
+    _georgia(p, "PREPARED EXCLUSIVELY FOR", size=10, color=_GREY)
 
     if client_name:
         p = doc.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _spacing(p, 0, 20)
-        _georgia(p, client_name.upper(), size=14, bold=True)
+        _sp(p, 0, 22)
+        _georgia(p, client_name.upper(), size=18, bold=True, color=_NAVY)
 
-    # 5. Trip Snapshot box
     _add_trip_snapshot(doc, destination, requirements, stay_requirements)
 
-    # 6. Advisor Note — starts on its own page
     _page_break(doc)
     _add_advisor_note(doc, destination)
+    _add_separator_rule(doc)
+    _add_letterhead_footer(doc, centered=True)
 
-    # 7. Bottom branding
-    blank(1)
-    _thin_rule(doc, before=4, after=6, color=_HDR_BG)
 
-    # Replicate BVBM Company Letterhead exactly: Arial 11pt, centered
-    # Line 1: bold
+# ── Thank-you page ────────────────────────────────────────────────────────────
+
+def _build_thank_you_page(doc: Document, destination: str) -> None:
+    _blank(doc, 6)
+
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    _sp(p, 0, 8)
+    _run(p, "Thank You", size=20, bold=True)
+
+    for text in [
+        (
+            f"Thank you for giving Bon Voyage By Marina the opportunity to assist with your {destination} journey. "
+            f"We hope the accommodation options in this document help you find the stay that best matches your travel style, preferences, and budget."
+        ),
+        "Should you wish to explore additional options, alternative locations, upgraded room categories, or other travel arrangements, we would be delighted to assist.",
+        f"We look forward to helping create an unforgettable {destination} experience for you.",
+    ]:
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        _sp(p, 0, 6)
+        _run(p, text, size=11)
+
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    _sp(p, 18, 4)
+    _run(p, "Warm regards,", size=11)
+    _add_letterhead_footer(doc, centered=False)
+
+
+# ── Hotel card components ─────────────────────────────────────────────────────
+
+def _add_hotel_name_card(doc: Document, hotel_name: str, city: str,
+                         category: str, theme: Theme,
+                         recommended: bool = False) -> None:
+    """Full-width themed name card: hotel name (Georgia 14pt bold) + • City • X-star (10pt)."""
+    table = doc.add_table(rows=1, cols=1)
+    table.autofit = False
+    _no_borders(table)
+    cell = table.rows[0].cells[0]
+    cell.width = Inches(7.0)
+    _shade_cell(cell, theme.light_hex)
+    _set_cell_margins(cell, 6, 6, 6, 6)
+    _cell_borders(cell, (8, theme.header_hex), (8, theme.header_hex),
+                  (36, theme.header_hex), (8, theme.header_hex))
+
+    p = cell.paragraphs[0]
+    _sp(p, 0, 2)
+    r = p.add_run(hotel_name)
+    r.font.name      = "Georgia"
+    r.font.size      = Pt(14)
+    r.font.bold      = True
+    r.font.color.rgb = theme.primary
+
+    if recommended:
+        rec = p.add_run("  ★ RECOMMENDED")
+        rec.font.name      = "Georgia"
+        rec.font.size      = Pt(10)
+        rec.font.bold      = True
+        rec.font.color.rgb = _AMBER
+
+    star = _star_category(category)
+    parts = " • ".join(x for x in [city, star] if x)
+    if parts:
+        r2 = p.add_run(f"  •  {parts}")
+        r2.font.size      = Pt(10)
+        r2.font.color.rgb = theme.secondary
+
+
+def _add_hotel_photo(doc: Document, photo_bytes: bytes | None) -> None:
+    """Centred hotel photo (5.0") matching the hand-curated reference layout."""
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    _spacing(p, 12, 12)
-    _body_run(p, "Bon Voyage By Marina", bold=True, size=11, color=_CHARCOAL)
-
-    # Line 2: italic tagline
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    _spacing(p, 12, 12)
-    _body_run(p, "Bespoke Travel Planning • Premium Stays • Seamless Experiences",
-              italic=True, size=11, color=_CHARCOAL)
-
-    # Line 3: contact info
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    _spacing(p, 12, 12)
-    _body_run(p, "\U0001f4de +91 86000 15316 | \U0001f4f8 @bonvoyagebymarina | \U0001f310 www.bonvoyagebymarina.com",
-              size=11, color=_CHARCOAL)
-
-    # Line 4: emoji (plain) + italic tagline
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    _spacing(p, 12, 12)
-    _body_run(p, "✈️ ", size=11, color=_CHARCOAL)
-    _body_run(p, "Crafting unforgettable journeys, one trip at a time.",
-              italic=True, size=11, color=_CHARCOAL)
-
-
-# ── Executive Summary ─────────────────────────────────────────────────────────
-
-def _build_executive_summary(doc: Document, plans: list[Plan],
-                              enriched_map: dict[str, EnrichedHotel],
-                              grouped_by_sections: bool = False) -> None:
-    if not plans:
-        return
-    _heading(doc, "Executive Summary", level=1)
-
-    p = doc.add_paragraph()
-    _spacing(p, 0, 12)
-    _body_run(p, "Compare all accommodation options at a glance.", color=_GREY)
-
-    if grouped_by_sections:
-        _build_exec_summary_by_hotel(doc, plans)
+    _sp(p, 8, 6)
+    if photo_bytes:
+        p.add_run().add_picture(io.BytesIO(photo_bytes), width=Inches(5.0))
     else:
-        _build_exec_summary_by_plan(doc, plans)
-
-    _thin_borders(doc.tables[-1])
+        _run(p, "[ Photo not available ]", size=9, color=_GREY)
 
 
-def _recommended_badge_para(cell, align=WD_ALIGN_PARAGRAPH.LEFT) -> None:
-    """Add a small ★ RECOMMENDED line to a table cell."""
-    p = cell.add_paragraph()
-    p.alignment = align
-    _spacing(p, 2, 0)
-    _body_run(p, "★ RECOMMENDED", bold=True, size=7.5, color=_AMBER)
-
-
-def _recommended_badge_doc(doc: Document) -> None:
-    """Add a small ★ RECOMMENDED paragraph to the document body."""
-    p = doc.add_paragraph()
-    _spacing(p, 0, 6)
-    _body_run(p, "★ RECOMMENDED", bold=True, size=9, color=_AMBER)
-
-
-def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
-    """One row per hotel. Used when the file has section headers instead of PLAN markers."""
-    # Flatten to (section_label, hotel) pairs
-    hotel_rows = [(plan.label, hotel) for plan in plans for hotel in plan.hotels]
-
-    col_labels = ["City / Dates", "Hotel", "Online Price", "Our Price", "You Save"]
-    col_widths = [Inches(1.55), Inches(2.55), Inches(0.9), Inches(0.9), Inches(1.1)]
-
-    table = doc.add_table(rows=1 + len(hotel_rows), cols=len(col_labels))
+def _add_hotel_details_table(doc: Document, enriched: EnrichedHotel,
+                              theme: Theme) -> None:
+    """2-col HOTEL DETAILS table: Stay/Rating/Flexibility/Includes left, Room/Address/Phone right."""
+    table = doc.add_table(rows=2, cols=2)
     table.autofit = False
-    for i, w in enumerate(col_widths):
-        for row in table.rows:
-            row.cells[i].width = w
+    _tbl_outer_borders(table, _OUTER_BORDER_HEX, sz=4)
+    for row in table.rows:
+        for cell in row.cells:
+            cell.width = Inches(3.5)
 
-    for i, label in enumerate(col_labels):
-        cell = table.rows[0].cells[i]
-        _shade_cell(cell, _HDR_BG)
-        cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
-        p = cell.paragraphs[0]
-        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _spacing(p, 0, 0)
-        _body_run(p, label, bold=True, size=9, color=_WHITE)
+    hdr = table.rows[0].cells[0].merge(table.rows[0].cells[1])
+    _shade_cell(hdr, theme.header_hex)
+    _set_cell_margins(hdr, 7.2, 7.2, 0, 7.2)
+    _cell_borders(hdr, (8, theme.header_hex), (8, theme.header_hex),
+                  (8, theme.header_hex), (8, theme.header_hex))
+    hp = hdr.paragraphs[0]
+    _sp(hp, 0, 0)
+    _run(hp, "HOTEL DETAILS", size=10, color=_WHITE)
 
-    # Per-section: track cheapest hotel for BEST PRICE badge
-    section_cheapest: dict[str, float] = {}
-    for label, hotel in hotel_rows:
-        price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
-        if label not in section_cheapest or price < section_cheapest[label]:
-            section_cheapest[label] = price
+    left  = table.rows[1].cells[0]
+    right = table.rows[1].cells[1]
+    _shade_cell(left,  theme.light_hex)
+    _shade_cell(right, theme.details_right_hex)
+    _set_cell_margins(left,  0, 5.4, 0, 5.4)
+    _set_cell_margins(right, 0, 5.4, 0, 5.4)
+    _cell_borders(left,  "nil", (8, theme.border_hex), (8, theme.border_hex), (8, theme.border_hex))
+    _cell_borders(right, "nil", (8, theme.border_hex), "nil",                 (8, theme.border_hex))
 
-    # Alternate shading by section group, not by row index
-    section_colors: dict[str, str] = {}
-    _palette = ["FFFFFF", _ROW_ALT]
-    for label, _ in hotel_rows:
-        if label not in section_colors:
-            section_colors[label] = _palette[len(section_colors) % 2]
+    left_rows = [
+        ("Stay",        enriched.dates or "—"),
+        ("Rating",      f"{enriched.rating}/5 from {enriched.rating_count:,} reviews"
+                        if enriched.rating else "—"),
+        ("Flexibility", enriched.cancellation or "—"),
+        ("Includes",    enriched.meal_type or "—"),
+    ]
+    for i, (label, value) in enumerate(left_rows):
+        p = left.paragraphs[0] if i == 0 else left.add_paragraph()
+        _sp(p, 10 if i == 0 else 0, 0)
+        _line_spacing_15(p)
+        _run(p, f"{label}: ", size=10, bold=True, color=theme.primary)
+        _run(p, value, size=10, color=theme.primary)
 
-    for row_idx, (section_label, hotel) in enumerate(hotel_rows):
-        row = table.rows[row_idx + 1]
-        bg = section_colors[section_label]
-        our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
-        is_cheapest = abs(our_price - section_cheapest[section_label]) < 0.01
-
-        you_save_amount = (
-            format_indian_number(hotel.customer_discount)
-            if hotel.customer_discount > 0 else "—"
-        )
-        you_save_pct = (
-            f"({hotel.discount_pct:.1f}% off)"
-            if hotel.customer_discount > 0 else None
-        )
-
-        col_configs = [
-            (section_label,                                              WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
-            (hotel.name + _star_suffix(hotel.category),                  WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
-            (format_indian_number(hotel.online_price),                   WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
-            (format_indian_number(our_price),                            WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
-            (you_save_amount,                                            WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
-        ]
-
-        for col_idx, (text, align, color, bold) in enumerate(col_configs):
-            cell = row.cells[col_idx]
-            _shade_cell(cell, bg)
-            cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
-            p = cell.paragraphs[0]
-            p.alignment = align
-            _spacing(p, 2, 2)
-            _body_run(p, text, bold=bold, size=9, color=color)
-            if col_idx == 1 and hotel.recommended:
-                _recommended_badge_para(cell, align)
-            if col_idx == 4 and you_save_pct:
-                p2 = cell.add_paragraph()
-                p2.alignment = align
-                _spacing(p2, 0, 2)
-                _body_run(p2, you_save_pct, bold=False, size=8, color=color)
+    right_rows = [
+        ("Room",    enriched.room_type or "—"),
+        ("Address", enriched.address or "—"),
+        ("Phone",   enriched.phone or "—"),
+    ]
+    for i, (label, value) in enumerate(right_rows):
+        p = right.paragraphs[0] if i == 0 else right.add_paragraph()
+        _sp(p, 10 if i == 0 else 0, 0)
+        _line_spacing_15(p)
+        _run(p, f"{label}: ", size=10, bold=True, color=theme.primary)
+        _run(p, value, size=10, color=theme.primary)
 
 
-def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
-    """One row per plan. Used when the file has explicit PLAN A / PLAN B markers."""
+def _add_hotel_details_table_unenriched(doc: Document, hotel: HotelRow,
+                                         theme: Theme) -> None:
+    """Fallback 2-col details table when Google Places enrichment is unavailable."""
+    table = doc.add_table(rows=2, cols=2)
+    table.autofit = False
+    _tbl_outer_borders(table, _OUTER_BORDER_HEX, sz=4)
+    for row in table.rows:
+        for cell in row.cells:
+            cell.width = Inches(3.5)
+
+    hdr = table.rows[0].cells[0].merge(table.rows[0].cells[1])
+    _shade_cell(hdr, theme.header_hex)
+    _set_cell_margins(hdr, 7.2, 7.2, 0, 7.2)
+    _cell_borders(hdr, (8, theme.header_hex), (8, theme.header_hex),
+                  (8, theme.header_hex), (8, theme.header_hex))
+    hp = hdr.paragraphs[0]
+    _sp(hp, 0, 0)
+    _run(hp, "HOTEL DETAILS", size=10, color=_WHITE)
+
+    left  = table.rows[1].cells[0]
+    right = table.rows[1].cells[1]
+    _shade_cell(left,  theme.light_hex)
+    _shade_cell(right, theme.details_right_hex)
+    _set_cell_margins(left,  0, 5.4, 0, 5.4)
+    _set_cell_margins(right, 0, 5.4, 0, 5.4)
+    _cell_borders(left,  "nil", (8, theme.border_hex), (8, theme.border_hex), (8, theme.border_hex))
+    _cell_borders(right, "nil", (8, theme.border_hex), "nil",                 (8, theme.border_hex))
+
+    left_rows = [
+        ("Stay",        hotel.dates or "—"),
+        ("Flexibility", hotel.cancellation or "—"),
+        ("Includes",    hotel.meal_type or "—"),
+    ]
+    for i, (label, value) in enumerate(left_rows):
+        p = left.paragraphs[0] if i == 0 else left.add_paragraph()
+        _sp(p, 10 if i == 0 else 0, 0)
+        _line_spacing_15(p)
+        _run(p, f"{label}: ", size=10, bold=True, color=theme.primary)
+        _run(p, value, size=10, color=theme.primary)
+
+    p = right.paragraphs[0]
+    _sp(p, 10, 0)
+    _line_spacing_15(p)
+    _run(p, "Room: ", size=10, bold=True, color=theme.primary)
+    _run(p, hotel.room_type or "—", size=10, color=theme.primary)
+
+
+def _add_pricing_summary_table(doc: Document, hotel: HotelRow, theme: Theme) -> None:
+    """Separate PRICING SUMMARY table: themed header + 3-column price row."""
+    table = doc.add_table(rows=2, cols=3)
+    table.autofit = False
+    _tbl_outer_borders(table, _OUTER_BORDER_HEX, sz=4)
+    col_w = Inches(7.0 / 3)
+    for row in table.rows:
+        for cell in row.cells:
+            cell.width = col_w
+
+    hdr = table.rows[0].cells[0].merge(table.rows[0].cells[2])
+    _shade_cell(hdr, theme.header_hex)
+    _set_cell_margins(hdr, 7.2, 7.2, 0, 7.2)
+    _cell_borders(hdr, (8, theme.header_hex), (8, theme.header_hex),
+                  (8, theme.header_hex), (8, theme.header_hex))
+    hp = hdr.paragraphs[0]
+    _sp(hp, 0, 0)
+    _run(hp, "PRICING SUMMARY", size=10, color=_WHITE)
+
+    our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
+    you_save_str = (
+        f"{format_indian_number(hotel.customer_discount)} ({hotel.discount_pct:.1f}% off)"
+        if hotel.customer_discount > 0 else "—"
+    )
+    row1 = table.rows[1]
+    cols_data = [
+        (row1.cells[0], "Best Online Price", format_indian_number(hotel.online_price),
+         theme.light_hex, True, False, theme.primary),
+        (row1.cells[1], "Our Price", format_indian_number(our_price),
+         theme.details_right_hex, False, False, theme.primary),
+        (row1.cells[2], "You Save", you_save_str,
+         theme.light_hex, False, True,
+         _GREEN if hotel.customer_discount > 0 else theme.primary),
+    ]
+
+    for cell, label, value, bg, is_first, is_last, val_color in cols_data:
+        _shade_cell(cell, bg)
+        _set_cell_margins(cell, 5.4, 5.4, 7.2, 5.4)
+        left_b  = (8, theme.border_hex) if is_first else "nil"
+        right_b = (8, theme.border_hex) if is_last  else (4, theme.border_hex)
+        _cell_borders(cell, "nil", (8, theme.border_hex), left_b, right_b)
+
+        pp = cell.paragraphs[0]
+        _sp(pp, 0, 0)
+        _line_spacing_15(pp)
+        _run(pp, f"{label}: ", size=10, bold=True, color=theme.primary)
+        _run(pp, value, size=10, bold=(val_color == _GREEN), color=val_color)
+
+
+def _add_marinas_take(doc: Document, description: str, theme: Theme) -> None:
+    """Full-width themed description box labelled "Marina's Take:"."""
+    if not description:
+        return
+    table = doc.add_table(rows=1, cols=1)
+    table.autofit = False
+    _no_borders(table)
+    cell = table.rows[0].cells[0]
+    cell.width = Inches(7.0)
+    _shade_cell(cell, theme.marinas_hex)
+    _set_cell_margins(cell, 6, 6, 6, 6)
+    _cell_borders(cell, "nil", "nil", (18, theme.header_hex), "nil")
+
+    p = cell.paragraphs[0]
+    _sp(p, 0, 2)
+    _run(p, "Our Take: ", size=10, bold=True, italic=True, color=theme.primary)
+    _run(p, description, size=10, color=_NAVY)
+
+
+def _add_why_recommend_hotel_box(doc: Document, why: str, theme: Theme) -> None:
+    """Per-hotel 'Why we recommend this hotel' box — grouped layout only."""
+    if not why:
+        return
+    table = doc.add_table(rows=1, cols=1)
+    table.autofit = False
+    _no_borders(table)
+    cell = table.rows[0].cells[0]
+    cell.width = Inches(7.0)
+    _shade_cell(cell, theme.light_hex)
+    _set_cell_margins(cell, 6, 6, 6, 6)
+    _cell_borders(cell, (8, theme.header_hex), (8, theme.header_hex),
+                  (8, theme.header_hex), (8, theme.header_hex))
+
+    p = cell.paragraphs[0]
+    _sp(p, 0, 0)
+    _run(p, "Why we recommend this hotel: ", size=10, bold=True, color=theme.primary)
+    _run(p, why, size=10, color=theme.primary)
+
+
+def _add_hotel_card(doc: Document, row: HotelRow,
+                    enriched: EnrichedHotel | None,
+                    theme_index: int = 0) -> None:
+    """Compose a complete hotel card: name → photo → details → marina's take → why-recommend."""
+    theme = _theme(theme_index)
+    hotel_name = (enriched.official_name if enriched else None) or row.name
+    _add_hotel_name_card(doc, hotel_name, row.city, row.category, theme,
+                         recommended=row.recommended)
+    if enriched:
+        _add_hotel_photo(doc, enriched.photo_bytes)
+        _add_hotel_details_table(doc, enriched, theme)
+        doc.add_paragraph()
+        _add_marinas_take(doc, enriched.description, theme)
+    else:
+        _add_hotel_details_table_unenriched(doc, row, theme)
+    if row.why_recommend:
+        _add_why_recommend_hotel_box(doc, row.why_recommend, theme)
+
+
+# ── Pricing + recommendation boxes ───────────────────────────────────────────
+
+def _add_plan_price_summary(doc: Document, plan: Plan, theme: Theme) -> None:
+    """3-col price summary: BEST ONLINE PRICE | OUR PRICE | YOU SAVE (accepts Theme)."""
+    pr = plan.pricing
+    label = plan.label.upper()
+    header_text = f"{label} PRICE SUMMARY"
+    if plan.recommended:
+        header_text += " • RECOMMENDED"
+
+    table = doc.add_table(rows=2, cols=3)
+    table.autofit = False
+    _tbl_outer_borders(table, _OUTER_BORDER_HEX, sz=4)
+    col_w = Inches(7.0 / 3)
+    for row in table.rows:
+        for cell in row.cells:
+            cell.width = col_w
+
+    hdr = table.rows[0].cells[0].merge(table.rows[0].cells[2])
+    _shade_cell(hdr, theme.header_hex)
+    _set_cell_margins(hdr, 7.2, 7.2, 7.2, 7.2)
+    _cell_borders(hdr, (6, theme.header_hex), (6, theme.header_hex),
+                  (6, theme.header_hex), (6, theme.header_hex))
+    hp = hdr.paragraphs[0]
+    hp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _sp(hp, 0, 0)
+    _run(hp, header_text, size=10, bold=True, color=_WHITE)
+
+    you_save = pr.customer_discount > 0
+    you_save_str = format_indian_number(pr.customer_discount) if you_save else "—"
+    you_save_pct = f"{pr.discount_pct:.1f}% off best online prices" if you_save else ""
+
+    cols_data = [
+        # (bg, label, label_bold, value, value_size, value_bold, value_color, extra_pct)
+        (theme.light_hex, "BEST ONLINE PRICE", True,
+         format_indian_number(pr.total_online_price), 18, True, _NAVY, None),
+        (_WHITE_BG, "OUR PRICE", True,
+         format_indian_number(pr.discounted_price), 18, True, theme.primary, None),
+        (_SAVINGS_BG, "YOU SAVE", True,
+         you_save_str, 18, True, _GREEN, you_save_pct),
+    ]
+
+    for col_idx, (bg, lbl, lbl_bold, val, val_sz, val_bold, val_color, extra) in enumerate(cols_data):
+        cell = table.rows[1].cells[col_idx]
+        _shade_cell(cell, bg)
+        _set_cell_margins(cell, 7.2, 7.2, 7.2, 7.2)
+        _cell_borders(cell, (6, theme.border_hex), (6, theme.border_hex),
+                      (6, theme.border_hex), (6, theme.border_hex))
+
+        lp = cell.paragraphs[0]
+        lp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        lbl_color = _GREEN if col_idx == 2 else (_NAVY if col_idx == 0 else theme.primary)
+        _sp(lp, 0, 3)
+        _run(lp, lbl, size=9, bold=lbl_bold, color=lbl_color)
+
+        vp = cell.add_paragraph()
+        vp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _sp(vp, 0, 0)
+        _run(vp, val, size=val_sz, bold=val_bold, color=val_color)
+
+        if extra:
+            ep = cell.add_paragraph()
+            ep.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            _sp(ep, 0, 0)
+            _run(ep, extra, size=9, bold=True, color=_GREEN)
+
+
+def _add_price_summary(doc: Document, plan: Plan, theme_index: int = 0) -> None:
+    """3-col price summary: BEST ONLINE PRICE | OUR PRICE | YOU SAVE (accepts theme_index)."""
+    _add_plan_price_summary(doc, plan, _theme(theme_index))
+
+
+def _add_recommended_choice_banner(doc: Document, plan_label: str,
+                                   why_text: str) -> None:
+    """Cream banner shown before the exec summary table when a plan is recommended."""
+    if not why_text:
+        return
+    table = doc.add_table(rows=1, cols=1)
+    table.autofit = False
+    _no_borders(table)
+    _pin_table_left(table)
+    cell = table.rows[0].cells[0]
+    cell.width = Inches(7.0)
+    _shade_cell(cell, _THEME_NAVY.light_hex)
+    _set_cell_margins(cell, 6, 6, 6, 6)
+    _cell_borders(cell, (8, _THEME_NAVY.header_hex), (8, _THEME_NAVY.header_hex),
+                  (8, _THEME_NAVY.header_hex), (8, _THEME_NAVY.header_hex))
+
+    p = cell.paragraphs[0]
+    _sp(p, 0, 0)
+    _run(p, f"Recommended choice: {plan_label}. ", bold=True, color=_NAVY)
+    _run(p, why_text, color=_NAVY)
+
+
+def _add_why_recommend_box(doc: Document, plan: Plan) -> None:
+    """Transition box placed before a plan's heading."""
+    if not plan.why_recommend:
+        return
+    table = doc.add_table(rows=1, cols=1)
+    table.autofit = False
+    _no_borders(table)
+    _pin_table_left(table)
+    cell = table.rows[0].cells[0]
+    cell.width = Inches(7.0)
+    _shade_cell(cell, _REC_BANNER_BG)
+    _set_cell_margins(cell, 6, 6, 6, 6)
+    _cell_borders(cell, (8, _AMBER_BORDER_HEX), (8, _AMBER_BORDER_HEX),
+                  (8, _AMBER_BORDER_HEX), (8, _AMBER_BORDER_HEX))
+
+    p = cell.paragraphs[0]
+    _sp(p, 0, 0)
+    _run(p, f"Why we recommend {plan.label}: ", size=10, bold=True,
+         color=_NAVY)
+    _run(p, plan.why_recommend, size=10, color=_NAVY)
+
+
+# ── Executive summary ─────────────────────────────────────────────────────────
+
+def _build_exec_summary_by_plan(doc: Document, plans: list[Plan], enriched_map: dict) -> None:
+    col_widths = [Inches(0.74), Inches(3.32), Inches(1.07), Inches(0.94), Inches(0.93)]
     col_labels = ["Plan", "Hotels", "Best Online Price", "Our Price", "You Save"]
-    col_widths = [Inches(0.65), Inches(3.0), Inches(1.05), Inches(1.05), Inches(1.25)]
-    table = doc.add_table(rows=1 + len(plans), cols=len(col_labels))
+    _HDR = _THEME_NAVY.header_hex
+
+    table = doc.add_table(rows=1 + len(plans), cols=5)
     table.autofit = False
     for i, w in enumerate(col_widths):
         for row in table.rows:
             row.cells[i].width = w
 
+    hdr_row = table.rows[0]
+    tr = hdr_row._tr
+    trPr = OxmlElement("w:trPr")
+    trHeight = OxmlElement("w:trHeight")
+    trHeight.set(qn("w:val"), str(int(35 * 20)))  # 35pt in twips
+    trPr.append(trHeight)
+    tr.insert(0, trPr)
+
     for i, label in enumerate(col_labels):
-        cell = table.rows[0].cells[i]
-        _shade_cell(cell, _HDR_BG)
+        cell = hdr_row.cells[i]
+        _shade_cell(cell, _HDR)
         cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
         p = cell.paragraphs[0]
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _spacing(p, 0, 0)
-        _body_run(p, label, bold=True, size=9, color=_WHITE)
+        _sp(p, 0, 0)
+        _run(p, label, size=10, bold=True, color=_WHITE)
 
     for row_idx, plan in enumerate(plans):
         row = table.rows[row_idx + 1]
-        bg = "FFFFFF" if row_idx % 2 == 0 else _ROW_ALT
+        bg = "FFFFFF" if row_idx % 2 == 0 else "F7F7F7"
+        t = _theme(row_idx)
+        pr = plan.pricing
 
-        you_save_amount = (
-            format_indian_number(plan.pricing.customer_discount)
-            if plan.pricing.customer_discount > 0 else "—"
-        )
-        you_save_pct = (
-            f"({plan.pricing.discount_pct:.1f}% off)"
-            if plan.pricing.customer_discount > 0 else None
-        )
+        you_save_str = (format_indian_number(pr.customer_discount)
+                        if pr.customer_discount > 0 else "—")
+        you_save_pct = (f"({pr.discount_pct:.1f}% off)"
+                        if pr.customer_discount > 0 else None)
 
-        col_configs = [
-            (plan.label,                                             WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
-            (None,                                                   WD_ALIGN_PARAGRAPH.LEFT,   _CHARCOAL, False),
-            (format_indian_number(plan.pricing.total_online_price),  WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, False),
-            (format_indian_number(plan.pricing.discounted_price),    WD_ALIGN_PARAGRAPH.CENTER, _CHARCOAL, True),
-            (you_save_amount,                                        WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
-        ]
+        # Plan column
+        pc = row.cells[0]
+        _shade_cell(pc, bg)
+        pc.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+        pp = pc.paragraphs[0]
+        pp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _sp(pp, 0, 0)
+        _run(pp, plan.label, size=10, bold=True, color=_NAVY)
+        if plan.recommended:
+            rp = pc.add_paragraph()
+            rp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            _sp(rp, 2, 0)
+            _run(rp, "★ RECOMMENDED", size=10, bold=True, color=_AMBER)
 
-        for col_idx, (text, align, color, bold) in enumerate(col_configs):
-            cell = row.cells[col_idx]
+        # Hotels column
+        hc = row.cells[1]
+        _shade_cell(hc, bg)
+        hc.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+        for h_idx, hotel in enumerate(plan.hotels):
+            hp = hc.paragraphs[0] if h_idx == 0 else hc.add_paragraph()
+            hp.alignment = WD_ALIGN_PARAGRAPH.LEFT
+            fmt = hp.paragraph_format
+            fmt.space_before      = Pt(10)
+            fmt.space_after       = Pt(10 if h_idx == len(plan.hotels) - 1 else 0)
+            fmt.line_spacing_rule = WD_LINE_SPACING.SINGLE
+            star = _star_category(hotel.category)
+            suffix = f" ({star[0]}*)" if star else ""
+            _enriched = enriched_map.get(hotel.name)
+            h_name = (_enriched.official_name if _enriched and _enriched.official_name else None) or hotel.name
+            _run(hp, f"❖ {h_name}{suffix}", size=10, color=_NAVY)
+
+        # Price columns
+        for col_idx, (val, bold, color) in enumerate([
+            (format_indian_number(pr.total_online_price), True,  _NAVY),
+            (format_indian_number(pr.discounted_price),   True,  _NAVY),
+            (you_save_str,                                True,  _GREEN),
+        ]):
+            cell = row.cells[2 + col_idx]
             _shade_cell(cell, bg)
             cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
             p = cell.paragraphs[0]
-            p.alignment = align
-
-            if col_idx == 1:
-                for h_idx, hotel in enumerate(plan.hotels):
-                    bp = p if h_idx == 0 else cell.add_paragraph()
-                    bp.alignment = WD_ALIGN_PARAGRAPH.LEFT
-                    _body_run(bp, f"• {hotel.name}{_star_suffix(hotel.category)}", size=9, color=_CHARCOAL)
-            else:
-                _body_run(p, text, bold=bold, size=9, color=color)
-
-            if col_idx == 0 and plan.recommended:
-                _recommended_badge_para(cell, WD_ALIGN_PARAGRAPH.CENTER)
-
-            if col_idx == 4 and you_save_pct:
+            p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+            _sp(p, 0, 0)
+            _run(p, val, size=10, bold=bold, color=color)
+            if col_idx == 2 and you_save_pct:
                 p2 = cell.add_paragraph()
-                p2.alignment = align
-                _spacing(p2, 0, 2)
-                _body_run(p2, you_save_pct, bold=False, size=8, color=color)
+                p2.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+                _sp(p2, 0, 2)
+                _run(p2, you_save_pct, size=10, bold=True, color=_GREEN)
+
+    _thin_borders(table)
 
 
-# ── Hotel card ────────────────────────────────────────────────────────────────
+def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan], enriched_map: dict) -> None:
+    col_widths = [Inches(1.55), Inches(2.55), Inches(0.9), Inches(0.9), Inches(1.1)]
+    col_labels = ["City / Dates", "Hotel", "Online Price", "Our Price", "You Save"]
+    _HDR = _THEME_NAVY.header_hex
 
-def _add_hyperlink(para, text: str, url: str, *,
-                   font_name: str = _FONT, size: float = 16,
-                   bold: bool = True, color: RGBColor = _CHARCOAL) -> None:
-    """Append a clickable hyperlink run to an existing paragraph."""
-    part = para.part
-    r_id = part.relate_to(
-        url,
-        "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
-        is_external=True,
-    )
-    hl = OxmlElement("w:hyperlink")
-    hl.set(qn("r:id"), r_id)
+    hotel_rows = [(plan.label, hotel) for plan in plans for hotel in plan.hotels]
 
-    r = OxmlElement("w:r")
-    rPr = OxmlElement("w:rPr")
+    table = doc.add_table(rows=1 + len(hotel_rows), cols=5)
+    table.autofit = False
+    for i, w in enumerate(col_widths):
+        for row in table.rows:
+            row.cells[i].width = w
 
-    rFonts = OxmlElement("w:rFonts")
-    rFonts.set(qn("w:ascii"), font_name)
-    rFonts.set(qn("w:hAnsi"), font_name)
-    rPr.append(rFonts)
+    hdr_row = table.rows[0]
+    tr = hdr_row._tr
+    trPr = OxmlElement("w:trPr")
+    trHeight = OxmlElement("w:trHeight")
+    trHeight.set(qn("w:val"), str(int(35 * 20)))  # 35pt in twips
+    trPr.append(trHeight)
+    tr.insert(0, trPr)
 
-    if bold:
-        rPr.append(OxmlElement("w:b"))
+    for i, label in enumerate(col_labels):
+        cell = hdr_row.cells[i]
+        _shade_cell(cell, _HDR)
+        cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+        p = cell.paragraphs[0]
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _sp(p, 0, 0)
+        _run(p, label, size=10, bold=True, color=_WHITE)
 
-    sz = OxmlElement("w:sz")
-    sz.set(qn("w:val"), str(int(size * 2)))
-    rPr.append(sz)
+    row_idx = 0
+    for plan in plans:
+        section_label = plan.label
+        for hotel_idx, hotel in enumerate(plan.hotels):
+            bg = "FFFFFF" if row_idx % 2 == 0 else "F7F7F7"
 
-    col_el = OxmlElement("w:color")
-    col_el.set(qn("w:val"), f"{color[0]:02X}{color[1]:02X}{color[2]:02X}")
-    rPr.append(col_el)
+            row = table.rows[row_idx + 1]
+            row_idx += 1
 
-    u = OxmlElement("w:u")
-    u.set(qn("w:val"), "single")
-    rPr.append(u)
+            our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
+            you_save_str = (format_indian_number(hotel.customer_discount)
+                            if hotel.customer_discount > 0 else "—")
+            you_save_pct = (f"({hotel.discount_pct:.1f}% off)"
+                            if hotel.customer_discount > 0 else None)
 
-    r.append(rPr)
-    t = OxmlElement("w:t")
-    t.text = text
-    r.append(t)
-    hl.append(r)
-    para._p.append(hl)
+            star = _star_category(hotel.category)
+            suffix = f" ({star[0]}*)" if star else ""
+            _enriched = enriched_map.get(hotel.name)
+            h_name = (_enriched.official_name if _enriched and _enriched.official_name else None) or hotel.name
+
+            for col_idx, (text, align, color, bold) in enumerate([
+                (section_label,                            WD_ALIGN_PARAGRAPH.LEFT,   _NAVY,  False),
+                (h_name + suffix,                          WD_ALIGN_PARAGRAPH.LEFT,   _NAVY,  False),
+                (format_indian_number(hotel.online_price), WD_ALIGN_PARAGRAPH.CENTER, _NAVY,  False),
+                (format_indian_number(our_price),          WD_ALIGN_PARAGRAPH.CENTER, _NAVY,  True),
+                (you_save_str,                             WD_ALIGN_PARAGRAPH.CENTER, _GREEN, True),
+            ]):
+                cell = row.cells[col_idx]
+                _shade_cell(cell, bg)
+                cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+                p = cell.paragraphs[0]
+                p.alignment = align
+                _sp(p, 2, 2)
+                _run(p, text, size=9, bold=bold, color=color)
+                if col_idx == 1 and hotel.recommended:
+                    rp = cell.add_paragraph()
+                    rp.alignment = WD_ALIGN_PARAGRAPH.LEFT
+                    _sp(rp, 0, 2)
+                    _run(rp, "★ RECOMMENDED", size=8, bold=True, color=_AMBER)
+                if col_idx == 4 and you_save_pct:
+                    p2 = cell.add_paragraph()
+                    p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                    _sp(p2, 0, 2)
+                    _run(p2, you_save_pct, size=8, color=_GREEN)
+
+    _thin_borders(table)
 
 
-def _google_search_url(name: str, destination: str) -> str:
-    return "https://www.google.com/search?q=" + urllib.parse.quote_plus(f"{name} {destination}")
-
-
-def _add_key_facts(doc: Document, enriched: EnrichedHotel) -> None:
-    facts: list[tuple[str, str]] = []
-    if enriched.room_type:
-        facts.append(("🛏️ Room", enriched.room_type))
-    if enriched.dates:
-        facts.append(("📅 Check-in / Check-out", enriched.dates))
-    if enriched.category:
-        facts.append(("🏨 Category", enriched.category))
-    if enriched.rating:
-        facts.append(("⭐ Guest Rating",
-                       f"{enriched.rating}/5 ({enriched.rating_count:,} reviews)"))
-    if enriched.cancellation:
-        facts.append(("🔄 Cancellation", enriched.cancellation))
-    if enriched.meal_type:
-        facts.append(("🍳 Breakfast", enriched.meal_type))
-
-    for label, value in facts:
-        p = doc.add_paragraph()
-        _spacing(p, 1, 2)
-        _body_run(p, f"{label}: ", size=11, color=_GREY)
-        _body_run(p, value, size=11, color=_CHARCOAL)
-
-
-def _add_why_recommend(doc: Document, why: str) -> None:
-    if not why:
+def _build_executive_summary(doc: Document, plans: list[Plan],
+                              grouped_by_sections: bool = False,
+                              enriched_map: dict | None = None) -> None:
+    if not plans:
         return
+
+    p = doc.add_paragraph(style="Heading 1")
+    p.paragraph_format.left_indent = Pt(0)
+    r = p.add_run("Executive Summary")
+    r.font.name = "Georgia"
+
     p = doc.add_paragraph()
-    _spacing(p, 6, 4)
-    _body_run(p, "Why we recommend it: ", bold=True, size=10.5, color=_AMBER)
-    _body_run(p, why, size=10.5, color=_CHARCOAL)
+    p.paragraph_format.left_indent = Pt(0)
+    _run(p,
+         "We've handpicked these accommodation options with your preferences, "
+         "itinerary, and the overall experience in mind.",
+         color=_NAVY)
+    _sp(p, 0, 8)
 
-
-def _add_hotel_card(doc: Document, enriched: EnrichedHotel,
-                    recommended: bool = False, destination: str = "") -> None:
-    """Image → Heading 2 name (hyperlinked) → Key Facts → Description."""
-    if enriched.photo_bytes:
-        p = doc.add_paragraph()
-        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _spacing(p, 8, 6)
-        p.add_run().add_picture(io.BytesIO(enriched.photo_bytes), width=Inches(5.0))
+    em = enriched_map or {}
+    if grouped_by_sections:
+        _build_exec_summary_by_hotel(doc, plans, em)
     else:
+        _build_exec_summary_by_plan(doc, plans, em)
+        rec_plan = next((pl for pl in plans if pl.recommended), None)
+        if rec_plan and rec_plan.why_recommend:
+            p = doc.add_paragraph()
+            _sp(p, 4, 0)
+            _add_recommended_choice_banner(doc, rec_plan.label, rec_plan.why_recommend)
+
+
+# ── Plans layout (Task 6) ─────────────────────────────────────────────────────
+
+def _build_plans_layout(doc: Document, plans: list[Plan],
+                        enriched_map: dict[str, EnrichedHotel],
+                        destination: str) -> None:
+    for plan_idx, plan in enumerate(plans):
+        t = _theme(plan_idx)
+
+        # Plan heading
+        p = doc.add_paragraph(style="Heading 1")
+        r = p.add_run(plan.label.upper())
+        r.font.name = "Georgia"
+        if plan.recommended:
+            r2 = p.add_run("  ★ RECOMMENDED")
+            r2.font.name      = "Georgia"
+            r2.font.size      = Pt(12.5)
+            r2.font.color.rgb = t.accent
+
+        # Horizontal rule under plan heading
         p = doc.add_paragraph()
-        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _spacing(p, 8, 6)
-        _body_run(p, "[ Image not available ]", size=9, color=_GREY)
+        _sp(p, 0, 4)
+        pPr = p._p.get_or_add_pPr()
+        pBdr = OxmlElement("w:pBdr")
+        top_border = OxmlElement("w:top")
+        top_border.set(qn("w:val"), "single")
+        top_border.set(qn("w:sz"), "18")
+        top_border.set(qn("w:space"), "0")
+        top_border.set(qn("w:color"), t.secondary_hex)
+        pBdr.append(top_border)
+        pPr.append(pBdr)
 
-    # Hotel name — Georgia 16pt Bold, hyperlinked to Google search
-    name_para = doc.add_paragraph()
-    _spacing(name_para, 12, 0)
-    hotel_name = enriched.official_name or "Hotel"
-    url = _google_search_url(hotel_name, destination) if destination else ""
-    if url:
-        _add_hyperlink(name_para, hotel_name, url,
-                       font_name="Georgia", size=16, bold=True, color=_LINK)
-    else:
-        r = name_para.add_run(hotel_name)
-        r.bold           = True
-        r.font.name      = "Georgia"
-        r.font.size      = Pt(16)
-        r.font.color.rgb = _CHARCOAL
-    if recommended:
-        _body_run(name_para, " ★ RECOMMENDED", bold=True, size=9, color=_AMBER)
-    _thin_rule(doc, before=0, after=6)
+        # Hotels: no break before first (stays on same page as heading); break between hotels
+        for hotel_idx, hotel in enumerate(plan.hotels):
+            if hotel_idx > 0:
+                _page_break(doc)
+            enriched = enriched_map.get(hotel.name)
+            _add_hotel_card(doc, hotel, enriched, theme_index=plan_idx)
 
-    _add_key_facts(doc, enriched)
+        # Price summary on its own page
+        _page_break(doc)
+        _add_price_summary(doc, plan, theme_index=plan_idx)
 
-    if enriched.description:
+        if plan_idx < len(plans) - 1:
+            _page_break(doc)
+
+
+def _build_grouped_sections(doc: Document, plans: list[Plan],
+                             enriched_map: dict[str, EnrichedHotel],
+                             destination: str) -> None:
+    for section_idx, plan in enumerate(plans):
+        if section_idx > 0:
+            _page_break(doc)
+
+        t = _theme(section_idx)
+
+        # Section heading — styled like plan headings with horizontal rule
+        p = doc.add_paragraph(style="Heading 1")
+        p.paragraph_format.left_indent = Pt(0)
+        r = p.add_run(plan.label.upper())
+        r.font.name = "Georgia"
+        r.font.color.rgb = t.primary
+
         p = doc.add_paragraph()
-        _spacing(p, 6, 8)
-        _body_run(p, enriched.description)
+        _sp(p, 0, 4)
+        pPr = p._p.get_or_add_pPr()
+        pBdr = OxmlElement("w:pBdr")
+        top_border = OxmlElement("w:top")
+        top_border.set(qn("w:val"), "single")
+        top_border.set(qn("w:sz"), "18")
+        top_border.set(qn("w:space"), "0")
+        top_border.set(qn("w:color"), t.secondary_hex)
+        pBdr.append(top_border)
+        pPr.append(pBdr)
+        for hotel_idx, hotel in enumerate(plan.hotels):
+            if hotel_idx > 0:
+                _page_break(doc)
+            enriched = enriched_map.get(hotel.name)
+            h_name = (enriched.official_name if enriched else None) or hotel.name
+            h_city = hotel.city or re.sub(r'\s*\(.*\)\s*$', '', plan.label).strip() or destination
+            h_cat  = (enriched.category if enriched else None) or hotel.category
+
+            _add_hotel_name_card(doc, h_name, h_city, h_cat, t,
+                                 recommended=hotel.recommended)
+            if enriched:
+                _add_hotel_photo(doc, enriched.photo_bytes)
+                _add_hotel_details_table(doc, enriched, t)
+                _spaced_gap(doc, 6)
+                _add_pricing_summary_table(doc, hotel, t)
+                _spaced_gap(doc, 6)
+                _add_marinas_take(doc, enriched.description, t)
+            else:
+                _add_hotel_details_table_unenriched(doc, hotel, t)
+                _spaced_gap(doc, 6)
+                _add_pricing_summary_table(doc, hotel, t)
+            if hotel.why_recommend:
+                p = doc.add_paragraph()
+                _sp(p, 6, 0)
+                _add_why_recommend_hotel_box(doc, hotel.why_recommend, t)
 
 
-# ── Pricing block ─────────────────────────────────────────────────────────────
 
-def _add_pricing_block(doc: Document, plan: Plan) -> None:
-    """Three-row pricing table: Online Price / Our Price / You Save."""
-    pr = plan.pricing
-    table = doc.add_table(rows=3, cols=2)
-    _no_borders(table)
+def _fix_compat_settings(doc: Document) -> None:
+    """Set compatibilityMode=15 (Word 2013+) and remove useFELayout.
 
-    rows_data = [
-        ("Online Price", format_indian_number(pr.total_online_price),
-         False, _GREY, _CHARCOAL, 11),
-        ("Our Price",    format_indian_number(pr.discounted_price),
-         True,  _GREY, _CHARCOAL, 13),
-        ("You Save",
-         f"{format_indian_number(pr.customer_discount)} ({pr.discount_pct:.1f}% off best online prices)",
-         True, _GREY, _GREEN, 11),
-    ]
+    python-docx's default template ships with compatibilityMode=14 (Word 2010)
+    and useFELayout. Word 2010 compat mode shifts paragraph indentation relative
+    to tables, causing heading/subtitle text to appear right of the table border.
+    Mode 15 matches the hand-curated reference document.
+    """
+    settings_elem = doc.settings.element
+    compat_ns = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+    ms_uri = "http://schemas.microsoft.com/office/word"
 
-    for i, (label, value, bold, lbl_color, val_color, val_size) in enumerate(rows_data):
-        lp = table.rows[i].cells[0].paragraphs[0]
-        _body_run(lp, label, size=11, color=lbl_color)
-        vp = table.rows[i].cells[1].paragraphs[0]
-        vp.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-        _body_run(vp, value, bold=bold, size=val_size, color=val_color)
+    # Remove useFELayout
+    fe = settings_elem.find(qn("w:useFELayout"))
+    if fe is not None:
+        settings_elem.remove(fe)
 
+    # Set compatibilityMode to 15
+    compat = settings_elem.find(qn("w:compat"))
+    if compat is not None:
+        for cs in compat.findall(qn("w:compatSetting")):
+            if cs.get(qn("w:name")) == "compatibilityMode":
+                cs.set(qn("w:val"), "15")
+                break
 
-def _add_hotel_pricing_block(doc: Document, hotel) -> None:
-    """Per-hotel pricing table using HotelRow discount fields."""
-    our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
-    if hotel.customer_discount > 0:
-        save_str = (f"{format_indian_number(hotel.customer_discount)}"
-                    f" ({hotel.discount_pct:.1f}% off best online prices)")
-        save_color = _GREEN
-    else:
-        save_str = "—"
-        save_color = _GREY
-
-    table = doc.add_table(rows=3, cols=2)
-    _no_borders(table)
-    rows_data = [
-        ("Online Price", format_indian_number(hotel.online_price), False, _GREY, _CHARCOAL, 11),
-        ("Our Price",    format_indian_number(our_price),          True,  _GREY, _CHARCOAL, 13),
-        ("You Save",     save_str,                                 True,  _GREY, save_color, 11),
-    ]
-    for i, (label, value, bold, lbl_color, val_color, val_size) in enumerate(rows_data):
-        lp = table.rows[i].cells[0].paragraphs[0]
-        _body_run(lp, label, size=11, color=lbl_color)
-        vp = table.rows[i].cells[1].paragraphs[0]
-        vp.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-        _body_run(vp, value, bold=bold, size=val_size, color=val_color)
-
-
-# ── Main entry point ──────────────────────────────────────────────────────────
 
 def build_document(
     plans: list[Plan],
@@ -776,165 +1239,43 @@ def build_document(
     doc = Document()
     _set_margins(doc)
     _configure_styles(doc)
+    _fix_compat_settings(doc)
 
-    # Cover page
     _build_cover_page(doc, destination, client_name, requirements,
                       stay_requirements=stay_requirements,
                       destination_photo=destination_photo)
     _page_break(doc)
 
-    # Executive Summary
-    _build_executive_summary(doc, plans, enriched_map, grouped_by_sections=grouped_by_sections)
+    _build_executive_summary(doc, plans, grouped_by_sections=grouped_by_sections,
+                             enriched_map=enriched_map)
     _page_break(doc)
 
-    # Detail sections
     if grouped_by_sections:
-        # Section = city/dates group. Each hotel within a section gets its own
-        # card + individual pricing block. One page break between sections.
-        for plan_idx, plan in enumerate(plans):
-            if plan_idx > 0:
-                _page_break(doc)
-
-            _heading(doc, plan.label.upper(), level=1)
-            _thin_rule(doc, before=2, after=8, color=_HDR_BG)
-
-            # Use the city portion of the section label (strip dates) for the search URL
-            city = re.sub(r'\s*\(.*\)\s*$', '', plan.label).strip() or destination
-
-            for i, hotel in enumerate(plan.hotels):
-                if i > 0:
-                    _thin_rule(doc, before=8, after=4)
-                enriched = enriched_map.get(hotel.name)
-                if enriched:
-                    _add_hotel_card(doc, enriched, recommended=hotel.recommended,
-                                    destination=city)
-                else:
-                    p = doc.add_paragraph()
-                    _spacing(p, 8, 4)
-                    _body_run(p, hotel.name, bold=True, size=13, color=_CHARCOAL)
-                    if hotel.recommended:
-                        _body_run(p, " ★ RECOMMENDED", bold=True, size=9, color=_AMBER)
-                    _thin_rule(doc, before=0, after=6)
-                    if hotel.room_type:
-                        p2 = doc.add_paragraph()
-                        _spacing(p2, 1, 2)
-                        _body_run(p2, "🛏️ Room: ", size=11, color=_GREY)
-                        _body_run(p2, hotel.room_type, size=11, color=_CHARCOAL)
-
-                _add_why_recommend(doc, hotel.why_recommend)
-                _thin_rule(doc, before=12, after=8)
-                _add_hotel_pricing_block(doc, hotel)
+        _build_grouped_sections(doc, plans, enriched_map, destination)
     else:
-        # Original plan-based layout — one page per plan, shared pricing block.
-        for plan_idx, plan in enumerate(plans):
-            if plan_idx > 0:
-                _page_break(doc)
+        _build_plans_layout(doc, plans, enriched_map, destination)
 
-            p = _heading(doc, plan.label.upper(), level=1)
-            if plan.recommended:
-                _body_run(p, " ★ RECOMMENDED", bold=True, size=9, color=_AMBER)
-            _thin_rule(doc, before=2, after=8, color=_HDR_BG)
-
-            if plan.why_recommend:
-                _add_why_recommend(doc, plan.why_recommend)
-
-            for i, hotel in enumerate(plan.hotels):
-                if i > 0:
-                    _thin_rule(doc, before=8, after=4)
-                enriched = enriched_map.get(hotel.name)
-                if enriched:
-                    _add_hotel_card(doc, enriched,
-                                    destination=hotel.city or destination)
-                else:
-                    p = doc.add_paragraph()
-                    _spacing(p, 8, 8)
-                    _body_run(p, f"[ {hotel.name} — details not available ]",
-                              color=_GREY)
-                _add_why_recommend(doc, hotel.why_recommend)
-
-            _thin_rule(doc, before=12, after=8)
-            _add_pricing_block(doc, plan)
-
-    # Final thank you page
     _page_break(doc)
-    _build_thank_you_page(doc, destination, destination_photo)
+    _build_thank_you_page(doc, destination)
+
+    # Pin every table to the left text margin so they align with body paragraphs
+    for tbl_elem in doc.element.body.findall(qn("w:tbl")):
+        tblPr = tbl_elem.find(qn("w:tblPr"))
+        if tblPr is None:
+            continue
+        for existing in tblPr.findall(qn("w:tblW")):
+            tblPr.remove(existing)
+        tblW = OxmlElement("w:tblW")
+        tblW.set(qn("w:w"), "10080")
+        tblW.set(qn("w:type"), "dxa")
+        tblPr.insert(0, tblW)
+        for existing in tblPr.findall(qn("w:tblInd")):
+            tblPr.remove(existing)
+        tblInd = OxmlElement("w:tblInd")
+        tblInd.set(qn("w:w"), "0")
+        tblInd.set(qn("w:type"), "dxa")
+        tblPr.insert(1, tblInd)  # must come before tblBorders per OOXML schema
 
     buf = io.BytesIO()
     doc.save(buf)
     return buf.getvalue()
-
-
-# ── Thank You page ────────────────────────────────────────────────────────────
-
-def _build_thank_you_page(doc: Document, destination: str,
-                          destination_photo: bytes | None = None) -> None:
-    def blank(n: int = 1) -> None:
-        for _ in range(n):
-            p = doc.add_paragraph()
-            _spacing(p, 0, 0)
-
-    # Generous whitespace to push content toward middle of page
-    blank(6)
-
-    # Heading — Arial 20pt Bold, left-aligned
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    _spacing(p, 0, 28)
-    r = p.add_run("Thank You")
-    r.bold           = True
-    r.font.name      = _FONT
-    r.font.size      = Pt(20)
-    r.font.color.rgb = _CHARCOAL
-
-    # Body — lines 1 and 2 in same paragraph, line 3 separate
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    _spacing(p, 0, 6)
-    _body_run(p, (
-        f"Thank you for giving Bon Voyage By Marina the opportunity to assist with your {destination} journey. "
-        f"We hope the accommodation options in this document help you find the stay that best matches your travel style, preferences, and budget."
-    ), size=11, color=_CHARCOAL)
-
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    _spacing(p, 0, 6)
-    _body_run(p, "Should you wish to explore additional options, alternative locations, upgraded room categories, or other travel arrangements, we would be delighted to assist.",
-              size=11, color=_CHARCOAL)
-
-    # Closing — regular (not italic)
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    _spacing(p, 18, 24)
-    _body_run(p, f"We look forward to helping create an unforgettable {destination} experience for you.",
-              size=11, color=_CHARCOAL)
-
-    # Signature — "Warm regards," directly followed by letterhead block, no gap
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    _spacing(p, 0, 4)
-    _body_run(p, "Warm regards,", size=11, color=_CHARCOAL)
-
-    # Full letterhead block — compact spacing matching the letterhead document
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    _spacing(p, 4, 2)
-    _body_run(p, "Bon Voyage By Marina", bold=True, size=11, color=_CHARCOAL)
-
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    _spacing(p, 0, 2)
-    _body_run(p, "Bespoke Travel Planning • Premium Stays • Seamless Experiences",
-              italic=True, size=11, color=_CHARCOAL)
-
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    _spacing(p, 0, 2)
-    _body_run(p, "\U0001f4de +91 86000 15316 | \U0001f4f8 @bonvoyagebymarina | \U0001f310 www.bonvoyagebymarina.com",
-              size=11, color=_CHARCOAL)
-
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    _spacing(p, 0, 2)
-    _body_run(p, "✈️ ", size=11, color=_CHARCOAL)
-    _body_run(p, "Crafting unforgettable journeys, one trip at a time.",
-              italic=True, size=11, color=_CHARCOAL)

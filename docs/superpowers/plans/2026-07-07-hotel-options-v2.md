@@ -1,0 +1,1421 @@
+# Hotel Options Document V2 Implementation Plan
+
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** Full rewrite of `src/hotel_options/generator.py` to match the new two-tone (navy/gold) design with table-based hotel cards, Unsplash cover photo, hotel name above full-width photo, address/phone in hotel details, Marina's Take, and 3-col price summary.
+
+**Architecture:** `generator.py` is completely replaced — same public `build_document` signature, new internals built around a `Theme` dataclass. A new `cover_photo.py` handles Unsplash/Pexels with AI-generated season-aware queries. `hotel_options_service.py` gets a small wiring change to use the new cover photo source.
+
+**Tech Stack:** python-docx, httpx, python-dotenv (env vars loaded by ai_provider already), openpyxl (unchanged)
+
+## Global Constraints
+
+- No test suite — verification is by generating a sample DOCX and inspecting visually
+- Branch: `hotelredesign`
+- Reference design: `input/Hotel Options - new design.docx`
+- Page text width: 7.0" (8.5" − 0.75" margins each side)
+- Font: Arial everywhere except hotel name card (Georgia)
+- All cell padding values in pt, converted to twips (×20) when writing XML
+- Theme alternates by plan index (0-based): even = navy, odd = gold — independent of recommendation status
+- For grouped-by-sections layout: theme index resets to 0 (navy) at each new section, increments per hotel within section
+
+---
+
+### Task 1: Cover photo module
+
+**Files:**
+- Create: `src/hotel_options/cover_photo.py`
+
+**Interfaces:**
+- Produces: `fetch_cover_photo(destination, travel_dates, ai_client, unsplash_key, pexels_key) -> bytes | None`
+
+- [ ] **Step 1: Create `src/hotel_options/cover_photo.py`**
+
+```python
+from __future__ import annotations
+import re
+import httpx
+
+_MONTH_TO_SEASON = {
+    1: "winter", 2: "winter", 3: "spring",
+    4: "spring", 5: "spring", 6: "summer",
+    7: "summer", 8: "summer", 9: "autumn",
+    10: "autumn", 11: "autumn", 12: "winter",
+}
+
+_MONTH_NAMES = {
+    "jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
+    "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12,
+}
+
+_MONTH_LABELS = {
+    1: "January", 2: "February", 3: "March", 4: "April",
+    5: "May", 6: "June", 7: "July", 8: "August",
+    9: "September", 10: "October", 11: "November", 12: "December",
+}
+
+
+def _infer_month(travel_dates: list[str]) -> int | None:
+    earliest = None
+    for d in travel_dates:
+        for abbr, num in _MONTH_NAMES.items():
+            if abbr in d.lower():
+                if earliest is None or num < earliest:
+                    earliest = num
+    return earliest
+
+
+def _build_query(destination: str, travel_dates: list[str], ai_client) -> str:
+    month_num = _infer_month(travel_dates)
+    season = _MONTH_TO_SEASON.get(month_num, "landscape") if month_num else "landscape"
+    month_name = _MONTH_LABELS.get(month_num, "")
+    prompt = (
+        f"Generate a short Unsplash photo search query (under 8 words) for a travel cover image "
+        f"for {destination} in {month_name or season}. "
+        f"Focus on landscapes, nature, and iconic scenery — no people, no interiors. "
+        f"Reply with only the search query, nothing else."
+    )
+    try:
+        return ai_client.complete(prompt, max_tokens=30).strip().strip('"')
+    except Exception:
+        return f"{destination} {season} landscape"
+
+
+def _fetch_unsplash(query: str, key: str) -> bytes | None:
+    try:
+        resp = httpx.get(
+            "https://api.unsplash.com/search/photos",
+            params={"query": query, "orientation": "landscape", "per_page": 1},
+            headers={"Authorization": f"Client-ID {key}"},
+            timeout=10,
+        )
+        results = resp.json().get("results", [])
+        if not results:
+            return None
+        url = results[0]["urls"]["regular"]
+        photo = httpx.get(url, timeout=15, follow_redirects=True)
+        return photo.content if photo.status_code == 200 else None
+    except Exception:
+        return None
+
+
+def _fetch_pexels(query: str, key: str) -> bytes | None:
+    try:
+        resp = httpx.get(
+            "https://api.pexels.com/v1/search",
+            params={"query": query, "orientation": "landscape", "per_page": 1},
+            headers={"Authorization": key},
+            timeout=10,
+        )
+        photos = resp.json().get("photos", [])
+        if not photos:
+            return None
+        url = photos[0]["src"]["large2x"]
+        photo = httpx.get(url, timeout=15, follow_redirects=True)
+        return photo.content if photo.status_code == 200 else None
+    except Exception:
+        return None
+
+
+def fetch_cover_photo(
+    destination: str,
+    travel_dates: list[str],
+    ai_client,
+    unsplash_key: str = "",
+    pexels_key: str = "",
+) -> bytes | None:
+    """Fetch a season-appropriate landscape photo for the destination cover page."""
+    query = _build_query(destination, travel_dates, ai_client)
+    if unsplash_key:
+        result = _fetch_unsplash(query, unsplash_key)
+        if result:
+            return result
+    if pexels_key:
+        result = _fetch_pexels(query, pexels_key)
+        if result:
+            return result
+    return None
+```
+
+- [ ] **Step 2: Verify module imports cleanly**
+
+```bash
+python3 -c "from src.hotel_options.cover_photo import fetch_cover_photo; print('OK')"
+```
+Expected: `OK`
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add src/hotel_options/cover_photo.py
+git commit -m "feat(hotel-options): add Unsplash/Pexels cover photo module"
+```
+
+---
+
+### Task 2: Theme system + shared helpers
+
+**Files:**
+- Modify: `src/hotel_options/generator.py` — replace entire file with constants, theme system, and all shared helpers; `build_document` left as a stub at the end
+
+**Interfaces:**
+- Produces: `Theme` dataclass, `_theme(index: int) -> Theme`, `format_indian_number`, `_star_category`, `_set_cell_margins`, `_run`, `_sp`, `_blank`, `_shade_cell`, `_no_borders`, `_thin_borders`, `_page_break`, `_line_spacing_15`, `_build_cover_page`, `_build_thank_you_page`
+
+- [ ] **Step 1: Replace `src/hotel_options/generator.py` with full scaffolding**
+
+```python
+from __future__ import annotations
+import io
+import re
+import urllib.parse
+from dataclasses import dataclass
+
+from docx import Document
+from docx.shared import Inches, Pt, RGBColor
+from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_LINE_SPACING
+from docx.enum.table import WD_ALIGN_VERTICAL
+from docx.oxml.ns import qn
+from docx.oxml import OxmlElement
+
+from src.hotel_options.models import Plan, EnrichedHotel
+
+
+# ── Theme system ──────────────────────────────────────────────────────────────
+
+@dataclass
+class Theme:
+    header_hex: str
+    light_hex: str
+    marinas_hex: str
+    primary: RGBColor
+    secondary: RGBColor
+    accent: RGBColor
+
+
+_THEME_NAVY = Theme(
+    header_hex="1F3A5F",
+    light_hex="F3F7FB",
+    marinas_hex="F3F7FB",
+    primary=RGBColor(0x1F, 0x3A, 0x5F),
+    secondary=RGBColor(0x5E, 0x78, 0x9A),
+    accent=RGBColor(0x2E, 0x86, 0xC1),
+)
+
+_THEME_GOLD = Theme(
+    header_hex="8A6D2F",
+    light_hex="FBF6EA",
+    marinas_hex="FFFDF7",
+    primary=RGBColor(0x8A, 0x6D, 0x2F),
+    secondary=RGBColor(0xC7, 0x78, 0x00),
+    accent=RGBColor(0xC7, 0x78, 0x00),
+)
+
+
+def _theme(index: int) -> Theme:
+    return _THEME_NAVY if index % 2 == 0 else _THEME_GOLD
+
+
+# ── Shared constants ──────────────────────────────────────────────────────────
+
+_CHARCOAL     = RGBColor(0x2D, 0x2D, 0x2D)
+_GREY         = RGBColor(0x66, 0x66, 0x66)
+_GREEN        = RGBColor(0x2E, 0x7D, 0x32)
+_WHITE        = RGBColor(0xFF, 0xFF, 0xFF)
+_SAVINGS_BG   = "EAF4EA"
+_REC_BANNER_BG = "FBF6EA"
+_RULE_COLOR   = "CCCCCC"
+_FONT         = "Arial"
+_MARGIN       = Inches(0.75)
+
+
+# ── Number formatting ─────────────────────────────────────────────────────────
+
+def format_indian_number(amount: float) -> str:
+    n = int(round(amount))
+    s = str(n)
+    if len(s) <= 3:
+        return f"₹{s}"
+    last3 = s[-3:]
+    rest = s[:-3]
+    groups: list[str] = []
+    while len(rest) > 2:
+        groups.insert(0, rest[-2:])
+        rest = rest[:-2]
+    if rest:
+        groups.insert(0, rest)
+    return f"₹{','.join(groups)},{last3}"
+
+
+def _star_category(category: str) -> str:
+    """'4-Star Hotel' → '4-star', '3 Star' → '3-star', else ''."""
+    m = re.search(r'(\d)', category or "")
+    return f"{m.group(1)}-star" if m else ""
+
+
+# ── Document setup ────────────────────────────────────────────────────────────
+
+def _set_margins(doc: Document) -> None:
+    for section in doc.sections:
+        section.top_margin    = _MARGIN
+        section.bottom_margin = _MARGIN
+        section.left_margin   = _MARGIN
+        section.right_margin  = _MARGIN
+
+
+def _configure_styles(doc: Document) -> None:
+    normal = doc.styles["Normal"]
+    normal.font.name  = _FONT
+    normal.font.size  = Pt(11)
+    normal.font.color.rgb = _CHARCOAL
+    normal.paragraph_format.space_after = Pt(0)
+    normal.paragraph_format.line_spacing_rule = WD_LINE_SPACING.MULTIPLE
+    normal.paragraph_format.line_spacing = 1.15
+
+    h1 = doc.styles["Heading 1"]
+    h1.font.name  = _FONT
+    h1.font.size  = Pt(16)
+    h1.font.bold  = True
+    h1.font.color.rgb = _CHARCOAL
+    h1.paragraph_format.space_before = Pt(0)
+    h1.paragraph_format.space_after  = Pt(4)
+
+
+# ── Low-level helpers ─────────────────────────────────────────────────────────
+
+def _blank(doc: Document, n: int = 1) -> None:
+    for _ in range(n):
+        p = doc.add_paragraph()
+        _sp(p, 0, 0)
+
+
+def _sp(para, before: float = 0, after: float = 0) -> None:
+    fmt = para.paragraph_format
+    fmt.space_before = Pt(before)
+    fmt.space_after  = Pt(after)
+
+
+def _run(para, text: str, *, font: str = _FONT, size: float = 11,
+         bold: bool = False, italic: bool = False,
+         color: RGBColor = _CHARCOAL) -> None:
+    r = para.add_run(text)
+    r.bold           = bold
+    r.italic         = italic
+    r.font.name      = font
+    r.font.size      = Pt(size)
+    r.font.color.rgb = color
+
+
+def _shade_cell(cell, hex_color: str) -> None:
+    tcPr = cell._tc.get_or_add_tcPr()
+    shd = OxmlElement("w:shd")
+    shd.set(qn("w:val"), "clear")
+    shd.set(qn("w:color"), "auto")
+    shd.set(qn("w:fill"), hex_color)
+    tcPr.append(shd)
+
+
+def _set_cell_margins(cell, top: float, left: float,
+                      bottom: float, right: float) -> None:
+    """Set cell padding in pt (converted to twips internally)."""
+    tcPr = cell._tc.get_or_add_tcPr()
+    tcMar = OxmlElement("w:tcMar")
+    for side, val in [("top", top), ("left", left),
+                      ("bottom", bottom), ("right", right)]:
+        m = OxmlElement(f"w:{side}")
+        m.set(qn("w:w"), str(int(val * 20)))
+        m.set(qn("w:type"), "dxa")
+        tcMar.append(m)
+    tcPr.append(tcMar)
+
+
+def _no_borders(table) -> None:
+    tbl_pr = table._tbl.tblPr
+    for existing in tbl_pr.findall(qn("w:tblBorders")):
+        tbl_pr.remove(existing)
+    tbl_borders = OxmlElement("w:tblBorders")
+    for name in ("top", "left", "bottom", "right", "insideH", "insideV"):
+        b = OxmlElement(f"w:{name}")
+        b.set(qn("w:val"), "none")
+        tbl_borders.append(b)
+    tbl_pr.append(tbl_borders)
+
+
+def _thin_borders(table) -> None:
+    for row in table.rows:
+        for cell in row.cells:
+            tcPr = cell._tc.get_or_add_tcPr()
+            tcBorders = OxmlElement("w:tcBorders")
+            for side in ("top", "left", "bottom", "right"):
+                b = OxmlElement(f"w:{side}")
+                b.set(qn("w:val"), "single")
+                b.set(qn("w:sz"), "4")
+                b.set(qn("w:color"), _RULE_COLOR)
+                tcBorders.append(b)
+            tcPr.append(tcBorders)
+
+
+def _page_break(doc: Document) -> None:
+    p = doc.add_paragraph()
+    _sp(p, 0, 0)
+    run = p.add_run()
+    br = OxmlElement("w:br")
+    br.set(qn("w:type"), "page")
+    run._r.append(br)
+
+
+def _line_spacing_15(para) -> None:
+    fmt = para.paragraph_format
+    fmt.line_spacing_rule = WD_LINE_SPACING.ONE_POINT_FIVE
+    fmt.line_spacing = None
+
+
+# ── Cover page helpers ────────────────────────────────────────────────────────
+
+def _georgia(para, text: str, size: float, bold: bool = False,
+             italic: bool = False, color: RGBColor = _CHARCOAL) -> None:
+    _run(para, text, font="Georgia", size=size, bold=bold, italic=italic, color=color)
+
+
+def _add_trip_snapshot(doc: Document, destination: str, requirements: str,
+                       stay_requirements: str = "") -> None:
+    import re as _re
+    req_lines  = [r.strip() for r in _re.split(r'[\n,]+', requirements) if r.strip()]
+    travellers = next((l for l in req_lines if _re.search(r'\d+\s+adult', l, _re.I)), "")
+    rooms      = next((l for l in req_lines if _re.search(r'\d+\s+room', l, _re.I)), "")
+
+    data = [
+        ("DESTINATION", destination),
+        ("TRAVELLERS",  travellers or "—"),
+        ("ROOMS",       rooms or "—"),
+        ("PREFERENCES", stay_requirements or "—"),
+    ]
+
+    _SNAP_HDR = "1F3A5F"
+    _SNAP_ALT = "F7F3EA"
+    _SNAP_LBL = RGBColor(0x8A, 0x6D, 0x2F)
+
+    table = doc.add_table(rows=2, cols=4)
+    _no_borders(table)
+
+    hdr = table.rows[0].cells[0].merge(table.rows[0].cells[3])
+    _shade_cell(hdr, _SNAP_HDR)
+    _set_cell_margins(hdr, 7.2, 7.2, 7.2, 7.2)
+    hp = hdr.paragraphs[0]
+    hp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _sp(hp, 0, 0)
+    _run(hp, "TRIP SNAPSHOT", size=10, color=_WHITE)
+
+    for col_idx, (label, value) in enumerate(data):
+        cell = table.rows[1].cells[col_idx]
+        bg = _SNAP_ALT if col_idx % 2 == 0 else "FFFFFF"
+        _shade_cell(cell, bg)
+        lp = cell.paragraphs[0]
+        _sp(lp, 0, 2)
+        lp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _run(lp, label, size=9, bold=True, color=_SNAP_LBL)
+        vp = cell.add_paragraph()
+        _sp(vp, 0, 2)
+        vp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _run(vp, value, size=9, color=_CHARCOAL)
+
+
+def _add_advisor_note(doc: Document, destination: str) -> None:
+    p = doc.add_paragraph()
+    _sp(p, 14, 6)
+    _georgia(p, "A NOTE FROM BON VOYAGE BY MARINA", size=12, bold=True)
+
+    note = (
+        f"Thank you for giving us the opportunity to assist with your "
+        f"{destination} journey. "
+        f"The options in this document have been carefully reviewed and shortlisted "
+        f"based on your preferences, location requirements, flexibility, and overall value. "
+        f"We hope this guide helps you choose the stay that is right for you."
+    )
+    p = doc.add_paragraph()
+    _sp(p, 0, 8)
+    _run(p, note, size=10.5)
+
+
+def _add_letterhead_footer(doc: Document, centered: bool = True) -> None:
+    align = WD_ALIGN_PARAGRAPH.CENTER if centered else WD_ALIGN_PARAGRAPH.LEFT
+    for text, bold, italic in [
+        ("Bon Voyage By Marina", True, False),
+        ("Bespoke Travel Planning • Premium Stays • Seamless Experiences", False, True),
+        ("\U0001f4de +91 86000 15316 | \U0001f4f8 @bonvoyagebymarina | \U0001f310 www.bonvoyagebymarina.com", False, False),
+    ]:
+        p = doc.add_paragraph()
+        p.alignment = align
+        _sp(p, 4, 2)
+        _run(p, text, size=11, bold=bold, italic=italic)
+    p = doc.add_paragraph()
+    p.alignment = align
+    _sp(p, 0, 2)
+    _run(p, "✈️ ", size=11)
+    _run(p, "Crafting unforgettable journeys, one trip at a time.", size=11, italic=True)
+
+
+def _build_cover_page(doc: Document, destination: str, client_name: str,
+                      requirements: str, stay_requirements: str = "",
+                      destination_photo: bytes | None = None) -> None:
+    if destination_photo:
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _sp(p, 0, 0)
+        p.add_run().add_picture(io.BytesIO(destination_photo), width=Inches(7.0))
+    else:
+        _blank(doc, 4)
+
+    _blank(doc, 2)
+
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _sp(p, 0, 8)
+    _georgia(p, f"{destination.upper()} ACCOMMODATION RECOMMENDATIONS", size=26, bold=True)
+
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _sp(p, 0, 20)
+    _georgia(p, "Curated by Bon Voyage By Marina", size=12, italic=True, color=_GREY)
+
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _sp(p, 0, 6)
+    _georgia(p, "PREPARED EXCLUSIVELY FOR", size=14, color=_GREY)
+
+    if client_name:
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _sp(p, 0, 20)
+        _georgia(p, client_name.upper(), size=14, bold=True)
+
+    _add_trip_snapshot(doc, destination, requirements, stay_requirements)
+
+    _page_break(doc)
+    _add_advisor_note(doc, destination)
+    _blank(doc, 1)
+    _add_letterhead_footer(doc, centered=True)
+
+
+# ── Thank-you page ────────────────────────────────────────────────────────────
+
+def _build_thank_you_page(doc: Document, destination: str) -> None:
+    _blank(doc, 6)
+
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    _sp(p, 0, 28)
+    _run(p, "Thank You", size=20, bold=True)
+
+    for text in [
+        (
+            f"Thank you for giving Bon Voyage By Marina the opportunity to assist with your {destination} journey. "
+            f"We hope the accommodation options in this document help you find the stay that best matches your travel style, preferences, and budget."
+        ),
+        "Should you wish to explore additional options, alternative locations, upgraded room categories, or other travel arrangements, we would be delighted to assist.",
+        f"We look forward to helping create an unforgettable {destination} experience for you.",
+    ]:
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        _sp(p, 0, 6)
+        _run(p, text, size=11)
+
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    _sp(p, 18, 4)
+    _run(p, "Warm regards,", size=11)
+    _add_letterhead_footer(doc, centered=False)
+
+
+# ── Stub (replaced in Task 6) ─────────────────────────────────────────────────
+
+def build_document(
+    plans: list[Plan],
+    enriched_map: dict[str, EnrichedHotel],
+    client_name: str,
+    destination: str,
+    requirements: str = "",
+    destination_photo: bytes | None = None,
+    stay_requirements: str = "",
+    grouped_by_sections: bool = False,
+) -> bytes:
+    doc = Document()
+    _set_margins(doc)
+    _configure_styles(doc)
+    _build_cover_page(doc, destination, client_name, requirements,
+                      stay_requirements=stay_requirements,
+                      destination_photo=destination_photo)
+    buf = io.BytesIO()
+    doc.save(buf)
+    return buf.getvalue()
+```
+
+- [ ] **Step 2: Verify stub builds without error**
+
+```bash
+python3 -c "
+from src.hotel_options.generator import build_document
+from src.hotel_options.models import Plan, PlanPricing
+p = Plan('Plan A', [], PlanPricing(100000, 100000, 0, 100000, 0))
+build_document([p], {}, 'Test Client', 'Japan')
+print('OK')
+"
+```
+Expected: `OK`
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add src/hotel_options/generator.py
+git commit -m "refactor(hotel-options): replace generator with v2 scaffolding and theme system"
+```
+
+---
+
+### Task 3: Hotel card components
+
+**Files:**
+- Modify: `src/hotel_options/generator.py` — add hotel card functions after `_add_letterhead_footer`
+
+**Interfaces:**
+- Consumes: `Theme`, `_shade_cell`, `_set_cell_margins`, `_no_borders`, `_run`, `_sp`, `_line_spacing_15`
+- Produces:
+  - `_add_hotel_name_card(doc, hotel_name, city, category, theme)`
+  - `_add_hotel_photo(doc, photo_bytes)`
+  - `_add_hotel_details_table(doc, enriched, theme)` where `enriched: EnrichedHotel`
+  - `_add_hotel_details_table_unenriched(doc, hotel, theme)` where `hotel: HotelRow`
+  - `_add_marinas_take(doc, description, theme)`
+  - `_add_why_recommend_hotel_box(doc, why_text, theme)`
+
+- [ ] **Step 1: Add hotel card functions (insert before the stub `build_document`)**
+
+```python
+# ── Hotel card components ─────────────────────────────────────────────────────
+
+def _add_hotel_name_card(doc: Document, hotel_name: str, city: str,
+                         category: str, theme: Theme) -> None:
+    """Full-width themed name card: hotel name (Georgia 14pt bold) + • City • X-star (10pt)."""
+    table = doc.add_table(rows=1, cols=1)
+    table.autofit = False
+    _no_borders(table)
+    cell = table.rows[0].cells[0]
+    cell.width = Inches(7.0)
+    _shade_cell(cell, theme.light_hex)
+    _set_cell_margins(cell, 6, 6, 6, 6)
+
+    p = cell.paragraphs[0]
+    _sp(p, 0, 2)
+    r = p.add_run(hotel_name)
+    r.font.name      = "Georgia"
+    r.font.size      = Pt(14)
+    r.font.bold      = True
+    r.font.color.rgb = theme.primary
+
+    star = _star_category(category)
+    parts = " • ".join(x for x in [city, star] if x)
+    if parts:
+        r2 = p.add_run(f"  •  {parts}")
+        r2.font.size      = Pt(10)
+        r2.font.color.rgb = theme.secondary
+
+
+def _add_hotel_photo(doc: Document, photo_bytes: bytes | None) -> None:
+    """Full-width hotel photo (7.0"), or placeholder text if unavailable."""
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _sp(p, 0, 0)
+    if photo_bytes:
+        p.add_run().add_picture(io.BytesIO(photo_bytes), width=Inches(7.0))
+    else:
+        _run(p, "[ Photo not available ]", size=9, color=_GREY)
+
+
+def _add_hotel_details_table(doc: Document, enriched: EnrichedHotel,
+                              theme: Theme) -> None:
+    """2-col HOTEL DETAILS table: Stay/Rating/Flexibility/Includes left, Room/Address/Phone right."""
+    table = doc.add_table(rows=2, cols=2)
+    table.autofit = False
+    _no_borders(table)
+    for row in table.rows:
+        for cell in row.cells:
+            cell.width = Inches(3.5)
+
+    hdr = table.rows[0].cells[0].merge(table.rows[0].cells[1])
+    _shade_cell(hdr, theme.header_hex)
+    _set_cell_margins(hdr, 7.2, 7.2, 7.2, 7.2)
+    hp = hdr.paragraphs[0]
+    _sp(hp, 0, 0)
+    _run(hp, "HOTEL DETAILS", size=10, color=_WHITE)
+
+    left  = table.rows[1].cells[0]
+    right = table.rows[1].cells[1]
+    _set_cell_margins(left,  0, 5.4, 0, 5.4)
+    _set_cell_margins(right, 0, 5.4, 0, 5.4)
+
+    left_rows = [
+        ("Stay",        enriched.dates or "—"),
+        ("Rating",      f"{enriched.rating}/5 from {enriched.rating_count:,} reviews" if enriched.rating else "—"),
+        ("Flexibility", enriched.cancellation or "—"),
+        ("Includes",    enriched.meal_type or "—"),
+    ]
+    for i, (label, value) in enumerate(left_rows):
+        p = left.paragraphs[0] if i == 0 else left.add_paragraph()
+        _sp(p, 10 if i == 0 else 0, 10 if i == len(left_rows) - 1 else 0)
+        _line_spacing_15(p)
+        _run(p, f"{label}: ", size=10, bold=False, color=theme.primary)
+        _run(p, value, size=10, color=theme.primary)
+
+    right_rows = [
+        ("Room",    enriched.room_type or "—"),
+        ("Address", enriched.address or "—"),
+        ("Phone",   enriched.phone or "—"),
+    ]
+    for i, (label, value) in enumerate(right_rows):
+        p = right.paragraphs[0] if i == 0 else right.add_paragraph()
+        _sp(p, 10 if i == 0 else 0, 10 if i == len(right_rows) - 1 else 0)
+        _line_spacing_15(p)
+        _run(p, f"{label}: ", size=10, bold=True, color=theme.primary)
+        _run(p, value, size=10, color=theme.primary)
+
+
+def _add_hotel_details_table_unenriched(doc: Document, hotel, theme: Theme) -> None:
+    """Fallback 2-col details table when Google Places enrichment is unavailable."""
+    table = doc.add_table(rows=2, cols=2)
+    table.autofit = False
+    _no_borders(table)
+    for row in table.rows:
+        for cell in row.cells:
+            cell.width = Inches(3.5)
+
+    hdr = table.rows[0].cells[0].merge(table.rows[0].cells[1])
+    _shade_cell(hdr, theme.header_hex)
+    _set_cell_margins(hdr, 7.2, 7.2, 7.2, 7.2)
+    hp = hdr.paragraphs[0]
+    _sp(hp, 0, 0)
+    _run(hp, "HOTEL DETAILS", size=10, color=_WHITE)
+
+    left  = table.rows[1].cells[0]
+    right = table.rows[1].cells[1]
+    _set_cell_margins(left,  0, 5.4, 0, 5.4)
+    _set_cell_margins(right, 0, 5.4, 0, 5.4)
+
+    left_rows = [
+        ("Stay",        hotel.dates or "—"),
+        ("Flexibility", hotel.cancellation or "—"),
+        ("Includes",    hotel.meal_type or "—"),
+    ]
+    for i, (label, value) in enumerate(left_rows):
+        p = left.paragraphs[0] if i == 0 else left.add_paragraph()
+        _sp(p, 10 if i == 0 else 0, 10 if i == len(left_rows) - 1 else 0)
+        _line_spacing_15(p)
+        _run(p, f"{label}: ", size=10, bold=False, color=theme.primary)
+        _run(p, value, size=10, color=theme.primary)
+
+    p = right.paragraphs[0]
+    _sp(p, 10, 10)
+    _line_spacing_15(p)
+    _run(p, "Room: ", size=10, bold=True, color=theme.primary)
+    _run(p, hotel.room_type or "—", size=10, color=theme.primary)
+
+
+def _add_marinas_take(doc: Document, description: str, theme: Theme) -> None:
+    """Full-width themed description box labelled 'Marina’s Take:'."""
+    if not description:
+        return
+    table = doc.add_table(rows=1, cols=1)
+    table.autofit = False
+    _no_borders(table)
+    cell = table.rows[0].cells[0]
+    cell.width = Inches(7.0)
+    _shade_cell(cell, theme.marinas_hex)
+    _set_cell_margins(cell, 6, 6, 6, 6)
+
+    p = cell.paragraphs[0]
+    _sp(p, 0, 2)
+    _run(p, "Marina’s Take: ", size=10, bold=True, color=theme.primary)
+    _run(p, description, size=10, color=theme.primary)
+
+
+def _add_why_recommend_hotel_box(doc: Document, why: str, theme: Theme) -> None:
+    """Per-hotel 'Why we recommend this hotel' box — grouped layout only."""
+    if not why:
+        return
+    table = doc.add_table(rows=1, cols=1)
+    table.autofit = False
+    _no_borders(table)
+    cell = table.rows[0].cells[0]
+    cell.width = Inches(7.0)
+    _shade_cell(cell, theme.light_hex)
+    _set_cell_margins(cell, 6, 6, 6, 6)
+
+    p = cell.paragraphs[0]
+    _sp(p, 0, 0)
+    _run(p, "Why we recommend this hotel: ", size=10, bold=True, color=theme.primary)
+    _run(p, why, size=10, color=theme.primary)
+```
+
+- [ ] **Step 2: Verify functions importable**
+
+```bash
+python3 -c "
+from src.hotel_options.generator import (
+    _add_hotel_name_card, _add_hotel_photo,
+    _add_hotel_details_table, _add_marinas_take,
+    _add_why_recommend_hotel_box,
+)
+print('OK')
+"
+```
+Expected: `OK`
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add src/hotel_options/generator.py
+git commit -m "feat(hotel-options): add v2 hotel card components"
+```
+
+---
+
+### Task 4: Price summary + recommendation boxes
+
+**Files:**
+- Modify: `src/hotel_options/generator.py` — add pricing and recommendation box functions
+
+**Interfaces:**
+- Consumes: `Theme`, `Plan`, `format_indian_number`, `_shade_cell`, `_set_cell_margins`, `_no_borders`, `_run`, `_sp`
+- Produces:
+  - `_add_plan_price_summary(doc, plan, theme)`
+  - `_add_recommended_choice_banner(doc, plan_label, why_text)`
+  - `_add_why_recommend_box(doc, plan_label, why_text)`
+
+- [ ] **Step 1: Add pricing + recommendation functions (insert before stub `build_document`)**
+
+```python
+# ── Pricing + recommendation boxes ───────────────────────────────────────────
+
+def _add_plan_price_summary(doc: Document, plan: Plan, theme: Theme) -> None:
+    """3-col price summary: BEST ONLINE PRICE | OUR PRICE | YOU SAVE."""
+    pr = plan.pricing
+    label = plan.label.upper()
+    header_text = f"{label} PRICE SUMMARY"
+    if plan.recommended:
+        header_text += " • RECOMMENDED"
+
+    table = doc.add_table(rows=2, cols=3)
+    table.autofit = False
+    _no_borders(table)
+    col_w = Inches(7.0 / 3)
+    for row in table.rows:
+        for cell in row.cells:
+            cell.width = col_w
+
+    hdr = table.rows[0].cells[0].merge(table.rows[0].cells[2])
+    _shade_cell(hdr, theme.header_hex)
+    _set_cell_margins(hdr, 7.2, 7.2, 7.2, 7.2)
+    hp = hdr.paragraphs[0]
+    hp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    _sp(hp, 10, 10)
+    _run(hp, header_text, size=12, color=_WHITE)
+
+    you_save = pr.customer_discount > 0
+    you_save_str  = format_indian_number(pr.customer_discount) if you_save else "—"
+    you_save_pct  = f"{pr.discount_pct:.1f}% off best online prices" if you_save else ""
+
+    cols_data = [
+        # (bg, label_text, label_bold, value_text, value_size, value_bold, value_color, extra_pct)
+        (theme.light_hex, "BEST ONLINE PRICE", False,
+         format_indian_number(pr.total_online_price), 15, False, theme.primary, None),
+        ("FFFFFF", "OUR PRICE", True,
+         format_indian_number(pr.discounted_price), 18, True, theme.primary, None),
+        (_SAVINGS_BG, "YOU SAVE", True,
+         you_save_str, 18, True, _GREEN, you_save_pct),
+    ]
+
+    for col_idx, (bg, lbl, lbl_bold, val, val_sz, val_bold, val_color, extra) in enumerate(cols_data):
+        cell = table.rows[1].cells[col_idx]
+        _shade_cell(cell, bg)
+
+        lp = cell.paragraphs[0]
+        lp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        lbl_color = _GREEN if col_idx == 2 else theme.primary
+        _sp(lp, 10 if col_idx == 2 else 0, 3)
+        _run(lp, lbl, size=9, bold=lbl_bold, color=lbl_color)
+
+        vp = cell.add_paragraph()
+        vp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _sp(vp, 0, 0)
+        _run(vp, val, size=val_sz, bold=val_bold, color=val_color)
+
+        if extra:
+            ep = cell.add_paragraph()
+            ep.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            _sp(ep, 0, 10)
+            _run(ep, extra, size=9, bold=True, color=_GREEN)
+
+
+def _add_recommended_choice_banner(doc: Document, plan_label: str,
+                                   why_text: str) -> None:
+    """Cream banner shown before the exec summary table when a plan is recommended."""
+    if not why_text:
+        return
+    table = doc.add_table(rows=1, cols=1)
+    table.autofit = False
+    _no_borders(table)
+    cell = table.rows[0].cells[0]
+    cell.width = Inches(7.0)
+    _shade_cell(cell, _REC_BANNER_BG)
+    _set_cell_margins(cell, 6, 6, 6, 6)
+
+    p = cell.paragraphs[0]
+    _sp(p, 0, 0)
+    _run(p, f"Recommended choice: {plan_label}. ", size=11, bold=True,
+         color=RGBColor(0x1F, 0x3A, 0x5F))
+    _run(p, why_text, size=11, color=RGBColor(0x1F, 0x3A, 0x5F))
+
+
+def _add_why_recommend_box(doc: Document, plan_label: str, why_text: str) -> None:
+    """Transition box placed before a plan's heading."""
+    if not why_text:
+        return
+    table = doc.add_table(rows=1, cols=1)
+    table.autofit = False
+    _no_borders(table)
+    cell = table.rows[0].cells[0]
+    cell.width = Inches(7.0)
+    _shade_cell(cell, _REC_BANNER_BG)
+    _set_cell_margins(cell, 6, 6, 6, 6)
+
+    p = cell.paragraphs[0]
+    _sp(p, 0, 0)
+    _run(p, f"Why we recommend {plan_label}: ", size=10, bold=True,
+         color=RGBColor(0x1F, 0x3A, 0x5F))
+    _run(p, why_text, size=10, color=RGBColor(0x1F, 0x3A, 0x5F))
+```
+
+- [ ] **Step 2: Verify importable**
+
+```bash
+python3 -c "
+from src.hotel_options.generator import (
+    _add_plan_price_summary, _add_recommended_choice_banner, _add_why_recommend_box,
+)
+print('OK')
+"
+```
+Expected: `OK`
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add src/hotel_options/generator.py
+git commit -m "feat(hotel-options): add v2 price summary and recommendation boxes"
+```
+
+---
+
+### Task 5: Executive summary
+
+**Files:**
+- Modify: `src/hotel_options/generator.py` — add executive summary functions
+
+**Interfaces:**
+- Consumes: `Theme`, `_theme(index)`, `Plan`, `_add_recommended_choice_banner`, `_thin_borders`
+- Produces: `_build_executive_summary(doc, plans, grouped_by_sections)`
+
+- [ ] **Step 1: Add executive summary functions (insert before stub `build_document`)**
+
+```python
+# ── Executive summary ─────────────────────────────────────────────────────────
+
+def _build_exec_summary_by_plan(doc: Document, plans: list[Plan]) -> None:
+    col_widths = [Inches(0.74), Inches(3.32), Inches(1.07), Inches(0.94), Inches(0.93)]
+    col_labels = ["Plan", "Hotels", "Best Online Price", "Our Price", "You Save"]
+    _HDR = "1F3A5F"
+
+    table = doc.add_table(rows=1 + len(plans), cols=5)
+    table.autofit = False
+    for i, w in enumerate(col_widths):
+        for row in table.rows:
+            row.cells[i].width = w
+
+    for i, label in enumerate(col_labels):
+        cell = table.rows[0].cells[i]
+        _shade_cell(cell, _HDR)
+        cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+        p = cell.paragraphs[0]
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _sp(p, 0, 0)
+        _run(p, label, size=10, bold=True, color=_WHITE)
+
+    for row_idx, plan in enumerate(plans):
+        row = table.rows[row_idx + 1]
+        bg = "FFFFFF" if row_idx % 2 == 0 else "F7F7F7"
+        t = _theme(row_idx)
+        pr = plan.pricing
+
+        you_save_str = (format_indian_number(pr.customer_discount)
+                        if pr.customer_discount > 0 else "—")
+        you_save_pct = (f"({pr.discount_pct:.1f}% off)"
+                        if pr.customer_discount > 0 else None)
+
+        # Plan column
+        pc = row.cells[0]
+        _shade_cell(pc, bg)
+        pc.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+        pp = pc.paragraphs[0]
+        pp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _sp(pp, 0, 0)
+        _run(pp, plan.label, size=10, bold=True, color=t.primary)
+        if plan.recommended:
+            rp = pc.add_paragraph()
+            rp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            _sp(rp, 2, 0)
+            _run(rp, "★ RECOMMENDED", size=10, bold=True, color=t.accent)
+
+        # Hotels column
+        hc = row.cells[1]
+        _shade_cell(hc, bg)
+        hc.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+        for h_idx, hotel in enumerate(plan.hotels):
+            hp = hc.paragraphs[0] if h_idx == 0 else hc.add_paragraph()
+            hp.alignment = WD_ALIGN_PARAGRAPH.LEFT
+            fmt = hp.paragraph_format
+            fmt.space_before      = Pt(10)
+            fmt.space_after       = Pt(10 if h_idx == len(plan.hotels) - 1 else 0)
+            fmt.line_spacing_rule = WD_LINE_SPACING.SINGLE
+            star = _star_category(hotel.category)
+            suffix = f" ({star[0]}*)" if star else ""
+            _run(hp, f"{hotel.name}{suffix}", size=10, color=t.primary)
+
+        # Price columns
+        for col_idx, (val, bold, color) in enumerate([
+            (format_indian_number(pr.total_online_price), True, t.primary),
+            (format_indian_number(pr.discounted_price),   True, t.primary),
+            (you_save_str,                                True, _GREEN),
+        ]):
+            cell = row.cells[2 + col_idx]
+            _shade_cell(cell, bg)
+            cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+            p = cell.paragraphs[0]
+            p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            _sp(p, 0, 0)
+            _run(p, val, size=10, bold=bold, color=color)
+            if col_idx == 2 and you_save_pct:
+                p2 = cell.add_paragraph()
+                p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                _sp(p2, 0, 2)
+                _run(p2, you_save_pct, size=10, bold=True, color=_GREEN)
+
+    _thin_borders(table)
+
+
+def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan]) -> None:
+    col_widths = [Inches(1.55), Inches(2.55), Inches(0.9), Inches(0.9), Inches(1.1)]
+    col_labels = ["City / Dates", "Hotel", "Online Price", "Our Price", "You Save"]
+    _HDR = "1F3A5F"
+
+    hotel_rows = [(plan.label, hotel) for plan in plans for hotel in plan.hotels]
+
+    table = doc.add_table(rows=1 + len(hotel_rows), cols=5)
+    table.autofit = False
+    for i, w in enumerate(col_widths):
+        for row in table.rows:
+            row.cells[i].width = w
+
+    for i, label in enumerate(col_labels):
+        cell = table.rows[0].cells[i]
+        _shade_cell(cell, _HDR)
+        cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+        p = cell.paragraphs[0]
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        _sp(p, 0, 0)
+        _run(p, label, size=10, bold=True, color=_WHITE)
+
+    # Track theme index per hotel within its section
+    section_hotel_counts: dict[str, int] = {}
+    for row_idx, (section_label, hotel) in enumerate(hotel_rows):
+        if section_label not in section_hotel_counts:
+            section_hotel_counts[section_label] = 0
+        theme_idx = section_hotel_counts[section_label]
+        section_hotel_counts[section_label] += 1
+
+        row = table.rows[row_idx + 1]
+        t = _theme(theme_idx)
+        bg = t.light_hex
+        our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
+        you_save_str = (format_indian_number(hotel.customer_discount)
+                        if hotel.customer_discount > 0 else "—")
+        you_save_pct = (f"({hotel.discount_pct:.1f}% off)"
+                        if hotel.customer_discount > 0 else None)
+
+        star = _star_category(hotel.category)
+        suffix = f" ({star[0]}*)" if star else ""
+
+        for col_idx, (text, align, color, bold) in enumerate([
+            (section_label,                            WD_ALIGN_PARAGRAPH.LEFT,   t.primary, False),
+            (hotel.name + suffix,                      WD_ALIGN_PARAGRAPH.LEFT,   t.primary, False),
+            (format_indian_number(hotel.online_price), WD_ALIGN_PARAGRAPH.CENTER, t.primary, False),
+            (format_indian_number(our_price),          WD_ALIGN_PARAGRAPH.CENTER, t.primary, True),
+            (you_save_str,                             WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
+        ]):
+            cell = row.cells[col_idx]
+            _shade_cell(cell, bg)
+            cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
+            p = cell.paragraphs[0]
+            p.alignment = align
+            _sp(p, 2, 2)
+            _run(p, text, size=9, bold=bold, color=color)
+            if col_idx == 4 and you_save_pct:
+                p2 = cell.add_paragraph()
+                p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                _sp(p2, 0, 2)
+                _run(p2, you_save_pct, size=8, color=_GREEN)
+
+    _thin_borders(table)
+
+
+def _build_executive_summary(doc: Document, plans: list[Plan],
+                              grouped_by_sections: bool = False) -> None:
+    if not plans:
+        return
+
+    p = doc.add_paragraph()
+    _sp(p, 0, 4)
+    _run(p, "Executive Summary", size=16, bold=True)
+
+    p = doc.add_paragraph()
+    _sp(p, 0, 12)
+    _run(p, (
+        "A client-ready comparison of both accommodation plans, "
+        "highlighting value, comfort, and the recommended option."
+    ), size=11, color=RGBColor(0x1F, 0x3A, 0x5F))
+
+    if not grouped_by_sections:
+        rec_plan = next((pl for pl in plans if pl.recommended), None)
+        if rec_plan and rec_plan.why_recommend:
+            p = doc.add_paragraph()
+            _sp(p, 0, 6)
+            _add_recommended_choice_banner(doc, rec_plan.label, rec_plan.why_recommend)
+
+    p = doc.add_paragraph()
+    _sp(p, 8, 4)
+
+    if grouped_by_sections:
+        _build_exec_summary_by_hotel(doc, plans)
+    else:
+        _build_exec_summary_by_plan(doc, plans)
+```
+
+- [ ] **Step 2: Verify importable**
+
+```bash
+python3 -c "from src.hotel_options.generator import _build_executive_summary; print('OK')"
+```
+Expected: `OK`
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add src/hotel_options/generator.py
+git commit -m "feat(hotel-options): add v2 executive summary"
+```
+
+---
+
+### Task 6: Plans layout — wire up `build_document`
+
+**Files:**
+- Modify: `src/hotel_options/generator.py` — replace stub with full `build_document`, add `_build_plans_layout`
+
+**Interfaces:**
+- Consumes: all functions from Tasks 2–5
+- Produces: working `build_document` for plans layout; `_build_grouped_sections` left as a stub
+
+- [ ] **Step 1: Replace stub `build_document` with full plans implementation**
+
+```python
+def _build_plans_layout(doc: Document, plans: list[Plan],
+                        enriched_map: dict[str, EnrichedHotel],
+                        destination: str) -> None:
+    for plan_idx, plan in enumerate(plans):
+        t = _theme(plan_idx)
+
+        # Transition "why recommend" box before this plan (for plan_idx > 0)
+        if plan_idx > 0 and plan.why_recommend:
+            _add_why_recommend_box(doc, plan.label, plan.why_recommend)
+            p = doc.add_paragraph()
+            _sp(p, 8, 0)
+
+        # Plan heading
+        p = doc.add_paragraph()
+        _sp(p, 0, 0)
+        r = p.add_run(plan.label.upper())
+        r.font.name      = "Georgia"
+        r.font.size      = Pt(20)
+        r.font.color.rgb = t.primary
+        if plan.recommended:
+            r2 = p.add_run("  ★ RECOMMENDED")
+            r2.font.size      = Pt(12.5)
+            r2.font.color.rgb = t.accent
+
+        # One page per hotel
+        for hotel in plan.hotels:
+            _page_break(doc)
+            enriched = enriched_map.get(hotel.name)
+            h_name = enriched.official_name if enriched else hotel.name
+            h_city = hotel.city or destination
+            h_cat  = enriched.category if enriched else hotel.category
+
+            _add_hotel_name_card(doc, h_name, h_city, h_cat, t)
+            _add_hotel_photo(doc, enriched.photo_bytes if enriched else None)
+            if enriched:
+                _add_hotel_details_table(doc, enriched, t)
+                _add_marinas_take(doc, enriched.description, t)
+            else:
+                _add_hotel_details_table_unenriched(doc, hotel, t)
+
+        # Price summary on its own page
+        _page_break(doc)
+        _add_plan_price_summary(doc, plan, t)
+
+        # For plan 0: show its own why_recommend after price summary
+        if plan_idx == 0 and plan.why_recommend:
+            p = doc.add_paragraph()
+            _sp(p, 8, 0)
+            _add_why_recommend_box(doc, plan.label, plan.why_recommend)
+
+        if plan_idx < len(plans) - 1:
+            _page_break(doc)
+
+
+def _build_grouped_sections(doc: Document, plans: list[Plan],
+                             enriched_map: dict[str, EnrichedHotel],
+                             destination: str) -> None:
+    # Implemented in Task 7
+    pass
+
+
+def build_document(
+    plans: list[Plan],
+    enriched_map: dict[str, EnrichedHotel],
+    client_name: str,
+    destination: str,
+    requirements: str = "",
+    destination_photo: bytes | None = None,
+    stay_requirements: str = "",
+    grouped_by_sections: bool = False,
+) -> bytes:
+    doc = Document()
+    _set_margins(doc)
+    _configure_styles(doc)
+
+    _build_cover_page(doc, destination, client_name, requirements,
+                      stay_requirements=stay_requirements,
+                      destination_photo=destination_photo)
+    _page_break(doc)
+
+    _build_executive_summary(doc, plans, grouped_by_sections=grouped_by_sections)
+    _page_break(doc)
+
+    if grouped_by_sections:
+        _build_grouped_sections(doc, plans, enriched_map, destination)
+    else:
+        _build_plans_layout(doc, plans, enriched_map, destination)
+
+    _page_break(doc)
+    _build_thank_you_page(doc, destination)
+
+    buf = io.BytesIO()
+    doc.save(buf)
+    return buf.getvalue()
+```
+
+- [ ] **Step 2: Generate a test document and inspect visually**
+
+```bash
+python3 -c "
+from src.hotel_options.generator import build_document
+from src.hotel_options.models import Plan, PlanPricing, HotelRow
+
+h = HotelRow('Test Hotel Osaka', '3-Star Hotel', '1 x Double Room',
+             'Free cancellation', 'Breakfast included', 190742,
+             dates='Nov 15 - Nov 17', city='Osaka')
+pr = PlanPricing(190742, 190742, 14300, 176442, 7.5)
+plan_a = Plan('Plan A', [h], pr)
+
+h2 = HotelRow('Test Hotel Kyoto', '4-Star Hotel', '1 x Twin Room',
+              'Non-refundable', 'Room only', 207444,
+              dates='Nov 17 - Nov 20', city='Kyoto')
+pr2 = PlanPricing(207444, 207444, 13400, 194044, 6.5)
+plan_b = Plan('Plan B', [h2], pr2, recommended=True,
+              why_recommend='Plan B offers superior comfort and central location.')
+
+data = build_document([plan_a, plan_b], {}, 'Rochak', 'Japan')
+with open('/tmp/test_v2_plans.docx', 'wb') as f:
+    f.write(data)
+print(f'Generated {len(data)} bytes → /tmp/test_v2_plans.docx')
+"
+```
+Expected: `Generated NNNN bytes → /tmp/test_v2_plans.docx`. Open the file and verify:
+- Cover page with blank photo slot (no Unsplash key in test)
+- Executive summary with recommended choice banner (gold banner, Plan B text)
+- Plan A heading in navy `#1F3A5F` Georgia 20pt
+- Hotel page: navy name card, photo placeholder, navy HOTEL DETAILS table
+- Plan A price summary: navy header, 3-col BEST/OUR/SAVE
+- Plan B heading in gold `#8A6D2F` Georgia 20pt + ★ RECOMMENDED
+- Thank you page
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add src/hotel_options/generator.py
+git commit -m "feat(hotel-options): wire up v2 plans layout in build_document"
+```
+
+---
+
+### Task 7: Grouped-by-sections layout
+
+**Files:**
+- Modify: `src/hotel_options/generator.py` — implement `_build_grouped_sections`
+
+**Interfaces:**
+- Consumes: `_theme(index)`, all hotel card components, `_add_plan_price_summary`, `_add_why_recommend_hotel_box`
+- Produces: working `_build_grouped_sections`
+
+- [ ] **Step 1: Replace the `_build_grouped_sections` stub**
+
+```python
+def _build_grouped_sections(doc: Document, plans: list[Plan],
+                             enriched_map: dict[str, EnrichedHotel],
+                             destination: str) -> None:
+    for section_idx, plan in enumerate(plans):
+        if section_idx > 0:
+            _page_break(doc)
+
+        # Section heading
+        p = doc.add_paragraph()
+        _sp(p, 0, 8)
+        _run(p, plan.label.upper(), size=16, bold=True,
+             color=RGBColor(0x1F, 0x3A, 0x5F))
+
+        for hotel_idx, hotel in enumerate(plan.hotels):
+            if hotel_idx > 0:
+                _page_break(doc)
+            t = _theme(hotel_idx)
+            enriched = enriched_map.get(hotel.name)
+            h_name = enriched.official_name if enriched else hotel.name
+            h_city = hotel.city or re.sub(r'\s*\(.*\)\s*$', '', plan.label).strip() or destination
+            h_cat  = enriched.category if enriched else hotel.category
+
+            _add_hotel_name_card(doc, h_name, h_city, h_cat, t)
+            _add_hotel_photo(doc, enriched.photo_bytes if enriched else None)
+            if enriched:
+                _add_hotel_details_table(doc, enriched, t)
+                _add_marinas_take(doc, enriched.description, t)
+            else:
+                _add_hotel_details_table_unenriched(doc, hotel, t)
+
+            _add_why_recommend_hotel_box(doc, hotel.why_recommend, t)
+
+        # Per-section price summary (navy theme for section header)
+        _page_break(doc)
+        _add_plan_price_summary(doc, plan, _theme(0))
+```
+
+- [ ] **Step 2: Generate and inspect grouped layout**
+
+```bash
+python3 -c "
+from src.hotel_options.generator import build_document
+from src.hotel_options.models import Plan, PlanPricing, HotelRow
+
+h1 = HotelRow('Hotel Osaka 1', '3-Star Hotel', '1 x Double', 'Free cancellation',
+              'Breakfast', 80000, dates='Nov 15-17', city='Osaka',
+              why_recommend='Great location near Dotonbori.')
+h2 = HotelRow('Hotel Osaka 2', '4-Star Hotel', '1 x Twin', 'Non-refundable',
+              'Room only', 95000, dates='Nov 15-17', city='Osaka')
+pr = PlanPricing(175000, 175000, 0, 175000, 0)
+plan = Plan('Osaka (Nov 15-17)', [h1, h2], pr)
+
+data = build_document([plan], {}, 'Test Client', 'Japan', grouped_by_sections=True)
+with open('/tmp/test_v2_grouped.docx', 'wb') as f:
+    f.write(data)
+print(f'Generated {len(data)} bytes')
+"
+```
+Expected: `Generated NNNN bytes`. Open and verify:
+- Hotel 1 page: navy theme name card + HOTEL DETAILS + "Why we recommend this hotel" navy box
+- Hotel 2 page: gold theme name card + HOTEL DETAILS (no why recommend box)
+- Section price summary: navy header
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add src/hotel_options/generator.py
+git commit -m "feat(hotel-options): implement v2 grouped-by-sections layout"
+```
+
+---
+
+### Task 8: Wire up service layer + Unsplash cover photo
+
+**Files:**
+- Modify: `src/library/ui/services/hotel_options_service.py`
+
+**Interfaces:**
+- Consumes: `fetch_cover_photo` from `src/hotel_options/cover_photo.py`
+- Change: `generate_doc` uses Unsplash/Pexels instead of Google Places for cover photo; reads `UNSPLASH_ACCESS_KEY` and `PEXELS_API_KEY` from env
+
+- [ ] **Step 1: Update imports and `generate_doc` in `hotel_options_service.py`**
+
+At the top of the file, add:
+```python
+import os as _os
+from src.hotel_options.cover_photo import fetch_cover_photo as _fetch_cover_photo
+```
+
+In `generate_doc`, find this line:
+```python
+    destination_photo = _enricher.fetch_destination_photo(destination, api_key)
+```
+Replace it with:
+```python
+    travel_dates = [h.dates for plan in result.plans for h in plan.hotels if h.dates]
+    destination_photo = _fetch_cover_photo(
+        destination,
+        travel_dates,
+        ai_client,
+        unsplash_key=_os.getenv("UNSPLASH_ACCESS_KEY", ""),
+        pexels_key=_os.getenv("PEXELS_API_KEY", ""),
+    )
+```
+
+- [ ] **Step 2: Verify service imports cleanly**
+
+```bash
+python3 -c "from src.library.ui.services.hotel_options_service import generate_doc; print('OK')"
+```
+Expected: `OK`
+
+- [ ] **Step 3: Start the server and test end-to-end**
+
+```bash
+python -m src.library ui --port 8765
+```
+
+Upload `DO NOT SHARE Rochak_Accommodation Options_Japan (1).xlsx`, parse, then generate. Download the DOCX and verify:
+- Cover page: Unsplash landscape photo of Japan, full-width
+- Executive summary: recommended choice banner if Plan B is marked recommended
+- Plan A: navy theme throughout (name card `#F3F7FB`, header `#1F3A5F`)
+- Plan B: gold theme throughout (name card `#FBF6EA`, header `#8A6D2F`)
+- Hotel details: 2-col table with Stay/Rating/Flexibility/Includes left, Room/Address/Phone right
+- Marina's Take: themed box below details
+- Price summary: 3-col BEST ONLINE PRICE / OUR PRICE / YOU SAVE
+
+- [ ] **Step 4: Commit**
+
+```bash
+git add src/library/ui/services/hotel_options_service.py
+git commit -m "feat(hotel-options): wire up Unsplash cover photo in service layer"
+```

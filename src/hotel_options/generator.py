@@ -778,51 +778,6 @@ def _add_price_summary(doc: Document, plan: Plan, theme_index: int = 0) -> None:
     _add_plan_price_summary(doc, plan, _theme(theme_index))
 
 
-def _add_hotel_price_strip(doc: Document, hotel: HotelRow, theme: Theme) -> None:
-    """Headerless 3-col price strip for a single hotel (no-plans layout)."""
-    you_save = hotel.customer_discount > 0
-    you_save_str = format_indian_number(hotel.customer_discount) if you_save else "—"
-    you_save_pct = f"{hotel.discount_pct:.1f}% off best online prices" if you_save else ""
-    our_price = hotel.discounted_price if hotel.discounted_price > 0 else hotel.online_price
-
-    cols_data = [
-        (theme.light_hex, "BEST ONLINE PRICE", format_indian_number(hotel.online_price), _NAVY),
-        (_WHITE_BG,        "OUR PRICE",         format_indian_number(our_price),          theme.primary),
-        (_SAVINGS_BG,      "YOU SAVE",           you_save_str,                             _GREEN),
-    ]
-
-    table = doc.add_table(rows=1, cols=3)
-    table.autofit = False
-    _tbl_outer_borders(table, _OUTER_BORDER_HEX, sz=4)
-    col_w = Inches(7.0 / 3)
-    for cell in table.rows[0].cells:
-        cell.width = col_w
-
-    for col_idx, (bg, lbl, val, val_color) in enumerate(cols_data):
-        cell = table.rows[0].cells[col_idx]
-        _shade_cell(cell, bg)
-        _set_cell_margins(cell, 7.2, 7.2, 7.2, 7.2)
-        _cell_borders(cell, (6, theme.border_hex), (6, theme.border_hex),
-                      (6, theme.border_hex), (6, theme.border_hex))
-
-        lbl_color = _GREEN if col_idx == 2 else (_NAVY if col_idx == 0 else theme.primary)
-        lp = cell.paragraphs[0]
-        lp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _sp(lp, 0, 3)
-        _run(lp, lbl, size=9, bold=True, color=lbl_color)
-
-        vp = cell.add_paragraph()
-        vp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        _sp(vp, 0, 0)
-        _run(vp, val, size=18, bold=True, color=val_color)
-
-        if col_idx == 2 and you_save_pct:
-            ep = cell.add_paragraph()
-            ep.alignment = WD_ALIGN_PARAGRAPH.CENTER
-            _sp(ep, 0, 0)
-            _run(ep, you_save_pct, size=9, bold=True, color=_GREEN)
-
-
 def _add_recommended_choice_banner(doc: Document, plan_label: str,
                                    why_text: str) -> None:
     """Cream banner shown before the exec summary table when a plan is recommended."""
@@ -1163,12 +1118,14 @@ def _build_grouped_sections(doc: Document, plans: list[Plan],
                 _add_marinas_take(doc, enriched.description, t)
             else:
                 _add_hotel_details_table_unenriched(doc, hotel, t)
-            _micro_gap(doc)
-            _add_hotel_price_strip(doc, hotel, t)
             if hotel.why_recommend:
                 p = doc.add_paragraph()
                 _sp(p, 6, 0)
                 _add_why_recommend_hotel_box(doc, hotel.why_recommend, t)
+
+        # Per-section price summary on its own page (navy theme)
+        _page_break(doc)
+        _add_price_summary(doc, plan, theme_index=0)
 
 
 def _fix_compat_settings(doc: Document) -> None:

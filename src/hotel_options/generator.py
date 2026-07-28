@@ -499,7 +499,8 @@ def _build_thank_you_page(doc: Document, destination: str) -> None:
 # ── Hotel card components ─────────────────────────────────────────────────────
 
 def _add_hotel_name_card(doc: Document, hotel_name: str, city: str,
-                         category: str, theme: Theme) -> None:
+                         category: str, theme: Theme,
+                         recommended: bool = False) -> None:
     """Full-width themed name card: hotel name (Georgia 14pt bold) + • City • X-star (10pt)."""
     table = doc.add_table(rows=1, cols=1)
     table.autofit = False
@@ -518,6 +519,13 @@ def _add_hotel_name_card(doc: Document, hotel_name: str, city: str,
     r.font.size      = Pt(14)
     r.font.bold      = True
     r.font.color.rgb = theme.primary
+
+    if recommended:
+        rec = p.add_run("  ★ RECOMMENDED")
+        rec.font.name      = "Georgia"
+        rec.font.size      = Pt(10)
+        rec.font.bold      = True
+        rec.font.color.rgb = _AMBER
 
     star = _star_category(category)
     parts = " • ".join(x for x in [city, star] if x)
@@ -685,7 +693,8 @@ def _add_hotel_card(doc: Document, row: HotelRow,
     """Compose a complete hotel card: name → photo → details → marina's take → why-recommend."""
     theme = _theme(theme_index)
     hotel_name = (enriched.official_name if enriched else None) or row.name
-    _add_hotel_name_card(doc, hotel_name, row.city, row.category, theme)
+    _add_hotel_name_card(doc, hotel_name, row.city, row.category, theme,
+                         recommended=row.recommended)
     if enriched:
         _add_hotel_photo(doc, enriched.photo_bytes)
         _add_hotel_details_table(doc, enriched, theme)
@@ -920,8 +929,16 @@ def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan], enriched_map:
         for row in table.rows:
             row.cells[i].width = w
 
+    hdr_row = table.rows[0]
+    tr = hdr_row._tr
+    trPr = OxmlElement("w:trPr")
+    trHeight = OxmlElement("w:trHeight")
+    trHeight.set(qn("w:val"), str(int(35 * 20)))  # 35pt in twips
+    trPr.append(trHeight)
+    tr.insert(0, trPr)
+
     for i, label in enumerate(col_labels):
-        cell = table.rows[0].cells[i]
+        cell = hdr_row.cells[i]
         _shade_cell(cell, _HDR)
         cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
         p = cell.paragraphs[0]
@@ -933,8 +950,7 @@ def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan], enriched_map:
     for plan in plans:
         section_label = plan.label
         for hotel_idx, hotel in enumerate(plan.hotels):
-            t = _theme(hotel_idx)
-            bg = t.light_hex
+            bg = "FFFFFF" if row_idx % 2 == 0 else "F7F7F7"
 
             row = table.rows[row_idx + 1]
             row_idx += 1
@@ -951,11 +967,11 @@ def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan], enriched_map:
             h_name = (_enriched.official_name if _enriched and _enriched.official_name else None) or hotel.name
 
             for col_idx, (text, align, color, bold) in enumerate([
-                (section_label,                            WD_ALIGN_PARAGRAPH.LEFT,   t.primary, False),
-                (h_name + suffix,                          WD_ALIGN_PARAGRAPH.LEFT,   _NAVY,     False),
-                (format_indian_number(hotel.online_price), WD_ALIGN_PARAGRAPH.CENTER, t.primary, False),
-                (format_indian_number(our_price),          WD_ALIGN_PARAGRAPH.CENTER, t.primary, True),
-                (you_save_str,                             WD_ALIGN_PARAGRAPH.CENTER, _GREEN,    True),
+                (section_label,                            WD_ALIGN_PARAGRAPH.LEFT,   _NAVY,  False),
+                (h_name + suffix,                          WD_ALIGN_PARAGRAPH.LEFT,   _NAVY,  False),
+                (format_indian_number(hotel.online_price), WD_ALIGN_PARAGRAPH.CENTER, _NAVY,  False),
+                (format_indian_number(our_price),          WD_ALIGN_PARAGRAPH.CENTER, _NAVY,  True),
+                (you_save_str,                             WD_ALIGN_PARAGRAPH.CENTER, _GREEN, True),
             ]):
                 cell = row.cells[col_idx]
                 _shade_cell(cell, bg)
@@ -964,6 +980,11 @@ def _build_exec_summary_by_hotel(doc: Document, plans: list[Plan], enriched_map:
                 p.alignment = align
                 _sp(p, 2, 2)
                 _run(p, text, size=9, bold=bold, color=color)
+                if col_idx == 1 and hotel.recommended:
+                    rp = cell.add_paragraph()
+                    rp.alignment = WD_ALIGN_PARAGRAPH.LEFT
+                    _sp(rp, 0, 2)
+                    _run(rp, "★ RECOMMENDED", size=8, bold=True, color=_AMBER)
                 if col_idx == 4 and you_save_pct:
                     p2 = cell.add_paragraph()
                     p2.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -987,6 +1008,8 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
     p = doc.add_paragraph()
     p.paragraph_format.left_indent = Pt(0)
     _run(p, (
+        "A curated overview of all accommodation options, organised by destination and date."
+        if grouped_by_sections else
         "A client-ready comparison of both accommodation plans, "
         "highlighting value, comfort, and the recommended option."
     ), color=_NAVY)
@@ -1057,10 +1080,23 @@ def _build_grouped_sections(doc: Document, plans: list[Plan],
         if section_idx > 0:
             _page_break(doc)
 
-        # Section heading
+        # Section heading — styled like plan headings with horizontal rule
+        p = doc.add_paragraph(style="Heading 1")
+        p.paragraph_format.left_indent = Pt(0)
+        r = p.add_run(plan.label.upper())
+        r.font.name = "Georgia"
+
         p = doc.add_paragraph()
-        _sp(p, 0, 8)
-        _run(p, plan.label.upper(), size=16, bold=True, color=_NAVY)
+        _sp(p, 0, 4)
+        pPr = p._p.get_or_add_pPr()
+        pBdr = OxmlElement("w:pBdr")
+        top_border = OxmlElement("w:top")
+        top_border.set(qn("w:val"), "single")
+        top_border.set(qn("w:sz"), "18")
+        top_border.set(qn("w:space"), "0")
+        top_border.set(qn("w:color"), _THEME_NAVY.secondary_hex)
+        pBdr.append(top_border)
+        pPr.append(pBdr)
 
         for hotel_idx, hotel in enumerate(plan.hotels):
             if hotel_idx > 0:
@@ -1071,11 +1107,13 @@ def _build_grouped_sections(doc: Document, plans: list[Plan],
             h_city = hotel.city or re.sub(r'\s*\(.*\)\s*$', '', plan.label).strip() or destination
             h_cat  = (enriched.category if enriched else None) or hotel.category
 
-            _add_hotel_name_card(doc, h_name, h_city, h_cat, t)
+            _add_hotel_name_card(doc, h_name, h_city, h_cat, t,
+                                 recommended=hotel.recommended)
             if enriched:
                 _add_hotel_photo(doc, enriched.photo_bytes)
                 _add_hotel_details_table(doc, enriched, t)
-                doc.add_paragraph()
+                p = doc.add_paragraph()
+                _sp(p, 4, 0)
                 _add_marinas_take(doc, enriched.description, t)
             else:
                 _add_hotel_details_table_unenriched(doc, hotel, t)

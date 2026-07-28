@@ -547,7 +547,7 @@ def _add_hotel_photo(doc: Document, photo_bytes: bytes | None) -> None:
 
 
 def _add_hotel_details_table(doc: Document, enriched: EnrichedHotel,
-                              theme: Theme) -> None:
+                              theme: Theme):
     """2-col HOTEL DETAILS table: Stay/Rating/Flexibility/Includes left, Room/Address/Phone right."""
     table = doc.add_table(rows=2, cols=2)
     table.autofit = False
@@ -600,11 +600,13 @@ def _add_hotel_details_table(doc: Document, enriched: EnrichedHotel,
         _run(p, f"{label}: ", size=10, bold=True, color=theme.primary)
         _run(p, value, size=10, color=theme.primary)
 
+    return table
+
 
 def _add_hotel_details_table_unenriched(doc: Document, hotel: HotelRow,
-                                         theme: Theme) -> None:
+                                         theme: Theme):
     """Fallback 2-col details table when Google Places enrichment is unavailable."""
-    table = doc.add_table(rows=3, cols=2)
+    table = doc.add_table(rows=2, cols=2)
     table.autofit = False
     _tbl_outer_borders(table, _OUTER_BORDER_HEX, sz=4)
     for row in table.rows:
@@ -647,8 +649,13 @@ def _add_hotel_details_table_unenriched(doc: Document, hotel: HotelRow,
     _run(p, "Room: ", size=10, bold=True, color=theme.primary)
     _run(p, hotel.room_type or "—", size=10, color=theme.primary)
 
-    # Price row — full-width, separated by a thin top border
-    price_cell = table.rows[2].cells[0].merge(table.rows[2].cells[1])
+    return table
+
+
+def _append_price_row(table, hotel: HotelRow, theme: Theme) -> None:
+    """Append a full-width price row to an existing hotel details table."""
+    price_row = table.add_row()
+    price_cell = price_row.cells[0].merge(price_row.cells[1])
     _shade_cell(price_cell, theme.light_hex)
     _set_cell_margins(price_cell, 5.4, 5.4, 7.2, 5.4)
     _cell_borders(price_cell,
@@ -1135,12 +1142,14 @@ def _build_grouped_sections(doc: Document, plans: list[Plan],
                                  recommended=hotel.recommended)
             if enriched:
                 _add_hotel_photo(doc, enriched.photo_bytes)
-                _add_hotel_details_table(doc, enriched, t)
+                details_tbl = _add_hotel_details_table(doc, enriched, t)
+                _append_price_row(details_tbl, hotel, t)
                 p = doc.add_paragraph()
                 _sp(p, 4, 0)
                 _add_marinas_take(doc, enriched.description, t)
             else:
-                _add_hotel_details_table_unenriched(doc, hotel, t)
+                details_tbl = _add_hotel_details_table_unenriched(doc, hotel, t)
+                _append_price_row(details_tbl, hotel, t)
             if hotel.why_recommend:
                 p = doc.add_paragraph()
                 _sp(p, 6, 0)

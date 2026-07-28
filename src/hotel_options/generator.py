@@ -1098,10 +1098,10 @@ def _build_grouped_sections(doc: Document, plans: list[Plan],
         pBdr.append(top_border)
         pPr.append(pBdr)
 
+        t = _theme(section_idx)
         for hotel_idx, hotel in enumerate(plan.hotels):
             if hotel_idx > 0:
                 _page_break(doc)
-            t = _theme(hotel_idx)
             enriched = enriched_map.get(hotel.name)
             h_name = (enriched.official_name if enriched else None) or hotel.name
             h_city = hotel.city or re.sub(r'\s*\(.*\)\s*$', '', plan.label).strip() or destination
@@ -1117,7 +1117,10 @@ def _build_grouped_sections(doc: Document, plans: list[Plan],
                 _add_marinas_take(doc, enriched.description, t)
             else:
                 _add_hotel_details_table_unenriched(doc, hotel, t)
-            _add_why_recommend_hotel_box(doc, hotel.why_recommend, t)
+            if hotel.why_recommend:
+                p = doc.add_paragraph()
+                _sp(p, 6, 0)
+                _add_why_recommend_hotel_box(doc, hotel.why_recommend, t)
 
         # Per-section price summary on its own page (navy theme)
         _page_break(doc)

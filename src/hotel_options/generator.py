@@ -737,7 +737,7 @@ def _add_plan_price_summary(doc: Document, plan: Plan, theme: Theme) -> None:
     cols_data = [
         # (bg, label, label_bold, value, value_size, value_bold, value_color, extra_pct)
         (theme.light_hex, "BEST ONLINE PRICE", True,
-         format_indian_number(pr.total_online_price), 15, True, _NAVY, None),
+         format_indian_number(pr.total_online_price), 18, True, _NAVY, None),
         (_WHITE_BG, "OUR PRICE", True,
          format_indian_number(pr.discounted_price), 18, True, theme.primary, None),
         (_SAVINGS_BG, "YOU SAVE", True,

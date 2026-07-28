@@ -727,8 +727,8 @@ def _add_plan_price_summary(doc: Document, plan: Plan, theme: Theme) -> None:
                   (6, theme.header_hex), (6, theme.header_hex))
     hp = hdr.paragraphs[0]
     hp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    _sp(hp, 10, 10)
-    _run(hp, header_text, size=12, color=_WHITE)
+    _sp(hp, 0, 0)
+    _run(hp, header_text, size=10, color=_WHITE)
 
     you_save = pr.customer_discount > 0
     you_save_str = format_indian_number(pr.customer_discount) if you_save else "—"
@@ -736,8 +736,8 @@ def _add_plan_price_summary(doc: Document, plan: Plan, theme: Theme) -> None:
 
     cols_data = [
         # (bg, label, label_bold, value, value_size, value_bold, value_color, extra_pct)
-        (theme.light_hex, "BEST ONLINE PRICE", False,
-         format_indian_number(pr.total_online_price), 15, False, _NAVY, None),
+        (theme.light_hex, "BEST ONLINE PRICE", True,
+         format_indian_number(pr.total_online_price), 15, True, _NAVY, None),
         (_WHITE_BG, "OUR PRICE", True,
          format_indian_number(pr.discounted_price), 18, True, theme.primary, None),
         (_SAVINGS_BG, "YOU SAVE", True,
@@ -754,7 +754,7 @@ def _add_plan_price_summary(doc: Document, plan: Plan, theme: Theme) -> None:
         lp = cell.paragraphs[0]
         lp.alignment = WD_ALIGN_PARAGRAPH.CENTER
         lbl_color = _GREEN if col_idx == 2 else (_NAVY if col_idx == 0 else theme.primary)
-        _sp(lp, 10 if col_idx == 2 else 0, 3)
+        _sp(lp, 0, 3)
         _run(lp, lbl, size=9, bold=lbl_bold, color=lbl_color)
 
         vp = cell.add_paragraph()

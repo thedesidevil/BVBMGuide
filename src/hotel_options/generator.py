@@ -1081,12 +1081,10 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
 
     p = doc.add_paragraph()
     p.paragraph_format.left_indent = Pt(0)
-    _run(p, (
-        "A curated overview of all accommodation options, organised by destination and date."
-        if grouped_by_sections else
-        "A client-ready comparison of both accommodation plans, "
-        "highlighting value, comfort, and the recommended option."
-    ), color=_NAVY)
+    _run(p,
+         "We've handpicked these accommodation options with your preferences, "
+         "itinerary, and the overall experience in mind.",
+         color=_NAVY)
     _sp(p, 0, 8)
 
     em = enriched_map or {}

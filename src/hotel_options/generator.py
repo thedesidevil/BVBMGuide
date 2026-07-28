@@ -347,7 +347,7 @@ def _add_trip_snapshot(doc: Document, destination: str, requirements: str,
     hp = hdr.paragraphs[0]
     hp.alignment = WD_ALIGN_PARAGRAPH.CENTER
     _sp(hp, 0, 0)
-    _run(hp, "TRIP SNAPSHOT", font="Georgia", size=10, color=_WHITE)
+    _run(hp, "TRIP SNAPSHOT", font="Georgia", size=10, bold=True, color=_WHITE)
 
     for col_idx, (label, value) in enumerate(data):
         cell = table.rows[1].cells[col_idx]
@@ -462,12 +462,7 @@ def _build_cover_page(doc: Document, destination: str, client_name: str,
 
     _page_break(doc)
     _add_advisor_note(doc, destination)
-    _blank(doc, 1)
-    p = doc.add_paragraph()
-    _sp(p, 0, 4)
     _add_separator_rule(doc)
-    p = doc.add_paragraph()
-    _sp(p, 0, 6)
     _add_letterhead_footer(doc, centered=True)
 
 
@@ -478,7 +473,7 @@ def _build_thank_you_page(doc: Document, destination: str) -> None:
 
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    _sp(p, 0, 28)
+    _sp(p, 0, 8)
     _run(p, "Thank You", size=20, bold=True)
 
     for text in [
@@ -555,7 +550,7 @@ def _add_hotel_details_table(doc: Document, enriched: EnrichedHotel,
 
     hdr = table.rows[0].cells[0].merge(table.rows[0].cells[1])
     _shade_cell(hdr, theme.header_hex)
-    _set_cell_margins(hdr, 7.2, 7.2, 7.2, 7.2)
+    _set_cell_margins(hdr, 7.2, 7.2, 0, 7.2)
     _cell_borders(hdr, (8, theme.header_hex), (8, theme.header_hex),
                   (8, theme.header_hex), (8, theme.header_hex))
     hp = hdr.paragraphs[0]
@@ -610,7 +605,7 @@ def _add_hotel_details_table_unenriched(doc: Document, hotel: HotelRow,
 
     hdr = table.rows[0].cells[0].merge(table.rows[0].cells[1])
     _shade_cell(hdr, theme.header_hex)
-    _set_cell_margins(hdr, 7.2, 7.2, 7.2, 7.2)
+    _set_cell_margins(hdr, 7.2, 7.2, 0, 7.2)
     _cell_borders(hdr, (8, theme.header_hex), (8, theme.header_hex),
                   (8, theme.header_hex), (8, theme.header_hex))
     hp = hdr.paragraphs[0]
@@ -660,7 +655,7 @@ def _add_marinas_take(doc: Document, description: str, theme: Theme) -> None:
 
     p = cell.paragraphs[0]
     _sp(p, 0, 2)
-    _run(p, "Marina's Take: ", size=10, bold=True, italic=True, color=theme.primary)
+    _run(p, "Our Take: ", size=10, bold=True, italic=True, color=theme.primary)
     _run(p, description, size=10, color=_NAVY)
 
 
@@ -728,7 +723,7 @@ def _add_plan_price_summary(doc: Document, plan: Plan, theme: Theme) -> None:
     hp = hdr.paragraphs[0]
     hp.alignment = WD_ALIGN_PARAGRAPH.CENTER
     _sp(hp, 0, 0)
-    _run(hp, header_text, size=10, color=_WHITE)
+    _run(hp, header_text, size=10, bold=True, color=_WHITE)
 
     you_save = pr.customer_discount > 0
     you_save_str = format_indian_number(pr.customer_discount) if you_save else "—"
@@ -765,7 +760,7 @@ def _add_plan_price_summary(doc: Document, plan: Plan, theme: Theme) -> None:
         if extra:
             ep = cell.add_paragraph()
             ep.alignment = WD_ALIGN_PARAGRAPH.CENTER
-            _sp(ep, 0, 10)
+            _sp(ep, 0, 0)
             _run(ep, extra, size=9, bold=True, color=_GREEN)
 
 
@@ -785,10 +780,10 @@ def _add_recommended_choice_banner(doc: Document, plan_label: str,
     _pin_table_left(table)
     cell = table.rows[0].cells[0]
     cell.width = Inches(7.0)
-    _shade_cell(cell, _REC_BANNER_BG)
+    _shade_cell(cell, _THEME_NAVY.light_hex)
     _set_cell_margins(cell, 6, 6, 6, 6)
-    _cell_borders(cell, (8, _AMBER_BORDER_HEX), (8, _AMBER_BORDER_HEX),
-                  (8, _AMBER_BORDER_HEX), (8, _AMBER_BORDER_HEX))
+    _cell_borders(cell, (8, _THEME_NAVY.header_hex), (8, _THEME_NAVY.header_hex),
+                  (8, _THEME_NAVY.header_hex), (8, _THEME_NAVY.header_hex))
 
     p = cell.paragraphs[0]
     _sp(p, 0, 0)
@@ -997,19 +992,16 @@ def _build_executive_summary(doc: Document, plans: list[Plan],
     ), color=_NAVY)
     _sp(p, 0, 8)
 
-    if not grouped_by_sections:
-        rec_plan = next((pl for pl in plans if pl.recommended), None)
-        if rec_plan and rec_plan.why_recommend:
-            _add_recommended_choice_banner(doc, rec_plan.label, rec_plan.why_recommend)
-
-    p = doc.add_paragraph()
-    _sp(p, 0, 4)
-
     em = enriched_map or {}
     if grouped_by_sections:
         _build_exec_summary_by_hotel(doc, plans, em)
     else:
         _build_exec_summary_by_plan(doc, plans, em)
+        rec_plan = next((pl for pl in plans if pl.recommended), None)
+        if rec_plan and rec_plan.why_recommend:
+            p = doc.add_paragraph()
+            _sp(p, 4, 0)
+            _add_recommended_choice_banner(doc, rec_plan.label, rec_plan.why_recommend)
 
 
 # ── Plans layout (Task 6) ─────────────────────────────────────────────────────
@@ -1019,12 +1011,6 @@ def _build_plans_layout(doc: Document, plans: list[Plan],
                         destination: str) -> None:
     for plan_idx, plan in enumerate(plans):
         t = _theme(plan_idx)
-
-        # Transition "why recommend" box before this plan (for plans after the first)
-        if plan_idx > 0 and plan.why_recommend:
-            _add_why_recommend_box(doc, plan)
-            p = doc.add_paragraph()
-            _sp(p, 8, 0)
 
         # Plan heading
         p = doc.add_paragraph(style="Heading 1")
@@ -1059,12 +1045,6 @@ def _build_plans_layout(doc: Document, plans: list[Plan],
         # Price summary on its own page
         _page_break(doc)
         _add_price_summary(doc, plan, theme_index=plan_idx)
-
-        # For plan 0: show its own why_recommend after price summary
-        if plan_idx == 0 and plan.why_recommend:
-            p = doc.add_paragraph()
-            _sp(p, 8, 0)
-            _add_why_recommend_box(doc, plan)
 
         if plan_idx < len(plans) - 1:
             _page_break(doc)

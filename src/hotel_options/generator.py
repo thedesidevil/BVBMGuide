@@ -678,8 +678,8 @@ def _add_why_recommend_hotel_box(doc: Document, why: str, theme: Theme) -> None:
     cell.width = Inches(7.0)
     _shade_cell(cell, theme.light_hex)
     _set_cell_margins(cell, 6, 6, 6, 6)
-    _cell_borders(cell, (8, _AMBER_BORDER_HEX), (8, _AMBER_BORDER_HEX),
-                  (8, _AMBER_BORDER_HEX), (8, _AMBER_BORDER_HEX))
+    _cell_borders(cell, (8, theme.header_hex), (8, theme.header_hex),
+                  (8, theme.header_hex), (8, theme.header_hex))
 
     p = cell.paragraphs[0]
     _sp(p, 0, 0)
@@ -1080,11 +1080,14 @@ def _build_grouped_sections(doc: Document, plans: list[Plan],
         if section_idx > 0:
             _page_break(doc)
 
+        t = _theme(section_idx)
+
         # Section heading — styled like plan headings with horizontal rule
         p = doc.add_paragraph(style="Heading 1")
         p.paragraph_format.left_indent = Pt(0)
         r = p.add_run(plan.label.upper())
         r.font.name = "Georgia"
+        r.font.color.rgb = t.primary
 
         p = doc.add_paragraph()
         _sp(p, 0, 4)
@@ -1094,11 +1097,9 @@ def _build_grouped_sections(doc: Document, plans: list[Plan],
         top_border.set(qn("w:val"), "single")
         top_border.set(qn("w:sz"), "18")
         top_border.set(qn("w:space"), "0")
-        top_border.set(qn("w:color"), _THEME_NAVY.secondary_hex)
+        top_border.set(qn("w:color"), t.secondary_hex)
         pBdr.append(top_border)
         pPr.append(pBdr)
-
-        t = _theme(section_idx)
         for hotel_idx, hotel in enumerate(plan.hotels):
             if hotel_idx > 0:
                 _page_break(doc)

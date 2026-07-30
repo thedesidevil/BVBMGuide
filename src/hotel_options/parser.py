@@ -30,8 +30,10 @@ _FILENAME_RE2 = re.compile(
     re.IGNORECASE,
 )
 _TRAILING_COPY_NUM_RE = re.compile(r'\s*\(\d+\)\s*$')
-_JUNK_PART_RE = re.compile(r'^(hotel\s*options?|accommodation(?:\s+options?)?|plans?)$', re.IGNORECASE)
+_JUNK_PART_RE = re.compile(r'^(hotel\s*options?|accommodation(?:\s+options?)?|no\s*plans?|plans?)$', re.IGNORECASE)
 _KNOWN_PREFIX_RE = re.compile(r'^(?:copy\s+of\s+)?DO NOT SHARE$', re.IGNORECASE)
+# Strips descriptor suffixes appended to a name, e.g. "Saumitra- accommodation" → "Saumitra"
+_NAME_JUNK_SUFFIX_RE = re.compile(r'\s*[-–]\s*(accommodation(?:\s+options?)?|hotel\s*options?|no\s*plans?)$', re.IGNORECASE)
 
 
 _FILENAME_AI_PROMPT = """\
@@ -76,7 +78,7 @@ def extract_filename_meta(filename: str, ai_client=None) -> tuple[str, str]:
     parts = [p.strip() for p in stem.split("_") if p.strip()]
     parts = [p for p in parts if not _KNOWN_PREFIX_RE.match(p)]
     parts = [p for p in parts if not _JUNK_PART_RE.match(p)]
-    client_name = parts[0] if parts else ""
+    client_name = _NAME_JUNK_SUFFIX_RE.sub('', parts[0]).strip() if parts else ""
     destination = _TRAILING_COPY_NUM_RE.sub('', parts[-1]).strip() if len(parts) > 1 else ""
     return client_name, destination
 

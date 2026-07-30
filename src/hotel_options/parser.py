@@ -9,7 +9,7 @@ from src.hotel_options.models import (
     HotelRow, PlanPricing, Plan, UnknownCode, ParseResult,
 )
 
-_PLAN_RE = re.compile(r'^PLAN\s+[A-Z](?:\s*\(recommended\))?\s*$', re.IGNORECASE)
+_PLAN_RE = re.compile(r'^Plan\s+', re.IGNORECASE)
 _SECTION_DATE_RE = re.compile(r'\(([^)]+)\)')
 _RECOMMENDED_RE = re.compile(r'\s*\(recommended\)\s*$', re.IGNORECASE)
 

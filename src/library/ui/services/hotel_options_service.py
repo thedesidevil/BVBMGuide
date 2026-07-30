@@ -162,7 +162,8 @@ def parse_file(
     api_key: str,
 ) -> dict:
     codes = CodeStore(storage).load()
-    result = parse_excel(xlsx_bytes, codes)
+    ai_client = get_ai_client()
+    result = parse_excel(xlsx_bytes, codes, ai_client)
     debug_rows = _sheet_debug(xlsx_bytes)
     if not result.plans:
         return {
@@ -179,20 +180,13 @@ def parse_file(
             ),
             "_debug_rows": debug_rows,
         }
-    ai_client_for_labels = None
     if result.grouped_by_sections:
-        ai_client_for_labels = get_ai_client()
-        cleaned = _normalize_section_labels([p.label for p in result.plans], ai_client_for_labels)
+        cleaned = _normalize_section_labels([p.label for p in result.plans], ai_client)
         for plan, label in zip(result.plans, cleaned):
             plan.label = label
-    client_name, destination = extract_filename_meta(filename)
+    client_name, destination = extract_filename_meta(filename, ai_client)
     if result.grouped_by_sections:
-        # Destination from section labels is always more reliable than the filename
-        # for no-plans files (filenames often say "no plans" not a city name)
-        destination = _infer_destination_from_labels(
-            [p.label for p in result.plans],
-            ai_client_for_labels or get_ai_client(),
-        )
+        destination = _infer_destination_from_labels([p.label for p in result.plans], ai_client)
 
     unique_names = list({h.name for plan in result.plans for h in plan.hotels})
     existence_map = _enricher.check_hotels_exist(unique_names, destination, api_key)
@@ -241,18 +235,18 @@ def generate_doc(
         store.save(existing)
 
     codes = store.load()
-    result = parse_excel(xlsx_bytes, codes)
+    ai_client = get_ai_client()
+    result = parse_excel(xlsx_bytes, codes, ai_client)
     if not result.plans:
         raise ValueError(
             "No hotel rows found in this file. "
             "Ensure hotel names are in column A and prices are numeric values in column I."
         )
-    ai_client = get_ai_client()
     if result.grouped_by_sections:
         cleaned = _normalize_section_labels([p.label for p in result.plans], ai_client)
         for plan, label in zip(result.plans, cleaned):
             plan.label = label
-    client_name, destination = extract_filename_meta(filename)
+    client_name, destination = extract_filename_meta(filename, ai_client)
     if result.grouped_by_sections:
         destination = _infer_destination_from_labels([p.label for p in result.plans], ai_client)
 

@@ -1,10 +1,11 @@
 from __future__ import annotations
 import io
+import json
 import re
 
 import openpyxl
 
-from src.hotel_options.decoder import decode_col_h
+from src.hotel_options.decoder import batch_decode_col_h
 from src.hotel_options.models import (
     HotelRow, PlanPricing, Plan, UnknownCode, ParseResult,
 )
@@ -26,12 +27,40 @@ _FILENAME_RE = re.compile(
 _TRAILING_COPY_NUM_RE = re.compile(r'\s*\(\d+\)\s*$')
 
 
-def extract_filename_meta(filename: str) -> tuple[str, str]:
+_FILENAME_AI_PROMPT = """\
+Extract the client name and destination from this hotel accommodation spreadsheet filename.
+Ignore prefixes like "DO NOT SHARE", "Copy of", "Plans" and suffixes like \
+"hotel options", "accommodation", "accommodation options".
+The destination is a country or city name.
+Return JSON: {{"client_name": "...", "destination": "..."}}. Use empty string if not determinable.
+
+Filename: {filename}"""
+
+_JUNK_DESTINATION_RE = re.compile(r'option|accommodation|hotel\s*option', re.IGNORECASE)
+
+
+def extract_filename_meta(filename: str, ai_client=None) -> tuple[str, str]:
     m = _FILENAME_RE.search(filename)
     if m:
         client_name = m.group(1).strip()
         destination = _TRAILING_COPY_NUM_RE.sub('', m.group(2)).strip()
         return client_name, destination
+
+    # Try AI before falling back to stem-splitting
+    if ai_client is not None:
+        try:
+            raw = ai_client.complete_json(_FILENAME_AI_PROMPT.format(filename=filename))
+            start = raw.find('{')
+            end = raw.rfind('}') + 1
+            raw = raw[start:end] if start >= 0 and end > start else raw
+            data = json.loads(raw)
+            client = str(data.get("client_name") or "").strip()
+            dest = str(data.get("destination") or "").strip()
+            if client or dest:
+                return client, dest
+        except Exception:
+            pass
+
     stem = filename.rsplit(".", 1)[0]
     parts = [p.strip() for p in stem.split("_") if p.strip()]
     client_name = ""
@@ -66,11 +95,12 @@ def _make_dummy_row(length: int = 14) -> tuple:
     return tuple(NoneCell() for _ in range(length))
 
 
-def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode]]:
+def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode], list[tuple]]:
     """Group hotels by section headers when no PLAN markers found.
-    Returns (plans, unknown_codes). If no section headers, one "All Hotels" plan."""
+    Returns (plans, unknown_codes, pending) where pending is [(HotelRow, raw_col_h)]."""
     all_plans: list[Plan] = []
     unknown_codes: list[UnknownCode] = []
+    pending: list[tuple] = []
     current_label: str | None = None
     current_hotels: list[HotelRow] = []
     current_section_dates: str = ""
@@ -141,11 +171,8 @@ def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode]]:
 
         # Hotel row: col A non-empty, col I numeric
         if val_a and _numeric(col_i_val) is not None:
-            col_h_val = row[7].value if len(row) > 7 else None
-            decoded = decode_col_h(str(col_h_val) if col_h_val is not None else None, codes)
+            col_h_raw = row[7].value if len(row) > 7 else None
             hotel_name, is_recommended = _strip_recommended(str_a)
-            for unk in decoded.unknowns:
-                unknown_codes.append(UnknownCode(code=unk, hotel_name=hotel_name, plan_label=current_label or ""))
             online = _numeric(col_i_val) or 0.0
             b2b = (_numeric(row[9].value) if len(row) > 9 else None) or 0.0
             col_l = (_numeric(row[11].value) if len(row) > 11 else None) or 0.0
@@ -159,12 +186,12 @@ def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode]]:
             running_discount += discount
             running_discounted += discounted
             why = str(row[17].value).strip() if len(row) > 17 and row[17].value else ""
-            current_hotels.append(HotelRow(
+            hotel = HotelRow(
                 name=hotel_name,
                 category=str(row[1].value).strip() if row[1].value else "",
                 room_type=str(row[2].value).strip() if row[2].value else "",
-                cancellation=decoded.cancellation,
-                meal_type=decoded.meal_type,
+                cancellation="",
+                meal_type="",
                 online_price=online,
                 dates=current_section_dates,
                 city=current_city,
@@ -173,13 +200,15 @@ def _parse_no_plans(ws, codes: dict) -> tuple[list[Plan], list[UnknownCode]]:
                 discount_pct=pct,
                 recommended=is_recommended,
                 why_recommend=why,
-            ))
+            )
+            current_hotels.append(hotel)
+            pending.append((hotel, str(col_h_raw) if col_h_raw is not None else None))
 
     _flush()
-    return all_plans, unknown_codes
+    return all_plans, unknown_codes, pending
 
 
-def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
+def parse_excel(xlsx_bytes: bytes, codes: dict[str, str], ai_client=None) -> ParseResult:
     wb = openpyxl.load_workbook(io.BytesIO(xlsx_bytes), data_only=True)
     ws = wb.active
 
@@ -188,6 +217,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
 
     plans: list[Plan] = []
     unknown_codes: list[UnknownCode] = []
+    pending: list[tuple] = []  # [(HotelRow, raw_col_h)]
 
     current_label: str | None = None
     current_recommended: bool = False
@@ -311,16 +341,7 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
         # Hotel row: col A non-empty, col I numeric
         if val_a and _numeric(col_i_val) is not None:
 
-            col_h_val = row[7].value if len(row) > 7 else None
-            decoded = decode_col_h(str(col_h_val) if col_h_val is not None else None, codes)
-
-            for unk in decoded.unknowns:
-                unknown_codes.append(UnknownCode(
-                    code=unk,
-                    hotel_name=str_a,
-                    plan_label=current_label or "",
-                ))
-
+            col_h_raw = row[7].value if len(row) > 7 else None
             online_raw = _numeric(col_i_val)
             online = online_raw if online_raw is not None else 0.0
             b2b_raw = _numeric(row[9].value) if len(row) > 9 else None
@@ -331,17 +352,19 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
             dates = current_section_dates or preamble_dates.get((str_a, online), "")
             city = current_city or preamble_cities.get((str_a, online), "")
             why = str(row[17].value).strip() if len(row) > 17 and row[17].value else ""
-            current_hotels.append(HotelRow(
+            hotel = HotelRow(
                 name=str_a,
                 category=str(row[1].value).strip() if row[1].value else "",
                 room_type=str(row[2].value).strip() if row[2].value else "",
-                cancellation=decoded.cancellation,
-                meal_type=decoded.meal_type,
+                cancellation="",
+                meal_type="",
                 online_price=online,
                 dates=dates,
                 why_recommend=why,
                 city=city,
-            ))
+            )
+            current_hotels.append(hotel)
+            pending.append((hotel, str(col_h_raw) if col_h_raw is not None else None))
 
     # Flush the last open plan — it may have no trailing summary row
     _flush(_make_dummy_row())
@@ -349,9 +372,17 @@ def parse_excel(xlsx_bytes: bytes, codes: dict[str, str]) -> ParseResult:
 
     grouped_by_sections = False
     if not plans:
-        plans, extra_codes = _parse_no_plans(ws, codes)
+        plans, extra_codes, extra_pending = _parse_no_plans(ws, codes)
         unknown_codes.extend(extra_codes)
+        pending.extend(extra_pending)
         grouped_by_sections = bool(plans)
+
+    # Batch-decode all col H values (AI for free text, fast-path for short codes)
+    if pending:
+        decoded = batch_decode_col_h([v for _, v in pending], codes, ai_client)
+        for (hotel, _), dec in zip(pending, decoded):
+            hotel.cancellation = dec.cancellation
+            hotel.meal_type = dec.meal_type
 
     return ParseResult(
         plans=plans,

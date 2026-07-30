@@ -35,12 +35,35 @@ def test_extract_filename_meta_standard():
 def test_extract_filename_meta_no_plans_filename():
     name, dest = extract_filename_meta("DO NOT SHARE_ Bushan_no plans.xlsx")
     assert name == "Bushan"
-    assert dest == "no plans"
+    assert dest == ""  # "no plans" is a descriptor, not a destination
 
 
 def test_extract_filename_meta_fallback():
     _, dest = extract_filename_meta("some_random_file.xlsx")
     assert dest == "file"
+
+
+# --- Filename patterns from real files ---
+
+def test_extract_filename_meta_client_destination_hotel_options():
+    # "DO NOT SHARE_Client_Destination_hotel options" pattern
+    name, dest = extract_filename_meta("DO NOT SHARE_Tanya_Turkey_hotel options.xlsx")
+    assert name == "Tanya"
+    assert dest == "Turkey"
+
+
+def test_extract_filename_meta_name_with_accommodation_suffix():
+    # "- accommodation" is a descriptor appended to the name, not a destination
+    name, dest = extract_filename_meta("DO NOT SHARE_Saumitra- accommodation.xlsx")
+    assert name == "Saumitra"
+    assert dest == ""
+
+
+def test_extract_filename_meta_plans_prefix_with_version():
+    # "Plans" prefix and "_v2" version suffix should be stripped
+    name, dest = extract_filename_meta("Plans Rochak_Accommodation Options_Japan_v2.xlsx")
+    assert name == "Rochak"
+    assert dest == "Japan"
 
 
 def test_parse_returns_one_plan():
@@ -72,7 +95,9 @@ def test_no_unknown_codes():
     assert result.unknown_codes == []
 
 
-def test_unknown_code_flagged():
+def test_unknown_code_not_surfaced_without_ai():
+    # Unknown col H values are silently left empty when no AI client is provided.
+    # The unknown_codes list is always empty now — AI handles free-text col H.
     wb = openpyxl.Workbook()
     ws = wb.active
     ws["A1"] = "PLAN A"
@@ -90,8 +115,10 @@ def test_unknown_code_flagged():
     buf = io.BytesIO()
     wb.save(buf)
     result = parse_excel(buf.getvalue(), CODES)
-    assert len(result.unknown_codes) == 1
-    assert result.unknown_codes[0].code == "xy"
+    assert result.unknown_codes == []
+    hotel = result.plans[0].hotels[0]
+    assert hotel.cancellation == ""
+    assert hotel.meal_type == ""
 
 
 def test_last_plan_no_trailing_summary_is_included():

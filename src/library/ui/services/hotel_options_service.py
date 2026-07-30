@@ -292,4 +292,4 @@ def generate_doc(
                                 grouped_by_sections=result.grouped_by_sections)
     enriched_count = len(enriched_map)
     maps_calls = len(unique_names) + enriched_count * 2  # Text Search + Place Details + Photo per hotel
-    return docx_bytes, ai_client.cost_usd, maps_calls
+    return docx_bytes, ai_client.cost_usd, maps_calls, client_name, destination

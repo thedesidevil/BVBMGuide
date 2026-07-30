@@ -24,29 +24,39 @@ _FILENAME_RE = re.compile(
     r'(?:copy\s+of\s+)?(?:DO NOT SHARE[\s_]+)?(?:Plans?\s+)?([^_]+)_Accommodation Options_([^_.]+)',
     re.IGNORECASE,
 )
+# Handles "DO NOT SHARE_Client_Destination_hotel options" style names
+_FILENAME_RE2 = re.compile(
+    r'(?:copy\s+of\s+)?(?:DO NOT SHARE[\s_]+)?([^_]+)_([^_]+)_(?:hotel\s*options?|accommodation(?:\s*options?)?)\b',
+    re.IGNORECASE,
+)
 _TRAILING_COPY_NUM_RE = re.compile(r'\s*\(\d+\)\s*$')
+_JUNK_PART_RE = re.compile(r'^(hotel\s*options?|accommodation(?:\s+options?)?|plans?)$', re.IGNORECASE)
+_KNOWN_PREFIX_RE = re.compile(r'^(?:copy\s+of\s+)?DO NOT SHARE$', re.IGNORECASE)
 
 
 _FILENAME_AI_PROMPT = """\
 Extract the client name and destination from this hotel accommodation spreadsheet filename.
 Ignore prefixes like "DO NOT SHARE", "Copy of", "Plans" and suffixes like \
 "hotel options", "accommodation", "accommodation options".
-The destination is a country or city name.
+The client name is the person's first name (e.g. "Tanya", "Saumitra").
+The destination is a country or city name (e.g. "Turkey", "Japan").
 Return JSON: {{"client_name": "...", "destination": "..."}}. Use empty string if not determinable.
 
 Filename: {filename}"""
 
-_JUNK_DESTINATION_RE = re.compile(r'option|accommodation|hotel\s*option', re.IGNORECASE)
-
 
 def extract_filename_meta(filename: str, ai_client=None) -> tuple[str, str]:
+    # Pattern 1: "Client_Accommodation Options_Destination"
     m = _FILENAME_RE.search(filename)
     if m:
-        client_name = m.group(1).strip()
-        destination = _TRAILING_COPY_NUM_RE.sub('', m.group(2)).strip()
-        return client_name, destination
+        return m.group(1).strip(), _TRAILING_COPY_NUM_RE.sub('', m.group(2)).strip()
 
-    # Try AI before falling back to stem-splitting
+    # Pattern 2: "Client_Destination_hotel options"
+    m = _FILENAME_RE2.search(filename)
+    if m:
+        return m.group(1).strip(), _TRAILING_COPY_NUM_RE.sub('', m.group(2)).strip()
+
+    # AI fallback for unusual patterns
     if ai_client is not None:
         try:
             raw = ai_client.complete_json(_FILENAME_AI_PROMPT.format(filename=filename))
@@ -61,17 +71,13 @@ def extract_filename_meta(filename: str, ai_client=None) -> tuple[str, str]:
         except Exception:
             pass
 
+    # Stem-splitting last resort: strip known prefixes and junk suffixes
     stem = filename.rsplit(".", 1)[0]
     parts = [p.strip() for p in stem.split("_") if p.strip()]
-    client_name = ""
-    if parts:
-        first = parts[0]
-        cleaned = re.sub(r'^(?:copy\s+of\s+)?DO NOT SHARE[\s_]*', '', first, flags=re.IGNORECASE).strip()
-        if cleaned:
-            client_name = cleaned
-        elif len(parts) >= 2:
-            client_name = parts[1]
-    destination = _TRAILING_COPY_NUM_RE.sub('', parts[-1]).strip() if parts else ""
+    parts = [p for p in parts if not _KNOWN_PREFIX_RE.match(p)]
+    parts = [p for p in parts if not _JUNK_PART_RE.match(p)]
+    client_name = parts[0] if parts else ""
+    destination = _TRAILING_COPY_NUM_RE.sub('', parts[-1]).strip() if len(parts) > 1 else ""
     return client_name, destination
 
 

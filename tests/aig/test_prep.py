@@ -1,8 +1,6 @@
 """Tests for src/aig/prep.py — pure functions only."""
 import json
 from pathlib import Path
-from unittest.mock import MagicMock, patch
-
 import pytest
 
 from src.aig.prep import PrepContext, extract_trip_context, _build_prep_context_from_itinerary_data

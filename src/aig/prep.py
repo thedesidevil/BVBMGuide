@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
@@ -185,6 +186,281 @@ def _build_prep_context_from_itinerary_data(itinerary) -> PrepContext:
     )
 
 
+def _clean_hotel_name(raw: str) -> str:
+    """Strip room-type suffixes and formatting noise from a raw table cell."""
+    # Remove parenthetical room type, e.g. "(Deluxe Room)"
+    name = re.sub(r"\s*\([^)]*\)\s*", " ", raw).strip()
+    # Replace newlines (soft line-wraps inside the cell) with spaces
+    name = re.sub(r"\s+", " ", name.replace("\n", " ")).strip()
+    # Remove digit-based room-type code, e.g. "3D/2N"
+    name = re.split(r"\d+[A-Z]/\d+[A-Z]", name)[0].strip()
+    # Split at camelCase boundary, e.g. "MirafloresSuperior" → "Miraflores"
+    name = re.split(r"(?<=[a-z])(?=[A-Z])", name)[0].strip()
+    # Title-case if the raw value was ALL CAPS
+    if name == name.upper():
+        return name.title()
+    return name
+
+
+def _extract_from_docx(input_path: Path) -> dict:
+    """Extract trip context directly from a BVM DOCX file.
+
+    Handles two BVM formats:
+    - Service voucher: tables with CITY_NAME/Hotel columns, CLIENT table with
+      MR./MRS./MS. prefix, ARRIVAL DATE / DEPARTURE DATE flight tables, and
+      a "Guest Name: X" paragraph.
+    - Notes file: freeform paragraphs with a destination title on the first
+      line, "Day N | DD Month" day headers, and "Arrival in X" / "Overnight: X"
+      location cues.
+
+    Returns a dict with whichever keys could be extracted; missing keys are
+    absent (not None) so the caller can apply its own defaults.
+    """
+    try:
+        from docx import Document  # type: ignore
+    except ImportError:
+        return {}
+
+    try:
+        doc = Document(str(input_path))
+    except Exception:
+        return {}
+
+    result: dict = {}
+
+    # Collect all paragraph text (each paragraph may contain soft line-breaks
+    # via <w:br/>, which python-docx exposes as \n within p.text).
+    paras = [p.text.strip() for p in doc.paragraphs if p.text.strip()]
+    full_text = "\n".join(paras)
+
+    # Collect table data: list of list-of-rows, each row is list of cell strings.
+    tables = []
+    for t in doc.tables:
+        rows = [[c.text.strip() for c in row.cells] for row in t.rows]
+        tables.append(rows)
+
+    # ------------------------------------------------------------------ #
+    # 1. Client name                                                       #
+    # ------------------------------------------------------------------ #
+
+    # Priority A: "Guest Name: X" somewhere in paragraph text
+    m = re.search(r"Guest Name[:\s]*([^\n]+)", full_text, re.IGNORECASE)
+    if m:
+        result["client_name"] = m.group(1).strip()
+
+    # Priority B: "MR./MRS./MS./DR. FIRSTNAME [LASTNAME]" in a table cell
+    if "client_name" not in result:
+        title_re = re.compile(
+            r"^(?:MR\.|MRS\.|MS\.|DR\.|MASTER)\s+([A-Z][A-Z\s]+)$"
+        )
+        for rows in tables:
+            for row in rows[:3]:
+                for cell in row:
+                    m2 = title_re.match(cell.strip())
+                    if m2:
+                        result["client_name"] = m2.group(1).strip().title()
+                        break
+                if "client_name" in result:
+                    break
+            if "client_name" in result:
+                break
+
+    # Priority C: filename stem — first valid name segment (expanded reject list;
+    # handles multi-word first segments by trying the first word).
+    if "client_name" not in result:
+        stem = input_path.stem
+        _reject = {
+            "service", "voucher", "all", "inclusive", "guide", "itinerary",
+            "final", "updated", "new", "draft", "for", "aig", "notes",
+            "input", "client",
+        }
+        for sep in ("-", "_"):
+            parts = stem.split(sep)
+            if len(parts) < 2:
+                continue
+            first_seg = parts[0].strip()
+            # Try single-word segment; if multi-word, try only the first word.
+            candidates = [first_seg] if " " not in first_seg else first_seg.split()[:1]
+            for word in candidates:
+                word = word.strip()
+                if (word.lower() not in _reject
+                        and re.match(r"^[A-Za-z]+$", word)
+                        and len(word) >= 3):
+                    result["client_name"] = word.capitalize()
+                    break
+            if "client_name" in result:
+                break
+
+    # ------------------------------------------------------------------ #
+    # 2. Dates                                                             #
+    # ------------------------------------------------------------------ #
+
+    _MONTHS = (
+        "January|February|March|April|May|June|July|"
+        "August|September|October|November|December|"
+        "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
+    )
+    _date_re = re.compile(
+        r"(\d{1,2})\s+(" + _MONTHS + r")(?:\s+(\d{4}))?",
+        re.IGNORECASE,
+    )
+
+    def _parse_date(text: str) -> Optional[str]:
+        dm = _date_re.search(text)
+        if dm:
+            day = int(dm.group(1))
+            month = dm.group(2)[:3].capitalize()
+            year = dm.group(3) or "2026"
+            return f"{day} {month} {year}"
+        return None
+
+    # From paragraph text: "Date of Travel: DD Month YYYY"
+    m3 = re.search(r"Date of Travel[:\s]*([^\n]+)", full_text, re.IGNORECASE)
+    if m3:
+        d = _parse_date(m3.group(1))
+        if d:
+            result["trip_start_date"] = d
+
+    m4 = re.search(r"Departure Date[:\s]*([^\n]+)", full_text, re.IGNORECASE)
+    if m4:
+        d = _parse_date(m4.group(1))
+        if d:
+            result["trip_end_date"] = d
+
+    # From tables with ARRIVAL DATE / DEPARTURE DATE header rows
+    for rows in tables:
+        if not rows:
+            continue
+        header_upper = [c.upper() for c in rows[0]]
+        if "ARRIVAL DATE" in header_upper and "trip_start_date" not in result and len(rows) > 1:
+            col = header_upper.index("ARRIVAL DATE")
+            if col < len(rows[1]):
+                d = _parse_date(rows[1][col])
+                if d:
+                    result["trip_start_date"] = d
+        if "DEPARTURE DATE" in header_upper and "trip_end_date" not in result and len(rows) > 1:
+            col = header_upper.index("DEPARTURE DATE")
+            if col < len(rows[1]):
+                d = _parse_date(rows[1][col])
+                if d:
+                    result["trip_end_date"] = d
+
+    # From notes format: scan all para dates, use first/last as fallback
+    if "trip_start_date" not in result:
+        all_dates = [_parse_date(p) for p in paras]
+        all_dates = [d for d in all_dates if d]
+        if all_dates:
+            result["trip_start_date"] = all_dates[0]
+            if len(all_dates) > 1:
+                result["trip_end_date"] = all_dates[-1]
+
+    # ------------------------------------------------------------------ #
+    # 3. Cities and hotels from tables                                     #
+    # ------------------------------------------------------------------ #
+
+    cities: list[str] = []
+    hotels: dict[str, str] = {}
+
+    for rows in tables:
+        if not rows:
+            continue
+        # Look for a header row containing a city column in the first 3 rows.
+        city_col = hotel_col = header_row_idx = None
+        for i, row in enumerate(rows[:3]):
+            norm = [c.upper().replace(" ", "_") for c in row]
+            if "CITY_NAME" in norm or "CITY" in norm:
+                header_row_idx = i
+                city_col = norm.index("CITY_NAME") if "CITY_NAME" in norm else norm.index("CITY")
+                for key in ("HOTEL_NAME", "HOTEL"):
+                    if key in norm:
+                        hotel_col = norm.index(key)
+                        break
+                break
+
+        if header_row_idx is None or city_col is None:
+            continue
+
+        for row in rows[header_row_idx + 1:]:
+            if city_col >= len(row):
+                continue
+            city_raw = row[city_col].strip()
+            if not city_raw or city_raw.upper() in ("CITY_NAME", "CITY"):
+                continue
+            # Strip parenthetical qualifiers, e.g. "Lima (2nd Entrance)"
+            city = re.sub(r"\s*\([^)]*\)\s*$", "", city_raw).strip().title()
+            if city and city not in cities:
+                cities.append(city)
+            if hotel_col is not None and hotel_col < len(row) and city not in hotels:
+                hotel_raw = row[hotel_col].strip()
+                hotel = _clean_hotel_name(hotel_raw)
+                if hotel and hotel.upper() not in ("HOTEL_NAME", "HOTEL"):
+                    hotels[city] = hotel
+
+    if cities:
+        result["cities"] = cities
+    if hotels:
+        result["hotels"] = hotels
+
+    # ------------------------------------------------------------------ #
+    # 4. Cities from notes-format paragraphs (if table extraction failed) #
+    # ------------------------------------------------------------------ #
+
+    if "cities" not in result:
+        notes_cities: list[str] = []
+
+        # Title line: "Dehradun & Mussoorie Family Getaway" → [Dehradun, Mussoorie]
+        if paras:
+            title = paras[0]
+            title_clean = re.sub(
+                r"\s+(?:Family|Getaway|Adventure|Tour|Trip|Holiday|Vacation|"
+                r"Package|Programme|Escape|Journey|Experience)\b.*$",
+                "", title, flags=re.IGNORECASE,
+            ).strip()
+            for part in re.split(r"\s+(?:&|and)\s+", title_clean, flags=re.IGNORECASE):
+                part = part.strip()
+                if part and len(part) >= 3 and re.match(r"^[A-Za-z\s]+$", part):
+                    notes_cities.append(part)
+
+        # "Arrival in X" — often in the first day header
+        for para in paras[:15]:
+            m5 = re.search(r"Arrival in ([A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+)?)", para)
+            if m5:
+                city = m5.group(1).strip()
+                if city not in notes_cities:
+                    notes_cities.append(city)
+
+        if notes_cities:
+            result["cities"] = notes_cities
+
+    return result
+
+
+def _build_prep_context_from_extracted(extracted: dict) -> PrepContext:
+    """Build PrepContext from the dict returned by _extract_from_docx."""
+    client_name = extracted.get("client_name") or ""
+    cities: list[str] = list(extracted.get("cities") or [])
+    destination_label = ", ".join(cities)
+
+    # Dates from the extractor are already human-readable ("13 Aug 2026")
+    start = extracted.get("trip_start_date") or ""
+    end = extracted.get("trip_end_date") or ""
+    date_range = f"{start} – {end}" if start and end else start or end
+
+    hotels: dict[str, str] = dict(extracted.get("hotels") or {})
+    transport_mode = extracted.get("transport_mode") or ""
+    dietary_notes = extracted.get("dietary_notes") or ""
+
+    return PrepContext(
+        client_name=client_name,
+        destination_label=destination_label,
+        cities=cities,
+        date_range=date_range,
+        hotels=hotels,
+        dietary_notes=dietary_notes,
+        transport_mode=transport_mode,
+    )
+
+
 def extract_trip_context(input_path: Path, ai_client=None) -> PrepContext:
     """Extract trip context from a DOCX input file or its sibling trip_facts.json.
 
@@ -197,6 +473,14 @@ def extract_trip_context(input_path: Path, ai_client=None) -> PrepContext:
     if facts_path.exists():
         data = json.loads(facts_path.read_text(encoding="utf-8"))
         return _build_prep_context_from_trip_facts(data)
+
+    # For DOCX files, try BVM-specific structural extraction first (handles
+    # service vouchers and notes files that the PDF-oriented regex parser
+    # cannot read reliably).
+    if input_path.suffix.lower() == ".docx":
+        extracted = _extract_from_docx(input_path)
+        if extracted.get("cities") or extracted.get("client_name"):
+            return _build_prep_context_from_extracted(extracted)
 
     from .parser import parse_itinerary
     itinerary = parse_itinerary(input_path, ai_client=ai_client)

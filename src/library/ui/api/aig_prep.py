@@ -35,7 +35,7 @@ async def aig_prep(request: Request, file: UploadFile = File(...)):
 
     # Write DOCX to a temp file so parse_itinerary / run_prep can read it
     with tempfile.TemporaryDirectory() as tmpdir:
-        tmp_docx = Path(tmpdir) / (file.filename or "input.docx")
+        tmp_docx = Path(tmpdir) / Path(file.filename or "input.docx").name
         tmp_docx.write_bytes(content)
 
         # Attempt to get AI client; fall back to regex if unavailable

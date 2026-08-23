@@ -8,7 +8,7 @@ import { SweepMode } from "./components/SweepMode";
 import { IngestWizard } from "./components/IngestWizard";
 import { IngestHistory } from "./components/IngestHistory";
 import { AuditLog } from "./components/AuditLog";
-import { VerifyTab } from "./components/VerifyTab";
+import { AIGTab } from "./components/AIGTab";
 import { HotelOptionsTab } from "./components/HotelOptionsTab";
 import type { TreeData } from "./types";
 import { api } from "./api/client";
@@ -107,7 +107,7 @@ export default function App() {
         {mode === "ingest" && <IngestWizard onDone={() => { setMode("city"); api.getTree().then((data) => setTree(data as TreeData)); }} />}
         {mode === "history" && <IngestHistory />}
         {mode === "audit" && <AuditLog />}
-        {mode === "verify" && <VerifyTab />}
+        {mode === "verify" && <AIGTab />}
         {mode === "hotel_options" && <HotelOptionsTab />}
       </Layout>
     </>

@@ -145,6 +145,18 @@ export const api = {
     return res.json();
   },
 
+  // --- AIG Prep ---
+  aigPrep: async (file: File): Promise<{ library_context: string; client_profile: string; filename_base: string }> => {
+    const formData = new FormData();
+    formData.append("file", file);
+    const res = await fetch(`${BASE}/aig/prep`, { method: "POST", body: formData });
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Prep failed: ${res.status} ${text}`);
+    }
+    return res.json();
+  },
+
   // --- Hotel Options ---
   parseHotelOptions: async (file: File): Promise<import("../types").HotelOptionsParseResult> => {
     const formData = new FormData();

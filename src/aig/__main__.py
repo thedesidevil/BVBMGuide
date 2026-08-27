@@ -298,6 +298,69 @@ def _parse_single_file(file: Path, show_days: bool, api_key: Optional[str]) -> N
 
 
 @app.command()
+def prep(
+    input_path: Path = typer.Argument(
+        ...,
+        help="Path to input .docx file (notes or service voucher)",
+        exists=True,
+    ),
+    db_path: Path = typer.Option(
+        Path("library_db"),
+        "--db",
+        help="Path to the library database directory",
+    ),
+    output: Optional[Path] = typer.Option(
+        None,
+        "--output", "-o",
+        help="Output directory for generated files (default: same directory as input)",
+    ),
+    api_key: Optional[str] = typer.Option(
+        None,
+        "--api-key",
+        help="AI API key (uses AI_API_KEY from .env if not set). Optional — used only if no trip_facts.json exists.",
+    ),
+):
+    """Generate library context and client profile companion docs for ChatGPT.
+
+    Reads the input file (or its sibling trip_facts.json if it exists), queries
+    the library database, and writes two .md files ready to upload to ChatGPT:
+
+    \b
+      [Name]_[City]_library_context.md  — BVM curated restaurants, dishes, tips
+      [Name]_[City]_client_profile.md   — trip details + [fill in] template
+
+    Run 'aig parse <dir>' first if you want AI-assisted extraction of complex
+    multi-file itineraries.
+    """
+    from .prep import run_prep
+
+    ai_client = None
+    facts_path = input_path.parent / "trip_facts.json"
+    if not facts_path.exists():
+        try:
+            ai_client = get_ai_client(api_key=api_key)
+        except ValueError:
+            console.print("[dim]No AI API key — using regex parser for extraction[/dim]")
+
+    try:
+        context_path, profile_path = run_prep(
+            input_path=input_path,
+            db_path=db_path,
+            output_dir=output,
+            ai_client=ai_client,
+        )
+    except Exception as e:
+        console.print(f"[red]Prep failed: {e}[/red]")
+        raise typer.Exit(1)
+
+    console.print(f"\n[green]✓ Library context →[/green] {context_path}")
+    console.print(f"[green]✓ Client profile  →[/green] {profile_path}")
+    console.print(
+        "\n[dim]Upload these alongside your input file to ChatGPT.[/dim]"
+    )
+
+
+@app.command()
 def generate(
     input_dir: Path = typer.Argument(
         ...,

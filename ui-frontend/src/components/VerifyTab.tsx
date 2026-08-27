@@ -267,7 +267,7 @@ function Results({ result, onReset }: { result: VerifyResult; onReset: () => voi
 // Upload view
 // ---------------------------------------------------------------------------
 
-function Upload({ onResult }: { onResult: (r: VerifyResult) => void }) {
+function Upload({ onResult, hideHeading }: { onResult: (r: VerifyResult) => void; hideHeading?: boolean }) {
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -300,10 +300,12 @@ function Upload({ onResult }: { onResult: (r: VerifyResult) => void }) {
 
   return (
     <div className="max-w-lg mx-auto mt-12 space-y-4">
-      <div className="text-center mb-6">
-        <h1 className="text-xl font-bold text-slate-900">AIG Verification</h1>
-        <p className="text-sm text-slate-500 mt-1">Upload a generated guide to run quality checks</p>
-      </div>
+      {!hideHeading && (
+        <div className="text-center mb-6">
+          <h1 className="text-xl font-bold text-slate-900">AIG Verification</h1>
+          <p className="text-sm text-slate-500 mt-1">Upload a generated guide to run quality checks</p>
+        </div>
+      )}
 
       {/* Drop zone */}
       <div
@@ -371,9 +373,9 @@ function Upload({ onResult }: { onResult: (r: VerifyResult) => void }) {
 // Root component
 // ---------------------------------------------------------------------------
 
-export function VerifyTab() {
+export function VerifyTab({ hideHeading }: { hideHeading?: boolean } = {}) {
   const [result, setResult] = useState<VerifyResult | null>(null);
   return result
     ? <Results result={result} onReset={() => setResult(null)} />
-    : <Upload onResult={setResult} />;
+    : <Upload onResult={setResult} hideHeading={hideHeading} />;
 }

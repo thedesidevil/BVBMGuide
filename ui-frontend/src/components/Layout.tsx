@@ -65,7 +65,7 @@ export function Layout({ mode, onModeChange, lastLibraryMode, isAdmin, reviewedC
               onClick={() => onModeChange("hotel_options")}
             />
             <SectionTab
-              label="AIG Verification"
+              label="AIG"
               active={activeSection(mode) === "verify"}
               onClick={() => onModeChange("verify")}
             />

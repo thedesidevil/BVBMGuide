@@ -10,7 +10,7 @@ from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from starlette.middleware.sessions import SessionMiddleware
 
 from . import google_auth as ga
-from .api import tree, city, country, review, sweep, audit, ingest, verify, hotel_options
+from .api import tree, city, country, review, sweep, audit, ingest, verify, hotel_options, aig_prep
 from .storage import LocalStorageBackend, StorageBackend
 
 
@@ -159,6 +159,7 @@ def create_app(
     app.include_router(ingest.router, prefix="/api", dependencies=_admin)
     app.include_router(verify.router, prefix="/api")  # all authenticated users
     app.include_router(hotel_options.router, prefix="/api")  # all authenticated users
+    app.include_router(aig_prep.router, prefix="/api")  # all authenticated users
 
     from fastapi.staticfiles import StaticFiles
 

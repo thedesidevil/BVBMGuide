@@ -11,9 +11,7 @@
         "Curries",
         "rotis"
       ],
-      "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Chez Pippo",
@@ -21,7 +19,7 @@
       "cuisine_type": [
         "Italian"
       ],
-      "hours": "12pm-11pm",
+      "hours": "12:00 PM – 11:00 PM",
       "nearby_landmarks": [
         "Eiffel Tower, Paris"
       ],
@@ -29,24 +27,29 @@
         "Pizzas",
         "Pastas",
         "Fresh pizzas",
-        "pastas"
+        "pastas",
+        "Truffle pasta",
+        "Vegetarian pizza",
+        "Burrata dishes",
+        "Truffle pizza",
+        "Tiramisu"
       ],
       "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ],
-      "price_range": "₹₹",
-      "ambience": "Casual Italian comfort option",
-      "area": "Eiffel Area",
+      "price_range": "₹₹₹",
+      "ambience": "Cozy European dining",
+      "area": "Near Eiffel Tower",
       "highlights": [
-        "Option near Eiffel Tower"
+        "Lively vegetarian-friendly Italian restaurant",
+        "Comforting pastas and pizzas"
       ],
       "best_for": [
-        "casual"
-      ]
+        "casual",
+        "romantic"
+      ],
+      "vegetarian_friendly": true
     },
     {
       "name": "Les Amours in Paris",
@@ -66,15 +69,7 @@
         "chicken fricassee with coconut & lemongrass",
         "Camembert roasted with honey and toasts"
       ],
-      "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "price_range": "EUR 20-35 per person",
       "ambience": "A pretty bistro just steps from the Eiffel Tower on Avenue de la Bourdonnais. It offers a floral, romantic decor and relaxed ambiance—often noted for its atmosphere and location",
       "area": "Near Eiffel Tower",
@@ -109,15 +104,7 @@
         "lamb served in a pan",
         "salmon cakes"
       ],
-      "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "price_range": "EUR 20- 25 per person",
       "ambience": "A charming, feminine bistro near the Eiffel Tower, featuring soft pink décor, whimsical touches, and a cozy atmosphere with a view of the landmark",
       "area": "Near Eiffel Tower",
@@ -142,15 +129,7 @@
         "variety of traditional dishes- both veg and non veg",
         "a variety of traditional dishes- both veg and non veg"
       ],
-      "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "price_range": "EUR 30- 40 per person",
       "ambience": "Regularly recommended as a casual, authentic French bistro between the Eiffel Tower and Musée d'Orsay—ideal for a relaxed group meal",
       "area": "Near Eiffel Tower",
@@ -169,30 +148,31 @@
       "cuisine_type": [
         "French"
       ],
-      "hours": "9am-1 am",
+      "hours": "12:00 PM – 2:30 PM & 7:00 PM – 10:30 PM",
       "nearby_landmarks": [
         "Eiffel Tower, Paris"
       ],
       "must_try_dishes": [
         "French onion soup",
         "avocado burger",
-        "chocolate mousse"
+        "chocolate mousse",
+        "Baked Camembert with summer truffle",
+        "Toasted truffle bread",
+        "Garlic bread"
       ],
       "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ],
-      "price_range": "₹₹₹",
-      "ambience": "Lively French brasserie",
-      "area": "Eiffel Area",
+      "price_range": "₹3,500–7,000 per person",
+      "ambience": "Chic contemporary Parisian dining",
+      "area": "Near Eiffel Tower",
       "highlights": [
-        "Option near Eiffel Tower"
+        "Intimate and refined restaurant",
+        "Modern French cuisine",
+        "Beautifully plated seasonal dishes"
       ],
       "best_for": [
-        "casual"
+        "Romantic dinner near Eiffel Tower"
       ]
     },
     {
@@ -201,7 +181,7 @@
       "cuisine_type": [
         "French"
       ],
-      "hours": "12-3pm, 7:15-11pm",
+      "hours": "12:00 PM – 3:00 PM & 7:00 PM – 11:00 PM",
       "nearby_landmarks": [
         "Eiffel Tower, Paris"
       ],
@@ -209,25 +189,27 @@
         "Mille Feuille",
         "Crème brulee",
         "Mille-feuille",
-        "classic French mains"
+        "classic French mains",
+        "Gratin dauphinois",
+        "Tepid porcini mushroom pâté with baby lettuce & truffle dressing",
+        "Butternut purée"
       ],
       "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ],
-      "price_range": "₹₹₹",
-      "ambience": "Historic Parisian dining room with warm traditional interiors",
-      "area": "Eiffel Area",
+      "price_range": "₹3,000–6,000 per person",
+      "ambience": "Traditional Parisian bistro",
+      "area": "Near Eiffel Tower",
       "highlights": [
-        "Option near Eiffel Tower"
+        "Classic Parisian bistro",
+        "Authentic French cuisine",
+        "Warm interiors",
+        "Charming neighbourhood atmosphere"
       ],
       "best_for": [
-        "elegant",
-        "romantic"
-      ]
+        "Elegant French dinner experience"
+      ],
+      "vegetarian_friendly": true
     },
     {
       "name": "Inavoue restaurant",
@@ -250,15 +232,7 @@
         "Crispy prawns",
         "korean chicken"
       ],
-      "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "price_range": "EUR 30-35 per person",
       "ambience": "A tucked-away gem off the tourist path, this spot features cozy, handsome décor with a chic, bobo-chic vibe that feels both intimate and stylish",
       "area": "Near Louvre",
@@ -271,16 +245,16 @@
       "name": "Café Carrousel",
       "city": "Paris",
       "cuisine_type": [
-        "French",
+        "Café",
         "European"
       ],
-      "hours": "7AM- 12 AM",
+      "hours": "7:00 AM – 12:00 AM",
       "nearby_landmarks": [
         "Louvre, Paris"
       ],
       "highlights": [
-        "Outdoor seating",
-        "Convenient location"
+        "Soft pastel interiors",
+        "Relaxed European aesthetics"
       ],
       "must_try_dishes": [
         "Coffee",
@@ -292,26 +266,22 @@
         "Crepes",
         "Caesar salad",
         "crème brûlée",
-        "ceasar salad"
+        "ceasar salad",
+        "Avocado toast",
+        "Mushroom sandwich",
+        "Fresh fruit waffles"
       ],
       "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ],
-      "price_range": "EUR 15-30 per person",
-      "ambience": "A lively café-bistro right by the Louvre Pyramid with outdoor seating and a casual French/European vibe—touristy but convenient and approachable",
+      "price_range": "₹700–1,800 per person",
+      "ambience": "Aesthetic European-style café",
       "area": "Near Louvre",
       "best_for": [
-        "casual"
+        "Leisurely café hopping",
+        "Desserts"
       ],
-      "vegetarian_friendly": false
+      "vegetarian_friendly": true
     },
     {
       "name": "Angelina Paris",
@@ -333,17 +303,7 @@
         "pastries",
         "Famous hot chocolate"
       ],
-      "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "price_range": "EUR 20-30 per person",
       "ambience": "A historic, elegant Belle Époque tearoom founded in 1903, known for its refined décor by Édouard-Jean Niermans and storied past—Patrons have included Marcel Proust and Coco Chanel",
       "area": "Near Louvre",
@@ -369,15 +329,7 @@
         "The Black Delirium pizza",
         "The Cruella Devil 2.0"
       ],
-      "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "price_range": "EUR 20-30 per person",
       "ambience": "A vibrant, urban pizzeria with a stylish neon-lit, tiled interior inspired by New York street pizza joints. You'll dine at high marble counters where the pizzaioli perform behind the counter—casual and energetic",
       "area": "Montmartre",
@@ -406,9 +358,7 @@
       "must_try_dishes": [
         "Avocado halloumi benedikt"
       ],
-      "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Pink Mamma",
@@ -425,15 +375,7 @@
         "lobster pasta",
         "Truffle pasta"
       ],
-      "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "price_range": "EUR 25-30 per person",
       "ambience": "A standout, Instagram-worthy four-story trattoria. The exterior is a pink building draped in lush greenery. Inside, each floor brings a distinct ambience—from retro bar and art-filled staircases to Tuscan-style kitchens and a photogenic rooftop with skylights and greenhouse vibes. There's even a hidden speakeasy bar in the basement",
       "area": "Montmartre",
@@ -460,11 +402,7 @@
       "must_try_dishes": [
         "Original Crookie (croissant cookie)"
       ],
-      "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Le Train Bleu",
@@ -479,11 +417,7 @@
         "Traditional food",
         "crepes"
       ],
-      "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ],
+      "source_files": [],
       "highlights": [
         "located in gare de lyon station"
       ]
@@ -499,10 +433,7 @@
         "Tiramisu"
       ],
       "highlights": [],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "L'Ourika",
@@ -515,10 +446,7 @@
         "Traditional Berber dishes"
       ],
       "highlights": [],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Traiteur Asiatique Les Beaux Jours",
@@ -533,10 +461,7 @@
         "sauteed vegetables"
       ],
       "highlights": [],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Osaka",
@@ -550,10 +475,7 @@
         "miso soup"
       ],
       "highlights": [],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "La Pizzeria da Pasqualino",
@@ -566,10 +488,7 @@
         "Pizza"
       ],
       "highlights": [],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "La Parisienne",
@@ -582,10 +501,7 @@
         "Cordon Bleu"
       ],
       "highlights": [],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Laduree",
@@ -601,10 +517,7 @@
         "located in gare de lyon station"
       ],
       "area": "gare de lyon station",
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Carette",
@@ -622,10 +535,7 @@
       "nearby_landmarks": [
         "Trocadero, Paris"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Perruche",
@@ -642,10 +552,7 @@
       "highlights": [
         "Beautiful view of Paris, but expensive"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Les Deux Magots",
@@ -658,10 +565,7 @@
         "Hot chocolate",
         "sandwiches"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ],
+      "source_files": [],
       "highlights": [
         "Additional option"
       ]
@@ -676,10 +580,7 @@
       "must_try_dishes": [
         "Chocolate mousse"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ],
+      "source_files": [],
       "highlights": [
         "Additional option"
       ]
@@ -696,10 +597,7 @@
         "Profiteroles",
         "rum baba"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ],
+      "source_files": [],
       "highlights": [
         "Additional option"
       ]
@@ -716,10 +614,7 @@
         "Swiss Brioche",
         "St. Honore cake"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ],
+      "source_files": [],
       "highlights": [
         "Additional option"
       ]
@@ -728,30 +623,36 @@
       "name": "Inavoué",
       "city": "Paris",
       "cuisine_type": [
-        "Modern"
+        "French",
+        "Café"
       ],
-      "price_range": "₹₹₹",
-      "hours": "11 AM – 1 AM",
-      "ambience": "Chic, intimate bistro with modern flair",
-      "area": "Louvre Area",
+      "price_range": "₹900–2,000 per person",
+      "hours": "11:30 AM – 3:00 PM | 7 PM - 12 AM",
+      "ambience": "Parisian chic café",
+      "area": "Near Louvre",
       "nearby_landmarks": [
         "Louvre, Paris"
       ],
       "highlights": [
-        "Chic, intimate bistro with modern flair"
+        "Known for refined pastries",
+        "Elegant interiors",
+        "Calm atmosphere"
       ],
       "must_try_dishes": [
         "Crispy prawns",
         "Korean chicken",
-        "veg-friendly small plates"
+        "veg-friendly small plates",
+        "Truffle mushroom pasta",
+        "Burrata salad",
+        "Butter croissants"
       ],
       "best_for": [
-        "stylish"
+        "Elegant brunch",
+        "Coffee break"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     },
     {
@@ -780,14 +681,7 @@
         "romantic"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Le Petit Capucci",
@@ -812,12 +706,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "vegetarian_friendly": false
     },
     {
@@ -846,12 +735,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "vegetarian_friendly": false
     },
     {
@@ -877,12 +761,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "vegetarian_friendly": false
     },
     {
@@ -911,12 +790,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "vegetarian_friendly": true
     },
     {
@@ -945,12 +819,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Mokus l'Écureuil",
@@ -978,11 +847,1207 @@
         "casual"
       ],
       "vegetarian_friendly": true,
+      "source_files": []
+    },
+    {
+      "name": "BABY BURGER",
+      "city": "Paris",
+      "cuisine_type": [
+        "Burgers",
+        "Fast Food"
+      ],
+      "price_range": "₹800–1,500 per person",
+      "hours": "11:30 AM – 3:00 PM, 6:30 PM – 11:00 PM",
+      "area": "Porte de Clichy",
+      "highlights": [
+        "Casual and quick",
+        "Great for an easy first meal"
+      ],
+      "must_try_dishes": [
+        "Veg burgers",
+        "Fries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
       "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "L'Essentiel",
+      "city": "Paris",
+      "cuisine_type": [
+        "French",
+        "Vegetarian"
+      ],
+      "price_range": "₹1,200–2,200 per person",
+      "hours": "10:00 AM – 12:00 AM; 10:00 AM – 3:00 PM (Sundays); closed on Mondays",
+      "area": "Porte de Clichy",
+      "highlights": [
+        "Slightly more refined",
+        "Great for a relaxed sit-down lunch"
+      ],
+      "must_try_dishes": [
+        "Vegetarian platters",
+        "Seasonal dishes"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bistrot Masala",
+      "city": "Paris",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹1,200–2,000 per person",
+      "hours": "11:30 AM – 2:30 PM | 7:00 PM – 10:00 PM; 11:30 AM – 2:30 PM (Mondays); closed on Sundays",
+      "area": "Porte de Clichy",
+      "highlights": [
+        "Ideal for familiar Indian flavours on arrival day"
+      ],
+      "must_try_dishes": [
+        "Paneer tikka masala",
+        "Dal makhani",
+        "Naan"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Le Potager du Marais",
+      "city": "Paris",
+      "cuisine_type": [
+        "French",
+        "Vegetarian",
+        "Vegan"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "12:00 PM – 3:00 PM | 7:00 PM – 10:30 PM",
+      "ambience": "Cozy, traditional Parisian",
+      "area": "Near Louvre / Central Paris",
+      "nearby_landmarks": [
+        "Louvre, Paris"
+      ],
+      "highlights": [
+        "Authentic French cuisine",
+        "Vegetarian-friendly"
+      ],
+      "must_try_dishes": [
+        "Vegan bourguignon",
+        "Lentil dishes"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Restaurant Agrabah Café",
+      "city": "Paris",
+      "cuisine_type": [
+        "Mediterranean",
+        "Buffet"
+      ],
+      "price_range": "₹2,000–3,500 per person",
+      "hours": "11:30 AM – 8:30 PM",
+      "ambience": "Relaxed sit-down",
+      "area": "Disneyland Paris",
+      "highlights": [
+        "Inside Disneyland park",
+        "Buffet with Mediterranean flavours",
+        "Best for a relaxed sit-down lunch"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Colonel Hathi's Pizza Outpost",
+      "city": "Paris",
+      "cuisine_type": [
+        "Pizza",
+        "Fast Food"
+      ],
+      "price_range": "₹1,200–2,000 per person",
+      "hours": "11:00 AM – 10:30 PM",
+      "ambience": "Casual",
+      "area": "Disneyland Paris",
+      "highlights": [
+        "Inside Disneyland park",
+        "Quick and easy"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bella Notte",
+      "city": "Paris",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹1,200–2,000 per person",
+      "hours": "11:00 AM – 8:00 PM",
+      "ambience": "Casual Italian",
+      "area": "Disneyland Paris",
+      "highlights": [
+        "Inside Disneyland park",
+        "Comfort option"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Earl of Sandwich – Disney Village",
+      "city": "Paris",
+      "cuisine_type": [
+        "Sandwiches",
+        "Fast Food"
+      ],
+      "price_range": "₹1,000–1,800 per person",
+      "hours": "8:00 AM – 11:00 PM",
+      "ambience": "Casual, quick service",
+      "area": "Disney Village",
+      "highlights": [
+        "Fast and reliable meal after a long day"
+      ],
+      "must_try_dishes": [
+        "Veg sandwiches",
+        "Wraps"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Vapiano Disney Village",
+      "city": "Paris",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "11:00 AM – 12:30 AM",
+      "ambience": "Modern, relaxed",
+      "area": "Disney Village",
+      "highlights": [
+        "Comfortable sit-down dinner"
+      ],
+      "must_try_dishes": [
+        "Fresh pasta",
+        "Pizzas"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Rainforest Café Disneyland Paris",
+      "city": "Paris",
+      "cuisine_type": [
+        "American",
+        "Themed"
+      ],
+      "price_range": "₹2,000–3,500 per person",
+      "hours": "11:30 AM – 11:00 PM",
+      "ambience": "Themed jungle, lively",
+      "area": "Disney Village",
+      "highlights": [
+        "Fun themed dining experience"
+      ],
+      "must_try_dishes": [
+        "Veg burgers",
+        "Nachos"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Le Pain Quotidien",
+      "city": "Paris",
+      "cuisine_type": [
+        "Café",
+        "Organic"
+      ],
+      "price_range": "₹1,000–1,800 per person",
+      "hours": "8:00 AM – 8:00 PM",
+      "ambience": "Organic, relaxed café",
+      "area": "Central Paris",
+      "highlights": [
+        "Light and reliable",
+        "Near major Hop-On Hop-Off stops"
+      ],
+      "must_try_dishes": [
+        "Avocado toast",
+        "Soups",
+        "Breads"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Jour Paris",
+      "city": "Paris",
+      "cuisine_type": [
+        "Healthy",
+        "Salads"
+      ],
+      "price_range": "₹1,000–1,800 per person",
+      "hours": "9:00 AM – 4:30 PM",
+      "ambience": "Healthy and fresh",
+      "area": "Central Paris",
+      "highlights": [
+        "Quick and fresh option"
+      ],
+      "must_try_dishes": [
+        "Healthy bowls",
+        "Salads"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "EXKi Paris",
+      "city": "Paris",
+      "cuisine_type": [
+        "Healthy",
+        "Vegetarian"
+      ],
+      "price_range": "₹1,000–1,800 per person",
+      "hours": "8:00 AM – 8:00 PM",
+      "area": "Central Paris",
+      "highlights": [
+        "Multiple locations",
+        "Vegetarian-friendly",
+        "Efficient stop during sightseeing"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Wild & The Moon Paris",
+      "city": "Paris",
+      "cuisine_type": [
+        "Organic",
+        "Vegan"
+      ],
+      "price_range": "₹1,000–1,800 per person",
+      "hours": "8:00 AM – 9:00 PM",
+      "ambience": "Clean, organic",
+      "area": "Near Louvre / Central Paris",
+      "nearby_landmarks": [
+        "Louvre, Paris"
+      ],
+      "highlights": [
+        "Light dinner option before night tour"
+      ],
+      "must_try_dishes": [
+        "Smoothie bowls",
+        "Wraps"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Le RECHO Café",
+      "city": "Paris",
+      "cuisine_type": [
+        "Café",
+        "Vegetarian"
+      ],
+      "price_range": "₹1,500–2,500",
+      "hours": "12:00 PM – 10:00 PM",
+      "ambience": "Warm, socially conscious café with rustic interiors, soft lighting, and a community-driven vibe",
+      "area": "Voco Porte de Clichy Zone",
+      "highlights": [
+        "Understated yet beautifully aesthetic",
+        "Meaningful dining",
+        "Good for cozy candid shots"
+      ],
+      "must_try_dishes": [
+        "Seasonal vegetarian plates",
+        "Soups",
+        "Desserts"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Season Marais",
+      "city": "Paris",
+      "cuisine_type": [
+        "Café",
+        "Brunch"
+      ],
+      "price_range": "₹1,500–3,000",
+      "hours": "8:30 AM – 5:00 PM",
+      "ambience": "Bright, modern brunch café with clean whites and beautifully plated dishes",
+      "area": "Voco Porte de Clichy Zone",
+      "highlights": [
+        "Great for brunch aesthetics and natural light photos"
+      ],
+      "must_try_dishes": [
+        "Avocado toast",
+        "Smoothie bowls",
+        "Pancakes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Café Kitsuné Palais Royal",
+      "city": "Paris",
+      "cuisine_type": [
+        "Café",
+        "Japanese-French"
+      ],
+      "price_range": "₹1,500–2,500",
+      "hours": "10:00 AM – 6:00 PM",
+      "ambience": "Chic Parisian-Japanese café with clean lines and a stunning courtyard setting",
+      "area": "Palais Royal",
+      "nearby_landmarks": [
+        "Palais Royal, Paris"
+      ],
+      "highlights": [
+        "Effortlessly stylish",
+        "Iconic Paris café aesthetic"
+      ],
+      "must_try_dishes": [
+        "Matcha latte",
+        "Pastries"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Viet Gourmet",
+      "city": "Paris",
+      "cuisine_type": [
+        "Vietnamese",
+        "Asian"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:00 AM – 3:00 PM, 6:00 PM – 11:00 PM",
+      "ambience": "Casual Asian comfort dining",
+      "highlights": [
+        "Cozy Asian restaurant",
+        "Flavorful vegetarian-friendly Vietnamese dishes",
+        "Perfect after a train journey"
+      ],
+      "must_try_dishes": [
+        "Vegetarian pho",
+        "Spring rolls",
+        "Tofu noodles"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sésame et Sel",
+      "city": "Paris",
+      "cuisine_type": [
+        "Mediterranean"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:45 AM – 2:30 PM, 7:00 PM – 10:20 PM (closed on Sundays)",
+      "ambience": "Relaxed Mediterranean café",
+      "highlights": [
+        "Fresh ingredients",
+        "Wholesome vegetarian options",
+        "Calm Parisian neighborhood atmosphere",
+        "Closed on Sundays"
+      ],
+      "must_try_dishes": [
+        "Falafel platters",
+        "Hummus bowls",
+        "Grilled vegetable dishes"
+      ],
+      "best_for": [
+        "casual",
+        "healthy dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Le Plaza",
+      "city": "Paris",
+      "cuisine_type": [
+        "European",
+        "French"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:30 AM – 2:30 PM, 6:00 PM – 11:00 PM",
+      "ambience": "Elegant Parisian brasserie",
+      "highlights": [
+        "Stylish brasserie-style dining",
+        "Classic Parisian setting"
+      ],
+      "must_try_dishes": [
+        "Vegetarian pasta",
+        "Gourmet salads",
+        "French desserts"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Adam et Eve Café - Restaurant Végétarien",
+      "city": "Paris",
+      "cuisine_type": [
+        "Vegetarian",
+        "French"
+      ],
+      "price_range": "₹₹",
+      "hours": "12:00 PM – 4:00 PM, 7:00 PM – 10:30 PM (Mon & Sat) | 11:30 AM – 4:00 PM, 7:00 PM – 10:30 PM (Tue - Fri) | Closed on Sun",
+      "ambience": "Cozy vegetarian café dining",
+      "area": "Near Louvre",
+      "nearby_landmarks": [
+        "Louvre Museum, Paris"
+      ],
+      "highlights": [
+        "Warm vegetarian café-restaurant",
+        "Homestyle vegetarian cuisine",
+        "Closed on Sundays"
+      ],
+      "must_try_dishes": [
+        "Vegetarian lasagna",
+        "Fresh salads",
+        "Homemade desserts"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Café 52",
+      "city": "Paris",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹₹",
+      "hours": "7:00 AM – 11:00 PM",
+      "ambience": "Trendy Paris café",
+      "area": "Near Louvre",
+      "nearby_landmarks": [
+        "Louvre Museum, Paris"
+      ],
+      "highlights": [
+        "Healthy vegetarian-friendly dishes",
+        "Excellent coffee",
+        "Relaxed evening ambience"
+      ],
+      "must_try_dishes": [
+        "Avocado toast",
+        "Vegetarian bowls",
+        "Pastries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Eats Thyme",
+      "city": "Paris",
+      "cuisine_type": [
+        "Vegetarian",
+        "Healthy"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:30 AM – 3:00 PM, 6:00 PM – 10:00 PM (Mon - Fri) | 11:30 AM – 10:30 PM (Sat & Sun)",
+      "ambience": "Cozy healthy café",
+      "area": "Near Louvre",
+      "nearby_landmarks": [
+        "Louvre Museum, Paris"
+      ],
+      "highlights": [
+        "Charming vegetarian-friendly café",
+        "Wholesome comfort food",
+        "Fresh ingredients"
+      ],
+      "must_try_dishes": [
+        "Falafel bowls",
+        "Vegetarian wraps",
+        "Homemade desserts"
+      ],
+      "best_for": [
+        "casual",
+        "healthy dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "New Jawad Rapp",
+      "city": "Paris",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:45 AM – 2:30 PM, 6:45 PM – 11:30 PM",
+      "ambience": "Elegant Indian dining",
+      "area": "Near Eiffel Tower",
+      "nearby_landmarks": [
+        "Eiffel Tower, Paris"
+      ],
+      "highlights": [
+        "Highly popular Indian restaurant",
+        "Excellent vegetarian North Indian dishes"
+      ],
+      "must_try_dishes": [
+        "Paneer tikka",
+        "Dal makhani",
+        "Garlic naan"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kozy Bosquet",
+      "city": "Paris",
+      "cuisine_type": [
+        "Café",
+        "Brunch"
+      ],
+      "price_range": "₹₹",
+      "hours": "8:00 AM – 3:30 PM (Tue - Fri) | 9:00 AM – 4:30 PM (Sat - Mon)",
+      "ambience": "Trendy Paris café",
+      "area": "Near Eiffel Tower",
+      "nearby_landmarks": [
+        "Eiffel Tower, Paris"
+      ],
+      "highlights": [
+        "Stylish café popular for brunch-style vegetarian dishes",
+        "Bright relaxed setting"
+      ],
+      "must_try_dishes": [
+        "Avocado toast",
+        "Pancakes",
+        "Vegetarian brunch plates"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Frame Brasserie – Veg Options",
+      "city": "Paris",
+      "cuisine_type": [
+        "European",
+        "French"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12:00 PM – 10:30 PM",
+      "ambience": "Chic modern Parisian dining",
+      "area": "Near Eiffel Tower",
+      "nearby_landmarks": [
+        "Eiffel Tower, Paris"
+      ],
+      "highlights": [
+        "Stylish restaurant",
+        "Fresh ingredients",
+        "Elegant modern European dining"
+      ],
+      "must_try_dishes": [
+        "Vegetarian risotto",
+        "Burrata dishes",
+        "Seasonal desserts"
+      ],
+      "best_for": [
+        "romantic",
+        "upscale dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Amazonia Paris",
+      "city": "Paris",
+      "cuisine_type": [
+        "International",
+        "Tropical"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:00 AM – 2:00 AM (Mon - Fri) | 10:00 AM – 2:00 AM (Sat & Sun)",
+      "ambience": "Stylish tropical dining",
+      "area": "Near Eiffel Tower",
+      "nearby_landmarks": [
+        "Eiffel Tower, Paris"
+      ],
+      "highlights": [
+        "Vibrant tropical-themed restaurant",
+        "Colorful interiors",
+        "Lively ambience"
+      ],
+      "must_try_dishes": [
+        "Vegetarian rice bowls",
+        "Tropical salads",
+        "Grilled vegetables"
+      ],
+      "best_for": [
+        "casual",
+        "social"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Le Train Bleu – Veg Options",
+      "city": "Paris",
+      "cuisine_type": [
+        "French",
+        "European"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:15 AM – 2:15 PM | 7:00 PM – 10:15 PM",
+      "ambience": "Grand historic Parisian dining",
+      "area": "Gare de Lyon",
+      "nearby_landmarks": [
+        "Gare de Lyon, Paris"
+      ],
+      "highlights": [
+        "Iconic historic restaurant inside Gare de Lyon",
+        "Magnificent Belle Époque interiors",
+        "Elegant Parisian atmosphere"
+      ],
+      "must_try_dishes": [
+        "Seasonal vegetarian pasta",
+        "French vegetable dishes",
+        "Desserts"
+      ],
+      "best_for": [
+        "romantic",
+        "upscale dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "L'Européen Paris – Veg Options",
+      "city": "Paris",
+      "cuisine_type": [
+        "French",
+        "European"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "7:00 AM – 12:00 AM",
+      "ambience": "Classic Parisian brasserie",
+      "area": "Near Gare de Lyon",
+      "nearby_landmarks": [
+        "Gare de Lyon, Paris"
+      ],
+      "highlights": [
+        "Lively brasserie-style restaurant",
+        "Vegetarian-friendly French and European dishes"
+      ],
+      "must_try_dishes": [
+        "Mushroom risotto",
+        "Vegetarian tartines",
+        "French desserts"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Fellows Coffee Paris",
+      "city": "Paris",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹₹",
+      "hours": "8:00 AM – 7:00 PM",
+      "ambience": "Stylish café with relaxed vibe",
+      "area": "Near Gare de Lyon",
+      "nearby_landmarks": [
+        "Gare de Lyon, Paris"
+      ],
+      "highlights": [
+        "Cozy modern café",
+        "Lighter vegetarian meals",
+        "Coffee breaks and pastries"
+      ],
+      "must_try_dishes": [
+        "Avocado toast",
+        "Sandwiches",
+        "Specialty coffee & desserts"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Le Potager de Charlotte",
+      "city": "Paris",
+      "cuisine_type": [
+        "Vegetarian",
+        "French"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12:00 PM – 2:15 PM | 6:45 PM – 10:30 PM",
+      "ambience": "Elegant intimate vegetarian dining",
+      "area": "Montmartre",
+      "nearby_landmarks": [
+        "Montmartre, Paris",
+        "Sacré-Cœur Basilica, Paris"
+      ],
+      "highlights": [
+        "Refined vegetarian restaurant",
+        "Beautifully plated plant-based French cuisine",
+        "Cozy artistic setting"
+      ],
+      "must_try_dishes": [
+        "Truffle ravioli",
+        "Seasonal vegetable plates",
+        "Vegan desserts"
+      ],
+      "best_for": [
+        "romantic",
+        "upscale dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bouillon Pigalle – Veg Options",
+      "city": "Paris",
+      "cuisine_type": [
+        "French"
+      ],
+      "price_range": "₹₹",
+      "hours": "12:00 PM – 12:00 AM",
+      "ambience": "Authentic bustling Paris brasserie",
+      "area": "Montmartre",
+      "nearby_landmarks": [
+        "Montmartre, Paris"
+      ],
+      "highlights": [
+        "Lively classic Parisian brasserie",
+        "Affordable French dining"
+      ],
+      "must_try_dishes": [
+        "French onion soup",
+        "Mushroom dishes",
+        "Desserts"
+      ],
+      "best_for": [
+        "casual",
+        "local experience"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Le Refuge des Fondus – Veg Options",
+      "city": "Paris",
+      "cuisine_type": [
+        "French",
+        "Swiss-inspired"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "7:15 PM – 12:00 AM",
+      "ambience": "Quirky cozy Montmartre dining",
+      "area": "Montmartre",
+      "nearby_landmarks": [
+        "Montmartre, Paris"
+      ],
+      "highlights": [
+        "Fun and uniquely Parisian dining experience",
+        "Famous for cozy interiors and cheese fondue"
+      ],
+      "must_try_dishes": [
+        "Vegetarian fondue",
+        "Bread platters",
+        "Desserts"
+      ],
+      "best_for": [
+        "casual",
+        "social"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pret A Manger La Défense",
+      "city": "Paris",
+      "cuisine_type": [
+        "Café",
+        "Sandwiches"
+      ],
+      "price_range": "₹",
+      "hours": "6:30 AM – 8:30 PM",
+      "ambience": "Casual modern café",
+      "highlights": [
+        "Reliable café stop",
+        "Fresh vegetarian sandwiches, pastries, coffee"
+      ],
+      "must_try_dishes": [
+        "Avocado sandwiches",
+        "Croissants",
+        "Coffee & smoothies"
+      ],
+      "best_for": [
+        "casual",
+        "quick meal"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Starbucks La Défense",
+      "city": "Paris",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹",
+      "hours": "6:30 AM – 8:00 PM",
+      "ambience": "Relaxed international café",
+      "highlights": [
+        "Comfortable option for coffee and vegetarian snacks"
+      ],
+      "must_try_dishes": [
+        "Veg sandwiches",
+        "Muffins & pastries",
+        "Coffee & frappes"
+      ],
+      "best_for": [
+        "casual",
+        "quick meal"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ladurée Paris – Champs-Élysées",
+      "city": "Paris",
+      "cuisine_type": [
+        "French",
+        "Patisserie"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "8:00 AM – 9:30 PM",
+      "ambience": "Elegant luxury Parisian café",
+      "area": "Champs-Élysées",
+      "nearby_landmarks": [
+        "Champs-Élysées, Paris"
+      ],
+      "highlights": [
+        "Iconic Parisian café experience",
+        "World-famous macarons",
+        "Elegant interiors"
+      ],
+      "must_try_dishes": [
+        "Macarons",
+        "French pastries",
+        "Hot chocolate"
+      ],
+      "best_for": [
+        "romantic",
+        "upscale dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Angelina Paris Lounge & Restaurant",
+      "city": "Paris",
+      "cuisine_type": [
+        "French",
+        "International"
+      ],
+      "price_range": "₹1,800–4,000 per person",
+      "hours": "11:30 AM – 1:00 AM",
+      "ambience": "Luxury contemporary dining",
+      "area": "Near Louvre",
+      "nearby_landmarks": [
+        "Louvre, Paris"
+      ],
+      "highlights": [
+        "Upscale contemporary lounge",
+        "Artisanal desserts",
+        "Beautifully plated cuisine"
+      ],
+      "must_try_dishes": [
+        "Wild mushroom risotto",
+        "Truffle fries",
+        "Burrata & heirloom tomato salad"
+      ],
+      "best_for": [
+        "Premium lunch",
+        "Elegant evening coffee"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Krishna Bhavan",
+      "city": "Paris",
+      "cuisine_type": [
+        "Indian",
+        "South Indian"
+      ],
+      "price_range": "€15–25 per person",
+      "hours": "11:30 AM – 11:00 PM",
+      "ambience": "Warm casual South Indian vegetarian restaurant",
+      "area": "Gare du Nord / Central Paris",
+      "nearby_landmarks": [
+        "Arc de Triomphe, Paris"
+      ],
+      "highlights": [
+        "Popular among Indian travelers",
+        "South Indian vegetarian restaurant"
+      ],
+      "must_try_dishes": [
+        "Masala dosa",
+        "Idli-vada combo",
+        "Paneer curry"
+      ],
+      "best_for": [
+        "Comfort Indian vegetarian dinner"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "PYM Kitchen",
+      "city": "Paris",
+      "cuisine_type": [
+        "American",
+        "Buffet",
+        "Marvel-themed"
+      ],
+      "price_range": "₹3,300–4,700 per person",
+      "hours": "11:30 AM – 9:30 PM",
+      "ambience": "Marvel-themed immersive superhero setting",
+      "area": "Walt Disney Studios Park, Disneyland Paris",
+      "nearby_landmarks": [
+        "Disneyland Paris, Paris"
+      ],
+      "highlights": [
+        "Marvel-themed buffet restaurant",
+        "Playful oversized and miniature food concepts",
+        "Interactive themed dining experience"
+      ],
+      "must_try_dishes": [
+        "Vegetarian pasta station",
+        "Mushroom sliders",
+        "Desserts buffet"
+      ],
+      "best_for": [
+        "Fun themed family lunch",
+        "Interactive themed dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Casa de Coco – Restaurante de Familia",
+      "city": "Paris",
+      "cuisine_type": [
+        "Mexican"
+      ],
+      "price_range": "₹1,900–3,300 per person",
+      "hours": "11:00 AM – 10:30 PM",
+      "ambience": "Vibrant Mexican-inspired Disney restaurant themed around the movie Coco",
+      "area": "Frontierland / Disneyland Paris",
+      "nearby_landmarks": [
+        "Disneyland Paris, Paris"
+      ],
+      "highlights": [
+        "Themed around the movie Coco",
+        "Colorful interiors",
+        "Lively atmosphere"
+      ],
+      "must_try_dishes": [
+        "Vegetarian tacos",
+        "Nachos",
+        "Churros"
+      ],
+      "best_for": [
+        "Quick vegetarian-friendly themed lunch",
+        "Fun themed vegetarian dinner"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Market House Deli",
+      "city": "Paris",
+      "cuisine_type": [
+        "Deli",
+        "Café"
+      ],
+      "price_range": "₹950–1,900 per person",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "Casual deli-style eatery",
+      "area": "Main Street U.S.A., Disneyland Paris",
+      "nearby_landmarks": [
+        "Disneyland Paris, Paris"
+      ],
+      "highlights": [
+        "Perfect for lighter meals",
+        "Quick breaks between rides"
+      ],
+      "must_try_dishes": [
+        "Cheese sandwiches",
+        "Pastries",
+        "Hot chocolate"
+      ],
+      "best_for": [
+        "Quick snacks",
+        "Lighter lunch"
+      ],
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -990,58 +2055,40 @@
     {
       "name": "Eiffel Tower",
       "city": "Paris",
-      "description": "Symbol of Paris and France, showcasing world-class engineering and culture",
-      "recommended_duration": "2 hours",
+      "description": "Iconic iron tower offering panoramic views over Paris including the Seine River, Haussmann rooftops, and distant monuments. 2nd Floor access available.",
+      "recommended_duration": "2-3 hours",
       "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
+        "France/Sneha_Europe_All Inclusive Guide.docx",
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ],
-      "hours": "9 AM - 11 PM"
+      "hours": "Entry time noted as 12:30 PM",
+      "entry_fee": "Approx. INR 3,500–6,500 depending on level access"
     },
     {
       "name": "Seine River Cruise",
       "city": "Paris",
-      "description": "River cruise along the Seine",
+      "description": "Relaxing cruise along the Seine River with illuminated bridges, riverside architecture, and glowing monuments creating a cinematic and timeless atmosphere.",
       "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf"
-      ]
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ],
+      "hours": "Evening departures throughout the night",
+      "entry_fee": "Approx. INR 1,500–3,500 per person",
+      "recommended_duration": "1-2 hours"
     },
     {
       "name": "Louvre",
       "city": "Paris",
       "description": "World's largest art museum and historic monument",
       "recommended_duration": "4 hours",
-      "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "hours": "9 AM - 7 PM"
     },
     {
       "name": "Jardin de Tuileries",
       "city": "Paris",
       "description": "A historic 16th-century royal garden, now a serene cultural oasis between the Louvre and Place de la Concorde",
-      "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "hours": "7 AM - 9 PM",
       "entry_fee": "Free",
       "recommended_duration": "1 hour"
@@ -1052,75 +2099,52 @@
       "description": "A sacred basilica atop Montmartre, symbolizing peace and offering breathtaking views of Paris",
       "hours": "Daily 06:00–22:30",
       "entry_fee": "Free",
-      "source_files": [
-        "France/2. France- Final Detailed Itinerary.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "recommended_duration": "2 hours"
     },
     {
       "name": "River Seine Illumination cruise",
       "city": "Paris",
       "description": "A Seine River Illumination cruise offers a magical, romantic vantage of Paris's most famous monuments beautifully lit at night",
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "hours": "Access until 10 PM",
       "recommended_duration": "1.5 hours"
     },
     {
       "name": "Disneyland Paris",
       "city": "Paris",
-      "description": "Disney theme park with characters, rides, and shows",
-      "recommended_duration": "1 day",
+      "description": "Magical theme park resort with two parks — Disneyland Park and Walt Disney Studios Park — featuring rides, themed zones, live entertainment, and the Disney Tales of Magic nighttime show.",
+      "recommended_duration": "Full day",
       "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+        "France/Sneha_Europe_All Inclusive Guide.docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ],
+      "hours": "9:30 AM – 10:40 PM",
+      "entry_fee": "Approx. ₹10,500–14,500 per person (2-Park ticket)"
     },
     {
       "name": "Place de la Concorde",
       "city": "Paris",
       "description": "Bustling intersection connecting the Champs-Élysées to the Seine River",
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Arc de Triomphe",
       "city": "Paris",
-      "description": "A monumental arch honoring those who fought and died for France, symbolizing national pride and remembrance",
+      "description": "Iconic monument standing at the center of Place Charles de Gaulle offering one of the city's most recognizable views with rooftop access.",
       "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ],
-      "hours": "Daily 10:00–23:00 (last entry ~22:15)",
-      "entry_fee": "About €13 for adults, if climbing to the top",
+      "hours": "10:00 AM – 11:00 PM",
+      "entry_fee": "Approx. INR 1,500–2,000 for rooftop access",
       "recommended_duration": "1 hour"
     },
     {
       "name": "Trocadero",
       "city": "Paris",
       "description": "Famous square and gardens offering the best panoramic views of the Eiffel Tower",
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "hours": "Open daily, 24 hours",
       "entry_fee": "Free",
       "recommended_duration": "1 hour"
@@ -1128,13 +2152,15 @@
     {
       "name": "Louvre Museum",
       "city": "Paris",
-      "description": "World's most celebrated museum with Mona Lisa and Venus de Milo",
-      "hours": "9:00 AM – 6:00 PM",
-      "recommended_duration": "3 hours",
+      "description": "One of the world's most iconic cultural experiences housed in a magnificent former royal palace. Features the Mona Lisa, Venus de Milo, and Winged Victory of Samothrace among countless masterpieces.",
+      "hours": "Entry time noted as 6:00 AM",
+      "recommended_duration": "3-4 hours",
       "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
-      ]
+        "France/Sneha_Europe_All Inclusive Guide.docx",
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ],
+      "entry_fee": "Approx. INR 2,000–3,000 per person"
     },
     {
       "name": "Notre Dame Cathedral",
@@ -1143,35 +2169,29 @@
       "hours": "Exterior accessible anytime",
       "entry_fee": "Free (exterior)",
       "recommended_duration": "1 hour",
-      "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Sacré-Cœur Basilica",
       "city": "Paris",
-      "description": "Basilica on Montmartre hill with panoramic Paris views",
-      "hours": "6:00 AM – 10:30 PM",
-      "entry_fee": "Free Entry",
-      "recommended_duration": "2 hours",
+      "description": "Iconic basilica perched high above Paris in Montmartre offering breathtaking panoramic sunset views. Musicians, artists, and travelers gather along the staircase and hilltop viewpoints.",
+      "hours": "6:30 AM – 10:30 PM",
+      "entry_fee": "Basilica entry free",
+      "recommended_duration": "1-2 hours",
       "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Montmartre",
       "city": "Paris",
-      "description": "Historic artistic district of Paris, once home to Picasso and Van Gogh, known for its bohemian charm",
-      "hours": "Open daily, 24 hours",
-      "entry_fee": "Free",
-      "recommended_duration": "3 hours",
+      "description": "Artistic and atmospheric neighborhood with cobblestone streets, ivy-covered cafés, painters' squares, old stairways, and glowing street lamps giving it a romantic timeless character.",
+      "hours": "Open throughout the day",
+      "entry_fee": "Free to explore",
+      "recommended_duration": "3-4 hours",
       "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
       ]
     },
     {
@@ -1181,12 +2201,7 @@
       "hours": "10:00–20:30 (Mon–Sat), 11:00–20:00 (Sun)",
       "entry_fee": "Free",
       "recommended_duration": "2 hours",
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Seine River Illumination Cruise",
@@ -1195,9 +2210,7 @@
       "hours": "Early evening onward",
       "entry_fee": "Approx. INR 1,500–2,500 per person",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Jardin des Tuileries",
@@ -1206,8 +2219,105 @@
       "hours": "7:00 AM – 9:00 PM",
       "entry_fee": "Free Entry",
       "recommended_duration": "1 hour",
+      "source_files": []
+    },
+    {
+      "name": "Seine River",
+      "city": "Paris",
+      "description": "Iconic river running through Paris, perfect for a relaxed evening stroll with atmospheric views and Parisian sunsets.",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "1–2 hours",
       "source_files": [
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Champs-Élysées",
+      "city": "Paris",
+      "description": "Paris' most famous avenue lined with luxury boutiques, cafés, theaters, and grand architecture.",
+      "hours": "Open throughout the day",
+      "entry_fee": "Free to explore",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx",
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Notre-Dame Cathedral",
+      "city": "Paris",
+      "description": "Iconic Gothic cathedral, exterior visit recommended.",
+      "hours": "8:15 AM – 7:30 PM",
+      "entry_fee": "Free (exterior)",
+      "recommended_duration": "20–30 minutes",
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tootbus Paris Night Bus Tour",
+      "city": "Paris",
+      "description": "Panoramic night bus tour of illuminated Paris, departing from Place du Carrousel near the Louvre. Audio guide available.",
+      "hours": "Starts 9:00 PM, duration ~2 hours",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tuileries Garden",
+      "city": "Paris",
+      "description": "Elegant pathways, fountains, sculptures, and perfectly manicured gardens creating a peaceful contrast to the busy city. Tree-lined pathways stretch toward Place de la Concorde.",
+      "hours": "7:30 AM – 7:30 PM",
+      "entry_fee": "Free entry",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Galeries Lafayette Haussmann",
+      "city": "Paris",
+      "description": "Iconic grand department store in Paris offering luxury fashion, accessories, and Parisian shopping experience.",
+      "hours": null,
+      "entry_fee": "Free to enter",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Printemps Haussmann",
+      "city": "Paris",
+      "description": "Elegant department store in Paris for shopping.",
+      "hours": null,
+      "entry_fee": "Free to enter",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sainte-Chapelle",
+      "city": "Paris",
+      "description": "Gothic royal chapel renowned for its towering stained-glass walls in shades of sapphire, ruby, and gold.",
+      "hours": "9:00 AM – 5:00 PM",
+      "entry_fee": "Approx. €13 per person",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Moulin Rouge",
+      "city": "Paris",
+      "description": "Iconic cabaret venue in Montmartre with vibrant performances, live music, and theatrical atmosphere.",
+      "hours": "Evening shows typically from 9:00 PM onwards",
+      "entry_fee": "Approx. €120–250 depending on seating & inclusions",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -1267,6 +2377,27 @@
       "location": "Paris",
       "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
       "_source_mtime": 1772384340.7984886
+    },
+    {
+      "name": "Voco Paris – Porte de Clichy",
+      "city": "Paris",
+      "location": "Porte de Clichy",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "name": "L'Escapade Paris",
+      "city": "Paris",
+      "location": "Near Le Kremlin-Bicêtre Metro Station",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "name": "Sure Hotel by Best Western Gare du Nord",
+      "city": "Paris",
+      "location": "Gare du Nord area",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
     }
   ],
   "local_dishes": [
@@ -1276,11 +2407,7 @@
       "description": "A Provençal vegetable stew made with eggplant, zucchini, peppers, and tomatoes",
       "vegetarian": true,
       "where_to_try": "Traditional bistro or brasserie",
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "French Onion Soup",
@@ -1288,9 +2415,7 @@
       "description": "Traditionally topped with melted cheese and baguette croutons",
       "vegetarian": true,
       "where_to_try": "French restaurants",
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Soupe à l'Oignon (French Onion Soup)",
@@ -1298,10 +2423,7 @@
       "description": "Traditionally topped with melted cheese and baguette croutons",
       "vegetarian": true,
       "where_to_try": null,
-      "source_files": [
-        "France/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Quiche aux Légumes",
@@ -1309,10 +2431,7 @@
       "description": "A savory tart with seasonal vegetables, cream, and cheese",
       "vegetarian": true,
       "where_to_try": null,
-      "source_files": [
-        "France/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Salade de Chèvre Chaud",
@@ -1320,9 +2439,7 @@
       "description": "Warm goat cheese salad, often served with honey and walnuts on crisp lettuce",
       "vegetarian": true,
       "where_to_try": null,
-      "source_files": [
-        "France/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Coq au Vin",
@@ -1330,10 +2447,7 @@
       "description": "Chicken slow-cooked in red wine with mushrooms and onions (a Burgundy classic)",
       "vegetarian": false,
       "where_to_try": null,
-      "source_files": [
-        "France/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Poulet Rôti",
@@ -1341,9 +2455,7 @@
       "description": "Simple yet iconic French roast chicken, often served with herbed potatoes",
       "vegetarian": false,
       "where_to_try": null,
-      "source_files": [
-        "France/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Moules Marinières",
@@ -1351,10 +2463,7 @@
       "description": "Mussels steamed in white wine, garlic, parsley, and shallots; often served with fries",
       "vegetarian": false,
       "where_to_try": null,
-      "source_files": [
-        "France/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bouillabaisse (Parisian Style)",
@@ -1362,13 +2471,188 @@
       "description": "Traditional fish stew from Marseille, but many Paris brasseries serve it with fresh local seafood",
       "vegetarian": false,
       "where_to_try": null,
+      "source_files": []
+    },
+    {
+      "name": "Butter Croissant & Viennoiserie",
+      "city": "Paris",
+      "description": "Flaky, buttery, and perfectly layered Parisian breakfast staple best enjoyed fresh out of the oven.",
+      "vegetarian": true,
+      "where_to_try": "Street bakeries and local boulangeries in Paris",
       "source_files": [
-        "France/Paris, Switzerland and Italy.pdf"
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "French Cheese Platters",
+      "city": "Paris",
+      "description": "A beautifully curated assortment of regional cheeses paired with breads, fruits, and preserves.",
+      "vegetarian": true,
+      "where_to_try": "La Fontaine de Mars, Le Bouchon Parisien",
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "French Onion Soup (Vegetarian Version)",
+      "city": "Paris",
+      "description": "A rich, slow-cooked soup topped with melted cheese and toasted bread, offering a deeply comforting and hearty traditional dish with a vegetarian twist.",
+      "vegetarian": true,
+      "where_to_try": "Le Potager du Marais, Paris",
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Hot Chocolate (Chocolat Chaud)",
+      "city": "Paris",
+      "description": "Thick, velvety, and indulgent — less of a drink and more like melted chocolate, perfect for a cozy café break.",
+      "vegetarian": true,
+      "where_to_try": "Cafés in Paris",
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Falafel Pita",
+      "city": "Paris",
+      "description": "One of Paris' most iconic vegetarian street-food dishes — warm pita filled with crispy falafel, hummus, vegetables, and sauces.",
+      "vegetarian": true,
+      "where_to_try": "L'As du Fallafel",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Gourmet Vegan Burgers",
+      "city": "Paris",
+      "description": "Paris has an excellent modern vegan café culture with creative plant-based comfort food and trendy casual dining spaces.",
+      "vegetarian": true,
+      "where_to_try": "Hank Burger Paris, Bioburger Oxygen La Défense",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "French & Mediterranean Vegetarian Cuisine",
+      "city": "Paris",
+      "description": "Elegant vegetarian interpretations of French and Mediterranean classics increasingly popular across Paris.",
+      "vegetarian": true,
+      "where_to_try": "Le Potager du Marais, Le Potager de Charlotte, Mavrommatis La Défense",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "French Croissants & Viennoiseries",
+      "city": "Paris",
+      "description": "Flaky, buttery pastries that are an essential Paris breakfast experience, pairing perfectly with coffee at a sidewalk café.",
+      "vegetarian": true,
+      "where_to_try": "Pret A Manger La Défense, Ladurée Paris – Champs-Élysées",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Macarons",
+      "city": "Paris",
+      "description": "Delicate almond meringue cookies filled with flavored cream — one of Paris' most iconic desserts and a must-try sweet treat.",
+      "vegetarian": true,
+      "where_to_try": "Ladurée Paris – Champs-Élysées",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Parisian Café Coffee Experience",
+      "city": "Paris",
+      "description": "Sitting at a Parisian café terrace and simply watching the city pass by is part of the culture itself.",
+      "vegetarian": true,
+      "where_to_try": "Fellows Coffee Paris, Mill'Feuille",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Butter Croissants & Viennoiseries",
+      "city": "Paris",
+      "description": "Freshly baked flaky pastries best enjoyed slowly with coffee at a sidewalk café.",
+      "vegetarian": true,
+      "where_to_try": "Angelina Paris, Café Carrousel, Inavoué",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Truffle Mushroom Risotto",
+      "city": "Paris",
+      "description": "A rich and creamy European comfort dish commonly served in elegant Parisian bistros.",
+      "vegetarian": true,
+      "where_to_try": "Angelina Paris, Le Bouchon Parisien",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Parisian Hot Chocolate & Desserts",
+      "city": "Paris",
+      "description": "Paris is famous for decadent desserts, artisanal pastries, and luxurious hot chocolate experiences.",
+      "vegetarian": true,
+      "where_to_try": "Angelina Paris, Café Carrousel",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Switzerland",
+        "Paris"
+      ],
+      "tip": "Keep your belongings secure, especially in busy areas and train stations.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Paris"
+      ],
+      "tip": "Be mindful of luggage while boarding trains or during transfers.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Paris"
+      ],
+      "tip": "Stick to well-lit areas if stepping out late.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Paris"
+      ],
+      "tip": "Avoid carrying large amounts of cash — cards are widely accepted.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Paris"
+      ],
+      "tip": "Always follow pedestrian signals when crossing roads.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    }
+  ],
   "souvenirs": [
     {
       "item": "Macarons",
@@ -2461,6 +3745,322 @@
       ],
       "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
       "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "French Perfumes & Fragrances",
+      "city": "Paris",
+      "category": "Fashion & Beauty",
+      "where_to_buy": [
+        "Luxury boutiques in Paris",
+        "Artisanal fragrance shops in Paris"
+      ],
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "item": "Gourmet Food Items (Cheese, Jams, Mustard)",
+      "city": "Paris",
+      "category": "Food",
+      "where_to_buy": [
+        "Local specialty food shops in Paris",
+        "Supermarkets in Paris"
+      ],
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "item": "Leather Goods & Accessories",
+      "city": "Paris",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Leather goods boutiques in Paris",
+        "Markets and shopping streets in Paris"
+      ],
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "item": "Scented Candles & Home Fragrances",
+      "city": "Paris",
+      "category": "Home & Lifestyle",
+      "where_to_buy": [
+        "Boutique shops in Paris"
+      ],
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "item": "Art Prints & Postcards",
+      "city": "Paris",
+      "category": "Art & Collectibles",
+      "where_to_buy": [
+        "Street vendors near Parisian landmarks",
+        "Art shops in Paris"
+      ],
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "item": "Parisian Fashion & Accessories",
+      "city": "Paris",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Champs-Élysées",
+        "Galeries Lafayette Haussmann",
+        "Printemps Paris"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "item": "French Perfumes",
+      "city": "Paris",
+      "category": "Beauty & Wellness",
+      "where_to_buy": [
+        "Galeries Lafayette",
+        "Champs-Élysées boutiques",
+        "Paris perfume stores"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "item": "Macarons & French Gourmet Treats",
+      "city": "Paris",
+      "category": "Food",
+      "where_to_buy": [
+        "Ladurée Champs-Élysées",
+        "Paris gourmet boutiques"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "item": "Parisian Art Prints & Montmartre Paintings",
+      "city": "Paris",
+      "category": "Art",
+      "where_to_buy": [
+        "Montmartre artist square",
+        "Local Paris art boutiques"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "item": "French Home Fragrances & Candles",
+      "city": "Paris",
+      "category": "Home & Lifestyle",
+      "where_to_buy": [
+        "Le Marais boutiques",
+        "Galeries Lafayette",
+        "Paris concept stores"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "item": "Parisian Scarves & Fashion Accessories",
+      "city": "Paris",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Rue de Rivoli",
+        "Champs-Élysées",
+        "Department stores in central Paris"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "item": "Macarons",
+      "city": "Paris",
+      "category": "Food",
+      "where_to_buy": [
+        "Ladurée",
+        "Galeries Lafayette",
+        "Champs-Élysées",
+        "Rue de Rivoli"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Gourmet chocolates",
+      "city": "Paris",
+      "category": "Food",
+      "where_to_buy": [
+        "Galeries Lafayette",
+        "Champs-Élysées",
+        "Rue de Rivoli"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "French butter cookies",
+      "city": "Paris",
+      "category": "Food",
+      "where_to_buy": [
+        "Galeries Lafayette",
+        "Champs-Élysées"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Artisanal jams",
+      "city": "Paris",
+      "category": "Food",
+      "where_to_buy": [
+        "Galeries Lafayette",
+        "Rue de Rivoli"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Luxury tea blends",
+      "city": "Paris",
+      "category": "Food",
+      "where_to_buy": [
+        "Galeries Lafayette",
+        "Champs-Élysées"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "French wines and champagne",
+      "city": "Paris",
+      "category": "Food",
+      "where_to_buy": [
+        "Galeries Lafayette",
+        "Champs-Élysées",
+        "La Vallée Village"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Premium cheese selections",
+      "city": "Paris",
+      "category": "Food",
+      "where_to_buy": [
+        "Galeries Lafayette",
+        "Rue de Rivoli"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Truffle products",
+      "city": "Paris",
+      "category": "Food",
+      "where_to_buy": [
+        "Galeries Lafayette",
+        "Champs-Élysées"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Designer scarves",
+      "city": "Paris",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Champs-Élysées",
+        "Galeries Lafayette",
+        "Rue de Rivoli"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Perfumes",
+      "city": "Paris",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Champs-Élysées",
+        "Galeries Lafayette"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Luxury cosmetics",
+      "city": "Paris",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Galeries Lafayette",
+        "Champs-Élysées"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Parisian handbags",
+      "city": "Paris",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Champs-Élysées",
+        "Galeries Lafayette"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Silk accessories",
+      "city": "Paris",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Champs-Élysées",
+        "Galeries Lafayette",
+        "Rue de Rivoli"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Handmade art prints and local paintings",
+      "city": "Paris",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Montmartre boutiques"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Vintage Paris souvenirs",
+      "city": "Paris",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Montmartre boutiques"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Eiffel Tower miniatures and fridge magnets",
+      "city": "Paris",
+      "category": "Classic souvenirs",
+      "where_to_buy": [
+        "Champs-Élysées",
+        "Rue de Rivoli",
+        "Montmartre boutiques"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Café mugs and Paris-themed stationery",
+      "city": "Paris",
+      "category": "Classic souvenirs",
+      "where_to_buy": [
+        "Rue de Rivoli",
+        "Galeries Lafayette"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
     }
   ],
   "emergency_contacts": [],
@@ -2570,6 +4170,96 @@
       "cost": "3 days for zones 1-3",
       "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
       "_source_mtime": 1772384310.3890185
+    },
+    {
+      "city": "Paris",
+      "mode": "RER (Regional Express Rail)",
+      "description": "Regional express train network connecting central Paris to suburbs and major hubs like Disneyland Paris (RER A) and Gare du Nord (RER E).",
+      "cost": "€2.55 (₹230–₹260) per person for standard journeys within Paris zones",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "city": "Paris",
+      "mode": "Metro",
+      "description": "Extensive underground metro network covering all major Paris attractions. Key lines include Line 1, Line 4, and Line 13.",
+      "cost": "€2.55 (₹230–₹260) per person",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "city": "Paris",
+      "mode": "Hop-On Hop-Off Bus (Big Bus Paris)",
+      "description": "Pre-booked sightseeing bus with audio guide covering major Paris landmarks including Eiffel Tower, Louvre, Champs-Élysées, and Notre-Dame. Valid approximately 9:45 AM – 5:30 PM.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "city": "Paris",
+      "mode": "Eurostar",
+      "description": "High-speed international train service arriving at Paris Gare du Nord from London and other European cities.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "city": "Paris",
+      "mode": "TGV Lyria",
+      "description": "High-speed train service from Paris Est to Basel SBB. Train 9211 departs 10:22 AM, arrives Basel 1:26 PM, duration approximately 3 hours.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "city": "Paris",
+      "mode": "Metro",
+      "description": "Extensive underground metro network connecting all major Paris attractions. Key lines include Line 1 (central Paris landmarks), Line 6 (Eiffel Tower area), Line 7, and Line 13.",
+      "cost": "Metro tickets required separately (not included in Swiss Pass)",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Paris",
+      "mode": "RER (Regional Express Rail)",
+      "description": "Regional express trains connecting central Paris to suburbs and airports. RER B connects to Charles de Gaulle Airport; RER A connects to Disneyland Paris (Marne-la-Vallée – Chessy station).",
+      "cost": "RER tickets required separately (not included in Swiss Pass)",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Paris",
+      "mode": "Metro & RER Trains",
+      "description": "Paris has one of Europe's best metro systems with excellent connectivity across the city. RER trains connect airports, Disneyland Paris, and outer districts. Google Maps works very accurately for metro navigation.",
+      "recommended_pass": "Navigo Easy Pass",
+      "cost": "Contactless tap payments also accepted",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "city": "Paris",
+      "mode": "Walking",
+      "description": "Many Paris neighbourhoods are best explored on foot, especially Montmartre, Le Marais, Latin Quarter, and around the Eiffel Tower & Seine River. Comfortable walking shoes are highly recommended.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "city": "Paris",
+      "mode": "Hop-On Hop-Off Bus",
+      "description": "Sightseeing bus route through the city's historic districts, riverside avenues, and iconic landmarks.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "city": "Paris",
+      "mode": "RER B Train",
+      "description": "Train connection from Charles de Gaulle Airport into central Paris toward Gare du Nord. Approx. 40–45 mins travel time.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "city": "Paris",
+      "mode": "RER A Train",
+      "description": "Train connection from central Paris to Disneyland Paris (Marne-la-Vallée Chessy station). Approx. 1 hr journey.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
     }
   ],
   "health_tips": [],
@@ -2582,6 +4272,9 @@
     "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
     "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
     "Switzerland/Paris, Switzerland and Italy.pdf",
-    "Italy/Paris, Switzerland and Italy.pdf"
+    "Italy/Paris, Switzerland and Italy.pdf",
+    "France/Sneha_Europe_All Inclusive Guide.docx",
+    "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+    "Europe/Vidhi_Europe_All Inclusive Guide.docx"
   ]
 }

@@ -18,12 +18,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Saravana Bhavan",
@@ -50,12 +45,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "The Hornbill Restaurant By Blackberry Hills Munnar Nature Resort & Spa",
@@ -77,12 +67,7 @@
         "romantic"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Parakkat Spice Merchant Restaurant",
@@ -101,12 +86,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Prakrithi Multi Cuisine Restaurant",
@@ -125,11 +105,194 @@
         "casual"
       ],
       "vegetarian_friendly": false,
+      "source_files": []
+    },
+    {
+      "name": "High Range Club Restaurant",
+      "city": "Munnar",
+      "cuisine_type": [
+        "Kerala",
+        "Indian"
+      ],
+      "price_range": "₹600–800 per person",
+      "hours": "07:30 AM – 10:30 PM",
+      "ambience": "Heritage-style restaurant with colonial charm and peaceful atmosphere surrounded by greenery",
+      "highlights": [
+        "Heritage colonial property",
+        "Old-world character",
+        "Refined dining experience",
+        "Parking available"
+      ],
+      "must_try_dishes": [
+        "Paneer Butter Masala",
+        "Vegetable Fried Rice",
+        "Kerala Chicken Curry",
+        "Fish Fry"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
       "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Cloud Castle Restaurant",
+      "city": "Munnar",
+      "cuisine_type": [
+        "Kerala",
+        "Multicuisine"
+      ],
+      "price_range": "₹400–700 per person",
+      "hours": "08:30 AM – 08:00 PM (Mon) | 08:30 AM – 08:30 PM (Tue–Sat) | 08:30 AM – 09:00 PM (Sun)",
+      "ambience": "Scenic restaurant with beautiful hill views and comfortable atmosphere",
+      "highlights": [
+        "Beautiful mountain views",
+        "Blend of Kerala and multicuisine dishes",
+        "Parking available"
+      ],
+      "must_try_dishes": [
+        "Vegetable Stew with Appam",
+        "Paneer Butter Masala",
+        "Chicken Roast",
+        "Fish Curry"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Underground Charcoal Grill",
+      "city": "Munnar",
+      "cuisine_type": [
+        "Grill",
+        "Contemporary"
+      ],
+      "price_range": "₹700–1200 per person",
+      "hours": "01:00 PM – 10:30 PM",
+      "ambience": "Stylish restaurant with sophisticated setting and contemporary presentation",
+      "highlights": [
+        "Known for charcoal-grilled dishes",
+        "Premium dining experience",
+        "Parking available"
+      ],
+      "must_try_dishes": [
+        "Grilled Vegetables",
+        "Paneer Steak",
+        "Grilled Fish",
+        "Lamb Specialities"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Rochas Restaurant Munnar",
+      "city": "Munnar",
+      "cuisine_type": [
+        "Kerala",
+        "Indian",
+        "Multicuisine"
+      ],
+      "price_range": "₹300–500 per person",
+      "hours": "8:00 AM – 10:00 PM",
+      "ambience": "Relaxed family restaurant with comfortable atmosphere",
+      "nearby_landmarks": [
+        "Eravikulam National Park (Rajamalai), Munnar"
+      ],
+      "highlights": [
+        "Convenient stop after sightseeing",
+        "Mix of Kerala and Indian cuisine",
+        "Parking available"
+      ],
+      "must_try_dishes": [
+        "Veg Fried Rice",
+        "Paneer Butter Masala",
+        "Kerala Chicken Curry",
+        "Fish Fry"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Hotel SN Restaurant Munnar",
+      "city": "Munnar",
+      "cuisine_type": [
+        "Kerala",
+        "Indian"
+      ],
+      "price_range": "₹250–450 per person",
+      "hours": "7:30 AM – 9:30 PM",
+      "ambience": "Simple, casual setting popular among travellers",
+      "nearby_landmarks": [
+        "Eravikulam National Park (Rajamalai), Munnar"
+      ],
+      "highlights": [
+        "Local favourite",
+        "Authentic Kerala-style lunch experience",
+        "Parking available"
+      ],
+      "must_try_dishes": [
+        "Veg Meals",
+        "Paneer Curry",
+        "Chicken Curry Meals",
+        "Pepper Chicken"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Guru's Restaurant Munnar",
+      "city": "Munnar",
+      "cuisine_type": [
+        "Kerala",
+        "Indian",
+        "Multicuisine"
+      ],
+      "price_range": "₹300–500 per person",
+      "hours": "8:00 AM – 10:00 PM",
+      "ambience": "Spacious multicuisine restaurant popular for hearty portions",
+      "nearby_landmarks": [
+        "Eravikulam National Park (Rajamalai), Munnar"
+      ],
+      "highlights": [
+        "Hearty portions",
+        "Suitable for vegetarians and non-vegetarians",
+        "Parking available"
+      ],
+      "must_try_dishes": [
+        "Veg Meals",
+        "Paneer Butter Masala",
+        "Kerala Chicken Curry",
+        "Fish Fry"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -141,11 +304,7 @@
       "hours": "8:00 am to 4:00 pm",
       "entry_fee": "₹200 for Indian adults",
       "recommended_duration": "Half day",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tea Museum by Tata",
@@ -154,38 +313,28 @@
       "hours": "09:00 AM to 5:00 PM",
       "entry_fee": "₹75 for adults, ₹35 for children, ₹20 for camera use",
       "recommended_duration": "2 hours",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Mattupetty Dam",
       "city": "Munnar",
-      "description": "A scenic spot ideal for photography and boating",
-      "hours": "9:30 AM to 5:00 PM",
-      "entry_fee": "₹10 per person",
-      "recommended_duration": "1-2 hours",
+      "description": "The broad reservoir reflects surrounding hills and tea estates, creating one of Munnar's most scenic landscapes. Optional speed boating available.",
+      "hours": "09:00 AM – 05:00 PM",
+      "entry_fee": "Entry Free | Speed boating extra (~₹500–1000 depending on boat type)",
+      "recommended_duration": "1–1.5 hours",
       "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Echo Point",
       "city": "Munnar",
-      "description": "Shout out and hear nature reply amidst misty hills",
-      "hours": "7:00 AM to 6:00/6:30 PM",
-      "entry_fee": "₹30 for adults, ₹15 for children",
-      "recommended_duration": "1 hour",
+      "description": "Surrounded by mist-covered hills and calm waters, famous for its natural echo phenomenon. The area features tea stalls, mountain breeze and beautiful lake views.",
+      "hours": "06:00 AM – 06:00 PM",
+      "entry_fee": "₹30–50 per person",
+      "recommended_duration": "45 minutes–1 hour",
       "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
       ]
     },
     {
@@ -195,12 +344,7 @@
       "hours": "9:00 AM to 5:00 PM",
       "entry_fee": "free",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Anakulam Jeep Safari",
@@ -209,11 +353,7 @@
       "hours": "Morning",
       "entry_fee": null,
       "recommended_duration": "Half day",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Rose Garden",
@@ -222,9 +362,7 @@
       "hours": "10am- 5pm",
       "entry_fee": "Rs. 20 per person",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kolukkumalai Tea Estate",
@@ -233,9 +371,7 @@
       "hours": "7am to 6 pm Mon- Saturday. Closed on Sundays",
       "entry_fee": "Rs. 100 per person for tea factory visit",
       "recommended_duration": "2-3 hours",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Attukad Waterfalls",
@@ -244,8 +380,72 @@
       "hours": "10 am to 6 pm",
       "entry_fee": "No entrance fee",
       "recommended_duration": "2-3 hours",
+      "source_files": []
+    },
+    {
+      "name": "Cheeyappara Waterfalls",
+      "city": "Munnar",
+      "description": "Water tumbles down layered rock formations surrounded by thick greenery. Especially dramatic during monsoon and post-monsoon season.",
+      "hours": "06:00 AM – 06:00 PM",
+      "entry_fee": "Free Entry",
+      "recommended_duration": "30–45 minutes",
       "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Valara Waterfalls",
+      "city": "Munnar",
+      "description": "Located amidst dense forest cover, this stop feels quieter and more natural with the sound of rushing water and cool mountain breeze.",
+      "hours": "06:00 AM – 06:00 PM",
+      "entry_fee": "Free Entry",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kallar Waterfalls",
+      "city": "Munnar",
+      "description": "A peaceful stop surrounded by rocky streams and thick vegetation. Tea estates begin appearing around the hills in this area.",
+      "hours": "06:00 AM – 06:00 PM",
+      "entry_fee": "Free Entry",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Blossom Hydel Park",
+      "city": "Munnar",
+      "description": "Flower gardens, shaded walking trails and mountain views. The atmosphere becomes especially pleasant towards sunset with cool air and soft golden light over the hills.",
+      "hours": "09:00 AM – 07:30 PM",
+      "entry_fee": "₹50–75 per person",
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "KDHP Tea Museum",
+      "city": "Munnar",
+      "description": "Showcases old tea-processing machinery, photographs and stories from the region's plantation history. The aroma of freshly processed tea leaves fills the space.",
+      "hours": "09:00 AM – 05:00 PM",
+      "entry_fee": "₹125–150 per person",
+      "recommended_duration": "1–1.5 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Eravikulam National Park (Rajamalai)",
+      "city": "Munnar",
+      "description": "Rolling grasslands unfold into mountain ridges with postcard-perfect scenery. Home to the famous Nilgiri Tahr found only in this region. Cool winds and uninterrupted hill views.",
+      "hours": "07:00 AM – 04:00 PM",
+      "entry_fee": "₹200–250 per person",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -276,11 +476,46 @@
       "location": "Munnar",
       "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
       "_source_mtime": 1772384279.852176
+    },
+    {
+      "name": "Scenic Taj Munnar",
+      "city": "Munnar",
+      "location": "Munnar hills, surrounded by rolling hills and tea-covered slopes",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
     }
   ],
   "local_dishes": [],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Munnar"
+      ],
+      "tip": "Hill roads around Munnar can occasionally become slippery during rain. Wear comfortable footwear with good grip during sightseeing.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "cities": [
+        "Cochin",
+        "Munnar",
+        "Thekkady"
+      ],
+      "tip": "When visiting temples or certain religious spaces, remove footwear before entering and dress modestly with shoulders and knees covered where possible.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "cities": [
+        "Munnar",
+        "Thekkady"
+      ],
+      "tip": "At places like Periyar Reserve and Eravikulam National Park, avoid loud noise and feeding animals to help preserve the natural experience.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    }
+  ],
   "souvenirs": [
     {
       "item": "Tea",
@@ -452,16 +687,56 @@
       ],
       "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
       "_source_mtime": 1772384279.852176
+    },
+    {
+      "item": "Fresh Tea & Specialty Tea Blends",
+      "city": "Munnar",
+      "category": "Food",
+      "where_to_buy": [
+        "KDHP Tea Museum"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "item": "Homemade Chocolates",
+      "city": "Munnar",
+      "category": "Food",
+      "where_to_buy": [
+        "Munnar Town Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "item": "Essential Oils & Herbal Products",
+      "city": "Munnar",
+      "category": "Health & Wellness",
+      "where_to_buy": [
+        "Munnar Town Market"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
     }
   ],
   "emergency_contacts": [],
   "connectivity_tips": [],
   "transport_options": [],
-  "health_tips": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Munnar"
+      ],
+      "tip": "Motion sickness tablets are recommended for the winding hill roads around Munnar.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    }
+  ],
   "source_files": [
     "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
     "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf",
     "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
-    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf"
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela.pdf",
+    "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
   ]
 }

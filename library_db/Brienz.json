@@ -16,9 +16,7 @@
       "must_try_dishes": [
         "Fresh fish from Lake Brienz"
       ],
-      "source_files": [
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Restaurant Lindenblüte, Hotel Lindenhof",
@@ -38,9 +36,7 @@
       "best_for": [
         "romantic"
       ],
-      "source_files": [
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Restaurant Pizzeria Aroma GmbH",
@@ -48,20 +44,29 @@
       "cuisine_type": [
         "Italian"
       ],
-      "price_range": "₹₹₹",
-      "hours": "8:00 AM – 12:00 PM | 5:00 PM - 11:30 PM",
+      "price_range": "₹₹",
+      "hours": "8:00 AM – 12:00 PM, 5:00 PM – 11:30 PM",
       "ambience": "Cozy lakeside restaurant with relaxed ambience",
       "must_try_dishes": [
         "Vegetarian pizza",
         "mushroom pasta",
-        "garlic bread"
+        "garlic bread",
+        "Mushroom pasta",
+        "Garlic bread"
       ],
       "best_for": [
         "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ],
+      "area": "Brienz village",
+      "nearby_landmarks": [
+        "Brienz Rothorn Railway, Brienz"
+      ],
+      "highlights": [
+        "Relaxed lunch by the lake"
       ]
     },
     {
@@ -70,20 +75,31 @@
       "cuisine_type": [
         "Swiss"
       ],
-      "price_range": "₹₹₹",
+      "price_range": "₹₹",
       "hours": "5:30 PM – 9:30 PM",
       "ambience": "Charming Swiss-style restaurant with warm hospitality and scenic alpine surroundings",
       "must_try_dishes": [
         "Rösti",
         "vegetable pasta",
-        "alpine cheese specialties"
+        "alpine cheese specialties",
+        "Vegetable pasta",
+        "Alpine cheese specialties"
       ],
       "best_for": [
-        "casual"
+        "casual",
+        "family"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ],
+      "area": "Brienz village",
+      "nearby_landmarks": [
+        "Brienz Rothorn Railway, Brienz"
+      ],
+      "highlights": [
+        "Traditional Swiss lunch",
+        "Warm hospitality"
       ]
     },
     {
@@ -93,25 +109,30 @@
         "Café",
         "Alpine"
       ],
-      "price_range": "₹₹",
-      "hours": "9:00 AM – 5:30 PM (closed Monday to Thursday)",
+      "price_range": "₹",
+      "hours": "9:00 AM – 5:30 PM",
       "ambience": "Relaxed mountain-style café",
       "must_try_dishes": [
         "Vegetable sandwiches",
         "rösti",
-        "hot chocolate"
+        "hot chocolate",
+        "Rösti",
+        "Hot chocolate"
       ],
       "best_for": [
-        "quick dining"
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "highlights": [
-        "Quick scenic alpine lunch",
-        "Mountain-style café"
+        "Light mountain lunch",
+        "Scenic alpine lunch after railway experience"
+      ],
+      "area": "Rothorn Summit area",
+      "nearby_landmarks": [
+        "Brienz Rothorn Railway, Brienz"
       ]
     },
     {
@@ -136,9 +157,7 @@
         "lakeside dining"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Restaurant Löwen",
@@ -163,8 +182,101 @@
         "traditional dining"
       ],
       "vegetarian_friendly": true,
+      "source_files": []
+    },
+    {
+      "name": "Restaurant Löwen Brienz",
+      "city": "Brienz",
+      "cuisine_type": [
+        "Swiss",
+        "Alpine"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Traditional Swiss alpine dining",
+      "area": "Brienz",
+      "nearby_landmarks": [
+        "Brienz pier, Brienz"
+      ],
+      "highlights": [
+        "Classic Swiss lakeside restaurant",
+        "Warm hospitality",
+        "Beautiful mountain surroundings"
+      ],
+      "must_try_dishes": [
+        "Vegetarian rösti",
+        "Cheese platters",
+        "Seasonal Swiss desserts"
+      ],
+      "best_for": [
+        "casual",
+        "scenic dining"
+      ],
+      "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Steinbock Hotel Restaurant",
+      "city": "Brienz",
+      "cuisine_type": [
+        "Swiss",
+        "Alpine"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:00 AM – 9:30 PM",
+      "ambience": "Rustic mountain chalet",
+      "area": "Brienz",
+      "nearby_landmarks": [
+        "Brienz station, Brienz"
+      ],
+      "highlights": [
+        "Cozy chalet-style restaurant",
+        "Scenic outdoor seating"
+      ],
+      "must_try_dishes": [
+        "Vegetable pasta",
+        "Rösti with alpine cheese",
+        "Mushroom cream dishes"
+      ],
+      "best_for": [
+        "casual",
+        "scenic dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Cafe Walz",
+      "city": "Brienz",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹",
+      "hours": "8:30 AM – 9:00 PM",
+      "ambience": "Cozy lakeside café",
+      "area": "Brienz",
+      "nearby_landmarks": [
+        "Brienz Lakeside Promenade, Brienz"
+      ],
+      "highlights": [
+        "Charming little café",
+        "Perfect for lighter vegetarian lunch"
+      ],
+      "must_try_dishes": [
+        "Fresh sandwiches",
+        "Swiss pastries",
+        "Coffee and cakes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -172,36 +284,54 @@
     {
       "name": "Brienz",
       "city": "Brienz",
-      "description": "Peaceful Swiss village beside crystal-clear Lake Brienz, famous for woodcarving heritage and traditional chalets",
+      "description": "Peaceful Swiss village nestled beside crystal-clear waters of Lake Brienz, famous for woodcarving heritage, traditional chalets, and postcard-perfect alpine scenery.",
       "hours": "Open throughout the day",
       "entry_fee": "Free",
       "recommended_duration": "2-3 hours",
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ]
     },
     {
       "name": "Brunngasse",
       "city": "Brienz",
-      "description": "One of Europe's prettiest streets lined with beautifully preserved wooden chalets overflowing with flowers",
+      "description": "Often regarded as one of Europe's prettiest streets, lined with beautifully preserved wooden chalets overflowing with flowers and traditional Swiss character.",
       "hours": "Open all day",
       "entry_fee": "Free",
       "recommended_duration": "30 minutes",
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ]
     },
     {
       "name": "Brienz Rothorn Railway",
       "city": "Brienz",
-      "description": "Historic steam-powered train climbing through forests, alpine meadows, and dramatic mountain scenery with spectacular panoramic views",
+      "description": "Historic vintage steam-powered train slowly climbing through forests, alpine meadows, and dramatic mountain scenery toward breathtaking panoramic viewpoints high above Lake Brienz.",
       "hours": "Approx. 8:30 AM – 5:00 PM",
-      "recommended_duration": "4-5 hours",
+      "recommended_duration": "1–1.5 hours at summit",
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Lake Brienz Cruise",
+      "city": "Brienz",
+      "description": "Peaceful cruise across turquoise waters of Lake Brienz surrounded by dramatic mountains, waterfalls, and charming Swiss villages. Best enjoyed from open-air upper deck seating.",
+      "hours": "Boat schedules operate throughout the day",
+      "recommended_duration": "1 hr 15 mins (one way)",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Brienz Village",
+      "city": "Brienz",
+      "description": "Peaceful and authentic village known for traditional wooden chalets, flower-lined streets, and lakeside charm. Famous for local wood-carving shops.",
+      "hours": "Open throughout the day",
+      "entry_fee": "Free to explore",
+      "recommended_duration": "2-3 hours",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -226,6 +356,8 @@
   "source_files": [
     "Qatar/Tejas - Europe All Inclusive Guide.pdf",
     "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-    "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+    "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+    "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
   ]
 }

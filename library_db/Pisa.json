@@ -26,11 +26,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
-        "Italy/4. Italy- Final Detailed Itinerary.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Grano Libero Ristorante",
@@ -57,11 +53,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
-        "Italy/4. Italy- Final Detailed Itinerary.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ristoro Dantesca",
@@ -89,11 +81,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
-        "Italy/4. Italy- Final Detailed Itinerary.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Namaste India",
@@ -109,9 +97,7 @@
         "Curries",
         "rotis"
       ],
-      "source_files": [
-        "Italy/4. Italy- Final Detailed Itinerary.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Gandhi Indian Restaurant Pisa",
@@ -127,8 +113,96 @@
         "Curries",
         "rotis"
       ],
+      "source_files": []
+    },
+    {
+      "name": "Ristorante Alle Bandierine Pisa",
+      "city": "Pisa",
+      "cuisine_type": [
+        "Italian",
+        "Tuscan"
+      ],
+      "price_range": "₹2,800–5,200 per person",
+      "hours": "7:30 AM – 11:30 PM",
+      "ambience": "Charming traditional Tuscan restaurant with cozy interiors and authentic local atmosphere",
+      "area": "Near Leaning Tower of Pisa",
+      "nearby_landmarks": [
+        "Leaning Tower of Pisa, Pisa"
+      ],
+      "highlights": [
+        "Charming traditional Tuscan restaurant",
+        "Authentic local atmosphere"
+      ],
+      "must_try_dishes": [
+        "Vegetarian pasta",
+        "Gnocchi",
+        "Tiramisu"
+      ],
+      "best_for": [
+        "Authentic Tuscan lunch in Pisa"
+      ],
+      "vegetarian_friendly": true,
       "source_files": [
-        "Italy/4. Italy- Final Detailed Itinerary.pdf"
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "La Pergoletta Pisa",
+      "city": "Pisa",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹2,400–4,700 per person",
+      "hours": "12:30–3 pm, 7–10 pm",
+      "ambience": "Elegant Italian restaurant with relaxed atmosphere",
+      "area": "Near Leaning Tower of Pisa",
+      "nearby_landmarks": [
+        "Leaning Tower of Pisa, Pisa"
+      ],
+      "highlights": [
+        "Known for handmade pasta",
+        "Relaxed atmosphere"
+      ],
+      "must_try_dishes": [
+        "Mushroom ravioli",
+        "Vegetarian risotto",
+        "Panna cotta"
+      ],
+      "best_for": [
+        "Relaxed sit-down lunch after sightseeing"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Filter Coffee Lab Pisa",
+      "city": "Pisa",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹1,400–2,800 per person",
+      "hours": "8:00 AM – 3:00 PM",
+      "ambience": "Cozy modern café",
+      "area": "Near Pisa historic centre",
+      "nearby_landmarks": [
+        "Leaning Tower of Pisa, Pisa"
+      ],
+      "highlights": [
+        "Specialty coffee",
+        "Lighter lunch options"
+      ],
+      "must_try_dishes": [
+        "Sandwiches",
+        "Pastries",
+        "Iced coffee"
+      ],
+      "best_for": [
+        "Casual café lunch and coffee break"
+      ],
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -136,15 +210,12 @@
     {
       "name": "Leaning Tower of Pisa",
       "city": "Pisa",
-      "description": "The famous tilt is even more striking in person. The contrast of white marble against green lawns makes the entire setting feel grand and surreal",
+      "description": "Italy's most iconic leaning landmark rising dramatically beside the stunning Piazza dei Miracoli with bright white marble architecture.",
       "hours": "9:00 AM – 8:00 PM",
-      "entry_fee": "~₹2,000–2,500 (tower climb)",
-      "recommended_duration": "~10–15 mins from station",
+      "entry_fee": "Tower entry approx. ₹2,400–3,300",
+      "recommended_duration": "2 hours",
       "source_files": [
-        "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
-        "Italy/Italy- Final Itinerary with booking links.pdf",
-        "Italy/4. Italy- Final Detailed Itinerary.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     },
     {
@@ -154,9 +225,7 @@
       "hours": "Open all day",
       "entry_fee": "Free (monuments separate)",
       "recommended_duration": "Same location",
-      "source_files": [
-        "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     }
   ],
   "hotels": [
@@ -240,7 +309,8 @@
     "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
     "Italy/Italy- Final Itinerary with booking links.pdf",
     "Italy/4. Italy- Final Detailed Itinerary.pdf",
-    "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+    "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+    "Europe/Vidhi_Europe_All Inclusive Guide.docx"
   ],
   "_audit": [
     {

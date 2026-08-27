@@ -13,10 +13,7 @@
       "must_try_dishes": [
         "Crispy duck"
       ],
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bebek Tepi Sawah",
@@ -36,9 +33,7 @@
         "Alfresco seating beside rice fields"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Green Kubu Cafe",
@@ -58,9 +53,7 @@
         "Panoramic views over lush paddy fields"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Jukung Grill at Bali Masari",
@@ -78,9 +71,7 @@
         "Riverside dining"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Jendela Bali – The Panoramic Resto",
@@ -105,9 +96,7 @@
         "Breezy outdoor deck"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kampung Bali Restaurant",
@@ -128,9 +117,7 @@
         "Traditional Balinese buffet setup"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Lion X",
@@ -140,9 +127,7 @@
       ],
       "hours": "12:00 PM - 3:00 PM and 6:00 PM - 10:30 PM",
       "ambience": "Inventive Chinese dining",
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Samabe Cave Dining",
@@ -152,8 +137,165 @@
       "highlights": [
         "Pre-booking required"
       ],
+      "source_files": []
+    },
+    {
+      "name": "Uma Restaurant – Bali Safari & Marine Park",
+      "city": "Bali",
+      "cuisine_type": [
+        "Indonesian",
+        "International"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:00 AM – 5:00 PM",
+      "ambience": "Spacious family-friendly restaurant within the safari complex",
+      "area": "Bali Safari & Marine Park",
+      "nearby_landmarks": [
+        "Bali Safari & Marine Park, Bali"
+      ],
+      "highlights": [
+        "Convenient dining during safari visit",
+        "Located within Bali Safari & Marine Park"
+      ],
+      "must_try_dishes": [
+        "Vegetable Fried Rice",
+        "Indonesian Vegetable Curry",
+        "Fresh Tropical Fruits"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
       "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tsavo Lion Restaurant",
+      "city": "Bali",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "₹₹",
+      "hours": "7:00 AM – 9:00 PM",
+      "ambience": "Unique dining experience with views into the lion habitat",
+      "area": "Bali Safari & Marine Park",
+      "nearby_landmarks": [
+        "Bali Safari & Marine Park, Bali"
+      ],
+      "highlights": [
+        "Memorable wildlife-themed dining experience",
+        "Views into the lion habitat",
+        "Located within Bali Safari & Marine Park"
+      ],
+      "must_try_dishes": [
+        "Vegetable Pasta",
+        "Grilled Vegetables",
+        "Fresh Juices"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Warung Bali Safari",
+      "city": "Bali",
+      "cuisine_type": [
+        "Indonesian",
+        "Local"
+      ],
+      "price_range": "₹",
+      "hours": "11:00 AM – 4:00 PM",
+      "ambience": "Casual local-style dining within the park",
+      "area": "Bali Safari & Marine Park",
+      "nearby_landmarks": [
+        "Bali Safari & Marine Park, Bali"
+      ],
+      "highlights": [
+        "Quick and casual lunch",
+        "Located within Bali Safari & Marine Park"
+      ],
+      "must_try_dishes": [
+        "Gado-Gado",
+        "Vegetable Noodles",
+        "Tofu Stir Fry"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Udupi Bali",
+      "city": "Bali",
+      "cuisine_type": [
+        "South Indian",
+        "Vegetarian"
+      ],
+      "price_range": "₹",
+      "hours": "7:00 AM – 10:00 PM",
+      "ambience": "Traditional vegetarian South Indian restaurant known for authentic flavours",
+      "area": "En route towards Ubud",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Pure vegetarian South Indian cuisine"
+      ],
+      "must_try_dishes": [
+        "Masala Dosa",
+        "South Indian Thali",
+        "Idli Sambar"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Andrawina Restaurant",
+      "city": "Bali",
+      "cuisine_type": [
+        "Indonesian",
+        "International"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "7:00 AM – 10:30 PM",
+      "ambience": "Spacious open-air restaurant set within Bali Safari & Marine Park, offering a comfortable family-friendly atmosphere with views of the park's lush surroundings",
+      "area": "Bali Safari & Marine Park",
+      "nearby_landmarks": [
+        "Bali Safari & Marine Park, Bali"
+      ],
+      "highlights": [
+        "Buffet dining",
+        "Wide variety of Indonesian and international dishes",
+        "Convenient lunch during safari visit"
+      ],
+      "must_try_dishes": [
+        "Indonesian Vegetable Curry",
+        "Vegetable Fried Rice",
+        "Gado-Gado",
+        "Fresh Tropical Fruits"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
       ]
     }
   ],
@@ -165,11 +307,7 @@
       "hours": "Opens 24 hrs",
       "entry_fee": "Usually free or ₹50-₹100 for certain photo spots",
       "recommended_duration": "20–30 mins",
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ulun Danu Beratan Temple",
@@ -178,11 +316,7 @@
       "hours": "Best visited between 6 AM–7 AM",
       "entry_fee": "Approx. ₹250-₹350 pp",
       "recommended_duration": "45 mins – 1 hr",
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Lempuyang Temple (Gateway to Heaven)",
@@ -191,37 +325,29 @@
       "hours": "6:00 AM – 6:00 PM",
       "entry_fee": "Sarong required (available on-site)",
       "recommended_duration": "1.5 hours",
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf",
-        "Bali Indonesia/All Inclusive Guide- Bali.docx",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bali Safari & Marine Park",
       "city": "Bali",
-      "description": "Get close to exotic animals in a lush safari setting",
-      "hours": "9:00 AM to 5:00 PM",
-      "entry_fee": "IDR 500,000 to IDR 1,500,000",
-      "recommended_duration": "6 to 7 hours",
+      "description": "Home to hundreds of animals from Indonesia, India, and Africa across beautifully landscaped grounds. Jungle Hopper Package includes safari journey, animal encounters, educational presentations, and selected park attractions.",
+      "hours": "9:00 AM – 5:30 PM | 6:00 PM – 9:00 PM",
+      "entry_fee": "Approx. INR 4,000–6,000 per person (depending on package selected)",
+      "recommended_duration": "4–5 hours",
       "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Tanah Lot Temple",
       "city": "Bali",
-      "description": "One of Bali's most photographed sea temples perched dramatically on a rock formation, especially magical at sunset",
-      "hours": "7:00 AM – 7:00 PM",
-      "entry_fee": "Approx. IDR 75,000 (₹400 approx.) per person",
-      "recommended_duration": "2-3 hours",
+      "description": "One of Bali's most iconic landmarks sitting dramatically atop a rocky offshore outcrop surrounded by the Indian Ocean. As the tide rises, the temple appears to float above the waves.",
+      "hours": "6:00 AM – 7:00 PM",
+      "entry_fee": "Approx. INR 400–500 per person",
+      "recommended_duration": "1.5–2 hours",
       "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Desmond.pdf",
-        "Bali Indonesia/All Inclusive Guide- Bali.docx",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf"
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
       ]
     },
     {
@@ -230,10 +356,7 @@
       "description": "Sacred temple built on a dramatic cliffside 70 meters above the sea, offers panoramic ocean views and forested paths",
       "hours": "7:00 AM – 7:00 PM",
       "recommended_duration": "2-3 hours",
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Desmond.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kecak Fire Dance",
@@ -241,37 +364,28 @@
       "description": "Hypnotic performance featuring chorus of chanting men, fire effects, and the legendary tale of Ramayana set against sunset backdrop",
       "hours": "6:00 PM (1 hour duration)",
       "recommended_duration": "1 hour",
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Desmond.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ayung River",
       "city": "Bali",
       "description": "Thrilling white water rafting location",
       "recommended_duration": "Half day",
-      "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Outback Adventure",
       "city": "Bali",
       "description": "ATV ride through jungle terrain",
       "recommended_duration": "Half day",
-      "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Aloha Bali Swing",
       "city": "Bali",
       "description": "Optional scenic stop with swings",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Garuda Wisnu Kencana (GWK) Cultural Park",
@@ -279,9 +393,7 @@
       "description": "Marvel at the 121-meter statue of Lord Vishnu riding Garuda, explore art exhibits, open-air plazas, and Balinese sculptures",
       "hours": "9:00 AM - 9:00 PM",
       "recommended_duration": "3-4 hours",
-      "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bali Swing",
@@ -290,9 +402,7 @@
       "hours": "8 AM to 5 PM",
       "entry_fee": "Packages start approx. ₹2,000-₹5,000 pp",
       "recommended_duration": "1–1.5 hrs",
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tegalalang Rice Terraces",
@@ -301,9 +411,7 @@
       "hours": "8 AM–6 PM",
       "entry_fee": "Approx. ₹80-₹150 pp",
       "recommended_duration": "45 min – 1 hr",
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kintamani Viewpoint (Mount Batur & Lake Batur)",
@@ -312,9 +420,7 @@
       "hours": "8 AM–6 PM",
       "entry_fee": "Entry approx. ₹150-₹250 pp",
       "recommended_duration": "30–45 mins",
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tegenungan Waterfall",
@@ -323,9 +429,7 @@
       "hours": "6:30 AM–6:30 PM",
       "entry_fee": "Approx. ₹100-₹150 pp",
       "recommended_duration": "45 mins – 1 hr",
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tukad Cepung Waterfall",
@@ -334,8 +438,30 @@
       "hours": "7:00 AM – 6:00 PM",
       "entry_fee": "Approx. IDR 30,000 (₹150–200)",
       "recommended_duration": "45–60 minutes",
+      "source_files": []
+    },
+    {
+      "name": "Ngurah Rai International Airport (DPS)",
+      "city": "Bali",
+      "description": "Bali's primary international gateway, located near Jimbaran and Kuta. Modern, easy to navigate, with currency exchange counters, SIM card kiosks, cafés, and ATMs.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
       "source_files": [
-        "Bali Indonesia/All Inclusive Guide- Bali.docx"
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Lempuyang Temple (Gates of Heaven)",
+      "city": "Bali",
+      "description": "Sacred temple complex perched high on the slopes of Mount Lempuyang, home to Bali's famous 'Gates of Heaven'. On clear mornings, Mount Agung perfectly frames the temple gates.",
+      "hours": "6:00 AM – 6:00 PM",
+      "entry_fee": "Approx. INR 550–800 per person",
+      "recommended_duration": "2–3 hours including queue time",
+      "source_files": [
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
       ]
     }
   ],
@@ -346,253 +472,163 @@
       "city": "Bali",
       "description": "Chicken rice comprised of shredded chicken, satay, boiled egg, roasted peanuts, french bean salad, sambal, and a bowl of steamed rice",
       "vegetarian": false,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ayam Betutu",
       "city": "Bali",
-      "description": "Balinese spiced chicken - A bowl of steamed rice accompanied by chunks of chicken bathed in chilli sambal with the satay, salad and peanuts",
+      "description": "One of Bali's most celebrated traditional dishes featuring chicken marinated in a rich blend of local spices, herbs, turmeric, and aromatics before being slow-cooked until tender.",
       "vegetarian": false,
       "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ],
+      "where_to_try": "Warung Blanjong Sanur, Natah Ubud, Sendang Restaurant at Mayura Ubud Retreat"
     },
     {
       "name": "Lawar",
       "city": "Bali",
       "description": "Primarily made from coconut gratings, to which minced jackfruit, bits of chicken skin, chilies, and coconut milk are added",
       "vegetarian": false,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Martabak",
       "city": "Bali",
       "description": "Popular Indonesian street-style pancake in savory chicken version or sweet chocolate & nut version",
       "vegetarian": true,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/All Inclusive Guide- Bali.docx",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Acai Bowls",
       "city": "Bali",
       "description": "Fresh customizable Acai Bowls and Smoothies are becoming popular",
       "vegetarian": true,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Klepon",
       "city": "Bali",
       "description": "Indonesia Sweet Rice Cakes - Made from boiled rice cakes filled with palm sugar and covered in coconut gratings",
       "vegetarian": true,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tipat Cantok",
       "city": "Bali",
       "description": "Balinese Rice Cake salad - made from peanut sauce, rice cakes steamed in palm leaves, cabbage and baby green sprouts, mixed thoroughly and drizzled with sweet soy sauce",
       "vegetarian": true,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Nasi Goreng",
       "city": "Bali",
-      "description": "Various spices are mixed to form a thick paste, added to boiled rice and cooked on a slow flame. Loads of vegetables are added along with chicken or other meat",
+      "description": "Indonesia's national dish — a fragrant fried rice dish cooked with vegetables, spices, egg, and your choice of meat or seafood.",
       "vegetarian": false,
       "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ],
+      "where_to_try": "Sendang Restaurant at Mayura Ubud Retreat, SEJA Restaurant & Bar, Warung Blanjong Sanur"
     },
     {
       "name": "Sambal Matah",
       "city": "Bali",
       "description": "Balinese Raw Sambal - prepared using finely chopped shallots, lemongrass, spices, garlic, and herbs, fried in hot oil with a sprinkle of shrimp paste",
       "vegetarian": false,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bubur Sumsum",
       "city": "Bali",
       "description": "Indonesian Rice Pudding - usually syrupy and served hot, garnished with coconut cream and sliced bananas",
       "vegetarian": true,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bebek Betutu",
       "city": "Bali",
       "description": "Balinese Roast Duck - prepared using a whole duck or chicken stuffed with vegetables, spices and herbs. Takes about 8-12 hours to prepare",
       "vegetarian": false,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Jukut Ares",
       "city": "Bali",
       "description": "Balinese Traditional Soup - Salt is added to a finely chopped banana stalk, and the mixture is pressed to remove moisture. Turmeric and bay leaves, among other spices, are added along with chunks of chicken",
       "vegetarian": false,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Pisang Goreng",
       "city": "Bali",
       "description": "Indonesian fried banana - can be paired with ice cream, syrup, chocolate, whipped cream, or eaten as it is",
       "vegetarian": true,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Gado Gado",
       "city": "Bali",
       "description": "Indonesian salad - made of potatoes, beans, capsicum and tomatoes, with a peanut sauce dressing",
       "vegetarian": true,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Fish Head Soup",
       "city": "Bali",
       "description": "Considered a delicacy, the fish head soup cooks the whole fish which are boiled in a broth to which various spices are added",
       "vegetarian": false,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Serombotan",
       "city": "Bali",
       "description": "Mixture of various items starting with bean sprouts, spinach, green banana slices, soybeans, and peanuts, topped with coconut and peanut sauce",
       "vegetarian": true,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kopi Tubruk",
       "city": "Bali",
       "description": "Balinese Coffee",
       "vegetarian": true,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Rujak",
       "city": "Bali",
       "description": "Indonesian Fruit Salad - Green mango, papaya, and yam beans are diced and mixed with shrimp paste, drizzled with chili sauce and dressed with palm sugar",
       "vegetarian": false,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Es Cendol",
       "city": "Bali",
       "description": "Made from rice flour jelly, coconut milk, and palm sugar droplets. Occasionally, ice or crushed ice cubes may be added to cool down the drink",
       "vegetarian": true,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ikan Bakar",
       "city": "Bali",
       "description": "Grilled Fish",
       "vegetarian": false,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tum Ayan",
       "city": "Bali",
       "description": "Minced chicken mixed with flavorful spices and coconut milk, wrapped in banana leaves, and steamed or grilled. Contains minced chicken, shallots, garlic, coconut milk, spice paste, chili, and peppercorn",
       "vegetarian": false,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
-        "Bali Indonesia/Eating Out Guide- Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Gado-Gado",
       "city": "Bali",
-      "description": "Hearty Indonesian salad of steamed vegetables, tofu, tempeh, and boiled eggs topped with creamy peanut sauce",
+      "description": "Traditional Indonesian salad of vegetables, tofu, and tempeh served with peanut sauce",
       "vegetarian": true,
-      "where_to_try": "Made's Warung Kuta",
+      "where_to_try": "Bumbu Bali, Warung Bali Safari, Andrawina Restaurant",
       "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf",
-        "Bali Indonesia/All Inclusive Guide- Bali.docx",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf"
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
       ]
     },
     {
@@ -601,9 +637,7 @@
       "description": "A perfect way to taste multiple Balinese flavors in one plate",
       "vegetarian": true,
       "where_to_try": null,
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Mie Goreng (Vegetarian)",
@@ -611,9 +645,7 @@
       "description": "Classic Indonesian fried noodles prepared with vegetables, tofu/tempeh, and sweet–savory sauces",
       "vegetarian": true,
       "where_to_try": null,
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Nasi Goreng (Vegetarian)",
@@ -621,9 +653,7 @@
       "description": "Fried rice with veggies, egg (optional), tempeh, and sambal. Often served with crackers and pickles on the side",
       "vegetarian": true,
       "where_to_try": null,
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Sate Lilit Vegetarian",
@@ -631,9 +661,7 @@
       "description": "A plant-based version of Bali's satay using tempeh, mushrooms, tofu, or soy-based mix wrapped around lemongrass sticks and grilled",
       "vegetarian": true,
       "where_to_try": null,
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tahu & Tempeh Goreng",
@@ -641,9 +669,7 @@
       "description": "Crispy fried tofu and tempeh served with chili dip. Simple but very satisfying",
       "vegetarian": true,
       "where_to_try": null,
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Sayur Lodeh",
@@ -651,10 +677,7 @@
       "description": "Traditional Indonesian coconut curry with vegetables like eggplant, beans, carrots, and tofu. Creamy, mild, and delicious",
       "vegetarian": true,
       "where_to_try": null,
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Urab (Vegetable Salad)",
@@ -662,9 +685,7 @@
       "description": "A fresh mix of steamed vegetables with spiced grated coconut. A must-try Balinese side dish",
       "vegetarian": true,
       "where_to_try": null,
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Sweet Potato Fries / Purple Yam Snacks",
@@ -672,9 +693,7 @@
       "description": "Bali uses a lot of purple yam — often turned into fries, chips, or steamed snacks",
       "vegetarian": true,
       "where_to_try": null,
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Vegetarian Laksa (Indonesian Style)",
@@ -682,9 +701,7 @@
       "description": "Rich, aromatic coconut broth with noodles, tofu, and vegetables. Not Balinese originally, but very popular across Bali",
       "vegetarian": true,
       "where_to_try": null,
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Pisang Goreng (Banana fritters)",
@@ -692,9 +709,7 @@
       "description": "Banana fritters",
       "vegetarian": true,
       "where_to_try": null,
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bubur Injin (Black rice pudding with coconut milk)",
@@ -702,18 +717,17 @@
       "description": "Black rice pudding with coconut milk",
       "vegetarian": true,
       "where_to_try": null,
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Nasi Campur",
       "city": "Bali",
-      "description": "Traditional Indonesian mixed rice platter served with small portions of vegetables, sambal, tofu/tempeh, and choice of chicken",
+      "description": "A Balinese mixed rice dish served with small portions of various side dishes",
       "vegetarian": true,
-      "where_to_try": "Made's Warung Kuta",
+      "where_to_try": "Sawobali Cake & Coffee Shop, Tetaring Restaurant",
       "source_files": [
-        "Bali Indonesia/All Inclusive Guide- Bali.docx"
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
       ]
     },
     {
@@ -722,37 +736,31 @@
       "description": "Grilled skewers of marinated chicken served with rich peanut sauce and rice cakes",
       "vegetarian": false,
       "where_to_try": "Made's Warung Kuta",
-      "source_files": [
-        "Bali Indonesia/All Inclusive Guide- Bali.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Lamb Rendang",
       "city": "Bali",
       "description": "Slow-cooked lamb simmered in coconut milk and aromatic spices until tender and deeply flavorful",
       "vegetarian": false,
-      "source_files": [
-        "Bali Indonesia/All Inclusive Guide- Bali.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Mie Goreng",
       "city": "Bali",
-      "description": "Indonesia's famous stir-fried noodles with vegetables, egg, and choice of chicken",
-      "vegetarian": true,
+      "description": "Popular Indonesian noodle dish combining stir-fried noodles with vegetables, sauces, spices, and proteins.",
+      "vegetarian": false,
       "source_files": [
-        "Bali Indonesia/All Inclusive Guide- Bali.docx",
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf"
-      ]
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ],
+      "where_to_try": "SEJA Restaurant & Bar, Warung Blanjong Sanur, Sindhu Night Market"
     },
     {
       "name": "Tempeh & Tofu Dishes",
       "city": "Bali",
       "description": "Plant-based dishes using locally made tempeh and tofu, often stir-fried, grilled, or served in mild curries",
       "vegetarian": true,
-      "source_files": [
-        "Bali Indonesia/All Inclusive Guide- Bali.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Sate Lilit",
@@ -760,35 +768,209 @@
       "description": "Traditional Balinese satay",
       "vegetarian": false,
       "where_to_try": "Made's Warung Kuta",
-      "source_files": [
-        "Bali Indonesia/All Inclusive Guide- Bali.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Cap Cay",
       "city": "Bali",
       "description": "A Chinese-Indonesian stir-fry dish with a medley of vegetables like cabbage, carrots, baby corn, mushrooms, and more. It's often vegetarian by default",
       "vegetarian": true,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tahu Berontak",
       "city": "Bali",
       "description": "A popular and addictive snack of deep-fried tofu stuffed with vegetables like cabbage, carrots, and bean sprouts",
       "vegetarian": true,
-      "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Dadar Gulung",
       "city": "Bali",
       "description": "Traditional green pancakes infused with pandan extract, filled with sweet, shredded coconut and palm sugar",
       "vegetarian": true,
+      "source_files": []
+    },
+    {
+      "name": "Vegetarian Nasi Goreng",
+      "city": "Bali",
+      "description": "Indonesian fried rice dish, vegetarian version",
+      "vegetarian": true,
+      "where_to_try": "Scene Restaurant – The Samaya Ubud, Penida Colada Beach Bar, Uma Restaurant – Bali Safari & Marine Park",
       "source_files": [
-        "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf"
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Indonesian Vegetable Curry",
+      "city": "Bali",
+      "description": "Traditional Indonesian curry made with vegetables and local spices",
+      "vegetarian": true,
+      "where_to_try": "Scene Restaurant – The Samaya Ubud, Casa Curandera Bali, Sari Organik",
+      "source_files": [
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tempeh Rendang",
+      "city": "Bali",
+      "description": "Tempeh cooked in a rich, spiced rendang sauce — a vegetarian take on a classic Indonesian dish",
+      "vegetarian": true,
+      "where_to_try": "Clear Café, Sari Organik",
+      "source_files": [
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Balinese Vegetable Curry",
+      "city": "Bali",
+      "description": "Traditional Balinese curry made with vegetables and local spices",
+      "vegetarian": true,
+      "where_to_try": "Dining Corner Restaurant, Sari Organik, Moksa Ubud",
+      "source_files": [
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Coconut Curry",
+      "city": "Bali",
+      "description": "Creamy curry made with coconut milk and vegetables",
+      "vegetarian": true,
+      "where_to_try": "Yellow Flower Café, Zest Ubud",
+      "source_files": [
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tempeh Satay",
+      "city": "Bali",
+      "description": "Grilled tempeh skewers, a vegetarian version of the classic Indonesian satay",
+      "vegetarian": true,
+      "where_to_try": "Sari Organik, Bebek Tepi Sawah Ubud",
+      "source_files": [
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Vegetable Nasi Goreng",
+      "city": "Bali",
+      "description": "Indonesian fried rice dish with vegetables, a staple of Balinese cuisine",
+      "vegetarian": true,
+      "where_to_try": "Dining Corner Restaurant, Penida Colada Beach Bar, Grand Puncak Sari Restaurant",
+      "source_files": [
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tofu Satay",
+      "city": "Bali",
+      "description": "Grilled tofu skewers served with peanut or other dipping sauces, a vegetarian take on the classic Indonesian satay",
+      "vegetarian": true,
+      "where_to_try": "Bumbu Bali, Bebek Tepi Sawah Ubud, Sari Organik",
+      "source_files": [
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Masala Dosa",
+      "city": "Bali",
+      "description": "South Indian crispy rice crepe filled with spiced potato filling, served with sambar and chutney",
+      "vegetarian": true,
+      "where_to_try": "Udupi Bali",
+      "source_files": [
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "South Indian Thali",
+      "city": "Bali",
+      "description": "A complete South Indian meal served on a platter with rice, dal, curries, and accompaniments",
+      "vegetarian": true,
+      "where_to_try": "Udupi Bali",
+      "source_files": [
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Paneer Tikka",
+      "city": "Bali",
+      "description": "Marinated Indian cottage cheese grilled in a tandoor oven, a popular North Indian starter",
+      "vegetarian": true,
+      "where_to_try": "Indian Delites Ubud, Queens of India, Tandoor Indian Restaurant",
+      "source_files": [
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Dal Makhani",
+      "city": "Bali",
+      "description": "Slow-cooked black lentils in a rich, creamy tomato-based sauce — a North Indian classic",
+      "vegetarian": true,
+      "where_to_try": "Indian Delites Ubud, Tandoor Indian Restaurant, Maharaja Indian Restaurant Ubud",
+      "source_files": [
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Nasi Campur Bali",
+      "city": "Bali",
+      "description": "A true staple of Balinese cuisine — a colourful platter of steamed rice served alongside a variety of meats, vegetables, sambals, peanuts, and traditional accompaniments.",
+      "vegetarian": false,
+      "where_to_try": "Melali Ubud, Warung Blanjong Sanur, Sendang Restaurant at Mayura Ubud Retreat",
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Balinese Chicken Satay (Sate Lilit)",
+      "city": "Bali",
+      "description": "Made by blending minced chicken or fish with coconut, herbs, and aromatic Balinese spices before wrapping it around lemongrass stalks and grilling it over charcoal.",
+      "vegetarian": false,
+      "where_to_try": "Melali Ubud, Natah Ubud, Warung Blanjong Sanur",
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Fresh Grilled Seafood",
+      "city": "Bali",
+      "description": "Perfectly grilled fish, prawns, squid, and shellfish seasoned with aromatic spices and served with local sambals and tropical accompaniments.",
+      "vegetarian": false,
+      "where_to_try": "COSTA – Beach Restaurant Sanur, SEJA Restaurant & Bar, Sendang Restaurant at Mayura Ubud Retreat",
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Seafood Platter",
+      "city": "Bali",
+      "description": "A generous platter featuring a variety of freshly grilled seafood, perfect for sharing while enjoying beachfront or garden dining settings.",
+      "vegetarian": false,
+      "where_to_try": "COSTA – Beach Restaurant Sanur, Sumak Turkish Cuisine Sanur",
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bali's Famous Pork Ribs",
+      "city": "Bali",
+      "description": "Slow-cooked until incredibly tender and finished with a smoky glaze, rich, juicy, and packed with flavour.",
+      "vegetarian": false,
+      "where_to_try": "Naughty Nuri's Sanur",
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Fresh Young Coconut (Kelapa Muda)",
+      "city": "Bali",
+      "description": "Fresh coconut water straight from the shell. Naturally hydrating and refreshing.",
+      "vegetarian": true,
+      "where_to_try": "Sanur Beach, COSTA – Beach Restaurant Sanur, Tis Cafe",
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
       ]
     }
   ],
@@ -1224,6 +1406,126 @@
       "category": "polite",
       "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf",
       "_source_mtime": 1772384384.8360991
+    },
+    {
+      "city": "Bali",
+      "english": "Hello (traditional Balinese greeting)",
+      "local": "Swastiastu",
+      "category": "greeting",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "city": "Bali",
+      "english": "Thank you",
+      "local": "Suksma",
+      "category": "polite",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "city": "Bali",
+      "english": "Yes",
+      "local": "Nyak",
+      "category": "polite",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "city": "Bali",
+      "english": "No",
+      "local": "Sing",
+      "category": "polite",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "city": "Bali",
+      "english": "How much is this?",
+      "local": "Ajikuda Niki?",
+      "category": "food",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "city": "Bali",
+      "english": "Hello (traditional Balinese greeting)",
+      "local": "Swastiastu",
+      "category": "greeting",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "city": "Bali",
+      "english": "Thank you",
+      "local": "Suksma",
+      "category": "polite",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "city": "Bali",
+      "english": "Yes",
+      "local": "Nyak",
+      "category": "polite",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "city": "Bali",
+      "english": "No",
+      "local": "Sing",
+      "category": "polite",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "city": "Bali",
+      "english": "How much is this?",
+      "local": "Ajikuda Niki?",
+      "category": "food",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "city": "Bali",
+      "english": "Hello (traditional Balinese greeting)",
+      "local": "Swastiastu",
+      "category": "greeting",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "city": "Bali",
+      "english": "Thank you",
+      "local": "Suksma",
+      "category": "polite",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "city": "Bali",
+      "english": "Yes",
+      "local": "Nyak",
+      "category": "polite",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "city": "Bali",
+      "english": "No",
+      "local": "Sing",
+      "category": "polite",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "city": "Bali",
+      "english": "How much is this?",
+      "local": "Ajikuda Niki?",
+      "category": "food",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
     }
   ],
   "safety_tips": [
@@ -1794,6 +2096,230 @@
       "tip": "Greet with a smile and a light bow; avoid touching heads",
       "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf",
       "_source_mtime": 1772384384.8360991
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Use Grab or Gojek for transparent cab fares and avoid roadside price negotiations.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Keep valuables secured — especially at beaches, waterfalls, and during boat transfers.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "At temples (especially Lempuyang), keep sunglasses, phones, and loose items secure — monkeys may grab visible objects.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Wear slip-resistant footwear at wet terrain areas.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Stay hydrated — Bali's humidity can cause dehydration quickly.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Use ATMs located inside proper establishments (not standalone roadside machines).",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Arrive 20–30 minutes early for the best seating at the Traditional Balinese Dance Performance at Ubud Palace.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "An early start is highly recommended for Lempuyang Temple as queues for photographs can become lengthy later in the day.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "It is recommended to arrive at the airport at least 3 hours prior to international departures.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Use Grab or Gojek for transparent cab fares and avoid roadside price negotiations.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Keep valuables secured — especially at beaches, waterfalls, and during boat transfers.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "At temples (especially Lempuyang), keep sunglasses, phones, and loose items secure — monkeys may grab visible objects.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Wear slip-resistant footwear at wet terrain areas.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Stay hydrated — Bali's humidity can cause dehydration quickly.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Use ATMs located inside proper establishments (not standalone roadside machines).",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "At Uluwatu Temple, keep an eye on personal belongings as the resident monkeys are known for their playful curiosity.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Arrive 20–30 minutes early for the best seating at the Traditional Balinese Dance Performance at Ubud Palace.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Arrive at least 30–45 minutes before the Kecak Fire Dance performance at Uluwatu to secure good seating.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "The trail down to Kelingking Beach is steep and physically demanding — proceed with caution.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Use Grab or Gojek for transparent cab fares and avoid roadside price negotiations.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Keep valuables secured — especially at beaches, waterfalls, and during boat transfers.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "At temples, keep sunglasses, phones, and loose items secure — monkeys may grab visible objects.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Wear slip-resistant footwear at wet terrain areas.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Stay hydrated — Bali's humidity can cause dehydration quickly.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Use ATMs located inside proper establishments, not standalone roadside machines.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "For international departures, arrive at the airport at least 3–4 hours prior to the scheduled departure time.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Keep some Indonesian Rupiah available for any last-minute purchases at the airport.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Ensure all checked baggage complies with airline weight and size restrictions.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
     }
   ],
   "souvenirs": [
@@ -2237,6 +2763,1054 @@
       ],
       "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf",
       "_source_mtime": 1772384384.8360991
+    },
+    {
+      "item": "Hand-carved wooden sculptures",
+      "city": "Bali",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Sukawati Art Market",
+        "Tegallalang Handicraft Stores"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Balinese masks",
+      "city": "Bali",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Sukawati Art Market",
+        "Tegallalang Handicraft Stores"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Traditional paintings",
+      "city": "Bali",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Sukawati Art Market",
+        "Tegallalang Handicraft Stores"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Decorative lanterns",
+      "city": "Bali",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Sukawati Art Market",
+        "Tegallalang Handicraft Stores"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Handwoven baskets",
+      "city": "Bali",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Sukawati Art Market",
+        "Tegallalang Handicraft Stores"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Bamboo handicrafts",
+      "city": "Bali",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Sukawati Art Market",
+        "Tegallalang Handicraft Stores"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Batik shirts",
+      "city": "Bali",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Seminyak Village",
+        "Beachwalk Shopping Center Kuta"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Sarongs",
+      "city": "Bali",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Seminyak Village",
+        "Beachwalk Shopping Center Kuta"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Handwoven scarves",
+      "city": "Bali",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Seminyak Village",
+        "Beachwalk Shopping Center Kuta"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Kaftans",
+      "city": "Bali",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Seminyak Village",
+        "Beachwalk Shopping Center Kuta"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Resort wear",
+      "city": "Bali",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Seminyak Village",
+        "Beachwalk Shopping Center Kuta"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Silver earrings",
+      "city": "Bali",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Celuk Village",
+        "Ubud Silver Workshops",
+        "Local Artisan Boutiques in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Silver bracelets",
+      "city": "Bali",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Celuk Village",
+        "Ubud Silver Workshops",
+        "Local Artisan Boutiques in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Silver pendants",
+      "city": "Bali",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Celuk Village",
+        "Ubud Silver Workshops",
+        "Local Artisan Boutiques in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Silver rings",
+      "city": "Bali",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Celuk Village",
+        "Ubud Silver Workshops",
+        "Local Artisan Boutiques in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Custom-made silver jewellery",
+      "city": "Bali",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Celuk Village",
+        "Ubud Silver Workshops",
+        "Local Artisan Boutiques in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Bali Arabica Coffee",
+      "city": "Bali",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Specialty Coffee Stores",
+        "Kintamani Coffee Plantations"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Organic Herbal Teas",
+      "city": "Bali",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Specialty Coffee Stores"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Artisanal Chocolates",
+      "city": "Bali",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Specialty Coffee Stores"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Coconut-based snacks",
+      "city": "Bali",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Essential oils",
+      "city": "Bali",
+      "category": "Spa & Wellness",
+      "where_to_buy": [
+        "Sensatia Botanicals",
+        "Utama Spice Ubud",
+        "Resort Boutique Shops"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Aromatherapy blends",
+      "city": "Bali",
+      "category": "Spa & Wellness",
+      "where_to_buy": [
+        "Sensatia Botanicals",
+        "Utama Spice Ubud",
+        "Resort Boutique Shops"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Natural soaps",
+      "city": "Bali",
+      "category": "Spa & Wellness",
+      "where_to_buy": [
+        "Sensatia Botanicals",
+        "Utama Spice Ubud",
+        "Resort Boutique Shops"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Coconut oil products",
+      "city": "Bali",
+      "category": "Spa & Wellness",
+      "where_to_buy": [
+        "Sensatia Botanicals",
+        "Utama Spice Ubud",
+        "Resort Boutique Shops"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Body scrubs",
+      "city": "Bali",
+      "category": "Spa & Wellness",
+      "where_to_buy": [
+        "Sensatia Botanicals",
+        "Utama Spice Ubud",
+        "Resort Boutique Shops"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Bath salts",
+      "city": "Bali",
+      "category": "Spa & Wellness",
+      "where_to_buy": [
+        "Sensatia Botanicals",
+        "Utama Spice Ubud",
+        "Resort Boutique Shops"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Handwoven rattan bags",
+      "city": "Bali",
+      "category": "Beach & Lifestyle",
+      "where_to_buy": [
+        "Seminyak Square",
+        "Seminyak Village",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Beach totes",
+      "city": "Bali",
+      "category": "Beach & Lifestyle",
+      "where_to_buy": [
+        "Seminyak Square",
+        "Seminyak Village",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Bamboo straws",
+      "city": "Bali",
+      "category": "Beach & Lifestyle",
+      "where_to_buy": [
+        "Seminyak Square",
+        "Seminyak Village",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Coconut shell products",
+      "city": "Bali",
+      "category": "Beach & Lifestyle",
+      "where_to_buy": [
+        "Seminyak Square",
+        "Seminyak Village",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Handmade candles",
+      "city": "Bali",
+      "category": "Beach & Lifestyle",
+      "where_to_buy": [
+        "Seminyak Square",
+        "Seminyak Village",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Decorative trays",
+      "city": "Bali",
+      "category": "Beach & Lifestyle",
+      "where_to_buy": [
+        "Seminyak Square",
+        "Seminyak Village",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Bamboo tableware",
+      "city": "Bali",
+      "category": "Eco-Friendly",
+      "where_to_buy": [
+        "Utama Spice",
+        "Seminyak Boutiques",
+        "Eco Lifestyle Stores in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Reusable travel accessories",
+      "city": "Bali",
+      "category": "Eco-Friendly",
+      "where_to_buy": [
+        "Utama Spice",
+        "Seminyak Boutiques",
+        "Eco Lifestyle Stores in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Organic skincare",
+      "city": "Bali",
+      "category": "Eco-Friendly",
+      "where_to_buy": [
+        "Utama Spice",
+        "Seminyak Boutiques",
+        "Eco Lifestyle Stores in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Eco-friendly home products",
+      "city": "Bali",
+      "category": "Eco-Friendly",
+      "where_to_buy": [
+        "Utama Spice",
+        "Seminyak Boutiques",
+        "Eco Lifestyle Stores in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Sambal sauces",
+      "city": "Bali",
+      "category": "Culinary Gifts",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Markets",
+        "Specialty Food Stores in Seminyak"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Balinese spices",
+      "city": "Bali",
+      "category": "Culinary Gifts",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Markets",
+        "Specialty Food Stores in Seminyak"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Gourmet sea salt",
+      "city": "Bali",
+      "category": "Culinary Gifts",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Markets",
+        "Specialty Food Stores in Seminyak"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Organic honey",
+      "city": "Bali",
+      "category": "Culinary Gifts",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Markets",
+        "Specialty Food Stores in Seminyak"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Traditional snacks",
+      "city": "Bali",
+      "category": "Culinary Gifts",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Markets",
+        "Specialty Food Stores in Seminyak"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "item": "Hand-carved wooden sculptures",
+      "city": "Bali",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Sukawati Art Market",
+        "Tegallalang Handicraft Stores"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Balinese masks",
+      "city": "Bali",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Sukawati Art Market",
+        "Tegallalang Handicraft Stores"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Traditional paintings",
+      "city": "Bali",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Sukawati Art Market",
+        "Tegallalang Handicraft Stores"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Decorative lanterns",
+      "city": "Bali",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Sukawati Art Market",
+        "Tegallalang Handicraft Stores"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Handwoven baskets",
+      "city": "Bali",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Sukawati Art Market",
+        "Tegallalang Handicraft Stores"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Bamboo handicrafts",
+      "city": "Bali",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Sukawati Art Market",
+        "Tegallalang Handicraft Stores"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Batik shirts",
+      "city": "Bali",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Seminyak Village",
+        "Beachwalk Shopping Center Kuta"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Sarongs",
+      "city": "Bali",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Seminyak Village",
+        "Beachwalk Shopping Center Kuta"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Handwoven scarves",
+      "city": "Bali",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Seminyak Village",
+        "Beachwalk Shopping Center Kuta"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Kaftans",
+      "city": "Bali",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Seminyak Village",
+        "Beachwalk Shopping Center Kuta"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Resort wear",
+      "city": "Bali",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Seminyak Village",
+        "Beachwalk Shopping Center Kuta"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Silver earrings",
+      "city": "Bali",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Celuk Village",
+        "Ubud Silver Workshops",
+        "Local Artisan Boutiques in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Silver bracelets",
+      "city": "Bali",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Celuk Village",
+        "Ubud Silver Workshops",
+        "Local Artisan Boutiques in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Silver pendants",
+      "city": "Bali",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Celuk Village",
+        "Ubud Silver Workshops",
+        "Local Artisan Boutiques in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Silver rings",
+      "city": "Bali",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Celuk Village",
+        "Ubud Silver Workshops",
+        "Local Artisan Boutiques in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Custom-made silver jewellery",
+      "city": "Bali",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Celuk Village",
+        "Ubud Silver Workshops",
+        "Local Artisan Boutiques in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Kintamani Coffee",
+      "city": "Bali",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Specialty Coffee Stores",
+        "Kintamani Coffee Plantations"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Bali Arabica Coffee",
+      "city": "Bali",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Specialty Coffee Stores",
+        "Kintamani Coffee Plantations"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Organic Herbal Teas",
+      "city": "Bali",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Specialty Coffee Stores"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Artisanal Chocolates",
+      "city": "Bali",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Specialty Coffee Stores"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Coconut-based snacks",
+      "city": "Bali",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Essential oils",
+      "city": "Bali",
+      "category": "Spa & Wellness",
+      "where_to_buy": [
+        "Sensatia Botanicals",
+        "Utama Spice Ubud",
+        "Resort Boutique Shops"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Aromatherapy blends",
+      "city": "Bali",
+      "category": "Spa & Wellness",
+      "where_to_buy": [
+        "Sensatia Botanicals",
+        "Utama Spice Ubud",
+        "Resort Boutique Shops"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Natural soaps",
+      "city": "Bali",
+      "category": "Spa & Wellness",
+      "where_to_buy": [
+        "Sensatia Botanicals",
+        "Utama Spice Ubud",
+        "Resort Boutique Shops"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Coconut oil products",
+      "city": "Bali",
+      "category": "Spa & Wellness",
+      "where_to_buy": [
+        "Sensatia Botanicals",
+        "Utama Spice Ubud",
+        "Resort Boutique Shops"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Body scrubs",
+      "city": "Bali",
+      "category": "Spa & Wellness",
+      "where_to_buy": [
+        "Sensatia Botanicals",
+        "Utama Spice Ubud",
+        "Resort Boutique Shops"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Bath salts",
+      "city": "Bali",
+      "category": "Spa & Wellness",
+      "where_to_buy": [
+        "Sensatia Botanicals",
+        "Utama Spice Ubud",
+        "Resort Boutique Shops"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Handwoven rattan bags",
+      "city": "Bali",
+      "category": "Accessories",
+      "where_to_buy": [
+        "Seminyak Square",
+        "Seminyak Village",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Beach totes",
+      "city": "Bali",
+      "category": "Accessories",
+      "where_to_buy": [
+        "Seminyak Square",
+        "Seminyak Village",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Bamboo straws",
+      "city": "Bali",
+      "category": "Accessories",
+      "where_to_buy": [
+        "Seminyak Square",
+        "Seminyak Village",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Coconut shell products",
+      "city": "Bali",
+      "category": "Accessories",
+      "where_to_buy": [
+        "Seminyak Square",
+        "Seminyak Village",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Handmade candles",
+      "city": "Bali",
+      "category": "Accessories",
+      "where_to_buy": [
+        "Seminyak Square",
+        "Seminyak Village",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Decorative trays",
+      "city": "Bali",
+      "category": "Accessories",
+      "where_to_buy": [
+        "Seminyak Square",
+        "Seminyak Village",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Bamboo tableware",
+      "city": "Bali",
+      "category": "Eco-Friendly",
+      "where_to_buy": [
+        "Utama Spice",
+        "Seminyak Boutiques",
+        "Eco Lifestyle Stores in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Reusable travel accessories",
+      "city": "Bali",
+      "category": "Eco-Friendly",
+      "where_to_buy": [
+        "Utama Spice",
+        "Seminyak Boutiques",
+        "Eco Lifestyle Stores in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Organic skincare",
+      "city": "Bali",
+      "category": "Eco-Friendly",
+      "where_to_buy": [
+        "Utama Spice",
+        "Seminyak Boutiques",
+        "Eco Lifestyle Stores in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Eco-friendly home products",
+      "city": "Bali",
+      "category": "Eco-Friendly",
+      "where_to_buy": [
+        "Utama Spice",
+        "Seminyak Boutiques",
+        "Eco Lifestyle Stores in Ubud"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Sambal sauces",
+      "city": "Bali",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Markets",
+        "Specialty Food Stores in Seminyak"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Balinese spices",
+      "city": "Bali",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Markets",
+        "Specialty Food Stores in Seminyak"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Gourmet sea salt",
+      "city": "Bali",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Markets",
+        "Specialty Food Stores in Seminyak"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Organic honey",
+      "city": "Bali",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Markets",
+        "Specialty Food Stores in Seminyak"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Traditional snacks",
+      "city": "Bali",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Markets",
+        "Specialty Food Stores in Seminyak"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "item": "Hand-carved wooden sculptures, Balinese masks, traditional paintings, decorative lanterns, handwoven baskets, bamboo handicrafts, dream catchers, handcrafted wall décor",
+      "city": "Bali",
+      "category": "Artisan Crafts & Home Décor",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "Tegallalang Handicraft Stores",
+        "Krisna Oleh-Oleh Bali (Sanur)"
+      ],
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "item": "Batik shirts, sarongs, handwoven scarves, beachwear, resort wear, traditional Balinese fabrics, handmade bags",
+      "city": "Bali",
+      "category": "Traditional Textiles & Fashion",
+      "where_to_buy": [
+        "Ubud Art Market",
+        "ICON Bali Mall (Sanur)",
+        "Krisna Oleh-Oleh Bali (Sanur)"
+      ],
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "item": "Bali Coffee, Kintamani Arabica Coffee, locally produced chocolate, coconut snacks, traditional Balinese cookies, herbal teas, spice blends",
+      "city": "Bali",
+      "category": "Food & Gourmet Treats",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali (Sanur)",
+        "Ubud Art Market",
+        "Specialty stores around Ubud Centre"
+      ],
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "item": "Essential oils, natural soaps, bath salts, body scrubs, aromatherapy oils, incense, organic skincare products",
+      "city": "Bali",
+      "category": "Spa & Wellness Products",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali (Sanur)",
+        "Ubud boutique stores",
+        "Wellness shops around Ubud Centre"
+      ],
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "item": "Balinese spice mixes, sambal sauces, vanilla products, herbal seasonings, locally produced honey",
+      "city": "Bali",
+      "category": "Local Flavours & Culinary Gifts",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali (Sanur)",
+        "Sindhu Night Market",
+        "Ubud speciality food stores"
+      ],
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
     }
   ],
   "emergency_contacts": [
@@ -2544,6 +4118,118 @@
       "number": "+62 361 259502",
       "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf",
       "_source_mtime": 1772384384.8360991
+    },
+    {
+      "city": "Bali",
+      "service": "Police",
+      "number": "110",
+      "notes": "International dial code for Indonesia: +62",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "city": "Bali",
+      "service": "Ambulance",
+      "number": "118 or 119",
+      "notes": "International dial code for Indonesia: +62",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "city": "Bali",
+      "service": "Fire Department",
+      "number": "113",
+      "notes": "International dial code for Indonesia: +62",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "city": "Bali",
+      "service": "Search & Rescue",
+      "number": "115",
+      "notes": "International dial code for Indonesia: +62",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "city": "Bali",
+      "service": "Consulate General of India – Denpasar",
+      "number": "+62 361 259502",
+      "notes": "For passport loss or serious emergency",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "city": "Bali",
+      "service": "Police",
+      "number": "110",
+      "notes": "International dial code for Indonesia: +62",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "city": "Bali",
+      "service": "Ambulance",
+      "number": "118 or 119",
+      "notes": "International dial code for Indonesia: +62",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "city": "Bali",
+      "service": "Fire Department",
+      "number": "113",
+      "notes": "International dial code for Indonesia: +62",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "city": "Bali",
+      "service": "Search & Rescue",
+      "number": "115",
+      "notes": "International dial code for Indonesia: +62",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "city": "Bali",
+      "service": "Consulate General of India – Denpasar",
+      "number": "+62 361 259502",
+      "notes": "For passport loss or serious emergency",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "city": "Bali",
+      "service": "Police",
+      "number": "110",
+      "notes": "International dial code for Indonesia: +62",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "city": "Bali",
+      "service": "Ambulance",
+      "number": "118 or 119",
+      "notes": "International dial code for Indonesia: +62",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "city": "Bali",
+      "service": "Fire Department",
+      "number": "113",
+      "notes": "International dial code for Indonesia: +62",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "city": "Bali",
+      "service": "Search & Rescue",
+      "number": "115",
+      "notes": "International dial code for Indonesia: +62",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
     }
   ],
   "connectivity_tips": [
@@ -2770,6 +4456,198 @@
       "tip": "Get your SIM on arrival for instant access to maps, ride-hailing apps, and translation tools",
       "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf",
       "_source_mtime": 1772384384.8360991
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Recommended provider: Telkomsel — offers the strongest network coverage across Bali.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Purchase your SIM immediately upon arrival at Ngurah Rai International Airport. Stalls are located inside the Arrival Hall (after immigration & baggage claim) and staff will install and activate the SIM for you.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Alternative purchase points: Authorized Telkomsel outlets in Ubud or Seminyak.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Suggested data plan: 15–25 GB. Both physical SIM cards and eSIMs are available.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Activate your SIM before leaving the airport and test Google Maps and WhatsApp before exiting the arrival area.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Keep your Indian SIM active for OTP banking (turn international roaming off if not required).",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Download offline Google Maps for Bali as backup.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Recommended apps to download before travel: Grab (primary cab app), Gojek (backup ride-hailing app), Google Maps, Google Translate.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Recommended mobile provider: Telkomsel, which offers the strongest network coverage across Bali.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Purchase your SIM immediately upon arrival at Ngurah Rai International Airport. Stalls are located inside the Arrival Hall (after immigration & baggage claim) and staff will install and activate the SIM for you.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Alternative SIM purchase points include authorized Telkomsel outlets in Ubud or Seminyak.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Suggested data plan: 15–25 GB. Both physical SIM cards and eSIMs are available.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Activate your SIM before leaving the airport and test Google Maps and WhatsApp before exiting the arrival area.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Keep your Indian SIM active for OTP banking (turn off international roaming if not required).",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Download offline Google Maps for Bali as backup.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Recommended apps to download before travel: Grab (primary cab app), Gojek (backup ride-hailing app), Google Maps, Google Translate.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Recommended provider: Telkomsel — offers the strongest network coverage across Bali.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Purchase your SIM immediately upon arrival at Ngurah Rai International Airport. Stalls are located inside the Arrival Hall after immigration and baggage claim. Staff will install and activate the SIM for you.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Alternative purchase points: Authorized Telkomsel outlets in Ubud or Seminyak.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Suggested data plan: 15–25 GB. Both physical SIM cards and eSIMs are available.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Activate your SIM before leaving the airport and test Google Maps and WhatsApp before exiting the arrival area.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Keep your Indian SIM active for OTP banking (turn off international roaming if not required).",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Download offline Google Maps for Bali as a backup.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Recommended apps to download before travel: Grab (primary cab app), Gojek (backup ride-hailing app), Google Maps, Google Translate.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
     }
   ],
   "transport_options": [
@@ -2877,6 +4755,70 @@
       "description": "Ride-hailing app for fair pricing and avoiding overcharging",
       "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf",
       "_source_mtime": 1772384384.3899555
+    },
+    {
+      "city": "Bali",
+      "mode": "Ride-hailing app – Grab",
+      "description": "Primary cab app recommended for transparent fares across Bali. Avoid roadside price negotiations.",
+      "cost": null,
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "city": "Bali",
+      "mode": "Ride-hailing app – Gojek",
+      "description": "Backup ride-hailing app available across Bali.",
+      "cost": null,
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "city": "Bali",
+      "mode": "Ride-hailing app – Grab",
+      "description": "Primary cab app recommended for transparent fares across Bali. Avoids roadside price negotiations.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "city": "Bali",
+      "mode": "Ride-hailing app – Gojek",
+      "description": "Backup ride-hailing app available across Bali.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "city": "Bali",
+      "mode": "Private car/transfer",
+      "description": "Private car transfers used throughout the itinerary for inter-city travel and excursions. Travel times vary by destination.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "city": "Bali",
+      "mode": "Private Driver / Transfer",
+      "description": "Private transfers with an English-speaking driver are used throughout the itinerary for airport transfers, hotel transfers, and sightseeing tours.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "city": "Bali",
+      "mode": "Ride-hailing App – Grab",
+      "description": "Primary cab app recommended for transparent fares across Bali. Avoids roadside price negotiations.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "city": "Bali",
+      "mode": "Ride-hailing App – Gojek",
+      "description": "Backup ride-hailing app recommended for getting around Bali.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
     }
   ],
   "health_tips": [
@@ -3071,6 +5013,126 @@
       "tip": "Travel insurance recommended: TATA AIG",
       "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf",
       "_source_mtime": 1772384384.8360991
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Recommended vaccines for travellers to Bali: Hepatitis A, Typhoid, Tetanus (ensure booster is up to date), and routine immunizations including MMR, Polio, and DPT.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Basic medications to carry: Paracetamol/Ibuprofen (for fever or body ache), Antihistamines (for allergies or insect bites), Anti-diarrheal tablets, Motion sickness pills (recommended for Nusa Penida boat transfer), personal prescription medicines (with doctor's note if required), ORS/electrolyte sachets (helpful in humid weather), mosquito repellent and bite cream.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Stay hydrated — Bali's humidity can cause dehydration quickly.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Use reef-safe sunscreen (SPF 50+ recommended) to protect both your skin and Bali's marine ecosystems.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Recommended vaccines for travellers to Bali: Hepatitis A, Typhoid, Tetanus (ensure booster is up to date), and routine immunizations including MMR, Polio, and DPT.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Carry basic medications: Paracetamol/Ibuprofen for fever or body ache, antihistamines for allergies or insect bites, anti-diarrheal tablets, motion sickness pills (recommended for Nusa Penida boat transfer), personal prescription medicines (with doctor's note if required), ORS/electrolyte sachets, and mosquito repellent & bite cream.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Stay hydrated — Bali's humidity can cause dehydration quickly. Carry a reusable water bottle on all excursions.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Use reef-safe sunscreen (SPF 50+ recommended) and apply lip balm with SPF when outdoors.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Temperatures at Mount Batur summit can be cool before sunrise — wear a light fleece or jacket and moisture-wicking clothing.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Motion sickness pills are recommended for the Nusa Penida speedboat transfer across the Bali Strait.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Recommended vaccines for travellers to Bali: Hepatitis A, Typhoid, Tetanus (ensure booster is up to date), and routine immunizations including MMR, Polio, and DPT.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Basic medications to carry: Paracetamol/Ibuprofen for fever or body ache, antihistamines for allergies or insect bites, anti-diarrheal tablets, motion sickness pills, personal prescription medicines (with doctor's note if required), ORS/electrolyte sachets, and mosquito repellent & bite cream.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Guests wishing to participate in the holy spring purification ritual at Tirta Empul Temple are advised to carry a change of clothes.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Women who are menstruating are respectfully not permitted to enter Tirta Empul Temple premises, in accordance with local customs and religious practices.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Stay hydrated — Bali's humidity can cause dehydration quickly. ORS/electrolyte sachets are helpful in humid weather.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
     }
   ],
   "source_files": [
@@ -3082,6 +5144,9 @@
     "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf",
     "Bali Indonesia/All Inclusive Guide- Bali.docx",
     "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun.pdf",
-    "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf"
+    "Bali Indonesia/Bali Bliss All-Inclusive Guide.pdf",
+    "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+    "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+    "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
   ]
 }

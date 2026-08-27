@@ -31,14 +31,7 @@
       "best_for": [
         "romantic"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/4. Italy- Final Detailed Itinerary.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "area": "Venice",
       "vegetarian_friendly": true
     },
@@ -74,14 +67,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/4. Italy- Final Detailed Itinerary.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "vegetarian_friendly": true
     },
     {
@@ -111,14 +97,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/4. Italy- Final Detailed Itinerary.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "area": "At the Santa Lucia station",
       "nearby_landmarks": [],
       "vegetarian_friendly": false
@@ -145,10 +124,7 @@
         "Tiramisu"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Italy/4. Italy- Final Detailed Itinerary.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "B Restaurant alla Vecchia Pescharia",
@@ -172,10 +148,7 @@
         "Limoncello"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Italy/4. Italy- Final Detailed Itinerary.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Pizzeria Marlin Ristorante",
@@ -196,10 +169,7 @@
         "soups"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Italy/4. Italy- Final Detailed Itinerary.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ristorante Camp Venedig",
@@ -210,9 +180,7 @@
       "hours": "7am-2pm, 4-10pm",
       "ambience": "Located inside the campsite. You can sit inside or outside",
       "vegetarian_friendly": false,
-      "source_files": [
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Taverna Fontana",
@@ -230,9 +198,7 @@
         "Tiramisu"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ristorante Trattoria alla Laguna",
@@ -245,8 +211,359 @@
         "Classic Venetian fare"
       ],
       "vegetarian_friendly": false,
+      "source_files": []
+    },
+    {
+      "name": "La Tecia Vegana",
+      "city": "Venice",
+      "cuisine_type": [
+        "Vegan",
+        "Italian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "6:00 PM – 10:30 PM",
+      "ambience": "Warm and intimate vegan and vegetarian restaurant",
+      "area": "Venice island",
+      "nearby_landmarks": [
+        "St. Mark's Square, Venice"
+      ],
+      "highlights": [
+        "One of Venice's most loved vegan and vegetarian restaurants",
+        "Creative Italian dishes"
+      ],
+      "must_try_dishes": [
+        "Vegan lasagna",
+        "Risotto",
+        "Tiramisu"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
       "source_files": [
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Orient Experience",
+      "city": "Venice",
+      "cuisine_type": [
+        "Middle Eastern",
+        "Mediterranean"
+      ],
+      "price_range": "₹₹",
+      "hours": "12:00 PM – 11:00 PM",
+      "ambience": "Cozy multicultural restaurant",
+      "area": "Venice island",
+      "nearby_landmarks": [
+        "Rialto Bridge, Venice"
+      ],
+      "highlights": [
+        "Flavorful vegetarian Middle Eastern and Mediterranean dishes"
+      ],
+      "must_try_dishes": [
+        "Falafel platter",
+        "Hummus",
+        "Couscous"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Ristorante Pizzeria Dolfin",
+      "city": "Venice",
+      "cuisine_type": [
+        "Italian",
+        "Pizza"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:00 AM – 10:30 PM",
+      "ambience": "Lively Italian restaurant",
+      "area": "Near Venezia Santa Lucia, Venice",
+      "highlights": [
+        "Classic vegetarian pizzas and comforting pasta dishes"
+      ],
+      "must_try_dishes": [
+        "Margherita pizza",
+        "Pesto pasta",
+        "Bruschetta"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Pasticceria Ceccon",
+      "city": "Venice",
+      "cuisine_type": [
+        "Bakery",
+        "Café"
+      ],
+      "price_range": "₹",
+      "hours": "7:00 AM – 1:00 PM, 3:30 PM – 8:00 PM",
+      "ambience": "Traditional Venetian bakery in a local setting",
+      "area": "Venice Mestre",
+      "highlights": [
+        "Fresh pastries",
+        "Strong espresso",
+        "Classic Italian breakfast"
+      ],
+      "must_try_dishes": [
+        "Cornetto",
+        "Cappuccino",
+        "Fruit tart"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Bar Viale",
+      "city": "Venice",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹",
+      "hours": "6:00 AM – 12:00 AM",
+      "ambience": "Simple and popular local café",
+      "area": "Venice Mestre",
+      "highlights": [
+        "Quick morning stop"
+      ],
+      "must_try_dishes": [
+        "Espresso",
+        "Toast",
+        "Croissant"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Caffè Del Doge Mestre",
+      "city": "Venice",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹",
+      "hours": "7:00 AM – 6:30 PM",
+      "ambience": "Elegant coffee house",
+      "area": "Venice Mestre",
+      "highlights": [
+        "Premium Venetian coffee blends",
+        "Premium coffee experience"
+      ],
+      "must_try_dishes": [
+        "Cappuccino",
+        "Brioche",
+        "Pastries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Caffè Florian",
+      "city": "Venice",
+      "cuisine_type": [
+        "Café",
+        "Desserts"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "9:00 AM – 11:00 PM",
+      "ambience": "One of the oldest and most iconic cafés in the world, with live music, candlelit ambience, and beautifully classic Venetian interiors",
+      "area": "St. Mark's Square, Venice",
+      "nearby_landmarks": [
+        "St. Mark's Square, Venice"
+      ],
+      "highlights": [
+        "Established in 1720",
+        "One of the oldest cafés in the world",
+        "Live music",
+        "Candlelit ambience"
+      ],
+      "must_try_dishes": [
+        "Desserts",
+        "Coffee"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Gio's",
+      "city": "Venice",
+      "cuisine_type": [
+        "Italian",
+        "Venetian"
+      ],
+      "price_range": "₹8,000–15,000 per person",
+      "hours": "12:30 PM – 10:00 PM",
+      "ambience": "Luxury canal-side fine dining",
+      "area": "Grand Canal, Venice",
+      "nearby_landmarks": [
+        "Grand Canal, Venice"
+      ],
+      "highlights": [
+        "Elegant waterfront restaurant overlooking the Grand Canal",
+        "Beautiful sunset views",
+        "Sophisticated interiors"
+      ],
+      "must_try_dishes": [
+        "Truffle risotto",
+        "Burrata ravioli",
+        "Grilled seasonal vegetables"
+      ],
+      "best_for": [
+        "Romantic dinner in Venice"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ristorante Piccolo Martini",
+      "city": "Venice",
+      "cuisine_type": [
+        "Italian",
+        "Venetian"
+      ],
+      "price_range": "₹2,500–5,500 per person",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "Classic Venetian trattoria",
+      "area": "Near Piazza San Marco, Venice",
+      "nearby_landmarks": [
+        "Piazza San Marco, Venice"
+      ],
+      "highlights": [
+        "Traditional Venetian restaurant",
+        "Warm hospitality",
+        "Relaxed atmosphere"
+      ],
+      "must_try_dishes": [
+        "Mushroom risotto",
+        "Margherita pizza",
+        "Grilled vegetable pasta"
+      ],
+      "best_for": [
+        "Relaxed Italian dinner"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Zenzerino",
+      "city": "Venice",
+      "cuisine_type": [
+        "Italian",
+        "Venetian"
+      ],
+      "price_range": "₹2,500–5,000 per person",
+      "hours": "12:00 PM – 2:00 PM | 7 PM - 10 PM",
+      "ambience": "Charming local Venetian dining",
+      "area": "Near the canals, Venice",
+      "highlights": [
+        "Cosy canal-side restaurant",
+        "Warm hospitality",
+        "Away from busiest tourist crowds"
+      ],
+      "must_try_dishes": [
+        "Spinach ravioli",
+        "Mushroom pasta",
+        "Grilled vegetable platter"
+      ],
+      "best_for": [
+        "Relaxed dinner near the canals"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ristorante Indiano Buddha",
+      "city": "Venice",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹2,000–4,500 per person",
+      "hours": "12:00 AM – 2:30 PM | 6:30 - 11 PM",
+      "ambience": "Casual Indian family dining",
+      "area": "Near Venice Santa Lucia",
+      "highlights": [
+        "Welcoming Indian restaurant",
+        "Comfortable setting"
+      ],
+      "must_try_dishes": [
+        "Paneer tikka",
+        "Dal makhani",
+        "Vegetable biryani"
+      ],
+      "best_for": [
+        "Comfort Indian dinner in Venice"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ristorante Bombay Spice – Indiano – Halal Food",
+      "city": "Venice",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹2,000–4,500 per person",
+      "hours": "12:00 PM – 2:30 PM | 7 PM - 10:30 PM",
+      "ambience": "Lively Indian casual dining",
+      "area": "Near central Venice",
+      "highlights": [
+        "Halal-friendly options",
+        "Generous portions",
+        "Warm service"
+      ],
+      "must_try_dishes": [
+        "Paneer butter masala",
+        "Vegetable pulao",
+        "Garlic naan"
+      ],
+      "best_for": [
+        "Indian dinner with halal-friendly options"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -258,12 +575,7 @@
       "hours": "09:30–17:15 (Sun & holidays from 14:00)",
       "entry_fee": "€3",
       "recommended_duration": "1.5 hours",
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Doge's Palace",
@@ -272,37 +584,30 @@
       "hours": "09:00–19:00 (Apr–Oct), 09:00–18:00 (Nov–Mar)",
       "entry_fee": "€25 (advance online) or €30 (on-site)",
       "recommended_duration": "2 hours",
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Rialto Bridge",
       "city": "Venice",
-      "description": "One of the oldest bridges in Venice with bustling atmosphere, shops and stalls",
-      "hours": "24 hours",
-      "entry_fee": "Free",
+      "description": "Iconic medieval bridge offering beautiful views across the Grand Canal with gondolas and Vaporetto boats drifting beneath centuries-old Venetian architecture.",
+      "hours": "Open 24 hrs",
+      "entry_fee": "Free Entry",
       "recommended_duration": "30 minutes",
       "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Italy- Final Itinerary with booking links.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "St. Mark's Square",
       "city": "Venice",
-      "description": "Heart of Venice with St. Mark's Basilica and Doge's Palace",
-      "hours": null,
-      "entry_fee": null,
-      "recommended_duration": null,
+      "description": "The heart of Venice featuring elegant arcades, towering bell towers, centuries-old buildings, music, and café culture.",
+      "hours": "Open throughout the day",
+      "entry_fee": "Free access to square",
+      "recommended_duration": "1–2 hours",
       "source_files": [
-        "Italy/Italy- Final Itinerary with booking links.pdf"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     },
     {
@@ -310,9 +615,7 @@
       "city": "Venice",
       "description": "The heart of Venice with stunning Basilica di San Marco",
       "recommended_duration": "2-3 hours",
-      "source_files": [
-        "Italy/4. Italy- Final Detailed Itinerary.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Gondola ride",
@@ -320,32 +623,56 @@
       "description": "Classical Gondola tour",
       "entry_fee": "80 euros per Gondola by day, 100 euros in the evening (from 7 pm)",
       "recommended_duration": "30-35 minutes",
-      "source_files": [
-        "Italy/4. Italy- Final Detailed Itinerary.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Saint Mark's Basilica",
       "city": "Venice",
       "description": "One of the most famous landmarks in Venice, known for its breathtaking Byzantine architecture, golden mosaics, and rich history",
-      "source_files": [
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Campanile",
       "city": "Venice",
       "description": "Bell tower offering panoramic city views",
-      "source_files": [
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Murano-Burano",
       "city": "Venice",
       "description": "Two charming islands near Venice known for their colourful houses",
+      "source_files": []
+    },
+    {
+      "name": "Grand Canal Gondola Ride",
+      "city": "Venice",
+      "description": "Timeless Venetian tradition — gliding slowly through quiet canals beneath historic bridges while gondoliers navigate centuries-old waterways.",
+      "hours": "Booked Time: 5:45 PM",
+      "entry_fee": null,
+      "recommended_duration": null,
       "source_files": [
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Burano Island",
+      "city": "Venice",
+      "description": "Colorful island village with brightly painted houses lining narrow canals, fishing boats, and lace shops.",
+      "hours": "Open throughout the day",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Venetian Gondola Ride",
+      "city": "Venice",
+      "description": "Timeless gondola experience through Venice's narrow canals revealing the city's quiet, romantic side beneath historic bridges.",
+      "hours": "Around 4:30 PM",
+      "entry_fee": "Approx. ₹8,500–14,000 per gondola depending on route & duration",
+      "recommended_duration": "45 minutes–1 hour",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -390,6 +717,20 @@
       "location": "Venice",
       "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
       "_source_mtime": 1772384340.7984886
+    },
+    {
+      "name": "Campanile Venice Mestre",
+      "city": "Venice",
+      "location": "Venice Mestre",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "name": "Garden Hotel Michelangelo Mestre",
+      "city": "Venice",
+      "location": "Near Mestre station",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
     }
   ],
   "local_dishes": [
@@ -399,39 +740,28 @@
       "description": "Pasta with clams, garlic, olive oil, and white wine",
       "vegetarian": false,
       "where_to_try": "Venetian restaurants",
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bigoli in salsa",
       "city": "Venice",
       "description": "Long, thick, whole-wheat pasta called bigoli coated in a sauce made of onions and salt-cured anchovies or sardines",
       "vegetarian": false,
-      "source_files": [
-        "Italy/4. Italy- Final Detailed Itinerary.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Risotto al nero di sepia",
       "city": "Venice",
       "description": "Risotto with squid ink",
       "vegetarian": false,
-      "source_files": [
-        "Italy/4. Italy- Final Detailed Itinerary.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Risi e bisi",
       "city": "Venice",
       "description": "Rice and peas - hearty classic Venetian dish often served as starter but can be a meal in itself",
       "vegetarian": true,
-      "source_files": [
-        "Italy/4. Italy- Final Detailed Itinerary.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Risotto al Nero di Seppia",
@@ -439,8 +769,66 @@
       "description": "Venetian specialty risotto with cuttlefish and squid ink",
       "vegetarian": false,
       "where_to_try": null,
+      "source_files": []
+    },
+    {
+      "name": "Spaghetti al Pomodoro",
+      "city": "Venice",
+      "description": "Simple tomato-based pasta highlighting fresh basil and olive oil — light and flavourful Venetian-style dining.",
+      "vegetarian": true,
+      "where_to_try": "Venetian restaurants",
       "source_files": [
-        "Italy/Paris, Switzerland and Italy.pdf"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Melanzane alla Parmigiana",
+      "city": "Venice",
+      "description": "Baked layers of eggplant, tomato sauce, and cheese — rich yet vegetarian-friendly Italian comfort food.",
+      "vegetarian": true,
+      "where_to_try": "Italian restaurants in Venice",
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Cicchetti (Vegetarian Tapas Style)",
+      "city": "Venice",
+      "description": "Small Venetian snacks like marinated vegetables, cheese bruschetta, and fried polenta bites — perfect with canal-side dining.",
+      "vegetarian": true,
+      "where_to_try": "Canal-side restaurants and bars in Venice",
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Tiramisu",
+      "city": "Venice",
+      "description": "Coffee-soaked dessert layered with mascarpone cream — Venice's most famous sweet indulgence.",
+      "vegetarian": true,
+      "where_to_try": "Restaurants throughout Venice and Italy",
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Wood-Fired Margherita Pizza",
+      "city": "Venice",
+      "description": "Traditional Italian pizza with fresh tomato sauce, mozzarella, basil, and olive oil cooked in wood-fired ovens.",
+      "vegetarian": true,
+      "where_to_try": "Pizpaz, Chez Pippo, Cantina e Cucina",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Eggplant Parmigiana",
+      "city": "Venice",
+      "description": "A comforting baked Italian dish layered with eggplant, tomato sauce, basil, and cheese.",
+      "vegetarian": true,
+      "where_to_try": "Ristorante Piccolo Martini, Bernini",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -838,6 +1226,120 @@
       "where_to_buy": [],
       "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
       "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Venetian Masks",
+      "city": "Venice",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Artisan shops throughout Venice"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "item": "Murano Glass",
+      "city": "Venice",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Murano Island",
+        "Glass shops in Venice"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "item": "Venetian Soaps & Perfumes",
+      "city": "Venice",
+      "category": "Beauty & Wellness",
+      "where_to_buy": [
+        "Local craft shops in Venice"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "item": "Gondola Miniatures",
+      "city": "Venice",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Souvenir shops throughout Venice"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "item": "Artisanal biscuits (baicoli)",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Rialto Market",
+        "Murano Island boutiques"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Italian coffee blends",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Rialto Market"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Bellini mixes",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Rialto Market"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Venetian chocolates",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Rialto Market"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Hand-blown Murano glass",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Murano Island boutiques"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Burano lace",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Murano Island boutiques",
+        "Rialto Market"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Venetian carnival masks",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Murano Island boutiques",
+        "Rialto Market"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
     }
   ],
   "emergency_contacts": [],
@@ -860,6 +1362,46 @@
       "cost": "25 EUR",
       "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
       "_source_mtime": 1772384343.3418624
+    },
+    {
+      "city": "Venice",
+      "mode": "Vaporetto (Water Bus)",
+      "description": "Venice's water bus system providing access around the islands and Grand Canal. Accessible from St. Mark's Square and Rialto Bridge areas.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Venice",
+      "mode": "Gondola",
+      "description": "Traditional Venetian gondola ride through quiet canals beneath historic bridges. Booked experience at 5:45 PM from Grand Canal / St. Mark's Square area.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Venice",
+      "mode": "Vaporetto (Water Bus)",
+      "description": "Venice's primary public transport on water. Used to travel between islands (Burano, Murano) and across the main island.",
+      "recommended_pass": "Venice transport pass",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "city": "Venice",
+      "mode": "Walking",
+      "description": "Venice is explored mainly through walking. Google Maps walking routes in Venice can sometimes be confusing due to narrow lanes — allow extra time while navigating.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "city": "Venice",
+      "mode": "Water Taxi",
+      "description": "Private water taxi service available across Venice for faster point-to-point travel.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
     }
   ],
   "health_tips": [],
@@ -870,6 +1412,8 @@
     "Italy/Italy- Final Itinerary with booking links.pdf",
     "Italy/4. Italy- Final Detailed Itinerary.pdf",
     "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
-    "Italy/Paris, Switzerland and Italy.pdf"
+    "Italy/Paris, Switzerland and Italy.pdf",
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+    "Europe/Vidhi_Europe_All Inclusive Guide.docx"
   ]
 }

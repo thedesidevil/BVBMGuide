@@ -1,5 +1,38 @@
 {
-  "restaurants": [],
+  "restaurants": [
+    {
+      "name": "Sri Mu Saravana Bhavan",
+      "city": "Cochin",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "₹150–300 per person",
+      "hours": "Open 24 Hours",
+      "ambience": "Convenient and comfortable stop for early morning travellers",
+      "area": "Near Cochin Airport",
+      "nearby_landmarks": [
+        "Cochin International Airport, Cochin"
+      ],
+      "highlights": [
+        "Open 24 hours",
+        "Ideal for early morning arrival breakfast stop",
+        "Parking available"
+      ],
+      "must_try_dishes": [
+        "Idli–Vada",
+        "Ghee Roast Dosa",
+        "Pongal",
+        "Filter Coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    }
+  ],
   "attractions": [
     {
       "name": "Mattancherry Palace",
@@ -8,9 +41,7 @@
       "hours": "10:00 AM – 5:00 PM",
       "entry_fee": "₹5 for adults, Children under 15: Free",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Jewish Synagogue",
@@ -19,19 +50,17 @@
       "hours": "10:00 AM – 12:00 PM & 3:00 PM – 5:00 PM",
       "entry_fee": "₹5 for Indian visitors, ₹100 for foreign visitors",
       "recommended_duration": "1 hour",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "St. Francis Church",
       "city": "Cochin",
-      "description": "The oldest European church in India, renowned for its historical significance and as the original burial site of Vasco da Gama",
-      "hours": "7:00 AM – 6:30 PM",
-      "entry_fee": "Free",
-      "recommended_duration": "30 minutes",
+      "description": "One of India's oldest European churches, this historic landmark carries stories from centuries of colonial history with simple architecture and peaceful surroundings.",
+      "hours": "09:00 AM – 05:00 PM",
+      "entry_fee": "Free Entry",
+      "recommended_duration": "30–45 minutes",
       "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf"
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
       ]
     },
     {
@@ -41,8 +70,28 @@
       "hours": "24 hours",
       "entry_fee": "Free",
       "recommended_duration": "30 minutes",
+      "source_files": []
+    },
+    {
+      "name": "Mattancherry Palace (Dutch Palace)",
+      "city": "Cochin",
+      "description": "Built by the Portuguese and later renovated by the Dutch, this palace houses beautiful Kerala murals, royal artefacts and historic exhibits providing a glimpse into Kerala's royal past.",
+      "hours": "10:00 AM – 05:00 PM (Friday Closed)",
+      "entry_fee": "₹5–20 per person",
+      "recommended_duration": "1–1.5 hours",
       "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf"
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Paradesi Jewish Synagogue",
+      "city": "Cochin",
+      "description": "One of the oldest active synagogues in the Commonwealth, known for hand-painted Chinese tiles, Belgian chandeliers and centuries of history.",
+      "hours": "10:00 AM – 06:00 PM (Closed on Saturdays and Jewish holidays)",
+      "entry_fee": "₹10–20 per person",
+      "recommended_duration": "45 minutes–1 hour",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -57,13 +106,33 @@
   ],
   "local_dishes": [],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Cochin",
+        "Munnar",
+        "Thekkady"
+      ],
+      "tip": "When visiting temples or certain religious spaces, remove footwear before entering and dress modestly with shoulders and knees covered where possible.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    }
+  ],
   "souvenirs": [],
   "emergency_contacts": [],
   "connectivity_tips": [],
-  "transport_options": [],
+  "transport_options": [
+    {
+      "city": "Cochin",
+      "mode": "Private Car / Driver",
+      "description": "Private driver transfers used throughout the itinerary for airport pickup, inter-city travel between Cochin, Munnar, Thekkady and local sightseeing.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    }
+  ],
   "health_tips": [],
   "source_files": [
-    "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf"
+    "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+    "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
   ]
 }

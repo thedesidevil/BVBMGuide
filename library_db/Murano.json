@@ -1,13 +1,115 @@
 {
-  "restaurants": [],
+  "restaurants": [
+    {
+      "name": "La Fornace Murano",
+      "city": "Murano",
+      "cuisine_type": [
+        "Italian",
+        "Venetian"
+      ],
+      "price_range": "₹2,800–5,700 per person",
+      "hours": "12:00 PM – 4:00 PM & 6:30 PM – 10:00 PM",
+      "ambience": "Elegant canal-side restaurant",
+      "area": "Near Murano glass workshops",
+      "nearby_landmarks": [
+        "Murano glass workshops, Murano"
+      ],
+      "highlights": [
+        "Canal-side restaurant",
+        "Located close to Murano's famous glass workshops"
+      ],
+      "must_try_dishes": [
+        "Vegetarian risotto",
+        "Handmade pasta",
+        "Tiramisu"
+      ],
+      "best_for": [
+        "Scenic upscale Venetian lunch beside the canals"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Osteria Acquastanca",
+      "city": "Murano",
+      "cuisine_type": [
+        "Italian",
+        "Venetian"
+      ],
+      "price_range": "₹2,800–5,700 per person",
+      "hours": "12:00 PM – 3:00 PM",
+      "ambience": "Charming boho-style Venetian restaurant with artistic interiors inspired by Murano glass craftsmanship",
+      "area": "Near Murano glass factories",
+      "nearby_landmarks": [
+        "Murano glass factories, Murano"
+      ],
+      "highlights": [
+        "Authentic Murano island ambience",
+        "Artistic interiors inspired by Murano glass craftsmanship"
+      ],
+      "must_try_dishes": [
+        "Artichoke pasta",
+        "Vegetarian antipasti",
+        "Italian desserts"
+      ],
+      "best_for": [
+        "Authentic local Venetian dining experience on Murano Island"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Approdo Pizzeria Ristorante",
+      "city": "Murano",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹1,400–2,800 per person",
+      "hours": "8:00 AM – 6:00 PM (later on weekends)",
+      "ambience": "Relaxed canal-side pizzeria",
+      "area": "Near Murano glass experience area",
+      "nearby_landmarks": [
+        "Murano glass experience, Murano"
+      ],
+      "highlights": [
+        "Canal-side pizzeria",
+        "Casual Italian lunch"
+      ],
+      "must_try_dishes": [
+        "Margherita pizza",
+        "Vegetarian pasta",
+        "Gelato"
+      ],
+      "best_for": [
+        "Casual Italian comfort lunch near the Vaporetto stop"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    }
+  ],
   "attractions": [
     {
       "name": "Basilica dei Santi Maria e Donato",
       "city": "Murano",
       "description": "Historic basilica in Murano",
       "recommended_duration": "1 hour",
+      "source_files": []
+    },
+    {
+      "name": "Murano Glass Experience",
+      "city": "Murano",
+      "description": "World-famous glassmaking island where molten glass transforms into intricate artworks through centuries-old techniques.",
+      "hours": "Most workshops open 9:00 AM – 5:00 PM",
+      "entry_fee": "Glass demonstrations often free or approx. ₹950–1,900",
+      "recommended_duration": "2 hours",
       "source_files": [
-        "Italy/4. Italy- Final Detailed Itinerary.pdf"
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -21,6 +123,7 @@
   "transport_options": [],
   "health_tips": [],
   "source_files": [
-    "Italy/4. Italy- Final Detailed Itinerary.pdf"
+    "Italy/4. Italy- Final Detailed Itinerary.pdf",
+    "Europe/Vidhi_Europe_All Inclusive Guide.docx"
   ]
 }

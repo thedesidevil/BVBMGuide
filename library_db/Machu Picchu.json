@@ -1,35 +1,287 @@
 {
-  "restaurants": [],
+  "restaurants": [
+    {
+      "name": "Tinkuy Restaurant",
+      "city": "Machu Picchu",
+      "cuisine_type": [
+        "Peruvian",
+        "International",
+        "Buffet"
+      ],
+      "price_range": "₹₹₹",
+      "hours": null,
+      "ambience": "Elegant buffet restaurant with spectacular mountain views",
+      "area": "Machu Picchu",
+      "nearby_landmarks": [
+        "Machu Picchu Historic Sanctuary, Machu Picchu",
+        "Belmond Sanctuary Lodge, Machu Picchu"
+      ],
+      "highlights": [
+        "Located steps from the entrance to Machu Picchu",
+        "Premium buffet experience",
+        "Spectacular mountain surroundings",
+        "Part of Belmond Sanctuary Lodge"
+      ],
+      "must_try_dishes": [
+        "Lomo Saltado",
+        "Quinoa Salad",
+        "Fresh Trout",
+        "Peruvian Desserts"
+      ],
+      "best_for": [
+        "family",
+        "special occasion"
+      ],
+      "source_files": [
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ]
+    }
+  ],
   "attractions": [
     {
       "name": "Machu Picchu Route 1C",
       "city": "Machu Picchu",
       "description": "Exploration route through the ancient citadel",
       "hours": "8:00 am start",
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Machu Picchu Route 3B",
       "city": "Machu Picchu",
       "description": "Afternoon exploration circuit of the ancient citadel",
       "hours": "1pm start",
+      "source_files": []
+    },
+    {
+      "name": "Machu Picchu Historic Sanctuary",
+      "city": "Machu Picchu",
+      "description": "One of the New Seven Wonders of the World and Peru's most iconic archaeological treasure. Built during the 15th century and hidden high in the Andes, rediscovered in 1911. A UNESCO World Heritage Site featuring remarkable stone architecture, ancient terraces, temples and ceremonial plazas.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": "Half day",
       "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+        "South America/Naren- Peru_All Inclusive Guide.docx"
       ]
     }
   ],
   "hotels": [],
   "local_dishes": [],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Carry only the cash you'll need for the day and keep your passport, extra cash and valuables safely stored in your hotel's room safe whenever possible.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Store digital copies of your passport, visa, travel insurance and flight tickets on your phone or secure cloud storage.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Use only your pre-arranged private transfers or registered taxis arranged through your hotel. Avoid accepting rides from unofficial drivers at airports or tourist attractions.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Use ATMs located inside banks, shopping malls or reputable hotels. Notify your bank before travelling to avoid any issues with international card transactions.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu"
+      ],
+      "tip": "Cusco, the Sacred Valley and Machu Picchu are located at high altitudes. Stay hydrated, avoid strenuous activity on your first day in Cusco and allow your body time to acclimatise.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Drink bottled or purified water throughout your trip. Avoid drinking tap water and ensure fruits are washed or peeled before consumption.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu"
+      ],
+      "tip": "The UV index can be very high in the Andes, even on cool days. Wear sunscreen, sunglasses and a hat whenever you're outdoors.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Tours and transportation operate on time, so it's best to arrive a few minutes early for all scheduled activities.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Many churches, monasteries and archaeological sites are considered sacred. Dress modestly when visiting religious sites, speak softly and avoid climbing or touching ancient Inca structures unless permitted.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Many locals in traditional Andean attire may expect a small tip for photographs. Always ask for permission before taking close-up photos.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Puerto Maldonado",
+        "Machu Picchu"
+      ],
+      "tip": "Whether visiting the Amazon Rainforest or Machu Picchu, avoid feeding wildlife, stay on designated paths and dispose of waste responsibly.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    }
+  ],
   "souvenirs": [],
   "emergency_contacts": [],
   "connectivity_tips": [],
   "transport_options": [],
-  "health_tips": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu"
+      ],
+      "tip": "Cusco and the Sacred Valley sit at over 3,000 metres above sea level (Cusco at 3,400 m / 11,150 ft). Take your time when walking, stay hydrated and avoid strenuous activity on your first day at altitude.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Ensure routine vaccinations are up to date before travelling, including Tetanus/Diphtheria/Pertussis (Td/Tdap), Measles/Mumps/Rubella (MMR), Polio and Influenza.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Hepatitis A vaccination is recommended for most travellers, as it can be transmitted through contaminated food or water.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Typhoid vaccination is recommended, especially if you plan to eat at local markets or travel beyond major cities.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Drink bottled or purified water throughout your trip. Avoid drinking tap water and ensure fruits are washed or peeled before consumption.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu"
+      ],
+      "tip": "The UV index can be very high in the Andes even on cool days. Use SPF 50+ reef-safe sunscreen, wear UV-protection sunglasses, a wide-brim hat and lip balm with SPF.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Carry personal medications with prescriptions if required, a small first-aid kit, motion sickness tablets if needed, hand sanitiser, wet wipes and anti-itch cream for insect bites.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    }
+  ],
   "source_files": [
-    "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+    "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+    "South America/Naren- Peru_All Inclusive Guide.docx"
   ]
 }

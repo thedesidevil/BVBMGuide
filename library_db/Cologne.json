@@ -4,53 +4,58 @@
       "name": "Dean & David Cologne Hbf",
       "city": "Cologne",
       "cuisine_type": [
-        "Health Food"
+        "Healthy",
+        "Fast Casual"
       ],
-      "price_range": "₹900–1,400",
+      "price_range": "₹900–1,400 pp",
       "hours": "7:30 AM – 9 PM",
       "ambience": "Fresh, modern, quick-service",
-      "area": "Köln Hbf",
+      "area": "Cologne Hauptbahnhof",
       "nearby_landmarks": [
-        "Köln Hbf, Cologne"
+        "Cologne Hauptbahnhof, Cologne"
       ],
       "highlights": [
-        "Healthy, quick meal"
+        "Healthy, quick meal",
+        "Vegan options available"
       ],
       "must_try_dishes": [
         "Veg bowls",
         "salads",
-        "wraps"
+        "wraps",
+        "Salads",
+        "Wraps"
       ],
       "best_for": [
-        "healthy",
-        "quick"
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Frittenwerk Cologne",
       "city": "Cologne",
       "cuisine_type": [
-        "Fast Food"
+        "Street Food",
+        "Fries"
       ],
-      "price_range": "₹800–1,200",
+      "price_range": "₹800–1,200 pp",
       "hours": "11 AM – 10 PM",
       "ambience": "Casual, lively",
       "highlights": [
+        "Vegan options available",
         "Comfort food"
       ],
       "must_try_dishes": [
         "Loaded fries (veg options)"
       ],
       "best_for": [
-        "comfort food"
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
@@ -59,58 +64,65 @@
       "cuisine_type": [
         "Italian"
       ],
-      "price_range": "₹1,200–1,800",
+      "price_range": "₹1,200–1,800 pp",
       "hours": "11:30 AM – 10 PM",
       "ambience": "Casual Italian",
       "highlights": [
-        "Relaxed sit-down lunch"
+        "Relaxed sit-down lunch",
+        "Vegetarian options available"
       ],
       "must_try_dishes": [
         "Veg pasta",
-        "pizza"
+        "pizza",
+        "Pizza"
       ],
       "best_for": [
-        "relaxed"
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Sattgrün Cologne",
       "city": "Cologne",
       "cuisine_type": [
-        "Vegan"
+        "Vegan",
+        "Buffet"
       ],
-      "price_range": "₹1,200–1,800",
+      "price_range": "₹1,200–1,800 pp",
       "hours": "12 PM – 10 PM",
       "ambience": "Casual vegan buffet",
       "highlights": [
+        "Vegan buffet",
         "Filling vegetarian meal"
       ],
       "must_try_dishes": [
-        "Mixed veg platters"
+        "Mixed veg platters",
+        "Evening veg spread"
       ],
       "best_for": [
-        "filling",
-        "vegetarian"
+        "casual",
+        "family"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Udum Vegan Cologne",
       "city": "Cologne",
       "cuisine_type": [
-        "Vegan"
+        "Vegan",
+        "Asian"
       ],
-      "price_range": "₹1,500–2,200",
+      "price_range": "₹1,500–2,200 pp",
       "hours": "12 PM – 11 PM",
       "ambience": "Trendy, modern",
       "highlights": [
+        "Vegan options available",
         "Contemporary dining"
       ],
       "must_try_dishes": [
@@ -118,112 +130,120 @@
         "Asian bowls"
       ],
       "best_for": [
-        "contemporary"
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Well Being Cologne",
       "city": "Cologne",
       "cuisine_type": [
-        "Vegan Asian"
+        "Vegan",
+        "Asian"
       ],
-      "price_range": "₹1,200–1,800",
+      "price_range": "₹1,200–1,800 pp",
       "hours": "5 PM – 9:30 PM",
       "ambience": "Vegan Asian",
       "highlights": [
+        "Vegan options available",
         "Light, flavourful dinner"
       ],
       "must_try_dishes": [
         "Tofu dishes",
-        "noodles"
+        "noodles",
+        "Noodles"
       ],
       "best_for": [
-        "light",
-        "flavourful"
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Peters Brauhaus Cologne",
       "city": "Cologne",
       "cuisine_type": [
-        "German"
+        "German",
+        "Brewery"
       ],
-      "price_range": "₹1,200–1,800",
+      "price_range": "₹1,200–1,800 pp",
       "hours": "11:30 AM – 11 PM",
       "ambience": "Traditional German brewery setting",
-      "area": "Old Town",
+      "area": "Old Town (Altstadt)",
       "highlights": [
         "Authentic local experience"
       ],
       "must_try_dishes": [
         "Veg schnitzel",
-        "potato dishes"
+        "potato dishes",
+        "Potato dishes"
       ],
       "best_for": [
-        "authentic",
-        "local"
+        "casual",
+        "family"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Frittenwerk Cologne Altstadt",
       "city": "Cologne",
       "cuisine_type": [
-        "Fast Food"
+        "Street Food",
+        "Fries"
       ],
-      "price_range": "₹800–1,200",
+      "price_range": "₹800–1,200 pp",
       "hours": "11 AM – 10 PM",
       "ambience": "Casual, lively",
-      "area": "Altstadt",
+      "area": "Old Town (Altstadt)",
       "highlights": [
+        "Vegan options available",
         "Quick comfort food"
       ],
       "must_try_dishes": [
         "Loaded fries (veg options)"
       ],
       "best_for": [
-        "quick",
-        "comfort food"
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "RheinZeit Cologne",
       "city": "Cologne",
       "cuisine_type": [
-        "Riverside Dining"
+        "European"
       ],
-      "price_range": "₹1,500–2,200",
+      "price_range": "₹1,500–2,200 pp",
       "hours": "8 AM – 12 AM",
       "ambience": "Riverside dining",
       "area": "Rhine Promenade",
       "highlights": [
-        "Scenic dinner by the river"
+        "Scenic dinner by the river",
+        "Vegetarian options available"
       ],
       "must_try_dishes": [
         "Veg pasta",
-        "salads"
+        "salads",
+        "Salads"
       ],
       "best_for": [
-        "scenic"
+        "casual",
+        "romantic"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
@@ -232,53 +252,57 @@
       "cuisine_type": [
         "Italian"
       ],
-      "price_range": "₹1,200–1,800",
+      "price_range": "₹1,200–1,800 pp",
       "hours": "11:30 AM – 11 PM",
       "ambience": "Casual Italian, lively",
       "area": "Heumarkt",
       "highlights": [
-        "Easy, satisfying meal"
+        "Easy, satisfying meal",
+        "Vegetarian options available"
       ],
       "must_try_dishes": [
         "Veg pizza",
-        "pasta"
+        "pasta",
+        "Pasta"
       ],
       "best_for": [
-        "easy",
-        "satisfying"
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Café Reichard Cologne",
       "city": "Cologne",
       "cuisine_type": [
-        "Café"
+        "Café",
+        "Bakery"
       ],
-      "price_range": "₹800–1,200",
+      "price_range": "₹800–1,200 pp",
       "hours": "8:30 AM – 7 PM",
       "ambience": "Classic café with cathedral views",
       "nearby_landmarks": [
         "Cologne Cathedral, Cologne"
       ],
       "highlights": [
-        "Elegant breakfast setting"
+        "Elegant breakfast setting",
+        "Cathedral views"
       ],
       "must_try_dishes": [
         "Pastries",
         "breads",
-        "coffee"
+        "coffee",
+        "Breads",
+        "Coffee"
       ],
       "best_for": [
-        "elegant",
-        "breakfast"
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
@@ -287,31 +311,33 @@
       "cuisine_type": [
         "Café"
       ],
-      "price_range": "₹900–1,400",
+      "price_range": "₹900–1,400 pp",
       "hours": "8:30 AM – 12 AM",
       "ambience": "Modern, stylish café",
       "highlights": [
-        "Relaxed start"
+        "Relaxed start to the day"
       ],
       "must_try_dishes": [
         "Breakfast platters",
-        "coffee"
+        "coffee",
+        "Coffee"
       ],
       "best_for": [
-        "relaxed"
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Bastian's Cologne",
       "city": "Cologne",
       "cuisine_type": [
-        "Bakery"
+        "Bakery",
+        "Café"
       ],
-      "price_range": "₹900–1,500",
+      "price_range": "₹900–1,500 pp",
       "hours": "8 AM – 6 PM",
       "ambience": "Premium bakery café",
       "highlights": [
@@ -319,15 +345,15 @@
       ],
       "must_try_dishes": [
         "Fresh breads",
-        "sandwiches"
+        "sandwiches",
+        "Sandwiches"
       ],
       "best_for": [
-        "quick",
-        "quality"
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -335,45 +361,45 @@
     {
       "name": "Cologne Cathedral (Kölner Dom)",
       "city": "Cologne",
-      "description": "Towering Gothic cathedral with intricate stonework and stained glass windows",
+      "description": "One of Europe's most awe-inspiring Gothic cathedrals with intricate stonework, stained glass windows, and towering spires. Tower climb offers sweeping Rhine views.",
       "hours": "6 AM – 8 PM",
-      "entry_fee": "Free (Tower climb ₹800–1,000)",
-      "recommended_duration": "2-3 hours",
+      "entry_fee": "Free (Tower climb ~₹800–1,000 pp)",
+      "recommended_duration": "1–2 hours",
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Cologne Old Town (Altstadt)",
       "city": "Cologne",
-      "description": "Colourful houses, narrow cobbled lanes, and lively squares",
+      "description": "Colourful houses, narrow cobbled lanes, and lively squares. Vibrant yet historic with plenty of photo-worthy corners.",
       "hours": "All day",
       "entry_fee": "Free",
-      "recommended_duration": "2-3 hours",
+      "recommended_duration": "1–2 hours",
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Hohenzollern Bridge",
       "city": "Cologne",
-      "description": "Iconic bridge filled with thousands of love locks with cathedral views",
+      "description": "Iconic bridge filled with thousands of love locks. Cathedral rises behind and the Rhine flows below — one of the most memorable viewpoints in the city.",
       "hours": "All day",
       "entry_fee": "Free",
       "recommended_duration": "30 minutes",
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Rhine Promenade",
       "city": "Cologne",
-      "description": "Peaceful walk along the Rhine with cathedral skyline backdrop",
+      "description": "Peaceful walk along the Rhine with charming atmosphere, locals strolling, golden light reflecting on the water, and the cathedral skyline as backdrop.",
       "hours": "All day",
       "entry_fee": "Free",
-      "recommended_duration": "1-2 hours",
+      "recommended_duration": "1 hour",
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
@@ -383,8 +409,17 @@
       "hours": "Departures every 1–2 hours",
       "entry_fee": "₹1,500–2,500",
       "recommended_duration": "1 hour",
+      "source_files": []
+    },
+    {
+      "name": "KD Rhine Cruise – Cologne",
+      "city": "Cologne",
+      "description": "Relaxed cruise along the Rhine passing Cologne's skyline, the Cathedral, Hohenzollern Bridge, and the city's blend of old and modern architecture.",
+      "hours": "Departures every 1–2 hours",
+      "entry_fee": "~₹1,500–2,500 pp",
+      "recommended_duration": "1 hour",
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -395,17 +430,24 @@
       "location": "Heart of Cologne's Old Town",
       "_source_file": "Netherlands/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_mtime": 1778114484.0
+    },
+    {
+      "name": "Dorint Hotel am Heumarkt Köln",
+      "city": "Cologne",
+      "location": "Heart of Cologne's Old Town, ~12–15 mins walk from Köln Hbf",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
     }
   ],
   "local_dishes": [
     {
       "name": "Käsespätzle",
       "city": "Cologne",
-      "description": "Soft egg noodles layered with melted cheese and topped with crispy onions",
+      "description": "Soft egg noodles layered with melted cheese and topped with crispy onions.",
       "vegetarian": true,
       "where_to_try": "Local German restaurants",
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
@@ -414,33 +456,137 @@
       "description": "Thin, crispy flatbread topped with cream, cheese, onions, and vegetables",
       "vegetarian": true,
       "where_to_try": "Local German restaurants",
-      "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Kartoffelpuffer",
       "city": "Cologne",
-      "description": "Golden, crispy potato pancakes served with apple sauce or sour cream",
+      "description": "Golden, crispy potato pancakes served with apple sauce or sour cream.",
       "vegetarian": true,
       "where_to_try": "Local German restaurants",
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "German Pretzels (Brezel)",
       "city": "Cologne",
-      "description": "Freshly baked soft pretzels with a chewy texture and salty crust",
+      "description": "Freshly baked soft pretzels with a chewy texture and salty crust.",
       "vegetarian": true,
-      "where_to_try": "Local bakeries",
+      "where_to_try": "Local bakeries, train station shops",
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Flammkuchen (Veg)",
+      "city": "Cologne",
+      "description": "Thin, crispy flatbread topped with cream, cheese, onions, and vegetables.",
+      "vegetarian": true,
+      "where_to_try": "Local German restaurants",
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mushroom Cream Dishes",
+      "city": "Cologne",
+      "description": "Rich, earthy mushroom gravies often paired with dumplings or bread.",
+      "vegetarian": true,
+      "where_to_try": "Local German restaurants",
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "German Potato Salad (Veg)",
+      "city": "Cologne",
+      "description": "Tangy, slightly warm potato salad with mustard dressing.",
+      "vegetarian": true,
+      "where_to_try": "Local German restaurants",
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Black Forest Cake (Veg-friendly versions)",
+      "city": "Cologne",
+      "description": "Chocolate sponge layered with cream and cherries.",
+      "vegetarian": true,
+      "where_to_try": "Local German cafés and bakeries",
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Avoid carrying large cash amounts.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Use official taxi apps or hotel-arranged transfers.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Keep passport copies separate from originals.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Be cautious in crowded tourist hotspots and transport hubs.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Stick to well-lit areas at night, especially near canals or stations.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    }
+  ],
   "souvenirs": [
     {
       "item": "German Chocolate",
@@ -495,6 +641,73 @@
       ],
       "_source_file": "Netherlands/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_mtime": 1778114484.0
+    },
+    {
+      "item": "German Chocolate (Ritter Sport, Lindt, Local Artisanal Brands)",
+      "city": "Cologne",
+      "category": "Food",
+      "where_to_buy": [
+        "REWE",
+        "Edeka",
+        "Chocolate boutiques in Cologne Old Town"
+      ],
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "item": "German Pretzels & Bakery Goods",
+      "city": "Cologne",
+      "category": "Food",
+      "where_to_buy": [
+        "Local bakeries around Cologne city centre",
+        "Train station shops (Köln Hbf)"
+      ],
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "item": "German Wine (Riesling from Rhine Region)",
+      "city": "Cologne",
+      "category": "Beverages",
+      "where_to_buy": [
+        "Wine shops near Old Town",
+        "REWE",
+        "Edeka"
+      ],
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "item": "Cologne Cathedral Souvenirs",
+      "city": "Cologne",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Shops around Cologne Cathedral"
+      ],
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "item": "German Beer (Craft & Regional Varieties)",
+      "city": "Cologne",
+      "category": "Beverages",
+      "where_to_buy": [
+        "REWE",
+        "Edeka",
+        "Local breweries & beer shops in Old Town"
+      ],
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "item": "Rhine River & Cologne-Themed Souvenirs",
+      "city": "Cologne",
+      "category": "Collectibles",
+      "where_to_buy": [
+        "Souvenir shops around Rhine promenade & Old Town"
+      ],
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
     }
   ],
   "emergency_contacts": [],
@@ -507,10 +720,29 @@
       "cost": "Varies by route",
       "_source_file": "Netherlands/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_mtime": 1778114484.0
+    },
+    {
+      "city": "Cologne",
+      "mode": "High-Speed Train",
+      "description": "Best for intercity travel such as Cologne to Frankfurt or Amsterdam connections via ICE high-speed and regional trains.",
+      "recommended_pass": "DB (Deutsche Bahn) Point-to-Point Tickets",
+      "cost": "~€20–€90 depending on timing",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "city": "Cologne",
+      "mode": "Bus / Tram / S-Bahn",
+      "description": "Local city travel within Cologne region covering bus, tram, and S-Bahn. Available via DB Navigator app, kiosks, and stations.",
+      "recommended_pass": "VRS (Cologne Transport Network Tickets)",
+      "cost": "~€3–€10 per day depending on zone",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
     }
   ],
   "health_tips": [],
   "source_files": [
-    "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+    "Netherlands/Sirisha_Europe_All Inclusive Guide.docx",
+    "Europe/Sirisha_Europe_All Inclusive Guide.docx"
   ]
 }

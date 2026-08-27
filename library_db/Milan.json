@@ -23,15 +23,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "vegetarian_friendly": false
     },
     {
@@ -55,15 +47,7 @@
       "best_for": [
         "romantic"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "vegetarian_friendly": true
     },
     {
@@ -90,15 +74,7 @@
       "best_for": [
         "romantic"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "vegetarian_friendly": false
     },
     {
@@ -124,11 +100,7 @@
         "Spaghetti alle cozze"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Al Cantinone",
@@ -148,11 +120,7 @@
         "Tagliolini al salmone"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf"
-      ],
+      "source_files": [],
       "area": "Near Galleria Vittorio Emanuele"
     },
     {
@@ -174,11 +142,7 @@
         "Chicken scaloppine al vino bianco"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Mag Café",
@@ -198,11 +162,7 @@
         "Negroni",
         "Spritz"
       ],
-      "source_files": [
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Spritz Navigli",
@@ -220,11 +180,7 @@
         "wine",
         "beers"
       ],
-      "source_files": [
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Manhattan Navigli",
@@ -240,11 +196,7 @@
         "Signature cocktails",
         "spritzes"
       ],
-      "source_files": [
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Obicà Mozzarella Bar",
@@ -268,8 +220,176 @@
         "chic dining"
       ],
       "vegetarian_friendly": true,
+      "source_files": []
+    },
+    {
+      "name": "Joia",
+      "city": "Milan",
+      "cuisine_type": [
+        "Vegetarian",
+        "Fine Dining"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12:30 PM – 1:30 PM, 7:30 PM – 9:30 PM (Sunday & Monday Closed)",
+      "ambience": "Luxury vegetarian dining",
+      "area": "Milan city centre",
+      "highlights": [
+        "Luxury vegetarian dining"
+      ],
+      "must_try_dishes": [
+        "Seasonal tasting menu",
+        "Truffle dishes",
+        "Gourmet desserts"
+      ],
+      "best_for": [
+        "fine dining",
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Flower Burger Milano",
+      "city": "Milan",
+      "cuisine_type": [
+        "Vegan",
+        "Burgers"
+      ],
+      "price_range": "₹₹",
+      "hours": "12:00 PM – 3:00 PM, 7:00 PM – 10:15 PM",
+      "ambience": "Casual fun dining",
+      "area": "Milan city centre",
+      "highlights": [
+        "Casual fun dinner",
+        "Vegan options"
+      ],
+      "must_try_dishes": [
+        "Vegan burgers",
+        "Loaded fries",
+        "Desserts"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Piz Milano",
+      "city": "Milan",
+      "cuisine_type": [
+        "Italian",
+        "Pizza"
+      ],
+      "price_range": "₹₹",
+      "hours": "12:00 PM – 3:00 PM, 7:00 PM – 11:00 PM",
+      "ambience": "Authentic Italian dining near the Duomo",
+      "area": "Duomo area, Milan",
+      "nearby_landmarks": [
+        "Duomo di Milano, Milan"
+      ],
+      "highlights": [
+        "Authentic Italian dinner"
+      ],
+      "must_try_dishes": [
+        "Margherita pizza",
+        "Burrata pizza",
+        "Tiramisu"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Biancolatte",
+      "city": "Milan",
+      "cuisine_type": [
+        "Café",
+        "Italian"
+      ],
+      "price_range": "₹",
+      "hours": "7:30 AM – 11:00 PM (Saturday & Sunday 8:30 AM – 11:00 PM)",
+      "ambience": "Stylish Milanese café with elegant interiors and relaxed morning ambience",
+      "area": "Near Residenza Cenisio, Milan",
+      "highlights": [
+        "Fresh pastries",
+        "Artisanal coffee"
+      ],
+      "must_try_dishes": [
+        "Croissants",
+        "Cappuccino",
+        "Yogurt bowls"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Pavé",
+      "city": "Milan",
+      "cuisine_type": [
+        "Café",
+        "Bakery"
+      ],
+      "price_range": "₹",
+      "hours": "8:00 AM – 7:00 PM",
+      "ambience": "Charming artisan bakery café with warm interiors",
+      "area": "Milan city centre",
+      "highlights": [
+        "Freshly baked breakfast selections",
+        "Cozy authentic Milan breakfast"
+      ],
+      "must_try_dishes": [
+        "Brioche",
+        "Focaccia",
+        "Espresso"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "California Bakery",
+      "city": "Milan",
+      "cuisine_type": [
+        "Café",
+        "Bakery"
+      ],
+      "price_range": "₹",
+      "hours": "9:00 AM – 8:00 PM",
+      "ambience": "Lively breakfast café",
+      "area": "Milan city centre",
+      "highlights": [
+        "Generous vegetarian breakfast options",
+        "Excellent coffee"
+      ],
+      "must_try_dishes": [
+        "Pancakes",
+        "Avocado toast",
+        "Hot chocolate"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ]
     }
   ],
@@ -277,19 +397,12 @@
     {
       "name": "Duomo di Milano",
       "city": "Milan",
-      "description": "Gothic cathedral with optional terrace climb",
-      "hours": "Slots available every half hour until 1:30pm (direct) or 3pm (tours)",
-      "entry_fee": "EUR 10 + EUR 14-16 for terraces",
+      "description": "One of the world's most spectacular Gothic cathedrals with intricate marble façade, lively piazza atmosphere, and elegant city surroundings.",
+      "hours": "Approx. 9:00 AM – 7:00 PM",
+      "entry_fee": "Cathedral Entry Extra",
       "recommended_duration": "2 hours",
       "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Italy- Final Itinerary with booking links.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ]
     },
     {
@@ -299,44 +412,32 @@
       "hours": "24 hours",
       "entry_fee": "Free",
       "recommended_duration": "1 hour",
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Galleria Vittorio Emanuele II",
       "city": "Milan",
-      "description": "Stunning glass-roofed shopping arcade",
+      "description": "Historic glass-covered arcade beside the Duomo filled with luxury boutiques, cafés, and elegant Italian architecture.",
       "recommended_duration": "1 hour",
       "source_files": [
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Italy- Final Itinerary with booking links.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf"
-      ]
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ],
+      "hours": "Open throughout the day",
+      "entry_fee": "Free to explore"
     },
     {
       "name": "Navigli District",
       "city": "Milan",
       "description": "Charming canals designed by Leonardo da Vinci with cafés and art studios",
       "recommended_duration": "2-3 hours",
-      "source_files": [
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Serravalle Designer Outlet",
       "city": "Milan",
       "description": "One of Europe's largest luxury outlet destinations with Italian-style architecture, designer boutiques, and premium international brands",
       "entry_fee": "Free Entry",
-      "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "La Scala",
@@ -345,9 +446,7 @@
       "hours": null,
       "entry_fee": null,
       "recommended_duration": null,
-      "source_files": [
-        "Italy/Italy- Final Itinerary with booking links.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Castello Sforzesco",
@@ -356,9 +455,7 @@
       "hours": null,
       "entry_fee": null,
       "recommended_duration": null,
-      "source_files": [
-        "Italy/Italy- Final Itinerary with booking links.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Parco Sempione",
@@ -367,9 +464,7 @@
       "hours": null,
       "entry_fee": null,
       "recommended_duration": null,
-      "source_files": [
-        "Italy/Italy- Final Itinerary with booking links.pdf"
-      ]
+      "source_files": []
     }
   ],
   "hotels": [
@@ -407,19 +502,54 @@
       "location": "Milan",
       "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
       "_source_mtime": 1772384340.7984886
+    },
+    {
+      "name": "Residenza Cenisio",
+      "city": "Milan",
+      "location": "Near Cenisio Metro Station, Milan",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
     }
   ],
   "local_dishes": [
     {
       "name": "Risotto alla Milanese",
       "city": "Milan",
-      "description": "Traditional Milanese saffron risotto",
+      "description": "Creamy saffron-infused risotto — rich, aromatic, and one of Milan's signature dishes. Vegetarian version available.",
       "vegetarian": true,
-      "where_to_try": "Al Cantinone",
+      "where_to_try": "Milan restaurants",
       "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Pizza Margherita",
+      "city": "Milan",
+      "description": "Classic Neapolitan pizza with tomato, mozzarella, basil — simple, fresh, and iconic.",
+      "vegetarian": true,
+      "where_to_try": "Italian restaurants in Milan",
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Caprese Salad",
+      "city": "Milan",
+      "description": "Fresh mozzarella, ripe tomatoes, basil leaves, olive oil — the essence of Italian simplicity.",
+      "vegetarian": true,
+      "where_to_try": "Italian restaurants throughout Italy",
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Cornetto + Cappuccino",
+      "city": "Milan",
+      "description": "Flaky Italian croissant paired with strong espresso or cappuccino — the perfect Milanese morning ritual.",
+      "vegetarian": true,
+      "where_to_try": "Cafés throughout Milan",
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ]
     }
   ],
@@ -605,6 +735,27 @@
       "where_to_buy": [],
       "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
       "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Italian Leather Goods",
+      "city": "Milan",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Boutiques in Milan",
+        "Serravalle Designer Outlet"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "item": "Milan Design Stationery",
+      "city": "Milan",
+      "category": "Stationery",
+      "where_to_buy": [
+        "Design stores in Milan"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
     }
   ],
   "emergency_contacts": [],
@@ -644,6 +795,15 @@
       "description": "Public transport system connecting major attractions",
       "_source_file": "Italy/Tejas - Europe All Inclusive Guide.pdf",
       "_source_mtime": 1772384338.18424
+    },
+    {
+      "city": "Milan",
+      "mode": "Metro",
+      "description": "Milan's metro network used for transfers within the city, including from Milano Centrale to hotel area (Cenisio on M5 Line) and to Duomo.",
+      "recommended_pass": null,
+      "cost": "Standard Rome metro ticket approx. INR 150–250 equivalent",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
     }
   ],
   "health_tips": [],
@@ -656,6 +816,7 @@
     "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
     "Italy/Italy- Final Itinerary with booking links.pdf",
     "Italy/Tejas - Europe All Inclusive Guide.pdf",
-    "Italy/Paris, Switzerland and Italy.pdf"
+    "Italy/Paris, Switzerland and Italy.pdf",
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
   ]
 }

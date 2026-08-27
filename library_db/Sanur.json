@@ -17,9 +17,7 @@
         "Summer rolls"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Bali Indonesia/Eating Out Guide- Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Forketta",
@@ -37,9 +35,7 @@
         "Tiramisu"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Bali Indonesia/Eating Out Guide- Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Pescado",
@@ -55,9 +51,7 @@
         "Pulpo Plancha"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Bali Indonesia/Eating Out Guide- Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Panda Kitchen",
@@ -70,9 +64,7 @@
         "Pickled Chili Squid"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Bali Indonesia/Eating Out Guide- Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Three Monkeys",
@@ -89,22 +81,330 @@
         "Halloumi"
       ],
       "vegetarian_friendly": false,
+      "source_files": []
+    },
+    {
+      "name": "COSTA - Beach Restaurant Sanur",
+      "city": "Sanur",
+      "cuisine_type": [
+        "Mediterranean",
+        "Seafood",
+        "Italian"
+      ],
+      "price_range": "₹1,000–2,500 per person",
+      "hours": "10:00 AM – 11:00 PM",
+      "ambience": "Stylish beachfront restaurant overlooking the ocean, combining Mediterranean charm with a relaxed tropical atmosphere, open-air setting",
+      "area": "Sanur Beach",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Beachfront location",
+        "Ocean views",
+        "Open-air setting",
+        "Sound of waves and sea breeze"
+      ],
+      "must_try_dishes": [
+        "Fresh Seafood",
+        "Handmade Pasta",
+        "Artisan Pizza"
+      ],
+      "best_for": [
+        "beachfront dining",
+        "ocean views",
+        "leisurely lunches"
+      ],
       "source_files": [
-        "Bali Indonesia/Eating Out Guide- Bali.pdf"
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "SEJA Restaurant & Bar",
+      "city": "Sanur",
+      "cuisine_type": [
+        "Indonesian",
+        "Seafood"
+      ],
+      "price_range": "₹400–1,200 per person",
+      "hours": "07:00 AM – 10:00 PM",
+      "ambience": "Contemporary tropical restaurant with elegant interiors and a laid-back Sanur vibe, balancing casual comfort and modern sophistication",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Laid-back Sanur vibe",
+        "Contemporary tropical setting"
+      ],
+      "must_try_dishes": [
+        "Indonesian Specialties",
+        "Grilled Seafood",
+        "Signature Rice Bowls"
+      ],
+      "best_for": [
+        "relaxed lunches",
+        "contemporary Indonesian cuisine"
+      ],
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Paed Thai Restaurant Sanur by Wonderspace",
+      "city": "Sanur",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "₹700–1,800 per person",
+      "hours": "07:00 AM – 10:00 PM",
+      "ambience": "Urban-chic Thai restaurant with stylish interiors and vibrant atmosphere",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Authentic Thai flavours",
+        "Warm hospitality"
+      ],
+      "must_try_dishes": [
+        "Pad Thai",
+        "Tom Yum Soup",
+        "Mango Sticky Rice"
+      ],
+      "best_for": [
+        "authentic Thai cuisine",
+        "family-friendly dining"
+      ],
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Naughty Nuri's Warung, Sanur",
+      "city": "Sanur",
+      "cuisine_type": [
+        "BBQ",
+        "Balinese"
+      ],
+      "price_range": "₹800–2,000 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Lively and energetic Bali favourite with casual atmosphere and vibrant setting",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Legendary grilled specialties",
+        "Bali favourite"
+      ],
+      "must_try_dishes": [
+        "Signature Pork Ribs",
+        "BBQ Pork Belly",
+        "Grilled Satay"
+      ],
+      "best_for": [
+        "Bali's famous ribs",
+        "casual dining",
+        "groups of friends or families"
+      ],
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sumak Turkish Cuisine Sanur",
+      "city": "Sanur",
+      "cuisine_type": [
+        "Turkish",
+        "Middle Eastern"
+      ],
+      "price_range": "₹1,200–3,000 per person",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "Stylish and contemporary restaurant with warm interiors, elegant décor, and traditional Middle Eastern touches",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Authentic Turkish hospitality",
+        "Elegant décor"
+      ],
+      "must_try_dishes": [
+        "Mixed Grill Platter",
+        "Lamb Adana Kebab",
+        "Turkish Pide"
+      ],
+      "best_for": [
+        "Middle Eastern cuisine",
+        "family dinners",
+        "something different from traditional Balinese fare"
+      ],
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Warung Blanjong",
+      "city": "Sanur",
+      "cuisine_type": [
+        "Balinese",
+        "Indonesian"
+      ],
+      "price_range": "₹300–900 per person",
+      "hours": "07:00 AM – 10:00 PM",
+      "ambience": "Relaxed garden-style setting with a warm Balinese atmosphere, long-standing local favourite",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Serving visitors and locals for decades",
+        "Authentic Balinese home-style cooking",
+        "Garden-style setting"
+      ],
+      "must_try_dishes": [
+        "Nasi Campur Bali",
+        "Chicken Satay",
+        "Pepes Ikan (Balinese Fish in Banana Leaf)"
+      ],
+      "best_for": [
+        "authentic Balinese cuisine",
+        "local dining experiences"
+      ],
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
       ]
     }
   ],
-  "attractions": [],
-  "hotels": [],
-  "local_dishes": [],
+  "attractions": [
+    {
+      "name": "Sanur Harbour",
+      "city": "Sanur",
+      "description": "Departure point for speedboat transfers to Nusa Penida. Speedboats generally operate from 7:30 AM onwards. The scenic boat journey across the Bali Strait takes approximately 35–45 minutes.",
+      "hours": "From 7:30 AM",
+      "entry_fee": "Approx. INR 2,000–3,000 per person (return ferry)",
+      "recommended_duration": "35–45 minutes (boat journey)",
+      "source_files": [
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sanur Boardwalk",
+      "city": "Sanur",
+      "description": "A beachfront boardwalk stretching along the coastline, lined with palm trees, beach cafés, boutique resorts, and ocean views. Offers a wonderful opportunity to enjoy the laid-back atmosphere of Sanur.",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "ICON Bali Mall",
+      "city": "Sanur",
+      "description": "Sanur's newest lifestyle and shopping destination combining international brands, local boutiques, cafés, restaurants, and entertainment spaces within a stylish beachfront setting.",
+      "hours": "10:00 AM – 10:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Krisna Oleh-Oleh Bali Sanur",
+      "city": "Sanur",
+      "description": "One of Bali's most popular souvenir stores offering fixed prices and an extensive selection of Balinese products including coffee, chocolates, batik clothing, handmade crafts, and spa products.",
+      "hours": "10:00 AM – 10:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "45–60 minutes",
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sindhu Night Market",
+      "city": "Sanur",
+      "description": "One of Sanur's most popular local night markets. Features freshly grilled satay, local delicacies, tropical fruits, and Indonesian desserts. One of the best places to experience authentic local life and sample traditional Indonesian street food.",
+      "hours": "05:00 PM – 10:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Taksu Sanur Hotel",
+      "city": "Sanur",
+      "location": "Sanur, Bali",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Tom Yum Soup",
+      "city": "Sanur",
+      "description": "Iconic Thai soup with a balance of spicy, sour, savoury, and aromatic flavours, infused with lemongrass, lime leaves, galangal, and fresh herbs.",
+      "vegetarian": false,
+      "where_to_try": "Paed Thai Restaurant Sanur by Wonderspace",
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pad Thai",
+      "city": "Sanur",
+      "description": "Stir-fried rice noodles with vegetables, peanuts, lime, and your choice of protein.",
+      "vegetarian": false,
+      "where_to_try": "Paed Thai Restaurant Sanur by Wonderspace",
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mango Sticky Rice",
+      "city": "Sanur",
+      "description": "A tropical dessert combining sweet ripe mangoes with creamy coconut-infused sticky rice.",
+      "vegetarian": true,
+      "where_to_try": "Paed Thai Restaurant Sanur by Wonderspace",
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Street Food Favourites",
+      "city": "Sanur",
+      "description": "Local street food including Chicken Satay, Nasi Goreng, Mie Goreng, Martabak, Bakso, and Tropical Fruit Juices.",
+      "vegetarian": false,
+      "where_to_try": "Sindhu Night Market",
+      "source_files": [
+        "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+      ]
+    }
+  ],
   "phrases": [],
   "safety_tips": [],
   "souvenirs": [],
   "emergency_contacts": [],
   "connectivity_tips": [],
-  "transport_options": [],
-  "health_tips": [],
+  "transport_options": [
+    {
+      "city": "Sanur",
+      "mode": "Speedboat",
+      "description": "Speedboat transfer from Sanur Harbour to Nusa Penida across the Bali Strait. Journey takes approximately 35–45 minutes. Boats generally operate from 7:30 AM onwards.",
+      "cost": "Approx. INR 2,000–3,000 per person (return)",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Sanur"
+      ],
+      "tip": "Nearby medical facility: Bali Mandara Regional General Hospital, approximately 5 minutes from Taksu Sanur Hotel, open 24/7.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    },
+    {
+      "cities": [
+        "Sanur"
+      ],
+      "tip": "Nearby pharmacy: Apotek Kimia Farma Danau Poso, approximately 1 minute from Taksu Sanur Hotel, open 7:00 AM – 10:00 PM.",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_mtime": 1782924536.0
+    }
+  ],
   "source_files": [
-    "Bali Indonesia/Eating Out Guide- Bali.pdf"
+    "Bali Indonesia/Eating Out Guide- Bali.pdf",
+    "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+    "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+    "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
   ]
 }

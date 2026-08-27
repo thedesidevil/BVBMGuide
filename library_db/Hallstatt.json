@@ -18,10 +18,7 @@
       "best_for": [
         "romantic"
       ],
-      "source_files": [
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Gasthof Zauner",
@@ -38,10 +35,7 @@
         "potato dumplings",
         "Sachertorte"
       ],
-      "source_files": [
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bräugasthof Hallstatt",
@@ -58,9 +52,124 @@
         "lake trout",
         "local beer"
       ],
+      "source_files": []
+    },
+    {
+      "name": "Seecafé Hallstatt",
+      "city": "Hallstatt",
+      "cuisine_type": [
+        "Café",
+        "Austrian"
+      ],
+      "ambience": "Scenic lakeside café",
+      "highlights": [
+        "Best lakeside atmosphere",
+        "Beautiful water views"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
       "source_files": [
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "nearby_landmarks": [
+        "Lake Hallstatt, Hallstatt"
+      ]
+    },
+    {
+      "name": "Ruhrwerk Hallstatt",
+      "city": "Hallstatt",
+      "cuisine_type": [
+        "Austrian"
+      ],
+      "ambience": "Stylish modern Austrian restaurant",
+      "highlights": [
+        "Elevated views over Hallstatt",
+        "Best panoramic dining views",
+        "Known for oven-fresh Schaumrollen pastries"
+      ],
+      "must_try_dishes": [
+        "Schaumrollen pastries",
+        "Schaumrollen"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Muk's Schmankerl",
+      "city": "Hallstatt",
+      "cuisine_type": [
+        "Austrian"
+      ],
+      "ambience": "Casual local spot",
+      "highlights": [
+        "More casual local-style meal",
+        "Austrian comfort food"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Maislinger Bakery",
+      "city": "Hallstatt",
+      "cuisine_type": [
+        "Bakery"
+      ],
+      "highlights": [
+        "Great for pastries and gingerbread",
+        "Coffee and takeaway snacks"
+      ],
+      "must_try_dishes": [
+        "Pastries",
+        "Gingerbread"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Die Gemischtwarenhandlung am See",
+      "city": "Hallstatt",
+      "cuisine_type": [
+        "Café"
+      ],
+      "ambience": "Charming lakeside café",
+      "nearby_landmarks": [
+        "Hallstatt Lutheran Church, Hallstatt"
+      ],
+      "highlights": [
+        "Located directly across from the church",
+        "Beautiful waterfront views"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
       ]
     }
   ],
@@ -68,11 +177,12 @@
     {
       "name": "Hallstatt Skywalk",
       "city": "Hallstatt",
-      "description": "Panoramic viewpoint 350m above the lake, reachable via funicular or steep hike",
-      "recommended_duration": "1 hour",
+      "description": "Take the funicular from the upper village area to the panoramic Skywalk viewpoint. Stunning elevated views over Hallstatt, the lake, and surrounding mountains.",
+      "recommended_duration": "45 minutes",
       "source_files": [
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
       ]
     },
     {
@@ -80,8 +190,45 @@
       "city": "Hallstatt",
       "description": "Alpine lake offering electric boat rentals and 1-hour cruises",
       "recommended_duration": "1 hour",
+      "source_files": []
+    },
+    {
+      "name": "Hallstatt Village",
+      "city": "Hallstatt",
+      "description": "Colorful lakeside streets, historic houses, waterfront viewpoints, charming cafés and local shops. Best enjoyed slowly.",
+      "recommended_duration": "3 hours",
       "source_files": [
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Lakeside Promenade",
+      "city": "Hallstatt",
+      "description": "Classic postcard views of the village and mountains with best reflections earlier in the day",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx"
+      ]
+    },
+    {
+      "name": "Hallstatt Lutheran Church Viewpoint",
+      "city": "Hallstatt",
+      "description": "One of the most photographed angles of Hallstatt, located directly beside the waterfront.",
+      "recommended_duration": "15 minutes",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Hallstatt Lakeside Promenade",
+      "city": "Hallstatt",
+      "description": "Classic postcard views of the village and mountains. Best reflections earlier in the day.",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Austria/Itinerary- Budapest Prague Austria.docx"
       ]
     }
   ],
@@ -101,9 +248,105 @@
       "_source_mtime": 1748240155.0
     }
   ],
-  "local_dishes": [],
+  "local_dishes": [
+    {
+      "name": "Schaumrollen",
+      "city": "Hallstatt",
+      "description": "Oven-fresh Austrian pastry rolls",
+      "vegetarian": true,
+      "where_to_try": "Ruhrwerk Hallstatt",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    }
+  ],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Hallstatt"
+      ],
+      "tip": "Cars are not allowed inside the old town. Park at P1 or P2 parking lots and expect a short walk of 8–12 minutes into the village.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765
+    },
+    {
+      "cities": [
+        "Hallstatt"
+      ],
+      "tip": "Carry essentials with you before leaving the car as you cannot drive into the old town.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765
+    },
+    {
+      "cities": [
+        "Hallstatt"
+      ],
+      "tip": "The Hallstatt Skywalk is best attempted only if energy levels are good, queues are manageable, and weather visibility is clear.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765
+    },
+    {
+      "cities": [
+        "Hallstatt"
+      ],
+      "tip": "Cars are not allowed inside the old town — park at P1 or P2 parking lots and carry all essentials before leaving the car",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "cities": [
+        "Hallstatt"
+      ],
+      "tip": "Hallstatt Skywalk is best attempted only if energy levels are good, queues are manageable, and weather visibility is clear",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "cities": [
+        "Hallstatt"
+      ],
+      "tip": "Carry water, snacks, a light jacket, and comfortable walking shoes for the Hallstatt and Gosausee day trip",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "cities": [
+        "Hallstatt"
+      ],
+      "tip": "Cars are not allowed inside the old town. Park at P1 or P2 and expect a short walk of 8–12 minutes into the village.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    },
+    {
+      "cities": [
+        "Hallstatt"
+      ],
+      "tip": "Carry essentials with you before leaving the car as you cannot drive into the old town.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    },
+    {
+      "cities": [
+        "Hallstatt"
+      ],
+      "tip": "The Hallstatt Skywalk is best done after lunch before departing. Only attempt if energy levels are good, queues are manageable, and weather visibility is clear.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    },
+    {
+      "cities": [
+        "Salzburg",
+        "Hallstatt",
+        "Gosausee"
+      ],
+      "tip": "Carry water, snacks, a light jacket, and comfortable walking shoes for the Hallstatt and Gosausee day trip.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    }
+  ],
   "souvenirs": [
     {
       "item": "Apricot schnapps",
@@ -164,14 +407,81 @@
       ],
       "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
       "_source_mtime": 1748240155.0
+    },
+    {
+      "item": "Gingerbread",
+      "city": "Hallstatt",
+      "category": "Food",
+      "where_to_buy": [
+        "Maislinger Bakery"
+      ],
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765
+    },
+    {
+      "item": "Pastries and gingerbread",
+      "city": "Hallstatt",
+      "category": "Food",
+      "where_to_buy": [
+        "Maislinger Bakery"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "item": "Gingerbread",
+      "city": "Hallstatt",
+      "category": "Food",
+      "where_to_buy": [
+        "Maislinger Bakery"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
     }
   ],
   "emergency_contacts": [],
   "connectivity_tips": [],
-  "transport_options": [],
-  "health_tips": [],
+  "transport_options": [
+    {
+      "city": "Hallstatt",
+      "mode": "Car",
+      "description": "Scenic drive from Salzburg through the Austrian lake district and alpine countryside. Cars are not allowed inside the old town — park at P1 Parking Hallstatt or P2 Central Parking",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "city": "Hallstatt",
+      "mode": "Car",
+      "description": "Scenic drive from Salzburg to Hallstatt through the Austrian lake district (~1.5 hours). Cars not allowed inside the old town — park at P1 or P2 parking lots.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    },
+    {
+      "city": "Hallstatt",
+      "mode": "Funicular",
+      "description": "Funicular from the upper village area to the Hallstatt Skywalk panoramic viewpoint.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Hallstatt",
+        "Gosausee",
+        "Wachau Valley",
+        "Salzburg"
+      ],
+      "tip": "Carry water, snacks, a light jacket, and comfortable walking shoes for full-day excursions including Hallstatt, Gosausee, and Wachau cycling.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765
+    }
+  ],
   "source_files": [
     "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+    "Europe/Itinerary- Budapest, Prague, Austria.docx",
+    "Austria/Itinerary- Budapest, Prague, Austria.docx",
+    "Austria/Itinerary- Budapest Prague Austria.docx"
   ]
 }

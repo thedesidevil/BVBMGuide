@@ -1,57 +1,170 @@
 {
-  "restaurants": [],
+  "restaurants": [
+    {
+      "name": "Penida Colada Beach Bar",
+      "city": "Nusa Penida",
+      "cuisine_type": [
+        "Indonesian",
+        "Local",
+        "Beachfront"
+      ],
+      "price_range": "₹₹",
+      "hours": "8:00 AM – 11:00 PM",
+      "ambience": "Relaxed beachfront setting with beautiful ocean views",
+      "area": "Nusa Penida",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Beachfront dining",
+        "Refreshing post-sightseeing meals"
+      ],
+      "must_try_dishes": [
+        "Vegetable Nasi Goreng",
+        "Veggie Wraps",
+        "Fresh Tropical Smoothie Bowls"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Virgin Beach Restaurant",
+      "city": "Nusa Penida",
+      "cuisine_type": [
+        "Indonesian",
+        "Local"
+      ],
+      "price_range": "₹",
+      "hours": "9:00 AM – 10:00 PM",
+      "ambience": "Casual island dining with sea views",
+      "area": "Nusa Penida",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Relaxed local dining experience"
+      ],
+      "must_try_dishes": [
+        "Vegetable Fried Rice",
+        "Tofu Stir Fry",
+        "Fresh Fruit Juices"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Amok Sunset Restaurant",
+      "city": "Nusa Penida",
+      "cuisine_type": [
+        "Indonesian",
+        "Local"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "Cliffside restaurant offering panoramic ocean vistas",
+      "area": "Nusa Penida",
+      "highlights": [
+        "Scenic island dining",
+        "Panoramic ocean views"
+      ],
+      "must_try_dishes": [
+        "Vegetable Curry",
+        "Grilled Vegetable Platters",
+        "Tropical Fruit Desserts"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": []
+    },
+    {
+      "name": "Bollywood Indian Cuisine Nusa Penida",
+      "city": "Nusa Penida",
+      "cuisine_type": [
+        "Indian",
+        "Vegetarian"
+      ],
+      "price_range": "₹₹",
+      "hours": "10:00 AM – 10:00 PM",
+      "ambience": "Casual Indian restaurant offering a comfortable dining atmosphere with island charm, ideal for a relaxing meal between sightseeing stops",
+      "area": "Western Nusa Penida",
+      "nearby_landmarks": [
+        "Kelingking Beach, Nusa Penida"
+      ],
+      "highlights": [
+        "Indian vegetarian comfort food"
+      ],
+      "must_try_dishes": [
+        "Paneer Butter Masala",
+        "Dal Tadka",
+        "Vegetable Biryani"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    }
+  ],
   "attractions": [
     {
       "name": "Nusa Penida",
       "city": "Nusa Penida",
       "description": "Island with stunning west coast exploration including Kelingking Beach, Angel's Billabong, and Broken Beach",
       "recommended_duration": "Full day",
-      "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kelingking Beach",
       "city": "Nusa Penida",
       "description": "Iconic cliff viewpoint shaped like a T-Rex",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Angel's Billabong",
       "city": "Nusa Penida",
-      "description": "Natural infinity pool carved into rock formations with crystal-clear water during low tide",
+      "description": "Natural infinity pool carved into the coastal rocks adjacent to Broken Beach. During calm sea conditions, crystal-clear waters reveal beautiful rock formations beneath the surface.",
       "recommended_duration": "20–30 minutes",
       "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf",
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf",
-        "Bali Indonesia/All Inclusive Guide- Bali.docx"
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx"
       ],
-      "hours": "24 hours (visit dependent on tide conditions)"
+      "hours": "Open 24 Hours"
     },
     {
       "name": "Broken Beach",
       "city": "Nusa Penida",
       "description": "Dramatic natural rock arch forming a circular cove with waves rolling through the opening",
       "recommended_duration": "20–30 minutes",
-      "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf",
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf",
-        "Bali Indonesia/All Inclusive Guide- Bali.docx"
-      ],
+      "source_files": [],
       "hours": "24 hours"
     },
     {
       "name": "Kelingking Beach Viewpoint",
       "city": "Nusa Penida",
-      "description": "The famous T-rex cliff — one of Bali's most iconic views with cliffs plunging dramatically into bright turquoise water",
-      "hours": null,
-      "entry_fee": null,
+      "description": "Often referred to as the 'T-Rex Cliff' due to its distinctive shape. Nusa Penida's most famous viewpoint with sweeping views of white sands, crashing waves, and endless shades of blue.",
+      "hours": "Open 24 Hours",
+      "entry_fee": "Approx. INR 150 per person",
       "recommended_duration": "1 hour",
       "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
       ]
     },
     {
@@ -61,9 +174,7 @@
       "hours": null,
       "entry_fee": null,
       "recommended_duration": "1 hour",
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Atuh Beach",
@@ -72,9 +183,7 @@
       "hours": null,
       "entry_fee": null,
       "recommended_duration": "1 hour",
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tree House Molenteng",
@@ -83,9 +192,7 @@
       "hours": null,
       "entry_fee": null,
       "recommended_duration": "30 minutes",
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kelingking Beach (Viewing Point Only)",
@@ -93,9 +200,7 @@
       "description": "Famous 'T-Rex cliff' formation with turquoise water crashing against towering limestone walls",
       "hours": "24 hours",
       "recommended_duration": "20–30 minutes",
-      "source_files": [
-        "Bali Indonesia/All Inclusive Guide- Bali.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Bubu Beach",
@@ -103,8 +208,38 @@
       "description": "Beach where you can actually swim with typically clear and inviting water",
       "hours": "Daytime access",
       "recommended_duration": "1-2 hours",
+      "source_files": []
+    },
+    {
+      "name": "Broken Beach (Pasih Uug)",
+      "city": "Nusa Penida",
+      "description": "Naturally formed coastal arch where the ocean flows through a circular opening into a stunning turquoise lagoon. Dramatic geological formation with rugged limestone cliffs.",
+      "hours": "Open 24 Hours",
+      "recommended_duration": null,
       "source_files": [
-        "Bali Indonesia/All Inclusive Guide- Bali.docx"
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Manta Bay",
+      "city": "Nusa Penida",
+      "description": "One of Nusa Penida's most sought-after marine experiences offering the chance to snorkel alongside majestic manta rays. Also home to colourful tropical fish, vibrant coral reefs, and sea turtles.",
+      "hours": "Best Snorkelling Hours: 9:00 AM – 2:00 PM (subject to sea and weather conditions)",
+      "entry_fee": "Approx. INR 2,000–4,500 per person",
+      "recommended_duration": null,
+      "source_files": [
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Manta Bay, Gamat Bay, The Wall & Crystal Bay Snorkelling",
+      "city": "Nusa Penida",
+      "description": "Snorkelling excursion to four of Nusa Penida's most renowned marine locations. Opportunity to spot manta rays at Manta Bay, colourful coral gardens at Gamat Bay and The Wall, and clear waters at Crystal Bay.",
+      "hours": "Subject to weather and sea conditions",
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
       ]
     }
   ],
@@ -127,6 +262,14 @@
       "tip": "Protect electronics in waterproof pouches",
       "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
       "_source_mtime": 1773895408.0
+    },
+    {
+      "cities": [
+        "Nusa Penida"
+      ],
+      "tip": "All snorkelling activities at Manta Bay are subject to local safety assessments on the day as marine sightings depend on weather and sea conditions.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
     }
   ],
   "souvenirs": [],
@@ -140,12 +283,23 @@
       "cost": "Crossing time: ~45 mins",
       "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
       "_source_mtime": 1773895408.0
+    },
+    {
+      "city": "Nusa Penida",
+      "mode": "Speedboat",
+      "description": "Speedboat transfer from Sanur Harbour to Nusa Penida across the Bali Strait. Journey takes approximately 35–45 minutes. Speedboats generally operate from 7:30 AM onwards.",
+      "recommended_pass": null,
+      "cost": "Approx. INR 2,000–3,000 per person (return)",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0
     }
   ],
   "health_tips": [],
   "source_files": [
     "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf",
     "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf",
-    "Bali Indonesia/All Inclusive Guide- Bali.docx"
+    "Bali Indonesia/All Inclusive Guide- Bali.docx",
+    "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+    "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
   ]
 }

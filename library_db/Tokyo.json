@@ -16,12 +16,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ],
+      "source_files": [],
       "must_try_dishes": [
         "Vegetable curry",
         "Naan",
@@ -32,26 +27,22 @@
       "name": "Tenku Lounge TOP of TREE",
       "city": "Tokyo",
       "cuisine_type": [
-        "Continental"
+        "Continental",
+        "Lounge"
       ],
-      "price_range": "₹1,200–₹2,000 per person",
+      "price_range": "₹1200–2000 per person",
       "hours": "11 AM – 4 PM | 5 PM – 11 PM",
-      "ambience": "Stylish lounge on the 31st floor in Solamachi with panoramic Tokyo Skytree views — modern, elegant ambiance",
-      "area": "Tokyo Solamachi",
+      "ambience": "Stylish lounge on the 31st floor with panoramic Tokyo Skytree views",
+      "area": "Solamachi",
       "highlights": [
-        "31st floor location",
         "Panoramic Tokyo Skytree views",
-        "Modern and elegant"
+        "Modern elegant ambiance"
       ],
       "best_for": [
-        "romantic",
         "casual"
       ],
       "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
       ],
       "must_try_dishes": [
         "Veg pasta",
@@ -85,12 +76,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ],
+      "source_files": [],
       "ambience": "Dessert café famous for creative matcha sweets in a charming local setting",
       "vegetarian_friendly": true,
       "nearby_landmarks": [
@@ -115,64 +101,67 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ichiran Asakusa",
       "city": "Tokyo",
       "cuisine_type": [
+        "Japanese",
         "Ramen"
       ],
-      "price_range": "1000-2000 yen per person",
-      "hours": "10am-10pm",
+      "price_range": "¥1000–2000",
+      "hours": "9:30 AM – 10:00 PM",
       "area": "Asakusa",
       "best_for": [
         "casual"
       ],
       "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ],
       "highlights": [
-        "Ramen"
+        "Perfect quick ramen stop"
       ],
-      "vegetarian_friendly": false
+      "vegetarian_friendly": false,
+      "must_try_dishes": [
+        "Tonkotsu ramen"
+      ],
+      "nearby_landmarks": [
+        "Senso-ji Temple, Tokyo"
+      ]
     },
     {
       "name": "Gyoza Bar Keisuke",
       "city": "Tokyo",
       "cuisine_type": [
-        "Japanese"
+        "Japanese",
+        "Dumplings"
       ],
-      "price_range": "₹800–₹1,200 per person",
-      "hours": "6 AM – 2 PM (Closed Mon & Tues)",
-      "area": "Asakusa",
+      "price_range": "₹500–₹800",
+      "hours": "6:00 AM – 2:00 PM",
+      "area": "Asakusa, Tokyo",
       "highlights": [
-        "Dumpling-focused",
-        "Casual atmosphere",
-        "Local Tokyo vibe"
+        "Vegetarian-friendly dumplings",
+        "Casual and lively",
+        "Quick and affordable"
       ],
       "best_for": [
-        "casual"
+        "quick and affordable local lunch"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ],
       "must_try_dishes": [
         "Veg gyoza",
-        "Side rice bowls"
+        "Side rice bowls",
+        "Veg Gyoza",
+        "Vegetable Rice Bowl",
+        "Miso Soup"
       ],
-      "ambience": "Casual dumpling-focused restaurant offering vegetarian-friendly options",
+      "ambience": "Casual and lively eatery popular for its vegetarian-friendly Japanese dumplings",
       "nearby_landmarks": [
-        "Senso-ji, Tokyo"
+        "Senso-ji Temple, Tokyo"
       ]
     },
     {
@@ -191,12 +180,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf",
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ],
+      "source_files": [],
       "ambience": "Casual dinner"
     },
     {
@@ -212,11 +196,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ],
+      "source_files": [],
       "highlights": [
         "Indian"
       ]
@@ -239,12 +219,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ],
+      "source_files": [],
       "vegetarian_friendly": false,
       "must_try_dishes": [
         "Fresh salads",
@@ -269,11 +244,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ],
+      "source_files": [],
       "vegetarian_friendly": false
     },
     {
@@ -303,10 +274,7 @@
         "variety"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Maccha House",
@@ -332,11 +300,7 @@
         "light meals"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Zeera",
@@ -359,10 +323,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ],
+      "source_files": [],
       "ambience": "Indian restaurant offering vegetarian-friendly curries and thalis"
     },
     {
@@ -387,43 +348,42 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Veg Kitchen",
       "city": "Tokyo",
       "cuisine_type": [
-        "Indian"
+        "Indian",
+        "Vegetarian"
       ],
-      "price_range": "₹800–₹1,200 per person",
-      "hours": "11 AM – 2:30 PM | 5 PM – 10 PM",
-      "ambience": "Simple Indian vegetarian restaurant offering reliable North Indian dishes",
-      "area": "Akihabara",
+      "price_range": "₹500–₹800",
+      "hours": "11:00 AM – 3:00 PM | 5:00 PM – 10:00 PM",
+      "ambience": "Simple vegetarian Indian restaurant offering reliable comfort food after a day of sightseeing",
+      "area": "Akihabara, Tokyo",
       "highlights": [
-        "Reliable North Indian dishes",
-        "Straightforward vegetarian"
+        "Simple vegetarian Indian restaurant",
+        "Reliable comfort food"
       ],
       "must_try_dishes": [
         "Thali set",
         "Dal fry",
         "Paneer dishes",
         "Veg thali set",
-        "Paneer butter masala"
+        "Paneer butter masala",
+        "Vegetarian Thali",
+        "Dal Fry",
+        "Paneer Curry"
       ],
       "best_for": [
-        "family",
-        "casual"
+        "authentic vegetarian dinner"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [
+        "Akihabara Station, Tokyo"
       ]
     },
     {
@@ -449,11 +409,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Haute Couture Café",
@@ -477,10 +433,7 @@
         "romantic"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Maccha House (Shibuya)",
@@ -507,9 +460,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Caravan",
@@ -526,9 +477,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Cafe",
@@ -546,9 +495,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Nepali Indian Restaurant and Bar Sewa",
@@ -562,9 +509,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tadim Turkish Restaurant and Halal Kebab",
@@ -581,9 +526,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bon Vegetarian Restaurant",
@@ -600,9 +543,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Vegan Cafe PQs",
@@ -619,9 +560,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Doteno Iseya",
@@ -635,9 +574,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Jidoriya Tsukada Shibuya",
@@ -662,10 +599,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "BiOcafe",
@@ -691,10 +625,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Tsukishima Monja Okoge Shibuya",
@@ -721,9 +652,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Kyushu Jangara Ramen Harajuku",
@@ -750,10 +679,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Kuta Bali Cafe Harajuku",
@@ -780,10 +706,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Onigiri Harajuku (Tarura)",
@@ -810,10 +733,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Churrasco Restaurant ALEGRIA Shinjuku",
@@ -840,9 +760,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Shinjukugyoenmae Sushi Labo",
@@ -869,9 +787,7 @@
         "romantic"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "お好み焼き 山本",
@@ -898,38 +814,37 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "T's TanTan Ecute Ueno",
       "city": "Tokyo",
       "cuisine_type": [
-        "Vegan",
-        "Japanese"
+        "Japanese",
+        "Vegan"
       ],
       "price_range": "₹800–1,500 per person",
-      "hours": "10:00 AM – 10:00 PM(weekdays), 10:00 AM – 9:00 PM (weekends)",
+      "hours": "10:00 AM – 10:00 PM (weekdays), 10:00 AM – 9:00 PM (weekends)",
       "area": "Ueno",
       "nearby_landmarks": [
         "Ueno Park, Tokyo"
       ],
       "highlights": [
-        "Vegan restaurant"
+        "Vegan options available"
       ],
       "must_try_dishes": [
         "Vegan tantan ramen",
         "soy meat karaage",
-        "gyoza"
+        "gyoza",
+        "Soy meat karaage",
+        "Gyoza"
       ],
       "best_for": [
         "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -950,15 +865,16 @@
       "must_try_dishes": [
         "Grilled fish set",
         "tofu & veg set",
-        "chicken teriyaki"
+        "chicken teriyaki",
+        "Tofu and veg set",
+        "Chicken teriyaki"
       ],
       "best_for": [
         "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -974,21 +890,22 @@
         "Ueno Park, Tokyo"
       ],
       "highlights": [
-        "Korean cuisine"
+        "Located in Ueno Sakura Terrace"
       ],
       "must_try_dishes": [
         "Sundubu tofu stew (veg or meat)",
         "bibimbap",
         "kimchi stew",
-        "Sundubu tofu stew"
+        "Sundubu tofu stew",
+        "Bibimbap",
+        "Kimchi stew"
       ],
       "best_for": [
         "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -1012,10 +929,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Teppan Baby",
@@ -1038,10 +952,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Halal Wagyu Ramen, Gyukatsu & Vegan GYUMON Shinjuku East Exit",
@@ -1065,10 +976,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Akasaka Umaya Shinjuku",
@@ -1091,10 +999,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Wagyu (Halal Vegan) Steak Hamburger & Ramen Shinjuku",
@@ -1118,10 +1023,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "MO-MO-PARADISE Kabukicho",
@@ -1143,10 +1045,7 @@
         "family"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Beef Tei Shinjuku Kabukicho",
@@ -1168,10 +1067,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "YAKINIKU TORAJI",
@@ -1191,9 +1087,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Ramen Zundou-ya",
@@ -1215,9 +1109,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Yakiniku Futago Shinjuku",
@@ -1237,9 +1129,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Kakekomi Gyoza",
@@ -1262,10 +1152,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Blue Bottle Coffee Shinjuku",
@@ -1287,31 +1174,37 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Ninja Akasaka",
       "city": "Tokyo",
       "cuisine_type": [
         "Japanese",
-        "International"
+        "Themed"
       ],
-      "price_range": "₹4000-8000",
-      "hours": "5 pm–10 pm (Sun), 5 pm–4 am (Mon-Fri), 5 pm–10 pm (Sat)",
-      "area": "near Asakasa Plaza",
+      "price_range": "₹2,500–₹5,000",
+      "hours": "11:30 AM – 2:30 PM | 5:00 PM – 10:00 PM",
+      "area": "Akasaka, Tokyo",
       "highlights": [
-        "Themed Dining",
-        "Ninja Presentation",
-        "Unique Experience"
+        "Immersive ninja-themed dining",
+        "Theatrical presentations",
+        "Unique décor"
       ],
       "best_for": [
-        "family"
+        "unique Tokyo dining experience"
       ],
       "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "must_try_dishes": [
+        "Vegetarian Sushi Roll",
+        "Tempura Vegetables",
+        "Matcha Dessert"
+      ],
+      "ambience": "Immersive ninja-themed dining experience with theatrical presentations and unique décor",
+      "nearby_landmarks": [],
+      "vegetarian_friendly": true
     },
     {
       "name": "Nataraj Aoyama Indian Restaurant",
@@ -1330,9 +1223,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Zeera Akihabara",
@@ -1340,19 +1231,27 @@
       "cuisine_type": [
         "Indian"
       ],
-      "price_range": "₹700-1200",
-      "hours": "11 am–3 pm / 5–11 pm",
+      "price_range": "₹700–1200 per person",
+      "hours": "11 AM – 3 PM | 5 PM – 11 PM",
       "area": "Akihabara",
       "highlights": [
-        "Good for vegetarians"
+        "Budget-friendly",
+        "Vegetarian-friendly options"
       ],
       "best_for": [
         "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ],
+      "must_try_dishes": [
+        "Cheese naan",
+        "Dal makhani",
+        "Paneer butter masala",
+        "Chicken tikka"
+      ],
+      "ambience": "Casual Indian restaurant in relaxed setting"
     },
     {
       "name": "Gyumon Halal Ramen",
@@ -1370,35 +1269,39 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Vegan Ramen UZU Tokyo",
       "city": "Tokyo",
       "cuisine_type": [
+        "Vegan",
         "Japanese",
-        "Vegan"
+        "Ramen"
       ],
-      "price_range": "₹1,200–2,000",
+      "price_range": "₹1,000–₹1,800",
       "hours": "10:30 AM – 9:00 PM",
-      "area": "Toyosu",
+      "area": "Toyosu, Tokyo",
       "highlights": [
-        "Fully vegan",
-        "Artistic ramen experience"
+        "Created in collaboration with TeamLab",
+        "Artistic dining space",
+        "Seamless continuation of TeamLab experience"
       ],
       "best_for": [
-        "artistic"
+        "complete TeamLab-inspired dining experience"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ],
-      "ambience": "Artistic ramen experience aligned with teamLab theme",
+      "ambience": "Modern artistic dining space created in collaboration with TeamLab, offering a seamless continuation of the immersive experience",
       "nearby_landmarks": [
-        "teamLab Planets, Tokyo"
+        "TeamLab Planets TOKYO DMM, Tokyo"
+      ],
+      "must_try_dishes": [
+        "Vegan Ramen",
+        "Matcha Ice Cream",
+        "Rice Bowl Set"
       ]
     },
     {
@@ -1418,9 +1321,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "MOS Burger LaLaport Toyosu",
@@ -1439,9 +1340,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "I'm Donut?",
@@ -1457,10 +1356,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ],
+      "source_files": [],
       "highlights": [
         "Donut Shop"
       ],
@@ -1481,10 +1377,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ],
+      "source_files": [],
       "highlights": [
         "Dessert café- souffle"
       ],
@@ -1505,10 +1398,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ],
+      "source_files": [],
       "vegetarian_friendly": false
     },
     {
@@ -1527,10 +1417,7 @@
       "best_for": [
         "romantic"
       ],
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ],
+      "source_files": [],
       "nearby_landmarks": [
         "Ueno Park, Tokyo"
       ],
@@ -1553,10 +1440,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ],
+      "source_files": [],
       "nearby_landmarks": [
         "Ueno Station Park Exit Square, Tokyo"
       ],
@@ -1576,9 +1460,7 @@
       "area": null,
       "highlights": [],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Takese Bakery Cafe Restaurant",
@@ -1594,9 +1476,7 @@
         "Japanese baked goods"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Fukunoya",
@@ -1609,9 +1489,7 @@
       "area": null,
       "highlights": [],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Durga",
@@ -1624,9 +1502,7 @@
       "area": null,
       "highlights": [],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Fuglen Tokyo",
@@ -1641,9 +1517,7 @@
         "Cocktails, coffee & Scandinavian baked goods in a trendy, wood-paneled space with vintage decor"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Haute Couture Caffe, Omotesando",
@@ -1658,9 +1532,7 @@
         "Sakura themed décor and afternoon tea"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Asakusa Strawberry Daifuku",
@@ -1677,9 +1549,7 @@
         "Strawberry Daifuku"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Asakusa Gyukatsu",
@@ -1694,9 +1564,7 @@
         "Interactive and immersive dining experiences"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Gyumon Halal Ramen Asakusa",
@@ -1711,9 +1579,7 @@
         "Ramen"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ninja Experience Café Asakusa",
@@ -1727,9 +1593,7 @@
         "You can dress up as a ninja"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Sushi Zanmai Toyosu",
@@ -1751,9 +1615,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Ootoya Koto Toyo",
@@ -1776,9 +1638,7 @@
         "casual",
         "family"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Saizeriya Koto Ward",
@@ -1800,34 +1660,35 @@
         "casual",
         "family"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Uobei Shibuya Dogenzaka",
       "city": "Tokyo",
       "cuisine_type": [
-        "Japanese"
+        "Japanese",
+        "Sushi"
       ],
-      "price_range": "₹1,000–2,000 per person",
+      "price_range": "¥1000–2000",
       "hours": "11:00 AM – 11:00 PM",
       "area": "Shibuya",
       "nearby_landmarks": [
         "Shibuya Crossing, Tokyo"
       ],
       "highlights": [
-        "Fast, fun sushi experience"
+        "Fun, fast sushi experience"
       ],
       "must_try_dishes": [
         "Salmon sushi",
-        "tempura rolls"
+        "tempura rolls",
+        "Sushi platters"
       ],
       "best_for": [
-        "casual"
+        "casual",
+        "family"
       ],
       "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -1853,9 +1714,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "T.Y. Harbor Brewery",
@@ -1877,9 +1736,7 @@
       "best_for": [
         "romantic"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Kani Doraku Toyosu",
@@ -1900,9 +1757,7 @@
       "best_for": [
         "romantic"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Torikizoku Koto",
@@ -1923,9 +1778,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Jonathan's Koto Ward",
@@ -1947,9 +1800,7 @@
       "best_for": [
         "family"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Sushiro Minamisuna",
@@ -1970,9 +1821,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Yayoiken Toyocho",
@@ -1994,9 +1843,7 @@
         "casual",
         "family"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Coco's Restaurant Koto",
@@ -2017,35 +1864,36 @@
       "best_for": [
         "family"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Queen of Hearts Banquet Hall",
       "city": "Tokyo",
       "cuisine_type": [
-        "International"
+        "Themed",
+        "Japanese"
       ],
-      "price_range": "₹1,500–2,500 per person",
+      "price_range": "¥1500–2500",
       "hours": "9:00 AM – 9:00 PM",
       "area": "Tokyo Disneyland",
       "nearby_landmarks": [
         "Tokyo Disneyland, Tokyo"
       ],
-      "ambience": "Themed Alice in Wonderland dining",
+      "ambience": "Beautiful Alice in Wonderland themed dining",
       "highlights": [
-        "Themed Alice in Wonderland dining"
+        "Alice in Wonderland themed dining"
       ],
       "must_try_dishes": [
         "Roast chicken",
-        "seafood dishes"
+        "seafood dishes",
+        "Set meals",
+        "Desserts"
       ],
       "best_for": [
         "family"
       ],
       "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -2054,24 +1902,25 @@
       "cuisine_type": [
         "Japanese"
       ],
-      "price_range": "₹1,000–1,800 per person",
-      "hours": "10:00 AM – 8:00 PM",
+      "price_range": "¥1000–1800",
+      "hours": "10:00 AM – Park closing",
       "area": "Tokyo Disneyland",
       "nearby_landmarks": [
         "Tokyo Disneyland, Tokyo"
       ],
       "highlights": [
-        "Popular quick-service spot"
+        "Casual curry spot"
       ],
       "must_try_dishes": [
-        "Japanese curry with chicken/seafood"
+        "Japanese curry with chicken/seafood",
+        "Japanese curry rice"
       ],
       "best_for": [
         "family",
         "casual"
       ],
       "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -2096,9 +1945,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Ichiran Shinjuku Central East",
@@ -2121,9 +1968,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Cafe Aaliya",
@@ -2146,9 +1991,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Kua Aina Odaiba",
@@ -2169,9 +2012,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Bills Odaiba",
@@ -2193,9 +2034,7 @@
       "best_for": [
         "romantic"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Ocean Club Buffet Decks Tokyo Beach",
@@ -2216,9 +2055,7 @@
       "best_for": [
         "family"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Milan Nataraj Shibuya",
@@ -2245,9 +2082,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Verve Coffee Roasters Shinjuku",
@@ -2270,9 +2105,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Sarabeth's Shinjuku",
@@ -2295,9 +2128,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "The Little Bakery Tokyo",
@@ -2320,9 +2151,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Kushitei Shibuya Stream",
@@ -2343,9 +2172,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Sushi no Ikumi",
@@ -2367,9 +2194,7 @@
       "best_for": [
         "romantic"
       ],
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Shibuya Teppanyaki Rin",
@@ -2391,9 +2216,7 @@
       "best_for": [
         "romantic"
       ],
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "丸天",
@@ -2418,9 +2241,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Oshokujidokoro Irori",
@@ -2446,9 +2267,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "御食事処はんのき食堂",
@@ -2474,9 +2293,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Afuri Shinjuku Lumine",
@@ -2501,9 +2318,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "T's Tantan",
@@ -2531,35 +2346,40 @@
         "authentic"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Ain Soph. Ginza",
       "city": "Tokyo",
       "cuisine_type": [
-        "Japanese",
-        "Vegan"
+        "Vegan",
+        "Japanese"
       ],
-      "price_range": "₹1,500–2,500",
-      "hours": "11:30 AM – 3:00 PM / 5:00 PM – 8:00 PM",
-      "ambience": "Elegant, refined vegan Japanese cuisine",
-      "area": "Ginza",
+      "price_range": "₹1,200–₹2,000",
+      "hours": "11:30 AM – 3:00 PM | 5:00 PM – 8:00 PM",
+      "ambience": "Elegant vegetarian restaurant known for beautifully plated dishes and a calm, sophisticated atmosphere",
+      "area": "Ginza, Tokyo",
       "highlights": [
-        "Premium vegan dining",
-        "Elegant and refined"
+        "Beautifully plated dishes",
+        "Calm sophisticated atmosphere",
+        "Elegant vegetarian restaurant"
       ],
       "must_try_dishes": [
         "Bento set",
-        "fluffy vegan pancakes"
+        "fluffy vegan pancakes",
+        "Vegan Curry",
+        "Seasonal Lunch Set",
+        "Pancakes"
       ],
       "best_for": [
-        "upscale"
+        "relaxed lunch while shopping in Ginza"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [
+        "CITAN Hostel, Tokyo"
       ]
     },
     {
@@ -2567,25 +2387,34 @@
       "city": "Tokyo",
       "cuisine_type": [
         "Japanese",
-        "Buddhist"
+        "Buddhist Vegetarian"
       ],
-      "price_range": "₹1,200–2,000",
-      "hours": "11:00 AM – 4:00 PM | 5 PM - 7:30 PM",
-      "ambience": "Traditional Buddhist vegetarian cuisine",
+      "price_range": "₹900–₹1,500",
+      "hours": "11:00 AM – 4:00 PM | 5:00 PM – 7:30 PM",
+      "ambience": "A peaceful Japanese vegetarian restaurant located inside CHABARA, offering traditional Buddhist-inspired cuisine with seasonal ingredients and a calm atmosphere",
       "highlights": [
-        "Traditional Buddhist (shojin ryori) vegetarian cuisine"
+        "Located inside CHABARA",
+        "Buddhist-inspired cuisine",
+        "Seasonal ingredients",
+        "Calm atmosphere"
       ],
       "must_try_dishes": [
         "Seasonal veggie set meals",
-        "tofu dishes"
+        "tofu dishes",
+        "Shojin Ryori Set Meal",
+        "Seasonal Vegetable Tempura",
+        "Sesame Tofu"
       ],
       "best_for": [
-        "authentic",
-        "cultural"
+        "authentic Japanese vegetarian dining experience"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "area": "Akihabara, Tokyo",
+      "nearby_landmarks": [
+        "CITAN Hostel, Tokyo"
       ]
     },
     {
@@ -2606,9 +2435,7 @@
         "authentic"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Falafel Brothers Shibuya",
@@ -2627,9 +2454,7 @@
         "quick"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "2foods Ginza",
@@ -2648,9 +2473,7 @@
         "contemporary"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Kyushu Jangara Ramen",
@@ -2670,9 +2493,7 @@
         "quick"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "R.O.STAR Toyosu Front",
@@ -2691,9 +2512,7 @@
         "quick"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Ain Soph. Toyosu",
@@ -2712,9 +2531,7 @@
         "relaxed"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Tendon Tenya Akihabara",
@@ -2735,9 +2552,7 @@
         "local"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Cafe Asan",
@@ -2756,33 +2571,35 @@
         "cozy"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Casbah Food Court",
       "city": "Tokyo",
       "cuisine_type": [
-        "Indian"
+        "Indian-inspired"
       ],
-      "price_range": "₹800–1,200",
-      "hours": "10:00 AM – 7:00 PM",
+      "price_range": "¥1200–2000",
+      "hours": "10:00 AM – Park closing",
       "ambience": "Safest vegetarian option inside park",
-      "area": "DisneySea",
+      "area": "Tokyo DisneySea",
       "highlights": [
-        "Indian-style curry restaurant",
-        "request no meat stock"
+        "Great Indian-inspired flavors"
       ],
       "must_try_dishes": [
-        "Veg curry with rice/naan"
+        "Veg curry with rice/naan",
+        "Curry sets (veg and non-veg)"
       ],
       "best_for": [
-        "safe vegetarian"
+        "family",
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [
+        "Tokyo DisneySea, Tokyo"
       ]
     },
     {
@@ -2791,24 +2608,30 @@
       "cuisine_type": [
         "Italian"
       ],
-      "price_range": "₹1,000–1,500",
+      "price_range": "₹1,000–₹2,000",
       "hours": "9:00 AM – 9:00 PM",
-      "ambience": "Comfortable, filling meal",
-      "area": "DisneySea",
+      "ambience": "Casual Italian-inspired waterfront restaurant with outdoor seating overlooking Mediterranean Harbor",
+      "area": "Mediterranean Harbor, Tokyo DisneySea",
       "highlights": [
-        "Italian-style dining",
-        "customisable"
+        "Outdoor seating overlooking Mediterranean Harbor",
+        "Casual waterfront dining"
       ],
       "must_try_dishes": [
         "Veg pasta",
-        "pizza"
+        "pizza",
+        "Margherita Pizza",
+        "Vegetable Pasta",
+        "Garden Salad"
       ],
       "best_for": [
-        "comfortable"
+        "relaxed lunch with harbour views"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [
+        "Tokyo DisneySea, Tokyo"
       ]
     },
     {
@@ -2833,9 +2656,7 @@
         "relaxed"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Mr. Farmer Tokyo",
@@ -2859,9 +2680,7 @@
         "healthy"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Chaya Natural & Wild Table",
@@ -2882,9 +2701,7 @@
         "wholesome"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Chibo Okonomiyaki Ikspiari",
@@ -2903,9 +2720,7 @@
         "comfortable"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Guzman y Gomez Ikspiari",
@@ -2922,9 +2737,7 @@
         "customizable"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Saizeriya Ikspiari",
@@ -2941,9 +2754,7 @@
         "budget"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Monsoon Cafe Ikspiari",
@@ -2960,9 +2771,7 @@
         "relaxed"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Daigo",
@@ -2984,9 +2793,7 @@
         "cultural"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "The Vegan Junk Food Bar Tokyo",
@@ -3010,9 +2817,7 @@
         "relaxed"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "T's Restaurant Jiyugaoka",
@@ -3037,9 +2842,7 @@
         "safe"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Ain Soph. Soar Ikebukuro",
@@ -3063,9 +2866,7 @@
         "relaxed"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Saido Vegan Restaurant",
@@ -3088,9 +2889,7 @@
         "premium"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Mercer Brunch Ginza Terrace",
@@ -3113,9 +2912,7 @@
         "stylish"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Komeda's Coffee Shimbashi",
@@ -3135,9 +2932,7 @@
         "relaxed"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Cafe de l'Ambre",
@@ -3155,9 +2950,7 @@
         "classic"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Brown Rice by Neal's Yard",
@@ -3177,8 +2970,1424 @@
         "wholesome"
       ],
       "vegetarian_friendly": true,
+      "source_files": []
+    },
+    {
+      "name": "T's Tantan Ikspiari",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese",
+        "Vegan"
+      ],
+      "price_range": "₹700–1200 per person",
+      "hours": "10:00 AM – 9:30 PM",
+      "ambience": "Comforting vegan ramen spot",
+      "area": "Disney Resort area",
+      "nearby_landmarks": [
+        "Tokyo DisneySea, Tokyo"
+      ],
+      "highlights": [
+        "Vegan ramen specialist",
+        "Rich broths",
+        "Beautifully balanced Japanese flavours"
+      ],
+      "must_try_dishes": [
+        "Golden sesame ramen",
+        "Vegan gyoza",
+        "Spicy tantan ramen"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
       "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Indian Curry House Spice Garden",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹800–1400 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Casual Indian restaurant",
+      "area": "Near DisneySea area",
+      "nearby_landmarks": [
+        "Tokyo DisneySea, Tokyo"
+      ],
+      "highlights": [
+        "Reliable vegetarian curries",
+        "Casual sit-down dining"
+      ],
+      "must_try_dishes": [
+        "Paneer curry",
+        "Vegetable biryani",
+        "Naan baskets"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ain Soph. Journey",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Vegan",
+        "Café"
+      ],
+      "price_range": "₹1000–1800 per person",
+      "hours": "11:30 AM – 3:30 PM | 6 PM – 9 PM",
+      "ambience": "Stylish vegan café with soft lighting and cozy interiors",
+      "area": "Near DisneySea area",
+      "nearby_landmarks": [
+        "Tokyo DisneySea, Tokyo"
+      ],
+      "highlights": [
+        "Beautifully plated dishes",
+        "Calm and refreshing atmosphere"
+      ],
+      "must_try_dishes": [
+        "Taco rice",
+        "Soy karaage",
+        "Vegan pancakes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Indian Restaurant Mumbai Yotsuya",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹1200–2200 per person",
+      "hours": "11:00 AM – 10:00 PM (Mon–Fri) | 11:00 AM – 9:00 PM (Sat & Sun)",
+      "ambience": "Warm and comforting with relaxed local neighbourhood atmosphere",
+      "area": "Yotsuya, Shinjuku",
+      "highlights": [
+        "Homestyle vegetarian dishes",
+        "Near stay area"
+      ],
+      "must_try_dishes": [
+        "Paneer butter masala",
+        "Garlic naan",
+        "Vegetable biryani"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Brown Rice by Neal's Yard Remedies",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese",
+        "Organic",
+        "Vegetarian"
+      ],
+      "price_range": "₹1,200–₹2,000",
+      "hours": "11:30 AM – 6:00 PM",
+      "ambience": "Elegant organic restaurant focusing on seasonal Japanese ingredients",
+      "area": "Tokyo",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Elegant organic restaurant",
+        "Seasonal Japanese ingredients",
+        "Beautifully presented meals"
+      ],
+      "must_try_dishes": [
+        "Seasonal set meals",
+        "Tofu dishes",
+        "Brown rice bowls",
+        "Seasonal Bento",
+        "Organic Tofu",
+        "Matcha Cheesecake"
+      ],
+      "best_for": [
+        "healthy Japanese vegetarian cuisine"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mr. Farmer Harajuku",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Café",
+        "Vegetarian"
+      ],
+      "price_range": "₹1000–1800 per person",
+      "hours": "10:00 AM – 9:00 PM",
+      "ambience": "Bright and stylish café with youthful Harajuku atmosphere",
+      "area": "Harajuku",
+      "nearby_landmarks": [
+        "Takeshita Street, Tokyo"
+      ],
+      "highlights": [
+        "Fresh vegetables and smoothies",
+        "Beautifully plated healthy meals"
+      ],
+      "must_try_dishes": [
+        "Avocado toast",
+        "Vegan burger",
+        "Smoothie bowls"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Milan Nataraj Harajuku",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Indian",
+        "Vegetarian"
+      ],
+      "price_range": "₹1200–2200 per person",
+      "hours": "11:30 AM – 10:30 PM",
+      "ambience": "Cozy Indian vegetarian restaurant in relaxed setting",
+      "area": "Harajuku / Omotesando",
+      "nearby_landmarks": [
+        "Shibuya Crossing, Tokyo"
+      ],
+      "highlights": [
+        "Organic curries",
+        "Tandoori dishes"
+      ],
+      "must_try_dishes": [
+        "Vegetable curry sets",
+        "Garlic naan",
+        "Paneer tikka"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pizza 4P's Tokyo",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Italian",
+        "Pizza"
+      ],
+      "price_range": "₹1800–3500 per person",
+      "hours": "11:00 AM – 2:00 PM, 5:00 – 9 PM (Mon–Fri) | 11:00 AM – 9:00 PM (Sat & Sun)",
+      "ambience": "Beautifully designed modern pizzeria with elegant contemporary interiors",
+      "area": "Near teamLab Borderless",
+      "nearby_landmarks": [
+        "teamLab Borderless, Tokyo"
+      ],
+      "highlights": [
+        "Fresh handmade cheeses",
+        "Wood-fired pizzas",
+        "Relaxed Tokyo café vibe"
+      ],
+      "must_try_dishes": [
+        "Burrata pizza",
+        "Truffle pizza",
+        "Fresh pasta"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Balcony by 6th",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Modern",
+        "Café"
+      ],
+      "price_range": "₹2200–4000 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Chic all-day dining café with greenery-filled interiors and airy seating",
+      "area": "Near teamLab Borderless",
+      "nearby_landmarks": [
+        "teamLab Borderless, Tokyo"
+      ],
+      "highlights": [
+        "Calm upscale atmosphere",
+        "Beautifully presented modern dishes"
+      ],
+      "must_try_dishes": [
+        "Truffle fries",
+        "Pasta",
+        "Seasonal desserts"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Curry House CoCo Ichibanya Shinjuku",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese",
+        "Curry"
+      ],
+      "price_range": "₹600–1200 per person",
+      "hours": "11 AM – 10:30 PM",
+      "ambience": "Casual and easy-going Japanese curry restaurant",
+      "area": "Shinjuku",
+      "highlights": [
+        "Customizable vegetarian curry options",
+        "Comforting casual dining"
+      ],
+      "must_try_dishes": [
+        "Vegetable curry rice",
+        "Cheese curry",
+        "Seasonal toppings"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Nataraj Shinjuku",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Indian",
+        "Vegetarian"
+      ],
+      "price_range": "₹1,000–₹1,800",
+      "hours": "11:30 AM – 10:00 PM",
+      "ambience": "One of Tokyo's most popular vegetarian Indian restaurants with a warm and welcoming atmosphere",
+      "area": "Shinjuku, Tokyo",
+      "highlights": [
+        "One of Tokyo's most popular vegetarian Indian restaurants",
+        "Warm and welcoming atmosphere"
+      ],
+      "must_try_dishes": [
+        "Vegetable curry platter",
+        "Spinach naan",
+        "Tandoori vegetables",
+        "Vegetarian Thali",
+        "Palak Paneer",
+        "Garlic Naan"
+      ],
+      "best_for": [
+        "authentic vegetarian Indian lunch"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": []
+    },
+    {
+      "name": "Jikasei MENSHO",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese",
+        "Ramen"
+      ],
+      "price_range": "₹900–1500 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Stylish modern ramen restaurant with sleek interiors and refined presentation",
+      "area": "Shinjuku",
+      "highlights": [
+        "Elevated vegetarian ramen bowls",
+        "Rich mushroom-based broths",
+        "Distinctly Tokyo feel"
+      ],
+      "must_try_dishes": [
+        "Vegetarian ramen",
+        "Mushroom broth ramen"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Indian Dining Spice インディアンダイニングスパイス",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹1200–2200 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Cozy Indian restaurant serving comforting vegetarian curries",
+      "area": "Near Shinjuku",
+      "highlights": [
+        "Comforting vegetarian curries",
+        "Freshly baked naan"
+      ],
+      "must_try_dishes": [
+        "Paneer curry",
+        "Dal makhani",
+        "Butter naan"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ichiran Ramen Tokyo",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese",
+        "Ramen"
+      ],
+      "price_range": "¥1000–2000",
+      "hours": "Open 24 hours",
+      "area": "Tokyo Station",
+      "nearby_landmarks": [
+        "Tokyo Station, Tokyo"
+      ],
+      "highlights": [
+        "Perfect quick meal after arrival",
+        "Open 24 hours"
+      ],
+      "must_try_dishes": [
+        "Tonkotsu ramen"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "CoCo Ichibanya Tokyo",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese",
+        "Curry"
+      ],
+      "price_range": "¥800–1500",
+      "hours": "11:00 AM – 10:30 PM",
+      "area": "Tokyo Station",
+      "nearby_landmarks": [
+        "Tokyo Station, Tokyo"
+      ],
+      "highlights": [
+        "Reliable and quick"
+      ],
+      "must_try_dishes": [
+        "Japanese curry"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ichiran Ramen Shibuya",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese",
+        "Ramen"
+      ],
+      "price_range": "¥1000–2000",
+      "hours": "Open 24 hours",
+      "area": "Shibuya",
+      "nearby_landmarks": [
+        "Shibuya Crossing, Tokyo"
+      ],
+      "highlights": [
+        "Great late-night option",
+        "Open 24 hours"
+      ],
+      "must_try_dishes": [
+        "Tonkotsu ramen"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Afuri Ramen Shibuya",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese",
+        "Ramen"
+      ],
+      "price_range": "¥1000–2000",
+      "hours": "11:00 AM – 11:00 PM",
+      "area": "Shibuya",
+      "nearby_landmarks": [
+        "Shibuya Crossing, Tokyo"
+      ],
+      "highlights": [
+        "Light and refreshing ramen"
+      ],
+      "must_try_dishes": [
+        "Yuzu ramen"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Plaza Pavilion Restaurant Tokyo",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese",
+        "Western"
+      ],
+      "price_range": "¥1200–2000",
+      "hours": "11:00 AM – 7:00 PM",
+      "area": "Tokyo Disneyland",
+      "nearby_landmarks": [
+        "Tokyo Disneyland, Tokyo"
+      ],
+      "highlights": [
+        "Great for variety and quick meals"
+      ],
+      "must_try_dishes": [
+        "Japanese sets",
+        "Western sets"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tomorrowland Terrace",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "American"
+      ],
+      "price_range": "¥1000–2000",
+      "hours": "Till park closing",
+      "area": "Tokyo Disneyland",
+      "nearby_landmarks": [
+        "Tokyo Disneyland, Tokyo"
+      ],
+      "highlights": [
+        "Quick and easy dinner"
+      ],
+      "must_try_dishes": [
+        "Burgers",
+        "Fries"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "CoCo Ichibanya Asakusa",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese",
+        "Curry"
+      ],
+      "price_range": "¥800–1500",
+      "hours": "11:00 AM – 11:00 PM",
+      "area": "Asakusa",
+      "nearby_landmarks": [
+        "Senso-ji Temple, Tokyo"
+      ],
+      "highlights": [
+        "Reliable and quick"
+      ],
+      "must_try_dishes": [
+        "Japanese curry"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Magellan's Restaurant",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "¥3000–6000",
+      "hours": "11:00 AM – Park closing",
+      "area": "Tokyo DisneySea",
+      "nearby_landmarks": [
+        "Tokyo DisneySea, Tokyo"
+      ],
+      "highlights": [
+        "Premium dining experience"
+      ],
+      "must_try_dishes": [
+        "Course meals",
+        "International cuisine"
+      ],
+      "best_for": [
+        "romantic",
+        "family"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Zambini Brothers Ristorante",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "¥1200–2000",
+      "hours": "9:00 AM – Park closing",
+      "area": "Tokyo DisneySea",
+      "nearby_landmarks": [
+        "Tokyo DisneySea, Tokyo"
+      ],
+      "highlights": [
+        "Casual Italian dining"
+      ],
+      "must_try_dishes": [
+        "Pasta",
+        "Pizza"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Horizon Bay Restaurant",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Western",
+        "Japanese"
+      ],
+      "price_range": "¥1500–2500",
+      "hours": "Till park closing",
+      "area": "Tokyo DisneySea",
+      "nearby_landmarks": [
+        "Tokyo DisneySea, Tokyo"
+      ],
+      "highlights": [
+        "Relaxed dinner option"
+      ],
+      "must_try_dishes": [
+        "Western/Japanese meals"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ichiran Shinjuku",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese",
+        "Ramen"
+      ],
+      "price_range": "¥1000–2000",
+      "hours": "Open 24 hours",
+      "area": "Shinjuku",
+      "nearby_landmarks": [
+        "Shinjuku Station, Tokyo"
+      ],
+      "highlights": [
+        "Great post-trip comfort meal",
+        "Open 24 hours"
+      ],
+      "must_try_dishes": [
+        "Tonkotsu ramen"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Uobei Shinjuku",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese",
+        "Sushi"
+      ],
+      "price_range": "¥1000–2000",
+      "hours": "11:00 AM – 11:00 PM",
+      "area": "Shinjuku",
+      "nearby_landmarks": [
+        "Shinjuku Station, Tokyo"
+      ],
+      "highlights": [
+        "Fun sushi experience"
+      ],
+      "must_try_dishes": [
+        "Sushi platters"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Afuri Ramen Shinjuku",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese",
+        "Ramen"
+      ],
+      "price_range": "¥1000–2000",
+      "hours": "10:00 AM – 10:00 PM",
+      "area": "Shinjuku",
+      "nearby_landmarks": [
+        "Shinjuku Station, Tokyo"
+      ],
+      "highlights": [
+        "Light and refreshing"
+      ],
+      "must_try_dishes": [
+        "Yuzu ramen"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sembikiya Azabudai Hills",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Cafe",
+        "Japanese"
+      ],
+      "price_range": "¥1500–3000 per person",
+      "hours": "~11:00 AM – 8:00 PM",
+      "area": "Azabudai Hills",
+      "nearby_landmarks": [
+        "teamLab Borderless Tokyo, Tokyo"
+      ],
+      "highlights": [
+        "Premium aesthetic café-style lunch and desserts",
+        "Located inside Azabudai Hills complex",
+        "Veg friendly"
+      ],
+      "must_try_dishes": [
+        "Fruit sandwiches",
+        "Light meals",
+        "Desserts"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "NANAN Tokyo",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Cafe",
+        "Health food"
+      ],
+      "price_range": "¥1000–2000 per person",
+      "hours": "~11:00 AM – 6:30 PM (closed on Sunday)",
+      "area": "Azabudai Hills",
+      "nearby_landmarks": [
+        "teamLab Borderless Tokyo, Tokyo"
+      ],
+      "highlights": [
+        "Clean, modern, health-focused meal",
+        "Veg options available"
+      ],
+      "must_try_dishes": [
+        "Rice flour bagels",
+        "Gluten-free plates"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Gyukatsu Motomura Shinjuku",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "¥1500–2500",
+      "hours": "11:00 AM – 10:00 PM",
+      "area": "Shinjuku",
+      "nearby_landmarks": [
+        "Shinjuku Station, Tokyo"
+      ],
+      "highlights": [
+        "Famous Japanese beef cutlet"
+      ],
+      "must_try_dishes": [
+        "Gyukatsu set"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tsurutontan Shinjuku",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese",
+        "Udon"
+      ],
+      "price_range": null,
+      "hours": "11:00 AM – 11:00 PM",
+      "area": "Shinjuku",
+      "nearby_landmarks": [
+        "Shinjuku Station, Tokyo"
+      ],
+      "highlights": [
+        "Upscale udon experience"
+      ],
+      "must_try_dishes": [
+        "Curry udon"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Streamer Coffee Company Akihabara",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "¥500–1500",
+      "hours": "9:00 AM – 8:00 PM",
+      "area": "Akihabara",
+      "nearby_landmarks": [
+        "Akihabara Station, Tokyo"
+      ],
+      "highlights": [
+        "Perfect recharge stop"
+      ],
+      "must_try_dishes": [
+        "Latte",
+        "Desserts"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Cafe Annon Tokyo",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Cafe",
+        "Japanese"
+      ],
+      "price_range": "¥1000–2000",
+      "hours": "9:00 AM – 10:45 PM",
+      "area": "Akihabara",
+      "nearby_landmarks": [
+        "Akihabara Station, Tokyo"
+      ],
+      "highlights": [
+        "Great dessert break"
+      ],
+      "must_try_dishes": [
+        "Pancakes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kailash Asian Dining & Bar",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Indian",
+        "Asian"
+      ],
+      "price_range": "₹700–₹1,400",
+      "hours": "11:00 AM – 10:30 PM",
+      "ambience": "Casual Indian restaurant offering familiar vegetarian flavours in the heart of Tokyo",
+      "area": "Near CITAN Hostel, Nihombashi",
+      "nearby_landmarks": [
+        "CITAN Hostel, Tokyo"
+      ],
+      "highlights": [
+        "Familiar vegetarian flavours",
+        "Casual setting"
+      ],
+      "must_try_dishes": [
+        "Paneer Butter Masala",
+        "Vegetable Biryani",
+        "Garlic Naan"
+      ],
+      "best_for": [
+        "comfort food after the Shinkansen journey"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "2foods Ginza Loft",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Vegan",
+        "Japanese",
+        "Fusion"
+      ],
+      "price_range": "₹800–₹1,400",
+      "hours": "11:00 AM – 8:15 PM",
+      "ambience": "Modern plant-based café with a bright, contemporary setting offering innovative Japanese-Western fusion dishes",
+      "area": "Ginza, Tokyo",
+      "nearby_landmarks": [
+        "CITAN Hostel, Tokyo"
+      ],
+      "highlights": [
+        "Modern plant-based café",
+        "Innovative Japanese-Western fusion",
+        "Bright contemporary setting"
+      ],
+      "must_try_dishes": [
+        "Plant-Based Omurice",
+        "Soy Keema Curry",
+        "Vegan Cheesecake"
+      ],
+      "best_for": [
+        "trendy lunch with modern Japanese plant-based cuisine"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "T's Tantan Tokyo Station",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Vegan",
+        "Japanese",
+        "Ramen"
+      ],
+      "price_range": "₹700–₹1,200",
+      "hours": "10:00 AM – 9:30 PM",
+      "ambience": "Famous vegan ramen restaurant loved by locals and visitors alike",
+      "area": "Tokyo Station",
+      "nearby_landmarks": [
+        "Tokyo Station, Tokyo"
+      ],
+      "highlights": [
+        "Famous vegan ramen restaurant",
+        "Loved by locals and visitors"
+      ],
+      "must_try_dishes": [
+        "Vegan Tantan Ramen",
+        "Gyoza",
+        "Sesame Rice Bowl"
+      ],
+      "best_for": [
+        "authentic Japanese vegetarian ramen"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "T's Restaurant Shibuya",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Vegan",
+        "Japanese",
+        "International"
+      ],
+      "price_range": "₹900–₹1,500",
+      "hours": "11:30 AM – 9:00 PM",
+      "ambience": "One of Tokyo's most respected vegetarian restaurants serving Japanese and international favourites",
+      "area": "Shibuya, Tokyo",
+      "nearby_landmarks": [],
+      "highlights": [
+        "One of Tokyo's most respected vegetarian restaurants",
+        "Japanese and international menu"
+      ],
+      "must_try_dishes": [
+        "Vegan Ramen",
+        "Soy Karaage",
+        "Curry Rice"
+      ],
+      "best_for": [
+        "authentic Japanese vegetarian dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Blue Cup Coffee Toyosu",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹800–₹1,500",
+      "hours": "8:00 AM – 7:00 PM",
+      "ambience": "Waterfront café with a relaxed atmosphere overlooking Toyosu's modern urban landscape",
+      "area": "Toyosu, Tokyo",
+      "nearby_landmarks": [
+        "TeamLab Planets TOKYO DMM, Tokyo"
+      ],
+      "highlights": [
+        "Waterfront café",
+        "Relaxed atmosphere",
+        "Views of Toyosu's urban landscape"
+      ],
+      "must_try_dishes": [
+        "Avocado Sandwich",
+        "Seasonal Pasta",
+        "Matcha Latte"
+      ],
+      "best_for": [
+        "relaxed lunch with waterfront views"
+      ],
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "NIHONBASHI BREWERY NINGYOCHO",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Gastropub",
+        "Craft Beer"
+      ],
+      "price_range": "₹1,500–₹3,000",
+      "hours": "11:00 AM – 2:00 PM, 5:00 PM – 11:00 PM (Mon–Wed) | 11:00 AM – 11:00 PM (Thu–Sat) | 11:00 AM – 10:00 PM (Sun)",
+      "ambience": "Stylish craft brewery and gastropub with a modern industrial design, offering a relaxed atmosphere and an excellent selection of house-brewed beverages and comfort food",
+      "area": "Nihombashi, Tokyo",
+      "nearby_landmarks": [
+        "CITAN Hostel, Tokyo"
+      ],
+      "highlights": [
+        "House-brewed craft beers",
+        "Modern industrial design",
+        "Relaxed gastropub atmosphere"
+      ],
+      "must_try_dishes": [
+        "Truffle Fries",
+        "Margherita Pizza",
+        "Seasonal Craft Beer Pairings"
+      ],
+      "best_for": [
+        "relaxed dinner and craft beer experience near Nihonbashi"
+      ],
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "obi Café & Bar",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Café",
+        "Bar"
+      ],
+      "price_range": "₹800–₹1,800",
+      "hours": "9:00 AM – 3:00 PM, 6:00 – 10:30 PM (Mon–Fri) | 9:00 AM – 10:30 PM (Sat) | Closed on Sun",
+      "ambience": "Trendy all-day café and bar with minimalist interiors, popular among locals and travellers looking for a casual yet stylish dining experience",
+      "area": "Near CITAN Hostel, Nihombashi",
+      "nearby_landmarks": [
+        "CITAN Hostel, Tokyo"
+      ],
+      "highlights": [
+        "Minimalist interiors",
+        "All-day café and bar",
+        "Popular with locals and travellers"
+      ],
+      "must_try_dishes": [
+        "Avocado Toast",
+        "Seasonal Pasta",
+        "House Coffee & Desserts"
+      ],
+      "best_for": [
+        "casual dinner",
+        "coffee",
+        "relaxed evening atmosphere"
+      ],
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "天鴻餃子房 東日本橋店",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Chinese",
+        "Japanese",
+        "Dumplings"
+      ],
+      "price_range": "₹700–₹1,500",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "Popular local Chinese-Japanese restaurant known for its handmade dumplings and authentic comfort food in a casual setting",
+      "area": "Higashi-Nihombashi, Tokyo",
+      "nearby_landmarks": [
+        "CITAN Hostel, Tokyo"
+      ],
+      "highlights": [
+        "Handmade dumplings",
+        "Authentic comfort food",
+        "Casual local setting"
+      ],
+      "must_try_dishes": [
+        "Vegetable Gyoza",
+        "Fried Rice",
+        "Seasonal Stir-Fried Vegetables"
+      ],
+      "best_for": [
+        "authentic local dining and handmade dumplings near the hostel"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Asakusa Kagetsudo",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese",
+        "Bakery"
+      ],
+      "price_range": "₹300–₹700",
+      "hours": "9:00 AM – 4:30 PM",
+      "ambience": "Historic bakery famous for its giant melon-pan and traditional Japanese baked treats",
+      "area": "Asakusa, Tokyo",
+      "nearby_landmarks": [
+        "Senso-ji Temple, Tokyo"
+      ],
+      "highlights": [
+        "Famous for giant melon-pan",
+        "Historic bakery",
+        "Traditional Japanese baked treats"
+      ],
+      "must_try_dishes": [
+        "Giant Melon Pan",
+        "Matcha Sweet Bread",
+        "Seasonal Pastries"
+      ],
+      "best_for": [
+        "light lunch or afternoon snack"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Curry wa Nomimono Akihabara",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese",
+        "Curry"
+      ],
+      "price_range": "₹600–₹1,000",
+      "hours": "11:00 AM – 4:00 PM | 5:00 PM – 9:30 PM",
+      "ambience": "Popular casual curry restaurant known for hearty Japanese-style curry meals",
+      "area": "Akihabara, Tokyo",
+      "nearby_landmarks": [
+        "Akihabara Station, Tokyo"
+      ],
+      "highlights": [
+        "Popular casual curry restaurant",
+        "Hearty Japanese-style curry"
+      ],
+      "must_try_dishes": [
+        "Vegetable Curry Rice",
+        "Egg Curry",
+        "Cheese Curry"
+      ],
+      "best_for": [
+        "casual Japanese comfort food"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "CRAFTALE",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Fine Dining",
+        "Japanese",
+        "Seasonal"
+      ],
+      "price_range": "₹2,500–₹5,000",
+      "hours": "6:00 PM – 11:00 PM (Wednesday Closed)",
+      "ambience": "Modern fine-dining restaurant offering beautifully presented seasonal dishes in an intimate setting",
+      "area": "Near CITAN Hostel, Nihombashi",
+      "nearby_landmarks": [
+        "CITAN Hostel, Tokyo"
+      ],
+      "highlights": [
+        "Fine-dining experience",
+        "Beautifully presented seasonal dishes",
+        "Intimate setting"
+      ],
+      "must_try_dishes": [
+        "Seasonal Vegetable Course",
+        "Mushroom Specialities",
+        "Chef's Tasting Menu"
+      ],
+      "best_for": [
+        "memorable final dinner in Tokyo"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "B by BROOKLYN BREWERY",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "American",
+        "Bar",
+        "Gastropub"
+      ],
+      "price_range": "₹1,500–₹3,000",
+      "hours": "4:00 AM – 11:00 PM",
+      "ambience": "Trendy urban restaurant with stylish interiors and a lively atmosphere",
+      "area": "Near CITAN Hostel, Nihombashi",
+      "nearby_landmarks": [
+        "CITAN Hostel, Tokyo"
+      ],
+      "highlights": [
+        "Trendy urban restaurant",
+        "Stylish interiors",
+        "Lively atmosphere"
+      ],
+      "must_try_dishes": [
+        "Vegetable Pizza",
+        "Truffle Fries",
+        "Seasonal Pasta"
+      ],
+      "best_for": [
+        "casual final-night dinner"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "BERTH COFFEE",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹600–₹1,200",
+      "hours": "8:00 AM – 6:00 PM",
+      "ambience": "Stylish neighbourhood café located within walking distance of CITAN, known for specialty coffee and freshly baked pastries",
+      "area": "Nihombashi, Tokyo",
+      "nearby_landmarks": [
+        "CITAN Hostel, Tokyo"
+      ],
+      "highlights": [
+        "Specialty coffee",
+        "Freshly baked pastries",
+        "Walking distance from CITAN"
+      ],
+      "must_try_dishes": [
+        "Croissant",
+        "Avocado Toast",
+        "Cappuccino"
+      ],
+      "best_for": [
+        "relaxed final breakfast before heading to the airport"
+      ],
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Magellan's",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "International",
+        "Fine Dining"
+      ],
+      "price_range": "₹2,000–₹4,000",
+      "hours": "11:00 AM – 7:30 PM",
+      "ambience": "One of DisneySea's most iconic restaurants, themed around an explorer's society with stunning interiors and elegant décor",
+      "area": "Mediterranean Harbor, Tokyo DisneySea",
+      "nearby_landmarks": [
+        "Tokyo DisneySea, Tokyo"
+      ],
+      "highlights": [
+        "Iconic DisneySea restaurant",
+        "Explorer's society theme",
+        "Stunning interiors and elegant décor"
+      ],
+      "must_try_dishes": [
+        "Seasonal Vegetable Entrée",
+        "Garden Salad",
+        "Bread Basket"
+      ],
+      "best_for": [
+        "signature DisneySea dining experience",
+        "premium DisneySea dining experience"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Café Portofino",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Italian",
+        "Café"
+      ],
+      "price_range": "₹1,200–₹2,200",
+      "hours": "10:00 AM – 8:30 PM",
+      "ambience": "Charming Italian café inspired by a coastal fishing village",
+      "area": "Mediterranean Harbor, Tokyo DisneySea",
+      "nearby_landmarks": [
+        "Tokyo DisneySea, Tokyo"
+      ],
+      "highlights": [
+        "Inspired by a coastal fishing village",
+        "Charming Italian café"
+      ],
+      "must_try_dishes": [
+        "Vegetable Pasta",
+        "Seasonal Salad",
+        "Garlic Bread"
+      ],
+      "best_for": [
+        "casual Italian-style lunch",
+        "casual dinner before evening shows"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ristorante di Canaletto",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Italian",
+        "Fine Dining"
+      ],
+      "price_range": "₹2,000–₹4,000",
+      "hours": "11:00 AM – 7:30 PM",
+      "ambience": "Elegant Venetian-style restaurant overlooking the waterways and gondolas of Mediterranean Harbor",
+      "area": "Mediterranean Harbor, Tokyo DisneySea",
+      "nearby_landmarks": [
+        "Tokyo DisneySea, Tokyo"
+      ],
+      "highlights": [
+        "Venetian-style restaurant",
+        "Overlooks waterways and gondolas of Mediterranean Harbor"
+      ],
+      "must_try_dishes": [
+        "Vegetable Risotto",
+        "Seasonal Pasta",
+        "Garden Salad"
+      ],
+      "best_for": [
+        "romantic waterfront dinner"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -3190,80 +4399,54 @@
       "hours": "6am-5pm every day",
       "entry_fee": "Free admission",
       "recommended_duration": "Not specified",
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Akihabara district",
       "city": "Tokyo",
       "description": "Anime capital of Tokyo",
       "hours": "24/7",
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/Detailed Final Itinerary for Japan_05052024.pdf"
-      ],
+      "source_files": [],
       "entry_fee": "Free",
       "recommended_duration": "A couple of hours"
     },
     {
       "name": "Ueno Park",
       "city": "Tokyo",
-      "description": "Peaceful green space perfect for relaxed evening stroll",
-      "hours": "Various",
+      "description": "One of Tokyo's best cherry blossom viewing spots, perfect for a relaxed hanami evening.",
+      "hours": "Open all day",
       "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ],
       "entry_fee": "Free",
-      "recommended_duration": "45 mins"
+      "recommended_duration": "1–2 hours"
     },
     {
       "name": "Shibuya Crossing",
       "city": "Tokyo",
-      "description": "World's busiest pedestrian crossing",
-      "hours": "24 hours",
+      "description": "One of the world's most famous intersections where hundreds of people surge across from every direction simultaneously beneath giant digital screens and neon advertisements.",
+      "hours": "Open 24 Hours",
       "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Azhar_Japan_All Inclusive Guide.docx",
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ],
       "entry_fee": "Free",
-      "recommended_duration": "30 mins"
+      "recommended_duration": "30–60 minutes"
     },
     {
       "name": "Shinjuku Gyoen garden",
       "city": "Tokyo",
       "description": "Garden to view the cherry blossoms",
       "hours": "9am-4pm everyday",
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Team lab borderless",
       "city": "Tokyo",
       "description": "Digital art museum",
       "hours": "9am-9pm Sun-Mon, closed on Tuesday",
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf"
-      ],
+      "source_files": [],
       "entry_fee": "Tickets bought online",
       "recommended_duration": "Not specified"
     },
@@ -3271,10 +4454,7 @@
       "name": "Mt Fuji",
       "city": "Tokyo",
       "description": "Day trip to Mt Fuji and hot springs",
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf"
-      ],
+      "source_files": [],
       "hours": "Day trip tour",
       "recommended_duration": "Full day"
     },
@@ -3285,21 +4465,18 @@
       "hours": "Open 24 hrs (Main hall 6 AM–5 PM)",
       "entry_fee": "Free",
       "recommended_duration": "60–75 minutes",
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Tokyo DisneySea",
       "city": "Tokyo",
-      "description": "One of the most visually stunning Disney parks globally — themed around oceans, exploration, and storytelling",
-      "hours": "9:00 AM – 9:00 PM",
+      "description": "A world-class theme park inspired by myths, legends, and stories connected to the sea, combining breathtaking architecture, immersive themed lands, thrilling rides, and world-class entertainment. Divided into themed ports including Mediterranean Harbor, Mysterious Island, Arabian Coast, Mermaid Lagoon, and American Waterfront.",
+      "hours": "Approximately 09:00 AM (check official schedule)",
       "recommended_duration": "Full day",
       "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Azhar_Japan_All Inclusive Guide.docx",
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ],
       "entry_fee": "1-Day Passport Ticket"
     },
@@ -3310,37 +4487,27 @@
       "hours": "9:00 AM – 5:00 PM",
       "entry_fee": "Free",
       "recommended_duration": "1 hour",
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "teamLab Borderless",
       "city": "Tokyo",
-      "description": "Immersive digital art universe with interactive, surreal, and visually stunning experiences",
-      "hours": "11:00 AM onwards (Tuesday Closed)",
-      "recommended_duration": "3 hours",
+      "description": "MORI Building Digital Art Museum featuring immersive digital art installations.",
+      "hours": "Entry at 11:30 AM (fixed)",
+      "recommended_duration": "2–2.5 hours",
       "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Shinjuku Gyoen National Garden",
       "city": "Tokyo",
-      "description": "One of Tokyo's most serene parks with Japanese, English, and French-style gardens",
-      "hours": "9:00 AM – 6:00 PM",
+      "description": "Beautiful national garden ideal for a relaxed stroll under cherry blossoms.",
+      "hours": "Open daily",
       "entry_fee": "¥500",
-      "recommended_duration": "1.5 hours",
+      "recommended_duration": "2 hours",
       "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/All Inclusive Guide- Japan_PN.pdf",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -3350,9 +4517,7 @@
       "hours": "9am-6:30pm every day",
       "entry_fee": "Tickets bought online",
       "recommended_duration": "Full day",
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Disneyland",
@@ -3361,43 +4526,31 @@
       "hours": "8am-10pm every day",
       "entry_fee": "Tickets bought online",
       "recommended_duration": "Full day",
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tokyo Disney Sea",
       "city": "Tokyo",
       "description": "Disney theme park",
-      "source_files": [
-        "Japan/Detailed Final Itinerary for Japan_05052024.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Senso-ji Temple",
       "city": "Tokyo",
-      "description": "Tokyo's oldest temple",
-      "hours": "Various",
+      "description": "Tokyo's oldest and most revered Buddhist temple, welcoming visitors through the iconic Kaminarimon (Thunder Gate) marked by its giant red lantern. Incense-filled grounds offering a cultural experience worlds apart from Tokyo's futuristic districts.",
+      "hours": "Temple Grounds: Open 24 Hours | Main Hall: 6:00 AM – 5:00 PM",
       "entry_fee": "Free",
-      "recommended_duration": "1 hour",
+      "recommended_duration": "1–2 hours",
       "source_files": [
-        "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx",
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Asakusa district",
       "city": "Tokyo",
       "description": "Traditional district with vibrant Nakamise-dori shopping street lined with traditional Japanese shops",
-      "source_files": [
-        "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ],
+      "source_files": [],
       "recommended_duration": "1 hour"
     },
     {
@@ -3406,66 +4559,51 @@
       "description": "Interactive digital art museum",
       "hours": "9am-10pm, Closed on Wednesday",
       "recommended_duration": "3-4 hours",
-      "source_files": [
-        "Japan/Detailed Final Itinerary for Japan_05052024.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Toyosu market",
       "city": "Tokyo",
       "description": "Huge venue with eateries, shops and observation deck to overlook wholesale seafood auctions",
-      "source_files": [
-        "Japan/Detailed Final Itinerary for Japan_05052024.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tokyo Imperial Palace gardens",
       "city": "Tokyo",
       "description": "Palace gardens (palace itself not accessible)",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Japan/Detailed Final Itinerary for Japan_05052024.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Harajuku",
       "city": "Tokyo",
       "description": "A very prominent youth fashion district- Trendy youth-oriented shops line Cat Street and other smaller backstreets. Many luxury brands have stores along Omotesando",
       "recommended_duration": "Evening",
-      "source_files": [
-        "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ],
+      "source_files": [],
       "hours": "11:00 am to 8:00 pm"
     },
     {
       "name": "Hachiko Statue",
       "city": "Tokyo",
-      "description": "Iconic loyalty statue of famous dog",
-      "hours": "24 hours",
+      "description": "Located beside Shibuya Station, this beloved statue commemorates Hachiko, Japan's famously loyal dog.",
+      "hours": "Open all day",
       "entry_fee": "Free",
-      "recommended_duration": "15 mins",
+      "recommended_duration": "15–30 mins",
       "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Takeshita Street",
       "city": "Tokyo",
-      "description": "Vibrant shopping street in Harajuku with quirky shops",
-      "hours": "Various",
+      "description": "Tokyo's most colourful and youthful neighbourhood in Harajuku, famous for quirky fashion boutiques, character stores, themed cafés, and creative street culture.",
+      "hours": "Open 24 Hours (Most Shops: 10:00 AM – 8:00 PM)",
       "entry_fee": "Free",
-      "recommended_duration": "30 mins",
+      "recommended_duration": "1–2 hours",
       "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -3475,10 +4613,7 @@
       "hours": "Varies by shop",
       "entry_fee": "Free",
       "recommended_duration": "2 hours",
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Meiji Shrine",
@@ -3487,23 +4622,18 @@
       "hours": "Sunrise – Sunset",
       "entry_fee": "Free",
       "recommended_duration": "2 hours",
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Nakamise Street",
       "city": "Tokyo",
-      "description": "Traditional street for browsing snacks and souvenirs",
-      "hours": "Various",
+      "description": "Traditional shopping lane leading toward Sensō-ji, lined with snack stalls, souvenir shops, handcrafted fans, yukatas, lanterns, and local sweets.",
+      "hours": "Most shops open around 9:00 AM – 8:00 PM",
       "entry_fee": "Free",
-      "recommended_duration": "30 mins",
+      "recommended_duration": "1 hour",
       "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -3513,23 +4643,17 @@
       "hours": "Open 24 hours",
       "entry_fee": "Free",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Akihabara",
       "city": "Tokyo",
-      "description": "Tokyo's electric town- anime, gaming, gadgets, and a completely different energy",
-      "hours": "Varies by shop",
+      "description": "Tokyo's anime, manga, and gaming hub.",
+      "hours": "Open all day",
       "entry_fee": "Free",
-      "recommended_duration": "2-3 hours",
+      "recommended_duration": "2–3 hours",
       "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -3537,70 +4661,54 @@
       "city": "Tokyo",
       "description": "Spot the world's largest Time Turner",
       "hours": "11:00 am - 9:00 pm",
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Harry Potter Café",
       "city": "Tokyo",
       "description": "Wizard-themed treats",
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Akasaka ACT Theatre",
       "city": "Tokyo",
       "description": "Enjoy the live production Harry Potter and the Cursed Child",
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Asakusa",
       "city": "Tokyo",
       "description": "Visit the Asakusa Culture and Sightseeing Center with 8th-floor observation terrace offering views of Asakusa and Tokyo Sky Tree",
       "hours": "10 am to 8 pm",
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "teamLab Planets",
       "city": "Tokyo",
       "description": "A digital art museum known for its immersive and interactive exhibits that blur the lines between art and technology",
       "hours": "09:00 am to 10:00 pm",
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Shibuya Scramble Crossing",
       "city": "Tokyo",
       "description": "Known for its iconic scramble crossing and Hachiko statue",
       "hours": "10:00 am to 9:00 pm",
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Warner Bros. Studio Tour",
       "city": "Tokyo",
       "description": "Immerse yourself in the behind-the-scenes magic of the Harry Potter films. Enjoy themed food and shopping",
       "hours": "8:30 am to 7:00 pm",
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Shibuya District",
       "city": "Tokyo",
       "description": "Known for its iconic scramble crossing and Hachiko statue",
       "recommended_duration": "Evening",
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Asakusa Culture and Sightseeing Center",
@@ -3609,9 +4717,7 @@
       "hours": "10am to 8pm",
       "entry_fee": "free",
       "recommended_duration": "1 hour",
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Meiji Jingu Shrine",
@@ -3620,9 +4726,7 @@
       "hours": "Sunrise – Sunset",
       "entry_fee": "Free",
       "recommended_duration": "1 hour",
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Tokyo Skytree",
@@ -3630,30 +4734,27 @@
       "description": "One of the tallest towers in the world with breathtaking panoramic views",
       "hours": "Various",
       "recommended_duration": "1.5 hours",
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Tokyo Disneyland",
       "city": "Tokyo",
-      "description": "Magical theme park with rides, shows, themed lands, and immersive storytelling",
-      "hours": "9:00 AM – 9:00 PM",
+      "description": "Magical Disney theme park with seasonal Spring and Easter themes. Features Pooh's Hunny Hunt, Monsters Inc., Splash Mountain, Big Thunder Mountain, Pirates of the Caribbean, and parades.",
+      "hours": "8:00 AM – Park closing",
       "recommended_duration": "Full day",
       "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Shibuya Sky",
       "city": "Tokyo",
-      "description": "A spectacular open-air observation deck offering 360° panoramic views of Tokyo",
-      "hours": "10 AM – 10:30 PM",
-      "entry_fee": "~¥2,000",
-      "recommended_duration": "1-2 hours",
+      "description": "Observation deck offering spectacular sunset and night views over Tokyo.",
+      "hours": "10:00 AM – 10:30 PM",
+      "entry_fee": "INR 1,200–1,500",
+      "recommended_duration": "1 hour",
       "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -3663,9 +4764,7 @@
       "hours": "9 AM – 4 PM",
       "entry_fee": "Free",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Oshino Hakkai Village",
@@ -3674,9 +4773,7 @@
       "hours": "9 AM – 5 PM",
       "entry_fee": "Free",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Lake Kawaguchiko",
@@ -3685,9 +4782,7 @@
       "hours": "Open 24 hours",
       "entry_fee": "Free",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Mt. Fuji Panoramic Ropeway",
@@ -3696,9 +4791,7 @@
       "hours": "9 AM – 5 PM",
       "entry_fee": "~¥900",
       "recommended_duration": "30 minutes",
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Pepper Parlor",
@@ -3706,9 +4799,7 @@
       "description": "A futuristic café where humanoid robots interact, serve, and entertain- a softer, modern alternative to the iconic Robot Restaurant",
       "hours": "11:00 AM – 10:00 PM",
       "entry_fee": "₹1,000–1,800",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Shibuya Sky Observatory",
@@ -3716,9 +4807,7 @@
       "description": "360° open-air rooftop views of Tokyo skyline transforming from sunset → night",
       "hours": "Entry Slot: 7:40 PM – 7:59 PM",
       "entry_fee": "Pre-paid via Klook",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "teamLab Planets TOKYO",
@@ -3727,17 +4816,19 @@
       "hours": "Entry Time: 12:00 PM",
       "entry_fee": "Pre-paid",
       "recommended_duration": "1.5–2 hours",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Akihabara Electric Town",
       "city": "Tokyo",
-      "description": "Welcome to Tokyo's anime and gaming capital- multi-storey arcades, manga shops, figurines, and glowing neon everywhere you look",
+      "description": "World-famous hub of anime, manga, gaming, and electronics culture. Features towering electronic stores, themed cafés, gaming arcades, collectible shops, and neon-lit streets.",
       "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "hours": "Open 24 Hours (Most Shops: 10:00 AM – 8:00 PM)",
+      "entry_fee": "Free",
+      "recommended_duration": "3–4 hours"
     },
     {
       "name": "GiGO Akihabara Building 3",
@@ -3745,95 +4836,73 @@
       "description": "Step into a multi-floor arcade packed with claw machines, racing simulators, rhythm games, and nostalgic Japanese gaming culture",
       "hours": "10:00 AM – 11:30 PM",
       "entry_fee": "Pay per game (~₹100–300)",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Journey to the Center of the Earth",
       "city": "Tokyo",
       "description": "High-speed adventure ride through a volcanic world",
       "recommended_duration": "One of the park's most iconic experiences",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Soaring: Fantastic Flight",
       "city": "Tokyo",
       "description": "Flight simulator across global landmarks",
       "recommended_duration": "Beautiful, immersive, and extremely popular",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Sindbad's Storybook Voyage",
       "city": "Tokyo",
       "description": "Gentle boat ride with rich storytelling",
       "recommended_duration": "Relaxing + visually charming",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "20,000 Leagues Under the Sea",
       "city": "Tokyo",
       "description": "Submarine-style deep-sea exploration",
       "recommended_duration": "Unique concept + great mid-day ride",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Mermaid Lagoon",
       "city": "Tokyo",
       "description": "Indoor, whimsical zone (Little Mermaid theme)",
       "recommended_duration": "Great for photos + lighter attractions",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Enchanted Tale of Beauty and the Beast",
       "city": "Tokyo",
       "description": "Must-do attraction in Fantasyland",
       "recommended_duration": "Do first",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Pooh's Hunny Hunt",
       "city": "Tokyo",
       "description": "Popular attraction in Fantasyland",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Space Mountain",
       "city": "Tokyo",
       "description": "Classic space-themed roller coaster in Tomorrowland",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Haunted Mansion",
       "city": "Tokyo",
       "description": "Spooky dark ride attraction",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Pirates of the Caribbean",
       "city": "Tokyo",
       "description": "Boat ride through pirate scenes in Adventureland",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Warner Bros. Studio Tour Tokyo – The Making of Harry Potter",
@@ -3841,9 +4910,7 @@
       "description": "Walk through The Great Hall, explore Diagon Alley & Hogwarts sets, ride visuals like Hogwarts Express, and experience interactive filmmaking magic",
       "hours": "Entry Time: 9:00 AM",
       "recommended_duration": "3–4 hours",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Odaiba Seaside Park",
@@ -3851,70 +4918,297 @@
       "description": "Waterfront park with Tokyo Bay views",
       "hours": "Open 24 hrs",
       "entry_fee": "Free",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "DiverCity Tokyo Plaza",
       "city": "Tokyo",
       "description": "Shopping mall in Odaiba",
       "hours": "11:00 AM – 8:00 PM",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Unicorn Gundam Statue",
       "city": "Tokyo",
       "description": "Giant robot statue with evening light show",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Ginza Six",
       "city": "Tokyo",
       "description": "Upscale shopping mall",
       "hours": "10:30 AM – 8:30 PM",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Uniqlo Ginza Flagship",
       "city": "Tokyo",
       "description": "Flagship Uniqlo store",
       "hours": "11:00 AM – 9:00 PM",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Itoya Ginza",
       "city": "Tokyo",
       "description": "Famous stationery store",
       "hours": "10:00 AM – 8:00 PM",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Caretta Shiodome",
       "city": "Tokyo",
       "description": "Shopping complex for souvenirs, gifts, quick shopping",
       "hours": "10:00 AM – 8:00 PM",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Don Quijote Ginza",
       "city": "Tokyo",
       "description": "24-hour discount store for snacks, souvenirs, quirky finds",
       "hours": "24 hours",
+      "source_files": []
+    },
+    {
+      "name": "Haneda Airport",
+      "city": "Tokyo",
+      "description": "One of the world's most efficient and beautifully organized airports, offering a smooth introduction to Japan's incredible hospitality and precision.",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": null,
       "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tokyo Metropolitan Government Building",
+      "city": "Tokyo",
+      "description": "Observation deck offering panoramic views across Tokyo. On clear days, you may catch a glimpse of Mount Fuji on the horizon.",
+      "hours": "8:30 AM – 5:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "teamLab Borderless Tokyo",
+      "city": "Tokyo",
+      "description": "One of Tokyo's most mesmerizing digital art experiences — a flowing world of moving light, sound, mirrors, projection art, and immersive spaces.",
+      "hours": "Usually 8:30 AM – 9:00 PM",
+      "entry_fee": "Approx. ₹2200–3200 per person",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sensō-ji Temple",
+      "city": "Tokyo",
+      "description": "Tokyo's oldest and most famous Buddhist temple. Giant red lanterns sway above the entrance gates while the scent of incense drifts through the temple grounds.",
+      "hours": "Temple grounds open 24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pokémon Center Tokyo DX",
+      "city": "Tokyo",
+      "description": "Flagship Pokémon store filled with exclusive merchandise, giant character displays, collectibles, plush toys, themed snacks, and limited-edition Japan-only items.",
+      "hours": "10:30 AM – 9:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Samurai Cultural Experience",
+      "city": "Tokyo",
+      "description": "Immersive samurai cultural experience in Shinjuku blending sword demonstrations, storytelling, traditional movements, and theatrical elements.",
+      "hours": "Show timings vary by session",
+      "entry_fee": "Approx. ₹3500–7000 per person depending on experience selected",
+      "recommended_duration": "1–1.5 hours",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Meguro River",
+      "city": "Tokyo",
+      "description": "One of Tokyo's most beautiful cherry blossom spots at night, perfect for a relaxed evening stroll.",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Hachikō Memorial Statue",
+      "city": "Tokyo",
+      "description": "Tokyo's most beloved meeting point just outside Shibuya Station, commemorating Hachikō, the loyal dog who continued waiting for his owner every day long after his passing.",
+      "hours": "Open 24 Hours",
+      "entry_fee": "Free",
+      "recommended_duration": "15–30 minutes",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Shibuya Center-Gai",
+      "city": "Tokyo",
+      "description": "A lively pedestrian street packed with fashion stores, gaming arcades, cafés, and bright neon lights. One of the best places to experience Tokyo's youthful energy.",
+      "hours": "Most Stores Open Until 9:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Omoide Yokocho",
+      "city": "Tokyo",
+      "description": "A narrow network of lantern-lined alleyways offering a glimpse into post-war Tokyo with old-world charm despite surrounding modern skyscrapers.",
+      "hours": "Open Throughout the Day",
+      "entry_fee": "Free",
+      "recommended_duration": "30–60 minutes",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tokyu Plaza Omotesando Harajuku",
+      "city": "Tokyo",
+      "description": "A stylish shopping complex known for its striking mirrored entrance and rooftop terrace.",
+      "hours": "11:00 AM – 8:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Street Kart Shibuya",
+      "city": "Tokyo",
+      "description": "Experience Tokyo from a completely different perspective by driving through the city's streets in a themed go-kart, passing famous landmarks.",
+      "hours": "Various Slots Available",
+      "entry_fee": "INR 5,000–8,000 per person",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kaminarimon Gate",
+      "city": "Tokyo",
+      "description": "The famous entrance to Senso-ji Temple and one of Tokyo's most photographed landmarks.",
+      "hours": "Open 24 Hours",
+      "entry_fee": "Free",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Nakamise Shopping Street",
+      "city": "Tokyo",
+      "description": "One of Japan's oldest shopping streets, lined with traditional stalls selling handcrafted souvenirs, local snacks, folding fans, yukatas, and sweets.",
+      "hours": "Most Shops: 10:00 AM – 6:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Radio Kaikan",
+      "city": "Tokyo",
+      "description": "A multi-storey complex in Akihabara packed with anime merchandise, collectibles, model kits, and hobby shops.",
+      "hours": null,
+      "entry_fee": "Free",
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Yodobashi Camera Akiba",
+      "city": "Tokyo",
+      "description": "One of Japan's largest electronics stores in Akihabara, offering everything from cameras and gadgets to gaming consoles and souvenirs.",
+      "hours": null,
+      "entry_fee": "Free",
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Akihabara Gachapon Hall",
+      "city": "Tokyo",
+      "description": "A paradise for capsule toy collectors in Akihabara featuring hundreds of unique Japanese gachapon machines.",
+      "hours": null,
+      "entry_fee": "Free",
+      "recommended_duration": "30–60 minutes",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "TeamLab Planets TOKYO DMM",
+      "city": "Tokyo",
+      "description": "An immersive digital art attraction where visitors walk barefoot through installations, interact with digital environments, and become part of the artwork. Features rooms with floating flowers, mirrored spaces, shimmering lights, and interactive exhibits.",
+      "hours": "8:30 AM – 10:00 PM",
+      "entry_fee": "INR 2,200–3,000 per person",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ginza",
+      "city": "Tokyo",
+      "description": "Tokyo's most famous shopping district combining luxury boutiques, flagship Japanese brands, department stores, stationery shops, cosmetics outlets, and beautifully designed cafés.",
+      "hours": "Most Stores: 10:00 AM – 8:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tokyo Character Street",
+      "city": "Tokyo",
+      "description": "Located beneath Tokyo Station, one of the best places in Japan to shop for Pokémon, Studio Ghibli, Nintendo, Sanrio, Disney, and anime-themed merchandise.",
+      "hours": "10:00 AM – 8:30 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "COREDO Muromachi",
+      "city": "Tokyo",
+      "description": "A stylish shopping complex blending modern retail with traditional Japanese craftsmanship. Excellent for premium tea, artisanal gifts, Japanese tableware, and locally made products.",
+      "hours": "11:00 AM – 8:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Daikoku Parking Area",
+      "city": "Tokyo",
+      "description": "Legendary automotive enthusiast hotspot and one of Japan's most famous car-meet locations. Features an incredible variety of vehicles from modified Japanese sports cars to rare supercars and collector vehicles.",
+      "hours": "Evening visits recommended",
+      "entry_fee": "Free",
+      "recommended_duration": "4 hours",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -3994,6 +5288,27 @@
       "location": "Shiodome",
       "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
       "_source_mtime": 1775062968.0
+    },
+    {
+      "name": "Airbnb Yotsuya",
+      "city": "Tokyo",
+      "location": "Yotsuya, Shinjuku",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "name": "Airbnb",
+      "city": "Tokyo",
+      "location": "MV76+M9Q Edogawa City Tokyo Japan",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "name": "CITAN – Hostel",
+      "city": "Tokyo",
+      "location": "Nihombashi district, near Tokyo Station, Akihabara, Ginza, Asakusa, Shinjuku, and Shibuya",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
     }
   ],
   "local_dishes": [
@@ -4003,9 +5318,7 @@
       "description": "Soft banana cream sponge cake, iconic souvenir",
       "vegetarian": true,
       "where_to_try": "Tokyo Station, Haneda/Narita Airport",
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Sukiyaki",
@@ -4013,9 +5326,7 @@
       "description": "Japanese hot pot with beef and vegetables",
       "vegetarian": false,
       "where_to_try": "MO-MO-PARADISE Kabukicho",
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Shabu-shabu",
@@ -4023,9 +5334,7 @@
       "description": "Thinly sliced meat cooked in hot broth",
       "vegetarian": false,
       "where_to_try": "MO-MO-PARADISE Kabukicho",
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Yakitori",
@@ -4033,9 +5342,7 @@
       "description": "Grilled chicken skewers",
       "vegetarian": false,
       "where_to_try": "Jidoriya Tsukada Shibuya",
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Tonkotsu ramen",
@@ -4043,18 +5350,16 @@
       "description": "Rich pork broth ramen",
       "vegetarian": false,
       "where_to_try": "Kyushu Jangara Ramen Harajuku",
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
-      "name": "Vegan ramen",
+      "name": "Vegan Ramen",
       "city": "Tokyo",
-      "description": "Plant-based ramen with various toppings",
+      "description": "Japanese noodle soup made with plant-based broth, topped with vegetables, tofu, and other vegan ingredients",
       "vegetarian": true,
-      "where_to_try": "T's TanTan Ecute Ueno",
+      "where_to_try": "T's Tantan Tokyo Station, T's Restaurant Shibuya, Vegan Ramen UZU Tokyo",
       "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -4063,9 +5368,7 @@
       "description": "Pan-fried dumplings with pork or vegetable filling",
       "vegetarian": true,
       "where_to_try": "Kakekomi Gyoza",
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Vegetarian Ramen (Yasai Ramen)",
@@ -4073,27 +5376,21 @@
       "description": "Noodles in a flavorful vegetable or miso broth topped with corn, mushrooms, and greens",
       "vegetarian": true,
       "where_to_try": "T's Tantan",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Onigiri (Rice Balls)",
       "city": "Tokyo",
       "description": "Rice triangles often filled with pickled plum (umeboshi) or seasoned vegetables",
       "vegetarian": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Vegetable Tempura",
       "city": "Tokyo",
       "description": "Lightly battered and fried vegetables like sweet potato, pumpkin, and eggplant",
       "vegetarian": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Japanese Vegetable Curry (Yasai Kare)",
@@ -4101,27 +5398,21 @@
       "description": "Mild, slightly sweet curry with potatoes, carrots, and onions served with rice",
       "vegetarian": true,
       "where_to_try": "Coco Ichibanya",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Inari Sushi",
       "city": "Tokyo",
       "description": "Sweet tofu pockets stuffed with vinegared rice; usually vegetarian",
       "vegetarian": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Edamame",
       "city": "Tokyo",
       "description": "Steamed young soybeans sprinkled with salt; a simple and healthy snack",
       "vegetarian": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Soba Noodles (Vegetarian)",
@@ -4129,27 +5420,21 @@
       "description": "Buckwheat noodles served cold with dipping sauce or hot in broth (confirm no fish stock)",
       "vegetarian": true,
       "where_to_try": "Soba Shop Meiji no Yakata Annex",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Vegetable Yakitori / Kushiyaki",
       "city": "Tokyo",
       "description": "Grilled skewers of mushrooms, peppers, or tofu (ask for no meat/fish)",
       "vegetarian": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Goma-ae",
       "city": "Tokyo",
       "description": "Spinach or vegetables dressed in a rich sesame sauce",
       "vegetarian": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Shojin Ryori",
@@ -4157,31 +5442,62 @@
       "description": "Traditional Buddhist temple cuisine; fully vegetarian and beautifully presented",
       "vegetarian": true,
       "where_to_try": "Komaki Shokudo Kamakura Fushikian",
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Matcha Desserts",
       "city": "Tokyo",
       "description": "Matcha ice cream, mochi, or cakes made with green tea flavor",
       "vegetarian": true,
-      "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Yaki Imo",
       "city": "Tokyo",
       "description": "Roasted Japanese sweet potato, a popular street snack",
       "vegetarian": true,
+      "source_files": []
+    },
+    {
+      "name": "Vegan Gyoza",
+      "city": "Tokyo",
+      "description": "Japanese pan-fried dumplings filled with vegetables and plant-based ingredients",
+      "vegetarian": true,
+      "where_to_try": "Halal Wagyu & Vegan Ramen Gyumon Osaka Dotonbori, Gyoza Bar Keisuke",
       "source_files": [
-        "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Melon Pan",
+      "city": "Tokyo",
+      "description": "A popular Japanese sweet bread with a crispy cookie crust on the outside, famous in Asakusa",
+      "vegetarian": true,
+      "where_to_try": "Asakusa Kagetsudo",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     }
   ],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Tokyo"
+      ],
+      "tip": "Convenience Store: FamilyMart Nishikasai Station (3 min car drive from Tokyo Airbnb). Pharmacy: Kusunoki Pharmacy (2 min car drive). Hospital: Obanajunkanki Clinic (5 min car drive).",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Tokyo"
+      ],
+      "tip": "Scam: Bar & Club Overcharging – Promoters may lure tourists into bars that later add huge hidden charges, especially in Tokyo nightlife areas.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    }
+  ],
   "souvenirs": [
     {
       "item": "Tokyo Banana Cakes",
@@ -4346,6 +5662,108 @@
       ],
       "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
       "_source_mtime": 1775062968.0
+    },
+    {
+      "item": "Anime merchandise",
+      "city": "Tokyo",
+      "category": "Pop culture",
+      "where_to_buy": [
+        "Akihabara shops",
+        "Don Quijote (Donki)"
+      ],
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "item": "Trendy fashion and gadgets",
+      "city": "Tokyo",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Shinjuku Shopping District",
+        "Shibuya",
+        "Tokyu Hands"
+      ],
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "item": "Tokyo Banana Cakes",
+      "city": "Tokyo",
+      "category": "Food",
+      "where_to_buy": [
+        "Tokyo Station"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Pokémon Merchandise",
+      "city": "Tokyo",
+      "category": "Anime & Gaming",
+      "where_to_buy": [
+        "Akihabara Electric Town",
+        "Tokyo Character Street",
+        "Nintendo Tokyo"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Anime Figures",
+      "city": "Tokyo",
+      "category": "Anime & Gaming",
+      "where_to_buy": [
+        "Akihabara Electric Town",
+        "Tokyo Character Street"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Manga",
+      "city": "Tokyo",
+      "category": "Anime & Gaming",
+      "where_to_buy": [
+        "Akihabara Electric Town",
+        "Tokyo Character Street"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Nintendo Merchandise",
+      "city": "Tokyo",
+      "category": "Anime & Gaming",
+      "where_to_buy": [
+        "Akihabara Electric Town",
+        "Tokyo Character Street",
+        "Nintendo Tokyo"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Studio Ghibli Goods",
+      "city": "Tokyo",
+      "category": "Anime & Gaming",
+      "where_to_buy": [
+        "Akihabara Electric Town",
+        "Tokyo Character Street"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Gashapon Capsule Toys",
+      "city": "Tokyo",
+      "category": "Anime & Gaming",
+      "where_to_buy": [
+        "Akihabara Electric Town",
+        "Tokyo Character Street",
+        "Akihabara Gachapon Hall"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
     }
   ],
   "emergency_contacts": [
@@ -4396,6 +5814,46 @@
       "notes": "English",
       "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
       "_source_mtime": 1775062968.0
+    },
+    {
+      "city": "Tokyo",
+      "service": "Embassy of India in Tokyo",
+      "number": "+81-3-3262-2391 to 2397",
+      "notes": "Address: 2-2-11 Kudan-Minami, Chiyoda-ku, Tokyo 102-0074, Japan. Working hours: Monday–Friday 9:00 AM – 5:30 PM",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Tokyo",
+      "service": "Embassy of India – Main Line",
+      "number": "+81-3-3262-2391",
+      "notes": "Indian Embassy in Tokyo; address: 2-2-11 Kudan-Minami, Chiyoda-ku, Tokyo",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "city": "Tokyo",
+      "service": "Embassy of India – Alternate Line",
+      "number": "+81-3-3262-2392",
+      "notes": "Indian Embassy in Tokyo",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "city": "Tokyo",
+      "service": "Embassy of India – Emergency (after hours)",
+      "number": "+81-80-3208-8622",
+      "notes": "Indian Embassy emergency line for after-hours assistance",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "city": "Tokyo",
+      "service": "Himawari Medical Information Service",
+      "number": "03-5285-8181",
+      "notes": "English-speaking medical help in Tokyo",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
     }
   ],
   "connectivity_tips": [],
@@ -4527,9 +5985,146 @@
       "description": "Monorail connecting Tokyo Disney Resort parks and hotels",
       "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
       "_source_mtime": 1775062968.0
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Shinkansen (Bullet Train)",
+      "description": "Fast, clean, and extremely comfortable for intercity travel such as Tokyo to Kyoto. Trains depart exactly on time.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Metro & Local Trains",
+      "description": "The easiest way to explore Tokyo, Kyoto, and Osaka. Recommended apps: Google Maps, Japan Travel by NAVITIME.",
+      "recommended_pass": "Suica or Pasmo IC card",
+      "cost": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Walking",
+      "description": "Japanese cities are highly walkable, especially areas like Shibuya, Harajuku, Gion, Arashiyama, and Dotonbori.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Private Transfer",
+      "description": "Private transfer arranged from Haneda Airport to stay. Approximate transfer time: 45 mins – 1 hr 15 mins depending on airport and traffic.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Tokyo",
+      "mode": "JR Yamanote Line",
+      "description": "Circular JR line connecting major Tokyo hubs including Shinjuku, Shibuya, Ueno, and Tokyo Station.",
+      "recommended_pass": "Suica or PASMO card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Toei Shinjuku Line",
+      "description": "Subway line connecting Shinjuku to Motoyawata, serving the Tokyo Airbnb area in Edogawa City.",
+      "recommended_pass": "Suica or PASMO card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Tokyo",
+      "mode": "JR Sobu Line (Rapid)",
+      "description": "JR line from Motoyawata to Maihama (for Disneyland/DisneySea) and to Narita Airport.",
+      "recommended_pass": "Suica or PASMO card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Disney Resort Line (Monorail)",
+      "description": "Monorail connecting Maihama Station to Tokyo DisneySea Station. Travel time approximately 10 minutes.",
+      "recommended_pass": "Suica or PASMO card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Tokyo Metro",
+      "description": "Subway network covering central Tokyo including access to Azabudai Hills (teamLab Borderless).",
+      "recommended_pass": "Suica or PASMO card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Shinkansen (Bullet Train)",
+      "description": "World-famous high-speed bullet train connecting Shin-Osaka to Tokyo Station. Train NOZOMI 8 departs 10:06 AM, arrives 12:33 PM, travel time approximately 2 hours 27 minutes.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Tokyo Metro & JR Lines",
+      "description": "Extensive metro and rail network connecting all major districts in Tokyo including Shinjuku, Shibuya, Harajuku, Asakusa, Akihabara, and Ginza.",
+      "recommended_pass": "Suica or PASMO card",
+      "cost": "Approx. INR 120–180 per journey",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "city": "Tokyo",
+      "mode": "JR Keiyo Line + Disney Resort Line",
+      "description": "Route from Tokyo Station via JR Keiyo Line to Maihama Station, then Disney Resort Line to Tokyo DisneySea Station.",
+      "recommended_pass": "Suica card",
+      "cost": "INR 250–450 per person",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Narita Express",
+      "description": "Express train from Tokyo Station to Narita International Airport for departure.",
+      "recommended_pass": null,
+      "cost": "INR 1,500–2,000 per person",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
     }
   ],
-  "health_tips": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Tokyo"
+      ],
+      "tip": "Pharmacy near CITAN Hostel: Kawana Pharmacy, approx. 5 min walk. Hours: 08:30 AM–6:00 PM (closed Sat & Sun).",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Tokyo"
+      ],
+      "tip": "Medical Clinic near CITAN Hostel: Odenma Clinic, approx. 4 min walk. Hours: 9:30 AM–12:30 PM, 2–4:30 PM (Mon, Tue, Thu, Fri); 9:30 AM–12:30 PM (Wed); closed Sat & Sun.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Tokyo"
+      ],
+      "tip": "English-speaking medical information in Tokyo: Himawari Medical Information Service, phone 03-5285-8181, website: https://www.himawari.metro.tokyo.jp",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    }
+  ],
   "source_files": [
     "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
     "Japan/AA_All Inclusive Guide_Japan.pdf",
@@ -4541,6 +6136,9 @@
     "Japan/All Inclusive Guide- Japan_PN.pdf",
     "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
     "Japan/Amanda_Japan_All Inclusive Guide.docx",
-    "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+    "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+    "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+    "Japan/Azhar_Japan_All Inclusive Guide.docx",
+    "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
   ]
 }

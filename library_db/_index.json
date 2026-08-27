@@ -1,6 +1,6 @@
 {
   "version": "1.2",
-  "built_at": "2026-05-08T22:42:41.997759",
+  "built_at": "2026-08-27T19:46:10.480969",
   "_processed_files": {
     "USA/NYC Plan.pdf": {
       "mtime": 1772384245.8185823,
@@ -2181,16 +2181,385 @@
       "processed_at": "2026-05-08T23:14:52.316998"
     },
     "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx": {
-      "mtime": 1747180800.0,
+      "mtime": 1778695624.2020826,
       "destination": "Vietnam",
       "covered_cities": [
         "Hanoi",
-        "Hoi An",
-        "Da Nang",
         "Halong Bay",
-        "Ninh Binh"
+        "Ninh Binh",
+        "Da Nang",
+        "Hoi An"
       ],
-      "processed_at": "2026-05-13T22:00:00.000000"
+      "processed_at": "2026-08-27T19:31:37.243976"
+    },
+    "Gujarat/Shweta- Somnath+Dwaraka_All_Inclusive_Guide.docx": {
+      "mtime": 1780852880.0,
+      "destination": "Gujarat",
+      "covered_cities": [
+        "Indore",
+        "Ahmedabad",
+        "Rajkot",
+        "Junagadh",
+        "Somnath",
+        "Dwarka",
+        "Vadodara"
+      ],
+      "processed_at": "2026-08-27T19:11:17.447257"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx": {
+      "mtime": 1779311242.0,
+      "destination": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Cochin",
+        "Munnar",
+        "Thekkady",
+        "Fort Kochi"
+      ],
+      "processed_at": "2026-08-27T19:11:26.659443"
+    },
+    "England and Scotland/Bhushan- London - All Inclusive Guide_v3.docx": {
+      "mtime": 1782512444.0,
+      "destination": "England and Scotland",
+      "covered_cities": [
+        "London",
+        "Kensington",
+        "Camden",
+        "Wimbledon",
+        "Soho",
+        "Mayfair",
+        "Covent Garden"
+      ],
+      "processed_at": "2026-08-27T19:11:55.129048"
+    },
+    "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx": {
+      "mtime": 1787589354.0,
+      "destination": "Goa",
+      "covered_cities": [
+        "Saligao",
+        "Goa",
+        "Assagao",
+        "Panjim",
+        "Nagoa",
+        "Verem",
+        "Torda"
+      ],
+      "processed_at": "2026-08-27T19:12:34.242600"
+    },
+    "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx": {
+      "mtime": 1779683024.0,
+      "destination": "South Korea",
+      "covered_cities": [
+        "Seoul",
+        "Busan",
+        "Singapore"
+      ],
+      "processed_at": "2026-08-27T19:13:16.864754"
+    },
+    "France/Sneha_Europe_All Inclusive Guide.docx": {
+      "mtime": 1776987744.0,
+      "destination": "France",
+      "covered_cities": [
+        "Paris",
+        "Lucerne",
+        "Interlaken",
+        "Grindelwald",
+        "Lauterbrunnen",
+        "Engelberg",
+        "Basel",
+        "Zurich"
+      ],
+      "processed_at": "2026-08-27T19:13:19.889491"
+    },
+    "South Korea/Farha_South Korea_ All Inclusive Guide.docx": {
+      "mtime": 1779139406.0,
+      "destination": "South Korea",
+      "covered_cities": [
+        "Seoul",
+        "Busan",
+        "Singapore"
+      ],
+      "processed_at": "2026-08-27T19:14:19.970283"
+    },
+    "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx": {
+      "mtime": 1779683478.0,
+      "destination": "Switzerland",
+      "covered_cities": [
+        "Zurich",
+        "Rhine Falls",
+        "Interlaken",
+        "Lauterbrunnen",
+        "Wengen",
+        "Brienz",
+        "Lucerne",
+        "Engelberg",
+        "Mt. Titlis",
+        "Mt. Pilatus",
+        "Harder Kulm",
+        "Paris",
+        "Disneyland Paris",
+        "Montmartre"
+      ],
+      "processed_at": "2026-08-27T19:16:12.542810"
+    },
+    "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx": {
+      "mtime": 1778539990.0,
+      "destination": "Japan",
+      "covered_cities": [
+        "Tokyo",
+        "Kyoto",
+        "Osaka",
+        "Nara",
+        "Lake Kawaguchiko",
+        "Singapore",
+        "Sentosa"
+      ],
+      "processed_at": "2026-08-27T19:16:36.914877"
+    },
+    "Japan/Azhar_Japan_All Inclusive Guide.docx": {
+      "mtime": 1774407004.0,
+      "destination": "Japan",
+      "covered_cities": [
+        "Osaka",
+        "Kyoto",
+        "Awaji Island",
+        "Tokyo",
+        "Hakone",
+        "Kamakura",
+        "Enoshima"
+      ],
+      "processed_at": "2026-08-27T19:17:04.356897"
+    },
+    "Europe/Itinerary- Budapest, Prague, Austria.docx": {
+      "mtime": 1787827071.4775765,
+      "destination": "Europe",
+      "covered_cities": [
+        "Budapest",
+        "Prague",
+        "Český Krumlov",
+        "Salzburg",
+        "Hallstatt",
+        "Gosausee",
+        "Melk",
+        "Dürnstein",
+        "Spitz",
+        "Wachau Valley",
+        "Vienna"
+      ],
+      "processed_at": "2026-08-27T19:19:24.458344"
+    },
+    "Japan/Akankshaa- Japan_All Inclusive Guide.docx": {
+      "mtime": 1781133774.0,
+      "destination": "Japan",
+      "covered_cities": [
+        "Mumbai",
+        "Kuala Lumpur",
+        "Osaka",
+        "Kyoto",
+        "Tokyo",
+        "Lake Kawaguchiko",
+        "Mt. Fuji Region"
+      ],
+      "processed_at": "2026-08-27T19:22:07.395065"
+    },
+    "Europe/Sirisha_Europe_All Inclusive Guide.docx": {
+      "mtime": 1778114484.0,
+      "destination": "Europe",
+      "covered_cities": [
+        "Amsterdam",
+        "Haarlem",
+        "Zaanse Schans",
+        "Zaandam",
+        "Giethoorn",
+        "Brussels",
+        "Bruges",
+        "Cologne",
+        "Bonn",
+        "Frankfurt"
+      ],
+      "processed_at": "2026-08-27T19:25:38.340883"
+    },
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx": {
+      "mtime": 1777831784.0,
+      "destination": "Europe",
+      "covered_cities": [
+        "Geneva",
+        "Chamonix",
+        "Montreux",
+        "Gstaad",
+        "Saanen",
+        "Interlaken",
+        "Lauterbrunnen",
+        "Grindelwald",
+        "Brienz",
+        "Lucerne",
+        "Rhine Falls",
+        "Zurich",
+        "Milan",
+        "Serravalle",
+        "Venice",
+        "Florence",
+        "Cinque Terre",
+        "Monterosso al Mare",
+        "Vernazza",
+        "Manarola",
+        "Riomaggiore",
+        "Rome",
+        "La Spezia"
+      ],
+      "processed_at": "2026-08-27T19:26:04.227710"
+    },
+    "North India/Silky_Mussoorie_All_Inclusive_Guide.docx": {
+      "mtime": 1781705310.0,
+      "destination": "North India",
+      "covered_cities": [
+        "Dehradun",
+        "Mussoorie",
+        "Dhanaulti",
+        "Kanatal"
+      ],
+      "processed_at": "2026-08-27T19:27:34.255404"
+    },
+    "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx": {
+      "mtime": 1779475594.0,
+      "destination": "Singapore and Malaysia",
+      "covered_cities": [
+        "Singapore"
+      ],
+      "processed_at": "2026-08-27T19:28:00.265381"
+    },
+    "Austria/Itinerary- Budapest, Prague, Austria.docx": {
+      "mtime": 1787826599.9011912,
+      "destination": "Austria",
+      "covered_cities": [
+        "Budapest",
+        "Prague",
+        "Český Krumlov",
+        "Salzburg",
+        "Hallstatt",
+        "Gosausee",
+        "Melk",
+        "Dürnstein",
+        "Spitz",
+        "Weißenkirchen",
+        "Unterloiben",
+        "Elsarn am Jauerling",
+        "Vienna"
+      ],
+      "processed_at": "2026-08-27T19:30:15.298011"
+    },
+    "Austria/Itinerary- Budapest Prague Austria.docx": {
+      "mtime": 1787829346.2370243,
+      "destination": "Austria",
+      "covered_cities": [
+        "Budapest",
+        "Prague",
+        "Český Krumlov",
+        "Salzburg",
+        "Hallstatt",
+        "Gosausee",
+        "Melk",
+        "Dürnstein",
+        "Spitz",
+        "Weißenkirchen",
+        "Unterloiben",
+        "Elsarn am Jauerling",
+        "Vienna"
+      ],
+      "processed_at": "2026-08-27T19:31:23.845695"
+    },
+    "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx": {
+      "mtime": 1780336018.0,
+      "destination": "Bali Indonesia",
+      "covered_cities": [
+        "Ubud",
+        "Nusa Penida",
+        "Kintamani",
+        "Nusa Dua",
+        "Kuta",
+        "Seminyak",
+        "Tanjung Benoa",
+        "Uluwatu",
+        "Sanur",
+        "Bali"
+      ],
+      "processed_at": "2026-08-27T19:49:04.512481"
+    },
+    "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx": {
+      "mtime": 1780701760.0,
+      "destination": "Bali Indonesia",
+      "covered_cities": [
+        "Ubud",
+        "Nusa Penida",
+        "Kintamani",
+        "Nusa Dua",
+        "Seminyak",
+        "Kuta",
+        "Uluwatu",
+        "Tanjung Benoa",
+        "Sanur"
+      ],
+      "processed_at": "2026-08-27T19:50:14.685499"
+    },
+    "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx": {
+      "mtime": 1782924536.0,
+      "destination": "Bali Indonesia",
+      "covered_cities": [
+        "Ubud",
+        "Kintamani",
+        "Sanur",
+        "Denpasar"
+      ],
+      "processed_at": "2026-08-27T19:51:07.589444"
+    },
+    "Europe/Vidhi_Europe_All Inclusive Guide.docx": {
+      "mtime": 1778731348.0,
+      "destination": "Europe",
+      "covered_cities": [
+        "Paris",
+        "Versailles",
+        "Basel",
+        "Zurich",
+        "Rhine Falls",
+        "Lucerne",
+        "Vitznau",
+        "Mount Rigi",
+        "Engelberg",
+        "Mount Titlis",
+        "Interlaken",
+        "Grindelwald",
+        "Lauterbrunnen",
+        "Mürren",
+        "Jungfraujoch",
+        "Chur",
+        "Tirano",
+        "Milan",
+        "Venice",
+        "Murano",
+        "Burano",
+        "Florence",
+        "Pisa",
+        "Montepulciano",
+        "Pienza",
+        "Rome"
+      ],
+      "processed_at": "2026-08-27T19:51:08.830918"
+    },
+    "South America/Naren- Peru_All Inclusive Guide.docx": {
+      "mtime": 1784956118.0,
+      "destination": "South America",
+      "covered_cities": [
+        "Lima",
+        "Puerto Maldonado",
+        "Tambopata",
+        "Cusco",
+        "Sacred Valley",
+        "Pisaq",
+        "Ollantaytambo",
+        "Urubamba",
+        "Machu Picchu",
+        "Aguas Calientes"
+      ],
+      "processed_at": "2026-08-27T19:53:07.803715"
     }
   },
   "_folder_coverage": {
@@ -2216,12 +2585,15 @@
       "Bath",
       "Bibury",
       "Bourton-on-the-Water",
+      "Bourton-on-the-water",
       "Brighton",
       "Broadway",
       "Cambridge",
+      "Camden",
       "Castle Combe",
       "Cotswold",
       "Cotswolds",
+      "Covent Garden",
       "Edinburgh",
       "Ephesus",
       "Fort William",
@@ -2233,9 +2605,11 @@
       "Isle of Skye",
       "Istanbul",
       "Iver",
+      "Kensington",
       "Loch Lomond",
       "London",
       "Mallaig",
+      "Mayfair",
       "Mykonos",
       "Newhaven",
       "Oxford",
@@ -2243,9 +2617,13 @@
       "Pitlochry",
       "Portree",
       "Santorini",
+      "Soho",
       "Stirling",
       "Stratford Upon Avon",
+      "Stratford upon Avon",
+      "Stratford-upon-Avon",
       "Turkey",
+      "Wimbledon",
       "Windsor"
     ],
     "Mauritius": [
@@ -2287,13 +2665,16 @@
       "Amalfi",
       "Annecy",
       "Baden-Baden",
+      "Basel",
       "Bern",
       "Chamonix",
       "Colmar",
+      "Engelberg",
       "France",
       "Freiburg",
       "Geneva",
       "Giverny",
+      "Grindelwald",
       "Interlaken",
       "Lauterbrunnen",
       "Lucerne",
@@ -2383,7 +2764,8 @@
     ],
     "South Korea": [
       "Busan",
-      "Seoul"
+      "Seoul",
+      "Singapore"
     ],
     "Spain": [
       "Barcelona",
@@ -2447,6 +2829,7 @@
       "Strasbourg"
     ],
     "Goa": [
+      "Assagao",
       "Baga",
       "Bambolim",
       "Benaulim",
@@ -2460,14 +2843,18 @@
       "Mardol",
       "Margao",
       "Mobor",
+      "Nagoa",
       "Nerul",
       "North Goa",
       "Panjim",
       "Pato",
       "Ponda",
       "Pune",
+      "Saligao",
       "South Goa",
-      "Utorda"
+      "Torda",
+      "Utorda",
+      "Verem"
     ],
     "Almaty Kazakhstan": [
       "Almaty",
@@ -2484,6 +2871,7 @@
       "Biel",
       "Brienz",
       "Chamonix",
+      "Disneyland Paris",
       "Doha",
       "Edinburgh",
       "Engelberg",
@@ -2495,6 +2883,7 @@
       "Grindelwald",
       "Gstaad",
       "Hallstatt",
+      "Harder Kulm",
       "Innsbruck",
       "Interlaken",
       "Lake Como",
@@ -2503,11 +2892,15 @@
       "Lucerne",
       "Menaggio",
       "Milan",
+      "Montmartre",
       "Montreux",
+      "Mt. Pilatus",
+      "Mt. Titlis",
       "Murren",
       "Mürren",
       "Paris",
       "Pienza",
+      "Rhine Falls",
       "Ringgenberg",
       "Rome",
       "Saanen",
@@ -2521,6 +2914,7 @@
       "Venice",
       "Vienna",
       "Wachau Valley",
+      "Wengen",
       "Wertheim",
       "Winterthur",
       "Zermatt",
@@ -2528,12 +2922,16 @@
     ],
     "Japan": [
       "Amanohashidate",
+      "Awaji Island",
+      "Enoshima",
       "Hakone",
       "Hiroshima",
       "Ine",
       "Ine Bay",
+      "Kamakura",
       "Kawaguchiko",
       "Kibune",
+      "Kuala Lumpur",
       "Kurama",
       "Kyoto",
       "Lake Kawaguchiko",
@@ -2541,9 +2939,13 @@
       "Miyazu Bay",
       "Mount Fuji",
       "Mt. Fuji",
+      "Mt. Fuji Region",
+      "Mumbai",
       "Nara",
       "Nikko",
       "Osaka",
+      "Sentosa",
+      "Singapore",
       "Tokyo"
     ],
     "Srilanka": [
@@ -2602,13 +3004,17 @@
       "Bir Billing",
       "Chandigarh",
       "Dalhousie",
+      "Dehradun",
+      "Dhanaulti",
       "Dharamshala",
       "Jibhi",
+      "Kanatal",
       "Kasauli",
       "Khajjiar",
       "Kufri",
       "Mashobra",
       "McLeod Ganj",
+      "Mussoorie",
       "Palampur",
       "Shangarh",
       "Shimla"
@@ -2679,6 +3085,10 @@
     ],
     "Austria": [
       "Bern",
+      "Budapest",
+      "Dürnstein",
+      "Elsarn am Jauerling",
+      "Gosausee",
       "Grindelwald",
       "Hallstatt",
       "Innsbruck",
@@ -2686,11 +3096,17 @@
       "Jungfraujoch",
       "Lauterbrunnen",
       "Lucerne",
+      "Melk",
       "Murren",
+      "Prague",
       "Salzburg",
+      "Spitz",
+      "Unterloiben",
       "Vienna",
       "Wachau Valley",
-      "Zurich"
+      "Weißenkirchen",
+      "Zurich",
+      "Český Krumlov"
     ],
     "Vietnam": [
       "Ba Na Hills",
@@ -2742,6 +3158,7 @@
       "Djimbaran",
       "Gili Trawangan",
       "Jimbaran",
+      "Kintamani",
       "Klungkung",
       "Kuta",
       "Nusa Dua",
@@ -2761,8 +3178,83 @@
       "Lima",
       "Machu Picchu",
       "Miraflores",
+      "Ollantaytambo",
+      "Pisaq",
       "Puerto Maldonado",
-      "Sacred Valley"
+      "Sacred Valley",
+      "Tambopata",
+      "Urubamba"
+    ],
+    "Gujarat": [
+      "Ahmedabad",
+      "Dwarka",
+      "Indore",
+      "Junagadh",
+      "Rajkot",
+      "Somnath",
+      "Vadodara"
+    ],
+    "Europe": [
+      "Amsterdam",
+      "Basel",
+      "Bonn",
+      "Brienz",
+      "Bruges",
+      "Brussels",
+      "Budapest",
+      "Burano",
+      "Chamonix",
+      "Chur",
+      "Cinque Terre",
+      "Cologne",
+      "Dürnstein",
+      "Engelberg",
+      "Florence",
+      "Frankfurt",
+      "Geneva",
+      "Giethoorn",
+      "Gosausee",
+      "Grindelwald",
+      "Gstaad",
+      "Haarlem",
+      "Hallstatt",
+      "Interlaken",
+      "Jungfraujoch",
+      "La Spezia",
+      "Lauterbrunnen",
+      "Lucerne",
+      "Manarola",
+      "Melk",
+      "Milan",
+      "Montepulciano",
+      "Monterosso al Mare",
+      "Montreux",
+      "Mount Rigi",
+      "Mount Titlis",
+      "Murano",
+      "Mürren",
+      "Paris",
+      "Pienza",
+      "Pisa",
+      "Prague",
+      "Rhine Falls",
+      "Riomaggiore",
+      "Rome",
+      "Saanen",
+      "Salzburg",
+      "Serravalle",
+      "Spitz",
+      "Tirano",
+      "Venice",
+      "Vernazza",
+      "Versailles",
+      "Vienna",
+      "Vitznau",
+      "Wachau Valley",
+      "Zaandam",
+      "Zaanse Schans",
+      "Zurich",
+      "Český Krumlov"
     ]
   },
   "_review_status": {

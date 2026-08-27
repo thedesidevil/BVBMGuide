@@ -17,9 +17,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "HANKA Restaurant",
@@ -43,9 +41,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Mixtura Valle",
@@ -67,9 +63,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "La Dispensa Pizza e Pasta",
@@ -88,9 +82,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     }
   ],
   "attractions": [
@@ -98,48 +90,47 @@
       "name": "Pisaq Market",
       "city": "Sacred Valley",
       "description": "Traditional market stop enroute from Cusco to Sacred Valley",
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Awana Kancha",
       "city": "Sacred Valley",
       "description": "Breeding center of South American camels (guanacos, llamas, alpacas and vicunas) where artisans demonstrate weaving and dyeing ancient Andean techniques",
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Maras Salt Mines",
       "city": "Sacred Valley",
       "description": "Salt mines where intense white shines like snow on sunny day, extracted from Inca times using same methods",
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Moray",
       "city": "Sacred Valley",
       "description": "Circular terraces similar to Greek amphitheater, used as open-air agricultural lab for adapting crops to different environmental conditions",
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ollantaytambo",
       "city": "Sacred Valley",
       "description": "Fortress featuring Temple of the Sun (six gigantic monoliths weighing over 50 tons) and Terrace of Ten Niches",
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Sacred Valley Zipline",
       "city": "Sacred Valley",
       "description": "Zipline experience over magical valley with 300m iron ladder climb and 100m rappel descent",
+      "source_files": []
+    },
+    {
+      "name": "Awana Kancha Living Museum",
+      "city": "Sacred Valley",
+      "description": "A cultural centre dedicated to preserving traditional Andean weaving techniques and native camelids. Visitors meet alpacas, llamas, vicuñas and guanacos, and watch local artisans demonstrate centuries-old weaving methods using natural dyes.",
+      "hours": "8:00 AM – 5:00 PM",
+      "entry_fee": null,
+      "recommended_duration": null,
       "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+        "South America/Naren- Peru_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -152,15 +143,306 @@
       "_source_mtime": 1748700574.0
     }
   ],
-  "local_dishes": [],
+  "local_dishes": [
+    {
+      "name": "Pachamanca",
+      "city": "Sacred Valley",
+      "description": "A centuries-old Andean cooking tradition where meats, potatoes, vegetables and herbs are slow-cooked underground using heated stones.",
+      "vegetarian": false,
+      "where_to_try": "El Albergue (included in itinerary)",
+      "source_files": [
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ]
+    }
+  ],
   "phrases": [],
-  "safety_tips": [],
-  "souvenirs": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Carry only the cash you'll need for the day and keep your passport, extra cash and valuables safely stored in your hotel's room safe whenever possible.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Store digital copies of your passport, visa, travel insurance and flight tickets on your phone or secure cloud storage.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Use only your pre-arranged private transfers or registered taxis arranged through your hotel. Avoid accepting rides from unofficial drivers at airports or tourist attractions.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Use ATMs located inside banks, shopping malls or reputable hotels. Notify your bank before travelling to avoid any issues with international card transactions.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu"
+      ],
+      "tip": "Cusco, the Sacred Valley and Machu Picchu are located at high altitudes. Stay hydrated, avoid strenuous activity on your first day in Cusco and allow your body time to acclimatise.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Drink bottled or purified water throughout your trip. Avoid drinking tap water and ensure fruits are washed or peeled before consumption.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu"
+      ],
+      "tip": "The UV index can be very high in the Andes, even on cool days. Wear sunscreen, sunglasses and a hat whenever you're outdoors.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Cusco",
+        "Sacred Valley"
+      ],
+      "tip": "Bargaining is acceptable at artisan markets such as Pisaq Market, but should always be friendly and respectful. Fixed-price shops and boutiques generally do not negotiate.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Tours and transportation operate on time, so it's best to arrive a few minutes early for all scheduled activities.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Many churches, monasteries and archaeological sites are considered sacred. Dress modestly when visiting religious sites, speak softly and avoid climbing or touching ancient Inca structures unless permitted.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Many locals in traditional Andean attire may expect a small tip for photographs. Always ask for permission before taking close-up photos.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Natural Herbal Products",
+      "city": "Sacred Valley",
+      "category": "Health & Wellness",
+      "where_to_buy": [
+        "Sacred Valley local markets and shops"
+      ],
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    }
+  ],
   "emergency_contacts": [],
-  "connectivity_tips": [],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley"
+      ],
+      "tip": "Claro Peru is one of Peru's largest mobile operators, offering excellent coverage across Lima, Cusco, the Sacred Valley and most tourist destinations. Best for overall coverage and high-speed data.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Puerto Maldonado"
+      ],
+      "tip": "Movistar Peru is a reliable network with strong coverage in cities and good connectivity throughout much of the country. Best for travellers visiting multiple regions across Peru.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Puerto Maldonado"
+      ],
+      "tip": "Bitel is a budget-friendly provider offering affordable prepaid plans with generous data allowances. Best for cost-conscious travellers.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Puerto Maldonado"
+      ],
+      "tip": "If your smartphone supports eSIM, you can activate a data plan before arriving in Peru. Popular providers include Airalo, Nomad and Holafly.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    }
+  ],
   "transport_options": [],
-  "health_tips": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu"
+      ],
+      "tip": "Cusco and the Sacred Valley sit at over 3,000 metres above sea level (Cusco at 3,400 m / 11,150 ft). Take your time when walking, stay hydrated and avoid strenuous activity on your first day at altitude.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Cusco",
+        "Sacred Valley"
+      ],
+      "tip": "Coca tea (Mate de Coca) is a traditional local remedy commonly offered by hotels in Cusco and is widely enjoyed by visitors while adjusting to the elevation.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Ensure routine vaccinations are up to date before travelling, including Tetanus/Diphtheria/Pertussis (Td/Tdap), Measles/Mumps/Rubella (MMR), Polio and Influenza.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Hepatitis A vaccination is recommended for most travellers, as it can be transmitted through contaminated food or water.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Typhoid vaccination is recommended, especially if you plan to eat at local markets or travel beyond major cities.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Drink bottled or purified water throughout your trip. Avoid drinking tap water and ensure fruits are washed or peeled before consumption.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu"
+      ],
+      "tip": "The UV index can be very high in the Andes even on cool days. Use SPF 50+ reef-safe sunscreen, wear UV-protection sunglasses, a wide-brim hat and lip balm with SPF.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Carry personal medications with prescriptions if required, a small first-aid kit, motion sickness tablets if needed, hand sanitiser, wet wipes and anti-itch cream for insect bites.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Sacred Valley"
+      ],
+      "tip": "Near Inkaterra Hacienda Urubamba: Puesto de Salud Huayllabamba medical centre is approximately 7 minutes drive (open 7:30 AM–7:30 PM). INKAFARMA pharmacy is approximately 20 minutes drive (open 9:00 AM–10:00 PM).",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    }
+  ],
   "source_files": [
-    "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+    "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+    "South America/Naren- Peru_All Inclusive Guide.docx"
   ]
 }

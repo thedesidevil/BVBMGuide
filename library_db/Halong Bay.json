@@ -6,9 +6,7 @@
       "city": "Halong Bay",
       "description": "UNESCO World Heritage Site cruise through emerald waters with dramatic limestone karsts. Includes Surprising Cave, Titop Island, and Luon Cave",
       "recommended_duration": "5-6 hours",
-      "source_files": [
-        "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Halong Bay",
@@ -17,20 +15,17 @@
       "hours": "Various cruise schedules",
       "entry_fee": null,
       "recommended_duration": "Overnight",
-      "source_files": [
-        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
-        "Vietnam/Mohnish_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Sung Sot Cave (Surprise Cave)",
       "city": "Halong Bay",
-      "description": "Famous grotto with impressive stalactites and dramatic cave chambers shaped naturally over thousands of years",
-      "hours": "During cruise activities",
+      "description": "Famous grotto in Halong Bay known for impressive stalactites and dramatic cave chambers shaped naturally over thousands of years. Sunlight filters through cave openings creating a surreal atmosphere.",
+      "hours": "During afternoon cruise activities",
       "entry_fee": null,
-      "recommended_duration": "1 hour",
+      "recommended_duration": "1–1.5 hours",
       "source_files": [
-        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx"
+        "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx"
       ]
     },
     {
@@ -40,9 +35,7 @@
       "hours": "During cruise",
       "entry_fee": null,
       "recommended_duration": "1 hour",
-      "source_files": [
-        "Vietnam/Mohnish_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Titop Island",
@@ -51,9 +44,7 @@
       "hours": "During cruise",
       "entry_fee": null,
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Vietnam/Mohnish_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Luon Cave",
@@ -62,36 +53,28 @@
       "hours": "During cruise",
       "entry_fee": null,
       "recommended_duration": "1 hour",
-      "source_files": [
-        "Vietnam/Mohnish_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Le Journey Classic Cruise Halong Bay",
       "city": "Halong Bay",
       "description": "Traditional Vietnamese cruise through emerald waters dotted with towering limestone karsts, featuring kayaking, cave exploration, and onboard dining",
       "hours": "Multi-day cruise experience",
-      "source_files": [
-        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Surprising Cave",
       "city": "Halong Bay",
       "description": "Cave in Bo Hon archipelago with kayaking opportunities in Luon Cave",
       "recommended_duration": "1 hour",
-      "source_files": [
-        "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Titov Island",
       "city": "Halong Bay",
       "description": "Island with sandy beach and Titov Peak for panoramic view of the bay",
       "recommended_duration": "1.5 hours",
-      "source_files": [
-        "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Halong Bay Cruise",
@@ -99,7 +82,19 @@
       "description": "Overnight luxury cruise through emerald waters and towering limestone karsts with cave exploration and sunset viewing",
       "hours": "Check-in around noon",
       "entry_fee": null,
-      "recommended_duration": "Overnight"
+      "recommended_duration": "Overnight",
+      "source_files": []
+    },
+    {
+      "name": "Halong International Cruise Port",
+      "city": "Halong Bay",
+      "description": "Main harbour for boarding luxury overnight cruises through Halong Bay's emerald-green waters and towering limestone karsts.",
+      "hours": "Cruise boarding usually begins around noon",
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx"
+      ]
     }
   ],
   "hotels": [
@@ -136,12 +131,22 @@
       "_source_mtime": 1776115654.0
     }
   ],
-  "health_tips": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Halong Bay"
+      ],
+      "tip": "Consider packing motion sickness tablets for the Halong Bay cruise if needed.",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_mtime": 1778695624.2020826
+    }
+  ],
   "source_files": [
     "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
     "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
     "Vietnam/Mohnish_All Inclusive Guide.docx",
     "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
-    "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf"
+    "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+    "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx"
   ]
 }

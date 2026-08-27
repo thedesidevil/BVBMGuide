@@ -18,22 +18,125 @@
       "best_for": [
         "casual"
       ],
+      "source_files": []
+    },
+    {
+      "name": "Weingut und Heuriger Maria & Manfred Hick",
+      "city": "Spitz",
+      "cuisine_type": [
+        "Austrian",
+        "Wine Bar"
+      ],
+      "ambience": "Traditional family-run heuriger with vineyard atmosphere",
+      "highlights": [
+        "Traditional family-run heuriger",
+        "Local Wachau wines",
+        "Vineyard atmosphere"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
       "source_files": [
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Gasthaus Spitzerl",
+      "city": "Spitz",
+      "cuisine_type": [
+        "Austrian"
+      ],
+      "ambience": "Cozy Austrian tavern",
+      "highlights": [
+        "Known for regional specialties",
+        "Relaxed atmosphere"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Weinschenke St. Michael",
+      "city": "Spitz",
+      "cuisine_type": [
+        "Austrian",
+        "Wine Bar"
+      ],
+      "ambience": "Rustic wine tavern",
+      "highlights": [
+        "Authentic Wachau character",
+        "Local wine offerings"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
       ]
     }
   ],
-  "attractions": [],
+  "attractions": [
+    {
+      "name": "Wachau Valley Cycling Route",
+      "city": "Spitz",
+      "description": "Easy and scenic cycling route through terraced vineyards, riverside villages, and Wachau wine country. Mostly flat and beginner-friendly. Suggested stop at Weißenkirchen.",
+      "recommended_duration": "3 hours",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    }
+  ],
   "hotels": [],
   "local_dishes": [],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Spitz",
+        "Dürnstein"
+      ],
+      "tip": "Leave the car parked in Spitz before cycling and collecting it again after the Danube cruise.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    }
+  ],
   "souvenirs": [],
   "emergency_contacts": [],
   "connectivity_tips": [],
-  "transport_options": [],
+  "transport_options": [
+    {
+      "city": "Spitz",
+      "mode": "Bicycle",
+      "description": "Rental bikes available via Nextbike app or local rental shop in Spitz. Easy and scenic cycling route through terraced vineyards and riverside villages. Mostly flat and beginner-friendly",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "city": "Spitz",
+      "mode": "Bicycle",
+      "description": "Rental bikes available via Nextbike app or local rental shop in Spitz. Easy and scenic cycling route through terraced vineyards and riverside villages. Mostly flat and beginner-friendly.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    }
+  ],
   "health_tips": [],
   "source_files": [
-    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+    "Europe/Itinerary- Budapest, Prague, Austria.docx",
+    "Austria/Itinerary- Budapest, Prague, Austria.docx",
+    "Austria/Itinerary- Budapest Prague Austria.docx"
   ]
 }

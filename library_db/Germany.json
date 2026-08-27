@@ -9,12 +9,7 @@
       "description": "Cheesy egg noodles, traditional German dish",
       "vegetarian": true,
       "where_to_try": "Zum Bitburger",
-      "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Flammkuchen",
@@ -22,10 +17,7 @@
       "description": "Thin flatbread with cream, cheese, and vegetables",
       "vegetarian": true,
       "where_to_try": "German restaurants",
-      "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kartoffelpuffer",
@@ -33,10 +25,7 @@
       "description": "Crispy potato pancakes served with apple sauce or sour cream",
       "vegetarian": true,
       "where_to_try": "German restaurants",
-      "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "German Pretzels",
@@ -44,9 +33,7 @@
       "description": "Freshly baked soft pretzels, often served with mustard or cheese spreads",
       "vegetarian": true,
       "where_to_try": "German bakeries",
-      "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "German Pretzels (Brezel)",
@@ -54,9 +41,7 @@
       "description": "Freshly baked soft pretzels, often served with mustard or cheese spreads",
       "vegetarian": true,
       "where_to_try": null,
-      "source_files": [
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     }
   ],
   "phrases": [
@@ -123,6 +108,62 @@
       "category": "food",
       "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
       "_source_mtime": 1772384292.0339181
+    },
+    {
+      "city": "Germany",
+      "english": "Hello / Good day",
+      "local": "Guten Tag",
+      "category": "greeting",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "city": "Germany",
+      "english": "Good morning",
+      "local": "Guten Morgen",
+      "category": "greeting",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "city": "Germany",
+      "english": "Please",
+      "local": "Bitte",
+      "category": "polite",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "city": "Germany",
+      "english": "Thank you",
+      "local": "Danke",
+      "category": "polite",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "city": "Germany",
+      "english": "Sorry / Excuse me",
+      "local": "Entschuldigung",
+      "category": "polite",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "city": "Germany",
+      "english": "Where is…?",
+      "local": "Wo ist…?",
+      "category": "navigation",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "city": "Germany",
+      "english": "How much does it cost?",
+      "local": "Wie viel kostet das?",
+      "category": "food",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
     }
   ],
   "safety_tips": [
@@ -181,17 +222,328 @@
       "tip": "Don't make Nazi-related jokes or gestures – This is extremely offensive and illegal",
       "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
       "_source_mtime": 1772384292.0339181
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Avoid carrying large cash amounts.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Use official taxi apps or hotel-arranged transfers.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Keep passport copies separate from originals.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Be cautious in crowded tourist hotspots and transport hubs.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Stick to well-lit areas at night, especially near canals or stations.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Watch out for fake fines for public transport without ticket checks.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Be aware of 'begging distraction' teams in tourist zones, particularly around Cologne Cathedral.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Ensure taxi meter is used to avoid overcharging.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Watch for pickpockets in busy train stations, especially Köln Hbf.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Avoid fake survey or donation clipboard scams in pedestrian streets.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Do not jaywalk — crossing on red is frowned upon and can be fined.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Do not make Nazi-related jokes or gestures — highly offensive and illegal.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Always validate transport tickets — many systems require stamping or activation.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
     }
   ],
   "souvenirs": [],
-  "emergency_contacts": [],
-  "connectivity_tips": [],
+  "emergency_contacts": [
+    {
+      "city": "Germany",
+      "service": "Police",
+      "number": "110",
+      "notes": "German police emergency number",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "city": "Germany",
+      "service": "Ambulance / Fire",
+      "number": "112",
+      "notes": "EU-wide emergency number",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "city": "Germany",
+      "service": "Indian Embassy – Berlin",
+      "number": "+49 30 257 950",
+      "notes": "Embassy of India, Berlin",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Recommended SIM options: Telekom (Deutsche Telekom / MagentaMobil Prepaid) for best premium coverage, Vodafone Germany Prepaid SIM (reliable), O2 Prepaid SIM (budget-friendly), Aldi Talk SIM (affordable, available in ALDI stores), Orange Holiday Europe SIM (cross-country Schengen travel).",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "Germany has strong city coverage but train routes may have intermittent signals. Station Wi-Fi at Köln Hbf and Frankfurt Airport is usually stable.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Germany"
+      ],
+      "tip": "eSIM is highly recommended for seamless activation on arrival in Germany.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "eSIM is the most convenient option for multi-country travel — no physical SIM swap needed.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Always carry a power bank for full-day sightseeing and navigation. Download offline maps before long train journeys or cruises.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Most cafés, hotels, and museums offer free Wi-Fi but speeds vary. Google Maps, DB Navigator, and STIB apps require constant data access.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    }
+  ],
   "transport_options": [],
-  "health_tips": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "No special travel vaccinations are mandatory for Indian travellers to the Netherlands, Belgium, or Germany. All three countries have excellent healthcare systems.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Ensure routine vaccinations are up to date: Tetanus, Diphtheria, Polio, MMR (Measles, Mumps, Rubella), and seasonal Influenza.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Recommended optional vaccinations for travel: Hepatitis A (exposure through food/travel dining), Hepatitis B (optional for long stays), Typhoid (broader travel hygiene protection).",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Tap water is safe to drink in all destinations.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Carry basic medications for cold, fever, and stomach upset. Use hand sanitizer regularly, especially in public transport and markets.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Stay hydrated, especially during walking-heavy sightseeing days. Wear comfortable footwear to avoid strain from cobblestone streets.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Use sunscreen even in mild May weather — UV exposure is still present.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Mosquito risk is very low, but mild repellents can be useful in parks. If prone to allergies, carry antihistamines due to spring pollen exposure.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Suggested travel medical kit: Paracetamol/pain reliever, antacids/digestion tablets, motion sickness tablets (for trains and canal/Rhine cruises), band-aids and antiseptic cream, ORS (oral rehydration salts), and personal prescription medicines with copy of prescription.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    },
+    {
+      "cities": [
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Excellent hospitals and pharmacies are widely available in all cities. Pharmacies are marked as 'Apotheek' in Netherlands/Belgium and 'Apotheke' in Germany. English-speaking staff are common in major cities.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0
+    }
+  ],
   "source_files": [
     "France/Tanya and Shovit_All Inclusive Guide.pdf",
     "Qatar/Tejas - Europe All Inclusive Guide.pdf",
     "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
-    "Switzerland/Tejas - Europe All Inclusive Guide.pdf"
+    "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+    "Europe/Sirisha_Europe_All Inclusive Guide.docx"
   ]
 }

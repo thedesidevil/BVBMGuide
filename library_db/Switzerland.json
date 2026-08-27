@@ -8,21 +8,7 @@
       "city": "Switzerland",
       "description": "A dish made by melting cheese in a communal pot, traditionally enjoyed by dipping bread into the cheese using long-stemmed forks",
       "vegetarian": true,
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "where_to_try": "Swiss restaurants"
     },
     {
@@ -30,76 +16,40 @@
       "city": "Switzerland",
       "description": "Iconic Swiss cheese dish where a wheel of Raclette cheese is heated, and the melted part is scraped onto boiled potatoes, pickles, and onions",
       "vegetarian": true,
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Rösti",
       "city": "Switzerland",
-      "description": "Swiss potato dish often served with mountain cheese",
+      "description": "A classic Swiss potato dish made from crispy pan-fried grated potatoes, often topped with cheese, vegetables, or herbs. Comforting, hearty, and especially delicious in the alpine regions.",
       "vegetarian": true,
       "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+        "France/Sneha_Europe_All Inclusive Guide.docx",
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
-      "where_to_try": "Restaurant Taverne"
+      "where_to_try": "Restaurant Löwen Brienz, Harder Kulm Panorama Restaurant, Restaurant Pilatus-Kulm"
     },
     {
       "name": "Käseschnitte",
       "city": "Switzerland",
       "description": "Bread slices topped with melted cheese, sometimes with ham or other additions",
       "vegetarian": true,
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Gschwellti",
       "city": "Switzerland",
       "description": "Boiled potatoes - a simple yet satisfying side dish commonly served with melted butter or cheese",
       "vegetarian": true,
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Alplermagronen",
       "city": "Switzerland",
       "description": "Traditional dish made with macaroni, cheese, potatoes, onions, and sometimes applesauce",
       "vegetarian": true,
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "where_to_try": "Lauterbrunnen"
     },
     {
@@ -108,16 +58,7 @@
       "description": "Swiss macaroni with potatoes, cheese, and cream, often served with crispy onions on top and apple sauce on the side",
       "vegetarian": true,
       "where_to_try": "Alpine restaurants",
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Filets de Perche",
@@ -125,22 +66,16 @@
       "description": "Perch fillets from Lake Geneva or Lake Zurich, pan-fried with lemon and butter",
       "vegetarian": false,
       "where_to_try": null,
-      "source_files": [
-        "France/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Cheese Fondue",
       "city": "Switzerland",
-      "description": "A classic Swiss experience—melted cheese served with bread cubes for dipping. Rich, warm, and perfect in alpine settings",
+      "description": "A warm pot of melted cheese served with bread cubes, creating a rich, indulgent, and interactive dining experience that is quintessentially Swiss.",
       "vegetarian": true,
-      "where_to_try": "Zermatt & Interlaken traditional Swiss restaurants",
+      "where_to_try": "Traditional Swiss restaurants in Lucerne, Interlaken, or Zurich",
       "source_files": [
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+        "France/Sneha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
@@ -149,10 +84,7 @@
       "description": "Traditional melted cheese dish",
       "vegetarian": true,
       "where_to_try": "Harder Kulm Panorama Restaurant",
-      "source_files": [
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Wiener Schnitzel",
@@ -160,10 +92,7 @@
       "description": "Breaded veal cutlet prepared tableside",
       "vegetarian": false,
       "where_to_try": "Old Swiss House",
-      "source_files": [
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Alpine Macaroni",
@@ -171,10 +100,7 @@
       "description": "Traditional alpine pasta dish",
       "vegetarian": true,
       "where_to_try": "Harder Kulm Panorama Restaurant",
-      "source_files": [
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Rösti (Swiss Potato Dish)",
@@ -182,9 +108,7 @@
       "description": "Crispy, golden potato base often served with cheese or vegetables—simple yet deeply satisfying",
       "vegetarian": true,
       "where_to_try": "Lucerne, Interlaken & mountain restaurants (Jungfraujoch / Rigi)",
-      "source_files": [
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Butter Gipfeli (Swiss Croissant)",
@@ -192,9 +116,7 @@
       "description": "Flaky, buttery, and slightly denser than a French croissant—perfect with coffee for a quick breakfast or snack",
       "vegetarian": true,
       "where_to_try": "Local bakeries in Zurich & Zermatt",
-      "source_files": [
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Älplermagronen (Swiss Alpine Mac & Cheese — Veg Version)",
@@ -202,9 +124,7 @@
       "description": "A comforting alpine dish made with pasta, potatoes, cream, and cheese—rich, hearty, and very local to mountain regions",
       "vegetarian": true,
       "where_to_try": "Interlaken region & mountain restaurants",
-      "source_files": [
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Vegetable Ravioli / Swiss-style Pasta",
@@ -212,9 +132,7 @@
       "description": "Fresh pasta dishes with seasonal vegetables and light sauces—common in Swiss-Italian influenced menus",
       "vegetarian": true,
       "where_to_try": "Zermatt & Interlaken cafés/restaurants",
-      "source_files": [
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Warm Alpine Vegetable Plates",
@@ -222,9 +140,7 @@
       "description": "Seasonal vegetables, grilled or sautéed, often served with local cheese or sauces—light yet flavourful",
       "vegetarian": true,
       "where_to_try": "Available across all destinations, especially scenic cafés",
-      "source_files": [
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Swiss Chocolate (Artisan Selections)",
@@ -232,9 +148,7 @@
       "description": "Smooth, high-quality chocolate—ranging from classic milk to rich dark varieties. A must-try while in Switzerland",
       "vegetarian": true,
       "where_to_try": "Zurich & Zermatt chocolate boutiques",
-      "source_files": [
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Zuger Kirschtorte (Non-alcoholic versions available)",
@@ -242,9 +156,7 @@
       "description": "A layered cake made with sponge, cream, and cherries—light and delicate (ask for non-alcoholic variants)",
       "vegetarian": true,
       "where_to_try": "Zurich & Lucerne bakeries",
-      "source_files": [
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Caramel Flan / Custard Desserts",
@@ -252,20 +164,16 @@
       "description": "Simple, creamy desserts commonly found across cafés and restaurants—great as a light sweet finish",
       "vegetarian": true,
       "where_to_try": "Widely available across all cities",
-      "source_files": [
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Swiss Chocolate",
       "city": "Switzerland",
-      "description": "High-quality chocolate brands like Lindt and Sprüngli",
+      "description": "Switzerland is world-famous for its silky smooth milk chocolates, artisanal pralines, and luxurious chocolate boutiques.",
       "vegetarian": true,
-      "where_to_try": "Confiserie Sprüngli in Zurich, or at chocolate shops across the country",
+      "where_to_try": "Lindt Home of Chocolate, Confiserie Sprüngli",
       "source_files": [
-        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf",
-        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf"
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
       ]
     },
     {
@@ -274,9 +182,7 @@
       "description": "A traditional Swiss nut tart, made with caramelized nuts and a buttery pastry",
       "vegetarian": true,
       "where_to_try": "Engadine region, particularly in and around St. Moritz",
-      "source_files": [
-        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Sausages (Bratwurst and Cervelat)",
@@ -284,9 +190,7 @@
       "description": "Swiss sausages often served with mustard, pickles, or in a bun",
       "vegetarian": false,
       "where_to_try": "Interlaken, Zurich, and Bern",
-      "source_files": [
-        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bircher Müsli",
@@ -294,46 +198,35 @@
       "description": "A healthy Swiss breakfast made from oats, fruit, nuts, and yogurt, popular for its fresh and nutritious qualities",
       "vegetarian": true,
       "where_to_try": "Swiss hotels and cafes",
-      "source_files": [
-        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
-        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Swiss Pastries",
       "city": "Switzerland",
       "description": "From buttery, flaky croissants to sweet, jam-filled Nusstorte from Engadine",
       "vegetarian": true,
-      "source_files": [
-        "Switzerland/Where to eat in Switzerland.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Swiss Cheese",
       "city": "Switzerland",
       "description": "Wide variety of cheeses including Emmental with its large holes, Gruyère, or Appenzeller with its strong flavor",
       "vegetarian": true,
-      "source_files": [
-        "Switzerland/Where to eat in Switzerland.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Rivella",
       "city": "Switzerland",
       "description": "A popular Swiss drink made from whey and herbs, available in various flavors",
       "vegetarian": true,
-      "source_files": [
-        "Switzerland/Where to eat in Switzerland.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Schümli Kaffee",
       "city": "Switzerland",
       "description": "A small, strong coffee served in a demitasse cup",
       "vegetarian": true,
-      "source_files": [
-        "Switzerland/Where to eat in Switzerland.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Nusstorte",
@@ -341,9 +234,7 @@
       "description": "A traditional Swiss nut tart, made with caramelized nuts and a buttery pastry",
       "vegetarian": true,
       "where_to_try": "Engadine region, particularly in and around St. Moritz",
-      "source_files": [
-        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bratwurst and Cervelat",
@@ -351,8 +242,146 @@
       "description": "Swiss sausages often served with mustard, pickles, or in a bun",
       "vegetarian": false,
       "where_to_try": "Interlaken, Zurich, and Bern",
+      "source_files": []
+    },
+    {
+      "name": "Älplermagronen (Swiss-Style Pasta)",
+      "city": "Switzerland",
+      "description": "A comforting combination of pasta, potatoes, cheese, and cream — hearty and filling, especially satisfying after a long day of sightseeing.",
+      "vegetarian": true,
+      "where_to_try": "Traditional Swiss restaurants in Lucerne or Interlaken",
       "source_files": [
-        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf"
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Swiss Chocolate & Pralines",
+      "city": "Switzerland",
+      "description": "Smooth, rich, and world-famous Swiss chocolates — both a must-try and perfect to take back as souvenirs.",
+      "vegetarian": true,
+      "where_to_try": "Schwegler Bäckerei Konditorei, Lucerne; chocolate shops across Switzerland",
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Swiss Coffee & Café Culture",
+      "city": "Switzerland",
+      "description": "Relaxed and slow-paced café culture, often paired with desserts in elegant and cozy settings.",
+      "vegetarian": true,
+      "where_to_try": "Cafés in Lucerne, Interlaken, and Zurich",
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Fresh Alpine Juices & Mocktails",
+      "city": "Switzerland",
+      "description": "Refreshing drinks made with fresh fruits and herbs, perfect for re-energizing after long walks or mountain excursions.",
+      "vegetarian": true,
+      "where_to_try": "Cafés and restaurants in Interlaken and Lucerne",
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Swiss Ice Cream & Gelato",
+      "city": "Switzerland",
+      "description": "Creamy, rich, and ideal for a sunny day — a delightful treat while exploring towns like Interlaken or Lucerne.",
+      "vegetarian": true,
+      "where_to_try": "Ice cream shops and cafés in Interlaken and Lucerne",
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Swiss Cheese Fondue",
+      "city": "Switzerland",
+      "description": "A warm pot of melted Swiss cheese served with bread cubes, potatoes, and vegetables — one of Switzerland's most iconic culinary experiences, especially in mountain towns.",
+      "vegetarian": true,
+      "where_to_try": "Restaurant Bellevue Harder Kulm, Le Refuge des Fondus",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Alpine Cheese Platters",
+      "city": "Switzerland",
+      "description": "Fresh regional cheeses served with breads, fruits, nuts, and preserves — simple yet deeply flavorful and deeply tied to Swiss mountain culture.",
+      "vegetarian": true,
+      "where_to_try": "Restaurant Löwen Brienz, Panorama Restaurant Titlis",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Alpine Mushroom Pasta",
+      "city": "Switzerland",
+      "description": "Creamy mushroom-based pasta dishes extremely popular across Swiss mountain restaurants, pairing beautifully with the cool alpine climate.",
+      "vegetarian": true,
+      "where_to_try": "Pastarazzi, Made in Sud, La Cucina",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Fresh Swiss Pastries",
+      "city": "Switzerland",
+      "description": "Perfect with morning coffee while overlooking lakes or mountain towns, Swiss pastries are simple yet incredibly comforting.",
+      "vegetarian": true,
+      "where_to_try": "Cafe Walz, Fellows Coffee Paris",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Swiss Hot Chocolate",
+      "city": "Switzerland",
+      "description": "Rich, creamy, and especially comforting after visiting snowy mountain summits like Titlis or Pilatus.",
+      "vegetarian": true,
+      "where_to_try": "Panorama Restaurant Titlis, Restaurant Pilatus-Kulm",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Fondue (Cheese Fondue)",
+      "city": "Switzerland",
+      "description": "Melted Swiss cheese served with bread cubes, potatoes, and pickles — a communal, comforting alpine classic best enjoyed in mountain towns.",
+      "vegetarian": true,
+      "where_to_try": "Mountain towns like Interlaken or Lucerne",
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Älplermagronen (Swiss Alpine Mac & Cheese)",
+      "city": "Switzerland",
+      "description": "A rich alpine dish made with pasta, potatoes, cream, caramelised onions, and cheese — hearty and deeply satisfying after mountain excursions.",
+      "vegetarian": true,
+      "where_to_try": "Alpine restaurants",
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Swiss Apple Strudel (Apfelstrudel)",
+      "city": "Switzerland",
+      "description": "Warm pastry filled with cinnamon-spiced apples and raisins, often served with vanilla sauce or cream.",
+      "vegetarian": true,
+      "where_to_try": "Swiss cafés and restaurants",
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Swiss Chocolate (Lindt-style desserts)",
+      "city": "Switzerland",
+      "description": "From pralines to mousse and hot chocolate, Switzerland's chocolate culture is world-class.",
+      "vegetarian": true,
+      "where_to_try": "Zurich and Lucerne cafés, Lindt Home of Chocolate",
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ]
     }
   ],
@@ -700,6 +729,246 @@
       "category": "polite",
       "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
       "_source_mtime": 1772384343.3418624
+    },
+    {
+      "city": "Switzerland",
+      "english": "Hello",
+      "local": "Grüezi",
+      "category": "greeting",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Thank you",
+      "local": "Danke",
+      "category": "polite",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Please / You're welcome",
+      "local": "Bitte",
+      "category": "polite",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Do you speak English?",
+      "local": "Sprechen Sie Englisch?",
+      "category": "polite",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Excuse me / Sorry",
+      "local": "Entschuldigung",
+      "category": "polite",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Hello",
+      "local": "Grüezi",
+      "category": "greeting",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Good Morning",
+      "local": "Guete Morge",
+      "category": "greeting",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Good Evening",
+      "local": "Guete Abig",
+      "category": "greeting",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Goodbye",
+      "local": "Uf Wiederluege",
+      "category": "greeting",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Thank You",
+      "local": "Danke",
+      "category": "polite",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Please",
+      "local": "Bitte",
+      "category": "polite",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Excuse Me / Sorry",
+      "local": "Entschuldigung",
+      "category": "polite",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Do you speak English?",
+      "local": "Sprechen Sie Englisch?",
+      "category": "polite",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "How much is this?",
+      "local": "Wie viel kostet das?",
+      "category": "food",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Where is the station?",
+      "local": "Wo ist der Bahnhof?",
+      "category": "polite",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Can I pay by card?",
+      "local": "Kann ich mit Karte zahlen?",
+      "category": "food",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Hello",
+      "local": "Hallo / Bonjour / Buongiorno",
+      "category": "greeting",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Good morning",
+      "local": "Guten Morgen",
+      "category": "greeting",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Goodbye",
+      "local": "Auf Wiedersehen",
+      "category": "greeting",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Please / You're welcome",
+      "local": "Bitte",
+      "category": "polite",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Thank you very much",
+      "local": "Danke schön",
+      "category": "polite",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Excuse me / Sorry",
+      "local": "Entschuldigung",
+      "category": "polite",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Bill please",
+      "local": "Die Rechnung bitte",
+      "category": "food",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Table for two",
+      "local": "Ein Tisch für zwei",
+      "category": "food",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Without meat, please",
+      "local": "Ohne Fleisch, bitte",
+      "category": "food",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Hello",
+      "local": "Grüezi",
+      "category": "greeting",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Thank you",
+      "local": "Danke",
+      "category": "polite",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Please / You're welcome",
+      "local": "Bitte",
+      "category": "polite",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Excuse me",
+      "local": "Entschuldigung",
+      "category": "polite",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "city": "Switzerland",
+      "english": "Do you speak English?",
+      "local": "Sprechen Sie Englisch?",
+      "category": "polite",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
     }
   ],
   "safety_tips": [
@@ -838,6 +1107,272 @@
       "tip": "Tipping: ~5–10% in restaurants; round up for taxis",
       "_source_file": "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
       "_source_mtime": 1772384309.270034
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland"
+      ],
+      "tip": "Keep your belongings secure, especially in crowded areas like stations and tourist attractions.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland"
+      ],
+      "tip": "Avoid displaying valuables openly such as phones, wallets, and passports.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland"
+      ],
+      "tip": "Stay alert in busy public transport areas, particularly in Paris.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland"
+      ],
+      "tip": "Use crossbody or anti-theft bags where possible.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland"
+      ],
+      "tip": "Stick to well-lit areas at night.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Follow all safety instructions during mountain excursions at Titlis and Jungfraujoch.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Be mindful of weather changes at higher altitudes.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Always follow pedestrian crossings and signals.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Respect quiet zones in trains.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Paris"
+      ],
+      "tip": "Keep your belongings secure, especially in busy areas and train stations.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Paris"
+      ],
+      "tip": "Be mindful of luggage while boarding trains or during transfers.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Paris"
+      ],
+      "tip": "Stick to well-lit areas if stepping out late.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Paris"
+      ],
+      "tip": "Avoid carrying large amounts of cash — cards are widely accepted.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Wear proper warm layers on mountain excursions — temperatures can drop quickly.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Walk carefully on snowy or uneven mountain paths.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Check weather conditions before heading out on mountain excursions.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Stay hydrated, even in cold mountain weather.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Paris"
+      ],
+      "tip": "Always follow pedestrian signals when crossing roads.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Stay behind marked lines on train platforms. Trains are extremely punctual — avoid rushing last minute.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Switzerland is an extremely safe country with very low crime. Main focus areas are discipline, punctuality, and public transport awareness.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "cities": [
+        "Italy",
+        "Switzerland"
+      ],
+      "tip": "Keep bags in front in crowded areas, especially in Venice, Rome, and Milan stations. Avoid loose pockets for phones and wallets.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "cities": [
+        "Italy",
+        "Switzerland"
+      ],
+      "tip": "Always keep luggage within sight on trains. Never leave bags unattended at stations. Be alert at major hubs: Milano Centrale, Roma Termini, Venezia Santa Lucia.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "cities": [
+        "Italy",
+        "Switzerland"
+      ],
+      "tip": "Keep passport and ticket copies in your phone and cloud backup. Enable mobile banking alerts for transactions.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "cities": [
+        "Italy",
+        "Switzerland"
+      ],
+      "tip": "Prefer official taxis or trains after 9–10 PM. Stick to well-lit, active streets at night.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Keep valuables secure in crowded tourist areas, metro stations, and train platforms.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Avoid keeping phones or wallets loosely in jacket pockets while sightseeing.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Use official taxis or trusted ride apps where available.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Carry a mix of cards and limited cash instead of large amounts of currency.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Keep digital and printed copies of passports, visas, insurance, and bookings.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Always monitor your luggage carefully during train travel and station transfers.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
     }
   ],
   "souvenirs": [
@@ -1584,6 +2119,162 @@
       "where_to_buy": [],
       "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
       "_source_mtime": 1772384340.7984886
+    },
+    {
+      "item": "Swiss Watches",
+      "city": "Switzerland",
+      "category": "Accessories",
+      "where_to_buy": [
+        "Watch boutiques in Zurich",
+        "Watch shops in Lucerne and Interlaken"
+      ],
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "item": "Swiss Chocolates",
+      "city": "Switzerland",
+      "category": "Food",
+      "where_to_buy": [
+        "Schwegler Bäckerei Konditorei, Lucerne",
+        "Chocolate shops across Switzerland",
+        "Airports and train stations"
+      ],
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "item": "Swiss Cowbells & Wooden Crafts",
+      "city": "Switzerland",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Souvenir shops in Lucerne",
+        "Souvenir shops in Interlaken"
+      ],
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "item": "Woollens & Winter Accessories",
+      "city": "Switzerland",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Clothing shops in Lucerne",
+        "Shops in Interlaken and Zurich"
+      ],
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "item": "Handcrafted Swiss Souvenirs (Music Boxes, Carved Wooden Pieces)",
+      "city": "Switzerland",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Souvenir shops in Lucerne",
+        "Souvenir shops in Interlaken and Zurich"
+      ],
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "item": "Swiss Chocolates",
+      "city": "Switzerland",
+      "category": "Food",
+      "where_to_buy": [
+        "Lindt Home of Chocolate",
+        "Confiserie Sprüngli",
+        "Bahnhofstrasse boutiques, Zurich"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "item": "Swiss Watches",
+      "city": "Switzerland",
+      "category": "Accessories",
+      "where_to_buy": [
+        "Bahnhofstrasse, Zurich",
+        "Lucerne Old Town watch boutiques"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "item": "Swiss Cheese & Gourmet Products",
+      "city": "Switzerland",
+      "category": "Food",
+      "where_to_buy": [
+        "Lucerne Old Town specialty stores",
+        "Brienz local shops",
+        "Zurich gourmet boutiques"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "item": "Swiss Wooden Handicrafts",
+      "city": "Switzerland",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Brienz Village artisan shops",
+        "Interlaken souvenir boutiques"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "item": "Swiss Cowbells & Alpine Souvenirs",
+      "city": "Switzerland",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Interlaken town center",
+        "Lucerne Old Town souvenir stores"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "item": "Swiss Beauty & Skincare Products",
+      "city": "Switzerland",
+      "category": "Beauty & Wellness",
+      "where_to_buy": [
+        "Manor Zurich",
+        "Globus department stores",
+        "Pharmacies in Lucerne & Zurich"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "item": "Swiss Alpine Cheese Wheels",
+      "city": "Switzerland",
+      "category": "Food",
+      "where_to_buy": [
+        "Local markets and cheese shops across Swiss cities"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "item": "Swiss Chocolate Boxes",
+      "city": "Switzerland",
+      "category": "Food",
+      "where_to_buy": [
+        "Lindt-style boutiques",
+        "Local chocolatiers across Swiss cities"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "item": "Alpine Honey Jars",
+      "city": "Switzerland",
+      "category": "Food",
+      "where_to_buy": [
+        "Local markets across Swiss cities"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
     }
   ],
   "emergency_contacts": [
@@ -1780,6 +2471,132 @@
       "notes": "Bern, Switzerland - Kirchenfeldstrasse 28, 3005 Bern",
       "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
       "_source_mtime": 1772384343.3418624
+    },
+    {
+      "city": "Switzerland",
+      "service": "General Emergency (Police / Ambulance / Fire)",
+      "number": "112",
+      "notes": "Official European emergency number, free of charge and accessible from any phone across France and Switzerland",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "city": "Switzerland",
+      "service": "Indian Embassy – Bern",
+      "number": "+41 31 350 11 30",
+      "notes": "Monday–Friday: 9:00 AM – 5:30 PM",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "city": "Switzerland",
+      "service": "Police",
+      "number": "117",
+      "notes": null,
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "service": "Ambulance",
+      "number": "144",
+      "notes": null,
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "service": "Fire",
+      "number": "118",
+      "notes": null,
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "service": "General Emergency (EU standard)",
+      "number": "112",
+      "notes": "Works across Europe and connects to emergency services quickly",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "service": "Embassy of India, Bern",
+      "number": "+41 31 350 11 30",
+      "notes": "Can assist in case of emergencies such as lost passports or urgent support",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "service": "Emergency",
+      "number": "112",
+      "notes": "General emergency number",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "service": "Police",
+      "number": "117",
+      "notes": null,
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "service": "Ambulance",
+      "number": "144",
+      "notes": null,
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "service": "Fire",
+      "number": "118",
+      "notes": null,
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "service": "Embassy of India, Bern",
+      "number": "+41 31 350 11 30",
+      "notes": "Indian Embassy in Switzerland",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "service": "Consulate General of India, Geneva",
+      "number": "+41 22 906 86 86",
+      "notes": "Indian Consulate in Geneva",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "service": "Police",
+      "number": "117",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "city": "Switzerland",
+      "service": "Ambulance",
+      "number": "144",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "city": "Switzerland",
+      "service": "Indian Embassy in Bern",
+      "number": "+41 31 350 11 30",
+      "notes": "Embassy of India, Kirchenfeldstrasse 28, 3005 Bern",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
     }
   ],
   "connectivity_tips": [
@@ -1959,6 +2776,171 @@
       "tip": "Ensure your roaming is activated to receive SMS such as for OTPs even if you don't purchase an international roaming pack",
       "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
       "_source_mtime": 1772384343.3418624
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland"
+      ],
+      "tip": "eSIMs are the easiest connectivity option — no physical SIM required and can be activated before departure via QR code. Popular providers include Airalo, Nomad, and Holafly, with Europe-wide coverage including France and Switzerland.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Local SIM card providers in Switzerland include Swisscom (best overall coverage including mountains), Sunrise (reliable alternative), and Salt (budget-friendly option). Available at Zurich HB Station, Lucerne Station, airports, and official stores. Passport mandatory for SIM registration.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland"
+      ],
+      "tip": "Strong connectivity on most train routes; brief signal drops in tunnels are normal.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Excellent mobile coverage even in mountain regions like Jungfraujoch, Titlis, and Interlaken.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland"
+      ],
+      "tip": "Wi-Fi is widely available in hotels, cafés, and stations throughout France and Switzerland.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "France"
+      ],
+      "tip": "eSIM is recommended for convenience — activate before leaving India. Popular providers include Airalo, Nomad, and Holafly. Purchase online, scan QR code, and activate instantly with no physical SIM needed. Choose a Europe-wide plan if traveling beyond Switzerland.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Local Swiss SIM cards are reliable with excellent coverage across cities and mountains. Top providers: Swisscom (best coverage), Sunrise, and Salt. Available at Zurich Airport, Zurich HB, convenience stores, and telecom shops. Passport required for registration.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "France"
+      ],
+      "tip": "International roaming from India is the most effortless option but usually more expensive. Popular providers: Airtel International Roaming and Jio International Packs. Check data limits carefully as plans can be costly.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "France"
+      ],
+      "tip": "Download Google Maps offline for all destinations before traveling.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Use the SBB Mobile App for real-time train schedules, live platform numbers, delays, train connections, and boat, tram, and bus schedules. Available on iOS App Store and Google Play Store.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Expect brief signal drops in tunnels and remote alpine areas.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Best setup: One Europe-wide SIM or eSIM with WiFi backup strategy. Switzerland and Italy are both supported by EU roaming providers via Italy-based SIMs or global eSIMs.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "eSIM is most recommended. Providers include Airalo (Europe eSIM), Holafly (Unlimited data plans), and Nomad eSIM (Flexible regional packs). Offers instant activation, works immediately upon landing, keeps primary SIM active for OTPs, and no risk of losing physical SIM.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Suggested eSIM plan: 10–20 GB for light usage (maps, WhatsApp, bookings) or unlimited plan for heavy navigation and uploads.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Local SIM in Switzerland available at Zurich Airport kiosks, Geneva Airport shops, and Swisscom/Sunrise stores. Best providers: Swisscom (best coverage, premium), Sunrise (good value), Salt Mobile (budget). Typical cost: CHF 20–60 depending on data package. Recommended plan: 5–10 GB.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Download offline maps of Switzerland (entire region) and Northern + Central Italy before travelling. Upload photos only on WiFi when possible. Avoid streaming during train rides unless on unlimited plan. Turn off background app refresh for non-essential apps.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Essential apps: Trenitalia App and Italo Treno App for Italy trains; SBB Mobile for Switzerland trains; Google Maps and Maps.me for navigation; WhatsApp for communication.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "An eSIM is the easiest and most convenient option for multi-country Europe trips. Recommended providers: Airalo, Holafly, Nomad. Works across multiple European countries with no physical SIM swapping required.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Local SIM cards available from Swisscom, Sunrise, and Salt. Purchase at Zurich/Lucerne stations or airport kiosks. Passport required. Excellent mountain and train route connectivity. Note: Switzerland is not fully covered under some EU roaming plans — check before purchasing.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
     }
   ],
   "transport_options": [
@@ -2081,6 +3063,109 @@
       "recommended_pass": "Swiss Travel Pass",
       "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
       "_source_mtime": 1748240155.0
+    },
+    {
+      "city": "Switzerland",
+      "mode": "Swiss Travel Pass",
+      "description": "All-inclusive travel pass covering unlimited travel on Swiss trains, buses, and boats including routes between Basel, Lucerne, Interlaken, Lauterbrunnen, Grindelwald, and Zurich. Also provides discounts on mountain excursions like Titlis and Jungfraujoch.",
+      "recommended_pass": "Swiss Travel Pass",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "city": "Switzerland",
+      "mode": "Train (SBB)",
+      "description": "Extensive and extremely punctual Swiss rail network connecting all major cities including Zurich, Interlaken, and Lucerne. Trains run frequently and are clean and safe.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Covered under Swiss Travel Pass for most intercity routes",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "mode": "Tram",
+      "description": "City trams available in Zurich and other Swiss cities for local transport.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Covered under Swiss Travel Pass",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "mode": "Bus",
+      "description": "Local and regional buses connecting towns and attractions across Switzerland.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Covered under Swiss Travel Pass",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "mode": "Lake Cruise / Boat",
+      "description": "Scenic lake cruises on Lake Brienz and Lake Lucerne offering beautiful panoramic views.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Fully or partially covered with Swiss Travel Pass depending on route",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "mode": "TGV LYRIA (High-Speed Train)",
+      "description": "High-speed train connecting Basel SBB to Paris Gare de Lyon. Train 9218, Coach 15, Seat 522, 2nd Class Club Four Lower Deck. Departure 12:34 PM, arrival 3:38 PM, journey approx. 3 hrs 40 mins.",
+      "cost": null,
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Switzerland",
+      "mode": "Self-Drive Car",
+      "description": "Primary mode of transport in Switzerland. Roads are exceptionally well-maintained with clear signage. International Driving Permit (IDP) is mandatory. Speed limits: 50 km/h in cities, 120 km/h on highways, 60–80 km/h on mountain roads. Drive on the right side. Headlights must be ON even during the day.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "mode": "Cable Car",
+      "description": "Used for mountain experiences such as Aiguille du Midi and Grindelwald First. Park car at base stations and switch to cable car.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "mode": "Mountain Train",
+      "description": "Scenic mountain trains used for Jungfrau region and Brienz Rothorn Railway. Depart from Grindelwald Terminal. Train frequency approximately every 30 minutes.",
+      "recommended_pass": null,
+      "cost": "Approx. INR 5,000–10,000 depending on route",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "mode": "Cogwheel Train",
+      "description": "Scenic cogwheel train to Rochers-de-Naye from Montreux with panoramic views.",
+      "recommended_pass": null,
+      "cost": "Approx. INR 6,000–8,000 per person (round trip)",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "city": "Switzerland",
+      "mode": "Swiss Trains",
+      "description": "Switzerland's train system is extremely punctual, scenic, and efficient. Intercity trains connect Lucerne, Interlaken, Chur, and Zurich smoothly. Train stations are clean, easy to navigate, and tourist friendly. Always arrive at the platform at least 10–15 minutes before departure.",
+      "recommended_pass": "Swiss Travel Pass",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "city": "Switzerland",
+      "mode": "Local Buses",
+      "description": "Swiss local buses are highly reliable and connect areas not covered by trains. Google Maps and SBB Mobile App provide accurate schedules and platform information.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
     }
   ],
   "health_tips": [
@@ -2187,6 +3272,291 @@
       "tip": "Bring hand sanitizer for rural areas and public transport",
       "_source_file": "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
       "_source_mtime": 1772384309.270034
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland"
+      ],
+      "tip": "No special or mandatory vaccinations are required for Indian travelers visiting France or Switzerland.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland"
+      ],
+      "tip": "Tap water is safe to drink in Switzerland and most parts of Paris.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland"
+      ],
+      "tip": "Vegetarian food is widely available — opt for well-reviewed restaurants for best quality.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland"
+      ],
+      "tip": "Temperatures can vary significantly, especially in the mountains — dress in layers to avoid catching a cold.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "At high-altitude locations like Jungfraujoch and Titlis, you may feel slight breathlessness — walk slowly and stay well hydrated.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland"
+      ],
+      "tip": "Use moisturizers, sunscreen (SPF 50 recommended), and sunglasses — cold air can be drying and snow glare can be strong.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland"
+      ],
+      "tip": "Carry a basic medical kit including fever, cold, and flu medication; digestion tablets; motion sickness medication for mountain routes; band-aids and basic first-aid; and any personal prescription medicines with a copy of the prescription.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Nearest medical facility to Hotel Luzernerhof, Lucerne: Permanence, approximately 15 minutes walk, open 7 AM–11 PM.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Nearest medical facility to Hotel Bären – The Bear Inn, Interlaken: Walk-In-Clinic Interlaken, approximately 15 minutes away, open 8 AM–12 PM and 1–5 PM (closed on weekends).",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Nearest medical facility to Novotel Zurich Airport Messe: Mr. Yüksel Cankut, approximately 11 minutes away, open 8 AM–5:30 PM (weekdays), 8 AM–1:00 PM (Saturdays), closed on Sundays.",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "France"
+      ],
+      "tip": "Tap water is safe to drink across all cities and mountain regions — carry a reusable bottle to stay hydrated.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "At high-altitude locations like Mt. Titlis and Mt. Pilatus, you may feel slight breathlessness — move at a comfortable pace and avoid overexertion.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Sun exposure is stronger in the mountains — carry sunscreen (SPF 50), sunglasses, and lip balm to protect against dryness and UV rays. UV exposure is stronger in snow-covered mountain regions.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "France"
+      ],
+      "tip": "Carry basic medications including personal prescriptions, cold & flu relief, motion sickness tablets, and a small first-aid kit.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "France"
+      ],
+      "tip": "Travel insurance is highly recommended to cover medical needs, delays, or unforeseen situations during your trip.",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "No mandatory vaccinations required for travelers from India. Routine vaccinations should be up to date including Tetanus and Hepatitis A & B.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Complete a routine health check-up before travel (optional but recommended). Carry prescribed personal medications with a prescription copy.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "cities": [
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Pack a basic travel medical kit including: Paracetamol (fever/headache), antacid/digestion tablets, motion sickness tablets (important for train and mountain travel), and band-aids with antiseptic cream.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Mild altitude sensitivity is possible above 2,000m+ in Jungfrau and mountain regions. Symptoms include slight headache, fatigue, and shortness of breath. Stay hydrated, avoid heavy meals before mountain ascent, move slowly at high viewpoints, and carry light snacks and a water bottle.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "No special vaccinations are mandatory for Indian travellers visiting France, Switzerland, and Italy for tourism.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Recommended vaccinations: Routine vaccinations (MMR, Tetanus, Flu), Hepatitis A, and Typhoid (especially for frequent international travellers).",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Stay well hydrated during sightseeing and long train journeys.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Wear comfortable walking shoes as most European cities involve extensive walking on cobblestone streets.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Carry light layers and a compact umbrella, especially for Switzerland where weather can change quickly.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Use sunscreen, sunglasses, and a cap during sunny afternoons.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Carry personal medications along with a small basic first-aid kit.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Inform restaurants clearly about dietary preferences while ordering meals.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Pace sightseeing comfortably and allow adequate rest between long travel days.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "France",
+        "Switzerland",
+        "Italy"
+      ],
+      "tip": "Carry a small mosquito repellent and hand sanitiser for added comfort during travel.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Nearest health centre to Lucerne hotel: Creative MED, approx. 2 mins walk, open Mon–Fri 9 AM–8 PM, Sat 9 AM–6 PM.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Nearest medical clinic to Interlaken apartment: Medical Clinic Interlaken, approx. 5 mins walk, open Mon–Fri 7:30 AM–5 PM, Sat 8 AM–11:30 PM.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "cities": [
+        "Switzerland"
+      ],
+      "tip": "Nearest medical centre to Chur hotel: Chur Medizin, approx. 1 min walk, open Mon–Thu 8 AM–12 PM & 2–6 PM, Fri 8 AM–12 PM & 2–4 PM.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
     }
   ],
   "source_files": [
@@ -2208,6 +3578,10 @@
     "Italy/Tejas - Europe All Inclusive Guide.pdf",
     "Italy/Paris, Switzerland and Italy.pdf",
     "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+    "France/Sneha_Europe_All Inclusive Guide.docx",
+    "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+    "Europe/Vidhi_Europe_All Inclusive Guide.docx"
   ]
 }

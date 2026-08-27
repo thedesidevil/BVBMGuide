@@ -1,17 +1,138 @@
 {
-  "restaurants": [],
+  "restaurants": [
+    {
+      "name": "Titlis Self Service Restaurant",
+      "city": "Engelberg",
+      "cuisine_type": [
+        "International",
+        "Fast Food"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "9:00 AM – 4:30 PM",
+      "ambience": "Casual",
+      "area": "Mount Titlis Summit",
+      "highlights": [
+        "Located at summit of Mount Titlis",
+        "Quick meal"
+      ],
+      "must_try_dishes": [
+        "Pizza",
+        "Quick bites"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Spice Bazaar Engelberg",
+      "city": "Engelberg",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹₹",
+      "hours": "2:00 PM – 11:30 PM",
+      "ambience": "Casual Indian dining",
+      "area": "Engelberg",
+      "nearby_landmarks": [
+        "Engelberg station, Engelberg"
+      ],
+      "highlights": [
+        "Good option before or after ascending Mt. Titlis",
+        "Familiar vegetarian comfort food"
+      ],
+      "must_try_dishes": [
+        "Vegetable curry",
+        "Dal and rice",
+        "Paneer dishes",
+        "Paneer butter masala",
+        "Vegetable biryani",
+        "Naan"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Gao's Restaurant Engelberg",
+      "city": "Engelberg",
+      "cuisine_type": [
+        "Asian"
+      ],
+      "price_range": "₹1,900–3,300 per person",
+      "hours": "1:00 PM – 11:00 PM (Tuesday & Wednesday Closed)",
+      "ambience": "Casual Asian restaurant with relaxed setting",
+      "area": "Near Engelberg station",
+      "nearby_landmarks": [
+        "Mount Titlis, Engelberg"
+      ],
+      "highlights": [
+        "Vegetarian-friendly noodle and rice dishes"
+      ],
+      "must_try_dishes": [
+        "Veg noodles",
+        "Tofu curry",
+        "Fried rice"
+      ],
+      "best_for": [
+        "Casual vegetarian Asian meal"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    }
+  ],
   "attractions": [
     {
       "name": "Mt. Titlis",
       "city": "Engelberg",
-      "description": "Mountain peak with cable car access, glacier cave, cliff walk and ice flyer chairlift",
-      "hours": "8:30 AM to 5:00 PM",
-      "recommended_duration": "6 hours",
+      "description": "Iconic Swiss mountain experience with the world's first rotating cable car (Titlis Rotair), Titlis Cliff Walk (Europe's highest suspension bridge), glacier cave, snow tubing, and panoramic views of glaciers and snowy peaks.",
+      "hours": "Approx. 8:30 AM – 5:00 PM (seasonal)",
+      "recommended_duration": "Full day",
       "source_files": [
-        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ],
+      "entry_fee": "Approx. INR 9,000–14,000 per person depending on Swiss Pass discounts"
+    },
+    {
+      "name": "Mount Titlis",
+      "city": "Engelberg",
+      "description": "Spectacular alpine destination featuring the world's first rotating cable car (Titlis Rotair), glacier cave, Cliff Walk, and panoramic mountain views.",
+      "hours": "Cable Cars: 8:30 AM – 5:00 PM",
+      "entry_fee": "Approx. ₹11,500–14,500 per person including cable car access",
+      "recommended_duration": "Full day",
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Titlis Cliff Walk",
+      "city": "Engelberg",
+      "description": "Europe's highest suspension bridge offering dramatic glacier views beneath your feet and thrilling alpine scenery.",
+      "hours": "Open during operating hours",
+      "recommended_duration": "30-60 minutes",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Titlis Glacier Cave",
+      "city": "Engelberg",
+      "description": "Glowing blue ice tunnels and intricately carved frozen sculptures inside the glacier, creating a surreal underground world.",
+      "hours": "Subject to weather conditions",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -22,12 +143,33 @@
   "souvenirs": [],
   "emergency_contacts": [],
   "connectivity_tips": [],
-  "transport_options": [],
+  "transport_options": [
+    {
+      "city": "Engelberg",
+      "mode": "Cable Car (Titlis Rotair)",
+      "description": "Multi-stage cable car journey from Engelberg valley station to Mount Titlis summit, including the world's first rotating cable car (Titlis Rotair).",
+      "cost": "~₹8,000–10,000 per person (discount with Swiss Travel Pass)",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "city": "Engelberg",
+      "mode": "Gondola / Cable Car (Mt. Titlis Rotair)",
+      "description": "The world's first rotating cable car ascending to Mt. Titlis summit with 360° views of glaciers and snowy peaks.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Lucerne–Engelberg route covered; cable car section discounted with Swiss Pass. Full ticket approx. INR 9,000–14,000",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    }
+  ],
   "health_tips": [],
   "source_files": [
     "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
     "Switzerland/Paris, Switzerland and Italy.pdf",
     "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
-    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+    "France/Sneha_Europe_All Inclusive Guide.docx",
+    "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+    "Europe/Vidhi_Europe_All Inclusive Guide.docx"
   ]
 }

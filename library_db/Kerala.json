@@ -9,9 +9,7 @@
       "description": "Quintessential Kerala meal - lavish spread of vegetarian dishes served on banana leaf including rice, various curries, pickles, and desserts",
       "vegetarian": true,
       "where_to_try": "Traditional Kerala restaurants",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Appam and Stew",
@@ -19,9 +17,7 @@
       "description": "Rice pancake with soft, spongy centre and crispy edges, perfect for dipping in mild coconut stew",
       "vegetarian": true,
       "where_to_try": "Local Kerala restaurants",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Puttu and Kadala Curry",
@@ -29,9 +25,7 @@
       "description": "Steamed rice cylinders served with spicy black chickpea curry - popular breakfast item",
       "vegetarian": true,
       "where_to_try": "Local breakfast spots",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Banana Chips",
@@ -39,9 +33,7 @@
       "description": "Crispy and slightly sweet banana chips - popular snack",
       "vegetarian": true,
       "where_to_try": "Street vendors and local shops",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Thalassery Biryani",
@@ -49,9 +41,7 @@
       "description": "Popular variant of biryani known for fragrant rice and rich, flavourful spices",
       "vegetarian": true,
       "where_to_try": "Local restaurants",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ghee Roast Dosa",
@@ -59,9 +49,7 @@
       "description": "Crispy and buttery dosa with rich ghee flavour, served with coconut chutney and sambar",
       "vegetarian": true,
       "where_to_try": "South Indian restaurants",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bonda",
@@ -69,9 +57,7 @@
       "description": "Deep-fried snacks with crispy outer layer and soft, spicy filling - popular tea-time treat",
       "vegetarian": true,
       "where_to_try": "Tea stalls and cafes",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kozhikodan Halwa",
@@ -79,9 +65,7 @@
       "description": "Sweet treat made from wheat flavoured with ghee and cardamom",
       "vegetarian": true,
       "where_to_try": "Local sweet shops",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Payasam",
@@ -89,9 +73,7 @@
       "description": "Delicious rice or vermicelli pudding flavoured with cardamom and garnished with cashews and raisins",
       "vegetarian": true,
       "where_to_try": "Traditional restaurants",
-      "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kattan Chaya",
@@ -99,15 +81,246 @@
       "description": "Strong black tea - local specialty",
       "vegetarian": true,
       "where_to_try": "Street vendors and tea stalls",
+      "source_files": []
+    },
+    {
+      "name": "Pazham Pori (Kerala Banana Fritters)",
+      "city": "Kerala",
+      "description": "Crispy golden banana fritters made using ripe bananas coated in a light batter. Perfect as an evening snack with tea.",
+      "vegetarian": true,
+      "where_to_try": "Roadside stalls across Kerala",
       "source_files": [
-        "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Parippu Vada",
+      "city": "Kerala",
+      "description": "A crunchy lentil fritter with spices and curry leaves, commonly enjoyed with chai across Kerala.",
+      "vegetarian": true,
+      "where_to_try": "Tea stalls and local eateries across Kerala",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kerala Sweet Corn & Spiced Pineapple",
+      "city": "Kerala",
+      "description": "Fresh sweet corn and pineapple slices sprinkled with local spices, often available at scenic viewpoints and roadside stalls.",
+      "vegetarian": true,
+      "where_to_try": "Scenic viewpoints and roadside stalls",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Appam with Stew",
+      "city": "Kerala",
+      "description": "Soft lace-edged rice pancakes served with creamy coconut stew. Mild, comforting and one of Kerala's signature breakfast and dinner dishes. Vegetarian and chicken options available.",
+      "vegetarian": true,
+      "where_to_try": "Hotels and local restaurants across Kerala",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kerala Sadya (Traditional Kerala Meal)",
+      "city": "Kerala",
+      "description": "A complete Kerala feast traditionally served on a banana leaf featuring rice, curries, pickles, avial, sambar, pachadi and desserts.",
+      "vegetarian": true,
+      "where_to_try": "Traditional Kerala restaurants",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kerala Chicken Roast with Malabar Parotta",
+      "city": "Kerala",
+      "description": "Slow-cooked chicken in roasted spices paired with flaky layered parotta. One of Kerala's most loved dishes.",
+      "vegetarian": false,
+      "where_to_try": "Local restaurants across Kerala",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Karimeen Pollichathu (Pearl Spot Fish)",
+      "city": "Kerala",
+      "description": "Fresh fish marinated with spices, wrapped in banana leaf and grilled slowly for rich flavours.",
+      "vegetarian": false,
+      "where_to_try": "Seafood restaurants across Kerala",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kerala Prawn Curry",
+      "city": "Kerala",
+      "description": "A coconut-based seafood curry with traditional spices and a slightly tangy flavour profile.",
+      "vegetarian": false,
+      "where_to_try": "Seafood restaurants across Kerala",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kerala Filter Coffee",
+      "city": "Kerala",
+      "description": "Freshly brewed strong coffee with a rich aroma, perfect during cool Munnar mornings.",
+      "vegetarian": true,
+      "where_to_try": "Sri Mu Saravana Bhavan and local cafés across Kerala",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tender Coconut Water",
+      "city": "Kerala",
+      "description": "Naturally refreshing and ideal for staying hydrated during sightseeing.",
+      "vegetarian": true,
+      "where_to_try": "Roadside stalls across Kerala",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Palada Payasam",
+      "city": "Kerala",
+      "description": "Kerala's famous dessert made using milk, rice flakes and slow-cooked sweetness, commonly served during celebrations and festive meals.",
+      "vegetarian": true,
+      "where_to_try": "Traditional Kerala restaurants",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
       ]
     }
   ],
-  "phrases": [],
-  "safety_tips": [],
+  "phrases": [
+    {
+      "city": "Kerala",
+      "english": "Hello / Greetings",
+      "local": "Namaskaram",
+      "category": "greeting",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "city": "Kerala",
+      "english": "How are you?",
+      "local": "Sukhamano?",
+      "category": "greeting",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "city": "Kerala",
+      "english": "Thank you",
+      "local": "Nanni",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "city": "Kerala",
+      "english": "How much is this?",
+      "local": "Ithinte Vila Ethra?",
+      "category": "food",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "city": "Kerala",
+      "english": "I want to go here",
+      "local": "Enikku ivide pokanam",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "city": "Kerala",
+      "english": "I want to go to the airport",
+      "local": "Airportilekku pokanam",
+      "category": "emergency",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Keep your phone charged before long sightseeing days and share your live location with family if preferred.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Keep hotel addresses and driver's contact details accessible at all times.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Carry bottled water during sightseeing and stay hydrated, especially during city exploration in Cochin.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Avoid carrying large amounts of cash. Keep passports, IDs and valuables safely stored and use hotel safes where available.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Always ask permission before taking close-up photographs of local people, especially inside religious or cultural places.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    }
+  ],
   "souvenirs": [],
-  "emergency_contacts": [],
+  "emergency_contacts": [
+    {
+      "city": "Kerala",
+      "service": "Police Emergency",
+      "number": "100",
+      "notes": null,
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "city": "Kerala",
+      "service": "Ambulance",
+      "number": "108",
+      "notes": null,
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "city": "Kerala",
+      "service": "Fire Emergency",
+      "number": "101",
+      "notes": null,
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "city": "Kerala",
+      "service": "National Emergency Helpline",
+      "number": "112",
+      "notes": null,
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    }
+  ],
   "connectivity_tips": [
     {
       "cities": [
@@ -135,9 +348,42 @@
       "tip": "Use mosquito/insect repellent due to tropical climate",
       "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
       "_source_mtime": 1772384277.8766136
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Kerala does not typically require any special or mandatory vaccinations for travellers arriving from India.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Carry any regular prescription medicines in original packaging.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Keep a small first-aid kit with pain relief medication, motion sickness tablets (helpful for Munnar hill roads), band-aids, antiseptic cream, medicines for acidity or stomach discomfort, and allergy medication if required.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Carry any regular medications in your day bag during sightseeing and stay hydrated by carrying bottled water.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0
     }
   ],
   "source_files": [
-    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf"
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+    "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
   ]
 }

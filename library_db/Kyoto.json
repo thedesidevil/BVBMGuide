@@ -12,10 +12,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ],
+      "source_files": [],
       "nearby_landmarks": [
         "Kyoto station, Kyoto"
       ],
@@ -28,20 +25,30 @@
       "name": "Taj Mahal Everest Karasuma Oike",
       "city": "Kyoto",
       "cuisine_type": [
-        "Indian"
+        "Indian",
+        "Vegetarian"
       ],
-      "price_range": "1000-2000 yen per person",
-      "hours": "11am-3pm, 5-10pm",
-      "highlights": [],
+      "price_range": "₹600–₹1,200",
+      "hours": "11:00 AM – 3:00 PM, 5:00 PM – 10:00 PM",
+      "highlights": [
+        "Popular with vegetarian travellers",
+        "Relaxed atmosphere"
+      ],
       "best_for": [
-        "casual"
+        "Indian vegetarian meals"
       ],
-      "vegetarian_friendly": false,
+      "vegetarian_friendly": true,
       "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "must_try_dishes": [
+        "Paneer Butter Masala",
+        "Vegetable Curry",
+        "Garlic Naan"
+      ],
+      "ambience": "Relaxed Indian restaurant popular with vegetarian travellers",
+      "area": "Karasuma Oike, Kyoto",
+      "nearby_landmarks": []
     },
     {
       "name": "Gohan-ya",
@@ -49,22 +56,27 @@
       "cuisine_type": [
         "Japanese"
       ],
-      "hours": "5:30–10:30 pm",
-      "ambience": "Seasonal homestyle recipes and a huge sake menu",
+      "hours": "11:30 AM – 10:00 PM (Closed Sunday)",
+      "ambience": "Small cosy restaurant serving home-style Japanese meals",
       "highlights": [
-        "Home-style Japanese",
-        "Seasonal menu",
-        "Alcohol options"
+        "Home-style Japanese cooking",
+        "Small and cosy"
       ],
       "best_for": [
-        "casual"
+        "traditional local dining"
       ],
       "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ],
-      "price_range": "₹1000-1600",
-      "area": "near Richmond Hotel Premier Kyoto Ekimae"
+      "price_range": "₹600–₹1,000",
+      "area": "Kyoto",
+      "must_try_dishes": [
+        "Seasonal Set Meals",
+        "Vegetable Rice Bowls",
+        "Japanese Side Dishes"
+      ],
+      "nearby_landmarks": [],
+      "vegetarian_friendly": true
     },
     {
       "name": "Fune Ethical Lifestyle",
@@ -79,12 +91,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "ThisisShizen",
@@ -103,10 +110,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ],
+      "source_files": [],
       "vegetarian_friendly": false
     },
     {
@@ -128,10 +132,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ],
+      "source_files": [],
       "nearby_landmarks": [
         "Arashiyama Bamboo Grove, Kyoto"
       ],
@@ -158,10 +159,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ],
+      "source_files": [],
       "ambience": "Casual burger restaurant",
       "nearby_landmarks": [
         "Arashiyama Bamboo Grove, Kyoto"
@@ -184,10 +182,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ],
+      "source_files": [],
       "ambience": "Italian restaurant with wood-oven",
       "nearby_landmarks": [
         "Kiyomizu-dera, Kyoto",
@@ -220,9 +215,7 @@
         "relaxed"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Toki Sushi",
@@ -247,10 +240,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ],
+      "source_files": [],
       "ambience": "Local sushi restaurant with veg-friendly options",
       "nearby_landmarks": [
         "Kiyomizu-dera, Kyoto",
@@ -284,9 +274,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Shubha Bihani - Bukkoji",
@@ -300,29 +288,37 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ],
+      "source_files": [],
       "highlights": []
     },
     {
       "name": "Sudarshan",
       "city": "Kyoto",
       "cuisine_type": [
-        "Indian"
+        "Indian",
+        "Vegetarian"
       ],
-      "price_range": "1000-2000 yen per person",
-      "hours": "11am–3pm, 5pm - 9:30pm",
+      "price_range": "₹600–₹1,200",
+      "hours": "11:00 AM – 3:00 PM, 5:00 PM – 9:30 PM",
       "best_for": [
-        "casual"
+        "Indian comfort food"
       ],
-      "vegetarian_friendly": false,
+      "vegetarian_friendly": true,
       "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ],
-      "highlights": []
+      "highlights": [
+        "Popular North Indian restaurant",
+        "Comfort food"
+      ],
+      "must_try_dishes": [
+        "Dal Tadka",
+        "Paneer Butter Masala",
+        "Vegetable Biryani"
+      ],
+      "ambience": "Popular Indian restaurant serving North Indian favourites",
+      "area": "Kyoto",
+      "nearby_landmarks": []
     },
     {
       "name": "Spice Lounge",
@@ -336,10 +332,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ],
+      "source_files": [],
       "highlights": [
         "Vegetarian-friendly Indian dishes"
       ]
@@ -359,9 +352,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ashoka Indian Resturant",
@@ -375,9 +366,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ajanta",
@@ -391,68 +380,80 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Restaurant Namaste",
       "city": "Kyoto",
       "cuisine_type": [
-        "Indian"
+        "Indian",
+        "Nepali",
+        "Vegetarian"
       ],
-      "price_range": "₹1,200–2,500 per person",
-      "hours": "11 AM – 10 PM",
+      "price_range": "₹600–₹1,200",
+      "hours": "11:00 AM – 10:00 PM",
       "nearby_landmarks": [
-        "Fushimi Inari Shrine, Kyoto"
+        "Fushimi Inari Taisha, Kyoto"
       ],
       "best_for": [
-        "casual"
+        "Indian dinner after Fushimi Inari"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ],
       "must_try_dishes": [
         "Butter chicken",
         "naan",
-        "veg curries"
+        "veg curries",
+        "Garlic naan",
+        "Vegetable curry",
+        "Momo dumplings",
+        "Veg Thali",
+        "Dal Makhani",
+        "Vegetable Momos"
       ],
-      "area": "Fushimi Inari",
+      "area": "Near Fushimi Inari",
       "highlights": [
-        "Indian food option",
-        "veg + non-veg, halal-friendly",
-        "Good fallback if craving familiar flavours"
-      ]
+        "Near Fushimi Inari",
+        "Indian-Nepali menu"
+      ],
+      "ambience": "Casual Indian-Nepali restaurant near Fushimi Inari"
     },
     {
       "name": "New Annapurna Fukakusa",
       "city": "Kyoto",
       "cuisine_type": [
-        "Indian"
+        "Indian",
+        "Vegetarian"
       ],
-      "price_range": "1000-2000 yen per person",
-      "hours": "11am–3pm, 5–11pm",
-      "nearby_landmarks": [
-        "Fushimi Inari Taisha, Kyoto"
-      ],
+      "price_range": "₹600–₹1,200",
+      "hours": "11:00 AM – 3:00 PM, 5:00 PM – 11:00 PM",
+      "nearby_landmarks": [],
       "best_for": [
-        "casual"
+        "comfort Indian food"
       ],
-      "vegetarian_friendly": false,
+      "vegetarian_friendly": true,
       "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ],
-      "area": "near Fushimi Inari",
+      "area": "Fukakusa, Kyoto",
       "highlights": [
-        "13 mins from Fushimi Inari Taisha, involves 10 mins of walking"
-      ]
+        "Family-friendly",
+        "Comfort Indian food"
+      ],
+      "must_try_dishes": [
+        "Vegetable curry set",
+        "Garlic naan",
+        "Samosas",
+        "Mango lassi",
+        "Vegetable Curry",
+        "Paneer Tikka",
+        "Butter Naan"
+      ],
+      "ambience": "Family-friendly Indian restaurant"
     },
     {
       "name": "Arashiyama Yoshimura",
@@ -478,11 +479,7 @@
         "romantic"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ],
+      "source_files": [],
       "ambience": "Riverside dining with scenic views"
     },
     {
@@ -510,10 +507,7 @@
         "romantic"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Sushi Naritaya",
@@ -539,10 +533,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Steak Otsuka",
@@ -568,10 +559,7 @@
         "romantic"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Ramen Hiwamatanoboru",
@@ -599,10 +587,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Katsugyu Fushimi Inari",
@@ -627,10 +612,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Kyo Chabana Kyoto Station",
@@ -638,19 +620,28 @@
       "cuisine_type": [
         "Japanese"
       ],
-      "price_range": "₹1400-2100",
-      "hours": "5–10:30 pm",
-      "area": "near Richmond Hotel Premier Kyoto Ekimae",
+      "price_range": "₹800–₹1,300",
+      "hours": "11:00 AM – 11:00 PM",
+      "area": "Kyoto Station",
       "highlights": [
-        "Okonomiyaki Specialty",
-        "Vegetarian Options"
+        "Known for Kyoto-style okonomiyaki",
+        "Local favourite"
       ],
       "best_for": [
-        "casual"
+        "authentic Kyoto comfort food"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "must_try_dishes": [
+        "Vegetarian Okonomiyaki",
+        "Tomato Okonomiyaki",
+        "Grilled Seasonal Vegetables"
+      ],
+      "ambience": "Casual local favourite known for Kyoto-style okonomiyaki",
+      "nearby_landmarks": [
+        "Kyoto Station, Kyoto"
       ]
     },
     {
@@ -669,29 +660,36 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Menya Yukou",
       "city": "Kyoto",
       "cuisine_type": [
+        "Japanese",
         "Ramen"
       ],
-      "price_range": "₹900-1400",
-      "hours": "5:30–10:00 pm",
+      "price_range": "₹500–₹900",
+      "hours": "11:00 AM – 3:00 PM | 5:30 PM – 10:00 PM",
       "highlights": [
-        "Vegetarian-friendly ramen",
-        "flavourful broths"
+        "Known for rich vegetarian broths",
+        "Local ramen restaurant"
       ],
       "best_for": [
-        "casual"
+        "evening ramen"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "must_try_dishes": [
+        "Vegetarian Ramen",
+        "Mushroom Broth Ramen",
+        "Seasonal Sides"
+      ],
+      "ambience": "Local ramen restaurant known for rich vegetarian broths",
+      "area": "Kyoto",
+      "nearby_landmarks": []
     },
     {
       "name": "Pastamore Kyoto Station Store",
@@ -707,10 +705,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ],
+      "source_files": [],
       "area": "Near Kyoto station",
       "nearby_landmarks": [
         "Kyoto station, Kyoto"
@@ -733,9 +728,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kosa",
@@ -751,58 +744,71 @@
       "best_for": [
         "romantic"
       ],
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kumonocha",
       "city": "Kyoto",
       "cuisine_type": [
-        "Café"
+        "Dessert",
+        "Japanese"
       ],
-      "price_range": "1000-2000 yen per person",
-      "hours": "10am- 5:30pm",
+      "price_range": "₹500–₹900",
+      "hours": "10:00 AM – 6:00 PM",
       "must_try_dishes": [
         "cloud-shaped mousse cakes",
         "matcha creations",
-        "Matcha drinks"
+        "Matcha drinks",
+        "Cloud Mousse Cake",
+        "Matcha Desserts",
+        "Seasonal Sweets"
       ],
       "best_for": [
-        "casual"
+        "matcha lovers",
+        "dessert lovers"
       ],
       "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ],
       "highlights": [
-        "Trendy café most famous for their cloud-shaped mousse cakes",
-        "Known for their Macha based drinks and desserts"
+        "Famous for artistic matcha creations",
+        "Elegant dessert café"
       ],
-      "vegetarian_friendly": false
+      "vegetarian_friendly": true,
+      "ambience": "Elegant dessert café famous for artistic matcha creations",
+      "area": "Kyoto",
+      "nearby_landmarks": []
     },
     {
-      "name": "French Café chasen",
+      "name": "French Café Chasen",
       "city": "Kyoto",
       "cuisine_type": [
-        "Café"
+        "French",
+        "Japanese",
+        "Dessert"
       ],
-      "price_range": "1000-2000 yen per person",
-      "hours": "11am- 9pm",
+      "price_range": "₹500–₹1,200",
+      "hours": "11:00 AM – 9:00 PM",
       "must_try_dishes": [
-        "kiribako mist box with 8 matcha desserts"
+        "kiribako mist box with 8 matcha desserts",
+        "Kiribako Matcha Dessert Box",
+        "Matcha Parfaits",
+        "Seasonal Sweets"
       ],
       "best_for": [
-        "casual"
+        "premium dessert experience"
       ],
       "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ],
       "highlights": [
-        "When you open the kiribako, white mist rises, revealing 8 exquisite matcha desserts"
+        "Blends French pastry with Kyoto matcha culture",
+        "Premium dessert experience"
       ],
-      "vegetarian_friendly": false
+      "vegetarian_friendly": true,
+      "ambience": "Stylish café blending French pastry techniques with Kyoto matcha culture",
+      "area": "Kyoto",
+      "nearby_landmarks": []
     },
     {
       "name": "Ippudo Kyoto Porta",
@@ -818,25 +824,35 @@
       ],
       "highlights": [],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Zirael Vegan Restaurant",
       "city": "Kyoto",
       "cuisine_type": [
-        "Vegan"
+        "Vegan",
+        "Japanese"
       ],
-      "price_range": "1000-2000 yen per person",
-      "hours": "12:30pm-7pm",
-      "area": "Gion",
+      "price_range": "₹600–₹1,200",
+      "hours": "12:30 PM – 3:30 PM | 4:30 PM – 9:00 PM",
+      "area": "Gion, Kyoto",
       "highlights": [
-        "Serves vegan dishes"
+        "Dedicated vegan restaurant",
+        "Located in Gion district"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "must_try_dishes": [
+        "Vegan Set Meals",
+        "Plant-Based Japanese Dishes",
+        "Seasonal Specials"
+      ],
+      "ambience": "Dedicated vegan restaurant in the Gion area",
+      "nearby_landmarks": [],
+      "best_for": [
+        "vegan dinner in Gion"
       ]
     },
     {
@@ -852,9 +868,7 @@
         "Japanese vegan restaurant"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Vegan Izakaya",
@@ -867,9 +881,7 @@
         "Izakaya"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Mimikou",
@@ -884,24 +896,35 @@
         "Has several veg and vegan options"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Okaffe Kyoto",
       "city": "Kyoto",
       "cuisine_type": [
-        "Café"
+        "Café",
+        "Dessert"
       ],
-      "price_range": "1000-2000 yen per person",
-      "hours": "9am – 8pm",
+      "price_range": "₹500–₹1,000",
+      "hours": "9:00 AM – 8:00 PM",
       "highlights": [
-        "The head barista is a multiple-time winner of the Japan Barista Championship"
+        "Run by an award-winning barista",
+        "Specialty coffee"
       ],
       "vegetarian_friendly": false,
       "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "must_try_dishes": [
+        "Hand-Brewed Coffee",
+        "Desserts",
+        "Seasonal Cakes"
+      ],
+      "ambience": "Specialty coffee café run by an award-winning barista",
+      "area": "Kyoto",
+      "nearby_landmarks": [],
+      "best_for": [
+        "coffee lovers"
       ]
     },
     {
@@ -916,9 +939,7 @@
         "Reservations required"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Café Cherish",
@@ -937,9 +958,7 @@
         "Mermaid Crystal Lagoon Parfait"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kyo Karucha Cafe",
@@ -956,9 +975,7 @@
         "creative cheesecake"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Itoh Kyuemon",
@@ -975,9 +992,7 @@
         "Matcha Parfait"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Maccha House",
@@ -994,9 +1009,7 @@
         "Uji Matcha Tiramisu"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Shigetsu (Tenryu-ji Temple)",
@@ -1022,9 +1035,7 @@
         "cultural"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Arabica Kyoto Arashiyama",
@@ -1050,42 +1061,41 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Veg Out Kyoto",
       "city": "Kyoto",
       "cuisine_type": [
-        "Japanese",
-        "Vegan"
+        "Vegan",
+        "Japanese"
       ],
-      "price_range": "¥1,500–2,500 pp",
-      "hours": "9 AM – 5 PM Monday and tuesday closes",
-      "ambience": "Riverfront vegan restaurant offering creative Japanese-inspired cuisine",
-      "area": "Gion / Downtown Kyoto",
-      "nearby_landmarks": [
-        "Gion District, Kyoto"
-      ],
+      "price_range": "₹900–₹1,500",
+      "hours": "9:00 AM – 10:30 AM | 11:30 AM – 5:00 PM (closed on Mon)",
+      "ambience": "Riverside vegan café offering creative Japanese-inspired cuisine with a relaxed atmosphere overlooking the river",
+      "area": "Kyoto city centre",
+      "nearby_landmarks": [],
       "highlights": [
-        "Vegan sushi platter",
-        "Tofu steak",
-        "Matcha tiramisu",
-        "Riverside dining"
+        "Riverside location",
+        "Vegan menu",
+        "Creative Japanese-inspired cuisine"
       ],
       "must_try_dishes": [
         "Vegan sushi platter",
         "Tofu steak",
-        "Matcha tiramisu"
+        "Matcha tiramisu",
+        "Vegan Sushi Platter",
+        "Tofu Steak",
+        "Matcha Tiramisu"
       ],
       "best_for": [
-        "relaxed",
-        "riverside dining"
+        "vegan dining",
+        "riverside meals",
+        "light lunch before travelling"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -1113,38 +1123,42 @@
         "cozy"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Mumokuteki Café & Foods",
       "city": "Kyoto",
       "cuisine_type": [
-        "Organic",
-        "Japanese"
+        "Japanese",
+        "Vegetarian",
+        "Organic"
       ],
-      "price_range": "¥1,000–1,800 pp",
-      "hours": "11:30 AM – 8 PM wednesday closes",
-      "ambience": "Local favorite known for balanced, organic dishes made with Kyoto-grown ingredients",
-      "area": "Gion / Downtown Kyoto",
+      "price_range": "₹600–₹1,100",
+      "hours": "11:30 AM – 7:00 PM (Closed Wednesday)",
+      "ambience": "Cozy, rustic café focused on organic Kyoto-grown ingredients and healthy vegetarian meals",
+      "area": "Central Kyoto",
       "highlights": [
-        "Local favorite",
-        "Organic dishes",
-        "Kyoto-grown ingredients"
+        "Uses Kyoto-grown organic ingredients",
+        "Local favourite",
+        "Wholesome vegetarian meals"
       ],
       "must_try_dishes": [
         "Vegetable tempura bowl",
         "Miso soup",
-        "Tofu pudding"
+        "Tofu pudding",
+        "Vegetable Tempura Bowl",
+        "Miso Soup",
+        "Tofu Pudding"
       ],
       "best_for": [
-        "local experience"
+        "healthy eating",
+        "vegetarian lunch"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": []
     },
     {
       "name": "Kiyomizu Junsei Okabeya",
@@ -1175,9 +1189,7 @@
         "peaceful"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Okutan Kiyomizu",
@@ -1210,9 +1222,7 @@
         "serene"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Yumeji Café Goryūkaku",
@@ -1241,9 +1251,7 @@
         "lunch break"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Choice Café Kyoto",
@@ -1252,92 +1260,92 @@
         "Vegan",
         "Café"
       ],
-      "price_range": "¥1,200–1,900 pp",
-      "hours": "9:30 AM – 8 PM",
-      "ambience": "Vegan-friendly café with hearty, clean meals and egg-based options",
-      "area": "Fushimi Inari Area / Southern Kyoto",
+      "price_range": "₹700–₹1,100",
+      "hours": "9:30 AM – 8:00 PM",
+      "ambience": "Contemporary vegan-friendly café with wholesome comfort food",
+      "area": "Kyoto",
       "highlights": [
-        "Vegan-friendly café",
-        "Hearty clean meals",
-        "Contemporary comfort"
+        "Vegan-friendly",
+        "Wholesome comfort food"
       ],
       "must_try_dishes": [
         "Vegan lasagna",
         "Tofu sandwich",
-        "Coconut cheesecake"
+        "Coconut cheesecake",
+        "Vegan Lasagna",
+        "Tofu Sandwich",
+        "Coconut Cheesecake"
       ],
       "best_for": [
-        "contemporary",
-        "comfort"
+        "vegan comfort food"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": []
     },
     {
       "name": "Yoshuji",
       "city": "Kyoto",
       "cuisine_type": [
-        "Buddhist vegetarian",
-        "Traditional Japanese"
+        "Japanese",
+        "Buddhist Vegetarian"
       ],
-      "price_range": "¥2,000–3,500 pp",
-      "hours": "10 AM – 5 PM",
-      "ambience": "Traditional temple restaurant near Kurama-dera serving Shojin Ryori — Buddhist vegetarian cuisine emphasizing balance and simplicity",
-      "area": "Kurama & Kibune Area",
-      "nearby_landmarks": [
-        "Kurama-dera Temple, Kyoto"
-      ],
+      "price_range": "₹1,200–₹2,000",
+      "hours": "10:00 AM – 5:30 PM",
+      "ambience": "Traditional temple restaurant serving Shojin Ryori (Buddhist vegetarian cuisine)",
+      "area": "Kyoto",
+      "nearby_landmarks": [],
       "highlights": [
-        "Traditional temple restaurant",
-        "Shojin Ryori Buddhist cuisine",
-        "Balance and simplicity"
+        "Serves authentic Shojin Ryori (Buddhist vegetarian cuisine)",
+        "Traditional temple restaurant"
       ],
       "must_try_dishes": [
         "Seasonal vegetable hotpot",
         "Sesame tofu",
-        "Yuba rolls"
+        "Yuba rolls",
+        "Seasonal Vegetable Hotpot",
+        "Sesame Tofu",
+        "Yuba Rolls"
       ],
       "best_for": [
-        "traditional",
-        "temple dining"
+        "authentic Buddhist cuisine"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Aburaya Shokudo",
       "city": "Kyoto",
       "cuisine_type": [
-        "Japanese",
-        "Mountain cuisine"
+        "Japanese"
       ],
-      "price_range": "¥1,200–2,000 pp",
-      "hours": "9 AM – 4:30 PM",
-      "ambience": "Homely mountain eatery serving rustic Kyoto-style comfort food with vegetarian-friendly sets",
-      "area": "Kurama & Kibune Area",
-      "nearby_landmarks": [
-        "Kurama Station, Kyoto"
-      ],
+      "price_range": "₹800–₹1,500",
+      "hours": "Daytime service",
+      "ambience": "Rustic mountain eatery near Kurama",
+      "area": "Kurama",
+      "nearby_landmarks": [],
       "highlights": [
-        "Homely mountain eatery",
-        "Rustic Kyoto-style comfort food"
+        "Rustic mountain eatery",
+        "Near Kurama village"
       ],
       "must_try_dishes": [
         "Vegetable tempura udon",
         "Soba with mountain greens",
-        "Miso rice bowl"
+        "Miso rice bowl",
+        "Vegetable Tempura Udon",
+        "Mountain Green Soba",
+        "Miso Rice Bowl"
       ],
       "best_for": [
-        "homely",
-        "comfort food"
+        "local mountain cuisine"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -1345,33 +1353,31 @@
       "city": "Kyoto",
       "cuisine_type": [
         "Japanese",
-        "Riverside dining"
+        "Kaiseki"
       ],
-      "price_range": "¥2,000–3,000 pp",
-      "hours": "10:30 AM – 4 PM",
-      "ambience": "Charming riverside restaurant in Kibune village offering kawadoko dining — seating on wooden decks above the stream (seasonal)",
-      "area": "Kurama & Kibune Area",
-      "nearby_landmarks": [
-        "Kibune Shrine, Kyoto"
-      ],
+      "price_range": "₹1,200–₹1,800",
+      "hours": "10:30 AM – 4:00 PM",
+      "ambience": "Seasonal riverside kawadoko dining above a flowing stream",
+      "area": "Kibune River",
+      "nearby_landmarks": [],
       "highlights": [
-        "Charming riverside restaurant",
-        "Kawadoko dining",
-        "Wooden decks above stream",
-        "Seasonal"
+        "Unique riverside kawadoko dining above a flowing stream",
+        "Seasonal experience"
       ],
       "must_try_dishes": [
         "Cold tofu set",
         "Vegetable kaiseki platter",
-        "Chilled matcha noodles"
+        "Chilled matcha noodles",
+        "Cold Tofu Set",
+        "Vegetable Kaiseki",
+        "Chilled Matcha Noodles"
       ],
       "best_for": [
-        "riverside",
-        "seasonal dining"
+        "unique riverside dining experience"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -1399,9 +1405,7 @@
         "comfort"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ganesha Kyoto",
@@ -1434,9 +1438,7 @@
         "authentic spices"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kerala Kitchen Kyoto",
@@ -1465,37 +1467,42 @@
         "spicy"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Miyakoyasai Kamo Kyoto Station Store",
       "city": "Kyoto",
       "cuisine_type": [
-        "Farm-to-table",
-        "Japanese"
+        "Japanese",
+        "Vegetarian",
+        "Buffet"
       ],
-      "price_range": "¥1,500 – 2,000 pp",
-      "hours": "11 AM – 3:30 PM,5 PM - 10 PM",
-      "ambience": "Farm-to-table buffet specializing in seasonal Kyoto vegetables",
-      "area": "Kyoto Station Area",
+      "price_range": "₹900–₹1,200",
+      "hours": "11:00 AM – 3:30 PM, 5:00 PM – 10:00 PM",
+      "ambience": "Farm-to-table buffet showcasing seasonal Kyoto vegetables",
+      "area": "Kyoto Station",
       "highlights": [
-        "Farm-to-table buffet",
+        "Farm-to-table concept",
+        "Unlimited vegetable buffet",
         "Seasonal Kyoto vegetables"
       ],
       "must_try_dishes": [
         "Salad and tofu bar",
         "Vegetable curry",
-        "Egg gratin"
+        "Egg gratin",
+        "Salad & Tofu Bar",
+        "Vegetable Curry",
+        "Egg Gratin"
       ],
       "best_for": [
-        "farm-to-table",
-        "buffet"
+        "unlimited vegetable buffet"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [
+        "Kyoto Station, Kyoto"
       ]
     },
     {
@@ -1504,54 +1511,62 @@
       "cuisine_type": [
         "Japanese"
       ],
-      "price_range": "¥1,200 – 1,800 pp",
-      "hours": "11:30 AM – 1:30 PM, 6 PM-9 PM",
-      "ambience": "Small family-run diner famed for customisable okonomiyaki (Japanese savoury pancake)",
-      "area": "Kyoto Station Area",
+      "price_range": "₹700–₹1,100",
+      "hours": "11:30 AM – 1:30 PM, 6:00 PM – 9:00 PM",
+      "ambience": "Family-run diner popular with locals",
+      "area": "Kyoto",
       "highlights": [
-        "Small family-run diner",
-        "Customisable okonomiyaki"
+        "Family-run diner",
+        "Popular with locals"
       ],
       "must_try_dishes": [
         "Vegetarian okonomiyaki with egg",
-        "Yakisoba with vegetables"
+        "Yakisoba with vegetables",
+        "Vegetarian Okonomiyaki",
+        "Vegetable Yakisoba",
+        "Miso Sauce Pancakes"
       ],
       "best_for": [
-        "family-run",
-        "customizable"
+        "casual Japanese dinner"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": []
     },
     {
       "name": "Tendon Makino Kyoto Station",
       "city": "Kyoto",
       "cuisine_type": [
-        "Tempura",
-        "Japanese"
+        "Japanese",
+        "Tempura"
       ],
-      "price_range": "¥1,000 – 1,800 pp",
-      "hours": "11 AM – 3 PM,5 Pm - 8:30 PM",
-      "ambience": "Tempura-style restaurant with egg-based and vegetarian sets available on request",
-      "area": "Kyoto Station Area",
+      "price_range": "₹600–₹1,100",
+      "hours": "11:00 AM – 3:00 PM, 5:00 PM – 8:30 PM",
+      "ambience": "Popular tempura restaurant inside Kyoto Station",
+      "area": "Kyoto Station",
       "highlights": [
-        "Tempura-style restaurant",
-        "Vegetarian sets available on request"
+        "Located inside Kyoto Station",
+        "Quick station meal"
       ],
       "must_try_dishes": [
         "Vegetable tempura bowl",
         "Soft-boiled egg tempura",
-        "Miso soup set"
+        "Miso soup set",
+        "Vegetable Tempura Bowl",
+        "Egg Tempura",
+        "Miso Soup Set"
       ],
       "best_for": [
-        "tempura",
-        "station dining"
+        "quick station meal"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [
+        "Kyoto Station, Kyoto"
       ]
     },
     {
@@ -1579,8 +1594,481 @@
         "ramen night"
       ],
       "vegetarian_friendly": true,
+      "source_files": []
+    },
+    {
+      "name": "Mumokuteki Café Kyoto",
+      "city": "Kyoto",
+      "cuisine_type": [
+        "Japanese",
+        "Vegetarian",
+        "Café"
+      ],
+      "price_range": "₹1000–1800 per person",
+      "hours": "11:30 AM – 7:00 PM",
+      "ambience": "Warm and artistic vegetarian café with cozy interiors and relaxed Kyoto atmosphere",
+      "area": "Kawaramachi",
+      "nearby_landmarks": [
+        "Kyoto Station, Kyoto"
+      ],
+      "highlights": [
+        "Wholesome Japanese-style meals",
+        "Very relaxed Kyoto atmosphere"
+      ],
+      "must_try_dishes": [
+        "Soy karaage plate",
+        "Tofu rice bowls",
+        "Vegan desserts"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
       "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Premarche Gelateria & Alternative Junk",
+      "city": "Kyoto",
+      "cuisine_type": [
+        "Vegan",
+        "Café"
+      ],
+      "price_range": "₹1200–2200 per person",
+      "hours": "12:00 PM – 6:00 PM (Saturday & Sunday 12 PM – 8 PM)",
+      "ambience": "Quirky vegan-friendly café",
+      "area": "Near Kyoto Station",
+      "nearby_landmarks": [
+        "Kyoto Station, Kyoto"
+      ],
+      "highlights": [
+        "Creative plant-based comfort food",
+        "One of Kyoto's most loved vegan gelato selections"
+      ],
+      "must_try_dishes": [
+        "Vegan pizza",
+        "Burgers",
+        "Gelato",
+        "Curry rice"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Choice Kyoto",
+      "city": "Kyoto",
+      "cuisine_type": [
+        "Vegan",
+        "Café"
+      ],
+      "price_range": "₹1000–1800 per person",
+      "hours": "9:30 AM – 8:00 PM",
+      "ambience": "Minimalist vegan café",
+      "area": "Near Higashiyama",
+      "nearby_landmarks": [
+        "Kyoto Station, Kyoto"
+      ],
+      "highlights": [
+        "Fresh smoothie bowls",
+        "Nourishing plant-based meals"
+      ],
+      "must_try_dishes": [
+        "Vegan taco rice",
+        "Smoothie bowls",
+        "Soy milk desserts"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Engine Ramen Kyoto",
+      "city": "Kyoto",
+      "cuisine_type": [
+        "Japanese",
+        "Ramen"
+      ],
+      "price_range": "₹900–1600 per person",
+      "hours": "12:00 PM – 10:30 PM",
+      "ambience": "Modern ramen spot with stylish yet casual setting",
+      "area": "Near Pontocho Alley",
+      "nearby_landmarks": [
+        "Pontocho Alley, Kyoto"
+      ],
+      "highlights": [
+        "Flavorful vegan ramen bowls",
+        "Warm hospitality"
+      ],
+      "must_try_dishes": [
+        "Vegan ramen",
+        "Spicy ramen",
+        "Gyoza"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Maharaja Kyoto",
+      "city": "Kyoto",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹1400–2400 per person",
+      "hours": "8:00 AM – 8:00 PM (Sunday to Thursday – Closed)",
+      "ambience": "Elegant Indian restaurant with refined dining atmosphere",
+      "area": "Gion",
+      "nearby_landmarks": [
+        "Gion District, Kyoto"
+      ],
+      "highlights": [
+        "Rich vegetarian curries",
+        "Premium dining experience"
+      ],
+      "must_try_dishes": [
+        "Paneer tikka",
+        "Dal makhani",
+        "Vegetable biryani"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Shigetsu",
+      "city": "Kyoto",
+      "cuisine_type": [
+        "Japanese",
+        "Buddhist Vegetarian"
+      ],
+      "price_range": "₹1800–3200 per person",
+      "hours": "11:00 AM – 2:00 PM (Thursday Closed)",
+      "ambience": "Tranquil tatami-style setting within Tenryu-ji Temple complex",
+      "area": "Arashiyama",
+      "nearby_landmarks": [
+        "Tenryu-ji Temple, Kyoto",
+        "Togetsukyo Bridge, Kyoto"
+      ],
+      "highlights": [
+        "Authentic shojin ryori (Zen Buddhist vegetarian cuisine)",
+        "Located within temple complex"
+      ],
+      "must_try_dishes": [
+        "Seasonal tofu dishes",
+        "Sesame tofu",
+        "Temple-style set meals"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Arashiyama Yoshimura Café",
+      "city": "Kyoto",
+      "cuisine_type": [
+        "Japanese",
+        "Café"
+      ],
+      "price_range": "₹1200–2200 per person",
+      "hours": "11:00 AM – 4:00 PM",
+      "ambience": "Scenic riverside café with beautiful views of Togetsukyo Bridge and surrounding mountains",
+      "area": "Arashiyama",
+      "nearby_landmarks": [
+        "Togetsukyo Bridge, Kyoto"
+      ],
+      "highlights": [
+        "Beautiful riverside views",
+        "Calm traditional setting"
+      ],
+      "must_try_dishes": [
+        "Vegetarian soba options",
+        "Matcha desserts",
+        "Seasonal sweets"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kerala Kyoto",
+      "city": "Kyoto",
+      "cuisine_type": [
+        "Indian",
+        "South Indian"
+      ],
+      "price_range": "₹1000–1800 per person",
+      "hours": "11:30 AM – 2:30 PM | 5 PM – 10 PM",
+      "ambience": "Cozy South Indian restaurant with warm homestyle flavours",
+      "area": "Kawaramachi",
+      "highlights": [
+        "Authentic vegetarian curries",
+        "Homestyle South Indian flavours"
+      ],
+      "must_try_dishes": [
+        "Masala dosa",
+        "Vegetable curry",
+        "Idli platter"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "TowZen Kyoto",
+      "city": "Kyoto",
+      "cuisine_type": [
+        "Japanese",
+        "Ramen"
+      ],
+      "price_range": "₹1200–2200 per person",
+      "hours": "11:00 AM – 2:30 PM | 6 PM – 8:30 PM",
+      "ambience": "Refined ramen restaurant with peaceful modern setting",
+      "area": "Kawaramachi",
+      "highlights": [
+        "Creamy vegan ramen",
+        "Elegant Kyoto-style presentation"
+      ],
+      "must_try_dishes": [
+        "Vegan soy milk ramen",
+        "Tofu toppings",
+        "Seasonal noodles"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "BHAVANI",
+      "city": "Kyoto",
+      "cuisine_type": [
+        "Indian",
+        "Vegetarian"
+      ],
+      "price_range": "₹1200–2500 per person",
+      "hours": "12:00 PM – 4:00 PM | 6:00 PM – 11:00 PM",
+      "ambience": "Welcoming Indian vegetarian restaurant with calm casual dining atmosphere",
+      "area": "Near Mimaru Kyoto Kawaramachi",
+      "highlights": [
+        "Authentic Indian flavors",
+        "Hearty comfort food"
+      ],
+      "must_try_dishes": [
+        "South Indian thali",
+        "Dosa",
+        "Paneer dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mar Cafe",
+      "city": "Kyoto",
+      "cuisine_type": [
+        "Café",
+        "Modern"
+      ],
+      "price_range": "₹1200–2200 per person",
+      "hours": "11:30 AM – 11:00 PM",
+      "ambience": "Cozy modern café with minimalist interiors and peaceful atmosphere",
+      "area": "Near Mimaru Kyoto Kawaramachi",
+      "highlights": [
+        "Light comfort meals",
+        "Peaceful Kyoto evening atmosphere"
+      ],
+      "must_try_dishes": [
+        "Matcha desserts",
+        "Pasta",
+        "Café beverages"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ukiya Kiyomizu Kisseian",
+      "city": "Kyoto",
+      "cuisine_type": [
+        "Japanese",
+        "Soba"
+      ],
+      "price_range": null,
+      "hours": "11 AM – 5:30 PM (closed on Monday & Tuesday)",
+      "area": "Kiyomizu-dera",
+      "nearby_landmarks": [
+        "Kiyomizu-dera Temple, Kyoto"
+      ],
+      "highlights": [
+        "Traditional soba",
+        "Light but filling",
+        "Perfect mid-itinerary meal"
+      ],
+      "must_try_dishes": [
+        "Handmade soba",
+        "Tempura sets"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Akoya-chaya",
+      "city": "Kyoto",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": null,
+      "area": "Kiyomizu-dera",
+      "nearby_landmarks": [
+        "Kiyomizu-dera Temple, Kyoto"
+      ],
+      "highlights": [
+        "Traditional yuba (tofu skin) cuisine",
+        "Refined cultural experience"
+      ],
+      "must_try_dishes": [
+        "Yuba (tofu skin) cuisine"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Fune Ethical Lifestyle Café",
+      "city": "Kyoto",
+      "cuisine_type": [
+        "Vegan",
+        "Japanese"
+      ],
+      "price_range": "₹500–₹900",
+      "hours": "12:00 PM – 6:00 PM (Closed Wednesday)",
+      "ambience": "Minimalist vegan café with peaceful interiors and ethical dining philosophy",
+      "area": "Kyoto",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Dedicated vegan café",
+        "Ethical dining philosophy",
+        "Minimalist interiors"
+      ],
+      "must_try_dishes": [
+        "Vegan Curry",
+        "Buddha Bowl",
+        "Plant-Based Desserts"
+      ],
+      "best_for": [
+        "vegan lunch",
+        "healthy eating"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kyoto Engine Ramen",
+      "city": "Kyoto",
+      "cuisine_type": [
+        "Japanese",
+        "Ramen"
+      ],
+      "price_range": "₹600–₹900",
+      "hours": "12:00 PM – 10:30 PM",
+      "ambience": "Modern ramen spot with vegetarian broth options",
+      "area": "Kyoto",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Vegetarian broth options available",
+        "Modern ramen spot"
+      ],
+      "must_try_dishes": [
+        "Vegetarian Soy Ramen",
+        "Seasoned Egg",
+        "Nori Toppings"
+      ],
+      "best_for": [
+        "vegetarian ramen"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Shubha Bihani",
+      "city": "Kyoto",
+      "cuisine_type": [
+        "Indian",
+        "Vegetarian"
+      ],
+      "price_range": "₹600–₹1,200",
+      "hours": "11:00 AM – 10:30 PM",
+      "ambience": "Authentic Indian restaurant with vegetarian options",
+      "area": "Kyoto",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Authentic Indian restaurant",
+        "Vegetarian options available"
+      ],
+      "must_try_dishes": [
+        "Veg Thali",
+        "Paneer Curry",
+        "Naan Basket"
+      ],
+      "best_for": [
+        "Indian vegetarian meals"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -1588,23 +2076,20 @@
     {
       "name": "Nijo Castle",
       "city": "Kyoto",
-      "description": "UNESCO World Heritage Site showcasing the power and elegance of the Tokugawa shoguns, famous for its 'nightingale floors' and exquisite Edo-period architecture",
-      "hours": "8:45 AM – 5:00 PM (last entry 4:00 PM)",
+      "description": "A UNESCO-listed castle showcasing elegant Edo-period architecture and beautiful gardens.",
+      "hours": "8:45 AM – 5:00 PM",
       "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ],
-      "entry_fee": "¥1,300 per person",
-      "recommended_duration": "2-3 hours"
+      "entry_fee": "Approx. ₹600–1000 per person",
+      "recommended_duration": "1–2 hours"
     },
     {
       "name": "Kinkaku-ji",
       "city": "Kyoto",
       "description": "Golden Pavilion covered in gold leaf, reflecting perfectly in mirror-like pond",
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/AA_All Inclusive Guide_Japan.pdf"
-      ],
+      "source_files": [],
       "hours": "9 AM – 5 PM",
       "entry_fee": "~₹600 per person",
       "recommended_duration": "60-75 minutes"
@@ -1612,28 +2097,22 @@
     {
       "name": "Kiyomizu-dera Temple",
       "city": "Kyoto",
-      "description": "Celebrated temple with large wooden terrace offering panoramic views",
+      "description": "A UNESCO World Heritage Site offering spectacular views over Kyoto from its historic wooden terrace.",
       "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
-        "Japan/Amit- All Inclusive Guide_Japan.pdf",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Azhar_Japan_All Inclusive Guide.docx",
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ],
       "hours": "6:00 AM – 6:00 PM",
-      "entry_fee": "~¥400",
-      "recommended_duration": "45 mins"
+      "entry_fee": "Approx. ₹250–500 per person",
+      "recommended_duration": "1–2 hours"
     },
     {
       "name": "Fushimi-Inari",
       "city": "Kyoto",
       "description": "Famous shrine with thousands of torii gates",
       "hours": "Elevator can only be used between 9:00-15:00",
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Arashiyama Bamboo Forest",
@@ -1642,73 +2121,52 @@
       "hours": "open 24hrs",
       "entry_fee": "no entrance fees",
       "recommended_duration": "1 hour",
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Arashiyama Bamboo Grove",
       "city": "Kyoto",
-      "description": "Serene walk through towering bamboo stalks",
-      "hours": "24 hours",
+      "description": "Walk through towering bamboo forests and enjoy one of Japan's most iconic landscapes.",
+      "hours": "Open all day",
       "entry_fee": "Free",
-      "recommended_duration": "30 mins",
+      "recommended_duration": "1–2 hours",
       "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
-        "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Sagano Scenic Railway",
       "city": "Kyoto",
-      "description": "A charming open-window train ride through forested valleys- especially beautiful during cherry blossom season",
+      "description": "One of Kyoto's most beautiful short train journeys, winding slowly through forested valleys, mountain landscapes, and river gorges with large open windows.",
       "hours": "Varies",
-      "recommended_duration": "25 minutes",
+      "recommended_duration": "25 mins",
       "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amit- All Inclusive Guide_Japan.pdf",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
       ],
-      "entry_fee": "~¥880 per person"
+      "entry_fee": "Approx. ₹500–1000 per person"
     },
     {
       "name": "Fushimi Inari Taisha",
       "city": "Kyoto",
-      "description": "Iconic pathway of thousands of vermillion torii gates",
-      "hours": "24 hours",
+      "description": "Famous for its thousands of vermillion torii gates winding through the forested hillside. One of Kyoto's most iconic and photographed attractions.",
+      "hours": "Open 24 hours",
       "entry_fee": "Free",
-      "recommended_duration": "1 hour",
+      "recommended_duration": "2–3 hours",
       "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Kinkaku-ji (Golden Pavilion)",
       "city": "Kyoto",
-      "description": "Stunning golden structure reflected in a tranquil pond",
+      "description": "Kyoto's world-famous golden temple reflected beautifully in a tranquil pond setting.",
       "hours": "9:00 AM – 5:00 PM",
       "entry_fee": "~¥500",
-      "recommended_duration": "40 mins",
+      "recommended_duration": "1 hour",
       "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
-        "Japan/Amit- All Inclusive Guide_Japan.pdf",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -1718,9 +2176,7 @@
       "hours": "Varies",
       "entry_fee": "Varies",
       "recommended_duration": "60–75 minutes",
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Kiyomizu-dera",
@@ -1729,10 +2185,7 @@
       "hours": "Varies",
       "entry_fee": "Varies",
       "recommended_duration": "45 minutes",
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Sagano Train Ride",
@@ -1741,22 +2194,18 @@
       "hours": "Last train at 15:02",
       "entry_fee": "Book online",
       "recommended_duration": "Not specified",
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Gion District",
       "city": "Kyoto",
-      "description": "Iconic district known for traditional wooden architecture and geisha culture",
-      "hours": "Various",
+      "description": "Kyoto's famous geisha district, filled with traditional wooden machiya houses, tea houses, and charming alleyways.",
+      "hours": "Best explored during sunset into evening",
       "entry_fee": "Free",
-      "recommended_duration": "1 hour",
+      "recommended_duration": "2–3 hours",
       "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -1766,10 +2215,7 @@
       "hours": "9am- 5pm",
       "entry_fee": "500 yen per person",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Fushimi Inari Shrine",
@@ -1778,12 +2224,7 @@
       "hours": "Open 24 hours",
       "entry_fee": "Free",
       "recommended_duration": "2-3 hours",
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amit- All Inclusive Guide_Japan.pdf",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Fushimi Inari-Taisha",
@@ -1792,9 +2233,7 @@
       "hours": "Open 24hrs",
       "entry_fee": "Free",
       "recommended_duration": "2 hours",
-      "source_files": [
-        "Japan/Detailed Final Itinerary for Japan_05052024.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Sannenzaka & Ninenzaka Streets",
@@ -1803,39 +2242,35 @@
       "hours": "Opens 24 hrs",
       "entry_fee": "Free",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amit- All Inclusive Guide_Japan.pdf",
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Philosopher's Path",
       "city": "Kyoto",
-      "description": "A peaceful canal-side walk lined with cherry blossoms",
-      "hours": "Open 24 hours",
+      "description": "A flat, scenic ~2 km trail along a canal offering peak cherry blossom experience with plenty of photo stops and small cafés.",
+      "hours": "Open all day",
       "entry_fee": "Free",
-      "recommended_duration": "1-2 hours",
+      "recommended_duration": "1.5 hours",
       "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Amanohashidate",
       "city": "Kyoto",
-      "description": "A scenic sandbar in Japan, renowned for its unique landscape. It stretches for about 3.6 kilometers. Said to be one of the 3 most beautiful views in Japan and is often called 'the bridge to heaven'",
+      "description": "One of Japan's Three Most Scenic Views, famous for its stunning pine-covered sandbar. A day trip from Kyoto.",
       "recommended_duration": "Full day",
       "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Ine Funaya",
       "city": "Kyoto",
-      "description": "Like the Venice of Japan. The distinctive feature of this village is its houses, which are built directly on the water. Offers a glimpse into the traditional way of life in this coastal region",
-      "recommended_duration": "Part of day trip",
+      "description": "A picturesque fishing village often referred to as the 'Venice of Japan' due to its waterfront boathouses. A day trip from Kyoto.",
+      "recommended_duration": "Full day",
       "source_files": [
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -1845,9 +2280,7 @@
       "hours": "Various",
       "entry_fee": "Free",
       "recommended_duration": "40 mins",
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Kurama-dera Temple",
@@ -1856,9 +2289,7 @@
       "hours": "9:00 AM – 4:30 PM",
       "entry_fee": "¥300 per person",
       "recommended_duration": "2-3 hours",
-      "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kurama Onsen",
@@ -1867,9 +2298,7 @@
       "hours": "10 AM – 9 PM",
       "entry_fee": "¥1,000–2,500",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kibune Village",
@@ -1878,9 +2307,7 @@
       "hours": "Open 24 hrs",
       "entry_fee": "No entry fee",
       "recommended_duration": "2-3 hours",
-      "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ninomaru Gardens",
@@ -1889,8 +2316,148 @@
       "hours": "8:45 AM – 5:00 PM (last entry 4:00 PM)",
       "entry_fee": "Included in Nijo Castle entry (¥1,300 per person)",
       "recommended_duration": "1 hour",
+      "source_files": []
+    },
+    {
+      "name": "Togetsukyo Bridge",
+      "city": "Kyoto",
+      "description": "Stretching across the Katsura River with forested hills in the background, one of Kyoto's most scenic landmarks.",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "30 mins",
       "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Tea Ceremony Kyoto",
+      "city": "Kyoto",
+      "description": "One of Kyoto's most elegant cultural traditions — a Japanese tea ceremony experience reflecting the Japanese philosophy of simplicity, mindfulness, and hospitality.",
+      "hours": "Session timings vary",
+      "entry_fee": "Approx. ₹1800–3500 per person depending on session",
+      "recommended_duration": "45 mins–1 hour",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Higashiyama Streets (Ninenzaka & Sannenzaka)",
+      "city": "Kyoto",
+      "description": "Preserved streets surrounding Kiyomizu-dera — narrow stone lanes lined with wooden buildings, tea houses, souvenir stores, and lantern-lit storefronts.",
+      "hours": "Most lively till early evening",
+      "entry_fee": "Free",
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pontocho Alley",
+      "city": "Kyoto",
+      "description": "Running parallel to the Kamogawa River, one of Kyoto's most atmospheric dining streets with narrow lantern-lit lanes and riverside restaurants.",
+      "hours": "Most lively during evening hours",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sagano Scenic Railway (Romantic Train)",
+      "city": "Kyoto",
+      "description": "Scenic railway experience running between Saga and Kameoka through beautiful landscapes.",
+      "hours": "Departure at 15:02 (Saga→Kameoka), 17:43 (Kameoka→Saga)",
+      "recommended_duration": "~2.5 hours including free time at Kameoka",
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Arashiyama",
+      "city": "Kyoto",
+      "description": "Scenic area featuring Togetsukyo Bridge, riverside walks, cherry blossoms, and the Bamboo Grove.",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "1–1.5 hours",
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Yasaka Shrine",
+      "city": "Kyoto",
+      "description": "One of Kyoto's most important shrines and the gateway to the historic Gion district.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": "30–60 minutes",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kifune Shrine",
+      "city": "Kyoto",
+      "description": "A serene mountain shrine known for its lantern-lined staircase and peaceful atmosphere.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kurama",
+      "city": "Kyoto",
+      "description": "A scenic mountain village offering temples, hiking trails, and natural hot springs.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": "Half day",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kibune River",
+      "city": "Kyoto",
+      "description": "Known for riverside dining, traditional inns, and beautiful mountain scenery.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": "Half day",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sannenzaka",
+      "city": "Kyoto",
+      "description": "Historic stone-paved lanes lined with traditional shops, cafés, and souvenir stores.",
+      "hours": null,
+      "entry_fee": "Free",
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sagano Romantic Train",
+      "city": "Kyoto",
+      "description": "A scenic railway journey through forests, mountains, and river valleys.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Traditional Tea Ceremony Experience",
+      "city": "Kyoto",
+      "description": "An authentic cultural experience that offers insight into Japan's tea traditions and hospitality.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -1929,17 +2496,24 @@
       "location": "Shijo area",
       "_source_file": "Japan/Amit- All Inclusive Guide_Japan.pdf",
       "_source_mtime": 1772384323.843264
+    },
+    {
+      "name": "Mimaru Kyoto Kawaramachi",
+      "city": "Kyoto",
+      "location": "Kawaramachi",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
     }
   ],
   "local_dishes": [
     {
-      "name": "Shojin ryori",
+      "name": "Shojin Ryori",
       "city": "Kyoto",
-      "description": "Traditional Buddhist vegetarian set meal",
+      "description": "Traditional Buddhist vegetarian cuisine featuring seasonal vegetables, tofu, and temple-style preparations",
       "vegetarian": true,
-      "where_to_try": "Shigetsu (Tenryu-ji Temple)",
+      "where_to_try": "Yoshuji, Komaki Shokudo Kamakura Fushikian",
       "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -1948,9 +2522,7 @@
       "description": "Tofu hot pot - a Kyoto specialty",
       "vegetarian": true,
       "where_to_try": "Shoraian",
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Soba noodles",
@@ -1958,9 +2530,7 @@
       "description": "Buckwheat noodles served hot or cold",
       "vegetarian": true,
       "where_to_try": "Arashiyama Yoshimura",
-      "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Gyukatsu",
@@ -1968,8 +2538,57 @@
       "description": "Crispy beef cutlets cooked to your liking",
       "vegetarian": false,
       "where_to_try": "Katsugyu Fushimi Inari",
+      "source_files": []
+    },
+    {
+      "name": "Shojin Ryori (Japanese Buddhist Temple Cuisine)",
+      "city": "Kyoto",
+      "description": "A beautifully balanced vegetarian meal style developed by Buddhist monks using seasonal vegetables, tofu, sesame, and delicate flavors.",
+      "vegetarian": true,
+      "where_to_try": "Tenryuji Temple Shigetsu",
       "source_files": [
-        "Japan/Amanda_Japan_All Inclusive Guide.docx"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Matcha Desserts",
+      "city": "Kyoto",
+      "description": "A wide variety of sweets and desserts made with Kyoto's famous matcha green tea, including parfaits, cakes, and tiramisu",
+      "vegetarian": true,
+      "where_to_try": "Kumonocha, French Café Chasen, Veg Out Kyoto",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Yuba (Tofu Skin)",
+      "city": "Kyoto",
+      "description": "Traditional Kyoto cuisine made from tofu skin, refined and culturally significant.",
+      "vegetarian": true,
+      "where_to_try": "Akoya-chaya, Kyoto",
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Vegetarian Okonomiyaki",
+      "city": "Kyoto",
+      "description": "Kyoto-style savoury Japanese pancake made with vegetables and batter, grilled on a hot plate",
+      "vegetarian": true,
+      "where_to_try": "Kyo Chabana Kyoto Station, Okonomiyaki Katsu",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Vegetable Tempura",
+      "city": "Kyoto",
+      "description": "Lightly battered and deep-fried seasonal vegetables, a classic Japanese dish",
+      "vegetarian": true,
+      "where_to_try": "Mumokuteki Café & Foods, Tendon Makino Kyoto Station, Aburaya Shokudo",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -2057,6 +2676,105 @@
       ],
       "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
       "_source_mtime": 1775062968.0
+    },
+    {
+      "item": "Kiyomizu pottery",
+      "city": "Kyoto",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kiyomizu-dera area shops",
+        "Nakamise Street"
+      ],
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "item": "Matcha sweets",
+      "city": "Kyoto",
+      "category": "Food",
+      "where_to_buy": [
+        "Kiyomizu-dera area shops",
+        "Specialty shops in Kyoto"
+      ],
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "item": "Premium Uji Matcha Powder",
+      "city": "Kyoto",
+      "category": "Food",
+      "where_to_buy": [
+        "Uji Tea Shops, Kyoto",
+        "Nakamura Tokichi Kyoto Station"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Matcha Tea Bags",
+      "city": "Kyoto",
+      "category": "Food",
+      "where_to_buy": [
+        "Uji Tea Shops, Kyoto",
+        "Nakamura Tokichi Kyoto Station"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Matcha Chocolates",
+      "city": "Kyoto",
+      "category": "Food",
+      "where_to_buy": [
+        "Uji Tea Shops, Kyoto",
+        "Nakamura Tokichi Kyoto Station"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Matcha Cookies",
+      "city": "Kyoto",
+      "category": "Food",
+      "where_to_buy": [
+        "Uji Tea Shops, Kyoto",
+        "Nakamura Tokichi Kyoto Station"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Traditional Tea Sets",
+      "city": "Kyoto",
+      "category": "Food",
+      "where_to_buy": [
+        "Uji Tea Shops, Kyoto",
+        "Nakamura Tokichi Kyoto Station"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Nama Yatsuhashi",
+      "city": "Kyoto",
+      "category": "Food",
+      "where_to_buy": [
+        "Kyoto Station",
+        "Nishiki Market"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Kyoto Matcha Sweets",
+      "city": "Kyoto",
+      "category": "Food",
+      "where_to_buy": [
+        "Kyoto Station",
+        "Nishiki Market"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
     }
   ],
   "emergency_contacts": [],
@@ -2124,6 +2842,37 @@
       "cost": "Varies by distance",
       "_source_file": "Japan/Amanda_Japan_All Inclusive Guide.docx",
       "_source_mtime": 1774630050.0
+    },
+    {
+      "city": "Kyoto",
+      "mode": "JR Kyoto Line (Special Rapid Service)",
+      "description": "Train from Shin-Osaka to Kyoto Station. Travel time approximately 15 minutes.",
+      "recommended_pass": "ICOCA card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Kyoto",
+      "mode": "City Bus",
+      "description": "Bus network covering major attractions including Philosopher's Path (Bus 5 or 17) and Kiyomizu-dera (Bus 100, 203, or 206).",
+      "recommended_pass": "ICOCA card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Kyoto",
+      "mode": "JR Sagano Line",
+      "description": "Train from Kyoto Station to Saga-Arashiyama Station for Arashiyama area. Travel time approximately 20 minutes.",
+      "recommended_pass": "ICOCA card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Kyoto",
+      "mode": "Taxi",
+      "description": "Recommended for comfort when travelling from Kiyomizu/Higashiyama area to Saga-Arashiyama/Torokko Station. Travel time 35–45 minutes depending on traffic.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
     }
   ],
   "health_tips": [],
@@ -2139,6 +2888,9 @@
     "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
     "Japan/Amit- All Inclusive Guide_Japan.pdf",
     "Japan/Amanda_Japan_All Inclusive Guide.docx",
-    "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+    "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+    "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+    "Japan/Azhar_Japan_All Inclusive Guide.docx",
+    "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
   ]
 }

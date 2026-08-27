@@ -25,23 +25,22 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Din Tai Fung",
       "city": "Singapore",
       "cuisine_type": [
-        "Taiwanese"
+        "Taiwanese",
+        "Asian"
       ],
-      "price_range": "SGD 15-35 per person",
-      "hours": "11 AM - 9 PM",
-      "ambience": "Acclaimed Taiwanese casual-dining chain famous for meticulously crafted xiao long bao",
-      "area": "Marina Bay Link Mall",
+      "price_range": "₹1800–3500 per person",
+      "hours": "11:00 AM – 9:00 PM (Sun–Thu) | 11:00 AM – 9:15 PM (Fri & Sat)",
+      "ambience": "Elegant interiors with consistently excellent service",
+      "area": "Marina Bay",
       "highlights": [
-        "Famous for xiao long bao",
-        "Meticulously crafted dumplings"
+        "One of Asia's most famous restaurant brands",
+        "Comforting Taiwanese flavors"
       ],
       "must_try_dishes": [
         "Sautéed string beans",
@@ -50,18 +49,18 @@
         "Dumplings",
         "Steamed Pork Xiao Long Bao",
         "Fried Rice with Pork Chop & Eggs",
-        "Crispy Golden Prawn Pancake"
+        "Crispy Golden Prawn Pancake",
+        "Vegetarian dumplings",
+        "Fried rice",
+        "Spicy noodles"
       ],
       "best_for": [
+        "family",
         "casual"
       ],
-      "vegetarian_friendly": false,
+      "vegetarian_friendly": true,
       "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
       ],
       "nearby_landmarks": [
         "Marina Bay Sands, Singapore"
@@ -98,10 +97,7 @@
         "romantic"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ],
+      "source_files": [],
       "nearby_landmarks": [
         "Marina Bay Sands, Singapore"
       ]
@@ -129,9 +125,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "IndoChili",
@@ -155,9 +149,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Trapizza",
@@ -193,12 +185,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Streats Asian Café",
@@ -234,10 +221,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "nomVnom Bistro",
@@ -263,22 +247,23 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Genesis Vegan Restaurant",
       "city": "Singapore",
       "cuisine_type": [
+        "Vegan",
         "Asian"
       ],
-      "price_range": "SGD 5-15 per person",
-      "hours": "11am-3pm, 5-9pm, Fri only lunch service, Sat-closed",
-      "ambience": "Cozy, casual eatery offering multi-cuisine vegan fare; relaxed and unpretentious",
+      "price_range": "₹₹",
+      "hours": "11:00 AM – 03:00 PM | 5:00 PM – 9:00 PM",
+      "ambience": "Peaceful vegan dining space with a calm and comfortable atmosphere",
       "area": "Clarke Quay",
       "highlights": [
-        "Vegan restaurant"
+        "Fully vegan menu",
+        "Fresh flavors",
+        "Lighter and healthier approach"
       ],
       "must_try_dishes": [
         "Vegan laksa",
@@ -287,17 +272,19 @@
         "Dumplings with capsicum sauce",
         "Vegan chicken rice",
         "Dumpings with capsicum sauce",
-        "vegan chicken rice"
+        "vegan chicken rice",
+        "Bento meals",
+        "Mushroom dishes"
       ],
       "best_for": [
         "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [
+        "Hotel Boss, Singapore"
       ]
     },
     {
@@ -324,9 +311,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Mel's Drive-In",
@@ -334,25 +319,33 @@
       "cuisine_type": [
         "American"
       ],
-      "ambience": "American diner with veggie burgers and fries in a retro 1950s setting",
-      "area": "Universal Studios Hollywood Zone",
+      "ambience": "Retro-themed American-style diner with lively décor",
+      "area": "Universal Studios Singapore",
       "nearby_landmarks": [
-        "Universal Studios, Singapore"
+        "Universal Studios Singapore, Singapore"
       ],
       "highlights": [
-        "Retro 1950s setting"
+        "Retro-themed diner",
+        "Located inside Universal Studios",
+        "Vegetarian-friendly choices available"
       ],
       "must_try_dishes": [
         "veggie burgers",
-        "fries"
+        "fries",
+        "Veg burger options",
+        "Fries",
+        "Desserts"
       ],
       "best_for": [
+        "family",
         "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ],
+      "price_range": "₹₹",
+      "hours": "Approx. 10:00 AM – 07:00 PM"
     },
     {
       "name": "Casa Del Wild",
@@ -376,9 +369,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Starbot Café",
@@ -403,9 +394,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Sahebs- The Indian Restaurant",
@@ -432,12 +421,7 @@
         "family"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ],
+      "source_files": [],
       "nearby_landmarks": [
         "Orchard Road, Singapore"
       ]
@@ -465,12 +449,7 @@
         "romantic"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ],
+      "source_files": [],
       "ambience": "Royal Indian dining experience",
       "nearby_landmarks": [
         "Orchard Road, Singapore"
@@ -500,9 +479,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Maya's Veggie Delight",
@@ -526,9 +503,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Thunder Tea Rice Stall",
@@ -550,9 +525,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Munchi Pancakes",
@@ -577,9 +550,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Komala Vilas",
@@ -605,10 +576,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ],
+      "source_files": [],
       "nearby_landmarks": [
         "Little India, Singapore"
       ]
@@ -635,10 +603,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ],
+      "source_files": [],
       "nearby_landmarks": [
         "Arab Street, Singapore"
       ]
@@ -667,10 +632,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ],
+      "source_files": [],
       "nearby_landmarks": [
         "Arab Street, Singapore"
       ]
@@ -706,10 +668,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "O'Coffee Club",
@@ -735,10 +694,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "The Soup Spoon",
@@ -764,10 +720,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Xin Cuisine Chinese Restaurant",
@@ -779,24 +732,37 @@
       "area": "Near Holiday Inn Atrium",
       "highlights": [],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Salaam Bombay",
       "city": "Singapore",
       "cuisine_type": [
-        "Indian"
+        "Indian",
+        "North Indian"
       ],
-      "hours": "11:30am-11pm",
+      "hours": "11:30 AM – 11:00 PM",
       "area": "Near Holiday Inn Atrium",
-      "highlights": [],
-      "vegetarian_friendly": false,
+      "highlights": [
+        "Comfortable interiors",
+        "North Indian comfort dishes"
+      ],
+      "vegetarian_friendly": true,
       "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ],
+      "must_try_dishes": [
+        "Paneer tikka",
+        "Dal makhani",
+        "Veg biryani"
+      ],
+      "price_range": "₹₹",
+      "ambience": "Warm Indian dining space with comfortable interiors and a relaxed atmosphere",
+      "nearby_landmarks": [
+        "Hotel Boss, Singapore"
+      ],
+      "best_for": [
+        "casual"
       ]
     },
     {
@@ -805,13 +771,28 @@
       "cuisine_type": [
         "Indian"
       ],
-      "hours": "12pm-11pm",
+      "hours": "11:30 PM – 11:30 PM",
       "area": "Robertson Quay",
-      "highlights": [],
-      "vegetarian_friendly": false,
+      "highlights": [
+        "Riverside dining setting",
+        "Spacious interiors"
+      ],
+      "vegetarian_friendly": true,
       "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ],
+      "must_try_dishes": [
+        "Paneer butter masala",
+        "Tandoori mushroom",
+        "Garlic naan"
+      ],
+      "price_range": "₹₹",
+      "ambience": "Stylish riverside dining setting with spacious interiors and a slightly elevated experience without feeling too formal",
+      "nearby_landmarks": [
+        "Hotel Boss, Singapore"
+      ],
+      "best_for": [
+        "family"
       ]
     },
     {
@@ -820,13 +801,28 @@
       "cuisine_type": [
         "Italian"
       ],
-      "hours": "12pm-11pm",
+      "hours": "12:00 PM – 11:00 PM (Saturday & Sunday 11:30 AM – 11:00 PM)",
       "area": "Near Holiday Inn Atrium",
-      "highlights": [],
-      "vegetarian_friendly": false,
+      "highlights": [
+        "Casual neighborhood feel",
+        "Lighter meal options"
+      ],
+      "vegetarian_friendly": true,
       "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ],
+      "must_try_dishes": [
+        "Margherita pizza",
+        "Mushroom pasta",
+        "Tiramisu"
+      ],
+      "price_range": "₹₹",
+      "ambience": "Cozy Italian-style restaurant with a casual neighborhood feel",
+      "nearby_landmarks": [
+        "Hotel Boss, Singapore"
+      ],
+      "best_for": [
+        "casual"
       ]
     },
     {
@@ -847,11 +843,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Embu",
@@ -866,11 +858,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Dolce Vita",
@@ -893,11 +881,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Cherry Garden",
@@ -916,11 +900,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Elemen",
@@ -936,11 +916,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Sufood",
@@ -961,11 +937,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Spago Dining Room by Wolfgang Puck",
@@ -987,11 +959,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Black Tap Craft Burgers and Beer",
@@ -1011,11 +979,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Blossom Restaurant",
@@ -1036,34 +1000,42 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bread Street Kitchen by Gordon Ramsay",
       "city": "Singapore",
       "cuisine_type": [
-        "British"
+        "British",
+        "European"
       ],
-      "hours": "12pm-12am",
+      "hours": "12:00 PM – 9:30 PM (Mon–Wed) | 12:00 PM – 10:30 PM (Thu & Fri) | 11:30 AM – 10:30 PM (Sat) | 11:30 AM – 9:30 PM (Sun)",
       "area": "Marina Bay Sands",
       "must_try_dishes": [
         "Roasted Pepper & Tomato Soup",
         "Superfood Salad",
         "Cauliflower steak",
-        "cauliflower steak"
+        "cauliflower steak",
+        "Truffle fries",
+        "Vegetarian mains",
+        "Sticky toffee pudding"
       ],
       "highlights": [
-        "Make a reservation"
+        "Celebrity-chef restaurant",
+        "Scenic Marina Bay views",
+        "Vibrant dining experience"
       ],
-      "vegetarian_friendly": false,
+      "vegetarian_friendly": true,
       "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ],
+      "price_range": "₹3500–6500 per person",
+      "ambience": "Stylish waterfront restaurant with lively interiors and scenic Marina Bay views",
+      "nearby_landmarks": [
+        "Marina Bay Sands, Singapore"
+      ],
+      "best_for": [
+        "casual"
       ]
     },
     {
@@ -1083,11 +1055,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Mott 32",
@@ -1107,11 +1075,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Rise",
@@ -1129,31 +1093,40 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Venchi",
       "city": "Singapore",
       "cuisine_type": [
+        "Italian",
+        "Dessert",
         "Gelato"
       ],
-      "hours": "10:30am-10:00pm",
-      "area": "The Shoppes in Marina Bay Sands",
+      "hours": "10:30 AM – 10:30 PM (Sun–Thu) | 10:30 AM – 11:00 PM (Fri & Sat)",
+      "area": "Marina Bay",
       "must_try_dishes": [
-        "Dark chocolate and pistachio flavours"
+        "Dark chocolate and pistachio flavours",
+        "Pistachio gelato",
+        "Dark chocolate selections",
+        "Crepes"
       ],
       "highlights": [
-        "This is the brand in Venice and Rome"
+        "Luxurious displays of handcrafted chocolates",
+        "Creamy gelato",
+        "Lovely mid-day indulgence"
       ],
-      "vegetarian_friendly": false,
+      "vegetarian_friendly": true,
       "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ],
+      "price_range": "₹1000–2200 per person",
+      "ambience": "Elegant Italian chocolate and gelato boutique",
+      "nearby_landmarks": [
+        "Marina Bay Sands, Singapore"
+      ],
+      "best_for": [
+        "casual"
       ]
     },
     {
@@ -1168,11 +1141,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Joie Restaurant",
@@ -1195,11 +1164,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Merci Marcel Orchard",
@@ -1213,11 +1178,7 @@
         "Cafe"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Real Food",
@@ -1236,11 +1197,7 @@
       ],
       "highlights": [],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Mr. Holmes Bakehouse",
@@ -1260,11 +1217,7 @@
       ],
       "highlights": [],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Uncle Chieng Traditional Ice Cream",
@@ -1281,11 +1234,7 @@
         "The viral Singaporean ice cream sandwich"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bhoomi by Milind Sovani",
@@ -1303,10 +1252,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "27 Degrees West",
@@ -1324,10 +1270,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Nox- Dine in the Dark",
@@ -1343,11 +1286,7 @@
         "Make a reservation- +65 6298 0708"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Entre Nous Creperie",
@@ -1366,11 +1305,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Veera Flavours",
@@ -1385,10 +1320,7 @@
       ],
       "highlights": [],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Komala Vilas Restaurant",
@@ -1403,10 +1335,7 @@
       ],
       "highlights": [],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ramana Bhavan Veg Restaurant",
@@ -1420,10 +1349,7 @@
         "South Indian"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Anatolia Restaurant SG",
@@ -1445,11 +1371,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Super Loco Customs House",
@@ -1468,11 +1390,7 @@
       ],
       "highlights": [],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tiong Bahru Bakery",
@@ -1491,11 +1409,7 @@
       ],
       "highlights": [],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Forketta",
@@ -1516,11 +1430,7 @@
         "Make a reservation"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tanjong Beach Club",
@@ -1546,10 +1456,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "The Kitchen Table",
@@ -1567,10 +1474,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Casserole",
@@ -1592,10 +1496,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Chifa!",
@@ -1621,11 +1522,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ],
+      "source_files": [],
       "price_range": "SGD 20-80 per person",
       "ambience": "Singapore's first Peruvian-Chinese restaurant blending Peru's vibrant cuisine with Cantonese cooking traditions",
       "nearby_landmarks": [
@@ -1660,9 +1557,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Crystal Jade Dining",
@@ -1690,9 +1585,7 @@
         "family"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kyoto Shokudo Cafe & Udon",
@@ -1719,9 +1612,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Go Greek by Zorba",
@@ -1749,9 +1640,7 @@
         "romantic",
         "casual"
       ],
-      "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "PS.Café by the Sea",
@@ -1778,9 +1667,7 @@
         "romantic",
         "casual"
       ],
-      "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ayam Penyet Ria",
@@ -1810,9 +1697,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Lao Fu Zi Fried Kway Teow",
@@ -1838,9 +1723,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tian Tian Hainanese Chicken Rice",
@@ -1866,9 +1749,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Native Kitchen",
@@ -1880,9 +1761,7 @@
       "nearby_landmarks": [
         "Village Hotel Sentosa"
       ],
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Mess Hall",
@@ -1894,9 +1773,7 @@
       "nearby_landmarks": [
         "Far East Mall, Sentosa"
       ],
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Coastes – Beach Bar & Restaurant",
@@ -1906,9 +1783,7 @@
       ],
       "hours": "11am-9pm",
       "area": "Siloso Beach Walk",
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Good Old Days",
@@ -1918,8 +1793,799 @@
       ],
       "hours": "10am-10pm",
       "area": "Siloso Beach Walk",
+      "source_files": []
+    },
+    {
+      "name": "Spago Bar & Lounge",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Contemporary",
+        "International"
+      ],
+      "price_range": "₹5000–9000 per person",
+      "hours": "8:30 AM – 11:00 PM",
+      "ambience": "Sophisticated rooftop dining with breathtaking Marina Bay skyline views",
+      "area": "Marina Bay Sands",
+      "nearby_landmarks": [
+        "Marina Bay Sands, Singapore"
+      ],
+      "highlights": [
+        "Breathtaking Marina Bay skyline views",
+        "Refined ambience",
+        "Luxury dining experience"
+      ],
+      "must_try_dishes": [
+        "Vegetarian pasta",
+        "Signature seasonal dishes",
+        "Desserts"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
       "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "PS.Cafe One Fullerton",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Café",
+        "Modern"
+      ],
+      "price_range": "₹3200–6000 per person",
+      "hours": "11:00 AM – 10:00 PM (Mon–Fri) | 10:00 AM – 10:00 PM (Sat & Sun)",
+      "ambience": "Beautifully designed waterfront café-restaurant with lush interiors and relaxed elegance",
+      "area": "Near Merlion Park",
+      "nearby_landmarks": [
+        "Merlion Park, Singapore",
+        "Marina Bay, Singapore"
+      ],
+      "highlights": [
+        "Stunning evening skyline views",
+        "Scenic waterfront location"
+      ],
+      "must_try_dishes": [
+        "Truffle fries",
+        "Pasta",
+        "Signature desserts"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Marché VivoCity",
+      "city": "Singapore",
+      "cuisine_type": [
+        "European",
+        "International"
+      ],
+      "price_range": "₹1800–3200 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Lively European-style marketplace restaurant with fresh live counters and cozy interiors",
+      "area": "VivoCity",
+      "highlights": [
+        "Plenty of vegetarian-friendly choices",
+        "Casual family-style dining"
+      ],
+      "must_try_dishes": [
+        "Vegetarian pizza",
+        "Rösti",
+        "Fresh pasta"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "White Restaurant VivoCity",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Singaporean",
+        "Local"
+      ],
+      "price_range": "₹1000–2000 per person",
+      "hours": "11:00 AM – 9:30 PM",
+      "ambience": "Casual Singaporean dining spot",
+      "area": "VivoCity",
+      "highlights": [
+        "Comforting local-style dishes",
+        "Vegetarian-friendly options available"
+      ],
+      "must_try_dishes": [
+        "Vegetarian fried rice",
+        "Noodles",
+        "Tofu dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Shangri-La Rasa Sentosa (Resort Dining)",
+      "city": "Singapore",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "₹2500–5000 per person",
+      "hours": "Till late evening",
+      "ambience": "Tropical beachfront resort dining with sea views and laid-back island atmosphere",
+      "area": "Sentosa",
+      "highlights": [
+        "Vegetarian options available",
+        "Beachfront resort ambience",
+        "Multiple dining venues"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Annalakshmi Restaurant Singapore",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Indian",
+        "Vegetarian"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:30 AM – 03:00 PM | 6:00 PM – 9:00 PM",
+      "ambience": "Warm vegetarian dining experience in a peaceful atmosphere",
+      "nearby_landmarks": [
+        "Hotel Boss, Singapore"
+      ],
+      "highlights": [
+        "Fully vegetarian menu",
+        "Peaceful atmosphere",
+        "Balance of lighter and filling dishes"
+      ],
+      "must_try_dishes": [
+        "Vegetarian thali",
+        "Paneer dishes",
+        "Indian curries"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Madras New Woodlands Restaurant",
+      "city": "Singapore",
+      "cuisine_type": [
+        "South Indian",
+        "Vegetarian"
+      ],
+      "price_range": "₹",
+      "hours": "07:30 AM – 10:30 PM",
+      "ambience": "Comfortable and familiar South Indian restaurant",
+      "nearby_landmarks": [
+        "Hotel Boss, Singapore"
+      ],
+      "highlights": [
+        "Traditional South Indian flavors",
+        "Broad vegetarian menu"
+      ],
+      "must_try_dishes": [
+        "Mini tiffin",
+        "Rava dosa",
+        "South Indian meals"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "MTR Singapore",
+      "city": "Singapore",
+      "cuisine_type": [
+        "South Indian",
+        "Vegetarian"
+      ],
+      "price_range": "₹",
+      "hours": "08:30 AM – 03:00 PM | 5:30 PM – 10:00 PM",
+      "ambience": "Casual setting with comforting South Indian flavors",
+      "nearby_landmarks": [
+        "Hotel Boss, Singapore"
+      ],
+      "highlights": [
+        "Traditional vegetarian menu",
+        "Casual setting"
+      ],
+      "must_try_dishes": [
+        "Mini tiffin",
+        "Rava dosa",
+        "Filter coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ocean Restaurant at Singapore Oceanarium",
+      "city": "Singapore",
+      "area": "Sentosa Island",
+      "cuisine_type": [
+        "Contemporary",
+        "Vegetarian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:30 PM – 03:00 PM | 06:00 PM – 10:30 PM",
+      "ambience": "Elegant interiors with spectacular underwater views; floor-to-ceiling aquarium panels",
+      "nearby_landmarks": [
+        "Singapore Oceanarium, Singapore"
+      ],
+      "highlights": [
+        "Floor-to-ceiling aquarium panels",
+        "Marine life views while dining",
+        "Unique immersive dining experience"
+      ],
+      "must_try_dishes": [
+        "Seasonal vegetarian set menu",
+        "Mushroom dishes",
+        "Truffle-based specialties"
+      ],
+      "best_for": [
+        "romantic",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Elemen Singapore",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Contemporary",
+        "Vegetarian"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:00 AM – 03:00 PM | 05:30 PM – 9:30 PM",
+      "ambience": "Contemporary vegetarian restaurant with elegant interiors and beautifully presented dishes",
+      "nearby_landmarks": [
+        "Hotel Boss, Singapore"
+      ],
+      "highlights": [
+        "Elegant interiors",
+        "Beautifully presented dishes",
+        "Premium vegetarian dining"
+      ],
+      "must_try_dishes": [
+        "Truffle fried rice",
+        "Herbal soup",
+        "Mushroom specialties"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Daehwa Vegetarian Singapore",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Korean",
+        "Vegetarian"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:30 AM – 08:45 PM",
+      "ambience": "Cozy Korean vegetarian restaurant with warm interiors",
+      "nearby_landmarks": [
+        "Hotel Boss, Singapore"
+      ],
+      "highlights": [
+        "Korean vegetarian cuisine",
+        "Warm cozy setting",
+        "Unique flavors different from Indian meals"
+      ],
+      "must_try_dishes": [
+        "Vegetarian bibimbap",
+        "Korean pancakes",
+        "Noodle dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Whole Earth Singapore",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Peranakan",
+        "Thai",
+        "Vegetarian"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:30 AM – 03:00 PM | 05:30 PM – 10:00 PM",
+      "ambience": "Cozy atmosphere with distinctive Peranakan and Thai flavors",
+      "nearby_landmarks": [
+        "Hotel Boss, Singapore"
+      ],
+      "highlights": [
+        "Singapore's first plant-based Peranakan and Thai vegetarian restaurant",
+        "Distinctive local flavors"
+      ],
+      "must_try_dishes": [
+        "Penang curry",
+        "Olive fried rice",
+        "Tofu dishes"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "VeganBurg Singapore",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Vegan",
+        "American"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:30 AM – 09:00 PM",
+      "ambience": "Casual modern dining concept with a relaxed atmosphere",
+      "nearby_landmarks": [
+        "Hotel Boss, Singapore"
+      ],
+      "highlights": [
+        "Creative plant-based comfort food",
+        "Modern casual concept"
+      ],
+      "must_try_dishes": [
+        "Chargrilled burger",
+        "Avocado beetroot burger",
+        "Seaweed fries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Real Food Singapore",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Vegetarian",
+        "Asian"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:00 AM – 09:00 PM",
+      "ambience": "Bright interiors with a pleasant setting for a relaxed midday break",
+      "nearby_landmarks": [
+        "Hotel Boss, Singapore"
+      ],
+      "highlights": [
+        "Wholesome dishes",
+        "Bright interiors"
+      ],
+      "must_try_dishes": [
+        "Organic noodles",
+        "Vegetable dumplings",
+        "Mushroom pasta"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Kind Bowl Singapore",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Vietnamese",
+        "Vegetarian"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:00 AM – 03:00 PM | 5:30 PM – 9:30 PM",
+      "ambience": "Cozy vegetarian restaurant with a welcoming atmosphere",
+      "nearby_landmarks": [
+        "Marina Bay Sands, Singapore"
+      ],
+      "highlights": [
+        "Vietnamese-inspired flavors",
+        "Lighter dishes"
+      ],
+      "must_try_dishes": [
+        "Pho",
+        "Fresh spring rolls",
+        "Rice bowls"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Elephant Grounds Singapore",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Café",
+        "Western"
+      ],
+      "price_range": "₹₹",
+      "hours": "08:00 AM – 8:00 PM",
+      "ambience": "Stylish café-style setting with comfortable interiors",
+      "nearby_landmarks": [
+        "Marina Bay Sands, Singapore"
+      ],
+      "highlights": [
+        "Café-style setting",
+        "Lighter evening meal options"
+      ],
+      "must_try_dishes": [
+        "Truffle fries",
+        "Pasta selections",
+        "Desserts"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Eight Treasures Vegetarian Restaurant",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Chinese",
+        "Asian",
+        "Vegetarian"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:30 AM – 02:00 PM | 6:00 PM – 9:30 PM",
+      "ambience": "Comfortable vegetarian restaurant with a calm atmosphere",
+      "nearby_landmarks": [
+        "Museum of Ice Cream Singapore, Singapore"
+      ],
+      "highlights": [
+        "Mix of Chinese and Asian flavors",
+        "Calm atmosphere"
+      ],
+      "must_try_dishes": [
+        "Vegetarian dumplings",
+        "Claypot tofu",
+        "Fried rice"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Nature Vegetarian Delights",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Asian",
+        "Vegetarian"
+      ],
+      "price_range": "₹",
+      "hours": "11:30 AM – 03:00 PM | 4:30 PM – 9:00 PM",
+      "ambience": "Casual vegetarian dining option",
+      "nearby_landmarks": [
+        "Museum of Ice Cream Singapore, Singapore"
+      ],
+      "highlights": [
+        "Lighter meals",
+        "Familiar Asian flavors"
+      ],
+      "must_try_dishes": [
+        "Vegetarian noodles",
+        "Rice bowls",
+        "Soup dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Balithai Vegetarian",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Asian",
+        "Vegetarian"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:30 AM – 10:00 PM",
+      "ambience": "Warm and modern dining setting",
+      "nearby_landmarks": [
+        "Museum of Ice Cream Singapore, Singapore"
+      ],
+      "highlights": [
+        "Asian-inspired vegetarian preparations",
+        "Warm modern setting"
+      ],
+      "must_try_dishes": [
+        "Green curry",
+        "Vegetarian noodles",
+        "Stir-fried vegetables"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Green Signature Singapore",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Asian",
+        "Vegetarian"
+      ],
+      "price_range": "₹",
+      "hours": "11:30 AM – 03:00 PM | 5:30 PM – 9:00 PM",
+      "ambience": "Lighter and casual vegetarian option",
+      "nearby_landmarks": [
+        "Hotel Boss, Singapore"
+      ],
+      "highlights": [
+        "Comforting Asian dishes",
+        "Casual atmosphere"
+      ],
+      "must_try_dishes": [
+        "Laksa",
+        "Rice bowls",
+        "Mushroom dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "NomVNom Singapore",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Vegan",
+        "Western"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:30 AM – 09:30 PM",
+      "ambience": "Casual vegetarian restaurant with a relaxed atmosphere",
+      "nearby_landmarks": [
+        "Universal Studios Singapore, Singapore"
+      ],
+      "highlights": [
+        "Creative plant-based comfort food",
+        "Relaxed atmosphere"
+      ],
+      "must_try_dishes": [
+        "Vegan burgers",
+        "Truffle fries",
+        "Pasta"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "WellSmoocht Singapore",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Café",
+        "Vegetarian"
+      ],
+      "price_range": "₹₹",
+      "hours": "12:00 PM – 9:00 PM",
+      "ambience": "Modern café concept with a relaxed atmosphere",
+      "nearby_landmarks": [
+        "Universal Studios Singapore, Singapore"
+      ],
+      "highlights": [
+        "Lighter vegetarian dishes",
+        "Desserts available"
+      ],
+      "must_try_dishes": [
+        "Waffles",
+        "Pasta",
+        "Smoothies"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Discovery Food Court",
+      "city": "Singapore",
+      "area": "Universal Studios Singapore",
+      "cuisine_type": [
+        "Asian",
+        "International"
+      ],
+      "price_range": "₹₹",
+      "hours": "Approx. 11:00 AM – 06:00 PM",
+      "ambience": "Casual food court within the park",
+      "nearby_landmarks": [
+        "Universal Studios Singapore, Singapore"
+      ],
+      "highlights": [
+        "Located inside Universal Studios",
+        "Quick and comfortable meal option"
+      ],
+      "must_try_dishes": [
+        "Vegetable noodles",
+        "Fried rice",
+        "Asian vegetarian dishes"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Starbucks Changi Airport",
+      "city": "Singapore",
+      "area": "Changi Airport",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹₹",
+      "hours": "Open 24 hours (varies by terminal)",
+      "ambience": "Convenient café inside airport terminals",
+      "nearby_landmarks": [
+        "Singapore Changi Airport, Singapore"
+      ],
+      "highlights": [
+        "Open 24 hours",
+        "Located inside airport terminals",
+        "Quick breakfast option"
+      ],
+      "must_try_dishes": [
+        "Vegetarian sandwich",
+        "Croissant",
+        "Coffee selections"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Soup Spoon Changi Airport",
+      "city": "Singapore",
+      "area": "Changi Airport",
+      "cuisine_type": [
+        "Café",
+        "International"
+      ],
+      "price_range": "₹₹",
+      "hours": "Approx. 11:00 AM – 9:30 PM",
+      "ambience": "Casual dining option with lighter meals and comforting flavors",
+      "nearby_landmarks": [
+        "Singapore Changi Airport, Singapore"
+      ],
+      "highlights": [
+        "Located inside airport terminals",
+        "Lighter meals"
+      ],
+      "must_try_dishes": [
+        "Mushroom soup",
+        "Vegetarian pasta",
+        "Garlic bread"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Annalakshmi Restaurant",
+      "city": "Singapore",
+      "cuisine_type": [
+        "Indian",
+        "Vegetarian"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:30 AM – 03:00 PM | 06:00 PM – 10:00 PM",
+      "ambience": "Serene vegetarian dining experience with a warm, welcoming atmosphere",
+      "nearby_landmarks": [
+        "Hotel Boss, Singapore"
+      ],
+      "highlights": [
+        "Fully vegetarian menu",
+        "Beautifully prepared Indian dishes",
+        "Warm welcoming atmosphere"
+      ],
+      "must_try_dishes": [
+        "Paneer curry",
+        "South Indian thali",
+        "Vegetable pulao"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -1929,64 +2595,60 @@
       "city": "Singapore",
       "description": "A free nightly performance of dancing fountains, colorful projections, and music set against the bay skyline",
       "hours": "Daily at 8:00 PM and 9:00 PM, with an additional 10:00 PM show on Fridays and Saturdays",
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Singapore Cable Car",
       "city": "Singapore",
-      "description": "Scenic ride with panoramic city and ocean views floating towards Sentosa Island",
+      "description": "Panoramic aerial views of Sentosa, Mount Faber, the harbour, and Singapore's skyline during a scenic cable car ride.",
       "hours": "First ride: 8:45 AM | Last boarding: 9:30 PM",
       "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
       ],
-      "entry_fee": "₹1,000–1,200 per adult (Sky Pass)",
+      "entry_fee": "Approx. ₹2200–4200 per person",
       "recommended_duration": "1 hour"
     },
     {
       "name": "Skyline Luge Sentosa",
       "city": "Singapore",
-      "description": "Engage in an adrenaline rush where you'll whiz down purpose-built tracks on a gravity-fueled cart—fun for both adults and kids",
+      "description": "One of Sentosa's most popular attractions combining scenic chairlift rides with downhill luge tracks overlooking the island.",
       "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ],
+      "entry_fee": "Approx. ₹1800–3500 depending on rides",
+      "recommended_duration": "1–2 hours"
     },
     {
       "name": "Harry Potter: Visions of Magic",
       "city": "Singapore",
       "description": "An immersive, multi-sensory journey filled with spellbinding sets, interactive technology, and atmospheric soundscapes that transport you straight into the wizarding world",
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Universal Studios Singapore",
       "city": "Singapore",
-      "description": "Theme park with popular rides like Battlestar Galactica: HUMAN vs. CYLON, Transformers: The Ride 3D, and Jurassic Park Rapids Adventure",
+      "description": "Movie-themed park combining immersive experiences, live entertainment, and thrilling rides across themed zones including Hollywood, Sci-Fi City, Ancient Egypt, Far Far Away, and The Lost World",
       "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ],
+      "area": "Sentosa Island",
+      "hours": "Approx. 10:00 AM – 08:00 PM"
     },
     {
       "name": "Fort Canning Park",
       "city": "Singapore",
       "description": "A tranquil green hill filled with colonial history, spice gardens, and city views",
       "hours": "7 AM–10 PM",
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Singapore Botanic Gardens",
       "city": "Singapore",
-      "description": "UNESCO World Heritage Site with lush landscapes, swan-filled lakes, and shaded walkways",
-      "hours": "5 AM–12 AM",
-      "entry_fee": "General Gardens: Free",
+      "description": "Peaceful gardens with shaded pathways, tropical landscapes, lakes, and beautifully maintained green spaces offering a refreshing contrast to Singapore's futuristic attractions",
+      "hours": "Open daily: 05:00 AM – 12:00 AM",
+      "entry_fee": "Free entry (National Orchid Garden has separate ticket charges)",
       "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
       ],
       "recommended_duration": "3-4 hours"
     },
@@ -1994,43 +2656,36 @@
       "name": "Marina Bay Street Circuit",
       "city": "Singapore",
       "description": "Take a stroll along the public roads which include sections like Raffles Boulevard and the roads around the Singapore Flyer and Fullerton Hotel",
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "ArtScience Museum",
       "city": "Singapore",
-      "description": "Singapore's iconic lotus-shaped landmark by the bay. Inside, wander through strikingly designed galleries where art, science, technology, and culture intersect. The highlight for many is FUTURE WORLD: Where Art Meets Science, a permanent exhibition created with teamLab",
+      "description": "Famous for its lotus-inspired architecture, combining technology, immersive digital exhibits, and creative installations into a uniquely modern museum experience.",
       "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ],
+      "hours": "Usually 10:00 AM – 7:00 PM",
+      "entry_fee": "Approx. ₹1500–3000 per person depending on exhibits",
+      "recommended_duration": "2–3 hours"
     },
     {
       "name": "Gardens by the Bay",
       "city": "Singapore",
-      "description": "Surreal green wonderland with Cloud Forest Dome, Flower Dome, and Supertree Grove",
-      "hours": "5 AM–2 AM (last entry 8 PM)",
+      "description": "Futuristic landscape with Giant Supertrees, cooled conservatories including Flower Dome and Cloud Forest, and Jurassic World experience. Illuminated gardens create a different atmosphere after sunset",
+      "hours": "09:00 AM – 09:00 AM",
       "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
       ],
-      "recommended_duration": "4-5 hours",
-      "entry_fee": "₹2,000 for both domes"
+      "recommended_duration": "3–4 hours",
+      "entry_fee": "Outdoor gardens free; conservatories ticketed separately"
     },
     {
       "name": "Little India",
       "city": "Singapore",
       "description": "Cultural area with shops",
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ],
+      "source_files": [],
       "hours": "Shops generally open around 10 to 11am",
       "recommended_duration": "Not specified"
     },
@@ -2038,20 +2693,13 @@
       "name": "Arab Street & Haji Lane",
       "city": "Singapore",
       "description": "The heart of Singapore's Islamic quarter, where you'll find Sultan Mosque – golden-domed and iconic, and Haji Lane – indie boutiques, graffiti walls, cool cafés",
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Chinatown",
       "city": "Singapore",
       "description": "Cultural area for souvenir buying",
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ],
+      "source_files": [],
       "hours": "Not specified",
       "recommended_duration": "Not specified"
     },
@@ -2061,21 +2709,20 @@
       "description": "A truly unique experience. Glide through dimly lit forests on a tram to spot nocturnal creatures in naturalistic habitats: from leopards and hyenas to glow-in-the-dark insects",
       "hours": "6:30 PM–12 AM (last entry 11:15 PM)",
       "recommended_duration": "2.5 hrs",
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Jewel Changi Airport",
       "city": "Singapore",
-      "description": "Airport wonderland with Rain Vortex waterfall, Canopy Park, and Shiseido Forest Valley",
+      "description": "Stunning indoor landscape at Changi Airport featuring the Canopy Bridge, Canopy Park, lush greenery, and architectural design",
       "hours": "10 AM–10 PM",
-      "entry_fee": "₹700 approx (Canopy Park)",
+      "entry_fee": "Free",
       "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
       ],
-      "recommended_duration": "2-3 hours"
+      "recommended_duration": "1–2 hours",
+      "area": "Changi Airport"
     },
     {
       "name": "Arab Street",
@@ -2083,11 +2730,7 @@
       "description": "Cultural area with shops",
       "hours": "Shops generally open around 10 to 11am",
       "recommended_duration": "Not specified",
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Singapore Zoo",
@@ -2095,12 +2738,7 @@
       "description": "Award-winning open-concept park with white tigers, giraffes, orangutans, and elevated boardwalks",
       "hours": "8:30 AM–6 PM",
       "recommended_duration": "4-5 hours",
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ],
+      "source_files": [],
       "entry_fee": "₹2,800 per adult"
     },
     {
@@ -2109,12 +2747,7 @@
       "description": "Reimagined bird park featuring cascading aviaries and immersive environments",
       "hours": "9 AM–6 PM (last entry 5 PM)",
       "recommended_duration": "3-4 hours",
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ],
+      "source_files": [],
       "entry_fee": "₹2,200 per adult"
     },
     {
@@ -2123,38 +2756,29 @@
       "description": "Unique experience gliding through dimly lit forests on a tram to spot nocturnal creatures in naturalistic habitats",
       "hours": "6:30 PM–12 AM (last entry 11:15 PM)",
       "recommended_duration": "2.5 hours",
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ],
+      "source_files": [],
       "entry_fee": "₹3,200 per adult"
     },
     {
       "name": "Orchard Road",
       "city": "Singapore",
-      "description": "Great place for shopping",
-      "hours": "Not specified",
+      "description": "Singapore's most famous shopping and lifestyle boulevard lined with stylish malls, cafés, public art spaces, and tree-lined streets",
+      "hours": "Most malls open 10:00 AM onwards",
       "recommended_duration": "Not specified",
       "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ],
+      "entry_fee": "Free to explore"
     },
     {
       "name": "Merlion Park",
       "city": "Singapore",
-      "description": "Singapore's most recognisable symbol - half-lion, half-fish icon against Marina Bay backdrop",
-      "hours": "24 hours",
+      "description": "Singapore's iconic Merlion statue overlooking Marina Bay with some of the city's best skyline views from the waterfront promenade.",
+      "hours": "Open all day",
       "entry_fee": "Free",
-      "recommended_duration": "30 minutes",
+      "recommended_duration": "30 mins",
       "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
       ]
     },
     {
@@ -2163,10 +2787,7 @@
       "description": "Aquarium at Sentosa Island",
       "hours": "10 am to 7 pm",
       "recommended_duration": "2-3 hours",
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Skyline Luge",
@@ -2174,10 +2795,7 @@
       "description": "Funicular adventure",
       "hours": "7 pm to 9 pm (night luge)",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Universal Studios",
@@ -2185,39 +2803,31 @@
       "description": "Theme park",
       "hours": "10 am to 7 pm",
       "recommended_duration": "4-8 hours",
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Siloso Beach",
       "city": "Singapore",
       "description": "Beach for relaxing evening",
       "recommended_duration": "2-3 hours",
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tanjong Beach",
       "city": "Singapore",
       "description": "Beach for relaxing evening",
       "recommended_duration": "2-3 hours",
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "S.E.A. Aquarium",
       "city": "Singapore",
-      "description": "One of the world's largest marine life habitats with over 100,000 marine animals from 800+ species in immersive habitats",
-      "hours": "10 AM–5 PM",
-      "entry_fee": "Ticket already purchased",
-      "recommended_duration": "3-4 hours",
+      "description": "One of Asia's most impressive aquariums, home to massive underwater viewing panels, vibrant marine life, and beautifully designed exhibits.",
+      "hours": "Usually 10:00 AM – 8:00 PM",
+      "entry_fee": "Approx. ₹2500–4200 per person",
+      "recommended_duration": "2–3 hours",
       "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
       ]
     },
     {
@@ -2227,31 +2837,29 @@
       "hours": "10 AM–7 PM",
       "entry_fee": "₹2,000",
       "recommended_duration": "2 hours",
-      "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Wings of Time",
       "city": "Singapore",
-      "description": "Breathtaking outdoor night show combining pyrotechnics, fountains, lasers, and storytelling against ocean backdrop",
+      "description": "Iconic evening show combining water projections, music, laser effects, and fireworks against the open sea at Sentosa Beach",
       "hours": "Showtimes: 7:40 PM & 8:40 PM",
       "entry_fee": "₹1,000",
-      "recommended_duration": "20 mins",
+      "recommended_duration": "Arrive 20–30 mins before showtime",
       "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ],
+      "area": "Sentosa Island"
     },
     {
       "name": "National Orchid Garden",
       "city": "Singapore",
-      "description": "Over 1,000 species and 2,000 hybrids of orchids in bloom",
-      "hours": "8:30 AM–7 PM (last entry 6 PM)",
-      "entry_fee": "₹500",
+      "description": "Singapore's most famous orchid collection with thousands of colorful blooms, located within Singapore Botanic Gardens",
+      "hours": "08:30 AM – 07:00 PM",
+      "entry_fee": "Approx. INR 350–500 pp",
       "recommended_duration": "2 hours",
       "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
       ]
     },
     {
@@ -2261,8 +2869,249 @@
       "hours": "10 AM - 10 PM",
       "entry_fee": "SGD 33 (approximately ₹2,060)",
       "recommended_duration": "30 minutes",
+      "source_files": []
+    },
+    {
+      "name": "Singapore Changi Airport",
+      "city": "Singapore",
+      "description": "One of the world's most efficient and beautifully designed airports — feels more like a lifestyle destination with indoor gardens, art installations, and shopping zones.",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": null,
       "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Marina Bay Sands",
+      "city": "Singapore",
+      "description": "One of Singapore's most recognizable landmarks dominating the skyline with futuristic architecture and panoramic waterfront setting.",
+      "hours": "Best explored morning onwards",
+      "entry_fee": "Free to explore public areas",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Spectra Light & Water Show",
+      "city": "Singapore",
+      "description": "A beautifully choreographed waterfront light show featuring fountains, lasers, projections, and music against the Marina Bay skyline.",
+      "hours": "Evening show timings daily",
+      "entry_fee": "Free",
+      "recommended_duration": "30–45 mins",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "HydroDash Sentosa",
+      "city": "Singapore",
+      "description": "A floating inflatable water park located directly on the beach.",
+      "hours": null,
+      "entry_fee": "Approx. ₹1800–3500 depending on duration",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ola Beach Club",
+      "city": "Singapore",
+      "description": "A relaxed beachfront venue ideal for sunset views, tropical drinks, kayaking, and slow beachside lounging.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mastercard Canopy Bridge",
+      "city": "Singapore",
+      "description": "Suspended glass bridge overlooking Jewel Changi's stunning indoor landscape with elevated views of lush greenery and architectural design below",
+      "hours": "10:00 AM – 9:00 PM",
+      "recommended_duration": "20–30 mins",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Canopy Park",
+      "city": "Singapore",
+      "description": "Combines artistic installations, gardens, and open spaces under natural light streaming through the glass structure at Jewel Changi",
+      "hours": "10:00 AM – 9:00 PM",
+      "recommended_duration": "30–45 mins",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Flower Dome",
+      "city": "Singapore",
+      "description": "Cooled conservatory at Gardens by the Bay with seasonal floral displays",
+      "hours": "09:00 AM – 09:00 AM",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Cloud Forest",
+      "city": "Singapore",
+      "description": "Cooled conservatory at Gardens by the Bay with mist, dramatic greenery, and a spectacular indoor waterfall",
+      "hours": "09:00 AM – 09:00 AM",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Jurassic World: The Experience",
+      "city": "Singapore",
+      "description": "Immersive Jurassic World themed experience at Gardens by the Bay",
+      "hours": "09:00 AM – 09:00 AM",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "ION Orchard",
+      "city": "Singapore",
+      "description": "Premium shopping space and lifestyle stores along Orchard Road, ideal for browsing, coffee stops, and photography",
+      "area": "Orchard Road",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Ngee Ann City (Takashimaya)",
+      "city": "Singapore",
+      "description": "One of Singapore's largest shopping complexes with fashion, gifts, and lifestyle stores",
+      "area": "Orchard Road",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Emerald Hill Road",
+      "city": "Singapore",
+      "description": "Charming heritage street lined with colorful Peranakan-style houses and quieter surroundings for photographs",
+      "area": "Orchard Road",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Paragon Shopping Centre",
+      "city": "Singapore",
+      "description": "Elegant shopping destination with international brands and lifestyle stores",
+      "area": "Orchard Road",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Singapore Panoramic City Drive",
+      "city": "Singapore",
+      "description": "Comfortable introduction to Singapore's iconic landmarks and neighborhoods, showcasing contrast between futuristic skyscrapers, colonial-era buildings, vibrant districts, and landscaped streets",
+      "recommended_duration": "Part of 3–4 hour combined experience",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Singapore River Cruise",
+      "city": "Singapore",
+      "description": "Cruise along Singapore River watching the skyline shift from daylight into a glittering display of reflections across the water with gentle breezes and illuminated buildings",
+      "hours": "Approx. 01:00 PM – 10:00 PM",
+      "recommended_duration": "Part of 3–4 hour combined experience",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mount Faber Cable Car Station",
+      "city": "Singapore",
+      "description": "Cable car ride gliding over Singapore's harbor and coastline with views transitioning from city landscapes and sea views to lush greenery",
+      "recommended_duration": "20–30 mins including boarding and photo opportunities",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Skyline Luge Singapore",
+      "city": "Singapore",
+      "area": "Sentosa Island",
+      "description": "Sky Ride lifts you above Sentosa offering views of beaches, greenery, and coastline; luge tracks provide fun downhill turns and scenic routes",
+      "hours": "10:00 AM – 9:30 PM",
+      "recommended_duration": "45–60 mins",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Singapore Oceanarium",
+      "city": "Singapore",
+      "area": "Sentosa Island",
+      "description": "Underwater world with large viewing panels surrounded by vibrant marine life; dim lighting, soft blue reflections, and slow movement of sea creatures create a peaceful atmosphere",
+      "hours": "Approx. 10:00 AM – 08:00 PM",
+      "recommended_duration": "1–1.5 hours",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Dopamine Land Singapore",
+      "city": "Singapore",
+      "area": "Sentosa Island",
+      "description": "Immersive attraction with colorful spaces, mirrors, sensory installations, playful lighting, and interactive elements designed to create a joyful and energetic atmosphere",
+      "recommended_duration": "45–60 mins",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Swan Lake",
+      "city": "Singapore",
+      "description": "One of the most scenic and relaxing areas within Singapore Botanic Gardens for photographs and short walks",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Rainforest Trail",
+      "city": "Singapore",
+      "description": "Quieter pathway within Singapore Botanic Gardens surrounded by dense tropical greenery creating a peaceful atmosphere",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Marina Bay Sands SkyPark Observation Deck",
+      "city": "Singapore",
+      "description": "High above Singapore, the city unfolds in every direction with panoramic views of glass towers, green spaces, the harbor, and the surrounding skyline",
+      "recommended_duration": "45–60 mins",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "ArtScience Museum – Future World by teamLab",
+      "city": "Singapore",
+      "area": "Marina Bay",
+      "description": "Technology and creativity blend through digital installations, interactive projections, and immersive rooms where flowers bloom digitally, lights react to movement, and every space feels playful and visually striking",
+      "hours": "10:00 AM – 07:00 PM",
+      "recommended_duration": "1–1.5 hours",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Museum of Ice Cream Singapore",
+      "city": "Singapore",
+      "description": "Playful world filled with pastel-colored rooms, interactive installations, and creative spaces designed around imagination and nostalgia; one of Singapore's most photogenic experiences",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -2308,75 +3157,75 @@
       "location": "Singapore City",
       "_source_file": "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf",
       "_source_mtime": 1772384345.7289002
+    },
+    {
+      "name": "Shangri-La Rasa Sentosa Singapore",
+      "city": "Singapore",
+      "location": "Sentosa Island, Siloso Beach",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "name": "Hotel Boss",
+      "city": "Singapore",
+      "location": "Bugis area",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
     }
   ],
   "local_dishes": [
     {
       "name": "Vegetarian Laksa",
       "city": "Singapore",
-      "description": "Rich coconut curry noodle soup with tofu puffs, bean sprouts, and mock seafood",
+      "description": "Rich coconut-based noodle soup with tofu, mushrooms, vegetables, and aromatic local spices replacing seafood; creamy and comforting flavors",
       "vegetarian": true,
       "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ],
+      "where_to_try": "Greendot VivoCity, Greendot"
     },
     {
       "name": "Vegetarian Hainanese Chicken Rice",
       "city": "Singapore",
       "description": "Singapore's national dish in a vegetarian twist with mock meat or tofu",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Vegetarian bee hoon",
       "city": "Singapore",
       "description": "Singaporean noodle dish that contains vegetarian spring rolls, fried tofu skin, and mock meats made from gluten. It also comprises of white rice noodles that are either thick or thin in texture",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Char Kway Teow (Veg version)",
       "city": "Singapore",
       "description": "Flat rice noodles wok-fried with soy sauce, veggies, and egg (optional)",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Roti Prata with Curry",
       "city": "Singapore",
       "description": "Crisp Indian flatbread served with dhal (lentil curry) or vegetable curry",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Satay (Veg skewers)",
       "city": "Singapore",
       "description": "Plant-based skewers grilled over charcoal, served with peanut sauce",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Carrot Cake (Chai Tow Kway)",
       "city": "Singapore",
       "description": "Stir-fried radish cake with egg, preserved radish, and soy sauce (black or white version)",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ],
+      "source_files": [],
       "where_to_try": "Hawker centres"
     },
     {
@@ -2384,142 +3233,98 @@
       "city": "Singapore",
       "description": "Paper-thin wrap filled with stewed turnip, veggies, and peanuts",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Masala Dosa",
       "city": "Singapore",
       "description": "Crisp rice-lentil crepe filled with spiced potatoes, served with chutneys",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Vegetarian Briyani",
       "city": "Singapore",
       "description": "Aromatic rice dish with spices, vegetables, and raita",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Gado-Gado",
       "city": "Singapore",
       "description": "Indonesian-style salad with peanut sauce, tempeh, tofu, and veggies",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Sayur Lodeh",
       "city": "Singapore",
       "description": "Light coconut vegetable curry, a Malay classic",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kaya Toast with Kopi/Teh",
       "city": "Singapore",
       "description": "Toast with coconut jam & butter (vegan versions available)",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ice Kachang",
       "city": "Singapore",
       "description": "Shaved ice mountain with syrup, beans, corn, and jelly (ask for vegetarian toppings)",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Chendol",
       "city": "Singapore",
       "description": "Sweet, icy and coconutty dessert that is made with coconut milk, palm sugar and shaved ice. It also contain green, jelly noodles made with rice flour",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Vegan Chicken Rice",
       "city": "Singapore",
       "description": "Aromatic ginger-infused rice, 'chicken' made of soybean or wheat gluten and the highlight, a tangy garlicky chilli dip",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Thunder Tea Rice",
       "city": "Singapore",
       "description": "White rice, blanched or lightly stir-fried vegetables and peanuts are served with the star of the dish, a herb-infused tea soup",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Prata",
       "city": "Singapore",
       "description": "Roti prata is fried flatbread, and good ones are both crispy and fluffy. Ask for 'prata kosong' which means plain prata and let them know you do not eat egg",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Stir fried Kai lan",
       "city": "Singapore",
       "description": "It refers to Chinese broccoli, that is stir-fried and then tossed with a little oil to give it a smooth glossy sheen",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Rojak",
       "city": "Singapore",
       "description": "An eclectic medley of fruits and vegetables drenched in a sweet, sour and sometimes spicy, tamarind sauce",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Char Kway Teow",
       "city": "Singapore",
       "description": "Flat rice noodles stir-fried with egg, prawns, cockles, Chinese sausage, and soy sauce",
       "vegetarian": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ],
+      "source_files": [],
       "where_to_try": "Lao Fu Zi Fried Kway Teow"
     },
     {
@@ -2527,12 +3332,7 @@
       "city": "Singapore",
       "description": "Spicy coconut curry noodle soup, usually with prawns, cockles, and fishcake",
       "vegetarian": false,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ],
+      "source_files": [],
       "where_to_try": "Hawker centres"
     },
     {
@@ -2540,77 +3340,49 @@
       "city": "Singapore",
       "description": "Colourful cakes and desserts that are soft, slightly chewy and sticky. They are made with common ingredients like rice, coconut, palm sugar and tapioca starch",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Fried Spring roll",
       "city": "Singapore",
       "description": "Crispy spring rolls that are deep fried and have a strong flavour of turnip, carrots and cabbage",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bandung",
       "city": "Singapore",
       "description": "Chilled drink that is made with condensed milk and rose cordial syrup, giving it a pink colour",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Popiah",
       "city": "Singapore",
       "description": "Fresh spring rolls stuffed with veggies wrapped in thin rice sheets. It is best served with a sweet sauce (often a bean sauce) or hot chilli sauce",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tau Huay",
       "city": "Singapore",
       "description": "Silken beancurd custard that is slightly more set than typical custard",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Red bean buns",
       "city": "Singapore",
       "description": "Red bean paste is a popular sweet and moreish filling for many bread-type of desserts. Pancakes, buns and waffles can be stuffed with this paste, which has a thick, reddish-black colour",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Potato curry puff",
       "city": "Singapore",
       "description": "The humble curry puff is a popular snack which is vegetarian-friendly",
       "vegetarian": true,
-      "source_files": [
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
-        "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Hainanese Chicken Rice",
@@ -2618,9 +3390,7 @@
       "description": "Poached chicken served with fragrant rice cooked in chicken stock, with chili sauce and ginger paste",
       "vegetarian": false,
       "where_to_try": "Tian Tian Hainanese Chicken Rice",
-      "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Chili Crab",
@@ -2628,9 +3398,7 @@
       "description": "Fresh crab stir-fried in a tangy, sweet, and spicy tomato-chili sauce",
       "vegetarian": false,
       "where_to_try": "Local restaurants",
-      "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Satay",
@@ -2638,9 +3406,7 @@
       "description": "Grilled skewers of marinated meat served with peanut sauce, ketupat (rice cakes), and cucumber-onion sides",
       "vegetarian": false,
       "where_to_try": "Lau Pa Sat Hawker Centre",
-      "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Hokkien Mee",
@@ -2648,9 +3414,7 @@
       "description": "Stir-fried egg noodles and rice noodles with prawns, squid, and rich seafood stock",
       "vegetarian": false,
       "where_to_try": "Golden Shoe Hokkien Mee",
-      "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Roti Prata",
@@ -2658,9 +3422,7 @@
       "description": "Crispy yet fluffy Indian flatbread, often served with curry",
       "vegetarian": true,
       "where_to_try": "Indian restaurants",
-      "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kaya Toast",
@@ -2668,8 +3430,81 @@
       "description": "Toasted bread with coconut jam (kaya) and butter, paired with soft-boiled eggs and soy sauce",
       "vegetarian": true,
       "where_to_try": "Local cafés",
+      "source_files": []
+    },
+    {
+      "name": "Mee Goreng",
+      "city": "Singapore",
+      "description": "Bold and flavorful stir-fried noodle dish influenced by Singapore's Indian-Muslim culinary culture; vegetarian version combines noodles, vegetables, spices, and rich sauces with a slightly sweet and savory flavor profile",
+      "vegetarian": true,
+      "where_to_try": "Gokul Vegetarian Restaurant",
       "source_files": [
-        "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "South Indian Vegetarian Thali",
+      "city": "Singapore",
+      "description": "Traditional vegetarian meals served with rice, breads, curries, vegetables, pickles, and accompaniments; authentic Indian vegetarian dining experience in Singapore's Little India area",
+      "vegetarian": true,
+      "where_to_try": "Komala Vilas Restaurant, Annalakshmi Restaurant, Madras New Woodlands Restaurant",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Vegan Burgers",
+      "city": "Singapore",
+      "description": "Creative vegetarian comfort food and globally inspired plant-based flavors from Singapore's strong plant-based café culture",
+      "vegetarian": true,
+      "where_to_try": "VeganBurg Singapore",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Coconut Ice Cream & Tropical Desserts",
+      "city": "Singapore",
+      "description": "Refreshing desserts with coconut flavors, tropical fruits, and lighter options especially enjoyable after sightseeing in Singapore's warm tropical weather",
+      "vegetarian": true,
+      "where_to_try": "Sentosa Island dessert kiosks, Marina Bay Sands dessert outlets, VivoCity dessert cafés",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bubble Tea & Specialty Tea Drinks",
+      "city": "Singapore",
+      "description": "Huge variety of bubble teas, fruit teas, matcha beverages, and specialty drinks available across Singapore's café culture",
+      "vegetarian": true,
+      "where_to_try": "Marina Bay area cafés, VivoCity beverage outlets, Sentosa Island cafés",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Truffle & Mushroom Specialties",
+      "city": "Singapore",
+      "description": "Modern vegetarian dining incorporating truffle flavors and gourmet mushroom dishes, particularly in contemporary restaurants",
+      "vegetarian": true,
+      "where_to_try": "Joie Restaurant (Truffle risotto), Elemen (Truffle fried rice), LingZhi Vegetarian (Truffle noodles)",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Kaya Jam",
+      "city": "Singapore",
+      "description": "Rich coconut and pandan spread traditionally enjoyed with toast and tea; one of Singapore's most iconic flavors",
+      "vegetarian": true,
+      "where_to_try": "VivoCity, Singapore Changi Airport, Major supermarkets around Bugis and Marina Bay areas",
+      "source_files": [
+        "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -2897,6 +3732,110 @@
       "category": "polite",
       "_source_file": "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf",
       "_source_mtime": 1772384345.7289002
+    },
+    {
+      "city": "Singapore",
+      "english": "Thank you (casual local style)",
+      "local": "Thank you lah",
+      "category": "polite",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "english": "Is it possible?",
+      "local": "Can or not?",
+      "category": "polite",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "english": "Hello",
+      "local": "Hello / Hi",
+      "category": "greeting",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "english": "Vegetarian please",
+      "local": "Vegetarian please",
+      "category": "food",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "english": "How much?",
+      "local": "How much?",
+      "category": "polite",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "english": "Singapore's metro/train system",
+      "local": "MRT",
+      "category": "polite",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "english": "Where is the MRT station?",
+      "local": "Where is the MRT station?",
+      "category": "polite",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "english": "Thank you (Mandarin)",
+      "local": "Xie Xie (谢谢)",
+      "category": "polite",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "english": "Thank you (Malay)",
+      "local": "Terima Kasih",
+      "category": "polite",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "english": "Thank you (casual local style)",
+      "local": "Thank you lah",
+      "category": "polite",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "city": "Singapore",
+      "english": "Hello",
+      "local": "Hello / Hi",
+      "category": "greeting",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "city": "Singapore",
+      "english": "Thank you",
+      "local": "Xie Xie (谢谢)",
+      "category": "polite",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "city": "Singapore",
+      "english": "Thank you",
+      "local": "Terima Kasih",
+      "category": "polite",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
     }
   ],
   "safety_tips": [
@@ -2979,6 +3918,287 @@
       "tip": "Singapore's heat can be humid, so carry a water bottle and opt for shade where possible",
       "_source_file": "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf",
       "_source_mtime": 1772384350.8755827
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Keep passports, cash, and important documents secure, especially in crowded stations, shopping streets, and tourist areas.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Keep digital copies of your passport, visa, insurance, and flight tickets saved on your phone/cloud storage.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Use only official taxis, hotel-arranged transfers, Grab (Singapore), or public transport.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Be mindful during rush hour on public transport, especially in Tokyo and Singapore MRT stations.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Carry a compact umbrella, sunscreen, and reusable water bottle during sightseeing days.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Mosquito repellent is especially useful in Singapore and Sentosa beach areas.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Avoid following aggressive nightlife promoters, bar agents, or strangers offering 'special deals,' particularly in nightlife districts.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Always confirm menu pricing before ordering at tourist-heavy restaurants or waterfront venues.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Double-check shopping bills, tax refund paperwork, and product authenticity before payment.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "In busy entertainment or shopping areas, avoid unofficial merchandise sellers or overly pushy sales tactics.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Keep passports, cash, and important documents secure, especially in crowded stations, shopping streets, and tourist areas.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Keep digital copies of your passport, visa, insurance, and flight tickets saved on your phone or cloud storage.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Use only official taxis, hotel-arranged transfers, Grab (Singapore), or public transport.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Be mindful during rush hour on public transport, especially on Singapore MRT stations.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Carry a compact umbrella, sunscreen, and reusable water bottle during sightseeing days.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Mosquito repellent is especially useful in Singapore and Sentosa beach areas.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Avoid following aggressive nightlife promoters, bar agents, or strangers offering special deals, particularly in nightlife districts.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Always confirm menu pricing before ordering at tourist-heavy restaurants or waterfront venues.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Double-check shopping bills, tax refund paperwork, and product authenticity before payment.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "In busy entertainment or shopping areas, avoid unofficial merchandise sellers or overly pushy sales tactics.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Queue properly in public places — Singapore is extremely orderly and efficient.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Keep public spaces clean — cleanliness is taken very seriously across the city.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Do not litter — Singapore has strict cleanliness laws and heavy fines.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Do not smoke outside designated areas — smoking restrictions are widely enforced.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Do not eat or drink inside MRT trains — fines may apply.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Do not bring chewing gum casually into Singapore — restrictions still apply for sale and import.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Follow pedestrian rules carefully — jaywalking fines are enforced strictly.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Dress modestly at religious sites, especially at temples and mosques.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Respect multicultural traditions — Singapore is home to Chinese, Malay, Indian, and international communities.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Return trays at food courts — tray return stations are common and encouraged.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Offer seats to elderly passengers on public transport — public etiquette is highly respected.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Do not speak loudly in quiet public spaces, especially in public transport.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Do not block walkways or escalators — stand to one side when stationary.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Do not disrespect religious customs — always behave respectfully in places of worship.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
     }
   ],
   "souvenirs": [
@@ -3563,6 +4783,151 @@
       ],
       "_source_file": "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf",
       "_source_mtime": 1772384345.7289002
+    },
+    {
+      "item": "Kaya Jam & Local Breakfast Spreads",
+      "city": "Singapore",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets",
+        "Airport stores",
+        "VivoCity food stores"
+      ],
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "item": "Singapore Snacks & Chocolates",
+      "city": "Singapore",
+      "category": "Food",
+      "where_to_buy": [
+        "VivoCity",
+        "Marina Bay Sands shops",
+        "Changi Airport"
+      ],
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "item": "TWG Tea & Luxury Tea Blends",
+      "city": "Singapore",
+      "category": "Food",
+      "where_to_buy": [
+        "Marina Bay Sands",
+        "Airport boutiques",
+        "TWG stores"
+      ],
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "item": "Merlion Souvenirs & Singapore Memorabilia",
+      "city": "Singapore",
+      "category": "Memorabilia",
+      "where_to_buy": [
+        "Marina Bay area",
+        "Chinatown souvenir stores",
+        "Sentosa shops"
+      ],
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "item": "Singapore Lifestyle & Fashion Brands",
+      "city": "Singapore",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Orchard Road",
+        "Marina Bay Sands"
+      ],
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "item": "Bak Kut Teh Spice Packs & Local Food Gifts",
+      "city": "Singapore",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets",
+        "Airport stores",
+        "VivoCity gourmet sections"
+      ],
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "item": "Kaya Jam & Local Breakfast Spreads",
+      "city": "Singapore",
+      "category": "Food",
+      "where_to_buy": [
+        "VivoCity",
+        "Singapore Changi Airport",
+        "Major supermarkets around Bugis",
+        "Major supermarkets around Marina Bay"
+      ],
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "item": "Singapore Snacks & Chocolates",
+      "city": "Singapore",
+      "category": "Food",
+      "where_to_buy": [
+        "VivoCity",
+        "Marina Bay Sands Shoppes",
+        "Singapore Changi Airport"
+      ],
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "item": "TWG Tea & Luxury Tea Blends",
+      "city": "Singapore",
+      "category": "Food",
+      "where_to_buy": [
+        "The Shoppes at Marina Bay Sands",
+        "TWG Tea Boutique at Changi Airport",
+        "Dedicated TWG boutiques across the city"
+      ],
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "item": "Merlion Souvenirs & Singapore Memorabilia",
+      "city": "Singapore",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Marina Bay Sands",
+        "Sentosa Island Shops",
+        "Chinatown Street Market"
+      ],
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "item": "Singapore Lifestyle & Fashion",
+      "city": "Singapore",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Orchard Road",
+        "The Shoppes at Marina Bay Sands",
+        "Bugis Junction"
+      ],
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "item": "Local Food Gifts & Singapore Flavors",
+      "city": "Singapore",
+      "category": "Food",
+      "where_to_buy": [
+        "VivoCity",
+        "Singapore Changi Airport",
+        "Gourmet supermarket sections across Marina Bay",
+        "Gourmet supermarket sections across Bugis"
+      ],
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
     }
   ],
   "emergency_contacts": [
@@ -3672,6 +5037,67 @@
       "number": "+65 6737 6777",
       "_source_file": "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf",
       "_source_mtime": 1772384345.7289002
+    },
+    {
+      "city": "Singapore",
+      "service": "Police",
+      "number": "999",
+      "notes": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "service": "Ambulance / Fire",
+      "number": "995",
+      "notes": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "service": "Non-Emergency Ambulance",
+      "number": "1777",
+      "notes": "Non-urgent ambulance",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "service": "High Commission of India, Singapore",
+      "number": "+6567376777",
+      "notes": "Indian High Commission in Singapore",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "service": "Police",
+      "number": "999",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "city": "Singapore",
+      "service": "Ambulance / Fire",
+      "number": "995",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "city": "Singapore",
+      "service": "Non-Emergency Ambulance",
+      "number": "1777",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "city": "Singapore",
+      "service": "High Commission of India, Singapore",
+      "number": "+6567376777",
+      "notes": "Indian High Commission in Singapore",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
     }
   ],
   "connectivity_tips": [
@@ -3754,6 +5180,54 @@
       "tip": "There are 3 main providers- Singtel, StarHub and M1. M1 offers the best data packs in terms of price and data allowance. The best place to buy a prepaid sim card is in the airport on arrival from the Changi Recommends Kiosks at Arrival Hall, Level 1. If you choose not to get it here, you can buy it from a Seven-Eleven convenience store",
       "_source_file": "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf",
       "_source_mtime": 1772384345.7289002
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Recommended SIM/eSIM providers in Singapore: Singtel, StarHub, M1, Airalo (eSIM). SIM cards available at Changi Airport arrival counters, 7-Eleven stores, and telecom outlets. Passport required for SIM registration.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Singapore has excellent high-speed coverage throughout the city, Sentosa, MRT network, and tourist attractions. Free Wi-Fi is also available at many malls, attractions, and airport areas.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Recommended SIM card providers: Singtel, StarHub, M1. eSIM option available via Airalo.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "SIM cards can be purchased at Changi Airport arrival counters, 7-Eleven stores, convenience stores, and telecom outlets. Passport required for SIM registration.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Singapore has excellent high-speed mobile coverage throughout the city, Sentosa, MRT network, and tourist attractions.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Free Wi-Fi is available at many malls, attractions, and airport areas.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
     }
   ],
   "transport_options": [
@@ -3878,6 +5352,86 @@
       "description": "Simply tap your forex card or international debit card. Each passenger has to have a separate card",
       "_source_file": "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf",
       "_source_mtime": 1772384345.7289002
+    },
+    {
+      "city": "Singapore",
+      "mode": "MRT (Metro System)",
+      "description": "The fastest and most convenient way to travel around Singapore. Stations are clearly signposted and tourist-friendly. Recommended apps: Google Maps, Citymapper, Grab.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "mode": "Public Buses",
+      "description": "Comfortable, air-conditioned, and well-connected across the city. Contactless international cards often work directly for payment.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "mode": "Grab & Taxis",
+      "description": "Grab is Singapore's most commonly used ride-hailing app and works very smoothly. Useful during humid afternoons or late evenings.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "mode": "Walking",
+      "description": "Areas like Marina Bay, Sentosa, Orchard Road, and Clarke Quay are pedestrian-friendly and enjoyable to explore on foot. Carry water and stay hydrated due to Singapore's tropical humidity.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "mode": "Private Transfer",
+      "description": "Private transfer from Changi Airport to Sentosa hotel. Approximate travel time: 30–40 mins depending on traffic.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Singapore",
+      "mode": "Private Airport Transfer",
+      "description": "Private transfer arranged from Singapore Changi Airport Terminal 2 to hotel on arrival day",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "city": "Singapore",
+      "mode": "Private Transfer",
+      "description": "Private transfers arranged throughout the itinerary for hotel pickups and drop-offs to various attractions including Gardens by the Bay, Sentosa, Marina Bay Sands, Museum of Ice Cream, and Universal Studios",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "city": "Singapore",
+      "mode": "Taxi / Ride-share",
+      "description": "Grab is the recommended ride-share app for Singapore. Official taxis also available.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "city": "Singapore",
+      "mode": "MRT (Mass Rapid Transit)",
+      "description": "Singapore's public MRT network with excellent coverage across the city. Be mindful during rush hour.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "city": "Singapore",
+      "mode": "Cable Car",
+      "description": "Mount Faber Cable Car Station provides scenic cable car ride to Sentosa Island over Singapore's harbor and coastline",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
     }
   ],
   "health_tips": [
@@ -3976,6 +5530,147 @@
       "tip": "Mosquito repellent (esp. for parks/zoo areas)",
       "_source_file": "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf",
       "_source_mtime": 1772384350.8755827
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Recommended routine vaccinations before travel: Tetanus, Hepatitis A, Typhoid, COVID-19 (if applicable), and routine flu vaccination (optional but helpful). Consult your doctor before travel if you have specific medical conditions.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Stay hydrated throughout the trip, especially in Singapore's humid tropical weather.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Carry sunscreen, sunglasses, and a cap/hat for long outdoor sightseeing days.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Mosquito repellent is recommended, particularly for Sentosa beach areas and outdoor evenings in Singapore.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Comfortable walking shoes are essential, as both countries involve significant walking and public transport usage.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Carry basic masks if sensitive to seasonal allergies, crowds, or changing weather.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Recommended travel health essentials: personal medications with prescriptions, basic first-aid kit, motion sickness medicine, band-aids/blister patches, hand sanitizer & wet wipes, ORS/electrolyte sachets, cold & fever medication, and digestive medication.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "No mandatory exotic vaccinations are typically required for Indian travelers visiting Singapore for tourism.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Stay hydrated throughout the trip, especially in Singapore's humid tropical weather.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Carry sunscreen, sunglasses, and a cap or hat for long outdoor sightseeing days.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Mosquito repellent is recommended, particularly for Sentosa beach areas and outdoor evenings in Singapore.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Wear comfortable walking shoes as the itinerary involves significant walking and public transport usage.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Carry basic masks if sensitive to seasonal allergies, crowds, or changing weather.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Recommended travel essentials: personal medications with prescriptions, basic first-aid kit, motion sickness medicine, band-aids and blister patches, hand sanitizer and wet wipes, ORS and electrolyte sachets, cold and fever medication, digestive medication.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Nearby medical facility: PANCARE MEDICAL CLINIC, approximately 6 min walk from Hotel Boss. Hours: Mon & Thu 08:00 AM–01:00 PM, 02:00 PM–05:00 PM, 06:00 PM–09:00 PM; Tue & Fri 08:00 AM–01:00 PM, 02:00 PM–05:00 PM; Wed & Sat 08:00 AM–01:00 PM; Closed Sunday.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Nearby pharmacy: Mustafa Pharmacy, approximately 10 min walk from Hotel Boss.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
+    },
+    {
+      "cities": [
+        "Singapore"
+      ],
+      "tip": "Nearby 24/7 supermarket: Prime Supermarket, approximately 6 min walk from Hotel Boss.",
+      "_source_file": "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1779475594.0
     }
   ],
   "source_files": [
@@ -3983,6 +5678,8 @@
     "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2).pdf",
     "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).pdf",
     "Singapore and Malaysia/All Inclusive Guide_Singapore.pdf",
-    "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf"
+    "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal.pdf",
+    "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+    "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx"
   ]
 }

@@ -7,9 +7,7 @@
       "description": "Cruise across Lake Ashi with views of Mt. Fuji (weather permitting)",
       "hours": "Various",
       "recommended_duration": "45 mins",
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Hakone Ropeway",
@@ -17,9 +15,7 @@
       "description": "Ride above Hakone's volcanic terrain with panoramic views",
       "hours": "Various",
       "recommended_duration": "30 mins",
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Owakudani Valley",
@@ -28,21 +24,60 @@
       "hours": "9:00 AM – 4:20 PM",
       "entry_fee": "Free",
       "recommended_duration": "30 mins",
+      "source_files": []
+    },
+    {
+      "name": "Hakone Ropeway & Owakudani",
+      "city": "Hakone",
+      "description": "Ropeway ride over volcanic landscapes with sulfur vents. Famous for black eggs (kuro tamago) and stunning views of Mt. Fuji (weather permitting).",
+      "hours": "Tour-dependent",
+      "recommended_duration": "1–2 hours",
       "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Lake Ashi Pirate Ship Cruise",
+      "city": "Hakone",
+      "description": "Scenic cruise across the lake with views of torii gates and mountains.",
+      "hours": "Tour-dependent",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     }
   ],
   "hotels": [],
-  "local_dishes": [],
+  "local_dishes": [
+    {
+      "name": "Kuro Tamago (Black Eggs)",
+      "city": "Hakone",
+      "description": "Hard-boiled eggs cooked in volcanic hot springs, turning the shell black. Famous at Owakudani.",
+      "vegetarian": true,
+      "where_to_try": "Owakudani, Hakone",
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ]
+    }
+  ],
   "phrases": [],
   "safety_tips": [],
   "souvenirs": [],
   "emergency_contacts": [],
   "connectivity_tips": [],
   "transport_options": [],
-  "health_tips": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Hakone"
+      ],
+      "tip": "Carry layers when visiting Mt. Fuji and Hakone — weather near Fuji is colder than Tokyo.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    }
+  ],
   "source_files": [
-    "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+    "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
+    "Japan/Azhar_Japan_All Inclusive Guide.docx"
   ]
 }

@@ -1,0 +1,90 @@
+{
+  "restaurants": [],
+  "attractions": [
+    {
+      "name": "Lake Gosau",
+      "city": "Gosausee",
+      "description": "Walk around the lake with dramatic Dachstein glacier views. Relax beside the water and enjoy the peaceful alpine atmosphere. Becomes especially magical later in the afternoon.",
+      "recommended_duration": "2 hours 30 minutes",
+      "source_files": []
+    },
+    {
+      "name": "Gosausee (Lake Gosau)",
+      "city": "Gosausee",
+      "description": "Walk around the lake with dramatic Dachstein glacier views. Relax beside the water and enjoy the peaceful alpine atmosphere. Becomes especially magical later in the afternoon.",
+      "recommended_duration": "2.5 hours",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Lake Gosau (Gosausee)",
+      "city": "Gosausee",
+      "description": "Walk around the lake with dramatic Dachstein glacier views, relax beside the water and enjoy the peaceful alpine atmosphere. Becomes especially magical later in the afternoon",
+      "recommended_duration": "2.5 hours",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Salzburg",
+        "Hallstatt",
+        "Gosausee"
+      ],
+      "tip": "Carry water, snacks, a light jacket, and comfortable walking shoes for the Hallstatt and Gosausee day trip.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    }
+  ],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Gosausee",
+      "mode": "Car",
+      "description": "Drive from Hallstatt to Gosausee through the Dachstein region, approximately 30 minutes. Parking is directly beside the lake.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    },
+    {
+      "city": "Gosausee",
+      "mode": "Car",
+      "description": "Drive from Hallstatt toward Gosausee through the Dachstein region. Parking is directly beside the lake",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "city": "Gosausee",
+      "mode": "Car",
+      "description": "Drive from Hallstatt to Gosausee (~30 mins). Parking directly beside the lake.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Hallstatt",
+        "Gosausee",
+        "Wachau Valley",
+        "Salzburg"
+      ],
+      "tip": "Carry water, snacks, a light jacket, and comfortable walking shoes for full-day excursions including Hallstatt, Gosausee, and Wachau cycling.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765
+    }
+  ],
+  "source_files": [
+    "Austria/Itinerary- Budapest Prague Austria.docx",
+    "Europe/Itinerary- Budapest, Prague, Austria.docx",
+    "Austria/Itinerary- Budapest, Prague, Austria.docx"
+  ]
+}

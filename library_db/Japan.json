@@ -6,103 +6,72 @@
     {
       "name": "Tempura",
       "city": "Japan",
-      "description": "Lightly battered and deep-fried seafood and vegetables, known for delicate crispiness",
+      "description": "Light, crispy batter fried to perfection, usually served with dipping sauce.",
       "vegetarian": false,
       "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ],
-      "where_to_try": "Tempura Tsunahachi in Tokyo"
+      "where_to_try": "Ukiya Kiyomizu Kisseian, Kyoto"
     },
     {
       "name": "Okonomiyaki",
       "city": "Japan",
       "description": "Savory pancake with cabbage",
       "vegetarian": true,
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf",
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ],
+      "source_files": [],
       "where_to_try": "Okonomiyaki Katsu"
     },
     {
       "name": "Sushi",
       "city": "Japan",
-      "description": "raw fish served on rice seasoned lightly with vinegar",
+      "description": "Fresh seafood served over vinegared rice. Best enjoyed at traditional counters or conveyor-belt spots.",
       "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ],
-      "vegetarian": false
+      "vegetarian": false,
+      "where_to_try": "Traditional sushi counters or conveyor-belt restaurants in Tokyo and Osaka"
     },
     {
       "name": "Ramen",
       "city": "Japan",
-      "description": "Comforting bowl of rich, flavourful broth with perfectly cooked noodles and toppings like chicken, seafood, or egg",
+      "description": "A comforting bowl of noodles in rich broth (tonkotsu, miso, or shoyu). Each region has its own style.",
       "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ],
       "vegetarian": false,
-      "where_to_try": "Ichiran Ramen in Tokyo"
+      "where_to_try": "Kinryu Ramen, Ippudo Ramen, Ichiran Ramen"
     },
     {
       "name": "Udon noodles",
       "city": "Japan",
       "description": "thick, chewy noodles traditionally made from wheat flour and brine water, served in various ways",
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ],
+      "source_files": [],
       "vegetarian": true
     },
     {
       "name": "Gyoza",
       "city": "Japan",
       "description": "Pan-fried dumplings",
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ],
+      "source_files": [],
       "vegetarian": false,
       "where_to_try": "Various restaurants"
     },
     {
       "name": "Mochi",
       "city": "Japan",
-      "description": "Wonderfully chewy and stretchy, mochi rice cakes are made from pounded steamed rice and often stuffed with sweet bean paste",
+      "description": "Soft, chewy rice cakes often filled with sweet red bean paste or ice cream.",
       "vegetarian": true,
       "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ],
-      "where_to_try": "Various shops"
+      "where_to_try": "Nakamise Street, Asakusa, Tokyo"
     },
     {
       "name": "Wagashi",
       "city": "Japan",
       "description": "More like works of art than food, wagashi sweets are an unmissable Japanese treat. Traditionally made with only plant-based ingredients such as bean paste, they're beautifully crafted in the shape of flowers and other stunning designs",
       "vegetarian": true,
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ],
+      "source_files": [],
       "where_to_try": "Specialty sweet shops"
     },
     {
@@ -110,12 +79,7 @@
       "city": "Japan",
       "description": "often with tofu and green onions, is part of every set meal including breakfast",
       "vegetarian": true,
-      "source_files": [
-        "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ],
+      "source_files": [],
       "where_to_try": "Part of set meals"
     },
     {
@@ -123,10 +87,7 @@
       "city": "Japan",
       "description": "Noodles in a flavorful vegetable or miso broth topped with corn, mushrooms, and greens",
       "vegetarian": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ],
+      "source_files": [],
       "where_to_try": "Various ramen shops"
     },
     {
@@ -134,10 +95,7 @@
       "city": "Japan",
       "description": "Rice triangles often filled with pickled plum (umeboshi) or seasoned vegetables",
       "vegetarian": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ],
+      "source_files": [],
       "where_to_try": "Convenience stores"
     },
     {
@@ -145,10 +103,7 @@
       "city": "Japan",
       "description": "Lightly battered and fried vegetables like sweet potato, pumpkin, and eggplant",
       "vegetarian": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ],
+      "source_files": [],
       "where_to_try": "Tempura restaurants"
     },
     {
@@ -156,10 +111,7 @@
       "city": "Japan",
       "description": "Mild, slightly sweet curry with potatoes, carrots, and onions served with rice",
       "vegetarian": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ],
+      "source_files": [],
       "where_to_try": "Curry houses"
     },
     {
@@ -167,10 +119,7 @@
       "city": "Japan",
       "description": "Sweet tofu pockets stuffed with vinegared rice; usually vegetarian",
       "vegetarian": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ],
+      "source_files": [],
       "where_to_try": "Sushi restaurants"
     },
     {
@@ -178,10 +127,7 @@
       "city": "Japan",
       "description": "Steamed young soybeans sprinkled with salt; a simple and healthy snack",
       "vegetarian": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ],
+      "source_files": [],
       "where_to_try": "Izakayas and restaurants"
     },
     {
@@ -189,58 +135,45 @@
       "city": "Japan",
       "description": "Buckwheat noodles served cold with dipping sauce or hot in broth (confirm no fish stock)",
       "vegetarian": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Vegetable Yakitori / Kushiyaki",
       "city": "Japan",
       "description": "Grilled skewers of mushrooms, peppers, or tofu (ask for no meat/fish)",
       "vegetarian": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Goma-ae",
       "city": "Japan",
       "description": "Spinach or vegetables dressed in a rich sesame sauce",
       "vegetarian": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Shojin Ryori",
       "city": "Japan",
       "description": "Traditional Buddhist temple cuisine; fully vegetarian and beautifully presented",
       "vegetarian": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Matcha Desserts",
       "city": "Japan",
-      "description": "Matcha parfaits, ice creams, cakes, and puddings",
+      "description": "Rich, earthy green tea flavored desserts including cakes and ice cream.",
       "vegetarian": true,
       "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx",
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ],
-      "where_to_try": "Kyoto Uji tea shops, Tokyo department stores"
+      "where_to_try": "Cafés across Kyoto and Tokyo"
     },
     {
       "name": "Yaki Imo",
       "city": "Japan",
       "description": "Roasted Japanese sweet potato, a popular street snack",
       "vegetarian": true,
-      "source_files": [
-        "Japan/AA_All Inclusive Guide_Japan.pdf",
-        "Japan/AA_All Inclusive Guide_Japan_v5.docx"
-      ],
+      "source_files": [],
       "where_to_try": "Street vendors"
     },
     {
@@ -249,10 +182,7 @@
       "description": "Japanese pickled vegetables are an essential part of a Japanese meal and are always included in set meals",
       "vegetarian": true,
       "where_to_try": "Included in set meals",
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Zaru Soba",
@@ -260,11 +190,7 @@
       "description": "Cold soba (buckwheat) noodles are popular in the summer served on a bamboo tray with nori seaweed, spring onion, wasabi",
       "vegetarian": true,
       "where_to_try": "Popular in summer",
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Nasu dengaku",
@@ -272,11 +198,7 @@
       "description": "This classic Japanese side dish consists of grilled eggplant cut into slices and coated with a delicious, rich miso glaze",
       "vegetarian": true,
       "where_to_try": "Various restaurants",
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Veg Sushi",
@@ -284,10 +206,7 @@
       "description": "lots of sushi in Japan is vegetarian. Look out for treats such as kappa maki (cucumber rolls), takuan maki (pickled daikon rolls) and inarizushi (rice stuffed inside deep-fried tofu pockets)",
       "vegetarian": true,
       "where_to_try": "Sushi restaurants",
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Vegetarian onigiri",
@@ -295,11 +214,7 @@
       "description": "Triangular onigiri rice balls are a quintessential Japanese snack, and several of them are vegetarian. Keep an eye out for ones filled with kombu seaweed, umeboshi (pickled plum), and natto (fermented soybeans)",
       "vegetarian": true,
       "where_to_try": "Convenience stores",
-      "source_files": [
-        "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/All Inclusive Guide- Japan_PN.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Sushi & Sashimi",
@@ -307,10 +222,7 @@
       "description": "Fresh seafood delicacies served as nigiri (on rice) or sashimi (without rice)",
       "vegetarian": false,
       "where_to_try": "Tsukiji Outer Market",
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Japanese Curry (Kare Raisu)",
@@ -318,9 +230,7 @@
       "description": "Mild, hearty curry with rice, often served with fried cutlet (katsu)",
       "vegetarian": true,
       "where_to_try": "Go! Go! Curry, CoCo Ichibanya",
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Dango & Mochi",
@@ -328,9 +238,7 @@
       "description": "Sweet rice dumplings on skewers, often with soy, red bean, or matcha flavors",
       "vegetarian": true,
       "where_to_try": "Nakamise Street, Gion District",
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Wagyu Beef / Kobe Beef",
@@ -338,9 +246,7 @@
       "description": "Melt-in-your-mouth beef, often served as steak, yakiniku, or in a hot pot",
       "vegetarian": false,
       "where_to_try": "Kobe, Matsusaka, specialty restaurants in Tokyo",
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Unagi (Grilled Eel)",
@@ -348,9 +254,7 @@
       "description": "Richly flavored eel, usually served over rice",
       "vegetarian": false,
       "where_to_try": "Hamachō, Nishiki Market",
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Gyoza (Japanese Dumplings)",
@@ -358,9 +262,7 @@
       "description": "Pan-fried or steamed dumplings with pork or veggie filling",
       "vegetarian": true,
       "where_to_try": "Harajuku Gyoza Lou",
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Kakigori (Shaved Ice)",
@@ -368,9 +270,7 @@
       "description": "Flavored shaved ice, especially in summer",
       "vegetarian": true,
       "where_to_try": "Street stalls in Tokyo & Kyoto",
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Dorayaki",
@@ -378,38 +278,31 @@
       "description": "Red bean-filled pancake, great snack while exploring",
       "vegetarian": true,
       "where_to_try": "Local sweet shops in Tokyo or Kyoto",
-      "source_files": [
-        "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Sashimi",
       "city": "Japan",
       "description": "raw fish or meat expertly cut into thin slices, served with daikon radish, pickled ginger, wasabi and soy sauce",
       "vegetarian": false,
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Onigiri",
       "city": "Japan",
-      "description": "Triangular rice balls, portions of Japanese rice with filling in centre, moulded into triangular or cylindrical shapes wrapped in nori seaweed",
-      "vegetarian": true,
+      "description": "Rice triangles stuffed with fillings like tuna, salmon, or pickled plum. Great quick snack.",
+      "vegetarian": false,
       "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ],
+      "where_to_try": "Convenience stores (FamilyMart, Lawson, 7-Eleven)"
     },
     {
       "name": "Soba",
       "city": "Japan",
       "description": "Buckwheat noodles, delicious chilled or in a hot broth",
       "vegetarian": true,
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf",
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ],
+      "source_files": [],
       "where_to_try": "Various restaurants"
     },
     {
@@ -417,37 +310,33 @@
       "city": "Japan",
       "description": "Japanese curry that is sweeter in flavour, thicker in texture, and prepared like a stew",
       "vegetarian": true,
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Vegetarian Sushi",
       "city": "Japan",
       "description": "kappa maki (cucumber rolls), takuan maki (pickled daikon rolls) and inarizushi (rice in deep-fried tofu pockets)",
       "vegetarian": true,
-      "source_files": [
-        "Japan/V2 - All Inclusive Guide- Japan- Sirisha.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Yakitori",
       "city": "Japan",
-      "description": "Grilled skewers, primarily chicken, cooked over charcoal for smoky flavour",
+      "description": "Juicy grilled chicken skewers, seasoned with salt or sweet soy glaze.",
       "vegetarian": false,
-      "where_to_try": "Torikizoku outlets",
+      "where_to_try": "Kushikatsu Daruma Dotonbori, Osaka",
       "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Japanese Curry",
       "city": "Japan",
-      "description": "Comforting dish featuring mildly spiced, thick curry served with rice and choice of chicken or seafood",
+      "description": "Mild, slightly sweet curry served with rice. Very different from Indian curry.",
       "vegetarian": false,
-      "where_to_try": "Coco Ichibanya",
+      "where_to_try": "CoCo Ichibanya (multiple locations)",
       "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     },
     {
@@ -456,9 +345,7 @@
       "description": "Traditional Japanese noodles served hot or cold—udon is thick and chewy, soba is thinner and made from buckwheat",
       "vegetarian": true,
       "where_to_try": "Specialty noodle shops",
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Karaage",
@@ -466,9 +353,7 @@
       "description": "Crispy, juicy bite-sized chicken pieces marinated in soy, ginger, and garlic, then deep-fried",
       "vegetarian": false,
       "where_to_try": "Street food stalls",
-      "source_files": [
-        "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Udon",
@@ -476,9 +361,7 @@
       "description": "Thick wheat noodles served hot or cold, often with tempura or tofu",
       "vegetarian": true,
       "where_to_try": "Various restaurants",
-      "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Matcha (Green Tea)",
@@ -486,9 +369,7 @@
       "description": "Often enjoyed in tea ceremonies or desserts",
       "vegetarian": true,
       "where_to_try": "Traditional tea houses",
-      "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Mochi & Daifuku",
@@ -496,9 +377,7 @@
       "description": "Sticky rice cakes filled with sweet red bean paste or fruit",
       "vegetarian": true,
       "where_to_try": "Local sweet shops",
-      "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Sake",
@@ -506,8 +385,46 @@
       "description": "Traditional Japanese rice wine",
       "vegetarian": true,
       "where_to_try": "Various restaurants and bars",
+      "source_files": []
+    },
+    {
+      "name": "Vegetarian Ramen",
+      "city": "Japan",
+      "description": "A comforting Japanese noodle dish served in rich flavorful broth with vegetables, tofu, and toppings. Vegetarian ramen has become increasingly popular across Japan.",
+      "vegetarian": true,
+      "where_to_try": "TowZen Kyoto, Engine Ramen Kyoto",
       "source_files": [
-        "Japan/Amit- All Inclusive Guide_Japan.pdf"
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Japanese Curry Rice",
+      "city": "Japan",
+      "description": "A mild, comforting curry served with rice and vegetables. Japanese curry is thicker, slightly sweeter, and very different from Indian-style curries.",
+      "vegetarian": true,
+      "where_to_try": "Mumokuteki Café Kyoto, vegetarian cafés across Kyoto & Osaka",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mitarashi Dango",
+      "city": "Japan",
+      "description": "Soft grilled rice dumplings glazed with sweet soy sauce — one of Japan's most traditional and beloved snacks.",
+      "vegetarian": true,
+      "where_to_try": "Ninenzaka Kyoto, Sannenzaka Kyoto, Asakusa streets in Tokyo",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bento",
+      "city": "Japan",
+      "description": "A beautifully arranged meal box with rice, veggies, and protein. Perfect for travel days.",
+      "vegetarian": false,
+      "where_to_try": "Convenience stores and train stations",
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -1095,6 +1012,238 @@
       "category": "polite",
       "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
       "_source_mtime": 1775062968.0
+    },
+    {
+      "city": "Japan",
+      "english": "Thank you",
+      "local": "Arigatō gozaimasu",
+      "category": "polite",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Japan",
+      "english": "Excuse me / Sorry",
+      "local": "Sumimasen",
+      "category": "polite",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Japan",
+      "english": "Hello / Good afternoon",
+      "local": "Konnichiwa",
+      "category": "greeting",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Japan",
+      "english": "Said before eating",
+      "local": "Itadakimasu",
+      "category": "food",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Japan",
+      "english": "How much is this?",
+      "local": "Ikura desu ka?",
+      "category": "polite",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Japan",
+      "english": "Where is the station?",
+      "local": "Eki wa doko desu ka?",
+      "category": "polite",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Japan",
+      "english": "I am vegetarian",
+      "local": "Watashi wa bejitarian desu",
+      "category": "food",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Japan",
+      "english": "No fish stock please",
+      "local": "Dashi nashi onegaishimasu",
+      "category": "food",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Japan",
+      "english": "Hello",
+      "local": "Konnichiwa",
+      "category": "greeting",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "english": "Thank you",
+      "local": "Arigatou Gozaimasu",
+      "category": "polite",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "english": "Excuse me / Sorry",
+      "local": "Sumimasen",
+      "category": "polite",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "english": "Yes",
+      "local": "Hai",
+      "category": "polite",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "english": "No",
+      "local": "Iie",
+      "category": "polite",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "english": "How much is this?",
+      "local": "Ikura desu ka?",
+      "category": "food",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "english": "Do you speak English?",
+      "local": "Eigo ga hanasemasu ka?",
+      "category": "polite",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "english": "This please",
+      "local": "Kore onegaishimasu",
+      "category": "food",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "english": "Delicious!",
+      "local": "Oishii desu!",
+      "category": "food",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "english": "Where is the station?",
+      "local": "Eki wa doko desu ka?",
+      "category": "polite",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "english": "Help please",
+      "local": "Tasukete kudasai",
+      "category": "emergency",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "english": "I don't understand",
+      "local": "Wakarimasen",
+      "category": "polite",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "english": "I will eat now (said before meals)",
+      "local": "Itadakimasu",
+      "category": "food",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "english": "Thank you for the meal (said after eating)",
+      "local": "Gochisousama",
+      "category": "food",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "english": "Thank you",
+      "local": "Arigatō gozaimasu",
+      "category": "polite",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "city": "Japan",
+      "english": "Excuse me / Sorry",
+      "local": "Sumimasen",
+      "category": "polite",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "city": "Japan",
+      "english": "Hello / Good afternoon",
+      "local": "Konnichiwa",
+      "category": "greeting",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "city": "Japan",
+      "english": "Said before eating",
+      "local": "Itadakimasu",
+      "category": "food",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "city": "Japan",
+      "english": "How much is this?",
+      "local": "Ikura desu ka?",
+      "category": "food",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "city": "Japan",
+      "english": "I am vegetarian",
+      "local": "Watashi wa bejitarian desu",
+      "category": "food",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "city": "Japan",
+      "english": "No fish, no meat",
+      "local": "Sakana nashi, niku nashi",
+      "category": "food",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
     }
   ],
   "safety_tips": [
@@ -1777,6 +1926,359 @@
       "tip": "Fake Hotel Calls/Emails - Phishing messages pretending to be from your hotel or booking site",
       "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
       "_source_mtime": 1775062968.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Keep passports, cash, and important documents secure, especially in crowded stations, shopping streets, and tourist areas.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Keep digital copies of your passport, visa, insurance, and flight tickets saved on your phone/cloud storage.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Use only official taxis, hotel-arranged transfers, Grab (Singapore), or public transport.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "While cards are widely accepted, carrying some local cash is helpful for smaller stores, temples, vending machines, or local cafés in Japan.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Vegetarian travelers in Japan should clearly mention: 'No meat, no fish, no seafood, no dashi.'",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Be mindful during rush hour on public transport, especially in Tokyo and Singapore MRT stations.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Carry a compact umbrella, sunscreen, and reusable water bottle during sightseeing days.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Avoid following aggressive nightlife promoters, bar agents, or strangers offering 'special deals,' particularly in nightlife districts.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Always confirm menu pricing before ordering at tourist-heavy restaurants or waterfront venues.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Double-check shopping bills, tax refund paperwork, and product authenticity before payment.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "In busy entertainment or shopping areas, avoid unofficial merchandise sellers or overly pushy sales tactics.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Japan is one of the safest countries in the world, especially in cities like Tokyo. Still, keep your belongings secure in crowded areas and public transport.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Follow local rules and signage carefully.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Be cautious during late-night travel (though generally safe).",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "In case of earthquakes, stay calm and follow instructions.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Keep your phone on silent mode in public transport and avoid talking on phone calls while using public transport.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Do not eat or drink while walking in crowded streets.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Do not litter — carry your trash with you as bins are limited.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Avoid tipping; it is not customary and may cause confusion.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Always stand in queues — Japan is very organized and punctuality is very important.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Do not take photos where it is prohibited, especially at places like Fushimi Inari Taisha.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Avoid entering onsen (hot springs) without following rules, such as cleaning before entry.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Contact the Embassy of India in Tokyo in case of passport loss or serious issues. Keep a copy of your passport and visa separately.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Carry your passport copy – Keep the original safe in the hotel when possible.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Stay aware in crowded areas – Especially at busy stations and markets.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Keep cash in small amounts – Japan is safe, but smart money handling is wise.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Use anti-theft bags or zipped backpacks – Prevents accidental loss.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Note last train timings – Trains stop around midnight in many cities.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Save emergency numbers – Police: 110, Ambulance/Fire: 119.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Download offline maps – Helpful if internet drops.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Follow pedestrian signals strictly – Jaywalking is frowned upon.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Use ATMs at convenience stores – Most foreign cards work there.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Check food ingredients – Vegetarian items may contain fish stock (dashi).",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Smoke only in designated areas – Fines may apply otherwise.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Follow earthquake safety instructions – Stay calm and follow local guidance if tremors occur.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Scam: Fake or Inflated Bills – Some small nightlife venues add unexplained 'service' or 'table' fees.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Scam: Street Promoter Pressure – Aggressive touts may push you to enter specific clubs or massage places.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Scam: Fake 'Closing Down Sale' Shops – Rare but some souvenir shops advertise fake heavy discounts.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Scam: Taxi Route Padding (very uncommon) – A driver may take a longer route if they think you don't know the way.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Scam: Temple/Photo Donation Pressure – Someone may offer to take your photo and then strongly ask for money.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Scam: Card Skimming (rare but possible) – Risk increases at isolated ATMs or suspicious machines.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Scam: Gashapon or Game Machine Tricks – Some arcade machines are set very difficult to win prizes.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Scam: Fake Hotel Calls/Emails – Phishing messages pretending to be from your hotel or booking site.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
     }
   ],
   "souvenirs": [
@@ -3159,6 +3661,561 @@
       ],
       "_source_file": "Japan/Amanda_Japan_All Inclusive Guide.docx",
       "_source_mtime": 1774630050.0
+    },
+    {
+      "item": "Matcha & Japanese Tea Products",
+      "city": "Japan",
+      "category": "Food",
+      "where_to_buy": [
+        "Kyoto tea shops in Gion",
+        "Higashiyama",
+        "Department store food halls"
+      ],
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "item": "Japanese KitKats & Local Snacks",
+      "city": "Japan",
+      "category": "Food",
+      "where_to_buy": [
+        "Don Quijote Dotonbori",
+        "Convenience stores",
+        "Airport duty free shops"
+      ],
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "item": "Japanese Chopsticks & Tableware",
+      "city": "Japan",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Ninenzaka Kyoto",
+        "Sannenzaka Kyoto",
+        "Kyoto handicraft stores"
+      ],
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "item": "Anime & Pokémon Merchandise",
+      "city": "Japan",
+      "category": "Pop culture collectibles",
+      "where_to_buy": [
+        "Pokémon Center Osaka DX",
+        "Akihabara",
+        "Nintendo Osaka"
+      ],
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "item": "Japanese Skincare & Cosmetics",
+      "city": "Japan",
+      "category": "Beauty & Cosmetics",
+      "where_to_buy": [
+        "Shinsaibashi Shopping Street",
+        "Drugstores",
+        "Don Quijote"
+      ],
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "item": "Traditional Japanese Crafts",
+      "city": "Japan",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Higashiyama streets",
+        "Gion boutiques",
+        "Asakusa markets"
+      ],
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "item": "Kokeshi dolls",
+      "city": "Japan",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Nakamise Street",
+        "Don Quijote (Donki)",
+        "Tokyu Hands"
+      ],
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "item": "Sensu (folding fans)",
+      "city": "Japan",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Nakamise Street",
+        "Tokyu Hands"
+      ],
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "item": "Kimono / Yukata",
+      "city": "Japan",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Don Quijote (Donki)",
+        "Tokyu Hands"
+      ],
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "item": "Japanese KitKat (unique flavors)",
+      "city": "Japan",
+      "category": "Food",
+      "where_to_buy": [
+        "Don Quijote (Donki)",
+        "Daiso",
+        "Convenience stores"
+      ],
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "item": "Senbei (crunchy snacks)",
+      "city": "Japan",
+      "category": "Food",
+      "where_to_buy": [
+        "Nakamise Street",
+        "Don Quijote (Donki)"
+      ],
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "item": "Matcha (premium green tea powder)",
+      "city": "Japan",
+      "category": "Food",
+      "where_to_buy": [
+        "Don Quijote (Donki)",
+        "Specialty tea shops in Kyoto"
+      ],
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "item": "Hello Kitty Merchandise",
+      "city": "Japan",
+      "category": "Gifts",
+      "where_to_buy": [
+        "Don Quijote (Donki)",
+        "Tokyu Hands"
+      ],
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "item": "Muji Stationery",
+      "city": "Japan",
+      "category": "Stationery",
+      "where_to_buy": [
+        "Muji stores"
+      ],
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "item": "Shiseido Beauty Products",
+      "city": "Japan",
+      "category": "Beauty & Cosmetics",
+      "where_to_buy": [
+        "Don Quijote (Donki)",
+        "Tokyu Hands",
+        "Pharmacies"
+      ],
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "item": "Matcha KitKat",
+      "city": "Japan",
+      "category": "Food",
+      "where_to_buy": [
+        "Don Quijote (Donki)",
+        "Tokyo Station",
+        "Shin-Osaka Station Souvenir Shops"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Sakura KitKat",
+      "city": "Japan",
+      "category": "Food",
+      "where_to_buy": [
+        "Don Quijote (Donki)",
+        "Tokyo Station",
+        "Shin-Osaka Station Souvenir Shops"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Regional KitKat Flavours",
+      "city": "Japan",
+      "category": "Food",
+      "where_to_buy": [
+        "Don Quijote (Donki)",
+        "Tokyo Station",
+        "Shin-Osaka Station Souvenir Shops"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Pocky Gift Boxes",
+      "city": "Japan",
+      "category": "Food",
+      "where_to_buy": [
+        "Don Quijote (Donki)",
+        "Tokyo Station",
+        "Shin-Osaka Station Souvenir Shops"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Royce Chocolates",
+      "city": "Japan",
+      "category": "Food",
+      "where_to_buy": [
+        "Don Quijote (Donki)",
+        "Tokyo Station",
+        "Shin-Osaka Station Souvenir Shops"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Japanese Rice Crackers",
+      "city": "Japan",
+      "category": "Food",
+      "where_to_buy": [
+        "Don Quijote (Donki)",
+        "Tokyo Station",
+        "Shin-Osaka Station Souvenir Shops"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Traditional Japanese Confectionery",
+      "city": "Japan",
+      "category": "Food",
+      "where_to_buy": [
+        "Tokyo Station",
+        "Kyoto Station",
+        "Nishiki Market"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Yukata (Summer Kimono)",
+      "city": "Japan",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Nishiki Market",
+        "Higashiyama Kyoto",
+        "Asakusa Nakamise Shopping Street"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Folding Fans (Sensu)",
+      "city": "Japan",
+      "category": "Traditional Crafts",
+      "where_to_buy": [
+        "Nishiki Market",
+        "Higashiyama Kyoto",
+        "Asakusa Nakamise Shopping Street"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Tenugui Towels",
+      "city": "Japan",
+      "category": "Traditional Crafts",
+      "where_to_buy": [
+        "Nishiki Market",
+        "Higashiyama Kyoto",
+        "Asakusa Nakamise Shopping Street"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Furoshiki Wrapping Cloths",
+      "city": "Japan",
+      "category": "Traditional Crafts",
+      "where_to_buy": [
+        "Nishiki Market",
+        "Higashiyama Kyoto",
+        "Asakusa Nakamise Shopping Street"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Chopstick Sets",
+      "city": "Japan",
+      "category": "Home & Lifestyle",
+      "where_to_buy": [
+        "Kyoto Souvenir Streets",
+        "Department Stores in Shinjuku & Ginza",
+        "Tokyo Station"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Tea Cups",
+      "city": "Japan",
+      "category": "Home & Lifestyle",
+      "where_to_buy": [
+        "Kyoto Souvenir Streets",
+        "Department Stores in Shinjuku & Ginza",
+        "Tokyo Station"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Sake Cups",
+      "city": "Japan",
+      "category": "Home & Lifestyle",
+      "where_to_buy": [
+        "Kyoto Souvenir Streets",
+        "Department Stores in Shinjuku & Ginza",
+        "Tokyo Station"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Handmade Ceramics",
+      "city": "Japan",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Kyoto Souvenir Streets",
+        "Department Stores in Shinjuku & Ginza",
+        "Tokyo Station"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Bento Boxes",
+      "city": "Japan",
+      "category": "Home & Lifestyle",
+      "where_to_buy": [
+        "Kyoto Souvenir Streets",
+        "Department Stores in Shinjuku & Ginza",
+        "Tokyo Station"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Omamori Lucky Charms",
+      "city": "Japan",
+      "category": "Temple & Shrine Souvenirs",
+      "where_to_buy": [
+        "Fushimi Inari Taisha",
+        "Senso-ji Temple"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Temple Stamps (Goshuin)",
+      "city": "Japan",
+      "category": "Temple & Shrine Souvenirs",
+      "where_to_buy": [
+        "Fushimi Inari Taisha",
+        "Senso-ji Temple"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Traditional Prayer Tablets",
+      "city": "Japan",
+      "category": "Temple & Shrine Souvenirs",
+      "where_to_buy": [
+        "Fushimi Inari Taisha",
+        "Senso-ji Temple"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Shrine Talismans",
+      "city": "Japan",
+      "category": "Temple & Shrine Souvenirs",
+      "where_to_buy": [
+        "Fushimi Inari Taisha",
+        "Senso-ji Temple"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Scale Model Cars",
+      "city": "Japan",
+      "category": "Automotive",
+      "where_to_buy": [
+        "Fuji Speedway Official Shop",
+        "Fuji Motorsports Museum",
+        "Akihabara Hobby Stores"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "JDM Stickers",
+      "city": "Japan",
+      "category": "Automotive",
+      "where_to_buy": [
+        "Fuji Speedway Official Shop",
+        "Fuji Motorsports Museum",
+        "Akihabara Hobby Stores"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Motorsport Apparel",
+      "city": "Japan",
+      "category": "Automotive",
+      "where_to_buy": [
+        "Fuji Speedway Official Shop",
+        "Fuji Motorsports Museum",
+        "Akihabara Hobby Stores"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Automotive Keychains",
+      "city": "Japan",
+      "category": "Automotive",
+      "where_to_buy": [
+        "Fuji Speedway Official Shop",
+        "Fuji Motorsports Museum",
+        "Akihabara Hobby Stores"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Starbucks Japan Tumblers",
+      "city": "Japan",
+      "category": "Collectibles",
+      "where_to_buy": [
+        "Starbucks Reserve Tokyo",
+        "Major Starbucks Stores in Tokyo, Kyoto & Osaka"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Limited Edition Mugs",
+      "city": "Japan",
+      "category": "Collectibles",
+      "where_to_buy": [
+        "Starbucks Reserve Tokyo",
+        "Major Starbucks Stores in Tokyo, Kyoto & Osaka"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Regional Merchandise",
+      "city": "Japan",
+      "category": "Collectibles",
+      "where_to_buy": [
+        "Starbucks Reserve Tokyo",
+        "Major Starbucks Stores in Tokyo, Kyoto & Osaka"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Shiseido Products",
+      "city": "Japan",
+      "category": "Beauty & Skincare",
+      "where_to_buy": [
+        "Don Quijote (Donki)",
+        "Matsumoto Kiyoshi",
+        "Loft",
+        "Tokyu Hands"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Japanese Sheet Masks",
+      "city": "Japan",
+      "category": "Beauty & Skincare",
+      "where_to_buy": [
+        "Don Quijote (Donki)",
+        "Matsumoto Kiyoshi",
+        "Loft",
+        "Tokyu Hands"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Sunscreens",
+      "city": "Japan",
+      "category": "Beauty & Skincare",
+      "where_to_buy": [
+        "Don Quijote (Donki)",
+        "Matsumoto Kiyoshi",
+        "Loft",
+        "Tokyu Hands"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Lip Balms",
+      "city": "Japan",
+      "category": "Beauty & Skincare",
+      "where_to_buy": [
+        "Don Quijote (Donki)",
+        "Matsumoto Kiyoshi",
+        "Loft",
+        "Tokyu Hands"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "item": "Beauty Supplements",
+      "city": "Japan",
+      "category": "Beauty & Skincare",
+      "where_to_buy": [
+        "Don Quijote (Donki)",
+        "Matsumoto Kiyoshi",
+        "Loft",
+        "Tokyu Hands"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
     }
   ],
   "emergency_contacts": [
@@ -3502,6 +4559,102 @@
       "notes": "non-emergency police help",
       "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
       "_source_mtime": 1775062968.0
+    },
+    {
+      "city": "Japan",
+      "service": "Police",
+      "number": "110",
+      "notes": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Japan",
+      "service": "Ambulance / Fire",
+      "number": "119",
+      "notes": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Japan",
+      "service": "Japan Helpline",
+      "number": "+81 570 000 911",
+      "notes": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Japan",
+      "service": "Embassy of India, Tokyo",
+      "number": "+81 3-3262-2391",
+      "notes": "Indian Embassy in Japan",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "city": "Japan",
+      "service": "Police",
+      "number": "110",
+      "notes": "Free to call from any phone",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "service": "Ambulance / Fire",
+      "number": "119",
+      "notes": "Free to call from any phone",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "service": "Consulate General of India Fukuoka",
+      "number": "+81-92-260-1236",
+      "notes": "Located in Fukuoka (Hakata Ward)",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "service": "Police",
+      "number": "110",
+      "notes": "Immediate emergency",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "city": "Japan",
+      "service": "Ambulance / Fire",
+      "number": "119",
+      "notes": "Immediate emergency",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "city": "Japan",
+      "service": "Japan Helpline",
+      "number": "+81-50-6868-5533",
+      "notes": "English support",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "city": "Japan",
+      "service": "Japan Visitor Hotline",
+      "number": "050-3816-2787",
+      "notes": "24/7, multilingual tourist and safety help",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "city": "Japan",
+      "service": "Japan Police Consultation Hotline",
+      "number": "#9110",
+      "notes": "Non-emergency police help",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
     }
   ],
   "connectivity_tips": [
@@ -3856,6 +5009,134 @@
       "tip": "eSIM is most convenient if phone supports it - activate instantly, no physical SIM change, good for short trips but requires eSIM-compatible phone",
       "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
       "_source_mtime": 1775062968.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "eSIMs are strongly recommended for convenience and immediate activation upon arrival. Recommended providers: Airalo, Ubigi, Sakura Mobile, Mobal, Japan Wireless.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Physical SIM cards can be purchased at Tokyo Haneda Airport, Narita Airport, and electronics stores (Bic Camera, Yodobashi Camera). Passport required for physical SIM purchases.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Japan has excellent mobile coverage across Tokyo, Kyoto, Osaka, and most tourist areas including Mt. Fuji regions.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Google Maps, Google Translate, and train navigation apps are extremely useful during your trip in Japan.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Prepaid tourist SIM cards are easily available at airports and stores. Best for data usage — calls are usually limited or not included. Works well in major cities like Tokyo and Osaka.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "eSIM is recommended — activate instantly with no need to swap physical SIM. Ideal for modern smartphones and can be purchased online before travel.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Pocket Wi-Fi is a portable Wi-Fi router great for families or groups. Can be rented at airports or delivered to hotels. Reliable provider: NTT Docomo.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "SIM cards and eSIMs can be purchased at airports (Narita, Haneda, Kansai), electronics stores like Bic Camera and Yodobashi Camera, and some convenience stores.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Check if your phone is unlocked before travel and ensure it supports eSIM if choosing that option.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Carry a power bank, especially for Pocket Wi-Fi. Download offline maps for backup.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Internet is fast and reliable across most tourist areas. Free public Wi-Fi is limited and not always reliable.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Voice calling options are limited in tourist SIMs. Registration/ID may be required for some SIM purchases.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Major mobile networks in Japan: NTT Docomo (best nationwide coverage, especially in rural and mountainous areas), SoftBank (very good speeds in cities and tourist zones), au by KDDI (reliable with strong urban coverage), Rakuten Mobile (cheaper but weaker coverage outside big cities).",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Networks are excellent in Tokyo, Kyoto, Osaka, and on bullet trains.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Data-Only Tourist SIM is the most popular option for tourists – easy to use, no Japanese phone number needed, good for maps, WhatsApp, and browsing. Usually no voice calls. Popular providers: Japan Travel SIM (Docomo network), Sakura Mobile, Mobal SIM.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "eSIM is the most convenient option if your phone supports it – activate instantly, no physical SIM change needed, good for short trips. Requires an eSIM-compatible phone.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
     }
   ],
   "transport_options": [
@@ -3971,6 +5252,32 @@
       "cost": "Varies by route and class",
       "_source_file": "Japan/Amanda_Japan_All Inclusive Guide.docx",
       "_source_mtime": 1774630050.0
+    },
+    {
+      "city": "Japan",
+      "mode": "Shinkansen (Bullet Train)",
+      "description": "High-speed rail connecting Osaka (Shin-Osaka) to Tokyo Station. Nozomi 74 departs 07:30 AM, arrives 09:57 AM. Duration approximately 2 hours 30 minutes. Sit on the right side for potential Mt. Fuji views.",
+      "recommended_pass": "JR Pass (if applicable)",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "mode": "IC Card (ICOCA / Suica / PASMO)",
+      "description": "Rechargeable contactless smart card used for trains, subways, and buses across Japan. Tap in and tap out at gates — no need to buy individual tickets. ICOCA is primary in Kansai (Osaka, Kyoto); Suica and PASMO are primary in Tokyo. All cards are interchangeable across regions.",
+      "recommended_pass": "ICOCA (Kansai) / Suica or PASMO (Tokyo)",
+      "cost": "¥500 refundable deposit + load ¥1,000–¥5,000. Recharge at train stations, 7-Eleven, FamilyMart, and Lawson.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "city": "Japan",
+      "mode": "IC Card (ICOCA / Suica / PASMO)",
+      "description": "Rechargeable contactless smart card used for trains, subways, and buses across Japan. Tap in and tap out at gates – no need to buy individual tickets. ICOCA is primary in Kansai (Osaka, Kyoto), Suica and PASMO are primary in Tokyo. All cards are interchangeable across cities.",
+      "recommended_pass": "ICOCA (Kansai), Suica or PASMO (Tokyo)",
+      "cost": "¥500 refundable deposit; load ¥1,000–¥5,000 recommended. Recharge at train stations, 7-Eleven, FamilyMart, and Lawson.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
     }
   ],
   "health_tips": [
@@ -4389,6 +5696,139 @@
       "tip": "Keep hand sanitizer and masks handy, especially on trains and crowded areas",
       "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
       "_source_mtime": 1775062968.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Recommended routine vaccinations before travel: Tetanus, Hepatitis A, Typhoid, COVID-19 (if applicable), and routine flu vaccination (optional but helpful). Consult your doctor before travel if you have specific medical conditions.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Carry sunscreen, sunglasses, and a cap/hat for long outdoor sightseeing days.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Vegetarian travelers in Japan should clearly communicate dietary restrictions: 'No meat, no fish, no seafood, no dashi.'",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Comfortable walking shoes are essential, as both countries involve significant walking and public transport usage.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Carry basic masks if sensitive to seasonal allergies, crowds, or changing weather.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan",
+        "Singapore"
+      ],
+      "tip": "Recommended travel health essentials: personal medications with prescriptions, basic first-aid kit, motion sickness medicine, band-aids/blister patches, hand sanitizer & wet wipes, ORS/electrolyte sachets, cold & fever medication, and digestive medication.",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Japan has excellent healthcare facilities, especially in cities like Tokyo. Look for hospitals with English-speaking staff in major cities like Osaka.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Carry basic medicines (fever, cold, allergies, digestion) and keep a copy of your prescriptions.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Travel insurance is highly recommended.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Tap water is safe to drink across Japan. Street food like Takoyaki is hygienic and safe. Eat freshly prepared food and avoid long-stored items.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Spring (March–April): Carry allergy medications as it is pollen season.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Summer (June–August): Stay hydrated and avoid heatstroke.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Winter (December–February): Carry warm clothes to avoid cold and flu.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Carry hand sanitizer and masks — this is common practice in Japan.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Keep emergency number saved: 119 for ambulance. Use translation apps if needed at medical facilities.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0
+    },
+    {
+      "cities": [
+        "Japan"
+      ],
+      "tip": "Check food ingredients carefully – Vegetarian items may contain fish stock (dashi), which is commonly used in Japanese cooking.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0
     }
   ],
   "source_files": [
@@ -4403,6 +5843,9 @@
     "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
     "Japan/Amit- All Inclusive Guide_Japan.pdf",
     "Japan/Amanda_Japan_All Inclusive Guide.docx",
-    "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+    "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+    "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+    "Japan/Azhar_Japan_All Inclusive Guide.docx",
+    "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
   ]
 }

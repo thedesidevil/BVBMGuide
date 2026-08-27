@@ -25,10 +25,7 @@
         "traditional"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Le Panier des 4 Saisons",
@@ -52,10 +49,7 @@
         "elegant"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Munchie",
@@ -81,42 +75,40 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Le Cap Horn",
       "city": "Chamonix",
       "cuisine_type": [
+        "European",
         "Fine Dining"
       ],
       "price_range": "₹₹₹",
-      "hours": "12:00 PM – 2:00 PM | 7 PM - 10 PM",
+      "hours": "12:00 PM – 2:00 PM, 7:00 PM – 10:00 PM",
       "ambience": "One of Chamonix's most elegant dining spaces with atmospheric interiors",
       "area": "Chamonix Town Centre",
       "nearby_landmarks": [],
       "highlights": [
-        "Upscale alpine dinner",
-        "Elegant dining space"
+        "Beautifully presented vegetarian-friendly dishes",
+        "Upscale alpine dining"
       ],
       "must_try_dishes": [
         "Sushi platters",
         "seafood mains",
         "Truffle risotto",
         "vegetable sushi",
-        "mushroom pasta"
+        "mushroom pasta",
+        "Vegetable sushi",
+        "Mushroom pasta"
       ],
       "best_for": [
-        "upscale dining"
+        "romantic",
+        "fine dining"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ]
     },
     {
@@ -143,10 +135,7 @@
         "scenic"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Poco Loco",
@@ -170,40 +159,39 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Cool Cat Restaurant",
       "city": "Chamonix",
       "cuisine_type": [
+        "International",
         "Café"
       ],
       "price_range": "₹₹",
       "hours": "12:00 PM – 12:00 AM",
-      "ambience": "Lively mountain-town café with vibrant interiors and scenic outdoor seating",
+      "ambience": "Lively mountain-town café with relaxed atmosphere, vibrant interiors, and scenic outdoor seating",
       "area": "Chamonix Town Centre",
       "must_try_dishes": [
         "Veg burgers",
         "loaded fries",
-        "hot chocolate"
+        "hot chocolate",
+        "Loaded fries",
+        "Hot chocolate"
       ],
       "best_for": [
         "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "nearby_landmarks": [
         "Aiguille du Midi, Chamonix"
       ],
       "highlights": [
-        "Lively ambience",
-        "Scenic outdoor seating"
+        "Scenic outdoor seating",
+        "Lively ambience"
       ]
     },
     {
@@ -211,27 +199,27 @@
       "city": "Chamonix",
       "cuisine_type": [
         "Café",
-        "Dessert"
+        "Desserts"
       ],
       "price_range": "₹",
-      "hours": "2:30 – 6:30 PM",
-      "ambience": "Charming waffle café",
+      "hours": "2:30 PM – 6:30 PM",
+      "ambience": "Charming waffle café ideal for a sweet alpine stop",
       "must_try_dishes": [
         "Belgian waffles",
         "Nutella waffles",
-        "cappuccino"
+        "cappuccino",
+        "Cappuccino"
       ],
       "best_for": [
-        "dessert"
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "area": "Chamonix Town Centre",
       "highlights": [
-        "Sweet alpine stop"
+        "Sweet alpine stop while strolling through Chamonix"
       ]
     },
     {
@@ -242,23 +230,25 @@
       ],
       "price_range": "₹",
       "hours": "8:00 AM – 10:30 PM",
-      "ambience": "Cozy riverside café with postcard-worthy alpine surroundings",
+      "ambience": "Cozy riverside café with postcard-worthy alpine surroundings and peaceful atmosphere",
       "must_try_dishes": [
         "Fresh pastries",
         "artisan desserts",
-        "cappuccino"
+        "cappuccino",
+        "Artisan desserts",
+        "Cappuccino"
       ],
       "best_for": [
-        "scenic café experience"
+        "casual",
+        "romantic"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "area": "Chamonix Town Centre",
       "highlights": [
-        "Riverside location",
+        "Riverside setting",
         "Peaceful atmosphere"
       ]
     },
@@ -271,32 +261,33 @@
       ],
       "price_range": "₹₹",
       "hours": "11:30 AM – 11:00 PM",
-      "ambience": "Warm Himalayan-inspired restaurant in heart of Chamonix",
+      "ambience": "Warm Himalayan-inspired restaurant in the heart of Chamonix",
       "must_try_dishes": [
         "Vegetable momos",
         "paneer curry",
-        "saffron rice"
+        "saffron rice",
+        "Paneer curry",
+        "Saffron rice"
       ],
       "best_for": [
-        "cozy dining"
+        "casual",
+        "family"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
-      "area": "Heart of Chamonix",
+      "area": "Chamonix Town Centre",
       "highlights": [
-        "Comforting vegetarian flavors",
-        "Cozy mountain lunch"
+        "Comforting vegetarian Indian and Nepalese flavors"
       ]
     },
     {
       "name": "La Tablee",
       "city": "Chamonix",
       "cuisine_type": [
-        "Alpine",
-        "European"
+        "European",
+        "Alpine"
       ],
       "price_range": "₹₹₹",
       "hours": "12:00 PM – 5:00 PM, 6:30 PM – 10:00 PM",
@@ -304,20 +295,23 @@
       "must_try_dishes": [
         "Mushroom risotto",
         "truffle pasta",
-        "alpine desserts"
+        "alpine desserts",
+        "Truffle pasta",
+        "Alpine desserts"
       ],
       "best_for": [
-        "gourmet dining"
+        "romantic",
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "highlights": [
         "Refined vegetarian-friendly dishes",
-        "Elegant alpine bistro"
-      ]
+        "Chalet-style atmosphere"
+      ],
+      "area": "Chamonix Town Centre"
     },
     {
       "name": "Restaurant Atmosphère",
@@ -326,25 +320,26 @@
         "European"
       ],
       "price_range": "₹₹₹",
-      "hours": "12:00 PM – 1:30 PM | 6:30 PM - 10:00 PM",
-      "ambience": "Beautifully designed riverside restaurant with scenic evening views",
+      "hours": "12:00 PM – 1:30 PM, 6:30 PM – 10:00 PM",
+      "ambience": "Beautifully designed riverside restaurant with elegant ambience and scenic evening views",
       "area": "Chamonix Town Centre",
       "must_try_dishes": [
         "Wild mushroom pasta",
         "grilled vegetables",
-        "molten chocolate dessert"
+        "molten chocolate dessert",
+        "Grilled vegetables",
+        "Molten chocolate dessert"
       ],
       "best_for": [
         "romantic"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "highlights": [
-        "Riverside location",
-        "Elegant ambience"
+        "Scenic evening views",
+        "Riverside setting"
       ]
     },
     {
@@ -354,25 +349,27 @@
         "Japanese"
       ],
       "price_range": "₹₹₹",
-      "hours": "12:00 PM – 2:15 PM | 6:30 PM - 9:30 PM",
-      "ambience": "Chic Japanese-inspired dining space in modern alpine setting",
+      "hours": "12:00 PM – 2:15 PM, 6:30 PM – 9:30 PM",
+      "ambience": "Chic Japanese-inspired dining space in a modern alpine setting",
       "area": "Chamonix Town Centre",
       "must_try_dishes": [
         "Vegetarian sushi",
         "tempura vegetables",
-        "ramen"
+        "ramen",
+        "Tempura vegetables",
+        "Ramen"
       ],
       "best_for": [
-        "fine dining"
+        "fine dining",
+        "romantic"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "highlights": [
-        "Contemporary fine dining",
-        "Beautifully plated dishes"
+        "Beautifully plated vegetarian dishes",
+        "Contemporary fine dining"
       ]
     },
     {
@@ -401,9 +398,7 @@
         "healthy dining"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Annapurna 2 Grill N' Curry",
@@ -428,9 +423,7 @@
         "comfort food"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Yak",
@@ -455,9 +448,7 @@
         "cozy dining"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     }
   ],
   "attractions": [
@@ -468,10 +459,7 @@
       "hours": "Typically 8:30 AM – 4:30/5 PM (weather dependent)",
       "entry_fee": "Approx. INR 7,000–8,000 per adult",
       "recommended_duration": "3-4 hours",
-      "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf",
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Montenvers Cogwheel Train",
@@ -480,9 +468,7 @@
       "hours": "Typically 8:30 AM – 4:30 PM (season dependent)",
       "entry_fee": "Approx. INR 3,500–4,500 per adult",
       "recommended_duration": "3 hours",
-      "source_files": [
-        "France/Tanya and Shovit_All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Montenvers Cogwheel Train to Mer de Glace",
@@ -491,9 +477,7 @@
       "hours": "Typically 8:30 AM – 4:30 PM (season dependent)",
       "entry_fee": "Approx. INR 3,500–4,500 per adult",
       "recommended_duration": "3-4 hours",
-      "source_files": [
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Les Planards",
@@ -502,20 +486,28 @@
       "hours": "Usually 10 AM – 5 PM (weather dependent)",
       "entry_fee": "Pay-per-activity (~INR 1,000–2,000 depending on activity)",
       "recommended_duration": "2-3 hours",
-      "source_files": [
-        "Germany/Tanya and Shovit_All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Aiguille du Midi",
       "city": "Chamonix",
-      "description": "Legendary cable car rising to 3,842 meters with extraordinary panoramic views across French, Swiss, and Italian Alps",
+      "description": "Legendary cable car rising dramatically to an altitude of 3,842 meters offering extraordinary panoramic views across the French, Swiss, and Italian Alps. Glass viewing platforms and observation terraces at the summit.",
       "hours": "Approx. 8:00 AM – 4:30 PM",
       "entry_fee": "Approx. INR 7,500–9,500 per person",
       "recommended_duration": "3-4 hours",
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Chamonix Town Centre",
+      "city": "Chamonix",
+      "description": "Wooden chalets, boutique stores, artisanal bakeries, and cozy cafés creating a warm alpine atmosphere. Luxury outdoor boutiques and open-air cafés.",
+      "hours": "Open throughout the day",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ]
     }
   ],
@@ -547,6 +539,13 @@
       "location": "Elegant chalet-style boutique stay nestled beneath Mont Blanc",
       "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
       "_source_mtime": 1777872516.0
+    },
+    {
+      "name": "Auberge du Manoir",
+      "city": "Chamonix",
+      "location": "Chamonix town area",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
     }
   ],
   "local_dishes": [],
@@ -642,6 +641,7 @@
     "France/Tanya and Shovit_All Inclusive Guide.pdf",
     "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
     "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-    "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+    "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
   ]
 }

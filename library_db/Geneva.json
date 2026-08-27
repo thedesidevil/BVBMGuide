@@ -16,10 +16,7 @@
         "Light-filled, modern chain branch"
       ],
       "area": "La Praille, Centre",
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Martelle Praille",
@@ -36,10 +33,7 @@
       ],
       "highlights": [],
       "area": "La Praille, Centre",
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Pizzeria Ristorante Molino",
@@ -53,10 +47,7 @@
       ],
       "highlights": [],
       "area": "La Praille, Centre",
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Les Armures",
@@ -74,31 +65,39 @@
         "chalet–inspired interior"
       ],
       "ambience": "chalet–inspired interior",
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tibits",
       "city": "Geneva",
       "cuisine_type": [
-        "Vegetarian"
+        "Vegetarian",
+        "International"
       ],
       "price_range": "₹₹",
       "hours": "6:30 AM – 10:30 PM (Sunday 8:00 AM - 10:00 PM)",
-      "ambience": "Beautifully curated vegetarian dining space with elegant buffet-style concept and contemporary interiors",
+      "ambience": "Beautifully curated vegetarian dining space with contemporary interiors",
       "must_try_dishes": [
         "Swiss rösti",
         "Thai curry",
-        "artisanal desserts"
+        "artisanal desserts",
+        "Artisanal desserts"
       ],
       "best_for": [
-        "casual"
+        "casual",
+        "healthy"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ],
+      "area": "Geneva city centre",
+      "nearby_landmarks": [
+        "World Trade Organization, Geneva"
+      ],
+      "highlights": [
+        "Elegant buffet-style concept",
+        "Fresh seasonal preparations"
       ]
     },
     {
@@ -108,24 +107,30 @@
         "European"
       ],
       "price_range": "₹₹₹",
-      "hours": "Saturday 6 pm–1 am & Sunday 11 am–4 pm",
-      "ambience": "Intimate restaurant with artistic plating, cozy European interiors",
+      "hours": "10:30 AM – 2:30 PM, 5:00 PM – 1:00 AM (Saturday 6 PM–1 AM, Sunday 11 AM–4 PM)",
+      "ambience": "Intimate restaurant with artistic plating and cozy European interiors",
       "must_try_dishes": [
         "Seasonal risotto",
         "truffle pasta",
-        "gourmet desserts"
+        "gourmet desserts",
+        "Truffle pasta",
+        "Gourmet desserts"
       ],
       "best_for": [
-        "romantic"
+        "romantic",
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "highlights": [
-        "Artistic plating",
-        "Cozy European interiors"
+        "Carefully crafted vegetarian-friendly dishes",
+        "Artistic plating"
+      ],
+      "area": "Geneva city centre",
+      "nearby_landmarks": [
+        "World Trade Organization, Geneva"
       ]
     },
     {
@@ -136,23 +141,28 @@
       ],
       "price_range": "₹₹",
       "hours": "12:00 PM – 2:30 PM, 7:00 PM – 2:00 AM",
-      "ambience": "Refined Indian dining destination in stylish contemporary atmosphere",
+      "ambience": "Refined Indian dining destination with stylish contemporary atmosphere",
       "must_try_dishes": [
         "Paneer tikka",
         "dal makhani",
-        "saffron rice"
+        "saffron rice",
+        "Dal makhani",
+        "Saffron rice"
       ],
       "best_for": [
-        "casual"
+        "casual",
+        "family"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "highlights": [
-        "Refined Indian dining",
-        "Stylish contemporary atmosphere"
+        "Ideal for easing into the trip with comforting vegetarian flavors"
+      ],
+      "area": "Geneva city centre",
+      "nearby_landmarks": [
+        "World Trade Organization, Geneva"
       ]
     },
     {
@@ -167,14 +177,24 @@
       "must_try_dishes": [
         "Vegetable biryani",
         "paneer butter masala",
-        "garlic naan"
+        "garlic naan",
+        "Paneer butter masala",
+        "Garlic naan"
       ],
       "best_for": [
-        "romantic"
+        "romantic",
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ],
+      "area": "Geneva city centre",
+      "nearby_landmarks": [
+        "Jet d'Eau, Geneva"
+      ],
+      "highlights": [
+        "Elevated vegetarian cuisine"
       ]
     },
     {
@@ -186,18 +206,27 @@
       "price_range": "₹₹",
       "hours": "11:00 AM – 11:00 PM",
       "ambience": "Charming Old Town dining spot with cozy Swiss atmosphere",
-      "area": "Old Town",
+      "area": "Old Town, Geneva",
       "must_try_dishes": [
         "Cheese rösti",
         "seasonal salads",
-        "Swiss desserts"
+        "Swiss desserts",
+        "Seasonal salads"
       ],
       "best_for": [
-        "casual"
+        "casual",
+        "family"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ],
+      "nearby_landmarks": [
+        "Jet d'Eau, Geneva"
+      ],
+      "highlights": [
+        "Satisfying vegetarian-friendly options",
+        "Cozy Swiss-style ambience"
       ]
     }
   ],
@@ -206,85 +235,73 @@
       "name": "Jardin Anglais",
       "city": "Geneva",
       "description": "English Garden with Flower Clock",
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "UN Headquarters",
       "city": "Geneva",
       "description": "United Nations headquarters building",
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Jardin Anglais and Flower Clock",
       "city": "Geneva",
       "description": "Garden with iconic flower clock",
-      "source_files": [
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Palace of Nations",
       "city": "Geneva",
-      "description": "One of Europe's most significant diplomatic landmarks with grand architecture, sweeping courtyards, and beautifully landscaped surroundings",
+      "description": "One of Europe's most significant diplomatic landmarks reflecting Geneva's international stature through grand architecture, sweeping courtyards, and beautifully landscaped surroundings. Nearby Ariana Park adds a peaceful contrast with open lawns and roaming peacocks.",
       "hours": "8:30 AM – 5:00 PM (Saturday & Sunday closed)",
       "entry_fee": "Approx. INR 1,800–2,200 per person (guided tour)",
       "recommended_duration": "2 hours",
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ]
     },
     {
       "name": "World Trade Organization",
       "city": "Geneva",
-      "description": "Located within Geneva's international district with elegant modern buildings, landscaped boulevards, and distant Alpine views",
+      "description": "Located within Geneva's international district, offering a quick but meaningful stop surrounded by elegant modern buildings, landscaped boulevards, and distant Alpine views.",
       "hours": "Exterior accessible all day",
       "entry_fee": "Free",
       "recommended_duration": "30 minutes",
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ]
     },
     {
       "name": "Vieille Ville (Geneva Old Town)",
       "city": "Geneva",
-      "description": "Geneva's Old Town with cobbled lanes, hidden courtyards, artisan boutiques, historic fountains, and charming cafés",
+      "description": "Cobbled lanes winding past hidden courtyards, artisan boutiques, historic fountains, and charming cafés tucked into centuries-old buildings.",
       "hours": "Open all day",
       "entry_fee": "Free",
       "recommended_duration": "2-3 hours",
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ]
     },
     {
       "name": "Lake Geneva Promenade",
       "city": "Geneva",
-      "description": "Elegant promenade where sailboats drift across the water beneath distant Alpine peaks",
+      "description": "Sailboats drift quietly across the water while the lakeside promenade glows beneath soft golden light. Perfect for a slow and elegant evening.",
       "hours": "Open 24 hours",
       "entry_fee": "Free",
       "recommended_duration": "1-2 hours",
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ]
     },
     {
       "name": "Jet d'Eau",
       "city": "Geneva",
-      "description": "One of Switzerland's most iconic landmarks rising dramatically above Lake Geneva with beautiful panoramic lake views",
+      "description": "One of Switzerland's most iconic landmarks, the Jet d'Eau rises dramatically above Lake Geneva and becomes especially beautiful during sunset hours.",
       "hours": "Usually operational throughout the day",
       "entry_fee": "Free",
       "recommended_duration": "30 minutes",
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ]
     }
   ],
@@ -315,6 +332,7 @@
     "France/All Inclusive Guide- Switzerland and Paris.pdf",
     "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
     "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-    "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+    "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
   ]
 }

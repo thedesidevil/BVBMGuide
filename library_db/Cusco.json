@@ -22,11 +22,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf",
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
-        "South America/All Inclusive Guide - Peru_CRE.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Restaurant Paccha",
@@ -50,11 +46,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf",
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
-        "South America/All Inclusive Guide - Peru_CRE.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Chakruna Native Burgers",
@@ -80,10 +72,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf",
-        "South America/All Inclusive Guide - Peru_CRE.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Perucho Restaurant & Craft Beer",
@@ -109,10 +98,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf",
-        "South America/All Inclusive Guide - Peru_CRE.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Pachapapa Cocina Cusqueña",
@@ -139,10 +125,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf",
-        "South America/All Inclusive Guide - Peru_CRE.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Mama Jama",
@@ -169,11 +152,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf",
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
-        "South America/All Inclusive Guide - Peru_CRE.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Yuraq Restaurant",
@@ -202,11 +181,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf",
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
-        "South America/All Inclusive Guide - Peru_CRE.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Hanz Craft Beer and Restaurant",
@@ -236,10 +211,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf",
-        "South America/All Inclusive Guide - Peru_CRE.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "INKAGRILL",
@@ -263,10 +235,7 @@
       "best_for": [
         "romantic"
       ],
-      "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf",
-        "South America/All Inclusive Guide - Peru_CRE.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Suyu peruvian Restaurant",
@@ -297,9 +266,7 @@
         "romantic"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Cholos Cocina Peruana",
@@ -323,9 +290,7 @@
         "casual"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "El Jardin",
@@ -351,33 +316,44 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Yaku Restaurant",
       "city": "Cusco",
       "cuisine_type": [
-        "Peruvian"
+        "Peruvian",
+        "Contemporary"
       ],
       "price_range": "₹₹",
-      "hours": "11:00 AM –10:30 PM",
-      "area": "Chocomuseo area",
+      "hours": "11:00 AM – 10:30 PM",
+      "area": "Historic Centre",
       "nearby_landmarks": [
-        "Chocomuseum, Cusco"
+        "Plaza Regocijo, Cusco",
+        "Aranwa Cusco Boutique Hotel, Cusco"
       ],
       "must_try_dishes": [
         "Corn soup",
         "Quinoa risotto",
-        "trout ceviche"
+        "trout ceviche",
+        "Trout Ceviche",
+        "Alpaca Steak",
+        "Lomo Saltado",
+        "Quinoa Risotto"
       ],
       "best_for": [
-        "casual"
+        "fine dining",
+        "romantic"
       ],
       "vegetarian_friendly": false,
       "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ],
+      "ambience": "Elegant contemporary Peruvian restaurant overlooking Plaza Regocijo, blending modern presentation with traditional Andean flavours",
+      "highlights": [
+        "Overlooks Plaza Regocijo",
+        "Modern presentation with traditional Andean flavours",
+        "Warm and sophisticated setting"
       ]
     },
     {
@@ -395,8 +371,207 @@
         "casual"
       ],
       "vegetarian_friendly": true,
+      "source_files": []
+    },
+    {
+      "name": "Morena Peruvian Kitchen",
+      "city": "Cusco",
+      "cuisine_type": [
+        "Peruvian",
+        "Contemporary"
+      ],
+      "price_range": "₹₹",
+      "hours": "12:00 PM – 11:00 PM",
+      "ambience": "Stylish contemporary restaurant overlooking Plaza de Armas with elegant Peruvian décor",
+      "area": "Historic Centre",
+      "nearby_landmarks": [
+        "Plaza de Armas, Cusco",
+        "Aranwa Cusco Boutique Hotel, Cusco"
+      ],
+      "highlights": [
+        "Overlooks Plaza de Armas",
+        "Beautiful city views",
+        "Authentic Peruvian cuisine"
+      ],
+      "must_try_dishes": [
+        "Lomo Saltado",
+        "Alpaca Tenderloin",
+        "Quinoa Risotto",
+        "Pisco Sour"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
       "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Cicciolina",
+      "city": "Cusco",
+      "cuisine_type": [
+        "Andean",
+        "Mediterranean",
+        "Fusion"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12:30 PM – 9:15 PM",
+      "ambience": "Intimate colonial courtyard restaurant combining Andean and Mediterranean flavours",
+      "area": "Historic Centre",
+      "nearby_landmarks": [
+        "Aranwa Cusco Boutique Hotel, Cusco"
+      ],
+      "highlights": [
+        "Intimate colonial courtyard setting",
+        "Fusion of Andean and Mediterranean flavours"
+      ],
+      "must_try_dishes": [
+        "Trout Tiradito",
+        "Handmade Pasta",
+        "Alpaca Carpaccio",
+        "Chocolate Fondant"
+      ],
+      "best_for": [
+        "romantic",
+        "fine dining"
+      ],
+      "source_files": [
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Chicha by Gastón Acurio",
+      "city": "Cusco",
+      "cuisine_type": [
+        "Peruvian",
+        "Andean"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12:00 PM – 10:30 PM",
+      "ambience": "Modern interpretation of traditional Andean cuisine in a sophisticated setting",
+      "area": "Historic Centre",
+      "nearby_landmarks": [
+        "Aranwa Cusco Boutique Hotel, Cusco"
+      ],
+      "highlights": [
+        "Modern take on traditional Andean cuisine",
+        "Sophisticated setting",
+        "By celebrated chef Gastón Acurio"
+      ],
+      "must_try_dishes": [
+        "Cuy Confit",
+        "Lomo Saltado",
+        "Quinoa Soup",
+        "Suspiro Limeño"
+      ],
+      "best_for": [
+        "special occasion",
+        "fine dining"
+      ],
+      "source_files": [
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "LIMO Peruano Nikkei",
+      "city": "Cusco",
+      "cuisine_type": [
+        "Peruvian",
+        "Nikkei",
+        "Fusion"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12:00 PM – 10:00 PM",
+      "ambience": "Stylish rooftop restaurant overlooking Plaza de Armas",
+      "area": "Historic Centre",
+      "nearby_landmarks": [
+        "Plaza de Armas, Cusco"
+      ],
+      "highlights": [
+        "Rooftop restaurant",
+        "Scenic views over Plaza de Armas",
+        "Fusion cuisine"
+      ],
+      "must_try_dishes": [
+        "Ceviche",
+        "Sushi Rolls",
+        "Lomo Saltado",
+        "Pisco Sour"
+      ],
+      "best_for": [
+        "casual",
+        "scenic dining"
+      ],
+      "source_files": [
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "MAP Café",
+      "city": "Cusco",
+      "cuisine_type": [
+        "Peruvian",
+        "Fine Dining"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12:00 PM – 3:00 PM, 6:00 PM – 10:00 PM",
+      "ambience": "Elegant glass-enclosed restaurant located within the Museum of Pre-Columbian Art courtyard",
+      "area": "Historic Centre",
+      "nearby_landmarks": [
+        "Museum of Pre-Columbian Art, Cusco",
+        "Aranwa Cusco Boutique Hotel, Cusco"
+      ],
+      "highlights": [
+        "Located within the Museum of Pre-Columbian Art",
+        "Glass-enclosed courtyard setting",
+        "Romantic fine dining"
+      ],
+      "must_try_dishes": [
+        "Alpaca Medallions",
+        "Andean Trout",
+        "Quinoa Risotto",
+        "Chocolate Dessert"
+      ],
+      "best_for": [
+        "romantic",
+        "fine dining"
+      ],
+      "source_files": [
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mamá Jama Restaurant",
+      "city": "Cusco",
+      "cuisine_type": [
+        "Peruvian",
+        "Contemporary"
+      ],
+      "price_range": "₹₹",
+      "hours": "12:15 PM – 11:00 PM",
+      "ambience": "Vibrant and contemporary restaurant with cosy atmosphere, stylish interiors and a creative menu combining traditional Peruvian ingredients with modern culinary techniques",
+      "area": "Historic Centre",
+      "nearby_landmarks": [
+        "Aranwa Cusco Boutique Hotel, Cusco"
+      ],
+      "highlights": [
+        "Creative menu combining traditional and modern techniques",
+        "Popular with locals and visitors",
+        "Cosy atmosphere"
+      ],
+      "must_try_dishes": [
+        "Alpaca Steak",
+        "Lomo Saltado",
+        "Fresh Ceviche",
+        "Quinoa Risotto"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "South America/Naren- Peru_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -407,134 +582,132 @@
       "description": "Most famous and bustling market in Cusco with fresh fruit, meats, herbs, textiles, and street food",
       "hours": "Market hours",
       "entry_fee": "Free",
-      "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf",
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
-        "South America/All Inclusive Guide - Peru_CRE.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Plaza de Armas",
       "city": "Cusco",
       "description": "Main square with Cusco Cathedral and Compañía de Jesús Church",
       "entry_fee": "Free",
-      "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf",
-        "South America/All Inclusive Guide - Peru_CRE.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "San Blas Neighborhood",
       "city": "Cusco",
       "description": "Neighborhood with handmade jewelry, textiles, organic items and scenic cafés",
       "recommended_duration": "Half day",
-      "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf",
-        "South America/All Inclusive Guide - Peru_CRE.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Twelve-Angled Stone",
       "city": "Cusco",
       "description": "Historic stone on Hatun Rumiyoc Street",
       "entry_fee": "Free",
-      "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "San Cristóbal Viewpoint",
       "city": "Cusco",
       "description": "Panoramic views of the city and hills",
       "entry_fee": "Free",
-      "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf",
-        "South America/All Inclusive Guide - Peru_CRE.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Cristo Blanco",
       "city": "Cusco",
       "description": "Best at golden hour for incredible city views",
       "entry_fee": "Free",
-      "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf",
-        "South America/All Inclusive Guide - Peru_CRE.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Rainbow Mountain",
       "city": "Cusco",
       "description": "Vibrant landscape at Ausangate mountain range with views of llamas and alpacas",
       "recommended_duration": "Full day",
-      "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf",
-        "South America/All Inclusive Guide - Peru_CRE.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Chocomuseo",
       "city": "Cusco",
       "description": "Chocolate workshop experience",
       "recommended_duration": "Morning workshop",
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Koricancha (Sun Temple)",
       "city": "Cusco",
       "description": "Beautiful Inca sun temple",
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Cusco Cathedral",
       "city": "Cusco",
-      "description": "Historic cathedral in city center",
+      "description": "Standing on the Plaza de Armas, one of Peru's most significant religious landmarks. Built over nearly a century using stones from a former Inca palace, combining Spanish Renaissance architecture with indigenous artistic influences. Famous for a painting of the Last Supper featuring guinea pig.",
       "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+        "South America/Naren- Peru_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Sacsayhuaman",
       "city": "Cusco",
       "description": "Remarkable Inca fortress building",
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kenko Amphitheater",
       "city": "Cusco",
       "description": "Ancient Inca amphitheater",
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Puca Pucara",
       "city": "Cusco",
       "description": "Strategically located 'red fortress' dominating the area",
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Tambomachay",
       "city": "Cusco",
       "description": "Site with two distinctive aqueducts providing clean water",
-      "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "San Blas Market",
       "city": "Cusco",
       "description": "Smaller, boutique market in bohemian San Blas neighborhood with narrow cobblestone streets, artisan workshops, and art galleries, dating back over 50 years",
+      "source_files": []
+    },
+    {
+      "name": "Qorikancha (Temple of the Sun)",
+      "city": "Cusco",
+      "description": "Once the most sacred temple of the Inca Empire, originally covered in sheets of solid gold. Today visitors can admire extraordinary Inca stonework alongside the Spanish-built Convent of Santo Domingo.",
+      "hours": "8:00 AM – 5:30 PM (Mon - Sat) | 2:00 PM – 5:00 PM (Sun)",
+      "entry_fee": null,
+      "recommended_duration": null,
       "source_files": [
-        "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf"
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Nearby Inca Ruins (Cusco)",
+      "city": "Cusco",
+      "description": "Impressive archaeological sites overlooking Cusco featuring massive stone fortifications and ceremonial centres demonstrating extraordinary Inca engineering skills. Offer spectacular panoramic views of the city.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bean to Bar Chocolate Workshop",
+      "city": "Cusco",
+      "description": "Hands-on workshop where visitors discover Peru's finest cacao, follow the journey from roasting and grinding to creating a handcrafted chocolate bar. Guided by local chocolate experts. Suitable for all ages.",
+      "hours": "08:30 AM (Duration: 2 hours)",
+      "entry_fee": null,
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "South America/Naren- Peru_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -558,9 +731,67 @@
       "location": "Cusco",
       "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
       "_source_mtime": 1751044942.0
+    },
+    {
+      "name": "Aranwa Cusco Boutique Hotel",
+      "city": "Cusco",
+      "location": "Historic Centre",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
     }
   ],
-  "local_dishes": [],
+  "local_dishes": [
+    {
+      "name": "Grilled Andean Trout",
+      "city": "Cusco",
+      "description": "Fresh trout from the Andean rivers, grilled to perfection and served with seasonal vegetables and local potatoes.",
+      "vegetarian": false,
+      "where_to_try": "MAP Café (Cusco), Hawa Restaurant (Sacred Valley)",
+      "source_files": [
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Alpaca Steak",
+      "city": "Cusco",
+      "description": "A lean, tender Andean speciality with a delicate flavour, often served with native potatoes and seasonal vegetables.",
+      "vegetarian": false,
+      "where_to_try": "Chicha by Gastón Acurio (Cusco), Hawa Restaurant (Sacred Valley)",
+      "source_files": [
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Quinoa Soup",
+      "city": "Cusco",
+      "description": "A nourishing soup made from Peru's famous supergrain, combined with fresh vegetables and aromatic herbs.",
+      "vegetarian": true,
+      "where_to_try": "Chicha by Gastón Acurio",
+      "source_files": [
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Peruvian Artisan Chocolate",
+      "city": "Cusco",
+      "description": "Made from premium Amazonian cacao, internationally recognised for exceptional quality and rich flavour.",
+      "vegetarian": true,
+      "where_to_try": "ChocoMuseo (Cusco and Lima)",
+      "source_files": [
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Coca Tea (Mate de Coca)",
+      "city": "Cusco",
+      "description": "A traditional herbal infusion enjoyed throughout the Andes, commonly consumed to help visitors acclimatise to high altitude.",
+      "vegetarian": true,
+      "where_to_try": "Hotels, local cafés and traditional restaurants in Cusco and Sacred Valley",
+      "source_files": [
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ]
+    }
+  ],
   "phrases": [],
   "safety_tips": [
     {
@@ -578,16 +809,361 @@
       "tip": "Coca Tea/Leaves: Many hotels offer coca tea (mate de coca), which can help alleviate altitude symptoms. Chewing coca leaves is also a traditional method",
       "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
       "_source_mtime": 1751044942.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Carry only the cash you'll need for the day and keep your passport, extra cash and valuables safely stored in your hotel's room safe whenever possible.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Store digital copies of your passport, visa, travel insurance and flight tickets on your phone or secure cloud storage.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Use only your pre-arranged private transfers or registered taxis arranged through your hotel. Avoid accepting rides from unofficial drivers at airports or tourist attractions.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Use ATMs located inside banks, shopping malls or reputable hotels. Notify your bank before travelling to avoid any issues with international card transactions.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu"
+      ],
+      "tip": "Cusco, the Sacred Valley and Machu Picchu are located at high altitudes. Stay hydrated, avoid strenuous activity on your first day in Cusco and allow your body time to acclimatise.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Drink bottled or purified water throughout your trip. Avoid drinking tap water and ensure fruits are washed or peeled before consumption.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu"
+      ],
+      "tip": "The UV index can be very high in the Andes, even on cool days. Wear sunscreen, sunglasses and a hat whenever you're outdoors.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Cusco",
+        "Sacred Valley"
+      ],
+      "tip": "Bargaining is acceptable at artisan markets such as Pisaq Market, but should always be friendly and respectful. Fixed-price shops and boutiques generally do not negotiate.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Tours and transportation operate on time, so it's best to arrive a few minutes early for all scheduled activities.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Many churches, monasteries and archaeological sites are considered sacred. Dress modestly when visiting religious sites, speak softly and avoid climbing or touching ancient Inca structures unless permitted.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Many locals in traditional Andean attire may expect a small tip for photographs. Always ask for permission before taking close-up photos.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
     }
   ],
-  "souvenirs": [],
+  "souvenirs": [
+    {
+      "item": "Baby Alpaca Wool Products",
+      "city": "Cusco",
+      "category": "Fashion & Textiles",
+      "where_to_buy": [
+        "Cusco shops and markets"
+      ],
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "item": "Handwoven Andean Textiles",
+      "city": "Cusco",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Cusco shops and markets"
+      ],
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "item": "Sterling Silver Jewellery",
+      "city": "Cusco",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Cusco shops and markets"
+      ],
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "item": "Retablos & Andean Handicrafts",
+      "city": "Cusco",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Cusco shops and markets"
+      ],
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "item": "Artisan Chocolate",
+      "city": "Cusco",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "ChocoMuseo Cusco"
+      ],
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    }
+  ],
   "emergency_contacts": [],
-  "connectivity_tips": [],
-  "transport_options": [],
-  "health_tips": [],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley"
+      ],
+      "tip": "Claro Peru is one of Peru's largest mobile operators, offering excellent coverage across Lima, Cusco, the Sacred Valley and most tourist destinations. Best for overall coverage and high-speed data.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Puerto Maldonado"
+      ],
+      "tip": "Movistar Peru is a reliable network with strong coverage in cities and good connectivity throughout much of the country. Best for travellers visiting multiple regions across Peru.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco"
+      ],
+      "tip": "Entel Peru is known for fast 4G/5G speeds in urban areas and competitive prepaid data packages. Best for high-speed internet and short-term tourist plans.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Puerto Maldonado"
+      ],
+      "tip": "Bitel is a budget-friendly provider offering affordable prepaid plans with generous data allowances. Best for cost-conscious travellers.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco"
+      ],
+      "tip": "SIM cards are widely available at Jorge Chávez International Airport upon arrival, official Claro/Movistar/Entel/Bitel retail stores, and major supermarkets and convenience stores in Lima and Cusco. Original passport required for activation.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Puerto Maldonado"
+      ],
+      "tip": "If your smartphone supports eSIM, you can activate a data plan before arriving in Peru. Popular providers include Airalo, Nomad and Holafly.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Cusco",
+      "mode": "Private Transfer",
+      "description": "Private vehicle with English-speaking guide from Alejandro Velasco Astete International Airport to hotel. Approximately 30 minutes.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu"
+      ],
+      "tip": "Cusco and the Sacred Valley sit at over 3,000 metres above sea level (Cusco at 3,400 m / 11,150 ft). Take your time when walking, stay hydrated and avoid strenuous activity on your first day at altitude.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Cusco",
+        "Sacred Valley"
+      ],
+      "tip": "Coca tea (Mate de Coca) is a traditional local remedy commonly offered by hotels in Cusco and is widely enjoyed by visitors while adjusting to the elevation.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Ensure routine vaccinations are up to date before travelling, including Tetanus/Diphtheria/Pertussis (Td/Tdap), Measles/Mumps/Rubella (MMR), Polio and Influenza.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Hepatitis A vaccination is recommended for most travellers, as it can be transmitted through contaminated food or water.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Typhoid vaccination is recommended, especially if you plan to eat at local markets or travel beyond major cities.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Drink bottled or purified water throughout your trip. Avoid drinking tap water and ensure fruits are washed or peeled before consumption.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu"
+      ],
+      "tip": "The UV index can be very high in the Andes even on cool days. Use SPF 50+ reef-safe sunscreen, wear UV-protection sunglasses, a wide-brim hat and lip balm with SPF.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Carry personal medications with prescriptions if required, a small first-aid kit, motion sickness tablets if needed, hand sanitiser, wet wipes and anti-itch cream for insect bites.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Cusco"
+      ],
+      "tip": "Near Aranwa Cusco Boutique Hotel: Centro Medico Grajeda Galenus is approximately 10 minutes walk (open Mon–Sat 9:00 AM–1:00 PM and 3:00 PM–8:00 PM, closed Sun). Farmacia CUSCO Drugstore is approximately 4 minutes walk (open Mon–Sat 9:00 AM–10:00 PM, closed Sun).",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    }
+  ],
   "source_files": [
     "South America/Craig_ All Inclusive Guide - Peru.pdf",
     "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
-    "South America/All Inclusive Guide - Peru_CRE.pdf"
+    "South America/All Inclusive Guide - Peru_CRE.pdf",
+    "South America/Naren- Peru_All Inclusive Guide.docx"
   ]
 }

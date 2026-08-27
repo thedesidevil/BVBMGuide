@@ -25,9 +25,7 @@
         "Sunset ocean views"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Sundays Beach Club",
@@ -48,9 +46,7 @@
         "Accessed by inclinator"
       ],
       "vegetarian_friendly": false,
-      "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bukit Cafe",
@@ -70,8 +66,134 @@
         "Fresh, vibrant fare"
       ],
       "vegetarian_friendly": true,
+      "source_files": []
+    },
+    {
+      "name": "Single Fin Bali",
+      "city": "Uluwatu",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "₹₹",
+      "hours": "8:00 AM – 10:00 PM",
+      "ambience": "Cliffside restaurant and bar offering spectacular ocean views and a relaxed coastal atmosphere",
+      "area": "Uluwatu",
+      "nearby_landmarks": [
+        "Uluwatu Temple, Uluwatu"
+      ],
+      "highlights": [
+        "Sunset views",
+        "Ocean panoramas",
+        "Relaxed farewell dinner"
+      ],
+      "must_try_dishes": [
+        "Wood-Fired Pizza",
+        "Grilled Vegetable Platters",
+        "Fresh Salads"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
       "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf"
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mana Uluwatu",
+      "city": "Uluwatu",
+      "cuisine_type": [
+        "International",
+        "Contemporary"
+      ],
+      "price_range": "₹₹",
+      "hours": "7:00 AM – 11:00 PM",
+      "ambience": "Stylish clifftop restaurant with sweeping views of the Indian Ocean",
+      "area": "Uluwatu",
+      "nearby_landmarks": [
+        "Uluwatu Temple, Uluwatu"
+      ],
+      "highlights": [
+        "Scenic dining",
+        "Contemporary cuisine"
+      ],
+      "must_try_dishes": [
+        "Wood-Fired Pizza",
+        "Roasted Vegetable Bowls",
+        "Fresh Smoothie Bowls"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "El Kabron Bali",
+      "city": "Uluwatu",
+      "cuisine_type": [
+        "International",
+        "Mediterranean"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:00 AM – 12:00 AM",
+      "ambience": "Elegant cliffside venue known for panoramic sunset views and sophisticated dining",
+      "area": "Uluwatu",
+      "nearby_landmarks": [
+        "Uluwatu Temple, Uluwatu"
+      ],
+      "highlights": [
+        "Memorable farewell dinner overlooking the Indian Ocean",
+        "Panoramic sunset views"
+      ],
+      "must_try_dishes": [
+        "Grilled Vegetables",
+        "Burrata Salad",
+        "Truffle Potato Dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Teja Uluwatu",
+      "city": "Uluwatu",
+      "cuisine_type": [
+        "International",
+        "Contemporary"
+      ],
+      "price_range": "₹₹",
+      "hours": "4:00 PM – 10:00 PM",
+      "ambience": "Stylish clifftop restaurant blending contemporary design with relaxed tropical charm, offering sweeping views of Uluwatu's dramatic coastline and a tranquil atmosphere away from the crowds",
+      "area": "Uluwatu",
+      "nearby_landmarks": [
+        "Uluwatu Temple, Uluwatu"
+      ],
+      "highlights": [
+        "Scenic cliffside dining",
+        "Sunset views",
+        "Relaxed farewell meal"
+      ],
+      "must_try_dishes": [
+        "Grilled Vegetable Skewers",
+        "Truffle Mushroom Pasta",
+        "Roasted Pumpkin Salad"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
       ]
     }
   ],
@@ -79,11 +201,14 @@
     {
       "name": "Uluwatu Temple",
       "city": "Uluwatu",
-      "description": "Sacred sea temple perched on a 70-meter cliff with sweeping ocean views",
+      "description": "One of Bali's most revered sea temples perched on a 70-metre-high limestone cliff overlooking the Indian Ocean. Features cliffside pathways with panoramic ocean vistas and stunning coastal scenery.",
       "recommended_duration": "2-3 hours",
       "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf"
-      ]
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ],
+      "hours": "7:00 AM – 7:00 PM",
+      "entry_fee": "Approx. INR 300 per person"
     },
     {
       "name": "Kecak Fire & Dance Show",
@@ -91,9 +216,7 @@
       "description": "Mesmerizing performance with fire, chants, and drama",
       "hours": "Starts ~6:00 PM",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Uluwatu Temple (Pura Luhur Uluwatu)",
@@ -102,9 +225,7 @@
       "hours": "7 AM–7 PM",
       "entry_fee": "Approx. ₹200-₹300 pp",
       "recommended_duration": "45 mins – 1 hr",
-      "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Kecak Fire Dance",
@@ -113,15 +234,42 @@
       "hours": "5:50 PM show (arrive by 4:45–5:00 PM for good seating)",
       "entry_fee": "Approx. ₹800 pp",
       "recommended_duration": "1.5 hours",
+      "source_files": []
+    },
+    {
+      "name": "Uluwatu Kecak & Fire Dance Amphitheatre",
+      "city": "Uluwatu",
+      "description": "One of Bali's most captivating cultural performances set against the backdrop of a glowing sunset over the Indian Ocean. Dozens of performers create rhythmic chants while narrating scenes from the ancient Ramayana epic.",
+      "hours": "Performance typically 6:00 PM – 7:00 PM",
+      "entry_fee": "Approx. INR 800–1,000 per person",
+      "recommended_duration": "1 hour",
       "source_files": [
-        "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
       ]
     }
   ],
   "hotels": [],
   "local_dishes": [],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Uluwatu"
+      ],
+      "tip": "Keep an eye on personal belongings at Uluwatu Temple as the resident monkeys are known for their playful curiosity.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    },
+    {
+      "cities": [
+        "Uluwatu"
+      ],
+      "tip": "Arrive at least 30–45 minutes before the Kecak Fire Dance performance begins to secure good seating.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0
+    }
+  ],
   "souvenirs": [],
   "emergency_contacts": [],
   "connectivity_tips": [],
@@ -129,6 +277,8 @@
   "health_tips": [],
   "source_files": [
     "Bali Indonesia/Bali - All Inclusive Guide - Prashita.pdf",
-    "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf"
+    "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf",
+    "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+    "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
   ]
 }

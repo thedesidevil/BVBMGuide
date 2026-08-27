@@ -21,32 +21,33 @@
         "relaxed"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "De Kraai Pancake House",
       "city": "Zaanse Schans",
       "cuisine_type": [
-        "Dutch"
+        "Dutch",
+        "Pancakes"
       ],
-      "price_range": "₹1,200–1,800",
+      "price_range": "₹1,200–1,800 pp",
       "hours": "9 AM – 6 PM",
       "ambience": "Traditional Dutch setting",
       "area": "Zaanse Schans",
       "highlights": [
-        "Local experience"
+        "Local experience",
+        "Inside Zaanse Schans"
       ],
       "must_try_dishes": [
         "Veg Dutch pancakes"
       ],
       "best_for": [
-        "local experience"
+        "family",
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
@@ -71,33 +72,27 @@
         "budget-friendly"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     }
   ],
   "attractions": [
     {
       "name": "Zaanse Schans",
       "city": "Zaanse Schans",
-      "description": "Historic windmills, wooden houses, and quiet canals like an open-air museum",
+      "description": "Open-air museum with historic windmills, wooden houses, and quiet canals. Slow-paced, scenic, and deeply rooted in Dutch heritage.",
       "hours": "All day",
       "source_files": [
-        "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
-        "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf",
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ],
-      "recommended_duration": "3-4 hours",
-      "entry_fee": "Free (small fees for windmill visits)"
+      "recommended_duration": "3–4 hours",
+      "entry_fee": "Free (some windmills have small entry fee)"
     },
     {
       "name": "Zaans Museum",
       "city": "Zaanse Schans",
       "description": "Museum in Zaanse Schans",
       "hours": null,
-      "source_files": [
-        "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf"
-      ]
+      "source_files": []
     }
   ],
   "hotels": [],
@@ -112,6 +107,7 @@
   "source_files": [
     "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
     "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf",
-    "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+    "Netherlands/Sirisha_Europe_All Inclusive Guide.docx",
+    "Europe/Sirisha_Europe_All Inclusive Guide.docx"
   ]
 }

@@ -21,12 +21,7 @@
       "best_for": [
         "romantic"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "nearby_landmarks": [
         "Piazza di Spagna, Pienza"
       ],
@@ -56,12 +51,7 @@
       "best_for": [
         "family"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "area": "Pienza",
       "nearby_landmarks": [],
       "vegetarian_friendly": false
@@ -87,15 +77,93 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "area": "Pienza",
       "nearby_landmarks": [],
       "vegetarian_friendly": true
+    },
+    {
+      "name": "La Buca di Enea Pienza",
+      "city": "Pienza",
+      "cuisine_type": [
+        "Italian",
+        "Tuscan"
+      ],
+      "price_range": "₹2,800–5,700 per person",
+      "hours": "12:00 PM – 10:00 PM",
+      "ambience": "Cozy Tuscan restaurant with rustic countryside ambience",
+      "area": "Pienza historic centre",
+      "highlights": [
+        "Rustic countryside ambience",
+        "Panoramic valley charm"
+      ],
+      "must_try_dishes": [
+        "Vegetarian pici pasta",
+        "Truffle ravioli",
+        "Tiramisu"
+      ],
+      "best_for": [
+        "Authentic Tuscan countryside lunch"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Sette di Vino Pienza",
+      "city": "Pienza",
+      "cuisine_type": [
+        "Italian",
+        "Tuscan"
+      ],
+      "price_range": "₹1,900–4,200 per person",
+      "hours": "12–2 pm, 7:30–9 pm (Wednesday Closed)",
+      "ambience": "Small traditional Tuscan eatery with charming local atmosphere",
+      "area": "Near main square, Pienza",
+      "highlights": [
+        "Small traditional Tuscan eatery",
+        "Charming local atmosphere"
+      ],
+      "must_try_dishes": [
+        "Vegetarian pasta",
+        "Bruschetta",
+        "Pecorino dishes"
+      ],
+      "best_for": [
+        "Casual Tuscan lunch experience"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Idyllium Pienza",
+      "city": "Pienza",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹2,400–4,700 per person",
+      "hours": "12:00 PM – 11:30 PM",
+      "ambience": "Elegant countryside café and restaurant with scenic terrace seating",
+      "area": "Near central piazza, Pienza",
+      "highlights": [
+        "Scenic terrace seating",
+        "Elegant countryside café"
+      ],
+      "must_try_dishes": [
+        "Risotto",
+        "Desserts",
+        "Italian coffee"
+      ],
+      "best_for": [
+        "Relaxed scenic lunch in Tuscany"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
     }
   ],
   "attractions": [
@@ -106,9 +174,7 @@
       "hours": "24 hours",
       "entry_fee": "Free",
       "recommended_duration": null,
-      "source_files": [
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Chapel of Vitaleta",
@@ -117,9 +183,7 @@
       "hours": "09:00–19:00 (daily, may vary seasonally)",
       "entry_fee": "Free",
       "recommended_duration": null,
-      "source_files": [
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "San Quirico d'Orcia",
@@ -128,8 +192,17 @@
       "hours": "24 hours",
       "entry_fee": "Free",
       "recommended_duration": null,
+      "source_files": []
+    },
+    {
+      "name": "Pienza",
+      "city": "Pienza",
+      "description": "One of Tuscany's most beautiful villages with postcard-perfect streets, charming cafés, artisan boutiques, and incredible Val d'Orcia views.",
+      "hours": "Open throughout the day",
+      "entry_fee": "Free to explore",
+      "recommended_duration": "1–2 hours",
       "source_files": [
-        "Italy/Paris, Switzerland and Italy.pdf"
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -314,6 +387,7 @@
     "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
     "France/Paris, Switzerland and Italy.pdf",
     "Switzerland/Paris, Switzerland and Italy.pdf",
-    "Italy/Paris, Switzerland and Italy.pdf"
+    "Italy/Paris, Switzerland and Italy.pdf",
+    "Europe/Vidhi_Europe_All Inclusive Guide.docx"
   ]
 }

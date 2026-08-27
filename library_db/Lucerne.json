@@ -11,35 +11,39 @@
         "Beer",
         "bar eats"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Rathaus Brauerei",
       "city": "Lucerne",
       "cuisine_type": [
-        "Brewery"
+        "Swiss"
       ],
-      "hours": "9am-11:30pm",
+      "hours": "11:00 AM – 11:30 PM",
       "must_try_dishes": [
         "Beer",
         "pretzels",
         "swiss local specialties",
-        "Pretzels"
+        "Pretzels",
+        "Rösti with cheese",
+        "Seasonal vegetable tart",
+        "Swiss cheese platter"
       ],
       "highlights": [
-        "Classic restaurant with its own brewery"
+        "One of Lucerne's most iconic riverside brewpubs",
+        "Located beside the Reuss River",
+        "Historic setting"
       ],
       "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ],
+      "price_range": "₹3,000–6,000 per person",
+      "ambience": "Historic Swiss brewery restaurant",
+      "area": "Beside the Reuss River, Lucerne",
+      "best_for": [
+        "Traditional Swiss dining experience"
+      ],
+      "vegetarian_friendly": true
     },
     {
       "name": "Just a little brewpub",
@@ -51,12 +55,7 @@
       "must_try_dishes": [
         "Craft beers"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "best_for": [
         "casual"
       ],
@@ -81,12 +80,7 @@
         "Reservations required"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "ambience": "Great location near the lake, with a wonderful view",
       "best_for": [
         "romantic",
@@ -109,13 +103,7 @@
       "highlights": [
         "Cocktails and appetizers"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "area": "On the lake",
       "ambience": "Located on the lake, beautiful sunsets",
       "vegetarian_friendly": false
@@ -145,18 +133,7 @@
       "best_for": [
         "scenic dining"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
-      ],
+      "source_files": [],
       "area": "Lucerne",
       "nearby_landmarks": [],
       "vegetarian_friendly": true
@@ -165,14 +142,15 @@
       "name": "Mill'Feuille",
       "city": "Lucerne",
       "cuisine_type": [
-        "Cafe"
+        "European",
+        "Café"
       ],
-      "price_range": "₹2,000–3,000 per person",
+      "price_range": "₹₹₹",
       "hours": "7:30 AM – 12:00 AM",
-      "ambience": "Modern bistro with riverside seating",
+      "ambience": "Chic riverside European café",
       "highlights": [
-        "Contemporary twist",
-        "Vegetarian options"
+        "Stylish riverside café-restaurant",
+        "Beautiful views"
       ],
       "must_try_dishes": [
         "Avocado toast",
@@ -182,27 +160,22 @@
         "grilled fish",
         "pasta",
         "desserts",
-        "Grilled fish"
+        "Grilled fish",
+        "Vegetarian tartines",
+        "Fresh salads",
+        "Desserts and coffee"
       ],
       "best_for": [
         "casual",
-        "contemporary dining"
+        "scenic dining"
       ],
       "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
-        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
       ],
-      "area": "Lucerne",
-      "nearby_landmarks": [],
+      "area": "Lucerne Old Town",
+      "nearby_landmarks": [
+        "Lucerne Old Town, Lucerne"
+      ],
       "vegetarian_friendly": true
     },
     {
@@ -225,16 +198,7 @@
       "best_for": [
         "romantic"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
-      ],
+      "source_files": [],
       "area": "Lucerne",
       "nearby_landmarks": [],
       "vegetarian_friendly": true
@@ -253,9 +217,7 @@
         "Located on the lake",
         "Reserve a table"
       ],
-      "source_files": [
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Restaurant Schiff",
@@ -275,11 +237,7 @@
         "Lake views",
         "Authentic Swiss dining"
       ],
-      "source_files": [
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
-      ],
+      "source_files": [],
       "price_range": "₹₹₹",
       "ambience": "Traditional Swiss restaurant with lake views",
       "best_for": [
@@ -302,9 +260,7 @@
       "highlights": [
         "Reserve a table"
       ],
-      "source_files": [
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Pfistern",
@@ -325,9 +281,7 @@
         "Reservations- restaurant-pfistern.ch"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "GourmIndia",
@@ -343,9 +297,7 @@
         "Make a reservation",
         "gourmindialuzern.com, thefork.ch"
       ],
-      "source_files": [
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Old Swiss House",
@@ -367,10 +319,7 @@
       "best_for": [
         "traditional experience"
       ],
-      "source_files": [
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Wirtshaus Galliker",
@@ -393,10 +342,7 @@
       "best_for": [
         "authentic local experience"
       ],
-      "source_files": [
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Brasserie Bodu",
@@ -420,10 +366,7 @@
       "best_for": [
         "romantic"
       ],
-      "source_files": [
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Café de Ville",
@@ -446,10 +389,7 @@
       "best_for": [
         "afternoon break"
       ],
-      "source_files": [
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Restaurant Balances",
@@ -465,85 +405,101 @@
         "fresh salads",
         "Truffle risotto",
         "seasonal vegetables",
-        "vegetarian pasta"
+        "vegetarian pasta",
+        "Seasonal vegetables",
+        "Vegetarian pasta"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "ambience": "Stylish riverside restaurant with beautiful waterfront views",
       "best_for": [
-        "scenic dining"
+        "romantic",
+        "fine dining"
       ],
       "highlights": [
         "Elegant European vegetarian dishes",
         "Beautiful waterfront views"
-      ]
+      ],
+      "area": "Lucerne city centre"
     },
     {
       "name": "Tibits Lucerne",
       "city": "Lucerne",
       "cuisine_type": [
-        "Vegetarian"
+        "Vegetarian",
+        "Contemporary"
       ],
-      "price_range": "₹₹₣",
+      "price_range": "₹2,400–4,200 per person",
       "hours": "6:30 AM – 10:30 PM",
       "must_try_dishes": [
         "Global vegetarian buffet",
         "salads",
         "Asian curries",
         "Seasonal salads",
-        "vegetarian desserts"
+        "vegetarian desserts",
+        "Global vegetarian spread",
+        "Vegetarian desserts",
+        "Swiss rösti",
+        "Falafel bowls",
+        "Fresh desserts"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "France/Sneha_Europe_All Inclusive Guide.docx",
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ],
-      "ambience": "Stylish vegetarian restaurant with modern minimalist ambience",
+      "ambience": "Stylish modern vegetarian restaurant with warm contemporary atmosphere",
       "best_for": [
-        "healthy dining"
+        "Relaxed vegetarian dinner after travel day"
       ],
       "nearby_landmarks": [
         "Lion Monument, Lucerne"
       ],
       "highlights": [
-        "Fresh buffet-style dining",
-        "Modern minimalist ambience"
-      ]
+        "Extensive buffet-style dining",
+        "Stylish modern vegetarian restaurant"
+      ],
+      "area": "Lucerne city centre"
     },
     {
       "name": "GourmIndia Lucerne",
       "city": "Lucerne",
       "cuisine_type": [
-        "Indian"
+        "Indian",
+        "North Indian"
       ],
-      "price_range": "₹₹₣",
-      "hours": "11:45 AM – 2:00 PM, 5:30 PM – 10:30 PM",
-      "ambience": "Elegant Indian restaurant in refined and welcoming setting",
+      "price_range": "₹2,400–3,800 per person",
+      "hours": "11:45 AM – 2:00 PM | 5:30 PM - 10:30 PM",
+      "ambience": "Cozy Indian restaurant with elegant interiors",
       "must_try_dishes": [
         "Paneer tikka",
         "dal makhani",
-        "vegetable biryani"
+        "vegetable biryani",
+        "Paneer dishes",
+        "Dal",
+        "Dal makhani",
+        "Vegetable biryani",
+        "Garlic naan"
       ],
       "best_for": [
-        "comfort food"
+        "Familiar Indian vegetarian comfort meal"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "France/Sneha_Europe_All Inclusive Guide.docx",
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ],
       "nearby_landmarks": [
         "Lion Monument, Lucerne"
       ],
       "highlights": [
-        "Authentic vegetarian flavors",
-        "Refined setting"
-      ]
+        "Comforting vegetarian North Indian dishes"
+      ],
+      "area": "Near Galaxy Apartments, Lucerne"
     },
     {
       "name": "Pastarazzi Lucerne",
@@ -551,29 +507,33 @@
       "cuisine_type": [
         "Italian"
       ],
-      "price_range": "₹₹₣",
-      "hours": "11:00 AM – 2:30 PM | 5:00 PM - 10:30 PM (Sunday closed)",
-      "ambience": "Lively Italian restaurant with relaxed interiors",
+      "price_range": "₹1,900–3,300 per person",
+      "hours": "11:00 AM – 2:00 PM | 5 PM - 10:30 PM",
+      "ambience": "Charming Italian-style pasta restaurant with cozy European ambience",
       "must_try_dishes": [
         "Truffle pasta",
         "pesto penne",
-        "tiramisu"
+        "tiramisu",
+        "Pesto penne",
+        "Tiramisu",
+        "Arrabbiata pasta",
+        "Truffle cream pasta"
       ],
       "best_for": [
-        "casual dining"
+        "Casual European vegetarian dinner"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ],
       "nearby_landmarks": [
         "Lion Monument, Lucerne"
       ],
       "highlights": [
-        "Freshly prepared vegetarian pasta dishes",
-        "Relaxed interiors"
-      ]
+        "Charming Italian-style pasta restaurant"
+      ],
+      "area": "Lucerne city centre"
     },
     {
       "name": "Kanchi Indian Cuisine",
@@ -581,25 +541,35 @@
       "cuisine_type": [
         "Indian"
       ],
-      "price_range": "₹₹₣",
-      "hours": "11:00 AM – 2:00 PM | 5:00 PM - 11:00 PM",
-      "ambience": "Refined Indian restaurant with warm hospitality",
+      "price_range": "₹₹",
+      "hours": "11:00 AM – 2:00 PM | 5:00 PM – 11:00 PM",
+      "ambience": "Comfortable Indian dining",
       "must_try_dishes": [
         "Malai kofta",
         "dal tadka",
-        "garlic naan"
+        "garlic naan",
+        "Paneer butter masala",
+        "Vegetable jalfrezi",
+        "Garlic naan",
+        "Dal tadka"
       ],
       "best_for": [
-        "elegant dining"
+        "casual",
+        "family"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "highlights": [
-        "Flavorful vegetarian dishes",
-        "Warm hospitality"
+        "Warm and welcoming",
+        "Popular among vegetarian travelers"
+      ],
+      "area": "Lucerne city centre",
+      "nearby_landmarks": [
+        "Lucerne station, Lucerne",
+        "Lucerne Old Town, Lucerne"
       ]
     },
     {
@@ -611,23 +581,678 @@
       ],
       "price_range": "₹₹₹",
       "hours": "7:00 AM – 12:00 AM (Sunday 9:00 AM – 12:00 AM)",
-      "ambience": "Cozy lakeside café-restaurant with relaxed ambience and beautiful evening views",
+      "ambience": "Cozy lakeside café-restaurant with relaxed ambience and beautiful evening views over the river",
       "must_try_dishes": [
         "Vegetarian tartines",
         "fresh pasta",
-        "desserts"
+        "desserts",
+        "Fresh pasta",
+        "Desserts"
       ],
       "best_for": [
-        "relaxed dining"
+        "casual",
+        "romantic"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "highlights": [
-        "Relaxed ambience",
-        "Beautiful evening views over the river"
+        "Beautiful evening views over the river",
+        "Relaxed waterfront dinner"
+      ],
+      "area": "Lucerne city centre"
+    },
+    {
+      "name": "Café de Ville Luzern",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "European",
+        "Swiss"
+      ],
+      "price_range": "₹2,000–3,500 per person",
+      "hours": "7:00 AM – 6:30 PM",
+      "ambience": "Classic European, slightly upscale yet relaxed",
+      "area": "Old Town, Lucerne",
+      "highlights": [
+        "Refined slow lunch in Old Town setting"
+      ],
+      "must_try_dishes": [
+        "Seasonal veg specials",
+        "Rösti",
+        "Fresh salads"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pikante Peruvian Cuisine Luzern",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Peruvian"
+      ],
+      "price_range": "₹2,000–3,500 per person",
+      "hours": "11:30 AM – 2:00 PM",
+      "ambience": "Cozy, vibrant, slightly offbeat",
+      "area": "Lucerne",
+      "highlights": [
+        "Unique beyond European cuisine"
+      ],
+      "must_try_dishes": [
+        "Veg ceviche-style dishes",
+        "Quinoa bowls"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Confiserie Bachmann Luzern",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Café",
+        "Bakery"
+      ],
+      "price_range": "₹1,000–2,000 per person",
+      "hours": "7:00 AM – 8:00 PM",
+      "ambience": "Bright café-style, quick and easy",
+      "area": "Lucerne",
+      "highlights": [
+        "Light quick lunch or late afternoon bite"
+      ],
+      "must_try_dishes": [
+        "Veg sandwiches",
+        "Quiches",
+        "Pastries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Restaurant La Cucina",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹2,000–3,500 per person",
+      "hours": "11:30 AM – 11:30 PM",
+      "ambience": "Cozy Italian",
+      "area": "Lucerne Old Town",
+      "highlights": [
+        "Quiet relaxed dinner"
+      ],
+      "must_try_dishes": [
+        "Pasta",
+        "Vegetarian risotto"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Made in Sud Luzern",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹2,000–3,500 per person",
+      "hours": "11:30 AM – 2:00 PM | 5:30 PM – 10:00 PM",
+      "ambience": "Elegant Italian, warm lighting",
+      "area": "Lucerne",
+      "highlights": [
+        "Relaxed sit-down dinner"
+      ],
+      "must_try_dishes": [
+        "Wood-fired veg pizza",
+        "Burrata"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Khoua Vientiane",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Asian",
+        "Laotian"
+      ],
+      "price_range": "₹1,800–3,000 per person",
+      "hours": "11:30 AM – 9:00 PM",
+      "ambience": "Cozy Asian, intimate",
+      "area": "Lucerne",
+      "highlights": [
+        "Something different and flavourful"
+      ],
+      "must_try_dishes": [
+        "Veg noodles",
+        "Tofu curries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Restaurant Helvetia Luzern",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "₹2,000–3,500 per person",
+      "hours": "11:30 AM – 11:00 PM",
+      "ambience": "Classic Swiss setting",
+      "area": "Lucerne",
+      "highlights": [
+        "Local Swiss experience"
+      ],
+      "must_try_dishes": [
+        "Veg rösti",
+        "Seasonal dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mill'Feuille Luzern",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Café",
+        "European"
+      ],
+      "price_range": "₹2,000–3,500",
+      "hours": "8:00 AM – 11:00 PM",
+      "ambience": "Modern interiors with stunning waterfront views, set right by the river",
+      "area": "Lucerne",
+      "highlights": [
+        "Riverside aesthetic shots",
+        "Especially beautiful in daylight"
+      ],
+      "must_try_dishes": [
+        "Veg breakfast plates",
+        "Desserts"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Café Tacuba",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Mexican"
+      ],
+      "price_range": "₹1,500–3,000",
+      "hours": "7:30 AM – 6:00 PM (weekdays); 9:00 AM – 5:00 PM (weekends)",
+      "ambience": "Colorful Mexican café with vibrant interiors and lively plating",
+      "area": "Lucerne",
+      "highlights": [
+        "Bright fun colorful shots",
+        "Refreshing contrast to Swiss minimalism"
+      ],
+      "must_try_dishes": [
+        "Veg tacos",
+        "Quesadillas"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Schwegler Bäckerei Konditorei",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Bakery",
+        "Patisserie"
+      ],
+      "price_range": "₹1,000–2,000",
+      "hours": "6:00 AM – 6:30 PM (closed on Sundays)",
+      "ambience": "Charming patisserie with vintage European interiors and beautifully crafted desserts",
+      "area": "Lucerne",
+      "highlights": [
+        "Elegant dessert photography"
+      ],
+      "must_try_dishes": [
+        "Swiss pastries",
+        "Chocolates"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pastarazzi",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:00 AM – 2:30 PM | 5:00 PM – 10:30 PM",
+      "ambience": "Cozy Italian trattoria",
+      "area": "Lucerne Old Town",
+      "nearby_landmarks": [
+        "Lucerne Old Town, Lucerne"
+      ],
+      "highlights": [
+        "Comforting handmade pasta",
+        "Warm European hospitality"
+      ],
+      "must_try_dishes": [
+        "Truffle cream pasta",
+        "Arrabbiata spaghetti",
+        "Fresh tiramisu"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "GourmIndia Luzern",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹₹",
+      "hours": "11:45 AM – 2:00 PM | 5:30 PM – 10:30 PM",
+      "ambience": "Elegant Indian dining",
+      "area": "Lucerne city centre",
+      "nearby_landmarks": [
+        "Lucerne Old Town, Lucerne"
+      ],
+      "highlights": [
+        "Popular Indian restaurant",
+        "Flavorful pure vegetarian dishes"
+      ],
+      "must_try_dishes": [
+        "Paneer tikka masala",
+        "Vegetable biryani",
+        "Dal makhani"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "BOLERO Restaurante",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Mediterranean"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:30 AM – 2:00 PM | 5:30 PM – 11:30 PM",
+      "ambience": "Chic Mediterranean dining",
+      "area": "Lucerne Old Town",
+      "nearby_landmarks": [
+        "Lucerne Old Town, Lucerne"
+      ],
+      "highlights": [
+        "Stylish Mediterranean restaurant",
+        "Several excellent vegetarian dishes",
+        "Elegant interiors"
+      ],
+      "must_try_dishes": [
+        "Vegetarian paella",
+        "Grilled vegetables",
+        "Mediterranean tapas"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Made in Sud",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:30 AM – 2:00 PM | 5:00 PM – 12:00 AM",
+      "ambience": "Trendy modern Italian dining",
+      "area": "Lucerne city centre",
+      "nearby_landmarks": [
+        "Lucerne station, Lucerne",
+        "Lucerne Old Town, Lucerne"
+      ],
+      "highlights": [
+        "Excellent vegetarian pizzas",
+        "Handmade pasta",
+        "Lively yet elegant atmosphere"
+      ],
+      "must_try_dishes": [
+        "Margherita bufala pizza",
+        "Truffle pasta",
+        "Burrata dishes"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Suite Rooftop Lounge – Veg Options",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "European"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "4:00 PM – 3:00 AM",
+      "ambience": "Rooftop lounge with city views",
+      "area": "Lucerne city centre",
+      "nearby_landmarks": [
+        "Lucerne station, Lucerne",
+        "Lucerne Old Town, Lucerne"
+      ],
+      "highlights": [
+        "Beautiful evening views over Lucerne",
+        "Vegetarian-friendly European dishes and mocktails"
+      ],
+      "must_try_dishes": [
+        "Vegetarian risotto",
+        "Fresh salads",
+        "Desserts and mocktails"
+      ],
+      "best_for": [
+        "romantic",
+        "scenic dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Restaurant Indian Garden",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:30 AM – 10:00 PM",
+      "ambience": "Elegant Indian dining",
+      "highlights": [
+        "Popular among vegetarian travelers",
+        "Flavorful dishes",
+        "Warm hospitality"
+      ],
+      "must_try_dishes": [
+        "Paneer tikka masala",
+        "Dal tadka",
+        "Garlic naan"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "La Cucina",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:30 AM – 2:00 PM | 5:30 PM – 12:00 AM",
+      "ambience": "Warm Italian trattoria",
+      "highlights": [
+        "Comforting vegetarian pasta",
+        "Relaxed European atmosphere"
+      ],
+      "must_try_dishes": [
+        "Mushroom risotto",
+        "Vegetarian pizza",
+        "Tiramisu"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "The Indian Restaurant Luzern",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Elegant Indian dining",
+      "highlights": [
+        "Refined Indian restaurant",
+        "Flavorful vegetarian dishes",
+        "Warm hospitality"
+      ],
+      "must_try_dishes": [
+        "Paneer tikka",
+        "Dal makhani",
+        "Vegetable biryani"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "La Bestia Pizza Pizza",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:30 AM – 11:30 PM",
+      "ambience": "Modern casual Italian dining",
+      "area": "Lucerne Old Town",
+      "nearby_landmarks": [
+        "Lucerne Old Town, Lucerne"
+      ],
+      "highlights": [
+        "Trendy pizza spot",
+        "Artisanal Italian-style pizzas",
+        "Lively atmosphere"
+      ],
+      "must_try_dishes": [
+        "Margherita pizza",
+        "Burrata pizza",
+        "Tiramisu"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Pacifico",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Latin American"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "11:30 AM – 2:00 PM | 5:00 PM – 2:30 AM",
+      "ambience": "Fun social dining atmosphere",
+      "area": "Lucerne city centre",
+      "nearby_landmarks": [
+        "Lucerne station, Lucerne"
+      ],
+      "highlights": [
+        "Vibrant Latin-American inspired restaurant",
+        "Several good vegetarian options",
+        "Lively evening energy"
+      ],
+      "must_try_dishes": [
+        "Veg tacos",
+        "Loaded nachos",
+        "Mocktails"
+      ],
+      "best_for": [
+        "casual",
+        "social"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Roadhouse Luzern",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "American"
+      ],
+      "price_range": "₹2,400–4,700 per person",
+      "hours": "12:00 AM – 4:00 AM | 11 AM - 12 AM",
+      "ambience": "Energetic American-style bar & restaurant with lively music",
+      "area": "Lucerne city centre",
+      "highlights": [
+        "Lively music",
+        "Vibrant nightlife atmosphere",
+        "Fun Swiss nightlife experience"
+      ],
+      "must_try_dishes": [
+        "Veg burgers",
+        "Loaded fries",
+        "Mocktails"
+      ],
+      "best_for": [
+        "Fun Swiss nightlife experience with music & drinks"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Bierlieb & Friends",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Pub",
+        "Comfort food"
+      ],
+      "price_range": "₹2,000–4,500 per person",
+      "hours": "11:30 PM – 11:00 PM",
+      "ambience": "Casual brewpub with lively evening vibes",
+      "area": "Near Galaxy Apartments, Lucerne",
+      "highlights": [
+        "Cosy craft beer bar",
+        "Local brews",
+        "Hearty comfort food"
+      ],
+      "must_try_dishes": [
+        "Truffle fries",
+        "Mushroom flatbread",
+        "Cheese fondue"
+      ],
+      "best_for": [
+        "Relaxed dinner & drinks"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Hotel Seeburg – Sunset Bar",
+      "city": "Lucerne",
+      "cuisine_type": [
+        "Mediterranean",
+        "International"
+      ],
+      "price_range": "₹3,500–7,000 per person",
+      "hours": "4:00 PM – 10:30 PM",
+      "ambience": "Elegant lakeside sunset lounge",
+      "area": "Lakeside, Lucerne",
+      "highlights": [
+        "Panoramic views across Lake Lucerne",
+        "Relaxed upscale atmosphere"
+      ],
+      "must_try_dishes": [
+        "Grilled vegetable platter",
+        "Truffle pasta",
+        "Mediterranean salad"
+      ],
+      "best_for": [
+        "Scenic sunset dinner & drinks"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -636,16 +1261,7 @@
       "name": "Chapel Bridge",
       "city": "Lucerne",
       "description": "Historic covered wooden footbridge",
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "hours": "Open daily, 24 hours",
       "entry_fee": "Free",
       "recommended_duration": "30 minutes"
@@ -655,45 +1271,26 @@
       "city": "Lucerne",
       "description": "Historic confectionery with chocolates, pastries, and famous Luzerner Lebkuchen",
       "hours": "7am- 7pm (Tues- Sat), 09:30am- 8pm (Sun- Mon)",
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Lion Monument",
       "city": "Lucerne",
-      "description": "Moving historical landmark carved directly into natural rock, described by Mark Twain as 'the saddest and most moving piece of rock in the world'",
+      "description": "Famous historic monument in Lucerne.",
       "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "France/Paris, Switzerland and Italy.pdf",
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
-        "Italy/Paris, Switzerland and Italy.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
-      "hours": "Open all day",
-      "entry_fee": "Free",
-      "recommended_duration": "30 minutes"
+      "hours": "Open 24 hours",
+      "entry_fee": "Free entry",
+      "recommended_duration": "20-30 minutes"
     },
     {
       "name": "Swiss Museum of Transport",
       "city": "Lucerne",
       "description": "Learn about the history of transportation in Switzerland",
       "hours": "10am-6pm",
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ],
+      "source_files": [],
       "recommended_duration": "3-4 hours"
     },
     {
@@ -701,10 +1298,7 @@
       "city": "Lucerne",
       "description": "Interactive and educational exhibition about chocolate history and production",
       "hours": "8:30am- 5pm",
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Mt. Titlis",
@@ -713,75 +1307,57 @@
       "hours": "8:30 AM to 5:00 PM",
       "entry_fee": "Variable",
       "recommended_duration": "6 hours",
-      "source_files": [
-        "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Mt. Pilatus Golden Trip",
       "city": "Lucerne",
       "description": "Includes boat ride, steepest cogwheel train, rotating gondola and cable car ride",
       "recommended_duration": "4 hours",
-      "source_files": [
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Chapel Bridge (Kapellbrücke)",
       "city": "Lucerne",
-      "description": "Iconic 14th-century wooden covered bridge stretching across the Reuss River, surrounded by flower displays and mountain views",
+      "description": "One of Switzerland's most iconic landmarks — a historic wooden bridge stretching gracefully across the river with flower-filled railings and beautiful mountain views.",
       "source_files": [
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+        "France/Sneha_Europe_All Inclusive Guide.docx",
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "hours": "Open 24 hours",
-      "entry_fee": "Free",
+      "entry_fee": "Free entry",
       "recommended_duration": "30 minutes"
     },
     {
       "name": "Water Tower (Wasserturm)",
       "city": "Lucerne",
       "description": "Historic tower adjacent to the Chapel Bridge",
-      "source_files": [
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Lion Monument (Löwendenkmal)",
       "city": "Lucerne",
       "description": "Poignant sculpture commemorating Swiss Guards",
-      "source_files": [
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Mount Pilatus",
       "city": "Lucerne",
       "description": "Mountain accessible via world's steepest cogwheel railway or panorama gondola",
       "recommended_duration": "Half day",
-      "source_files": [
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Lake Lucerne Promenade",
       "city": "Lucerne",
-      "description": "Peaceful promenade surrounded by elegant waterfront views, mountain scenery, and charming cafés",
-      "hours": "Open all day",
+      "description": "Beautiful lakeside promenade where soft lights reflect across the lake and surrounding mountains fade into the evening sky. Swans glide peacefully along the water.",
+      "hours": "Open 24 hours",
       "entry_fee": "Free",
       "source_files": [
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "France/Sneha_Europe_All Inclusive Guide.docx",
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "recommended_duration": "1-2 hours"
     },
@@ -790,31 +1366,57 @@
       "city": "Lucerne",
       "description": "Mountain peak accessible by cogwheel train offering panoramic Alpine landscapes",
       "hours": "Open year-round",
-      "source_files": [
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Kapellbrücke (Chapel Bridge)",
       "city": "Lucerne",
       "description": "Covered wooden bridge with 17th-century painted panels",
       "recommended_duration": "30 minutes",
-      "source_files": [
-        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
-        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Lucerne Old Town",
       "city": "Lucerne",
-      "description": "Beautifully preserved Old Town with colorful frescoed buildings, cobblestone streets, boutique shops, and lively squares",
+      "description": "Beautifully preserved Old Town filled with colorful frescoed buildings, cobblestone streets, boutique shops, and lively squares. Blends medieval charm with refined Swiss sophistication.",
       "hours": "Open throughout the day",
       "entry_fee": "Free",
       "recommended_duration": "2-3 hours",
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Jesuit Church",
+      "city": "Lucerne",
+      "description": "A peaceful baroque church with elegant interiors located right beside the Reuss River.",
+      "hours": "6:30 AM – 6:30 PM",
+      "entry_fee": "Free entry",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Mt. Pilatus",
+      "city": "Lucerne",
+      "description": "Iconic mountain excursion from Lucerne featuring the world's steepest cogwheel train, panoramic gondola rides, Dragon Path walkway, and sweeping views of multiple lakes and the Swiss Alps.",
+      "hours": "Seasonal timings vary",
+      "entry_fee": "Approx. INR 8,000–14,000 depending on route & Swiss Pass discounts",
+      "recommended_duration": "Full day",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Lake Lucerne Cruise",
+      "city": "Lucerne",
+      "description": "Scenic boat journey across crystal-clear Lake Lucerne surrounded by alpine villages and distant snow-capped peaks.",
+      "hours": "Throughout the day",
+      "entry_fee": "Included with Swiss Travel Pass (or approx. ₹3,300–5,200 without pass)",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -832,6 +1434,34 @@
       "location": "Peaceful lakeside hotel surrounded by mountain and waterfront scenery",
       "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
       "_source_mtime": 1777872516.0
+    },
+    {
+      "name": "Hotel Luzernerhof",
+      "city": "Lucerne",
+      "location": "Near Lucerne Station, Old Town area",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "name": "Family M Apartments 40 – Luzern Horw",
+      "city": "Lucerne",
+      "location": "Horw, approx. 10–15 mins from Lucerne station via public transport",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "name": "Seehotel Kastanienbaum",
+      "city": "Lucerne",
+      "location": "Kastanienbaum, Lake Lucerne area (~15 mins from Lucerne city centre)",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "name": "Galaxy Apartments Lucerne",
+      "city": "Lucerne",
+      "location": "Near Lucerne Old Town",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
     }
   ],
   "local_dishes": [
@@ -841,25 +1471,14 @@
       "description": "A type of gingerbread cookie unique to Lucerne, often decorated with colorful icing",
       "vegetarian": true,
       "where_to_try": "Bachmann Confectionery",
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Chügelipaschtete",
       "city": "Lucerne",
       "description": "Lucerne Saffron Cake - a sweet and savory pastry filled with a mixture of rice, raisins, saffron, and sometimes meat",
       "vegetarian": false,
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Luzerner Chügelipastete",
@@ -867,9 +1486,46 @@
       "description": "Traditional Lucerne meat pastry",
       "vegetarian": false,
       "where_to_try": "Old Swiss House",
+      "source_files": []
+    },
+    {
+      "name": "Cheese Fondue",
+      "city": "Lucerne",
+      "description": "One of Switzerland's most iconic dishes — melted cheese served with bread, potatoes, and vegetables for dipping.",
+      "vegetarian": true,
+      "where_to_try": "Chalet Beizli, Rathaus Brauerei",
       "source_files": [
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Rösti",
+      "city": "Lucerne",
+      "description": "A classic Swiss potato dish that is crispy outside and soft inside, often served with cheese or seasonal vegetables.",
+      "vegetarian": true,
+      "where_to_try": "Rathaus Brauerei, Chalet Beizli",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Wild Mushroom Risotto",
+      "city": "Lucerne",
+      "description": "Creamy risotto prepared with alpine mushrooms and herbs — especially comforting in the Swiss mountain regions.",
+      "vegetarian": true,
+      "where_to_try": "Hotel Seeburg – Sunset Bar, OX Restaurant & Grill",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Swiss Chocolate & Desserts",
+      "city": "Lucerne",
+      "description": "Switzerland is world-famous for handcrafted chocolates, pralines, and dessert cafés.",
+      "vegetarian": true,
+      "where_to_try": "Velo Café, Hotel Seeburg – Sunset Bar",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -976,6 +1632,101 @@
       ],
       "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
       "_source_mtime": 1748240155.0
+    },
+    {
+      "item": "Swiss Landscape Artwork",
+      "city": "Lucerne",
+      "category": "Art",
+      "where_to_buy": [
+        "Art shops and galleries in Lucerne"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "item": "Swiss Watches (Entry Luxury Range)",
+      "city": "Lucerne",
+      "category": "Accessories",
+      "where_to_buy": [
+        "Watch boutiques in Lucerne"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "item": "Local Market Cheese Packs",
+      "city": "Lucerne",
+      "category": "Food",
+      "where_to_buy": [
+        "Local markets in Lucerne"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0
+    },
+    {
+      "item": "Swiss chocolates and handmade pralines",
+      "city": "Lucerne",
+      "category": "Food",
+      "where_to_buy": [
+        "Bucherer Lucerne",
+        "Coop City Lucerne",
+        "Interlaken Old Town"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Premium hot chocolate mixes",
+      "city": "Lucerne",
+      "category": "Food",
+      "where_to_buy": [
+        "Coop City Lucerne",
+        "Bucherer Lucerne"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Swiss cheese",
+      "city": "Lucerne",
+      "category": "Food",
+      "where_to_buy": [
+        "Coop City Lucerne"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Swiss watches",
+      "city": "Lucerne",
+      "category": "Luxury",
+      "where_to_buy": [
+        "Bucherer Lucerne",
+        "Casagrande Swiss Watches"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Swiss Army knives",
+      "city": "Lucerne",
+      "category": "Luxury",
+      "where_to_buy": [
+        "Bucherer Lucerne",
+        "Coop City Lucerne"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    },
+    {
+      "item": "Luxury pens",
+      "city": "Lucerne",
+      "category": "Luxury",
+      "where_to_buy": [
+        "Bucherer Lucerne"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
     }
   ],
   "emergency_contacts": [],
@@ -1010,6 +1761,41 @@
       "description": "Gondola from Kriens to Mount Pilatus summit",
       "_source_file": "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
       "_source_mtime": 1772384364.4304612
+    },
+    {
+      "city": "Lucerne",
+      "mode": "Train (Luzern–Interlaken Express)",
+      "description": "Scenic train route from Lucerne to Interlaken Ost, one of Switzerland's most scenic routes with lakes, waterfalls, and mountain views. Duration approximately 1 hour 50 minutes, runs every hour.",
+      "recommended_pass": "Swiss Travel Pass",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "city": "Lucerne",
+      "mode": "Cogwheel Train (Mt. Pilatus Railway)",
+      "description": "The world's steepest cogwheel train ascending Mt. Pilatus from Alpnachstad with dramatic cliffside views.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Partially discounted with Swiss Pass. Full excursion approx. INR 8,000–14,000",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Lucerne",
+      "mode": "Gondola (Mt. Pilatus)",
+      "description": "Panoramic gondola descent from Mt. Pilatus toward Kriens with sweeping aerial views of forests, valleys, and Lake Lucerne.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Partially discounted with Swiss Pass",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
+    },
+    {
+      "city": "Lucerne",
+      "mode": "Lake Cruise (Boat)",
+      "description": "Scenic cruise across Lake Lucerne toward Vitznau. Approx. 1 hr boat ride.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Included with Swiss Travel Pass (or approx. ₹3,300–5,200 without pass)",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
     }
   ],
   "health_tips": [],
@@ -1031,6 +1817,10 @@
     "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
     "Italy/Paris, Switzerland and Italy.pdf",
     "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+    "France/Sneha_Europe_All Inclusive Guide.docx",
+    "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+    "Europe/Vidhi_Europe_All Inclusive Guide.docx"
   ]
 }

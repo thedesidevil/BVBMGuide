@@ -4,9 +4,10 @@
       "name": "That's Toast Bruges",
       "city": "Bruges",
       "cuisine_type": [
-        "Brunch"
+        "Brunch",
+        "Café"
       ],
-      "price_range": "₹1,200–1,800",
+      "price_range": "₹1,200–1,800 pp",
       "hours": "8:30 AM – 4 PM",
       "ambience": "Trendy brunch café",
       "nearby_landmarks": [
@@ -17,23 +18,25 @@
       ],
       "must_try_dishes": [
         "Veg toast platters",
-        "smoothies"
+        "smoothies",
+        "Smoothies"
       ],
       "best_for": [
-        "brunch-style"
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Sanseveria Bagelsalon Bruges",
       "city": "Bruges",
       "cuisine_type": [
-        "Café"
+        "Café",
+        "Bagels"
       ],
-      "price_range": "₹1,000–1,500",
+      "price_range": "₹1,000–1,500 pp",
       "hours": "8 AM – 3 PM",
       "ambience": "Cozy vintage café",
       "nearby_landmarks": [
@@ -44,15 +47,15 @@
       ],
       "must_try_dishes": [
         "Veg bagels",
-        "soups"
+        "soups",
+        "Soups"
       ],
       "best_for": [
-        "light",
-        "relaxed"
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -60,51 +63,41 @@
     {
       "name": "Belfry of Bruges",
       "city": "Bruges",
-      "description": "366-step climb to panoramic views over Bruges' red rooftops",
+      "description": "Iconic medieval bell tower in Bruges. Climb 366 steps to the top for panoramic views over Bruges' red rooftops.",
       "hours": "9 AM – 8 PM",
       "source_files": [
-        "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
-        "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf",
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ],
       "recommended_duration": "1 hour",
-      "entry_fee": "₹1,200–1,500"
+      "entry_fee": "~₹1,200–1,500 pp"
     },
     {
       "name": "De Burg",
       "city": "Bruges",
       "description": "Ancient cobblestone plaza surrounded by grand Gothic buildings",
       "hours": null,
-      "source_files": [
-        "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Market Square",
       "city": "Bruges",
       "description": "The central square of Brugge",
       "hours": null,
-      "source_files": [
-        "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Church of our Lady",
       "city": "Bruges",
       "description": "Gothic church housing a Michelangelo statue",
       "hours": null,
-      "source_files": [
-        "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Boniface Bridge",
       "city": "Bruges",
       "description": "A quaint bridge with romantic canal views",
       "hours": null,
-      "source_files": [
-        "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Markt Square",
@@ -113,19 +106,17 @@
       "hours": "All day",
       "entry_fee": "Free",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Bruges Canals",
       "city": "Bruges",
-      "description": "Serene canals lined with charming houses and flowering balconies",
+      "description": "Serene canals lined with charming houses and flowering balconies. Boat rides offer a different perspective of the city.",
       "hours": "Boat rides: 10 AM – 6 PM",
-      "entry_fee": "₹1,000–1,500 (boat ride)",
-      "recommended_duration": "2-3 hours",
+      "entry_fee": "Boat ride ~₹1,000–1,500 pp",
+      "recommended_duration": "1–2 hours",
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
@@ -135,8 +126,28 @@
       "hours": "All day",
       "entry_fee": "Free",
       "recommended_duration": "1 hour",
+      "source_files": []
+    },
+    {
+      "name": "Markt Square, Bruges",
+      "city": "Bruges",
+      "description": "Vibrant heart of Bruges surrounded by colourful guild houses and lively cafés. Horse carriages pass by and the towering Belfry dominates the skyline.",
+      "hours": "All day",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Minnewater Park (Lake of Love)",
+      "city": "Bruges",
+      "description": "Peaceful green escape with swans gliding across the lake and surrounding trees creating a romantic, tranquil setting.",
+      "hours": "All day",
+      "entry_fee": "Free",
+      "recommended_duration": "45 minutes",
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -152,6 +163,7 @@
   "source_files": [
     "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
     "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf",
-    "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+    "Netherlands/Sirisha_Europe_All Inclusive Guide.docx",
+    "Europe/Sirisha_Europe_All Inclusive Guide.docx"
   ]
 }

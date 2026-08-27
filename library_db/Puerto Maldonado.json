@@ -6,8 +6,39 @@
       "city": "Puerto Maldonado",
       "description": "Amazon rainforest exploration with a-la-carte excursions",
       "recommended_duration": "3 days",
+      "source_files": []
+    },
+    {
+      "name": "Refugio Amazonas Lodge",
+      "city": "Puerto Maldonado",
+      "description": "A rainforest lodge located within the buffer zone of Tambopata National Reserve. Offers guided jungle excursions, canopy tower, oxbow lake exploration, wildlife observation and camera trap stations. Open-sided rooms immerse guests in nature.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": "3 nights",
       "source_files": [
-        "South America/Craig_ All Inclusive Guide - Peru.pdf"
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Canopy Tower",
+      "city": "Puerto Maldonado",
+      "description": "A 30-metre tower rising above the rainforest canopy at Refugio Amazonas, offering breathtaking panoramic views and excellent birdwatching opportunities including macaws, parrots and toucans.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "South America/Naren- Peru_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Oxbow Lake",
+      "city": "Puerto Maldonado",
+      "description": "A tranquil Amazon ecosystem near Refugio Amazonas. Guests glide across calm waters to spot giant river otters, kingfishers, black caimans, turtles, monkeys and tropical birds.",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "South America/Naren- Peru_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -18,18 +49,267 @@
       "location": "Amazon rainforest",
       "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
       "_source_mtime": 1751044942.0
+    },
+    {
+      "name": "Refugio Amazonas Lodge",
+      "city": "Puerto Maldonado",
+      "location": "Buffer zone of Tambopata National Reserve",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
     }
   ],
   "local_dishes": [],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Carry only the cash you'll need for the day and keep your passport, extra cash and valuables safely stored in your hotel's room safe whenever possible.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Store digital copies of your passport, visa, travel insurance and flight tickets on your phone or secure cloud storage.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Use only your pre-arranged private transfers or registered taxis arranged through your hotel. Avoid accepting rides from unofficial drivers at airports or tourist attractions.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Use ATMs located inside banks, shopping malls or reputable hotels. Notify your bank before travelling to avoid any issues with international card transactions.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Puerto Maldonado"
+      ],
+      "tip": "In the Amazon Rainforest, wear long sleeves during early morning and evening, apply mosquito repellent regularly and always follow your naturalist guide's instructions. Never wander away from marked trails without your guide.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Drink bottled or purified water throughout your trip. Avoid drinking tap water and ensure fruits are washed or peeled before consumption.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Tours and transportation operate on time, so it's best to arrive a few minutes early for all scheduled activities.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Many churches, monasteries and archaeological sites are considered sacred. Dress modestly when visiting religious sites, speak softly and avoid climbing or touching ancient Inca structures unless permitted.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Many locals in traditional Andean attire may expect a small tip for photographs. Always ask for permission before taking close-up photos.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Puerto Maldonado",
+        "Machu Picchu"
+      ],
+      "tip": "Whether visiting the Amazon Rainforest or Machu Picchu, avoid feeding wildlife, stay on designated paths and dispose of waste responsibly.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    }
+  ],
   "souvenirs": [],
   "emergency_contacts": [],
-  "connectivity_tips": [],
-  "transport_options": [],
-  "health_tips": [],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Puerto Maldonado"
+      ],
+      "tip": "Movistar Peru is a reliable network with strong coverage in cities and good connectivity throughout much of the country. Best for travellers visiting multiple regions across Peru.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Puerto Maldonado"
+      ],
+      "tip": "Bitel is a budget-friendly provider offering affordable prepaid plans with generous data allowances. Best for cost-conscious travellers.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Puerto Maldonado"
+      ],
+      "tip": "If your smartphone supports eSIM, you can activate a data plan before arriving in Peru. Popular providers include Airalo, Nomad and Holafly.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Puerto Maldonado"
+      ],
+      "tip": "At Refugio Amazonas Lodge, mobile coverage is extremely limited. Complimentary Wi-Fi is available only in common areas. Electricity is available during scheduled hours each day — charge your devices whenever power is available. Expect little to no mobile signal during your stay.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Puerto Maldonado",
+      "mode": "Road and River Transfer",
+      "description": "Combination of road transfer by vehicle and motorised canoe journey to reach Refugio Amazonas Lodge from Puerto Maldonado Airport.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Puerto Maldonado"
+      ],
+      "tip": "Use strong mosquito repellent (DEET or Picaridin recommended) in the Amazon Rainforest. Wear lightweight long-sleeved shirts and full-length trousers, especially during early morning and evening.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Ensure routine vaccinations are up to date before travelling, including Tetanus/Diphtheria/Pertussis (Td/Tdap), Measles/Mumps/Rubella (MMR), Polio and Influenza.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Hepatitis A vaccination is recommended for most travellers, as it can be transmitted through contaminated food or water.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Typhoid vaccination is recommended, especially if you plan to eat at local markets or travel beyond major cities.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Drink bottled or purified water throughout your trip. Avoid drinking tap water and ensure fruits are washed or peeled before consumption.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "tip": "Carry personal medications with prescriptions if required, a small first-aid kit, motion sickness tablets if needed, hand sanitiser, wet wipes and anti-itch cream for insect bites.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    },
+    {
+      "cities": [
+        "Puerto Maldonado"
+      ],
+      "tip": "Bring a portable power bank for the Amazon lodge as electricity is only available during scheduled hours each day at Refugio Amazonas.",
+      "_source_file": "South America/Naren- Peru_All Inclusive Guide.docx",
+      "_source_mtime": 1784956118.0
+    }
+  ],
   "source_files": [
     "South America/Craig_ All Inclusive Guide - Peru.pdf",
-    "South America/All Inclusive Guide - Peru_CRE.pdf"
+    "South America/All Inclusive Guide - Peru_CRE.pdf",
+    "South America/Naren- Peru_All Inclusive Guide.docx"
   ]
 }

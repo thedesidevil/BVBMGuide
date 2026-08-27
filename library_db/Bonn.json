@@ -4,83 +4,93 @@
       "name": "Cassius Garten Bonn",
       "city": "Bonn",
       "cuisine_type": [
-        "Vegetarian"
+        "Vegetarian",
+        "Buffet"
       ],
-      "price_range": "₹1,200–1,800",
+      "price_range": "₹1,200–1,800 pp",
       "hours": "11:00 AM – 9 PM",
       "ambience": "Casual vegetarian buffet",
       "nearby_landmarks": [
         "Beethoven House, Bonn"
       ],
       "highlights": [
-        "Wholesome vegetarian meal"
+        "Wholesome vegetarian meal",
+        "Vegetarian buffet"
       ],
       "must_try_dishes": [
         "Veg buffet",
         "salads",
-        "baked dishes"
+        "baked dishes",
+        "Salads",
+        "Baked dishes"
       ],
       "best_for": [
-        "wholesome",
-        "vegetarian"
+        "casual",
+        "family"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Black Veg Bonn",
       "city": "Bonn",
       "cuisine_type": [
-        "Vegan"
+        "Vegan",
+        "Café"
       ],
-      "price_range": "₹1,200–1,800",
+      "price_range": "₹1,200–1,800 pp",
       "hours": "12 PM – 7 PM",
       "ambience": "Modern vegan café",
       "nearby_landmarks": [
         "Beethoven House, Bonn"
       ],
       "highlights": [
+        "Vegan options available",
         "Casual lunch"
       ],
       "must_try_dishes": [
         "Vegan burgers",
-        "bowls"
+        "bowls",
+        "Bowls"
       ],
       "best_for": [
         "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Ichiban Noodle Bar Bonn",
       "city": "Bonn",
       "cuisine_type": [
-        "Asian"
+        "Asian",
+        "Noodles"
       ],
-      "price_range": "₹1,000–1,500",
+      "price_range": "₹1,000–1,500 pp",
       "hours": "12 PM – 10 PM",
       "ambience": "Casual Asian dining",
       "nearby_landmarks": [
         "Beethoven House, Bonn"
       ],
       "highlights": [
-        "Comfort meal"
+        "Comfort meal",
+        "Vegetarian options available"
       ],
       "must_try_dishes": [
         "Veg ramen",
-        "noodles"
+        "noodles",
+        "Noodles"
       ],
       "best_for": [
-        "comfort"
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -88,12 +98,12 @@
     {
       "name": "Bonn Old Town (Altstadt)",
       "city": "Bonn",
-      "description": "Pastel-coloured buildings, quiet lanes, and charming squares",
-      "hours": "10 AM - 4 PM",
+      "description": "Pastel-coloured buildings, quiet lanes, and charming squares. Noticeably calmer than Cologne — perfect for a relaxed wander.",
+      "hours": "10 AM – 4 PM",
       "entry_fee": "Free",
-      "recommended_duration": "2-3 hours",
+      "recommended_duration": "1 hour",
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
@@ -103,19 +113,17 @@
       "hours": "10 AM – 6 PM",
       "entry_fee": "₹900–1,200",
       "recommended_duration": "1-2 hours",
-      "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Poppelsdorf Palace & Botanical Gardens",
       "city": "Bonn",
-      "description": "Peaceful escape with landscaped gardens, greenhouses, and seasonal blooms",
+      "description": "Peaceful escape with landscaped gardens, greenhouses, and seasonal blooms. Tree-lined avenues add to the charm.",
       "hours": "10 AM – 6 PM",
       "entry_fee": "Free",
-      "recommended_duration": "2-3 hours",
+      "recommended_duration": "1.5 hours",
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
@@ -125,19 +133,39 @@
       "hours": "9 AM – 6 PM",
       "entry_fee": "Free",
       "recommended_duration": "2-3 hours",
-      "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Kunstmuseum Bonn",
       "city": "Bonn",
-      "description": "Contemporary art space featuring post-war German artists",
+      "description": "Contemporary art space featuring post-war German artists — ideal for modern creative expression enthusiasts.",
       "hours": "11 AM – 6 PM",
-      "entry_fee": "₹800–1,200",
+      "entry_fee": "~₹800–1,200 pp",
+      "recommended_duration": "1.5 hours",
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Beethoven House, Bonn",
+      "city": "Bonn",
+      "description": "Birthplace of Ludwig van Beethoven offering an intimate and beautifully curated insight into the composer's life.",
+      "hours": "10 AM – 6 PM",
+      "entry_fee": "~₹900–1,200 pp",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "House of the History of the Federal Republic of Germany (Haus der Geschichte)",
+      "city": "Bonn",
+      "description": "Highly engaging museum walking through Germany's post-war history with interactive exhibits and real artefacts.",
+      "hours": "9 AM – 6 PM",
+      "entry_fee": "Free",
       "recommended_duration": "2 hours",
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -160,6 +188,7 @@
   ],
   "health_tips": [],
   "source_files": [
-    "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+    "Netherlands/Sirisha_Europe_All Inclusive Guide.docx",
+    "Europe/Sirisha_Europe_All Inclusive Guide.docx"
   ]
 }

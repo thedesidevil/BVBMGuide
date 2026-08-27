@@ -1,0 +1,659 @@
+{
+  "restaurants": [
+    {
+      "name": "Uss Da Dhaba Premium",
+      "city": "Dehradun",
+      "cuisine_type": [
+        "North Indian",
+        "Punjabi"
+      ],
+      "price_range": "₹300–700 per person",
+      "hours": "8:00 AM – 11:30 PM",
+      "ambience": "Casual family atmosphere",
+      "nearby_landmarks": [
+        "Taj Dehradun, Dehradun"
+      ],
+      "highlights": [
+        "Popular vegetarian-friendly restaurant",
+        "Known for hearty North Indian food",
+        "Ideal for comforting Punjabi flavours"
+      ],
+      "must_try_dishes": [
+        "Dal Makhani",
+        "Paneer Butter Masala",
+        "Stuffed Naan",
+        "Rajma Chawal"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+      ]
+    },
+    {
+      "name": "Cuisine de Saffron Leaf",
+      "city": "Dehradun",
+      "cuisine_type": [
+        "North Indian",
+        "Continental",
+        "Vegetarian"
+      ],
+      "price_range": "₹700–1,200 per person",
+      "hours": "12:00 PM – 12:00 AM",
+      "ambience": "Modern family restaurant with stylish setting",
+      "nearby_landmarks": [
+        "Taj Dehradun, Dehradun"
+      ],
+      "highlights": [
+        "Extensive menu",
+        "Stylish setting"
+      ],
+      "must_try_dishes": [
+        "Paneer Tikka",
+        "Veg Biryani",
+        "Dal Makhani",
+        "Sizzlers"
+      ],
+      "best_for": [
+        "family",
+        "celebration"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+      ]
+    },
+    {
+      "name": "The Perch (Kitchen By Shugan Farm)",
+      "city": "Dehradun",
+      "cuisine_type": [
+        "Continental",
+        "Farm-to-table"
+      ],
+      "price_range": "₹800–1,400 per person",
+      "hours": "12:00 PM – 10:30 PM",
+      "ambience": "Charming restaurant set amidst greenery along Mussoorie Road, peaceful ambience",
+      "area": "Mussoorie Road",
+      "nearby_landmarks": [
+        "Taj Dehradun, Dehradun"
+      ],
+      "highlights": [
+        "Farm-to-table-inspired dining",
+        "Set amidst greenery"
+      ],
+      "must_try_dishes": [
+        "Wood Fired Pizza",
+        "Mezze Platter",
+        "Pasta Alfredo",
+        "Seasonal Desserts"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+      ]
+    },
+    {
+      "name": "AMA Cafe",
+      "city": "Dehradun",
+      "cuisine_type": [
+        "Cafe",
+        "Breakfast"
+      ],
+      "price_range": "₹500–1,000 per person",
+      "hours": "8:00 AM – 10:30 PM",
+      "ambience": "Bright and welcoming café",
+      "area": "Rajpur Road",
+      "highlights": [
+        "Excellent breakfast menu",
+        "Baked goods",
+        "Family-friendly atmosphere"
+      ],
+      "must_try_dishes": [
+        "Pancakes",
+        "Avocado Toast",
+        "Veg Sandwich",
+        "Hot Chocolate"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+      ]
+    },
+    {
+      "name": "Café De Piccolo",
+      "city": "Dehradun",
+      "cuisine_type": [
+        "Cafe",
+        "Breakfast",
+        "European"
+      ],
+      "price_range": "₹500–1,000 per person",
+      "hours": "8:00 AM – 10:30 PM",
+      "ambience": "Relaxed setting",
+      "highlights": [
+        "Long-time Dehradun favourite",
+        "Mix of breakfast classics",
+        "Baked treats and fresh coffee"
+      ],
+      "must_try_dishes": [
+        "English Breakfast",
+        "Croissants",
+        "Veg Omelette Style Breakfast Platter",
+        "Coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+      ]
+    },
+    {
+      "name": "KOI - From The House of AKIO",
+      "city": "Dehradun",
+      "cuisine_type": [
+        "Cafe",
+        "Breakfast"
+      ],
+      "price_range": "₹600–1,200 per person",
+      "hours": "8:00 AM – 11:00 PM",
+      "ambience": "Contemporary café with elegant interiors",
+      "highlights": [
+        "Excellent coffee",
+        "Refined breakfast menu"
+      ],
+      "must_try_dishes": [
+        "Sourdough Toasts",
+        "Fresh Bakery Selection",
+        "Pancakes",
+        "Specialty Coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+      ]
+    },
+    {
+      "name": "Amritsari Express",
+      "city": "Dehradun",
+      "cuisine_type": [
+        "North Indian",
+        "Vegetarian"
+      ],
+      "price_range": "₹500–700 per person",
+      "hours": "11:30 AM – 10:30 PM",
+      "highlights": [
+        "Known for hearty North Indian comfort food",
+        "Quick service"
+      ],
+      "must_try_dishes": [
+        "Amritsari Kulcha",
+        "Dal Makhani",
+        "Paneer Lababdar"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+      ],
+      "ambience": "Family-friendly",
+      "nearby_landmarks": [
+        "Forest Research Institute, Dehradun"
+      ]
+    },
+    {
+      "name": "Kalsang Veg Green",
+      "city": "Dehradun",
+      "cuisine_type": [
+        "Tibetan",
+        "Asian",
+        "Vegetarian"
+      ],
+      "price_range": "₹400–700 per person",
+      "hours": "11:00 AM – 10:30 PM",
+      "highlights": [
+        "Vegetarian branch of Dehradun's famous Kalsang",
+        "Tibetan and Asian flavours"
+      ],
+      "must_try_dishes": [
+        "Veg Momos",
+        "Thukpa",
+        "Stir-Fried Noodles"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+      ],
+      "ambience": "Relaxed setting",
+      "nearby_landmarks": [
+        "Paltan Bazaar, Dehradun"
+      ]
+    },
+    {
+      "name": "Orchard Restaurant",
+      "city": "Dehradun",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "₹700–1,000 per person",
+      "hours": "12:30 PM – 10:30 PM",
+      "ambience": "Set amidst greenery with mountain views",
+      "area": "En route to Mussoorie",
+      "highlights": [
+        "One of the most pleasant lunch stops before heading to Mussoorie",
+        "Vegetarian options available"
+      ],
+      "must_try_dishes": [
+        "Wood Fired Pizza",
+        "Paneer Steak",
+        "Farm Fresh Salads"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+      ]
+    },
+    {
+      "name": "Kalsang Friends Corner",
+      "city": "Dehradun",
+      "cuisine_type": [
+        "Tibetan",
+        "Asian",
+        "Vegetarian"
+      ],
+      "price_range": "₹600–1,000 per person",
+      "hours": "10:00 AM – 10:30 PM",
+      "ambience": "Relaxed ambience",
+      "nearby_landmarks": [
+        "Paltan Bazaar, Dehradun"
+      ],
+      "highlights": [
+        "One of Dehradun's most popular dining spots",
+        "Excellent Tibetan and Asian vegetarian offerings"
+      ],
+      "must_try_dishes": [
+        "Veg Momos",
+        "Thukpa",
+        "Vegetable Fried Rice",
+        "Chilli Paneer"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+      ]
+    },
+    {
+      "name": "Kumar Vegetarian Restaurant",
+      "city": "Dehradun",
+      "cuisine_type": [
+        "North Indian",
+        "South Indian",
+        "Vegetarian"
+      ],
+      "price_range": "₹500–900 per person",
+      "hours": "11:00 AM – 3:30 PM | 7:30 PM – 10:30 PM",
+      "nearby_landmarks": [
+        "Paltan Bazaar, Dehradun"
+      ],
+      "highlights": [
+        "Pure vegetarian restaurant",
+        "Serves both North Indian and South Indian dishes"
+      ],
+      "must_try_dishes": [
+        "Paneer Butter Masala",
+        "Veg Thali",
+        "Masala Dosa",
+        "Gulab Jamun"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+      ],
+      "ambience": "Well-known pure vegetarian restaurant"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Forest Research Institute (FRI)",
+      "city": "Dehradun",
+      "description": "One of India's most magnificent colonial-era buildings resembling a European estate, surrounded by sprawling lawns, tree-lined avenues, and grand Greco-Roman architecture. Offers beautiful family photographs and open space for children.",
+      "hours": "9:30 AM – 5:00 PM",
+      "entry_fee": "~₹40 Adults | ~₹20 Children (museum entry)",
+      "recommended_duration": null,
+      "source_files": [
+        "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+      ]
+    },
+    {
+      "name": "Mindrolling Monastery",
+      "city": "Dehradun",
+      "description": "A peaceful Tibetan Buddhist monastery known for its towering Great Stupa, manicured gardens, colourful murals, prayer wheels, and serene atmosphere.",
+      "hours": "7:00 AM – 6:00 PM",
+      "entry_fee": "Free Entry",
+      "recommended_duration": null,
+      "source_files": [
+        "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+      ]
+    },
+    {
+      "name": "Dehradun Zoo (Malsi Deer Park)",
+      "city": "Dehradun",
+      "description": "A compact zoo nestled at the foothills of Mussoorie, ideal for families with young children. Houses deer, peacocks, rabbits, and other animals in a relaxed natural setting.",
+      "hours": "9:00 AM – 5:30 PM",
+      "entry_fee": "₹30 Adults | ₹10 Children",
+      "recommended_duration": null,
+      "source_files": [
+        "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+      ]
+    },
+    {
+      "name": "Paltan Bazaar",
+      "city": "Dehradun",
+      "description": "Dehradun's most famous local market with bustling lanes filled with bakeries, spice shops, local sweets, basmati rice stores, woollens, and souvenir stalls.",
+      "hours": "10:00 AM – 9:00 PM",
+      "entry_fee": "Free Entry",
+      "recommended_duration": null,
+      "source_files": [
+        "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+      ]
+    },
+    {
+      "name": "Robber's Cave (Guchhu Pani)",
+      "city": "Dehradun",
+      "description": "One of Dehradun's most unique natural attractions — a narrow river cave where cool water flows through rocky passages. Walking through the shallow stream surrounded by towering rock formations is a fun experience for families.",
+      "hours": "7:00 AM – 6:00 PM",
+      "entry_fee": "Approx. ₹35 per person",
+      "recommended_duration": null,
+      "source_files": [
+        "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Taj Dehradun",
+      "city": "Dehradun",
+      "location": "Dehradun, nestled amidst lush greenery overlooking surrounding hills",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "name": "Taj Dehradun",
+      "city": "Dehradun",
+      "location": "Dehradun, nestled amidst lush greenery overlooking surrounding hills",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Dehradun"
+      ],
+      "tip": "When visiting Robber's Cave, carry an extra pair of footwear and clothes as you will be walking through shallow streams.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Himalayan Spices & Local Pickles",
+      "city": "Dehradun",
+      "category": "Food",
+      "where_to_buy": [
+        "Paltan Bazaar, Dehradun"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "item": "Dehradun Basmati Rice",
+      "city": "Dehradun",
+      "category": "Food",
+      "where_to_buy": [
+        "Paltan Bazaar, Dehradun"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "item": "Bakery Products",
+      "city": "Dehradun",
+      "category": "Food",
+      "where_to_buy": [
+        "Paltan Bazaar, Dehradun"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "item": "Handmade Souvenirs",
+      "city": "Dehradun",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Paltan Bazaar, Dehradun"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "item": "Himalayan Herbs & Spices",
+      "city": "Dehradun",
+      "category": "Food",
+      "where_to_buy": [
+        "Paltan Bazaar, Dehradun"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "item": "Organic Honey",
+      "city": "Dehradun",
+      "category": "Food",
+      "where_to_buy": [
+        "Organic stores on Rajpur Road, Dehradun",
+        "Speciality food stores in Mussoorie"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "item": "Himalayan Spices & Local Pickles",
+      "city": "Dehradun",
+      "category": "Food",
+      "where_to_buy": [
+        "Paltan Bazaar, Dehradun"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "item": "Dehradun Basmati Rice",
+      "city": "Dehradun",
+      "category": "Food",
+      "where_to_buy": [
+        "Paltan Bazaar, Dehradun"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "item": "Bakery Products",
+      "city": "Dehradun",
+      "category": "Food",
+      "where_to_buy": [
+        "Paltan Bazaar, Dehradun"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "item": "Handmade Souvenirs",
+      "city": "Dehradun",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Paltan Bazaar, Dehradun"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "item": "Himalayan Herbs & Spices",
+      "city": "Dehradun",
+      "category": "Food",
+      "where_to_buy": [
+        "Paltan Bazaar, Dehradun"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "item": "Organic Honey",
+      "city": "Dehradun",
+      "category": "Food",
+      "where_to_buy": [
+        "Organic stores on Rajpur Road, Dehradun",
+        "Speciality food stores in Mussoorie"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Dehradun",
+      "mode": "Private Driver",
+      "description": "Private driver arranged for airport transfers and sightseeing throughout the trip.",
+      "cost": null,
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "city": "Dehradun",
+      "mode": "Private Driver / Taxi",
+      "description": "Private driver arranged for airport transfers and sightseeing throughout the trip. Transfer from Jolly Grant Airport to Taj Dehradun takes approximately 1 hour.",
+      "cost": null,
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Dehradun",
+        "Mussoorie",
+        "Kanatal",
+        "Dhanaulti"
+      ],
+      "tip": "Carry a basic first-aid kit and personal prescription medicines throughout the trip.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "cities": [
+        "Dehradun",
+        "Mussoorie",
+        "Kanatal",
+        "Dhanaulti"
+      ],
+      "tip": "Use mosquito repellent, especially during outdoor activities and evening hours.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "cities": [
+        "Dehradun",
+        "Mussoorie"
+      ],
+      "tip": "Apply sunscreen (SPF 30+) and use a sun cap or hat, particularly during outdoor sightseeing in June.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "cities": [
+        "Dehradun",
+        "Mussoorie",
+        "Kanatal",
+        "Dhanaulti"
+      ],
+      "tip": "Pack a basic first-aid kit and personal prescription medicines for the trip.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "cities": [
+        "Dehradun",
+        "Mussoorie",
+        "Kanatal",
+        "Dhanaulti"
+      ],
+      "tip": "Use mosquito repellent, especially during outdoor activities and evening hours.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "cities": [
+        "Dehradun",
+        "Mussoorie",
+        "Kanatal",
+        "Dhanaulti"
+      ],
+      "tip": "Apply sunscreen (SPF 30+) and use lip balm and moisturiser as the mountain climate can be drying.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "cities": [
+        "Dehradun",
+        "Mussoorie",
+        "Kanatal",
+        "Dhanaulti"
+      ],
+      "tip": "Carry digital copies of all travel documents throughout the trip.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    },
+    {
+      "cities": [
+        "Dehradun"
+      ],
+      "tip": "When visiting Robber's Cave, carry an extra pair of footwear and clothes as you will be walking through shallow water streams.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0
+    }
+  ],
+  "source_files": [
+    "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+  ]
+}

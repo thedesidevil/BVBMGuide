@@ -10,48 +10,63 @@
       "hours": "11:00 AM – 10:00 PM",
       "ambience": "Rustic riverside dining",
       "highlights": [
-        "Lively riverside dining spot with rustic décor"
+        "Lively riverside dining spot",
+        "Rustic décor"
       ],
       "must_try_dishes": [
         "Garlic prawns",
         "grilled chicken",
         "Vietnamese noodles",
         "Beef noodle stir-fry",
-        "vegetable spring rolls"
+        "vegetable spring rolls",
+        "Vegetable noodles",
+        "Tofu stir-fry",
+        "Fried rice",
+        "Spring rolls"
       ],
       "best_for": [
-        "casual local-style dinner"
+        "casual"
       ],
       "source_files": [
-        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
-        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
-      ]
+        "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx"
+      ],
+      "area": "Ninh Binh",
+      "nearby_landmarks": [],
+      "vegetarian_friendly": true
     },
     {
       "name": "Vedana Restaurant",
       "city": "Ninh Binh",
       "cuisine_type": [
         "Vietnamese",
-        "International"
+        "Asian"
       ],
       "price_range": "INR 1,200–2,000 per person",
       "hours": "6:00 AM – 10:00 PM",
-      "ambience": "Elegant resort dining",
-      "area": "Wyndham Grand Vedana Resort",
+      "ambience": "Elegant resort dining surrounded by greenery",
+      "area": "Wyndham Grand Vedana Ninh Binh Resort",
       "highlights": [
-        "Resort's own restaurant with peaceful and refined setting"
+        "Located within the resort",
+        "Peaceful and refined setting"
       ],
       "must_try_dishes": [
         "Lemongrass chicken",
         "grilled prawns",
-        "Vietnamese hotpot"
+        "Vietnamese hotpot",
+        "Vegetable hotpot",
+        "Wok-fried vegetables",
+        "Tofu curry",
+        "Vegetable fried rice"
       ],
       "best_for": [
-        "relaxed dinner after transfer day"
+        "family",
+        "casual"
       ],
       "source_files": [
-        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx"
-      ]
+        "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [],
+      "vegetarian_friendly": true
     },
     {
       "name": "Trang An Riverside Restaurant",
@@ -61,25 +76,33 @@
       ],
       "price_range": "INR 700–1,400 per person",
       "hours": "9:00 AM – 8:00 PM",
-      "ambience": "Riverside Vietnamese dining",
+      "ambience": "Riverside Vietnamese dining surrounded by greenery and limestone scenery",
       "area": "Trang An area",
       "nearby_landmarks": [
+        "Hoa Lu Ancient Capital, Ninh Binh",
         "Trang An Landscape Complex, Ninh Binh"
       ],
       "highlights": [
-        "Peaceful riverside restaurant surrounded by limestone scenery"
+        "Peaceful riverside setting",
+        "Scenic limestone surroundings"
       ],
       "must_try_dishes": [
         "Grilled chicken",
         "seafood fried rice",
-        "stir-fried prawns"
+        "stir-fried prawns",
+        "Vegetable fried rice",
+        "Tofu in claypot",
+        "Stir-fried noodles",
+        "Spring rolls"
       ],
       "best_for": [
-        "scenic relaxed lunch"
+        "casual",
+        "family"
       ],
       "source_files": [
-        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx"
-      ]
+        "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx"
+      ],
+      "vegetarian_friendly": true
     },
     {
       "name": "Chef Dung Restaurant",
@@ -89,22 +112,32 @@
       ],
       "price_range": "INR 900–1,600 per person",
       "hours": "10:00 AM – 10:00 PM",
-      "ambience": "Contemporary Vietnamese dining",
+      "ambience": "Contemporary Vietnamese dining with countryside surroundings",
       "area": "Trang An area",
       "highlights": [
-        "Modern Vietnamese restaurant with countryside surroundings"
+        "Fresh local flavours",
+        "Beautiful countryside surroundings"
       ],
       "must_try_dishes": [
         "Claypot seafood",
         "grilled lamb skewers",
-        "vegetable noodles"
+        "vegetable noodles",
+        "Vegetable noodles",
+        "Tofu curry",
+        "Mushroom fried rice",
+        "Stir-fried vegetables"
       ],
       "best_for": [
-        "comfortable family lunch"
+        "family",
+        "casual"
       ],
       "source_files": [
-        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx"
-      ]
+        "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [
+        "Trang An Landscape Complex, Ninh Binh"
+      ],
+      "vegetarian_friendly": true
     },
     {
       "name": "Trung Tuyet Restaurant",
@@ -114,22 +147,33 @@
       ],
       "price_range": "INR 600–1,300 per person",
       "hours": "8:00 AM – 9:30 PM",
-      "ambience": "Cozy local dining",
+      "ambience": "Cozy local dining with warm hospitality",
       "area": "Trang An area",
       "highlights": [
-        "Charming family-run restaurant known for warm hospitality"
+        "Family-run restaurant",
+        "Authentic Northern Vietnamese dishes",
+        "Warm hospitality"
       ],
       "must_try_dishes": [
         "Lemongrass chicken",
         "garlic prawns",
-        "fresh spring rolls"
+        "fresh spring rolls",
+        "Fresh spring rolls",
+        "Tofu with lemongrass",
+        "Vegetable fried rice",
+        "Stir-fried noodles"
       ],
       "best_for": [
-        "authentic Vietnamese lunch"
+        "casual",
+        "family"
       ],
       "source_files": [
-        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx"
-      ]
+        "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [
+        "Trang An Landscape Complex, Ninh Binh"
+      ],
+      "vegetarian_friendly": true
     },
     {
       "name": "Chookie's Hideaway",
@@ -151,9 +195,7 @@
       "best_for": [
         "relaxed local-style dinner"
       ],
-      "source_files": [
-        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Tam Gia Trang Restaurant",
@@ -175,9 +217,7 @@
       "best_for": [
         "scenic family dinner"
       ],
-      "source_files": [
-        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "NGON Vegan Restaurant",
@@ -198,10 +238,7 @@
         "vegetarian"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
-        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Ngo Dong Vegan Restaurant",
@@ -222,10 +259,7 @@
         "vegetarian"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
-        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "An Tam Coc Restaurant and Coffee",
@@ -249,11 +283,7 @@
       "best_for": [
         "casual"
       ],
-      "source_files": [
-        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
-        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
-        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Com Nieu Tam Coc- Claypot restaurant",
@@ -273,10 +303,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
-        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Aroma Indian Restaurant",
@@ -294,10 +321,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
-        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Curry King Indian Restaurant",
@@ -315,10 +339,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
-        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Saffron Indian Restaurant",
@@ -336,10 +357,7 @@
         "casual"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
-        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Chookie's Beer Garden",
@@ -359,9 +377,7 @@
       "best_for": [
         "casual social dinner"
       ],
-      "source_files": [
-        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Ngon Vegan Restaurant Ninh Binh",
@@ -382,9 +398,7 @@
         "light wholesome dinner"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Family Restaurant",
@@ -402,9 +416,7 @@
       "best_for": [
         "trying regional Ninh Binh flavors"
       ],
-      "source_files": [
-        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Tam Coc Lantern Restaurant",
@@ -422,9 +434,7 @@
       "best_for": [
         "comfortable authentic meal"
       ],
-      "source_files": [
-        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "The Banana Tree Hostel Restaurant",
@@ -442,9 +452,7 @@
       "best_for": [
         "casual dinner vibe"
       ],
-      "source_files": [
-        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Old Vietnam Restaurant Tam Coc",
@@ -463,9 +471,7 @@
         "comforting Vietnamese meal"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "BOLLYWOOD SPICE TRANG AN INDIAN RESTAURANT",
@@ -481,43 +487,52 @@
       ],
       "highlights": [
         "Authentic North Indian flavours",
-        "Excellent vegetarian-friendly options"
+        "Excellent vegetarian-friendly options",
+        "Welcoming atmosphere"
       ],
       "must_try_dishes": [
         "Paneer butter masala",
         "dal tadka",
         "vegetable biryani",
         "garlic naan",
-        "chana masala"
+        "chana masala",
+        "Dal tadka",
+        "Vegetable biryani",
+        "Garlic naan",
+        "Chana masala"
       ],
       "best_for": [
-        "family"
+        "family",
+        "casual"
       ],
-      "vegetarian_friendly": true
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx"
+      ],
+      "area": "Trang An area"
     }
   ],
   "attractions": [
     {
       "name": "Hoa Lu Ancient Capital",
       "city": "Ninh Binh",
-      "description": "Ancient capital of Vietnam during 10th and 11th centuries, featuring temples of King Dinh and King Le surrounded by limestone mountains",
+      "description": "Ancient capital of Vietnam during the 10th and 11th centuries, surrounded by dramatic limestone mountains. Features temples of King Dinh and King Le with beautifully preserved architecture.",
       "hours": "7:00 AM – 5:00 PM",
-      "entry_fee": "Approx. INR 300–400 per person",
-      "recommended_duration": "2 hours",
+      "entry_fee": "INR 300–400 per person",
+      "recommended_duration": "1.5–2 hours",
       "source_files": [
-        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
-        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+        "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Trang An Landscape Complex",
       "city": "Ninh Binh",
-      "description": "UNESCO World Heritage Site with boat rides through emerald rivers, cave tunnels, and towering limestone valleys",
+      "description": "UNESCO World Heritage Site featuring peaceful boat rides through emerald-green rivers, cave tunnels, lotus-covered waterways, and towering limestone valleys. Featured in Kong: Skull Island.",
       "hours": "7:00 AM – 5:00 PM",
-      "entry_fee": "Approx. INR 850–1,000 per person for boat ride",
-      "recommended_duration": "2-2.5 hours",
+      "entry_fee": "INR 850–1,000 per person for boat ride",
+      "recommended_duration": "2–2.5 hours",
       "source_files": [
-        "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx"
+        "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx"
       ]
     },
     {
@@ -525,9 +540,7 @@
       "city": "Ninh Binh",
       "description": "Complex of buddhist pagodas",
       "hours": "6:00 am to 6:00 pm",
-      "source_files": [
-        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Trang An Boat Tour",
@@ -535,10 +548,7 @@
       "description": "3 hr scenic boat journey viewing mountains, countryside and caves from Trang An Wharf",
       "hours": "7am-5pm",
       "entry_fee": "250,000 Vietnamese Dong (VND) per person, approximately $10 USD",
-      "source_files": [
-        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
-        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
-      ],
+      "source_files": [],
       "recommended_duration": "3 hours"
     },
     {
@@ -547,10 +557,7 @@
       "description": "Ancient Buddhist temple",
       "hours": "7:30 am - 4:30 pm",
       "entry_fee": "Free",
-      "source_files": [
-        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
-        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Hang Mua Caves",
@@ -558,19 +565,14 @@
       "description": "Mountain with one of the best viewpoints in Ninh Binh, involves 500 steps climb for sunset views",
       "hours": "6:00 am - 7:00 pm",
       "entry_fee": "100,000 VND per adult",
-      "source_files": [
-        "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
-        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
-      ],
+      "source_files": [],
       "recommended_duration": "Sunset at 5:30 pm, arrive by 4 pm"
     },
     {
       "name": "Bai Dinh",
       "city": "Ninh Binh",
       "description": "Complex of Buddhist pagodas",
-      "source_files": [
-        "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Trang An Scenic Landscape Complex",
@@ -579,9 +581,7 @@
       "hours": "7:00 AM – 4:00 PM",
       "entry_fee": "~₹800 – ₹1,000 per person",
       "recommended_duration": "2-2.5 hours",
-      "source_files": [
-        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Mua Cave Ninh Binh",
@@ -589,9 +589,7 @@
       "description": "Climb 500 stone steps to reach iconic viewpoint with dragon sculpture overlooking panorama of rice fields and rivers through limestone peaks",
       "hours": "6:00 AM – 7:00 PM",
       "entry_fee": "~₹300 – ₹400",
-      "source_files": [
-        "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     }
   ],
   "hotels": [
@@ -620,6 +618,13 @@
       "location": "Tam Coc area",
       "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
       "_source_mtime": 1778197216.0
+    },
+    {
+      "name": "Wyndham Grand Vedana Ninh Binh Resort",
+      "city": "Ninh Binh",
+      "location": "Serene countryside setting, approximately 20–25 mins from central Tam Coc area",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_mtime": 1778695624.2020826
     }
   ],
   "local_dishes": [],
@@ -634,6 +639,7 @@
     "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
     "Vietnam/Kush_Vietnam- All Inclusive Guide.pdf",
     "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
-    "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+    "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+    "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx"
   ]
 }

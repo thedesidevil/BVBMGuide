@@ -34,12 +34,7 @@
       "nearby_landmarks": [
         "Staubbach Falls, Lauterbrunnen"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "ambience": "Close to the train station with views of the Staubbach Falls",
       "best_for": [
         "family",
@@ -67,12 +62,7 @@
       "nearby_landmarks": [
         "Stuabbach falls, Lauterbrunnen"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Stefan Von Allmen",
@@ -92,12 +82,7 @@
         "Light bites",
         "Great for breakfast or brunch"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "ambience": "Situated across the train station",
       "best_for": [
         "casual"
@@ -123,12 +108,7 @@
       "nearby_landmarks": [
         "Staubbach falls, Lauterbrunnen"
       ],
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ],
+      "source_files": [],
       "ambience": "Situated around the Staubbach falls area",
       "best_for": [
         "casual"
@@ -154,11 +134,7 @@
         "Trout fillet from local waters"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Airtime Cafe Bakery",
@@ -179,11 +155,7 @@
         "Smoked salmon bagel"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Hotel Silberhorn Restaurant",
@@ -201,10 +173,187 @@
         "Perch fillets with lemon butter"
       ],
       "vegetarian_friendly": true,
+      "source_files": []
+    },
+    {
+      "name": "Airtime Café Lauterbrunnen",
+      "city": "Lauterbrunnen",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "10:00 AM – 5:00 PM",
+      "ambience": "Cozy, relaxed café",
+      "area": "Lauterbrunnen",
+      "nearby_landmarks": [
+        "Lauterbrunnen Station, Lauterbrunnen"
+      ],
+      "highlights": [
+        "Light scenic lunch"
+      ],
+      "must_try_dishes": [
+        "Veg burgers",
+        "Coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
       "source_files": [
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf"
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Flavours Lauterbrunnen",
+      "city": "Lauterbrunnen",
+      "cuisine_type": [
+        "International",
+        "Pizza"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "10:00 AM – 5:00 PM",
+      "ambience": "Casual",
+      "area": "Lauterbrunnen",
+      "highlights": [
+        "Easy meal option"
+      ],
+      "must_try_dishes": [
+        "Pizza",
+        "Veg options"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Airtime Cafe",
+      "city": "Lauterbrunnen",
+      "cuisine_type": [
+        "Café",
+        "International"
+      ],
+      "price_range": "₹",
+      "hours": "10:00 AM – 5:00 PM (Tuesday - Friday Closed)",
+      "ambience": "Cozy mountain café",
+      "area": "Lauterbrunnen",
+      "nearby_landmarks": [
+        "Lauterbrunnen station, Lauterbrunnen"
+      ],
+      "highlights": [
+        "Relaxed traveler-friendly café",
+        "Beautiful mountain surroundings",
+        "Closed Tuesday to Friday"
+      ],
+      "must_try_dishes": [
+        "Veggie sandwiches",
+        "Fresh pastries",
+        "Coffee and smoothies"
+      ],
+      "best_for": [
+        "casual",
+        "scenic dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Restaurant Weidstübli",
+      "city": "Lauterbrunnen",
+      "cuisine_type": [
+        "Swiss",
+        "Alpine"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "12:00 PM – 10:30 PM",
+      "ambience": "Traditional alpine chalet dining",
+      "area": "Lauterbrunnen",
+      "nearby_landmarks": [
+        "Lauterbrunnen station, Lauterbrunnen"
+      ],
+      "highlights": [
+        "Charming Swiss chalet-style restaurant",
+        "Hearty alpine meals",
+        "Warm rustic atmosphere"
+      ],
+      "must_try_dishes": [
+        "Cheese rösti",
+        "Vegetarian pasta",
+        "Swiss desserts"
+      ],
+      "best_for": [
+        "family",
+        "traditional dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Flavours",
+      "city": "Lauterbrunnen",
+      "cuisine_type": [
+        "Indian",
+        "Asian"
+      ],
+      "price_range": "₹₹",
+      "hours": "9:00 AM – 5:00 PM",
+      "ambience": "Casual international dining",
+      "area": "Lauterbrunnen",
+      "nearby_landmarks": [
+        "Lauterbrunnen station, Lauterbrunnen"
+      ],
+      "highlights": [
+        "Popular with vegetarian travelers",
+        "Serves Indian and Asian cuisine"
+      ],
+      "must_try_dishes": [
+        "Vegetable curry",
+        "Fried rice",
+        "Noodles and paneer dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Hotel Oberland Restaurant Lauterbrunnen",
+      "city": "Lauterbrunnen",
+      "cuisine_type": [
+        "Swiss",
+        "Italian"
+      ],
+      "price_range": "₹2,400–4,200 per person",
+      "hours": "12:00 PM – 9:30 PM",
+      "ambience": "Charming chalet-style restaurant with relaxed valley atmosphere",
+      "area": "Near Lauterbrunnen station",
+      "nearby_landmarks": [
+        "Lauterbrunnen, Lauterbrunnen"
+      ],
+      "highlights": [
+        "Relaxed valley atmosphere"
+      ],
+      "must_try_dishes": [
+        "Veg pizza",
+        "Fondue",
+        "Fresh salads"
+      ],
+      "best_for": [
+        "Scenic lunch in the valley"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -214,69 +363,66 @@
       "city": "Lauterbrunnen",
       "description": "Top of Europe with Sphinx Observatory, Ice Palace, and Alpine Sensation",
       "recommended_duration": "3 hours",
-      "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
-      ],
+      "source_files": [],
       "entry_fee": "CHF 225 (~INR 20,000) round trip",
       "hours": "08:00 – 18:00"
     },
     {
       "name": "Lauterbrunnen Valley",
       "city": "Lauterbrunnen",
-      "description": "Valley known as the Valley of 72 waterfalls with Staubbach falls being the highest free falling waterfall in Switzerland",
+      "description": "Breathtaking valley surrounded by towering cliffs, cascading waterfalls, flower-filled meadows, and traditional wooden chalets. Early June brings lush greenery and crisp mountain air.",
       "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf"
-      ]
+        "France/Sneha_Europe_All Inclusive Guide.docx",
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ],
+      "hours": "Open 24 hours",
+      "entry_fee": "Free to explore",
+      "recommended_duration": "Half day"
     },
     {
       "name": "Staubbach Falls",
       "city": "Lauterbrunnen",
-      "description": "One of Switzerland's most iconic waterfalls plunging dramatically from nearly 300 meters above the valley floor",
+      "description": "Dramatic waterfall cascading from nearly 300 meters above the Lauterbrunnen Valley floor, surrounded by towering cliffs and peaceful alpine villages.",
       "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
-        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ],
-      "hours": "Open all day",
-      "entry_fee": "Free",
+      "hours": "Open 24 hrs",
+      "entry_fee": "Free Entry",
       "recommended_duration": "1 hour"
     },
     {
       "name": "Trümmelbach Falls",
       "city": "Lauterbrunnen",
-      "description": "Dramatic glacier-fed waterfalls thundering inside the mountain",
+      "description": "Glacial water crashing powerfully through narrow rock tunnels deep within the cliffs. Elevated pathways and tunnels allow visitors to walk close to the rushing glacier-fed water.",
       "source_files": [
-        "France/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/All Inclusive Guide- Nizam-Switzerland.pdf",
-        "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+        "France/Sneha_Europe_All Inclusive Guide.docx",
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
       ],
-      "hours": "Open May–Oct"
+      "hours": "9:00 AM – 5:00 PM",
+      "entry_fee": "Approx. INR 1,400–1,800 per person",
+      "recommended_duration": "1-2 hours"
     },
     {
       "name": "Lauterbrunnen",
       "city": "Lauterbrunnen",
-      "description": "One of the most beautiful valleys in the world with towering cliffs and waterfalls cascading into peaceful green meadows",
+      "description": "Often described as one of the most beautiful valleys in the world. Towering cliffs rise dramatically on either side while waterfalls cascade down into peaceful green meadows below.",
       "hours": "Open throughout the day",
       "entry_fee": "Free",
       "recommended_duration": "2-3 hours",
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ]
+    },
+    {
+      "name": "Lauterbrunnen Village",
+      "city": "Lauterbrunnen",
+      "description": "Scenic Swiss valley village surrounded by dramatic cliff faces, waterfalls, flower-filled meadows, and traditional wooden chalets.",
+      "hours": "Open throughout the day",
+      "entry_fee": "Free to explore",
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -287,28 +433,21 @@
       "city": "Lauterbrunnen",
       "description": "Alpine Macaroni - a traditional dish made with macaroni, cheese, potatoes, onions, and sometimes applesauce",
       "vegetarian": true,
-      "source_files": [
-        "Switzerland/All Inclusive Guide- Switzerland and Paris.pdf",
-        "Switzerland/Where to eat in Switzerland.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bratwurst",
       "city": "Lauterbrunnen",
       "description": "Grilled sausages, a popular street food option throughout Switzerland",
       "vegetarian": false,
-      "source_files": [
-        "Switzerland/Where to eat in Switzerland.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Rauchfleisch",
       "city": "Lauterbrunnen",
       "description": "Smoked meats like sausage or bacon, often served with cheese and potatoes",
       "vegetarian": false,
-      "source_files": [
-        "Switzerland/Where to eat in Switzerland.pdf"
-      ]
+      "source_files": []
     }
   ],
   "phrases": [],
@@ -323,6 +462,15 @@
       "description": "Scenic train via Lauterbrunnen and Wengen to Kleine Scheidegg, then up to Jungfraujoch",
       "_source_file": "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
       "_source_mtime": 1772384364.4304612
+    },
+    {
+      "city": "Lauterbrunnen",
+      "mode": "Mountain Train (Wengernalp Railway)",
+      "description": "Scenic mountain train from Lauterbrunnen to Wengen offering beautiful alpine views.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Covered under Swiss Travel Pass",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0
     }
   ],
   "health_tips": [],
@@ -341,6 +489,10 @@
     "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
     "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
     "Italy/Tejas - Europe All Inclusive Guide.pdf",
-    "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+    "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+    "France/Sneha_Europe_All Inclusive Guide.docx",
+    "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+    "Europe/Vidhi_Europe_All Inclusive Guide.docx"
   ]
 }

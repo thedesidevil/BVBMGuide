@@ -1,0 +1,132 @@
+{
+  "restaurants": [
+    {
+      "name": "Délices de Agra",
+      "city": "Versailles",
+      "cuisine_type": [
+        "Indian",
+        "North Indian"
+      ],
+      "price_range": "₹1,200–2,200 per person",
+      "hours": "12:00 PM – 3:30 PM & 6:00 PM – 11:30 PM",
+      "ambience": "Casual family-style dining",
+      "area": "Near Palace of Versailles",
+      "nearby_landmarks": [
+        "Palace of Versailles, Versailles"
+      ],
+      "highlights": [
+        "Warm Indian restaurant",
+        "Flavourful North Indian cuisine"
+      ],
+      "must_try_dishes": [
+        "Paneer butter masala",
+        "Rotis",
+        "Vegetable biryani"
+      ],
+      "best_for": [
+        "Comfort Indian meal near Versailles"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Positive Déli – Rue de Satory",
+      "city": "Versailles",
+      "cuisine_type": [
+        "Café",
+        "Contemporary"
+      ],
+      "price_range": "₹800–1,800 per person",
+      "hours": "11:30 AM – 10:00 PM",
+      "ambience": "Cozy contemporary café",
+      "area": "Rue de Satory, Versailles",
+      "nearby_landmarks": [
+        "Palace of Versailles, Versailles"
+      ],
+      "highlights": [
+        "Fresh ingredients",
+        "Relaxed vibes",
+        "Wholesome meals",
+        "Walkable within Versailles centre"
+      ],
+      "must_try_dishes": [
+        "Fresh salads",
+        "Gourmet sandwiches",
+        "Vegetarian bowls"
+      ],
+      "best_for": [
+        "Relaxed lunch",
+        "Coffee stop"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Taj Mahal Versailles",
+      "city": "Versailles",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹1,200–2,500 per person",
+      "hours": "12:00 PM – 2:30 PM & 6:00 PM – 10:30 PM",
+      "ambience": "Traditional Indian dining",
+      "area": "Near Palace of Versailles",
+      "nearby_landmarks": [
+        "Palace of Versailles, Versailles"
+      ],
+      "highlights": [
+        "Classic curries",
+        "Tandoori dishes",
+        "Vegetarian favourites"
+      ],
+      "must_try_dishes": [
+        "Paneer tikka",
+        "Tandoori roti"
+      ],
+      "best_for": [
+        "Familiar Indian flavours after sightseeing"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Palace of Versailles",
+      "city": "Versailles",
+      "description": "Magnificent royal palace with gilded halls, the iconic Hall of Mirrors, and sprawling French gardens symbolizing the absolute power of the French monarchy.",
+      "hours": "9:00 AM – 5:30 PM",
+      "entry_fee": "Approx. ₹3,100 per person",
+      "recommended_duration": "4–5 hours",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Versailles",
+      "mode": "RER C Train",
+      "description": "Train from Paris toward Versailles Château Rive Gauche station. Approx. 1 hr 15 mins from hotel.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+  ]
+}

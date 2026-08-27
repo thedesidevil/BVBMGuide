@@ -1,26 +1,345 @@
 {
-  "restaurants": [],
+  "restaurants": [
+    {
+      "name": "Landhaus Bacher",
+      "city": "Dürnstein",
+      "cuisine_type": [
+        "Austrian"
+      ],
+      "ambience": "Refined countryside restaurant",
+      "highlights": [
+        "One of Austria's most acclaimed countryside restaurants",
+        "Refined Austrian cuisine"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Restaurant Schloss Dürnstein",
+      "city": "Dürnstein",
+      "cuisine_type": [
+        "Austrian"
+      ],
+      "hours": "Closes at 2 PM",
+      "ambience": "Elegant riverside dining",
+      "highlights": [
+        "Elegant riverside dining",
+        "Beautiful Danube and vineyard surroundings"
+      ],
+      "best_for": [
+        "romantic",
+        "casual"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "nearby_landmarks": [
+        "Danube River, Dürnstein"
+      ]
+    },
+    {
+      "name": "Fesslhütte",
+      "city": "Dürnstein",
+      "cuisine_type": [
+        "Austrian"
+      ],
+      "ambience": "Rustic wine-country setting",
+      "highlights": [
+        "Danube and vineyard views",
+        "Rustic wine-country setting"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "nearby_landmarks": [
+        "Danube River, Dürnstein"
+      ]
+    },
+    {
+      "name": "Kuffer Keller",
+      "city": "Dürnstein",
+      "cuisine_type": [
+        "Austrian"
+      ],
+      "ambience": "Traditional cellar-style dining",
+      "highlights": [
+        "Traditional cellar-style Austrian dining experience"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Schnitzers seit 1988",
+      "city": "Dürnstein",
+      "cuisine_type": [
+        "Austrian"
+      ],
+      "ambience": "Casual local-style",
+      "highlights": [
+        "Known for schnitzels and Austrian comfort food"
+      ],
+      "must_try_dishes": [
+        "Schnitzel"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Domäne Wachau",
+      "city": "Dürnstein",
+      "cuisine_type": [
+        "Wine Bar"
+      ],
+      "ambience": "Relaxed wine tasting",
+      "highlights": [
+        "Signature Wachau wines",
+        "Excellent introduction to Wachau vineyard terroir"
+      ],
+      "must_try_dishes": [
+        "Grüner Veltliner",
+        "Riesling"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx"
+      ]
+    }
+  ],
   "attractions": [
     {
       "name": "Dürnstein",
       "city": "Dürnstein",
       "description": "Historic medieval town with Stiftskirche Cloister Tower and castle ruins where Richard the Lionheart was imprisoned",
       "recommended_duration": "2 hours",
+      "source_files": []
+    },
+    {
+      "name": "Dürnstein Village",
+      "city": "Dürnstein",
+      "description": "Often called 'the Pearl of the Wachau.' Charming medieval lanes, boutique wine shops, hidden courtyards, riverside pathways, and pastel-colored historic buildings.",
+      "recommended_duration": "1.5 hours",
       "source_files": [
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Stiftskirche Cloister Tower (Dürnstein Abbey)",
+      "city": "Dürnstein",
+      "description": "Dürnstein's iconic blue-and-white Baroque tower. One of the most photographed landmarks in the Wachau region.",
+      "recommended_duration": "20 minutes",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Burgruine Dürnstein (Castle Ruins)",
+      "city": "Dürnstein",
+      "description": "Famous as the site where Richard the Lionheart was imprisoned in 1192 during the Third Crusade. Optional ~20-minute uphill hike with panoramic views over Dürnstein, the Danube, and Wachau vineyards.",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Vineyard Walk to Unterloiben",
+      "city": "Dürnstein",
+      "description": "Walk through the vineyards toward Unterloiben via vineyard trail past the French memorial landmark or relaxed Danube riverside path. Heart of Wachau wine country.",
+      "recommended_duration": "45 minutes",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Domäne Wachau Wine Tasting",
+      "city": "Dürnstein",
+      "description": "Relaxed tasting of the region's signature wines. Excellent introduction to Wachau vineyard terroir and local wine culture.",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "DDSG Blue Danube Cruise",
+      "city": "Dürnstein",
+      "description": "Scenic cruise through Wachau Valley vineyards and riverside villages. Beautiful perspective of the Danube from the water.",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
       ]
     }
   ],
   "hotels": [],
-  "local_dishes": [],
+  "local_dishes": [
+    {
+      "name": "Grüner Veltliner",
+      "city": "Dürnstein",
+      "description": "Signature white wine of the Wachau region",
+      "vegetarian": true,
+      "where_to_try": "Domäne Wachau",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Riesling",
+      "city": "Dürnstein",
+      "description": "World-class white wine produced in the Wachau Valley",
+      "vegetarian": true,
+      "where_to_try": "Domäne Wachau",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    }
+  ],
   "phrases": [],
-  "safety_tips": [],
-  "souvenirs": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Dürnstein"
+      ],
+      "tip": "Dürnstein is compact and best explored entirely on foot once parked.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765
+    },
+    {
+      "cities": [
+        "Dürnstein"
+      ],
+      "tip": "The hike to Burgruine Dürnstein castle ruins should only be attempted if energy levels are good, weather is pleasant, and comfortable shoes are worn.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765
+    },
+    {
+      "cities": [
+        "Burgruine Dürnstein",
+        "Dürnstein"
+      ],
+      "tip": "The optional hike to Burgruine Dürnstein should only be attempted if energy levels are good, weather is pleasant, and comfortable shoes are worn",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "cities": [
+        "Dürnstein"
+      ],
+      "tip": "Dürnstein is compact and best explored entirely on foot once parked.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    },
+    {
+      "cities": [
+        "Dürnstein"
+      ],
+      "tip": "Attempt the Burgruine Dürnstein hike only if energy levels are good, weather is pleasant, and comfortable shoes are worn.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    },
+    {
+      "cities": [
+        "Spitz",
+        "Dürnstein"
+      ],
+      "tip": "Leave the car parked in Spitz before cycling and collecting it again after the Danube cruise.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Local wine",
+      "city": "Dürnstein",
+      "category": "Food",
+      "where_to_buy": [
+        "Domäne Wachau",
+        "Boutique wine shops in Dürnstein"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "item": "Wachau wines (Grüner Veltliner, Riesling)",
+      "city": "Dürnstein",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Domäne Wachau",
+        "Boutique wine shops in Dürnstein"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    }
+  ],
   "emergency_contacts": [],
   "connectivity_tips": [],
-  "transport_options": [],
+  "transport_options": [
+    {
+      "city": "Dürnstein",
+      "mode": "Car",
+      "description": "Drive through Wachau Valley. Park at main public parking areas along the Danube promenade near the old town entrance or near the Krems Gate area",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "city": "Dürnstein",
+      "mode": "River Cruise (DDSG Blue Danube)",
+      "description": "Scenic cruise through Wachau Valley vineyards and riverside villages. Board at DDSG Blue Danube dock near the Dürnstein river promenade. Reconfirm exact timings a few days before travel as schedules may vary seasonally",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "city": "Dürnstein",
+      "mode": "Boat (DDSG Blue Danube)",
+      "description": "Scenic Danube cruise from Dürnstein through Wachau Valley vineyards and riverside villages. Board at DDSG Blue Danube dock near the Dürnstein river promenade. Reconfirm exact timings before travel as schedules may vary seasonally.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    }
+  ],
   "health_tips": [],
   "source_files": [
-    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+    "Europe/Itinerary- Budapest, Prague, Austria.docx",
+    "Austria/Itinerary- Budapest, Prague, Austria.docx",
+    "Austria/Itinerary- Budapest Prague Austria.docx"
   ]
 }

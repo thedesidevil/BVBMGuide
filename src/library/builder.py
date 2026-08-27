@@ -44,7 +44,8 @@ def _checkpoint_save(database: dict, output_path: Path) -> None:
             with open(output_path / '_index.json', 'w', encoding='utf-8') as f:
                 json.dump(index, f, indent=2, ensure_ascii=False)
             for dest, data in database['destinations'].items():
-                with open(output_path / f'{dest}.json', 'w', encoding='utf-8') as f:
+                safe_dest = dest.replace('/', '-').replace('\\', '-')
+                with open(output_path / f'{safe_dest}.json', 'w', encoding='utf-8') as f:
                     json.dump(data, f, indent=2, ensure_ascii=False)
         console.print(
             f"[dim]  checkpoint saved "
@@ -110,6 +111,15 @@ class LibraryBuilder:
                     if index_path.exists():
                         with open(index_path, 'r', encoding='utf-8') as f:
                             existing_db = json.load(f)
+                        # Load destination data from individual shard files — _index.json
+                        # only holds metadata, not destinations.
+                        existing_db["destinations"] = {}
+                        for shard in output_path.glob("*.json"):
+                            if shard.name.startswith("_"):
+                                continue
+                            dest_name = shard.stem
+                            with open(shard, 'r', encoding='utf-8') as f:
+                                existing_db["destinations"][dest_name] = json.load(f)
                 processed_files = existing_db.get("_processed_files", {})
                 console.print(f"[dim]Found existing database with {len(processed_files)} processed files[/dim]")
             except Exception:
@@ -411,7 +421,9 @@ class LibraryBuilder:
 
             if name not in seen:
                 seen[name] = item.copy()
-                seen[name]["source_files"] = [src_file] if src_file else []
+                existing_sources = item.get("source_files") or []
+                new_source = [src_file] if src_file else []
+                seen[name]["source_files"] = list(dict.fromkeys(existing_sources + new_source))
             else:
                 existing = seen[name]
 
@@ -501,7 +513,7 @@ class LibraryDatabase:
                 self._data = dict(self._index)
                 self._data['destinations'] = {}
                 for dest_file in sorted(self.db_path.glob('*.json')):
-                    if dest_file.name == '_index.json':
+                    if dest_file.name.startswith('_'):
                         continue
                     with open(dest_file, 'r', encoding='utf-8') as f:
                         self._data['destinations'][dest_file.stem] = json.load(f)

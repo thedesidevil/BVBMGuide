@@ -15,9 +15,7 @@
       "highlights": [
         "At the Grindelwald Terminal"
       ],
-      "source_files": [
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Derby Swiss Quality Hotel",
@@ -33,9 +31,7 @@
         "A la carte restaurant",
         "Reservation needed"
       ],
-      "source_files": [
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "\"Barrys Restaurant, Bar & Lounge\"",
@@ -59,13 +55,7 @@
       "highlights": [
         "Reserve a table"
       ],
-      "source_files": [
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Hotel Alpenhof",
@@ -77,9 +67,7 @@
         "Rosti",
         "cheese fondue"
       ],
-      "source_files": [
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Berggasthaus First",
@@ -107,12 +95,7 @@
       "best_for": [
         "mountain dining"
       ],
-      "source_files": [
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Café 3692",
@@ -142,31 +125,40 @@
         "quiet spot"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bergrestaurant First",
       "city": "Grindelwald",
       "cuisine_type": [
-        "Alpine",
         "Swiss"
       ],
-      "price_range": "₹2,500–4,000 per person",
-      "hours": "9:00 AM – 4:30 PM",
-      "area": "Grindelwald First Summit",
+      "price_range": "₹2,800–4,700 per person",
+      "hours": "9:00 AM – 5:30 PM",
+      "area": "Grindelwald First summit station",
       "must_try_dishes": [
         "Rösti",
         "pasta",
-        "alpine-style vegetarian dishes"
+        "alpine-style vegetarian dishes",
+        "Pasta",
+        "Vegetarian rösti",
+        "Alpine pasta",
+        "Hot chocolate"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+        "France/Sneha_Europe_All Inclusive Guide.docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ],
+      "ambience": "Scenic mountaintop restaurant with panoramic terrace seating",
+      "highlights": [
+        "Panoramic terrace seating overlooking the Alps"
+      ],
+      "best_for": [
+        "Scenic lunch with panoramic mountain views"
+      ],
+      "nearby_landmarks": [
+        "Grindelwald First, Grindelwald"
       ]
     },
     {
@@ -183,9 +175,7 @@
         "naan"
       ],
       "vegetarian_friendly": true,
-      "source_files": [
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "GoldenIndia Grindelwald",
@@ -193,33 +183,35 @@
       "cuisine_type": [
         "Indian"
       ],
-      "price_range": "₹₹₹",
+      "price_range": "₹₹",
       "hours": "12:00 PM – 10:00 PM",
-      "ambience": "Cozy Indian restaurant with stunning alpine surroundings",
+      "ambience": "Cozy Indian restaurant with stunning alpine surroundings nearby",
       "must_try_dishes": [
         "Paneer tikka masala",
         "dal fry",
-        "jeera rice"
+        "jeera rice",
+        "Dal fry",
+        "Jeera rice"
       ],
       "best_for": [
-        "relaxed dining"
+        "casual",
+        "family"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "highlights": [
-        "Comforting vegetarian cuisine",
-        "Alpine surroundings"
-      ]
+        "Comforting vegetarian cuisine with alpine surroundings"
+      ],
+      "area": "Grindelwald village"
     },
     {
       "name": "Barry's Grindelwald",
       "city": "Grindelwald",
       "cuisine_type": [
-        "Alpine",
-        "Swiss"
+        "Swiss",
+        "European"
       ],
       "price_range": "₹₹₹",
       "hours": "7:00 PM – 12:30 AM",
@@ -227,19 +219,109 @@
       "must_try_dishes": [
         "Rösti",
         "truffle pasta",
-        "grilled vegetables"
+        "grilled vegetables",
+        "Truffle pasta",
+        "Grilled vegetables"
       ],
       "best_for": [
-        "elegant dining"
+        "casual",
+        "romantic"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "highlights": [
-        "Elegant Swiss mountain dining",
-        "Scenic mountain ambience"
+        "Scenic mountain ambience",
+        "Elegant Swiss mountain lunch"
+      ],
+      "area": "Grindelwald village"
+    },
+    {
+      "name": "First Mountain Restaurant",
+      "city": "Grindelwald",
+      "cuisine_type": [
+        "International",
+        "Fast Food"
+      ],
+      "price_range": "₹2,000–3,500 per person",
+      "hours": "9:00 AM – 4:30 PM",
+      "ambience": "Casual",
+      "area": "Grindelwald First",
+      "highlights": [
+        "Quick meal at the top"
+      ],
+      "must_try_dishes": [
+        "Pizza",
+        "Snacks"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ]
+    },
+    {
+      "name": "Restaurant Alte Post Grindelwald",
+      "city": "Grindelwald",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "₹2,800–4,700 per person",
+      "hours": "8:00 AM – 11:30 PM",
+      "ambience": "Traditional Swiss restaurant with cozy chalet-style interiors and authentic alpine atmosphere",
+      "area": "Near Grindelwald station",
+      "highlights": [
+        "Cozy chalet-style interiors",
+        "Authentic alpine atmosphere"
+      ],
+      "must_try_dishes": [
+        "Veg rösti",
+        "Local dishes",
+        "Cheese fondue",
+        "Veg pizza",
+        "Swiss desserts"
+      ],
+      "best_for": [
+        "Traditional Swiss alpine dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ],
+      "nearby_landmarks": [
+        "Grindelwald First, Grindelwald"
+      ]
+    },
+    {
+      "name": "Golden India Grindelwald",
+      "city": "Grindelwald",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹2,800–4,700 per person",
+      "hours": "12:00 PM – 10:00 PM",
+      "ambience": "Cozy Indian restaurant",
+      "area": "Near Grindelwald station",
+      "nearby_landmarks": [
+        "Grindelwald First, Grindelwald"
+      ],
+      "highlights": [
+        "Comforting vegetarian meals after mountain excursions"
+      ],
+      "must_try_dishes": [
+        "Chana masala",
+        "Paneer tikka",
+        "Naan"
+      ],
+      "best_for": [
+        "Indian vegetarian comfort meal in the Alps"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -249,37 +331,27 @@
       "city": "Grindelwald",
       "description": "Mountain lake with reflection views, accessible via hike from First",
       "recommended_duration": "3 hours",
-      "source_files": [
-        "Qatar/Tejas - Europe All Inclusive Guide.pdf",
-        "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
-        "Italy/Tejas - Europe All Inclusive Guide.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Grindelwald First",
       "city": "Grindelwald",
-      "description": "Mountain summit with sweeping alpine vistas, jagged peaks, and dramatic drop-offs",
-      "recommended_duration": "3-4 hours",
+      "description": "Alpine destination accessible by cable car featuring the First Cliff Walk and optional hike to Bachalpsee lake with sweeping glacier valley views.",
+      "recommended_duration": "4–5 hours",
       "source_files": [
-        "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+        "France/Sneha_Europe_All Inclusive Guide.docx",
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ],
-      "hours": "During cable car hours",
-      "entry_fee": "₹6,000–8,000 per person (discounted with Swiss Pass)"
+      "hours": "8:30 AM – 6:00 PM",
+      "entry_fee": "Approx. ₹7,500–10,500 per person"
     },
     {
       "name": "First Cliff Walk",
       "city": "Grindelwald",
-      "description": "Thrilling cliff walk suspended above the valley with panoramic mountain views",
+      "description": "Panoramic mountain views and thrilling cliff walk suspended above the valley at Grindelwald First.",
       "recommended_duration": "2-3 hours",
       "source_files": [
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ],
       "hours": "Approx. 8:30 AM – 4:30 PM",
       "entry_fee": "Approx. INR 6,000–8,000 per person"
@@ -287,15 +359,13 @@
     {
       "name": "Bachalpsee Lake",
       "city": "Grindelwald",
-      "description": "Still mountain lake where surrounding peaks are beautifully mirrored in the water",
-      "recommended_duration": "50–60 mins hike (one way)",
+      "description": "Reflective alpine lake surrounded by towering peaks, accessible via a scenic hike from Grindelwald First.",
+      "recommended_duration": "2 hours (including hike)",
       "source_files": [
-        "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
-        "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf"
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
       ],
-      "hours": "Open all day",
-      "entry_fee": "Free"
+      "hours": "Open throughout the day",
+      "entry_fee": "Free access"
     },
     {
       "name": "First Cliff Walk by Tissot",
@@ -303,20 +373,17 @@
       "description": "Thrilling cliff-edge walkway with dramatic alpine views",
       "hours": "During cable car hours",
       "entry_fee": "Free",
-      "source_files": [
-        "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "Grindelwald",
       "city": "Grindelwald",
-      "description": "Alpine village surrounded by dramatic mountain peaks including the famous Eiger, with chalet-lined streets and panoramic viewpoints",
+      "description": "Surrounded by dramatic mountain peaks including the famous Eiger. Chalet-lined streets, scenic cafés, and panoramic viewpoints. One of the most iconic destinations in the Swiss Alps.",
       "hours": "Open throughout the day",
       "entry_fee": "Free",
       "recommended_duration": "3-4 hours",
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ]
     },
     {
@@ -325,17 +392,24 @@
       "description": "Europe's highest railway station with snow-covered peaks, Aletsch Glacier, and extraordinary alpine panoramas",
       "entry_fee": "Approx. INR 18,000–28,000 per person depending on pass & season",
       "recommended_duration": "4–6 hrs round trip",
-      "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
-      ]
+      "source_files": []
     },
     {
       "name": "First Cliff Walk at Grindelwald First",
       "city": "Grindelwald",
       "description": "Thrilling cliff walk suspended above the valley with panoramic mountain views",
       "entry_fee": "Approx. INR 6,000–8,000 per person",
+      "source_files": []
+    },
+    {
+      "name": "Grindelwald Terminal",
+      "city": "Grindelwald",
+      "description": "Modern station serving as the gateway into some of Switzerland's most breathtaking mountain scenery. Surrounded by dramatic alpine peaks.",
+      "hours": "Open throughout the day",
+      "entry_fee": "Parking charges applicable",
+      "recommended_duration": null,
       "source_files": [
-        "Switzerland/Kunal_Europe_All Inclusive Guide.docx"
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
       ]
     }
   ],
@@ -377,6 +451,22 @@
       "description": "Firstbahn Gondola to Grindelwald First summit",
       "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
       "_source_mtime": 1748240155.0
+    },
+    {
+      "city": "Grindelwald",
+      "mode": "Cable Car (First Cable Car)",
+      "description": "Cable car from Grindelwald village to Grindelwald First viewpoint. Opens approximately 8:30 AM.",
+      "cost": "~₹6,000–8,000 per person (discount with Swiss Travel Pass)",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0
+    },
+    {
+      "city": "Grindelwald",
+      "mode": "Cable Car",
+      "description": "Cable car from Grindelwald village to Grindelwald First. Approx. 25 mins.",
+      "cost": "Approx. ₹7,500–10,500 per person",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0
     }
   ],
   "health_tips": [],
@@ -391,6 +481,9 @@
     "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
     "Italy/Tejas - Europe All Inclusive Guide.pdf",
     "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
-    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+    "France/Sneha_Europe_All Inclusive Guide.docx",
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+    "Europe/Vidhi_Europe_All Inclusive Guide.docx"
   ]
 }

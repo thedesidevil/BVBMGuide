@@ -1,0 +1,173 @@
+{
+  "restaurants": [
+    {
+      "name": "Papa's Living Restaurant",
+      "city": "Český Krumlov",
+      "cuisine_type": [
+        "Czech",
+        "European"
+      ],
+      "ambience": "Cozy riverside restaurant",
+      "highlights": [
+        "Lovely atmosphere and views",
+        "Riverside setting"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "nearby_landmarks": [
+        "Vltava River, Český Krumlov"
+      ]
+    },
+    {
+      "name": "Krumlovský Mlýn",
+      "city": "Český Krumlov",
+      "cuisine_type": [
+        "Czech"
+      ],
+      "ambience": "Charming restaurant in a historic mill building",
+      "highlights": [
+        "Set beside the river in a historic mill building",
+        "Scenic setting"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "nearby_landmarks": [
+        "Vltava River, Český Krumlov"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Český Krumlov Castle",
+      "city": "Český Krumlov",
+      "description": "Explore castle courtyards and elevated viewpoints overlooking the town.",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Cloak Bridge",
+      "city": "Český Krumlov",
+      "description": "One of the town's most iconic viewpoints with panoramic red-rooftop views.",
+      "recommended_duration": "20 minutes",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Castle Gardens & Pond",
+      "city": "Český Krumlov",
+      "description": "Relaxed stroll through peaceful gardens behind the castle complex.",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Main Town Square",
+      "city": "Český Krumlov",
+      "description": "Colorful medieval streets, cafés, and charming corners.",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Vltava River Walk",
+      "city": "Český Krumlov",
+      "description": "Walk along the scenic riverbanks. Explore quieter lanes and riverside viewpoints. One of the most relaxing parts of the town.",
+      "recommended_duration": "1 hour",
+      "source_files": []
+    },
+    {
+      "name": "Vltava Riverside Walk",
+      "city": "Český Krumlov",
+      "description": "Walk along the scenic riverbanks. Explore quieter lanes and riverside viewpoints. One of the most relaxing parts of the town.",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Český Krumlov",
+      "mode": "Bus (RegioJet)",
+      "description": "RegioJet bus from Na Knížecí Station in Prague to Český Krumlov. Comfortable countryside journey through southern Bohemia. Tickets booked. Departure 09:00, arrival 11:35.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    },
+    {
+      "city": "Český Krumlov",
+      "mode": "Taxi",
+      "description": "Taxi from bus station to the historic center recommended on arrival.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    },
+    {
+      "city": "Český Krumlov",
+      "mode": "Bus (RegioJet)",
+      "description": "RegioJet bus from Na Knížecí Station in Prague to Český Krumlov. Comfortable countryside journey through southern Bohemia. Tickets booked. Departs 09:00, arrives 11:35",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "city": "Český Krumlov",
+      "mode": "Taxi",
+      "description": "Taxi recommended from bus station to the historic center of Český Krumlov",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "city": "Český Krumlov",
+      "mode": "Bus (RegioJet)",
+      "description": "RegioJet bus from Prague (Na Knížecí Station) to Český Krumlov. Comfortable countryside journey through southern Bohemia. Duration approximately 2 hours 35 minutes (09:00–11:35). Tickets booked.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    },
+    {
+      "city": "Český Krumlov",
+      "mode": "Taxi",
+      "description": "Taxi from bus station to the historic center recommended on arrival.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    }
+  ],
+  "health_tips": [],
+  "source_files": [
+    "Austria/Itinerary- Budapest Prague Austria.docx",
+    "Europe/Itinerary- Budapest, Prague, Austria.docx",
+    "Austria/Itinerary- Budapest, Prague, Austria.docx"
+  ]
+}

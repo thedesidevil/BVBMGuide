@@ -4,57 +4,63 @@
       "name": "De Grachthof Giethoorn",
       "city": "Giethoorn",
       "cuisine_type": [
-        "Local"
+        "Dutch",
+        "Café"
       ],
-      "price_range": "₹1,500–2,000",
+      "price_range": "₹1,500–2,000 pp",
       "hours": "10:30 AM – 9:30 PM",
       "ambience": "Canal-side dining",
       "highlights": [
-        "Scenic lunch"
+        "Scenic canal-side location"
       ],
       "must_try_dishes": [
         "Veg soups",
-        "sandwiches"
+        "sandwiches",
+        "Sandwiches"
       ],
       "best_for": [
-        "scenic"
+        "casual",
+        "family"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Grand Café Fanfare Giethoorn",
       "city": "Giethoorn",
       "cuisine_type": [
+        "European",
         "Café"
       ],
-      "price_range": "₹1,500–2,200",
+      "price_range": "₹1,500–2,200 pp",
       "hours": "11 AM – 9 PM",
       "ambience": "Lively canal café",
       "highlights": [
-        "Relaxed sit-down"
+        "Relaxed sit-down dining"
       ],
       "must_try_dishes": [
         "Veg pastas",
-        "salads"
+        "salads",
+        "Salads"
       ],
       "best_for": [
-        "relaxed"
+        "casual"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     },
     {
       "name": "Café Restaurant Smit Giethoorn",
       "city": "Giethoorn",
       "cuisine_type": [
-        "Local"
+        "Dutch",
+        "Café"
       ],
-      "price_range": "₹1,200–1,800",
+      "price_range": "₹1,200–1,800 pp",
       "hours": "9:30 AM – 9 PM",
       "ambience": "Traditional canal-side restaurant",
       "highlights": [
@@ -63,15 +69,17 @@
       "must_try_dishes": [
         "Veg soups",
         "fries",
-        "simple mains"
+        "simple mains",
+        "Fries",
+        "Simple mains"
       ],
       "best_for": [
-        "easy",
-        "no-fuss"
+        "casual",
+        "family"
       ],
       "vegetarian_friendly": true,
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -81,21 +89,18 @@
       "city": "Giethoorn",
       "description": "Car-free village often called 'Venice of the Netherlands'",
       "hours": null,
-      "source_files": [
-        "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
-        "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf"
-      ],
+      "source_files": [],
       "recommended_duration": "Full day"
     },
     {
       "name": "Giethoorn Village",
       "city": "Giethoorn",
-      "description": "Venice of the North with canals, wooden bridges, and thatched-roof cottages",
+      "description": "Often called the 'Venice of the North', a peaceful village with no roads — only canals, wooden bridges, and thatched-roof cottages. Whisper boats glide silently through the water.",
       "hours": "All day",
-      "entry_fee": "Free (boat rental extra ₹2,000–3,000)",
-      "recommended_duration": "4-6 hours",
+      "entry_fee": "Free (boat rental extra ~₹2,000–3,000 per group)",
+      "recommended_duration": "Full day",
       "source_files": [
-        "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
       ]
     }
   ],
@@ -111,6 +116,7 @@
   "source_files": [
     "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
     "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf",
-    "Netherlands/Sirisha_Europe_All Inclusive Guide.docx"
+    "Netherlands/Sirisha_Europe_All Inclusive Guide.docx",
+    "Europe/Sirisha_Europe_All Inclusive Guide.docx"
   ]
 }

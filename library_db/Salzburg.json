@@ -18,10 +18,7 @@
       "highlights": [
         "Founded in 803 AD"
       ],
-      "source_files": [
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Bärenwirt Salzburg",
@@ -37,10 +34,7 @@
         "Wiener schnitzel",
         "potato salad"
       ],
-      "source_files": [
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Triangel Restaurant",
@@ -60,9 +54,259 @@
       "nearby_landmarks": [
         "Mozarteum concert hall"
       ],
+      "source_files": []
+    },
+    {
+      "name": "Augustiner Bräu",
+      "city": "Salzburg",
+      "cuisine_type": [
+        "Austrian",
+        "Beer Hall"
+      ],
+      "ambience": "Lively communal beer hall atmosphere",
+      "highlights": [
+        "Iconic monastery brewery dating back to 1621",
+        "Traditional Austrian food stalls",
+        "Fresh beer served in stone mugs",
+        "Surprisingly family-friendly",
+        "One of the most authentic Salzburg dining experiences"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
       "source_files": [
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Zwettler's Wirtshaus",
+      "city": "Salzburg",
+      "cuisine_type": [
+        "Austrian"
+      ],
+      "ambience": "Traditional Austrian tavern",
+      "highlights": [
+        "Traditional Austrian tavern atmosphere",
+        "Hearty local dishes"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Bärenwirt",
+      "city": "Salzburg",
+      "cuisine_type": [
+        "Austrian"
+      ],
+      "ambience": "Traditional",
+      "highlights": [
+        "Known for excellent Austrian fried chicken (Backhendl)"
+      ],
+      "must_try_dishes": [
+        "Backhendl (Austrian fried chicken)",
+        "Backhendl"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Sternbräu",
+      "city": "Salzburg",
+      "cuisine_type": [
+        "Austrian",
+        "Beer Hall"
+      ],
+      "ambience": "Classic Salzburg beer hall",
+      "highlights": [
+        "Classic beer hall atmosphere",
+        "Austrian specialties"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Stiftsbäckerei St. Peter",
+      "city": "Salzburg",
+      "cuisine_type": [
+        "Bakery"
+      ],
+      "ambience": "Historic bakery",
+      "area": "Getreidegasse",
+      "highlights": [
+        "Historic bakery with over 700 years of bread baking tradition",
+        "Freshly baked breads and pastries"
+      ],
+      "must_try_dishes": [
+        "Freshly baked breads",
+        "Pastries",
+        "Traditional Austrian baked goods"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Café-Konditorei Fürst",
+      "city": "Salzburg",
+      "cuisine_type": [
+        "Café",
+        "Confectionery"
+      ],
+      "ambience": "Elegant pastry shop",
+      "area": "Getreidegasse",
+      "highlights": [
+        "Original home of the Mozartkugel chocolates",
+        "Cakes and desserts"
+      ],
+      "must_try_dishes": [
+        "Original Mozartkugel",
+        "Cakes and desserts",
+        "Cakes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Café Tomaselli",
+      "city": "Salzburg",
+      "cuisine_type": [
+        "Café",
+        "Austrian"
+      ],
+      "ambience": "Elegant Austrian coffeehouse",
+      "highlights": [
+        "Elegant Austrian coffeehouse atmosphere",
+        "Austria's oldest continuously operational café"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Café Bazar",
+      "city": "Salzburg",
+      "cuisine_type": [
+        "Café"
+      ],
+      "ambience": "Beautiful riverside setting",
+      "highlights": [
+        "Beautiful riverside setting overlooking the Salzach"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "nearby_landmarks": [
+        "Salzach River, Salzburg"
+      ]
+    },
+    {
+      "name": "Casa Napoli",
+      "city": "Salzburg",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "ambience": "Relaxed",
+      "highlights": [
+        "Relaxed Italian comfort food"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Cosmic Pizza",
+      "city": "Salzburg",
+      "cuisine_type": [
+        "Pizza"
+      ],
+      "ambience": "Casual",
+      "highlights": [
+        "Casual pizza option",
+        "Good for late easy meal"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Stiegl-Brauwelt",
+      "city": "Salzburg",
+      "cuisine_type": [
+        "Austrian",
+        "Brewery"
+      ],
+      "ambience": "Relaxed brewery atmosphere",
+      "highlights": [
+        "Relaxed brewery atmosphere",
+        "Hearty Austrian food",
+        "Local beer"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
       ]
     }
   ],
@@ -72,19 +316,17 @@
       "city": "Salzburg",
       "description": "Birthplace of Mozart with interactive exhibits",
       "recommended_duration": "1 hour",
-      "source_files": [
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Hohensalzburg Fortress",
       "city": "Salzburg",
-      "description": "Historic fortress accessible by funicular with panoramic views",
-      "recommended_duration": "1.5 hours",
+      "description": "Take the funicular up to the fortress. Explore courtyards and viewing terraces. Enjoy panoramic views across Salzburg's rooftops, churches, and surrounding Alps. One of the best viewpoints in Austria.",
+      "recommended_duration": "2 hours 15 minutes",
       "source_files": [
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-        "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
       ]
     },
     {
@@ -92,9 +334,7 @@
       "city": "Salzburg",
       "description": "Alpine lake with emerald-green waters surrounded by vertical cliffs, optional boat ride to St. Bartholomä Church",
       "recommended_duration": "1.5-2 hours",
-      "source_files": [
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
-      ]
+      "source_files": []
     },
     {
       "name": "Salzburg Marionette Theatre",
@@ -103,8 +343,118 @@
       "hours": "Evening shows typically begin at 19:30",
       "entry_fee": "€28-€42 depending on seating",
       "recommended_duration": "90 minutes",
+      "source_files": []
+    },
+    {
+      "name": "Salzburg Cathedral",
+      "city": "Salzburg",
+      "description": "Historic baroque cathedral in the heart of Salzburg's historic center.",
+      "recommended_duration": "30 minutes",
       "source_files": [
-        "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Mirabell Palace & Gardens",
+      "city": "Salzburg",
+      "description": "One of Salzburg's most iconic landmarks. Includes Mirabell Gardens, Pegasus Fountain, Rose Garden, Dwarf Garden, grand palace exterior, and fortress viewpoints across the gardens.",
+      "recommended_duration": "1.5 hours",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Classical Concert at Mirabell Palace",
+      "city": "Salzburg",
+      "description": "Classical concert in one of Salzburg's most elegant historic settings. Music by Mozart and other classical masters performed in an intimate palace setting.",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Salzach Riverside Walk",
+      "city": "Salzburg",
+      "description": "Relaxed riverside introduction to Salzburg. Beautiful evening lighting and fortress views. Walk toward the Altstadt via the pedestrian bridges.",
+      "recommended_duration": "40 minutes",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Salzburg Altstadt",
+      "city": "Salzburg",
+      "description": "Historic old town with Getreidegasse, narrow baroque lanes, hidden courtyards, and elegant historic squares.",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Mozart's Birthplace",
+      "city": "Salzburg",
+      "description": "Historic birthplace of Mozart located along Getreidegasse.",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "St. Peter's Abbey & Cemetery",
+      "city": "Salzburg",
+      "description": "One of Europe's most beautiful historic cemeteries and a filming location associated with The Sound of Music.",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx"
+      ]
+    },
+    {
+      "name": "Residenzplatz & Mozartplatz",
+      "city": "Salzburg",
+      "description": "Elegant baroque squares forming the historic heart of Salzburg",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx"
+      ]
+    },
+    {
+      "name": "Getreidegasse",
+      "city": "Salzburg",
+      "description": "Narrow baroque lanes with hidden courtyards, elegant historic squares, cafés, bakeries, chocolate shops, and hidden passageways",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx"
+      ]
+    },
+    {
+      "name": "St. Peter's Abbey",
+      "city": "Salzburg",
+      "description": "Historic abbey in Salzburg's Old Town.",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "St. Peter's Cemetery",
+      "city": "Salzburg",
+      "description": "One of Europe's most beautiful historic cemeteries and a filming location associated with The Sound of Music.",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
       ]
     }
   ],
@@ -122,18 +472,204 @@
       "location": "Near Salzburg Hauptbahnhof",
       "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
       "_source_mtime": 1748240155.0
+    },
+    {
+      "name": "Best Western Plus Amedia Art Salzburg",
+      "city": "Salzburg",
+      "location": "Salzburg",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765
+    },
+    {
+      "name": "Best Western Plus Amedia Art Salzburg",
+      "city": "Salzburg",
+      "location": "Salzburg",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "name": "Best Western Plus Amedia Art Salzburg",
+      "city": "Salzburg",
+      "location": "Salzburg",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
     }
   ],
-  "local_dishes": [],
+  "local_dishes": [
+    {
+      "name": "Mozartkugel",
+      "city": "Salzburg",
+      "description": "Iconic Salzburg chocolate confection — marzipan and nougat coated in dark chocolate",
+      "vegetarian": true,
+      "where_to_try": "Café-Konditorei Fürst",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    },
+    {
+      "name": "Backhendl (Austrian Fried Chicken)",
+      "city": "Salzburg",
+      "description": "Traditional Austrian breaded and fried chicken",
+      "where_to_try": "Bärenwirt",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx"
+      ]
+    },
+    {
+      "name": "Backhendl",
+      "city": "Salzburg",
+      "description": "Traditional Austrian fried chicken",
+      "where_to_try": "Bärenwirt",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ]
+    }
+  ],
   "phrases": [],
-  "safety_tips": [],
-  "souvenirs": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Salzburg"
+      ],
+      "tip": "Salzburg's public transport is simple and efficient and included in the mobility pass.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765
+    },
+    {
+      "cities": [
+        "Salzburg",
+        "Hallstatt",
+        "Gosausee"
+      ],
+      "tip": "Carry water, snacks, a light jacket, and comfortable walking shoes for the Hallstatt and Gosausee day trip.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Mozartkugel chocolates",
+      "city": "Salzburg",
+      "category": "Food",
+      "where_to_buy": [
+        "Café-Konditorei Fürst"
+      ],
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765
+    },
+    {
+      "item": "Mozartkugel chocolates",
+      "city": "Salzburg",
+      "category": "Food",
+      "where_to_buy": [
+        "Café-Konditorei Fürst"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "item": "Freshly baked breads and pastries",
+      "city": "Salzburg",
+      "category": "Food",
+      "where_to_buy": [
+        "Stiftsbäckerei St. Peter"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "item": "Mozartkugel chocolates",
+      "city": "Salzburg",
+      "category": "Food",
+      "where_to_buy": [
+        "Café-Konditorei Fürst"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    }
+  ],
   "emergency_contacts": [],
   "connectivity_tips": [],
-  "transport_options": [],
-  "health_tips": [],
+  "transport_options": [
+    {
+      "city": "Salzburg",
+      "mode": "Trolleybus",
+      "description": "Trolleybus recommended for travel between hotel and Salzburg Old Town. Simple and efficient public transport network included in the mobility pass.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765
+    },
+    {
+      "city": "Salzburg",
+      "mode": "Taxi (Bolt)",
+      "description": "Bolt taxi recommended as an alternative to public transport for transfers around Salzburg.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765
+    },
+    {
+      "city": "Salzburg",
+      "mode": "Trolleybus",
+      "description": "Trolleybus recommended for travel between hotel and Salzburg Old Town. Salzburg's public transport is simple and efficient",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "city": "Salzburg",
+      "mode": "Taxi (Bolt)",
+      "description": "Bolt taxi recommended as an alternative to public transport for transfers around Salzburg",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "city": "Salzburg",
+      "mode": "Public Transport (Mobility Pass)",
+      "description": "Salzburg's public transport network is included in the mobility pass",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912
+    },
+    {
+      "city": "Salzburg",
+      "mode": "Trolleybus / Public Transport",
+      "description": "Salzburg's public transport network is simple and efficient. Trolleybus recommended for travel between hotel and Old Town. Included in mobility pass.",
+      "recommended_pass": "Mobility pass",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    },
+    {
+      "city": "Salzburg",
+      "mode": "Taxi (Bolt)",
+      "description": "Bolt taxi recommended as an alternative to public transport for transfers between hotel and Old Town.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    },
+    {
+      "city": "Salzburg",
+      "mode": "Funicular",
+      "description": "Funicular used to ascend to Hohensalzburg Fortress from the base.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Hallstatt",
+        "Gosausee",
+        "Wachau Valley",
+        "Salzburg"
+      ],
+      "tip": "Carry water, snacks, a light jacket, and comfortable walking shoes for full-day excursions including Hallstatt, Gosausee, and Wachau cycling.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765
+    }
+  ],
   "source_files": [
     "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
-    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf"
+    "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+    "Europe/Itinerary- Budapest, Prague, Austria.docx",
+    "Austria/Itinerary- Budapest, Prague, Austria.docx",
+    "Austria/Itinerary- Budapest Prague Austria.docx"
   ]
 }

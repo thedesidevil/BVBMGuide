@@ -67,6 +67,8 @@ export default function App() {
     const libraryModes = ["city", "sweep", "ingest", "history", "audit"] as const;
     if ((libraryModes as readonly string[]).includes(newMode)) {
       setLastLibraryMode(newMode as typeof libraryModes[number]);
+    }
+    if ((libraryModes as readonly string[]).includes(newMode) || newMode === "verify") {
       setLibraryRequested(true);
     }
     setMode(newMode);

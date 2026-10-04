@@ -1,12 +1,34 @@
 from __future__ import annotations
+import io
 import re
 import httpx
+from PIL import Image
 
 from src.hotel_options.models import HotelRow, EnrichedHotel
 from src.common.brand_voice import HOTEL_DESCRIPTION_SYSTEM
 
 _PLACES_BASE = "https://maps.googleapis.com/maps/api/place"
 _PLACE_ID_RE = re.compile(r'ChIJ[A-Za-z0-9_\-]+')
+
+
+def _sanitize_photo_bytes(photo_bytes: bytes) -> bytes:
+    """Re-encode a fetched photo through Pillow, stripping EXIF/TIFF metadata.
+
+    Some Google Place photos carry an EXIF segment that python-docx's minimal
+    image-header parser can't walk (raises UnexpectedEndOfFileError with no
+    message when add_picture() is later called), even though the JPEG itself
+    is perfectly valid. Round-tripping through Pillow drops that metadata.
+    """
+    try:
+        img = Image.open(io.BytesIO(photo_bytes))
+        fmt = img.format or "JPEG"
+        if fmt == "JPEG" and img.mode != "RGB":
+            img = img.convert("RGB")
+        buf = io.BytesIO()
+        img.save(buf, format=fmt)
+        return buf.getvalue()
+    except Exception:
+        return photo_bytes
 
 _DESCRIPTION_PROMPT = """\
 Write a hotel description for a client accommodation proposal.
@@ -47,7 +69,9 @@ def fetch_destination_photo(destination: str, api_key: str) -> bytes | None:
             follow_redirects=True,
             timeout=10,
         )
-        return photo_resp.content if photo_resp.status_code == 200 else None
+        if photo_resp.status_code != 200:
+            return None
+        return _sanitize_photo_bytes(photo_resp.content)
     except Exception:
         return None
 
@@ -104,7 +128,7 @@ def enrich_hotel(
             follow_redirects=True,
         )
         photo_resp.raise_for_status()
-        photo_bytes = photo_resp.content
+        photo_bytes = _sanitize_photo_bytes(photo_resp.content)
 
     # AI description
     prompt = _DESCRIPTION_PROMPT.format(

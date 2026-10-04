@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json
+import logging
 import os
 
 from fastapi import APIRouter, File, Form, HTTPException, Request, UploadFile
@@ -8,6 +9,7 @@ from fastapi.responses import HTMLResponse, Response
 from src.hotel_options.codes import CodeStore
 from src.library.ui.services.hotel_options_service import parse_file, generate_doc
 
+log = logging.getLogger(__name__)
 router = APIRouter()
 
 _XLSX_MAGIC = b"PK"
@@ -31,7 +33,8 @@ async def parse_hotel_options(request: Request, file: UploadFile = File(...)):
     try:
         return parse_file(content, file.filename, request.app.state.storage_backend, api_key)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Parse failed: {e}")
+        log.exception("Hotel options parse failed for %s", file.filename)
+        raise HTTPException(status_code=500, detail=f"Parse failed: {e or type(e).__name__}")
 
 
 @router.post("/hotel-options/generate")
@@ -58,7 +61,8 @@ async def generate_hotel_options(
             request.app.state.storage_backend, api_key,
         )
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Generation failed: {e}")
+        log.exception("Hotel options generation failed for %s", file.filename)
+        raise HTTPException(status_code=500, detail=f"Generation failed: {e or type(e).__name__}")
     parts = [p for p in [client_name, destination, "Hotel Options"] if p]
     safe_name = "_".join(parts).replace(" ", "_") + ".docx"
     return Response(

@@ -11,13 +11,14 @@ from .models import Answers, DayPlan, HotelStay, PlannedItem, Place, Question, T
 
 DIET_LABEL = "Diet (restrictions, allergies, likes)"
 BOOKING_WORDS = re.compile(r"ticket|booking|voucher|confirmation|reservation|e-?ticket", re.I)
-CONFIRMED_RE = re.compile(r"\b(confirmed|booked)\b", re.I)
+_CONFIRMED_RE = re.compile(r"\b(confirmed|booked)\b", re.I)
+_NEGATED_RE = re.compile(r"(?:\b(?:not|never|to be|be)|n't)\s*(?:yet\s*)?$")
 PERMIT_RE = re.compile(r"permit|\bilp\b|inner line", re.I)
 PERMIT_AREAS = ["nathula", "nathu la", "tsomgo", "changu", "gurudongmar", "pangong", "nubra", "arunachal", "nagaland"]
 MODE_WORDS = {
     "taxi": ("taxi", "cab", "uber", "ola"),
     "public_transport": ("public", "metro", "train", "bus", "transit", "subway"),
-    "self_drive": ("self", "rent"),
+    "self_drive": ("self", "rent", "rental"),
     "private_driver": ("driver", "private", "chauffeur"),
 }
 MODES = ["taxi", "public_transport", "self_drive", "private_driver"]
@@ -104,8 +105,12 @@ def _all_text(plan: TripPlan, attachments: list[Attachment]) -> list[str]:
     return blobs
 
 
-def _permit_area(item: PlannedItem, day: DayPlan) -> Optional[str]:
-    hay = _norm(" ".join([item.name, item.locality, item.city, item.note, day.title, day.city]))
+def _is_confirmed(note: str) -> bool:
+    return any(not _NEGATED_RE.search(note[:m.start()].lower()) for m in _CONFIRMED_RE.finditer(note))
+
+
+def _permit_area(item: PlannedItem) -> Optional[str]:
+    hay = _norm(item.name)
     for area in PERMIT_AREAS:
         if _norm(area) in hay:
             return area
@@ -135,14 +140,34 @@ def _window_open(place: Place, day: date, window: tuple[str, str]) -> Optional[b
     return any(results)
 
 
-def _pax(label: str) -> tuple[int, int]:
-    adults = children = 0
-    for n, word in re.findall(r"(\d+)\s*x?\s*(adults?|seniors?|child(?:ren)?|youths?|infants?|kids?)", label, re.I):
-        if word.lower().startswith(("adult", "senior")):
-            adults += int(n)
+_PAX_WORD = r"adults?|seniors?|child(?:ren)?|youths?|infants?|kids?|pax|passengers?|persons?|people"
+_PAX_RE = re.compile(rf"(\d+)\s*[x×]?\s*({_PAX_WORD})\b|\b({_PAX_WORD})\s*[x×]\s*(\d+)", re.I)
+
+
+def _pax(label: str) -> Optional[tuple[int, int, int]]:
+    adults = children = unspecified = 0
+    for m in _PAX_RE.finditer(label):
+        n = int(m.group(1) or m.group(4))
+        word = (m.group(2) or m.group(3)).lower()
+        if word.startswith(("adult", "senior")):
+            adults += n
+        elif word.startswith(("child", "youth", "infant", "kid")):
+            children += n
         else:
-            children += int(n)
-    return adults, children
+            unspecified += n
+    if adults + children + unspecified == 0:
+        return None
+    return adults, children, unspecified
+
+
+def _pax_matches(label: str, adults: int, kids: int) -> bool:
+    parsed = _pax(label)
+    if parsed is None:
+        return False
+    la, lc, lu = parsed
+    if lu:
+        return la + lc + lu == adults + kids
+    return la == adults and lc == kids
 
 
 def run_checklist(
@@ -278,7 +303,7 @@ def run_checklist(
     for b in plan.bookings:
         for dp in plan.days:
             for item in dp.items:
-                if item.booking_ref != b.name:
+                if item.booking_ref != b.name or item.optional:
                     continue
                 bt, it = _parse_time(b.time), _parse_time(item.time)
                 if dp.date != b.day or (bt and it and bt != it):
@@ -290,18 +315,17 @@ def run_checklist(
     adults = plan.travellers.adults
     kids = max(sum(plan.travellers.child_counts.values()), len(plan.travellers.kids_ages))
     for leg in plan.transport:
-        la, lc = _pax(leg.pax_label)
-        if la > adults or lc > kids:
+        if leg.pax_label.strip() and not _pax_matches(leg.pax_label, adults, kids):
             ref = leg.ref or leg.number or f"{leg.from_place}-{leg.to_place}"
             add(f"headcount:{ref}", "headcount",
-                f"The ticket for {ref} says '{leg.pax_label}' but the trip has {adults} adult(s) and {kids} child(ren). "
-                "Who is travelling on it?")
+                f"The ticket for {ref} says '{leg.pax_label}' — does it cover all {adults + kids} travellers "
+                f"({adults} adult(s), {kids} child(ren))?")
 
     blobs = _all_text(plan, attachments)
     booked = {b.name for b in plan.bookings}
     for dp in plan.days:
         for item in dp.items:
-            if item.optional or not CONFIRMED_RE.search(item.note):
+            if item.optional or not _is_confirmed(item.note):
                 continue
             if item.booking_ref in booked or any(_same(item.name, b) for b in booked):
                 continue
@@ -327,7 +351,9 @@ def run_checklist(
         areas_done: set[str] = set()
         for dp in plan.days:
             for item in dp.items:
-                area = _permit_area(item, dp)
+                if item.optional:
+                    continue
+                area = _permit_area(item)
                 if area and area not in areas_done and not _permit_mentioned(item, area, blobs):
                     areas_done.add(area)
                     add(f"permit:{item.name}", "permit",
@@ -336,8 +362,65 @@ def run_checklist(
     return qs
 
 
+_DOT_TIME_RE = re.compile(r"(?<![\d./:-])(\d{1,2})\.(\d{2})\s*([ap]\.?m\.?)(?![\d])", re.I)
+
+
+def _departure_time(ans: str) -> Optional[time]:
+    found: set[time] = set()
+    for m in re.finditer(r"(?<![\d./:-])(\d{1,2})(?::(\d{2}))?\s*([ap]\.?m\.?)?(?![\d])", ans, re.I):
+        if not m.group(2) and not m.group(3):
+            continue
+        t = _parse_time(f"{m.group(1)}:{m.group(2) or '00'}" + (f" {m.group(3)}" if m.group(3) else ""))
+        if t is not None and (m.group(2) or m.group(3)):
+            found.add(t)
+    for m in _DOT_TIME_RE.finditer(ans):
+        t = _parse_time(f"{m.group(1)}:{m.group(2)} {m.group(3)}")
+        if t is not None:
+            found.add(t)
+    return next(iter(found)) if len(found) == 1 else None
+
+
+def validate_answers(questions: list[Question], answers: Answers) -> dict[str, str]:
+    bad: dict[str, str] = {}
+    for q in questions:
+        ans = (answers.get(q.id) or "").strip()
+        if not ans:
+            continue
+        reason = None
+        if q.kind in ("late_departure", "early_arrival"):
+            try:
+                date.fromisoformat(ans)
+            except ValueError:
+                reason = "expected a date like 2026-10-15"
+            else:
+                if q.options and ans not in q.options:
+                    reason = f"choose one of {', '.join(q.options)}"
+        elif q.kind == "open_choice":
+            if q.options and not any(_same(ans, o) for o in q.options):
+                reason = f"choose one of {', '.join(q.options)}"
+        elif q.kind == "no_library":
+            if ans.lower() not in ("proceed", "stop"):
+                reason = "answer Proceed or Stop"
+        elif q.kind == "no_departure":
+            if _departure_time(ans) is None:
+                reason = "give one departure time like 14:30 and the mode"
+        elif q.id == "missing:travel_modes":
+            if not _modes(ans):
+                reason = "choose from taxi, public transport, self drive, private driver"
+        elif q.id == "missing:adults":
+            if not re.search(r"\d+", ans):
+                reason = "give a number"
+        elif q.id == "kids_ages":
+            if not re.search(r"\d+", ans):
+                reason = "give ages as numbers"
+        if reason:
+            bad[q.id] = reason
+    return bad
+
+
 def unanswered(questions: list[Question], answers: Answers) -> list[Question]:
-    return [q for q in questions if not (answers.get(q.id) or "").strip()]
+    bad = validate_answers(questions, answers)
+    return [q for q in questions if not (answers.get(q.id) or "").strip() or q.id in bad]
 
 
 def _iso(s: str, what: str) -> date:
@@ -357,7 +440,7 @@ def _pick(stays: list[HotelStay], attr: str, dates: set[date], place: str) -> Op
 
 def _modes(answer: str) -> list[str]:
     low = answer.lower()
-    return [m for m in MODES if any(w in low for w in MODE_WORDS[m])]
+    return [m for m in MODES if any(re.search(rf"\b{w}(?:s|es)?\b", low) for w in MODE_WORDS[m])]
 
 
 def _items_for_choice(dp: DayPlan, chosen: str, options: list[str]) -> list[PlannedItem]:
@@ -370,10 +453,11 @@ def _items_for_choice(dp: DayPlan, chosen: str, options: list[str]) -> list[Plan
 
 def apply_answers(plan: TripPlan, questions: list[Question], answers: Answers) -> TripPlan:
     out = plan.model_copy(deep=True)
+    invalid = validate_answers(questions, answers)
     drop_choices: set[int] = set()
     for q in questions:
         ans = (answers.get(q.id) or "").strip()
-        if not ans:
+        if not ans or q.id in invalid:
             continue
         kind = q.kind
         suffix = q.id.split(":", 1)[1] if ":" in q.id else ""
@@ -438,15 +522,15 @@ def apply_answers(plan: TripPlan, questions: list[Question], answers: Answers) -
                 if target is not None:
                     target.items.extend(moved)
         elif kind == "no_departure":
-            m = re.search(r"(\d{1,2})[:.](\d{2})", ans)
+            t = _departure_time(ans)
             last = max((dp.date for dp in out.days), default=None)
-            if m and last and int(m.group(1)) < 24 and int(m.group(2)) < 60:
+            if t and last:
                 low = ans.lower()
                 leg_kind = next((k for k in ("flight", "train", "bus", "boat") if k in low), "other")
                 origin = next((dp.city for dp in out.days if dp.date == last), "")
                 out.transport.append(TransportLeg(
                     kind=leg_kind, from_place=origin, to_place="", source="answer",
-                    depart=datetime.combine(last, time(int(m.group(1)), int(m.group(2)))),
+                    depart=datetime.combine(last, t),
                 ))
         elif q.id == "missing:client_names":
             out.client_names = [n.strip() for n in re.split(r",|&|\band\b", ans) if n.strip()]

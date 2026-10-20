@@ -7,7 +7,7 @@ from src.aigv2.intake.template import IntakeFields
 from src.aigv2.models import (
     Booking, DayPlan, Diet, HotelStay, OpenChoice, Place, PlannedItem, TransportLeg, Traveller, TripPlan, WeeklyHours,
 )
-from src.aigv2.preflight import PreflightStop, apply_answers, run_checklist, unanswered
+from src.aigv2.preflight import PreflightStop, apply_answers, run_checklist, unanswered, validate_answers
 
 
 class FakeLib:
@@ -286,3 +286,103 @@ def test_all_questions_returned_at_once():
     assert len(set(ids(qs))) == len(qs)
     assert ids(unanswered(qs, {"missing:diet": "none", "hotel_gap:2026-10-11": " "})) == [
         "missing:travel_modes", "image_only:scan.pdf", "hotel_gap:2026-10-11"]
+
+
+@pytest.mark.parametrize("ans,expected", [
+    ("flight at 2:30 pm", datetime(2026, 10, 12, 14, 30)),
+    ("on 15.10 at 14:30", datetime(2026, 10, 12, 14, 30)),
+    ("train 9am", datetime(2026, 10, 12, 9, 0)),
+])
+def test_no_departure_time_parsing(ans, expected):
+    plan = make(transport=[])
+    qs = ask(plan)
+    out = apply_answers(plan, qs, {"no_departure": ans})
+    assert out.transport[0].depart == expected
+
+
+@pytest.mark.parametrize("ans", ["around noonish", "15.10", "at 10:00 or 14:30"])
+def test_no_departure_invalid_answer_not_applied(ans):
+    plan = make(transport=[])
+    qs = ask(plan)
+    assert "no_departure" in validate_answers(qs, {"no_departure": ans})
+    assert ids(unanswered(qs, {"no_departure": ans})) == ["no_departure"]
+    assert apply_answers(plan, qs, {"no_departure": ans}).transport == []
+
+
+@pytest.mark.parametrize("label,adults,kids,flagged", [
+    ("1 Adult", 2, 0, True),
+    ("2 Adults", 2, 1, True),
+    ("1 Adult, 1 Child", 2, 1, True),
+    ("2x Youth", 2, 0, True),
+    ("Adult x2", 2, 0, False),
+    ("Adult x3", 2, 0, True),
+    ("2 Pax", 2, 0, False),
+    ("2 Pax", 2, 1, True),
+    ("seat A", 2, 0, True),
+    ("2 Adults, 1 Child", 2, 1, False),
+    ("3 Adults", 2, 1, True),
+])
+def test_headcount_any_disagreement(label, adults, kids, flagged):
+    leg = TransportLeg(kind="train", from_place="a", to_place="b", source="t", ref="R1", pax_label=label,
+                       depart=datetime(2026, 10, 12, 10, 0))
+    plan = make(travellers=Traveller(adults=adults, kids_ages=[7] * kids), transport=[leg])
+    assert (ids(ask(plan)) == ["headcount:R1"]) == flagged
+    if flagged:
+        assert "does it cover all" in ask(plan)[0].text
+
+
+def test_open_choice_invalid_answer_keeps_plan():
+    day = DayPlan(date=date(2026, 10, 10), title="t", city="Paris", items=[
+        PlannedItem(name="Top of the Rock", kind="attraction", city="Paris"),
+        PlannedItem(name="Empire State Building", kind="attraction", city="Paris"),
+    ])
+    plan = make(days=[day, *make().days[1:]],
+                open_choices=[OpenChoice(day=date(2026, 10, 10), text="v", options=["Top of the Rock", "Empire State Building"])])
+    qs = ask(plan)
+    ans = {"open_choice:0": "whichever"}
+    assert "open_choice:0" in validate_answers(qs, ans)
+    assert ids(unanswered(qs, ans)) == ["open_choice:0"]
+    out = apply_answers(plan, qs, ans)
+    assert len(out.days[0].items) == 2 and len(out.open_choices) == 1
+
+
+def test_non_iso_date_answers_invalid():
+    plan = make(hotels=[hotel(date(2026, 10, 10), date(2026, 10, 14))],
+                days=[DayPlan(date=date(2026, 10, d), title="t", city="Paris") for d in range(10, 15)],
+                transport=[TransportLeg(kind="flight", from_place="Paris", to_place="Rome", source="t",
+                                        depart=datetime(2026, 10, 15, 1, 0))])
+    qs = ask(plan)
+    ans = {"late_departure:2026-10-15": "14 Oct"}
+    assert "late_departure:2026-10-15" in validate_answers(qs, ans)
+    out = apply_answers(plan, qs, ans)
+    assert out.hotels[0].check_out == date(2026, 10, 14)
+
+
+@pytest.mark.parametrize("ans,expected", [
+    ("a different plan", []),
+    ("cable car and business class", []),
+    ("rent a car", ["self_drive"]),
+    ("cabs, buses", ["taxi", "public_transport"]),
+])
+def test_mode_word_boundaries(ans, expected):
+    from src.aigv2.preflight import _modes
+    assert _modes(ans) == expected
+
+
+@pytest.mark.parametrize("note,asked", [
+    ("confirmed", True), ("booked by agent", True),
+    ("not booked", False), ("to be booked", False), ("not yet confirmed", False), ("isn't booked", False),
+])
+def test_confirmed_negation(note, asked):
+    item = PlannedItem(name="Tour", kind="activity", city="Paris", note=note)
+    days = make().days
+    days[1] = DayPlan(date=date(2026, 10, 11), title="t", city="Paris", items=[item])
+    assert bool(ask(make(days=days))) == asked
+
+
+def test_permit_skips_optional_and_day_title():
+    opt = PlannedItem(name="Pangong Lake", kind="attraction", city="Leh", optional=True)
+    plain = PlannedItem(name="Leh Palace", kind="attraction", city="Leh")
+    days = [DayPlan(date=date(2026, 10, 10), title="Road to Nubra", city="Leh", items=[opt, plain]), *make().days[1:]]
+    plan = make(days=days, trip_scope="domestic")
+    assert ask(plan) == []

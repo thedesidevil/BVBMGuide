@@ -193,7 +193,7 @@ Runs after building, and again on any re-uploaded edited doc. It reads **the .do
 
 ## 11. Platform & cost
 
-- **Models**: `gpt-6.1-sol` (writing, ranking, QC), `gpt-6-luna` (extraction, classification), via the OpenAI-compatible proxy locally and OpenAI directly in production — same models both places (§R5-1). New env var `AI_MODEL_FAST` alongside `AI_MODEL`.
+- **Models**: per-step split in §11b (mostly `gpt-6-luna`; `gpt-6.1-sol` for the QC read-through and as automatic fallback), via the OpenAI-compatible proxy locally and OpenAI directly in production — same models both places (§R5-1). New env var `AI_MODEL_FAST` alongside `AI_MODEL`.
 - **Google**: existing `GOOGLE_MAPS_API_KEY`; enable Places API (New) + Routes API on the billing project — Claude sends console steps (§5n R4-2).
 - **Cache** (S3, library bucket, separate prefix, e.g. `aigv2-cache/places/`): place ID, location, status, hours, fetched-at; refreshed after 30 days; never mixed with `library_db/` (§5n R4-3). Locally mirrored to a folder.
 - **Runs** (S3 per-run folder: inputs, answers, trip plan, outputs, QC report, verification sheet), kept 90 days, listed in the web UI (§5n R4-4).
@@ -201,6 +201,26 @@ Runs after building, and again on any re-uploaded edited doc. It reads **the .do
 - **Budget**: ≤ $1 all-in per AIG. Builder must produce a per-run cost log (AI tokens + Google calls) and confirm on the test trips. Rough AI estimate for a 10-day trip: $0.40–0.80 incl. QC; Google cost reduced by the cache and Google's free monthly usage caps — to be measured.
 - **Code location**: new package `src/aigv2/` **[Claude's call]**, so the current `prep` keeps working; the Prep panel stays hidden-but-available for one month after v2 ships, then is removed (§5k #20). Existing helpers (`src/common/ai_provider.py`, library DB reader, `hotel_options` styling patterns, Verify-tab rules) are reused where sensible.
 - No auto-deploy to Lambda; deploys only when the user asks (memory).
+
+## 11b. Model split per step (user decision, 2026-10-20)
+
+Each step's model is a **config setting**, not hard-coded, so any step can be switched after measuring cost and quality on the test trips. Where luna output fails a code validation (schema, dates vs vouchers, hotel coverage), that step **automatically retries on sol**.
+
+| Step | Model |
+|---|---|
+| Extract intake + attachments → trip plan (also tags open choices, vague days, planner commentary) | `gpt-6-luna` |
+| Pre-flight ambiguity detection | **Code checklist** (no LLM) — see below |
+| Rank valid restaurant candidates | `gpt-6-luna` |
+| Day writing (intros, descriptions) + creative title | `gpt-6-luna` — **switch to `gpt-6.1-sol` if luna's writing proves deficient** |
+| List-style sections (packing, SIM, getting around, etc.) | `gpt-6-luna` |
+| QC: "no facts in prose" check | `gpt-6-luna` |
+| QC: "does this make sense?" read-through | `gpt-6.1-sol` |
+
+**Always `gpt-6.1-sol`, never `gpt-6-sol` (6.0).**
+
+**Pre-flight checklist (code):** required fields missing from intake *and* attachments; any night without a hotel, overlapping stays, or gaps between stays; departure flight between 00:00–05:00 (→ "which night is checkout?"); notes vs vouchers disagreeing on dates/hotels/flight times (vouchers win, but ask when they conflict with notes); itinerary day count vs date range; missing travel mode; image-only uploads; destinations with no library data. Language-dependent items (open choices like "X or Y", "if comfortable", vague days like "Choose your day trip", planner commentary) are **tagged by luna during extraction** and turned into questions by code. Backstop: the sol QC read-through.
+
+Revised AI estimate: **~$0.15–0.25 per AIG** (10-day trip), leaving most of the $1 for Google.
 
 ## 12. Testing & acceptance
 

@@ -7,7 +7,7 @@ from urllib.parse import quote_plus
 
 import requests
 
-from src.aigv2.hours import _is_24h, from_google
+from src.aigv2.hours import from_google, is_24h
 from src.aigv2.models import Place, WeeklyHours
 from src.aigv2.store import PlaceCache
 
@@ -37,8 +37,17 @@ _WEAK_COVERAGE = {
 }
 
 
+_WEAK_NOTE = "Google coverage is limited here — verify details"
+_UNKNOWN_HOURS_NOTE = "check this hospital has 24-hour emergency care"
+
+
 def weak_coverage(country_or_city: str) -> bool:
-    return _fold(country_or_city).strip() in _WEAK_COVERAGE
+    parts = [_fold(p).strip() for p in country_or_city.split(",")]
+    return any(p in _WEAK_COVERAGE for p in parts)
+
+
+def _add_note(place: Place, note: str) -> None:
+    place.verify_note = f"{place.verify_note}; {note}" if place.verify_note else note
 
 
 def _fold(text: str) -> str:
@@ -65,7 +74,7 @@ def _haversine_km(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
 
 
 def _is_24h_week(hours: Optional[WeeklyHours]) -> bool:
-    return hours is not None and len(hours.periods) == 7 and all(_is_24h(p) for p in hours.periods.values())
+    return hours is not None and len(hours.periods) == 7 and all(is_24h(p) for p in hours.periods.values())
 
 
 class PlacesClient:
@@ -74,7 +83,6 @@ class PlacesClient:
         self.cache = cache
         self.session = session or requests.Session()
         self.calls: dict[str, int] = {"text_search": 0, "nearby": 0}
-        self.verify_notes: dict[str, str] = {}
 
     def _post(self, url: str, body: dict, counter: str) -> dict:
         self.calls[counter] += 1
@@ -97,7 +105,7 @@ class PlacesClient:
             cached = self.cache.get(key)
             if cached is not None:
                 return cached
-        body: dict = {"textQuery": f"{name}, {city}"}
+        body: dict = {"textQuery": f"{name}, {city}", "languageCode": "en"}
         if near:
             body["locationBias"] = {
                 "circle": {"center": {"latitude": near[0], "longitude": near[1]}, "radius": 20000.0}
@@ -109,24 +117,35 @@ class PlacesClient:
         scored.sort(key=lambda t: (t[0], t[1]), reverse=True)
         ok, _, best = scored[0]
         place = self._to_place(best, key, f"{name} {city}", ok)
+        if weak_coverage(city):
+            _add_note(place, _WEAK_NOTE)
         self.cache.put(key, place)
         return place
 
-    def nearby(self, lat: float, lng: float, types: list[str], radius_m: int, max_results: int) -> list[Place]:
-        places = self._nearby_once(lat, lng, types, radius_m, max_results)
+    def nearby(
+        self, lat: float, lng: float, types: list[str], radius_m: int, max_results: int, city: Optional[str] = None
+    ) -> list[Place]:
+        found = self._nearby_once(lat, lng, types, radius_m, max_results)
+        places = [p for _, p in found]
         if "hospital" in types:
-            places = self._emergency_hospitals(places)
-            if not any(_haversine_km(lat, lng, p.lat, p.lng) <= _HOSPITAL_RADIUS_KM for p in places):
-                places = self._nearby_once(lat, lng, _CLINIC_TYPES, radius_m, max_results)
-                for p in places:
-                    self.verify_notes[p.place_id] = _CLINIC_NOTE
+            others = [p for t, p in found if t != "hospital"]
+            hospitals = self._emergency_hospitals([p for t, p in found if t == "hospital"])
+            if not any(_haversine_km(lat, lng, p.lat, p.lng) <= _HOSPITAL_RADIUS_KM for p in hospitals):
+                hospitals = [p for _, p in self._nearby_once(lat, lng, _CLINIC_TYPES, radius_m, max_results)]
+                for p in hospitals:
+                    _add_note(p, _CLINIC_NOTE)
+            places = others + hospitals
+        if city and weak_coverage(city):
+            for p in places:
+                _add_note(p, _WEAK_NOTE)
         return places
 
-    def _nearby_once(self, lat: float, lng: float, types: list[str], radius_m: int, max_results: int) -> list[Place]:
+    def _nearby_once(self, lat: float, lng: float, types: list[str], radius_m: int, max_results: int) -> list[tuple[str, Place]]:
         body = {
             "includedTypes": types,
             "maxResultCount": max_results,
             "rankPreference": "DISTANCE",
+            "languageCode": "en",
             "locationRestriction": {
                 "circle": {"center": {"latitude": lat, "longitude": lng}, "radius": float(radius_m)}
             },
@@ -138,22 +157,27 @@ class PlacesClient:
             name = _display(r).casefold()
             if r.get("primaryType") not in wanted or any(w in name for w in _EXCLUDED_NAME_WORDS):
                 continue
-            out.append(self._to_place(r, f"nearby:{','.join(types)}", _display(r), True))
+            out.append((r["primaryType"], self._to_place(r, f"nearby:{','.join(types)}", _display(r), True)))
         return out
 
     @staticmethod
     def _emergency_hospitals(places: list[Place]) -> list[Place]:
-        def emergency(p: Place) -> bool:
-            return "emergency" in p.name.casefold() or _is_24h_week(p.hours)
-
-        kept = [p for p in places if p.hours is None or emergency(p)]
-        return sorted(kept, key=lambda p: not ("emergency" in p.name.casefold()))
+        kept = []
+        for p in places:
+            named = "emergency" in p.name.casefold()
+            if p.hours is None:
+                if not named:
+                    _add_note(p, _UNKNOWN_HOURS_NOTE)
+            elif not (named or _is_24h_week(p.hours)):
+                continue
+            kept.append(p)
+        return sorted(kept, key=lambda p: "emergency" not in p.name.casefold())
 
     @staticmethod
     def _match_ok(name: str, city: str, near: Optional[tuple[float, float]], raw: dict) -> bool:
         if _overlap(name, _display(raw)) < _MIN_OVERLAP:
             return False
-        if _fold(city) in _fold(raw.get("formattedAddress", "")):
+        if re.search(rf"(?<!\w){re.escape(_fold(city))}(?!\w)", _fold(raw.get("formattedAddress", ""))):
             return True
         loc = raw.get("location")
         if near and loc:

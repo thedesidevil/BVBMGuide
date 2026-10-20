@@ -144,6 +144,7 @@ class Place(BaseModel):
     maps_url: str
     fetched_at: datetime
     match_ok: bool
+    verify_note: Optional[str] = None
 
 
 class Marker(BaseModel):

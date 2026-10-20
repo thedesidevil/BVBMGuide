@@ -163,7 +163,7 @@ def _fmt12(t: time) -> str:
     return f"{h % 12 or 12}:{mi:02d} {'AM' if h < 12 else 'PM'}"
 
 
-def _is_24h(periods: list[tuple[time, time]]) -> bool:
+def is_24h(periods: list[tuple[time, time]]) -> bool:
     return periods == [(time(0), END_OF_DAY)]
 
 
@@ -173,7 +173,7 @@ def format_for_day(hours: WeeklyHours | None, day: date) -> str:
     p = hours.periods.get(day.weekday())
     if not p:
         return "Closed"
-    if _is_24h(p):
+    if is_24h(p):
         return "Open 24 hours"
     return ", ".join(f"{_fmt12(a)} – {_fmt12(b)}" for a, b in p)
 
@@ -202,7 +202,7 @@ def format_week(hours: WeeklyHours | None) -> str:
         label = _DAYS[a] if a == b else f"{_DAYS[a]}–{_DAYS[b]}"
         if not p:
             text = "Closed"
-        elif _is_24h(p):
+        elif is_24h(p):
             text = "24 hours"
         else:
             text = " & ".join(f"{_compact(x, False)}–{_compact(y, True)}" for x, y in p)

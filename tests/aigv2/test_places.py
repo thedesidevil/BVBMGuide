@@ -60,7 +60,7 @@ def test_find_parses_place(tmp_path):
     url, headers, body = s.posts[0]
     assert url.endswith("places:searchText") and headers["X-Goog-Api-Key"] == "KEY"
     assert "places.primaryType" in headers["X-Goog-FieldMask"]
-    assert body == {"textQuery": "Seher Restaurant, Istanbul"}
+    assert body == {"textQuery": "Seher Restaurant, Istanbul", "languageCode": "en"}
 
 
 def test_malformed_hours_become_none(tmp_path):
@@ -151,10 +151,66 @@ def test_hospital_falls_back_to_clinic(tmp_path):
     out = c.nearby(41.0, 29.0, ["hospital"], 20000, 3)
     assert [p.place_id for p in out] == ["cl"]
     assert s.posts[1][2]["includedTypes"] == ["doctor", "medical_clinic"]
-    assert c.verify_notes["cl"] == "nearest clinic, not a hospital"
+    assert out[0].verify_note == "nearest clinic, not a hospital"
     assert c.calls["nearby"] == 2
 
 
 def test_weak_coverage():
-    assert weak_coverage("South Korea") and weak_coverage("Seoul") and weak_coverage("China")
+    assert weak_coverage("Seoul, South Korea") and weak_coverage("South Korea") and weak_coverage("Seoul") and weak_coverage("China")
     assert not weak_coverage("Istanbul")
+
+
+def _roh(open_h, close_h):
+    return {"periods": [
+        {"open": {"day": d, "hour": open_h, "minute": 0}, "close": {"day": d, "hour": close_h, "minute": 0}}
+        for d in range(7)
+    ]}
+
+
+def test_city_match_is_word_bounded(tmp_path):
+    c, _ = client(tmp_path, {"places": [gp("Seher Restaurant", addr="Via Roma 1, Venice, Italy")]})
+    assert c.find("Seher Restaurant", "Nice").match_ok is False
+    c2, _ = client(tmp_path / "b", {"places": [gp("Joe's Pizza", addr="1 Broadway, New York, NY 10001")]})
+    assert c2.find("Joe's Pizza", "New York").match_ok is True
+
+
+def test_weak_coverage_note_on_find_and_nearby(tmp_path):
+    c, _ = client(tmp_path, {"places": [gp("Seher Restaurant", addr="Gangnam, Seoul, South Korea")]})
+    assert c.find("Seher Restaurant", "Seoul").verify_note == "Google coverage is limited here — verify details"
+    c2, _ = client(tmp_path / "b", {"places": [gp("Merkez Pharmacy", ptype="pharmacy")]})
+    out = c2.nearby(37.5, 127.0, ["pharmacy"], 1000, 3, city="Seoul, South Korea")
+    assert out[0].verify_note == "Google coverage is limited here — verify details"
+    c3, _ = client(tmp_path / "c", {"places": [gp("Seher Restaurant")]})
+    assert c3.find("Seher Restaurant", "Istanbul").verify_note is None
+
+
+def test_hospital_unknown_hours_note(tmp_path):
+    c, _ = client(tmp_path, {"places": [gp("Town Hospital", ptype="hospital", lat=41.001, lng=29.0)]})
+    out = c.nearby(41.0, 29.0, ["hospital"], 5000, 3)
+    assert out[0].verify_note == "check this hospital has 24-hour emergency care"
+
+
+def test_hospital_24h_filter(tmp_path):
+    c, _ = client(tmp_path, {"places": [
+        gp("Day Hospital", ptype="hospital", pid="a", lat=41.001, lng=29.0, regularOpeningHours=_roh(9, 17)),
+        gp("Round Clock Hospital", ptype="hospital", pid="b", lat=41.002, lng=29.0,
+           regularOpeningHours={"periods": [{"open": {"day": 0, "hour": 0, "minute": 0}}]}),
+    ]})
+    out = c.nearby(41.0, 29.0, ["hospital"], 5000, 5)
+    assert [p.place_id for p in out] == ["b"]
+
+
+def test_filter_only_for_hospital_results(tmp_path):
+    c, s = client(tmp_path, {"places": [
+        gp("Day Pharmacy", ptype="pharmacy", pid="p", regularOpeningHours=_roh(9, 17)),
+        gp("City Emergency Hospital", ptype="hospital", pid="h", lat=41.001, lng=29.0),
+    ]})
+    out = c.nearby(41.0, 29.0, ["hospital", "pharmacy"], 5000, 5)
+    assert {p.place_id for p in out} == {"p", "h"}
+    assert s.posts[0][2]["languageCode"] == "en"
+
+
+def test_search_text_language_code(tmp_path):
+    c, s = client(tmp_path, {"places": [gp("Seher Restaurant")]})
+    c.find("Seher Restaurant", "Istanbul")
+    assert s.posts[0][2]["languageCode"] == "en"

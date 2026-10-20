@@ -16,6 +16,8 @@ load_dotenv()
 
 # (prefix, input $/1M tokens, output $/1M tokens) — prefix-matched against model name
 _MODEL_PRICING: list[tuple[str, float, float]] = [
+    ("gpt-6.1-sol",      2.00, 10.00),
+    ("gpt-6-luna",       0.10,  0.50),
     ("claude-fable-5",   10.00, 50.00),
     ("claude-mythos-5",  10.00, 50.00),
     ("claude-opus-4",     5.00, 25.00),

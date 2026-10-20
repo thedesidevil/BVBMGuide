@@ -207,3 +207,6 @@ class Library:
 
     def has_data(self, city: str) -> bool:
         return bool(self.restaurants(city))
+
+    def coverage(self) -> dict[str, list[str]]:
+        return {f: list(c) for f, c in self._coverage.items() if isinstance(c, list)}

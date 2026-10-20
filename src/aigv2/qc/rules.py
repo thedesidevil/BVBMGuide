@@ -4,8 +4,10 @@ from datetime import date
 from typing import Iterable, Optional
 
 from src.aigv2.library import Library, diet_fits, norm_name
-from src.aigv2.models import Finding, TripPlan
+from src.aigv2.models import Finding, TransportLeg, TripPlan
 from src.aigv2.qc.reader import MAPS_RE, MEAL_SLOT_RE, SECTION_TITLES, THANK_YOU, DocDay, DocModel, DocSlot, DocVenue
+from src.aigv2.render.document import BEFORE_YOU_GO, WHILE_THERE
+from src.aigv2.writing.sections import _DOMESTIC_OMIT as DOMESTIC_OMIT
 
 _MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
 _WEEKDAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
@@ -24,10 +26,16 @@ CHATTER_RE = re.compile(r"\bI would recommend\b|\bI['’]d (?:aim|keep|suggest|s
 CLOSING_RE = re.compile(r"\b(?:we\s+(?:truly\s+)?hope\s+(?:this|your)\s+(?:vacation|trip|journey|holiday)|"
                         r"hope\s+(?:this|your)\s+(?:vacation|trip|journey|holiday)\s+(?:brought|was|has been|gave)|"
                         r"thank you for (?:giving us the opportunity|choosing|trusting))", re.I)
-THIRD_PERSON_RE = re.compile(r"\b(?:her|him|the client['’]?s?|the clients['’]?)\b", re.I)
+THIRD_PERSON_RE = re.compile(r"\bthe (?:client|guest)(?:['’]s\b|s['’](?!\w)|s\b|\b)", re.I)
 _WALK_RES = [re.compile(r"\bwalk(?:ing)?\s*[·:\-–—]?\s*(?:about\s+)?(\d+)\s*(?:min|minutes?)\b", re.I),
              re.compile(r"\b(\d+)\s*-?\s*min(?:ute)?s?\.?\s+(?:walk|on foot)", re.I)]
-_TRANSPORT = re.compile(r"^(Flight|Train|Boat|Bus|Transfer)\b|→")
+_HHMM = re.compile(r"\b(\d{1,2}):(\d{2})\b")
+_FOLDER_SPLIT = re.compile(r"\s+and\s+|\s*[&+,/]\s*", re.I)
+_PROPER = re.compile(r"\b[A-Z][A-Za-z'’-]{3,}\b")
+_TITLE_STOP = {"welcome", "arrival", "arrive", "departure", "depart", "farewell", "explore", "exploring", "discover",
+               "journey", "morning", "afternoon", "evening", "leisure", "free", "full", "half", "tour", "with",
+               "from", "into", "home", "back", "city", "old", "town", "last", "first", "final", "day", "days",
+               "your", "the", "and", "time", "goodbye", "transfer", "check", "travel"}
 _MEALS = ("breakfast", "lunch", "dinner")
 _MARKER_KIND = re.compile(r"⚠ ([A-Z ]*[A-Z])")
 _BEST_FOR_RE = re.compile(r"best for[^.\n]{0,30}?\b(breakfast|lunch|dinner)\b", re.I)
@@ -41,26 +49,43 @@ def _trip_days(trip: TripPlan):
     return sorted(trip.days, key=lambda d: d.date)
 
 
-def _section_order(doc: DocModel) -> list[Finding]:
+def _section_order(doc: DocModel, trip: TripPlan) -> list[Finding]:
     h1 = [t for lvl, t in doc.headings if lvl == 1]
+    titles = [t.casefold() for t in SECTION_TITLES]
     day_pos = [i for i, t in enumerate(h1) if _DAY_PREFIX.match(t)]
-    known = [(i, t) for i, t in enumerate(h1) if t in SECTION_TITLES]
+    known = [(i, t) for i, t in enumerate(h1) if t.casefold() in titles]
     out = []
     if not day_pos:
         out.append(_f("section_order", "No day headers found"))
     last_day = day_pos[-1] if day_pos else -1
     prev = -1
     for i, t in known:
-        rank = SECTION_TITLES.index(t)
+        rank = titles.index(t.casefold())
         if i < last_day:
             out.append(_f("section_order", f"'{t}' appears before the last day", t))
         elif rank < prev:
             out.append(_f("section_order", f"'{t}' is out of order", t))
         prev = max(prev, rank)
-    if THANK_YOU not in h1:
-        out.append(_f("section_order", "Thank You page missing"))
-    elif h1[-1] != THANK_YOU:
+    present = {t.casefold() for t in h1}
+    domestic = trip.trip_scope == "domestic"
+    expected = [t for k, t in BEFORE_YOU_GO + WHILE_THERE if not (domestic and k in DOMESTIC_OMIT)] + [THANK_YOU]
+    for t in expected:
+        if t.casefold() not in present:
+            out.append(_f("section_order", f"Section '{t}' is missing"))
+    if h1 and THANK_YOU.casefold() in present and h1[-1].casefold() != THANK_YOU.casefold():
         out.append(_f("section_order", "Thank You page is not last", THANK_YOU))
+    return out
+
+
+def _day_sequence(doc: DocModel) -> list[Finding]:
+    out, prev, seen = [], None, set()
+    for d in doc.days:
+        if d.index in seen:
+            out.append(_f("day_sequence", f"Day {d.index} appears more than once", d.header, d.index))
+        elif prev is not None and d.index < prev:
+            out.append(_f("day_sequence", f"Day {d.index} comes after day {prev}", d.header, d.index))
+        seen.add(d.index)
+        prev = d.index if prev is None else max(prev, d.index)
     return out
 
 
@@ -129,7 +154,7 @@ def _venue_link(doc: DocModel) -> list[Finding]:
 
 
 def _is_restaurant(v: DocVenue) -> bool:
-    return not _TRANSPORT.search(v.name)
+    return v.kind == "venue"
 
 
 def _meal_groups(day: DocDay) -> list[tuple[str, list[DocSlot]]]:
@@ -203,30 +228,79 @@ def _meal_mismatch(v: DocVenue, meal: str) -> Optional[str]:
     return None
 
 
-def _minutes(s: str) -> Optional[int]:
-    h = re.search(r"(\d+)\s*h(?:ours?|rs?)?\b", s)
-    m = re.search(r"(\d+)\s*min", s)
-    if not h and not m:
-        return None
-    return (int(h.group(1)) * 60 if h else 0) + (int(m.group(1)) if m else 0)
+def _walk_minutes(text: str) -> Optional[int]:
+    mins = [int(x) for rx in _WALK_RES for x in rx.findall(text)]
+    return max(mins) if mins else None
 
 
 def _walk(doc: DocModel) -> list[Finding]:
     out, seen = [], set()
-    for p in doc.paragraphs:
-        if p.day is None:
-            continue
-        for rx in _WALK_RES:
-            mins = [int(x) for x in rx.findall(p.text)]
-            if any(x > 10 for x in mins) and p.text not in seen:
-                seen.add(p.text)
-                out.append(_f("walk_limit", f"Walk of {max(mins)} min (limit 10)", p.text, p.day))
     for d in doc.days:
         for s in d.slots:
             for v in s.venues:
-                mins = _minutes(v.facts.get("WALK", ""))
-                if mins is not None and mins > 10:
+                blob = "\n".join([v.travel, v.body, *(f"{k} {val}" for k, val in v.facts.items())])
+                mins, key = _walk_minutes(blob), (d.index, norm_name(v.name))
+                if mins is not None and mins > 10 and key not in seen:
+                    seen.add(key)
                     out.append(_f("walk_limit", f"Walk of {mins} min to '{v.name}' (limit 10)", v.name, d.index))
+    for p in doc.paragraphs:
+        if p.day is None or p.venue is not None:
+            continue
+        mins, key = _walk_minutes(p.text), (p.day, p.text)
+        if mins is not None and mins > 10 and key not in seen:
+            seen.add(key)
+            out.append(_f("walk_limit", f"Walk of {mins} min (limit 10)", p.text, p.day))
+    return out
+
+
+def _day_venues(doc: DocModel):
+    return [(d.index, v) for d in doc.days for s in d.slots for v in s.venues]
+
+
+def _hotels(doc: DocModel, trip: TripPlan) -> list[Finding]:
+    hotels = {norm_name(h.hotel) for h in trip.hotels}
+    out = []
+    for n, v in _day_venues(doc):
+        if v.kind == "hotel":
+            names = [v.name]
+        elif v.kind == "transfer":
+            names = [x.strip() for x in v.name.split("→")]
+        else:
+            continue
+        if hotels and not any(norm_name(x) in hotels for x in names):
+            out.append(_f("hotel_mismatch", f"'{v.name}' names no hotel from the vouchers", v.name, n))
+    return out
+
+
+def _squash(s: str) -> str:
+    return re.sub(r"[\s\-]", "", norm_name(s))
+
+
+def _match_leg(v: DocVenue, legs: list[TransportLeg]) -> Optional[TransportLeg]:
+    service, ref = _squash(v.facts.get("SERVICE", "")), _squash(v.facts.get("REFERENCE", ""))
+    for leg in legs:
+        if (service and service == _squash(leg.number)) or (ref and ref == _squash(leg.ref)):
+            return leg
+    m = re.match(r"^\w+: (.+) to (.+)$", v.name)
+    if m:
+        a, b = norm_name(m.group(1)), norm_name(m.group(2))
+        return next((leg for leg in legs if norm_name(leg.from_place) == a and norm_name(leg.to_place) == b), None)
+    return None
+
+
+def _transport_times(doc: DocModel, trip: TripPlan) -> list[Finding]:
+    out = []
+    for n, v in _day_venues(doc):
+        if v.kind != "transport":
+            continue
+        leg = _match_leg(v, trip.transport)
+        if leg is None:
+            continue
+        for label, dt in (("DEPARTS", leg.depart), ("ARRIVES", leg.arrive)):
+            m = _HHMM.search(v.facts.get(label, ""))
+            if dt is not None and m and (int(m.group(1)), int(m.group(2))) != (dt.hour, dt.minute):
+                out.append(_f("transport_time_mismatch", f"'{v.name}' {label.lower()} {m.group(0)} but the "
+                                                         f"booking says {dt:%H:%M}", v.name, n))
     return out
 
 
@@ -270,16 +344,31 @@ def _commentary(doc: DocModel, trip: TripPlan) -> list[Finding]:
     return out
 
 
-def _title(doc: DocModel, trip: TripPlan) -> list[Finding]:
+def _word_in(term: str, text: str) -> bool:
+    return re.search(rf"(?<!\w){re.escape(term)}(?!\w)", text) is not None
+
+
+def _title(doc: DocModel, trip: TripPlan, library: Library) -> list[Finding]:
     blob = norm_name(f"{doc.title} {doc.subtitle}")
     anchor = doc.subtitle or doc.title
     if not blob:
-        return [_f("title_destination", "No title or subtitle found")]
-    dests = [norm_name(c) for c in dict.fromkeys([h.city for h in trip.hotels] + [d.city for d in trip.days])]
-    if dests and not any(re.search(rf"(?<!\w){re.escape(c)}(?!\w)", blob) for c in dests):
-        return [_f("title_destination", f"Title does not name the trip's destinations ({', '.join(dests)})",
-                   anchor)]
-    return []
+        return [_f("title_destination", "No title or subtitle found", severity="warning")]
+    cities = {norm_name(c) for c in [h.city for h in trip.hotels] + [d.city for d in trip.days]}
+    coverage = library.coverage()
+    regions = {norm_name(part) for f, cs in coverage.items() if cities & {norm_name(c) for c in cs}
+               for part in _FOLDER_SPLIT.split(f) if part.strip()}
+    related = cities | regions | {norm_name(h.hotel) for h in trip.hotels}
+    known = {norm_name(part) for f in coverage for part in _FOLDER_SPLIT.split(f) if part.strip()}
+    known |= {norm_name(c) for cs in coverage.values() for c in cs}
+    leaks = sorted(k for k in known if len(k) >= 4 and _word_in(k, blob)
+                   and not any(_word_in(k, r) or _word_in(r, k) for r in related))
+    if leaks:
+        return [_f("title_destination", f"Title names {', '.join(leaks)}, which is not on this trip", anchor)]
+    proper = {norm_name(w) for d in trip.days for w in _PROPER.findall(d.title)} - _TITLE_STOP
+    if any(_word_in(t, blob) for t in related | proper if t):
+        return []
+    return [_f("title_destination", f"Title does not name the trip's destinations ({', '.join(sorted(cities))})",
+               anchor, severity="warning")]
 
 
 def _markers(doc: DocModel) -> list[Finding]:
@@ -291,6 +380,7 @@ def _markers(doc: DocModel) -> list[Finding]:
 
 
 def check_rules(doc: DocModel, trip: TripPlan, library: Library) -> list[Finding]:
-    return (_section_order(doc) + _days(doc, trip) + _title(doc, trip) + _venue_link(doc)
+    return (_section_order(doc, trip) + _day_sequence(doc) + _days(doc, trip) + _title(doc, trip, library)
+            + _venue_link(doc) + _hotels(doc, trip) + _transport_times(doc, trip)
             + _meals(doc, trip, library) + _walk(doc) + _prose(doc) + _utm_links(doc) + _commentary(doc, trip)
             + _markers(doc))

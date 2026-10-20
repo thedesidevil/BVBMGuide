@@ -7,10 +7,12 @@ from docx import Document
 from docx.oxml.ns import qn
 
 from src.aigv2.library import Library
-from src.aigv2.models import Diet
+from datetime import date
+
+from src.aigv2.models import DayPlan, Diet, HotelStay
 from src.aigv2.planning.meals import MealPick
 from src.aigv2.planning.slots import MealSlot
-from src.aigv2.qc.reader import DocModel, read_docx
+from src.aigv2.qc.reader import SECTION_TITLES, DocModel, read_docx
 from src.aigv2.qc.rules import check_rules
 from src.aigv2.render.blocks import add_link
 from src.aigv2.render.document import render_guide
@@ -25,6 +27,9 @@ def library(tmp_path):
         {"name": "Hamdi", "cuisine_type": ["Turkish"], "vegetarian_friendly": False},
     ]}
     (tmp_path / "Istanbul.json").write_text(json.dumps(shard), encoding="utf-8")
+    coverage = {"Turkey": ["Istanbul", "Cappadocia"], "Kerala": ["Kochi", "Munnar", "Alleppey"],
+                "Bali": ["Bali", "Ubud", "Seminyak"]}
+    (tmp_path / "_index.json").write_text(json.dumps({"_folder_coverage": coverage}), encoding="utf-8")
     return Library(tmp_path)
 
 
@@ -154,7 +159,7 @@ def test_reader_tolerates_legacy_doc(library):
 def test_reader_finds_hand_added_restaurant_paragraph(library):
     doc = Document()
     doc.add_paragraph("Day 1 – Thu, 29 Oct | Welcome", style="Heading 1")
-    doc.add_paragraph("Lunch near Galata Tower")
+    doc.add_paragraph("Lunch near Galata Tower", style="Heading 2")
     p = doc.add_paragraph()
     add_link(p, "Karakoy Lokantasi", "https://www.google.com/maps/search/?api=1&query=Karakoy+Lokantasi")
     p.add_run(" – lovely meze")
@@ -324,10 +329,17 @@ def test_closing_phrase_outside_thank_you(library):
         assert fs and fs[0].day == 1
 
 
-@pytest.mark.parametrize("text", ["Book her a window seat.", "Ask him to carry cash.",
-                                  "Keep the client's passport handy."])
+@pytest.mark.parametrize("text", ["Keep the client's passport handy.", "Ask the guest to carry cash.",
+                                  "The clients' bags go first.", "Remind the client about the visa.",
+                                  "The guest's room faces the sea."])
 def test_third_person_client(text, library):
     assert findings(render(with_intro(text)), library, "third_person_client")
+
+
+@pytest.mark.parametrize("text", ["The queen built her palace here.", "Locals greet him with tea.",
+                                  "A clientele of artists gathers here."])
+def test_third_person_ignores_plain_pronouns(text, library):
+    assert not findings(render(with_intro(text)), library, "third_person_client")
 
 
 def test_meal_label_mismatch_is_warning(library):
@@ -355,7 +367,8 @@ def test_no_markers_no_marker_finding(library):
     doc.add_paragraph("All Inclusive Guide – Istanbul")
     for i, d in enumerate(trip().days, 1):
         doc.add_paragraph(f"Day {i} – {d.date:%a}, {d.date.day} {d.date:%b} | X", style="Heading 1")
-    doc.add_paragraph("Thank You", style="Heading 1")
+    for title in SECTION_TITLES:
+        doc.add_paragraph(title, style="Heading 1")
     assert check_rules(read_docx(save(doc)), trip(), library) == []
 
 
@@ -366,3 +379,121 @@ def test_anchors_are_verbatim_paragraphs(library):
     for f in check_rules(m, trip(), library):
         if f.anchor_text:
             assert f.anchor_text in lines, f
+
+
+def test_walk_findings_per_venue_on_different_days(library):
+    d1, d2 = day1(), day2()
+    d1.meals[0].restaurants[0] = chosen("Mikla", minutes=25)
+    d2.meals[0].restaurants[2] = chosen("Hamdi", minutes=25)
+    fs = findings(render(data(days=[d1, d2, day3()])), library, "walk_limit")
+    assert sorted((f.day, f.anchor_text) for f in fs) == [(1, "Mikla"), (2, "Hamdi")]
+
+
+def test_walk_travel_line_attributed_to_next_card(library):
+    d1 = day1()
+    d1.legs["Galata Tower"] = d1.legs["Galata Tower"].model_copy(update={"walk_min": 9})
+    raw = edit_text(render(data(days=[d1, day2(), day3()])), "Walk · 9 min", "Walk · 18 min")
+    m = read_docx(raw)
+    galata = next(v for d in m.days for s in d.slots for v in s.venues if v.name == "Galata Tower")
+    assert galata.travel.startswith("Getting there: Walk · 18 min")
+    fs = findings(raw, library, "walk_limit")
+    assert [(f.anchor_text, f.day) for f in fs] == [("Galata Tower", 1)]
+
+
+def _title_doc(title, subtitle):
+    doc = Document()
+    doc.add_paragraph(title, style="Title")
+    doc.add_paragraph(subtitle)
+    return read_docx(save(doc))
+
+
+KERALA = dict(hotels=[HotelStay(city="Kochi", hotel="Brunton Boatyard", check_in=date(2026, 12, 1),
+                                check_out=date(2026, 12, 3), source="voucher"),
+                      HotelStay(city="Munnar", hotel="Blanket Hotel", check_in=date(2026, 12, 3),
+                                check_out=date(2026, 12, 5), source="voucher")],
+              days=[DayPlan(date=date(2026, 12, 1), title="Fort Kochi Walk", city="Kochi")],
+              transport=[], trip_scope="domestic")
+
+
+def _title_findings(title, subtitle, library, t):
+    return [f for f in check_rules(_title_doc(title, subtitle), t, library) if f.rule == "title_destination"]
+
+
+def test_region_title_passes(library):
+    assert _title_findings("Kerala Escapes", "All Inclusive Guide – Kerala", library, trip(**KERALA)) == []
+
+
+def test_unknown_region_title_is_only_a_warning(library, tmp_path_factory):
+    bare = Library(tmp_path_factory.mktemp("bare"))
+    fs = _title_findings("Kerala Escapes", "Your Southern Story", bare, trip(**KERALA))
+    assert [f.severity for f in fs] == ["warning"]
+
+
+def test_leaked_destination_in_title_is_error(library):
+    fs = _title_findings("All Inclusive Guide - Bali", "", library, trip(**KERALA))
+    assert [f.severity for f in fs] == ["error"] and "bali" in fs[0].message
+
+
+def test_missing_mandatory_section(library):
+    s = __import__("tests.aigv2.test_render_document", fromlist=["sections"]).sections()
+    s["dishes"] = None
+    fs = findings(render(data(sections=s)), library, "section_order")
+    assert [f.message for f in fs] == ["Section 'Must-Try Local Dishes' is missing"]
+
+
+def test_domestic_trip_omits_money_sim_health(library):
+    s = __import__("tests.aigv2.test_render_document", fromlist=["sections"]).sections()
+    for k in ("money", "connectivity", "health"):
+        s[k] = None
+    t = trip(trip_scope="domestic")
+    assert not findings(render(data(sections=s, trip=t, trip_scope="domestic", domestic=True)), library,
+                        "section_order", t)
+    assert len(findings(render(data(sections=s)), library, "section_order")) == 3
+
+
+def test_prose_paragraph_is_not_a_slot():
+    doc = Document()
+    doc.add_paragraph("Day 1 – Thu, 29 Oct | Welcome", style="Heading 1")
+    doc.add_paragraph("Lunch near the river was lovely")
+    doc.add_paragraph("Lunch near the river was lovely, and the views made it worth the walk from town.")
+    p = doc.add_paragraph("Morning", style="List Bullet")
+    doc.add_paragraph("Day 2 – Fri, 30 Oct | Old City was where we started the walk on our first visit years ago")
+    m = read_docx(save(doc))
+    assert m.days[0].slots == [] and [d.index for d in m.days] == [1]
+    assert p.text in m.text
+
+
+def test_hotel_name_not_in_vouchers(library):
+    raw = edit_text(render(), "Istanbul Airport → Pera Palace", "Istanbul Airport → Grand Bazaar Inn")
+    fs = findings(raw, library, "hotel_mismatch")
+    assert [(f.anchor_text, f.day) for f in fs] == [("Istanbul Airport → Grand Bazaar Inn", 1)]
+
+
+def test_flight_time_differs_from_ticket(library):
+    raw = edit_text(render(), "04:00 · Mumbai", "05:00 · Mumbai")
+    fs = findings(raw, library, "transport_time_mismatch")
+    assert [(f.anchor_text, f.day) for f in fs] == [("Flight: Mumbai to Istanbul Airport", 1)]
+
+
+def test_duplicate_and_out_of_order_days(library):
+    raw = edit_text(render(), "Day 3 – Sat, 31 Oct", "Day 2 – Sat, 31 Oct")
+    assert findings(raw, library, "day_sequence")
+    m = read_docx(render())
+    m.days = [m.days[1], m.days[0], m.days[2]]
+    assert "day_sequence" in {f.rule for f in check_rules(m, trip(), library)}
+
+
+def test_unknown_marker_types_counted():
+    doc = Document()
+    p = doc.add_paragraph("Hours 9–5 · ")
+    p.add_run("⚠ CONFIRM WITH HOTEL")
+    doc.add_paragraph("⚠ VERIFY: entry fee ⚠ PRICE UNKNOWN")
+    assert read_docx(save(doc)).markers == ["⚠ CONFIRM WITH HOTEL", "⚠ VERIFY: entry fee", "⚠ PRICE UNKNOWN"]
+
+
+def test_card_kinds_from_renderer_labels():
+    m = read_docx(render())
+    kinds = {v.name: v.kind for d in m.days for s in d.slots for v in s.venues}
+    assert kinds["Flight: Mumbai to Istanbul Airport"] == "transport"
+    assert kinds["Istanbul Airport → Pera Palace"] == "transfer"
+    assert kinds["Mikla"] == kinds["Galata Tower"] == "venue"

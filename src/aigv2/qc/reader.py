@@ -11,10 +11,14 @@ from src.aigv2.render.document import BEFORE_YOU_GO, WHILE_THERE
 THANK_YOU = "Thank You"
 SECTION_TITLES = [t for _, t in BEFORE_YOU_GO + WHILE_THERE] + [THANK_YOU]
 _KNOWN_H1 = {t.casefold() for t in SECTION_TITLES}
-MARKER_RE = re.compile(
-    r"⚠ (?:ADD RESTAURANT|VERIFY:|PRICE UNKNOWN|WRITE PERSONAL LETTER|CHECK:)[^⚠]*?(?=\s+·\s|\s*⚠|\s*$)")
+MARKER_RE = re.compile(r"⚠ [^⚠]*?(?=\s+·\s|\s*⚠|\s*$)")
 DAY_RE = re.compile(r"^Day\s*(\d+)\s*[–—:\-|,]")
 MEAL_SLOT_RE = re.compile(r"^(Breakfast|Lunch|Dinner)\s+(?:near\b|[—–-]\s*Included\b)", re.I)
+_MEAL_LINE = re.compile(r"^(Breakfast|Lunch|Dinner)\s+(?:near\s+[^.!?]{1,70}|[—–-]\s*Included in your package)$", re.I)
+_FALLBACK_MAX = 80
+_TRAVEL_LINE = re.compile(r"^Getting there:")
+_TRANSPORT_FACTS = {"DEPARTS", "ARRIVES", "SERVICE", "OPERATOR"}
+_TRANSPORT_TITLE = re.compile(r"^(Flight|Train|Boat|Bus|Transfer)(: .+)?$")
 _SLOT_WORDS = {"morning", "afternoon", "evening"}
 _SLOT_CLOSE = re.compile(r"^(Leave for the airport by|Reach the (station|harbor|harbour) by|Leave by|Overnight (in|on board))")
 _HEADING_STYLE = re.compile(r"^heading\s*([1-3])$", re.I)
@@ -28,6 +32,8 @@ class DocVenue(BaseModel):
     url: Optional[str] = None
     facts: dict[str, str] = Field(default_factory=dict)
     body: str = ""
+    travel: str = ""
+    kind: str = "venue"
 
 
 class DocSlot(BaseModel):
@@ -46,6 +52,7 @@ class DocPara(BaseModel):
     text: str
     day: Optional[int] = None
     section: Optional[str] = None
+    venue: Optional[str] = None
 
 
 class DocModel(BaseModel):
@@ -116,6 +123,7 @@ class _Reader:
         self.day: Optional[DocDay] = None
         self.section = ""
         self.slot: Optional[DocSlot] = None
+        self.travel: Optional[DocPara] = None
 
     def _links(self, p) -> list[tuple[str, str]]:
         out = []
@@ -163,23 +171,41 @@ class _Reader:
 
     def _level(self, p, text: str) -> Optional[int]:
         lvl = self._style_level(p)
-        if lvl is not None or not text or self._internal_only(p):
+        if lvl is not None or not text or not self._fallback_ok(p, text):
             return lvl
-        if (DAY_RE.match(text) and len(text) < 160) or text.casefold() in _KNOWN_H1:
+        if DAY_RE.match(text) or text.casefold() in _KNOWN_H1:
             return 1
-        if text.casefold() in _SLOT_WORDS or MEAL_SLOT_RE.match(text):
+        if text.casefold() in _SLOT_WORDS or _MEAL_LINE.match(text):
             return 2
         return None
 
-    def _record(self, text: str) -> None:
+    def _fallback_ok(self, p, text: str) -> bool:
+        if len(text) > _FALLBACK_MAX or self._internal_only(p):
+            return False
+        ppr = p.pPr
+        if ppr is not None:
+            if ppr.find(qn("w:numPr")) is not None:
+                return False
+            ps = ppr.find(qn("w:pStyle"))
+            sid = (ps.get(qn("w:val")) or "") if ps is not None else ""
+            if "list" in sid.casefold() or "list" in self.styles.get(sid, ("", None))[0].casefold():
+                return False
+            if ppr.find(qn("w:keepNext")) is not None or ppr.find(qn("w:pageBreakBefore")) is not None:
+                return True
+        runs = [r for r in p.iter(qn("w:r")) if "".join(t.text or "" for t in r.iter(qn("w:t"))).strip()]
+        return bool(runs) and all(_bold(r) or _big(r) for r in runs)
+
+    def _record(self, text: str, venue: Optional[str] = None) -> Optional[DocPara]:
         if not text:
-            return
-        self.paras.append(DocPara(text=text, day=self.day.index if self.day else None,
-                                  section=None if self.day else self.section))
+            return None
+        para = DocPara(text=text, day=self.day.index if self.day else None,
+                       section=None if self.day else self.section, venue=venue)
+        self.paras.append(para)
         if self.day is None:
             self.sections.setdefault(self.section, []).append(text)
         elif self.slot is not None:
             self.slot.markers.extend(MARKER_RE.findall(text))
+        return para
 
     def _current_slot(self) -> DocSlot:
         if self.slot is None:
@@ -189,6 +215,9 @@ class _Reader:
 
     def _add_venue(self, v: DocVenue) -> None:
         if self.day is not None:
+            if self.travel is not None:
+                v.travel, self.travel.venue = self.travel.text, v.name
+                self.travel = None
             self._current_slot().venues.append(v)
         elif self.section:
             self.section_venues.append(v)
@@ -203,7 +232,7 @@ class _Reader:
             self._title_fallback()
         text = "\n".join(p.text for p in self.paras)
         return DocModel(headings=self.headings, days=self.days, sections=self.sections,
-                        markers=MARKER_RE.findall(text), links=self.links, text=text, title=self.title,
+                        markers=[m for p in self.paras for m in MARKER_RE.findall(p.text)], links=self.links, text=text, title=self.title,
                         subtitle=self.subtitle, section_venues=self.section_venues, paragraphs=self.paras)
 
     def _title_fallback(self) -> None:
@@ -220,6 +249,8 @@ class _Reader:
         level = self._level(p, text)
         if level == 0 and not self.title:
             self.title = text
+        if level in (1, 2) or _SLOT_CLOSE.match(text):
+            self.travel = None
         if level == 1 and text:
             self.headings.append((1, text))
             self.slot = None
@@ -245,13 +276,18 @@ class _Reader:
             self.slot = None
             self._record(text)
             return
+        venue = None
         if self.day is not None and text:
             maps = [(t, u) for t, u in links if MAPS_RE.match(u)]
             if level == 3:
-                self._add_venue(DocVenue(name=text, url=links[0][1] if links else None))
+                venue = DocVenue(name=text, url=links[0][1] if links else None)
             elif maps and self.slot is not None and MEAL_SLOT_RE.match(self.slot.heading):
-                self._add_venue(DocVenue(name=maps[0][0] or text, url=maps[0][1]))
-        self._record(text)
+                venue = DocVenue(name=maps[0][0] or text, url=maps[0][1])
+        if venue is not None:
+            self._add_venue(venue)
+        para = self._record(text, venue.name if venue else None)
+        if para is not None and self.day is not None and venue is None and _TRAVEL_LINE.match(text):
+            self.travel = para
 
     def _table(self, tbl) -> None:
         cells = _cells(tbl)
@@ -263,12 +299,12 @@ class _Reader:
             self._record(_ptext(p))
 
     def _card(self, tc) -> None:
-        title, url, facts, body = None, None, {}, []
+        title, url, facts, body, paras = None, None, {}, [], []
         for el in _children(tc):
             if el.tag == qn("w:tbl"):
                 for p in _all_paras(el):
                     self.links.extend(self._links(p))
-                    self._record(_ptext(p))
+                    paras.append(self._record(_ptext(p)))
                 for cell in _cells(el):
                     lines = [t for t in (_ptext(p) for p in _all_paras(cell)) if t]
                     if len(lines) >= 2 and _is_label(lines[0]):
@@ -283,9 +319,41 @@ class _Reader:
                     self.headings.append((3, text))
             elif text:
                 body.append(text)
-            self._record(text)
+            paras.append(self._record(text))
         if title:
-            self._add_venue(DocVenue(name=title, url=url, facts=facts, body="\n".join(body)))
+            for para in paras:
+                if para is not None:
+                    para.venue = title
+            self._add_venue(DocVenue(name=title, url=url, facts=facts, body="\n".join(body),
+                                     kind=_card_kind(title, facts)))
+
+
+def _card_kind(title: str, facts: dict[str, str]) -> str:
+    if _TRANSPORT_FACTS & facts.keys() or _TRANSPORT_TITLE.match(title):
+        return "transport"
+    if "TRANSFER" in facts:
+        return "transfer"
+    if "CHECK-IN" in facts:
+        return "hotel"
+    return "venue"
+
+
+def _rpr_on(r, tag: str):
+    rpr = r.find(qn("w:rPr"))
+    return rpr.find(qn(tag)) if rpr is not None else None
+
+
+def _bold(r) -> bool:
+    b = _rpr_on(r, "w:b")
+    return b is not None and b.get(qn("w:val")) not in ("0", "false")
+
+
+def _big(r) -> bool:
+    sz = _rpr_on(r, "w:sz")
+    try:
+        return sz is not None and int(sz.get(qn("w:val"))) >= 24
+    except (TypeError, ValueError):
+        return False
 
 
 def _is_label(s: str) -> bool:

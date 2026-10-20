@@ -186,3 +186,80 @@ def test_title_rejects_generic():
     llm, _ = make([{"title": "Your Trip"}], [{"title": "Paris"}])
     with pytest.raises(LLMStepError):
         write_title(trip(), llm)
+
+
+@pytest.mark.parametrize("key,lib_key,tip", [
+    ("health", "health_tips", "Drink bottled water"),
+    ("safety", "safety_tips", "Watch your bag"),
+    ("etiquette", "phrases", "Bonjour"),
+    ("getting_around", "transport_options", "Metro runs late"),
+    ("connectivity", "connectivity_tips", "Free wifi in cafes"),
+])
+def test_country_only_content_is_library(key, lib_key, tip):
+    llm, calls = make(sec([{"heading": "Tip", "body": tip}]))
+    s = write_section(key, [{"city": "Paris", "country": "France"}], {"France": {lib_key: [tip]}}, trip(), llm)
+    assert s.from_library and not s.items[0].verify
+    assert tip in calls[0][1]["messages"][-1]["content"]
+
+
+def test_country_data_keyed_by_country_only():
+    llm, calls = make(sec([{"heading": "Tip", "body": "ok"}]))
+    s = write_section("health", [{"city": "Paris", "country": "France"}], {"Italy": {"health_tips": ["x"]}}, trip(), llm)
+    assert not s.from_library
+
+
+def test_money_is_ai_verify_and_unresolved_currency_marked():
+    llm, _ = make(sec([{"heading": "Cards", "body": "Widely accepted."}]))
+    s = write_section("money", [{"city": "Atlantis", "country": "Nowhere"}], {}, trip(), llm, fx=FakeFx())
+    assert not s.from_library and all(i.verify for i in s.items) and s.items[0].heading == "Currency"
+
+
+def test_day_restaurant_and_title_facts_rejected_and_names_canonical():
+    r = day_reply()
+    r["restaurants"][0]["ambience"] = "just 5 minutes away"
+    llm, _ = make([r], [day_reply()])
+    write_day(FACTS, llm)
+    assert llm.cost_log[1]["fallback"] is True
+    r = day_reply()
+    r["title"] = "Paris at 9 AM"
+    llm, _ = make([r], [day_reply()])
+    write_day(FACTS, llm)
+    assert llm.cost_log[1]["fallback"] is True
+    r = day_reply()
+    r["attractions"][0]["name"] = "  louvre "
+    llm, _ = make(r)
+    assert write_day(FACTS, llm).attractions[0].name == "Louvre"
+
+
+def test_domestic_remote_guidance_is_code_written():
+    llm, calls = make(sec([{"heading": "Roads", "body": "Be careful."}]))
+    t = trip("domestic", ("Leh",))
+    plain = write_section("safety", [{"city": "Leh"}], {}, t, llm)
+    assert [i.heading for i in plain.items][:2] == ["Emergency number", "Roads"]
+    for kw in ({"remote_area": True}, {"high_altitude": True}):
+        llm, calls = make(sec([{"heading": "Roads", "body": "Be careful."}]))
+        s = write_section("safety", [{"city": "Leh"}], {}, t, llm, **kw)
+        heads = [i.heading for i in s.items]
+        assert {"Altitude", "Mountain roads", "Low network"} <= set(heads)
+
+
+def test_verify_heuristic_precision():
+    from src.aigv2.writing.sections import needs_verify
+    assert not needs_verify("Consider travel insurance and an eSIM or SIM card")
+    assert not needs_verify("Pack a USB 3 charger")
+    assert needs_verify("Budget 20 EUR")
+    assert needs_verify("Buy a Maya eSIM")
+    assert needs_verify("Try Airalo")
+
+
+def test_title_rejects_hyphenated_and_strips_quotes():
+    llm, _ = make([{"title": "All-Inclusive Guide Paris"}], [{"title": "\"Parisian Autumn\""}])
+    assert write_title(trip(), llm) == "Parisian Autumn"
+    assert llm.cost_log[1]["fallback"] is True
+
+
+def test_safety_no_hotels_no_crash():
+    t = trip()
+    t.hotels = []
+    llm, _ = make(sec([{"heading": "Bags", "body": "Watch them."}]))
+    assert write_section("safety", [{"country": "France"}], {}, t, llm).items

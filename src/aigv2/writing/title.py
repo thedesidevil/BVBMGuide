@@ -16,13 +16,17 @@ class TitleOut(BaseModel):
     title: str
 
 
+def _clean(t: str) -> str:
+    return t.strip().strip("\"'“”‘’`").strip()
+
+
 def _validate(out: TitleOut) -> list[str]:
-    t = out.title.strip()
+    t = _clean(out.title)
     words = t.split()
     problems = []
     if not 2 <= len(words) <= 5:
         problems.append("title must be 2 to 5 words")
-    if "all inclusive guide" in t.casefold():
+    if re.search(r"all[\s-]*inclusive[\s-]*guide", t, re.I):
         problems.append("title must not contain 'All Inclusive Guide'")
     if _EMOJI.search(t):
         problems.append("title must not contain emojis")
@@ -37,4 +41,4 @@ def write_title(trip, llm) -> str:
               f"Occasion: {trip.occasion or 'none'}\nTravellers: {trip.travellers.adults} adults, "
               f"children ages {trip.travellers.kids_ages or 'none'}")
     out = llm.run_json("title", _SYSTEM, prompt, TitleOut, validate=_validate)
-    return out.title.strip()
+    return _clean(out.title)

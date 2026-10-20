@@ -80,10 +80,14 @@ def _validator(day_facts: dict):
             problems.append("attraction names must equal the input names exactly, with no additions or omissions")
         if sorted(norm_name(r.name) for r in day.restaurants) != want_r:
             problems.append("restaurant names must equal the input names exactly, with no additions or omissions")
+        problems += prose_fact_problems("title", day.title)
         problems += prose_fact_problems("intro", day.intro)
         problems += prose_fact_problems("free_time_idea", day.free_time_idea)
         for a in day.attractions:
             problems += prose_fact_problems(f"description of {a.name}", a.description)
+        for r in day.restaurants:
+            problems += prose_fact_problems(f"ambience of {r.name}", r.ambience)
+            problems += prose_fact_problems(f"best_for of {r.name}", r.best_for)
         return problems
 
     return validate
@@ -92,4 +96,11 @@ def _validator(day_facts: dict):
 def write_day(day_facts: dict, llm) -> DayText:
     _check_facts(day_facts)
     prompt = "Verified facts for this day (JSON):\n" + json.dumps(day_facts, default=str, ensure_ascii=False)
-    return llm.run_json("write_days", _SYSTEM, prompt, DayText, validate=_validator(day_facts))
+    day = llm.run_json("write_days", _SYSTEM, prompt, DayText, validate=_validator(day_facts))
+    canon_a = {norm_name(i["name"]): i["name"] for i in day_facts["attractions"]}
+    canon_r = {norm_name(i["name"]): i["name"] for i in day_facts["restaurants"]}
+    for a in day.attractions:
+        a.name = canon_a[norm_name(a.name)]
+    for r in day.restaurants:
+        r.name = canon_r[norm_name(r.name)]
+    return day

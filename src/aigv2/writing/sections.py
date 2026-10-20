@@ -13,15 +13,16 @@ SECTION_KEYS = ("packing", "connectivity", "health", "getting_around", "dishes",
 COUNTRY_KEYS = {"dishes", "souvenirs", "etiquette", "money", "connectivity", "safety"}
 _DOMESTIC_OMIT = {"money", "connectivity", "health"}
 
+_BOTH = lambda name: [("city", name), ("country", name)]
 _LIB = {
     "dishes": [("city", "local_dishes")],
     "souvenirs": [("city", "souvenirs")],
-    "etiquette": [("city", "phrases"), ("country", "etiquette"), ("country", "tipping"), ("country", "dos_and_donts")],
-    "safety": [("city", "safety_tips"), ("city", "emergency_contacts"), ("country", "scams"), ("country", "emergency")],
-    "connectivity": [("city", "connectivity_tips"), ("country", "apps")],
-    "getting_around": [("city", "transport_options")],
-    "health": [("city", "health_tips")],
-    "money": [("country", "money"), ("country", "payments")],
+    "etiquette": _BOTH("phrases"),
+    "safety": _BOTH("safety_tips") + _BOTH("emergency_contacts"),
+    "connectivity": _BOTH("connectivity_tips"),
+    "getting_around": _BOTH("transport_options"),
+    "health": _BOTH("health_tips"),
+    "money": [],
     "packing": [],
 }
 _FOCUS = {
@@ -44,12 +45,13 @@ _SYSTEM = (
 )
 _PROVIDERS = ("Airalo", "Holafly", "Tata AIG", "BookMyForex", "Niyo", "Viettel", "Dialog", "T-Mobile", "Vodafone",
               "Airtel", "Jio")
-_PRICE = re.compile(r"\d\s*(?:[€$£₹¥₺฿]|[A-Z]{3}\b|Rs\b)|(?:[€$£₹¥₺฿]|\b[A-Z]{3}\b|\bRs\b\.?)\s*\d")
-_PROVIDER = re.compile(r"(?<![A-Za-z])(?:insurance|e-?sim|sim card|" +
-                       "|".join(re.escape(p) for p in _PROVIDERS) + r")(?![A-Za-z])", re.I)
+_CODES = {"USD", "EUR", "GBP", "INR", "JPY", "THB", "AED", "CHF", "TRY"}
+_CODE_RE = "|".join(sorted(_CODES))
+_PRICE = re.compile(rf"\d\s*(?:[€$£₹¥₺฿]|(?:{_CODE_RE}|Rs)\b)|(?:[€$£₹¥₺฿]|\b(?:{_CODE_RE}|Rs)\b\.?)\s*\d")
+_PROVIDER = re.compile(r"(?<![A-Za-z])(?:" + "|".join(re.escape(p) for p in _PROVIDERS) + r")(?![A-Za-z])", re.I)
+_SIM_BRAND = re.compile(r"\b[A-Z][A-Za-z0-9]+\s+e?SIM\b")
 _THEME = re.compile(r"rope drop|fast ?pass|lightning lane|express pass|single rider", re.I)
 _EMBASSY = re.compile(r"embass|consulate", re.I)
-_CODES = {"USD", "EUR", "GBP", "INR", "JPY", "THB", "AED", "CHF", "TRY"}
 
 
 class SectionItem(BaseModel):
@@ -76,7 +78,7 @@ class _SectionOut(BaseModel):
 
 
 def needs_verify(text: str) -> bool:
-    return bool(_PRICE.search(text) or _PROVIDER.search(text))
+    return bool(_PRICE.search(text) or _PROVIDER.search(text) or _SIM_BRAND.search(text))
 
 
 def _listify(v) -> list:
@@ -89,27 +91,23 @@ def _slice_country(country_data: dict, country: str) -> dict:
     for k, v in (country_data or {}).items():
         if isinstance(v, dict) and norm_name(k) == norm_name(country):
             return v
-    if country_data and not any(isinstance(v, dict) for v in country_data.values()):
-        return country_data
     return {}
 
 
 def _countries(city_data: list[dict], country_data: dict) -> list[str]:
     out = list(dict.fromkeys(c["country"] for c in city_data if c.get("country")))
-    for k, v in (country_data or {}).items():
-        if isinstance(v, dict) and k not in out and not out:
-            out.append(k)
-    return out or [""]
+    return out or list(country_data or {}) or [""]
 
 
-def _library_items(key: str, cities: list[dict], cdata: dict) -> list:
+def _library_items(key: str, cities: list[dict], cdatas: list[dict]) -> list:
     out = []
     for scope, name in _LIB[key]:
         if scope == "city":
             for c in cities:
                 out += _listify(c.get(name))
         else:
-            out += _listify(cdata.get(name))
+            for cd in cdatas:
+                out += _listify(cd.get(name))
     return out
 
 
@@ -155,8 +153,10 @@ def _validator(key: str, material: str, library: bool, restaurants: dict[str, st
 
 def _fx_item(country: str, shard: dict, fx, today: date) -> Optional[SectionItem]:
     code = city_currency(country, shard)
-    if not code or code == "INR":
+    if code == "INR":
         return None
+    if not code:
+        return SectionItem(heading="Currency", body="Please confirm the local currency and today's exchange rate before you travel.", verify=True)
     label = f"Currency: {code}"
     try:
         rate = fx.rate(code, today) if fx else None
@@ -198,16 +198,14 @@ def _embassy(items: list[SectionItem], places, city: str, international: bool) -
     return out
 
 
-def _one(key: str, cities: list[dict], cdata: dict, trip, llm, domestic: bool) -> tuple[list[SectionItem], bool]:
-    lib = _library_items(key, cities, cdata)
+def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm) -> tuple[list[SectionItem], bool]:
+    lib = _library_items(key, cities, cdatas)
     library = bool(lib)
     material = json.dumps(lib, ensure_ascii=False, default=str)
     restaurants = _restaurant_names(cities)
     extra = ""
     if key == "packing":
-        extra = "\nCountry facts: " + json.dumps(cdata, ensure_ascii=False, default=str)
-    if key == "safety" and domestic:
-        extra += "\nThis is a domestic India trip: include altitude, mountain-road and low-network guidance; emergency number is 112."
+        extra = "\nCountry facts: " + json.dumps(cdatas, ensure_ascii=False, default=str)
     if key == "dishes":
         extra += "\nLibrary restaurants allowed in where_to_try: " + json.dumps(sorted(restaurants.values()), ensure_ascii=False)
     mode = ("Format ONLY the library facts below into client-ready items. Add no facts, numbers, names or prices."
@@ -228,9 +226,19 @@ def _one(key: str, cities: list[dict], cdata: dict, trip, llm, domestic: bool) -
     return items, library
 
 
+_REMOTE_GUIDANCE = [
+    ("Altitude", "At high altitude, ascend gradually, drink plenty of water, rest on arrival and avoid alcohol on the first day. "
+                 "If anyone develops a severe headache, breathlessness or confusion, descend and seek medical help."),
+    ("Mountain roads", "Mountain roads can be narrow and affected by weather or landslides. Travel in daylight with an "
+                       "experienced local driver and allow generous buffer time."),
+    ("Low network", "Mobile coverage can be patchy or absent in remote areas. Download offline maps, keep key phone numbers "
+                    "and bookings saved offline, and tell your hotel your route."),
+]
+
+
 def write_section(key: str, city_data: list[dict], country_data: dict, trip, llm, *,
                   places=None, fx=None, today: Optional[date] = None,
-                  remote_area: bool = False) -> Optional[SectionContent]:
+                  remote_area: bool = False, high_altitude: bool = False) -> Optional[SectionContent]:
     if key not in SECTION_KEYS:
         raise ValueError(f"unknown section key: {key}")
     domestic = trip.trip_scope == "domestic"
@@ -242,21 +250,26 @@ def write_section(key: str, city_data: list[dict], country_data: dict, trip, llm
     by_country: dict[str, list[SectionItem]] = {}
     all_lib = True
     for country in countries:
-        cities = [c for c in city_data if not country or not c.get("country") or c["country"] == country] \
-            if key in COUNTRY_KEYS else city_data
-        cdata = _slice_country(country_data, country) if key in COUNTRY_KEYS else (country_data or {})
-        items, library = _one(key, cities, cdata, trip, llm, domestic)
-        all_lib = all_lib and library and key != "packing"
+        if key in COUNTRY_KEYS:
+            cities = [c for c in city_data if not country or not c.get("country") or c["country"] == country]
+            cdatas = [_slice_country(country_data, country)]
+        else:
+            cities = city_data
+            cdatas = [_slice_country(country_data, c) for c in _countries(city_data, country_data)]
+        items, library = _one(key, cities, cdatas, trip, llm)
+        all_lib = all_lib and library
         if key == "money" and not domestic:
             fx_item = _fx_item(country, next((c for c in cities if c.get("currency")), {}), fx, today)
             if fx_item:
                 items.insert(0, fx_item)
         if key == "safety":
-            city = next((c.get("city") for c in cities if c.get("city")), None) or trip.hotels[0].city
+            city = next((c.get("city") for c in cities if c.get("city")), None) or (trip.hotels[0].city if trip.hotels else "")
             items = _embassy(items, places, city, not domestic)
             if domestic:
-                items.insert(0, SectionItem(heading="Emergency number",
-                                            body="Dial 112 for police, fire and ambulance anywhere in India.", verify=False))
+                extra = [SectionItem(heading="Emergency number", body="Dial 112 for police, fire and ambulance anywhere in India.")]
+                if remote_area or high_altitude:
+                    extra += [SectionItem(heading=h, body=b) for h, b in _REMOTE_GUIDANCE]
+                items = extra + items
         by_country[country] = items
     flat = [i for items in by_country.values() for i in items]
     return SectionContent(key=key, items=flat, from_library=all_lib,

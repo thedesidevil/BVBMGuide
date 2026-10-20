@@ -20,8 +20,8 @@ _NO_DINNER_AFTER = time(21, 0)
 _EARLY_ARRIVAL_BEFORE = time(5, 0)
 _PACKED_BREAKFAST_BEFORE = time(7, 0)
 _DEFAULT_CHECKIN = time(15, 0)
-_TIME_RE = re.compile(r"(\d{1,2})[:.](\d{2})\s*([ap])?\.?m?\.?|(\d{1,2})\s*([ap])\.?m\b", re.I)
-_DINNER_RULE = re.compile(r"dinner\s+(?:before|between|near|after|at)\s+(.+)", re.I)
+_TIME_RE = re.compile(r"(\d{1,2})[:.](\d{2})(?:\s*([ap])\.?m\b)?|(\d{1,2})\s*([ap])\.?m\b", re.I)
+_DINNER_RULE = re.compile(r"dinner\s+(?:before|between|near)\s+(.+)", re.I)
 _SEA_DAY = re.compile(r"\bat sea\b|\bsea day\b", re.I)
 
 
@@ -36,6 +36,7 @@ class MealSlot(BaseModel):
     start: time
     anchors: list[Anchor] = Field(default_factory=list)
     included: bool = False
+    unanchored: bool = False
 
 
 class DayResult(BaseModel):
@@ -136,7 +137,7 @@ def _stay_for(stays: list[HotelStay], d: date, meal: str, start: time) -> Option
     mid = [s for s in stays if s.check_in < d < s.check_out]
     if meal == "breakfast":
         cands = [s for s in stays if s.check_in < d <= s.check_out]
-        return cands[0] if cands else (new[0] if new else None)
+        return cands[0] if cands else None
     if meal == "lunch":
         if mid:
             return mid[0]
@@ -216,12 +217,24 @@ def schedule_day(
             res.markers.append(Marker(kind="VERIFY", text=f"location of {name} unknown"))
         return None
 
-    def anchors(spec: list[tuple[str, int, tuple[str, ...]]]) -> list[Anchor]:
-        out = []
+    def anchors(spec: list[tuple[str, int, tuple[str, ...]]], stay: Optional[HotelStay]) -> list[Anchor]:
+        out: list[Anchor] = []
+        dropped = 0
         for name, n, fb in spec:
             c = coords(name, *fb)
             if c:
                 out.append((name, c, n))
+            else:
+                dropped += n
+        if dropped and stay:
+            hc = coords(stay.hotel)
+            if hc:
+                for i, (nm, c, n) in enumerate(out):
+                    if nm == stay.hotel:
+                        out[i] = (nm, c, n + dropped)
+                        break
+                else:
+                    out.append((stay.hotel, hc, dropped))
         return out
 
     def real(s: ScheduledItem) -> bool:
@@ -241,12 +254,13 @@ def schedule_day(
         if _included(meal, stay, res.scheduled, d):
             res.meals.append(MealSlot(meal=meal, start=start, included=True))
             return
-        res.meals.append(MealSlot(meal=meal, start=start, anchors=anchors(spec())))
+        found = anchors(spec(), stay)
+        res.meals.append(MealSlot(meal=meal, start=start, anchors=found, unanchored=not found))
 
     # breakfast
     b_start = _window("breakfast", country, settings)
     b_stay = _stay_for(stays, d, "breakfast", b_start)
-    if not (arr_t and arr_t > b_start):
+    if b_stay and not (arr_t and arr_t > b_start):
         out_rule = "breakfast out" in rules
         if _included("breakfast", b_stay, res.scheduled, d) or out_rule:
             add("breakfast", b_start, b_stay, lambda: hotel_spec(b_stay, 3))
@@ -259,10 +273,12 @@ def schedule_day(
     midday_arrival = hotel_arr is not None and time(11) <= hotel_arr <= time(13)
     late = hotel_arr is not None and hotel_arr > _LATE_LUNCH_CUTOFF
     morning = [s for s in res.scheduled if s.slot == "morning" and real(s)]
+    at_hotel_rule = "lunch at hotel" in rules or any(
+        0 <= r.find("return to hotel") < r.find("lunch") for r in (x.lower() for x in day.meal_rules))
     port = bool(l_stay and l_stay.kind == "cruise")
 
     def lunch_spec():
-        if "lunch at hotel" in rules or "return to hotel" in rules or midday_checkin or midday_arrival:
+        if at_hotel_rule or midday_checkin or midday_arrival:
             return hotel_spec(l_stay, 3)
         if day.drive_stops:
             first = parse_time(day.items[0].time) if day.items else None
@@ -285,9 +301,17 @@ def schedule_day(
     evening = [s for s in res.scheduled if s.slot == "evening" and real(s)]
 
     def dinner_spec():
-        m = _DINNER_RULE.search(" ".join(day.meal_rules))
+        joined = " ".join(day.meal_rules)
+        names = "|".join(["hotel"] + ([re.escape(d_stay.hotel)] if d_stay else []))
+        if re.search(rf"dinner\s+(?:at|in|near|before|after)?\s*(?:the\s+|my\s+|your\s+)?(?:{names})\b", joined, re.I):
+            return hotel_spec(d_stay, 3)
+        m = _DINNER_RULE.search(joined)
+        target = ""
         if m:
             target = re.split(r"\s+and\s+", m.group(1).strip(), maxsplit=1)[0].strip().rstrip(".")
+            if parse_time(target):
+                target = ""
+        if target:
             for s in res.scheduled:
                 n = s.item.name.lower()
                 if n in target.lower() or target.lower() in n:

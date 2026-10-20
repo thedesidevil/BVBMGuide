@@ -2,7 +2,7 @@ from datetime import date, datetime, time
 
 from src.aigv2.config import Settings
 from src.aigv2.models import DayPlan, HotelStay, PlannedItem, Place, Stop, TransportLeg
-from src.aigv2.planning.slots import schedule_day
+from src.aigv2.planning.slots import parse_time, schedule_day
 
 D = date(2026, 11, 3)
 S = Settings(models={})
@@ -110,7 +110,7 @@ def test_late_arrival_no_lunch():
     assert meal(r, "lunch") is None and meal(r, "dinner")
 
 
-def test_arrival_at_14_still_has_lunch_slot():
+def test_arrival_before_cutoff_still_has_lunch_slot():
     r = run(day(), stays=[stay(cin=D)], arrival=leg(arrive=datetime(2026, 11, 3, 13, 30)))
     assert meal(r, "lunch")
 
@@ -165,7 +165,54 @@ def test_drive_day_lunch_at_waypoint():
     assert meal(r, "lunch").anchors[0][0] == "B"
 
 
-def test_missing_place_marks_verify_and_leaves_anchor_out():
+def test_missing_place_moves_count_to_hotel():
     r = run(day([item("A"), item("Fado show", slot_hint="evening")]), pl=places("Hotel H", "A"))
-    assert [a[0] for a in meal(r, "dinner").anchors] == ["Hotel H"]
+    assert meal(r, "dinner").anchors == [("Hotel H", (1.0, 2.0), 3)]
     assert [m.text for m in r.markers] == ["location of Fado show unknown"]
+    assert not meal(r, "dinner").unanchored
+
+
+def test_all_places_missing_is_unanchored_not_included():
+    r = run(day([item("A")]), pl={})
+    m = meal(r, "dinner")
+    assert m.anchors == [] and m.unanchored and not m.included
+    assert not meal(r, "dinner").included
+
+
+def test_parse_time():
+    assert parse_time("9:00 pickup") == time(9, 0)
+    assert parse_time("9:00 private tour") == time(9, 0)
+    assert parse_time("9 pm") == time(21, 0)
+    assert parse_time("9:30 a.m.") == time(9, 30)
+    assert parse_time("2 hours") is None
+
+
+def test_dinner_hotel_targets_ignore_evening_split():
+    for rule in ("dinner at the hotel", "dinner near hotel", "dinner near my hotel", "Dinner near Hotel H"):
+        r = run(day([item("Fado show", slot_hint="evening")], rules=[rule]))
+        assert meal(r, "dinner").anchors == [("Hotel H", (1.0, 2.0), 3)], rule
+
+
+def test_dinner_time_target_ignored():
+    r = run(day([item("Fado show", slot_hint="evening")], rules=["dinner before 8pm"]))
+    assert [a[0] for a in meal(r, "dinner").anchors] == ["Fado show", "Hotel H"]
+
+
+def test_dinner_between_anchors_at_first():
+    pl = places("Hotel H", "Eiffel Tower", "Seine cruise")
+    r = run(day([item("Eiffel Tower"), item("Seine cruise", slot_hint="evening")],
+                rules=["dinner between Eiffel Tower and Seine cruise"]), pl=pl)
+    assert meal(r, "dinner").anchors == [("Eiffel Tower", (2.0, 3.0), 3)]
+
+
+def test_no_breakfast_on_checkin_day_without_prior_stay():
+    s = stay(cin=D, meal_plan="breakfast")
+    r = run(day([item("A")], rules=["breakfast out"]), stays=[s])
+    assert meal(r, "breakfast") is None
+
+
+def test_return_to_hotel_only_before_lunch():
+    r = run(day([item("A")], rules=["return to hotel before lunch"]))
+    assert meal(r, "lunch").anchors[0][0] == "Hotel H"
+    r = run(day([item("A")], rules=["lunch near A, then return to hotel"]))
+    assert meal(r, "lunch").anchors[0][0] == "A"

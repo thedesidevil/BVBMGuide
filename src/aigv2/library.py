@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 
 from src.aigv2.models import Diet
@@ -11,12 +12,24 @@ _INDIAN = (
 _JP_KR = ("japanese", "korean")
 _PURE_VEG = (
     "pure veg", "pure-veg", "vegetarian only", "vegetarian-only", "100% vegetarian",
-    "fully vegetarian", "all vegetarian",
+    "fully vegetarian", "all vegetarian", "pure vegetarian",
 )
+
+
+_NEG = re.compile(r"(?:\bnot |\bno |\bnon-|\bnon )$")
+
+
+class LibraryDataError(Exception):
+    pass
 
 
 def _norm(s: str) -> str:
     return " ".join(s.casefold().split())
+
+
+def _has(text: str, term: str) -> bool:
+    pattern = r"(?<![a-z])" + re.escape(term) + r"(?![a-z])"
+    return any(not _NEG.search(text[: m.start()]) for m in re.finditer(pattern, text))
 
 
 def _cuisines(r: dict) -> list[str]:
@@ -38,22 +51,31 @@ def _text(r: dict, keys: tuple[str, ...]) -> str:
 
 
 def is_indian(restaurant: dict) -> bool:
-    return any(t in c for c in _cuisines(restaurant) for t in _INDIAN)
+    return any(_has(c, t) for c in _cuisines(restaurant) for t in _INDIAN)
 
 
-def _is_veg_restriction(s: str) -> bool:
-    return "vegetarian" in s or "vegan" in s or s == "veg"
+def _kind(restriction: str) -> str | None:
+    if "vegan" in restriction:
+        return "vegan"
+    if "vegetarian" in restriction or restriction == "veg":
+        return "vegetarian"
+    return None
+
+
+def _vegan_fits(r: dict) -> bool:
+    blob = " | ".join([_norm(r.get("name") or ""), *_cuisines(r), _text(r, ("highlights", "must_try_dishes", "notes"))])
+    return _has(blob, "vegan")
 
 
 def _veg_fits(r: dict, pure: bool) -> bool:
     cuisines = _cuisines(r)
     if pure:
-        blob = _norm(" | ".join([r.get("name") or "", *cuisines]) + " | " + _text(r, ("highlights",)))
-        return r.get("vegetarian_friendly") is True and any(p in blob for p in _PURE_VEG)
-    veg_cuisine = any("vegetarian" in c or "vegan" in c for c in cuisines)
-    if any(j in c for c in cuisines for j in _JP_KR):
+        blob = " | ".join([_norm(r.get("name") or ""), *cuisines, _text(r, ("highlights",))])
+        return r.get("vegetarian_friendly") is True and any(_has(blob, p) for p in _PURE_VEG)
+    veg_cuisine = any(_has(c, w) for c in cuisines for w in ("vegetarian", "vegan"))
+    if any(_has(c, j) for c in cuisines for j in _JP_KR):
         proof = _text(r, ("highlights", "must_try_dishes", "notes"))
-        return veg_cuisine or (r.get("vegetarian_friendly") is True and ("vegetarian" in proof or "vegan" in proof))
+        return veg_cuisine or (r.get("vegetarian_friendly") is True and (_has(proof, "vegetarian") or _has(proof, "vegan")))
     return r.get("vegetarian_friendly") is True or veg_cuisine or is_indian(r)
 
 
@@ -80,10 +102,14 @@ def diet_fits(restaurant: dict, diet: Diet) -> bool:
         return False
     blob = _text(restaurant, ("highlights", "must_try_dishes", "notes"))
     for rs in restrictions:
-        if _is_veg_restriction(rs):
+        kind = _kind(rs)
+        if kind == "vegan":
+            if not _vegan_fits(restaurant):
+                return False
+        elif kind == "vegetarian":
             if not diet.pure_veg and not _veg_fits(restaurant, False):
                 return False
-        elif not any(t in blob for t in _terms(rs)):
+        elif not any(_has(blob, t) for t in _terms(rs)):
             return False
     return True
 
@@ -96,12 +122,16 @@ class Library:
 
     @staticmethod
     def _load(path: Path) -> dict:
+        if not path.exists():
+            return {}
         try:
             with open(path, "r", encoding="utf-8") as f:
                 data = json.load(f)
-        except (OSError, ValueError):
-            return {}
-        return data if isinstance(data, dict) else {}
+        except (OSError, ValueError) as e:
+            raise LibraryDataError(path) from e
+        if not isinstance(data, dict):
+            raise LibraryDataError(path)
+        return data
 
     def _names(self, city: str) -> list[str]:
         c = city.strip()
@@ -116,12 +146,15 @@ class Library:
         want = {n.casefold() for n in names}
         return [f for f, cities in self._coverage.items() if want & {c.casefold() for c in cities}]
 
-    def _region_names(self, folders: list[str]) -> list[str]:
+    def _region_names(self, folders: list[str], city: str) -> list[str]:
         out = []
         for f in folders:
+            if re.search(r" and |&|\+", f.casefold()):
+                continue
             words = _norm(f).split()
             for c in self._coverage.get(f, []):
-                if _norm(c).split() and words[: len(_norm(c).split())] == _norm(c).split():
+                cw = _norm(c).split()
+                if cw and _norm(c) != _norm(city) and words[: len(cw)] == cw:
                     out.append(c)
         return out
 
@@ -136,7 +169,7 @@ class Library:
 
     def city(self, city: str) -> dict:
         names = self._names(city)
-        names += self._region_names(self._folders(names))
+        names += self._region_names(self._folders(names), city)
         merged: dict = {}
         seen: dict[str, set] = {}
         for shard in self._shards(names):

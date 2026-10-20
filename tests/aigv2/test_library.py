@@ -3,7 +3,7 @@ import os
 
 import pytest
 
-from src.aigv2.library import Library, diet_fits, is_indian
+from src.aigv2.library import Library, LibraryDataError, diet_fits, is_indian
 from src.aigv2.models import Diet
 
 
@@ -125,3 +125,53 @@ def test_halal_mention_fits_no_pork():
     assert not diet_fits(_r("Kebab", highlights=["Grill"]), d)
     assert diet_fits(_r("Y", must_try_dishes=["no beef curry"]), Diet(restrictions=["no beef"]))
     assert diet_fits(_r("Z", notes="nut-free kitchen"), Diet(allergies=["nut allergy"]))
+
+
+def test_multi_destination_folder_has_no_region(tmp_path):
+    _write(tmp_path / "_index.json", {"_folder_coverage": {"Singapore and Malaysia": ["Singapore", "Kuala Lumpur"]}})
+    _write(tmp_path / "Singapore.json", {"restaurants": [_r("Hawker SG")]})
+    _write(tmp_path / "Kuala Lumpur.json", {"restaurants": [_r("Nasi KL")]})
+    lib = Library(tmp_path)
+    assert [r["name"] for r in lib.restaurants("Kuala Lumpur")] == ["Nasi KL"]
+
+
+def test_region_shard_not_self_merged(lib_dir):
+    assert [r["name"] for r in Library(lib_dir).restaurants("Bali")] == ["Warung Bali", "Locavore"]
+
+
+def test_allergy_word_boundaries():
+    nut = Diet(allergies=["nut allergy"])
+    assert not diet_fits(_r("A", notes="peanut-free kitchen"), nut)
+    assert not diet_fits(_r("A", notes="no nutmeg used"), nut)
+    assert not diet_fits(_r("A", notes="shellfish-free"), Diet(allergies=["fish allergy"]))
+    assert diet_fits(_r("A", notes="fish-free menu"), Diet(allergies=["fish allergy"]))
+
+
+def test_negated_mentions_rejected():
+    d = Diet(restrictions=["no pork"])
+    assert not diet_fits(_r("A", highlights=["not halal"]), d)
+    assert not diet_fits(_r("A", highlights=["no halal options"]), d)
+    assert not diet_fits(_r("A", cuisine=["non-vegetarian"]), Diet(restrictions=["vegetarian"]))
+
+
+def test_vegan_needs_explicit_vegan():
+    d = Diet(restrictions=["vegan"])
+    assert not diet_fits(_r("Vatan", ["Gujarati"], veg=True), d)
+    assert diet_fits(_r("V", highlights=["Vegan menu"]), d)
+
+
+def test_negated_proof_rejected():
+    d = Diet(restrictions=["vegetarian"])
+    assert not diet_fits(_r("S", ["Japanese"], veg=True, highlights=["No vegetarian options"]), d)
+    assert not diet_fits(_r("S", ["Korean"], veg=True, highlights=["not vegan friendly"]), d)
+    assert not diet_fits(_r("S", ["Japanese"], veg=True, highlights=["non-vegetarian only"]), d)
+    pv = Diet(restrictions=["vegetarian"], pure_veg=True)
+    assert not diet_fits(_r("P", ["Indian"], veg=True, highlights=["not pure veg"]), pv)
+
+
+def test_corrupt_shard_raises(tmp_path):
+    _write(tmp_path / "_index.json", {"_folder_coverage": {}})
+    (tmp_path / "Rome.json").write_text("{bad")
+    with pytest.raises(LibraryDataError):
+        Library(tmp_path).restaurants("Rome")
+    assert Library(tmp_path).restaurants("Missing") == []

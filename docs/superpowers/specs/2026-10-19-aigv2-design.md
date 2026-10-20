@@ -131,7 +131,8 @@ Yellow-highlighted inline text; QC fails while any remain. Types:
 ### 8.1 Restaurants (§5e, §5j, §5l)
 - **Library only** (incl. cafés, bakeries, breakfast, "where to try" for dishes). Never from Google or AI.
 - **3 options per meal.** Fewer valid → list what's valid + one `⚠ ADD RESTAURANT` marker per missing slot. No suggestions in the UI.
-- **Diet: only places known to fit** (user decision, builder check). Clients with no restrictions → every library restaurant fits. Clients with restrictions (vegetarian, no pork, no beef, nothing raw, allergies…) → a restaurant is used only if its library data positively shows it fits (e.g. `vegetarian_friendly`, a vegetarian/vegan cuisine, or dishes/notes stating it); unknown = excluded → `⚠ ADD RESTAURANT` gap. No AI judgement of diet fit. QC applies the same rule and the same client profile — no false diet alarms. Expect more gap markers for restricted diets until library ingestion captures diet info (future enhancement).
+- **Diet: only places known to fit** (user decision, builder check; refined 2026-10-20). Clients with no restrictions → every library restaurant fits. **Vegetarian** clients → fits if `vegetarian_friendly`, a vegetarian/vegan cuisine, **or an Indian cuisine (incl. Gujarati, South Indian, Rajasthani…)**. Only if the client asks for **"pure veg"** (or similar strict wording) → only restaurants explicitly pure-veg/vegetarian-only. Other restrictions (no pork, no beef, nothing raw, allergies…) → only if the library data positively shows it fits; unknown = excluded → `⚠ ADD RESTAURANT` gap.
+- **Indian restaurants** (99% of clients are Indian): on international trips, include at least one Indian restaurant per meal whenever an eligible one (passing every other rule) exists in the library. No AI judgement of diet fit. QC applies the same rule and the same client profile — no false diet alarms. Expect more gap markers for restricted diets until library ingestion captures diet info (future enhancement).
 - Must be **open at that meal time on that weekday** and **operational** per Google; otherwise dropped → gap marker; the discrepancy is listed in the verification sheet/QC report (§5j R2-2).
 - **Repeats**: within a city, a restaurant appears **at most twice in total**, and **never twice on the same day** (§5j R2-4).
 - **Lunch anchor**: near that day's attractions by default; near the hotel when the itinerary has them at the hotel at lunchtime (check-in ~11 AM–1 PM, "return to hotel" after a morning start) (§5e).
@@ -238,6 +239,22 @@ Revised AI estimate: **~$0.15–0.25 per AIG** (10-day trip), leaving most of th
 - **Walking vs modes**: walking is shown for any leg ≤10 min regardless of the listed modes; other modes (taxi, public transport, self-drive) are shown only if listed in the intake.
 - **Sign-off**: building starts after this document is approved. The rebuilt cover, the intake template and the Google API setup are approval checkpoints inside the plan, not blockers before it.
 - **Library city naming** (e.g. empty `New York City.json` alongside a populated New York file): the builder resolves city aliases at read time; it does not rename or edit library files.
+
+## 12c. Additions from the review of 167 past AIGs (user decisions, 2026-10-20)
+
+Full findings: `docs/aigv2/2026-10-20-past-aigs-findings.md`.
+
+1. **Domestic India trips are in v1.** Drop embassy, SIM, currency/INR conversion and vaccines; emergency = 112. Health only when altitude (≥ 2,500 m), sea travel or remote areas apply. Add altitude/mountain-road/low-network safety, permits ("subject to permit & weather", carry ID), and separate entry fees for Indians and foreigners (AI + VERIFY). Prices INR only. Private driver is a common mode.
+2. **Included meals** (all-inclusive / half-board / full-board resorts, cruises, safari dinners, package meals, from vouchers or notes): the meal shows "Included in your package" and no restaurant options or gap markers; other meals are planned as usual.
+3. **Indian restaurants**: see §8.1 (at least one per meal when the library has an eligible one).
+4. **Vegetarian diet**: Indian cuisines count as known fit unless the client asks for pure veg (§8.1).
+5. **Parking**: a parking line on every venue **only for self-drive trips** — library value if present, else AI + `⚠ VERIFY`.
+6. **Recurring house content folded into existing sections**: a new **Money & Payments** item under Before You Go (currency, cards, ATMs, cash-only notes, forex card; exchange rate from code, never AI); recommended apps → Mobile Connectivity; tipping and dos & don'ts → Cultural Etiquette; scams → Safety; plug type, travel insurance and visa documents → Packing; transit cards and rail passes ("how to use your pass", coverage per leg) → Getting Around. Library first; AI + `⚠ VERIFY` otherwise; any price or provider name always verify-marked.
+7. **Cruises and overnight trains are in v1**: a night on board is a stay (no hotel-gap question); meals on board are included; sea days have no meal planning; port days anchor at the port with dock and "back on board by" times.
+8. **No theme-park "how to do the park" tips** unless the user's inputs include them.
+9. **Multi-country trips**: end sections that differ per country (emergency numbers, embassy/consulate, dishes, souvenirs, phrases, currency, SIM) are grouped per country.
+
+TOC "Before You Go" becomes: Tailored Packing List · Money & Payments · Mobile Connectivity & SIM Guide · Health & Vaccination (domestic trips: Money & Payments, SIM and Health omitted unless Health applies).
 
 ## 13. Left to the builder
 

@@ -10,7 +10,7 @@
 
 **Tech Stack:** Python 3.14, pydantic v2, python-docx, openpyxl, requests, pymupdf, Pillow, typer, pytest. OpenAI-compatible API via existing `src/common/ai_provider.py`. Google Places API (New) + Routes API.
 
-**Spec:** `docs/superpowers/specs/2026-10-19-aigv2-design.md` (decisions referenced as §N). Background: `docs/aigv2/2026-10-19-discovery-notes.md`.
+**Spec:** `docs/superpowers/specs/2026-10-19-aigv2-design.md` (decisions referenced as §N; §12c = past-AIG decisions). Background: `docs/aigv2/2026-10-19-discovery-notes.md`, `docs/aigv2/2026-10-20-past-aigs-findings.md`.
 
 ## Global Constraints
 
@@ -21,7 +21,11 @@
 - Budget: ≤ **$1** per first full run (build + one QC), AI + Google; every run writes a cost log (§11, §12b).
 - **Never write to `library_db/`** or any library file (§3). Read-only.
 - Restaurants **library only**; 3 per meal; fewer → one `⚠ ADD RESTAURANT – <Meal>, Day N, near <anchor>` marker per missing slot (§8.1).
-- Diet: only restaurants **known to fit**; unknown = excluded (§8.1).
+- Diet: only restaurants **known to fit**; unknown = excluded. Vegetarian: `vegetarian_friendly`, vegetarian/vegan cuisine, **or any Indian cuisine** fits — unless the client asks for "pure veg", then only explicit pure-veg/vegetarian-only (§8.1).
+- Indian restaurants: on international trips, at least one Indian restaurant per meal when an eligible one exists in the library (99% of clients are Indian) (§8.1).
+- Domestic India trips: no embassy, SIM, currency or vaccines; emergency 112; prices INR only (§12c).
+- Included meals → "Included in your package", no options, no gap markers (§12c).
+- No theme-park strategy tips unless present in the inputs (§12c).
 - Repeats: same restaurant ≤ **2 times per city**, never twice the same day (§8.1).
 - Near: lunch ≤ **10 min walk** or ≤ **15 min** by trip transport; dinner ≤ **20 min** (§8.1). Walking legs only when ≤ **10 min** (§8.3).
 - Prices: local currency + INR in brackets, INR rounded to nearest **₹50**, e.g. `€25 (~₹2,400)`; unknown → `⚠ PRICE UNKNOWN` (§8.1).
@@ -122,6 +126,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
   - `Finding(rule:str, severity:Literal["error","warning"], message:str, anchor_text:str="", day:int|None=None)`
 
 - **Real-trip amendments (Dilna/Jumana/Sneha review, 2026-10-20):** `travel_modes` also allows `"private_driver"` (rendered "By car"); `TransportLeg.kind` adds `"boat"`; `TransportLeg` adds `pax_label: str = ""` (e.g. `"3 Adults"`, `"2x Youth"`); `HotelStay` adds `check_in_time: time|None`, `check_out_time: time|None`; `Booking` adds `end_time: str|None`, `meeting_point: str = ""`, `duration: str = ""`, `instructions: list[str] = []` (e.g. "exchange voucher at ticket office", "bring headphones"), `timed: bool` (False = valid all day / open-dated), `pax_label: str = ""`, `included_in_package: bool = False`; `PlannedItem` adds `optional: bool = False`, `booking_ref: str|None`, `locality: str = ""` (e.g. `"Engelberg"` for a Titlis day trip from Lucerne); `Traveller` adds `child_counts: dict[str,int] = {}` (voucher CWB/CWOB/Infant).
+- **Past-AIG amendments (2026-10-20):** `TripPlan.trip_scope: Literal["international","domestic"]` (domestic = every city in India); `HotelStay.kind: Literal["hotel","resort","cruise","sleeper_train","lodge"] = "hotel"` and `HotelStay.meal_plan: Literal["none","breakfast","half_board","full_board","all_inclusive"] = "none"`; `PlannedItem.includes_meal: list[Literal["breakfast","lunch","dinner"]] = []` (safari BBQ, package lunch); `PlannedItem.pickup_time: str|None`, `pickup_place: str = ""`; `Diet.pure_veg: bool = False`; `TransportLeg` adds `operator: str = ""`, `number: str = ""`, `seat: str = ""`, `platform: str = ""` (only from tickets); new `Stop(name, minutes_from_prev, suggested_stop_min, km_from_prev)` and `DayPlan.drive_stops: list[Stop] = []`; `Settings.country_meal_windows: dict[str, dict[str, tuple[str,str]]]` = `{"Spain": {"lunch": ("13:30","16:00"), "dinner": ("20:30","22:30")}, "Greece": {"dinner": ("20:00","22:30")}}`; train "reach station by" = departure − 40 min.
 - [ ] **Step 1: Write failing tests** `tests/aigv2/test_models.py`:
   - `test_settings_defaults`: with env cleared, `load_settings().models["write_days"] == "gpt-6-luna"` and `.models["qc_sense"] == "gpt-6.1-sol"`, `.walk_max_min == 10`.
   - `test_settings_step_override`: `AIGV2_MODEL_WRITE_DAYS=gpt-6.1-sol` → `models["write_days"] == "gpt-6.1-sol"`.
@@ -221,6 +226,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
 - `validate_trip` returns problems for: zero days; any `DayPlan.date` outside `[min check_in, max check_out]` when hotels exist; duplicate day dates; `HotelStay.check_out <= check_in`.
 
 - **Amendments:** de-duplicate per-passenger tickets — legs with the same `ref` + train/flight number + departure are one leg (the BVM voucher, Eurostar/TGV PDFs). Service vouchers: read pax table, flights (free text like "MIDNIGHT ARRIVAL AT 00:10 ON 25 SEPTEMBER (NIGHT OF 24 SEPTEMBER)"), hotel table (city, hotel, check-in/out, confirmation notes), day-wise blocks (type, time window, pickup/checkout times, notes) into `Booking`/`PlannedItem` with `included_in_package=True`; ignore stray document headings (e.g. a leftover "vietnam"). Items the notes call "optional" get `optional=True`. A `Booking` is created only from an attachment; "confirmed" in the notes without an attachment stays a `PlannedItem` (Task 11 flags it).
+- **Past-AIG amendments:** extract meal plans from vouchers/notes ("Breakfast included", "half board", "all meals on board", "BBQ dinner included") into `HotelStay.meal_plan` / `PlannedItem.includes_meal`; cruise and sleeper-train nights become `HotelStay(kind="cruise"|"sleeper_train")`; "pure veg" wording sets `Diet.pure_veg`; drive-day stops become `drive_stops`.
 - [ ] **Step 1: Write failing tests** with a fake LLM:
   - `test_extract_passes_inputs_to_llm`: prompt includes voucher text and template values.
   - `test_validate_trip_flags_out_of_range_day` and `test_validate_trip_flags_bad_stay`.
@@ -241,6 +247,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
 - The adapter opens files read-only; it exposes no write method.
 
 - **Amendments:** `city()` also merges the **region shard** that covers the city (via `_index.json` `_folder_coverage`, e.g. `Bali.json` for Ubud/Sanur) and resolves the country shard through the folder name (e.g. `_country/Bali Indonesia.json`). `restaurants_near(locality: str)` returns that locality's shard (Engelberg, Jungfraujoch, Grindelwald, Disneyland Paris) so day-trip meals use the place they are in, not the overnight city.
+- **Past-AIG amendments:** `diet_fits` for vegetarian: also True when any `cuisine_type` is Indian or a regional Indian cuisine (`indian, gujarati, south indian, north indian, rajasthani, punjabi, kerala, udupi, chettinad, bengali, maharashtrian`); when `diet.pure_veg`, True only if `vegetarian_friendly` with highlights/cuisine/name stating pure veg / vegetarian-only. Japanese/Korean venues need explicit vegetarian proof (hidden fish stock). Add `is_indian(restaurant) -> bool`. Tests: `test_gujarati_fits_vegetarian`, `test_pure_veg_requires_explicit`, `test_japanese_needs_explicit_veg`.
 - [ ] **Step 1: Write failing tests** (use `local_db` fixture style from `tests/conftest.py`, plus a two-shard alias fixture):
   - `test_city_aliases_merge`: shards `New York.json` (2 restaurants) + `New York City.json` (1 overlapping, 1 new) → `restaurants("New York")` has 3.
   - `test_diet_no_restrictions_all_fit`, `test_vegetarian_requires_flag_or_cuisine`, `test_no_beef_unknown_excluded` (Vatan-like entry without explicit mention → False), `test_halal_mention_fits_no_pork`.
@@ -258,6 +265,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
 - Produces: `WeeklyHours(periods: dict[int, list[tuple[time, time]]], source: Literal["google","library"])` (weekday 0=Mon; a period ending past midnight is split across days); `WeeklyHours.from_google(regular_opening_hours: dict) -> WeeklyHours`; `parse_library_hours(text: str) -> WeeklyHours | None` (handles `"5 pm - 9:30 pm"`, `"11 AM – 10 PM (Mon–Thu)"`, `"Daily 8 am–12 am"`, `"12 PM - 2 PM, 7 PM - 11 PM"`; returns `None` for anything else, e.g. `"Confirm directly before visiting"`); `is_open_for(hours: WeeklyHours | None, day: date, start: time, minutes: int) -> bool | None` (`None` = unknown); `format_for_day(hours, day) -> str` (e.g. `"11:00 AM – 10:00 PM"`, `"Closed"`).
 - Effective hours rule (used by later tasks): Google hours if present; else library hours (rendered with `⚠ VERIFY: hours`); else unknown. Unknown hours → restaurant **not eligible** for meal slots; attraction rendered with `⚠ VERIFY: opening hours`.
 
+- **Past-AIG amendments:** `parse_library_hours` returns `None` for end-before-start (unless end ≤ 04:00), start == end, or a 00:00 opening ("12 AM – 10 PM"); accepts narrow no-break spaces and all dash variants. `format_week(hours) -> str` ("9–6 Mon–Fri · 9–1 Sat · Closed Sun") for Important Places. Tests: `test_inverted_ampm_rejected` ("11:30 PM – 8:30 PM"), `test_equal_start_end_rejected`, `test_nnbsp_parsed`.
 - [ ] **Step 1: Write failing tests:**
   - `test_google_periods_parse_and_overnight_split`.
   - `test_lunch_at_4pm_opener_is_closed`: library `"4 pm - 11 pm"` → `is_open_for(..., time(12,30), 60) is False`.
@@ -281,6 +289,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
 - `maps_url` built per Global Constraints.
 
 - **Amendment:** `nearby()` for hospitals falls back to types `["doctor","medical_clinic"]` when no hospital is within 10 km (islands like Nusa Lembongan); the result is verify-marked "nearest clinic, not a hospital".
+- **Past-AIG amendments:** add `places.primaryType,places.types` to the field mask. `nearby()` keeps only results whose `primaryType` is in the requested type set and whose name has none of: `dental, dentist, physio, cardio, sexual health, circumcision, sports, cosmetic, aesthetic, veterinary, equipment, b.v., ltd, gmbh, petroleum, fuel`. Hospitals must be emergency hospitals (prefer names/types with emergency; open 24 h when hours known); fallback clinic with VERIFY. For cities in South Korea or China every `Place` is verify-marked (weak coverage). Tests: `test_steroid_shop_not_pharmacy`, `test_equipment_firm_not_hospital`.
 - [ ] **Step 1: Write failing tests** with a fake session returning canned JSON:
   - `test_find_parses_place`: fields mapped; `maps_url` contains `query_place_id=` and no `utm_`.
   - `test_find_uses_cache`: second `find` makes no HTTP call; `calls["text_search"] == 1`.
@@ -302,6 +311,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
 - `compute_legs(points: list[tuple[str, tuple[float,float]]], routes: RoutesClient, modes: list[str]) -> list[Leg]` — consecutive pairs; WALK always requested; DRIVE when taxi/self_drive; TRANSIT when public_transport.
 
 - **Amendments:** a `boat` leg (or any leg whose DRIVE/TRANSIT result is `ROUTE_NOT_FOUND` across water) uses the voucher's times and gets `⚠ VERIFY: boat transfer timing`. Inter-city rail legs **without a ticket** use Routes TRANSIT for a duration only, rendered as "about N h by train" + `⚠ VERIFY: no ticket provided — check timetable`; never invent frequency claims like "direct trains every hour".
+- **Past-AIG amendments:** TRANSIT requests also return steps → `TransitStep(line: str, headsign: str, board: str, alight: str, stops: int)`; `Leg.transit_steps: list[TransitStep]`. Drive days with `drive_stops` produce one leg per stop with km and minutes, and a day total. Platform numbers never come from Routes.
 - [ ] **Step 1: Write failing tests:**
   - `test_walk_shown_only_when_short`: walk 8, drive 5, modes `["taxi"]` → `[("Walk",8),("By car",5)]`; walk 25 → `[("By car",5)]` (Review: "2 min walk" that is 25).
   - `test_transit_only_if_listed`: modes `["taxi"]`, transit 12 → no transit option.
@@ -323,6 +333,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
 
 - **Amendments — extra checks:** `early_arrival:<date>` (arrival 00:00–05:00 → the day is the previous date, the hotel night starts that previous date; confirm); `no_departure` (no outbound leg found → ask the departure time and mode); `booking_conflict:<ref>` (a booking's date/time differs from where the notes place that item — e.g. night tour Day 1 in notes vs 2 May on the ticket; booking wins, asked to confirm); `headcount:<ref>` (ticket `pax_label` disagrees with travellers, e.g. "3 Adults" vs 2 adults + 1 child, "2x Youth" for 2 adults); `unvouchered_confirmed:<item>` (notes say confirmed/booked but no attachment); `image_details:<name>` (booking-like attachment whose date/time is only in images, or a photo attachment — "this may contain bookings; paste its text"); `kids_ages` asked only when children exist and ages are unknown. **Optional items are not asked** — they render as optional suggestions (see Task 18); only either/or choices are asked (user confirmed 2026-10-20).
 - Tests to add: `test_early_arrival_previous_day` (00:10 on 25 Sep → question; answer keeps Day 1 = 24 Sep), `test_no_departure_question`, `test_booking_conflict_question`, `test_headcount_mismatch`, `test_optional_items_not_asked`.
+- **Past-AIG amendments:** no `hotel_gap` for nights covered by a `cruise`/`sleeper_train` stay; `permit:<item>` question when a domestic item is in a known permit area (Nathula, Tsomgo, Gurudongmar, Pangong, Nubra, Arunachal, Nagaland ILP areas) and no permit is mentioned.
 - [ ] **Step 1: Write failing tests:**
   - `test_late_departure_question` (Review Focus 2): flight departs `2026-10-15 01:00` → question `late_departure:2026-10-15` with options `["2026-10-14","2026-10-15"]`; answering `2026-10-14` sets that stay's `check_out`.
   - `test_hotel_gap` (Review Focus 5): stays 1–5 Nov and 6–8 Nov → `hotel_gap:2026-11-05`.
@@ -350,6 +361,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
   - Arrival after 14:00 → no lunch slot; arrival after 21:00 → no dinner slot; departure day: no meal slots after the "leave by" time (departure − 3 h international flights, − 1 h trains) **[plan's call; verify-marked]**.
 
 - **Amendments:** voucher time windows and pickup times fix the slot and start time of included tours. Early-arrival day (00:00–05:00): only the transfer + check-in, no meals. **Hotel-change day:** stays are looked up per meal — dinner anchors at the *new* hotel when check-in is before dinner; lunch anchor uses the item's `locality` when set. Optional items are scheduled like others but marked optional.
+- **Past-AIG amendments:** meal windows use `Settings.country_meal_windows` for the day's country; included meals (stay `meal_plan`, item `includes_meal`, cruise days) produce a `MealSlot(included=True)` with no anchors; sea days have no meal slots; port days anchor at the port. Drive days: lunch anchor = the `drive_stop` nearest 13:00. Late-arrival lunch cutoff = hotel arrival after **15:00**. Departure before 07:00 → "ask the hotel for a packed breakfast" tip. Tests: `test_included_dinner_no_options`, `test_spain_dinner_window`, `test_drive_day_lunch_at_waypoint`.
 - [ ] **Step 1: Write failing tests:**
   - `test_untimed_items_fill_in_order`; `test_lunch_near_last_morning_attraction`; `test_lunch_at_hotel_on_midday_checkin` (check-in 12:00); `test_dinner_split_with_evening_attraction` (evening Fado show → anchors `[("Fado show",…,1),("hotel",…,2)]`); `test_dinner_before_cruise_rule` (meal_rules `"dinner before Seine cruise"` → 3 near the cruise); `test_breakfast_only_when_out`; `test_late_arrival_no_lunch`.
 - [ ] **Step 2: Run** → FAIL. **Step 3: Implement.** **Step 4: Run** → PASS.
@@ -375,6 +387,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
 - Every exclusion is returned for the QC report and verification sheet.
 
 - **Amendments:** candidates come from the **anchor's locality** shard when the item has a `locality`, else the day's city (not the overnight hotel city). "Per city" for the repeat rule = the library shard used. Test: `test_day_trip_lunch_uses_locality` (Titlis lunch picks from Engelberg).
+- **Past-AIG amendments:** skip `MealSlot(included=True)`. On international trips, when ≥1 eligible candidate `is_indian`, at least one pick per meal slot is Indian (ranking chooses which). Test: `test_indian_option_guaranteed_when_available`.
 - [ ] **Step 1: Write failing tests** (fakes for places/routes/llm):
   - `test_three_valid_no_markers`; `test_two_valid_one_marker` with exact marker text `"⚠ ADD RESTAURANT – Lunch, Day 3, near Galata Tower"`.
   - `test_closed_restaurant_excluded` (`CLOSED_PERMANENTLY` → `closed`); `test_opens_at_4pm_not_lunch` → `not_open_at_meal`.
@@ -395,6 +408,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
 - City currency: from the library country shard field `currency` if present, else a small built-in map by country (EUR for eurozone, TRY Turkey, USD USA, GBP UK, JPY Japan, CHF Switzerland, THB Thailand, AED UAE, IDR Indonesia, SGD Singapore); unknown → `PRICE UNKNOWN`.
 
 - **Amendment:** currency resolved per day's city/country (EUR in Paris, CHF in Switzerland on the same trip).
+- **Past-AIG amendments:** domestic trips print INR only. Rupee-currency countries render ISO codes (`MUR 500 (~₹950)`, `LKR`, `NPR`), never bare "Rs".
 - [ ] **Step 1: Write failing tests:** `test_parse_range`, `test_tier_unknown`, `test_format_rounds_to_50` (`€25` at 93.4 → `"€25 (~₹2,350)"`), `test_fx_cached` (second call no HTTP), `test_missing_price_marker`.
 - [ ] **Step 2: Run** → FAIL. **Step 3: Implement.** **Step 4: Run** → PASS.
 - [ ] **Step 5: Commit** `feat(aigv2): add price parsing and INR conversion`.
@@ -409,6 +423,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
 - Consumes: `PlacesClient.nearby`, `RoutesClient.durations`, `HotelStay` + hotel `Place`.
 - Produces: `ImportantPlaces(city: str, hotel: str, pharmacies: list[NearbyPlace], groceries: list[NearbyPlace], hospital: NearbyPlace | None)`; `NearbyPlace(place: Place, walk_min: int|None, drive_min: int|None, hours_text: str)`; `important_places(stays: list[HotelStay], hotel_places: dict[str, Place], places, routes, modes) -> list[ImportantPlaces]` — one per distinct hotel; pharmacies: types `["pharmacy"]`, 2 results within 10-min walk (search radius 900 m); groceries: `["supermarket","convenience_store","grocery_store"]`, 2 within 10-min walk; hospital: `["hospital"]`, radius 10 km, nearest by drive. Fewer than 2 found → `Marker(VERIFY, "fewer than 2 <type> within a 10-minute walk")`.
 
+- **Past-AIG amendments:** Important Places entries show `format_week` hours (closed days included) and phone.
 - [ ] **Step 1: Write failing tests:** two hotels in two cities → two `ImportantPlaces`; pharmacy 14-min walk filtered out with VERIFY marker; hospital chosen by shortest drive.
 - [ ] **Step 2: Run** → FAIL. **Step 3: Implement.** **Step 4: Run** → PASS.
 - [ ] **Step 5: Commit** `feat(aigv2): add important places per stay`.
@@ -429,6 +444,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
   - `write_title(trip: TripPlan, llm) -> str` — 2–5 words, destination-specific, not containing "All Inclusive Guide".
 - Prompts: American English; warm, first-person "we", never salesy; no emojis.
 
+- **Past-AIG amendments:** new section key `money` (Money & Payments: currency per country, cards/ATMs, cash-only notes, forex card; today's rate from `FxRates`, never AI). Sub-content folded in: recommended apps (incl. Naver/Kakao for Korea, Amap/Alipay/WeChat for China) → `connectivity`; tipping + dos & don'ts → `etiquette`; scams → `safety`; plug type, travel insurance, visa documents, weather/season line → `packing`; transit cards and rail passes (how to use, coverage) → `getting_around`. Any price or provider name in section content is verify-marked even when from the library. **Domestic trips:** omit `money`, `connectivity`, and `health` unless altitude ≥ 2,500 m / sea travel / remote area; `safety` adds altitude, mountain-road and low-network guidance and emergency 112; entry fees may show Indian vs foreigner prices (VERIFY). **Multi-country trips:** `emergency`, `embassy`, `dishes`, `souvenirs`, `etiquette` (phrases), `money`, `connectivity` are written per country (`SectionContent.by_country: dict[str, list[SectionItem]]`). Never write theme-park strategy tips unless the inputs contain them. Tests: `test_domestic_omits_money_sim`, `test_multicountry_sections_grouped`, `test_library_price_still_verified`.
 - [ ] **Step 1: Write failing tests** with fake LLM: `test_day_names_must_match_inputs` (extra name → fallback), `test_description_with_time_rejected` (`"open 9 AM"` → fallback), `test_section_library_first_not_verified`, `test_section_ai_marked_verify`, `test_packing_never_verify`, `test_dishes_where_to_try_library_only`, `test_title_rejects_generic`.
 - [ ] **Step 2: Run** → FAIL. **Step 3: Implement.** **Step 4: Run** → PASS.
 - [ ] **Step 5: Commit** `feat(aigv2): add luna writers for days, sections and title`.
@@ -464,6 +480,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
 
 - **Amendments:** arrival/departure cards use the actual mode — "Gare du Nord → <hotel>" for train arrivals, "Harbour → <hotel>" for boats; leave-by = departure − 3 h (international flight), − 2 h (domestic flight), − 30 min (train), − 1 h (boat) **[plan's call]**, verify-marked. Attraction cards show booking facts when present: `YOUR BOOKING` (time or "valid all day" when `timed=False` — never "Confirmed entry" without a booking attachment), `MEETING POINT`, `DURATION`, and voucher `instructions` as bullet tips. Optional items render with an "Optional" pill. Package-included items show an "Included in your package" pill.
 - Test to add: `test_untimed_booking_not_shown_as_confirmed_time`.
+- **Past-AIG amendments:** TOC "Before You Go" = Tailored Packing List · Money & Payments · Mobile Connectivity & SIM Guide · Health & Vaccination (omitted ones dropped). Included meals render a single line "Lunch — Included in your package" (no card). Self-drive trips add a `PARKING` fact on every venue (library value or AI + VERIFY). Train cards show operator, number, class/seat, stations, times, duration, "Reach the station by HH:MM", platform only if ticketed, and a luggage-drop tip when arriving before check-in; transit legs list steps ("Line 4 → Line 2, alight Samseong, 6 stops"); drive days list stops with km/minutes and a day total; cruise port days show dock time and "Back on board by HH:MM". Sunset time (computed, no API) shown when an item mentions sunset. Multi-country end sections render per-country sub-headings.
 - [ ] **Step 1: Write failing tests** with a hand-built `GuideData` fixture (2 days):
   - `test_day_header_format` (Review Focus 2): `day_header(1, date(2026,10,29), "Welcome to Istanbul") == "Day 1 – Thu, 29 Oct | Welcome to Istanbul"`; 15 Nov 2026 renders `Sun`.
   - `test_section_order`: Heading 1 texts in exactly the §7.1 order.
@@ -486,6 +503,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
 - Produces (`rules.py`): `check_rules(doc: DocModel, trip: TripPlan, library: Library) -> list[Finding]` with rule ids: `section_order`, `day_header_format`, `day_weekday` (header weekday ≠ date), `day_dates` (header dates vs trip days), `venue_link` (venue without Maps hyperlink), `meal_count` (meal slot with < 3 venues and no ADD RESTAURANT marker), `repeat_city`, `repeat_day`, `diet` (venue that is a library restaurant failing `diet_fits`; hand-added non-library venues are skipped — §12b), `walk_limit` (a "Walk" fact > 10 min), `placeholder` (regex `\[fill in|TBD|mention timings|lorem`), `utm` (`utm_` in any link), `commentary` (any `trip.commentary_removed` sentence found in text), `markers_remaining` (one finding listing the count).
 
 - **Amendment:** add rule `assistant_chatter` — regex for leaked AI/planner text: `\b(Here are|Here's|in your preferred format|as an AI|I'd (keep|suggest|skip)|the client'?s?|Tripadvisor\))\b` (case-insensitive) → error. Test with Jumana's "I'd keep dinner easy…" and Sneha's "Here are clear, step-by-step directions…".
+- **Past-AIG amendments:** new rules `title_destination` (title/subtitle must name ≥1 trip destination; catches "All Inclusive Guide- Bali" in a Kerala guide), `closing_phrase_misplaced` ("We hope this vacation…", "Hope this trip brought you…" outside Thank You), `third_person_client` ("her", "him", "the client's" in client-facing text), `meal_label_mismatch` (warning: "best for dinner" in a lunch slot or vice versa), `repeat_in_set`; `placeholder` adds `Not specified`, `Please see options below`, `choose one of`. `assistant_chatter` matches first-person adviser voice (`\bI would recommend\b`, `\bI'd (aim|keep|suggest|skip|treat|choose)\b`) and specific AI phrases (`Here are clear`, `in your preferred format`, `Let me know if`, `as an AI`) — **not** bare "Here are" (house text "Here are few numbers you may need" must pass). Tests for each.
 - [ ] **Step 1: Write failing tests:** rendered fixture → `check_rules` returns only `markers_remaining`; planted errors each produce their rule id: wrong weekday (`"Day 1 – Fri, 29 Oct"`), a repeated restaurant on one day, a 25-min walk, a link with `utm_source=chatgpt.com`, a commentary sentence; `test_reader_survives_google_roundtrip` (Review Focus 3): the round-trip/stand-in doc yields the same days, venue names, links and marker count as the original.
 - [ ] **Step 2: Run** → FAIL. **Step 3: Implement.** **Step 4: Run** → PASS.
 - [ ] **Step 5: Commit** `feat(aigv2): add QC document reader and rule checks`.

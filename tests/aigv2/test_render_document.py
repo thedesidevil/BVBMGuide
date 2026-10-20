@@ -299,7 +299,6 @@ def test_attraction_ai_fields_marked_and_entry_fee_links_website():
     block = day_block(doc, 2)
     assert "TRY 1500 · ⚠ VERIFY: entry fee" in block
     assert "Shoulders covered · ⚠ VERIFY: dress code" in block
-    assert "⚠ VERIFY: duration" not in block or "DURATION" in block
     assert any(r.target_ref == "https://topkapi.example" for r in doc.part.rels.values() if r.is_external)
 
 
@@ -372,7 +371,7 @@ def test_intercity_train_day():
                   booking_by_item={}, price_by_restaurant={}, arrival=train, departure=train, prev_city="Paris")
     block = day_block(load(data(trip=t, days=[day1(), d])), 2)
     for s in ("Hotel P → Paris Gare de Lyon", "SNCF", "TGV 6601", "Coach 5, Seat 42", "09:00", "11:00", "2 h",
-              "Reach the station by 08:30", "PLATFORM\n7", "Lyon Part-Dieu → Hotel L", "Walk · 9 min",
+              "Reach the station by 08:20", "PLATFORM\n7", "Lyon Part-Dieu → Hotel L", "Walk · 9 min",
               "⚠ VERIFY: inter-city travel day logistics", "luggage", "Overnight in Lyon"):
         assert s in block, s
     assert block.index("Hotel P → Paris Gare de Lyon") < block.index("TGV 6601") < block.index("Lyon Part-Dieu → Hotel L")
@@ -475,3 +474,100 @@ def test_sunset_time_paris_midsummer():
     t = sunset_time(48.8566, 2.3522, date(2026, 6, 21), 2.0)
     assert abs((t.hour * 60 + t.minute) - (21 * 60 + 58)) <= 10
     assert sunset_time(78.2, 15.6, date(2026, 6, 21), 2.0) is None
+
+
+def test_attraction_ai_duration_best_time_tips_marked_unless_library_duration():
+    d2 = day2()
+    d2.text.attractions[1] = AttractionText(name="Hagia Sophia", description="A great mosque.", duration="1 hour",
+                                            best_time="Early morning", tips="Remove shoes")
+    d2.text.attractions[0].duration = "3 hours"
+    d2.library_attractions = {"Topkapi Palace": {"recommended_duration": "2-3 hours"}}
+    block = day_block(load(data(days=[day1(), d2, day3()])), 2)
+    hagia = block[block.index("Hagia Sophia\n"):block.index("Bosphorus Sunset Cruise\n")]
+    assert "DURATION\n1 hour · ⚠ VERIFY: duration" in hagia
+    assert "BEST TIME\nEarly morning · ⚠ VERIFY: best time" in hagia
+    assert "TIP\nRemove shoes · ⚠ VERIFY: tip" in hagia
+    topkapi = block[block.index("Topkapi Palace\n"):block.index("Hagia Sophia\n")]
+    assert "DURATION\n2-3 hours\n" in topkapi
+    assert "VERIFY: duration" not in topkapi and "\n3 hours" not in topkapi
+
+
+def test_intercity_day_without_leg_shows_hotel_link_and_verify_note():
+    t = trip(hotels=[HotelStay(city="Paris", hotel="Hotel P", check_in=D1, check_out=D2, source="voucher"),
+                     HotelStay(city="Lyon", hotel="Hotel L", check_in=D2, check_out=D3, source="voucher")])
+    d = RenderDay(index=2, date=D2, city="Lyon", text=DayText(title="On to Lyon", intro="Driving today."),
+                  result=DayResult(), places={"Hotel L": place("Hotel L", note="address differs from voucher")},
+                  prev_city="Paris")
+    doc = load(data(trip=t, days=[day1(), d]))
+    block = day_block(doc, 2)
+    assert "Paris → Hotel L" in block
+    assert "⚠ VERIFY: transfer time" in block and "⚠ VERIFY: address differs from voucher" in block
+    card = next(t for t in doc.tables if t.cell(0, 0).paragraphs[0].text == "Paris → Hotel L")
+    rid = card.cell(0, 0).paragraphs[0]._p.find(qn("w:hyperlink")).get(qn("r:id"))
+    assert "query=Hotel+L" in doc.part.rels[rid].target_ref
+
+
+def test_new_stay_without_arrival_leg_gets_check_in_card():
+    t = trip(hotels=[HotelStay(city="Istanbul", hotel="Hotel A", check_in=D1, check_out=D2, source="voucher"),
+                     HotelStay(city="Istanbul", hotel="Hotel B", check_in=D2, check_out=D3, source="voucher",
+                               check_in_time=time(14))])
+    d = RenderDay(index=2, date=D2, city="Istanbul", text=DayText(title="Move", intro="New hotel."),
+                  result=DayResult(), places={"Hotel B": None}, prev_city="Istanbul")
+    doc = load(data(trip=t, days=[day1(), d]))
+    block = day_block(doc, 2)
+    assert "Hotel B\nCHECK-IN\nfrom 14:00" in block
+    assert "⚠ VERIFY: Hotel B not found on Google" in block
+    card = next(t for t in doc.tables if t.cell(0, 0).paragraphs[0].text == "Hotel B")
+    assert card.cell(0, 0).paragraphs[0]._p.find(qn("w:hyperlink")) is not None
+
+
+def test_anchored_slot_without_pick_marks_each_anchor():
+    d1 = day1()
+    d1.meals = []
+    d1.result.meals[0].anchors = [("Galata Tower", (41.0, 29.0), 1), (HOTEL, (41.0, 28.9), 2)]
+    block = day_block(load(data(days=[d1, day2(), day3()])), 1)
+    assert block.count("⚠ ADD RESTAURANT – Dinner, Day 1, near Galata Tower") == 1
+    assert block.count(f"⚠ ADD RESTAURANT – Dinner, Day 1, near {HOTEL}") == 2
+    assert "near Istanbul" not in block
+
+
+def test_pick_not_reused_for_other_slot_of_same_meal():
+    d1 = day1()
+    d1.meals[0].slot = MealSlot(meal="dinner", start=time(21), anchors=d1.result.meals[0].anchors)
+    block = day_block(load(data(days=[d1, day2(), day3()])), 1)
+    assert "Mikla" not in block
+    assert block.count(f"⚠ ADD RESTAURANT – Dinner, Day 1, near {HOTEL}") == 3
+
+
+def test_dear_guest_when_no_client_name_and_transport_card_without_place_has_no_link():
+    t = trip(client_names=[])
+    boat = TransportLeg(kind="boat", from_place="", to_place="", arrive=datetime(2026, 10, 29, 10, 0), source="x")
+    doc = load(data(trip=t, days=[day1().model_copy(update={"arrival": boat}), day2(), day3()]))
+    text = all_text(doc)
+    assert "Dear Guest," in text and "⚠ WRITE PERSONAL LETTER" in text
+    card = next(t for t in doc.tables if t.cell(0, 0).paragraphs[0].text == "Boat")
+    assert card.cell(0, 0).paragraphs[0]._p.find(qn("w:hyperlink")) is None
+    assert "query=&" not in doc.element.xml
+    assert all(not r.target_ref.endswith("query=") for r in doc.part.rels.values() if r.is_external)
+
+
+def test_sunset_skips_unmatched_hotel_place():
+    d2 = day2()
+    d2.places["Bosphorus Sunset Cruise"] = None
+    d2.places[HOTEL] = place(HOTEL, match_ok=False)
+    block = day_block(load(data(days=[day1(), d2, day3()])), 2)
+    assert "SUNSET" not in block
+    d2.places[HOTEL] = place(HOTEL)
+    assert "SUNSET" in day_block(load(data(days=[day1(), d2, day3()])), 2)
+
+
+def test_slot_heading_repeats_after_meal():
+    d1 = day1()
+    noon, later = item("Spice Bazaar", slot="afternoon"), item("Grand Bazaar", slot="afternoon")
+    lunch = MealSlot(meal="lunch", start=time(12, 30), included=True)
+    d1.result = DayResult(scheduled=[sched(noon, "afternoon", time(12)), sched(later, "afternoon", time(14))],
+                          meals=[lunch])
+    d1.meals = []
+    block = day_block(load(data(days=[d1, day2(), day3()])), 1)
+    after = block[block.index("Lunch — Included in your package"):]
+    assert "Afternoon\nGrand Bazaar" in after or after.index("Afternoon") < after.index("Grand Bazaar")

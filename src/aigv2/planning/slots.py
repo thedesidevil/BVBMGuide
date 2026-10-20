@@ -119,7 +119,7 @@ def _window(meal: str, country: str, settings: Settings) -> time:
     return _t(settings.slot_windows[meal][0])
 
 
-def _leave_by(dep: TransportLeg, domestic: bool) -> Optional[time]:
+def leave_by(dep: TransportLeg, domestic: bool) -> Optional[time]:
     if not dep.depart:
         return None
     if dep.kind == "flight":
@@ -197,7 +197,7 @@ def schedule_day(
     if arr:
         hotel_arr = _plus(arr_t, _HOTEL_ARRIVAL_BUFFER.get(arrival.kind, _DEFAULT_BUFFER))
     dep = departure if departure and departure.depart and departure.depart.date() == d else None
-    leave_by = _leave_by(dep, domestic) if dep else None
+    cutoff = leave_by(dep, domestic) if dep else None
     if dep and dep.depart.time() < _PACKED_BREAKFAST_BEFORE:
         res.tips.append("Ask the hotel for a packed breakfast")
     early = arr_t is not None and arr_t < _EARLY_ARRIVAL_BEFORE
@@ -249,7 +249,7 @@ def schedule_day(
         return []
 
     def add(meal: str, start: time, stay: Optional[HotelStay], spec) -> None:
-        if leave_by is not None and start >= leave_by:
+        if cutoff is not None and start >= cutoff:
             return
         if _included(meal, stay, res.scheduled, d):
             res.meals.append(MealSlot(meal=meal, start=start, included=True))

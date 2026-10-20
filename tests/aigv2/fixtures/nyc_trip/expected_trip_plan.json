@@ -1,0 +1,39 @@
+{
+  "client_names": ["Test Client"],
+  "travellers": {"adults": 2, "kids_ages": [], "notes": "", "child_counts": {}},
+  "diet": {"restrictions": ["vegetarian"], "allergies": [], "likes": [], "pure_veg": true},
+  "travel_modes": ["taxi", "public_transport"],
+  "hotels": [
+    {"city": "New York", "hotel": "Hudson Plaza Hotel", "check_in": "2027-03-12", "check_out": "2027-03-15",
+     "source": "voucher", "check_in_time": "15:00:00", "check_out_time": "11:00:00",
+     "kind": "hotel", "meal_plan": "breakfast"}
+  ],
+  "transport": [
+    {"kind": "flight", "from_place": "JFK", "to_place": "LHR", "depart": "2027-03-15T19:30:00",
+     "arrive": "2027-03-16T07:30:00", "ref": "ZQ7K2P", "source": "flight_ticket.txt",
+     "pax_label": "TEST/CLIENT MR", "operator": "", "number": "XA 101", "seat": "14A", "platform": ""}
+  ],
+  "bookings": [],
+  "days": [
+    {"date": "2027-03-12", "title": "Arrival in New York", "city": "New York",
+     "items": [{"name": "Arrive at JFK", "kind": "transfer", "city": "New York", "slot_hint": "evening"}],
+     "meal_rules": [], "drive_stops": []},
+    {"date": "2027-03-13", "title": "Statue of Liberty", "city": "New York",
+     "items": [{"name": "Statue of Liberty ferry", "kind": "attraction", "city": "New York", "slot_hint": "morning"}],
+     "meal_rules": ["Lunch near the ferry"], "drive_stops": []},
+    {"date": "2027-03-14", "title": "Day trip", "city": "New York", "items": [], "meal_rules": [], "drive_stops": []},
+    {"date": "2027-03-15", "title": "Departure", "city": "New York",
+     "items": [{"name": "Central Park walk", "kind": "attraction", "city": "New York", "slot_hint": "morning", "optional": true}],
+     "meal_rules": [], "drive_stops": []}
+  ],
+  "open_choices": [
+    {"day": "2027-03-13", "text": "Evening: Broadway show or Top of the Rock sunset visit",
+     "options": ["Broadway show", "Top of the Rock sunset visit"]}
+  ],
+  "vague_days": ["2027-03-14"],
+  "commentary_removed": ["Saumitra, please double check the ferry timing with the client before we send this."],
+  "trip_scope": "international",
+  "budget": "",
+  "occasion": "",
+  "additional_notes": ""
+}

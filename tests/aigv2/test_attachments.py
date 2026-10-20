@@ -64,7 +64,7 @@ def test_docx_with_inline_picture(tmp_path):
     assert a.has_images is True
     assert "3 senior citizen women" in a.text
     assert "Hagia Sophia" not in a.text
-    assert a.image_only is True or len(a.text.strip()) >= 40
+    assert a.image_only is True
 
 
 def test_docx_image_only(tmp_path):
@@ -176,3 +176,30 @@ def test_dedup_by_hash(tmp_path):
     assert atts[0].duplicate_of is None
     assert atts[1].duplicate_of == "one.pdf"
     assert atts[2].duplicate_of == "one.pdf"
+
+
+def test_junk_pdf_returns_error(tmp_path):
+    p = tmp_path / "junk.pdf"
+    p.write_bytes(b"this is not a pdf")
+    a = read_attachment(p)
+    assert a.kind == "other" and a.text == "" and a.error
+    good = _text_pdf(tmp_path / "ok.pdf", "A perfectly fine voucher for the Grand Hotel stay")
+    atts = read_attachments([p, good])
+    assert atts[0].error and atts[1].error is None
+
+
+def test_macos_zip_entries_skipped(tmp_path):
+    inner = _text_pdf(tmp_path / "i.pdf", "Voucher for Hotel Sultan, check in, two nights stay")
+    z = tmp_path / "mac.zip"
+    with zipfile.ZipFile(z, "w") as zf:
+        zf.write(inner, "x.pdf")
+        zf.writestr("__MACOSX/._x.pdf", b"\x00\x05\x16\x07")
+        zf.writestr("sub/._y.pdf", b"\x00\x05\x16\x07")
+    assert [a.name for a in read_attachments([z])] == ["mac.zip/x.pdf"]
+
+
+def test_corrupt_zip_returns_error(tmp_path):
+    z = tmp_path / "bad.zip"
+    z.write_bytes(b"PK not really a zip")
+    atts = read_attachments([z])
+    assert len(atts) == 1 and atts[0].name == "bad.zip" and atts[0].error

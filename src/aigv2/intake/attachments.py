@@ -37,6 +37,7 @@ class Attachment(BaseModel):
     has_images: bool
     text_dates: list[str] = []
     duplicate_of: str | None = None
+    error: str | None = None
 
 
 def _find_dates(text: str) -> list[str]:
@@ -95,8 +96,30 @@ def _build(name: str, data: bytes) -> Attachment:
     )
 
 
+def _failed(name: str, exc: Exception) -> Attachment:
+    return Attachment(
+        name=name,
+        kind="other",
+        text="",
+        image_only=False,
+        has_images=False,
+        error=f"{type(exc).__name__}: {exc}",
+    )
+
+
+def _safe_build(name: str, data: bytes) -> Attachment:
+    try:
+        return _build(name, data)
+    except Exception as exc:
+        return _failed(name, exc)
+
+
 def read_attachment(path: Path) -> Attachment:
-    return _build(path.name, path.read_bytes())
+    try:
+        data = path.read_bytes()
+    except OSError as exc:
+        return _failed(path.name, exc)
+    return _safe_build(path.name, data)
 
 
 def _safe_zip_name(name: str) -> bool:
@@ -104,34 +127,52 @@ def _safe_zip_name(name: str) -> bool:
     return not p.is_absolute() and ".." not in p.parts and not re.match(r"^[A-Za-z]:", name)
 
 
-def _expand_zip(path: Path) -> list[tuple[str, bytes]]:
-    out: list[tuple[str, bytes]] = []
+def _expand_zip(path: Path) -> list[tuple[str, bytes | Attachment]]:
+    out: list[tuple[str, bytes | Attachment]] = []
     total = 0
-    with zipfile.ZipFile(path) as zf:
+    try:
+        zf = zipfile.ZipFile(path)
+    except (zipfile.BadZipFile, OSError) as exc:
+        return [(path.name, _failed(path.name, exc))]
+    with zf:
         for info in zf.infolist():
+            base = PurePosixPath(info.filename.replace("\\", "/"))
             if info.is_dir() or not _safe_zip_name(info.filename):
+                continue
+            if "__MACOSX" in base.parts or base.name.startswith("._"):
                 continue
             if len(out) >= ZIP_MAX_FILES:
                 break
             if total + info.file_size > ZIP_MAX_BYTES:
                 continue
-            data = zf.read(info)
+            inner = f"{path.name}/{info.filename}"
+            try:
+                data = zf.read(info)
+            except Exception as exc:
+                out.append((inner, _failed(inner, exc)))
+                continue
             total += len(data)
-            out.append((f"{path.name}/{info.filename}", data))
+            out.append((inner, data))
     return out
 
 
 def read_attachments(paths: list[Path]) -> list[Attachment]:
-    items: list[tuple[str, bytes]] = []
+    items: list[tuple[str, bytes | Attachment]] = []
     for p in paths:
         if p.suffix.lower() == ".zip":
             items.extend(_expand_zip(p))
         else:
-            items.append((p.name, p.read_bytes()))
+            try:
+                items.append((p.name, p.read_bytes()))
+            except OSError as exc:
+                items.append((p.name, _failed(p.name, exc)))
     first_seen: dict[str, str] = {}
     result: list[Attachment] = []
     for name, data in items:
-        att = _build(name, data)
+        if isinstance(data, Attachment):
+            result.append(data)
+            continue
+        att = _safe_build(name, data)
         digest = hashlib.sha256(data).hexdigest()
         if digest in first_seen:
             att.duplicate_of = first_seen[digest]

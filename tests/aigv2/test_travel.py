@@ -1,7 +1,7 @@
 from src.aigv2.google.routes import RoutesClient
-from src.aigv2.models import Stop
+from src.aigv2.models import Stop, TransitStep
 from src.aigv2.planning.travel import (
-    Leg, TransitStep, boat_leg, compute_legs, drive_day_legs, leg_markers, leg_options, rail_leg, rail_text,
+    Leg, boat_leg, compute_legs, drive_day_legs, leg_markers, leg_options, rail_leg, rail_text,
 )
 
 
@@ -139,6 +139,7 @@ def test_compute_legs_requests_only_needed_modes():
     assert [(l.from_name, l.to_name, l.walk_min, l.drive_min, l.transit_min) for l in legs] == [
         ("Hotel", "Museum", 25, 6, None), ("Museum", "Cafe", 25, 6, None)]
     assert set(r.modes) == {"WALK", "DRIVE"}
+    assert not any(l.no_route for l in legs)
 
 
 def test_compute_legs_transit_steps():
@@ -151,7 +152,7 @@ def test_compute_legs_transit_steps():
 
     legs = compute_legs([("A", (1, 1)), ("B", (2, 2))], R(), ["public_transport"])
     assert legs[0].transit_min == 9 and legs[0].transit_steps[0].line == "M2"
-    assert legs[0].drive_min is None
+    assert legs[0].drive_min == 9
 
 
 def test_boat_leg_uses_voucher_time():
@@ -162,10 +163,52 @@ def test_boat_leg_uses_voucher_time():
 
 def test_unticketed_rail_is_duration_only():
     l = rail_leg("Rome", "Florence", 95, ticketed=False)
-    assert rail_text(l) == "about 1.5 h by train"
+    assert rail_text(l) == "about 2 h by train"
+    assert leg_options(l, ["taxi"], 10) == [("about 2 h by train", 120)]
     assert [m.render() for m in leg_markers(l, ["taxi"], 10)] == ["⚠ VERIFY: no ticket provided — check timetable"]
     assert leg_markers(rail_leg("Rome", "Florence", 95, ticketed=True), ["taxi"], 10) == []
     assert rail_text(rail_leg("A", "B", 180, ticketed=False)) == "about 3 h by train"
+
+
+def test_rail_text_rounding_and_none():
+    assert rail_text(rail_leg("A", "B", None, ticketed=False)) is None
+    assert rail_text(rail_leg("A", "B", 10, ticketed=False)) == "about 10 min by train"
+    assert rail_text(rail_leg("A", "B", 12, ticketed=False)) == "about 15 min by train"
+    assert rail_text(rail_leg("A", "B", 75, ticketed=False)) == "about 1.5 h by train"
+    nl = rail_leg("A", "B", None, ticketed=False)
+    assert leg_options(nl, ["taxi"], 10) == []
+    assert len(leg_markers(nl, ["taxi"], 10)) == 1
+
+
+def test_walk_max_clamped_and_walk_none():
+    assert leg_options(leg(15, 5), ["taxi"], 30) == [("By car", 5)]
+    assert leg_options(leg(None, 5), ["taxi"], 10) == [("By car", 5)]
+
+
+class MapRoutes:
+    def __init__(self, table):
+        self.table = table
+
+    def durations(self, o, d, mode):
+        return {(0, 0): self.table[mode]}
+
+    def transit_steps(self, o, d):
+        return []
+
+
+def test_compute_legs_car_fallback_via_public_transport_only():
+    legs = compute_legs([("A", (1, 1)), ("B", (2, 2))], MapRoutes({"WALK": 30, "DRIVE": 7, "TRANSIT": None}), ["public_transport"])
+    assert legs[0].drive_min == 7 and not legs[0].no_route
+    assert leg_options(legs[0], ["public_transport"], 10) == [("By car", 7)]
+    assert [m.render() for m in leg_markers(legs[0], ["public_transport"], 10)] == ["⚠ VERIFY: travel mode for this leg"]
+
+
+def test_compute_legs_route_not_found_flags_no_route():
+    legs = compute_legs([("Pier", (1, 1)), ("Island", (2, 2))], MapRoutes({"WALK": None, "DRIVE": None, "TRANSIT": None}), ["taxi", "public_transport"])
+    assert legs[0].no_route
+    assert leg_options(legs[0], ["taxi"], 10) == []
+    assert [m.render() for m in leg_markers(legs[0], ["taxi"], 10)] == [
+        "⚠ VERIFY: no road route found — use the voucher's transfer time (boat/flight?)"]
 
 
 def test_drive_day_legs_and_total():

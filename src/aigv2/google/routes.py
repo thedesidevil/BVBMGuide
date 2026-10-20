@@ -4,7 +4,7 @@ from typing import Literal, Optional
 
 import requests
 
-from src.aigv2.planning.travel import TransitStep
+from src.aigv2.models import TransitStep
 
 MATRIX_URL = "https://routes.googleapis.com/distanceMatrix/v2:computeRouteMatrix"
 DIRECTIONS_URL = "https://routes.googleapis.com/directions/v2:computeRoutes"

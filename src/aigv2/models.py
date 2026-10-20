@@ -86,6 +86,14 @@ class Stop(BaseModel):
     km_from_prev: float
 
 
+class TransitStep(BaseModel):
+    line: str
+    headsign: str
+    board: str
+    alight: str
+    stops: int
+
+
 class DayPlan(BaseModel):
     date: date
     title: str

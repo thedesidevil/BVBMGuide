@@ -398,3 +398,11 @@ def test_indian_guarantee_across_anchors(tmp_path):
     picks, _ = plan([(1, TUE, "Istanbul", [dinner(anchors=(show, hotel))])], lib, pl, rt, llm=llm)
     assert names(picks[0])[0] == "Tandoor"
     assert all("Indian restaurant" not in p for p in llm.prompts[1:])
+
+
+def test_indian_search_continues_past_spare(tmp_path):
+    rs = [rest(f"N{i}") for i in range(5)] + [rest("Closed Curry", cuisine=("Indian",)), rest("Masala", cuisine=("Indian",))]
+    lib, pl, rt = world(tmp_path, rs, overrides={"Closed Curry": place("Closed Curry", 6, status="CLOSED_PERMANENTLY")})
+    picks, excl = plan([(1, TUE, "Istanbul", [lunch()])], lib, pl, rt, llm=FirstN())
+    assert ("Closed Curry", "closed") in reasons(excl)
+    assert "Masala" in names(picks[0])

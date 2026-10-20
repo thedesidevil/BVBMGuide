@@ -188,14 +188,18 @@ class _Planner:
         places_today = self.places_by_day.setdefault(n, set())
         valid: list[ChosenRestaurant] = []
         seen_ids: dict[str, str] = {}
-        while pool and len(valid) < count + _SPARE:
+        while pool:
+            first = None
             if need_indian and not any(is_indian(c.lib) for c in valid):
                 first = next((i for i, r in enumerate(pool) if is_indian(r)), None)
-                if first:
-                    pool.insert(0, pool.pop(first))
-            batch = []
-            while pool and len(batch) < _BATCH:
+            if len(valid) >= count + _SPARE and first is None:
+                break
+            if first:
+                pool.insert(0, pool.pop(first))
+            batch, taken = [], 0
+            while pool and taken < _BATCH:
                 r = pool.pop(0)
+                taken += 1
                 place = self._resolve(r["name"], shard, a_xy)
                 if place is _CAPPED:
                     continue

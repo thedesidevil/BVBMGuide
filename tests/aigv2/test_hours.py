@@ -128,3 +128,34 @@ def test_format_week():
            + [{"open": _g(6, 9), "close": _g(6, 13)}]}
     assert hours.format_week(hours.from_google(roh)) == "9–6 Mon–Fri · 9–1 Sat · Closed Sun"
     assert hours.format_week(None) == "Hours unknown"
+
+
+@pytest.mark.parametrize("roh", [
+    {"periods": [{"open": {"hour": 9}}]},
+    {"periods": [{"close": _g(1, 17)}]},
+    {"periods": [{"open": _g(1, 9), "close": {"hour": 17}}]},
+    {"periods": [{"open": None, "close": _g(1, 17)}]},
+    {"periods": ["x"]},
+])
+def test_google_malformed_raises_value_error(roh):
+    with pytest.raises(ValueError):
+        hours.from_google(roh)
+
+
+def test_prefix_day_spec():
+    wh = hours.parse_library_hours("Mon-Fri 9 am-5 pm")
+    assert wh.periods[0] == [(time(9), time(17))] and wh.periods[4] == [(time(9), time(17))]
+    assert 5 not in wh.periods and 6 not in wh.periods
+
+
+def test_wrapping_day_range():
+    wh = hours.parse_library_hours("11 AM - 10 PM (Fri-Mon)")
+    assert sorted(wh.periods) == [0, 4, 5, 6]
+
+
+def test_sunday_night_spills_into_monday():
+    wh = hours.from_google({"periods": [{"open": _g(0, 22), "close": _g(1, 1)}]})
+    assert wh.periods[6] == [(time(22), time(23, 59, 59))]
+    assert wh.periods[0] == [(time(0), time(1))]
+    assert hours.is_open_for(wh, SUN, time(23, 30), 60) is True
+    assert hours.is_open_for(wh, SUN, time(23, 30), 120) is False

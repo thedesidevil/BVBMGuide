@@ -27,6 +27,13 @@ def _finish(periods: dict[int, list[tuple[time, time]]], source: str) -> WeeklyH
 
 
 def from_google(regular_opening_hours: dict) -> WeeklyHours:
+    try:
+        return _from_google(regular_opening_hours)
+    except (KeyError, TypeError, AttributeError) as e:
+        raise ValueError(f"malformed regularOpeningHours: {e!r}") from e
+
+
+def _from_google(regular_opening_hours: dict) -> WeeklyHours:
     raw = (regular_opening_hours or {}).get("periods")
     if not raw:
         raise ValueError("regularOpeningHours has no periods")

@@ -1,4 +1,6 @@
+import itertools
 import json
+import re
 from datetime import date, datetime, time
 from types import SimpleNamespace
 
@@ -48,11 +50,32 @@ class FakeRoutes:
     def __init__(self, places, minutes):
         self.by_coord = {(p.lat, p.lng): n for n, p in places.items() if p}
         self.minutes = minutes
+        self.by_origin = {}
         self.calls = []
 
     def durations(self, origins, destinations, mode):
         self.calls.append((tuple(origins), tuple(destinations), mode))
-        return {(0, j): self.minutes.get(self.by_coord[d], {}).get(mode) for j, d in enumerate(destinations)}
+        table = self.by_origin.get(origins[0], {})
+        out = {}
+        for j, d in enumerate(destinations):
+            n = self.by_coord[d]
+            out[(0, j)] = (table.get(n) or self.minutes.get(n, {})).get(mode)
+        return out
+
+
+class FirstN:
+    def __init__(self):
+        self.prompts = []
+
+    def run_json(self, step, system, prompt, schema, validate=None, **kw):
+        self.prompts.append(prompt)
+        n = int(re.search(r"Choose exactly (\d+)", prompt).group(1))
+        cands = json.loads(re.search(r"Candidates \(JSON\): (.*)\n", prompt).group(1))
+        for combo in itertools.combinations([c["name"] for c in cands], n):
+            obj = schema(picks=list(combo))
+            if not validate(obj):
+                return obj
+        raise AssertionError("no valid combination")
 
 
 class FakeLLM:
@@ -77,8 +100,12 @@ def world(tmp_path, restaurants, city="Istanbul", minutes=None, overrides=None, 
     return lib, FakePlaces(pl), FakeRoutes(pl, mins)
 
 
-def plan(days, lib, places, routes, diet=None, modes=("taxi",), llm=None, scope="international"):
+def run_plan(days, lib, places, routes, diet=None, modes=("taxi",), llm=None, scope="international"):
     return plan_meals(days, lib, places, routes, diet or Diet(), list(modes), llm or FakeLLM([]), S, trip_scope=scope)
+
+
+def plan(*a, **kw):
+    return run_plan(*a, **kw)[:2]
 
 
 def lunch(anchors=(GALATA,), start=time(12, 30), **kw):
@@ -299,3 +326,75 @@ def test_indian_option_guaranteed_when_available(tmp_path):
     domestic = FakeLLM(["A", "B", "C"])
     picks, _ = plan([(1, TUE, "Istanbul", [lunch()])], lib, pl, rt, llm=domestic, scope="domestic")
     assert names(picks[0]) == ["A", "B", "C"]
+
+
+def test_lazy_resolution_stops_after_enough_valid(tmp_path):
+    lib, pl, rt = world(tmp_path, [rest(f"R{i}") for i in range(40)])
+    picks, _, stats = run_plan([(1, TUE, "Istanbul", [lunch()])], lib, pl, rt, llm=FirstN())
+    assert len(pl.calls) <= 6 and stats.lookups_by_city == {"Istanbul": len(pl.calls)}
+    assert stats.capped_cities == [] and len(names(picks[0])) == 3
+    assert all(len(c[1]) <= 6 for c in rt.calls)
+
+
+def test_lookup_cap_per_city(tmp_path):
+    rs = [rest(f"R{i}") for i in range(30)]
+    lib, pl, rt = world(tmp_path, rs, overrides={f"R{i}": place(f"R{i}", i + 1, status="CLOSED_PERMANENTLY") for i in range(30)})
+    picks, _, stats = run_plan([(1, TUE, "Istanbul", [lunch(), dinner()])], lib, pl, rt)
+    assert len(pl.calls) == 25 and stats.lookups_by_city == {"Istanbul": 25}
+    assert stats.capped_cities == ["Istanbul"]
+    assert [len(p.markers) for p in picks] == [3, 3]
+
+
+def test_location_overlap_resolved_first(tmp_path):
+    rs = [rest(f"R{i}") for i in range(10)] + [rest("Tower Grill", area="Galata Tower, Beyoglu")]
+    lib, pl, rt = world(tmp_path, rs)
+    run_plan([(1, TUE, "Istanbul", [lunch()])], lib, pl, rt, llm=FirstN())
+    assert pl.calls[0][0] == "Tower Grill"
+
+
+def test_repeats_keyed_by_place_id(tmp_path):
+    rs = [rest("Hamdi"), rest("Hamdi Restaurant"), rest("B"), rest("C"), rest("D")]
+    same = place("Hamdi", 1)
+    lib, pl, rt = world(tmp_path, rs, overrides={"Hamdi": same, "Hamdi Restaurant": same})
+    days = [(1, TUE, "Istanbul", [lunch(), dinner()]),
+            (2, date(2026, 11, 4), "Istanbul", [lunch(), dinner()]),
+            (3, date(2026, 11, 5), "Istanbul", [lunch(), dinner()])]
+    picks, excl = plan(days, lib, pl, rt, llm=FirstN())
+    by_day = {}
+    for p in picks:
+        by_day.setdefault(p.day_index, []).extend(c.place.place_id for c in p.restaurants)
+    assert all(ids.count("id1") <= 1 for ids in by_day.values())
+    assert sum(ids.count("id1") for ids in by_day.values()) <= 2
+    assert sum(ids.count("id1") for ids in by_day.values()) >= 1
+
+
+def test_missing_route_is_distance_unknown(tmp_path):
+    lib, pl, rt = world(tmp_path, [rest("A"), rest("NoRoute")], minutes={"NoRoute": {}})
+    _, excl = plan([(1, TUE, "Istanbul", [lunch()])], lib, pl, rt)
+    assert [(e.name, e.reason) for e in excl] == [("NoRoute", "too_far")]
+    assert excl[0].detail.endswith("distance unknown")
+
+
+def test_no_eligible_indian_no_requirement_line(tmp_path):
+    lib, pl, rt = world(tmp_path, [rest("A"), rest("B"), rest("C"), rest("D")])
+    llm = FirstN()
+    plan([(1, TUE, "Istanbul", [lunch()])], lib, pl, rt, llm=llm)
+    assert "Indian" not in llm.prompts[0]
+
+
+def test_indian_guarantee_across_anchors(tmp_path):
+    show = ("Fado show", (41.0, 29.0), 1)
+    hotel = ("Hotel H", (40.0, 28.0), 2)
+    rs = [rest("A"), rest("B"), rest("C"), rest("D"), rest("Tandoor", cuisine=("Punjabi",))]
+    lib, pl, rt = world(tmp_path, rs)
+    rt.by_origin[(41.0, 29.0)] = {"Tandoor": {"WALK": 50, "DRIVE": 40}}
+    llm = FirstN()
+    picks, _ = plan([(1, TUE, "Istanbul", [dinner(anchors=(show, hotel))])], lib, pl, rt, llm=llm)
+    assert "Indian" not in llm.prompts[0] and "Indian restaurant" in llm.prompts[1]
+    assert "Tandoor" in names(picks[0]) and len(names(picks[0])) == 3
+
+    rt.by_origin.clear()
+    llm = FirstN()
+    picks, _ = plan([(1, TUE, "Istanbul", [dinner(anchors=(show, hotel))])], lib, pl, rt, llm=llm)
+    assert names(picks[0])[0] == "Tandoor"
+    assert all("Indian restaurant" not in p for p in llm.prompts[1:])

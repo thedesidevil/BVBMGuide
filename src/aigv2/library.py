@@ -23,7 +23,7 @@ class LibraryDataError(Exception):
     pass
 
 
-def _norm(s: str) -> str:
+def norm_name(s: str) -> str:
     return " ".join(s.casefold().split())
 
 
@@ -36,7 +36,7 @@ def _cuisines(r: dict) -> list[str]:
     c = r.get("cuisine_type") or []
     if isinstance(c, str):
         c = [c]
-    return [_norm(x) for x in c if isinstance(x, str)]
+    return [norm_name(x) for x in c if isinstance(x, str)]
 
 
 def _text(r: dict, keys: tuple[str, ...]) -> str:
@@ -47,7 +47,7 @@ def _text(r: dict, keys: tuple[str, ...]) -> str:
             parts.append(v)
         elif isinstance(v, list):
             parts.extend(x for x in v if isinstance(x, str))
-    return _norm(" | ".join(parts))
+    return norm_name(" | ".join(parts))
 
 
 def is_indian(restaurant: dict) -> bool:
@@ -63,14 +63,14 @@ def _kind(restriction: str) -> str | None:
 
 
 def _vegan_fits(r: dict) -> bool:
-    blob = " | ".join([_norm(r.get("name") or ""), *_cuisines(r), _text(r, ("highlights", "must_try_dishes", "notes"))])
+    blob = " | ".join([norm_name(r.get("name") or ""), *_cuisines(r), _text(r, ("highlights", "must_try_dishes", "notes"))])
     return _has(blob, "vegan")
 
 
 def _veg_fits(r: dict, pure: bool) -> bool:
     cuisines = _cuisines(r)
     if pure:
-        blob = " | ".join([_norm(r.get("name") or ""), *cuisines, _text(r, ("highlights",))])
+        blob = " | ".join([norm_name(r.get("name") or ""), *cuisines, _text(r, ("highlights",))])
         return r.get("vegetarian_friendly") is True and any(_has(blob, p) for p in _PURE_VEG)
     veg_cuisine = any(_has(c, w) for c in cuisines for w in ("vegetarian", "vegan"))
     if any(_has(c, j) for c in cuisines for j in _JP_KR):
@@ -95,7 +95,7 @@ def _terms(restriction: str) -> list[str]:
 
 
 def diet_fits(restaurant: dict, diet: Diet) -> bool:
-    restrictions = [_norm(x) for x in diet.restrictions + diet.allergies if x.strip()]
+    restrictions = [norm_name(x) for x in diet.restrictions + diet.allergies if x.strip()]
     if not restrictions and not diet.pure_veg:
         return True
     if diet.pure_veg and not _veg_fits(restaurant, True):
@@ -151,10 +151,10 @@ class Library:
         for f in folders:
             if re.search(r" and |&|\+", f.casefold()):
                 continue
-            words = _norm(f).split()
+            words = norm_name(f).split()
             for c in self._coverage.get(f, []):
-                cw = _norm(c).split()
-                if cw and _norm(c) != _norm(city) and words[: len(cw)] == cw:
+                cw = norm_name(c).split()
+                if cw and norm_name(c) != norm_name(city) and words[: len(cw)] == cw:
                     out.append(c)
         return out
 
@@ -180,7 +180,7 @@ class Library:
                 bucket = merged.setdefault(key, [])
                 keys = seen.setdefault(key, set())
                 for item in val:
-                    k = _norm(item["name"]) if isinstance(item, dict) and isinstance(item.get("name"), str) else json.dumps(item, sort_keys=True)
+                    k = norm_name(item["name"]) if isinstance(item, dict) and isinstance(item.get("name"), str) else json.dumps(item, sort_keys=True)
                     if k not in keys:
                         keys.add(k)
                         bucket.append(item)
@@ -190,10 +190,10 @@ class Library:
         d = self.root / "_country"
         if not d.is_dir():
             return {}
-        want = _norm(country)
+        want = norm_name(country)
         folders = self._folders(self._names(country))
         by_stem = {p.stem.casefold(): p for p in d.glob("*.json")}
-        for cand in [want, *(_norm(f) for f in folders)]:
+        for cand in [want, *(norm_name(f) for f in folders)]:
             if cand in by_stem:
                 return self._load(by_stem[cand])
         return {}

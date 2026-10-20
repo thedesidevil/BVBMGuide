@@ -96,7 +96,7 @@ def parse_library_hours(text: str) -> WeeklyHours | None:
     if not text:
         return None
     s = re.sub(r"[\s     ]+", " ", text).strip().lower()
-    s = re.sub(r"[‐-―−﹘﹣－]", "-", s).rstrip(".")
+    s = re.sub(r"[‐-―−﹘﹣－]", "-", s).rstrip(".").replace("|", ",")
     days = list(range(7))
     m = _SUFFIX_RE.match(s)
     if m:

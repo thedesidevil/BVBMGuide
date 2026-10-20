@@ -159,3 +159,9 @@ def test_sunday_night_spills_into_monday():
     assert wh.periods[0] == [(time(0), time(1))]
     assert hours.is_open_for(wh, SUN, time(23, 30), 60) is True
     assert hours.is_open_for(wh, SUN, time(23, 30), 120) is False
+
+
+def test_library_pipe_separated_ranges():
+    h = hours.parse_library_hours("11:30 AM – 3:30 PM | 6:30 PM – 11:00 PM")
+    assert h is not None and h.source == "library"
+    assert h.periods[2] == [(time(11, 30), time(15, 30)), (time(18, 30), time(23, 0))]

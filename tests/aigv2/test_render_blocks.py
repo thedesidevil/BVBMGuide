@@ -94,3 +94,44 @@ def test_header_has_logo():
     doc = new_document()
     h = doc.sections[0].header._element
     assert h.xpath(".//pic:pic") or h.xpath(".//*[local-name()='pic']")
+
+
+from src.aigv2.render.theme import PPR_ORDER, TBLPR_ORDER, TCPR_ORDER
+
+
+def _local(el):
+    return [c.tag.split("}")[1] for c in el]
+
+
+def _assert_ordered(el, order):
+    idx = [order.index(n) for n in _local(el)]
+    assert idx == sorted(idx), _local(el)
+
+
+def test_card_xml_child_order():
+    doc = new_document()
+    blocks.add_card(doc, "T", "https://e.com", [("A", "b")], "body", ["p"])
+    tbl = doc.tables[0]._tbl
+    _assert_ordered(tbl.tblPr, TBLPR_ORDER)
+    for tcpr in tbl.iter(qn("w:tcPr")):
+        _assert_ordered(tcpr, TCPR_ORDER)
+    for ppr in tbl.iter(qn("w:pPr")):
+        _assert_ordered(ppr, PPR_ORDER)
+
+
+def test_rule_and_footer_ppr_order():
+    doc = new_document()
+    p = blocks.add_rule(doc)
+    _assert_ordered(p._p.pPr, PPR_ORDER)
+    assert "pBdr" in _local(p._p.pPr)
+    _assert_ordered(doc.sections[0].footer.paragraphs[0]._p.pPr, PPR_ORDER)
+
+
+def test_links_not_underlined_and_no_blank_paragraph_in_card():
+    doc = new_document()
+    p = doc.add_paragraph()
+    blocks.add_link(p, "x", "https://e.com")
+    assert p._p.xpath('.//w:u[@w:val="none"]')
+    blocks.add_card(doc, "T", "https://e.com", [("A", "b")], "body", [])
+    cell = doc.tables[0].cell(0, 0)
+    assert [q.text for q in cell.paragraphs] == ["T", "body"]

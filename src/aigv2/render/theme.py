@@ -13,6 +13,32 @@ HEADING_FONT, BODY_FONT = "Cormorant Garamond", "Georgia"
 TAGLINE = "Your Vacation · Your Story · Your Way"
 
 
+TBLPR_ORDER = ["tblStyle", "tblpPr", "tblOverlap", "bidiVisual", "tblStyleRowBandSize", "tblStyleColBandSize",
+               "tblW", "jc", "tblCellSpacing", "tblInd", "tblBorders", "shd", "tblLayout", "tblCellMar", "tblLook"]
+PPR_ORDER = ["pStyle", "keepNext", "keepLines", "pageBreakBefore", "framePr", "widowControl", "numPr",
+             "suppressLineNumbers", "pBdr", "shd", "tabs", "suppressAutoHyphens", "kinsoku", "wordWrap",
+             "overflowPunct", "topLinePunct", "autoSpaceDE", "autoSpaceDN", "bidi", "adjustRightInd",
+             "snapToGrid", "spacing", "ind", "contextualSpacing", "mirrorIndents", "suppressOverlap", "jc",
+             "textDirection", "textAlignment", "textboxTightWrap", "outlineLvl", "divId", "cnfStyle", "rPr",
+             "sectPr", "pPrChange"]
+TCPR_ORDER = ["cnfStyle", "tcW", "gridSpan", "hMerge", "vMerge", "tcBorders", "shd", "noWrap", "tcMar",
+              "textDirection", "tcFitText", "vAlign", "hideMark"]
+
+
+def ordered_insert(parent, child, order):
+    """Insert child into parent at its schema position, replacing any same-tag sibling."""
+    name = child.tag.split("}")[1]
+    for old in parent.findall(child.tag):
+        parent.remove(old)
+    idx = order.index(name)
+    for i, sib in enumerate(list(parent)):
+        sname = sib.tag.split("}")[1]
+        if sname in order and order.index(sname) > idx:
+            parent.insert(i, child)
+            return
+    parent.append(child)
+
+
 def set_font(style_or_run, name: str) -> None:
     style_or_run.font.name = name
     rpr = style_or_run.element.get_or_add_rPr() if hasattr(style_or_run, "element") else style_or_run._r.get_or_add_rPr()
@@ -99,7 +125,7 @@ def new_document():
     for pos in (4680, 9360):
         tabs.append(_tab("clear", pos))
     tabs.append(_tab("right", int(width / 635)))
-    ppr.append(tabs)
+    ordered_insert(ppr, tabs, PPR_ORDER)
     _style_footer_run(fp.add_run(TAGLINE))
     _style_footer_run(fp.add_run("\t"))
     _field(fp, "PAGE")

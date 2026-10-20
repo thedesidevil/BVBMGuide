@@ -1,11 +1,12 @@
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
-from docx.shared import Cm, Pt, RGBColor
+from docx.shared import Pt, RGBColor
 from docx.enum.text import WD_BREAK
 
 from src.aigv2.models import Marker
 from src.aigv2.render.theme import (
-    BODY_FONT, CARD_BORDER, CARD_FILL, FROST, POWDER, ROYAL, SLATE, set_font,
+    BODY_FONT, CARD_BORDER, CARD_FILL, FROST, POWDER, PPR_ORDER, ROYAL, SLATE, TBLPR_ORDER, TCPR_ORDER,
+    ordered_insert, set_font,
 )
 
 _BM_ID = [100]
@@ -48,48 +49,49 @@ def _sort_rpr(run):
 
 
 def _shade_cell(cell, fill):
-    cell._tc.get_or_add_tcPr().append(_el("w:shd", val="clear", color="auto", fill=fill))
+    ordered_insert(cell._tc.get_or_add_tcPr(), _el("w:shd", val="clear", color="auto", fill=fill), TCPR_ORDER)
 
 
 def _cell_margins(cell, top, left, bottom, right):
     mar = OxmlElement("w:tcMar")
     for side, v in (("top", top), ("left", left), ("bottom", bottom), ("right", right)):
         mar.append(_el(f"w:{side}", w=int(v * 20), type="dxa"))
-    cell._tc.get_or_add_tcPr().append(mar)
+    ordered_insert(cell._tc.get_or_add_tcPr(), mar, TCPR_ORDER)
 
 
 def _table_borders(table, color=None, sz=4):
     pr = table._tbl.tblPr
-    for old in pr.findall(qn("w:tblBorders")):
-        pr.remove(old)
     b = OxmlElement("w:tblBorders")
     for name in ("top", "left", "bottom", "right", "insideH", "insideV"):
         if color and name not in ("insideH", "insideV"):
             b.append(_el(f"w:{name}", val="single", sz=sz, space=0, color=color))
         else:
             b.append(_el(f"w:{name}", val="nil"))
-    pr.append(b)
+    ordered_insert(pr, b, TBLPR_ORDER)
 
 
 def _bottom_border(paragraph, color, sz=6):
     ppr = paragraph._p.get_or_add_pPr()
     bdr = OxmlElement("w:pBdr")
     bdr.append(_el("w:bottom", val="single", sz=sz, space=1, color=color))
-    ppr.append(bdr)
+    ordered_insert(ppr, bdr, PPR_ORDER)
 
 
-def add_link(paragraph, text: str, url: str, *, size=None, bold=False):
+def add_link(paragraph, text: str, url: str, *, size=None, bold=False, styled=True):
     rid = paragraph.part.relate_to(
         url, "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink", is_external=True)
     h = OxmlElement("w:hyperlink")
     h.set(qn("r:id"), rid)
     h.set(qn("w:history"), "1")
-    _append_link_run(paragraph, h, text, size, bold)
+    _append_link_run(paragraph, h, text, size, bold, styled)
 
 
-def _append_link_run(paragraph, h, text, size, bold):
+def _append_link_run(paragraph, h, text, size, bold, styled=True):
     run = paragraph.add_run(text)
-    _style_run(run, size=size, bold=bold, color=ROYAL)
+    if styled:
+        _style_run(run, size=size, bold=bold, color=ROYAL)
+    else:
+        run.font.color.rgb = RGBColor.from_string(ROYAL)
     run.font.underline = False
     h.append(run._r)
     paragraph._p.append(h)
@@ -183,12 +185,15 @@ def add_card(doc, title, url, facts, body, pills):
     tp.style = doc.styles["Heading 3"]
     tp.paragraph_format.keep_with_next = True
     if url:
-        add_link(tp, title, url, size=15, bold=True)
-        _heading_link_font(tp)
+        add_link(tp, title, url, styled=False)
     else:
         tp.add_run(title)
+    trail = None
     if facts:
         _facts_table(cell, facts)
+        trail = cell.paragraphs[-1]
+    if (body or pills) and trail is not None:
+        trail._p.getparent().remove(trail._p)
     if body:
         bp = cell.add_paragraph()
         _style_run(bp.add_run(body), size=10, color=SLATE)
@@ -205,17 +210,3 @@ def add_card(doc, title, url, facts, body, pills):
     spacer = doc.add_paragraph()
     spacer.paragraph_format.space_after = Pt(4)
     return table
-
-
-def _heading_link_font(paragraph):
-    for r in paragraph._p.iter(qn("w:r")):
-        rpr = r.find(qn("w:rPr"))
-        rf = rpr.find(qn("w:rFonts")) if rpr is not None else None
-        if rf is not None:
-            rpr.remove(rf)
-        sz = rpr.find(qn("w:sz")) if rpr is not None else None
-        if sz is not None:
-            rpr.remove(sz)
-            szcs = rpr.find(qn("w:szCs"))
-            if szcs is not None:
-                rpr.remove(szcs)

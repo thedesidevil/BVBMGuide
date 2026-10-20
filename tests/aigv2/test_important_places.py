@@ -8,10 +8,10 @@ def hrs():
     return WeeklyHours(periods={d: [(time(9), time(21))] for d in range(6)}, source="google")
 
 
-def mk(name, lat, hours="default", note=None):
+def mk(name, lat, hours="default", note=None, ok=True):
     return Place(query=name, place_id=name, name=name, address="", lat=lat, lng=0.0, status="OPERATIONAL",
                  hours=hrs() if hours == "default" else hours, phone="+1 555 0100", maps_url="u",
-                 fetched_at=datetime(2026, 1, 1), match_ok=True, verify_note=note)
+                 fetched_at=datetime(2026, 1, 1), match_ok=ok, verify_note=note)
 
 
 def stay(hotel, city, d=1):
@@ -84,3 +84,41 @@ def test_pharmacy_beyond_ten_minutes_filtered_and_markers_carried():
 def test_missing_hotel_place_gets_marker():
     res = important_places([stay("Ghost", "Rome")], {}, FakePlaces({}), FakeRoutes({}, {}), [])
     assert res[0].pharmacies == [] and res[0].markers[0].kind == "VERIFY"
+
+
+def _one(pharm, groc, hosp, walk, drive, modes=(), hotel=None):
+    places = FakePlaces({(1.0, "pharmacy"): pharm, (1.0, "grocery"): groc, (1.0, "hospital"): hosp})
+    hotels = {"H1": hotel or mk("H1", 1.0)}
+    return important_places([stay("H1", "Rome")], hotels, places, FakeRoutes(walk, drive), list(modes))[0]
+
+
+def test_hospital_drive_unknown_gets_marker():
+    r = _one([], [], [mk("H", 1.5)], {}, {})
+    assert r.hospital.drive_min is None
+    assert any("drive time unknown" in m.text for m in r.hospital.markers)
+
+
+def test_hospital_chosen_by_drive_even_with_public_transport_only():
+    r = _one([], [], [mk("Slow", 1.5), mk("Fast", 1.6)], {1.5: 1, 1.6: 50}, {1.5: 20, 1.6: 6}, ["public_transport"])
+    assert r.hospital.place.name == "Fast" and r.hospital.walk_min is None
+
+
+def test_hotel_with_bad_match_treated_as_missing():
+    places = FakePlaces({})
+    res = important_places([stay("H1", "Rome")], {"H1": mk("H1", 1.0, ok=False)}, places, FakeRoutes({}, {}), [])
+    assert places.calls == [] and res[0].markers[0].kind == "VERIFY" and res[0].hospital is None
+
+
+def test_unknown_walk_dropped_no_car_drive_none_and_hours_marker():
+    a, b = mk("A", 1.1, hours=None), mk("B", 1.2)
+    r = _one([a, b], [], [], {1.1: 5}, {1.1: 3, 1.2: 3})
+    assert [n.place.name for n in r.pharmacies] == ["A"]
+    assert r.pharmacies[0].drive_min is None
+    assert any(m.text == "opening hours unknown" for m in r.pharmacies[0].markers)
+
+
+def test_place_in_both_lists_kept_only_in_pharmacies():
+    shared, g = mk("Shared", 1.1), mk("G", 1.2)
+    r = _one([shared], [shared, g], [], {1.1: 2, 1.2: 3}, {})
+    assert [n.place.name for n in r.pharmacies] == ["Shared"]
+    assert [n.place.name for n in r.groceries] == ["G"]

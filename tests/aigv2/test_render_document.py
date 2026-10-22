@@ -571,3 +571,31 @@ def test_slot_heading_repeats_after_meal():
     block = day_block(load(data(days=[d1, day2(), day3()])), 1)
     after = block[block.index("Lunch — Included in your package"):]
     assert "Afternoon\nGrand Bazaar" in after or after.index("Afternoon") < after.index("Grand Bazaar")
+
+
+def test_transport_and_nearby_links_name_the_city():
+    from src.aigv2.qc.reader import read_docx
+    from src.aigv2.render.sections_render import search_url
+    imp = important()
+    imp[0].pharmacies[0].place.maps_url = ""
+    m = read_docx(render_guide(data(important=imp), S))
+    urls = {v.name: v.url for d in m.days for s in d.slots for v in s.venues}
+    assert urls["Flight: Mumbai to Istanbul Airport"] == search_url("Istanbul Airport", "Istanbul")
+    assert urls["Flight: Istanbul Airport to Mumbai"] == search_url("Istanbul Airport", "Istanbul")
+    section = {v.name: v.url for v in m.section_venues}
+    assert section["Eczane Pera"] == search_url("Eczane Pera", "Istanbul")
+
+
+def test_city_change_departure_links_use_previous_city():
+    from src.aigv2.qc.reader import read_docx
+    from src.aigv2.render.sections_render import search_url
+    train = TransportLeg(kind="train", from_place="Central Station", to_place="Ankara Gar",
+                         depart=datetime(2026, 10, 31, 9, 0), arrive=datetime(2026, 10, 31, 13, 0), source="ticket")
+    d3 = day3()
+    d3.city, d3.prev_city, d3.arrival, d3.departure = "Ankara", "Istanbul", train, train
+    t = trip(hotels=[HotelStay(city="Istanbul", hotel=HOTEL, check_in=D1, check_out=D3, source="voucher"),
+                     HotelStay(city="Ankara", hotel="Ankara Inn", check_in=D3, check_out=date(2026, 11, 1),
+                               source="voucher")])
+    m = read_docx(render_guide(data(trip=t, days=[day1(), day2(), d3]), S))
+    urls = {v.name: v.url for d in m.days for s in d.slots for v in s.venues}
+    assert urls[f"{HOTEL} → Central Station"] == search_url("Central Station", "Istanbul")

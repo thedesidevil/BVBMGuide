@@ -38,6 +38,7 @@ class Attachment(BaseModel):
     text_dates: list[str] = []
     duplicate_of: str | None = None
     error: str | None = None
+    skipped_files: list[str] = []
 
 
 def _find_dates(text: str) -> list[str]:
@@ -134,6 +135,7 @@ def _expand_zip(path: Path) -> list[tuple[str, bytes | Attachment]]:
         zf = zipfile.ZipFile(path)
     except (zipfile.BadZipFile, OSError) as exc:
         return [(path.name, _failed(path.name, exc))]
+    skipped: list[str] = []
     with zf:
         for info in zf.infolist():
             base = PurePosixPath(info.filename.replace("\\", "/"))
@@ -141,9 +143,8 @@ def _expand_zip(path: Path) -> list[tuple[str, bytes | Attachment]]:
                 continue
             if "__MACOSX" in base.parts or base.name.startswith("._"):
                 continue
-            if len(out) >= ZIP_MAX_FILES:
-                break
-            if total + info.file_size > ZIP_MAX_BYTES:
+            if len(out) >= ZIP_MAX_FILES or total + info.file_size > ZIP_MAX_BYTES:
+                skipped.append(info.filename)
                 continue
             inner = f"{path.name}/{info.filename}"
             try:
@@ -153,6 +154,9 @@ def _expand_zip(path: Path) -> list[tuple[str, bytes | Attachment]]:
                 continue
             total += len(data)
             out.append((inner, data))
+    if skipped:
+        out.append((path.name, Attachment(name=path.name, kind="other", text="", image_only=False, has_images=False,
+                                          skipped_files=skipped)))
     return out
 
 

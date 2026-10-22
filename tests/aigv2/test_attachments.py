@@ -155,13 +155,18 @@ def test_zip_caps(tmp_path):
     with zipfile.ZipFile(z, "w") as zf:
         for i in range(60):
             zf.writestr(f"f{i}.txt", "x")
-    assert len(read_attachments([z])) == 50
+    atts = read_attachments([z])
+    assert len([a for a in atts if not a.skipped_files]) == 50
+    notice = [a for a in atts if a.skipped_files]
+    assert len(notice) == 1 and notice[0].name == "many.zip"
+    assert notice[0].skipped_files == [f"f{i}.txt" for i in range(50, 60)]
 
     big = tmp_path / "big.zip"
     with zipfile.ZipFile(big, "w") as zf:
         zf.writestr("a.txt", b"0" * (30 * 1024 * 1024))
         zf.writestr("b.txt", b"0" * (30 * 1024 * 1024))
-    assert [a.name for a in read_attachments([big])] == ["big.zip/a.txt"]
+    atts = read_attachments([big])
+    assert [a.name for a in atts] == ["big.zip/a.txt", "big.zip"] and atts[1].skipped_files == ["b.txt"]
 
 
 def test_dedup_by_hash(tmp_path):

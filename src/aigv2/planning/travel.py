@@ -1,4 +1,5 @@
 import math
+from datetime import datetime
 from typing import Optional, Protocol
 
 from pydantic import BaseModel, Field
@@ -22,8 +23,8 @@ class Leg(BaseModel):
 
 
 class _Routes(Protocol):
-    def durations(self, origins, destinations, mode) -> dict: ...
-    def transit_steps(self, origin, destination) -> list[TransitStep]: ...
+    def durations(self, origins, destinations, mode, when=None) -> dict: ...
+    def transit_steps(self, origin, destination, when=None) -> list[TransitStep]: ...
 
 
 def boat_leg(from_name: str, to_name: str, minutes: int) -> Leg:
@@ -90,18 +91,20 @@ def leg_markers(leg: Leg, modes: list[str], walk_max: int) -> list[Marker]:
     return []
 
 
-def compute_legs(points: list[tuple[str, tuple[float, float]]], routes: _Routes, modes: list[str], walk_max: int = 10) -> list[Leg]:
+def compute_legs(points: list[tuple[str, tuple[float, float]]], routes: _Routes, modes: list[str], walk_max: int = 10,
+                 departures: Optional[list[Optional[datetime]]] = None) -> list[Leg]:
     legs = []
-    for (n1, p1), (n2, p2) in zip(points, points[1:]):
+    for i, ((n1, p1), (n2, p2)) in enumerate(zip(points, points[1:])):
         def minutes(mode: str) -> Optional[int]:
             return routes.durations([p1], [p2], mode)[(0, 0)]
 
+        when = departures[i] if departures and i < len(departures) else None
         leg = Leg(from_name=n1, to_name=n2, walk_min=minutes("WALK"))
         leg.drive_min = minutes("DRIVE")
         if "public_transport" in modes:
-            leg.transit_min = minutes("TRANSIT")
+            leg.transit_min = routes.durations([p1], [p2], "TRANSIT", when=when)[(0, 0)]
             if leg.transit_min is not None:
-                leg.transit_steps = routes.transit_steps(p1, p2)
+                leg.transit_steps = routes.transit_steps(p1, p2, when=when)
         leg.no_route = (
             leg.drive_min is None
             and leg.transit_min is None

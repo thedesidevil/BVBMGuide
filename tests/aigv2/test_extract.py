@@ -103,7 +103,12 @@ def test_dedupe_legs_merges_per_passenger_tickets():
     out = dedupe_legs(plan)
     assert len(out.transport) == 2
     assert out.transport[0].pax_label == "TEST/CLIENT MR, TEST/GUEST MS"
+    assert out.transport[0].seat == "14A, 14B"
     assert out.transport[1].depart.hour == 21
+    third = leg.model_copy(update={"pax_label": "TEST/KID MSTR", "seat": "14A"})
+    blank = leg.model_copy(update={"pax_label": "TEST/BABY", "seat": ""})
+    plan.transport = [leg, same, third, blank]
+    assert dedupe_legs(plan).transport[0].seat == "14A, 14B"
 
 
 def test_extract_dedupes_llm_output():

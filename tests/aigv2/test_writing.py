@@ -263,3 +263,18 @@ def test_safety_no_hotels_no_crash():
     t.hotels = []
     llm, _ = make(sec([{"heading": "Bags", "body": "Watch them."}]))
     assert write_section("safety", [{"country": "France"}], {}, t, llm).items
+
+
+def test_dishes_where_to_try_diet_filtered():
+    cities = [{**CITY[0], "restaurants": [
+        {"name": "Le Boeuf", "cuisine_type": ["Steakhouse"], "vegetarian_friendly": False},
+        {"name": "Green Table", "cuisine_type": ["Vegetarian"], "vegetarian_friendly": True,
+         "highlights": "Pure vegetarian kitchen"}]}]
+    veg = trip().model_copy(update={"diet": Diet(restrictions=["vegetarian"], pure_veg=True)})
+    bad = sec([{"heading": "Croissant", "body": "Flaky", "where_to_try": ["Le Boeuf"]}])
+    good = sec([{"heading": "Croissant", "body": "Flaky", "where_to_try": ["Green Table"]}])
+    llm, calls = make([bad], [good])
+    s = write_section("dishes", cities, {}, veg, llm)
+    assert llm.cost_log[1]["fallback"] is True
+    assert "Green Table" in s.items[0].body and "Le Boeuf" not in s.items[0].body
+    assert "Le Boeuf" not in calls[0][1]["messages"][1]["content"].split("where_to_try: ", 1)[1].split("\n", 1)[0]

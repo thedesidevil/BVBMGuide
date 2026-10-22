@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 from docx import Document
@@ -25,7 +26,8 @@ FIELDS: list[tuple[str, bool]] = [
     ("Additional notes", False),
 ]
 
-SEE_ATTACHMENTS = {"see attachments", "see attached", "use information from the attached files"}
+SEE_ATTACHMENTS = {"see attachments", "see attachment", "see attached", "see attached files",
+                   "use information from the attached files"}
 _FONT = "Georgia"
 
 
@@ -34,6 +36,13 @@ class IntakeFields(BaseModel):
     see_attachments: set[str] = Field(default_factory=set)
     missing_required: list[str] = Field(default_factory=list)
     is_template: bool = False
+
+
+def _see_attachments(value: str) -> bool:
+    words = re.sub(r"[^\w\s]", " ", value.casefold()).split()
+    if words[:1] == ["please"]:
+        words = words[1:]
+    return " ".join(words) in SEE_ATTACHMENTS
 
 
 def _norm(label: str) -> str:
@@ -97,7 +106,7 @@ def parse_template(path: Path) -> IntakeFields:
                 found[label] = row.cells[1].text.strip()
         if not found:
             continue
-        see = {k for k, v in found.items() if v.lower() in SEE_ATTACHMENTS}
+        see = {k for k, v in found.items() if _see_attachments(v)}
         values = {k: v for k, v in found.items() if v and k not in see}
         missing = [r for r in required if r not in values and r not in see]
         return IntakeFields(values=values, see_attachments=see, missing_required=missing, is_template=True)

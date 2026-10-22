@@ -4,7 +4,7 @@ from typing import Optional
 
 from .config import Settings
 from .hours import is_open_for
-from .intake.attachments import Attachment
+from .intake.attachments import ZIP_MAX_BYTES, ZIP_MAX_FILES, Attachment
 from .intake.template import IntakeFields
 from .library import Library
 from .models import Answers, DayPlan, HotelStay, PlannedItem, Place, Question, TransportLeg, TripPlan, place_key
@@ -206,6 +206,12 @@ def run_checklist(
     for a in live:
         if a.error:
             add(f"unreadable:{a.name}", "unreadable", f"We couldn't read {a.name} — please re-upload it or paste its text")
+    for a in live:
+        if a.skipped_files:
+            shown = ", ".join(a.skipped_files[:10]) + (", …" if len(a.skipped_files) > 10 else "")
+            add(f"zip_skipped:{a.name}", "zip_skipped",
+                f"{len(a.skipped_files)} file(s) in {a.name} were not read (limit {ZIP_MAX_FILES} files / "
+                f"{ZIP_MAX_BYTES // (1024 * 1024)} MB): {shown} — upload them separately, or answer 'not needed'")
     for a in live:
         if not a.error and a.image_only and a.kind != "image":
             add(f"image_only:{a.name}", "image_only", f"{a.name} is an image — please paste its text")

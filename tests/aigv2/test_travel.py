@@ -124,11 +124,11 @@ class FakeRoutes:
     def __init__(self):
         self.modes = []
 
-    def durations(self, o, d, mode):
+    def durations(self, o, d, mode, when=None):
         self.modes.append(mode)
         return {(0, 0): {"WALK": 25, "DRIVE": 6, "TRANSIT": None}[mode]}
 
-    def transit_steps(self, o, d):
+    def transit_steps(self, o, d, when=None):
         raise AssertionError("no transit result, no steps")
 
 
@@ -144,10 +144,10 @@ def test_compute_legs_requests_only_needed_modes():
 
 def test_compute_legs_transit_steps():
     class R(FakeRoutes):
-        def durations(self, o, d, mode):
+        def durations(self, o, d, mode, when=None):
             return {(0, 0): 9}
 
-        def transit_steps(self, o, d):
+        def transit_steps(self, o, d, when=None):
             return [TransitStep(line="M2", headsign="X", board="A", alight="B", stops=3)]
 
     legs = compute_legs([("A", (1, 1)), ("B", (2, 2))], R(), ["public_transport"])
@@ -189,10 +189,10 @@ class MapRoutes:
     def __init__(self, table):
         self.table = table
 
-    def durations(self, o, d, mode):
+    def durations(self, o, d, mode, when=None):
         return {(0, 0): self.table[mode]}
 
-    def transit_steps(self, o, d):
+    def transit_steps(self, o, d, when=None):
         return []
 
 
@@ -220,3 +220,48 @@ def test_drive_day_legs_and_total():
     assert [(l.from_name, l.to_name, l.drive_min, l.km) for l in legs] == [
         ("Hotel", "Viewpoint", 40, 35.5), ("Viewpoint", "Village", 65, 70.0)]
     assert (total_min, total_km) == (105, 105.5)
+
+
+def test_transit_requests_carry_near_future_same_weekday_time():
+    from datetime import datetime, timedelta, timezone
+    s = FakeSession(FakeResp([{"originIndex": 0, "destinationIndex": 0, "duration": "600s"}]))
+    rc = RoutesClient("K", session=s)
+    rc.now = lambda: datetime(2026, 10, 22, 8, 0, tzinfo=timezone.utc)  # a Thursday
+    trip_time = datetime(2027, 3, 15, 12, 30)  # a Monday, naive local time
+    rc.durations([(48.85, 2.35)], [(48.86, 2.34)], "TRANSIT", when=trip_time)
+    assert s.posts[0][2]["departureTime"] == "2026-10-26T12:30:00+00:00"
+    rc.durations([(48.85, 2.35)], [(48.86, 2.34)], "WALK", when=trip_time)
+    assert "departureTime" not in s.posts[1][2]
+    aware = trip_time.replace(tzinfo=timezone(timedelta(hours=1)))
+    rc.durations([(48.85, 2.35)], [(48.86, 2.34)], "TRANSIT", when=aware)
+    assert s.posts[2][2]["departureTime"] == "2026-10-26T12:30:00+01:00"
+    rc.durations([(40.7, -74.0)], [(40.71, -74.0)], "TRANSIT", when=trip_time)
+    assert s.posts[3][2]["departureTime"] == "2026-10-26T12:30:00-05:00"
+    s2 = FakeSession(FakeResp({}))
+    rc2 = RoutesClient("K", session=s2)
+    rc2.now = rc.now
+    rc2.transit_steps((48.85, 2.35), (48.86, 2.34), when=datetime(2027, 3, 18, 9, 0))  # a Thursday
+    assert s2.posts[0][2]["departureTime"] == "2026-10-29T09:00:00+00:00"
+
+
+def test_compute_legs_passes_leg_times_to_transit():
+    from datetime import datetime
+
+    class R(FakeRoutes):
+        def __init__(self):
+            super().__init__()
+            self.whens = []
+
+        def durations(self, o, d, mode, when=None):
+            self.whens.append((mode, when))
+            return {(0, 0): 9}
+
+        def transit_steps(self, o, d, when=None):
+            self.whens.append(("steps", when))
+            return []
+
+    r = R()
+    t1, t2 = datetime(2027, 3, 15, 10), datetime(2027, 3, 15, 14)
+    compute_legs([("A", (1, 1)), ("B", (2, 2)), ("C", (3, 3))], r, ["public_transport"], departures=[t1, t2])
+    assert ("TRANSIT", t1) in r.whens and ("steps", t1) in r.whens and ("TRANSIT", t2) in r.whens
+    assert ("WALK", None) in r.whens

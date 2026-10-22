@@ -5,7 +5,7 @@ from typing import Optional
 
 from pydantic import BaseModel, Field
 
-from src.aigv2.library import norm_name
+from src.aigv2.library import diet_fits, norm_name
 from src.aigv2.models import Marker
 from src.aigv2.money import FxUnavailable, city_currency
 
@@ -113,9 +113,9 @@ def _library_items(key: str, cities: list[dict], cdatas: list[dict]) -> list:
     return out
 
 
-def _restaurant_names(cities: list[dict]) -> dict[str, str]:
+def _restaurant_names(cities: list[dict], diet) -> dict[str, str]:
     return {norm_name(r["name"]): r["name"] for c in cities for r in c.get("restaurants", [])
-            if isinstance(r, dict) and r.get("name")}
+            if isinstance(r, dict) and r.get("name") and diet_fits(r, diet)}
 
 
 def _trip_context(trip) -> str:
@@ -204,7 +204,7 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm) -> tuple[l
     lib = _library_items(key, cities, cdatas)
     library = bool(lib)
     material = json.dumps(lib, ensure_ascii=False, default=str)
-    restaurants = _restaurant_names(cities)
+    restaurants = _restaurant_names(cities, trip.diet)
     extra = ""
     if key == "packing":
         extra = "\nCountry facts: " + json.dumps(cdatas, ensure_ascii=False, default=str)

@@ -61,9 +61,13 @@ def dedupe_legs(plan: TripPlan) -> TripPlan:
         key = (leg.ref, leg.number, leg.depart)
         if key in index:
             kept = legs[index[key]]
+            update = {}
             if leg.pax_label and leg.pax_label not in kept.pax_label.split(", "):
-                legs[index[key]] = kept.model_copy(update={
-                    "pax_label": ", ".join(p for p in [kept.pax_label, leg.pax_label] if p)})
+                update["pax_label"] = ", ".join(p for p in [kept.pax_label, leg.pax_label] if p)
+            if leg.seat and leg.seat not in kept.seat.split(", "):
+                update["seat"] = ", ".join(p for p in [kept.seat, leg.seat] if p)
+            if update:
+                legs[index[key]] = kept.model_copy(update=update)
             continue
         index[key] = len(legs)
         legs.append(leg)
@@ -77,7 +81,7 @@ def _build_prompt(intake: IntakeFields | None, attachments: list[Attachment]) ->
         parts.extend(f"{k}: {v}" for k, v in intake.values.items())
         if intake.see_attachments:
             parts.append("Fields answered 'see attachments': " + ", ".join(sorted(intake.see_attachments)))
-    usable = [a for a in attachments if not a.duplicate_of and not a.error]
+    usable = [a for a in attachments if not a.duplicate_of and not a.error and not a.skipped_files]
     for a in usable:
         if a.image_only:
             parts.append(f"\n=== ATTACHMENT: {a.name} (image-only, unreadable, no text available) ===")

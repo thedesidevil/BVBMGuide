@@ -70,3 +70,22 @@ def test_cache_never_touches_library(tmp_path):
 def test_default_backend(tmp_path):
     b = default_backend(Settings(models={}, data_root=tmp_path))
     assert isinstance(b, LocalStorageBackend) and b.base_path == tmp_path
+
+
+def test_run_id_validated(tmp_path):
+    import pytest
+    backend = LocalStorageBackend(tmp_path)
+    for bad in ("../etc", "a/b", "a\\b", ".hidden", "..", "", "a b", "x/../y"):
+        with pytest.raises(ValueError):
+            RunStore(backend, bad)
+    assert RunStore(backend, "20260101-000000-abc_1.2").run_id == "20260101-000000-abc_1.2"
+
+
+def test_corrupt_cache_entry_is_a_miss(tmp_path):
+    backend = LocalStorageBackend(tmp_path)
+    cache = PlaceCache(backend, max_age_days=30)
+    (tmp_path / PlaceCache._key("bad")).parent.mkdir(parents=True, exist_ok=True)
+    (tmp_path / PlaceCache._key("bad")).write_text("{not json", encoding="utf-8")
+    backend.write_json(PlaceCache._key("old"), {"query": "x", "name": "old shape"})
+    backend.write_json(PlaceCache._key("list"), [1, 2])
+    assert cache.get("bad") is None and cache.get("old") is None and cache.get("list") is None

@@ -53,7 +53,7 @@ class FakeRoutes:
         self.by_origin = {}
         self.calls = []
 
-    def durations(self, origins, destinations, mode):
+    def durations(self, origins, destinations, mode, when=None):
         self.calls.append((tuple(origins), tuple(destinations), mode))
         table = self.by_origin.get(origins[0], {})
         out = {}
@@ -406,3 +406,22 @@ def test_indian_search_continues_past_spare(tmp_path):
     picks, excl = plan([(1, TUE, "Istanbul", [lunch()])], lib, pl, rt, llm=FirstN())
     assert ("Closed Curry", "closed") in reasons(excl)
     assert "Masala" in names(picks[0])
+
+
+def test_transit_lookup_carries_meal_time():
+    from datetime import datetime as _dt
+    seen = []
+
+    class R:
+        calls = {}
+
+        def durations(self, origins, destinations, mode, when=None):
+            seen.append((mode, when))
+            return {(0, j): 5 for j in range(len(destinations))}
+
+    from src.aigv2.planning.meals import _Planner
+    planner = _Planner(None, None, R(), Diet(), ["public_transport"], None, Settings(models={}), "international")
+    slot = MealSlot(meal="lunch", start=time(12, 30), anchors=[])
+    p = place("X", 0)
+    planner._measure([({"name": "X"}, p, p.hours, False)], (1.0, 2.0), date(2027, 3, 15), slot, "w")
+    assert ("TRANSIT", _dt(2027, 3, 15, 12, 30)) in seen and ("WALK", None) in seen

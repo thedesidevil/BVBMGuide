@@ -386,3 +386,30 @@ def test_permit_skips_optional_and_day_title():
     days = [DayPlan(date=date(2026, 10, 10), title="Road to Nubra", city="Leh", items=[opt, plain]), *make().days[1:]]
     plan = make(days=days, trip_scope="domestic")
     assert ask(plan) == []
+
+
+def test_zip_skipped_files_question():
+    a = att("many.zip", kind="other", text="", skipped_files=[f"f{i}.pdf" for i in range(12)])
+    qs = ask(make(), [a])
+    assert ids(qs) == ["zip_skipped:many.zip"]
+    assert qs[0].text.startswith("12 file(s) in many.zip were not read")
+    assert "f0.pdf" in qs[0].text and "f11.pdf" not in qs[0].text and "…" in qs[0].text
+    assert apply_answers(make(), qs, {"zip_skipped:many.zip": "not needed"}) == make()
+
+
+def test_see_attachments_with_punctuation_still_asks_diet(tmp_path):
+    from src.aigv2.intake.template import build_template, parse_template
+    from docx import Document
+    p = tmp_path / "t.docx"
+    build_template(p)
+    doc = Document(str(p))
+    for row in doc.tables[0].rows[1:]:
+        if row.cells[0].text.startswith("Diet"):
+            row.cells[1].text = "See attachments."
+        if row.cells[0].text.startswith("Itinerary"):
+            row.cells[1].text = "Please see attached!"
+    doc.save(str(p))
+    intake = parse_template(p)
+    assert {"Diet (restrictions, allergies, likes)", "Itinerary"} <= intake.see_attachments
+    assert "Diet (restrictions, allergies, likes)" not in intake.values
+    assert ids(ask(make(diet=Diet()), intake=intake)) == ["missing:diet"]

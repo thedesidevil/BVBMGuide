@@ -33,7 +33,7 @@ class FakeRoutes:
     def __init__(self, walk, drive):
         self.walk, self.drive = walk, drive
 
-    def durations(self, origins, destinations, mode):
+    def durations(self, origins, destinations, mode, when=None):
         table = self.walk if mode == "WALK" else self.drive
         return {(0, j): table.get(d[0]) for j, d in enumerate(destinations)}
 

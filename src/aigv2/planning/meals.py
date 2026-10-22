@@ -1,7 +1,7 @@
 import json
 import re
 from collections import Counter
-from datetime import date
+from datetime import date, datetime
 from typing import Literal, Optional
 
 from pydantic import BaseModel, Field
@@ -274,7 +274,8 @@ class _Planner:
         dests = [(p.lat, p.lng) for _, p, _, _ in batch]
 
         def mins(mode: str) -> list[Optional[int]]:
-            got = self.routes.durations([a_xy], dests, mode)
+            when = datetime.combine(day, slot.start) if mode == "TRANSIT" else None
+            got = self.routes.durations([a_xy], dests, mode, when=when)
             return [got.get((0, j)) for j in range(len(dests))]
 
         walk = mins("WALK")

@@ -1,4 +1,5 @@
 import hashlib
+import re
 import secrets
 from datetime import datetime, timedelta, timezone
 from typing import Optional, Union
@@ -10,10 +11,13 @@ from src.aigv2.models import Place
 from src.library.ui.storage import LocalStorageBackend, StorageBackend
 
 _RUNS = "runs/"
+_RUN_ID = re.compile(r"^[A-Za-z0-9_-][A-Za-z0-9_.-]*$")
 
 
 class RunStore:
     def __init__(self, backend: StorageBackend, run_id: str):
+        if not _RUN_ID.match(run_id or "") or ".." in run_id:
+            raise ValueError(f"invalid run id {run_id!r}: use letters, digits, '-', '_' and '.' only")
         self.backend = backend
         self.run_id = run_id
 
@@ -68,10 +72,13 @@ class PlaceCache:
         return f"cache/places/{hashlib.sha1(key.encode('utf-8')).hexdigest()}.json"
 
     def get(self, key: str) -> Optional[Place]:
-        raw = self.backend.read_json(self._key(key))
-        if raw is None:
+        try:
+            raw = self.backend.read_json(self._key(key))
+            if raw is None:
+                return None
+            place = Place.model_validate(raw)
+        except (ValueError, TypeError, UnicodeDecodeError):
             return None
-        place = Place.model_validate(raw)
         fetched = place.fetched_at
         if fetched.tzinfo is None:
             fetched = fetched.replace(tzinfo=timezone.utc)

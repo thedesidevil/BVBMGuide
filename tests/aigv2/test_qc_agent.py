@@ -47,7 +47,7 @@ class FakeRoutes:
         self.minutes = minutes
         self.calls = {"matrix_elements": 0, "directions": 0}
 
-    def durations(self, origins, destinations, mode):
+    def durations(self, origins, destinations, mode, when=None):
         self.calls["matrix_elements"] += 1
         return {(0, 0): self.minutes}
 
@@ -242,7 +242,7 @@ def test_unverified_when_anchor_unresolved():
 
 def test_unverified_when_route_missing():
     class NoRoute(FakeRoutes):
-        def durations(self, origins, destinations, mode):
+        def durations(self, origins, destinations, mode, when=None):
             return {(0, 0): None}
 
     findings, rows = check_facts(read_docx(render()), trip(), FakePlaces(cached_places()), NoRoute())

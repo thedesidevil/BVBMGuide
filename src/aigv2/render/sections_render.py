@@ -63,7 +63,7 @@ def render_section(doc, title: str, bookmark: str, content: SectionContent) -> N
     marker_lines(doc, content.markers)
 
 
-def _nearby_card(doc, n: NearbyPlace) -> None:
+def _nearby_card(doc, n: NearbyPlace, city: str) -> None:
     p = n.place
     travel = [f"Walk · {n.walk_min} min"] if n.walk_min is not None else []
     if n.drive_min is not None:
@@ -74,7 +74,7 @@ def _nearby_card(doc, n: NearbyPlace) -> None:
         facts.append(("PHONE", p.phone))
     if p.address:
         facts.append(("ADDRESS", p.address))
-    add_card(doc, p.name, p.maps_url or search_url(p.name), facts, None, [])
+    add_card(doc, p.name, p.maps_url or search_url(p.name, city), facts, None, [])
     marker_lines(doc, n.markers + place_markers(p, n.markers))
 
 
@@ -88,7 +88,7 @@ def render_important(doc, title: str, bookmark: str, entries: list[ImportantPlac
                 continue
             add_eyebrow(doc, label)
             for n in group:
-                _nearby_card(doc, n)
+                _nearby_card(doc, n, e.city)
         marker_lines(doc, e.markers)
 
 

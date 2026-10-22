@@ -1,5 +1,6 @@
 import json
 import math
+from datetime import datetime, timedelta, timezone
 from typing import Literal, Optional
 
 import requests
@@ -24,11 +25,20 @@ def _elements(resp: requests.Response) -> list[dict]:
     return data if isinstance(data, list) else [data]
 
 
+def departure_time(when: datetime, lng: float, now: datetime) -> str:
+    """Transit timetables only exist for the near future: same weekday and local time, within the next week."""
+    tz = when.tzinfo or timezone(timedelta(hours=round(lng / 15)))
+    base = now.astimezone(tz).date() + timedelta(days=1)
+    day = base + timedelta(days=(when.weekday() - base.weekday()) % 7)
+    return datetime.combine(day, when.time().replace(tzinfo=None), tzinfo=tz).isoformat()
+
+
 class RoutesClient:
     def __init__(self, api_key: str, session: Optional[requests.Session] = None):
         self.api_key = api_key
         self.session = session or requests.Session()
         self.calls: dict[str, int] = {"matrix_elements": 0, "directions": 0}
+        self.now = lambda: datetime.now(timezone.utc)
 
     def _post(self, url: str, mask: str, body: dict) -> requests.Response:
         resp = self.session.post(
@@ -45,6 +55,7 @@ class RoutesClient:
         origins: list[tuple[float, float]],
         destinations: list[tuple[float, float]],
         mode: Literal["WALK", "DRIVE", "TRANSIT"],
+        when: Optional[datetime] = None,
     ) -> dict[tuple[int, int], Optional[int]]:
         self.calls["matrix_elements"] += len(origins) * len(destinations)
         body = {
@@ -52,6 +63,8 @@ class RoutesClient:
             "destinations": [{"waypoint": _waypoint(d)} for d in destinations],
             "travelMode": mode,
         }
+        if mode == "TRANSIT" and when is not None and origins:
+            body["departureTime"] = departure_time(when, origins[0][1], self.now())
         out: dict[tuple[int, int], Optional[int]] = {
             (i, j): None for i in range(len(origins)) for j in range(len(destinations))
         }
@@ -62,9 +75,12 @@ class RoutesClient:
             out[(el.get("originIndex", 0), el.get("destinationIndex", 0))] = math.ceil(seconds / 60)
         return out
 
-    def transit_steps(self, origin: tuple[float, float], destination: tuple[float, float]) -> list[TransitStep]:
+    def transit_steps(self, origin: tuple[float, float], destination: tuple[float, float],
+                      when: Optional[datetime] = None) -> list[TransitStep]:
         self.calls["directions"] += 1
         body = {"origin": _waypoint(origin), "destination": _waypoint(destination), "travelMode": "TRANSIT"}
+        if when is not None:
+            body["departureTime"] = departure_time(when, origin[1], self.now())
         data = self._post(DIRECTIONS_URL, STEPS_MASK, body).json()
         routes = data.get("routes") or []
         if not routes:

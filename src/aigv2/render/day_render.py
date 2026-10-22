@@ -89,7 +89,7 @@ class DayRenderer:
             self._port_day(arr, dep)
         else:
             if early_dep:
-                self._departure(dep, transport_card=dep is not arr)
+                self._departure(dep, transport_card=dep is not arr, city=rd.prev_city or rd.city)
             if arr:
                 self._arrival(arr)
             else:
@@ -100,7 +100,7 @@ class DayRenderer:
             doc.add_paragraph(rd.text.free_time_idea)
         final = bool(dep and not early_dep and not cruise)
         if final:
-            self._departure(dep, transport_card=True)
+            self._departure(dep, transport_card=True, city=rd.city)
         else:
             self._overnight(cruise)
 
@@ -151,7 +151,7 @@ class DayRenderer:
         add_card(self.doc, title, url, facts, body, [])
         marker_lines(self.doc, markers + (self._hotel_markers(hotel) if hotel else []))
 
-    def _transport_card(self, t: TransportLeg, link_to: str) -> None:
+    def _transport_card(self, t: TransportLeg, link_to: str, city: str = "") -> None:
         kind = {"flight": "Flight", "train": "Train", "boat": "Boat", "bus": "Bus"}.get(t.kind, "Transfer")
         title = f"{kind}: {t.from_place} to {t.to_place}" if t.from_place and t.to_place else kind
         facts: list = []
@@ -173,14 +173,14 @@ class DayRenderer:
         if t.ref:
             facts.append(("REFERENCE", t.ref))
         where = link_to or t.to_place or t.from_place
-        add_card(self.doc, title, search_url(where) if where.strip() else None, facts, None, [])
+        add_card(self.doc, title, search_url(where, city) if where.strip() else None, facts, None, [])
 
     def _arrival(self, arr: TransportLeg) -> None:
         stay = self._stay(arriving=True)
         if arr is not self.rd.departure:
-            self._transport_card(arr, arr.to_place)
+            self._transport_card(arr, arr.to_place, self.rd.city)
         else:
-            self._transport_card(arr, arr.from_place)
+            self._transport_card(arr, arr.from_place, self.rd.prev_city or self.rd.city)
         if stay is None:
             marker_lines(self.doc, [_verify(f"hotel for {self.rd.date.isoformat()}")])
             return
@@ -193,7 +193,7 @@ class DayRenderer:
         self._transfer_card(f"{port} → {stay.hotel}", self._url(stay.hotel), self.rd.legs.get("arrival"), body,
                             stay.hotel)
 
-    def _departure(self, dep: TransportLeg, transport_card: bool) -> None:
+    def _departure(self, dep: TransportLeg, transport_card: bool, city: str) -> None:
         by = leave_by(dep, self.data.domestic)
         if by:
             self.doc.add_paragraph(f"{_REACH.get(dep.kind, 'Leave by')} {_hm(by)}")
@@ -201,12 +201,12 @@ class DayRenderer:
         stay = self._stay(arriving=False)
         port = dep.from_place or _PORT[dep.kind]
         if stay:
-            self._transfer_card(f"{stay.hotel} → {port}", search_url(port, self.rd.city),
+            self._transfer_card(f"{stay.hotel} → {port}", search_url(port, city),
                                 self.rd.legs.get("departure"), None, None)
         else:
             marker_lines(self.doc, [_verify(f"hotel to leave from on {self.rd.date.isoformat()}")])
         if transport_card:
-            self._transport_card(dep, dep.from_place)
+            self._transport_card(dep, dep.from_place, city)
 
     def _drive_stops(self) -> None:
         if not self.plan or not self.plan.drive_stops:

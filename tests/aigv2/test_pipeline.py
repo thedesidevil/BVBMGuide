@@ -52,11 +52,11 @@ class FakeRoutes:
     def __init__(self):
         self.calls = {"matrix_elements": 0, "directions": 0}
 
-    def durations(self, origins, destinations, mode):
+    def durations(self, origins, destinations, mode, when=None):
         self.calls["matrix_elements"] += len(origins) * len(destinations)
         return {(i, j): 5 for i in range(len(origins)) for j in range(len(destinations))}
 
-    def transit_steps(self, origin, destination):
+    def transit_steps(self, origin, destination, when=None):
         self.calls["directions"] += 1
         return []
 
@@ -419,9 +419,9 @@ class RecordingRoutes(FakeRoutes):
         super().__init__()
         self.pairs = []
 
-    def durations(self, origins, destinations, mode):
+    def durations(self, origins, destinations, mode, when=None):
         self.pairs.append((list(origins), list(destinations)))
-        return super().durations(origins, destinations, mode)
+        return super().durations(origins, destinations, mode, when)
 
 
 def test_arrival_departure_and_legs(deps):

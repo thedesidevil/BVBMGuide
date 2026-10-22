@@ -339,10 +339,13 @@ def _legs(ds: DayState, trip: TripPlan, deps: Deps) -> dict[str, Leg]:
             legs["departure"] = leg
     origin = new or morning
     # on a day trip the client leaves by train/boat, so a hotel-to-first-stop drive would be wrong advice
-    points = [(origin.hotel, _xy(hotel(origin)))] if origin and not ds.other_legs else []
-    points += [(s.item.name, _xy(places.get(s.item.name))) for s in ds.result.scheduled if s.item.kind in _ITEM_KINDS]
-    points = [(n, xy) for n, xy in points if xy is not None]
-    for leg in compute_legs(points, deps.routes, modes, deps.settings.walk_max_min):
+    tz = timezone(timedelta(hours=ds.utc_offset_hours)) if ds.utc_offset_hours is not None else None
+    points = [(origin.hotel, _xy(hotel(origin)), None)] if origin and not ds.other_legs else []
+    points += [(s.item.name, _xy(places.get(s.item.name)), datetime.combine(d, s.start, tzinfo=tz))
+               for s in ds.result.scheduled if s.item.kind in _ITEM_KINDS]
+    points = [p for p in points if p[1] is not None]
+    for leg in compute_legs([(n, xy) for n, xy, _ in points], deps.routes, modes, deps.settings.walk_max_min,
+                            departures=[t for _, _, t in points[1:]]):
         legs[leg.to_name] = leg
     return legs
 

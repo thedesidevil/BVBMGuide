@@ -1,0 +1,576 @@
+import os
+import re
+from concurrent.futures import ThreadPoolExecutor
+from dataclasses import dataclass
+from datetime import date, datetime, time, timedelta, timezone
+from pathlib import Path
+from typing import Any, Optional
+from zoneinfo import ZoneInfo
+
+from pydantic import BaseModel, Field
+
+from src.aigv2.config import STEPS, Settings, load_settings
+from src.aigv2.google.places import PlacesClient
+from src.aigv2.google.routes import RoutesClient
+from src.aigv2.intake.attachments import read_attachments
+from src.aigv2.intake.extract import extract_trip
+from src.aigv2.intake.template import IntakeFields, parse_template
+from src.aigv2.library import Library, norm_name
+from src.aigv2.llm import StepLLM
+from src.aigv2.models import Answers, Booking, Diet, HotelStay, Place, Question, Traveller, TripPlan
+from src.aigv2.money import FxRates, city_currency, price_text
+from src.aigv2.planning.important_places import ImportantPlaces, important_places
+from src.aigv2.planning.meals import Exclusion, MealPick, PlanStats, plan_meals
+from src.aigv2.planning.slots import DayResult, schedule_day
+from src.aigv2.planning.travel import Leg, compute_legs
+from src.aigv2.preflight import apply_answers, run_checklist, unanswered
+from src.aigv2.qc import run_qc
+from src.aigv2.qc.report import PRICE_KEY, QCResult, write_report
+from src.aigv2.render.document import GuideData, RenderDay, output_filename, render_guide
+from src.aigv2.store import PlaceCache, RunStore, default_backend
+from src.aigv2.verification import build_sheet
+from src.aigv2.writing.days import DayText, write_day
+from src.aigv2.writing.sections import SECTION_KEYS, SectionContent, write_section
+from src.aigv2.writing.title import write_title
+from src.library.ui.storage import StorageBackend
+
+WRITERS = 6
+REGEN_SECTIONS = (*SECTION_KEYS, "title")
+_ITEM_KINDS = ("attraction", "activity", "meal_out")
+_OUTPUTS = ("guide.docx", "qc_report.md", "qc_report.json", "verification.xlsx")
+_EXCL_DAY = re.compile(r"^\w+, Day (\d+), ")
+# Single-time-zone countries only; anything else gets no sunset time rather than a guessed one.
+_TZ = {
+    "india": "Asia/Kolkata", "turkey": "Europe/Istanbul", "türkiye": "Europe/Istanbul", "turkiye": "Europe/Istanbul",
+    "uk": "Europe/London", "united kingdom": "Europe/London", "france": "Europe/Paris", "italy": "Europe/Rome",
+    "greece": "Europe/Athens", "netherlands": "Europe/Amsterdam", "germany": "Europe/Berlin",
+    "switzerland": "Europe/Zurich", "austria": "Europe/Vienna", "belgium": "Europe/Brussels",
+    "ireland": "Europe/Dublin", "czechia": "Europe/Prague", "czech republic": "Europe/Prague",
+    "hungary": "Europe/Budapest", "croatia": "Europe/Zagreb", "iceland": "Atlantic/Reykjavik",
+    "norway": "Europe/Oslo", "sweden": "Europe/Stockholm", "finland": "Europe/Helsinki",
+    "japan": "Asia/Tokyo", "south korea": "Asia/Seoul", "thailand": "Asia/Bangkok", "vietnam": "Asia/Ho_Chi_Minh",
+    "singapore": "Asia/Singapore", "malaysia": "Asia/Kuala_Lumpur", "philippines": "Asia/Manila",
+    "united arab emirates": "Asia/Dubai", "uae": "Asia/Dubai", "qatar": "Asia/Qatar", "sri lanka": "Asia/Colombo",
+    "nepal": "Asia/Kathmandu", "bhutan": "Asia/Thimphu", "maldives": "Indian/Maldives",
+    "mauritius": "Indian/Mauritius", "egypt": "Africa/Cairo", "hong kong": "Asia/Hong_Kong",
+}
+
+
+class UnansweredQuestions(Exception):
+    def __init__(self, questions: list[Question]):
+        self.questions = questions
+        super().__init__("unanswered questions: " + ", ".join(q.id for q in questions))
+
+
+@dataclass
+class Deps:
+    settings: Settings
+    llm: StepLLM
+    library: Library
+    places: PlacesClient
+    routes: RoutesClient
+    fx: FxRates
+    backend: StorageBackend
+
+
+def default_deps() -> Deps:
+    from dotenv import load_dotenv
+
+    load_dotenv()
+    settings = load_settings()
+    backend = default_backend(settings)
+    key = os.environ.get("GOOGLE_MAPS_API_KEY", "")
+    return Deps(settings=settings, llm=StepLLM(settings), library=Library(Path("library_db")),
+                places=PlacesClient(key, PlaceCache(backend, settings.cache_days)), routes=RoutesClient(key),
+                fx=FxRates(backend), backend=backend)
+
+
+class BuildResult(BaseModel):
+    docx_name: str
+    qc: QCResult
+    cost_usd: float
+    cost: dict = Field(default_factory=dict)
+
+
+class DayState(BaseModel):
+    index: int
+    date: date
+    city: str
+    country: str = ""
+    result: DayResult
+    legs: dict[str, Leg] = Field(default_factory=dict)
+    arrival: Optional[int] = None
+    departure: Optional[int] = None
+    prev_city: Optional[str] = None
+    utc_offset_hours: Optional[float] = None
+    booking_by_item: dict[str, Booking] = Field(default_factory=dict)
+    library_attractions: dict[str, dict] = Field(default_factory=dict)
+
+
+class PlanState(BaseModel):
+    trip: TripPlan
+    places: dict[str, Optional[Place]]
+    countries: dict[str, str]
+    days: list[DayState]
+    picks: list[MealPick]
+    exclusions: list[Exclusion]
+    stats: PlanStats
+    important: list[ImportantPlaces]
+
+
+# ---------- cost ----------
+
+class CostMeter:
+    def __init__(self, deps: Deps):
+        self.deps = deps
+        self.log_start = len(deps.llm.cost_log)
+        self.google_start = self._google()
+
+    def _google(self) -> dict[str, int]:
+        return {**self.deps.places.calls, **self.deps.routes.calls}
+
+    def cost(self) -> dict:
+        by_step: dict[str, dict] = {}
+        for e in self.deps.llm.cost_log[self.log_start:]:
+            row = by_step.setdefault(e["step"], {"model": e["model"], "prompt_tokens": 0, "completion_tokens": 0,
+                                                 "usd": 0.0})
+            if e["model"] not in row["model"].split("+"):
+                row["model"] += "+" + e["model"]
+            row["prompt_tokens"] += e["prompt_tokens"]
+            row["completion_tokens"] += e["completion_tokens"]
+            row["usd"] += e["usd"]
+        order = {s: i for i, s in enumerate(STEPS)}
+        by_step = dict(sorted(by_step.items(), key=lambda kv: order.get(kv[0], len(order))))
+        unit = self.deps.settings.google_usd_per_call
+        counts = {api: 0 for api in unit}
+        for k, v in self._google().items():
+            api = PRICE_KEY.get(k, k)
+            counts[api] = counts.get(api, 0) + v - self.google_start.get(k, 0)
+        by_api = {api: {"calls": n, "usd": n * unit.get(api, 0.0)} for api, n in counts.items()}
+        ai_usd = sum(r["usd"] for r in by_step.values())
+        google_usd = sum(r["usd"] for r in by_api.values())
+        return {"ai": {"total_usd": ai_usd, "by_step": by_step},
+                "google": {"total_usd": google_usd, "by_api": by_api},
+                "total_usd": ai_usd + google_usd}
+
+
+def cost_summary(cost: dict) -> str:
+    ai, google = cost["ai"], cost["google"]
+    steps = " · ".join(f"{k} ${v['usd']:.2f}" for k, v in ai["by_step"].items()) or "none"
+    apis = " · ".join(f"{k} {v['calls']}{'' if k == 'route_element' else ' calls'} ${v['usd']:.2f}"
+                      for k, v in google["by_api"].items() if v["calls"]) or "none"
+    return "\n".join([f"Cost this run: ${cost['total_usd']:.2f}",
+                      f"  {'AI':<8}${ai['total_usd']:.2f}  ({steps})",
+                      f"  {'Google':<8}${google['total_usd']:.2f}  ({apis})"])
+
+
+def _record_cost(store: RunStore, label: str, cost: dict) -> None:
+    history = (store.load_json("cost_history.json") or {}).get("runs", [])
+    history.append({"command": label, "at": datetime.now(timezone.utc).isoformat(), "cost": cost})
+    store.save_json("cost_history.json", {"runs": history})
+    store.save_json("cost.json", cost)
+
+
+# ---------- helpers ----------
+
+def _xy(p: Optional[Place]) -> Optional[tuple[float, float]]:
+    return (p.lat, p.lng) if p is not None and p.match_ok else None
+
+
+def _stay_for_day(trip: TripPlan, d: date) -> Optional[HotelStay]:
+    return next((s for s in trip.hotels if s.check_in <= d < s.check_out), None) or \
+        next((s for s in trip.hotels if s.check_out == d), None)
+
+
+def _morning_stay(trip: TripPlan, d: date) -> Optional[HotelStay]:
+    return next((s for s in trip.hotels if s.check_in < d <= s.check_out), None)
+
+
+def _new_stay(trip: TripPlan, d: date) -> Optional[HotelStay]:
+    return next((s for s in trip.hotels if s.check_in == d), None)
+
+
+def resolve_places(trip: TripPlan, client, places: dict[str, Optional[Place]]) -> dict[str, Optional[Place]]:
+    for h in trip.hotels:
+        if h.hotel not in places:
+            places[h.hotel] = client.find(h.hotel, h.city)
+    for dp in trip.days:
+        stay = _stay_for_day(trip, dp.date)
+        near = _xy(places.get(stay.hotel)) if stay else None
+        for it in dp.items:
+            if it.kind != "free_time" and it.name not in places:
+                places[it.name] = client.find(it.name, it.city or dp.city, near=near)
+    return places
+
+
+def _country_of(place: Optional[Place]) -> str:
+    if place is None or not place.match_ok or not place.address:
+        return ""
+    return re.sub(r"[\d-]+", "", place.address.split(",")[-1]).strip()
+
+
+def _utc_offset(country: str, d: date) -> Optional[float]:
+    tz = _TZ.get(country.casefold())
+    if not tz:
+        return None
+    return ZoneInfo(tz).utcoffset(datetime.combine(d, time(12))).total_seconds() / 3600
+
+
+def _arrival_idx(trip: TripPlan, d: date) -> Optional[int]:
+    hits = [(l.arrive, i) for i, l in enumerate(trip.transport) if l.arrive and l.arrive.date() == d and any(
+        s.check_in == d or (l.arrive.hour < 5 and s.check_in == d - timedelta(days=1)) for s in trip.hotels)]
+    return max(hits)[1] if hits else None
+
+
+def _departure_idx(trip: TripPlan, d: date, trip_days: set[date]) -> Optional[int]:
+    nxt = d + timedelta(days=1)
+    hits = [(l.depart, i) for i, l in enumerate(trip.transport) if l.depart and (
+        l.depart.date() == d or (l.depart.date() == nxt and l.depart.hour < 5 and nxt not in trip_days))
+        and _morning_stay(trip, d) is not None]
+    return min(hits)[1] if hits else None
+
+
+def _endpoint(name: str, city: str, places: dict, client) -> Optional[Place]:
+    if not name.strip():
+        return None
+    if name not in places:
+        places[name] = client.find(name, city)
+    return places[name]
+
+
+def _pair(a: str, pa: Optional[Place], b: str, pb: Optional[Place], deps: Deps, modes: list[str]) -> Optional[Leg]:
+    xa, xb = _xy(pa), _xy(pb)
+    if xa is None or xb is None:
+        return None
+    return compute_legs([(a, xa), (b, xb)], deps.routes, modes, deps.settings.walk_max_min)[0]
+
+
+def _legs(ds: DayState, trip: TripPlan, places: dict, deps: Deps) -> dict[str, Leg]:
+    d, modes, legs = ds.date, trip.travel_modes, {}
+    morning, new = _morning_stay(trip, d), _new_stay(trip, d)
+    if ds.arrival is not None and new:
+        t = trip.transport[ds.arrival]
+        leg = _pair(t.to_place, _endpoint(t.to_place, ds.city, places, deps.places), new.hotel, places.get(new.hotel),
+                    deps, modes)
+    elif new and morning and norm_name(morning.hotel) != norm_name(new.hotel):
+        leg = _pair(morning.hotel, places.get(morning.hotel), new.hotel, places.get(new.hotel), deps, modes)
+    else:
+        leg = None
+    if leg:
+        legs["arrival"] = leg
+    if ds.departure is not None and morning:
+        t = trip.transport[ds.departure]
+        leg = _pair(morning.hotel, places.get(morning.hotel), t.from_place,
+                    _endpoint(t.from_place, ds.prev_city or ds.city, places, deps.places), deps, modes)
+        if leg:
+            legs["departure"] = leg
+    origin = new or morning
+    points = [(origin.hotel, _xy(places.get(origin.hotel)))] if origin else []
+    points += [(s.item.name, _xy(places.get(s.item.name))) for s in ds.result.scheduled if s.item.kind in _ITEM_KINDS]
+    points = [(n, xy) for n, xy in points if xy is not None]
+    for leg in compute_legs(points, deps.routes, modes, deps.settings.walk_max_min):
+        legs[leg.to_name] = leg
+    return legs
+
+
+def _booking_map(trip: TripPlan, items) -> dict[str, Booking]:
+    out = {}
+    for it in items:
+        b = next((b for b in trip.bookings if (it.booking_ref and b.name == it.booking_ref)
+                  or norm_name(b.name) == norm_name(it.name)), None)
+        if b:
+            out[it.name] = b
+    return out
+
+
+def _library_attractions(library: Library, city: str, items) -> dict[str, dict]:
+    lib = {norm_name(a["name"]): a for a in library.city(city).get("attractions", [])
+           if isinstance(a, dict) and isinstance(a.get("name"), str)}
+    return {it.name: lib[norm_name(it.name)] for it in items if norm_name(it.name) in lib}
+
+
+def _questions(store: RunStore) -> list[Question]:
+    data = store.load_json("questions.json")
+    if data is None:
+        raise ValueError(f"run {store.run_id} has no questions.json; run start first")
+    return [Question.model_validate(q) for q in data["questions"]]
+
+
+def _load_plan(store: RunStore) -> PlanState:
+    data = store.load_json("plan.json")
+    if data is None:
+        raise ValueError(f"run {store.run_id} has no plan.json; run build first")
+    return PlanState.model_validate(data)
+
+
+def _version(store: RunStore, stem: str, ext: str) -> int:
+    pat = re.compile(rf"^{re.escape(stem)}\.v(\d+)\.{ext}$")
+    nums = [int(m.group(1)) for n in store.names() if (m := pat.match(n))]
+    return max(nums, default=0) + 1
+
+
+# ---------- stages ----------
+
+def start_run(intake_path: Path | None, attachment_paths: list[Path], deps: Deps) -> tuple[RunStore, list[Question]]:
+    meter = CostMeter(deps)
+    store = RunStore.create(deps.backend)
+    paths = list(attachment_paths)
+    for p in ([intake_path] if intake_path else []) + paths:
+        store.save_bytes(f"inputs/{p.name}", p.read_bytes())
+    intake = parse_template(intake_path) if intake_path else IntakeFields()
+    attachments = read_attachments(paths)
+    trip = extract_trip(intake, attachments, deps.llm)
+    places = resolve_places(trip, deps.places, {})
+    questions = run_checklist(trip, intake, attachments, deps.library, places, deps.settings)
+    store.save_json("intake.json", intake)
+    store.save_json("attachments.json", {"attachments": [a.model_dump(mode="json") for a in attachments]})
+    store.save_json("trip_plan.json", trip)
+    store.save_json("places.json", {"places": {k: v.model_dump(mode="json") if v else None for k, v in places.items()}})
+    store.save_json("questions.json", {"questions": [q.model_dump(mode="json") for q in questions]})
+    store.save_json("answers.template.json", {q.id: "" for q in questions})
+    _record_cost(store, "start", meter.cost())
+    return store, questions
+
+
+def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
+    if store.has("plan.json"):
+        return _load_plan(store)
+    trip = apply_answers(TripPlan.model_validate(store.load_json("trip_plan.json")), _questions(store), answers)
+    raw = (store.load_json("places.json") or {}).get("places", {})
+    places = resolve_places(trip, deps.places, {k: Place.model_validate(v) if v else None for k, v in raw.items()})
+    s = deps.settings
+    countries: dict[str, str] = {}
+    for dp in trip.days:
+        stay = _stay_for_day(trip, dp.date)
+        if not countries.get(dp.city):
+            countries[dp.city] = _country_of(places.get(stay.hotel)) if stay else ""
+    trip_days = {dp.date for dp in trip.days}
+    days: list[DayState] = []
+    prev = None
+    for n, dp in enumerate(sorted(trip.days, key=lambda x: x.date), 1):
+        arr, dep = _arrival_idx(trip, dp.date), _departure_idx(trip, dp.date, trip_days)
+        ds = DayState(index=n, date=dp.date, city=dp.city, country=countries.get(dp.city, ""),
+                      result=DayResult(), arrival=arr, departure=dep, prev_city=prev,
+                      utc_offset_hours=_utc_offset(countries.get(dp.city, ""), dp.date),
+                      booking_by_item=_booking_map(trip, dp.items),
+                      library_attractions=_library_attractions(deps.library, dp.city, dp.items))
+        ds.result = schedule_day(dp, trip.hotels, trip.transport[arr] if arr is not None else None,
+                                 trip.transport[dep] if dep is not None else None, places, s, ds.country,
+                                 trip.trip_scope == "domestic")
+        ds.legs = _legs(ds, trip, places, deps)
+        days.append(ds)
+        prev = dp.city
+    picks, exclusions, stats = plan_meals([(d.index, d.date, d.city, d.result.meals) for d in days], deps.library,
+                                          deps.places, deps.routes, trip.diet, trip.travel_modes, deps.llm, s,
+                                          trip_scope=trip.trip_scope)
+    important = important_places(trip.hotels, {h.hotel: places[h.hotel] for h in trip.hotels if places.get(h.hotel)},
+                                 deps.places, deps.routes, trip.travel_modes)
+    state = PlanState(trip=trip, places=places, countries=countries, days=days, picks=picks, exclusions=exclusions,
+                      stats=stats, important=important)
+    store.save_json("plan.json", state)
+    return state
+
+
+def _day_facts(ds: DayState, state: PlanState) -> dict:
+    dp = next(d for d in state.trip.days if d.date == ds.date)
+    attractions = [{"name": s.item.name, "kind": s.item.kind, "slot": s.slot, "note": s.item.note,
+                    "optional": s.item.optional,
+                    "library_description": ds.library_attractions.get(s.item.name, {}).get("description")}
+                   for s in ds.result.scheduled if s.item.kind in ("attraction", "activity")]
+    restaurants, seen = [], set()
+    for p in state.picks:
+        if p.day_index != ds.index:
+            continue
+        for c in p.restaurants:
+            if norm_name(c.lib["name"]) not in seen:
+                seen.add(norm_name(c.lib["name"]))
+                restaurants.append({"name": c.lib["name"], "meal": p.slot.meal, "cuisine": c.lib.get("cuisine_type"),
+                                    "highlights": c.lib.get("highlights")})
+    return {"date": ds.date.isoformat(), "city": ds.city, "planned_title": dp.title, "attractions": attractions,
+            "restaurants": restaurants, "travellers": state.trip.travellers.model_dump(mode="json"),
+            "occasion": state.trip.occasion}
+
+
+def _section_inputs(state: PlanState, library: Library) -> tuple[list[dict], dict]:
+    cities = list(dict.fromkeys(d.city for d in state.days))
+    city_data = [{**library.city(c), "city": c, "country": state.countries.get(c, "")} for c in cities]
+    country_data: dict[str, dict] = {}
+    for c in cities:
+        country = state.countries.get(c, "")
+        if country and country not in country_data:
+            country_data[country] = library.country(country) or library.country(c)
+    return city_data, country_data
+
+
+def _write(store: RunStore, state: PlanState, deps: Deps) -> None:
+    jobs: dict[str, Any] = {}
+    city_data, country_data = _section_inputs(state, deps.library)
+    with ThreadPoolExecutor(max_workers=WRITERS) as pool:
+        for ds in state.days:
+            name = f"days/day_{ds.index:02d}.json"
+            if not store.has(name):
+                jobs[name] = pool.submit(write_day, _day_facts(ds, state), deps.llm)
+        for key in SECTION_KEYS:
+            name = f"sections/{key}.json"
+            if not store.has(name):
+                jobs[name] = pool.submit(write_section, key, city_data, country_data, state.trip, deps.llm,
+                                         places=deps.places, fx=deps.fx, today=date.today())
+        if not store.has("sections/title.json"):
+            jobs["sections/title.json"] = pool.submit(write_title, state.trip, deps.llm)
+    error = None
+    for name, fut in jobs.items():
+        try:
+            out = fut.result()
+        except Exception as e:
+            error = error or e
+            continue
+        if name == "sections/title.json":
+            store.save_json(name, {"title": out})
+        elif name.startswith("sections/"):
+            store.save_json(name, {"content": out.model_dump(mode="json") if out else None})
+        else:
+            store.save_json(name, out)
+    if error:
+        raise error
+
+
+def _render_days(store: RunStore, state: PlanState, deps: Deps) -> list[RenderDay]:
+    out = []
+    for ds in state.days:
+        t = state.trip.transport
+        picks = [p for p in state.picks if p.day_index == ds.index]
+        currency = city_currency(ds.country, deps.library.city(ds.city)) or ""
+        prices = {c.lib["name"]: price_text(c.lib, currency, deps.fx, ds.date) for p in picks for c in p.restaurants}
+        out.append(RenderDay(
+            index=ds.index, date=ds.date, city=ds.city,
+            text=DayText.model_validate(store.load_json(f"days/day_{ds.index:02d}.json")),
+            result=ds.result, meals=picks, legs=ds.legs, places=state.places, booking_by_item=ds.booking_by_item,
+            price_by_restaurant=prices, arrival=t[ds.arrival] if ds.arrival is not None else None,
+            departure=t[ds.departure] if ds.departure is not None else None, prev_city=ds.prev_city,
+            utc_offset_hours=ds.utc_offset_hours, library_attractions=ds.library_attractions))
+    return out
+
+
+def _stats_md(stats: PlanStats) -> str:
+    lines = ["## Restaurant lookups", ""]
+    lines += [f"- {c}: {n} Google lookups" for c, n in sorted(stats.lookups_by_city.items())] or ["None."]
+    if stats.capped_cities:
+        lines += ["", "Lookup cap reached (some library restaurants were not checked): " + ", ".join(stats.capped_cities)]
+    return "\n".join(lines) + "\n"
+
+
+def _render_qc(store: RunStore, state: PlanState, answers: Answers, deps: Deps) -> QCResult:
+    if store.has("guide.docx") and store.has("qc_report.json"):
+        result = QCResult.model_validate(store.load_json("qc_report.json"))
+    else:
+        sections = {}
+        for key in SECTION_KEYS:
+            raw = store.load_json(f"sections/{key}.json")["content"]
+            sections[key] = SectionContent.model_validate(raw) if raw else None
+        data = GuideData(trip=state.trip, title=store.load_json("sections/title.json")["title"],
+                         days=_render_days(store, state, deps), sections=sections, important=state.important,
+                         trip_scope=state.trip.trip_scope, modes=state.trip.travel_modes,
+                         domestic=state.trip.trip_scope == "domestic")
+        docx = render_guide(data, deps.settings)
+        annotated, result, report = run_qc(docx, state.trip, answers, deps.library, deps.places, deps.routes,
+                                           deps.llm, state.exclusions, deps.settings.google_usd_per_call)
+        _, report_data = write_report(result, state.exclusions, result.cost)
+        store.save_bytes("guide.docx", annotated)
+        store.save_bytes("qc_report.md", (report + "\n" + _stats_md(state.stats)).encode("utf-8"))
+        store.save_json("qc_report.json", {**report_data, "plan_stats": state.stats.model_dump(mode="json")})
+    if not store.has("verification.xlsx"):
+        store.save_bytes("verification.xlsx", build_sheet(result.fact_rows, state.exclusions))
+    return result
+
+
+def _finish(store: RunStore, answers: Answers, deps: Deps, meter: CostMeter, label: str) -> BuildResult:
+    state = _plan(store, answers, deps)
+    _write(store, state, deps)
+    result = _render_qc(store, state, answers, deps)
+    cost = meter.cost()
+    _record_cost(store, label, cost)
+    return BuildResult(docx_name=output_filename(state.trip), qc=result, cost_usd=cost["total_usd"], cost=cost)
+
+
+def build_run(store: RunStore, answers: Answers, deps: Deps) -> BuildResult:
+    meter = CostMeter(deps)
+    missing = unanswered(_questions(store), answers)
+    if missing:
+        raise UnansweredQuestions(missing)
+    saved = store.load_json("answers.json")
+    if saved is not None and saved != answers and store.has("plan.json"):
+        raise ValueError("answers differ from the ones this run was built with; start a new run")
+    store.save_json("answers.json", answers)
+    return _finish(store, answers, deps, meter, "build")
+
+
+def regenerate(store: RunStore, days: list[int], sections: list[str], deps: Deps) -> BuildResult:
+    meter = CostMeter(deps)
+    state = _load_plan(store)
+    answers = store.load_json("answers.json") or {}
+    if not store.has("guide.docx"):
+        raise ValueError(f"run {store.run_id} has no finished guide to regenerate")
+    bad_days = [d for d in days if not 1 <= d <= len(state.days)]
+    bad_keys = [k for k in sections if k not in REGEN_SECTIONS]
+    if bad_days or bad_keys or not (days or sections):
+        raise ValueError(f"nothing valid to regenerate (days 1–{len(state.days)}; sections {', '.join(REGEN_SECTIONS)})"
+                         + (f"; bad days {bad_days}" if bad_days else "") + (f"; bad sections {bad_keys}" if bad_keys else ""))
+    v = _version(store, "guide", "docx")
+    for name in _OUTPUTS:
+        data = store.load_bytes(name)
+        if data is not None:
+            stem, ext = name.rsplit(".", 1)
+            store.save_bytes(f"{stem}.v{v}.{ext}", data)
+            store.delete(name)
+    for n in days:
+        store.delete(f"days/day_{n:02d}.json")
+    for key in sections:
+        store.delete(f"sections/{key}.json")
+    if days:
+        targets = set(days)
+        keep = [p for p in state.picks if p.day_index not in targets]
+        city = {d.index: d.city for d in state.days}
+        picks, excl, stats = plan_meals(
+            [(d.index, d.date, d.city, d.result.meals) for d in state.days if d.index in targets], deps.library,
+            deps.places, deps.routes, state.trip.diet, state.trip.travel_modes, deps.llm, deps.settings,
+            trip_scope=state.trip.trip_scope, prior=[(city[p.day_index], p) for p in keep])
+        state.picks = sorted(keep + picks, key=lambda p: p.day_index)
+        state.exclusions = [e for e in state.exclusions
+                            if not ((m := _EXCL_DAY.match(e.detail)) and int(m.group(1)) in targets)] + excl
+        for c, k in stats.lookups_by_city.items():
+            state.stats.lookups_by_city[c] = state.stats.lookups_by_city.get(c, 0) + k
+        state.stats.capped_cities = list(dict.fromkeys(state.stats.capped_cities + stats.capped_cities))
+        store.save_json("plan.json", state)
+    return _finish(store, answers, deps, meter, "regenerate")
+
+
+def _blank_trip() -> TripPlan:
+    return TripPlan(client_names=[], travellers=Traveller(adults=0), diet=Diet(), travel_modes=[], hotels=[],
+                    transport=[], bookings=[], days=[], open_choices=[], vague_days=[], commentary_removed=[],
+                    trip_scope="international")
+
+
+def requalify(store_or_none: Optional[RunStore], docx_path: Path, deps: Deps) -> tuple[bytes, QCResult, str]:
+    meter = CostMeter(deps)
+    docx = Path(docx_path).read_bytes()
+    store = store_or_none
+    if store is not None:
+        state = _load_plan(store)
+        trip, answers, exclusions = state.trip, store.load_json("answers.json") or {}, state.exclusions
+    else:
+        trip, answers, exclusions = _blank_trip(), {}, []
+    out, result, report = run_qc(docx, trip, answers, deps.library, deps.places, deps.routes, deps.llm, exclusions,
+                                 deps.settings.google_usd_per_call)
+    if store is None:
+        report = ("> No run was given, so checks against the trip plan (dates, hotels, flights, diet) were limited.\n\n"
+                  + report)
+    else:
+        n = _version(store, "requalify/guide", "docx")
+        _, data = write_report(result, exclusions, result.cost)
+        store.save_bytes(f"requalify/input.v{n}.docx", docx)
+        store.save_bytes(f"requalify/guide.v{n}.docx", out)
+        store.save_bytes(f"requalify/qc_report.v{n}.md", report.encode("utf-8"))
+        store.save_json(f"requalify/qc_report.v{n}.json", data)
+        store.save_bytes(f"requalify/verification.v{n}.xlsx", build_sheet(result.fact_rows, exclusions))
+        _record_cost(store, "qc", meter.cost())
+    return out, result, report

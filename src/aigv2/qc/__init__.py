@@ -7,7 +7,7 @@ from src.aigv2.qc.report import QCResult, build_cost, marker_kinds, write_report
 from src.aigv2.qc.rules import _f, check_rules
 
 
-def run_qc(docx_bytes, trip, answers, library, places, routes, llm, exclusions):
+def run_qc(docx_bytes, trip, answers, library, places, routes, llm, exclusions, unit_usd=None):
     log_start = len(llm.cost_log)
     google_start = {**places.calls, **routes.calls}
     doc = read_docx(docx_bytes)
@@ -21,7 +21,8 @@ def run_qc(docx_bytes, trip, answers, library, places, routes, llm, exclusions):
         except LLMStepError as e:
             findings.append(_f("qc_llm_failed", f"AI check '{name}' could not complete: {e}"))
     google_now = {**places.calls, **routes.calls}
-    cost = build_cost(llm.cost_log[log_start:], {k: v - google_start.get(k, 0) for k, v in google_now.items()})
+    cost = build_cost(llm.cost_log[log_start:], {k: v - google_start.get(k, 0) for k, v in google_now.items()},
+                      unit_usd)
     result = QCResult.build(findings, len(doc.markers), rows, marker_kinds(doc.markers), cost)
     report, _ = write_report(result, exclusions, cost)
     return annotate(docx_bytes, findings), result, report

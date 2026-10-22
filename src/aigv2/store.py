@@ -42,6 +42,16 @@ class RunStore:
     def has(self, name: str) -> bool:
         return self.backend.exists(self._key(name))
 
+    def delete(self, name: str) -> None:
+        self.backend.delete(self._key(name))
+
+    def names(self) -> list[str]:
+        prefix = self._key("")
+        return sorted(k.replace("\\", "/")[len(prefix):] for k in self.backend.list_keys(prefix))
+
+    def key(self, name: str) -> str:
+        return self._key(name)
+
     @staticmethod
     def list_runs(backend: StorageBackend) -> list[str]:
         ids = {k[len(_RUNS):].split("/", 1)[0] for k in backend.list_keys(_RUNS)}

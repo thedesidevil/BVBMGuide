@@ -121,6 +121,22 @@ class _Planner:
                 return anchor_name, near
         return city, self.library.restaurants(city)
 
+    def seed(self, city: str, pick: MealPick) -> None:
+        n = pick.day_index
+        for c in pick.restaurants:
+            name = norm_name(c.lib["name"])
+            key = (norm_name(city), name)
+            for a_name, _, _ in pick.slot.anchors:
+                shard, cands = self._shard(a_name, city)
+                if any(isinstance(r.get("name"), str) and norm_name(r["name"]) == name for r in cands):
+                    key = (norm_name(shard), name)
+                    break
+            pid = _pid(c.place, key)
+            self.places_by_day.setdefault(n, set()).add(pid)
+            self.names_by_day.setdefault(n, set()).add(key)
+            self.uses_by_place[pid] += 1
+            self.uses_by_name[key] += 1
+
     def _exclude(self, name: str, reason: Reason, where: str, detail: str) -> None:
         self.exclusions.append(Exclusion(name=name, reason=reason, detail=f"{where}: {detail}"))
 
@@ -340,8 +356,11 @@ def plan_meals(
     settings: Settings,
     *,
     trip_scope: str,
+    prior: list[tuple[str, MealPick]] = (),
 ) -> tuple[list[MealPick], list[Exclusion], PlanStats]:
     planner = _Planner(library, places, routes, diet, modes, llm, settings, trip_scope)
+    for city, pick in prior:
+        planner.seed(city, pick)
     picks = []
     for n, day, city, slots in sorted(days, key=lambda d: (d[1], d[0])):
         for slot in slots:

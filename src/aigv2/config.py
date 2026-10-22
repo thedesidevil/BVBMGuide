@@ -4,6 +4,9 @@ from pathlib import Path
 from pydantic import BaseModel, Field
 
 STEPS = ["extract", "rank", "write_days", "write_sections", "title", "qc_prose", "qc_sense"]
+# Unconfirmed estimates (Places API (New) Enterprise SKUs, Routes Essentials per element) — confirm against
+# Google's price list before relying on them.
+GOOGLE_USD_PER_CALL = {"text_search": 0.035, "nearby": 0.035, "route_element": 0.005}
 
 
 class Settings(BaseModel):
@@ -26,6 +29,7 @@ class Settings(BaseModel):
         "Greece": {"dinner": ("20:00", "22:30")},
     })
     data_root: Path = Path("aigv2_data")
+    google_usd_per_call: dict[str, float] = Field(default_factory=lambda: dict(GOOGLE_USD_PER_CALL))
 
 
 def load_settings() -> Settings:

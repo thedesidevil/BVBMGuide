@@ -3,11 +3,13 @@ from collections import Counter, defaultdict
 
 from pydantic import BaseModel, Field
 
+from src.aigv2.config import GOOGLE_USD_PER_CALL
 from src.aigv2.models import Finding
 from src.aigv2.planning.meals import Exclusion
 from src.aigv2.qc.facts import FactRow
 
-GOOGLE_UNIT_USD = {"text_search": 0.035, "nearby": 0.035, "matrix_elements": 0.005, "directions": 0.005}
+PRICE_KEY = {"text_search": "text_search", "nearby": "nearby", "matrix_elements": "route_element",
+             "directions": "route_element"}
 GOOGLE_LABELS = {"text_search": "Places text search", "nearby": "Places nearby search",
                  "matrix_elements": "Routes matrix elements", "directions": "Routes directions"}
 _MARKER_KIND = re.compile(r"⚠ ([A-Z ]*[A-Z])")
@@ -32,15 +34,17 @@ def marker_kinds(markers: list[str]) -> dict[str, int]:
     return dict(Counter(m.group(1) if (m := _MARKER_KIND.match(t)) else t for t in markers))
 
 
-def build_cost(llm_log: list[dict], google_calls: dict[str, int]) -> dict:
+def build_cost(llm_log: list[dict], google_calls: dict[str, int], unit_usd: dict[str, float] | None = None) -> dict:
+    prices = unit_usd or GOOGLE_USD_PER_CALL
     steps: dict[tuple[str, str], dict] = {}
     for e in llm_log:
         row = steps.setdefault((e["step"], e["model"]), {"step": e["step"], "model": e["model"], "calls": 0, "usd": 0.0})
         row["calls"] += 1
         row["usd"] += e["usd"]
     ai = {"steps": list(steps.values()), "usd": sum(r["usd"] for r in steps.values())}
-    apis = [{"api": k, "label": GOOGLE_LABELS.get(k, k), "calls": n, "unit_usd": GOOGLE_UNIT_USD.get(k, 0.0),
-             "usd": n * GOOGLE_UNIT_USD.get(k, 0.0)} for k, n in google_calls.items() if n]
+    unit = {k: prices.get(PRICE_KEY.get(k, k), 0.0) for k in google_calls}
+    apis = [{"api": k, "label": GOOGLE_LABELS.get(k, k), "calls": n, "unit_usd": unit[k], "usd": n * unit[k]}
+            for k, n in google_calls.items() if n]
     google = {"apis": apis, "usd": sum(a["usd"] for a in apis)}
     return {"ai": ai, "google": google, "total_usd": ai["usd"] + google["usd"]}
 

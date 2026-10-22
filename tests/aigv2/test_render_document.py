@@ -58,7 +58,7 @@ FLIGHT_OUT = TransportLeg(kind="flight", from_place="Istanbul Airport", to_place
 
 def trip(**kw):
     base = dict(
-        client_names=["Annie Sharma", "Raj Sharma"], travellers=Traveller(adults=2), diet=Diet(),
+        client_names=["Asha Verma", "Ravi Verma"], travellers=Traveller(adults=2), diet=Diet(),
         travel_modes=["taxi"],
         hotels=[HotelStay(city="Istanbul", hotel=HOTEL, check_in=D1, check_out=D3, source="voucher",
                           check_in_time=time(15))],
@@ -223,9 +223,9 @@ def test_toc_has_no_page_numbers_and_links_to_bookmarks():
 
 def test_letter_page_marker():
     text = all_text(load())
-    assert "Dear Annie," in text
+    assert "Dear Asha," in text
     assert "⚠ WRITE PERSONAL LETTER" in text
-    assert text.index("Dear Annie,") < text.index("Minarets and Moonlight")
+    assert text.index("Dear Asha,") < text.index("Minarets and Moonlight")
 
 
 def test_cover_section_zero_margins_with_full_page_image():
@@ -257,11 +257,11 @@ def test_no_utm_and_no_emoji():
 
 
 def test_output_filename():
-    assert output_filename(trip()) == "All Inclusive Guide - Annie Sharma - Istanbul.docx"
+    assert output_filename(trip()) == "All Inclusive Guide - Asha Verma - Istanbul.docx"
     two = trip(hotels=[HotelStay(city="Paris", hotel="A", check_in=D1, check_out=D2, source="voucher"),
                        HotelStay(city="Rome", hotel="B", check_in=D2, check_out=D3, source="voucher"),
                        HotelStay(city="Paris", hotel="C", check_in=D3, check_out=D3, source="voucher")])
-    assert output_filename(two) == "All Inclusive Guide - Annie Sharma - Paris, Rome.docx"
+    assert output_filename(two) == "All Inclusive Guide - Asha Verma - Paris, Rome.docx"
 
 
 def test_untimed_booking_not_shown_as_confirmed_time():

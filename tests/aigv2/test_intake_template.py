@@ -29,12 +29,12 @@ def test_parse_filled(tmp_path):
     p = tmp_path / "t.docx"
     build_template(p)
     _fill(p, {
-        "Client name(s)": "Saumitra",
+        "Client name(s)": "Asha",
         "Itinerary": "see attachments",
         "Diet (restrictions, allergies, likes)": "no beef, nothing raw",
     })
     result = parse_template(p)
-    assert result.values["Client name(s)"] == "Saumitra"
+    assert result.values["Client name(s)"] == "Asha"
     assert "Itinerary" in result.see_attachments
     assert "Itinerary" not in result.missing_required
     assert "Client name(s)" not in result.missing_required

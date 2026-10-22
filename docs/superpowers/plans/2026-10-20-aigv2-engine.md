@@ -44,7 +44,7 @@
 2. **Late-night departures and date boundaries** (01:00 flight on the 15th) — pre-flight checkout question; weekday in every header computed from the date. Tests in Tasks 11 and 18.
 3. **Doc after a Google Docs round-trip** (custom style names stripped, direct formatting kept) — re-QC still finds days, venues, links and markers. Test in Task 19.
 4. **No Google hours and unparseable library hours** ("Confirm directly before visiting") — restaurant treated as hours-unknown: never shown as open; excluded from meal slots, not a crash. Test in Task 8.
-5. **Itinerary days not matching the dates, or a night with no hotel** (Saumitra's 5 Nov) — pre-flight question, never a crash or silent guess. Test in Task 11.
+5. **Itinerary days not matching the dates, or a night with no hotel** (Trip E's 5 Nov) — pre-flight question, never a crash or silent guess. Test in Task 11.
 
 ---
 
@@ -85,7 +85,7 @@ src/aigv2/
   assets/
     cover_a4.png         Rebuilt A4 cover (Task 17, user-approved)
     logo.png             From BVBMWebsite logo assets
-    thank_you.txt        Annie's Thank You text verbatim
+    thank_you.txt        Trip D's Thank You text verbatim
   qc/
     reader.py            Parse any .docx (incl. Google Docs export) into DocModel
     rules.py             Code rule checks → Findings
@@ -125,7 +125,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
   - `Marker(kind:Literal["ADD_RESTAURANT","VERIFY","PRICE_UNKNOWN","WRITE_LETTER","CHECK"], text:str)` with `render() -> str` producing `"⚠ ADD RESTAURANT – Lunch, Day 3, near Galata Tower"`, `"⚠ VERIFY: <text>"`, `"⚠ PRICE UNKNOWN"`, `"⚠ WRITE PERSONAL LETTER"`, `"⚠ CHECK: <text>"`
   - `Finding(rule:str, severity:Literal["error","warning"], message:str, anchor_text:str="", day:int|None=None)`
 
-- **Real-trip amendments (Dilna/Jumana/Sneha review, 2026-10-20):** `travel_modes` also allows `"private_driver"` (rendered "By car"); `TransportLeg.kind` adds `"boat"`; `TransportLeg` adds `pax_label: str = ""` (e.g. `"3 Adults"`, `"2x Youth"`); `HotelStay` adds `check_in_time: time|None`, `check_out_time: time|None`; `Booking` adds `end_time: str|None`, `meeting_point: str = ""`, `duration: str = ""`, `instructions: list[str] = []` (e.g. "exchange voucher at ticket office", "bring headphones"), `timed: bool` (False = valid all day / open-dated), `pax_label: str = ""`, `included_in_package: bool = False`; `PlannedItem` adds `optional: bool = False`, `booking_ref: str|None`, `locality: str = ""` (e.g. `"Engelberg"` for a Titlis day trip from Lucerne); `Traveller` adds `child_counts: dict[str,int] = {}` (voucher CWB/CWOB/Infant).
+- **Real-trip amendments (Trip B/Trip C/Trip A review, 2026-10-20):** `travel_modes` also allows `"private_driver"` (rendered "By car"); `TransportLeg.kind` adds `"boat"`; `TransportLeg` adds `pax_label: str = ""` (e.g. `"3 Adults"`, `"2x Youth"`); `HotelStay` adds `check_in_time: time|None`, `check_out_time: time|None`; `Booking` adds `end_time: str|None`, `meeting_point: str = ""`, `duration: str = ""`, `instructions: list[str] = []` (e.g. "exchange voucher at ticket office", "bring headphones"), `timed: bool` (False = valid all day / open-dated), `pax_label: str = ""`, `included_in_package: bool = False`; `PlannedItem` adds `optional: bool = False`, `booking_ref: str|None`, `locality: str = ""` (e.g. `"Engelberg"` for a Titlis day trip from Lucerne); `Traveller` adds `child_counts: dict[str,int] = {}` (voucher CWB/CWOB/Infant).
 - **Past-AIG amendments (2026-10-20):** `TripPlan.trip_scope: Literal["international","domestic"]` (domestic = every city in India); `HotelStay.kind: Literal["hotel","resort","cruise","sleeper_train","lodge"] = "hotel"` and `HotelStay.meal_plan: Literal["none","breakfast","half_board","full_board","all_inclusive"] = "none"`; `PlannedItem.includes_meal: list[Literal["breakfast","lunch","dinner"]] = []` (safari BBQ, package lunch); `PlannedItem.pickup_time: str|None`, `pickup_place: str = ""`; `Diet.pure_veg: bool = False`; `TransportLeg` adds `operator: str = ""`, `number: str = ""`, `seat: str = ""`, `platform: str = ""` (only from tickets); new `Stop(name, minutes_from_prev, suggested_stop_min, km_from_prev)` and `DayPlan.drive_stops: list[Stop] = []`; `Settings.country_meal_windows: dict[str, dict[str, tuple[str,str]]]` = `{"Spain": {"lunch": ("13:30","16:00"), "dinner": ("20:30","22:30")}, "Greece": {"dinner": ("20:00","22:30")}}`; train "reach station by" = departure − 40 min.
 - [ ] **Step 1: Write failing tests** `tests/aigv2/test_models.py`:
   - `test_settings_defaults`: with env cleared, `load_settings().models["write_days"] == "gpt-6-luna"` and `.models["qc_sense"] == "gpt-6.1-sol"`, `.walk_max_min == 10`.
@@ -192,8 +192,8 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
 
 - [ ] **Step 1: Write failing tests:**
   - `test_build_then_parse_empty`: built template parses with `is_template True`, `missing_required` == the 6 required labels.
-  - `test_parse_filled`: fill rows programmatically (`Client name(s)`=`Saumitra`, `Itinerary`=`see attachments`, `Diet…`=`no beef, nothing raw`) → `values["Client name(s)"] == "Saumitra"`, `"Itinerary" in see_attachments`, `"Itinerary" not in missing_required`.
-  - `test_freeform_notes_not_template`: parse `input/for-aigv2/Jumana-client notes.docx` copied into a fixture → `is_template False`.
+  - `test_parse_filled`: fill rows programmatically (`Client name(s)`=`Asha`, `Itinerary`=`see attachments`, `Diet…`=`no beef, nothing raw`) → `values["Client name(s)"] == "Asha"`, `"Itinerary" in see_attachments`, `"Itinerary" not in missing_required`.
+  - `test_freeform_notes_not_template`: parse a synthetic free-form notes docx → `is_template False`.
 - [ ] **Step 2: Run** → FAIL. **Step 3: Implement**; run `python -c "from pathlib import Path; from src.aigv2.intake.template import build_template; build_template(Path('docs/aigv2/AIG Intake Template.docx'))"`.
 - [ ] **Step 4: Run** → PASS.
 - [ ] **Step 5: Commit** `feat(aigv2): add intake template build and parse` (include the generated .docx; it is the team-review checkpoint).
@@ -209,7 +209,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
 - PDF via pymupdf `page.get_text()`; `image_only=True` when total stripped text < 40 chars and the PDF has ≥1 image. DOCX via python-docx paragraphs + table cells in document order; `has_images=True` when the body contains inline pictures; `image_only=True` when text < 40 chars and has images. Files with image extensions (`.png .jpg .jpeg .heic .webp`) → `kind="image"`, `image_only=True`, text empty.
 
 - **Amendments:** `.zip` attachments are expanded in memory (skip entries with `..`/absolute paths, cap 50 files and 50 MB uncompressed) and each inner file read as its own `Attachment` named `<zip>/<inner>`. Identical files (same SHA-256) are kept once (`duplicate_of: str|None` on the rest). PDFs with text but whose dates/times sit in images: `has_images=True` and `text_dates: list[str]` (dates found by regex) — Task 11 uses this (a booking-like PDF with images and no date in its text → "paste the booking details" question).
-- [ ] **Step 1: Write failing tests:** fixture DOCX with text → text contains its paragraphs and table cells; `input/for-aigv2/annie- notes for aig.docx` copy → `has_images True` and text contains `"3 senior citizen women"` but not `"Hagia Sophia"`; a generated PDF with no text and one image → `image_only True`; `x.png` → `kind "image"`.
+- [ ] **Step 1: Write failing tests:** fixture DOCX with text → text contains its paragraphs and table cells; a synthetic notes docx with an embedded itinerary image → `has_images True` and its text paragraphs extracted, the image content not; a generated PDF with no text and one image → `image_only True`; `x.png` → `kind "image"`.
 - [ ] **Step 2: Run** → FAIL. **Step 3: Implement.** **Step 4: Run** → PASS.
 - [ ] **Step 5: Commit** `feat(aigv2): add attachment reader with image-only detection`.
 
@@ -217,7 +217,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
 
 ### Task 6: Extraction to TripPlan (luna) with validation
 
-**Files:** Create `src/aigv2/intake/extract.py`, `tests/aigv2/test_extract.py`, `tests/aigv2/fixtures/nyc_trip/` (notes text, a hotel voucher text, a flight ticket text, and `expected_trip_plan.json` hand-written from Saumitra's notes)
+**Files:** Create `src/aigv2/intake/extract.py`, `tests/aigv2/test_extract.py`, `tests/aigv2/fixtures/nyc_trip/` (notes text, a hotel voucher text, a flight ticket text, and `expected_trip_plan.json` hand-written, synthetic, modelled on Trip E's notes)
 
 **Interfaces:**
 - Consumes: `StepLLM.run_json` (step `extract`), `IntakeFields`, `list[Attachment]`, `TripPlan`.
@@ -453,7 +453,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
 
 ### Task 17: Render theme, blocks and cover asset
 
-**Files:** Create `src/aigv2/render/__init__.py`, `render/theme.py`, `render/blocks.py`, `src/aigv2/assets/` (`logo.png` copied from `../BVBMWebsite/01 BVBM Final Logo Assets/RGB File (For Digital)/PNG/Horizontal Lockup/` — pick the navy-on-white variant; `cover_a4.png`; `thank_you.txt` with Annie's Thank You text verbatim from `input/for-aigv2/Annie- Istanbul- All Inclusive Guide.docx`), `scripts/aigv2_build_cover.py`, `tests/aigv2/test_render_blocks.py`
+**Files:** Create `src/aigv2/render/__init__.py`, `render/theme.py`, `render/blocks.py`, `src/aigv2/assets/` (`logo.png` copied from `../BVBMWebsite/01 BVBM Final Logo Assets/RGB File (For Digital)/PNG/Horizontal Lockup/` — pick the navy-on-white variant; `cover_a4.png`; `thank_you.txt` with Trip D's Thank You text verbatim from the Trip D shipped guide (see `input/for-aigv2/` (gitignored))), `scripts/aigv2_build_cover.py`, `tests/aigv2/test_render_blocks.py`
 
 **Interfaces:**
 - Produces (`theme.py`): `new_document() -> Document` — A4 (21.0 × 29.7 cm), margins 2.0 cm; `Normal` = Georgia 10.5 pt slate; `Heading 1` = Cormorant Garamond 24 pt navy (days, end sections); `Heading 2` = Cormorant Garamond italic 15 pt gold (time-slot headings); `Heading 3` = Cormorant Garamond 15 pt navy semibold (card titles); `Title` = Cormorant Garamond 34 pt navy; header with `logo.png` 3 cm wide; footer tab-stopped "Your Vacation · Your Story · Your Way" (Cormorant italic 10 pt slate) left and a PAGE field right. Built-in style names only (Review Focus 3).
@@ -485,7 +485,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
   - `test_day_header_format` (Review Focus 2): `day_header(1, date(2026,10,29), "Welcome to Istanbul") == "Day 1 – Thu, 29 Oct | Welcome to Istanbul"`; 15 Nov 2026 renders `Sun`.
   - `test_section_order`: Heading 1 texts in exactly the §7.1 order.
   - `test_toc_has_no_page_numbers_and_links_to_bookmarks`.
-  - `test_letter_page_marker`: `"⚠ WRITE PERSONAL LETTER"` present and `"Dear Annie,"`.
+  - `test_letter_page_marker`: `"⚠ WRITE PERSONAL LETTER"` present and `"Dear <first name>,"`.
   - `test_every_venue_card_has_hyperlink`.
   - `test_no_utm_and_no_emoji`: document text has no `utm_` and no characters in emoji ranges other than `⚠`.
   - `test_output_filename`.
@@ -502,7 +502,7 @@ Run data root: `aigv2_data/` (gitignored): `runs/<run_id>/…`, `cache/places/<k
 - Produces (`reader.py`): `DocModel(headings: list[tuple[int, str]], days: list[DocDay], sections: dict[str, list[str]], markers: list[str], links: list[tuple[str, str]], text: str)`; `DocDay(header: str, slots: list[DocSlot])`; `DocSlot(heading: str, venues: list[DocVenue])`; `DocVenue(name: str, url: str|None, facts: dict[str, str], body: str)`; `read_docx(data: bytes) -> DocModel`. Structure comes from outline level (built-in Heading 1/2/3 or `w:outlineLvl`) and, when heading styles were lost, from formatting fallbacks: Heading 1 ≈ paragraph text matching `^Day \d+ – ` or a known section title; venue = first paragraph inside a 1-cell table; facts = label/value pairs in nested tables (label = uppercase line). Markers = text matching `⚠ (ADD RESTAURANT|VERIFY:|PRICE UNKNOWN|WRITE PERSONAL LETTER|CHECK:)`.
 - Produces (`rules.py`): `check_rules(doc: DocModel, trip: TripPlan, library: Library) -> list[Finding]` with rule ids: `section_order`, `day_header_format`, `day_weekday` (header weekday ≠ date), `day_dates` (header dates vs trip days), `venue_link` (venue without Maps hyperlink), `meal_count` (meal slot with < 3 venues and no ADD RESTAURANT marker), `repeat_city`, `repeat_day`, `diet` (venue that is a library restaurant failing `diet_fits`; hand-added non-library venues are skipped — §12b), `walk_limit` (a "Walk" fact > 10 min), `placeholder` (regex `\[fill in|TBD|mention timings|lorem`), `utm` (`utm_` in any link), `commentary` (any `trip.commentary_removed` sentence found in text), `markers_remaining` (one finding listing the count).
 
-- **Amendment:** add rule `assistant_chatter` — regex for leaked AI/planner text: `\b(Here are|Here's|in your preferred format|as an AI|I'd (keep|suggest|skip)|the client'?s?|Tripadvisor\))\b` (case-insensitive) → error. Test with Jumana's "I'd keep dinner easy…" and Sneha's "Here are clear, step-by-step directions…".
+- **Amendment:** add rule `assistant_chatter` — regex for leaked AI/planner text: `\b(Here are|Here's|in your preferred format|as an AI|I'd (keep|suggest|skip)|the client'?s?|Tripadvisor\))\b` (case-insensitive) → error. Test with Trip C's "I'd keep dinner easy…" and Trip A's "Here are clear, step-by-step directions…".
 - **Past-AIG amendments:** new rules `title_destination` (title/subtitle must name ≥1 trip destination; catches "All Inclusive Guide- Bali" in a Kerala guide), `closing_phrase_misplaced` ("We hope this vacation…", "Hope this trip brought you…" outside Thank You), `third_person_client` ("her", "him", "the client's" in client-facing text), `meal_label_mismatch` (warning: "best for dinner" in a lunch slot or vice versa), `repeat_in_set`; `placeholder` adds `Not specified`, `Please see options below`, `choose one of`. `assistant_chatter` matches first-person adviser voice (`\bI would recommend\b`, `\bI'd (aim|keep|suggest|skip|treat|choose)\b`) and specific AI phrases (`Here are clear`, `in your preferred format`, `Let me know if`, `as an AI`) — **not** bare "Here are" (house text "Here are few numbers you may need" must pass). Tests for each.
 - [ ] **Step 1: Write failing tests:** rendered fixture → `check_rules` returns only `markers_remaining`; planted errors each produce their rule id: wrong weekday (`"Day 1 – Fri, 29 Oct"`), a repeated restaurant on one day, a 25-min walk, a link with `utm_source=chatgpt.com`, a commentary sentence; `test_reader_survives_google_roundtrip` (Review Focus 3): the round-trip/stand-in doc yields the same days, venue names, links and marker count as the original.
 - [ ] **Step 2: Run** → FAIL. **Step 3: Implement.** **Step 4: Run** → PASS.
@@ -581,9 +581,9 @@ Cost this run: $0.42
 **Files:** Create `docs/aigv2/google-cloud-setup.md`, `docs/aigv2/acceptance-log.md`
 
 - [ ] **Step 1:** Write `google-cloud-setup.md`: console steps to enable **Places API (New)** and **Routes API** on the project holding `GOOGLE_MAPS_API_KEY`, confirm billing, restrict the key to those two APIs, and set a budget alert at $20/month. Send to the user.
-- [ ] **Step 2: Remind the user** (memory `aigv2-pending-test-data`) to ingest the latest AIGs into the library (Lisbon and Nusa Lembongan have no restaurants). Test-trip inputs for Sneha, Dilna and Jumana are already in `input/for-aigv2/AIG Inputs and outputs/`.
-- [ ] **Step 3:** Primary acceptance trip = **Sneha (Europe)** — best library coverage (Paris 77, Interlaken 57, Lucerne 46, Zurich 46 restaurants), multi-city, trains, zips and a photo attachment; inputs in `input/for-aigv2/AIG Inputs and outputs/Sneha- Europe…/`. Then **Dilna (Bali)** (service voucher, boats, midnight arrival, Nusa Lembongan has 0 restaurants) and **Jumana (Lisbon)** (many timed experience bookings; Lisbon has 0 restaurants → gap-marker path). Fill the intake template for each; run `start` → answer questions → `build`. Record in `acceptance-log.md`: questions asked, marker counts by type, QC findings, total cost (must be ≤ $1), wall time.
-- [ ] **Step 4:** Run `qc` on the three **shipped** guides (`Sneha_Europe_All Inclusive Guide.docx`, `Dilna- Bali- All Inclusive Guide.docx`, `Jumana_Lisbon All Inclusive Guide.docx`) and record that it catches the known errors: Jumana — 3 restaurants closed on Sunday 18 Oct, Matiz Lisboa twice on Day 1, planner commentary, 8 `utm_source=chatgpt.com` links; Sneha — impossible hours ("11:30 PM – 8:30 PM"), a 13-min walk, "Here are clear, step-by-step directions…" chatter, Day 2 header not a heading; Dilna — Important Places block headed with the wrong hotel. Also plant errors in our own output (wrong weekday, 25-min walk, repeated restaurant, removed link).
+- [ ] **Step 2: Remind the user** (memory `aigv2-pending-test-data`) to ingest the latest AIGs into the library (Lisbon and Nusa Lembongan have no restaurants). Test-trip inputs for Trips A, B and C are already in place (see `input/for-aigv2/` (gitignored)).
+- [ ] **Step 3:** Primary acceptance trip = **Trip A (Europe)** — best library coverage (Paris 77, Interlaken 57, Lucerne 46, Zurich 46 restaurants), multi-city, trains, zips and a photo attachment; inputs: see `input/for-aigv2/` (gitignored). Then **Trip B (Bali)** (service voucher, boats, midnight arrival, Nusa Lembongan has 0 restaurants) and **Trip C (Lisbon)** (many timed experience bookings; Lisbon has 0 restaurants → gap-marker path). Fill the intake template for each; run `start` → answer questions → `build`. Record in `acceptance-log.md`: questions asked, marker counts by type, QC findings, total cost (must be ≤ $1), wall time.
+- [ ] **Step 4:** Run `qc` on the three **shipped** guides (Trip A, Trip B, Trip C; see `input/for-aigv2/` (gitignored)) and record that it catches the known errors: Trip C — 3 restaurants closed on Sunday 18 Oct, Matiz Lisboa twice on Day 1, planner commentary, 8 `utm_source=chatgpt.com` links; Trip A — impossible hours ("11:30 PM – 8:30 PM"), a 13-min walk, "Here are clear, step-by-step directions…" chatter, Day 2 header not a heading; Trip B — Important Places block headed with the wrong hotel. Also plant errors in our own output (wrong weekday, 25-min walk, repeated restaurant, removed link).
 - [ ] **Step 5: User checkpoint:** user uploads `guide.docx` to Google Docs and confirms fonts, cards, links, TOC links, footer and markers survive; then downloads it back as .docx → save as `tests/aigv2/fixtures/google_roundtrip.docx` and re-run `pytest tests/aigv2/test_qc_rules.py -v` → PASS.
-- [ ] **Step 6:** Repeat Step 3 for Annie (Istanbul) and Jumana (Lisbon) once their library data exists; note luna writing quality for the "switch day writing to sol?" decision (§11b).
+- [ ] **Step 6:** Repeat Step 3 for Trip D (Istanbul) and Trip C (Lisbon) once their library data exists; note luna writing quality for the "switch day writing to sol?" decision (§11b).
 - [ ] **Step 7: Commit** `docs(aigv2): add Google setup guide and acceptance log`.

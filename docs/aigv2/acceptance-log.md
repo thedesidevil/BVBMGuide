@@ -1,6 +1,6 @@
 # AIG v2 acceptance log
 
-Status: **not yet run** — engine tasks 1–22 are built and unit-tested with fakes (466 tests); live runs need the Google setup (`google-cloud-setup.md`) and the user's real test inputs under `input/for-aigv2/AIG Inputs and outputs/` (gitignored).
+Status: **not yet run** — engine tasks 1–22 are built and unit-tested with fakes (466 tests); live runs need the Google setup (`google-cloud-setup.md`) and the user's real test inputs under `input/for-aigv2/` (gitignored; the trip-to-file mapping is kept there, not in the repo).
 
 ## How to run one trip
 
@@ -22,17 +22,17 @@ Each command prints the AI/Google cost split and writes `cost.json` (history in 
 ## Acceptance trips
 | Trip | Why | Questions asked | Markers by type | QC findings | Cost (AI / Google / total) | Wall time | Result |
 |---|---|---|---|---|---|---|---|
-| Sneha (Europe) — primary | best library coverage; multi-city, trains, zips, photo | | | | | | |
-| Dilna (Bali) | service voucher, boats, midnight arrival, Nusa Lembongan 0 restaurants | | | | | | |
-| Jumana (Lisbon) | many timed experience bookings; Lisbon 0 restaurants → gap markers | | | | | | |
-| Annie (Istanbul) — after library data | | | | | | | |
+| Trip A (Europe) — primary | best library coverage; multi-city, trains, zips, photo | | | | | | |
+| Trip B (Bali) | service voucher, boats, midnight arrival, Nusa Lembongan 0 restaurants | | | | | | |
+| Trip C (Lisbon) | many timed experience bookings; Lisbon 0 restaurants → gap markers | | | | | | |
+| Trip D (Istanbul) — after library data | | | | | | | |
 
 ## Re-QC of shipped guides (must catch the known errors)
 | Guide | Known errors QC should catch | Caught? |
 |---|---|---|
-| Jumana_Lisbon | 3 restaurants closed Sun 18 Oct; Matiz Lisboa twice on Day 1; planner commentary; 8 `utm_source=chatgpt.com` links | |
-| Sneha_Europe | impossible hours ("11:30 PM – 8:30 PM"); a 13-min walk; "Here are clear, step-by-step directions…" chatter; Day 2 header not a heading | |
-| Dilna- Bali | Important Places block headed with the wrong hotel | |
+| Trip C (Lisbon) | 3 restaurants closed Sun 18 Oct; Matiz Lisboa twice on Day 1; planner commentary; 8 `utm_source=chatgpt.com` links | |
+| Trip A (Europe) | impossible hours ("11:30 PM – 8:30 PM"); a 13-min walk; "Here are clear, step-by-step directions…" chatter; Day 2 header not a heading | |
+| Trip B (Bali) | Important Places block headed with the wrong hotel | |
 | Our own output (planted) | wrong weekday; 25-min walk; repeated restaurant; removed link | |
 
 ## Google Docs round trip (user)

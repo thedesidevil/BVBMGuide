@@ -7,7 +7,7 @@ Branch: `aigv2`. Status: **brainstorming / discovery — no design approved, no 
 - Generate AIGs through code, end to end. $0.50–$1 per AIG in API cost is acceptable.
 - Automate both **creation and QC**, aiming for zero mistakes.
 - OK for the program to ask a human to verify things or fill blanks — but the bulk of the work is done for them.
-- Adopt the **new format** (Annie Istanbul: pages before the TOC).
+- Adopt the **new format** (Trip D (Istanbul): pages before the TOC).
 - Apply the **new branding** (BVBMWebsite) and the visual style of the AI-generated mockup (`BVBMWebsite/tmp/BVBM FAQ Section/aig-preview/aig-preview.png`).
 
 ---
@@ -98,7 +98,7 @@ Files: step-by-step PDF, Instruction Set PDF, 44-page Sample Guide (Paris/Switze
 - Lunch near attractions (checklist) vs ≤20 min from hotel in hotel's zone (instructions) — clash on day trips.
 - "Leave blank" vs "curate 1–2 extras".
 - Day layout: Morning/Afternoon/Evening/Meals vs meals interleaved (sample, mockup).
-- Day header: checklist `Day X: Weekday, Date – Title`; sample `Day 1: September 9 — Arrival in Paris`; Annie `Day 1 – Thursday, 29 October 2026 | Welcome to Istanbul`.
+- Day header: checklist `Day X: Weekday, Date – Title`; sample `Day 1: September 9 — Arrival in Paris`; Trip D `Day 1 – Thursday, 29 October 2026 | Welcome to Istanbul`.
 - Emergency hospital under Important Places (checklist) vs Safety (instructions).
 - "(Insta Worthy)" tag vs separate Instagrammable Cafés section.
 - Sample guide has leftover placeholders ("mention timings"), wrong hours (dinner spot "12 PM–2 PM"), typos; phrase/SIM examples copied from Mauritius.
@@ -107,7 +107,7 @@ Files: step-by-step PDF, Instruction Set PDF, 44-page Sample Guide (Paris/Switze
 
 ---
 
-## 4. New format — Annie Istanbul (`input/for-aigv2/Annie- Istanbul- All Inclusive Guide.docx`)
+## 4. New format — Trip D (Istanbul) (see `input/for-aigv2/` (gitignored))
 
 **Order:**
 1. **Cover (new)** — full-bleed PNG, navy with thin gold border, logo, tagline "Your Vacation • Your Story • Your Way", "BON VOYAGE BY MARINA", phone, website. Entirely boilerplate (no client/destination/title).
@@ -131,7 +131,7 @@ Files: step-by-step PDF, Instruction Set PDF, 44-page Sample Guide (Paris/Switze
 
 **Human errors found (what QC must catch):**
 - Letter says **"Bali" twice** in an Istanbul guide (copy-paste); "Ivaan,,".
-- File "Annie" but letter "Dear Dilna".
+- File named for one client but the letter addressed to another.
 - <3 restaurants per meal (Day 2 lunch 2, Day 4 lunch 1, most dinners 2, Day 6 none).
 - Repeats across days incl. inconsistent names (Turgut Kebab Sirkeci / "TurguT Restaurant Sirkeci").
 - Messy hours ("Confirm directly before visiting.Listed as daily 8 am–12 am"), inconsistent am/AM.
@@ -176,14 +176,14 @@ Other sample AIGs: `tmp/BVBM FAQ Section/` (Bhushan London v3, Akankshaa Japan, 
 Three real cases, each with the notes docx the teammate fed to `prep` and the two files `prep` produced.
 
 **What the notes look like (free-form, inconsistent):**
-- **Jumana** (`Jumana-client notes.docx`): 2 adults, Lisbon, 14–18 Oct; 16 Oct morning work event; Ubers except bus to Óbidos; "apart from pork they eat everything. Love food". Hotel (Sofitel Lisbon Liberdade) buried inside Day 1 text. Day-by-day itinerary as paragraphs with "Overnight: Lisbon". 18 Oct titled "Choose Your Day Trip" but only Óbidos given; no departure info.
-- **Annie** (`annie- notes for aig.docx`): "3 senior citizen women / Budget- mid range / Leisure trip / Diet- no restrictions". **The itinerary is a pasted screenshot (image)**, not text: 29 Oct–3 Nov Istanbul, arrive 6:30 PM, Whirling Dervish at Hodjapasha, hammam in Taksim, depart 3 Nov. No hotel, no year, no flight times in notes.
-- **Saumitra** (`Saumitra notes for aig.docx`): solo, NYC, work Nov 1–5 morning (evenings free), sightseeing from Nov 5 afternoon; "mid Manhattan 6th Avenue 1st–5th", Royalton from Nov 6 (night of 5th ambiguous); taxis; no beef, nothing raw; leaves ~noon Nov 8. Itinerary is a **planner's draft with internal commentary** written to the team, not the client ("I'd skip it if you're already doing Top of the Rock", "Since they have already got the main sightseeing days…", "they" for a solo traveller), pasted address/phone blocks, duplicate lines, optional/either-or choices (Top of the Rock OR Empire State; Museum "if comfortable").
+- **Trip C** (client notes; see `input/for-aigv2/` (gitignored)): 2 adults, Lisbon, 14–18 Oct; 16 Oct morning work event; Ubers except bus to Óbidos; "apart from pork they eat everything. Love food". Hotel (Sofitel Lisbon Liberdade) buried inside Day 1 text. Day-by-day itinerary as paragraphs with "Overnight: Lisbon". 18 Oct titled "Choose Your Day Trip" but only Óbidos given; no departure info.
+- **Trip D** (client notes; see `input/for-aigv2/` (gitignored)): "3 senior citizen women / Budget- mid range / Leisure trip / Diet- no restrictions". **The itinerary is a pasted screenshot (image)**, not text: 29 Oct–3 Nov Istanbul, arrive 6:30 PM, Whirling Dervish at Hodjapasha, hammam in Taksim, depart 3 Nov. No hotel, no year, no flight times in notes.
+- **Trip E** (client notes; see `input/for-aigv2/` (gitignored)): solo, NYC, work Nov 1–5 morning (evenings free), sightseeing from Nov 5 afternoon; "mid Manhattan 6th Avenue 1st–5th", Royalton from Nov 6 (night of 5th ambiguous); taxis; no beef, nothing raw; leaves ~noon Nov 8. Itinerary is a **planner's draft with internal commentary** written to the team, not the client ("I'd skip it if you're already doing Top of the Rock", "Since they have already got the main sightseeing days…", "they" for a solo traveller), pasted address/phone blocks, duplicate lines, optional/either-or choices (Top of the Rock OR Empire State; Museum "if comfortable").
 
 **What `prep` produced — essentially empty:**
-- Annie → destination "Client notes", dates/hotel/diet/style/group all `[fill in]`; library context "No BVM library data for Client notes".
-- Jumana → destination blank, dates "18 Oct 2026 – 18 Oct 2026", hotel `[fill in]` (Sofitel missed), diet `[fill in]` (pork-free missed); library context empty.
-- Saumitra → name `[fill in]`, destination "Solo traveller"; library context empty.
+- Trip D → destination "Client notes", dates/hotel/diet/style/group all `[fill in]`; library context "No BVM library data for Client notes".
+- Trip C → destination blank, dates "18 Oct 2026 – 18 Oct 2026", hotel `[fill in]` (Sofitel missed), diet `[fill in]` (pork-free missed); library context empty.
+- Trip E → name `[fill in]`, destination "Solo traveller"; library context empty.
 
 **Root causes in `src/aig/prep.py`:**
 - `_extract_from_docx` treats the first heading/line as the destination title → "Client notes", "Solo traveller".
@@ -193,10 +193,10 @@ Three real cases, each with the notes docx the teammate fed to `prep` and the tw
 
 **Implications (Claude's read):**
 - This explains the voice-note pain "I don't know which fields the profile needs / I forget things": the tool shows blanks for things she *did* write.
-- ~~Annie letter mismatch~~ — **User clarified (2026-10-19):** Annie's guide may have been a work in progress. **The personal letter page is always written by hand for a personal touch; the program must leave it empty** (placeholder page only). Not an AI-generation concern; at most QC can flag if it was left unfilled.
+- ~~Trip D letter mismatch~~ — **User clarified (2026-10-19):** Trip D's guide may have been a work in progress. **The personal letter page is always written by hand for a personal touch; the program must leave it empty** (placeholder page only). Not an AI-generation concern; at most QC can flag if it was left unfilled.
 - Notes mix confirmed facts, planner suggestions, optional choices and internal commentary. A v2 intake needs to separate these (structured fields + itinerary), and the generator must never leak planner commentary into the guide.
-- Facts that arrive from elsewhere (Annie's hotel "Hotel Asur", flight times, year) mean intake must combine notes + itinerary + tickets/vouchers, and flag what's missing.
-- Ambiguities a human must confirm: Saumitra's night of Nov 5 hotel; Jumana's departure; Annie's year/hotel.
+- Facts that arrive from elsewhere (Trip D's hotel, flight times, year) mean intake must combine notes + itinerary + tickets/vouchers, and flag what's missing.
+- Ambiguities a human must confirm: Trip E's night of Nov 5 hotel; Trip C's departure; Trip D's year/hotel.
 
 ---
 
@@ -249,7 +249,7 @@ Three real cases, each with the notes docx the teammate fed to `prep` and the tw
     - **Table of contents: yes**, generated in the Google Doc if the program can; otherwise generated by us, as long as it's in our theme/colour palette.
     - **Getting Around: yes, important — keep.**
     - **Instagrammable cafés: dropped** ("we don't do that anymore").
-    - **Per-day "at a glance" table: not part of the new format** — new AIGs are flowing Word text, no tables. (Annie's guide had them; it may have been WIP.)
+    - **Per-day "at a glance" table: not part of the new format** — new AIGs are flowing Word text, no tables. (Trip D's guide had them; it may have been WIP.)
 18. **Day header:** `Day 1 – Thu, 29 Oct | Welcome to Istanbul` — 3-letter weekday, 3-letter month, no year, then a pipe and a plain title.
 19. **Day layout:** go with the mockup's new layout (Morning → Lunch near X → Afternoon → Dinner). Cheap to change later if it proves troublesome.
 20. **Emojis:** not important — **it must look classy**. Claude's call: drop them or use clean, mockup-style styling.
@@ -260,7 +260,7 @@ Three real cases, each with the notes docx the teammate fed to `prep` and the tw
 ## 5h. Answers — F. Look & output (`input/for-aigv2/answers-to-F.mp3`, user, 2026-10-19)
 
 23. **Always an editable Word doc**, uploaded to Google Docs and **edited only in Google Docs**.
-24. **Cover: keep the same branded navy cover image for everyone** (as in Annie). Then the **TOC page (page 3, after the hand-written letter) uses the mockup style**: logo, "Your All-Inclusive Guide" kicker, creative title (e.g. *Sakura Adventures*) + destination subtitle, then grouped TOC.
+24. **Cover: keep the same branded navy cover image for everyone** (as in Trip D). Then the **TOC page (page 3, after the hand-written letter) uses the mockup style**: logo, "Your All-Inclusive Guide" kicker, creative title (e.g. *Sakura Adventures*) + destination subtitle, then grouped TOC.
     - Group labels: **find a better word than "Your Days"**. **"While You're There" may not fit** — packing list (and mobile/SIM) are pre-trip, so the grouping needs rethinking.
 25. **A4.**
 26. **Photos: yes, but in a later version.** v1 focus = **team efficiency + lift in look and feel**. Other new features come after v1 is in use and delivering productivity + accuracy gains. (Saved to memory as a deferred feature.)
@@ -347,9 +347,9 @@ R4-14. **Default OK** — packing list AI-written, no marker.
 R4-15. **Default OK** — Claude rebuilds the cover at A4 from brand assets for approval.
 R4-16. **Default OK** — logo header; footer tagline left + page number right; phone/website on Thank You page.
 R4-17. **Default OK** — yellow-highlight markers ("⚠ VERIFY:", "⚠ ADD RESTAURANT:", "⚠ PRICE UNKNOWN"); QC fails while any remain.
-R4-18. **Default OK** — Thank You text from Annie's guide verbatim.
+R4-18. **Default OK** — Thank You text from Trip D's guide verbatim.
 R4-19. **Default OK** — "All Inclusive Guide - <Client> - <Destinations>.docx".
-R4-20. **User will provide test data** after checking with the team how accurate Jumana's, Annie's and Saumitra's AIGs are. Claude to give a list of what's needed; user uploads to `input/for-aigv2/`. *(Saved to memory as pending.)*
+R4-20. **User will provide test data** after checking with the team how accurate Trip C's, Trip D's and Trip E's AIGs are. Claude to give a list of what's needed; user uploads to `input/for-aigv2/`. *(Saved to memory as pending.)*
 R4-21. **Default OK** — PDF + DOCX uploads; images rejected with "paste text".
 R4-22. **American English, not British.**
 
@@ -378,7 +378,7 @@ From E:
 - R2-14. "Trip summary table" meant the old client-info table (city | dates | hotel + Maps link | transport). Confirm it's dropped along with client info? Is there any per-trip overview at all after the letter (e.g. a one-line list of cities and nights)?
 - R2-15. "No tables": the mockup's restaurant/attraction cards are built as tables in Word (the only Google-Docs-safe way to get a bordered card with a 2-column facts grid). Is that OK as long as it *looks* like cards, not a spreadsheet? Same for phrase lists (Turkish | Meaning) — table, or plain lines?
 - R2-16. Proposed final order (please confirm): Cover → Personal letter (blank, hand-written) → Creative title + "All Inclusive Guide – X" → Table of contents → Days → Important Places Around Your Stays → Getting Around → Must-Try Local Dishes → Souvenir Shopping Guide → Cultural Etiquette & Local Phrases → Tailored Packing List → Mobile Connectivity → Safety & Emergency Contacts → Health & Vaccination → Thank You.
-- R2-17. Where should the creative title sit: on the cover itself, or on the page after the letter (Annie's position, before the TOC)?
+- R2-17. Where should the creative title sit: on the cover itself, or on the page after the letter (Trip D's position, before the TOC)?
 
 From F:
 - R2-18. TOC trade-off: a native Word TOC converts into a Google Docs TOC that stays correct as the team edits, but it can't do the mockup's group labels and is styled by Google. A custom mockup-style TOC (grouped, dotted leaders, our fonts) looks right but its page numbers go stale once the team edits in Google Docs. Options: (a) native TOC styled as close as possible; (b) custom grouped TOC with links but no page numbers; (c) custom with page numbers the team refreshes by hand. Preference?
@@ -399,7 +399,7 @@ From G:
 3. Confirm/correct the interpretation in §1.
 4. Resolve contradictions in §3 (currency, lunch distance rule, blank vs curated, day layout, header format, hospital placement, Insta cafés).
 5. Output medium: DOCX the team can edit vs PDF/HTML matching the mockup (or both).
-6. Cover: boilerplate image (Annie) vs client/destination-specific cover (mockup).
+6. Cover: boilerplate image (Trip D) vs client/destination-specific cover (mockup).
 7. Client Info + Trip Summary page and Getting Around section — dropped in new format, or keep?
 8. ~~Who writes notes / source of truth~~ — answered in §5c.
 9. Remaining question sets C–G (Q8–Q30 of the full list given in chat) — user is answering via voice notes `answers-to-<X>.mp3` in `input/for-aigv2/`.
@@ -452,7 +452,7 @@ From G:
 
 **E. Structure & content**
 17. ★ Final section order; keep/drop Client Info table, Getting Around, Instagrammable Cafés, at-a-glance table?
-18. Day header format (Annie / checklist / mockup eyebrow).
+18. Day header format (Trip D / checklist / mockup eyebrow).
 19. Day layout: mockup (Morning → Lunch near X → Afternoon → Dinner) vs M/A/E + Meals block.
 20. Emojis: heavy, clean, or small icons?
 21. Emergency hospital: Important Places or Safety?
@@ -490,7 +490,7 @@ From G:
 
 **Intake template**
 - R3-9. I'll draft the intake Word template (mandatory fields + "Additional notes"). Draft fields: client name(s); number of adults + kids with ages; seniors/mobility needs; trip dates; cities with nights; hotel per city (if no voucher); arrival/departure flights/trains (if no ticket); confirmed bookings (tours, shows, times); diet (restrictions, allergies, likes); transport preference; budget level; occasion; must-dos/avoids; day-by-day itinerary text. Anything to add or remove? → *Default: build from that list; the team reviews it before use.*
-- R3-10. Itinerary text with open choices or planner commentary (Saumitra): should the template require a "client-ready" itinerary, or is it fine to paste the planner draft and let the tool ask questions? → *Default: paste anything; the tool asks all questions in one go (per B-6).*
+- R3-10. Itinerary text with open choices or planner commentary (Trip E): should the template require a "client-ready" itinerary, or is it fine to paste the planner draft and let the tool ask questions? → *Default: paste anything; the tool asks all questions in one go (per B-6).*
 
 **Run experience**
 - R3-11. Questions to the team before generating: answered in the web UI (a form showing all questions at once), not in the doc? → *Default: in the web UI.*
@@ -512,7 +512,7 @@ From G:
 **Days — content the rules don't cover yet**
 - R4-3. Free time ("evening at leisure", "if energy permits"): suggest something, or leave it as free time? → *Default: leave as free time with one light, nearby suggestion only if the itinerary hints at one; never invent new attractions.*
 - R4-4. Attractions: must every attraction come from the itinerary/notes (tool never adds its own)? → *Default: yes — the tool only enriches what the itinerary names.*
-- R4-5. Breakfast: include it? → *Default: no, unless the itinerary mentions breakfast out (e.g. "breakfast → short walk" on Saumitra's last day).*
+- R4-5. Breakfast: include it? → *Default: no, unless the itinerary mentions breakfast out (e.g. "breakfast → short walk" on Trip E's last day).*
 - R4-6. Arrival day: airport → hotel by each allowed mode with time and approx cost; departure day: hotel → airport with a "leave by" time from the flight time (e.g. 3 h before international)? → *Default: yes; "leave by" gets a verify marker.*
 - R4-7. Inter-city travel days (train/flight between cities): include station/airport transfer at both ends, plus lunch near wherever they are around midday? → *Default: yes.*
 - R4-8. Group adjustments: seniors, kids or mobility needs — tighter limits (e.g. walking ≤5 min for seniors), kid-friendly restaurant preference? → *Default: walking ≤5 min when seniors/mobility needs are noted; otherwise same rules.*
@@ -522,14 +522,14 @@ From G:
 - R4-10. Packing list: AI-written from season, weather and booked activities (hammam, mosque visits, hiking) — no marker needed? → *Default: no marker; it's advice, not facts.*
 
 **Look & assets**
-- R4-11. Cover: Annie's cover image is US Letter size. Do you have an A4 version, or should I rebuild it at A4 from the brand assets (logo PDF, navy, gold border, tagline)? → *Default: I rebuild it at A4 and you approve it.*
-- R4-12. Header/footer: mockup has tagline left + page number right; Annie has logo header + phone/website footer. → *Default: small logo in the header; footer "Your Vacation · Your Story · Your Way" left, page number right; phone + website on the Thank You page only.*
+- R4-11. Cover: Trip D's cover image is US Letter size. Do you have an A4 version, or should I rebuild it at A4 from the brand assets (logo PDF, navy, gold border, tagline)? → *Default: I rebuild it at A4 and you approve it.*
+- R4-12. Header/footer: mockup has tagline left + page number right; Trip D has logo header + phone/website footer. → *Default: small logo in the header; footer "Your Vacation · Your Story · Your Way" left, page number right; phone + website on the Thank You page only.*
 - R4-13. Markers: yellow highlight with a prefix, e.g. **"⚠ VERIFY:"** / **"⚠ ADD RESTAURANT:"** / **"⚠ PRICE UNKNOWN"**; QC fails while any remain. → *Default: yes.*
-- R4-14. Thank You page: fixed text taken from Annie's guide? → *Default: yes, word for word.*
+- R4-14. Thank You page: fixed text taken from Trip D's guide? → *Default: yes, word for word.*
 - R4-15. File name: "All Inclusive Guide - <Client> - <Destinations>.docx" (from the manual process). → *Default: yes.*
 
 **Testing**
-- R4-16. Test set: can I use Jumana (Lisbon), Annie (Istanbul) and Saumitra (NYC) as the first three test trips, and can you share their vouchers/tickets and the final shipped guides to compare against? → *Default: yes; we judge v1 on these three before the team uses it.*
+- R4-16. Test set: can I use Trip C (Lisbon), Trip D (Istanbul) and Trip E (NYC) as the first three test trips, and can you share their vouchers/tickets and the final shipped guides to compare against? → *Default: yes; we judge v1 on these three before the team uses it.*
 - R4-17. Uploads: what file types do vouchers and tickets usually come as (PDF, DOCX, email printouts, images)? → *Default: PDF and DOCX supported; images rejected with a "paste text" message (per B-7).*
 - R4-18. Spelling: British English throughout (brand tone guide)? → *Default: yes.*
 
@@ -543,7 +543,7 @@ From G:
 
 ## 10. Test data needed (R4-20 — pending from user)
 
-For each of Jumana (Lisbon), Annie (Istanbul), Saumitra (NYC):
+For each of Trip C (Lisbon), Trip D (Istanbul), Trip E (NYC):
 1. Client notes (have) — ideally re-done in the new intake template once it exists.
 2. Itinerary PDF/DOCX as sent to the client.
 3. All vouchers: hotel confirmations, BVM service vouchers, tours/shows/experiences.

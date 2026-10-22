@@ -57,7 +57,7 @@ v2 is a web-UI tool that takes the team's intake doc plus trip attachments and p
 
 Teammates, in the existing web UI (FastAPI + React, `src/library/ui/`, `ui-frontend/`), deployed on Lambda (§5c).
 
-1. **Upload**: the filled intake template (.docx) + attachments (itinerary, hotel vouchers, BVM service vouchers, tickets — PDF/DOCX). Images are rejected with "please paste the text" (§5d, §5n R4-21). Image-only content inside a .docx (e.g. Annie's pasted itinerary screenshot) is detected and reported the same way.
+1. **Upload**: the filled intake template (.docx) + attachments (itinerary, hotel vouchers, BVM service vouchers, tickets — PDF/DOCX). Images are rejected with "please paste the text" (§5d, §5n R4-21). Image-only content inside a .docx (e.g. Trip D's pasted itinerary screenshot) is detected and reported the same way.
 2. **Pre-flight**: the tool reads everything and shows **all** its questions in one web-UI form: missing required fields, contradictions, open choices in planner drafts (Top of the Rock *or* Empire State), ambiguous hotel nights or checkout dates, missing travel mode (§5d, §5l R3-7, §5m R3-11). The run does not start until answered. The tool also warns up front if a destination has no library data (it still proceeds if the user confirms; restaurant slots become gap markers) (§5m R3-14).
 3. **Generate** (background job; UI says "check back in ~15–30 minutes"; recent runs are listed) (§5i, §5n R4-4).
 4. **Download**: the AIG .docx, a **QC report**, and a **verification sheet** (§5k, §5m R3-12/R3-17).
@@ -86,7 +86,7 @@ dates; cities & nights; hotel per city; flights/trains; confirmed bookings (tour
 Vouchers win for hotels, flight/train times, checkout dates. Otherwise notes, then itinerary. Conflicts between sources become pre-flight questions.
 
 ### 6.3 Planner drafts
-The itinerary field may contain a planner's draft with commentary and either/or choices (Saumitra case). The tool must (a) turn open choices into pre-flight questions, (b) strip internal commentary — it never appears in the guide.
+The itinerary field may contain a planner's draft with commentary and either/or choices (Trip E case). The tool must (a) turn open choices into pre-flight questions, (b) strip internal commentary — it never appears in the guide.
 
 ## 7. Output document
 
@@ -102,7 +102,7 @@ Editable **.docx**, **A4**, designed to survive **Google Docs import** cleanly: 
 4. **Days**
 5. **Before You Go** sections (order as above)
 6. **While You're There** sections (order as above)
-7. **Thank You** — Annie's text verbatim + phone + website (§5n R4-16/R4-18).
+7. **Thank You** — Trip D's text verbatim + phone + website (§5n R4-16/R4-18).
 
 ### 7.2 Day format (§5g, mockup)
 - Header: `Day 1 – Thu, 29 Oct | Welcome to Istanbul` (3-letter weekday and month, no year, pipe, plain title).
@@ -225,14 +225,14 @@ Revised AI estimate: **~$0.15–0.25 per AIG** (10-day trip), leaving most of th
 
 ## 12. Testing & acceptance
 
-- Test trips: **Jumana (Lisbon), Annie (Istanbul), Saumitra (NYC)** + ideally one **10–15 night multi-city trip** — user is gathering vouchers, tickets, shipped AIGs and known-problem notes (§10, pending).
+- Test trips: **Trip C (Lisbon), Trip D (Istanbul), Trip E (NYC)** + ideally one **10–15 night multi-city trip** — user is gathering vouchers, tickets, shipped AIGs and known-problem notes (§10, pending).
 - v1 is judged on these before the team uses it: every factual item either verified or marked; QC agent catches deliberately planted errors (wrong weekday, closed restaurant, 25-min "walk", repeated restaurant, missing hyperlink); format identical across all days; output imports into Google Docs with links and styling intact; cost per run ≤ $1.
 - Comparison with the shipped AIGs is for coverage and tone, not as ground truth (their accuracy is unknown — §5n R4-20).
 - **Library coverage prerequisite**: today Lisbon has no library data and Istanbul has only 8 restaurants; New York (27) is the only test city that exercises the restaurant pipeline. The user will **ingest the latest AIGs into the library before testing**. Until then, NYC is the primary restaurant test; Lisbon/Istanbul test everything else (and the gap-marker path).
 
 ## 12b. Decisions from the builder check [Claude's calls — override if wrong]
 
-- **Untimed itineraries** (e.g. Jumana's paragraphs): the builder assigns Morning/Afternoon/Evening from the itinerary's order and wording, then checks those slots against Google hours. It does **not** ask about every untimed item; it asks in pre-flight only when the assigned slot conflicts with a place's hours and no other order works.
+- **Untimed itineraries** (e.g. Trip C's paragraphs): the builder assigns Morning/Afternoon/Evening from the itinerary's order and wording, then checks those slots against Google hours. It does **not** ask about every untimed item; it asks in pre-flight only when the assigned slot conflicts with a place's hours and no other order works.
 - **QC and the cache**: QC reuses cached place IDs, locations and travel times, but re-fetches **status and hours** fresh (cheap, and these are what goes stale). The **$1 cap covers the first full run** (build + one QC). Re-QC and regenerations cost extra, are logged, and should stay well under $1 each.
 - **Restaurants the team adds by hand** into gaps: QC accepts them (they need not be library entries) and checks only the Google facts — open/operational, hours at that meal, distance, and diet where it can tell. Not being in the library is never a finding.
 - **QC parsing**: the builder embeds stable structure in the .docx (consistent styles/labels per card) so QC can read venues reliably after a Google Docs round-trip; QC falls back to loose parsing for hand-added content.

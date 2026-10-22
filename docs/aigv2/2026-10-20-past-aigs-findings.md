@@ -37,7 +37,7 @@ Source: `input/for-aigv2/all-aigs/` (287 .docx → 208 unique texts → 167 afte
 - `placeholder` adds "Not specified", "Please see options below", "choose one of".
 - `assistant_chatter`: first-person adviser voice ("I would recommend", "I'd aim/keep/suggest/skip/treat") and specific AI phrases ("Here are clear…", "in your preferred format", "Let me know if") — **not** bare "Here are" (house text uses "Here are few numbers you may need").
 - Planner voice referring to the client in third person ("her", "him", "the client's") → error.
-- Day headers must be real headings (format drift seen in Leh, Sneha).
+- Day headers must be real headings (format drift seen in Leh, Trip A).
 
 **Multi-country trips**
 - End sections that differ per country are grouped per country: emergency numbers, embassy/consulate (with email + after-hours number), dishes, souvenirs, phrases, currency, SIM (with multi-country eSIM option).

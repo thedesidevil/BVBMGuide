@@ -20,6 +20,11 @@ class FakeSession:
     def __init__(self, *payloads):
         self.payloads = list(payloads)
         self.posts = []
+        self.gets = []
+
+    def get(self, url, headers=None, timeout=None):
+        self.gets.append((url, headers))
+        return FakeResp(self.payloads.pop(0) if len(self.payloads) > 1 else self.payloads[0])
 
     def post(self, url, headers=None, json=None, timeout=None):
         self.posts.append((url, headers, json))
@@ -214,3 +219,43 @@ def test_search_text_language_code(tmp_path):
     c, s = client(tmp_path, {"places": [gp("Seher Restaurant")]})
     c.find("Seher Restaurant", "Istanbul")
     assert s.posts[0][2]["languageCode"] == "en"
+
+
+def test_website_tracking_params_stripped(tmp_path):
+    c, _ = client(tmp_path, {"places": [gp("Seher Restaurant",
+                                            websiteUri="https://x.example/menu?utm_source=gmb&ref=7&UTM_medium=maps")]})
+    assert c.find("Seher Restaurant", "Istanbul").website == "https://x.example/menu?ref=7"
+    c2, _ = client(tmp_path / "b", {"places": [gp("Seher Restaurant", websiteUri="https://x.example/?utm_source=g")]})
+    assert c2.find("Seher Restaurant", "Istanbul").website == "https://x.example/"
+
+
+def test_fresh_status_uses_place_details_by_id(tmp_path):
+    c, s = client(tmp_path, {"places": [gp("Seher Restaurant", pid="pidX")]},
+                  {"businessStatus": "CLOSED_PERMANENTLY", "regularOpeningHours": _roh(9, 17)})
+    cached = c.find("Seher Restaurant", "Istanbul")
+    fresh = c.fresh_status(cached)
+    url, headers = s.gets[0]
+    assert url == "https://places.googleapis.com/v1/places/pidX"
+    assert headers["X-Goog-FieldMask"] == "businessStatus,regularOpeningHours" and headers["X-Goog-Api-Key"] == "KEY"
+    assert fresh.status == "CLOSED_PERMANENTLY" and fresh.hours.periods[1]
+    assert fresh.place_id == "pidX" and fresh.name == cached.name and fresh.lat == cached.lat
+    assert c.calls == {"text_search": 1, "nearby": 0, "details": 1} and len(s.posts) == 1
+
+
+def test_fresh_status_gone_place_is_none(tmp_path):
+    class Gone(FakeResp):
+        status_code = 404
+
+    c, s = client(tmp_path, {"places": [gp("Seher Restaurant")]})
+    cached = c.find("Seher Restaurant", "Istanbul")
+    s.get = lambda url, headers=None, timeout=None: Gone({})
+    assert c.fresh_status(cached) is None
+
+
+def test_nearby_link_names_city_and_skips_malformed(tmp_path):
+    broken = gp("No Location Pharmacy", ptype="pharmacy", pid="x")
+    del broken["location"]
+    c, _ = client(tmp_path, {"places": [broken, gp("City Pharmacy", ptype="pharmacy", pid="ok")]})
+    out = c.nearby(41.0, 29.0, ["pharmacy"], 1500, 5, city="Istanbul")
+    assert [p.place_id for p in out] == ["ok"]
+    assert "query=City+Pharmacy+Istanbul&query_place_id=ok" in out[0].maps_url

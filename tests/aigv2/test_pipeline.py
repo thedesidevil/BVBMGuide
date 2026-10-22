@@ -33,11 +33,15 @@ def _place(name: str, i: int = 0) -> Place:
 
 class FakePlaces:
     def __init__(self):
-        self.calls = {"text_search": 0, "nearby": 0}
+        self.calls = {"text_search": 0, "nearby": 0, "details": 0}
 
     def find(self, name, city, near=None, fresh=False):
         self.calls["text_search"] += 1
         return _place(name)
+
+    def fresh_status(self, place):
+        self.calls["details"] += 1
+        return place
 
     def nearby(self, lat, lng, types, radius_m, max_results, city=None):
         self.calls["nearby"] += 1
@@ -287,8 +291,8 @@ def test_cost_log_totals(deps):
     assert by_step["qc_sense"]["model"] == "gpt-6.1-sol" and by_step["write_days"]["prompt_tokens"] > 0
     assert sum(s["usd"] for s in by_step.values()) == pytest.approx(cost["ai"]["total_usd"])
     unit = deps.settings.google_usd_per_call
-    assert set(unit) == {"text_search", "nearby", "route_element"}
-    for api in ("text_search", "nearby", "route_element"):
+    assert set(unit) == {"text_search", "nearby", "details", "route_element"}
+    for api in ("text_search", "nearby", "details", "route_element"):
         assert by_api[api]["calls"] > 0
         assert by_api[api]["usd"] == pytest.approx(by_api[api]["calls"] * unit[api])
     assert by_api["route_element"]["calls"] == deps.routes.calls["matrix_elements"] + deps.routes.calls["directions"]

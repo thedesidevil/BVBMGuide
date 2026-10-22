@@ -25,15 +25,21 @@ from tests.aigv2.test_render_document import HOTEL, place, trip
 class FakePlaces:
     def __init__(self, cached, fresh=None):
         self.cached, self.fresh_map = cached, fresh or {}
-        self.calls = {"text_search": 0, "nearby": 0}
+        self.calls = {"text_search": 0, "nearby": 0, "details": 0}
         self.fresh_calls = []
+        self.fresh_searches = []
 
     def find(self, name, city, near=None, fresh=False):
         if fresh:
             self.calls["text_search"] += 1
-            self.fresh_calls.append(name)
+            self.fresh_searches.append(name)
             return self.fresh_map.get(name, self.cached.get(name))
         return self.cached.get(name)
+
+    def fresh_status(self, place):
+        self.calls["details"] += 1
+        self.fresh_calls.append(place.name)
+        return self.fresh_map.get(place.name, place)
 
 
 class FakeRoutes:
@@ -69,7 +75,7 @@ def test_closed_venue_found_fresh():
     places = FakePlaces(cached_places(), {"Mikla": closed("Mikla")})
     findings, rows = check_facts(doc, trip(), places, FakeRoutes())
     assert [f.rule for f in findings if f.rule == "closed_now"] == ["closed_now"]
-    assert "Mikla" in places.fresh_calls
+    assert "Mikla" in places.fresh_calls and places.fresh_searches == [] and places.calls["text_search"] == 0
     assert next(r for r in rows if r.venue == "Mikla").match is False
     _, rows = check_facts(doc, trip(), FakePlaces(cached_places(), {"Mikla": closed("Mikla")}), FakeRoutes(), fresh=False)
     assert all(r.match for r in rows if r.venue == "Mikla")
@@ -207,8 +213,8 @@ def test_unverified_when_no_google_match():
 
 def test_unverified_when_fresh_lookup_empty_or_unmatched():
     class NoFresh(FakePlaces):
-        def find(self, name, city, near=None, fresh=False):
-            return None if fresh and name == "Mikla" else super().find(name, city, near, fresh)
+        def fresh_status(self, place):
+            return None if place.name == "Mikla" else super().fresh_status(place)
 
     findings, rows = check_facts(read_docx(render()), trip(), NoFresh(cached_places()), FakeRoutes())
     assert rules_of(findings, "Mikla") and not next(r for r in rows if r.venue == "Mikla").match
@@ -310,3 +316,34 @@ def test_sense_check_accepts_pydantic_answers(monkeypatch):
     llm, calls = fake_llm('{"issues": []}', monkeypatch)
     sense_check(read_docx(render()), trip(), llm, Finding(rule="x", severity="error", message="m"))
     assert '"rule": "x"' in calls[0][1]
+
+
+def test_fresh_search_only_without_cached_place_id():
+    p = cached_places()
+    p["Mikla"] = p["Mikla"].model_copy(update={"place_id": ""})
+    places = FakePlaces(p, {"Mikla": place("Mikla", match_ok=False)})
+    findings, _ = check_facts(read_docx(render()), trip(), places, FakeRoutes())
+    assert places.fresh_searches == ["Mikla"] and "Mikla" not in places.fresh_calls
+    assert rules_of(findings, "Mikla")
+
+
+def test_meal_checked_at_country_window():
+    from src.aigv2.config import Settings
+    p = late_place("Mikla")
+    p.hours.periods = {d: [(time(9), time(21, 15))] for d in range(7)}
+    s = Settings(models={}, country_meal_windows={"Turkey": {"dinner": ("21:00", "23:00")}})
+    findings, _ = check_facts(read_docx(render()), trip(), FakePlaces(cached_places(Mikla=p)), FakeRoutes())
+    assert not [f for f in findings if f.rule == "not_open_at_slot" and f.anchor_text == "Mikla"]
+    findings, _ = check_facts(read_docx(render()), trip(), FakePlaces(cached_places(Mikla=p)), FakeRoutes(),
+                              countries={"Istanbul": "Turkey"}, settings=s)
+    hit = [f for f in findings if f.rule == "not_open_at_slot" and f.anchor_text == "Mikla"]
+    assert hit and "21:00" in hit[0].message
+
+
+def test_attraction_checked_at_booked_time():
+    p = late_place("Topkapi Palace")
+    p.hours.periods = {d: [(time(8), time(9, 45))] for d in range(7)}
+    findings, _ = check_facts(read_docx(render()), trip(), FakePlaces(cached_places(**{"Topkapi Palace": p})),
+                              FakeRoutes())
+    hit = [f for f in findings if f.rule == "not_open_at_slot" and f.anchor_text == "Topkapi Palace"]
+    assert hit and "10:00" in hit[0].message

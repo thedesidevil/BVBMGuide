@@ -3,7 +3,7 @@ import re
 import unicodedata
 from datetime import datetime, timezone
 from typing import Optional
-from urllib.parse import quote_plus
+from urllib.parse import parse_qsl, quote_plus, urlencode, urlsplit, urlunsplit
 
 import requests
 
@@ -13,6 +13,8 @@ from src.aigv2.store import PlaceCache
 
 SEARCH_TEXT_URL = "https://places.googleapis.com/v1/places:searchText"
 SEARCH_NEARBY_URL = "https://places.googleapis.com/v1/places:searchNearby"
+DETAILS_URL = "https://places.googleapis.com/v1/places/{}"
+DETAILS_FIELD_MASK = "businessStatus,regularOpeningHours"
 FIELD_MASK = ",".join(
     f"places.{f}"
     for f in (
@@ -73,6 +75,23 @@ def _haversine_km(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
     return 6371.0 * 2 * math.asin(math.sqrt(a))
 
 
+def strip_tracking(url: Optional[str]) -> Optional[str]:
+    if not url:
+        return url
+    parts = urlsplit(url)
+    query = [(k, v) for k, v in parse_qsl(parts.query, keep_blank_values=True) if not k.casefold().startswith("utm_")]
+    return urlunsplit(parts._replace(query=urlencode(query)))
+
+
+def _hours(raw: dict) -> Optional[WeeklyHours]:
+    if not raw.get("regularOpeningHours"):
+        return None
+    try:
+        return from_google(raw["regularOpeningHours"])
+    except ValueError:
+        return None
+
+
 def _is_24h_week(hours: Optional[WeeklyHours]) -> bool:
     return hours is not None and len(hours.periods) == 7 and all(is_24h(p) for p in hours.periods.values())
 
@@ -82,7 +101,7 @@ class PlacesClient:
         self.api_key = api_key
         self.cache = cache
         self.session = session or requests.Session()
-        self.calls: dict[str, int] = {"text_search": 0, "nearby": 0}
+        self.calls: dict[str, int] = {"text_search": 0, "nearby": 0, "details": 0}
 
     def _post(self, url: str, body: dict, counter: str) -> dict:
         self.calls[counter] += 1
@@ -99,6 +118,21 @@ class PlacesClient:
         resp.raise_for_status()
         return resp.json()
 
+    def fresh_status(self, place: Place) -> Optional[Place]:
+        """Re-fetch only business status and hours by place ID (Place Details); None if Google no longer has it."""
+        self.calls["details"] += 1
+        resp = self.session.get(
+            DETAILS_URL.format(place.place_id),
+            headers={"X-Goog-Api-Key": self.api_key, "X-Goog-FieldMask": DETAILS_FIELD_MASK},
+            timeout=30,
+        )
+        if getattr(resp, "status_code", 200) == 404:
+            return None
+        resp.raise_for_status()
+        raw = resp.json()
+        return place.model_copy(update={"status": raw.get("businessStatus") or "UNKNOWN", "hours": _hours(raw),
+                                        "fetched_at": datetime.now(timezone.utc)})
+
     def find(self, name: str, city: str, near: Optional[tuple[float, float]] = None, fresh: bool = False) -> Optional[Place]:
         key = f"{name}|{city}"
         if not fresh:
@@ -110,7 +144,7 @@ class PlacesClient:
             body["locationBias"] = {
                 "circle": {"center": {"latitude": near[0], "longitude": near[1]}, "radius": 20000.0}
             }
-        raw = self._post(SEARCH_TEXT_URL, body, "text_search").get("places") or []
+        raw = [r for r in self._post(SEARCH_TEXT_URL, body, "text_search").get("places") or [] if _has_location(r)]
         if not raw:
             return None
         scored = [(self._match_ok(name, city, near, r), _overlap(name, _display(r)), r) for r in raw]
@@ -125,13 +159,13 @@ class PlacesClient:
     def nearby(
         self, lat: float, lng: float, types: list[str], radius_m: int, max_results: int, city: Optional[str] = None
     ) -> list[Place]:
-        found = self._nearby_once(lat, lng, types, radius_m, max_results)
+        found = self._nearby_once(lat, lng, types, radius_m, max_results, city)
         places = [p for _, p in found]
         if "hospital" in types:
             others = [p for t, p in found if t != "hospital"]
             hospitals = self._emergency_hospitals([p for t, p in found if t == "hospital"])
             if not any(_haversine_km(lat, lng, p.lat, p.lng) <= _HOSPITAL_RADIUS_KM for p in hospitals):
-                hospitals = [p for _, p in self._nearby_once(lat, lng, _CLINIC_TYPES, radius_m, max_results)]
+                hospitals = [p for _, p in self._nearby_once(lat, lng, _CLINIC_TYPES, radius_m, max_results, city)]
                 for p in hospitals:
                     _add_note(p, _CLINIC_NOTE)
             places = others + hospitals
@@ -140,7 +174,8 @@ class PlacesClient:
                 _add_note(p, _WEAK_NOTE)
         return places
 
-    def _nearby_once(self, lat: float, lng: float, types: list[str], radius_m: int, max_results: int) -> list[tuple[str, Place]]:
+    def _nearby_once(self, lat: float, lng: float, types: list[str], radius_m: int, max_results: int,
+                     city: Optional[str] = None) -> list[tuple[str, Place]]:
         body = {
             "includedTypes": types,
             "maxResultCount": max_results,
@@ -157,7 +192,10 @@ class PlacesClient:
             name = _display(r).casefold()
             if r.get("primaryType") not in wanted or any(w in name for w in _EXCLUDED_NAME_WORDS):
                 continue
-            out.append((r["primaryType"], self._to_place(r, f"nearby:{','.join(types)}", _display(r), True)))
+            if not _has_location(r):
+                continue
+            link = f"{_display(r)} {city.split(',')[0].strip()}" if city else _display(r)
+            out.append((r["primaryType"], self._to_place(r, f"nearby:{','.join(types)}", link, True)))
         return out
 
     @staticmethod
@@ -186,12 +224,7 @@ class PlacesClient:
 
     @staticmethod
     def _to_place(raw: dict, query: str, link_text: str, match_ok: bool) -> Place:
-        hours = None
-        if raw.get("regularOpeningHours"):
-            try:
-                hours = from_google(raw["regularOpeningHours"])
-            except ValueError:
-                hours = None
+        hours = _hours(raw)
         pid = raw.get("id", "")
         url = f"https://www.google.com/maps/search/?api=1&query={quote_plus(link_text)}"
         if pid:
@@ -205,12 +238,18 @@ class PlacesClient:
             lng=raw["location"]["longitude"],
             status=raw.get("businessStatus") or "UNKNOWN",
             hours=hours,
-            website=raw.get("websiteUri"),
+            website=strip_tracking(raw.get("websiteUri")),
             phone=raw.get("internationalPhoneNumber"),
             maps_url=url,
             fetched_at=datetime.now(timezone.utc),
             match_ok=match_ok,
         )
+
+
+def _has_location(raw: dict) -> bool:
+    loc = raw.get("location")
+    return isinstance(loc, dict) and isinstance(loc.get("latitude"), (int, float)) \
+        and isinstance(loc.get("longitude"), (int, float))
 
 
 def _display(raw: dict) -> str:

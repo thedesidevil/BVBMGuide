@@ -573,7 +573,8 @@ def _render_qc(store: RunStore, state: PlanState, answers: Answers, deps: Deps) 
                          domestic=state.trip.trip_scope == "domestic")
         docx = render_guide(data, deps.settings)
         annotated, result, report = run_qc(docx, state.trip, answers, deps.library, deps.places, deps.routes,
-                                           deps.llm, state.exclusions, deps.settings.google_usd_per_call)
+                                           deps.llm, state.exclusions, deps.settings.google_usd_per_call,
+                                           countries=state.countries, settings=deps.settings)
         _, report_data = write_report(result, state.exclusions, result.cost)
         store.save_bytes("guide.docx", annotated)
         store.save_bytes("qc_report.md", (report + "\n" + _stats_md(state.stats)).encode("utf-8"))
@@ -664,7 +665,8 @@ def _requalify(store: RunStore, docx_path: Path, deps: Deps) -> tuple[bytes, QCR
     state = _load_plan(store)
     answers, exclusions = store.load_json("answers.json") or {}, state.exclusions
     out, result, report = run_qc(docx, state.trip, answers, deps.library, deps.places, deps.routes, deps.llm,
-                                 exclusions, deps.settings.google_usd_per_call)
+                                 exclusions, deps.settings.google_usd_per_call, countries=state.countries,
+                                 settings=deps.settings)
     n = _version(store, "requalify/guide", "docx")
     _, data = write_report(result, exclusions, result.cost)
     store.save_bytes(f"requalify/input.v{n}.docx", docx)

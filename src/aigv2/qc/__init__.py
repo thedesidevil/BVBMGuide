@@ -7,12 +7,13 @@ from src.aigv2.qc.report import QCResult, build_cost, marker_kinds, write_report
 from src.aigv2.qc.rules import _f, check_rules
 
 
-def run_qc(docx_bytes, trip, answers, library, places, routes, llm, exclusions, unit_usd=None):
+def run_qc(docx_bytes, trip, answers, library, places, routes, llm, exclusions, unit_usd=None, countries=None,
+           settings=None):
     log_start = len(llm.cost_log)
     google_start = {**places.calls, **routes.calls}
     doc = read_docx(docx_bytes)
     findings = check_rules(doc, trip, library)
-    fact_findings, rows = check_facts(doc, trip, places, routes)
+    fact_findings, rows = check_facts(doc, trip, places, routes, countries=countries, settings=settings)
     findings += fact_findings
     for name, check in (("prose_fact", lambda: prose_fact_check(doc, llm)),
                         ("sense", lambda: sense_check(doc, trip, llm, answers))):

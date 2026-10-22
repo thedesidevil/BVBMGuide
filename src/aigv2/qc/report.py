@@ -8,9 +8,10 @@ from src.aigv2.models import Finding
 from src.aigv2.planning.meals import Exclusion
 from src.aigv2.qc.facts import FactRow
 
-PRICE_KEY = {"text_search": "text_search", "nearby": "nearby", "matrix_elements": "route_element",
+PRICE_KEY = {"text_search": "text_search", "nearby": "nearby", "details": "details", "matrix_elements": "route_element",
              "directions": "route_element"}
 GOOGLE_LABELS = {"text_search": "Places text search", "nearby": "Places nearby search",
+                 "details": "Place Details (status + hours)",
                  "matrix_elements": "Routes matrix elements", "directions": "Routes directions"}
 _MARKER_KIND = re.compile(r"⚠ ([A-Z ]*[A-Z])")
 

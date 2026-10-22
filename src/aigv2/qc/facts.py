@@ -7,15 +7,17 @@ from pydantic import BaseModel
 
 from src.aigv2.config import Settings
 from src.aigv2.hours import format_for_day, is_open_for
-from src.aigv2.models import Place, TripPlan
+from src.aigv2.library import norm_name
+from src.aigv2.models import DayPlan, Place, TripPlan
+from src.aigv2.planning.slots import meal_start, parse_time
 from src.aigv2.qc.reader import DocModel, DocVenue
 from src.aigv2.qc.rules import _f
 
 _NEAR = re.compile(r"\bnear\s+(.+)$", re.I)
 _TRAVEL = re.compile(r"(Walk|By car|By public transport)\s*·\s*(\d+)\s*min", re.I)
 _MODES = {"walk": "WALK", "by car": "DRIVE", "by public transport": "TRANSIT"}
-_SLOT_START = {"breakfast": "07:30", "morning": "09:00", "lunch": "12:30", "afternoon": "14:00",
-               "evening": "17:30", "dinner": "19:30"}
+_MEALS = ("breakfast", "lunch", "dinner")
+_TIME_FACTS = ("YOUR BOOKING", "PICKUP", "TIME")
 _LOOKUP_ERRORS = (requests.RequestException, ValueError, KeyError)
 _UNVERIFIED = "Not verified"
 _VISIT_MIN = 30
@@ -34,13 +36,21 @@ class FactRow(BaseModel):
     match: bool
 
 
-def _slot_time(heading: str) -> Optional[time]:
+def _visit_time(v: DocVenue, heading: str, plan: DayPlan, country: str, settings: Settings) -> Optional[time]:
+    """The card's own time (booking, pickup, stated time), else the planned item time, else the slot/meal start."""
+    for label in _TIME_FACTS:
+        t = parse_time(v.facts.get(label))
+        if t:
+            return t
+    item = next((it for it in plan.items if norm_name(it.name) == norm_name(v.name)), None)
+    t = item and (parse_time(item.pickup_time) or parse_time(item.time))
+    if t:
+        return t
     word = heading.split()[0].casefold() if heading.split() else ""
-    start = _SLOT_START.get(word) or Settings(models={}).slot_windows.get(word, (None,))[0]
-    if not start:
-        return None
-    h, m = start.split(":")
-    return time(int(h), int(m))
+    if word in _MEALS:
+        return meal_start(word, country, settings)
+    start = settings.slot_windows.get(word, (None,))[0]
+    return time.fromisoformat(start) if start else None
 
 
 def _minutes_text(mode: str, minutes: int) -> str:
@@ -61,8 +71,12 @@ def _unverified(v: DocVenue, day_no: int, what: str):
     return _f("fact_unverified", f"Could not verify {what} for {v.name}; check it by hand", v.name, day_no, "warning")
 
 
-def check_facts(doc: DocModel, trip: TripPlan, places, routes, fresh: bool = True) -> tuple[list, list[FactRow]]:
+def check_facts(doc: DocModel, trip: TripPlan, places, routes, fresh: bool = True,
+                countries: Optional[dict[str, str]] = None,
+                settings: Optional[Settings] = None) -> tuple[list, list[FactRow]]:
     findings, rows = [], []
+    settings = settings or Settings(models={})
+    countries = countries or {}
     plan_days = sorted(trip.days, key=lambda d: d.date)
     for day in doc.days:
         if day.index is None or not 1 <= day.index <= len(plan_days):
@@ -73,8 +87,9 @@ def check_facts(doc: DocModel, trip: TripPlan, places, routes, fresh: bool = Tru
             for v in slot.venues:
                 if v.kind != "venue":
                     continue
+                start = _visit_time(v, slot.heading, plan, countries.get(plan.city, ""), settings)
                 try:
-                    f, row = _check_venue(v, day.index, plan.date, plan.city, slot.heading,
+                    f, row = _check_venue(v, day.index, plan.date, plan.city, start,
                                           near.group(1).strip() if near else None, places, routes, fresh)
                 except _LOOKUP_ERRORS as e:
                     f = [_f("fact_check_failed", f"{v.name}: Google lookup failed ({e.__class__.__name__})",
@@ -90,12 +105,17 @@ def _row(v: DocVenue, day_no: int, google_hours: str, guide_travel: str, google_
                    guide_travel=guide_travel, google_travel=google_travel, link=v.url or "", match=match)
 
 
-def _check_venue(v: DocVenue, day_no: int, d: date, city: str, heading: str, anchor: Optional[str],
+def _check_venue(v: DocVenue, day_no: int, d: date, city: str, start: Optional[time], anchor: Optional[str],
                  places, routes, fresh: bool):
     cached = places.find(v.name, city)
     place = None
     if cached is not None and cached.match_ok:
-        place = places.find(v.name, city, near=(cached.lat, cached.lng), fresh=True) if fresh else cached
+        if not fresh:
+            place = cached
+        elif cached.place_id:
+            place = places.fresh_status(cached)
+        else:
+            place = places.find(v.name, city, near=(cached.lat, cached.lng), fresh=True)
     if place is None or not place.match_ok:
         return [_unverified(v, day_no, "status, hours and travel time (no confident Google match)")], \
             _row(v, day_no, _UNVERIFIED, "", _UNVERIFIED, False)
@@ -105,7 +125,6 @@ def _check_venue(v: DocVenue, day_no: int, d: date, city: str, heading: str, anc
         findings.append(_f("closed_now", f"{v.name} is shown as closed {state} on Google", v.name, day_no))
     elif place.status == "UNKNOWN":
         findings.append(_unverified(v, day_no, "business status"))
-    start = _slot_time(heading)
     if place.hours is None:
         findings.append(_unverified(v, day_no, "opening hours (Google has none)"))
     elif start is None:

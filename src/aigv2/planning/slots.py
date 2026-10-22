@@ -110,7 +110,7 @@ def _schedule_items(day: DayPlan, settings: Settings) -> list[ScheduledItem]:
     return sorted(out, key=lambda s: s.start)
 
 
-def _window(meal: str, country: str, settings: Settings) -> time:
+def meal_start(meal: str, country: str, settings: Settings) -> time:
     custom = settings.country_meal_windows.get(country, {}).get(meal)
     if custom:
         return _t(custom[0])
@@ -258,7 +258,7 @@ def schedule_day(
         res.meals.append(MealSlot(meal=meal, start=start, anchors=found, unanchored=not found))
 
     # breakfast
-    b_start = _window("breakfast", country, settings)
+    b_start = meal_start("breakfast", country, settings)
     b_stay = _stay_for(stays, d, "breakfast", b_start)
     if b_stay and not (arr_t and arr_t > b_start):
         out_rule = "breakfast out" in rules
@@ -266,7 +266,7 @@ def schedule_day(
             add("breakfast", b_start, b_stay, lambda: hotel_spec(b_stay, 3))
 
     # lunch
-    l_start = _window("lunch", country, settings)
+    l_start = meal_start("lunch", country, settings)
     l_stay = _stay_for(stays, d, "lunch", l_start)
     new = [s for s in stays if s.check_in == d]
     midday_checkin = any(s.check_in_time and time(11) <= s.check_in_time <= time(13) for s in new)
@@ -296,7 +296,7 @@ def schedule_day(
         add("lunch", l_start, l_stay, lunch_spec)
 
     # dinner
-    d_start = _window("dinner", country, settings)
+    d_start = meal_start("dinner", country, settings)
     d_stay = _stay_for(stays, d, "dinner", d_start)
     evening = [s for s in res.scheduled if s.slot == "evening" and real(s)]
 

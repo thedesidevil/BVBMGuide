@@ -135,16 +135,22 @@ class CostMeter:
 
     def cost(self) -> dict:
         by_step: dict[str, dict] = {}
+        warnings: list[str] = []
         for e in self.deps.llm.cost_log[self.log_start:]:
-            row = by_step.setdefault(e["step"], {"model": e["model"], "prompt_tokens": 0, "completion_tokens": 0,
-                                                 "usd": 0.0})
+            key = f"{e['step']} (fallback)" if e.get("fallback") else e["step"]
+            row = by_step.setdefault(key, {"model": e["model"], "prompt_tokens": 0, "completion_tokens": 0,
+                                           "usd": 0.0})
             if e["model"] not in row["model"].split("+"):
                 row["model"] += "+" + e["model"]
             row["prompt_tokens"] += e["prompt_tokens"]
             row["completion_tokens"] += e["completion_tokens"]
             row["usd"] += e["usd"]
+            msg = f"No price for model {e['model']} (step {e['step']}); its cost is counted as $0"
+            if e.get("unpriced") and msg not in warnings:
+                warnings.append(msg)
         order = {s: i for i, s in enumerate(STEPS)}
-        by_step = dict(sorted(by_step.items(), key=lambda kv: order.get(kv[0], len(order))))
+        by_step = dict(sorted(by_step.items(), key=lambda kv: (order.get(kv[0].split(" ")[0], len(order)),
+                                                               kv[0].endswith("(fallback)"))))
         unit = self.deps.settings.google_usd_per_call
         counts = {api: 0 for api in unit}
         for k, v in self._google().items():
@@ -153,9 +159,12 @@ class CostMeter:
         by_api = {api: {"calls": n, "usd": n * unit.get(api, 0.0)} for api, n in counts.items()}
         ai_usd = sum(r["usd"] for r in by_step.values())
         google_usd = sum(r["usd"] for r in by_api.values())
-        return {"ai": {"total_usd": ai_usd, "by_step": by_step},
-                "google": {"total_usd": google_usd, "by_api": by_api},
-                "total_usd": ai_usd + google_usd}
+        out = {"ai": {"total_usd": ai_usd, "by_step": by_step},
+               "google": {"total_usd": google_usd, "by_api": by_api},
+               "total_usd": ai_usd + google_usd}
+        if warnings:
+            out["warnings"] = warnings
+        return out
 
 
 def cost_summary(cost: dict) -> str:
@@ -165,7 +174,8 @@ def cost_summary(cost: dict) -> str:
                       for k, v in google["by_api"].items() if v["calls"]) or "none"
     return "\n".join([f"Cost this run: ${cost['total_usd']:.2f}",
                       f"  {'AI':<8}${ai['total_usd']:.2f}  ({steps})",
-                      f"  {'Google':<8}${google['total_usd']:.2f}  ({apis})"])
+                      f"  {'Google':<8}${google['total_usd']:.2f}  ({apis})",
+                      *(f"  WARNING: {w}" for w in cost.get("warnings", []))])
 
 
 def _guarded(store: RunStore, meter: CostMeter, label: str, fn):

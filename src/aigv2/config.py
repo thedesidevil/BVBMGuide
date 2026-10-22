@@ -1,11 +1,13 @@
 import os
+import re
 from pathlib import Path
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
 STEPS = ["extract", "rank", "write_days", "write_sections", "title", "qc_prose", "qc_sense"]
 # Unconfirmed estimates (Places API (New) Enterprise SKUs incl. Place Details with opening hours, Routes Essentials
 # per element) — confirm against Google's price list before relying on them.
+_BANNED_MODEL = re.compile(r"^gpt-6(?:\.0)?-sol(?:$|[^.\d])", re.I)
 GOOGLE_USD_PER_CALL = {"text_search": 0.035, "nearby": 0.035, "details": 0.020, "route_element": 0.005}
 
 
@@ -30,6 +32,13 @@ class Settings(BaseModel):
     })
     data_root: Path = Path("aigv2_data")
     google_usd_per_call: dict[str, float] = Field(default_factory=lambda: dict(GOOGLE_USD_PER_CALL))
+
+    @model_validator(mode="after")
+    def _no_gpt_6_sol(self) -> "Settings":
+        bad = [f"{k}={m}" for k, m in [*self.models.items(), ("fallback", self.fallback_model)] if _BANNED_MODEL.match(m)]
+        if bad:
+            raise ValueError(f"gpt-6-sol (6.0) must never be used; use gpt-6.1-sol ({', '.join(bad)})")
+        return self
 
 
 def load_settings() -> Settings:

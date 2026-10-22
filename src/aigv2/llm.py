@@ -1,3 +1,4 @@
+import logging
 from typing import Callable
 
 from pydantic import BaseModel, ValidationError
@@ -5,6 +6,8 @@ from pydantic import BaseModel, ValidationError
 from src.common.ai_provider import AIClient, _lookup_pricing
 
 from .config import Settings
+
+log = logging.getLogger(__name__)
 
 
 class LLMStepError(Exception):
@@ -55,8 +58,10 @@ class StepLLM:
         c_tok = getattr(usage, "completion_tokens", 0) or 0
         price = _lookup_pricing(model)
         usd = (p_tok * price[0] + c_tok * price[1]) / 1_000_000 if price else 0.0
+        if price is None:
+            log.warning("model %s (step %s) has no price; its cost is counted as $0", model, step)
         self._log.append({"step": step, "model": model, "prompt_tokens": p_tok,
-                          "completion_tokens": c_tok, "usd": usd, "fallback": fallback})
+                          "completion_tokens": c_tok, "usd": usd, "fallback": fallback, "unpriced": price is None})
         text = resp.choices[0].message.content or ""
         try:
             obj = schema.model_validate_json(text)

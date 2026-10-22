@@ -73,3 +73,13 @@ def test_cost_uses_pricing():
     llm.run_json("rank", "sys", "p", Out)
     assert llm.cost_log[0]["usd"] == pytest.approx(0.10)
     assert llm.total_usd() == pytest.approx(0.10)
+
+
+def test_unpriced_model_is_flagged(caplog):
+    calls = []
+    settings = Settings(models={"rank": "mystery-model"})
+    llm = StepLLM(settings, client_factory=lambda m: FakeClient(m, {"mystery-model": '{"x": 1}'}, calls))
+    with caplog.at_level("WARNING"):
+        llm.run_json("rank", "sys", "p", Out)
+    assert llm.cost_log[0]["usd"] == 0.0 and llm.cost_log[0]["unpriced"] is True
+    assert "mystery-model" in caplog.text and "no price" in caplog.text

@@ -686,3 +686,23 @@ def test_unlinked_bookings_get_verify_marker_and_qc_rule(deps):
     doc.save(buf)
     fs = [f for f in check_rules(read_docx(buf.getvalue()), trip, deps.library) if f.rule == "booking_missing"]
     assert [(f.day, "Uffizi Skip-the-line" in f.message) for f in fs] == [(3, True)]
+
+
+def test_cost_rows_per_model_and_unpriced_warning(deps):
+    meter = pipeline.CostMeter(deps)
+    log = deps.llm._log
+    log.append({"step": "rank", "model": "gpt-6-luna", "prompt_tokens": 100, "completion_tokens": 10, "usd": 0.01,
+                "fallback": False})
+    log.append({"step": "rank", "model": "gpt-6.1-sol", "prompt_tokens": 200, "completion_tokens": 20, "usd": 0.05,
+                "fallback": True})
+    log.append({"step": "title", "model": "mystery-model", "prompt_tokens": 50, "completion_tokens": 5, "usd": 0.0,
+                "fallback": False, "unpriced": True})
+    cost = meter.cost()
+    rows = cost["ai"]["by_step"]
+    assert list(rows) == ["rank", "rank (fallback)", "title"]
+    assert rows["rank"] == {"model": "gpt-6-luna", "prompt_tokens": 100, "completion_tokens": 10, "usd": 0.01}
+    assert rows["rank (fallback)"]["model"] == "gpt-6.1-sol" and rows["rank (fallback)"]["usd"] == 0.05
+    assert cost["ai"]["total_usd"] == pytest.approx(0.06)
+    assert cost["warnings"] == ["No price for model mystery-model (step title); its cost is counted as $0"]
+    text = cost_summary(cost)
+    assert "rank (fallback) $0.05" in text and "WARNING: No price for model mystery-model" in text

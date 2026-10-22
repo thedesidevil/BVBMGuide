@@ -33,3 +33,19 @@ def test_marker_render():
 def test_pricing_known():
     assert _lookup_pricing("gpt-6.1-sol") == (2.0, 10.0)
     assert _lookup_pricing("gpt-6-luna") == (0.10, 0.50)
+
+
+def test_gpt_6_sol_rejected(monkeypatch):
+    import pytest
+    from src.aigv2.config import Settings
+    _clear(monkeypatch)
+    monkeypatch.setenv("AIGV2_MODEL_WRITE_DAYS", "gpt-6-sol")
+    with pytest.raises(ValueError, match="gpt-6-sol"):
+        load_settings()
+    monkeypatch.setenv("AIGV2_MODEL_WRITE_DAYS", "GPT-6.0-sol")
+    with pytest.raises(ValueError, match="gpt-6-sol"):
+        load_settings()
+    with pytest.raises(ValueError):
+        Settings(models={}, fallback_model="gpt-6-sol")
+    monkeypatch.setenv("AIGV2_MODEL_WRITE_DAYS", "gpt-6.1-sol")
+    assert load_settings().models["write_days"] == "gpt-6.1-sol"

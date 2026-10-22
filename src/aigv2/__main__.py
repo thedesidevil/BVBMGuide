@@ -50,8 +50,18 @@ def _build_errors(fn):
             typer.echo(f"  [{q.id}] {q.text}")
         raise typer.Exit(1)
     except (PreflightStop, ValueError) as e:
-        typer.echo(str(e))
-        raise typer.Exit(1)
+        _failed(e)
+    except Exception as e:
+        _failed(e, f"{type(e).__name__}: ")
+
+
+def _failed(e: Exception, prefix: str = ""):
+    typer.echo(f"FAILED: {prefix}{e}")
+    cost = getattr(e, "run_cost", None)
+    if cost is not None:
+        typer.echo(f"Run id: {e.run_id}")
+        typer.echo(pipeline.cost_summary(cost))
+    raise typer.Exit(1)
 
 
 @app.command()
@@ -66,7 +76,7 @@ def start(attachments: Optional[list[Path]] = typer.Argument(None, help="Attachm
           intake: Optional[Path] = typer.Option(None, "--intake", help="Filled intake template .docx")):
     """Read inputs, extract the trip and list the pre-flight questions."""
     deps = pipeline.default_deps()
-    store, questions = pipeline.start_run(intake, list(attachments or []), deps)
+    store, questions = _build_errors(lambda: pipeline.start_run(intake, list(attachments or []), deps))
     typer.echo(f"Run id: {store.run_id}")
     if questions:
         typer.echo(f"Questions ({len(questions)}):")
@@ -101,10 +111,10 @@ def regenerate(run_id: str, day: list[int] = typer.Option([], "--day", help="Day
 
 @app.command()
 def qc(edited: Path = typer.Argument(..., help="Edited guide .docx"),
-       run: Optional[str] = typer.Option(None, "--run", help="Run id the guide came from")):
+       run: str = typer.Option(..., "--run", help="Run id the guide came from (required: QC needs its trip plan)")):
     """Re-run QC on an edited guide."""
     deps = pipeline.default_deps()
-    store = _store(deps, run) if run else None
+    store = _store(deps, run)
     meter = pipeline.CostMeter(deps)
     out, result, report = _build_errors(lambda: pipeline.requalify(store, edited, deps))
     cost = meter.cost()

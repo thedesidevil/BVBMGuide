@@ -329,3 +329,219 @@ def test_cli_start_and_qc(deps, tmp_path, monkeypatch):
     assert "Cost this run:" in out.output and ("PASS" in out.output or "FAIL" in out.output)
     assert (tmp_path / "edited.qc.docx").exists() and (tmp_path / "edited.qc_report.md").exists()
     assert json.loads((tmp_path / "edited.cost.json").read_text())["total_usd"] >= 0
+
+
+# ---------- fix round 1 ----------
+
+from datetime import date, timedelta  # noqa: E402
+
+from src.aigv2.models import DayPlan, Diet, HotelStay, PlannedItem, TransportLeg, Traveller, TripPlan  # noqa: E402
+from src.aigv2.store import RunStore  # noqa: E402
+from src.aigv2.writing.sections import write_section  # noqa: E402
+
+D0 = date(2027, 5, 10)
+COUNTRY = {"Prague": "Czechia", "Vienna": "Austria"}
+
+
+class CityPlaces(FakePlaces):
+    def __init__(self):
+        super().__init__()
+        self.lookups = []
+
+    def find(self, name, city, near=None, fresh=False):
+        self.calls["text_search"] += 1
+        self.lookups.append((name, city))
+        p = _place(name)
+        p.lat = 50.0 if city == "Prague" else 48.2 if city == "Vienna" else 40.75
+        p.address = f"1 Test St, {city}, {COUNTRY.get(city, 'USA')}"
+        p.place_id = f"pid_{name}_{city}".replace(" ", "_")
+        return p
+
+
+def two_city_trip() -> TripPlan:
+    d = [D0 + timedelta(days=i) for i in range(4)]
+    return TripPlan(
+        client_names=["Test Client"], travellers=Traveller(adults=2), diet=Diet(), travel_modes=["taxi"],
+        hotels=[HotelStay(city="Prague", hotel="Grand Hotel", check_in=d[0], check_out=d[2], source="voucher"),
+                HotelStay(city="Vienna", hotel="Grand Hotel", check_in=d[2], check_out=d[3], source="voucher")],
+        transport=[
+            TransportLeg(kind="flight", from_place="Mumbai", to_place="Airport", depart=datetime(2027, 5, 10, 2, 0),
+                         arrive=datetime(2027, 5, 10, 9, 0), source="ticket"),
+            TransportLeg(kind="flight", from_place="Airport", to_place="Airport", depart=datetime(2027, 5, 12, 10, 0),
+                         arrive=datetime(2027, 5, 12, 11, 0), source="ticket"),
+            TransportLeg(kind="flight", from_place="Airport", to_place="Mumbai", depart=datetime(2027, 5, 13, 18, 0),
+                         arrive=datetime(2027, 5, 14, 6, 0), source="ticket")],
+        bookings=[],
+        days=[DayPlan(date=d[0], title="Arrive", city="Prague"),
+              DayPlan(date=d[1], title="Old Town", city="Prague",
+                      items=[PlannedItem(name="Old Town", kind="attraction", city="Prague", slot_hint="morning"),
+                             PlannedItem(name="Castle", kind="attraction", city="Prague", slot_hint="afternoon")]),
+              DayPlan(date=d[2], title="To Vienna", city="Vienna",
+                      items=[PlannedItem(name="Old Town", kind="attraction", city="Vienna", slot_hint="afternoon")]),
+              DayPlan(date=d[3], title="Home", city="Vienna")],
+        open_choices=[], vague_days=[], commentary_removed=[], trip_scope="international")
+
+
+def seeded(deps, trip: TripPlan) -> RunStore:
+    store = RunStore.create(deps.backend)
+    store.save_json("trip_plan.json", trip)
+    store.save_json("questions.json", {"questions": []})
+    return store
+
+
+def test_places_keyed_by_city(deps):
+    deps.places = CityPlaces()
+    store = seeded(deps, two_city_trip())
+    build_run(store, {}, deps)
+    state = pipeline._load_plan(store)
+    d2, d3, d4 = state.days[1], state.days[2], state.days[3]
+    assert d2.places["Old Town"].lat == 50.0 and d3.places["Old Town"].lat == 48.2
+    assert d3.places["Grand Hotel"].lat == 48.2 and d2.places["Grand Hotel"].lat == 50.0
+    assert d4.places["Airport"].lat == 48.2 and state.days[0].places["Airport"].lat == 50.0
+    assert ("Airport", "Vienna") in deps.places.lookups and ("Airport", "Prague") in deps.places.lookups
+    assert state.countries == {"Prague": "Czechia", "Vienna": "Austria"}
+    assert {i.city for i in state.important} == {"Prague", "Vienna"}
+
+
+def test_arrival_departure_and_legs(deps):
+    deps.places = CityPlaces()
+    store = seeded(deps, two_city_trip())
+    build_run(store, {}, deps)
+    state = pipeline._load_plan(store)
+    assert [(d.arrival, d.departure) for d in state.days] == [(0, None), (None, None), (1, 1), (None, 2)]
+    assert set(state.days[0].legs) == {"arrival"}
+    assert set(state.days[1].legs) == {"Old Town", "Castle"}
+    assert state.days[1].legs["Castle"].from_name == "Old Town"
+    assert set(state.days[2].legs) == {"arrival", "departure", "Old Town"}
+    assert state.days[2].legs["departure"].from_name == "Grand Hotel"
+    assert state.days[2].legs["arrival"].to_name == "Grand Hotel"
+    assert set(state.days[3].legs) == {"departure"}
+    rds = pipeline._render_days(store, state, deps)
+    assert rds[2].arrival is rds[2].departure and rds[2].prev_city == "Prague"
+    assert rds[0].departure is None and rds[3].arrival is None
+    assert rds[2].utc_offset_hours == 2.0
+
+
+def test_early_arrival_and_after_midnight_departure():
+    d = [D0 + timedelta(days=i) for i in range(3)]
+    trip = two_city_trip().model_copy(update={
+        "hotels": [HotelStay(city="Prague", hotel="H", check_in=d[0], check_out=d[2], source="voucher")],
+        "transport": [
+            TransportLeg(kind="flight", from_place="X", to_place="Airport", arrive=datetime(2027, 5, 11, 2, 30),
+                         source="t"),
+            TransportLeg(kind="flight", from_place="Airport", to_place="X", depart=datetime(2027, 5, 13, 1, 30),
+                         source="t")]})
+    assert pipeline._arrival_idx(trip, d[1]) == 0
+    assert pipeline._arrival_idx(trip, d[0]) is None
+    assert pipeline._departure_idx(trip, d[2], {d[0], d[1], d[2]}) == 1
+    assert pipeline._departure_idx(trip, d[2], {d[0], d[1], d[2], d[2] + timedelta(days=1)}) is None
+    late = trip.model_copy(update={"transport": [trip.transport[1].model_copy(
+        update={"depart": datetime(2027, 5, 13, 6, 0)})]})
+    assert pipeline._departure_idx(late, d[2], {d[2]}) is None
+
+
+def test_utc_offset_and_country():
+    assert pipeline._utc_offset("Austria", date(2027, 1, 15)) == 1.0
+    assert pipeline._utc_offset("Austria", date(2027, 7, 15)) == 2.0
+    assert pipeline._utc_offset("India", date(2027, 7, 15)) == 5.5
+    assert pipeline._utc_offset("USA", date(2027, 7, 15)) is None
+    assert pipeline._utc_offset("", date(2027, 7, 15)) is None
+    p = _place("Hotel")
+    p.address = "Kärntner Ring 1, 1010 Wien, Austria"
+    assert pipeline._country_of(p) == "Austria"
+    p.address = "10 Bayfront Ave, Singapore 018956"
+    assert pipeline._country_of(p) == "Singapore"
+    p.match_ok = False
+    assert pipeline._country_of(p) == "" and pipeline._country_of(None) == ""
+
+
+def test_country_falls_back_to_library(deps, tmp_path):
+    assert pipeline._library_country(deps.library, "New York") == "USA"
+    assert pipeline._library_country(deps.library, "Atlantis") == ""
+
+    class NoCountry(FakePlaces):
+        def find(self, name, city, near=None, fresh=False):
+            p = super().find(name, city, near, fresh)
+            p.address = ""
+            return p
+    deps.places = NoCountry()
+    store, answers, _ = built(deps)
+    assert pipeline._load_plan(store).countries == {"New York": "USA"}
+
+
+def test_regenerate_swaps_exclusions(deps):
+    store, answers, _ = built(deps)
+    plan = store.load_json("plan.json")
+    plan["exclusions"] += [{"name": "S2", "reason": "closed", "detail": "Lunch, Day 2, near X: sentinel"},
+                           {"name": "S3", "reason": "closed", "detail": "Lunch, Day 3, near X: sentinel"}]
+    store.save_json("plan.json", plan)
+    regenerate(store, [2], [], deps)
+    names = [e["name"] for e in store.load_json("plan.json")["exclusions"]]
+    assert "S2" not in names and "S3" in names
+    assert any(", Day 2, " in e["detail"] for e in store.load_json("plan.json")["exclusions"])
+
+
+def test_changed_answers_refused(deps):
+    store, answers, _ = built(deps)
+    changed = dict(answers)
+    changed["open_choice:0"] = "Top of the Rock sunset visit"
+    with pytest.raises(ValueError, match="start a new run"):
+        build_run(store, changed, deps)
+
+
+def test_failed_build_saves_partial_and_cost(deps, tmp_path, monkeypatch):
+    store, questions, answers = started(deps)
+
+    def boom(prompt):
+        raise RuntimeError("title service down")
+    monkeypatch.setitem(REPLIES, "title", boom)
+    with pytest.raises(RuntimeError) as exc:
+        build_run(store, answers, deps)
+    assert exc.value.run_id == store.run_id and exc.value.run_cost["ai"]["total_usd"] > 0
+    assert store.has("days/day_01.json") and store.has("days/day_04.json") and store.has("sections/safety.json")
+    assert not store.has("sections/title.json") and not store.has("guide.docx")
+    cost = store.load_json("cost.json")
+    assert cost == exc.value.run_cost and cost["google"]["by_api"]["text_search"]["calls"] > 0
+    assert store.load_json("cost_history.json")["runs"][-1]["command"] == "build (failed)"
+    ans = tmp_path / "answers.json"
+    ans.write_text(json.dumps(answers), encoding="utf-8")
+    from src.aigv2.__main__ import app
+    monkeypatch.setattr(pipeline, "default_deps", lambda: deps)
+    out = CliRunner().invoke(app, ["build", store.run_id, "--answers", str(ans)])
+    assert out.exit_code == 1 and "FAILED: RuntimeError: title service down" in out.output
+    assert "Cost this run: $" in out.output and "  Google " in out.output
+    monkeypatch.setitem(REPLIES, "title", lambda p: json.dumps({"title": "Manhattan Lights Ahead"}))
+    before = len(steps(deps.llm, "write_days"))
+    build_run(store, answers, deps)
+    assert len(steps(deps.llm, "write_days")) == before and store.has("guide.docx")
+
+
+def test_requalify_requires_run(deps, tmp_path, monkeypatch):
+    store, answers, _ = built(deps)
+    edited = tmp_path / "edited.docx"
+    edited.write_bytes(store.load_bytes("guide.docx"))
+    with pytest.raises(ValueError, match="--run"):
+        requalify(None, edited, deps)
+    from src.aigv2.__main__ import app
+    monkeypatch.setattr(pipeline, "default_deps", lambda: deps)
+    out = CliRunner().invoke(app, ["qc", str(edited)])
+    assert out.exit_code != 0 and "--run" in out.output
+
+
+def test_domestic_guide_has_health_check_marker(deps, monkeypatch):
+    plan = json.loads((FIX / "expected_trip_plan.json").read_text(encoding="utf-8"))
+    plan["trip_scope"] = "domestic"
+    monkeypatch.setitem(REPLIES, "extract", lambda p: json.dumps(plan))
+    store, answers, result = built(deps)
+    text = "\n".join(p.text for p in Document(io.BytesIO(store.load_bytes("guide.docx"))).paragraphs)
+    assert "⚠ CHECK: Altitude / remote area / sea travel not assessed" in text
+    assert result.qc.marker_kinds.get("CHECK", 0) >= 1
+
+
+def test_health_section_for_high_altitude(deps):
+    plan = TripPlan.model_validate_json((FIX / "expected_trip_plan.json").read_text(encoding="utf-8"))
+    domestic = plan.model_copy(update={"trip_scope": "domestic"})
+    city = [{"city": "Leh", "country": "India"}]
+    assert write_section("health", city, {}, domestic, deps.llm) is None
+    assert write_section("health", city, {}, domestic, deps.llm, high_altitude=True) is not None
+    assert write_section("money", city, {}, domestic, deps.llm, high_altitude=True) is None

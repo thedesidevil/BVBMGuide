@@ -17,7 +17,7 @@ from src.aigv2.intake.extract import extract_trip
 from src.aigv2.intake.template import IntakeFields, parse_template
 from src.aigv2.library import Library, norm_name
 from src.aigv2.llm import StepLLM
-from src.aigv2.models import Answers, Booking, Diet, HotelStay, Place, Question, Traveller, TripPlan
+from src.aigv2.models import Answers, Booking, HotelStay, Marker, Place, Question, TripPlan
 from src.aigv2.money import FxRates, city_currency, price_text
 from src.aigv2.planning.important_places import ImportantPlaces, important_places
 from src.aigv2.planning.meals import Exclusion, MealPick, PlanStats, plan_meals
@@ -39,6 +39,8 @@ REGEN_SECTIONS = (*SECTION_KEYS, "title")
 _ITEM_KINDS = ("attraction", "activity", "meal_out")
 _OUTPUTS = ("guide.docx", "qc_report.md", "qc_report.json", "verification.xlsx")
 _EXCL_DAY = re.compile(r"^\w+, Day (\d+), ")
+DOMESTIC_HEALTH_CHECK = ("Altitude / remote area / sea travel not assessed — add health and mountain-road guidance "
+                         "if this trip goes above 2,500 m, to a remote area, or involves sea travel")
 # Single-time-zone countries only; anything else gets no sunset time rather than a guessed one.
 _TZ = {
     "india": "Asia/Kolkata", "turkey": "Europe/Istanbul", "türkiye": "Europe/Istanbul", "turkiye": "Europe/Istanbul",
@@ -98,6 +100,7 @@ class DayState(BaseModel):
     city: str
     country: str = ""
     result: DayResult
+    places: dict[str, Optional[Place]] = Field(default_factory=dict)
     legs: dict[str, Leg] = Field(default_factory=dict)
     arrival: Optional[int] = None
     departure: Optional[int] = None
@@ -164,6 +167,18 @@ def cost_summary(cost: dict) -> str:
                       f"  {'Google':<8}${google['total_usd']:.2f}  ({apis})"])
 
 
+def _guarded(store: RunStore, meter: CostMeter, label: str, fn):
+    try:
+        out = fn()
+    except Exception as e:
+        cost = meter.cost()
+        _record_cost(store, f"{label} (failed)", cost)
+        e.run_cost, e.run_id = cost, store.run_id
+        raise
+    _record_cost(store, label, meter.cost())
+    return out
+
+
 def _record_cost(store: RunStore, label: str, cost: dict) -> None:
     history = (store.load_json("cost_history.json") or {}).get("runs", [])
     history.append({"command": label, "at": datetime.now(timezone.utc).isoformat(), "cost": cost})
@@ -190,23 +205,66 @@ def _new_stay(trip: TripPlan, d: date) -> Optional[HotelStay]:
     return next((s for s in trip.hotels if s.check_in == d), None)
 
 
+def pkey(name: str, city: str) -> str:
+    return f"{norm_name(name)}|{norm_name(city)}"
+
+
 def resolve_places(trip: TripPlan, client, places: dict[str, Optional[Place]]) -> dict[str, Optional[Place]]:
+    """Resolve hotels and itinerary items; keys are pkey(name, city) so same-named places in two cities stay apart."""
     for h in trip.hotels:
-        if h.hotel not in places:
-            places[h.hotel] = client.find(h.hotel, h.city)
+        if pkey(h.hotel, h.city) not in places:
+            places[pkey(h.hotel, h.city)] = client.find(h.hotel, h.city)
     for dp in trip.days:
         stay = _stay_for_day(trip, dp.date)
-        near = _xy(places.get(stay.hotel)) if stay else None
+        near = _xy(places.get(pkey(stay.hotel, stay.city))) if stay else None
         for it in dp.items:
-            if it.kind != "free_time" and it.name not in places:
-                places[it.name] = client.find(it.name, it.city or dp.city, near=near)
+            k = pkey(it.name, it.city or dp.city)
+            if it.kind != "free_time" and k not in places:
+                places[k] = client.find(it.name, it.city or dp.city, near=near)
     return places
+
+
+def _checklist_view(trip: TripPlan, places: dict[str, Optional[Place]]) -> dict[str, Optional[Place]]:
+    view: dict[str, Optional[Place]] = {}
+    owner: dict[str, str] = {}
+    for dp in trip.days:
+        for it in dp.items:
+            k = pkey(it.name, it.city or dp.city)
+            if it.name in owner and owner[it.name] != k:
+                view[it.name] = None
+            elif it.name not in owner:
+                owner[it.name], view[it.name] = k, places.get(k)
+    return view
+
+
+def _day_view(trip: TripPlan, d: date, city: str, prev_city: Optional[str], arrival: Optional[int],
+              departure: Optional[int], places: dict[str, Optional[Place]]) -> dict[str, Optional[Place]]:
+    view: dict[str, Optional[Place]] = {}
+    for s in trip.hotels:
+        if s.check_in <= d <= s.check_out:
+            view[s.hotel] = places.get(pkey(s.hotel, s.city))
+    if departure is not None and trip.transport[departure].from_place.strip():
+        name = trip.transport[departure].from_place
+        view[name] = places.get(pkey(name, prev_city or city))
+    if arrival is not None and trip.transport[arrival].to_place.strip():
+        name = trip.transport[arrival].to_place
+        view[name] = places.get(pkey(name, city))
+    dp = next((x for x in trip.days if x.date == d), None)
+    for it in (dp.items if dp else []):
+        view[it.name] = places.get(pkey(it.name, it.city or city))
+    return view
 
 
 def _country_of(place: Optional[Place]) -> str:
     if place is None or not place.match_ok or not place.address:
         return ""
     return re.sub(r"[\d-]+", "", place.address.split(",")[-1]).strip()
+
+
+def _library_country(library: Library, city: str) -> str:
+    folders = [f for f, cities in library.coverage().items() if norm_name(city) in {norm_name(c) for c in cities}]
+    known = [f for f in folders if f.casefold() in _TZ or city_currency(f)]
+    return (known or folders or [""])[0]
 
 
 def _utc_offset(country: str, d: date) -> Optional[float]:
@@ -230,12 +288,9 @@ def _departure_idx(trip: TripPlan, d: date, trip_days: set[date]) -> Optional[in
     return min(hits)[1] if hits else None
 
 
-def _endpoint(name: str, city: str, places: dict, client) -> Optional[Place]:
-    if not name.strip():
-        return None
-    if name not in places:
-        places[name] = client.find(name, city)
-    return places[name]
+def _endpoint(name: str, city: str, places: dict, client) -> None:
+    if name.strip() and pkey(name, city) not in places:
+        places[pkey(name, city)] = client.find(name, city)
 
 
 def _pair(a: str, pa: Optional[Place], b: str, pb: Optional[Place], deps: Deps, modes: list[str]) -> Optional[Leg]:
@@ -245,13 +300,12 @@ def _pair(a: str, pa: Optional[Place], b: str, pb: Optional[Place], deps: Deps, 
     return compute_legs([(a, xa), (b, xb)], deps.routes, modes, deps.settings.walk_max_min)[0]
 
 
-def _legs(ds: DayState, trip: TripPlan, places: dict, deps: Deps) -> dict[str, Leg]:
-    d, modes, legs = ds.date, trip.travel_modes, {}
+def _legs(ds: DayState, trip: TripPlan, deps: Deps) -> dict[str, Leg]:
+    d, modes, legs, places = ds.date, trip.travel_modes, {}, ds.places
     morning, new = _morning_stay(trip, d), _new_stay(trip, d)
     if ds.arrival is not None and new:
         t = trip.transport[ds.arrival]
-        leg = _pair(t.to_place, _endpoint(t.to_place, ds.city, places, deps.places), new.hotel, places.get(new.hotel),
-                    deps, modes)
+        leg = _pair(t.to_place, places.get(t.to_place), new.hotel, places.get(new.hotel), deps, modes)
     elif new and morning and norm_name(morning.hotel) != norm_name(new.hotel):
         leg = _pair(morning.hotel, places.get(morning.hotel), new.hotel, places.get(new.hotel), deps, modes)
     else:
@@ -260,8 +314,7 @@ def _legs(ds: DayState, trip: TripPlan, places: dict, deps: Deps) -> dict[str, L
         legs["arrival"] = leg
     if ds.departure is not None and morning:
         t = trip.transport[ds.departure]
-        leg = _pair(morning.hotel, places.get(morning.hotel), t.from_place,
-                    _endpoint(t.from_place, ds.prev_city or ds.city, places, deps.places), deps, modes)
+        leg = _pair(morning.hotel, places.get(morning.hotel), t.from_place, places.get(t.from_place), deps, modes)
         if leg:
             legs["departure"] = leg
     origin = new or morning
@@ -314,21 +367,23 @@ def _version(store: RunStore, stem: str, ext: str) -> int:
 def start_run(intake_path: Path | None, attachment_paths: list[Path], deps: Deps) -> tuple[RunStore, list[Question]]:
     meter = CostMeter(deps)
     store = RunStore.create(deps.backend)
-    paths = list(attachment_paths)
+    return _guarded(store, meter, "start", lambda: _start(store, intake_path, list(attachment_paths), deps))
+
+
+def _start(store: RunStore, intake_path: Path | None, paths: list[Path], deps: Deps) -> tuple[RunStore, list[Question]]:
     for p in ([intake_path] if intake_path else []) + paths:
         store.save_bytes(f"inputs/{p.name}", p.read_bytes())
     intake = parse_template(intake_path) if intake_path else IntakeFields()
     attachments = read_attachments(paths)
     trip = extract_trip(intake, attachments, deps.llm)
     places = resolve_places(trip, deps.places, {})
-    questions = run_checklist(trip, intake, attachments, deps.library, places, deps.settings)
+    questions = run_checklist(trip, intake, attachments, deps.library, _checklist_view(trip, places), deps.settings)
     store.save_json("intake.json", intake)
     store.save_json("attachments.json", {"attachments": [a.model_dump(mode="json") for a in attachments]})
     store.save_json("trip_plan.json", trip)
     store.save_json("places.json", {"places": {k: v.model_dump(mode="json") if v else None for k, v in places.items()}})
     store.save_json("questions.json", {"questions": [q.model_dump(mode="json") for q in questions]})
     store.save_json("answers.template.json", {q.id: "" for q in questions})
-    _record_cost(store, "start", meter.cost())
     return store, questions
 
 
@@ -343,28 +398,37 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
     for dp in trip.days:
         stay = _stay_for_day(trip, dp.date)
         if not countries.get(dp.city):
-            countries[dp.city] = _country_of(places.get(stay.hotel)) if stay else ""
+            countries[dp.city] = (_country_of(places.get(pkey(stay.hotel, stay.city))) if stay else "") \
+                or _library_country(deps.library, dp.city)
     trip_days = {dp.date for dp in trip.days}
     days: list[DayState] = []
     prev = None
     for n, dp in enumerate(sorted(trip.days, key=lambda x: x.date), 1):
         arr, dep = _arrival_idx(trip, dp.date), _departure_idx(trip, dp.date, trip_days)
+        if arr is not None:
+            _endpoint(trip.transport[arr].to_place, dp.city, places, deps.places)
+        if dep is not None:
+            _endpoint(trip.transport[dep].from_place, prev or dp.city, places, deps.places)
         ds = DayState(index=n, date=dp.date, city=dp.city, country=countries.get(dp.city, ""),
                       result=DayResult(), arrival=arr, departure=dep, prev_city=prev,
+                      places=_day_view(trip, dp.date, dp.city, prev, arr, dep, places),
                       utc_offset_hours=_utc_offset(countries.get(dp.city, ""), dp.date),
                       booking_by_item=_booking_map(trip, dp.items),
                       library_attractions=_library_attractions(deps.library, dp.city, dp.items))
         ds.result = schedule_day(dp, trip.hotels, trip.transport[arr] if arr is not None else None,
-                                 trip.transport[dep] if dep is not None else None, places, s, ds.country,
+                                 trip.transport[dep] if dep is not None else None, ds.places, s, ds.country,
                                  trip.trip_scope == "domestic")
-        ds.legs = _legs(ds, trip, places, deps)
+        ds.legs = _legs(ds, trip, deps)
         days.append(ds)
         prev = dp.city
     picks, exclusions, stats = plan_meals([(d.index, d.date, d.city, d.result.meals) for d in days], deps.library,
                                           deps.places, deps.routes, trip.diet, trip.travel_modes, deps.llm, s,
                                           trip_scope=trip.trip_scope)
-    important = important_places(trip.hotels, {h.hotel: places[h.hotel] for h in trip.hotels if places.get(h.hotel)},
-                                 deps.places, deps.routes, trip.travel_modes)
+    important = []
+    for city in dict.fromkeys(h.city for h in trip.hotels):
+        stays = [h for h in trip.hotels if h.city == city]
+        found = {h.hotel: places[pkey(h.hotel, city)] for h in stays if places.get(pkey(h.hotel, city))}
+        important += important_places(stays, found, deps.places, deps.routes, trip.travel_modes)
     state = PlanState(trip=trip, places=places, countries=countries, days=days, picks=picks, exclusions=exclusions,
                       stats=stats, important=important)
     store.save_json("plan.json", state)
@@ -444,7 +508,7 @@ def _render_days(store: RunStore, state: PlanState, deps: Deps) -> list[RenderDa
         out.append(RenderDay(
             index=ds.index, date=ds.date, city=ds.city,
             text=DayText.model_validate(store.load_json(f"days/day_{ds.index:02d}.json")),
-            result=ds.result, meals=picks, legs=ds.legs, places=state.places, booking_by_item=ds.booking_by_item,
+            result=ds.result, meals=picks, legs=ds.legs, places=ds.places, booking_by_item=ds.booking_by_item,
             price_by_restaurant=prices, arrival=t[ds.arrival] if ds.arrival is not None else None,
             departure=t[ds.departure] if ds.departure is not None else None, prev_city=ds.prev_city,
             utc_offset_hours=ds.utc_offset_hours, library_attractions=ds.library_attractions))
@@ -467,6 +531,10 @@ def _render_qc(store: RunStore, state: PlanState, answers: Answers, deps: Deps) 
         for key in SECTION_KEYS:
             raw = store.load_json(f"sections/{key}.json")["content"]
             sections[key] = SectionContent.model_validate(raw) if raw else None
+        if state.trip.trip_scope == "domestic":
+            safety = sections.get("safety") or SectionContent(key="safety")
+            safety.markers.append(Marker(kind="CHECK", text=DOMESTIC_HEALTH_CHECK))
+            sections["safety"] = safety
         data = GuideData(trip=state.trip, title=store.load_json("sections/title.json")["title"],
                          days=_render_days(store, state, deps), sections=sections, important=state.important,
                          trip_scope=state.trip.trip_scope, modes=state.trip.travel_modes,
@@ -483,13 +551,16 @@ def _render_qc(store: RunStore, state: PlanState, answers: Answers, deps: Deps) 
     return result
 
 
-def _finish(store: RunStore, answers: Answers, deps: Deps, meter: CostMeter, label: str) -> BuildResult:
+def _finish(store: RunStore, answers: Answers, deps: Deps) -> tuple[str, QCResult]:
     state = _plan(store, answers, deps)
     _write(store, state, deps)
-    result = _render_qc(store, state, answers, deps)
-    cost = meter.cost()
-    _record_cost(store, label, cost)
-    return BuildResult(docx_name=output_filename(state.trip), qc=result, cost_usd=cost["total_usd"], cost=cost)
+    return output_filename(state.trip), _render_qc(store, state, answers, deps)
+
+
+def _result(store: RunStore, meter: CostMeter, label: str, fn) -> BuildResult:
+    name, qc = _guarded(store, meter, label, fn)
+    cost = store.load_json("cost.json")
+    return BuildResult(docx_name=name, qc=qc, cost_usd=cost["total_usd"], cost=cost)
 
 
 def build_run(store: RunStore, answers: Answers, deps: Deps) -> BuildResult:
@@ -501,7 +572,7 @@ def build_run(store: RunStore, answers: Answers, deps: Deps) -> BuildResult:
     if saved is not None and saved != answers and store.has("plan.json"):
         raise ValueError("answers differ from the ones this run was built with; start a new run")
     store.save_json("answers.json", answers)
-    return _finish(store, answers, deps, meter, "build")
+    return _result(store, meter, "build", lambda: _finish(store, answers, deps))
 
 
 def regenerate(store: RunStore, days: list[int], sections: list[str], deps: Deps) -> BuildResult:
@@ -509,12 +580,17 @@ def regenerate(store: RunStore, days: list[int], sections: list[str], deps: Deps
     state = _load_plan(store)
     answers = store.load_json("answers.json") or {}
     if not store.has("guide.docx"):
-        raise ValueError(f"run {store.run_id} has no finished guide to regenerate")
+        raise ValueError(f"run {store.run_id} has no finished guide to regenerate; run `build` first")
     bad_days = [d for d in days if not 1 <= d <= len(state.days)]
     bad_keys = [k for k in sections if k not in REGEN_SECTIONS]
     if bad_days or bad_keys or not (days or sections):
         raise ValueError(f"nothing valid to regenerate (days 1–{len(state.days)}; sections {', '.join(REGEN_SECTIONS)})"
                          + (f"; bad days {bad_days}" if bad_days else "") + (f"; bad sections {bad_keys}" if bad_keys else ""))
+    return _result(store, meter, "regenerate", lambda: _regenerate(store, state, answers, days, sections, deps))
+
+
+def _regenerate(store: RunStore, state: PlanState, answers: Answers, days: list[int], sections: list[str],
+                deps: Deps) -> tuple[str, QCResult]:
     v = _version(store, "guide", "docx")
     for name in _OUTPUTS:
         data = store.load_bytes(name)
@@ -541,36 +617,27 @@ def regenerate(store: RunStore, days: list[int], sections: list[str], deps: Deps
             state.stats.lookups_by_city[c] = state.stats.lookups_by_city.get(c, 0) + k
         state.stats.capped_cities = list(dict.fromkeys(state.stats.capped_cities + stats.capped_cities))
         store.save_json("plan.json", state)
-    return _finish(store, answers, deps, meter, "regenerate")
-
-
-def _blank_trip() -> TripPlan:
-    return TripPlan(client_names=[], travellers=Traveller(adults=0), diet=Diet(), travel_modes=[], hotels=[],
-                    transport=[], bookings=[], days=[], open_choices=[], vague_days=[], commentary_removed=[],
-                    trip_scope="international")
+    return _finish(store, answers, deps)
 
 
 def requalify(store_or_none: Optional[RunStore], docx_path: Path, deps: Deps) -> tuple[bytes, QCResult, str]:
-    meter = CostMeter(deps)
-    docx = Path(docx_path).read_bytes()
-    store = store_or_none
-    if store is not None:
-        state = _load_plan(store)
-        trip, answers, exclusions = state.trip, store.load_json("answers.json") or {}, state.exclusions
-    else:
-        trip, answers, exclusions = _blank_trip(), {}, []
-    out, result, report = run_qc(docx, trip, answers, deps.library, deps.places, deps.routes, deps.llm, exclusions,
-                                 deps.settings.google_usd_per_call)
-    if store is None:
-        report = ("> No run was given, so checks against the trip plan (dates, hotels, flights, diet) were limited.\n\n"
-                  + report)
-    else:
-        n = _version(store, "requalify/guide", "docx")
-        _, data = write_report(result, exclusions, result.cost)
-        store.save_bytes(f"requalify/input.v{n}.docx", docx)
-        store.save_bytes(f"requalify/guide.v{n}.docx", out)
-        store.save_bytes(f"requalify/qc_report.v{n}.md", report.encode("utf-8"))
-        store.save_json(f"requalify/qc_report.v{n}.json", data)
-        store.save_bytes(f"requalify/verification.v{n}.xlsx", build_sheet(result.fact_rows, exclusions))
-        _record_cost(store, "qc", meter.cost())
+    if store_or_none is None:
+        raise ValueError("re-QC needs the run the guide came from (--run RUN_ID): the trip plan is required")
+    store, meter = store_or_none, CostMeter(deps)
+    return _guarded(store, meter, "qc", lambda: _requalify(store, Path(docx_path), deps))
+
+
+def _requalify(store: RunStore, docx_path: Path, deps: Deps) -> tuple[bytes, QCResult, str]:
+    docx = docx_path.read_bytes()
+    state = _load_plan(store)
+    answers, exclusions = store.load_json("answers.json") or {}, state.exclusions
+    out, result, report = run_qc(docx, state.trip, answers, deps.library, deps.places, deps.routes, deps.llm,
+                                 exclusions, deps.settings.google_usd_per_call)
+    n = _version(store, "requalify/guide", "docx")
+    _, data = write_report(result, exclusions, result.cost)
+    store.save_bytes(f"requalify/input.v{n}.docx", docx)
+    store.save_bytes(f"requalify/guide.v{n}.docx", out)
+    store.save_bytes(f"requalify/qc_report.v{n}.md", report.encode("utf-8"))
+    store.save_json(f"requalify/qc_report.v{n}.json", data)
+    store.save_bytes(f"requalify/verification.v{n}.xlsx", build_sheet(result.fact_rows, exclusions))
     return out, result, report

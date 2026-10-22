@@ -60,6 +60,7 @@ def render_section(doc, title: str, bookmark: str, content: SectionContent) -> N
             _items(doc, items)
     else:
         _items(doc, content.items)
+    marker_lines(doc, content.markers)
 
 
 def _nearby_card(doc, n: NearbyPlace) -> None:

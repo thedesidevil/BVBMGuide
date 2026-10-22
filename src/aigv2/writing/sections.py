@@ -6,6 +6,7 @@ from typing import Optional
 from pydantic import BaseModel, Field
 
 from src.aigv2.library import norm_name
+from src.aigv2.models import Marker
 from src.aigv2.money import FxUnavailable, city_currency
 
 SECTION_KEYS = ("packing", "connectivity", "health", "getting_around", "dishes", "souvenirs", "etiquette",
@@ -65,6 +66,7 @@ class SectionContent(BaseModel):
     items: list[SectionItem] = Field(default_factory=list)
     from_library: bool = True
     by_country: dict[str, list[SectionItem]] = Field(default_factory=dict)
+    markers: list[Marker] = Field(default_factory=list)
 
 
 class _ItemOut(BaseModel):
@@ -242,7 +244,7 @@ def write_section(key: str, city_data: list[dict], country_data: dict, trip, llm
     if key not in SECTION_KEYS:
         raise ValueError(f"unknown section key: {key}")
     domestic = trip.trip_scope == "domestic"
-    if domestic and key in _DOMESTIC_OMIT and not remote_area:
+    if domestic and key in _DOMESTIC_OMIT and not (remote_area or (key == "health" and high_altitude)):
         return None
     today = today or date.today()
     countries = _countries(city_data, country_data) if key in COUNTRY_KEYS else [""]

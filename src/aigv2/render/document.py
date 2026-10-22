@@ -73,7 +73,7 @@ def _present(data: GuideData, key: str) -> bool:
     if key == "important":
         return bool(data.important)
     s = data.sections.get(key)
-    return s is not None and bool(s.items or s.by_country)
+    return s is not None and bool(s.items or s.by_country or s.markers)
 
 
 def _cover(doc) -> None:

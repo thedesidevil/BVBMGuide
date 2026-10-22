@@ -13,4 +13,4 @@ AIG v2 uses two Google APIs with the key in `GOOGLE_MAPS_API_KEY`: **Places API 
 
 ## Unit prices used for the cost log
 
-`Settings.google_usd_per_call` (src/aigv2/config.py): Places text search / nearby **$0.035 per call**, Routes **$0.005 per route element**. These are **unconfirmed estimates** — check them against https://developers.google.com/maps/billing-and-pricing/pricing (SKU tier, Enterprise/Pro fields, free monthly caps) and update `config.py` if they differ. Directions/transit calls are counted under `route_element` and may bill at a different SKU.
+`Settings.google_usd_per_call` (src/aigv2/config.py): Places text search / nearby **$0.035 per call**, Place Details (QC's fresh status + hours by place ID, field mask `businessStatus,regularOpeningHours`) **$0.020 per call**, Routes **$0.005 per route element**. These are **unconfirmed estimates** — check them against https://developers.google.com/maps/billing-and-pricing/pricing (SKU tier, Enterprise/Pro fields, free monthly caps) and update `config.py` if they differ. Directions/transit calls are counted under `route_element` and may bill at a different SKU.

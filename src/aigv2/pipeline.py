@@ -229,7 +229,7 @@ def resolve_places(trip: TripPlan, client, places: dict[str, Optional[Place]]) -
         near = _xy(places.get(pkey(stay.hotel, stay.city))) if stay else None
         for it in dp.items:
             k = pkey(it.name, it.city or dp.city)
-            if it.kind != "free_time" and k not in places:
+            if it.kind not in ("free_time", "transfer") and k not in places:
                 places[k] = client.find(it.name, it.city or dp.city, near=near)
     return places
 
@@ -255,12 +255,23 @@ def _day_view(trip: TripPlan, d: date, city: str, prev_city: Optional[str], arri
 def _country_of(place: Optional[Place]) -> str:
     if place is None or not place.match_ok or not place.address:
         return ""
-    return re.sub(r"[\d-]+", "", place.address.split(",")[-1]).strip()
+    last = re.split(r",|\s+[-–]\s+", place.address)[-1]
+    return re.sub(r"[\d-]+", "", last).strip()
+
+
+def _known_country(country: str) -> bool:
+    return bool(country) and (country.casefold() in _TZ or bool(city_currency(country)))
+
+
+def _city_country(place: Optional[Place], library: Library, city: str) -> str:
+    """Address country when it is a known one, else the library's mapping, else whatever the address says."""
+    addr = _country_of(place)
+    return addr if _known_country(addr) else (_library_country(library, city) or addr)
 
 
 def _library_country(library: Library, city: str) -> str:
     folders = [f for f, cities in library.coverage().items() if norm_name(city) in {norm_name(c) for c in cities}]
-    known = [f for f in folders if f.casefold() in _TZ or city_currency(f)]
+    known = [f for f in folders if _known_country(f)]
     return (known or folders or [""])[0]
 
 
@@ -437,8 +448,8 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
     for dp in trip.days:
         stay = _stay_for_day(trip, dp.date)
         if not countries.get(dp.city):
-            countries[dp.city] = (_country_of(places.get(pkey(stay.hotel, stay.city))) if stay else "") \
-                or _library_country(deps.library, dp.city)
+            countries[dp.city] = _city_country(places.get(pkey(stay.hotel, stay.city)) if stay else None,
+                                               deps.library, dp.city)
     trip_days = {dp.date for dp in trip.days}
     ordered = sorted(trip.days, key=lambda x: x.date)
     ends = {dp.date: (_arrival_idx(trip, dp.date), _departure_idx(trip, dp.date, trip_days)) for dp in ordered}
@@ -525,12 +536,12 @@ def _write(store: RunStore, state: PlanState, deps: Deps) -> None:
                                          places=deps.places, fx=deps.fx, today=date.today())
         if not store.has("sections/title.json"):
             jobs["sections/title.json"] = pool.submit(write_title, state.trip, deps.llm)
-    error = None
+    errors: list[tuple[str, Exception]] = []
     for name, fut in jobs.items():
         try:
             out = fut.result()
         except Exception as e:
-            error = error or e
+            errors.append((name, e))
             continue
         if name == "sections/title.json":
             store.save_json(name, {"title": out})
@@ -538,8 +549,11 @@ def _write(store: RunStore, state: PlanState, deps: Deps) -> None:
             store.save_json(name, {"content": out.model_dump(mode="json") if out else None})
         else:
             store.save_json(name, out)
-    if error:
-        raise error
+    if len(errors) == 1:
+        raise errors[0][1]
+    if errors:
+        detail = "; ".join(f"{n}: {e.__class__.__name__}: {e}" for n, e in errors)
+        raise RuntimeError(f"{len(errors)} writers failed — {detail}") from errors[0][1]
 
 
 def _render_days(store: RunStore, state: PlanState, deps: Deps) -> list[RenderDay]:

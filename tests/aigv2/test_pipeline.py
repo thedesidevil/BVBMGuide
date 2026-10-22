@@ -706,3 +706,37 @@ def test_cost_rows_per_model_and_unpriced_warning(deps):
     assert cost["warnings"] == ["No price for model mystery-model (step title); its cost is counted as $0"]
     text = cost_summary(cost)
     assert "rank (fallback) $0.05" in text and "WARNING: No price for model mystery-model" in text
+
+
+def test_country_from_dash_separated_address(deps):
+    p = _place("Hotel")
+    p.address = "Sheikh Zayed Rd - Trade Centre - Dubai - United Arab Emirates"
+    assert pipeline._country_of(p) == "United Arab Emirates"
+    p.address = "Al Barsha 1, Sheikh Zayed Rd - Al Barsha"
+    assert pipeline._city_country(p, deps.library, "New York") == "USA"
+    p.address = "1 Test St, New York, NY 10001, USA"
+    assert pipeline._city_country(p, deps.library, "Atlantis") == "USA"
+    p.address = "Calle 1, Cusco, Peru"
+    assert pipeline._city_country(p, deps.library, "Cusco") == "Peru"
+
+
+def test_transfer_items_not_sent_to_google(deps):
+    trip = day_trip()
+    trip.days[2].items = [PlannedItem(name="Private transfer to the vineyard", kind="transfer", city="Florence")]
+    places = CityPlaces()
+    pipeline.resolve_places(trip, places, {})
+    assert ("Private transfer to the vineyard", "Florence") not in places.lookups
+    store = seeded(deps, trip)
+    build_run(store, {}, deps)
+    text = day_text(store.load_bytes("guide.docx"), 3)
+    assert "Private transfer to the vineyard" in text and "place not found on Google" not in text
+
+
+def test_write_reports_every_failed_writer(deps, monkeypatch):
+    store, questions, answers = started(deps)
+    monkeypatch.setitem(REPLIES, "title", lambda p: (_ for _ in ()).throw(RuntimeError("title down")))
+    monkeypatch.setitem(REPLIES, "write_days", lambda p: (_ for _ in ()).throw(RuntimeError("days down")))
+    with pytest.raises(RuntimeError) as exc:
+        build_run(store, answers, deps)
+    msg = str(exc.value)
+    assert "title down" in msg and "days down" in msg and "sections/title.json" in msg and "days/day_01.json" in msg

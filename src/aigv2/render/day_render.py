@@ -310,7 +310,7 @@ class DayRenderer:
             add_link(lp, "official website", p.website)
         for instr in (b.instructions if b else []):
             cell.add_paragraph(instr, style="List Bullet")
-        markers = [] if found else [_verify("place not found on Google")]
+        markers = [] if found or it.kind == "transfer" else [_verify("place not found on Google")]
         if p is not None and p.status not in ("OPERATIONAL", "UNKNOWN"):
             markers.append(_verify(f"Google lists this place as {p.status.replace('_', ' ').lower()}"))
         marker_lines(self.doc, markers + place_markers(p))

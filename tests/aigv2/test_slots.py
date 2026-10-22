@@ -216,3 +216,11 @@ def test_return_to_hotel_only_before_lunch():
     assert meal(r, "lunch").anchors[0][0] == "Hotel H"
     r = run(day([item("A")], rules=["lunch near A, then return to hotel"]))
     assert meal(r, "lunch").anchors[0][0] == "A"
+
+
+def test_unmatched_place_is_not_an_anchor():
+    pl = places("Hotel H", "A", "B")
+    pl["B"] = pl["B"].model_copy(update={"match_ok": False})
+    r = run(day([item("A"), item("B")]), pl=pl)
+    assert meal(r, "lunch").anchors == [("Hotel H", (1.0, 2.0), 3)]
+    assert any(m.text == "location of B unknown" for m in r.markers)

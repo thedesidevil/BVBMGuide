@@ -221,9 +221,16 @@ class DayRenderer:
     def _timeline(self) -> None:
         entries = [(s.start, 0, i, s) for i, s in enumerate(self.rd.result.scheduled)]
         entries += [(m.start, 1, i, m) for i, m in enumerate(self.rd.result.meals)]
+        entries += [((t.depart or t.arrive).time(), -1, i, t) for i, t in enumerate(self.rd.other_transport)
+                    if t.depart or t.arrive]
         slot = None
         for _, _, _, e in sorted(entries, key=lambda x: x[:3]):
-            if isinstance(e, ScheduledItem):
+            if isinstance(e, TransportLeg):
+                self._transport_card(e, e.to_place)
+                marker_lines(self.doc, [_verify(f"day-trip transport {e.from_place or '?'} → {e.to_place or '?'}: "
+                                                "confirm times and how to reach the departure point")])
+                slot = None
+            elif isinstance(e, ScheduledItem):
                 if e.slot != slot:
                     slot = e.slot
                     add_slot_heading(self.doc, _SLOT_TITLE[slot])

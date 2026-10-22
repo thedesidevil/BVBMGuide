@@ -304,6 +304,47 @@ def _transport_times(doc: DocModel, trip: TripPlan) -> list[Finding]:
     return out
 
 
+def _leg_shown(leg: TransportLeg, venues: list[DocVenue]) -> bool:
+    for v in venues:
+        if _match_leg(v, [leg]) is leg:
+            return True
+        times = {(label, m.group(0)) for label in ("DEPARTS", "ARRIVES") if (m := _HHMM.search(v.facts.get(label, "")))}
+        want = {(label, f"{dt:%H:%M}") for label, dt in (("DEPARTS", leg.depart), ("ARRIVES", leg.arrive)) if dt}
+        if not (leg.from_place.strip() and leg.to_place.strip()) and want and want <= times:
+            return True
+    return False
+
+
+def _transport_coverage(doc: DocModel, trip: TripPlan) -> list[Finding]:
+    if not doc.days:
+        return []
+    venues = [v for _, v in _day_venues(doc) if v.kind == "transport"]
+    dates = [d.date for d in _trip_days(trip)]
+    out = []
+    for leg in trip.transport:
+        if _leg_shown(leg, venues):
+            continue
+        dt = leg.depart or leg.arrive
+        n = dates.index(dt.date()) + 1 if dt and dt.date() in dates else None
+        when = f" on {dt:%a, %d %b %H:%M}" if dt else " (no time known)"
+        out.append(_f("transport_missing", f"{leg.kind.capitalize()} {leg.from_place or '?'} → {leg.to_place or '?'}"
+                                           f"{when} is not shown in the guide", "", n))
+    return out
+
+
+def _bookings_shown(doc: DocModel, trip: TripPlan) -> list[Finding]:
+    if not doc.days:
+        return []
+    blob = norm_name(doc.text)
+    dates = [d.date for d in _trip_days(trip)]
+    out = []
+    for b in trip.bookings:
+        if norm_name(b.name) and norm_name(b.name) not in blob:
+            n = dates.index(b.day) + 1 if b.day in dates else None
+            out.append(_f("booking_missing", f"Booking '{b.name}' ({b.day:%a, %d %b}) is not in the guide", "", n))
+    return out
+
+
 def _prose(doc: DocModel) -> list[Finding]:
     out = []
     for p in doc.paragraphs:
@@ -381,6 +422,7 @@ def _markers(doc: DocModel) -> list[Finding]:
 
 def check_rules(doc: DocModel, trip: TripPlan, library: Library) -> list[Finding]:
     return (_section_order(doc, trip) + _day_sequence(doc) + _days(doc, trip) + _title(doc, trip, library)
-            + _venue_link(doc) + _hotels(doc, trip) + _transport_times(doc, trip)
+            + _venue_link(doc) + _hotels(doc, trip) + _transport_times(doc, trip) + _transport_coverage(doc, trip)
+            + _bookings_shown(doc, trip)
             + _meals(doc, trip, library) + _walk(doc) + _prose(doc) + _utm_links(doc) + _commentary(doc, trip)
             + _markers(doc))

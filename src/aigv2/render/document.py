@@ -43,6 +43,7 @@ class RenderDay(BaseModel):
     price_by_restaurant: dict[str, str | Marker] = Field(default_factory=dict)
     arrival: Optional[TransportLeg] = None
     departure: Optional[TransportLeg] = None
+    other_transport: list[TransportLeg] = Field(default_factory=list)
     prev_city: Optional[str] = None
     utc_offset_hours: Optional[float] = None
     library_attractions: dict[str, dict] = Field(default_factory=dict)

@@ -585,3 +585,100 @@ def test_checklist_hours_checked_per_city(deps, monkeypatch):
     deps.places = places
     _, qs = start_run(None, sorted(FIX.glob("*.txt")), deps)
     assert [q.day for q in qs if q.kind == "hours_conflict"] == [D0 + timedelta(days=2)]
+
+
+# ---------- final review fixes ----------
+
+from src.aigv2.qc.reader import read_docx  # noqa: E402
+from src.aigv2.qc.rules import check_rules  # noqa: E402
+
+M = [date(2027, 3, 10) + timedelta(days=i) for i in range(4)]
+
+
+def day_trip() -> TripPlan:
+    return TripPlan(
+        client_names=["Test Client"], travellers=Traveller(adults=2), diet=Diet(), travel_modes=["taxi"],
+        hotels=[HotelStay(city="Florence", hotel="Hotel Arno", check_in=M[0], check_out=M[3], source="voucher")],
+        transport=[
+            TransportLeg(kind="flight", from_place="Mumbai", to_place="Florence Airport",
+                         depart=datetime(2027, 3, 10, 2, 0), arrive=datetime(2027, 3, 10, 10, 0), source="ticket"),
+            TransportLeg(kind="train", from_place="Firenze SMN", to_place="Pisa Centrale",
+                         depart=datetime(2027, 3, 11, 9, 0), arrive=datetime(2027, 3, 11, 10, 0), source="ticket"),
+            TransportLeg(kind="train", from_place="Pisa Centrale", to_place="Firenze SMN",
+                         depart=datetime(2027, 3, 11, 18, 0), arrive=datetime(2027, 3, 11, 19, 0), source="ticket"),
+            TransportLeg(kind="flight", from_place="Florence Airport", to_place="Mumbai",
+                         depart=datetime(2027, 3, 13, 15, 0), arrive=datetime(2027, 3, 13, 23, 0), source="ticket")],
+        bookings=[],
+        days=[DayPlan(date=M[0], title="Arrive", city="Florence"),
+              DayPlan(date=M[1], title="Day trip to Pisa", city="Florence",
+                      items=[PlannedItem(name="Leaning Tower", kind="attraction", city="Pisa", time="11:00")]),
+              DayPlan(date=M[2], title="Uffizi", city="Florence"),
+              DayPlan(date=M[3], title="Home", city="Florence")],
+        open_choices=[], vague_days=[], commentary_removed=[], trip_scope="international")
+
+
+def day_text(docx: bytes, n: int) -> str:
+    m = read_docx(docx)
+    return "\n".join(p.text for p in m.paragraphs if p.day == n)
+
+
+def test_same_hotel_day_trip_is_not_a_departure(deps):
+    trip = day_trip()
+    days = {d.date for d in trip.days}
+    assert pipeline._departure_idx(trip, M[1], days) is None
+    assert pipeline._departure_idx(trip, M[3], days) == 3
+    store = seeded(deps, trip)
+    result = build_run(store, {}, deps)
+    state = pipeline._load_plan(store)
+    d2 = state.days[1]
+    assert (d2.arrival, d2.departure) == (None, None) and d2.other_legs == [1, 2]
+    assert {m.meal for m in d2.result.meals} >= {"lunch", "dinner"}
+    assert "arrival" not in d2.legs and "departure" not in d2.legs
+    docx = store.load_bytes("guide.docx")
+    text = day_text(docx, 2)
+    assert "Reach the station by" not in text and "Overnight in Florence" in text
+    assert "Train: Firenze SMN to Pisa Centrale" in text and "Train: Pisa Centrale to Firenze SMN" in text
+    assert "⚠ VERIFY: day-trip transport" in text
+    assert "Lunch near" in text and "Dinner near" in text
+    assert not [f for f in result.qc.findings if f.rule == "transport_missing"]
+
+
+def test_qc_flags_transport_leg_not_in_guide(deps):
+    trip = day_trip()
+    store = seeded(deps, trip)
+    build_run(store, {}, deps)
+    docx = store.load_bytes("guide.docx")
+    doc = Document(io.BytesIO(docx))
+    for tbl in list(doc.element.body.iter(qn("w:tbl"))):
+        if "Train: Pisa Centrale to Firenze SMN" in "".join(t.text or "" for t in tbl.iter(qn("w:t"))):
+            tbl.getparent().remove(tbl)
+    buf = io.BytesIO()
+    doc.save(buf)
+    fs = [f for f in check_rules(read_docx(buf.getvalue()), trip, deps.library) if f.rule == "transport_missing"]
+    assert len(fs) == 1 and "Pisa Centrale" in fs[0].message and fs[0].day == 2
+
+
+def test_unlinked_bookings_get_verify_marker_and_qc_rule(deps):
+    from src.aigv2.models import Booking
+    trip = day_trip().model_copy(update={"bookings": [
+        Booking(name="Leaning Tower", day=M[1], time="11:00", source="voucher"),
+        Booking(name="Uffizi Skip-the-line", day=M[2], time="10:00", source="voucher"),
+        Booking(name="Cooking Class", day=date(2027, 4, 1), source="voucher")]})
+    store = seeded(deps, trip)
+    build_run(store, {}, deps)
+    state = pipeline._load_plan(store)
+    texts = {d.index: [m.render() for m in d.result.markers] for d in state.days}
+    assert "Leaning Tower" in state.days[1].booking_by_item
+    assert not any("Leaning Tower" in t for t in texts[2])
+    assert any(t.startswith("⚠ VERIFY: booking 'Uffizi Skip-the-line' at 10:00") for t in texts[3])
+    assert any("'Cooking Class'" in t and "2027-04-01" in t for t in texts[1])
+    docx = store.load_bytes("guide.docx")
+    assert "Uffizi Skip-the-line" in day_text(docx, 3)
+    doc = Document(io.BytesIO(docx))
+    for p in list(doc.element.body.iter(qn("w:p"))):
+        if "Uffizi Skip-the-line" in "".join(t.text or "" for t in p.iter(qn("w:t"))):
+            p.getparent().remove(p)
+    buf = io.BytesIO()
+    doc.save(buf)
+    fs = [f for f in check_rules(read_docx(buf.getvalue()), trip, deps.library) if f.rule == "booking_missing"]
+    assert [(f.day, "Uffizi Skip-the-line" in f.message) for f in fs] == [(3, True)]

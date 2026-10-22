@@ -369,7 +369,7 @@ def test_no_markers_no_marker_finding(library):
         doc.add_paragraph(f"Day {i} – {d.date:%a}, {d.date.day} {d.date:%b} | X", style="Heading 1")
     for title in SECTION_TITLES:
         doc.add_paragraph(title, style="Heading 1")
-    assert check_rules(read_docx(save(doc)), trip(), library) == []
+    assert check_rules(read_docx(save(doc)), trip(transport=[]), library) == []
 
 
 def test_anchors_are_verbatim_paragraphs(library):

@@ -104,6 +104,7 @@ class DayState(BaseModel):
     legs: dict[str, Leg] = Field(default_factory=dict)
     arrival: Optional[int] = None
     departure: Optional[int] = None
+    other_legs: list[int] = Field(default_factory=list)
     prev_city: Optional[str] = None
     utc_offset_hours: Optional[float] = None
     booking_by_item: dict[str, Booking] = Field(default_factory=dict)
@@ -267,11 +268,30 @@ def _arrival_idx(trip: TripPlan, d: date) -> Optional[int]:
 
 
 def _departure_idx(trip: TripPlan, d: date, trip_days: set[date]) -> Optional[int]:
+    """Only a leg on a day a stay checks out (or the trip's last leg) is the departure; day trips are not."""
+    if _morning_stay(trip, d) is None:
+        return None
     nxt = d + timedelta(days=1)
-    hits = [(l.depart, i) for i, l in enumerate(trip.transport) if l.depart and (
-        l.depart.date() == d or (l.depart.date() == nxt and l.depart.hour < 5 and nxt not in trip_days))
-        and _morning_stay(trip, d) is not None]
+    timed = [(l.depart, i) for i, l in enumerate(trip.transport) if l.depart]
+    last = max(timed)[1] if timed else None
+    hits = []
+    for dt, i in timed:
+        overnight = dt.date() == nxt and dt.hour < 5 and nxt not in trip_days
+        if not (dt.date() == d or overnight):
+            continue
+        checks_out = any(s.check_out == d or (overnight and s.check_out == nxt) for s in trip.hotels)
+        if checks_out or i == last:
+            hits.append((dt, i))
     return min(hits)[1] if hits else None
+
+
+def _leg_date(leg) -> Optional[date]:
+    dt = leg.depart or leg.arrive
+    return dt.date() if dt else None
+
+
+def _other_legs(trip: TripPlan, d: date, used: set[int]) -> list[int]:
+    return [i for i, l in enumerate(trip.transport) if i not in used and _leg_date(l) == d]
 
 
 def _endpoint(name: str, city: str, places: dict, client) -> None:
@@ -308,7 +328,8 @@ def _legs(ds: DayState, trip: TripPlan, deps: Deps) -> dict[str, Leg]:
         if leg:
             legs["departure"] = leg
     origin = new or morning
-    points = [(origin.hotel, _xy(hotel(origin)))] if origin else []
+    # on a day trip the client leaves by train/boat, so a hotel-to-first-stop drive would be wrong advice
+    points = [(origin.hotel, _xy(hotel(origin)))] if origin and not ds.other_legs else []
     points += [(s.item.name, _xy(places.get(s.item.name))) for s in ds.result.scheduled if s.item.kind in _ITEM_KINDS]
     points = [(n, xy) for n, xy in points if xy is not None]
     for leg in compute_legs(points, deps.routes, modes, deps.settings.walk_max_min):
@@ -324,6 +345,21 @@ def _booking_map(trip: TripPlan, items) -> dict[str, Booking]:
         if b:
             out[it.name] = b
     return out
+
+
+def _unlinked_booking_markers(trip: TripPlan, days: list["DayState"]) -> None:
+    linked = [b for d in days for b in d.booking_by_item.values()]
+    by_date = {d.date: d for d in days}
+    for b in trip.bookings:
+        if b in linked:
+            continue
+        when = f" at {b.time}" if b.time else ""
+        target = by_date.get(b.day)
+        text = f"booking '{b.name}'{when} is not placed in the day plan"
+        if target is None and days:
+            target, text = days[0], f"booking '{b.name}' on {b.day.isoformat()} falls outside the trip days"
+        if target is not None:
+            target.result.markers.append(Marker(kind="VERIFY", text=text))
 
 
 def _library_attractions(library: Library, city: str, items) -> dict[str, dict]:
@@ -391,16 +427,20 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
             countries[dp.city] = (_country_of(places.get(pkey(stay.hotel, stay.city))) if stay else "") \
                 or _library_country(deps.library, dp.city)
     trip_days = {dp.date for dp in trip.days}
+    ordered = sorted(trip.days, key=lambda x: x.date)
+    ends = {dp.date: (_arrival_idx(trip, dp.date), _departure_idx(trip, dp.date, trip_days)) for dp in ordered}
+    used = {i for pair in ends.values() for i in pair if i is not None}
     days: list[DayState] = []
     prev = None
-    for n, dp in enumerate(sorted(trip.days, key=lambda x: x.date), 1):
-        arr, dep = _arrival_idx(trip, dp.date), _departure_idx(trip, dp.date, trip_days)
+    for n, dp in enumerate(ordered, 1):
+        arr, dep = ends[dp.date]
         if arr is not None:
             _endpoint(trip.transport[arr].to_place, dp.city, places, deps.places)
         if dep is not None:
             _endpoint(trip.transport[dep].from_place, prev or dp.city, places, deps.places)
         ds = DayState(index=n, date=dp.date, city=dp.city, country=countries.get(dp.city, ""),
                       result=DayResult(), arrival=arr, departure=dep, prev_city=prev,
+                      other_legs=_other_legs(trip, dp.date, used),
                       places=_day_view(trip, dp.date, dp.city, prev, arr, dep, places),
                       utc_offset_hours=_utc_offset(countries.get(dp.city, ""), dp.date),
                       booking_by_item=_booking_map(trip, dp.items),
@@ -411,6 +451,7 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
         ds.legs = _legs(ds, trip, deps)
         days.append(ds)
         prev = dp.city
+    _unlinked_booking_markers(trip, days)
     picks, exclusions, stats = plan_meals([(d.index, d.date, d.city, d.result.meals) for d in days], deps.library,
                                           deps.places, deps.routes, trip.diet, trip.travel_modes, deps.llm, s,
                                           trip_scope=trip.trip_scope)
@@ -501,6 +542,7 @@ def _render_days(store: RunStore, state: PlanState, deps: Deps) -> list[RenderDa
             result=ds.result, meals=picks, legs=ds.legs, places=ds.places, booking_by_item=ds.booking_by_item,
             price_by_restaurant=prices, arrival=t[ds.arrival] if ds.arrival is not None else None,
             departure=t[ds.departure] if ds.departure is not None else None, prev_city=ds.prev_city,
+            other_transport=[t[i] for i in ds.other_legs],
             utc_offset_hours=ds.utc_offset_hours, library_attractions=ds.library_attractions))
     return out
 

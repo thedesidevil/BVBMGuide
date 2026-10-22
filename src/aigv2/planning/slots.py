@@ -210,7 +210,7 @@ def schedule_day(
     def coords(name: str, *fallbacks: str) -> Optional[tuple[float, float]]:
         for n in (name, *fallbacks):
             p = places.get(n)
-            if p:
+            if p and p.match_ok:
                 return (p.lat, p.lng)
         if name not in flagged:
             flagged.add(name)

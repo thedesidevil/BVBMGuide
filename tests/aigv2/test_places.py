@@ -227,6 +227,8 @@ def test_website_tracking_params_stripped(tmp_path):
     assert c.find("Seher Restaurant", "Istanbul").website == "https://x.example/menu?ref=7"
     c2, _ = client(tmp_path / "b", {"places": [gp("Seher Restaurant", websiteUri="https://x.example/?utm_source=g")]})
     assert c2.find("Seher Restaurant", "Istanbul").website == "https://x.example/"
+    c3, _ = client(tmp_path / "c", {"places": [gp("Seher Restaurant", websiteUri="https://x.example/a?q=a%20b")]})
+    assert c3.find("Seher Restaurant", "Istanbul").website == "https://x.example/a?q=a%20b"
 
 
 def test_fresh_status_uses_place_details_by_id(tmp_path):

@@ -79,8 +79,9 @@ def strip_tracking(url: Optional[str]) -> Optional[str]:
     if not url:
         return url
     parts = urlsplit(url)
-    query = [(k, v) for k, v in parse_qsl(parts.query, keep_blank_values=True) if not k.casefold().startswith("utm_")]
-    return urlunsplit(parts._replace(query=urlencode(query)))
+    pairs = parse_qsl(parts.query, keep_blank_values=True)
+    query = [(k, v) for k, v in pairs if not k.casefold().startswith("utm_")]
+    return url if len(query) == len(pairs) else urlunsplit(parts._replace(query=urlencode(query)))
 
 
 def _hours(raw: dict) -> Optional[WeeklyHours]:

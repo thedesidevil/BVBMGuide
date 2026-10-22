@@ -349,8 +349,8 @@ def _legs(ds: DayState, trip: TripPlan, deps: Deps) -> dict[str, Leg]:
         if leg:
             legs["departure"] = leg
     origin = new or morning
-    # on a day trip the client leaves by train/boat, so a hotel-to-first-stop drive would be wrong advice
     tz = timezone(timedelta(hours=ds.utc_offset_hours)) if ds.utc_offset_hours is not None else None
+    # on a day trip the client leaves by train/boat, so a hotel-to-first-stop drive would be wrong advice
     points = [(origin.hotel, _xy(hotel(origin)), None)] if origin and not ds.other_legs else []
     points += [(s.item.name, _xy(places.get(s.item.name)), datetime.combine(d, s.start, tzinfo=tz))
                for s in ds.result.scheduled if s.item.kind in _ITEM_KINDS]

@@ -7,7 +7,7 @@ from .hours import is_open_for
 from .intake.attachments import Attachment
 from .intake.template import IntakeFields
 from .library import Library
-from .models import Answers, DayPlan, HotelStay, PlannedItem, Place, Question, TransportLeg, TripPlan
+from .models import Answers, DayPlan, HotelStay, PlannedItem, Place, Question, TransportLeg, TripPlan, place_key
 
 DIET_LABEL = "Diet (restrictions, allergies, likes)"
 BOOKING_WORDS = re.compile(r"ticket|booking|voucher|confirmation|reservation|e-?ticket", re.I)
@@ -274,7 +274,8 @@ def run_checklist(
 
     for dp in plan.days:
         for item in dp.items:
-            place = places.get(item.name)
+            key = place_key(item.name, item.city or dp.city)
+            place = places[key] if key in places else places.get(item.name)
             window = windows.get(item.slot_hint)
             if item.kind != "attraction" or item.optional or place is None or place.hours is None or window is None:
                 continue

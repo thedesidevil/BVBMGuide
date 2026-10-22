@@ -155,6 +155,10 @@ class Place(BaseModel):
     verify_note: Optional[str] = None
 
 
+def place_key(name: str, city: str) -> str:
+    return f"{' '.join(name.casefold().split())}|{' '.join(city.casefold().split())}"
+
+
 class Marker(BaseModel):
     kind: Literal["ADD_RESTAURANT", "VERIFY", "PRICE_UNKNOWN", "WRITE_LETTER", "CHECK"]
     text: str

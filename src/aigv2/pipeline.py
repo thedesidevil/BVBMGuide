@@ -17,7 +17,7 @@ from src.aigv2.intake.extract import extract_trip
 from src.aigv2.intake.template import IntakeFields, parse_template
 from src.aigv2.library import Library, norm_name
 from src.aigv2.llm import StepLLM
-from src.aigv2.models import Answers, Booking, HotelStay, Marker, Place, Question, TripPlan
+from src.aigv2.models import Answers, Booking, HotelStay, Marker, Place, Question, TripPlan, place_key
 from src.aigv2.money import FxRates, city_currency, price_text
 from src.aigv2.planning.important_places import ImportantPlaces, important_places
 from src.aigv2.planning.meals import Exclusion, MealPick, PlanStats, plan_meals
@@ -205,8 +205,7 @@ def _new_stay(trip: TripPlan, d: date) -> Optional[HotelStay]:
     return next((s for s in trip.hotels if s.check_in == d), None)
 
 
-def pkey(name: str, city: str) -> str:
-    return f"{norm_name(name)}|{norm_name(city)}"
+pkey = place_key
 
 
 def resolve_places(trip: TripPlan, client, places: dict[str, Optional[Place]]) -> dict[str, Optional[Place]]:
@@ -224,31 +223,18 @@ def resolve_places(trip: TripPlan, client, places: dict[str, Optional[Place]]) -
     return places
 
 
-def _checklist_view(trip: TripPlan, places: dict[str, Optional[Place]]) -> dict[str, Optional[Place]]:
-    view: dict[str, Optional[Place]] = {}
-    owner: dict[str, str] = {}
-    for dp in trip.days:
-        for it in dp.items:
-            k = pkey(it.name, it.city or dp.city)
-            if it.name in owner and owner[it.name] != k:
-                view[it.name] = None
-            elif it.name not in owner:
-                owner[it.name], view[it.name] = k, places.get(k)
-    return view
-
-
 def _day_view(trip: TripPlan, d: date, city: str, prev_city: Optional[str], arrival: Optional[int],
               departure: Optional[int], places: dict[str, Optional[Place]]) -> dict[str, Optional[Place]]:
+    # bare names serve the renderer/scheduler (the arriving stay wins a clash); pkeys keep both stays and ports apart
     view: dict[str, Optional[Place]] = {}
-    for s in trip.hotels:
-        if s.check_in <= d <= s.check_out:
-            view[s.hotel] = places.get(pkey(s.hotel, s.city))
+    for s in sorted((s for s in trip.hotels if s.check_in <= d <= s.check_out), key=lambda s: s.check_in):
+        view[pkey(s.hotel, s.city)] = view[s.hotel] = places.get(pkey(s.hotel, s.city))
     if departure is not None and trip.transport[departure].from_place.strip():
         name = trip.transport[departure].from_place
-        view[name] = places.get(pkey(name, prev_city or city))
+        view[pkey(name, prev_city or city)] = view[name] = places.get(pkey(name, prev_city or city))
     if arrival is not None and trip.transport[arrival].to_place.strip():
         name = trip.transport[arrival].to_place
-        view[name] = places.get(pkey(name, city))
+        view[pkey(name, city)] = view[name] = places.get(pkey(name, city))
     dp = next((x for x in trip.days if x.date == d), None)
     for it in (dp.items if dp else []):
         view[it.name] = places.get(pkey(it.name, it.city or city))
@@ -303,22 +289,26 @@ def _pair(a: str, pa: Optional[Place], b: str, pb: Optional[Place], deps: Deps, 
 def _legs(ds: DayState, trip: TripPlan, deps: Deps) -> dict[str, Leg]:
     d, modes, legs, places = ds.date, trip.travel_modes, {}, ds.places
     morning, new = _morning_stay(trip, d), _new_stay(trip, d)
+
+    def hotel(s: HotelStay) -> Optional[Place]:
+        return places.get(pkey(s.hotel, s.city))
+
+    leg = None
     if ds.arrival is not None and new:
         t = trip.transport[ds.arrival]
-        leg = _pair(t.to_place, places.get(t.to_place), new.hotel, places.get(new.hotel), deps, modes)
-    elif new and morning and norm_name(morning.hotel) != norm_name(new.hotel):
-        leg = _pair(morning.hotel, places.get(morning.hotel), new.hotel, places.get(new.hotel), deps, modes)
-    else:
-        leg = None
+        leg = _pair(t.to_place, places.get(pkey(t.to_place, ds.city)), new.hotel, hotel(new), deps, modes)
+    elif new and morning and pkey(morning.hotel, morning.city) != pkey(new.hotel, new.city):
+        leg = _pair(morning.hotel, hotel(morning), new.hotel, hotel(new), deps, modes)
     if leg:
         legs["arrival"] = leg
     if ds.departure is not None and morning:
         t = trip.transport[ds.departure]
-        leg = _pair(morning.hotel, places.get(morning.hotel), t.from_place, places.get(t.from_place), deps, modes)
+        port = places.get(pkey(t.from_place, ds.prev_city or ds.city))
+        leg = _pair(morning.hotel, hotel(morning), t.from_place, port, deps, modes)
         if leg:
             legs["departure"] = leg
     origin = new or morning
-    points = [(origin.hotel, _xy(places.get(origin.hotel)))] if origin else []
+    points = [(origin.hotel, _xy(hotel(origin)))] if origin else []
     points += [(s.item.name, _xy(places.get(s.item.name))) for s in ds.result.scheduled if s.item.kind in _ITEM_KINDS]
     points = [(n, xy) for n, xy in points if xy is not None]
     for leg in compute_legs(points, deps.routes, modes, deps.settings.walk_max_min):
@@ -377,7 +367,7 @@ def _start(store: RunStore, intake_path: Path | None, paths: list[Path], deps: D
     attachments = read_attachments(paths)
     trip = extract_trip(intake, attachments, deps.llm)
     places = resolve_places(trip, deps.places, {})
-    questions = run_checklist(trip, intake, attachments, deps.library, _checklist_view(trip, places), deps.settings)
+    questions = run_checklist(trip, intake, attachments, deps.library, places, deps.settings)
     store.save_json("intake.json", intake)
     store.save_json("attachments.json", {"attachments": [a.model_dump(mode="json") for a in attachments]})
     store.save_json("trip_plan.json", trip)

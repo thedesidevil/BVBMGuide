@@ -336,6 +336,9 @@ def test_cli_start_and_qc(deps, tmp_path, monkeypatch):
 from datetime import date, timedelta  # noqa: E402
 
 from src.aigv2.models import DayPlan, Diet, HotelStay, PlannedItem, TransportLeg, Traveller, TripPlan  # noqa: E402
+from src.aigv2.pipeline import pkey  # noqa: E402
+from src.aigv2.preflight import run_checklist  # noqa: E402
+from src.aigv2.intake.template import IntakeFields  # noqa: E402
 from src.aigv2.store import RunStore  # noqa: E402
 from src.aigv2.writing.sections import write_section  # noqa: E402
 
@@ -347,6 +350,7 @@ class CityPlaces(FakePlaces):
     def __init__(self):
         super().__init__()
         self.lookups = []
+        self.closed: set[tuple[str, str]] = set()
 
     def find(self, name, city, near=None, fresh=False):
         self.calls["text_search"] += 1
@@ -355,6 +359,9 @@ class CityPlaces(FakePlaces):
         p.lat = 50.0 if city == "Prague" else 48.2 if city == "Vienna" else 40.75
         p.address = f"1 Test St, {city}, {COUNTRY.get(city, 'USA')}"
         p.place_id = f"pid_{name}_{city}".replace(" ", "_")
+        p.lng = -73.98 + len(name) * 0.001
+        if (name, city) in self.closed:
+            p.hours = WeeklyHours(periods={6: [(time(9), time(17))]}, source="google")
         return p
 
 
@@ -403,8 +410,18 @@ def test_places_keyed_by_city(deps):
     assert {i.city for i in state.important} == {"Prague", "Vienna"}
 
 
+class RecordingRoutes(FakeRoutes):
+    def __init__(self):
+        super().__init__()
+        self.pairs = []
+
+    def durations(self, origins, destinations, mode):
+        self.pairs.append((list(origins), list(destinations)))
+        return super().durations(origins, destinations, mode)
+
+
 def test_arrival_departure_and_legs(deps):
-    deps.places = CityPlaces()
+    deps.places, deps.routes = CityPlaces(), RecordingRoutes()
     store = seeded(deps, two_city_trip())
     build_run(store, {}, deps)
     state = pipeline._load_plan(store)
@@ -415,6 +432,14 @@ def test_arrival_departure_and_legs(deps):
     assert set(state.days[2].legs) == {"arrival", "departure", "Old Town"}
     assert state.days[2].legs["departure"].from_name == "Grand Hotel"
     assert state.days[2].legs["arrival"].to_name == "Grand Hotel"
+    view = state.days[2].places
+    assert view[pkey("Grand Hotel", "Prague")].lat == 50.0 and view[pkey("Grand Hotel", "Vienna")].lat == 48.2
+    assert view[pkey("Airport", "Prague")].lat == 50.0 and view[pkey("Airport", "Vienna")].lat == 48.2
+    assert view["Grand Hotel"].lat == 48.2
+    prague_hotel, prague_port = (50.0, view[pkey("Grand Hotel", "Prague")].lng), (50.0, view[pkey("Airport", "Prague")].lng)
+    vienna_port, vienna_hotel = (48.2, view[pkey("Airport", "Vienna")].lng), (48.2, view[pkey("Grand Hotel", "Vienna")].lng)
+    assert ([prague_hotel], [prague_port]) in deps.routes.pairs
+    assert ([vienna_port], [vienna_hotel]) in deps.routes.pairs
     assert set(state.days[3].legs) == {"departure"}
     rds = pipeline._render_days(store, state, deps)
     assert rds[2].arrival is rds[2].departure and rds[2].prev_city == "Prague"
@@ -545,3 +570,18 @@ def test_health_section_for_high_altitude(deps):
     assert write_section("health", city, {}, domestic, deps.llm) is None
     assert write_section("health", city, {}, domestic, deps.llm, high_altitude=True) is not None
     assert write_section("money", city, {}, domestic, deps.llm, high_altitude=True) is None
+
+
+def test_checklist_hours_checked_per_city(deps, monkeypatch):
+    trip = two_city_trip()
+    places = CityPlaces()
+    places.closed = {("Old Town", "Prague")}
+    resolved = pipeline.resolve_places(trip, places, {})
+    qs = run_checklist(trip, IntakeFields(), [], deps.library, resolved, deps.settings)
+    hours = [q for q in qs if q.kind == "hours_conflict"]
+    assert [(q.id, q.day) for q in hours] == [(f"hours_conflict:{D0 + timedelta(days=1)}:Old Town", D0 + timedelta(days=1))]
+    places.closed = {("Old Town", "Vienna")}
+    monkeypatch.setitem(REPLIES, "extract", lambda p: trip.model_dump_json())
+    deps.places = places
+    _, qs = start_run(None, sorted(FIX.glob("*.txt")), deps)
+    assert [q.day for q in qs if q.kind == "hours_conflict"] == [D0 + timedelta(days=2)]

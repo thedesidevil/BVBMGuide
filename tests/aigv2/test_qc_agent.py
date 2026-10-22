@@ -1,4 +1,7 @@
 import io
+
+import pytest
+import requests
 from datetime import time
 from types import SimpleNamespace
 
@@ -15,7 +18,7 @@ from src.aigv2.qc.facts import check_facts
 from src.aigv2.qc.llm_checks import prose_fact_check, sense_check
 from src.aigv2.qc.reader import read_docx
 from src.aigv2.qc.report import QCResult, build_cost, marker_kinds, write_report
-from tests.aigv2.test_qc_rules import library, render  # noqa: F401
+from tests.aigv2.test_qc_rules import edit_text, library, render  # noqa: F401
 from tests.aigv2.test_render_document import HOTEL, place, trip
 
 
@@ -171,7 +174,7 @@ def test_report_lists_exclusions_and_cost():
     assert "**FAIL**" in md and "Hamdi (closed): Google says closed" in md
     assert "### Day 1" in md and "PRICE UNKNOWN: 1" in md and "## Cost" in md
     assert "gpt-6.1-sol" in md and "Places text search: 2" in md
-    assert js["cost"]["total_usd"] == round(0.11 + 2 * 0.035 + 4 * 0.005, 10) or abs(js["cost"]["total_usd"] - 0.2) < 1e-9
+    assert js["cost"]["total_usd"] == pytest.approx(0.11 + 2 * 0.035 + 4 * 0.005)
     assert js["exclusions"][0]["name"] == "Hamdi"
 
 
@@ -185,3 +188,125 @@ def test_run_qc_end_to_end(library, monkeypatch):  # noqa: F811
     assert "⚠ CHECK: Mikla is shown as closed" in "\n".join(paras(out))
     assert result.cost["google"]["usd"] > 0 and result.cost["ai"]["usd"] >= 0
     assert "## Cost" in report and "Google total" in report
+
+
+def rules_of(findings, name=None):
+    return [f for f in findings if f.rule == "fact_unverified" and (name is None or f.anchor_text == name)]
+
+
+def test_unverified_when_no_google_match():
+    p = cached_places()
+    del p["Mikla"]
+    findings, rows = check_facts(read_docx(render()), trip(), FakePlaces(p), FakeRoutes())
+    assert rules_of(findings, "Mikla")
+    assert all(r.match is False and r.google_hours == "Not verified" for r in rows if r.venue == "Mikla")
+    bad = place("Mikla", match_ok=False)
+    findings, _ = check_facts(read_docx(render()), trip(), FakePlaces(cached_places(Mikla=bad)), FakeRoutes())
+    assert rules_of(findings, "Mikla")
+
+
+def test_unverified_when_fresh_lookup_empty_or_unmatched():
+    class NoFresh(FakePlaces):
+        def find(self, name, city, near=None, fresh=False):
+            return None if fresh and name == "Mikla" else super().find(name, city, near, fresh)
+
+    findings, rows = check_facts(read_docx(render()), trip(), NoFresh(cached_places()), FakeRoutes())
+    assert rules_of(findings, "Mikla") and not next(r for r in rows if r.venue == "Mikla").match
+
+
+def test_unverified_when_hours_or_status_unknown():
+    nohours = place("Mikla", hrs=False)
+    findings, rows = check_facts(read_docx(render()), trip(), FakePlaces(cached_places(), {"Mikla": nohours}),
+                                 FakeRoutes())
+    assert any("opening hours" in f.message for f in rules_of(findings, "Mikla"))
+    assert not next(r for r in rows if r.venue == "Mikla").match
+    unknown = late_place("Mikla")
+    unknown.status = "UNKNOWN"
+    findings, _ = check_facts(read_docx(render()), trip(), FakePlaces(cached_places(), {"Mikla": unknown}), FakeRoutes())
+    assert any("business status" in f.message for f in rules_of(findings, "Mikla"))
+
+
+def test_unverified_when_anchor_unresolved():
+    p = cached_places()
+    del p[HOTEL]
+    findings, rows = check_facts(read_docx(render()), trip(), FakePlaces(p), FakeRoutes())
+    assert any("could not locate" in f.message for f in rules_of(findings, "Mikla"))
+    assert not next(r for r in rows if r.venue == "Mikla").match
+
+
+def test_unverified_when_route_missing():
+    class NoRoute(FakeRoutes):
+        def durations(self, origins, destinations, mode):
+            return {(0, 0): None}
+
+    findings, rows = check_facts(read_docx(render()), trip(), FakePlaces(cached_places()), NoRoute())
+    assert any("no Google route" in f.message for f in rules_of(findings, "Mikla"))
+    assert not next(r for r in rows if r.venue == "Mikla").match
+
+
+def test_unverified_when_guide_states_no_travel_leg():
+    data = edit_text(render(), "GETTING THERE", "ELSEWHERE")
+    findings, _ = check_facts(read_docx(data), trip(), FakePlaces(cached_places()), FakeRoutes())
+    assert any("none stated" in f.message for f in rules_of(findings, "Mikla"))
+
+
+def test_fully_verified_row_matches():
+    _, rows = check_facts(read_docx(render()), trip(), FakePlaces(cached_places()), FakeRoutes())
+    assert next(r for r in rows if r.venue == "Mikla").match is True
+
+
+class RaisingPlaces(FakePlaces):
+    def __init__(self, exc):
+        super().__init__(cached_places())
+        self.exc = exc
+
+    def find(self, name, city, near=None, fresh=False):
+        if name == "Mikla":
+            raise self.exc
+        return super().find(name, city, near, fresh)
+
+
+@pytest.mark.parametrize("exc", [requests.ConnectionError("down"), KeyError("location"), ValueError("bad json")])
+def test_fact_check_failed_surfaces(exc):
+    findings, rows = check_facts(read_docx(render()), trip(), RaisingPlaces(exc), FakeRoutes())
+    assert any(f.rule == "fact_check_failed" and f.anchor_text == "Mikla" for f in findings)
+    assert not next(r for r in rows if r.venue == "Mikla").match
+
+
+def test_qc_llm_failed_surfaces(library, monkeypatch):  # noqa: F811
+    llm, _ = fake_llm("not json", monkeypatch)
+    out, result, report = run_qc(render(), trip(), {}, library, FakePlaces(cached_places()), FakeRoutes(), llm, [])
+    failed = [f for f in result.findings if f.rule == "qc_llm_failed"]
+    assert len(failed) == 2 and result.passed is False
+
+
+def test_annotate_scopes_to_day_and_stays_out_of_tables():
+    data = render()
+    out = annotate(data, [Finding(rule="sense", severity="error", message="Hotel transfer odd",
+                                  anchor_text=HOTEL, day=3),
+                          Finding(rule="sense", severity="error", message="Tower odd", anchor_text="Galata Tower")])
+    body = Document(io.BytesIO(out)).element.body
+    all_p = list(body.iter(qn("w:p")))
+    texts = ["".join(t.text or "" for t in p.iter(qn("w:t"))) for p in all_p]
+    for msg in ("⚠ CHECK: Hotel transfer odd", "⚠ CHECK: Tower odd"):
+        mp = all_p[texts.index(msg)]
+        assert mp.getparent() is body
+    day3 = next(i for i, t in enumerate(texts) if t.startswith("Day 3 – ") and "Farewell" in t
+                and all_p[i].find(".//" + qn("w:hyperlink")) is None)
+    assert texts.index("⚠ CHECK: Hotel transfer odd") > day3
+    assert texts.index("⚠ CHECK: Tower odd") < day3
+
+
+def test_unfound_llm_anchor_attaches_to_day_header(monkeypatch):
+    llm, _ = fake_llm('{"issues": [{"quote": "text the guide never says", "problem": "Odd", "day": 2}]}', monkeypatch)
+    out = sense_check(read_docx(render()), trip(), llm)
+    assert out[0].day == 2 and out[0].anchor_text == "text the guide never says"
+    after = paras(annotate(render(), out))
+    i = next(i for i, t in enumerate(after) if t == "⚠ CHECK: Odd")
+    assert after[i - 1].startswith("Day 2 – ")
+
+
+def test_sense_check_accepts_pydantic_answers(monkeypatch):
+    llm, calls = fake_llm('{"issues": []}', monkeypatch)
+    sense_check(read_docx(render()), trip(), llm, Finding(rule="x", severity="error", message="m"))
+    assert '"rule": "x"' in calls[0][1]

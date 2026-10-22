@@ -24,29 +24,53 @@ def _style_id(p) -> str:
     return (st.get(qn("w:val")) if st is not None else "").casefold().replace(" ", "")
 
 
-def _find(paras, needle: str):
+_DAY_RX = re.compile(r"^Day\s*(\d+)\s*[–—:\-|,]")
+
+
+def _day_map(paras) -> dict[int, int | None]:
+    out, current = {}, None
+    for p in paras:
+        if _style_id(p) in ("heading1", "heading 1"):
+            m = _DAY_RX.match(_text(p))
+            current = int(m.group(1)) if m else None
+        out[id(p)] = current
+    return out
+
+
+def _find(paras, needle: str, day=None, days=None):
     if not needle:
         return None
-    hits = [p for p in paras if needle in _text(p)]
-    return next((p for p in hits if not _internal_link(p)), hits[0] if hits else None)
+    hits = [p for p in paras if needle in _text(p) and not _internal_link(p)]
+    scoped = [p for p in hits if day is not None and days.get(id(p)) == day]
+    pool = scoped or hits or [p for p in paras if needle in _text(p)]
+    return pool[0] if pool else None
 
 
 def _day_header(paras, day):
     if day is None:
         return None
-    rx = re.compile(rf"^Day\s*{day}\s*[–—:\-|,]")
-    hits = [p for p in paras if rx.match(_text(p)) and not _internal_link(p)]
+    hits = [p for p in paras if _DAY_RX.match(_text(p)) and int(_DAY_RX.match(_text(p)).group(1)) == day
+            and not _internal_link(p)]
     return next((p for p in hits if _style_id(p).startswith("heading")), hits[0] if hits else None)
+
+
+def _outside_tables(p):
+    top = p
+    for a in p.iterancestors():
+        if a.tag == qn("w:tbl"):
+            top = a
+    return top
 
 
 def annotate(docx_bytes: bytes, findings: list[Finding]) -> bytes:
     doc = Document(io.BytesIO(docx_bytes))
     body = doc.element.body
     paras = list(body.iter(qn("w:p")))
+    days = _day_map(paras)
     tail: dict[int, object] = {}
     at_start = 0
     for f in findings:
-        target = _find(paras, " ".join(f.anchor_text.split()))
+        target = _find(paras, " ".join(f.anchor_text.split()), f.day, days)
         if target is None:
             target = _day_header(paras, f.day)
         new_p = OxmlElement("w:p")
@@ -54,8 +78,9 @@ def annotate(docx_bytes: bytes, findings: list[Finding]) -> bytes:
             body.insert(at_start, new_p)
             at_start += 1
         else:
-            (tail.get(id(target)) if id(target) in tail else target).addnext(new_p)
-            tail[id(target)] = new_p
+            top = _outside_tables(target)
+            (tail[id(top)] if id(top) in tail else top).addnext(new_p)
+            tail[id(top)] = new_p
         add_marker(Paragraph(new_p, doc._body), Marker(kind="CHECK", text=f.message))
     out = io.BytesIO()
     doc.save(out)

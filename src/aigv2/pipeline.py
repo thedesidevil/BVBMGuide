@@ -301,7 +301,7 @@ def _departure_idx(trip: TripPlan, d: date, trip_days: set[date]) -> Optional[in
         if not (dt.date() == d or overnight):
             continue
         checks_out = any(s.check_out == d or (overnight and s.check_out == nxt) for s in trip.hotels)
-        if checks_out or i == last:
+        if checks_out or (i == last and dt.date() >= max(trip_days)):
             hits.append((dt, i))
     return min(hits)[1] if hits else None
 

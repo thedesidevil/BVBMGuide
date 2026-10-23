@@ -469,6 +469,16 @@ def test_early_arrival_and_after_midnight_departure():
     assert pipeline._departure_idx(late, d[2], {d[2]}) is None
 
 
+def test_mid_trip_leg_is_not_departure_when_final_flight_missing():
+    d = [D0 + timedelta(days=i) for i in range(4)]
+    trip = two_city_trip().model_copy(update={
+        "hotels": [HotelStay(city="Prague", hotel="H", check_in=d[0], check_out=d[3], source="voucher")],
+        "transport": [TransportLeg(kind="train", from_place="A", to_place="B",
+                                   depart=datetime(2027, 5, 11, 15, 0), source="t")]})
+    assert pipeline._departure_idx(trip, d[1], set(d)) is None
+    assert pipeline._departure_idx(trip, d[3], set(d)) is None
+
+
 def test_utc_offset_and_country():
     assert pipeline._utc_offset("Austria", date(2027, 1, 15)) == 1.0
     assert pipeline._utc_offset("Austria", date(2027, 7, 15)) == 2.0

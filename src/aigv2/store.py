@@ -11,12 +11,12 @@ from src.aigv2.models import Place
 from src.library.ui.storage import LocalStorageBackend, StorageBackend
 
 _RUNS = "runs/"
-_RUN_ID = re.compile(r"^[A-Za-z0-9_-][A-Za-z0-9_.-]*$")
+_RUN_ID = re.compile(r"[A-Za-z0-9_-][A-Za-z0-9_.-]*")
 
 
 class RunStore:
     def __init__(self, backend: StorageBackend, run_id: str):
-        if not _RUN_ID.match(run_id or "") or ".." in run_id:
+        if not _RUN_ID.fullmatch(run_id or "") or ".." in run_id:
             raise ValueError(f"invalid run id {run_id!r}: use letters, digits, '-', '_' and '.' only")
         self.backend = backend
         self.run_id = run_id

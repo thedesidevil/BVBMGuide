@@ -75,7 +75,7 @@ def test_default_backend(tmp_path):
 def test_run_id_validated(tmp_path):
     import pytest
     backend = LocalStorageBackend(tmp_path)
-    for bad in ("../etc", "a/b", "a\\b", ".hidden", "..", "", "a b", "x/../y"):
+    for bad in ("../etc", "a/b", "a\\b", ".hidden", "..", "", "a b", "x/../y", "abc\n"):
         with pytest.raises(ValueError):
             RunStore(backend, bad)
     assert RunStore(backend, "20260101-000000-abc_1.2").run_id == "20260101-000000-abc_1.2"

@@ -197,4 +197,30 @@ export const api = {
       method: "POST",
       body: JSON.stringify({ code, meaning }),
     }),
+
+  // --- AIG v2 ---
+  v2Runs: () => request<{ runs: any[] }>("/aigv2/runs"),
+  v2Run: (id: string) => request<any>(`/aigv2/runs/${encodeURIComponent(id)}`),
+  v2Job: (id: string) => request<any>(`/aigv2/jobs/${id}`),
+  v2Start: async (intake: File | null, attachments: File[]): Promise<any> => {
+    const fd = new FormData();
+    if (intake) fd.append("intake", intake);
+    attachments.forEach((f) => fd.append("attachments", f));
+    const res = await fetch(`${BASE}/aigv2/start`, { method: "POST", body: fd });
+    if (!res.ok) throw new Error(`Start failed: ${res.status} ${await res.text()}`);
+    return res.json();
+  },
+  v2Build: (id: string, answers: Record<string, string>) =>
+    request<any>(`/aigv2/runs/${encodeURIComponent(id)}/build`, { method: "POST", body: JSON.stringify({ answers }) }),
+  v2Regenerate: (id: string, days: number[], sections: string[]) =>
+    request<any>(`/aigv2/runs/${encodeURIComponent(id)}/regenerate`, { method: "POST", body: JSON.stringify({ days, sections }) }),
+  v2Qc: async (id: string, file: File): Promise<any> => {
+    const fd = new FormData();
+    fd.append("file", file);
+    const res = await fetch(`${BASE}/aigv2/runs/${encodeURIComponent(id)}/qc`, { method: "POST", body: fd });
+    if (!res.ok) throw new Error(`QC failed: ${res.status} ${await res.text()}`);
+    return res.json();
+  },
+  v2FileUrl: (id: string, name: string) => `${BASE}/aigv2/runs/${encodeURIComponent(id)}/files/${name}`,
+  v2TemplateUrl: () => `${BASE}/aigv2/template`,
 };

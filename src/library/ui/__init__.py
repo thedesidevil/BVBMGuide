@@ -160,6 +160,10 @@ def create_app(
     app.include_router(verify.router, prefix="/api")  # all authenticated users
     app.include_router(hotel_options.router, prefix="/api")  # all authenticated users
     app.include_router(aig_prep.router, prefix="/api")  # all authenticated users
+    # Imported here, not at module level: src.aigv2.store imports src.library.ui.storage, which loads this package.
+    from .api import aigv2
+
+    app.include_router(aigv2.router, prefix="/api")  # all authenticated users
 
     from fastapi.staticfiles import StaticFiles
 

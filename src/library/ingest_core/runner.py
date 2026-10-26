@@ -63,7 +63,7 @@ def _has_items(container: dict, lists: tuple[str, ...]) -> bool:
     return any(isinstance(container.get(n), list) and container[n] for n in lists)
 
 
-def _has_content(data: dict) -> bool:
+def has_content(data: dict) -> bool:
     if _covered(data) or _has_items(data, CITY_LISTS):
         return True
     cc = data.get("country_content")
@@ -183,7 +183,7 @@ def run_ingest(
                     raise TypeError(
                         f"extraction data is {type(extraction.data).__name__}, not an object")
                 cleaned, dropped = clean_extraction(extraction.data)
-                if not _has_content(cleaned):
+                if not has_content(cleaned):
                     fail(entry, "empty", "no cities or items after cleaning", extraction)
                     continue
                 meta = FileMeta(source_file=rel, order_date=entry.order_date,

@@ -43,6 +43,11 @@ def build(
         min=1,
         max=20,
     ),
+    max_usd: Optional[float] = typer.Option(
+        None,
+        "--max-usd",
+        help="Cost ceiling in USD; required when more than 5 files would be extracted",
+    ),
     api_key: Optional[str] = typer.Option(
         None,
         "--api-key",
@@ -63,7 +68,7 @@ def build(
     try:
         builder = LibraryBuilder(library_path, api_key=api_key, workers=workers)
         console.print(f"[dim]Using AI: {builder.client}[/dim]\n")
-        builder.build_database(force=force, output_path=db_path)
+        builder.build_database(force=force, output_path=db_path, max_usd=max_usd)
     except ValueError as e:
         console.print(f"\n[red]Error:[/red] {e}")
         raise typer.Exit(1)

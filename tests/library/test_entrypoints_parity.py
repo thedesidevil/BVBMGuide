@@ -288,3 +288,150 @@ def test_ui_persist_skips_failed_extraction(tmp_path, memory_backend):
     assert result["persisted_files"] == 0
     index = memory_backend.read_json("_index.json") or {}
     assert not index.get("_processed_files")
+
+
+# --- fix round 1: persist isolation, v2 skip, missing bytes ----------------
+
+def _v2_doc(path: Path) -> Path:
+    import zipfile
+    _doc(path)
+    with zipfile.ZipFile(path, "a") as z:
+        z.writestr("docProps/custom.xml",
+                   '<?xml version="1.0"?><Properties xmlns="http://schemas.openxmlformats.org/'
+                   'officeDocument/2006/custom-properties"><property fmtid="{x}" pid="2" '
+                   'name="bvbm_run_id"><lpwstr>abc</lpwstr></property></Properties>')
+    return path
+
+
+def test_ui_persist_skips_v2_generated_file(tmp_path, memory_backend):
+    path = _v2_doc(tmp_path / "v2.docx")
+    result = _ui_persist(memory_backend, path, "Italy", _extraction_data())
+    assert result["persisted_files"] == 0
+    assert result["skipped"] == [("v2.docx", "v2_generated")]
+    assert memory_backend.read_json("Rome.json") is None
+    assert not (memory_backend.read_json("_index.json") or {}).get("_processed_files")
+
+
+def _session_with(service, tmp_path, names):
+    session = service.create_session()
+    ids = []
+    for name in names:
+        path = _doc(tmp_path / name, extra=name)
+        [entry] = service.save_upload(session, name, path.read_bytes())
+        session.update_file(entry["file_id"], {"assigned_folder": "Italy"})
+        data = _extraction_data()
+        data["restaurants"] = [{"name": f"R-{name}", "city": "Rome"}]
+        service.save_extracted_edits(session, entry["file_id"], data)
+        ids.append(entry["file_id"])
+    return session, ids
+
+
+def test_ui_persist_isolates_a_failing_file(tmp_path, memory_backend, monkeypatch):
+    import src.library.ingest_core.merge as merge_mod
+
+    real = merge_mod.merge_extraction
+
+    def flaky(db, data, meta):
+        if meta.source_file == "Italy/b.docx":
+            raise RuntimeError("boom")
+        return real(db, data, meta)
+
+    monkeypatch.setattr(merge_mod, "merge_extraction", flaky)
+    service = IngestService(memory_backend, None)
+    session, _ = _session_with(service, tmp_path, ["a.docx", "b.docx", "c.docx"])
+
+    result = service.persist(session)
+
+    assert result["persisted_files"] == 2
+    assert result["failed"] == [("b.docx", "RuntimeError: boom")]
+    index = memory_backend.read_json("_index.json")
+    assert set(index["_processed_files"]) == {"Italy/a.docx", "Italy/c.docx"}
+    names = {r["name"] for r in memory_backend.read_json("Rome.json")["restaurants"]}
+    assert names == {"R-a.docx", "R-c.docx"}
+
+
+def test_ui_persist_missing_upload_bytes_is_failed(tmp_path, memory_backend):
+    service = IngestService(memory_backend, None)
+    session, ids = _session_with(service, tmp_path, ["a.docx", "b.docx"])
+    memory_backend.delete(session.get_upload_key(ids[0]))
+
+    result = service.persist(session)
+
+    assert result["persisted_files"] == 1
+    assert [f for f, _ in result["failed"]] == ["a.docx"]
+    assert set(memory_backend.read_json("_index.json")["_processed_files"]) == {"Italy/b.docx"}
+
+
+# --- fix round 1: build cost guards ----------------------------------------
+
+def test_build_database_refuses_legacy_index(builder_env):
+    builder, out, calls = builder_env
+    LocalStorageBackend(out).write_json("_index.json", {"_processed_files": {
+        "Italy/rome.docx": {"mtime": 1.0, "destination": "Italy", "covered_cities": ["Rome"]}}})
+    for force in (False, True):
+        with pytest.raises(ValueError, match="built by the old ingester"):
+            builder.build_database(output_path=out, workers=1, force=force)
+    assert calls == []
+
+
+def _six_file_library(lib: Path) -> None:
+    for i in range(4):
+        _doc(lib / "Spain" / f"s{i}.docx", extra=f"spain {i}", mtime=date(2025, 5, i + 1))
+
+
+def test_build_database_requires_max_usd_for_more_than_five_files(builder_env, monkeypatch):
+    builder, out, calls = builder_env
+    _six_file_library(builder.library_path)
+    with pytest.raises(ValueError, match="--max-usd is required"):
+        builder.build_database(output_path=out, workers=1)
+    assert calls == []
+
+
+def test_build_database_runs_six_files_with_max_usd(builder_env, monkeypatch):
+    builder, out, calls = builder_env
+    _six_file_library(builder.library_path)
+    fake = runner_mod.extract_file
+
+    def fake_any(client, path):
+        if Path(path).name.startswith("s"):
+            calls.append(Path(path).name)
+            return Extraction(data={"covered_cities": ["Madrid"],
+                                    "restaurants": [{"name": Path(path).stem, "city": "Madrid"}]},
+                              chunks=1, prompt_tokens=0, completion_tokens=0, usd=0.0)
+        return fake(client, path)
+
+    monkeypatch.setattr(runner_mod, "extract_file", fake_any)
+    result = builder.build_database(output_path=out, workers=1, max_usd=5.0)
+    assert len(calls) == 6
+    assert len(result["_processed_files"]) == 6
+    # --force makes the whole plan count again: refused without --max-usd
+    with pytest.raises(ValueError, match="--max-usd is required"):
+        builder.build_database(output_path=out, workers=1, force=True)
+
+
+# --- fix round 1: country API is read-only ---------------------------------
+
+def test_country_api_missing_shard_is_404_and_writes_nothing(tmp_path):
+    from fastapi.testclient import TestClient
+
+    from src.library.ui import create_app
+
+    db = tmp_path / "db"
+    backend = LocalStorageBackend(db)
+    backend.write_json("_index.json", {"_folder_coverage": {"Italy": ["Rome"]}})
+    backend.write_json("Rome.json", {"safety_tips": [{"tip": "Watch your bag", "cities": ["Rome"]}]})
+    before = sorted(backend.list_keys(""))
+
+    client = TestClient(create_app(db_path=db))
+    resp = client.get("/api/country/Italy")
+
+    assert resp.status_code == 404
+    assert sorted(backend.list_keys("")) == before
+
+
+def test_clear_processed_files_keeps_rest_of_index(memory_db):
+    memory_db.record_processed_file("Italy/a.docx", {"text_hash": "h"})
+    memory_db.add_folder_coverage("Italy", ["Rome"])
+    memory_db.clear_processed_files()
+    assert memory_db._index["_processed_files"] == {}
+    assert memory_db.get_folder_coverage() == {"Italy": ["Rome"]}

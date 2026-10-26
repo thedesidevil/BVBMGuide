@@ -301,22 +301,26 @@ class IngestService:
         ``aig-library/<folder>/`` and the processed-files index and folder
         coverage are updated; the index is saved once at the end.
 
-        Files whose cleaned extraction has no cities and no items (for example a
-        failed extraction stored as ``{"error": ...}``) are skipped and not recorded.
+        Skipped (listed under ``skipped`` as ``(filename, reason)``, not
+        recorded): v2-generated files (``bvbm_run_id`` property, reason
+        ``v2_generated``) and files whose cleaned extraction has no cities and no
+        items, such as a failed extraction stored as ``{"error": ...}`` (reason
+        ``empty``).
+
+        Each file is isolated: missing upload bytes or any exception while
+        scanning, cleaning, merging or recording puts ``(filename, error)`` under
+        ``failed`` and the next file is processed. The index is saved in a
+        ``finally``. Staging is cleaned up only when no file failed, so failed
+        uploads stay available for a retry.
 
         Returns ``persisted_files``, ``affected_cities`` (city shards the items
-        were merged into),
-        ``stats`` (summed ``MergeStats`` incl. ``by_city``) and ``dropped``
-        (count of items removed by cleaning).
+        were merged into), ``stats`` (summed ``MergeStats`` incl. ``by_city``),
+        ``dropped`` (count of items removed by cleaning), ``skipped`` and
+        ``failed``.
         """
-        import tempfile
         from dataclasses import asdict
-        from datetime import date
 
-        from src.library.ingest_core.clean import clean_extraction
-        from src.library.ingest_core.merge import FileMeta, MergeStats, merge_extraction
-        from src.library.ingest_core.ordering import scan_file
-        from src.library.ingest_core.runner import _has_content as has_content
+        from src.library.ingest_core.merge import MergeStats
         from src.library.ui.services.db_service import LibraryDBService
 
         db_service = LibraryDBService(self.backend)
@@ -324,66 +328,40 @@ class IngestService:
         persisted_count = 0
         dropped_count = 0
         total = MergeStats()
+        skipped: list[tuple[str, str]] = []
+        failed: list[tuple[str, str]] = []
 
-        for file_id, entry in files.items():
-            if entry.get("excluded"):
-                continue
-            folder = entry.get("assigned_folder")
-            if not folder:
-                continue
+        try:
+            for file_id, entry in files.items():
+                if entry.get("excluded"):
+                    continue
+                folder = entry.get("assigned_folder")
+                if not folder:
+                    continue
 
-            data = self.backend.read_json(session.get_extracted_key(file_id))
-            if not data:
-                continue
+                data = self.backend.read_json(session.get_extracted_key(file_id))
+                if not data:
+                    continue
 
-            filename = entry.get("filename") or f"{file_id}.{entry.get('type') or 'pdf'}"
-            file_bytes = self.backend.read_bytes(session.get_upload_key(file_id))
+                filename = entry.get("filename") or f"{file_id}.{entry.get('type') or 'pdf'}"
+                try:
+                    outcome = self._persist_one(session, db_service, file_id, entry,
+                                                folder, filename, data)
+                except Exception as e:  # one bad file must not abort the others
+                    failed.append((filename, f"{type(e).__name__}: {e}"))
+                    continue
+                if isinstance(outcome, str):
+                    skipped.append((filename, outcome))
+                    continue
+                stats, dropped = outcome
+                total += stats
+                dropped_count += dropped
+                persisted_count += 1
+        finally:
+            db_service.save_index()
 
-            suffix = Path(filename).suffix or f".{entry.get('type') or 'pdf'}"
-            with tempfile.NamedTemporaryFile(suffix=suffix, delete=False) as tmp:
-                tmp.write(file_bytes or b"")
-                tmp_path = Path(tmp.name)
-            try:
-                scan = scan_file(tmp_path)
-            finally:
-                tmp_path.unlink(missing_ok=True)
-            order_date = scan.last_day or date.today()
-
-            cleaned, dropped = clean_extraction(data)
-            if not has_content(cleaned):
-                # failed extraction ({"error": ...}) or nothing left after cleaning:
-                # do not record it, so a later run can still ingest the file
-                continue
-            rel_key = f"{folder}/{filename}"
-            meta = FileMeta(source_file=rel_key, order_date=order_date, fmt=scan.fmt, folder=folder)
-            total += merge_extraction(db_service, cleaned, meta)
-            dropped_count += len(dropped)
-
-            # Copy source file to aig-library (only on local filesystem)
-            if self.library_path and file_bytes:
-                dest_dir = self.library_path / folder
-                dest_dir.mkdir(parents=True, exist_ok=True)
-                dest_file = dest_dir / filename
-                if not dest_file.exists():
-                    dest_file.write_bytes(file_bytes)
-
-            covered = cleaned.get("covered_cities")
-            covered = [c for c in covered if isinstance(c, str) and c.strip()] \
-                if isinstance(covered, list) else []
-            db_service.record_processed_file(rel_key, {
-                "text_hash": scan.text_hash,
-                "order_date": order_date.isoformat(),
-                "fmt": scan.fmt,
-                "folder": folder,
-                "covered_cities": covered,
-                "processed_at": datetime.now(timezone.utc).isoformat(),
-            })
-            db_service.add_folder_coverage(folder, covered)
-
-            persisted_count += 1
-
-        db_service.save_index()
-        session.cleanup()
+        if not failed:
+            session.cleanup()
 
         affected = {name for name in total.by_city if not name.startswith("_country/")}
         return {
@@ -391,4 +369,64 @@ class IngestService:
             "affected_cities": sorted(affected),
             "stats": asdict(total),
             "dropped": dropped_count,
+            "skipped": skipped,
+            "failed": failed,
         }
+
+    def _persist_one(self, session: IngestSession, db_service, file_id: str, entry: dict,
+                     folder: str, filename: str, data: dict):
+        """Clean, merge and record one file. Returns ``(MergeStats, dropped_count)``
+        or a skip reason string; raises on failure (the caller records it)."""
+        import tempfile
+        from datetime import date
+
+        from src.library.ingest_core.clean import clean_extraction, is_v2_generated
+        from src.library.ingest_core.merge import FileMeta, merge_extraction
+        from src.library.ingest_core.ordering import scan_file
+        from src.library.ingest_core.runner import has_content
+
+        file_bytes = self.backend.read_bytes(session.get_upload_key(file_id))
+        if not file_bytes:
+            raise FileNotFoundError("uploaded file is missing or empty")
+
+        suffix = Path(filename).suffix or f".{entry.get('type') or 'pdf'}"
+        with tempfile.NamedTemporaryFile(suffix=suffix, delete=False) as tmp:
+            tmp.write(file_bytes)
+            tmp_path = Path(tmp.name)
+        try:
+            if is_v2_generated(tmp_path):
+                return "v2_generated"
+            scan = scan_file(tmp_path)
+        finally:
+            tmp_path.unlink(missing_ok=True)
+        order_date = scan.last_day or date.today()
+
+        cleaned, dropped = clean_extraction(data)
+        if not has_content(cleaned):
+            # nothing left after cleaning: do not record, so a later run can ingest it
+            return "empty"
+        rel_key = f"{folder}/{filename}"
+        meta = FileMeta(source_file=rel_key, order_date=order_date, fmt=scan.fmt, folder=folder)
+        stats = merge_extraction(db_service, cleaned, meta)
+
+        # Copy source file to aig-library (only on local filesystem)
+        if self.library_path:
+            dest_dir = self.library_path / folder
+            dest_dir.mkdir(parents=True, exist_ok=True)
+            dest_file = dest_dir / filename
+            if not dest_file.exists():
+                dest_file.write_bytes(file_bytes)
+
+        covered = cleaned.get("covered_cities")
+        covered = [c for c in covered if isinstance(c, str) and c.strip()] \
+            if isinstance(covered, list) else []
+        db_service.record_processed_file(rel_key, {
+            "text_hash": scan.text_hash,
+            "order_date": order_date.isoformat(),
+            "fmt": scan.fmt,
+            "folder": folder,
+            "covered_cities": covered,
+            "processed_at": datetime.now(timezone.utc).isoformat(),
+        })
+        db_service.add_folder_coverage(folder, covered)
+        return stats, len(dropped)

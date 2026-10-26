@@ -21,6 +21,12 @@ console = Console()
 DB_VERSION = "1.2"
 CHECKPOINT_EVERY = 10
 LOG_DIR_NAME = "_logs"
+MAX_UNCAPPED_FILES = 5
+LEGACY_INDEX_MESSAGE = (
+    "This library was built by the old ingester: its processed-file records have no "
+    "content hash, so a rebuild would re-extract and re-pay for every file. Use the "
+    "plan/rebuild workflow into a new folder instead."
+)
 
 
 class LibraryBuilder:
@@ -62,7 +68,13 @@ class LibraryBuilder:
             found.append((f, rel.parts[0]))
         return found
 
-    def build_database(self, output_path: Optional[Path] = None, force: bool = False, workers: Optional[int] = None) -> dict:
+    def build_database(
+        self,
+        output_path: Optional[Path] = None,
+        force: bool = False,
+        workers: Optional[int] = None,
+        max_usd: Optional[float] = None,
+    ) -> dict:
         """Build or incrementally update the sharded library database.
 
         Scans every DOCX/PDF in the subfolders of ``library_path`` (folder =
@@ -79,10 +91,19 @@ class LibraryBuilder:
         Only directory outputs are supported; a ``.json`` path raises
         ``ValueError``. The run log goes to ``<output_path>/_logs/``.
 
+        Cost guards (each raises ``ValueError`` before any extraction):
+
+        - an existing index whose ``_processed_files`` holds a record without
+          ``text_hash`` was built by the old ingester; every file would be
+          re-extracted, so the build refuses (with or without ``force``);
+        - more than ``MAX_UNCAPPED_FILES`` files to extract requires
+          ``max_usd``, which is passed to ``run_ingest`` as the cost ceiling.
+
         Returns ``{"version", "built_at", "destinations": {city: shard},
         "_processed_files", "_folder_coverage"[, "_review_status"]}``.
         """
         from src.library.ingest_core import run_ingest
+        from src.library.ingest_core.clean import is_v2_generated
         from src.library.ingest_core.ordering import order_files, scan_file
         from src.library.ingest_core.runner import PlanEntry
         from src.library.ui.services.db_service import LibraryDBService
@@ -94,10 +115,11 @@ class LibraryBuilder:
         output_path.mkdir(parents=True, exist_ok=True)
 
         db = LibraryDBService(LocalStorageBackend(output_path))
+        existing = db._index.get("_processed_files") or {}
+        if any(not (isinstance(r, dict) and r.get("text_hash")) for r in existing.values()):
+            raise ValueError(LEGACY_INDEX_MESSAGE)
         if force:
-            db._index["_processed_files"] = {}
-        db._index["version"] = DB_VERSION
-        db._index["built_at"] = datetime.now().isoformat()
+            db.clear_processed_files()
 
         discovered = self._discover()
         folder_of = {path: folder for path, folder in discovered}
@@ -109,6 +131,21 @@ class LibraryBuilder:
         ]
         skipped = [o for o in ordered if o.skipped_reason is not None]
 
+        processed = db._index.get("_processed_files") or {}
+        to_extract = [
+            e for e in plan
+            if (processed.get(f"{e.folder}/{e.path.name}") or {}).get("text_hash") != e.text_hash
+            and not is_v2_generated(e.path)
+        ]
+        console.print(f"\n  Files to extract (paid AI calls): {len(to_extract)}")
+        if len(to_extract) > MAX_UNCAPPED_FILES and max_usd is None:
+            raise ValueError(
+                f"{len(to_extract)} files would be extracted; --max-usd is required "
+                f"for more than {MAX_UNCAPPED_FILES} files"
+            )
+        db._index["version"] = DB_VERSION
+        db._index["built_at"] = datetime.now().isoformat()
+
         num_workers = workers if workers is not None else self.workers
         console.print("\n[bold]Building library database...[/bold]")
         console.print(f"  Files in library:  {len(discovered)}")
@@ -119,7 +156,8 @@ class LibraryBuilder:
             console.print(f"  [dim]skip {o.scan.path.relative_to(self.library_path)}: {o.skipped_reason}[/dim]")
 
         report = run_ingest(plan, db, self.client, log_dir=output_path / LOG_DIR_NAME,
-                            workers=num_workers, checkpoint_every=CHECKPOINT_EVERY)
+                            workers=num_workers, max_usd=max_usd,
+                            checkpoint_every=CHECKPOINT_EVERY)
 
         database: dict = {
             "version": db._index.get("version", DB_VERSION),

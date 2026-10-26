@@ -78,6 +78,10 @@ class LibraryDBService:
         self._index["_blocklist"] = [dict(e) for e in entries]
         self._save_index()
 
+    def clear_processed_files(self) -> None:
+        """Forget every processed-file record (in memory; call ``save_index``)."""
+        self._index["_processed_files"] = {}
+
     def record_processed_file(self, rel_key: str, info: dict) -> None:
         """Record a processed file in the index (in memory; call ``save_index``)."""
         self._index.setdefault("_processed_files", {})[rel_key] = dict(info)

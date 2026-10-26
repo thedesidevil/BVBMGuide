@@ -95,3 +95,37 @@ def test_is_v2_generated(tmp_path):
     assert is_v2_generated(c) is False
     assert is_v2_generated(d) is False
     assert is_v2_generated(tmp_path / "missing.docx") is False
+
+
+def _tip_kept(text):
+    out, dropped = clean_extraction({"safety_tips": [{"tip": text}]})
+    return len(out["safety_tips"]) == 1 and dropped == []
+
+
+def _tip_reason(text):
+    out, dropped = clean_extraction({"safety_tips": [{"tip": text}]})
+    return [d["reason"] for d in dropped]
+
+
+def test_lowercase_verify_and_check_kept():
+    assert _tip_kept("Verify the taxi has a meter")
+    assert _tip_kept("Double-check: carry cash")
+
+
+def test_uppercase_markers_still_dropped():
+    assert _tip_reason("⚠ VERIFY: price") == ["marker"]
+    assert _tip_reason("CHECK: hours") == ["marker"]
+
+
+def test_no_longer_not_client_specific():
+    assert _tip_kept("Booking no longer possible")
+    assert _tip_kept("Reservation no longer needed")
+    assert _tip_reason("Booking no. 12345") == ["client_specific"]
+    assert _tip_reason("Booking ref ABC") == ["client_specific"]
+    assert _tip_reason("Confirmation number 9") == ["client_specific"]
+    assert _tip_reason("Reservation ID 9") == ["client_specific"]
+
+
+def test_day_of_the_dead_kept_and_ai_chatter_dropped():
+    assert _tip_kept("Day of the Dead Museum")
+    assert _tip_reason("as an AI language model") == ["chatter"]

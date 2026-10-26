@@ -83,7 +83,7 @@ Facts containing prices or provider names are stored as written; v2 already mark
 
 ### 5.3 Dropped on purpose
 - Client-specific text: names, travel dates, booking references, "your hotel", itinerary-day wording. The prompt must say so and the post-processor must reject items matching client-name/booking patterns.
-- Any text containing `⚠`, "VERIFY", "ADD RESTAURANT", "PRICE UNKNOWN", "WRITE PERSONAL LETTER", "CHECK:" (v2 marker strings from `Marker.render`) is dropped before dedup. Detection is by text patterns only for now (my call); v2's renderer could later stamp a document property on its output to make this exact, which is out of scope here.
+- Any text containing `⚠`, "VERIFY", "ADD RESTAURANT", "PRICE UNKNOWN", "WRITE PERSONAL LETTER", "CHECK:" (v2 marker strings from `Marker.render`) is dropped before dedup. Detection is by text patterns, plus an exact check: a file carrying the invisible v2 run id (custom document property `bvbm_run_id`) is recognised as v2-generated. The ingester reads that property; stamping it is the generation feedback-loop project (section 13).
 - Assistant chatter ("I would recommend", "Here are clear…") is dropped (same patterns as v2's `assistant_chatter` QC rule).
 
 ## 6. Ordering and the conflict rule
@@ -101,6 +101,8 @@ Items from the old format never overwrite items from the new format for the same
 Exact duplicate files (208 unique texts across 287 files) are processed once.
 
 **Dating details (my call).** Ordering is resolved before any paid extraction: a free pre-pass reads each file's text (no AI) to find the day dates and detect the format, so the processing order is fixed up front and can be shown to the user. A modified date shared by more than 5 files is treated as a bulk-copy date. Day dates without a year take the year of the file's modified date; if that is itself a bulk-copy date, the file is flagged in the run log for the user to date by hand.
+
+**Measured limit of the pre-pass (2026-10-26).** Inferring the year from weekday-plus-date day headers resolves only 24 of the 117 bulk-dated files (and 39 of 170 others); the rest have no weekday dates. So for roughly 90 bulk-dated files the order comes from format (new beats old) and then file name. The run log lists every file ordered by that last fallback so the user can correct the order before the paid run.
 
 ## 7. One ingest path
 
@@ -155,3 +157,7 @@ The team's hand edits to the library are precious and must not be lost. Decided 
 None. The user's answers on 2026-10-26: a hand edit stays when a later AIG disagrees; the user does not remember the earlier edits, so section 8 is a small review workflow.
 
 Calls made after the builder check are marked "my call" in sections 5.3, 6, 7, 8, 9 and 10. Decisions to confirm by reading: the model comparison (Sonnet 5.5 vs Haiku 5.5), the edit-review approach in section 8, and dropping client-specific text at ingest.
+
+## 13. Follow-on, not in this project: generation feedback loop
+
+User idea (2026-10-26): keep each generated guide in S3 with an invisible id embedded in the .docx, compare the team's corrected copies against what the program produced, and update the logic or the library from the differences; also write information learned during generation into the library to reduce Google spend. This is a separate project with its own design, after this one. Two points touch this design: (1) the ingester already reads the `bvbm_run_id` property to recognise v2-generated files (section 5.3); (2) writing learned data into the library reverses the earlier decision that nothing is saved to the library during generation, so that is confirmed with the user before that project starts. Recorded in memory as `generation-feedback-loop`.

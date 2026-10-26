@@ -64,6 +64,31 @@ class LibraryDBService:
                 names.append(key[:-5])
         return names
 
+    def list_city_shards(self) -> list[str]:
+        """Names of top-level shards whose names do not start with ``_``."""
+        return [n for n in self.get_all_city_names() if not n.startswith("_")]
+
+    def save_index(self) -> None:
+        self._save_index()
+
+    def get_blocklist(self) -> list[dict]:
+        return list(self._index.get("_blocklist", []))
+
+    def set_blocklist(self, entries: list[dict]) -> None:
+        self._index["_blocklist"] = [dict(e) for e in entries]
+        self._save_index()
+
+    def record_processed_file(self, rel_key: str, info: dict) -> None:
+        """Record a processed file in the index (in memory; call ``save_index``)."""
+        self._index.setdefault("_processed_files", {})[rel_key] = dict(info)
+
+    def add_folder_coverage(self, folder: str, cities: list[str]) -> None:
+        """Union ``cities`` into the folder's coverage (in memory; call ``save_index``)."""
+        current = self._index.setdefault("_folder_coverage", {}).setdefault(folder, [])
+        for city in cities:
+            if city not in current:
+                current.append(city)
+
     def get_tree(self) -> dict:
         coverage = self.get_folder_coverage()
         review_status = self.get_review_status()

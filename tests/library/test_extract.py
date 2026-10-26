@@ -68,8 +68,29 @@ def test_prompt_names_every_list_and_field():
         assert f'"{field}"' in EXTRACTION_PROMPT, field
     rendered = EXTRACTION_PROMPT.format(text="DOC BODY")
     assert "DOC BODY" in rendered
-    for phrase in ("your hotel", "VERIFY", " | "):
+    for phrase in ("your hotel", " | "):
         assert phrase in rendered
+
+
+def test_prompt_states_rules():
+    rendered = EXTRACTION_PROMPT.format(text="DOC BODY")
+    for marker in ("ADD RESTAURANT", "PRICE UNKNOWN", "WRITE PERSONAL LETTER",
+                   "CHECK:", "VERIFY", "\u26a0"):
+        assert marker in rendered, marker
+    assert "only when a heading or table column the restaurant appears under states the meal" in rendered
+    assert "short canonical wording" in rendered
+    assert "repeated in each of those countries' country_content entries" in rendered
+    assert "section heading the restaurant sits under" in rendered
+    assert "Dinner Options in Chamonix Town Centre" in rendered
+    assert "nearby_landmarks: landmarks the text places near the restaurant" in rendered
+    assert "Type of souvenir | Category | Where to buy" in rendered
+    assert '"What to Buy"' in rendered
+    assert "city is the origin city" in rendered
+    assert "Visa and entry requirements: put them in dos_donts only if phrased as advice" in rendered
+    for placeholder in ('"<breakfast|lunch|dinner>"', '"<sim|esim|wifi>"',
+                        '"<family|couples|friends|solo|...>"',
+                        '"<true only if the text says so, else omit>"'):
+        assert placeholder in rendered, placeholder
 
 
 def test_single_pass_returns_data_and_token_deltas(tmp_path):
@@ -167,3 +188,40 @@ def test_unreadable_returns_none_without_calling(tmp_path):
     path.write_bytes(b"not a docx")
     assert extract_file(client, path) is None
     assert client.calls == []
+
+
+def test_merge_chunks_ignores_malformed_fields():
+    merged = merge_chunks([
+        {"covered_cities": "Florence", "city_countries": [["Florence", "Italy"]],
+         "country_content": {"country": "Italy"},
+         "restaurants": [{"name": "Trattoria Mario", "city": "Florence"}]},
+        "not a dict",
+        ["also", "not"],
+        {"covered_cities": ["Rome", 5], "city_countries": {"Rome": "Italy"},
+         "country_content": ["bad", {"country": "Italy", "currency": "EUR"}]},
+    ])
+    assert merged["covered_cities"] == ["Rome"]
+    assert merged["city_countries"] == {"Rome": "Italy"}
+    assert merged["country_content"] == [{"country": "Italy", "currency": "EUR"}]
+    assert merged["restaurants"] == [{"name": "Trattoria Mario", "city": "Florence"}]
+
+
+def test_extract_file_survives_malformed_chunks(tmp_path, monkeypatch):
+    text = ("z" * 1000 + "\n\n") * ((SINGLE_PASS_LIMIT // 1000) + 20)
+    monkeypatch.setattr(extract_mod, "read_text", lambda p: text)
+    client = StubClient([
+        ["a", "list", "not", "a", "dict"],
+        {"covered_cities": "Florence", "city_countries": ["Florence", "Italy"],
+         "restaurants": [{"name": "Roscioli", "city": "Rome"}]},
+    ])
+    result = extract_file(client, tmp_path / "big.docx")
+    assert result is not None
+    assert result.chunks == 2
+    assert result.data == {"restaurants": [{"name": "Roscioli", "city": "Rome"}]}
+
+
+def test_extract_file_none_when_no_chunk_is_a_dict(tmp_path, monkeypatch):
+    text = ("w" * 1000 + "\n\n") * ((SINGLE_PASS_LIMIT // 1000) + 20)
+    monkeypatch.setattr(extract_mod, "read_text", lambda p: text)
+    client = StubClient([["x"], "[1, 2]"])
+    assert extract_file(client, tmp_path / "big.docx") is None

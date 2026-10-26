@@ -43,6 +43,8 @@ def _merge_lists(target: dict, source: dict, seen: dict[str, set], skip: set[str
         if name in skip or not isinstance(items, list):
             continue
         out = target.setdefault(name, [])
+        if not isinstance(out, list):
+            continue
         keys = seen.setdefault(name, set())
         for item in items:
             if not isinstance(item, dict):
@@ -74,16 +76,27 @@ def merge_chunks(results: list[dict]) -> dict:
     for r in results:
         if not isinstance(r, dict):
             continue
-        for c in r.get("covered_cities") or []:
-            if c not in covered:
-                covered.append(c)
-        for city, country in (r.get("city_countries") or {}).items():
-            city_countries.setdefault(city, country)
+        cov = r.get("covered_cities")
+        if isinstance(cov, list):
+            for c in cov:
+                if isinstance(c, str) and c.strip() and c not in covered:
+                    covered.append(c)
+        cc = r.get("city_countries")
+        if isinstance(cc, dict):
+            for city, country in cc.items():
+                if isinstance(country, str) and country.strip():
+                    city_countries.setdefault(city, country)
         _merge_lists(merged, r, seen, special)
-        for entry in r.get("country_content") or []:
-            if not isinstance(entry, dict) or not entry.get("country"):
+        content = r.get("country_content")
+        if not isinstance(content, list):
+            continue
+        for entry in content:
+            if not isinstance(entry, dict):
                 continue
-            ckey = norm_key(entry["country"])
+            country = entry.get("country")
+            if not isinstance(country, str) or not country.strip():
+                continue
+            ckey = norm_key(country)
             target = countries.get(ckey)
             if target is None:
                 target = countries[ckey] = {"country": entry["country"]}
@@ -143,7 +156,7 @@ def extract_file(client: AIClient, path: Path) -> Extraction | None:
     if not results:
         return None
 
-    data = results[0] if len(results) == 1 else merge_chunks(results)
+    data = results[0] if len(chunks) == 1 else merge_chunks(results)
     usd1 = client.cost_usd
     usd = None if usd0 is None or usd1 is None else usd1 - usd0
     return Extraction(

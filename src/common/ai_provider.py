@@ -20,6 +20,10 @@ _MODEL_PRICING: list[tuple[str, float, float]] = [
     ("gpt-6-luna",       0.10,  0.50),
     ("claude-fable-5",   10.00, 50.00),
     ("claude-mythos-5",  10.00, 50.00),
+    ("claude-sonnet-5",   2.00, 10.00),
+    # Haiku 5.5 prompts above 100K tokens cost $0.50/$2.50; cost_usd stays flat
+    # and the pilot report flags any such prompt.
+    ("claude-haiku-5",    0.10,  0.50),
     ("claude-opus-4",     5.00, 25.00),
     ("claude-sonnet-4",   3.00, 15.00),
     ("claude-haiku-4",    1.00,  5.00),

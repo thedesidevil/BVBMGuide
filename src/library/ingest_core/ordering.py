@@ -3,7 +3,8 @@
 Order (spec section 6): format rank (old before new), then a trusted date
 (file mtime unless it is a bulk-copy date, else the latest travel day found
 in weekday-plus-date day headers), then file name. Duplicates and files that
-do not look like AIGs are kept in the list but marked skipped and sorted last.
+do not look like AIGs (or cannot be read) are kept in the list but marked
+skipped and sorted last.
 """
 
 from __future__ import annotations
@@ -23,6 +24,8 @@ MATCH_RATIO = 0.6
 MIN_HEADERS = 2
 MIN_OLD_ROWS = 3
 MIN_DAY_LINES = 2
+MIN_DATED_LINES = 3
+HEAD_LINES = 3
 
 # Table first cells (old format): "Day 1", "Day 2", ...
 _DAY_RE = re.compile(r"^\s*day\s*\d+", re.IGNORECASE)
@@ -53,11 +56,31 @@ def _alt(words) -> str:
 
 _WD = rf"(?P<wd>{_alt(_WEEKDAYS)})\.?"
 _MO = rf"(?P<mo>{_alt(_MONTHS)})\.?"
+_WD_ANY = rf"(?:{_alt(_WEEKDAYS)})\.?"
+_MO_ANY = rf"(?:{_alt(_MONTHS)})\.?"
 _DD = r"(?P<dd>\d{1,2})(?:st|nd|rd|th)?"
 # "Mon, 12 Jan" / "Monday 12th of January"
 _DAY_FIRST = re.compile(rf"\b{_WD},?\s+{_DD}\s+(?:of\s+)?{_MO}\b", re.IGNORECASE)
 # "Monday, Jan 12" / "Mon Jan 12th"
 _MONTH_FIRST = re.compile(rf"\b{_WD},?\s+{_MO}\s+{_DD}\b", re.IGNORECASE)
+
+# Day lines in guides that never write "Day N" (after an optional emoji/bullet):
+# a weekday followed by "|", ",", ":" or a date ("Saturday | Arrival",
+# "Sat, Nov 30 | ...", "Monday 12 Jan ..."), or
+# a month + day number followed by "|", ":" or a dash ("Mar 21 | ...",
+# "📅 May 29: ...", "Dec 16, Monday | ..."), or day + month ("21 May – ...").
+_WEEKDAY_LINE_RE = re.compile(
+    rf"^[\W_]*{_WD_ANY}\b\s*(?:[|,:]|\d{{1,2}}\b|{_MO_ANY}\b)", re.IGNORECASE
+)
+_MONTH_LINE_RE = re.compile(
+    rf"^[\W_]*{_MO_ANY}\s+\d{{1,2}}(?:st|nd|rd|th)?\b(?:,?\s*{_WD_ANY})?\s*[|:\u2013\u2014-]",
+    re.IGNORECASE,
+)
+# Same, date-first: "21 May – Arrival in Cairns".
+_DAY_MONTH_LINE_RE = re.compile(
+    rf"^[\W_]*\d{{1,2}}(?:st|nd|rd|th)?\s+{_MO_ANY}\b(?:,?\s*{_WD_ANY})?\s*[|:\u2013\u2014-]",
+    re.IGNORECASE,
+)
 
 
 @dataclass(frozen=True)
@@ -68,6 +91,8 @@ class FileScan:
     fmt: Literal["new", "old"]
     last_day: date | None
     looks_like_aig: bool
+    head_lines: tuple[str, ...] = ()
+    unreadable: bool = False
 
 
 @dataclass
@@ -115,11 +140,13 @@ def _infer_last_day(text: str) -> date | None:
         return None  # ambiguous between years
     year = best[0][1]
     days = []
-    for _, dd, mo in headers:
+    for wd, dd, mo in headers:
         try:
-            days.append(date(year, mo, dd))
+            d = date(year, mo, dd)
         except ValueError:
             continue
+        if d.weekday() == wd:
+            days.append(d)
     return max(days) if days else None
 
 
@@ -147,7 +174,23 @@ def _has_day_table(path: Path) -> bool:
 
 
 def _file_mtime(path: Path) -> date:
-    return date.fromtimestamp(path.stat().st_mtime)
+    try:
+        return date.fromtimestamp(path.stat().st_mtime)
+    except (OSError, ValueError, OverflowError):
+        return date.min
+
+
+def _looks_like_aig(lines: list[str]) -> bool:
+    if sum(1 for line in lines if _DAY_LINE_RE.match(line)) >= MIN_DAY_LINES:
+        return True
+    dated = sum(
+        1
+        for line in lines
+        if _WEEKDAY_LINE_RE.match(line)
+        or _MONTH_LINE_RE.match(line)
+        or _DAY_MONTH_LINE_RE.match(line)
+    )
+    return dated >= MIN_DATED_LINES
 
 
 def scan_file(path: Path) -> FileScan:
@@ -167,6 +210,7 @@ def scan_file(path: Path) -> FileScan:
             fmt="new",
             last_day=None,
             looks_like_aig=False,
+            unreadable=True,
         )
 
     fmt: Literal["new", "old"] = "new"
@@ -177,14 +221,16 @@ def scan_file(path: Path) -> FileScan:
         except Exception:
             fmt = "new"
 
-    day_lines = sum(1 for line in text.splitlines() if _DAY_LINE_RE.match(line))
+    lines = text.splitlines()
+    head = tuple(line.strip() for line in lines if line.strip())[:HEAD_LINES]
     return FileScan(
         path=path,
         mtime=mtime,
         text_hash=text_hash(text),
         fmt=fmt,
         last_day=_infer_last_day(text),
-        looks_like_aig=day_lines >= MIN_DAY_LINES,
+        looks_like_aig=_looks_like_aig(lines),
+        head_lines=head,
     )
 
 
@@ -197,12 +243,31 @@ def _name_key(scan: FileScan) -> tuple[str, str]:
 
 
 def order_files(scans: list[FileScan], bulk_threshold: int = 5) -> list[OrderedFile]:
+    """Fix the processing order (oldest first; later files overwrite earlier).
+
+    Sort key: processable before skipped, format rank (old=0, new=1),
+    ``order_date or date.min``, file name. Undated files therefore sort before
+    dated files of the same format, so dated data overwrites undated data: a
+    conservative choice, since undated files have no trusted date.
+
+    Skip precedence: ``unreadable``, then ``not_an_aig``, then ``duplicate``.
+    Duplicates are detected only among processable files; the first by file
+    name is kept and the rest get ``duplicate_of``.
+    """
     mtime_counts = Counter(s.mtime for s in scans)
+
+    def _base_reason(s: FileScan) -> str | None:
+        if s.unreadable:
+            return "unreadable"
+        if not s.looks_like_aig:
+            return "not_an_aig"
+        return None
 
     # Duplicates: first by path name keeps the text, the rest are skipped.
     by_hash: dict[str, list[FileScan]] = defaultdict(list)
     for s in scans:
-        by_hash[s.text_hash].append(s)
+        if _base_reason(s) is None:
+            by_hash[s.text_hash].append(s)
     dup_of: dict[int, Path] = {}
     for group in by_hash.values():
         group = sorted(group, key=_name_key)
@@ -217,12 +282,9 @@ def order_files(scans: list[FileScan], bulk_threshold: int = 5) -> list[OrderedF
             order_date, basis = s.last_day, "travel"
         else:
             order_date, basis = None, "format"  # refined below
-        if not s.looks_like_aig:
-            reason = "not_an_aig"
-        elif id(s) in dup_of:
+        reason = _base_reason(s)
+        if reason is None and id(s) in dup_of:
             reason = "duplicate"
-        else:
-            reason = None
         entries.append(
             OrderedFile(
                 scan=s,
@@ -255,6 +317,16 @@ def order_files(scans: list[FileScan], bulk_threshold: int = 5) -> list[OrderedF
     return entries
 
 
+def _md(value: str) -> str:
+    return value.replace("|", "\\|")
+
+
+def _reason_text(e: OrderedFile) -> str:
+    if e.skipped_reason == "duplicate" and e.duplicate_of is not None:
+        return f"duplicate of {e.duplicate_of.name}"
+    return e.skipped_reason or ""
+
+
 def write_order_report(ordered: list[OrderedFile], out: Path) -> None:
     out = Path(out)
     processed = [e for e in ordered if e.skipped_reason is None]
@@ -274,13 +346,12 @@ def write_order_report(ordered: list[OrderedFile], out: Path) -> None:
             position = str(pos)
         else:
             position = "-"
-        reason = e.skipped_reason or ""
-        if e.duplicate_of is not None:
-            reason = f"{reason} of {e.duplicate_of.name}"
-        name = e.scan.path.name.replace("|", "\\|")
+        reason = _md(_reason_text(e))
+        name = _md(e.scan.path.name)
+        order_date = e.order_date.isoformat() if e.order_date else ""
+        basis = e.basis if e.skipped_reason is None else ""
         lines.append(
-            f"| {position} | {name} | {e.order_date.isoformat() if e.order_date else ''} "
-            f"| {e.basis} | {e.scan.fmt} | {reason.replace('|', '\\|')} |"
+            f"| {position} | {name} | {order_date} | {basis} | {e.scan.fmt} | {reason} |"
         )
 
     fallback = [e for e in processed if e.basis in ("format", "name")]
@@ -296,5 +367,26 @@ def write_order_report(ordered: list[OrderedFile], out: Path) -> None:
         lines += [f"- {e.scan.path.name} ({e.basis}, {e.scan.fmt})" for e in fallback]
     else:
         lines.append("- none")
+
+    skipped = [e for e in ordered if e.skipped_reason is not None]
+    lines += [
+        "",
+        "## Skipped files (check these)",
+        "",
+        "Rescue any real guide skipped by mistake. For non-guides and unreadable "
+        "files the first lines of text are shown.",
+        "",
+    ]
+    if not skipped:
+        lines.append("- none")
+    for e in skipped:
+        lines.append(f"- {e.scan.path.name}: {_reason_text(e)}")
+        if e.skipped_reason in ("not_an_aig", "unreadable"):
+            if e.scan.unreadable:
+                lines.append("    - (unreadable)")
+            elif e.scan.head_lines:
+                lines += [f"    - {line}" for line in e.scan.head_lines]
+            else:
+                lines.append("    - (no text)")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text("\n".join(lines) + "\n", encoding="utf-8")

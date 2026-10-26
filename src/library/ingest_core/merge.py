@@ -167,6 +167,18 @@ class _Merger:
         self.cities[name] = shard
         return shard
 
+    def existing_city(self, raw: str) -> _Shard | None:
+        """Shard for ``raw`` only if it exists in the DB or holds items written in
+        this call; never creates a new shard."""
+        target = norm_key(raw)
+        for shard in self.cities.values():
+            if norm_key(shard.key) == target:
+                return shard if (not shard.is_new or shard.changed) else None
+        name = resolve_city_shard(self.db, raw)
+        if self.db.get_city_data(name) is None:
+            return None
+        return self.city(name)
+
     def country(self, raw: str) -> _Shard:
         target = norm_key(raw)
         for name, shard in self.countries.items():
@@ -213,6 +225,11 @@ class _Merger:
             return
         if existing.get("_source_file") == self.meta.source_file:  # rule 4
             if _content(existing) == _content(item):
+                # same content; refresh provenance if the order date/format changed
+                for k in ("_source_date", "_source_format"):
+                    if existing.get(k) != self.provenance[k]:
+                        existing[k] = self.provenance[k]
+                        shard.changed = True
                 self.stats.bump(shard.key, "unchanged")
                 return
             if "_replaced_from" in existing:
@@ -275,7 +292,16 @@ def _manual_fields(item: dict) -> dict:
 
 
 def merge_extraction(db: LibraryDBService, data: dict, meta: FileMeta) -> MergeStats:
-    """Merge one cleaned extraction into city and country shards."""
+    """Merge one cleaned extraction into city and country shards.
+
+    Blocklist entries are ``{"city": <shard>, "list": <list name>, "key": <item_key>}``.
+    For a city item ``<shard>`` is the city shard name; for a country-level item it
+    is ``"_country/<Country>"`` (the same key used in ``MergeStats.by_city``). Shard
+    names are compared through ``norm_key``, so case/accent variants match.
+
+    City-level ``currency`` is set only on city shards that already exist or that
+    receive items in this call; ``city_countries`` never creates a shard.
+    """
     m = _Merger(db, meta)
 
     for list_name in CITY_LISTS:
@@ -288,8 +314,9 @@ def merge_extraction(db: LibraryDBService, data: dict, meta: FileMeta) -> MergeS
             targets: list[str] = []
             if list_name in TIP_LISTS and isinstance(item.get("cities"), list):
                 targets = [c for c in item["cities"] if isinstance(c, str) and c.strip()]
-            elif isinstance(item.get("city"), str) and item["city"].strip():
+            if not targets and isinstance(item.get("city"), str) and item["city"].strip():
                 targets = [item["city"]]
+            # no usable city: skipped, nothing counted, nothing written
             seen: set[str] = set()
             for raw in targets:
                 shard = m.city(raw)
@@ -321,7 +348,9 @@ def merge_extraction(db: LibraryDBService, data: dict, meta: FileMeta) -> MergeS
                 for city, c in city_countries.items():
                     if (isinstance(city, str) and city.strip() and isinstance(c, str)
                             and norm_key(c) == norm_key(country)):
-                        m.set_currency(m.city(city), currency)
+                        city_shard = m.existing_city(city)
+                        if city_shard is not None:
+                            m.set_currency(city_shard, currency)
 
     m.flush()
     return m.stats

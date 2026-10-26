@@ -192,6 +192,7 @@ def test_currency_reaches_country_and_matching_city_shard(memory_db):
 def test_currency_older_file_does_not_overwrite(memory_db):
     def d(cur):
         return {"covered_cities": ["Rome"], "city_countries": {"Rome": "Italy"},
+                "restaurants": [_rest("R")],
                 "country_content": [{"country": "Italy", "currency": cur}]}
     merge_extraction(memory_db, d("EUR"), _meta("italy/new.docx", date(2025, 1, 1), "new"))
     merge_extraction(memory_db, d("ITL"), _meta("italy/old.docx", date(2026, 1, 1), "old"))
@@ -333,3 +334,104 @@ def test_db_helpers(memory_db, memory_backend):
     memory_db.set_blocklist([{"city": "Rome", "list": "restaurants", "key": "x"}])
     assert memory_db.get_blocklist() == [{"city": "Rome", "list": "restaurants", "key": "x"}]
     assert memory_backend.read_json("_index.json")["_blocklist"][0]["key"] == "x"
+
+
+# --- fix round 1 ---
+
+def test_same_file_new_order_date_refreshes_provenance(memory_db, memory_backend):
+    data = _data(restaurants=[_rest("R", hours="a")])
+    merge_extraction(memory_db, copy.deepcopy(data), _meta("italy/a.docx", date(2024, 1, 1)))
+    before = len(memory_backend.writes)
+    stats = merge_extraction(memory_db, copy.deepcopy(data), _meta("italy/a.docx", date(2025, 3, 4), "old"))
+    item = memory_db.get_city_data("Rome")["restaurants"][0]
+    assert item["_source_date"] == "2025-03-04"
+    assert item["_source_format"] == "old"
+    assert "_replaced_from" not in item
+    assert stats.unchanged == 1 and stats.replaced == 0
+    assert "Rome.json" in memory_backend.writes[before:]
+
+
+def test_same_file_identical_meta_zero_writes(memory_db, memory_backend):
+    data = _data(restaurants=[_rest("R", hours="a")])
+    merge_extraction(memory_db, copy.deepcopy(data), _meta())
+    before = len(memory_backend.writes)
+    stats = merge_extraction(memory_db, copy.deepcopy(data), _meta())
+    assert stats.unchanged == 1
+    assert memory_backend.writes[before:] == []
+
+
+def test_currency_never_creates_stub_city_shard(memory_db, memory_backend):
+    data = {
+        "covered_cities": ["Florence"],
+        "city_countries": {"Firenze": "Italy"},
+        "restaurants": [_rest("Za Za", "Florence")],
+        "country_content": [{"country": "Italy", "currency": "EUR"}],
+    }
+    merge_extraction(memory_db, data, _meta())
+    assert "Firenze.json" not in memory_backend.files
+    assert "currency" not in memory_db.get_city_data("Florence")
+    assert memory_db.get_country_data("Italy")["currency"] == "EUR"
+
+
+def test_currency_reaches_existing_shard_via_name_variant(memory_db):
+    memory_db.save_city_data("São Paulo", {"restaurants": []})
+    data = {"city_countries": {"sao paulo": "Brazil"},
+            "country_content": [{"country": "Brazil", "currency": "BRL"}]}
+    merge_extraction(memory_db, data, _meta())
+    assert memory_db.get_city_data("São Paulo")["currency"] == "BRL"
+    assert memory_db.list_city_shards() == ["São Paulo"]
+
+
+def test_currency_skips_city_whose_items_were_all_blocked(memory_db, memory_backend):
+    memory_db.set_blocklist([{"city": "Rome", "list": "restaurants", "key": "r"}])
+    merge_extraction(memory_db, _data(restaurants=[_rest("R")],
+                                      country_content=[{"country": "Italy", "currency": "EUR"}]),
+                     _meta())
+    assert "Rome.json" not in memory_backend.files
+
+
+def test_country_blocklist_entry_blocks_country_item(memory_db):
+    memory_db.set_blocklist([
+        {"city": "_country/Italy", "list": "tipping", "key": "tipping is not expected"},
+        {"city": "Rome", "list": "restaurants", "key": "r"},
+    ])
+    stats = merge_extraction(memory_db, _data(
+        restaurants=[_rest("R"), _rest("S")],
+        country_content=[{"country": "italy", "tipping": [{"tip": "Tipping is not expected"},
+                                                          {"tip": "Round up taxi fares"}]}],
+    ), _meta())
+    tips = [t["tip"] for t in memory_db.get_country_data("italy")["tipping"]]
+    assert tips == ["Round up taxi fares"]
+    assert stats.by_city["_country/italy"]["blocked"] == 1
+    assert stats.by_city["Rome"]["blocked"] == 1
+    assert stats.blocked == 2 and stats.added == 2
+
+
+def test_tip_with_empty_cities_falls_back_to_city(memory_db):
+    stats = merge_extraction(memory_db, _data(safety_tips=[
+        {"cities": [], "city": "Rome", "tip": "Watch for pickpockets"},
+        {"cities": ["  "], "city": "Rome", "tip": "Avoid unlicensed taxis"},
+    ]), _meta())
+    assert stats.added == 2
+    assert len(memory_db.get_city_data("Rome")["safety_tips"]) == 2
+
+
+def test_tip_with_no_usable_city_is_skipped(memory_db, memory_backend):
+    stats = merge_extraction(memory_db, _data(safety_tips=[
+        {"cities": [], "tip": "Watch for pickpockets"},
+        {"cities": [" "], "city": "  ", "tip": "Avoid unlicensed taxis"},
+    ]), _meta())
+    assert stats == MergeStats()
+    assert memory_backend.files == {}
+
+
+def test_duplicate_key_within_one_file_first_wins_and_idempotent(memory_db, memory_backend):
+    data = _data(restaurants=[_rest("Roscioli", hours="first"), _rest("roscioli", hours="second")])
+    s1 = merge_extraction(memory_db, copy.deepcopy(data), _meta())
+    shard = memory_db.get_city_data("Rome")
+    assert [r["hours"] for r in shard["restaurants"]] == ["first"]
+    assert s1.added == 1
+    snapshot = dict(memory_backend.files)
+    s2 = merge_extraction(memory_db, copy.deepcopy(data), _meta())
+    assert memory_backend.files == snapshot
+    assert s2.unchanged == 1 and s2.replaced == 0

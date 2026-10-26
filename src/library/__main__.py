@@ -34,7 +34,7 @@ def build(
     force: bool = typer.Option(
         False,
         "--force", "-f",
-        help="Force re-processing of all files (ignore cache)",
+        help="Re-extract and re-merge all files (clears the processed-files index; shards are kept)",
     ),
     workers: int = typer.Option(
         5,
@@ -553,7 +553,10 @@ def inspect(
 
     with Progress(SpinnerColumn(), TextColumn("[progress.description]{task.description}"), console=console) as progress:
         task = progress.add_task("Running AI extraction...", total=None)
-        data = builder._process_file(file_path)
+        from .ingest_core.extract import extract_file
+
+        extraction = extract_file(builder.client, file_path)
+        data = extraction.data if extraction else None
         progress.update(task, completed=True)
 
     if data is None:

@@ -1,74 +1,30 @@
-"""Build a structured database from the AIG library using AI extraction."""
+"""Build the library database from the AIG library through the shared ingest core.
+
+``LibraryBuilder`` is a thin CLI caller of ``src.library.ingest_core``: it scans
+and orders the library files, then runs ``run_ingest`` (extract, clean, ordered
+newer-wins merge, provenance, index/coverage, country shards).
+``LibraryDatabase`` is the read-only sharded DB reader.
+"""
 
 import json
-import os
-import re
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime
 from pathlib import Path
 from typing import Optional
-from datetime import datetime
 
-import fitz  # PyMuPDF for PDF extraction
-from docx import Document
 from rich.console import Console
-from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn
 
 from src.common.ai_provider import get_ai_client
-from src.common.doc_extractor import (
-    repair_truncated_json as _repair_truncated_json,
-    sanitize_text as _sanitize_text,
-    call_and_parse as _shared_call_and_parse,
-    split_into_chunks as _split_into_chunks_shared,
-    merge_extraction_results as _merge_extraction_results_shared,
-    LIBRARY_EXTRACTION_PROMPT,
-    SINGLE_PASS_LIMIT,
-    CHUNK_OVERLAP,
-)
 
 
 console = Console()
 
 DB_VERSION = "1.2"
 CHECKPOINT_EVERY = 10
-
-
-def _checkpoint_save(database: dict, output_path: Path) -> None:
-    """Write database to disk as an incremental checkpoint (flat or sharded)."""
-    try:
-        if output_path.suffix == '.json':
-            with open(output_path, 'w', encoding='utf-8') as f:
-                json.dump(database, f, indent=2, ensure_ascii=False)
-        else:
-            output_path.mkdir(parents=True, exist_ok=True)
-            index = {k: v for k, v in database.items() if k != 'destinations'}
-            with open(output_path / '_index.json', 'w', encoding='utf-8') as f:
-                json.dump(index, f, indent=2, ensure_ascii=False)
-            for dest, data in database['destinations'].items():
-                safe_dest = dest.replace('/', '-').replace('\\', '-')
-                with open(output_path / f'{safe_dest}.json', 'w', encoding='utf-8') as f:
-                    json.dump(data, f, indent=2, ensure_ascii=False)
-        console.print(
-            f"[dim]  checkpoint saved "
-            f"({len(database['_processed_files'])} files)[/dim]"
-        )
-    except Exception as e:
-        console.print(f"[yellow]Checkpoint save failed:[/yellow] {e}")
-
-
-_INCLUDED_PATTERN = re.compile(r'\bincluded\b|\bcovered\b|\bcomplementary\b|\bfree of charge\b|\bbooked\b|\bpre-booked\b', re.IGNORECASE)
-_HAS_PRICE = re.compile(r'[$€£¥₹₩฿]|\b\d+\s*(USD|EUR|GBP|JPY|KZT|TRY|CHF|INR|AED|SGD|THB|MYR|IDR)\b', re.IGNORECASE)
-
-
-def _clean_entry_fees(data: dict) -> None:
-    """Remove entry_fee values that describe tour inclusions rather than real venue costs."""
-    for attraction in data.get("attractions", []):
-        fee = attraction.get("entry_fee")
-        if fee and _INCLUDED_PATTERN.search(fee) and not _HAS_PRICE.search(fee):
-            attraction.pop("entry_fee", None)
+LOG_DIR_NAME = "_logs"
 
 
 class LibraryBuilder:
-    """Builds a structured database from the AIG library using AI."""
+    """Builds the library database from the AIG library using the ingest core."""
 
     def __init__(
         self,
@@ -88,381 +44,110 @@ class LibraryBuilder:
             model=model,
         )
 
-    def build_database(self, output_path: Optional[Path] = None, force: bool = False, workers: Optional[int] = None) -> dict:
-        """Build or incrementally update the library database.
+    def _discover(self) -> list[tuple[Path, str]]:
+        """``(path, folder)`` for every DOCX/PDF under a top-level subfolder.
 
-        Scans all DOCX/PDF files in subfolders of library_path.
-        Skips files whose relative-path key is already in _processed_files
-        with an unchanged mtime (unless force=True).
+        ``folder`` is the top-level subfolder name. Files directly in
+        ``library_path`` and anything under ``failed-processing/`` are ignored.
         """
-        if output_path is None:
-            output_path = Path("library_db")
-
-        existing_db = None
-        processed_files: dict = {}
-
-        if output_path.exists() and not force:
-            try:
-                if output_path.suffix == '.json':
-                    with open(output_path, 'r', encoding='utf-8') as f:
-                        existing_db = json.load(f)
-                else:
-                    index_path = output_path / '_index.json'
-                    if index_path.exists():
-                        with open(index_path, 'r', encoding='utf-8') as f:
-                            existing_db = json.load(f)
-                        # Load destination data from individual shard files — _index.json
-                        # only holds metadata, not destinations.
-                        existing_db["destinations"] = {}
-                        for shard in output_path.glob("*.json"):
-                            if shard.name.startswith("_"):
-                                continue
-                            dest_name = shard.stem
-                            with open(shard, 'r', encoding='utf-8') as f:
-                                existing_db["destinations"][dest_name] = json.load(f)
-                processed_files = existing_db.get("_processed_files", {})
-                console.print(f"[dim]Found existing database with {len(processed_files)} processed files[/dim]")
-            except Exception:
-                existing_db = None
-
-        database: dict = {
-            "version": DB_VERSION,
-            "built_at": datetime.now().isoformat(),
-            "destinations": existing_db.get("destinations", {}) if existing_db else {},
-            "_processed_files": processed_files,
-            "_folder_coverage": existing_db.get("_folder_coverage", {}) if existing_db else {},
-        }
-        if existing_db and "_review_status" in existing_db:
-            database["_review_status"] = existing_db["_review_status"]
-
-        # Discover all DOCX/PDF files (skip failed-processing/)
-        all_files = [
-            f for f in self.library_path.rglob("*")
-            if f.suffix.lower() in (".docx", ".pdf")
-            and "failed-processing" not in f.parts
-        ]
-
-        # Determine which files need processing
-        files_to_process = []
-        for file_path in all_files:
-            rel_key = str(file_path.relative_to(self.library_path))
-            file_mtime = os.path.getmtime(file_path)
-            if rel_key in processed_files and processed_files[rel_key].get("mtime") == file_mtime:
+        found = []
+        for f in sorted(self.library_path.rglob("*")):
+            if f.suffix.lower() not in (".docx", ".pdf") or not f.is_file():
                 continue
-            files_to_process.append(file_path)
+            if f.name.startswith("~$"):
+                continue
+            rel = f.relative_to(self.library_path)
+            if len(rel.parts) < 2 or "failed-processing" in rel.parts:
+                continue
+            found.append((f, rel.parts[0]))
+        return found
 
-        if not files_to_process:
-            console.print("\n[green]✓ All files already processed. Database is up to date.[/green]")
-            self._build_folder_coverage(database)
-            return database
+    def build_database(self, output_path: Optional[Path] = None, force: bool = False, workers: Optional[int] = None) -> dict:
+        """Build or incrementally update the sharded library database.
+
+        Scans every DOCX/PDF in the subfolders of ``library_path`` (folder =
+        top-level subfolder name), orders them with ``scan_file``/``order_files``
+        (duplicates, non-AIGs and unreadable files are skipped) and runs
+        ``run_ingest`` against a ``LibraryDBService`` on ``output_path``. Files
+        whose text hash is already recorded in ``_processed_files`` are skipped.
+
+        ``force=True`` clears the processed-files index (and only that) so every
+        file is re-extracted and re-merged. It never deletes shards: the merge is
+        idempotent and newer-wins, so re-merging the same files leaves them as
+        they were apart from refreshed content.
+
+        Only directory outputs are supported; a ``.json`` path raises
+        ``ValueError``. The run log goes to ``<output_path>/_logs/``.
+
+        Returns ``{"version", "built_at", "destinations": {city: shard},
+        "_processed_files", "_folder_coverage"[, "_review_status"]}``.
+        """
+        from src.library.ingest_core import run_ingest
+        from src.library.ingest_core.ordering import order_files, scan_file
+        from src.library.ingest_core.runner import PlanEntry
+        from src.library.ui.services.db_service import LibraryDBService
+        from src.library.ui.storage import LocalStorageBackend
+
+        output_path = Path(output_path) if output_path is not None else Path("library_db")
+        if output_path.suffix.lower() == ".json":
+            raise ValueError("single-file library output is no longer supported; use a directory")
+        output_path.mkdir(parents=True, exist_ok=True)
+
+        db = LibraryDBService(LocalStorageBackend(output_path))
+        if force:
+            db._index["_processed_files"] = {}
+        db._index["version"] = DB_VERSION
+        db._index["built_at"] = datetime.now().isoformat()
+
+        discovered = self._discover()
+        folder_of = {path: folder for path, folder in discovered}
+        ordered = order_files([scan_file(path) for path, _ in discovered])
+        plan = [
+            PlanEntry(path=o.scan.path, folder=folder_of[o.scan.path], order_date=o.order_date,
+                      fmt=o.scan.fmt, text_hash=o.scan.text_hash)
+            for o in ordered if o.skipped_reason is None
+        ]
+        skipped = [o for o in ordered if o.skipped_reason is not None]
 
         num_workers = workers if workers is not None else self.workers
+        console.print("\n[bold]Building library database...[/bold]")
+        console.print(f"  Files in library:  {len(discovered)}")
+        console.print(f"  Skipped by scan:   {len(skipped)}")
+        console.print(f"  In plan:           {len(plan)}")
+        console.print(f"  Workers:           {num_workers}\n")
+        for o in skipped:
+            console.print(f"  [dim]skip {o.scan.path.relative_to(self.library_path)}: {o.skipped_reason}[/dim]")
 
-        console.print(f"\n[bold]Building library database...[/bold]")
-        console.print(f"  Total files in library: {len(all_files)}")
-        console.print(f"  Already processed:      {len(all_files) - len(files_to_process)}")
-        console.print(f"  To process:             {len(files_to_process)}")
-        console.print(f"  Workers:                {num_workers}\n")
+        report = run_ingest(plan, db, self.client, log_dir=output_path / LOG_DIR_NAME,
+                            workers=num_workers, checkpoint_every=CHECKPOINT_EVERY)
 
-        with Progress(
-            SpinnerColumn(),
-            TextColumn("[progress.description]{task.description}"),
-            BarColumn(),
-            TaskProgressColumn(),
-            console=console,
-        ) as progress:
-            task = progress.add_task("Processing files...", total=len(files_to_process))
-
-            with ThreadPoolExecutor(max_workers=num_workers) as executor:
-                future_to_file = {
-                    executor.submit(self._process_file, fp): fp
-                    for fp in files_to_process
-                }
-
-                completed_since_checkpoint = 0
-                for future in as_completed(future_to_file):
-                    file_path = future_to_file[future]
-                    rel_key = str(file_path.relative_to(self.library_path))
-                    destination = file_path.parent.name
-
-                    progress.update(task, description=f"[{destination}] {file_path.name[:35]}...")
-
-                    try:
-                        file_data = future.result()
-                        if file_data:
-                            file_mtime = os.path.getmtime(file_path)
-                            tracked_dests: set[str] = set()
-
-                            _MULTI_CITY_FIELDS = {"safety_tips", "connectivity_tips", "health_tips"}
-
-                            for field in ("restaurants", "attractions", "hotels",
-                                          "local_dishes", "phrases", "safety_tips", "souvenirs",
-                                          "emergency_contacts", "connectivity_tips",
-                                          "transport_options", "health_tips"):
-                                for item in file_data.get(field) or []:
-                                    if isinstance(item, dict):
-                                        item["_source_file"] = rel_key
-                                        item["_source_mtime"] = file_mtime
-                                        if field in _MULTI_CITY_FIELDS:
-                                            raw = item.get("cities") or [item.get("city", "")]
-                                            dests = [c.strip().title() for c in raw if c and c.strip()] or [destination]
-                                        else:
-                                            raw_city = item.get("city", "").strip()
-                                            dests = [raw_city.title() if raw_city else destination]
-                                    else:
-                                        dests = [destination]
-
-                                    for dest in dests:
-                                        if dest not in database["destinations"]:
-                                            database["destinations"][dest] = {
-                                                "restaurants": [], "attractions": [], "hotels": [],
-                                                "local_dishes": [], "phrases": [], "safety_tips": [],
-                                                "souvenirs": [], "emergency_contacts": [],
-                                                "connectivity_tips": [], "transport_options": [],
-                                                "health_tips": [], "source_files": [],
-                                            }
-
-                                        dest_data = database["destinations"][dest]
-                                        if dest not in tracked_dests:
-                                            if rel_key not in dest_data["source_files"]:
-                                                dest_data["source_files"].append(rel_key)
-                                            tracked_dests.add(dest)
-
-                                        dest_data[field].append(item)
-
-                            database["_processed_files"][rel_key] = {
-                                "mtime": file_mtime,
-                                "destination": destination,
-                                "covered_cities": file_data.get("covered_cities", []),
-                                "processed_at": datetime.now().isoformat(),
-                            }
-
-                    except Exception as e:
-                        console.print(f"[yellow]Warning:[/yellow] Failed to process {rel_key}: {e}")
-
-                    progress.advance(task)
-                    completed_since_checkpoint += 1
-                    if completed_since_checkpoint >= CHECKPOINT_EVERY:
-                        _checkpoint_save(database, output_path)
-                        completed_since_checkpoint = 0
-
-        # Deduplicate
-        for dest_data in database["destinations"].values():
-            dest_data["restaurants"] = self._deduplicate_by_name(dest_data["restaurants"])
-            dest_data["attractions"] = self._deduplicate_by_name(dest_data["attractions"])
-            dest_data["local_dishes"] = self._deduplicate_by_name(dest_data["local_dishes"])
-
-        self._build_folder_coverage(database)
-
-        # Reset review status to pending for any cities that were rebuilt
-        affected_cities = {
-            meta.get("destination", "")
-            for rel_key, meta in database["_processed_files"].items()
-            if rel_key in {str(fp.relative_to(self.library_path)) for fp in files_to_process}
+        database: dict = {
+            "version": db._index.get("version", DB_VERSION),
+            "built_at": db._index.get("built_at"),
+            "destinations": {name: db.get_city_data(name) or {} for name in db.list_city_shards()},
+            "_processed_files": dict(db._index.get("_processed_files", {})),
+            "_folder_coverage": dict(db.get_folder_coverage()),
         }
-        review_status = database.get("_review_status", {})
-        if review_status:
-            for city in affected_cities:
-                if city in review_status:
-                    review_status[city] = {"status": "pending"}
-            database["_review_status"] = review_status
-
-        _checkpoint_save(database, output_path)
+        if "_review_status" in db._index:
+            database["_review_status"] = db._index["_review_status"]
 
         console.print(f"\n[bold green]✓ Database saved to {output_path}[/bold green]")
-        self._print_summary(database)
+        self._print_summary(report)
         return database
 
-    def process_single_file(self, file_path: Path, destination: str, database: dict) -> bool:
-        """Process one file and merge its data into database in-place. Returns True on success."""
-        rel_key = str(file_path.relative_to(self.library_path))
-
-        try:
-            file_data = self._process_file(file_path)
-        except Exception as e:
-            console.print(f"[yellow]Warning:[/yellow] Failed to process {rel_key}: {e}")
-            return False
-
-        if not file_data:
-            return False
-
-        file_mtime = os.path.getmtime(file_path)
-        tracked_dests: set[str] = set()
-        _MULTI_CITY_FIELDS = {"safety_tips", "connectivity_tips", "health_tips"}
-
-        for field in ("restaurants", "attractions", "hotels",
-                      "local_dishes", "phrases", "safety_tips", "souvenirs",
-                      "emergency_contacts", "connectivity_tips",
-                      "transport_options", "health_tips"):
-            for item in file_data.get(field) or []:
-                if isinstance(item, dict):
-                    item["_source_file"] = rel_key
-                    item["_source_mtime"] = file_mtime
-                    if field in _MULTI_CITY_FIELDS:
-                        raw = item.get("cities") or [item.get("city", "")]
-                        dests = [c.strip().title() for c in raw if c and c.strip()] or [destination]
-                    else:
-                        raw_city = item.get("city", "").strip()
-                        dests = [raw_city.title() if raw_city else destination]
-                else:
-                    dests = [destination]
-
-                for dest in dests:
-                    if dest not in database["destinations"]:
-                        database["destinations"][dest] = {
-                            "restaurants": [], "attractions": [], "hotels": [],
-                            "local_dishes": [], "phrases": [], "safety_tips": [],
-                            "souvenirs": [], "emergency_contacts": [],
-                            "connectivity_tips": [], "transport_options": [],
-                            "health_tips": [], "source_files": [],
-                        }
-
-                    dest_data = database["destinations"][dest]
-                    if dest not in tracked_dests:
-                        if rel_key not in dest_data["source_files"]:
-                            dest_data["source_files"].append(rel_key)
-                        tracked_dests.add(dest)
-
-                    dest_data[field].append(item)
-
-        database["_processed_files"][rel_key] = {
-            "mtime": file_mtime,
-            "destination": destination,
-            "covered_cities": file_data.get("covered_cities", []),
-            "processed_at": datetime.now().isoformat(),
-        }
-
-        self._build_folder_coverage(database)
-        return True
-
-    def _process_file(self, file_path: Path) -> Optional[dict]:
-        """Extract structured data from one DOCX or PDF file via AI."""
-        try:
-            if file_path.suffix.lower() == '.pdf':
-                full_text = self._extract_text_from_pdf(file_path)
-            else:
-                full_text = self._extract_text_from_docx(file_path)
-        except Exception as e:
-            console.print(f"[dim]Text extraction failed for {file_path.name}: {e}[/dim]")
-            return None
-
-        full_text = _sanitize_text(full_text)
-
-        if len(full_text) < 200:
-            return None
-
-        if len(full_text) <= SINGLE_PASS_LIMIT:
-            result = self._call_and_parse(LIBRARY_EXTRACTION_PROMPT.format(text=full_text), file_path.name)
-            return result
-
-        # Multi-pass chunked extraction for large documents
-        chunks = _split_into_chunks_shared(full_text)
-        console.print(f"[dim]{file_path.name}: {len(full_text):,} chars → {len(chunks)} chunks[/dim]")
-
-        chunk_results = []
-        for i, chunk in enumerate(chunks):
-            result = self._call_and_parse(
-                LIBRARY_EXTRACTION_PROMPT.format(text=chunk),
-                f"{file_path.name} chunk {i+1}/{len(chunks)}",
-            )
-            if result:
-                chunk_results.append(result)
-
-        if not chunk_results:
-            console.print(f"[dim]AI extraction failed for {file_path.name}: all chunks failed[/dim]")
-            return None
-
-        if len(chunk_results) == 1:
-            return chunk_results[0]
-
-        return _merge_extraction_results_shared(chunk_results)
-
-    def _call_and_parse(self, prompt: str, label: str) -> Optional[dict]:
-        """Send prompt to AI and parse the JSON response."""
-        result = _shared_call_and_parse(self.client, prompt, label)
-        if result:
-            _clean_entry_fees(result)
-        return result
-
-    def _extract_text_from_docx(self, docx_path: Path) -> str:
-        doc = Document(docx_path)
-        return "\n".join(para.text for para in doc.paragraphs if para.text.strip())
-
-    def _extract_text_from_pdf(self, pdf_path: Path) -> str:
-        doc = fitz.open(pdf_path)
-        text_parts = [page.get_text() for page in doc]
-        doc.close()
-        return "\n".join(text_parts)
-
-    def _build_folder_coverage(self, database: dict) -> None:
-        """Build _folder_coverage by unioning covered_cities across all processed files per folder."""
-        coverage: dict[str, set] = {}
-        for meta in database["_processed_files"].values():
-            folder = meta.get("destination", "")
-            cities = meta.get("covered_cities", [])
-            if folder:
-                coverage.setdefault(folder, set()).update(c.strip() for c in cities if c.strip())
-        database["_folder_coverage"] = {f: sorted(cities) for f, cities in coverage.items()}
-
-    def _deduplicate_by_name(self, items: list) -> list:
-        """Deduplicate items by name with recency-aware merging.
-
-        - must_try_dishes: always unioned across all source files
-        - all other fields: overwritten only if the incoming file is newer
-        - source_files: accumulated list of every file the item appeared in
-        """
-        seen: dict[str, dict] = {}
-        for item in items:
-            name = item.get("name", "").lower().strip()
-            if not name:
-                continue
-            src_file = item.get("_source_file")
-            src_mtime = item.get("_source_mtime", 0)
-
-            if name not in seen:
-                seen[name] = item.copy()
-                existing_sources = item.get("source_files") or []
-                new_source = [src_file] if src_file else []
-                seen[name]["source_files"] = list(dict.fromkeys(existing_sources + new_source))
-            else:
-                existing = seen[name]
-
-                if src_file and src_file not in existing["source_files"]:
-                    existing["source_files"].append(src_file)
-
-                # Always union must_try_dishes
-                existing_dishes = existing.get("must_try_dishes") or []
-                new_dishes = item.get("must_try_dishes") or []
-                merged = list(dict.fromkeys(existing_dishes + [d for d in new_dishes if d not in existing_dishes]))
-                if merged:
-                    existing["must_try_dishes"] = merged
-
-                # Overwrite other fields only if incoming file is newer
-                if src_mtime > existing.get("_source_mtime", 0):
-                    for key, value in item.items():
-                        if key in ("must_try_dishes", "_source_file", "_source_mtime", "source_files"):
-                            continue
-                        if value is not None:
-                            existing[key] = value
-                    existing["_source_mtime"] = src_mtime
-
-        result = []
-        for item in seen.values():
-            item.pop("_source_file", None)
-            item.pop("_source_mtime", None)
-            result.append(item)
-        return result
-
-    def _print_summary(self, database: dict) -> None:
-        console.print("\n[bold]Library Database Summary[/bold]\n")
-        for dest, data in sorted(database["destinations"].items()):
-            cities = database.get("_folder_coverage", {}).get(dest, [])
-            console.print(f"  [cyan]{dest}[/cyan]")
-            console.print(f"    Files:       {len(data['source_files'])}")
-            console.print(f"    Restaurants: {len(data['restaurants'])}")
-            console.print(f"    Attractions: {len(data['attractions'])}")
-            console.print(f"    Cities:      {', '.join(cities[:5])}{'...' if len(cities) > 5 else ''}")
-            console.print()
+    def _print_summary(self, report) -> None:
+        s = report.stats
+        console.print("\n[bold]Ingest Summary[/bold]\n")
+        console.print(f"  Processed: {len(report.processed)}")
+        console.print(f"  Skipped:   {len(report.skipped)}")
+        console.print(f"  Failed:    {len(report.failed)}")
+        console.print(f"  Items:     +{s.added} added, ~{s.replaced} replaced, "
+                      f"={s.unchanged} unchanged, {s.skipped_older} older skipped, "
+                      f"{s.protected} protected, {s.blocked} blocked")
+        console.print(f"  Dropped:   {len(report.dropped)}")
+        for rel, message in report.failed:
+            console.print(f"  [yellow]failed[/yellow] {rel}: {message}")
+        console.print()
 
 
 class LibraryDatabase:

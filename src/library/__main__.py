@@ -143,6 +143,48 @@ def _is_live_library(path: Path) -> bool:
     return resolved in (Path("library_db").resolve(), repo_db)
 
 
+def _repo_root() -> Path:
+    return Path(__file__).resolve().parents[2]
+
+
+@app.command()
+def backup(
+    dest: Path = typer.Option(..., "--dest", help="New folder to hold the copies (must not exist)"),
+    tag: str = typer.Option(..., "--tag", help="Local git tag to create at HEAD"),
+    db_path: Path = typer.Option(Path("library_db"), "--db", help="Library database folder"),
+    library_path: Path = typer.Option(Path("aig-library"), "--library", "-l", help="AIG library folder"),
+):
+    """Copy library_db and aig-library to DEST and tag the current git state (no push)."""
+    from .ingest_core.edits import backup_library, backup_stats
+
+    try:
+        backup_library(db_path, library_path, dest, tag)
+    except ValueError as e:
+        console.print(f"\n[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+    files, size = backup_stats(dest)
+    console.print(f"Backed up {files} files ({size:,} bytes) to {dest}; created local git tag {tag}")
+
+
+@app.command(name="edit-candidates")
+def edit_candidates(
+    old: Path = typer.Option(..., "--old", help="Old library_db folder (backup copy)"),
+    new: Path = typer.Option(Path("library_db_new"), "--new", help="New library_db folder"),
+    git_commit: Optional[str] = typer.Option(None, "--git-commit", help="Commit of hand edits, e.g. d4147e1"),
+    out: Path = typer.Option(Path("edit_candidates.md"), "--out", help="Markdown file to write"),
+    repo: Optional[Path] = typer.Option(None, "--repo", help="Git repo (default: this project)"),
+):
+    """List old items missing from or different in the new library."""
+    from .ingest_core.edits import write_edit_candidates
+
+    try:
+        write_edit_candidates(old, new, git_commit, repo or _repo_root(), out)
+    except ValueError as e:
+        console.print(f"\n[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+    console.print(f"Wrote {out}")
+
+
 @app.command()
 def rebuild(
     plan_dir: Path = typer.Option(Path("ingest_plan"), "--plan", help="Folder holding plan.json"),
@@ -153,6 +195,10 @@ def rebuild(
     model: Optional[str] = typer.Option(None, "--model", help="Model whose pilot average is used for --dry-run"),
     dry_run: bool = typer.Option(False, "--dry-run", help="Print the projected cost and file count; extract nothing"),
     api_key: Optional[str] = typer.Option(None, "--api-key", help="API key (uses AI_API_KEY from .env if not set)"),
+    blocklist_from_git: Optional[str] = typer.Option(
+        None, "--blocklist-from-git",
+        help="Git commit whose removed items (plus audit-log deletes) are blocked in the new database",
+    ),
 ):
     """Run the paid ingest of a plan into a new, empty database folder."""
     import json
@@ -206,6 +252,13 @@ def rebuild(
         client = get_ai_client(api_key=api_key, model=model)
         db_path.mkdir(parents=True, exist_ok=True)
         db = LibraryDBService(LocalStorageBackend(db_path))
+        if blocklist_from_git:
+            from .ingest_core.edits import build_blocklist
+
+            root = _repo_root()
+            bl = build_blocklist(root / "library_db" / "_audit.json", blocklist_from_git, root)
+            db.set_blocklist(bl)
+            console.print(f"Loaded {len(bl)} blocklist entries")
         done = db._index.get("_processed_files") or {}
         todo = [e for e in entries
                 if (done.get(f"{e.folder}/{Path(e.path).name}") or {}).get("text_hash") != e.text_hash]

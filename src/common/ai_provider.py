@@ -7,6 +7,7 @@ This module provides a unified interface for AI completions that works with:
 """
 
 import os
+import re
 from typing import Optional
 
 from dotenv import load_dotenv
@@ -41,6 +42,11 @@ def _lookup_pricing(model: str) -> Optional[tuple[float, float]]:
     return None
 
 
+def _drops_temperature(model: str) -> bool:
+    """5.x Claude models reject ``temperature``."""
+    return bool(re.match(r"claude-[a-z]+-5", (model or "").lower()))
+
+
 class AIClient:
     """AI client using OpenAI-compatible API.
     
@@ -52,7 +58,9 @@ class AIClient:
         self,
         api_key: Optional[str] = None,
         base_url: Optional[str] = None,
-        model: Optional[str] = None
+        model: Optional[str] = None,
+        timeout: float = 300.0,
+        max_retries: Optional[int] = None,
     ):
         """Initialize the AI client.
         
@@ -60,6 +68,8 @@ class AIClient:
             api_key: API key (defaults to AI_API_KEY or OPENAI_API_KEY env var)
             base_url: Base URL for the API (defaults to AI_BASE_URL or OPENAI_BASE_URL env var)
             model: Model name (defaults to AI_MODEL env var, or "gpt-4o")
+            timeout: Per-request timeout in seconds
+            max_retries: OpenAI client retry count (None keeps the library default)
         """
         from openai import OpenAI
         
@@ -76,15 +86,45 @@ class AIClient:
             )
         
         # Initialize OpenAI client (works with any OpenAI-compatible endpoint)
-        self._client = OpenAI(
-            api_key=self.api_key,
-            base_url=self.base_url,
-            timeout=300.0,
-        )
+        client_kwargs: dict = {"api_key": self.api_key, "base_url": self.base_url, "timeout": timeout}
+        if max_retries is not None:
+            client_kwargs["max_retries"] = max_retries
+        self._client = OpenAI(**client_kwargs)
 
         # Accumulated token counts across all complete_json() calls on this instance
         self.usage: dict[str, int] = {"prompt_tokens": 0, "completion_tokens": 0}
     
+    def _create(self, *, temperature: Optional[float] = None, **kwargs):
+        """One chat completion with the gateway-compat fallbacks.
+
+        - 5.x Claude models never get ``temperature``.
+        - An error mentioning ``temperature`` is retried once without it.
+        - An error mentioning ``max_tokens`` is retried once with
+          ``max_completion_tokens``. Any other error raises unchanged.
+        Usage is added for every response that comes back.
+        """
+        if temperature is not None and not _drops_temperature(self.model):
+            kwargs["temperature"] = temperature
+        tried_temp = tried_tokens = False
+        while True:
+            try:
+                response = self._client.chat.completions.create(**kwargs)
+                break
+            except Exception as e:
+                msg = str(e).lower()
+                if "temperature" in msg and "temperature" in kwargs and not tried_temp:
+                    tried_temp = True
+                    kwargs.pop("temperature")
+                elif "max_tokens" in msg and "max_tokens" in kwargs and not tried_tokens:
+                    tried_tokens = True
+                    kwargs["max_completion_tokens"] = kwargs.pop("max_tokens")
+                else:
+                    raise
+        if response.usage:
+            self.usage["prompt_tokens"]     += response.usage.prompt_tokens or 0
+            self.usage["completion_tokens"] += response.usage.completion_tokens or 0
+        return response
+
     def complete_with_images(
         self,
         prompt: str,
@@ -105,7 +145,7 @@ class AIClient:
             for img in images
         ]
         content.append({"type": "text", "text": prompt})
-        response = self._client.chat.completions.create(
+        response = self._create(
             model=self.model,
             max_tokens=max_tokens,
             temperature=temperature,
@@ -135,16 +175,39 @@ class AIClient:
         if system:
             messages.append({"role": "system", "content": system})
         messages.append({"role": "user", "content": prompt})
-        response = self._client.chat.completions.create(
+        response = self._create(
             model=self.model,
             max_tokens=max_tokens,
             temperature=temperature,
             messages=messages,
         )
-        if response.usage:
-            self.usage["prompt_tokens"]     += response.usage.prompt_tokens or 0
-            self.usage["completion_tokens"] += response.usage.completion_tokens or 0
         return response.choices[0].message.content.strip()
+
+    def complete_json_full(
+        self,
+        prompt: str,
+        max_tokens: int = 8000,
+        system: Optional[str] = None,
+    ) -> tuple[str, Optional[str]]:
+        """JSON-mode completion returning ``(text, finish_reason)``.
+
+        Uses response_format=json_object and temperature=0 (dropped for models
+        that reject it; see ``_create``). ``finish_reason`` is "length" when the
+        output was cut off by ``max_tokens``.
+        """
+        messages = []
+        if system:
+            messages.append({"role": "system", "content": system})
+        messages.append({"role": "user", "content": prompt})
+        response = self._create(
+            model=self.model,
+            max_tokens=max_tokens,
+            temperature=0,
+            response_format={"type": "json_object"},
+            messages=messages,
+        )
+        choice = response.choices[0]
+        return (choice.message.content or "").strip(), getattr(choice, "finish_reason", None)
 
     def complete_json(
         self,
@@ -152,41 +215,8 @@ class AIClient:
         max_tokens: int = 8000,
         system: Optional[str] = None,
     ) -> str:
-        """Generate a JSON-mode completion.
-
-        Uses response_format=json_object and temperature=0. Reasoning models
-        (e.g. claude-opus-4-8, o4-mini) reject the temperature parameter, so
-        this method retries without it on that failure.
-
-        Args:
-            prompt: User-turn message
-            max_tokens: Maximum tokens in the response
-            system: Optional system prompt prepended before the user message
-
-        Returns:
-            The model's response text (valid JSON string).
-        """
-        messages = []
-        if system:
-            messages.append({"role": "system", "content": system})
-        messages.append({"role": "user", "content": prompt})
-        kwargs = dict(
-            model=self.model,
-            max_tokens=max_tokens,
-            response_format={"type": "json_object"},
-            messages=messages,
-        )
-        try:
-            response = self._client.chat.completions.create(temperature=0, **kwargs)
-        except Exception as e:
-            if "temperature" in str(e).lower():
-                response = self._client.chat.completions.create(**kwargs)
-            else:
-                raise
-        if response.usage:
-            self.usage["prompt_tokens"]     += response.usage.prompt_tokens or 0
-            self.usage["completion_tokens"] += response.usage.completion_tokens or 0
-        return response.choices[0].message.content.strip()
+        """Generate a JSON-mode completion; the text of ``complete_json_full``."""
+        return self.complete_json_full(prompt, max_tokens=max_tokens, system=system)[0]
 
     @property
     def cost_usd(self) -> Optional[float]:
@@ -212,7 +242,9 @@ def get_ai_client(
     api_key: Optional[str] = None,
     base_url: Optional[str] = None,
     model: Optional[str] = None,
-    provider: Optional[str] = None  # Kept for backward compatibility, ignored
+    provider: Optional[str] = None,  # Kept for backward compatibility, ignored
+    timeout: float = 300.0,
+    max_retries: Optional[int] = None,
 ) -> AIClient:
     """Get an AI client with the specified configuration.
     
@@ -228,6 +260,8 @@ def get_ai_client(
     return AIClient(
         api_key=api_key,
         base_url=base_url,
-        model=model
+        model=model,
+        timeout=timeout,
+        max_retries=max_retries,
     )
 

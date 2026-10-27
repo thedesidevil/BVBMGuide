@@ -435,3 +435,70 @@ def test_clear_processed_files_keeps_rest_of_index(memory_db):
     memory_db.clear_processed_files()
     assert memory_db._index["_processed_files"] == {}
     assert memory_db.get_folder_coverage() == {"Italy": ["Rome"]}
+
+
+# --- ExtractionError reasons reach every caller --------------------------
+
+def test_ui_extract_all_reports_extraction_error_reason(tmp_path, memory_backend, monkeypatch):
+    from src.library.ingest_core.extract import ExtractionError
+
+    service = IngestService(memory_backend, tmp_path / "lib")
+    session = service.create_session()
+    [f] = service.save_upload(session, "a.docx", _doc(tmp_path / "a.docx").read_bytes())
+
+    def boom(client, path):
+        raise ExtractionError("truncated: a.docx hit the output limit")
+
+    monkeypatch.setattr(extract_mod, "extract_file", boom)
+    seen = {}
+    monkeypatch.setattr("src.common.ai_provider.get_ai_client",
+                        lambda **kw: seen.update(kw) or StubClient())
+    results = service.extract_all(session, workers=1)
+
+    assert results[f["file_id"]] == "failed"
+    assert session.get_file(f["file_id"])["state"] == "failed"
+    stored = memory_backend.read_json(session.get_extracted_key(f["file_id"]))
+    assert "truncated" in stored["error"]
+    assert seen["timeout"] == 600.0 and seen["max_retries"] == 1  # ingest client settings
+
+
+def test_builder_failure_reason_reaches_report_and_log(builder_env, monkeypatch):
+    from src.library.ingest_core.extract import ExtractionError
+
+    builder, out, calls = builder_env
+
+    def boom(client, path):
+        raise ExtractionError("unparseable")
+
+    monkeypatch.setattr(runner_mod, "extract_file", boom)
+    builder.build_database(output_path=out, workers=1)
+    log = (out / "_logs" / "ingest_log.jsonl").read_text()
+    assert "ExtractionError: unparseable" in log
+
+
+def test_builder_client_uses_ingest_settings(tmp_path, monkeypatch):
+    import src.library.builder as builder_mod
+
+    seen = {}
+    monkeypatch.setattr(builder_mod, "get_ai_client", lambda **kw: seen.update(kw) or StubClient())
+    builder_mod.LibraryBuilder(tmp_path)
+    assert seen["timeout"] == 600.0 and seen["max_retries"] == 1
+
+
+def test_inspect_cli_reports_extraction_error(tmp_path, monkeypatch):
+    from typer.testing import CliRunner
+
+    import src.library.__main__ as cli
+    import src.library.builder as builder_mod
+    from src.library.ingest_core.extract import ExtractionError
+
+    monkeypatch.setattr(builder_mod, "get_ai_client", lambda **kw: StubClient())
+
+    def boom(client, path):
+        raise ExtractionError("truncated: x hit the output limit")
+
+    monkeypatch.setattr(extract_mod, "extract_file", boom)
+    path = _doc(tmp_path / "a.docx")
+    res = CliRunner().invoke(cli.app, ["inspect", str(path), "--library", str(tmp_path)])
+    assert res.exit_code == 1
+    assert "truncated" in " ".join(res.output.split())

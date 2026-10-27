@@ -167,6 +167,29 @@ For a full rebuild from past AIGs, run the steps in this order. Nothing here tou
 5. **rebuild**: `python -m src.library rebuild --plan ingest_plan --db library_db_new --max-usd N`. Refuses `library_db` and refuses to run without `--max-usd`. Resumable: Ctrl-C saves progress, re-run the same command. The run log is in `library_db_new/_ingest_log/`.
 6. **verify**: `python -m src.library verify --db library_db_new`, then review before swapping it in.
 
+### Try it on a subset first
+
+Before the full plan, check the whole chain on a few files:
+
+1. Make a new folder (for example `ingest_try/`) and copy 3 past AIGs into it.
+2. Run `python -m src.library plan --input ingest_try --library aig-library --out ingest_plan_try`. Read the "Classification FAILED" block (if any) and `order_report.md`.
+3. Run `python -m src.library pilot --plan ingest_plan_try --models <model> --count 3 --out pilot_out_try`. Check `pilot_report.md`: no failed files, sensible item counts, a cost per file.
+4. Only then run `plan` on the full input folder. A file that fails the AI step is reported with its reason (`truncated`, `unparseable`, `api_error: ...`) in the pilot report, the rebuild log and the `failed` list.
+
+### Swapping the new library in
+
+These are manual steps; no command moves or overwrites `library_db`.
+
+1. Stop the library UI server (port 8765).
+2. Move `library_db` to a dated backup name (for example `library_db_backup_2026-10-27`).
+3. Move `library_db_new` to `library_db`.
+4. Restart the server.
+
+Notes:
+
+- Review statuses are not carried over: the new library marks every shard that received items as `pending`. That is acceptable today because the old statuses described the old extraction, which the new items replace.
+- Source files that came from the `input/` folder are not copied into `aig-library/`, so `qc --verify-sources` cannot find them for the new library.
+
 `build` also takes `--max-usd` (required for more than 5 files) and refuses a legacy index whose processed-file records have no content hash.
 
 ## Key Design Decisions

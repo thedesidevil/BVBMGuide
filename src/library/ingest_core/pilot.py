@@ -78,13 +78,13 @@ def run_pilot(entries: list[PlanEntry], models: list[str], out_dir: Path, client
     """Probe each model, extract every entry with each model, write the reports.
 
     ``clients`` maps model name -> client; by default each model gets
-    ``get_ai_client(model=name)``. Raises ``PilotError`` if a probe fails; no
+    ``get_ingest_client(name)``. Raises ``PilotError`` if a probe fails; no
     other model is substituted. Nothing is written to any library database.
     """
     if clients is None:
-        from src.common.ai_provider import get_ai_client
+        from src.library.ingest_core.extract import get_ingest_client
 
-        clients = {m: get_ai_client(model=m) for m in models}
+        clients = {m: get_ingest_client(m) for m in models}
     for m in models:
         try:
             clients[m].complete("Reply with the single word OK.", max_tokens=8, temperature=0)

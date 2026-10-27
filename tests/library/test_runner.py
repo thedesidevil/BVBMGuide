@@ -299,7 +299,7 @@ def test_workers_gt_1_logs_none_token_figures(tmp_path, memory_db, monkeypatch):
 def test_processed_file_record_and_checkpoints(tmp_path, memory_db, memory_backend, monkeypatch):
     client = StubClient()
     names = [f"f{i}.docx" for i in range(5)]
-    fake = FakeExtractor({n: {"covered_cities": ["Rome"]} for n in names}, client)
+    fake = FakeExtractor({n: _data(f"R{n}", hours=n[1]) for n in names}, client)
     _patch(monkeypatch, fake)
     saves = []
     real_save = memory_db.save_index
@@ -307,7 +307,7 @@ def test_processed_file_record_and_checkpoints(tmp_path, memory_db, memory_backe
     plan = [_entry(tmp_path, n) for n in names]
     report = run_ingest(plan, memory_db, client, log_dir=tmp_path / "logs", checkpoint_every=2)
     assert isinstance(report, IngestReport)
-    assert len(report.processed) == 5  # covered_cities alone counts as content
+    assert len(report.processed) == 5
     assert len(saves) == 3  # after files 2 and 4, plus the final one
     rec = LibraryDBService(memory_backend)._index["_processed_files"]["italy/f0.docx"]
     assert rec["text_hash"] == "hash-f0.docx"
@@ -315,3 +315,31 @@ def test_processed_file_record_and_checkpoints(tmp_path, memory_db, memory_backe
     assert rec["fmt"] == "new" and rec["folder"] == "italy"
     assert rec["covered_cities"] == ["Rome"]
     assert rec["processed_at"].endswith("+00:00")
+    assert [r["hours"] for r in memory_db.get_city_data("Rome")["restaurants"]] == ["0", "1", "2", "3", "4"]
+
+
+def test_has_content_needs_a_real_item():
+    from src.library.ingest_core.runner import has_content
+
+    assert not has_content({"covered_cities": ["Rome"]})
+    assert not has_content({"covered_cities": ["Rome"], "restaurants": [], "country_content": [{"country": "Italy"}]})
+    assert has_content({"restaurants": [{"name": "X"}]})
+    assert has_content({"country_content": [{"country": "Italy", "tipping": [{"tip": "t"}]}]})
+
+
+def test_covered_cities_only_file_is_failed_as_empty(tmp_path, memory_db, monkeypatch):
+    client = StubClient()
+    _patch(monkeypatch, FakeExtractor({"a.docx": {"covered_cities": ["Rome"]}}, client))
+    report = run_ingest([_entry(tmp_path, "a.docx")], memory_db, client, log_dir=tmp_path / "logs", workers=1)
+    assert report.processed == [] and [f for f, _ in report.failed] == ["italy/a.docx"]
+
+
+def test_extraction_error_reason_reaches_failed_and_log(tmp_path, memory_db, monkeypatch):
+    from src.library.ingest_core.extract import ExtractionError
+
+    client = StubClient()
+    _patch(monkeypatch, FakeExtractor({"a.docx": ExtractionError("truncated: a.docx hit the output limit")}, client))
+    report = run_ingest([_entry(tmp_path, "a.docx")], memory_db, client, log_dir=tmp_path / "logs", workers=1)
+    assert "truncated" in report.failed[0][1]
+    line = json.loads((tmp_path / "logs" / "ingest_log.jsonl").read_text().splitlines()[0])
+    assert line["status"] == "failed" and "truncated" in line["error"]

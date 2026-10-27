@@ -217,10 +217,9 @@ class IngestService:
         """
         import tempfile
 
-        from src.common.ai_provider import get_ai_client
         from src.library.ingest_core import extract as extract_mod
 
-        client = get_ai_client()
+        client = extract_mod.get_ingest_client()
         files = session.get_files()
         candidates = {
             fid: entry for fid, entry in files.items()
@@ -242,8 +241,10 @@ class IngestService:
             try:
                 extraction = extract_mod.extract_file(client, tmp_path)
                 if extraction is None:
-                    return file_id, "failed", {"error": "Extraction returned no data"}
+                    return file_id, "failed", {"error": "Extraction returned no data (text too short or unreadable)"}
                 return file_id, "extracted", extraction.data
+            except extract_mod.ExtractionError as e:
+                return file_id, "failed", {"error": f"Extraction failed: {e}"}
             except Exception as e:
                 return file_id, "failed", {"error": str(e)}
             finally:

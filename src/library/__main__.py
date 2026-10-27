@@ -88,11 +88,11 @@ def plan(
 
     Re-running keeps the folders already in plan.json (including hand edits); delete plan.json to re-plan from scratch.
     """
-    from src.common.ai_provider import get_ai_client
+    from .ingest_core.extract import get_ingest_client
     from .ingest_core.plan import build_plan
 
     try:
-        client = get_ai_client(api_key=api_key)
+        client = get_ingest_client(api_key=api_key)
         entries = build_plan(input_path, library_path, client, out)
     except Exception as e:
         console.print(f"\n[red]Error:[/red] {e}")
@@ -101,6 +101,10 @@ def plan(
 
     rows = _json.loads((out / "plan.json").read_text(encoding="utf-8"))
     missing = [Path(r["path"]).name for r in rows if r.get("skipped_reason") == "no_folder"]
+    failed = [r for r in rows if r.get("classify_error")]
+    if failed:
+        console.print(f"\n[bold red]{len(failed)} files could not be classified "
+                      f"(first error: {failed[0]['classify_error']}) - these are marked no_folder[/bold red]")
     if missing:
         console.print(f"\n[yellow]{len(missing)} file(s) have no folder:[/yellow]")
         for n in missing:
@@ -140,7 +144,10 @@ def pilot(
 def _is_live_library(path: Path) -> bool:
     resolved = path.resolve()
     repo_db = (Path(__file__).resolve().parents[2] / "library_db").resolve()
-    return resolved in (Path("library_db").resolve(), repo_db)
+    for live in {Path("library_db").resolve(), repo_db}:
+        if resolved == live or resolved.is_relative_to(live):
+            return True
+    return False
 
 
 def _repo_root() -> Path:
@@ -268,9 +275,9 @@ def rebuild(
         return
 
     try:
-        from src.common.ai_provider import get_ai_client
+        from .ingest_core.extract import get_ingest_client
 
-        client = get_ai_client(api_key=api_key, model=model)
+        client = get_ingest_client(model=model, api_key=api_key)
         db_path.mkdir(parents=True, exist_ok=True)
         db = LibraryDBService(LocalStorageBackend(db_path))
         if blocklist is not None:
@@ -782,9 +789,14 @@ def inspect(
 
     with Progress(SpinnerColumn(), TextColumn("[progress.description]{task.description}"), console=console) as progress:
         task = progress.add_task("Running AI extraction...", total=None)
-        from .ingest_core.extract import extract_file
+        from .ingest_core.extract import ExtractionError, extract_file
 
-        extraction = extract_file(builder.client, file_path)
+        try:
+            extraction = extract_file(builder.client, file_path)
+        except ExtractionError as e:
+            progress.update(task, completed=True)
+            console.print(f"[red]Extraction failed:[/red] {e}")
+            raise typer.Exit(1)
         data = extraction.data if extraction else None
         progress.update(task, completed=True)
 

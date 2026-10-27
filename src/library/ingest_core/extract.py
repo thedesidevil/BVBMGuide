@@ -6,7 +6,7 @@ from pathlib import Path
 from src.common.ai_provider import AIClient
 from src.common.doc_extractor import (
     SINGLE_PASS_LIMIT,
-    call_and_parse,
+    call_and_parse_checked,
     sanitize_text,
     split_into_chunks,
 )
@@ -15,6 +15,18 @@ from src.library.ingest_core.prompt import EXTRACTION_PROMPT
 from src.library.ingest_core.text import UnreadableFile, read_text
 
 MIN_TEXT_CHARS = 200
+
+
+class ExtractionError(Exception):
+    """The AI step failed for a file (truncated, unparseable, API error, or every chunk failed)."""
+
+
+def get_ingest_client(model: str | None = None, api_key: str | None = None) -> AIClient:
+    """Client for ingest runs: long timeout, one gateway retry."""
+    from src.common.ai_provider import get_ai_client
+
+    kwargs = {"api_key": api_key} if api_key else {}
+    return get_ai_client(model=model, timeout=600.0, max_retries=1, **kwargs)
 
 
 @dataclass
@@ -120,8 +132,10 @@ def merge_chunks(results: list[dict]) -> dict:
 def extract_file(client: AIClient, path: Path) -> Extraction | None:
     """Extract library content from one file.
 
-    Returns None when the file is unreadable, its text is under 200
-    characters, or every AI call fails. Text up to ``SINGLE_PASS_LIMIT`` is
+    Returns None when the file is unreadable or its text is under 200
+    characters. Raises ``ExtractionError`` (with the reason) when the AI step
+    fails: a chunk whose response was truncated, unparseable, or an API error
+    (a truncated chunk is never repaired into partial data). Text up to ``SINGLE_PASS_LIMIT`` is
     sent in one call; longer text is split and the chunks merged.
 
     Token and cost figures are the delta of ``client.usage`` and
@@ -147,14 +161,19 @@ def extract_file(client: AIClient, path: Path) -> Extraction | None:
     else:
         chunks = split_into_chunks(text)
     results = []
+    failures: list[str] = []
     for i, chunk in enumerate(chunks):
         label = name if len(chunks) == 1 else f"{name} chunk {i + 1}/{len(chunks)}"
-        result = call_and_parse(client, EXTRACTION_PROMPT.format(text=chunk), label)
-        if isinstance(result, dict) and result:
+        result, reason = call_and_parse_checked(client, EXTRACTION_PROMPT.format(text=chunk), label)
+        if reason == "truncated":
+            raise ExtractionError(f"truncated: {label} hit the output limit")
+        if reason:
+            failures.append(reason if len(chunks) == 1 else f"chunk {i + 1}/{len(chunks)}: {reason}")
+        elif result:
             results.append(result)
 
     if not results:
-        return None
+        raise ExtractionError("; ".join(failures) or "unparseable")
 
     data = results[0] if len(chunks) == 1 else merge_chunks(results)
     usd1 = client.cost_usd

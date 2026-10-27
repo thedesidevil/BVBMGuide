@@ -87,7 +87,15 @@ class LibraryIngester:
     # ------------------------------------------------------------------
 
     def _classify_file(self, file_path: Path, existing_folders: list[str]) -> Optional[str]:
-        """Ask AI which library folder this file belongs in."""
+        """Ask AI which library folder this file belongs in (None on any failure)."""
+        folder, error = self._classify_file_checked(file_path, existing_folders)
+        if error:
+            console.print(f"  [dim]Classification error: {error}[/dim]")
+        return folder
+
+    def _classify_file_checked(self, file_path: Path, existing_folders: list[str]) -> tuple[Optional[str], Optional[str]]:
+        """Like ``_classify_file`` but returns ``(folder, error)``: ``error`` is set only
+        when the call or its parsing FAILED, not when the model answered with no folder."""
         try:
             preview = self._extract_preview(file_path, max_chars=3000)
         except Exception:
@@ -110,10 +118,9 @@ class LibraryIngester:
                 resp = resp.strip("` \n")
             data = json.loads(resp)
             folder = data.get("folder", "").strip()
-            return folder if folder else None
+            return (folder if folder else None), None
         except Exception as e:
-            console.print(f"  [dim]Classification error: {e}[/dim]")
-            return None
+            return None, f"{type(e).__name__}: {e}"
 
     def _extract_preview(self, file_path: Path, max_chars: int = 3000) -> str:
         if file_path.suffix.lower() == ".pdf":

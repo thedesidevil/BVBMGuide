@@ -395,3 +395,128 @@ def test_pilot_single_file_error_recorded(tmp_path, monkeypatch):
     assert "RuntimeError: boom" in rep["files"][0]["models"]["m1"]["error"]
     assert rep["files"][1]["models"]["m1"]["failed"] is False
     assert "boom" in (out / "pilot_report.md").read_text()
+
+
+# --- B3: classification errors are counted and shown ---------------------
+
+def _classify_setup(tmp_path, monkeypatch, names=("b.pdf", "c.pdf")):
+    from src.library.ingest_core import ordering
+
+    inp, lib = tmp_path / "in", tmp_path / "lib"
+    (lib / "Italy").mkdir(parents=True)
+    inp.mkdir()
+    for n in names:
+        (inp / n).write_bytes(n.encode())
+    monkeypatch.setattr(plan_mod, "scan_file", lambda p: ordering.FileScan(
+        path=p, mtime=date(2025, 1, 1), text_hash=f"h-{p.name}", fmt="new", last_day=None, looks_like_aig=True))
+    monkeypatch.setattr("src.library.ingester.LibraryIngester._extract_preview",
+                        lambda self, p, max_chars=3000: "text")
+    return inp, lib
+
+
+def test_build_plan_records_classification_failures(tmp_path, monkeypatch):
+    inp, lib = _classify_setup(tmp_path, monkeypatch)
+
+    class Raises:
+        api_key = "k"
+
+        def complete(self, prompt, **k):
+            raise RuntimeError("gateway 502")
+
+    entries = build_plan(inp, lib, Raises(), tmp_path / "out")
+    assert entries == []
+    rows = json.loads((tmp_path / "out" / "plan.json").read_text())
+    assert [r["skipped_reason"] for r in rows] == ["no_folder", "no_folder"]
+    assert all("gateway 502" in r["classify_error"] for r in rows)
+    assert "Classification FAILED for 2 file(s)" in (tmp_path / "out" / "order_report.md").read_text()
+
+
+def test_empty_answer_is_no_folder_but_not_a_failure(tmp_path, monkeypatch):
+    inp, lib = _classify_setup(tmp_path, monkeypatch, names=("b.pdf",))
+
+    class Empty:
+        api_key = "k"
+
+        def complete(self, prompt, **k):
+            return '{"folder": ""}'
+
+    build_plan(inp, lib, Empty(), tmp_path / "out")
+    row = json.loads((tmp_path / "out" / "plan.json").read_text())[0]
+    assert row["skipped_reason"] == "no_folder" and "classify_error" not in row
+
+
+def test_plan_cli_prints_prominent_classification_block(tmp_path, monkeypatch):
+    inp, lib = _classify_setup(tmp_path, monkeypatch)
+
+    class Raises:
+        api_key = "k"
+
+        def complete(self, prompt, **k):
+            raise RuntimeError("gateway 502")
+
+    monkeypatch.setattr("src.common.ai_provider.get_ai_client", lambda **k: Raises())
+    res = runner.invoke(cli.app, ["plan", "--input", str(inp), "--library", str(lib),
+                                  "--out", str(tmp_path / "out")])
+    out = " ".join(res.output.split())
+    assert res.exit_code == 0, res.output
+    assert "2 files could not be classified (first error: RuntimeError: gateway 502) - these are marked no_folder" in out
+
+
+def test_ingester_classify_file_still_swallows_errors(tmp_path, monkeypatch):
+    from src.library.ingester import LibraryIngester
+
+    monkeypatch.setattr(LibraryIngester, "_extract_preview", lambda self, p, max_chars=3000: "t")
+    ing = LibraryIngester(tmp_path, api_key="k")
+
+    class Raises:
+        def complete(self, *a, **k):
+            raise RuntimeError("down")
+
+    ing.client = Raises()
+    assert ing._classify_file(tmp_path / "x.pdf", ["Italy"]) is None
+
+
+# --- B4: live-library guard covers paths inside library_db ---------------
+
+def test_is_live_library_refuses_paths_inside(tmp_path):
+    root = Path(cli.__file__).resolve().parents[2] / "library_db"
+    assert cli._is_live_library(Path("library_db"))
+    assert cli._is_live_library(root / "new")
+    assert cli._is_live_library(Path("library_db/new/deeper"))
+    assert not cli._is_live_library(tmp_path / "library_db_new")
+    assert not cli._is_live_library(root.parent / "library_db_new")
+
+
+def test_rebuild_refuses_path_inside_library_db(tmp_path):
+    d = _write_plan(tmp_path)
+    res = runner.invoke(cli.app, ["rebuild", "--plan", str(d), "--db", "library_db/new", "--max-usd", "1"])
+    assert res.exit_code != 0 and "library_db" in res.output
+    assert not Path("library_db/new").exists()
+
+
+def test_pilot_report_carries_extraction_error_reason(tmp_path, monkeypatch):
+    from src.library.ingest_core.extract import ExtractionError
+
+    plan = [_e(tmp_path, "a.docx", "Italy")]
+
+    def boom(c, p):
+        raise ExtractionError("truncated: a.docx hit the output limit")
+
+    monkeypatch.setattr(pilot_mod, "extract_file", boom)
+    out = tmp_path / "out"
+    run_pilot(plan, ["m1"], out, clients={"m1": Probe()})
+    rep = json.loads((out / "pilot_report.json").read_text())
+    assert "truncated" in rep["files"][0]["models"]["m1"]["error"]
+
+
+def test_pilot_cli_and_rebuild_use_ingest_client(tmp_path, monkeypatch):
+    seen = []
+    monkeypatch.setattr("src.common.ai_provider.get_ai_client",
+                        lambda **k: seen.append(k) or Probe())
+    plan = [_e(tmp_path, "a.docx", "Italy")]
+    (tmp_path / "plan.json").write_text(json.dumps([{
+        "path": str(plan[0].path), "folder": "Italy", "order_date": None, "basis": "x",
+        "fmt": "new", "text_hash": "h", "skipped_reason": None}]))
+    monkeypatch.setattr(pilot_mod, "extract_file", lambda *a: None)
+    runner.invoke(cli.app, ["pilot", "--plan", str(tmp_path), "--models", "m1", "--out", str(tmp_path / "o")])
+    assert seen and seen[0]["timeout"] == 600.0 and seen[0]["max_retries"] == 1 and seen[0]["model"] == "m1"

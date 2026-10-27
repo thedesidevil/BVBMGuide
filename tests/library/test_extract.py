@@ -5,7 +5,9 @@ from docx import Document
 
 from src.common.doc_extractor import SINGLE_PASS_LIMIT
 from src.library.ingest_core import extract as extract_mod
-from src.library.ingest_core.extract import Extraction, extract_file, merge_chunks
+import pytest
+
+from src.library.ingest_core.extract import Extraction, ExtractionError, extract_file, merge_chunks
 from src.library.ingest_core.prompt import CITY_LISTS, COUNTRY_LISTS, EXTRACTION_PROMPT
 
 
@@ -21,13 +23,19 @@ class StubClient:
         self._price = price
 
     def complete_json(self, prompt, max_tokens=None, **kwargs):
+        return self.complete_json_full(prompt, max_tokens, **kwargs)[0]
+
+    def complete_json_full(self, prompt, max_tokens=None, **kwargs):
         self.calls.append(prompt)
         self.usage["prompt_tokens"] += self._pt
         self.usage["completion_tokens"] += self._ct
         resp = self._responses.pop(0)
         if isinstance(resp, Exception):
             raise resp
-        return resp if isinstance(resp, str) else json.dumps(resp)
+        finish = None
+        if isinstance(resp, tuple):
+            resp, finish = resp
+        return (resp if isinstance(resp, str) else json.dumps(resp)), finish
 
     @property
     def cost_usd(self):
@@ -161,18 +169,51 @@ def test_merge_chunks_keeps_same_name_in_different_cities():
     assert len(merged["restaurants"]) == 2
 
 
-def test_all_chunks_fail_returns_none(tmp_path, monkeypatch):
+def test_all_chunks_fail_raises(tmp_path, monkeypatch):
     text = ("y" * 1000 + "\n\n") * ((SINGLE_PASS_LIMIT // 1000) + 20)
     monkeypatch.setattr(extract_mod, "read_text", lambda p: text)
     client = StubClient([RuntimeError("boom"), "not json at all"])
-    assert extract_file(client, tmp_path / "big.docx") is None
+    with pytest.raises(ExtractionError) as ei:
+        extract_file(client, tmp_path / "big.docx")
+    assert "api_error: boom" in str(ei.value) and "unparseable" in str(ei.value)
     assert len(client.calls) == 2
 
 
-def test_single_pass_failure_returns_none(tmp_path):
+def test_single_pass_api_error_raises_with_reason(tmp_path):
     client = StubClient([RuntimeError("boom")])
     path = _docx(tmp_path / "a.docx", [LONG_LINE] * 3)
-    assert extract_file(client, path) is None
+    with pytest.raises(ExtractionError, match="api_error: boom"):
+        extract_file(client, path)
+
+
+def test_unparseable_raises_with_reason(tmp_path):
+    client = StubClient(["this is not json"])
+    path = _docx(tmp_path / "a.docx", [LONG_LINE] * 3)
+    with pytest.raises(ExtractionError, match="unparseable"):
+        extract_file(client, path)
+
+
+def test_truncated_is_a_failure_not_repaired(tmp_path):
+    # a response cut off mid-list would repair into partial data; it must fail instead
+    client = StubClient([('{"restaurants": [{"name": "Fake Trattoria", "city": "Rome"}, {"name": "Cut', "length")])
+    path = _docx(tmp_path / "a.docx", [LONG_LINE] * 3)
+    with pytest.raises(ExtractionError, match="truncated"):
+        extract_file(client, path)
+
+
+def test_truncated_chunk_fails_whole_file(tmp_path, monkeypatch):
+    text = ("y" * 1000 + "\n\n") * ((SINGLE_PASS_LIMIT // 1000) + 20)
+    monkeypatch.setattr(extract_mod, "read_text", lambda p: text)
+    client = StubClient([{"restaurants": [{"name": "A", "city": "Rome"}]}, ('{"restaurants": [', "length")])
+    with pytest.raises(ExtractionError, match="truncated"):
+        extract_file(client, tmp_path / "big.docx")
+
+
+def test_one_bad_chunk_of_many_still_succeeds(tmp_path, monkeypatch):
+    text = ("y" * 1000 + "\n\n") * ((SINGLE_PASS_LIMIT // 1000) + 20)
+    monkeypatch.setattr(extract_mod, "read_text", lambda p: text)
+    client = StubClient([{"restaurants": [{"name": "A", "city": "Rome"}]}, "garbage"])
+    assert extract_file(client, tmp_path / "big.docx").data["restaurants"][0]["name"] == "A"
 
 
 def test_short_text_returns_none_without_calling(tmp_path):
@@ -220,8 +261,21 @@ def test_extract_file_survives_malformed_chunks(tmp_path, monkeypatch):
     assert result.data == {"restaurants": [{"name": "Roscioli", "city": "Rome"}]}
 
 
-def test_extract_file_none_when_no_chunk_is_a_dict(tmp_path, monkeypatch):
+def test_extract_file_raises_when_no_chunk_is_a_dict(tmp_path, monkeypatch):
     text = ("w" * 1000 + "\n\n") * ((SINGLE_PASS_LIMIT // 1000) + 20)
     monkeypatch.setattr(extract_mod, "read_text", lambda p: text)
     client = StubClient([["x"], "[1, 2]"])
-    assert extract_file(client, tmp_path / "big.docx") is None
+    with pytest.raises(ExtractionError, match="unparseable"):
+        extract_file(client, tmp_path / "big.docx")
+
+
+def test_call_and_parse_checked_reasons():
+    from src.common.doc_extractor import call_and_parse, call_and_parse_checked
+
+    assert call_and_parse_checked(StubClient([{"a": 1}]), "p", "l") == ({"a": 1}, None)
+    assert call_and_parse_checked(StubClient([("{", "length")]), "p", "l") == (None, "truncated")
+    assert call_and_parse_checked(StubClient(["nope"]), "p", "l") == (None, "unparseable")
+    data, reason = call_and_parse_checked(StubClient([RuntimeError("gateway down")]), "p", "l")
+    assert data is None and reason == "api_error: gateway down"
+    # the legacy wrapper keeps repairing truncated JSON (verify service relies on it)
+    assert call_and_parse(StubClient(['{"a": [1, 2']), "p", "l") == {"a": [1, 2]}

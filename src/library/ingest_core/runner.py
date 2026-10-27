@@ -64,7 +64,8 @@ def _has_items(container: dict, lists: tuple[str, ...]) -> bool:
 
 
 def has_content(data: dict) -> bool:
-    if _covered(data) or _has_items(data, CITY_LISTS):
+    """True when at least one real item is in a city list or a country list (covered_cities alone is not content)."""
+    if _has_items(data, CITY_LISTS):
         return True
     cc = data.get("country_content")
     entries = cc.values() if isinstance(cc, dict) else cc if isinstance(cc, list) else []

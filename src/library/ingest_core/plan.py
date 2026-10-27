@@ -57,9 +57,11 @@ def build_plan(input_dir: Path, library_dir: Path, client, out_dir: Path) -> lis
             previous = {}
 
     ingester = None
+    classify_errors: list[tuple[str, str]] = []
     rows = []
     for o in ordered:
         folder = ""
+        classify_error = None
         reason = o.skipped_reason
         if reason is None:
             key = str(o.scan.path.resolve())
@@ -70,7 +72,10 @@ def build_plan(input_dir: Path, library_dir: Path, client, out_dir: Path) -> lis
                 if ingester is None:
                     ingester = LibraryIngester(library_dir, api_key=getattr(client, "api_key", None) or "unused")
                     ingester.client = client
-                folder = ingester._classify_file(o.scan.path, folders) or ""
+                folder, classify_error = ingester._classify_file_checked(o.scan.path, folders)
+                folder = folder or ""
+                if classify_error:
+                    classify_errors.append((o.scan.path.name, classify_error))
                 if folder and folder not in folders:
                     folders.append(folder)
                 if not folder:
@@ -83,6 +88,7 @@ def build_plan(input_dir: Path, library_dir: Path, client, out_dir: Path) -> lis
             "fmt": o.scan.fmt,
             "text_hash": o.scan.text_hash,
             "skipped_reason": reason,
+            **({"classify_error": classify_error} if classify_error else {}),
         })
 
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -91,6 +97,9 @@ def build_plan(input_dir: Path, library_dir: Path, client, out_dir: Path) -> lis
     missing = [Path(r["path"]).name for r in rows if r["skipped_reason"] == "no_folder"]
     section = ["", "## Needs a folder (edit plan.json)", ""]
     section += [f"- {n}" for n in missing] or ["- none"]
+    if classify_errors:
+        section += ["", f"## Classification FAILED for {len(classify_errors)} file(s)", ""]
+        section += [f"- {n}: {err}" for n, err in classify_errors]
     with open(out_dir / REPORT_NAME, "a", encoding="utf-8") as f:
         f.write("\n".join(section) + "\n")
     return _to_entries(rows)

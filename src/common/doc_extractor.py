@@ -77,8 +77,46 @@ def repair_truncated_json(text: str) -> Optional[dict]:
     return None
 
 
+def call_and_parse_checked(client: AIClient, prompt: str, label: str) -> tuple[Optional[dict], Optional[str]]:
+    """Send prompt in JSON mode; return ``(data, failure_reason)``.
+
+    Reasons: ``"truncated"`` (finish_reason ``length``; never repaired),
+    ``"unparseable"``, ``"api_error: <short message>"``. On success the reason is None.
+    """
+    try:
+        raw, finish = client.complete_json_full(prompt, max_tokens=32000)
+    except Exception as e:
+        print(f"[doc_extractor] AI call failed for {label}: {e}")
+        msg = " ".join(str(e).split())
+        return None, f"api_error: {msg[:200] or type(e).__name__}"
+    if finish == "length":
+        print(f"[doc_extractor] response truncated for {label}")
+        return None, "truncated"
+    raw = raw.strip()
+    # Strip markdown fences in case the model wraps JSON anyway
+    if raw.startswith("```"):
+        raw = raw.split("```")[1]
+        if raw.startswith("json"):
+            raw = raw[4:]
+    if raw.endswith("```"):
+        raw = raw[:-3]
+    raw = raw.strip()
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        data = repair_truncated_json(raw)
+    if not isinstance(data, dict) or not data:
+        print(f"[doc_extractor] JSON parse failed for {label}")
+        return None, "unparseable"
+    return data, None
+
+
 def call_and_parse(client: AIClient, prompt: str, label: str) -> Optional[dict]:
-    """Send prompt to AI in JSON mode and return the parsed dict, or None on failure."""
+    """Send prompt to AI in JSON mode and return the parsed dict, or None on failure.
+
+    Unlike ``call_and_parse_checked`` a truncated response is repaired into
+    partial data (the behaviour the verify service relies on).
+    """
     try:
         raw = client.complete_json(prompt, max_tokens=32000)
         raw = raw.strip()

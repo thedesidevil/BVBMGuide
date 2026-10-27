@@ -48,6 +48,8 @@ class LibraryBuilder:
             api_key=api_key,
             base_url=base_url,
             model=model,
+            timeout=600.0,
+            max_retries=1,
         )
 
     def _discover(self) -> list[tuple[Path, str]]:

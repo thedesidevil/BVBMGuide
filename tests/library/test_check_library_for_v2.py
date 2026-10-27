@@ -29,12 +29,39 @@ FULL = {"currency": "EXA", "tipping": [{"tip": "t"}], "money": [{"tip": "m"}],
         "connectivity_tips": [{"provider": "P", "kind": "sim"}]}
 
 
+def _row(out: str, country: str) -> dict:
+    lines = out.splitlines()
+    header = lines[0].split()
+    row = next(l for l in lines[1:] if l.startswith(country)).split()[len(country.split()) - 1:]
+    return dict(zip(header, row))
+
+
 def test_country_with_content_shows_tick_and_exits_0(check, tmp_path, capsys):
     db = _db(tmp_path, {"Examplia": FULL}, {"Examplia": ["Testville"]},
              {"Testville": {"local_dishes": [{"name": "Fake Stew"}]}})
     assert check.main(["--db", str(db)]) == 0
+    row = _row(capsys.readouterr().out, "Examplia")
+    assert row["dishes"] == "✓" and row["etiquette"] == "–" and row["souvenirs"] == "–"
+    assert row["connectivity"] == "✓"  # country-level connectivity_tips
+    assert row["money"] == "n/a" and row["currency"] == "EXA"
+
+
+def test_folder_not_named_like_country_still_counts(check, tmp_path, capsys):
+    db = _db(tmp_path, {"Examplia": FULL}, {"Examplia and Neighbours": ["Testville"]},
+             {"Testville": {"local_dishes": [{"name": "Fake Stew"}]}})
+    assert check.main(["--db", str(db)]) == 0
     out = capsys.readouterr().out
-    assert "Examplia" in out and "✓" in out and "–" in out
+    assert _row(out, "Examplia")["dishes"] == "✓"
+    assert "GAP: folder" not in out
+
+
+def test_money_not_counted_missing_and_headers_full(check, tmp_path, capsys):
+    db = _db(tmp_path, {"Examplia": {"currency": "EXA"}})
+    assert check.main(["--db", str(db)]) == 0
+    out = capsys.readouterr().out
+    assert "getting_around" in out.splitlines()[0] and "currency" in out.splitlines()[0]
+    assert "7 missing sections" in out  # 7 city/country sections, money excluded
+    assert check.main(["--db", str(db), "--strict"]) == 0  # currency alone is content
 
 
 def test_gap_folder_without_country_shard_is_reported_but_exit_0(check, tmp_path, capsys):

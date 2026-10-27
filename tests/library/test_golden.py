@@ -43,10 +43,24 @@ def _keys(shard: dict, list_name: str) -> set[str]:
     return {item_key(list_name, i) for i in shard.get(list_name, []) if isinstance(i, dict)}
 
 
+def _load(path: Path) -> dict:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except ValueError as e:
+        raise ValueError(f"golden fixture {path.name} is not valid JSON: {e}") from e
+
+
+def unpaired(root: Path = GOLDEN_DIR) -> list[str]:
+    root = Path(root)
+    ext = {p.name[: -len(".extraction.json")] for p in root.glob("*.extraction.json")}
+    exp = {p.name[: -len(".expected.json")] for p in root.glob("*.expected.json")}
+    return sorted([f"{n}.extraction.json (no expected)" for n in ext - exp]
+                  + [f"{n}.expected.json (no extraction)" for n in exp - ext])
+
+
 def run_case(ext: Path, exp: Path, db) -> list[str]:
     """Run one pair against ``db``; return a list of problems (empty = pass)."""
-    data = json.loads(ext.read_text(encoding="utf-8"))
-    expected = json.loads(exp.read_text(encoding="utf-8"))
+    data, expected = _load(ext), _load(exp)
     m = expected["meta"]
     meta = FileMeta(source_file=m["source_file"],
                     order_date=date.fromisoformat(m["order_date"]) if m.get("order_date") else None,
@@ -113,3 +127,22 @@ def test_harness_reports_missing_and_unexpected(memory_db, tmp_path):
     problems = run_case(ext, exp, memory_db)
     assert len(problems) == 3
     assert any("missing" in p for p in problems) and any("unexpected" in p for p in problems)
+
+
+def test_no_unpaired_golden_files():
+    assert not unpaired(), f"unpaired golden files: {unpaired()}"
+
+
+def test_unpaired_files_are_listed(tmp_path):
+    (tmp_path / "a.extraction.json").write_text("{}")
+    (tmp_path / "b.expected.json").write_text("{}")
+    assert unpaired(tmp_path) == ["a.extraction.json (no expected)", "b.expected.json (no extraction)"]
+
+
+def test_malformed_fixture_error_names_file(memory_db, tmp_path):
+    ext = tmp_path / "bad.extraction.json"
+    exp = tmp_path / "bad.expected.json"
+    ext.write_text("{oops")
+    exp.write_text("{}")
+    with pytest.raises(ValueError, match="bad.extraction.json"):
+        run_case(ext, exp, memory_db)

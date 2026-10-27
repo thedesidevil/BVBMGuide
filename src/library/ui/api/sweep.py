@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from typing import Optional
 
 from ..services.db_service import LibraryDBService
+from .manual import stamp_item
 
 router = APIRouter()
 
@@ -50,6 +51,7 @@ def get_sweep(
 
 class SweepSaveRequest(BaseModel):
     edits: list[dict]
+    changed_by: str = "unknown"
 
 
 @router.put("/sweep")
@@ -70,7 +72,9 @@ def save_sweep(request: Request, body: SweepSaveRequest):
         items = data.get(category, [])
         if index < 0 or index >= len(items):
             continue
-        items[index][field_name] = value
+        if items[index].get(field_name) != value:
+            items[index][field_name] = value
+            stamp_item(items[index], body.changed_by)
         db.save_city_data(city, data)
         affected_cities.add(city)
 

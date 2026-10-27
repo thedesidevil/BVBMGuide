@@ -4,6 +4,7 @@ from pydantic import BaseModel
 
 from ..services.db_service import LibraryDBService
 from ..services.audit_service import AuditService
+from .manual import stamp_manual_edits
 
 router = APIRouter()
 
@@ -83,6 +84,7 @@ def save_city(name: str, request: Request, body: dict):
     changed_by = body.pop("changed_by", "unknown")
     audit = AuditService(request.app.state.storage_backend)
     _diff_city(existing, body, changed_by, name, audit)
+    stamp_manual_edits(existing, body, changed_by)
 
     db.save_city_data(name, body)
     db.set_review_status(name, "in_progress")

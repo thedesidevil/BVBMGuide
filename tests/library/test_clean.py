@@ -129,3 +129,42 @@ def test_no_longer_not_client_specific():
 def test_day_of_the_dead_kept_and_ai_chatter_dropped():
     assert _tip_kept("Day of the Dead Museum")
     assert _tip_reason("as an AI language model") == ["chatter"]
+
+
+def test_country_content_list_shape_is_cleaned():
+    data = {"country_content": [
+        {"country": "Examplia", "currency": "EXA",
+         "tipping": [{"tip": "⚠ VERIFY: x"}, {"tip": "Tipping is optional"}, {"tip": "  "}],
+         "dos_donts": [{"tip": "Ask your hotel to book"}]},
+        "garbage", None, 5,
+        {"country": "Otherland",
+         "scams": [{"tip": "I would recommend caution"}, {"tip": "Beware fake guides"}],
+         "plugs": "not a list"},
+        {"country": "Bare", "currency": "BAR"},
+    ]}
+    snapshot = repr(data)
+    out, dropped = clean_extraction(data)
+    assert repr(data) == snapshot
+    cc = out["country_content"]
+    assert cc[0]["tipping"] == [{"tip": "Tipping is optional"}] and cc[0]["dos_donts"] == []
+    assert cc[4]["scams"] == [{"tip": "Beware fake guides"}] and cc[4]["plugs"] == "not a list"
+    assert cc[5] == {"country": "Bare", "currency": "BAR"}
+    assert cc[1:4] == ["garbage", None, 5]
+    assert sorted(_reasons(dropped)) == ["chatter", "client_specific", "marker", "no_identity"]
+    assert {d["scope"] for d in dropped} == {"_country/Examplia", "_country/Otherland"}
+
+
+def test_country_content_dict_shape_still_cleaned():
+    out, dropped = clean_extraction({"country_content": {"Italy": {"tipping": [{"tip": "VERIFY"}, {"tip": "ok"}]}, "X": 1}})
+    assert out["country_content"]["Italy"]["tipping"] == [{"tip": "ok"}]
+    assert _reasons(dropped) == ["marker"]
+
+
+def test_marker_in_country_content_never_reaches_country_shard(memory_db):
+    from src.library.ingest_core.merge import FileMeta, merge_extraction
+    data = {"covered_cities": ["Testville"], "city_countries": {"Testville": "Examplia"},
+            "country_content": [{"country": "Examplia", "tipping": [{"tip": "⚠ VERIFY: 10%"}, {"tip": "Tipping is optional"}]}]}
+    cleaned, _ = clean_extraction(data)
+    merge_extraction(memory_db, cleaned, FileMeta("e/a.docx", None, "new", "Examplia"))
+    tips = [i["tip"] for i in memory_db.get_country_data("Examplia")["tipping"]]
+    assert tips == ["Tipping is optional"]

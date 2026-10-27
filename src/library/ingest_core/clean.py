@@ -52,7 +52,7 @@ def _reason(list_name: str, item) -> str:
     return ""
 
 
-def _clean_lists(container: dict, dropped: list[dict]) -> None:
+def _clean_lists(container: dict, dropped: list[dict], scope: str = "") -> None:
     for name in IDENTITY_FIELDS:
         items = container.get(name)
         if not isinstance(items, list):
@@ -62,7 +62,10 @@ def _clean_lists(container: dict, dropped: list[dict]) -> None:
             reason = _reason(name, item)
             if reason:
                 text = " | ".join(_strings(item)) if isinstance(item, dict) else str(item)
-                dropped.append({"list": name, "reason": reason, "text": text})
+                rec = {"list": name, "reason": reason, "text": text}
+                if scope:
+                    rec["scope"] = scope
+                dropped.append(rec)
             else:
                 kept.append(item)
         container[name] = kept
@@ -74,8 +77,14 @@ def clean_extraction(data: dict) -> tuple[dict, list[dict]]:
     dropped: list[dict] = []
     _clean_lists(out, dropped)
     cc = out.get("country_content")
-    if isinstance(cc, dict):
-        for entry in cc.values():
+    if isinstance(cc, list):  # the shape EXTRACTION_PROMPT emits: [{country, <lists>}]
+        for entry in cc:
             if isinstance(entry, dict):
-                _clean_lists(entry, dropped)
+                country = entry.get("country")
+                scope = f"_country/{country}" if isinstance(country, str) and country.strip() else "_country/"
+                _clean_lists(entry, dropped, scope)
+    elif isinstance(cc, dict):  # tolerated legacy shape: {country: {lists}}
+        for country, entry in cc.items():
+            if isinstance(entry, dict):
+                _clean_lists(entry, dropped, f"_country/{country}")
     return out, dropped

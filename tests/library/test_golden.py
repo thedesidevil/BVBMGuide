@@ -113,11 +113,3 @@ def test_harness_reports_missing_and_unexpected(memory_db, tmp_path):
     problems = run_case(ext, exp, memory_db)
     assert len(problems) == 3
     assert any("missing" in p for p in problems) and any("unexpected" in p for p in problems)
-
-
-@pytest.mark.xfail(strict=True, reason="clean_extraction only cleans country_content when it is a dict; "
-                                       "the extraction schema makes it a list, so markers there survive")
-def test_country_content_list_is_cleaned():
-    data = {"country_content": [{"country": "Examplia", "tipping": [{"tip": "⚠ VERIFY: x"}, {"tip": "ok"}]}]}
-    out, dropped = clean_extraction(data)
-    assert out["country_content"][0]["tipping"] == [{"tip": "ok"}]

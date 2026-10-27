@@ -1,28 +1,73 @@
 {
-  "meta": {"source_file": "examplia/synthetic_a.docx", "order_date": "2026-01-15", "fmt": "new", "folder": "Examplia"},
+  "meta": {
+    "source_file": "examplia/synthetic_a.docx",
+    "order_date": "2026-01-15",
+    "fmt": "new",
+    "folder": "Examplia"
+  },
   "present": {
     "Testville": {
-      "restaurants": ["trattoria fake", "cafe dummy"],
-      "safety_tips": ["beware of unlicensed taxis"]
+      "restaurants": [
+        "trattoria fake",
+        "cafe dummy"
+      ],
+      "safety_tips": [
+        "beware of unlicensed taxis"
+      ]
     },
     "Sampleton": {
-      "local_dishes": ["fake stew"],
-      "safety_tips": ["beware of unlicensed taxis"]
+      "local_dishes": [
+        "fake stew"
+      ],
+      "safety_tips": [
+        "beware of unlicensed taxis"
+      ]
     },
     "_country/Examplia": {
-      "tipping": ["tipping is not expected in restaurants"],
-      "connectivity_tips": ["eurofake esim|esim"]
+      "tipping": [
+        "tipping is not expected in restaurants"
+      ],
+      "connectivity_tips": [
+        "eurofake esim|esim"
+      ]
     },
     "_country/Otherland": {
-      "connectivity_tips": ["eurofake esim|esim"]
+      "connectivity_tips": [
+        "eurofake esim|esim"
+      ],
+      "dos_donts": [
+        "dress modestly at temples"
+      ]
     }
   },
   "absent": {
     "Testville": {
-      "restaurants": ["marker bistro"],
-      "safety_tips": ["ask your hotel to call a taxi"]
+      "restaurants": [
+        "marker bistro"
+      ],
+      "safety_tips": [
+        "ask your hotel to call a taxi"
+      ]
+    },
+    "_country/Examplia": {
+      "tipping": [
+        "10 service charge",
+        "verify 10 service charge"
+      ]
+    },
+    "_country/Otherland": {
+      "dos_donts": [
+        "show your booking reference at the desk"
+      ]
     }
   },
-  "currency": {"_country/Examplia": "EXA", "_country/Otherland": "OTH", "Sampleton": "EXA"},
-  "dropped_reasons": {"marker": 1, "client_specific": 1}
+  "currency": {
+    "_country/Examplia": "EXA",
+    "_country/Otherland": "OTH",
+    "Sampleton": "EXA"
+  },
+  "dropped_reasons": {
+    "marker": 2,
+    "client_specific": 2
+  }
 }

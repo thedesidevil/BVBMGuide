@@ -382,7 +382,7 @@ class IngestService:
         from datetime import date
 
         from src.library.ingest_core.clean import clean_extraction, is_v2_generated
-        from src.library.ingest_core.merge import FileMeta, merge_extraction
+        from src.library.ingest_core.merge import FileMeta, country_coverage, merge_extraction
         from src.library.ingest_core.ordering import scan_file
         from src.library.ingest_core.runner import has_content
 
@@ -430,4 +430,6 @@ class IngestService:
             "processed_at": datetime.now(timezone.utc).isoformat(),
         })
         db_service.add_folder_coverage(folder, covered)
+        for country, cities in country_coverage(cleaned).items():
+            db_service.add_folder_coverage(country, cities)
         return stats, len(dropped)

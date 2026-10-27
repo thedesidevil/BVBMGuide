@@ -21,7 +21,7 @@ from pathlib import Path
 
 from src.library.ingest_core.clean import clean_extraction, is_v2_generated
 from src.library.ingest_core.extract import extract_file
-from src.library.ingest_core.merge import FileMeta, MergeStats, merge_extraction
+from src.library.ingest_core.merge import FileMeta, MergeStats, country_coverage, merge_extraction
 from src.library.ingest_core.prompt import CITY_LISTS, COUNTRY_LISTS
 from src.library.ui.services.db_service import LibraryDBService
 
@@ -200,6 +200,8 @@ def run_ingest(
                     "processed_at": datetime.now(timezone.utc).isoformat(),
                 })
                 db.add_folder_coverage(entry.folder, covered)
+                for country, cities in country_coverage(cleaned).items():
+                    db.add_folder_coverage(country, cities)
             except Exception as e:  # one bad file must never abort the run
                 fail(entry, "exception", _err(e), extraction, error=_err(e))
                 continue

@@ -364,3 +364,27 @@ def merge_extraction(db: LibraryDBService, data: dict, meta: FileMeta) -> MergeS
 
     m.flush()
     return m.stats
+
+
+def country_coverage(data: dict) -> dict[str, list[str]]:
+    """Cleaned extraction -> ``{canonical country: [covered cities]}``, multi-country guides only.
+
+    Cities without a country mapping are skipped. A guide spanning one country (or none)
+    returns ``{}`` so domestic trips do not create extra coverage entries.
+    """
+    covered = data.get("covered_cities")
+    cc = data.get("city_countries")
+    if not isinstance(covered, list) or not isinstance(cc, dict):
+        return {}
+    by_norm = {norm_key(k): v for k, v in cc.items() if isinstance(k, str)}
+    out: dict[str, list[str]] = {}
+    for city in covered:
+        if not isinstance(city, str) or not city.strip():
+            continue
+        raw = by_norm.get(norm_key(city))
+        if not isinstance(raw, str) or not raw.strip():
+            continue
+        cities = out.setdefault(canonical_country(raw), [])
+        if norm_key(city) not in {norm_key(c) for c in cities}:
+            cities.append(city)
+    return out if len(out) > 1 else {}

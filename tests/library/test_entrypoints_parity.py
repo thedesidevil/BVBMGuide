@@ -502,3 +502,25 @@ def test_inspect_cli_reports_extraction_error(tmp_path, monkeypatch):
     res = CliRunner().invoke(cli.app, ["inspect", str(path), "--library", str(tmp_path)])
     assert res.exit_code == 1
     assert "truncated" in " ".join(res.output.split())
+
+
+def test_cli_and_ui_record_identical_country_coverage_for_two_country_guide(tmp_path, monkeypatch):
+    path = _doc(tmp_path / "lib" / "Europe" / "trip.docx")
+    data = {"covered_cities": ["Zurich", "Rome"],
+            "city_countries": {"Zurich": "Switzerland", "Rome": "Italy"},
+            "restaurants": [{"name": "Kronenhalle", "city": "Zurich"},
+                            {"name": "Roscioli", "city": "Rome"}]}
+    cli_backend = MemoryBackend()
+    [ordered] = order_files([scan_file(path)])
+    plan = [PlanEntry(path=path, folder="Europe", order_date=ordered.order_date,
+                      fmt=ordered.scan.fmt, text_hash=ordered.scan.text_hash)]
+    monkeypatch.setattr(runner_mod, "extract_file",
+                        lambda client, p: Extraction(data=data, chunks=1, prompt_tokens=0,
+                                                     completion_tokens=0, usd=0.0))
+    run_ingest(plan, LibraryDBService(cli_backend), StubClient(), log_dir=tmp_path / "logs", workers=1)
+    ui_backend = MemoryBackend()
+    _ui_persist(ui_backend, path, "Europe", data)
+
+    expected = {"Europe": ["Zurich", "Rome"], "Switzerland": ["Zurich"], "Italy": ["Rome"]}
+    assert cli_backend.read_json("_index.json")["_folder_coverage"] == expected
+    assert ui_backend.read_json("_index.json")["_folder_coverage"] == expected

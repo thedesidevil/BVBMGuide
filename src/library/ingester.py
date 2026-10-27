@@ -26,7 +26,44 @@ First 3000 characters of the document:
 
 Task: Decide which folder this document belongs in. If one of the existing folders is a good fit, use it exactly as written. If no existing folder fits, suggest a concise new folder name (e.g. "Morocco", "New Zealand").
 
-Return ONLY a JSON object: {{"folder": "<folder name>"}}"""
+Rules:
+- Folders are named for a country or a group of neighbouring countries.
+- NEVER pick a continent or region folder such as "Europe" or "Asia" for a guide that names specific countries.
+- For a guide covering several countries, choose the folder of the FIRST country named in the title or itinerary (the other countries are recorded separately).
+- If there is no folder for that country, suggest a concise new country name.
+
+Reply with ONLY the JSON object, no explanation: {{"folder": "<folder name>"}}"""
+
+
+def _parse_folder_reply(resp: str) -> dict:
+    """Whole reply as JSON, else the LAST JSON object containing a "folder" key."""
+    text = (resp or "").strip()
+    if text.startswith("```"):
+        parts = text.split("```")
+        text = parts[1] if len(parts) > 1 else text
+        if text.startswith("json"):
+            text = text[4:]
+        text = text.strip("` \n")
+    try:
+        data = json.loads(text)
+        if isinstance(data, dict):
+            return data
+    except ValueError:
+        pass
+    decoder = json.JSONDecoder()
+    found = None
+    for i, ch in enumerate(text):
+        if ch != "{":
+            continue
+        try:
+            obj, _ = decoder.raw_decode(text, i)
+        except ValueError:
+            continue
+        if isinstance(obj, dict) and "folder" in obj:
+            found = obj
+    if found is None:
+        raise ValueError(f"no folder JSON in reply: {text[:80]}")
+    return found
 
 
 class LibraryIngester:
@@ -109,15 +146,9 @@ class LibraryIngester:
         )
 
         try:
-            resp = self.client.complete(prompt, max_tokens=64, temperature=0)
-            resp = resp.strip()
-            if resp.startswith("```"):
-                resp = resp.split("```")[1]
-                if resp.startswith("json"):
-                    resp = resp[4:]
-                resp = resp.strip("` \n")
-            data = json.loads(resp)
-            folder = data.get("folder", "").strip()
+            resp = self.client.complete(prompt, max_tokens=512, temperature=0)
+            data = _parse_folder_reply(resp)
+            folder = str(data.get("folder") or "").strip()
             return (folder if folder else None), None
         except Exception as e:
             return None, f"{type(e).__name__}: {e}"

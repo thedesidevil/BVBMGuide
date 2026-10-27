@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import subprocess
 from pathlib import Path
@@ -49,9 +50,51 @@ def backup_library(db_dir: Path, library_dir: Path, dest: Path, tag: str) -> Non
     if tag in existing:
         raise ValueError(f"git tag already exists: {tag}")
     dest.mkdir(parents=True)
-    shutil.copytree(db_dir, dest / "library_db")
-    shutil.copytree(library_dir, dest / "aig-library")
-    _git(repo, "tag", tag)
+    try:
+        shutil.copytree(db_dir, dest / "library_db")
+        shutil.copytree(library_dir, dest / "aig-library")
+    except OSError as e:
+        shutil.rmtree(dest, ignore_errors=True)
+        raise ValueError(f"backup copy failed ({e}); the partial backup was removed") from e
+    try:
+        _git(repo, "tag", tag)
+    except ValueError as e:
+        raise ValueError(f"a complete backup was written to {dest}, but creating tag {tag} failed: {e}") from e
+
+
+def has_uncommitted_changes(db_dir: Path) -> bool:
+    r = subprocess.run(["git", "status", "--porcelain", "--", "."], cwd=Path(db_dir).resolve(),
+                       capture_output=True, text=True)
+    return r.returncode == 0 and bool(r.stdout.strip())
+
+
+_REF_OK = re.compile(r"^[0-9A-Za-z._/~^@{}-]+$")
+
+
+def resolve_commit(repo: Path, value: str) -> str:
+    """Resolve ``value`` to a full commit SHA or raise ValueError."""
+    if not value or value.startswith("-") or not _REF_OK.match(value):
+        raise ValueError(f"not a valid commit reference: {value!r}")
+    r = subprocess.run(["git", "rev-parse", "--verify", "--quiet", f"{value}^{{commit}}"], cwd=repo,
+                       capture_output=True, text=True)
+    sha = r.stdout.strip()
+    if r.returncode != 0 or not sha:
+        raise ValueError(f"commit {value!r} not found in this repository")
+    return sha
+
+
+def commit_has_parent(repo: Path, sha: str) -> bool:
+    return subprocess.run(["git", "rev-parse", "--verify", "-q", f"{sha}^"], cwd=repo,
+                          capture_output=True).returncode == 0
+
+
+def load_audit(path: Path) -> list | None:
+    """Audit entries, or None when the file is missing or invalid."""
+    try:
+        data = json.loads(Path(path).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    return data if isinstance(data, list) else None
 
 
 def backup_stats(dest: Path) -> tuple[int, int]:
@@ -76,18 +119,14 @@ def _shard_label(rel: str) -> str | None:
 
 def _changed_shards(repo: Path, commit: str) -> list[tuple[str, str]]:
     """(label, repo-relative path) for each shard changed in ``commit``."""
-    out = _git(repo, "diff-tree", "--no-commit-id", "--name-only", "-r", "--root", commit)
+    sha = resolve_commit(repo, commit)
+    out = _git(repo, "diff-tree", "-z", "--no-commit-id", "--name-only", "-r", "--root", sha)
     res = []
-    for rel in sorted(set(out.splitlines())):
+    for rel in sorted(set(x for x in out.split("\0") if x)):
         label = _shard_label(rel)
         if label:
             res.append((label, rel))
     return res
-
-
-def _has_parent(repo: Path, commit: str) -> bool:
-    return subprocess.run(["git", "rev-parse", "--verify", "-q", f"{commit}^"], cwd=repo,
-                          capture_output=True).returncode == 0
 
 
 def build_blocklist(audit_path: Path, git_commit: str | None, repo: Path) -> list[dict]:
@@ -100,13 +139,10 @@ def build_blocklist(audit_path: Path, git_commit: str | None, repo: Path) -> lis
             seen.add((e["city"], e["list"], e["key"]))
             result.append(e)
 
-    audit_path = Path(audit_path)
-    if audit_path.exists():
-        try:
-            entries = json.loads(audit_path.read_text(encoding="utf-8"))
-        except ValueError:
-            entries = []
-        for e in entries if isinstance(entries, list) else []:
+    sha = resolve_commit(repo, git_commit) if git_commit is not None else None
+    entries = load_audit(audit_path)
+    if entries is not None:
+        for e in entries:
             if not isinstance(e, dict) or e.get("action") != "delete":
                 continue
             cat, city = e.get("category"), e.get("city")
@@ -121,10 +157,10 @@ def build_blocklist(audit_path: Path, git_commit: str | None, repo: Path) -> lis
                 key = item_key(cat, {field: name}) if name else ""
             add(city, cat, key)
 
-    if git_commit and _has_parent(repo, git_commit):
-        for label, rel in _changed_shards(repo, git_commit):
-            old = _git_show_json(repo, f"{git_commit}^:{rel}")
-            new = _git_show_json(repo, f"{git_commit}:{rel}")
+    if sha and commit_has_parent(repo, sha):
+        for label, rel in _changed_shards(repo, sha):
+            old = _git_show_json(repo, f"{sha}^:{rel}")
+            new = _git_show_json(repo, f"{sha}:{rel}")
             for list_name, items in old.items():
                 if list_name not in IDENTITY_FIELDS or not isinstance(items, list):
                     continue
@@ -179,17 +215,13 @@ def _label_of(item: dict, list_name: str) -> str:
 
 def write_edit_candidates(old_db: Path, new_db: Path, git_commit: str | None, repo: Path, out: Path) -> None:
     candidates: set[str] = set()
-    if git_commit:
-        candidates.update(label for label, _ in _changed_shards(repo, git_commit))
+    if git_commit is not None:
+        sha = resolve_commit(repo, git_commit)
+        candidates.update(label for label, _ in _changed_shards(repo, sha))
     # audit cities from the old library's audit log
-    audit = Path(old_db) / "_audit.json"
-    if audit.exists():
-        try:
-            for e in json.loads(audit.read_text(encoding="utf-8")):
-                if isinstance(e, dict) and e.get("city"):
-                    candidates.add(str(e["city"]))
-        except ValueError:
-            pass
+    for e in load_audit(Path(old_db) / "_audit.json") or []:
+        if isinstance(e, dict) and e.get("city"):
+            candidates.add(str(e["city"]))
 
     lines = ["# Edit candidates", "",
              "Old items that are missing from, or differ in, the new library. "

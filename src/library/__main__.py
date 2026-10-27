@@ -162,6 +162,11 @@ def backup(
     except ValueError as e:
         console.print(f"\n[red]Error:[/red] {e}")
         raise typer.Exit(1)
+    from .ingest_core.edits import has_uncommitted_changes
+
+    if has_uncommitted_changes(db_path):
+        console.print("[yellow]Warning:[/yellow] the tag marks HEAD, which does NOT include the uncommitted "
+                      "edits in the database folder, but the copied folder does.")
     files, size = backup_stats(dest)
     console.print(f"Backed up {files} files ({size:,} bytes) to {dest}; created local git tag {tag}")
 
@@ -175,8 +180,10 @@ def edit_candidates(
     repo: Optional[Path] = typer.Option(None, "--repo", help="Git repo (default: this project)"),
 ):
     """List old items missing from or different in the new library."""
-    from .ingest_core.edits import write_edit_candidates
+    from .ingest_core.edits import load_audit, write_edit_candidates
 
+    if load_audit(old / "_audit.json") is None:
+        console.print(f"Warning: no audit log found in {old}; audit cities skipped")
     try:
         write_edit_candidates(old, new, git_commit, repo or _repo_root(), out)
     except ValueError as e:
@@ -218,6 +225,20 @@ def rebuild(
         console.print("\n[red]Error:[/red] --max-usd must be greater than 0")
         raise typer.Exit(1)
 
+    blocklist = None
+    if blocklist_from_git is not None:
+        from .ingest_core.edits import build_blocklist, commit_has_parent, resolve_commit
+
+        root = _repo_root()
+        try:
+            sha = resolve_commit(root, blocklist_from_git)
+            if not commit_has_parent(root, sha):
+                console.print("commit has no parent; only audit deletions are used")
+            blocklist = build_blocklist(root / "library_db" / "_audit.json", sha, root)
+        except ValueError as e:
+            console.print(f"\n[red]Error:[/red] {e}")
+            raise typer.Exit(1)
+
     try:
         entries = load_plan(plan_dir)
     except Exception as e:
@@ -252,13 +273,9 @@ def rebuild(
         client = get_ai_client(api_key=api_key, model=model)
         db_path.mkdir(parents=True, exist_ok=True)
         db = LibraryDBService(LocalStorageBackend(db_path))
-        if blocklist_from_git:
-            from .ingest_core.edits import build_blocklist
-
-            root = _repo_root()
-            bl = build_blocklist(root / "library_db" / "_audit.json", blocklist_from_git, root)
-            db.set_blocklist(bl)
-            console.print(f"Loaded {len(bl)} blocklist entries")
+        if blocklist is not None:
+            db.set_blocklist(blocklist)
+            console.print(f"Loaded {len(blocklist)} blocklist entries")
         done = db._index.get("_processed_files") or {}
         todo = [e for e in entries
                 if (done.get(f"{e.folder}/{Path(e.path).name}") or {}).get("text_hash") != e.text_hash]

@@ -168,3 +168,128 @@ def test_rebuild_loads_blocklist(tmp_path, monkeypatch):
     assert {"city": "Cairns", "list": "restaurants", "key": "beta"} in seen["bl"]
     assert "2 blocklist entries" in res.output
     assert LibraryDBService(LocalStorageBackend(db)).get_blocklist()
+
+
+def test_non_ascii_shard_name(tmp_path):
+    repo = tmp_path / "repo"
+    repo.mkdir()
+    for a in (("init", "-q"), ("config", "user.email", "t@e.com"), ("config", "user.name", "T"),
+              ("config", "commit.gpgsign", "false")):
+        _git(repo, *a)
+    _write(repo / "library_db" / "Zürich.json", {"restaurants": [{"name": "Alpha"}, {"name": "Beta"}]})
+    _git(repo, "add", "-A")
+    _git(repo, "commit", "-qm", "a")
+    _write(repo / "library_db" / "Zürich.json", {"restaurants": [{"name": "Alpha"}]})
+    _git(repo, "commit", "-qam", "b")
+    got = build_blocklist(tmp_path / "none.json", "HEAD", repo)
+    assert got == [{"city": "Zürich", "list": "restaurants", "key": "beta"}]
+    old, new = tmp_path / "old", tmp_path / "new"
+    _write(old / "Zürich.json", {"restaurants": [{"name": "Beta", "_source_file": "x"}]})
+    _write(new / "Zürich.json", {"restaurants": []})
+    write_edit_candidates(old, new, "HEAD", repo, tmp_path / "c.md")
+    assert "Beta" in (tmp_path / "c.md").read_text(encoding="utf-8").split("## Old items")[0]
+
+
+def test_invalid_commit_refs(tmp_path, monkeypatch):
+    repo, first, second = _repo(tmp_path)
+    with pytest.raises(ValueError, match="not found"):
+        build_blocklist(tmp_path / "n.json", "deadbeefdeadbeef", repo)
+    with pytest.raises(ValueError, match="not found"):
+        write_edit_candidates(tmp_path, tmp_path, "deadbeefdeadbeef", repo, tmp_path / "o.md")
+    called = []
+    monkeypatch.setattr(subprocess, "run", lambda *a, **k: called.append(a))
+    for bad in ("--output=/tmp/x", "-h", "a b", ""):
+        with pytest.raises(ValueError, match="not a valid commit reference"):
+            build_blocklist(tmp_path / "n.json", bad, repo)
+    assert called == []
+    monkeypatch.undo()
+    assert build_blocklist(tmp_path / "n.json", second[:8], repo)
+
+
+def test_rebuild_bad_sha_creates_nothing(tmp_path, monkeypatch):
+    from src.library.ingest_core import runner as runner_mod
+    from tests.library.test_plan_pilot import _Client, _write_plan
+
+    repo, _, _ = _repo(tmp_path)
+    d = _write_plan(tmp_path, 1)
+    monkeypatch.setattr(cli, "_repo_root", lambda: repo)
+    called = []
+    monkeypatch.setattr("src.common.ai_provider.get_ai_client", lambda **k: called.append("client") or _Client())
+    monkeypatch.setattr(runner_mod, "run_ingest", lambda *a, **k: called.append("run"))
+    db = tmp_path / "new"
+    for bad in ("deadbeefdeadbeef", "--output=/tmp/x"):
+        res = runner.invoke(cli.app, ["rebuild", "--plan", str(d), "--db", str(db), "--max-usd", "5",
+                                      "--blocklist-from-git", bad])
+        assert res.exit_code == 1, res.output
+        assert not db.exists()
+    assert called == []
+
+
+def test_backup_copy_failure_cleans_up(tmp_path, monkeypatch):
+    import shutil
+    repo, _, _ = _repo(tmp_path)
+    lib = repo / "aig-library"
+    _write(lib / "f.json", {})
+
+    def boom(*a, **k):
+        raise OSError("disk full")
+
+    monkeypatch.setattr(shutil, "copytree", boom)
+    dest = tmp_path / "bk"
+    with pytest.raises(ValueError, match="disk full"):
+        backup_library(repo / "library_db", lib, dest, "t1")
+    assert not dest.exists()
+    assert "t1" not in _git(repo, "tag").split()
+
+
+def test_backup_tag_failure_keeps_copy(tmp_path, monkeypatch):
+    from src.library.ingest_core import edits
+    repo, _, _ = _repo(tmp_path)
+    lib = repo / "aig-library"
+    _write(lib / "f.json", {})
+    real = edits._git
+
+    def fake(r, *args):
+        if args[:1] == ("tag",) and "--list" not in args:
+            raise ValueError("nope")
+        return real(r, *args)
+
+    monkeypatch.setattr(edits, "_git", fake)
+    dest = tmp_path / "bk"
+    with pytest.raises(ValueError, match="complete backup was written to .*creating tag t1 failed: nope"):
+        backup_library(repo / "library_db", lib, dest, "t1")
+    assert (dest / "library_db").exists()
+
+
+def test_cli_backup_warns_on_uncommitted(tmp_path):
+    repo, _, _ = _repo(tmp_path)
+    lib = repo / "aig-library"
+    _write(lib / "f.json", {})
+    _write(repo / "library_db" / "Cairns.json", {"restaurants": []})
+    res = runner.invoke(cli.app, ["backup", "--dest", str(tmp_path / "bk"), "--tag", "t1",
+                                  "--db", str(repo / "library_db"), "--library", str(lib)])
+    assert res.exit_code == 0, res.output
+    assert "does NOT include the uncommitted" in " ".join(res.output.split())
+
+
+def test_edit_candidates_warns_without_audit(tmp_path):
+    old, new = tmp_path / "old", tmp_path / "new"
+    _write(old / "Rome.json", {"attractions": []})
+    _write(new / "Rome.json", {"attractions": []})
+    res = runner.invoke(cli.app, ["edit-candidates", "--old", str(old), "--new", str(new),
+                                  "--out", str(tmp_path / "c.md")])
+    assert res.exit_code == 0, res.output
+    assert "no audit log found" in res.output
+
+
+@pytest.mark.parametrize("n,more", [(50, None), (51, "... and 1 more")])
+def test_cap_boundary(tmp_path, n, more):
+    old, new = tmp_path / "old", tmp_path / "new"
+    _write(old / "Rome.json", {"attractions": [{"name": f"A{i:03d}"} for i in range(n)]})
+    _write(new / "Rome.json", {"attractions": []})
+    write_edit_candidates(old, new, None, tmp_path, tmp_path / "c.md")
+    text = (tmp_path / "c.md").read_text(encoding="utf-8")
+    if more:
+        assert more in text
+    else:
+        assert "... and" not in text

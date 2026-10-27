@@ -84,7 +84,10 @@ def plan(
     out: Path = typer.Option(Path("ingest_plan"), "--out", help="Where to write plan.json and order_report.md"),
     api_key: Optional[str] = typer.Option(None, "--api-key", help="API key (uses AI_API_KEY from .env if not set)"),
 ):
-    """Order every past AIG and assign it a library folder (no extraction)."""
+    """Order every past AIG and assign it a library folder (no extraction).
+
+    Re-running keeps the folders already in plan.json (including hand edits); delete plan.json to re-plan from scratch.
+    """
     from src.common.ai_provider import get_ai_client
     from .ingest_core.plan import build_plan
 
@@ -94,6 +97,15 @@ def plan(
     except Exception as e:
         console.print(f"\n[red]Error:[/red] {e}")
         raise typer.Exit(1)
+    import json as _json
+
+    rows = _json.loads((out / "plan.json").read_text(encoding="utf-8"))
+    missing = [Path(r["path"]).name for r in rows if r.get("skipped_reason") == "no_folder"]
+    if missing:
+        console.print(f"\n[yellow]{len(missing)} file(s) have no folder:[/yellow]")
+        for n in missing:
+            console.print(f"  - {n}")
+        console.print("Put a folder for each in plan.json, or accept leaving them out.")
     console.print(f"\n[bold green]{len(entries)} file(s) planned.[/bold green] "
                   f"Review {out / 'order_report.md'} and edit folders in {out / 'plan.json'} if needed.")
 
@@ -156,11 +168,14 @@ def rebuild(
     if max_usd is None and not dry_run:
         console.print("\n[red]Error:[/red] --max-usd is required unless --dry-run")
         raise typer.Exit(1)
+    if max_usd is not None and max_usd <= 0:
+        console.print("\n[red]Error:[/red] --max-usd must be greater than 0")
+        raise typer.Exit(1)
 
     try:
         entries = load_plan(plan_dir)
     except Exception as e:
-        console.print(f"\n[red]Error:[/red] cannot read plan: {e}")
+        console.print(f"\n[red]Error:[/red] {e}" if isinstance(e, ValueError) else f"\n[red]Error:[/red] cannot read plan: {e}")
         raise typer.Exit(1)
 
     if dry_run:
@@ -171,8 +186,8 @@ def rebuild(
                 if (done.get(f"{e.folder}/{Path(e.path).name}") or {}).get("text_hash") != e.text_hash]
         console.print(f"Files to extract: {len(todo)}")
         if estimate_from is None or model is None:
-            console.print("[yellow]Give --estimate-from and --model to project a cost.[/yellow]")
-            return
+            console.print("[red]Error:[/red] a projection needs both --estimate-from and --model")
+            raise typer.Exit(1)
         try:
             avg = json.loads(estimate_from.read_text(encoding="utf-8"))["models"][model]["avg_usd_per_file"]
         except (OSError, KeyError, ValueError) as e:
@@ -191,7 +206,13 @@ def rebuild(
         client = get_ai_client(api_key=api_key, model=model)
         db_path.mkdir(parents=True, exist_ok=True)
         db = LibraryDBService(LocalStorageBackend(db_path))
-        console.print(f"[dim]Using AI: {client}[/dim]\n")
+        done = db._index.get("_processed_files") or {}
+        todo = [e for e in entries
+                if (done.get(f"{e.folder}/{Path(e.path).name}") or {}).get("text_hash") != e.text_hash]
+        used = client.model + ("" if model else " (default from the environment; --model not given)")
+        console.print(f"Model: {used}")
+        console.print(f"Files to process: {len(todo)}")
+        console.print(f"Cost ceiling (--max-usd): ${max_usd:.2f}\n")
         report = run_ingest(entries, db, client, log_dir=db_path / "_ingest_log",
                             workers=workers, max_usd=max_usd)
     except KeyboardInterrupt:

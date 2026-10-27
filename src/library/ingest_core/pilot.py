@@ -95,7 +95,11 @@ def run_pilot(entries: list[PlanEntry], models: list[str], out_dir: Path, client
     for e in entries:
         row = {"file": f"{e.folder}/{Path(e.path).name}", "folder": e.folder, "fmt": e.fmt, "models": {}}
         for m in models:
-            ex = extract_file(clients[m], Path(e.path))
+            try:
+                ex = extract_file(clients[m], Path(e.path))
+            except Exception as exc:
+                row["models"][m] = {"failed": True, "error": f"{type(exc).__name__}: {exc}"}
+                continue
             if ex is None:
                 row["models"][m] = {"failed": True}
                 continue
@@ -137,7 +141,8 @@ def _markdown(models, summary, files) -> str:
         for m in models:
             x = r["models"][m]
             if x["failed"]:
-                L.append(f"| {r['file']} | {r['fmt']} | {m} | | | | | FAILED | |")
+                err = x.get("error")
+                L.append(f"| {r['file']} | {r['fmt']} | {m} | | | | | FAILED{': ' + err.replace('|', '/') if err else ''} | |")
                 continue
             counts = ", ".join(f"{k}={v}" for k, v in sorted(x["counts"].items()))
             usd = "n/a" if x["usd"] is None else f"{x['usd']:.4f}"
@@ -151,7 +156,7 @@ def _markdown(models, summary, files) -> str:
             L.append(f"**{kind}**")
             for m in models:
                 x = r["models"][m]
-                names = "FAILED" if x["failed"] else "; ".join(x[kind]) or "(none)"
+                names = ("FAILED" + (f": {x['error']}" if x.get("error") else "")) if x["failed"] else "; ".join(x[kind]) or "(none)"
                 L.append(f"- {m}: {names}")
             L.append("")
     return "\n".join(L) + "\n"

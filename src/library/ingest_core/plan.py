@@ -46,14 +46,27 @@ def build_plan(input_dir: Path, library_dir: Path, client, out_dir: Path) -> lis
     ordered = order_files([scan_file(f) for f in files])
     folders, by_name = _library_folders(library_dir)
 
+    previous: dict[str, str] = {}
+    prev_file = out_dir / PLAN_NAME
+    if prev_file.exists():
+        try:
+            for r in json.loads(prev_file.read_text(encoding="utf-8")):
+                if isinstance(r, dict) and isinstance(r.get("path"), str):
+                    previous[r["path"]] = r.get("folder") if isinstance(r.get("folder"), str) else ""
+        except (OSError, ValueError):
+            previous = {}
+
     ingester = None
     rows = []
     for o in ordered:
         folder = ""
         reason = o.skipped_reason
         if reason is None:
+            key = str(o.scan.path.resolve())
             folder = by_name.get(o.scan.path.name, "")
-            if not folder:
+            if not folder and previous.get(key):
+                folder = previous[key]  # kept from the earlier plan.json (may be hand-edited)
+            elif not folder:
                 if ingester is None:
                     ingester = LibraryIngester(library_dir, api_key=getattr(client, "api_key", None) or "unused")
                     ingester.client = client
@@ -63,7 +76,7 @@ def build_plan(input_dir: Path, library_dir: Path, client, out_dir: Path) -> lis
                 if not folder:
                     reason = "no_folder"
         rows.append({
-            "path": str(o.scan.path),
+            "path": str(o.scan.path.resolve()),
             "folder": folder,
             "order_date": o.order_date.isoformat() if o.order_date else None,
             "basis": o.basis,
@@ -75,24 +88,52 @@ def build_plan(input_dir: Path, library_dir: Path, client, out_dir: Path) -> lis
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / PLAN_NAME).write_text(json.dumps(rows, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     write_order_report(ordered, out_dir / REPORT_NAME)
+    missing = [Path(r["path"]).name for r in rows if r["skipped_reason"] == "no_folder"]
+    section = ["", "## Needs a folder (edit plan.json)", ""]
+    section += [f"- {n}" for n in missing] or ["- none"]
+    with open(out_dir / REPORT_NAME, "a", encoding="utf-8") as f:
+        f.write("\n".join(section) + "\n")
     return _to_entries(rows)
 
 
+class PlanError(ValueError):
+    """plan.json has an invalid entry."""
+
+
 def _to_entries(rows: list[dict]) -> list[PlanEntry]:
-    return [
-        PlanEntry(
-            path=Path(r["path"]),
-            folder=r["folder"],
-            order_date=date.fromisoformat(r["order_date"]) if r.get("order_date") else None,
-            fmt=r["fmt"],
-            text_hash=r["text_hash"],
-        )
-        for r in rows
-        if not r.get("skipped_reason")
-    ]
+    out = []
+    for n, r in enumerate(rows):
+        where = r.get("path", "?") if isinstance(r, dict) else "?"
+        try:
+            if not isinstance(r, dict):
+                raise TypeError("entry is not an object")
+            reason = r.get("skipped_reason")
+            folder = r["folder"]
+            if not isinstance(folder, str):
+                raise TypeError("folder is not text")
+            if reason and not (reason == "no_folder" and folder.strip()):
+                continue
+            if not folder.strip():
+                raise ValueError("folder is empty")
+            od = r["order_date"]
+            out.append(PlanEntry(
+                path=Path(r["path"]),
+                folder=folder,
+                order_date=date.fromisoformat(od) if od else None,
+                fmt=r["fmt"],
+                text_hash=r["text_hash"],
+            ))
+        except (KeyError, TypeError, ValueError) as e:
+            why = f"missing {e}" if isinstance(e, KeyError) else str(e)
+            raise PlanError(f"plan.json entry {n} ({where}) is invalid: {why}") from e
+    return out
 
 
 def load_plan(out_dir: Path) -> list[PlanEntry]:
-    """Read ``plan.json`` from disk (never cached) and return non-skipped entries."""
+    """Read ``plan.json`` from disk (never cached) and return processable entries.
+
+    Skipped entries are dropped, except a ``no_folder`` entry whose folder was
+    filled in by hand.
+    """
     rows = json.loads((Path(out_dir) / PLAN_NAME).read_text(encoding="utf-8"))
     return _to_entries(rows)

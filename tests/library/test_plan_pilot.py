@@ -205,6 +205,7 @@ def test_rebuild_dry_run_projection(tmp_path):
 
 
 class _Client:
+    model = "stub-model"
     cost_usd = 0.0
     usage = {"prompt_tokens": 0, "completion_tokens": 0}
 
@@ -241,3 +242,156 @@ def test_rebuild_ctrl_c(tmp_path, monkeypatch):
                                   "--max-usd", "5"])
     assert res.exit_code == 130
     assert "Progress is saved; re-run the same command to resume." in res.output
+
+
+# ---- fix round 1 ----
+def _aig_scan(path, h):
+    from src.library.ingest_core import ordering
+
+    return ordering.FileScan(path=path, mtime=date(2025, 1, 1), text_hash=h, fmt="new",
+                             last_day=None, looks_like_aig=True)
+
+
+class _Cls:
+    api_key = "k"
+
+    def __init__(self, folder="Italy", fail=False):
+        self.folder, self.fail, self.calls = folder, fail, 0
+
+    def complete(self, prompt, **k):
+        self.calls += 1
+        if self.fail:
+            raise AssertionError("classifier must not be called")
+        return json.dumps({"folder": self.folder}) if self.folder else "garbage"
+
+
+def _setup(tmp_path, monkeypatch):
+    inp, lib = tmp_path / "in", tmp_path / "lib"
+    (lib / "Italy").mkdir(parents=True)
+    inp.mkdir()
+    monkeypatch.setattr(plan_mod, "scan_file", lambda p: _aig_scan(p, "h-" + p.name))
+    monkeypatch.setattr("src.library.ingester.LibraryIngester._extract_preview",
+                        lambda self, p, max_chars=3000: "text")
+    return inp, lib
+
+
+def test_replan_keeps_hand_edits_and_classifies_only_new(tmp_path, monkeypatch):
+    inp, lib = _setup(tmp_path, monkeypatch)
+    (inp / "a.pdf").write_bytes(b"a")
+    out = tmp_path / "out"
+    build_plan(inp, lib, _Cls("Italy"), out)
+    rows = json.loads((out / "plan.json").read_text())
+    rows[0]["folder"] = "Hand Edited"
+    (out / "plan.json").write_text(json.dumps(rows))
+
+    build_plan(inp, lib, _Cls(fail=True), out)
+    assert json.loads((out / "plan.json").read_text())[0]["folder"] == "Hand Edited"
+
+    (inp / "b.pdf").write_bytes(b"b")
+    c = _Cls("France")
+    build_plan(inp, lib, c, out)
+    got = {Path(r["path"]).name: r["folder"] for r in json.loads((out / "plan.json").read_text())}
+    assert c.calls == 1
+    assert got == {"a.pdf": "Hand Edited", "b.pdf": "France"}
+
+
+def test_no_folder_visible_and_rescuable(tmp_path, monkeypatch):
+    inp, lib = _setup(tmp_path, monkeypatch)
+    (inp / "a.pdf").write_bytes(b"a")
+    out = tmp_path / "out"
+    entries = build_plan(inp, lib, _Cls(folder=None), out)
+    assert entries == []
+    rows = json.loads((out / "plan.json").read_text())
+    assert rows[0]["skipped_reason"] == "no_folder"
+    assert "## Needs a folder (edit plan.json)" in (out / "order_report.md").read_text()
+    assert "- a.pdf" in (out / "order_report.md").read_text().split("## Needs a folder")[1]
+    # (c) hand-filled folder is processable; other reasons stay skipped
+    rows[0]["folder"] = "Italy"
+    rows.append({**rows[0], "path": "/x/d.pdf", "skipped_reason": "duplicate", "folder": "Italy"})
+    (out / "plan.json").write_text(json.dumps(rows))
+    assert [e.folder for e in load_plan(out)] == ["Italy"]
+    # (a) CLI lists them
+    rows[0]["folder"] = ""
+    (out / "plan.json").write_text(json.dumps(rows[:1]))
+    monkeypatch.setattr("src.common.ai_provider.get_ai_client", lambda **k: _Cls(folder=None))
+    res = runner.invoke(cli.app, ["plan", "--input", str(inp), "--library", str(lib), "--out", str(out)])
+    assert res.exit_code == 0, res.output
+    assert "1 file(s) have no folder" in res.output and "a.pdf" in res.output
+
+
+def test_load_plan_invalid_entries(tmp_path):
+    from src.library.ingest_core.plan import PlanError
+
+    base = {"path": "/x/a.pdf", "folder": "Italy", "order_date": None, "basis": "m", "fmt": "new",
+            "text_hash": "h", "skipped_reason": None}
+    for bad, why in (({k: v for k, v in base.items() if k != "fmt"}, "missing"),
+                     ({**base, "folder": ""}, "folder is empty")):
+        (tmp_path / "plan.json").write_text(json.dumps([bad]))
+        with pytest.raises(PlanError, match=r"plan.json entry 0 \(/x/a.pdf\) is invalid: " + why):
+            load_plan(tmp_path)
+    (tmp_path / "plan.json").write_text(json.dumps([{**base, "folder": ""}]))
+    res = runner.invoke(cli.app, ["rebuild", "--plan", str(tmp_path), "--db", str(tmp_path / "n"),
+                                  "--max-usd", "1"])
+    assert res.exit_code == 1 and "is invalid" in res.output and "Traceback" not in res.output
+
+
+def test_rebuild_prints_model_count_ceiling_before_run(tmp_path, monkeypatch):
+    d = _write_plan(tmp_path, 2)
+
+    class C(_Client):
+        model = "env-model"
+
+    monkeypatch.setattr("src.common.ai_provider.get_ai_client", lambda **k: C())
+    from src.library.ingest_core import runner as runner_mod
+
+    seen = {}
+
+    def spy(*a, **k):
+        seen["out"] = capture["fn"]()
+        raise KeyboardInterrupt
+
+    capture = {}
+    monkeypatch.setattr(runner_mod, "run_ingest", spy)
+    # CliRunner buffers output; capture what has been printed so far via console.print
+    printed = []
+    real = cli.console.print
+    monkeypatch.setattr(cli.console, "print", lambda *a, **k: (printed.append(" ".join(map(str, a))), real(*a, **k)))
+    capture["fn"] = lambda: "\n".join(printed)
+    res = runner.invoke(cli.app, ["rebuild", "--plan", str(d), "--db", str(tmp_path / "n"), "--max-usd", "5"])
+    out = seen["out"]
+    assert "env-model (default from the environment" in out
+    assert "Files to process: 2" in out
+    assert "$5.00" in out
+    assert res.exit_code == 130
+
+
+def test_rebuild_dry_run_needs_estimate_and_model(tmp_path):
+    d = _write_plan(tmp_path)
+    res = runner.invoke(cli.app, ["rebuild", "--plan", str(d), "--db", str(tmp_path / "n"), "--dry-run"])
+    assert res.exit_code == 1 and "--estimate-from" in res.output and "--model" in res.output
+
+
+def test_rebuild_rejects_nonpositive_max_usd(tmp_path):
+    d = _write_plan(tmp_path)
+    for v in ("0", "-1"):
+        res = runner.invoke(cli.app, ["rebuild", "--plan", str(d), "--db", str(tmp_path / "n"),
+                                      "--max-usd", v])
+        assert res.exit_code == 1 and "greater than 0" in res.output
+
+
+def test_pilot_single_file_error_recorded(tmp_path, monkeypatch):
+    plan = [_e(tmp_path, "a.docx", "Italy"), _e(tmp_path, "b.docx", "France")]
+
+    def fake(c, p):
+        if p.name == "a.docx":
+            raise RuntimeError("boom")
+        return Extraction(data={"restaurants": [{"name": "R"}]}, chunks=1, prompt_tokens=1,
+                          completion_tokens=1, usd=0.1)
+
+    monkeypatch.setattr(pilot_mod, "extract_file", fake)
+    out = tmp_path / "out"
+    run_pilot(plan, ["m1"], out, clients={"m1": Probe()})
+    rep = json.loads((out / "pilot_report.json").read_text())
+    assert "RuntimeError: boom" in rep["files"][0]["models"]["m1"]["error"]
+    assert rep["files"][1]["models"]["m1"]["failed"] is False
+    assert "boom" in (out / "pilot_report.md").read_text()

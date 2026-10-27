@@ -1,0 +1,27 @@
+{
+  "covered_cities": ["Testville", "Sampleton", "Otherburg"],
+  "city_countries": {"Testville": "Examplia", "Sampleton": "Examplia", "Otherburg": "Otherland"},
+  "restaurants": [
+    {"name": "Trattoria Fake", "city": "Testville", "cuisine_type": ["Fakeish"], "meal_slots": ["lunch"], "area": "Old Quarter"},
+    {"name": "Cafe Dummy", "city": "Testville", "cuisine_type": ["Cafe"], "meal_slots": ["dinner"]},
+    {"name": "Marker Bistro", "city": "Testville", "notes": "⚠ VERIFY: price"}
+  ],
+  "local_dishes": [{"name": "Fake Stew", "city": "Sampleton", "description": "Slow-cooked test stew"}],
+  "safety_tips": [
+    {"cities": ["Testville", "Sampleton"], "tip": "Beware of unlicensed taxis"},
+    {"cities": ["Testville"], "tip": "Ask your hotel to call a taxi"}
+  ],
+  "country_content": [
+    {
+      "country": "Examplia",
+      "currency": "EXA",
+      "tipping": [{"tip": "Tipping is not expected in restaurants"}],
+      "connectivity_tips": [{"provider": "EuroFake eSIM", "kind": "esim", "coverage_countries": ["Examplia", "Otherland"], "price_text": "10 EXA for 5 GB"}]
+    },
+    {
+      "country": "Otherland",
+      "currency": "OTH",
+      "connectivity_tips": [{"provider": "EuroFake eSIM", "kind": "esim", "coverage_countries": ["Examplia", "Otherland"], "price_text": "10 EXA for 5 GB"}]
+    }
+  ]
+}

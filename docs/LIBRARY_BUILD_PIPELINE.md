@@ -156,6 +156,19 @@ library_db/                ← project root, NOT inside aig-library/
 
 Each city shard contains all data for that city: restaurants, attractions, hotels, local dishes, phrases, safety tips, souvenirs, emergency contacts, connectivity tips, transport options, and health tips.
 
+## Plan, Pilot, Rebuild (redesigned ingest)
+
+For a full rebuild from past AIGs, run the steps in this order. Nothing here touches `library_db/`.
+
+1. **plan**: `python -m src.library plan --input <dir> --library aig-library --out ingest_plan`. Free except one small classification call per file with no same-named file in the library. Writes `plan.json` (path, folder, order date, basis, format, hash, skipped reason) and `order_report.md`. Check the report, and edit folders in `plan.json` if needed; later steps read the file as it is on disk.
+2. **pilot**: `python -m src.library pilot --plan ingest_plan --models claude-sonnet-5-5,claude-haiku-5-5 --out pilot_out`. Probes each model with one tiny call (stops if a model does not answer), then extracts about 10 chosen files per model into memory only. Writes `pilot_report.md` (tokens, cost, item counts, a flag for prompts over 100K tokens, side-by-side restaurant and attraction names) and `pilot_report.json`.
+3. **dry-run**: `python -m src.library rebuild --plan ingest_plan --db library_db_new --dry-run --estimate-from pilot_out/pilot_report.json --model NAME` prints the file count and projected total. No extraction, nothing written.
+4. **backup**: tag git and copy `library_db/` and `aig-library/` outside the repo.
+5. **rebuild**: `python -m src.library rebuild --plan ingest_plan --db library_db_new --max-usd N`. Refuses `library_db` and refuses to run without `--max-usd`. Resumable: Ctrl-C saves progress, re-run the same command. The run log is in `library_db_new/_ingest_log/`.
+6. **verify**: `python -m src.library verify --db library_db_new`, then review before swapping it in.
+
+`build` also takes `--max-usd` (required for more than 5 files) and refuses a legacy index whose processed-file records have no content hash.
+
 ## Key Design Decisions
 
 | Decision | Rationale |

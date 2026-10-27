@@ -15,7 +15,15 @@ pip install -r requirements.txt
 # --- Library Management (python -m src.library) ---
 
 # Build/rebuild the library database from aig-library/ files
-python -m src.library build [--library aig-library] [--db library_db] [--force] [--workers 5]
+python -m src.library build [--library aig-library] [--db library_db] [--force] [--workers 5] [--max-usd N]
+# (--max-usd is required when more than 5 files would be extracted; build refuses a legacy
+#  index whose processed-file records lack content hashes - use plan/rebuild into a new folder)
+
+# Redesigned ingest: plan -> pilot -> rebuild into a NEW folder (never library_db)
+python -m src.library plan --input <dir> --library aig-library --out ingest_plan
+python -m src.library pilot --plan ingest_plan --models claude-sonnet-5-5,claude-haiku-5-5 --count 10 --out pilot_out
+python -m src.library rebuild --plan ingest_plan --db library_db_new --max-usd N [--workers 5]
+python -m src.library rebuild --plan ingest_plan --db library_db_new --dry-run --estimate-from pilot_out/pilot_report.json --model NAME
 
 # Classify and move new AIGs into the library
 python -m src.library ingest --input <folder>

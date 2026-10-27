@@ -78,6 +78,139 @@ def build(
 
 
 @app.command()
+def plan(
+    input_path: Path = typer.Option(..., "--input", "-i", help="Folder of past AIGs to plan", exists=True),
+    library_path: Path = typer.Option(Path("aig-library"), "--library", "-l", help="AIG library directory (folder names and same-named files)"),
+    out: Path = typer.Option(Path("ingest_plan"), "--out", help="Where to write plan.json and order_report.md"),
+    api_key: Optional[str] = typer.Option(None, "--api-key", help="API key (uses AI_API_KEY from .env if not set)"),
+):
+    """Order every past AIG and assign it a library folder (no extraction)."""
+    from src.common.ai_provider import get_ai_client
+    from .ingest_core.plan import build_plan
+
+    try:
+        client = get_ai_client(api_key=api_key)
+        entries = build_plan(input_path, library_path, client, out)
+    except Exception as e:
+        console.print(f"\n[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+    console.print(f"\n[bold green]{len(entries)} file(s) planned.[/bold green] "
+                  f"Review {out / 'order_report.md'} and edit folders in {out / 'plan.json'} if needed.")
+
+
+@app.command()
+def pilot(
+    plan_dir: Path = typer.Option(Path("ingest_plan"), "--plan", help="Folder holding plan.json"),
+    models: str = typer.Option(..., "--models", help="Comma-separated model names to compare"),
+    count: int = typer.Option(10, "--count", help="Number of files to run", min=1),
+    out: Path = typer.Option(Path("pilot_out"), "--out", help="Where to write pilot_report.md/json"),
+):
+    """Run a few plan files through each model and report cost and quality. Writes no library data."""
+    from .ingest_core.pilot import PilotError, run_pilot, select_pilot_files
+    from .ingest_core.plan import load_plan
+
+    names = [m.strip() for m in models.split(",") if m.strip()]
+    if not names:
+        console.print("\n[red]Error:[/red] --models is empty")
+        raise typer.Exit(1)
+    try:
+        entries = select_pilot_files(load_plan(plan_dir), count)
+        run_pilot(entries, names, out)
+    except PilotError as e:
+        console.print(f"\n[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+    except Exception as e:
+        console.print(f"\n[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+    console.print(f"\n[bold green]Pilot done.[/bold green] See {out / 'pilot_report.md'}")
+
+
+def _is_live_library(path: Path) -> bool:
+    resolved = path.resolve()
+    repo_db = (Path(__file__).resolve().parents[2] / "library_db").resolve()
+    return resolved in (Path("library_db").resolve(), repo_db)
+
+
+@app.command()
+def rebuild(
+    plan_dir: Path = typer.Option(Path("ingest_plan"), "--plan", help="Folder holding plan.json"),
+    db_path: Path = typer.Option(..., "--db", help="NEW database folder (never library_db)"),
+    max_usd: Optional[float] = typer.Option(None, "--max-usd", help="Cost ceiling in USD; required unless --dry-run"),
+    workers: int = typer.Option(5, "--workers", "-w", min=1, max=20, help="Parallel extraction workers"),
+    estimate_from: Optional[Path] = typer.Option(None, "--estimate-from", help="pilot_report.json for --dry-run"),
+    model: Optional[str] = typer.Option(None, "--model", help="Model whose pilot average is used for --dry-run"),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Print the projected cost and file count; extract nothing"),
+    api_key: Optional[str] = typer.Option(None, "--api-key", help="API key (uses AI_API_KEY from .env if not set)"),
+):
+    """Run the paid ingest of a plan into a new, empty database folder."""
+    import json
+
+    from .ingest_core.plan import load_plan
+    from .ingest_core.runner import run_ingest
+    from .ui.services.db_service import LibraryDBService
+    from .ui.storage import LocalStorageBackend
+
+    if _is_live_library(db_path):
+        console.print("\n[red]Error:[/red] refusing to rebuild into library_db; use a new folder (e.g. library_db_new)")
+        raise typer.Exit(1)
+    if max_usd is None and not dry_run:
+        console.print("\n[red]Error:[/red] --max-usd is required unless --dry-run")
+        raise typer.Exit(1)
+
+    try:
+        entries = load_plan(plan_dir)
+    except Exception as e:
+        console.print(f"\n[red]Error:[/red] cannot read plan: {e}")
+        raise typer.Exit(1)
+
+    if dry_run:
+        done: dict = {}
+        if (db_path / "_index.json").exists():
+            done = LibraryDBService(LocalStorageBackend(db_path))._index.get("_processed_files") or {}
+        todo = [e for e in entries
+                if (done.get(f"{e.folder}/{Path(e.path).name}") or {}).get("text_hash") != e.text_hash]
+        console.print(f"Files to extract: {len(todo)}")
+        if estimate_from is None or model is None:
+            console.print("[yellow]Give --estimate-from and --model to project a cost.[/yellow]")
+            return
+        try:
+            avg = json.loads(estimate_from.read_text(encoding="utf-8"))["models"][model]["avg_usd_per_file"]
+        except (OSError, KeyError, ValueError) as e:
+            console.print(f"\n[red]Error:[/red] no average for model {model} in {estimate_from}: {e}")
+            raise typer.Exit(1)
+        if avg is None:
+            console.print(f"\n[red]Error:[/red] pilot has no cost figure for {model}")
+            raise typer.Exit(1)
+        console.print(f"Average per file ({model}): ${avg:.4f}")
+        console.print(f"Projected total: ${avg * len(todo):.2f}")
+        return
+
+    try:
+        from src.common.ai_provider import get_ai_client
+
+        client = get_ai_client(api_key=api_key, model=model)
+        db_path.mkdir(parents=True, exist_ok=True)
+        db = LibraryDBService(LocalStorageBackend(db_path))
+        console.print(f"[dim]Using AI: {client}[/dim]\n")
+        report = run_ingest(entries, db, client, log_dir=db_path / "_ingest_log",
+                            workers=workers, max_usd=max_usd)
+    except KeyboardInterrupt:
+        console.print("\nStopping: waiting for in-flight extractions to finish (up to 5 minutes). "
+                      "Progress is saved; re-run the same command to resume.")
+        raise typer.Exit(130)
+    except ValueError as e:
+        console.print(f"\n[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+    except Exception as e:
+        console.print(f"\n[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+    console.print(f"\n[bold green]{len(report.processed)} processed, {len(report.failed)} failed, "
+                  f"{len(report.skipped)} skipped.[/bold green]")
+    if report.cost_usd is not None:
+        console.print(f"Cost: ${report.cost_usd:.2f}")
+
+
+@app.command()
 def ingest(
     input_path: Path = typer.Option(
         ...,

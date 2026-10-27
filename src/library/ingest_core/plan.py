@@ -1,0 +1,98 @@
+"""Build and read the ingest plan: every input file, ordered, with a folder.
+
+``build_plan`` writes ``plan.json`` and ``order_report.md`` into ``out_dir`` so
+the user can review (and hand-edit folders) before the pilot and the paid run.
+"""
+
+import json
+from datetime import date
+from pathlib import Path
+
+from src.library.ingest_core.ordering import order_files, scan_file, write_order_report
+from src.library.ingest_core.runner import PlanEntry
+
+PLAN_NAME = "plan.json"
+REPORT_NAME = "order_report.md"
+
+
+def _library_folders(library_dir: Path) -> tuple[list[str], dict[str, str]]:
+    """Folder names in the library and a map of file name -> top-level folder."""
+    folders = sorted(p.name for p in library_dir.iterdir() if p.is_dir()) if library_dir.is_dir() else []
+    by_name: dict[str, str] = {}
+    for f in sorted(library_dir.rglob("*")) if library_dir.is_dir() else []:
+        if f.suffix.lower() not in (".docx", ".pdf") or not f.is_file():
+            continue
+        rel = f.relative_to(library_dir)
+        if len(rel.parts) < 2 or "failed-processing" in rel.parts:
+            continue
+        by_name.setdefault(f.name, rel.parts[0])
+    return folders, by_name
+
+
+def build_plan(input_dir: Path, library_dir: Path, client, out_dir: Path) -> list[PlanEntry]:
+    """Scan, order and assign a folder to every .docx/.pdf in ``input_dir``.
+
+    A file with a same-named file in ``library_dir`` takes that file's folder
+    for free; any other processable file is classified by ``client`` against
+    the existing library folder names.
+    """
+    from src.library.ingester import LibraryIngester
+
+    input_dir, library_dir, out_dir = Path(input_dir), Path(library_dir), Path(out_dir)
+    files = sorted(
+        f for f in input_dir.rglob("*")
+        if f.is_file() and f.suffix.lower() in (".docx", ".pdf") and not f.name.startswith("~$")
+    )
+    ordered = order_files([scan_file(f) for f in files])
+    folders, by_name = _library_folders(library_dir)
+
+    ingester = None
+    rows = []
+    for o in ordered:
+        folder = ""
+        reason = o.skipped_reason
+        if reason is None:
+            folder = by_name.get(o.scan.path.name, "")
+            if not folder:
+                if ingester is None:
+                    ingester = LibraryIngester(library_dir, api_key=getattr(client, "api_key", None) or "unused")
+                    ingester.client = client
+                folder = ingester._classify_file(o.scan.path, folders) or ""
+                if folder and folder not in folders:
+                    folders.append(folder)
+                if not folder:
+                    reason = "no_folder"
+        rows.append({
+            "path": str(o.scan.path),
+            "folder": folder,
+            "order_date": o.order_date.isoformat() if o.order_date else None,
+            "basis": o.basis,
+            "fmt": o.scan.fmt,
+            "text_hash": o.scan.text_hash,
+            "skipped_reason": reason,
+        })
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / PLAN_NAME).write_text(json.dumps(rows, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    write_order_report(ordered, out_dir / REPORT_NAME)
+    return _to_entries(rows)
+
+
+def _to_entries(rows: list[dict]) -> list[PlanEntry]:
+    return [
+        PlanEntry(
+            path=Path(r["path"]),
+            folder=r["folder"],
+            order_date=date.fromisoformat(r["order_date"]) if r.get("order_date") else None,
+            fmt=r["fmt"],
+            text_hash=r["text_hash"],
+        )
+        for r in rows
+        if not r.get("skipped_reason")
+    ]
+
+
+def load_plan(out_dir: Path) -> list[PlanEntry]:
+    """Read ``plan.json`` from disk (never cached) and return non-skipped entries."""
+    rows = json.loads((Path(out_dir) / PLAN_NAME).read_text(encoding="utf-8"))
+    return _to_entries(rows)

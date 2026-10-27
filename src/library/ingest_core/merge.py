@@ -26,6 +26,7 @@ from dataclasses import dataclass, field
 from datetime import date
 from typing import Literal
 
+from src.library.ingest_core.countries import canonical_country
 from src.library.ingest_core.identity import city_shard_name, item_key, norm_key
 from src.library.ingest_core.prompt import CITY_LISTS, COUNTRY_LISTS, TIP_LISTS
 from src.library.ui.services.db_service import LibraryDBService
@@ -143,7 +144,7 @@ class _Merger:
             "_source_format": meta.fmt,
         }
         self.blocked = {
-            (norm_key(e.get("city", "")), e.get("list"), e.get("key"))
+            (_block_scope(e.get("city", "")), e.get("list"), e.get("key"))
             for e in db.get_blocklist()
             if isinstance(e, dict)
         }
@@ -180,6 +181,7 @@ class _Merger:
         return self.city(name)
 
     def country(self, raw: str) -> _Shard:
+        raw = canonical_country(raw)
         target = norm_key(raw)
         for name, shard in self.countries.items():
             if norm_key(name) == target:
@@ -204,7 +206,7 @@ class _Merger:
             # no identity, or a repeat within this file: first occurrence wins
             return
         shard.seen.add((list_name, key))
-        if (norm_key(block_city), list_name, key) in self.blocked:
+        if (_block_scope(block_city), list_name, key) in self.blocked:
             self.stats.bump(shard.key, "blocked")
             return
         incoming = {**_content(item), **self.provenance}
@@ -287,6 +289,14 @@ class _Merger:
             self.db.set_review_status(name, "pending")
 
 
+def _block_scope(scope) -> str:
+    """Normalised blocklist scope; ``_country/<X>`` goes through ``canonical_country``."""
+    scope = str(scope or "")
+    if scope.startswith("_country/"):
+        return "_country/" + norm_key(canonical_country(scope[len("_country/"):]))
+    return norm_key(scope)
+
+
 def _manual_fields(item: dict) -> dict:
     return {k: v for k, v in item.items() if k.startswith("_manual")}
 
@@ -347,7 +357,7 @@ def merge_extraction(db: LibraryDBService, data: dict, meta: FileMeta) -> MergeS
             if isinstance(city_countries, dict):
                 for city, c in city_countries.items():
                     if (isinstance(city, str) and city.strip() and isinstance(c, str)
-                            and norm_key(c) == norm_key(country)):
+                            and norm_key(canonical_country(c)) == norm_key(canonical_country(country))):
                         city_shard = m.existing_city(city)
                         if city_shard is not None:
                             m.set_currency(city_shard, currency)

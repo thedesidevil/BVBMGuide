@@ -9,10 +9,10 @@ IDENTITY_FIELDS: dict[str, list[tuple[str, ...]]] = {
     "hotels": [("name",)],
     "local_dishes": [("name",)],
     "souvenirs": [("item",)],
-    "phrases": [("english",)],
-    "connectivity_tips": [("provider", "kind"), ("tip",)],
-    "emergency_contacts": [("service", "number"), ("number",)],
-    "transport_options": [("mode",)],
+    "phrases": [("english",), ("local",)],
+    "connectivity_tips": [("provider", "kind"), ("provider",), ("tip",)],
+    "emergency_contacts": [("service", "number"), ("number",), ("service",)],
+    "transport_options": [("mode", "recommended_pass"), ("mode", "description"), ("mode",)],
     "safety_tips": [("tip",), ("text",)],
     "health_tips": [("tip",), ("text",)],
     "tipping": [("tip",), ("text",)],
@@ -23,8 +23,8 @@ IDENTITY_FIELDS: dict[str, list[tuple[str, ...]]] = {
     "season_notes": [("tip",), ("text",)],
     "apps": [("name",)],
     "plugs": [("type",)],
-    "embassies": [("name", "city")],
-    "route_guides": [("from", "to")],
+    "embassies": [("name", "city"), ("name",)],
+    "route_guides": [("from", "to"), ("from",)],
 }
 
 

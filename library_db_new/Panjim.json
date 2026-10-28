@@ -1,0 +1,855 @@
+{
+  "restaurants": [
+    {
+      "name": "Viva Panjim",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Goan",
+        "Portuguese"
+      ],
+      "price_range": "₹800–1200 per person",
+      "hours": "12:00 PM – 3:30 PM & 7:00 PM – 11:00 PM",
+      "ambience": "Cozy heritage Portuguese home-style restaurant with warm old-Goa charm",
+      "area": "Panjim",
+      "highlights": [
+        "Heritage setting",
+        "Authentic Goan flavours"
+      ],
+      "must_try_dishes": [
+        "Veg xacuti",
+        "Mushroom cafreal",
+        "Poi bread",
+        "Goan curries",
+        "Alsande tonak"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Veg adaptations available",
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx"
+    },
+    {
+      "name": "Praça Prazeres",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Indo-Portuguese",
+        "Goan"
+      ],
+      "price_range": "₹1000–1800 per person",
+      "hours": "7:00 PM – 11:30 PM",
+      "ambience": "Charming heritage-style restaurant with warm lighting and Indo-Portuguese vibe",
+      "area": "Panjim",
+      "highlights": [
+        "Heritage-style setting"
+      ],
+      "must_try_dishes": [
+        "Veg caldin",
+        "Vegetable stew",
+        "Goan-style curries"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx"
+    },
+    {
+      "name": "Jaffna Jump",
+      "city": "Panjim",
+      "cuisine_type": [
+        "South Indian",
+        "Tamil",
+        "Sri Lankan"
+      ],
+      "price_range": "INR 700–1,200",
+      "hours": "12:00 PM – 3:00 PM, 7:00 PM – 10:30 PM",
+      "highlights": [
+        "Rare Jaffna (Sri Lankan Tamil) cuisine",
+        "Rich spice profile different from typical Goan food"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Antique Mardol",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Goan"
+      ],
+      "price_range": "Rs. 400- 700",
+      "hours": "12pm- 10:30pm",
+      "ambience": "Cozy, elegant and family friendly",
+      "highlights": [
+        "Traditional Goan specialities"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Ritz Classic",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Goan"
+      ],
+      "price_range": "₹500–800 per person",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "Simple, no-frills seating",
+      "area": "Panjim",
+      "highlights": [
+        "Authentic Goan flavours",
+        "Local favourite"
+      ],
+      "must_try_dishes": [
+        "Veg thali",
+        "Mushroom xacuti"
+      ],
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx"
+    },
+    {
+      "name": "The Black Sheep Bistro",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Contemporary Goan"
+      ],
+      "price_range": "₹500–1,000 per person",
+      "hours": "12:00 PM – 12:00 AM",
+      "ambience": "Trendy, chic and cosy with exposed brick walls, dim lighting and tasteful artwork",
+      "highlights": [
+        "Trendy contemporary restaurant"
+      ],
+      "must_try_dishes": [
+        "Veg Bao",
+        "Mushroom Stroganoff",
+        "Mexican Paneer"
+      ],
+      "best_for": [
+        "Contemporary Goan dining"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Tataki - Immersive Asian Dining",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Asian Fusion",
+        "Sushi",
+        "Dim Sum",
+        "Thai"
+      ],
+      "price_range": "Approx. ₹1,000-1,500",
+      "hours": "12:00 PM - 3:00 PM, 6:00 PM - 11:00 PM",
+      "ambience": "Stylish decor, vibrant atmosphere with live music",
+      "highlights": [
+        "Immersive contemporary Asian dining"
+      ],
+      "must_try_dishes": [
+        "Sushi Sashimi Platter",
+        "Charcoal Black and White Dumplings",
+        "Pad Thai",
+        "Thai Red Curry",
+        "Jaggery Cheesecake"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Café Tato",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Goan",
+        "Café"
+      ],
+      "price_range": "₹200–400 per person",
+      "hours": "7:00 AM – 9:00 PM",
+      "ambience": "Old-school Goan café with nostalgic charm",
+      "area": "Panjim",
+      "highlights": [
+        "Quick bites"
+      ],
+      "must_try_dishes": [
+        "Poi bhaji",
+        "Cutlets (veg options available)"
+      ],
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx"
+    },
+    {
+      "name": "Café Bodega",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Café",
+        "Italian"
+      ],
+      "price_range": "₹800–1200 per person",
+      "hours": "10:00 AM – 6:30 PM",
+      "ambience": "Artistic café set inside a heritage bungalow with garden seating and gallery vibes",
+      "area": "Panjim",
+      "highlights": [
+        "Heritage bungalow",
+        "Garden seating",
+        "Gallery vibes"
+      ],
+      "must_try_dishes": [
+        "Wood-fired pizzas (veg)",
+        "Salads",
+        "Sandwiches",
+        "Desserts"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx"
+    },
+    {
+      "name": "MO's Café & Bistro",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Cafe",
+        "Goan",
+        "Japanese"
+      ],
+      "hours": "8 am to 7 pm",
+      "ambience": "Welcoming",
+      "highlights": [
+        "Helmed by chef Moina Oberoi",
+        "Artisanal ingredients with Goan and Japanese influences"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Larder & Folk",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Cafe",
+        "Bakery"
+      ],
+      "hours": "9 am to 7 pm (closed on Mondays)",
+      "ambience": "Cozy, vibrant, warm and inviting",
+      "highlights": [
+        "Bakery items, savory dishes and desserts"
+      ],
+      "notes": "Closed on Mondays",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Padaria Prazeres",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Bakery"
+      ],
+      "hours": "8 am to 7 pm (closed on Mondays)",
+      "ambience": "Vibrant",
+      "highlights": [
+        "Artisanal bakery with pastries, sandwiches and breads",
+        "Favorite of locals and tourists"
+      ],
+      "notes": "Closed on Mondays",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Sea Pebble Restaurant",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹500–900 per person",
+      "hours": "12:00 PM – 11:00 PM",
+      "ambience": "Comfortable seaside restaurant with calm ambience",
+      "area": "Miramar",
+      "must_try_dishes": [
+        "Dal fry",
+        "Vegetable curry",
+        "Rotis",
+        "Jeera rice"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    },
+    {
+      "name": "Navtara Veg Restaurant",
+      "city": "Panjim",
+      "cuisine_type": [
+        "North Indian",
+        "Pure vegetarian"
+      ],
+      "price_range": "₹250–500 per person",
+      "hours": "7:00 AM – 10:30 PM",
+      "area": "Panjim",
+      "highlights": [
+        "Pure veg",
+        "Fast service",
+        "Very senior-friendly"
+      ],
+      "must_try_dishes": [
+        "North Indian thali",
+        "Paneer bhurji",
+        "Roti",
+        "Dal tadka"
+      ],
+      "best_for": [
+        "seniors"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    },
+    {
+      "name": "Schandis Restaurant",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Persian"
+      ],
+      "price_range": "₹800–1,200 per person",
+      "hours": "12:00 PM – 2:00 AM",
+      "ambience": "Elegant Persian restaurant with calm ambience and comfortable seating",
+      "area": "Panjim",
+      "must_try_dishes": [
+        "Persian rice with vegetables",
+        "Hummus & pita",
+        "Grilled veg platter"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    },
+    {
+      "name": "Copperleaf",
+      "city": "Panjim",
+      "cuisine_type": [
+        "North Indian"
+      ],
+      "price_range": "₹600–1,000 per person",
+      "hours": "7:00 PM – 11:00 PM",
+      "ambience": "Spacious, well-known Indian restaurant",
+      "area": "Taleigao",
+      "highlights": [
+        "Very good vegetarian North Indian food"
+      ],
+      "must_try_dishes": [
+        "Dal makhani",
+        "Paneer butter masala",
+        "Veg kofta",
+        "Indian breads"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    },
+    {
+      "name": "Maverick & Farmer Coffee",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹800–1200 per person",
+      "hours": "8:00 AM – 9:00 PM",
+      "ambience": "Minimal, modern café known for specialty coffee and clean flavours",
+      "area": "Panjim",
+      "highlights": [
+        "Specialty coffee"
+      ],
+      "must_try_dishes": [
+        "Avocado toast",
+        "Sourdough sandwiches",
+        "Desserts",
+        "Coffee"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new"
+    },
+    {
+      "name": "Konkani Canteen",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Goan"
+      ],
+      "price_range": "₹500–900 per person",
+      "hours": "12:00 PM – 5:00 PM & 7:30 PM – 11:30 PM",
+      "ambience": "Casual setting; popular local favourite",
+      "area": "Panjim",
+      "highlights": [
+        "Authentic Goan cuisine"
+      ],
+      "must_try_dishes": [
+        "Veg thali",
+        "Mushroom xacuti",
+        "Poi bread",
+        "Kokum drinks"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new"
+    },
+    {
+      "name": "Anandashram",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Goan",
+        "Saraswat",
+        "Vegetarian"
+      ],
+      "price_range": "₹300–600 per person",
+      "hours": "11:00 AM – 3:30 PM & 7:00 PM – 10:30 PM",
+      "ambience": "Heritage vegetarian restaurant",
+      "area": "Panjim",
+      "highlights": [
+        "Comforting home-style meals"
+      ],
+      "must_try_dishes": [
+        "Veg thali",
+        "Sol kadi",
+        "Local curries"
+      ],
+      "vegetarian_friendly": "true",
+      "notes": "Pure vegetarian",
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new"
+    },
+    {
+      "name": "Bombay Coffee Roasters",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹500–800 per person",
+      "hours": "8:00 AM – 10:00 PM",
+      "ambience": "Modern café with minimal interiors and relaxed vibe",
+      "area": "Panjim",
+      "highlights": [
+        "Great coffee"
+      ],
+      "must_try_dishes": [
+        "Coffee blends",
+        "Sandwiches",
+        "Desserts"
+      ],
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new"
+    },
+    {
+      "name": "The Lazy Goose",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Seafood",
+        "Continental"
+      ],
+      "price_range": "₹900–1,000 per person",
+      "hours": "12:30 PM – 12:00 AM",
+      "ambience": "Relaxed, riverside",
+      "highlights": [
+        "Set beside the river",
+        "Seafood and Continental favourites"
+      ],
+      "must_try_dishes": [
+        "Fettuccine Pesto",
+        "Green Thai Vegetable Curry",
+        "Pumpkin & Feta Falafels"
+      ],
+      "best_for": [
+        "Riverside lunch",
+        "Seafood"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new"
+    },
+    {
+      "name": "Tataki",
+      "city": "Panjim",
+      "cuisine_type": [
+        "Asian Fusion",
+        "Sushi",
+        "Dim Sum",
+        "Thai"
+      ],
+      "price_range": "₹1,000-1,500",
+      "hours": "12:00 PM - 3:00 PM, 6:00 PM - 11:00 PM",
+      "ambience": "Stylish decor, vibrant atmosphere with live music",
+      "highlights": [
+        "Immersive dining experience",
+        "Contemporary Asian dishes"
+      ],
+      "must_try_dishes": [
+        "Sushi Sashimi Platter",
+        "Charcoal Black and White Dumplings",
+        "Pad Thai",
+        "Thai Red Curry",
+        "Jaggery Cheesecake"
+      ],
+      "_source_file": "Goa/Ankush_Goa Guide.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Immaculate Conception Church",
+      "city": "Panjim",
+      "description": "Church featured in Bollywood movies like Josh, Aashiqui 2 and Simba",
+      "tips": [
+        "Can be viewed from outside"
+      ],
+      "_source_file": "Goa/Goa- All Inclusive Guide(1).docx",
+      "_source_date": "2025-02-06",
+      "_source_format": "new"
+    },
+    {
+      "name": "Fontainhas",
+      "city": "Panjim",
+      "description": "Goa's Latin Quarter with narrow lanes, pastel Portuguese houses and balconies draped with bougainvillea; a living museum ideal for slow walks and photographs.",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "20–30 mins",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Fontainhas Heritage Walk",
+      "city": "Panjim",
+      "description": "Narrow lanes lined with brightly coloured Portuguese houses, red-tiled roofs and quaint balconies; local bakeries for traditional Goan sweets",
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx"
+    },
+    {
+      "name": "Nauti Amigo Luxury Dinner Cruise",
+      "city": "Panjim",
+      "description": "Premier dining cruise on the Mandovi River with views of Panjim city under lights, buffet dinner, complimentary drinks and Bollywood music and dance performances",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Mario Miranda Gallery",
+      "city": "Panjim",
+      "description": "Works of Goa's beloved cartoonist capturing everyday Goan life with humour and detail",
+      "hours": "10:00 AM – 10:00 PM",
+      "entry_fee": "Free entry",
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx"
+    },
+    {
+      "name": "Azulejos Tile Painting Experience (CIPA)",
+      "city": "Panjim",
+      "description": "Learn the traditional art of Portuguese-style tile painting, a legacy of Goa's colonial past; a way to create a personalised souvenir",
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new"
+    },
+    {
+      "name": "Mandovi River Promenade",
+      "city": "Panjim",
+      "description": "Riverside promenade for an evening walk, watching boats drift by and the city light up",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free",
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new"
+    },
+    {
+      "name": "Miramar Beach",
+      "city": "Panjim",
+      "description": "Lively beach close to Panjim, ideal for a relaxed stroll and local Goan life",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "45 mins – 1 hour",
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Taj Cidade de Goa – Heritage",
+      "city": "Panjim",
+      "location": "Heritage seaside/riverfront property with colonial-style architecture, waterfront lawns and parking",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new"
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Poee",
+      "city": "Panjim",
+      "description": "Local wheat bread, eaten with veg curry",
+      "where_to_try": "Panjim eateries",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    },
+    {
+      "name": "Veg Xacuti",
+      "city": "Panjim",
+      "description": "Coconut-based Goan gravy",
+      "vegetarian": "true",
+      "where_to_try": "Viva Panjim",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    },
+    {
+      "name": "Veg Caldin",
+      "city": "Panjim",
+      "description": "Coconut-based Goan gravy",
+      "vegetarian": "true",
+      "where_to_try": "Viva Panjim",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    },
+    {
+      "name": "Bebinca",
+      "city": "Panjim",
+      "description": "Layered dessert",
+      "where_to_try": "Sweet shops in Fontainhas",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Cashew nuts",
+      "city": "Panjim",
+      "category": "Food",
+      "where_to_buy": [
+        "Zantyes, Panjim",
+        "Zantyes, Margao"
+      ],
+      "_source_file": "Goa/Goa- All Inclusive Guide(1).docx",
+      "_source_date": "2025-02-06",
+      "_source_format": "new"
+    },
+    {
+      "item": "Mario Miranda paintings",
+      "city": "Panjim",
+      "category": "Art",
+      "where_to_buy": [
+        "Mario Gallery, Panjim"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Goan sweets (doce, bebinca)",
+      "city": "Panjim",
+      "category": "Food",
+      "where_to_buy": [
+        "Confetaria 31 de Janeiro, Panjim"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Azulejos tiles",
+      "city": "Panjim",
+      "category": "Decor",
+      "where_to_buy": [
+        "Galleria Azulejos de Goa, Panjim"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Cashew nuts (roasted/salted)",
+      "city": "Panjim",
+      "category": "Food",
+      "where_to_buy": [
+        "Zantye's – Panjim"
+      ],
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    },
+    {
+      "item": "Mario Miranda prints",
+      "city": "Panjim",
+      "category": "Art",
+      "where_to_buy": [
+        "Mario Gallery – Panjim"
+      ],
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    },
+    {
+      "item": "Azulejos (hand-painted tiles)",
+      "city": "Panjim",
+      "category": "Handicraft",
+      "where_to_buy": [
+        "Galleria Azulejos de Goa – Panjim"
+      ],
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    },
+    {
+      "item": "Cashew Nuts (Plain / Flavoured)",
+      "city": "Panjim",
+      "where_to_buy": [
+        "Zantye's, Panjim",
+        "Zantye's, Margao"
+      ],
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "item": "Mario Miranda Paintings & Merchandise",
+      "city": "Panjim",
+      "where_to_buy": [
+        "Mario Gallery, Panjim"
+      ],
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "item": "Goan Sweets (Doce, Bebinca, Dodol)",
+      "city": "Panjim",
+      "category": "Food",
+      "where_to_buy": [
+        "Confeitaria 31 de Janeiro, Panjim"
+      ],
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "item": "Azulejos Tiles (Hand-painted Ceramic Tiles)",
+      "city": "Panjim",
+      "where_to_buy": [
+        "Galleria Azulejos de Goa, Panjim"
+      ],
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "item": "Handmade Crochet & Lace Items",
+      "city": "Panjim",
+      "where_to_buy": [
+        "Panjim local markets",
+        "Small artisan stores"
+      ],
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "Goa/Goa- All Inclusive Guide(1).docx",
+    "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+    "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx",
+    "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+    "Goa/Oishee_Goa_All Inclusive Guide.docx",
+    "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+    "Goa/Ankush_Goa Guide.pdf"
+  ],
+  "currency": "INR",
+  "_currency_source": {
+    "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+    "_source_date": "2026-08-24",
+    "_source_format": "new"
+  }
+}

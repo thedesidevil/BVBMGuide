@@ -1,0 +1,263 @@
+{
+  "restaurants": [
+    {
+      "name": "Nagataya",
+      "city": "Hiroshima",
+      "cuisine_type": [
+        "Japanese",
+        "Okonomiyaki"
+      ],
+      "price_range": "¥1,000–¥2,000 per person",
+      "hours": "Generally 11 AM–8:30 PM; closed Tuesday",
+      "area": "Near Peace Memorial Park",
+      "nearby_landmarks": [
+        "Peace Memorial Park, Hiroshima"
+      ],
+      "highlights": [
+        "Hiroshima-style okonomiyaki layered on a hotplate",
+        "Offers meat-free versions"
+      ],
+      "must_try_dishes": [
+        "Hiroshima-style okonomiyaki"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Ask about versions without beef or pork, including meat-derived fats and sauces",
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    },
+    {
+      "name": "Caffè Ponte",
+      "city": "Hiroshima",
+      "cuisine_type": [
+        "European",
+        "Café"
+      ],
+      "price_range": "¥1,500–¥3,000 per person",
+      "hours": "10 AM–10 PM weekdays; 8 AM–10 PM weekends",
+      "ambience": "Relaxed riverside café",
+      "area": "Opposite Peace Memorial Park",
+      "nearby_landmarks": [
+        "Peace Memorial Park, Hiroshima"
+      ],
+      "must_try_dishes": [
+        "Pasta",
+        "Pizza",
+        "Café-style lunch dishes"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    },
+    {
+      "name": "Okonomiyaki Micchan Sohonten — Orizuru Tower",
+      "city": "Hiroshima",
+      "cuisine_type": [
+        "Japanese",
+        "Okonomiyaki"
+      ],
+      "price_range": "¥1,000–¥3,000 per person",
+      "hours": "11 AM–9 PM; last order may be earlier",
+      "area": "Orizuru Tower",
+      "nearby_landmarks": [
+        "Atomic Bomb Dome, Hiroshima"
+      ],
+      "highlights": [
+        "Well-known Hiroshima-style okonomiyaki"
+      ],
+      "must_try_dishes": [
+        "Hiroshima-style okonomiyaki with noodles"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Ask for a preparation without beef or pork",
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    },
+    {
+      "name": "Chinese Restaurant Tonkou Hiroshima",
+      "city": "Hiroshima",
+      "cuisine_type": [
+        "Chinese"
+      ],
+      "hours": "Open till 3pm",
+      "area": "Shukkei-en Garden area",
+      "nearby_landmarks": [
+        "Shukkei-en Garden, Hiroshima"
+      ],
+      "_source_file": "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
+      "_source_date": "2024-05-22",
+      "_source_format": "old"
+    },
+    {
+      "name": "Baku",
+      "city": "Hiroshima",
+      "hours": "Closes at 3pm",
+      "area": "Shukkei-en Garden area",
+      "nearby_landmarks": [
+        "Shukkei-en Garden, Hiroshima"
+      ],
+      "_source_file": "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
+      "_source_date": "2024-05-22",
+      "_source_format": "old"
+    },
+    {
+      "name": "Hoka Hoka Tei",
+      "city": "Hiroshima",
+      "hours": "7am-7pm",
+      "area": "Shukkei-en Garden area",
+      "nearby_landmarks": [
+        "Shukkei-en Garden, Hiroshima"
+      ],
+      "notes": "Take-out available",
+      "_source_file": "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
+      "_source_date": "2024-05-22",
+      "_source_format": "old"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Atomic Bomb Dome",
+      "city": "Hiroshima",
+      "description": "Landmark ruin, 12 mins from Hiroshima Station",
+      "hours": "Open 24/7",
+      "entry_fee": "Free",
+      "_source_file": "Japan/All Inclusive Guide- Japan_PN(1).docx",
+      "_source_date": "2025-03-19",
+      "_source_format": "old"
+    },
+    {
+      "name": "Peace Memorial Park",
+      "city": "Hiroshima",
+      "description": "Park a 2 min walk from the Atomic Bomb Dome",
+      "hours": "Open 24/7",
+      "entry_fee": "Free",
+      "_source_file": "Japan/All Inclusive Guide- Japan_PN(1).docx",
+      "_source_date": "2025-03-19",
+      "_source_format": "old"
+    },
+    {
+      "name": "Peace Memorial Museum",
+      "city": "Hiroshima",
+      "description": "Museum in Hiroshima Peace Memorial Park.",
+      "tips": [
+        "Wheelchair accessible, but there is only one lift at the entrance, so wheelchair visitors return the same way"
+      ],
+      "_source_file": "Japan/All Inclusive Guide- Japan- AK and families(1).docx",
+      "_source_date": "2025-03-29",
+      "_source_format": "old",
+      "_replaced_from": "Japan/All Inclusive Guide- Japan_PN(1).docx"
+    },
+    {
+      "name": "Hiroshima Peace Memorial Park",
+      "city": "Hiroshima",
+      "description": "Park in the centre of downtown Hiroshima.",
+      "tips": [
+        "Wheelchair accessible with paved paths and ramps"
+      ],
+      "_source_file": "Japan/All Inclusive Guide- Japan- AK and families(1).docx",
+      "_source_date": "2025-03-29",
+      "_source_format": "old"
+    },
+    {
+      "name": "Hiroshima Walking Tour",
+      "city": "Hiroshima",
+      "description": "4-hour guided walking tour ending at Shukkei-en Garden",
+      "recommended_duration": "4 hours",
+      "_source_file": "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
+      "_source_date": "2024-05-22",
+      "_source_format": "old"
+    },
+    {
+      "name": "Shukkei-en Garden",
+      "city": "Hiroshima",
+      "description": "Garden; several restaurants are within a short walk",
+      "_source_file": "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
+      "_source_date": "2024-05-22",
+      "_source_format": "old"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Mitsui Garden Hotel Hiroshima",
+      "city": "Hiroshima",
+      "location": "Central Hiroshima, convenient for Peace Memorial Park",
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Hiroshima-style Okonomiyaki",
+      "city": "Hiroshima",
+      "description": "Layered savoury pancake with cabbage, noodles, egg and toppings",
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    },
+    {
+      "name": "Hiroshima Tsukemen",
+      "city": "Hiroshima",
+      "description": "Chilled noodles with a spicy dipping sauce",
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    },
+    {
+      "name": "Setouchi Citrus Desserts",
+      "city": "Hiroshima",
+      "description": "Lemon cakes, tarts and other sweets using Setouchi fruit",
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Hiroshima",
+      "mode": "Hiroshima Electric Railway streetcar",
+      "description": "Streetcar from Hiroshima Station towards central Hiroshima; taxi is an alternative",
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    },
+    {
+      "city": "Hiroshima",
+      "mode": "JR Miyajima Ferry",
+      "description": "Ferry from Miyajimaguchi to Miyajima island",
+      "recommended_pass": "JR Pass",
+      "covers": "JR Pass is valid only on the JR ferry",
+      "_source_file": "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
+      "_source_date": "2024-05-22",
+      "_source_format": "old"
+    }
+  ],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "Japan/All Inclusive Guide- Japan_PN(1).docx",
+    "Japan/All Inclusive Guide- Japan- AK and families(1).docx",
+    "Japan/Shital- Japan- All Inclusive Guide.docx",
+    "Japan/Detailed Final Itinerary for Japan_05052024.pdf"
+  ],
+  "currency": "JPY",
+  "_currency_source": {
+    "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+    "_source_date": "2026-10-19",
+    "_source_format": "new"
+  }
+}

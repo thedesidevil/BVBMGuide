@@ -1,0 +1,940 @@
+{
+  "restaurants": [
+    {
+      "name": "Saint & Rogue",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "Pub"
+      ],
+      "price_range": "INR 1000–3000",
+      "hours": "11:30 am – 10 pm (Closed Sat–Sun)",
+      "ambience": "Cozy vintage pub with charming old-school interior and warm lighting",
+      "highlights": [
+        "Chicken schnitzel",
+        "Grilled fish"
+      ],
+      "must_try_dishes": [
+        "Chicken parmigiana"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/For AI Test Australia- All Inclusive Guide.docx"
+    },
+    {
+      "name": "Sherlock Holmes",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "Pub"
+      ],
+      "price_range": "Rs. 1000- 2000",
+      "hours": "11:30 am – 11 pm; Closed on Sun",
+      "ambience": "English themed bar",
+      "must_try_dishes": [
+        "Craft beer",
+        "Pub grub"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Australia/For AI Test Australia- All Inclusive Guide.docx",
+      "_source_date": "2025-01-17",
+      "_source_format": "old",
+      "_replaced_from": "Australia/Australia- All Inclusive Guide(2).docx"
+    },
+    {
+      "name": "Sal's Authentic New York Pizza – Flinders Lane",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "Pizza"
+      ],
+      "price_range": "INR 500–1000",
+      "hours": "12 am – 10 pm",
+      "ambience": "Quick and casual",
+      "area": "Flinders Lane",
+      "highlights": [
+        "Thin-crust pizzas",
+        "Buffalo wings"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/For AI Test Australia- All Inclusive Guide.docx"
+    },
+    {
+      "name": "Young and Jacksons",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "Pub"
+      ],
+      "price_range": "INR 1000–2000",
+      "hours": "10 am – late",
+      "ambience": "Historic pub",
+      "highlights": [
+        "Rooftop cider bar"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/For AI Test Australia- All Inclusive Guide.docx"
+    },
+    {
+      "name": "The Mitre Tavern",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "Pub"
+      ],
+      "price_range": "INR 1000–2000",
+      "hours": "11 am – 12 am",
+      "ambience": "Historic Melbourne pub, casual with historic charm",
+      "highlights": [
+        "Beer garden",
+        "Live music"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/For AI Test Australia- All Inclusive Guide.docx"
+    },
+    {
+      "name": "Saravaana Bhavan",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "Rs. 1000- 2000",
+      "hours": "9 am – 10:45 pm",
+      "must_try_dishes": [
+        "Dosas"
+      ],
+      "_source_file": "Australia/For AI Test Australia- All Inclusive Guide.docx",
+      "_source_date": "2025-01-17",
+      "_source_format": "old",
+      "_replaced_from": "Australia/Australia- All Inclusive Guide(2).docx"
+    },
+    {
+      "name": "Commonplace Coffee Brewers",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "Rs. 500- 1000",
+      "hours": "6 am – 4 pm",
+      "must_try_dishes": [
+        "Coffee",
+        "Short eats"
+      ],
+      "_source_file": "Australia/For AI Test Australia- All Inclusive Guide.docx",
+      "_source_date": "2025-01-17",
+      "_source_format": "old",
+      "_replaced_from": "Australia/Australia- All Inclusive Guide(2).docx"
+    },
+    {
+      "name": "Spin Coffee",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "Rs. 500- 1000",
+      "hours": "7 am – 3:30 pm; Closed on Sat and Sun",
+      "must_try_dishes": [
+        "Coffee",
+        "Short eats"
+      ],
+      "_source_file": "Australia/For AI Test Australia- All Inclusive Guide.docx",
+      "_source_date": "2025-01-17",
+      "_source_format": "old",
+      "_replaced_from": "Australia/Australia- All Inclusive Guide(2).docx"
+    },
+    {
+      "name": "Hardware Societe",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "Brunch",
+        "Cafe"
+      ],
+      "price_range": "INR 1000–2000",
+      "hours": "7:30 am – 3 pm",
+      "ambience": "Parisian-style café",
+      "highlights": [
+        "Melbourne's brunch institution",
+        "Brunch dishes served with flair"
+      ],
+      "must_try_dishes": [
+        "Baked eggs",
+        "Lobster benedict",
+        "Artisan coffee"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/For AI Test Australia- All Inclusive Guide.docx"
+    },
+    {
+      "name": "Stomping Grounds",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "Brewery",
+        "Beer Hall"
+      ],
+      "price_range": "Rs. 1000- 2000",
+      "hours": "11:30 am – 11 pm",
+      "highlights": [
+        "Voted best brewpub in Australia since 2017 by Beer & Brewer",
+        "Beer samplers and tasters"
+      ],
+      "must_try_dishes": [
+        "Wings",
+        "Mussels marinara",
+        "Beer batter chips"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Australia/For AI Test Australia- All Inclusive Guide.docx",
+      "_source_date": "2025-01-17",
+      "_source_format": "old",
+      "_replaced_from": "Australia/Australia- All Inclusive Guide(2).docx"
+    },
+    {
+      "name": "Garden State Hotel",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "Pub"
+      ],
+      "price_range": "INR 1000–3000",
+      "hours": "12 pm – 11 pm (Open till 3 am on Fri/Sat)",
+      "ambience": "Great beer garden vibe",
+      "highlights": [
+        "Craft beers",
+        "Pub classics"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/For AI Test Australia- All Inclusive Guide.docx"
+    },
+    {
+      "name": "Chin Chin",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "Asian"
+      ],
+      "price_range": "INR 1500–3000",
+      "hours": "11 am – late",
+      "ambience": "Modern, trendy interiors with neon lights",
+      "highlights": [
+        "DJ sets"
+      ],
+      "must_try_dishes": [
+        "Pavlova"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/For AI Test Australia- All Inclusive Guide.docx"
+    },
+    {
+      "name": "Soi 38",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "Thai street food"
+      ],
+      "price_range": "INR 1000–2000",
+      "hours": "11 am – 3 pm",
+      "highlights": [
+        "Authentic Thai street food"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/For AI Test Australia- All Inclusive Guide.docx"
+    },
+    {
+      "name": "Cookie",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "Thai fusion"
+      ],
+      "price_range": "INR 2000–3000",
+      "hours": "6 am – 4 pm",
+      "ambience": "Vibrant beer hall atmosphere with retro charm",
+      "highlights": [
+        "Craft beers",
+        "Thai eatery"
+      ],
+      "must_try_dishes": [
+        "Pad Thai noodles",
+        "Deep-fried snapper"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/For AI Test Australia- All Inclusive Guide.docx"
+    },
+    {
+      "name": "Fathers Office Speakeasy Bar and Restaurant",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "Pub"
+      ],
+      "price_range": "Rs. 1000- 2000",
+      "hours": "12 pm – 10 pm; Open till 3 am on Fri and Sat",
+      "highlights": [
+        "Popular gastropub chain known for its unique blend of craft beer and gourmet food"
+      ],
+      "must_try_dishes": [
+        "Classic American mains",
+        "Platters",
+        "Punchbowl cocktails",
+        "Craft beers"
+      ],
+      "_source_file": "Australia/For AI Test Australia- All Inclusive Guide.docx",
+      "_source_date": "2025-01-17",
+      "_source_format": "old",
+      "_replaced_from": "Australia/Australia- All Inclusive Guide(2).docx"
+    },
+    {
+      "name": "Sherlock Holmes Inn",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "English pub"
+      ],
+      "price_range": "INR 1000–2000",
+      "hours": "11:30 am – 11 pm (Closed Sun)",
+      "ambience": "English-style pub",
+      "highlights": [
+        "Craft beers",
+        "Hearty mains",
+        "Comfort food"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Stomping Ground Brewing Co.",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "Brewpub"
+      ],
+      "price_range": "INR 1000–2000",
+      "hours": "11:30 am – 12 am",
+      "highlights": [
+        "Voted Australia's top brewery"
+      ],
+      "must_try_dishes": [
+        "Mussels marinara",
+        "Beer samplers"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Fathers Office",
+      "city": "Melbourne",
+      "cuisine_type": [
+        "American"
+      ],
+      "price_range": "INR 1000–2000",
+      "hours": "12 pm – late (Open till 3 am on Fri/Sat)",
+      "highlights": [
+        "American mains",
+        "Cocktails",
+        "Craft beers"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Federation Square",
+      "city": "Melbourne",
+      "description": "Hub for culture, exhibitions and public events, reachable by free tram",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/For AI Test Australia- All Inclusive Guide.docx"
+    },
+    {
+      "name": "Hosier Lane and AC/DC Lane",
+      "city": "Melbourne",
+      "description": "Colourful laneways in the CBD to admire street art",
+      "_source_file": "Australia/For AI Test Australia- All Inclusive Guide.docx",
+      "_source_date": "2025-01-17",
+      "_source_format": "old",
+      "_replaced_from": "Australia/Australia- All Inclusive Guide(2).docx"
+    },
+    {
+      "name": "Queen Victoria Market",
+      "city": "Melbourne",
+      "description": "Iconic open-air market with 600+ stalls selling souvenirs, clothes and gourmet treats",
+      "hours": "6 am – 3 pm (Tues, Thurs, Fri), 6 am – 4 pm (Sat), 9 am – 4 pm (Sun), Closed Mon",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/For AI Test Australia- All Inclusive Guide.docx"
+    },
+    {
+      "name": "St. Kilda Beach",
+      "city": "Melbourne",
+      "description": "Famous beach known for white sands and penguin sightings, usually at St. Kilda Pier",
+      "tips": [
+        "Best time to view penguins is 30 mins after sunset"
+      ],
+      "_source_file": "Australia/For AI Test Australia- All Inclusive Guide.docx",
+      "_source_date": "2025-01-17",
+      "_source_format": "old",
+      "_replaced_from": "Australia/Australia- All Inclusive Guide(2).docx"
+    },
+    {
+      "name": "Twelve Apostles",
+      "city": "Melbourne",
+      "description": "Great Ocean Road landmark with lookouts and walkways",
+      "hours": "Dawn till dusk",
+      "_source_file": "Australia/For AI Test Australia- All Inclusive Guide.docx",
+      "_source_date": "2025-01-17",
+      "_source_format": "old",
+      "_replaced_from": "Australia/Australia- All Inclusive Guide(2).docx"
+    },
+    {
+      "name": "Colac Lake",
+      "city": "Melbourne",
+      "description": "Largest natural freshwater lake in Victoria, passed on the inland route back from the Great Ocean Road",
+      "_source_file": "Australia/Australia- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Melbourne Chinatown",
+      "city": "Melbourne",
+      "description": "Chinatown precinct for lunch options",
+      "_source_file": "Australia/Australia- All Inclusive Guide(2).docx",
+      "_source_date": "2024-12-12",
+      "_source_format": "old"
+    },
+    {
+      "name": "Teddy’s Lookout",
+      "city": "Melbourne",
+      "description": "Lookout near Lorne with a great view and iconic photo opportunity of the Great Ocean Road",
+      "_source_file": "Australia/Australia- All Inclusive Guide(2).docx",
+      "_source_date": "2024-12-12",
+      "_source_format": "old"
+    },
+    {
+      "name": "Little Creatures Brewery",
+      "city": "Melbourne",
+      "description": "Optional brewery stop on the return from the Great Ocean Road via Colac and Geelong",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/Australia- All Inclusive Guide(2).docx"
+    },
+    {
+      "name": "Great Ocean Road and Twelve Apostles",
+      "city": "Melbourne",
+      "description": "Full-day scenic road trip to the Twelve Apostles via Lorne, Teddy's Lookout and Apollo Bay",
+      "recommended_duration": "Approx. 5 hrs one way",
+      "tips": [
+        "Parking available at major lookouts and tourist stops"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Hosier Lane",
+      "city": "Melbourne",
+      "description": "Melbourne's most famous graffiti spot",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "AC/DC Lane",
+      "city": "Melbourne",
+      "description": "Rock-themed street art tribute",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "St Kilda Beach and Pier",
+      "city": "Melbourne",
+      "description": "Beach with a leisurely stroll and beachside cafés; little penguins can be seen at the pier",
+      "tips": [
+        "Best time to view penguins is 30 mins after sunset at St Kilda Pier"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Puffing Billy Railway",
+      "city": "Melbourne",
+      "description": "Century-old steam train ride through the Dandenong rainforest from Belgrave Station with open carriages",
+      "entry_fee": "Approx. AUD 65 (INR 3500)",
+      "tips": [
+        "Arrive by 9:30 AM for the 10:30 AM departure"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Hotel Indigo Melbourne on Flinders",
+      "city": "Melbourne",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Fish and Chips",
+      "city": "Melbourne",
+      "description": "A classic takeaway dish, often enjoyed by the beach",
+      "_source_file": "Australia/Australia- All Inclusive Guide(2).docx",
+      "_source_date": "2024-12-12",
+      "_source_format": "old"
+    },
+    {
+      "name": "Barramundi",
+      "city": "Melbourne",
+      "description": "A popular fish, often grilled or baked",
+      "_source_file": "Australia/Australia- All Inclusive Guide(2).docx",
+      "_source_date": "2024-12-12",
+      "_source_format": "old"
+    },
+    {
+      "name": "Chicken Parmigiana",
+      "city": "Melbourne",
+      "description": "Breaded chicken, tomato sauce, cheese",
+      "where_to_try": "Saint & Rogue",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/For AI Test Australia- All Inclusive Guide.docx"
+    },
+    {
+      "name": "Vegemite on toast",
+      "city": "Melbourne",
+      "description": "A savory spread made from yeast extract, often enjoyed on toast for breakfast",
+      "_source_file": "Australia/Australia- All Inclusive Guide(2).docx",
+      "_source_date": "2024-12-12",
+      "_source_format": "old"
+    },
+    {
+      "name": "Lamingtons",
+      "city": "Melbourne",
+      "description": "Sponge cake coated in chocolate and coconut",
+      "where_to_try": "Queen Victoria Market",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/Australia- All Inclusive Guide(2).docx"
+    },
+    {
+      "name": "Pavlova",
+      "city": "Melbourne",
+      "description": "Meringue dessert topped with cream and fruit",
+      "where_to_try": "Chin Chin or selected dessert cafés in the CBD",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/Australia- All Inclusive Guide(2).docx"
+    },
+    {
+      "name": "Anzac Biscuits",
+      "city": "Melbourne",
+      "description": "A classic biscuit made with oats, coconut, and golden syrup",
+      "vegetarian": "true",
+      "_source_file": "Australia/Australia- All Inclusive Guide(2).docx",
+      "_source_date": "2024-12-12",
+      "_source_format": "old"
+    },
+    {
+      "name": "Tim Tams",
+      "city": "Melbourne",
+      "description": "Chocolate biscuit with a creamy filling",
+      "vegetarian": "true",
+      "_source_file": "Australia/Australia- All Inclusive Guide(2).docx",
+      "_source_date": "2024-12-12",
+      "_source_format": "old"
+    },
+    {
+      "name": "Lamb leg",
+      "city": "Melbourne",
+      "description": "A large platter with a lamb roast served over roasted root vegetables and roasted onion",
+      "vegetarian": "false",
+      "_source_file": "Australia/Australia- All Inclusive Guide(2).docx",
+      "_source_date": "2024-12-12",
+      "_source_format": "old"
+    },
+    {
+      "name": "Mussels Marinara & Beer Samplers",
+      "city": "Melbourne",
+      "description": "At Australia's top-rated brewpub",
+      "where_to_try": "Stomping Ground Brewing Co.",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Baked Eggs with Lobster",
+      "city": "Melbourne",
+      "description": "Luxe brunch classic",
+      "where_to_try": "Hardware Societe",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Pad Thai Noodles & Deep-Fried Snapper",
+      "city": "Melbourne",
+      "where_to_try": "Cookie",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Boomerangs",
+      "city": "Melbourne",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Queen Victoria Market"
+      ],
+      "_source_file": "Australia/For AI Test Australia- All Inclusive Guide.docx",
+      "_source_date": "2025-01-17",
+      "_source_format": "old",
+      "_replaced_from": "Australia/Australia- All Inclusive Guide(2).docx"
+    },
+    {
+      "item": "Akubra Hats",
+      "city": "Melbourne",
+      "category": "Fashion & Craft",
+      "where_to_buy": [
+        "Queen Victoria Market"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/For AI Test Australia- All Inclusive Guide.docx"
+    },
+    {
+      "item": "Kangaroo leather products",
+      "city": "Melbourne",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Queen Victoria Market"
+      ],
+      "_source_file": "Australia/For AI Test Australia- All Inclusive Guide.docx",
+      "_source_date": "2025-01-17",
+      "_source_format": "old",
+      "_replaced_from": "Australia/Australia- All Inclusive Guide(2).docx"
+    },
+    {
+      "item": "Aboriginal art products (wall hanging, tablecloths, bags)",
+      "city": "Melbourne",
+      "category": "Art",
+      "where_to_buy": [
+        "Queen Victoria Market"
+      ],
+      "_source_file": "Australia/For AI Test Australia- All Inclusive Guide.docx",
+      "_source_date": "2025-01-17",
+      "_source_format": "old",
+      "_replaced_from": "Australia/Australia- All Inclusive Guide(2).docx"
+    },
+    {
+      "item": "Kangaroo Leather Goods",
+      "city": "Melbourne",
+      "category": "Fashion & Craft",
+      "where_to_buy": [
+        "Queen Victoria Market"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "item": "Aboriginal Art Souvenirs",
+      "city": "Melbourne",
+      "category": "Art",
+      "where_to_buy": [
+        "Queen Victoria Market",
+        "Curated galleries"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Melbourne",
+      "service": "Pharmacy",
+      "notes": "Chemist Warehouse Melbourne, Bourke & King Street",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Melbourne",
+      "service": "Medical Centre",
+      "notes": "William Angliss Institute Medical Centre",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Cairns",
+        "Sydney",
+        "Melbourne"
+      ],
+      "tip": "Activate international roaming on an Indian number to receive messages such as OTPs, even without a roaming plan",
+      "_source_file": "Australia/Australia- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Cairns",
+        "Sydney",
+        "Melbourne"
+      ],
+      "tip": "Activate international roaming on your home number even without a roaming plan, so you still receive SMS such as OTPs",
+      "_source_file": "Australia/Australia- All Inclusive Guide(2).docx",
+      "_source_date": "2024-12-12",
+      "_source_format": "old"
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Melbourne",
+      "mode": "Free tram zone",
+      "description": "Free tram rides within the city centre (CBD) and the Docklands",
+      "cost": "Free",
+      "covers": "Areas around Flinders Street, Spring Street, La Trobe Street, Spencer Street, Bourke Street, Elizabeth Street, Victoria Street and William Street; notable stops include Flinders Street Station, Federation Square, Queen Victoria Market and Bourke Street Mall",
+      "_source_file": "Australia/Australia- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "city": "Melbourne",
+      "mode": "Public transport (myki)",
+      "description": "Needed for public transport outside the free tram zone",
+      "recommended_pass": "myki card",
+      "how_to_use": "Buy a myki card from retail outlets displaying the myki sign, visitor centres and train stations; load with money and top up at convenience stores and train stations",
+      "_source_file": "Australia/Australia- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "city": "Melbourne",
+      "mode": "Free tram",
+      "description": "Free tram rides within the city centre (CBD) and the Docklands, including Flinders Street, Spring Street, La Trobe Street, Spencer Street, Bourke Street, Elizabeth Street, Victoria Street and William Street",
+      "cost": "Free",
+      "covers": "CBD and Docklands; notable stops include Flinders Street Station, Federation Square, Queen Victoria Market and Bourke Street Mall",
+      "_source_file": "Australia/Australia- All Inclusive Guide(2).docx",
+      "_source_date": "2024-12-12",
+      "_source_format": "old"
+    },
+    {
+      "city": "Melbourne",
+      "mode": "Public transport (myki card)",
+      "description": "A myki card is needed outside the free tram zone",
+      "recommended_pass": "myki card",
+      "how_to_use": "Buy from retail outlets displaying the myki sign, visitor centres and train stations; load with money and top up at convenience stores and train stations",
+      "_source_file": "Australia/Australia- All Inclusive Guide(2).docx",
+      "_source_date": "2024-12-12",
+      "_source_format": "old"
+    },
+    {
+      "city": "Melbourne",
+      "mode": "Uber",
+      "description": "Use Uber to get around by cab",
+      "_source_file": "Australia/Australia- All Inclusive Guide(2).docx",
+      "_source_date": "2024-12-12",
+      "_source_format": "old"
+    },
+    {
+      "city": "Melbourne",
+      "mode": "Free tram",
+      "description": "Free tram rides within the city centre (CBD) and the Docklands",
+      "cost": "Free",
+      "covers": "Areas around Flinders Street, Spring Street, La Trobe Street, Spencer Street, Bourke Street, Elizabeth Street, Victoria Street and William Street; stops include Flinders Street Station, Federation Square, Queen Victoria Market and Bourke Street Mall",
+      "_source_file": "Australia/For AI Test Australia- All Inclusive Guide.docx",
+      "_source_date": "2025-01-17",
+      "_source_format": "old"
+    },
+    {
+      "city": "Melbourne",
+      "mode": "Public transport (outside free tram zone)",
+      "description": "A myki card is needed outside the free tram zone",
+      "recommended_pass": "myki card",
+      "how_to_use": "Buy at retail outlets displaying the myki sign, visitor centres and train stations; load money on the card and top up at convenience stores and train stations",
+      "covers": "Public transport outside the free tram zone",
+      "_source_file": "Australia/For AI Test Australia- All Inclusive Guide.docx",
+      "_source_date": "2025-01-17",
+      "_source_format": "old"
+    },
+    {
+      "city": "Melbourne",
+      "mode": "Tram",
+      "description": "Free tram ride to Federation Square",
+      "covers": "Free tram zone in central Melbourne",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Melbourne"
+      ],
+      "tip": "Coles Spencer St is open 6 am – 11 pm",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "route_guides": [
+    {
+      "city": "Melbourne",
+      "from": "Melbourne",
+      "to": "Twelve Apostles",
+      "stops": [
+        {
+          "name": "Lorne",
+          "suggested_stop": "Beautiful coastal town; lunch"
+        },
+        {
+          "name": "Teddy's Lookout",
+          "suggested_stop": "Panoramic views over the coastline"
+        },
+        {
+          "name": "Apollo Bay",
+          "suggested_stop": "Scenic break and coffee; lunch"
+        },
+        {
+          "name": "Twelve Apostles",
+          "suggested_stop": "Iconic rock formations"
+        }
+      ],
+      "total_time": "Approx. 5 hrs one way via the Great Ocean Road; return via Colac and Geelong with optional stop at Little Creatures Brewery",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Australia/For AI Test Australia- All Inclusive Guide.docx"
+    },
+    {
+      "city": "Melbourne",
+      "from": "Twelve Apostles",
+      "to": "Melbourne",
+      "stops": [
+        {
+          "name": "Colac",
+          "suggested_stop": "Colac Lake, the largest natural freshwater lake in Victoria"
+        },
+        {
+          "name": "Geelong",
+          "suggested_stop": "Little Creatures brewery"
+        }
+      ],
+      "total_time": "3 hrs",
+      "_source_file": "Australia/For AI Test Australia- All Inclusive Guide.docx",
+      "_source_date": "2025-01-17",
+      "_source_format": "old",
+      "_replaced_from": "Australia/Australia- All Inclusive Guide(2).docx"
+    },
+    {
+      "city": "Melbourne",
+      "from": "Melbourne",
+      "to": "Phillip Island",
+      "stops": [
+        {
+          "name": "Belgrave Station",
+          "suggested_stop": "Puffing Billy steam train ride"
+        },
+        {
+          "name": "Emerald/Lakeside Station",
+          "suggested_stop": "Lunch stop"
+        },
+        {
+          "name": "Phillip Island Nature Park",
+          "suggested_stop": "Penguin Parade at sunset"
+        }
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "season_notes": [
+    {
+      "city": "Melbourne",
+      "tip": "May–June is mild at 12–20°C",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "Australia/Australia- All Inclusive Guide(1).docx",
+    "Australia/Australia- All Inclusive Guide(2).docx",
+    "Australia/For AI Test Australia- All Inclusive Guide.docx",
+    "Australia/Australia - All Inclusive Guide - Bipasha(1).docx"
+  ],
+  "currency": "AUD",
+  "_currency_source": {
+    "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+    "_source_date": null,
+    "_source_format": "new"
+  }
+}

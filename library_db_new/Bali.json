@@ -1,0 +1,919 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Nasi Ayam",
+      "city": "Bali",
+      "description": "Chicken rice with shredded chicken, satay, boiled egg, roasted peanuts, french bean salad, sambal and steamed rice",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx"
+    },
+    {
+      "name": "Lawar",
+      "city": "Bali",
+      "description": "Made from coconut gratings with minced jackfruit, chicken skin, chilies and coconut milk",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx"
+    },
+    {
+      "name": "Ayam Betutu",
+      "city": "Bali",
+      "description": "Balinese spiced chicken with steamed rice, chilli sambal, satay, salad and peanuts",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx"
+    },
+    {
+      "name": "Nasi Goreng",
+      "city": "Bali",
+      "description": "Spiced fried rice with vegetables and chicken or other meat; mention dietary needs when ordering",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx"
+    },
+    {
+      "name": "Mie Goreng",
+      "city": "Bali",
+      "description": "Stir-fried noodles with vegetables, egg and a choice of chicken",
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_date": "2026-03-19",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx"
+    },
+    {
+      "name": "Gado-Gado",
+      "city": "Bali",
+      "description": "Salad of steamed vegetables, tofu, tempeh and boiled eggs topped with creamy peanut sauce",
+      "vegetarian": "true",
+      "where_to_try": "Made's Warung Kuta",
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_date": "2026-03-19",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx"
+    },
+    {
+      "name": "Sambal Matah",
+      "city": "Bali",
+      "description": "Balinese raw sambal of chopped shallots, lemongrass, spices, garlic and herbs with shrimp paste; eaten alone or with fish or chicken",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx"
+    },
+    {
+      "name": "Sayur Lodeh",
+      "city": "Bali",
+      "description": "Traditional Indonesian coconut curry with vegetables like eggplant, beans, carrots and tofu; creamy and mild",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx"
+    },
+    {
+      "name": "Bebek Betutu",
+      "city": "Bali",
+      "description": "Balinese roast duck wrapped in banana leaves",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Ikan Bakar",
+      "city": "Bali",
+      "description": "Grilled fish",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx"
+    },
+    {
+      "name": "Tum Ayam",
+      "city": "Bali",
+      "description": "Minced chicken wrapped and steamed in banana leaf",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Fish Head Soup",
+      "city": "Bali",
+      "description": "Delicacy of fish boiled in a spiced broth",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx"
+    },
+    {
+      "name": "Martabak",
+      "city": "Bali",
+      "description": "Street-style pancake, savory chicken version or sweet chocolate and nut version",
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_date": "2026-03-19",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Cap Cay",
+      "city": "Bali",
+      "description": "Chinese-Indonesian stir-fry with vegetables like cabbage, carrots, baby corn and mushrooms; often vegetarian by default",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Tahu Berontak",
+      "city": "Bali",
+      "description": "Deep-fried tofu stuffed with vegetables like cabbage, carrots and bean sprouts",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Dadar Gulung",
+      "city": "Bali",
+      "description": "Green pandan-flavoured pancakes filled with sweet shredded coconut and palm sugar",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Acai Bowls",
+      "city": "Bali",
+      "description": "Fresh customizable acai bowls and smoothies, increasingly popular",
+      "vegetarian": "true",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Klepon",
+      "city": "Bali",
+      "description": "Sweet rice cakes filled with palm sugar and covered in coconut gratings",
+      "vegetarian": "true",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Tipat Cantok",
+      "city": "Bali",
+      "description": "Balinese rice cake salad with peanut sauce, palm-leaf steamed rice cakes, cabbage and sprouts, drizzled with sweet soy sauce",
+      "vegetarian": "true",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Bubur Sumsum",
+      "city": "Bali",
+      "description": "Indonesian rice pudding, syrupy and served hot, garnished with coconut cream and sliced bananas",
+      "vegetarian": "true",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Bebek Betutu or Bebek Goreng",
+      "city": "Bali",
+      "description": "Balinese roast duck stuffed with vegetables, spices and herbs, slow-cooked for 8-12 hours",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Jukut Ares",
+      "city": "Bali",
+      "description": "Balinese traditional soup of banana stalk, turmeric, bay leaves, spices and chicken",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Pisang Goreng",
+      "city": "Bali",
+      "description": "Banana fritters",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx"
+    },
+    {
+      "name": "Serombotan",
+      "city": "Bali",
+      "description": "Mix of bean sprouts, spinach, green banana slices, soybeans and peanuts topped with coconut and peanut sauce",
+      "vegetarian": "true",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Kopi Tubruk",
+      "city": "Bali",
+      "description": "Balinese coffee",
+      "vegetarian": "true",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Rujak",
+      "city": "Bali",
+      "description": "Indonesian fruit salad of green mango, papaya and yam beans with shrimp paste, chili sauce and palm sugar",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Es Cendol",
+      "city": "Bali",
+      "description": "Cold drink of rice flour jelly, coconut milk and palm sugar, often with crushed ice",
+      "vegetarian": "true",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Tum Ayan",
+      "city": "Bali",
+      "description": "Minced chicken with spices and coconut milk, wrapped in banana leaves and steamed or grilled",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Nasi Campur (Vegetarian Version)",
+      "city": "Bali",
+      "description": "Mixed plate to taste multiple Balinese flavours",
+      "vegetarian": "true",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx"
+    },
+    {
+      "name": "Mie Goreng (Vegetarian)",
+      "city": "Bali",
+      "description": "Indonesian fried noodles with vegetables, tofu/tempeh and sweet–savory sauces; most restaurants have a veg version",
+      "vegetarian": "true",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx"
+    },
+    {
+      "name": "Nasi Goreng (Vegetarian)",
+      "city": "Bali",
+      "description": "Fried rice with veggies, optional egg, tempeh and sambal; often served with crackers and pickles",
+      "vegetarian": "true",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx"
+    },
+    {
+      "name": "Sate Lilit Vegetarian",
+      "city": "Bali",
+      "description": "Plant-based version of Bali's satay using tempeh, mushrooms, tofu or soy-based mix wrapped around lemongrass sticks and grilled",
+      "vegetarian": "true",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx"
+    },
+    {
+      "name": "Tahu & Tempeh Goreng",
+      "city": "Bali",
+      "description": "Crispy fried tofu and tempeh served with chili dip",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx"
+    },
+    {
+      "name": "Urab",
+      "city": "Bali",
+      "description": "Vegetable salad of steamed vegetables with spiced grated coconut; a Balinese side dish",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx"
+    },
+    {
+      "name": "Sweet Potato Fries / Purple Yam Snacks",
+      "city": "Bali",
+      "description": "Purple yam is widely used and turned into fries, chips or steamed snacks",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx"
+    },
+    {
+      "name": "Vegetarian Laksa (Indonesian Style)",
+      "city": "Bali",
+      "description": "Aromatic coconut broth with noodles, tofu and vegetables; not originally Balinese but popular across Bali",
+      "vegetarian": "true",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx"
+    },
+    {
+      "name": "Bubur Injin",
+      "city": "Bali",
+      "description": "Black rice pudding with coconut milk",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx"
+    },
+    {
+      "name": "Fresh coconut water",
+      "city": "Bali",
+      "description": "Fresh coconut drink",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx"
+    },
+    {
+      "name": "Kintamani coffee",
+      "city": "Bali",
+      "description": "Bali coffee from Kintamani",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx"
+    },
+    {
+      "name": "Nasi Campur",
+      "city": "Bali",
+      "description": "Traditional Indonesian mixed rice platter with small portions of vegetables, sambal, tofu/tempeh and a choice of chicken",
+      "where_to_try": "Made's Warung Kuta",
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_date": "2026-03-19",
+      "_source_format": "new"
+    },
+    {
+      "name": "Chicken Satay (Sate Ayam)",
+      "city": "Bali",
+      "description": "Grilled marinated chicken skewers served with peanut sauce and rice cakes",
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_date": "2026-03-19",
+      "_source_format": "new"
+    },
+    {
+      "name": "Lamb Rendang",
+      "city": "Bali",
+      "description": "Slow-cooked lamb simmered in coconut milk and aromatic spices",
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_date": "2026-03-19",
+      "_source_format": "new"
+    },
+    {
+      "name": "Tempeh & Tofu Dishes",
+      "city": "Bali",
+      "description": "Plant-based dishes using local tempeh and tofu, stir-fried, grilled or in mild curries",
+      "vegetarian": "true",
+      "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+      "_source_date": "2026-03-19",
+      "_source_format": "new"
+    },
+    {
+      "name": "Bebek Betutu / Bebek Goreng",
+      "city": "Bali",
+      "description": "Balinese roast duck stuffed with vegetables, spices and herbs, slow-cooked for 8-12 hours",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
+      "_source_date": "2025-05-19",
+      "_source_format": "old"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Keep valuables secure and out of sight in busy areas",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Use a money belt or neck pouch for passports and extra cash",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Carry digital and paper copies of travel documents",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Avoid isolated alleys or beaches late at night",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Check local news or apps for protests or strikes",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Ubud",
+        "Nusa Dua",
+        "Bali"
+      ],
+      "tip": "Use Grab/Gojek instead of taxis that may overcharge",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
+      "_source_date": "2025-05-19",
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Ubud",
+        "Nusa Dua",
+        "Bali"
+      ],
+      "tip": "Avoid isolated beaches after dark",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
+      "_source_date": "2025-05-19",
+      "_source_format": "old"
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Pie Susu",
+      "city": "Bali",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets",
+        "Pie Susu Asli Enaak, Jimbaran"
+      ],
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx"
+    },
+    {
+      "item": "Batik & Ikat Textiles",
+      "city": "Bali",
+      "category": "Textiles",
+      "_source_file": "Bali Indonesia/Bali - All Inclusive Guide - Prashita(1).docx",
+      "_source_date": "2025-05-21",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx"
+    },
+    {
+      "item": "Balinese Coffee (Kopi Luwak)",
+      "city": "Bali",
+      "category": "Food",
+      "where_to_buy": [
+        "Markets",
+        "Coffee farms"
+      ],
+      "_source_file": "Bali Indonesia/Bali - All Inclusive Guide - Prashita(1).docx",
+      "_source_date": "2025-05-21",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Rattan Bags",
+      "city": "Bali",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Ubud",
+        "Seminyak"
+      ],
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx"
+    },
+    {
+      "item": "Wooden Handicrafts & Ceramics",
+      "city": "Bali",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "item": "Essential Oils & Spa Products",
+      "city": "Bali",
+      "category": "Wellness",
+      "_source_file": "Bali Indonesia/Bali - All Inclusive Guide - Prashita(1).docx",
+      "_source_date": "2025-05-21",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx"
+    },
+    {
+      "item": "Snacks, T-shirts and souvenirs in bulk",
+      "city": "Bali",
+      "category": "General",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali"
+      ],
+      "_source_file": "Bali Indonesia/Bali - All Inclusive Guide - Prashita(1).docx",
+      "_source_date": "2025-05-21",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx"
+    },
+    {
+      "item": "Batik & Ikat Fabrics",
+      "city": "Bali",
+      "category": "Textiles",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "item": "Spa Products & Essential Oils",
+      "city": "Bali",
+      "category": "Beauty & wellness",
+      "where_to_buy": [
+        "Local spa boutiques"
+      ],
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "item": "Snacks, clothing, magnets, soaps and gifts (fixed prices)",
+      "city": "Bali",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "Krishna Oleh-Oleh"
+      ],
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "item": "All-in-one souvenirs at reasonable fixed prices",
+      "city": "Bali",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "Agung Bali Souvenir Centre"
+      ],
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "item": "Snacks, clothing, magnets, soaps, gifts",
+      "city": "Bali",
+      "category": "Fixed-price souvenirs",
+      "where_to_buy": [
+        "Krishna Oleh-Oleh",
+        "Agung Bali Souvenir Centre"
+      ],
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new"
+    },
+    {
+      "item": "Jewellery",
+      "city": "Bali",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Kuta Beach Walk",
+        "Kuta Art Market",
+        "Taman Sari Market",
+        "Jalan Pantai Mengiat Shopping Street (Nusa Dua)",
+        "Bali Collection (Nusa Dua)",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/Bali Travel Guide.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "item": "Handmade products (bags, wooden bowls, shell items, paintings, ceramics)",
+      "city": "Bali",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Kuta Beach Walk",
+        "Kuta Art Market",
+        "Taman Sari Market",
+        "Jalan Pantai Mengiat Shopping Street (Nusa Dua)",
+        "Bali Collection (Nusa Dua)",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/Bali Travel Guide.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "item": "Batik and Ikat Fabric",
+      "city": "Bali",
+      "category": "Textiles",
+      "where_to_buy": [
+        "Kuta Beach Walk",
+        "Kuta Art Market",
+        "Taman Sari Market",
+        "Jalan Pantai Mengiat Shopping Street (Nusa Dua)",
+        "Bali Collection (Nusa Dua)",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/Bali Travel Guide.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "item": "Balinese Coffee",
+      "city": "Bali",
+      "category": "Food and drink",
+      "where_to_buy": [
+        "Kuta Beach Walk",
+        "Kuta Art Market",
+        "Taman Sari Market",
+        "Jalan Pantai Mengiat Shopping Street (Nusa Dua)",
+        "Bali Collection (Nusa Dua)",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/Bali Travel Guide.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "item": "Indonesian Rice Wine",
+      "city": "Bali",
+      "category": "Food and drink",
+      "where_to_buy": [
+        "Kuta Beach Walk",
+        "Kuta Art Market",
+        "Taman Sari Market",
+        "Jalan Pantai Mengiat Shopping Street (Nusa Dua)",
+        "Bali Collection (Nusa Dua)",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/Bali Travel Guide.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "item": "Spa Treatment Products",
+      "city": "Bali",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Kuta Beach Walk",
+        "Kuta Art Market",
+        "Taman Sari Market",
+        "Jalan Pantai Mengiat Shopping Street (Nusa Dua)",
+        "Bali Collection (Nusa Dua)",
+        "Ubud Art Market"
+      ],
+      "_source_file": "Bali Indonesia/Bali Travel Guide.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Bali",
+      "service": "Indian Embassy Bali",
+      "number": "+62 361 259502",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Bali",
+      "service": "Tourist Police (English-speaking)",
+      "number": "+62 361 754 599",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Buy a SIM at Denpasar Airport arrival hall, at stalls near luggage belt 4 or after customs",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Get a SIM on arrival for instant access to maps, ride-hailing apps and translation tools",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Ubud",
+        "Nusa Dua",
+        "Bali"
+      ],
+      "tip": "Buy a Telkomsel SIM at Denpasar Airport Arrival Hall, near luggage belt 4 or after customs",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
+      "_source_date": "2025-05-19",
+      "_source_format": "old"
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Bali",
+      "mode": "Private car with driver",
+      "description": "Most convenient and comfortable way to explore, especially for full-day sightseeing, inter-city transfers and early starts. Fixed pricing for the day, no navigation stress, air-conditioned, door-to-door service",
+      "covers": "Temple visits, waterfalls, Nusa Dua–Ubud transfers",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Bali",
+      "mode": "App-based taxis (Grab & Gojek)",
+      "description": "Suited to short city rides, dining transfers and casual outings such as Ubud café hopping, hotel to market transfers and Nusa Dua to nearby restaurants",
+      "how_to_use": "Download the Grab and Gojek apps before arrival",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Bali",
+      "mode": "Private car with driver",
+      "description": "Most convenient option for full-day sightseeing, inter-city transfers and early starts; fixed daily pricing, air-conditioned, door-to-door, no navigation stress",
+      "covers": "Temple visits, waterfalls, Nusa Dua–Ubud transfers",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new"
+    },
+    {
+      "city": "Bali",
+      "mode": "App-based taxi (Grab & Gojek)",
+      "description": "Good for short rides, dining transfers and casual outings such as Ubud café hopping, hotel to market and Nusa Dua to nearby restaurants",
+      "how_to_use": "Download Grab and Gojek before arrival",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new"
+    },
+    {
+      "city": "Bali",
+      "mode": "Private transfers and tours via local partner",
+      "description": "Preferred way to get around; the local partner arranges private transfers and tours",
+      "_source_file": "Bali Indonesia/Bali Travel Guide.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "city": "Bali",
+      "mode": "Cab provider",
+      "description": "Provider handles transport only, giving flexibility to switch things around in the itinerary",
+      "_source_file": "Bali Indonesia/Bali Travel Guide.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "city": "Bali",
+      "mode": "Hotel-booked transport",
+      "description": "Booking via the hotel gives even greater flexibility",
+      "_source_file": "Bali Indonesia/Bali Travel Guide.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "city": "Bali",
+      "mode": "Grab and Gojek",
+      "description": "Cab hailing apps that work only in certain areas such as Nusa Dua, Kuta, Seminyak and Ubud",
+      "how_to_use": "Book through the Grab or Gojek apps",
+      "covers": "Nusa Dua, Kuta, Seminyak, Ubud",
+      "_source_file": "Bali Indonesia/Bali Travel Guide.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Be cautious with ice in drinks and unpeeled fruits from small vendors",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Bali"
+      ],
+      "tip": "Carry motion sickness tablets for boats and ferries",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Ubud",
+        "Nusa Dua",
+        "Bali"
+      ],
+      "tip": "Carry mosquito repellent and creams",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
+      "_source_date": "2025-05-19",
+      "_source_format": "old"
+    }
+  ],
+  "route_guides": [],
+  "season_notes": [
+    {
+      "city": "Bali",
+      "tip": "Mid June: chance of evening showers",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Bali",
+      "tip": "Occasional showers; carry a rain jacket or umbrella",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Bali",
+      "tip": "Lightweight, breathable summer clothing suits the weather",
+      "_source_file": "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Bali",
+      "tip": "December is monsoon season; carry a compact umbrella and light rain jacket",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Bali",
+      "tip": "Mosquitoes increase during the rains",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Bali",
+      "tip": "December is monsoon season; mosquitoes increase during rains",
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new"
+    },
+    {
+      "city": "Bali",
+      "tip": "Carry rain jackets or umbrellas for the occasional shower",
+      "_source_file": "Bali Indonesia/Bali Travel Guide.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "source_files": [
+    "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx",
+    "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx",
+    "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx",
+    "Bali Indonesia/Bali - All Inclusive Guide - Prashita(1).docx",
+    "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+    "Bali Indonesia/All Inclusive Guide- Bali.docx",
+    "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf",
+    "Bali Indonesia/Bali Travel Guide.pdf"
+  ],
+  "currency": "IDR",
+  "_currency_source": {
+    "_source_file": "Bali Indonesia/All Inclusive Guide- Bali.docx",
+    "_source_date": "2026-03-19",
+    "_source_format": "new"
+  }
+}

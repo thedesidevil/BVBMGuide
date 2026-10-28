@@ -1,0 +1,597 @@
+{
+  "restaurants": [
+    {
+      "name": "Theva Cuisine",
+      "city": "Kandy",
+      "cuisine_type": [
+        "Sri Lankan"
+      ],
+      "price_range": "Approx. LKR 5,000 per person",
+      "hours": "8:00 AM – 10:00 PM",
+      "ambience": "Hilltop setting with panoramic views and breezy outdoor seating; calm, refined and scenic",
+      "highlights": [
+        "Authentic Sri Lankan flavors in an elevated setting"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx"
+    },
+    {
+      "name": "Devon Restaurant",
+      "city": "Kandy",
+      "cuisine_type": [
+        "Sri Lankan"
+      ],
+      "price_range": "Approx. LKR 1,500–2,500 per person",
+      "hours": "7:30 AM – 7:00 PM",
+      "ambience": "Popular local eatery with quick service",
+      "highlights": [
+        "Authentic Sri Lankan comfort food",
+        "Simple, hearty Sri Lankan vegetarian meal"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx"
+    },
+    {
+      "name": "Royal Bar and Hotel",
+      "city": "Kandy",
+      "cuisine_type": [
+        "Sri Lankan"
+      ],
+      "hours": "7am-11pm",
+      "ambience": "Old world charm",
+      "highlights": [
+        "Great cocktails",
+        "Good place to catch a drink",
+        "Live performances"
+      ],
+      "must_try_dishes": [
+        "Fish cakes",
+        "Chicken curry",
+        "Prawn curry"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka(1).docx",
+      "_source_date": "2024-12-20",
+      "_source_format": "old",
+      "_replaced_from": "Srilanka/All Inclusive Guide- Sri Lanka.docx"
+    },
+    {
+      "name": "The Empire Cafe",
+      "city": "Kandy",
+      "price_range": "Approx. LKR 1,000–2,000 per person",
+      "hours": "8:00 AM – 8:30 PM",
+      "ambience": "Colonial café vibe overlooking the lively streets near the temple",
+      "nearby_landmarks": [
+        "Temple of the Sacred Tooth Relic, Kandy"
+      ],
+      "highlights": [
+        "Casual and relaxed lunch in the heart of town"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx"
+    },
+    {
+      "name": "Vito Wood Fired Pizza",
+      "city": "Kandy",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "12-09:30pm",
+      "highlights": [
+        "Outdoor seating"
+      ],
+      "must_try_dishes": [
+        "Pizzas",
+        "Pastas"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka(1).docx",
+      "_source_date": "2024-12-20",
+      "_source_format": "old",
+      "_replaced_from": "Srilanka/All Inclusive Guide- Sri Lanka.docx"
+    },
+    {
+      "name": "Indian Summer Restaurant",
+      "city": "Kandy",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "LKR 800 to 1,500 per person",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "Modern, vibrant décor with a cozy atmosphere",
+      "highlights": [
+        "Centrally located near Kandy's city center",
+        "Diverse menu catering to various dietary preferences"
+      ],
+      "must_try_dishes": [
+        "Indian curries",
+        "Rotis",
+        "Rice"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx",
+      "_source_date": "2025-10-15",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Cultural show at Kandy Lake Club",
+      "city": "Kandy",
+      "description": "Cultural show; tickets can be booked online or on the spot",
+      "hours": "Starts at 5pm",
+      "entry_fee": "3500 LKR",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka(1).docx",
+      "_source_date": "2024-12-20",
+      "_source_format": "old",
+      "_replaced_from": "Srilanka/All Inclusive Guide- Sri Lanka.docx"
+    },
+    {
+      "name": "Temple of the Tooth Relic",
+      "city": "Kandy",
+      "description": "Sacred temple in Kandy, close to Kandy Lake Club",
+      "hours": "Open everyday 05:30am- 08:00pm",
+      "entry_fee": "Rs. 1500",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka(1).docx",
+      "_source_date": "2024-12-20",
+      "_source_format": "old",
+      "_replaced_from": "Srilanka/All Inclusive Guide- Sri Lanka.docx"
+    },
+    {
+      "name": "Arthurs Seat Kandy Viewpoint",
+      "city": "Kandy",
+      "description": "Viewpoint over Kandy, close to Kandy Lake",
+      "hours": "Open through",
+      "entry_fee": "Free",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka(1).docx",
+      "_source_date": "2024-12-20",
+      "_source_format": "old",
+      "_replaced_from": "Srilanka/All Inclusive Guide- Sri Lanka.docx"
+    },
+    {
+      "name": "Kandy Lake",
+      "city": "Kandy",
+      "description": "Peaceful walk around the lake next to the Temple of the Sacred Tooth Relic",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx",
+      "_source_date": "2025-10-15",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/All Inclusive Guide- Sri Lanka(1).docx"
+    },
+    {
+      "name": "Temple of the Sacred Tooth Relic",
+      "city": "Kandy",
+      "description": "Sri Lanka's most revered Buddhist shrine, a golden-roofed temple beside Kandy Lake; the relic is housed in a golden casket and not directly visible, with pooja ceremonies",
+      "hours": "5:30 AM – 8:00 PM",
+      "entry_fee": "Approx. LKR 2,000 per person (foreign visitors)",
+      "dress_code": "Cover shoulders and knees; remove footwear",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Kandyan Cultural Centre",
+      "city": "Kandy",
+      "description": "Traditional Kandyan dance show with fire walking, mask dances, drumming rituals and vibrant costumes",
+      "hours": "Shows typically begin around 5:00 PM",
+      "entry_fee": "Approx. LKR 3,500 per person",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.docx"
+    },
+    {
+      "name": "Temple of the Sacred Tooth Relic (Sri Dalada Maligawa)",
+      "city": "Kandy",
+      "description": "One of the most revered Buddhist temples in the world, believed to house a sacred relic of Lord Buddha. Features Kandyan architecture, drummers performing during puja, and golden reliquaries and shrines.",
+      "hours": "5:30 a.m. to 8:00 p.m",
+      "entry_fee": "LKR 2000 pp",
+      "dress_code": "Shoulders and knees covered",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+      "_source_date": "2025-12-13",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx"
+    },
+    {
+      "name": "Kandy Lake (Kiri Muhuda)",
+      "city": "Kandy",
+      "description": "Picturesque lake, good for a relaxed walk after visiting the temple. Optional short boat ride.",
+      "hours": "Open 24 hours",
+      "entry_fee": "Boat ride approx. LKR 1,500",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+      "_source_date": "2025-12-13",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx"
+    },
+    {
+      "name": "Royal Botanical Gardens Peradeniya",
+      "city": "Kandy",
+      "description": "147 acres of orchids, royal palms, bamboo groves and spice plants, with a grand palm avenue and orchid house",
+      "hours": "7:30 AM – 5:00 PM",
+      "entry_fee": "Approx. LKR 3,000 per person",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Golden Crown Hotel",
+      "city": "Kandy",
+      "location": "Quiet hills, about 20 mins from Kandy town center",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.docx"
+    },
+    {
+      "name": "Radisson Hotel Kandy",
+      "city": "Kandy",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+      "_source_date": "2025-12-13",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx"
+    },
+    {
+      "name": "Golden Crown",
+      "city": "Kandy",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx",
+      "_source_date": "2025-10-15",
+      "_source_format": "new"
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Batik",
+      "city": "Kandy",
+      "category": "Textiles",
+      "where_to_buy": [
+        "Jayamali Batiks Studio in Kandy market"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka(1).docx",
+      "_source_date": "2024-12-20",
+      "_source_format": "old",
+      "_replaced_from": "Srilanka/All Inclusive Guide- Sri Lanka.docx"
+    },
+    {
+      "item": "Gems including moonstone carvings",
+      "city": "Kandy",
+      "category": "Gems",
+      "where_to_buy": [
+        "Kahandawela"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka(1).docx",
+      "_source_date": "2024-12-20",
+      "_source_format": "old",
+      "_replaced_from": "Srilanka/All Inclusive Guide- Sri Lanka.docx"
+    },
+    {
+      "item": "Spices & Herbal Products",
+      "city": "Kandy",
+      "category": "Spices",
+      "where_to_buy": [
+        "Spice Garden, Matale",
+        "Kandy City Centre Spice Market"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+      "_source_date": "2025-12-13",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Gems & Jewellery (Sapphires, Moonstones)",
+      "city": "Kandy",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Gem Museum & Lapidary, Kandy",
+        "Premadasa Gems, Colombo"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+      "_source_date": "2025-12-13",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Batik & Handloom Fabrics",
+      "city": "Kandy",
+      "category": "Textiles",
+      "where_to_buy": [
+        "Selyn Handloom Centre"
+      ],
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx",
+      "_source_date": "2025-10-15",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx"
+    },
+    {
+      "item": "Ayurvedic Oils & Natural Skincare",
+      "city": "Kandy",
+      "category": "Wellness",
+      "where_to_buy": [
+        "Spa Ceylon"
+      ],
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx",
+      "_source_date": "2025-10-15",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx"
+    },
+    {
+      "item": "Coconut Shell Crafts & Lacquerware",
+      "city": "Kandy",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Kandyan Art Association Craft Centre, Kandy"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+      "_source_date": "2025-12-13",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Handmade Paper & Stationery",
+      "city": "Kandy",
+      "category": "Stationery",
+      "where_to_buy": [
+        "Maximus Elephant Dung Paper Factory Shop, Kandy"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+      "_source_date": "2025-12-13",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx"
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Kandy",
+      "service": "Hospital: Lakeside Adventist Hospital",
+      "notes": "3 min drive from Radisson Hotel Kandy",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+      "_source_date": "2025-12-13",
+      "_source_format": "new"
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Colombo",
+        "Kandy",
+        "Kalutara",
+        "Mirissa",
+        "Galle",
+        "Pinnawala"
+      ],
+      "tip": "Activate roaming on your home number even without an international plan, to receive messages such as OTPs",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka(1).docx",
+      "_source_date": "2024-12-20",
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Colombo",
+        "Minneriya",
+        "Kandy",
+        "Nuwara Eliya",
+        "Bentota"
+      ],
+      "tip": "Use a data SIM for navigation and translation",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx",
+      "_source_date": "2025-10-15",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Colombo",
+        "Minneriya",
+        "Kandy",
+        "Nuwara Eliya",
+        "Bentota"
+      ],
+      "tip": "Wi-Fi is common, but mobile data is more reliable",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx",
+      "_source_date": "2025-10-15",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Colombo",
+        "Minneriya",
+        "Kandy",
+        "Nuwara Eliya",
+        "Bentota"
+      ],
+      "tip": "Carry a power bank for long trips or safaris",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx",
+      "_source_date": "2025-10-15",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Colombo",
+        "Minneriya",
+        "Kandy",
+        "Nuwara Eliya",
+        "Bentota"
+      ],
+      "tip": "Short-term tourist data packs of 1–7 days cost ~LKR 500–1000 for ~1–5 GB",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx",
+      "_source_date": "2025-10-15",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Colombo",
+        "Minneriya",
+        "Kandy",
+        "Nuwara Eliya",
+        "Bentota"
+      ],
+      "tip": "30-day data packs cost ~LKR 1500–3000 for ~5–10 GB",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx",
+      "_source_date": "2025-10-15",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Colombo",
+        "Minneriya",
+        "Kandy",
+        "Nuwara Eliya",
+        "Bentota"
+      ],
+      "tip": "Data top-ups are available at stores, kiosks or apps",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx",
+      "_source_date": "2025-10-15",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Colombo",
+        "Kandy",
+        "Galle"
+      ],
+      "tip": "Tourist SIMs are sold at telecom outlets and electronics shops in Colombo, Kandy and Galle",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new"
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Ella",
+        "Nuwara Eliya",
+        "Kandy"
+      ],
+      "tip": "Carry motion sickness tablets for winding hill routes",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.docx"
+    },
+    {
+      "cities": [
+        "Kandy"
+      ],
+      "tip": "Pharmacy near Radisson Kandy: City Pharmacy, 5 min drive",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Kandy"
+      ],
+      "tip": "Nearest hospital to Radisson Kandy: Lakeside Adventist Hospital, 3 min drive",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Kandy"
+      ],
+      "tip": "Convenience store near Radisson Kandy: Savers Supermarket, 7 min drive",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Colombo",
+        "Kandy"
+      ],
+      "tip": "Good private healthcare facilities are available in Colombo and Kandy",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new"
+    }
+  ],
+  "route_guides": [
+    {
+      "city": "Kandy",
+      "from": "Kandy",
+      "to": "Nuwara Eliya",
+      "stops": [
+        {
+          "name": "Ramboda Falls",
+          "minutes": 113,
+          "suggested_stop": "View one of Sri Lanka's tallest waterfalls"
+        },
+        {
+          "name": "Sri Bhakta Hanuman Temple",
+          "minutes": 30,
+          "suggested_stop": "Optional stop to see the giant Hanuman statue"
+        }
+      ],
+      "total_time": "Approx. 2.5–3 hours without stops",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx"
+    },
+    {
+      "city": "Kandy",
+      "from": "Kandy",
+      "to": "Colombo",
+      "total_time": "Approx. 3.5–4.5 hours depending on traffic",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "season_notes": [
+    {
+      "city": "Kandy",
+      "tip": "Evenings are cooler in the hill country; carry a light jacket in December",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Kandy",
+      "tip": "Evenings in December are cooler; carry a light jacket",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+      "_source_date": "2025-12-13",
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "Srilanka/All Inclusive Guide- Sri Lanka.docx",
+    "Srilanka/All Inclusive Guide- Sri Lanka(1).docx",
+    "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.docx",
+    "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx",
+    "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx",
+    "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+    "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx"
+  ],
+  "currency": "LKR",
+  "_currency_source": {
+    "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+    "_source_date": "2026-02-14",
+    "_source_format": "new"
+  }
+}

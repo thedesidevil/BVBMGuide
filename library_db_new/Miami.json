@@ -1,0 +1,389 @@
+{
+  "restaurants": [
+    {
+      "name": "Azteca South Beach",
+      "city": "Miami",
+      "cuisine_type": [
+        "Mexican"
+      ],
+      "highlights": [
+        "Many vegetarian options",
+        "Kids menu",
+        "Excellent tequila and mezcal section"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": "true",
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new",
+      "_replaced_from": "USA/ALL INCLUSIVE GUIDE USA.docx"
+    },
+    {
+      "name": "Café Americano",
+      "city": "Miami",
+      "cuisine_type": [
+        "American café"
+      ],
+      "hours": "8am- 10:30pm",
+      "must_try_dishes": [
+        "Sandwiches",
+        "Juices",
+        "Milkshakes",
+        "Coffee",
+        "Avocado toast"
+      ],
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new",
+      "_replaced_from": "USA/ALL INCLUSIVE GUIDE USA.docx"
+    },
+    {
+      "name": "11th Street Diner",
+      "city": "Miami",
+      "cuisine_type": [
+        "American"
+      ],
+      "hours": "7:30am- 12am",
+      "highlights": [
+        "All day breakfast"
+      ],
+      "must_try_dishes": [
+        "Cuban sandwiches"
+      ],
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new",
+      "_replaced_from": "USA/ALL INCLUSIVE GUIDE USA.docx"
+    },
+    {
+      "name": "Bombay Bistro",
+      "city": "Miami",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "9-11am, 12-3:30pm, 6-10:45 pm",
+      "highlights": [
+        "Serves happy hour food"
+      ],
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new",
+      "_replaced_from": "USA/ALL INCLUSIVE GUIDE USA.docx"
+    },
+    {
+      "name": "Mister O1",
+      "city": "Miami",
+      "cuisine_type": [
+        "Pizzeria"
+      ],
+      "hours": "12pm-10pm",
+      "must_try_dishes": [
+        "Pizzas",
+        "Antipasti",
+        "Salads"
+      ],
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Mandolin Aegean Bistro",
+      "city": "Miami",
+      "cuisine_type": [
+        "Greek",
+        "Turkish"
+      ],
+      "hours": "12pm-11pm",
+      "must_try_dishes": [
+        "Kebabs",
+        "Salads",
+        "Sangria"
+      ],
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Lucali",
+      "city": "Miami",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "12pm-11pm",
+      "must_try_dishes": [
+        "Pizzas",
+        "Calzones",
+        "Wine"
+      ],
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "The Great Indian Kitchen Miami",
+      "city": "Miami",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "12pm-1:30am",
+      "must_try_dishes": [
+        "Curries",
+        "Rotis",
+        "Biryanis"
+      ],
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Joe's Stone Crab",
+      "city": "Miami",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "$100 per person",
+      "hours": "11:30am-2:30pm, 5-10pm",
+      "highlights": [
+        "Legendary restaurant"
+      ],
+      "must_try_dishes": [
+        "Stone crabs",
+        "Key lime pie"
+      ],
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Key West Day Trip",
+      "city": "Miami",
+      "description": "Guided day tour to Key West from Miami with early meeting point",
+      "tips": [
+        "Meeting time is early morning (6am)"
+      ],
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "SeAquarium",
+      "city": "Miami",
+      "description": "Kid-friendly aquarium activity",
+      "hours": "10am-5pm; closed on Tue and Wed",
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new",
+      "_replaced_from": "USA/ALL INCLUSIVE GUIDE USA.docx"
+    },
+    {
+      "name": "Frost Science Museum",
+      "city": "Miami",
+      "description": "Science museum",
+      "hours": "10am-6pm",
+      "entry_fee": "Approx. Rs. 2500 per head",
+      "tips": [
+        "Tickets can be bought on the spot"
+      ],
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Scuba Diving in Miami",
+      "city": "Miami",
+      "description": "Most dives require a minimum age of 10 and some are 12+. Children above 8 can enrol in a scuba diving class but cannot go on an actual dive. Adult dives are at West Palm, not suitable for children under 10",
+      "entry_fee": "USD 269 per child for the scuba class",
+      "tips": [
+        "Book the kids' class online in advance"
+      ],
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Florida Keys",
+      "city": "Miami",
+      "description": "Drive from Miami to the Florida Keys",
+      "recommended_duration": "3.5 hrs drive each way",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "President Hotel, Miami",
+      "city": "Miami",
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new",
+      "_replaced_from": "USA/ALL INCLUSIVE GUIDE USA.docx"
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Key Lime Pie",
+      "city": "Miami",
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new",
+      "_replaced_from": "USA/ALL INCLUSIVE GUIDE USA.docx"
+    },
+    {
+      "name": "Cuban food (black beans and rice, tostones)",
+      "city": "Miami",
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Arepas",
+      "city": "Miami",
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new",
+      "_replaced_from": "USA/ALL INCLUSIVE GUIDE USA.docx"
+    },
+    {
+      "name": "Cuban black beans and rice",
+      "city": "Miami",
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new"
+    },
+    {
+      "name": "Tostones",
+      "city": "Miami",
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new"
+    },
+    {
+      "name": "Fresh seafood",
+      "city": "Miami",
+      "description": "Fresh seafood is a Florida speciality",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Cuban food",
+      "city": "Miami",
+      "description": "Cuban dishes such as black beans and rice and tostones",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Ceviche",
+      "city": "Miami",
+      "description": "Seafood marinated in citrus juices",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Florida Rock Shrimp",
+      "city": "Miami",
+      "description": "Local shrimp speciality",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Grouper Sandwich",
+      "city": "Miami",
+      "description": "Crispy fried grouper fillet on an onion roll, Cuban bread or kaiser, with lettuce, tomato and tartar sauce",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Stone Crab Claws",
+      "city": "Miami",
+      "description": "Famous Miami seafood speciality",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Buy a SIM or eSIM from TSIM; if buying two SIMs, get one T-Mobile and one AT&T",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Miami",
+      "mode": "Rental car",
+      "description": "Parking is easy in Florida, so a rental car works well",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Miami"
+      ],
+      "tip": "Walgreens at 1400 Collins Ave is open 24 hours and sells snacks, milk, sodas and water",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "route_guides": [],
+  "season_notes": [
+    {
+      "city": "Miami",
+      "tip": "Florida in May is pleasant but humid, about 23°C to 28°C",
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Miami",
+      "tip": "Pleasant but humid, 23°C minimum to 28°C maximum",
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new"
+    },
+    {
+      "city": "Miami",
+      "tip": "Pleasant but humid in late October and early November; max about 28°C, min about 24°C",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "source_files": [
+    "USA/ALL INCLUSIVE GUIDE USA.docx",
+    "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+    "USA/Varun-Priyankee-Orlando-2024.pdf"
+  ],
+  "currency": "USD",
+  "_currency_source": {
+    "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+    "_source_date": "2025-05-01",
+    "_source_format": "new"
+  }
+}

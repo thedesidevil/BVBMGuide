@@ -1,0 +1,341 @@
+{
+  "restaurants": [
+    {
+      "name": "Indian Curry Castle, Frankfurt",
+      "city": "Frankfurt",
+      "area": "Altstadt",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "EUR 25-40 per person",
+      "hours": "11 AM - 2:30 PM; 5:30 PM- 11 PM",
+      "ambience": "Cozy restaurant in the Old Town with warm décor and friendly local vibe",
+      "must_try_dishes": [
+        "Butter chicken",
+        "Saag Paneer",
+        "Chana Masala with garlic naan"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Café Karin, Frankfurt",
+      "city": "Frankfurt",
+      "price_range": "EUR 15-25 per person",
+      "hours": "9 AM - 7 PM",
+      "ambience": "Cozy café with a Parisian flair and relaxed vibe",
+      "highlights": [
+        "Known for fresh, healthy lunches"
+      ],
+      "must_try_dishes": [
+        "Veggie quiche",
+        "Mediterranean salad",
+        "Smoked salmon with rösti",
+        "Sandwiches"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Restaurant Margarete, Frankfurt",
+      "city": "Frankfurt",
+      "hhours": "5 PM - 12 AM",
+      "hours": "5 PM - 12 AM",
+      "ambience": "Stylish modern bistro with minimalist design and terrace seating",
+      "must_try_dishes": [
+        "Seasonal vegetable risotto",
+        "Chicken breast with herb jus",
+        "Grilled fish"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "MainNizza, Frankfurt",
+      "city": "Frankfurt",
+      "price_range": "EUR 35-50 per person",
+      "hours": "11:30 AM - 12 AM",
+      "ambience": "Contemporary, chic yet relaxed riverside restaurant with a large terrace overlooking the Main River",
+      "must_try_dishes": [
+        "Truffle pasta",
+        "Seasonal veggie mains",
+        "Roast corn-fed chicken with sides"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Medici Restaurant, Frankfurt",
+      "city": "Frankfurt",
+      "hours": "11:30 AM - 10 PM",
+      "must_try_dishes": [
+        "Parmesan risotto with seasonal vegetables",
+        "Sea bass filet with olive oil & lemon"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Zum Bitburger, Frankfurt",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "German"
+      ],
+      "hours": "12 PM - 9 PM",
+      "ambience": "Traditional German restaurant and beerhouse; lively, rustic and authentic with hearty portions",
+      "must_try_dishes": [
+        "Käsespätzle (cheesy egg noodles)",
+        "Breaded chicken schnitzel with potato salad"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Adolf Wagner, Frankfurt",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "German"
+      ],
+      "price_range": "EUR 20-30 per person",
+      "hours": "11 AM - 12 AM",
+      "ambience": "Rustic, bustling Apfelwein tavern with wooden benches and lively local vibes",
+      "highlights": [
+        "One of Frankfurt's most famous Apfelwein taverns"
+      ],
+      "must_try_dishes": [
+        "Handkäse mit Musik (marinated sour milk cheese with onions)",
+        "Breaded chicken schnitzel with potato salad"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Zum Gemalten Haus, Frankfurt",
+      "city": "Frankfurt",
+      "area": "Sachsenhausen",
+      "cuisine_type": [
+        "German"
+      ],
+      "hours": "11 AM - 11 PM",
+      "ambience": "Historic tavern with colorful murals and a buzzing beer-garden feel",
+      "highlights": [
+        "An institution in Sachsenhausen"
+      ],
+      "must_try_dishes": [
+        "Potato pancakes with apple sauce",
+        "Roast chicken with rösti"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Römerberg Square",
+      "city": "Frankfurt",
+      "description": "Historic heart of Frankfurt with half-timbered houses and the Town Hall",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Frankfurt Cathedral (Kaiserdom)",
+      "city": "Frankfurt",
+      "description": "Cathedral with a tower climb for panoramic city views",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Main River Promenade",
+      "city": "Frankfurt",
+      "description": "Relaxed riverside walk",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Zeil",
+      "city": "Frankfurt",
+      "description": "Shopping street for high street and designer shopping",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Palmengarten",
+      "city": "Frankfurt",
+      "description": "Botanical gardens",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Sachsenhausen Apfelwein Taverns",
+      "city": "Frankfurt",
+      "description": "Frankfurt's traditional cider culture; beer and cider tasting tours available",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "JW Marriott Frankfurt",
+      "city": "Frankfurt",
+      "location": "9 min walk from Römerberg Square",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Delta by Marriott Frankfurt",
+      "city": "Frankfurt",
+      "location": "25 min by public transport from JW Marriott Frankfurt",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Handkäse mit Musik",
+      "city": "Frankfurt",
+      "description": "Marinated sour milk cheese with onions",
+      "where_to_try": "Adolf Wagner",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Käsespätzle",
+      "city": "Frankfurt",
+      "description": "Cheesy egg noodles",
+      "where_to_try": "Zum Bitburger",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Apfelwein",
+      "city": "Frankfurt",
+      "description": "Traditional apple wine served in Sachsenhausen taverns",
+      "where_to_try": "Sachsenhausen Apfelwein taverns",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Frankfurt"
+      ],
+      "tip": "Pickpockets are common around the central station area",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Apfelwein (Apple Wine) & Stoneware Mugs",
+      "city": "Frankfurt",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Sachsenhausen tavern shops"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "item": "Bethmännchen (marzipan cookies)",
+      "city": "Frankfurt",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Confiserie Graff",
+        "Kleinmarkthalle"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "item": "Frankfurt Skyline Souvenirs",
+      "city": "Frankfurt",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "Römerberg tourist shops"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "item": "German Beer Steins",
+      "city": "Frankfurt",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "Souvenir shops around Römer"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Frankfurt",
+      "mode": "U-Bahn, S-Bahn, tram and bus",
+      "description": "RMV Day Pass with unlimited travel within Frankfurt city for 24 hours",
+      "recommended_pass": "RMV Day Pass",
+      "cost": "€6.65 per adult (city zone)",
+      "covers": "U-Bahn, S-Bahn, trams and buses within Frankfurt city; useful for Old Town, Museumsufer and Sachsenhausen",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    }
+  ],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "Europe/Tejas - Europe All Inclusive Guide(1).docx"
+  ],
+  "currency": "EUR",
+  "_currency_source": {
+    "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+    "_source_date": "2025-09-13",
+    "_source_format": "new"
+  }
+}

@@ -1,0 +1,404 @@
+{
+  "restaurants": [
+    {
+      "name": "Restaurant Pizzeria Aroma GmbH",
+      "city": "Brienz",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "INR 2,500–4,000 per person",
+      "hours": "8:00 AM – 12:00 PM | 5:00 PM - 11:30 PM",
+      "ambience": "Cozy lakeside, relaxed",
+      "nearby_landmarks": [
+        "Brienz Rothorn Railway Station, Brienz"
+      ],
+      "must_try_dishes": [
+        "Vegetarian pizza",
+        "Mushroom pasta",
+        "Garlic bread"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "name": "Restaurant Lindenblüte",
+      "city": "Brienz",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "INR 3,000–4,500 per person",
+      "hours": "5:30 PM – 9:30 PM",
+      "ambience": "Charming, warm hospitality",
+      "nearby_landmarks": [
+        "Brienz Rothorn Railway Station, Brienz"
+      ],
+      "must_try_dishes": [
+        "Rösti",
+        "Vegetable pasta",
+        "Alpine cheese specialties"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "name": "Bistro Rothorn",
+      "city": "Brienz",
+      "cuisine_type": [
+        "Café",
+        "Alpine"
+      ],
+      "price_range": "Approx. INR 1,500–3,000 per person",
+      "hours": "9:00 AM – 5:30 PM; closed Monday to Thursday",
+      "ambience": "Relaxed mountain-style café",
+      "highlights": [
+        "Lighter meal before boarding the Rothorn railway"
+      ],
+      "must_try_dishes": [
+        "Vegetable sandwiches",
+        "Rösti",
+        "Hot chocolate"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Pizzeria Aroma",
+      "city": "Brienz",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "Approx. INR 2,500–4,000 per person",
+      "hours": "8:00 AM – 12:00 PM | 5:00 PM – 11:30 PM; closed on Tuesday",
+      "ambience": "Cozy lakeside, relaxed",
+      "highlights": [
+        "Comforting vegetarian Italian dishes"
+      ],
+      "must_try_dishes": [
+        "Vegetarian pizza",
+        "Mushroom pasta",
+        "Garlic bread"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "name": "Restaurant Löwen",
+      "city": "Brienz",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "Approx. INR 2,500–4,000 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Warm wooden interiors, alpine hospitality, lakeside surroundings",
+      "highlights": [
+        "Traditional Swiss restaurant"
+      ],
+      "must_try_dishes": [
+        "Cheese rösti",
+        "Mushroom cream pasta",
+        "Seasonal vegetarian specials",
+        "Swiss desserts"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "name": "Restaurant Löwen Brienz",
+      "city": "Brienz",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "INR 3,000–5,000 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Traditional Swiss alpine dining",
+      "highlights": [
+        "Classic Swiss lakeside restaurant with warm hospitality"
+      ],
+      "must_try_dishes": [
+        "Vegetarian rösti",
+        "Cheese platters",
+        "Seasonal Swiss desserts"
+      ],
+      "best_for": [
+        "relaxed lakeside Swiss lunch"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_date": "2026-05-25",
+      "_source_format": "new"
+    },
+    {
+      "name": "Steinbock Hotel Restaurant",
+      "city": "Brienz",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "INR 2,500–4,500 per person",
+      "hours": "11:00 AM – 9:30 PM",
+      "ambience": "Rustic mountain chalet",
+      "highlights": [
+        "Chalet-style restaurant with scenic outdoor seating"
+      ],
+      "must_try_dishes": [
+        "Vegetable pasta",
+        "Rösti with alpine cheese",
+        "Mushroom cream dishes"
+      ],
+      "best_for": [
+        "scenic alpine lunch"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_date": "2026-05-25",
+      "_source_format": "new"
+    },
+    {
+      "name": "Cafe Walz",
+      "city": "Brienz",
+      "cuisine_type": [
+        "Café",
+        "Bakery"
+      ],
+      "price_range": "INR 1,500–3,000 per person",
+      "hours": "8:30 AM – 9:00 PM",
+      "ambience": "Cozy lakeside café",
+      "highlights": [
+        "Fresh pastries and coffee by the lake"
+      ],
+      "must_try_dishes": [
+        "Fresh sandwiches",
+        "Swiss pastries",
+        "Coffee and cakes"
+      ],
+      "best_for": [
+        "light café lunch and desserts"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_date": "2026-05-25",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Brienz Rothorn Bahn",
+      "city": "Brienz",
+      "description": "Historic steam cogwheel railway, 2 min walk from the Brienz ferry terminal.",
+      "tips": [
+        "Early-season operation typically only goes as far as Planalp middle station (30 min journey)"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria(1).docx",
+      "_source_date": "2025-05-21",
+      "_source_format": "new"
+    },
+    {
+      "name": "Brienz Lakeside Promenade",
+      "city": "Brienz",
+      "description": "Easy flat stroll along Lake Brienz with turquoise water and traditional chalets",
+      "recommended_duration": "30–60 min",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Brienz to Iseltwald Lakeside Walk",
+      "city": "Brienz",
+      "description": "One of the prettiest lake walks in the Bernese Oberland; return by bus possible",
+      "recommended_duration": "~2.5–3 hrs one way",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Brienzer Rothorn Panorama Trail",
+      "city": "Brienz",
+      "description": "Historic steam cogwheel train up to Brienzer Rothorn (2,350 m) followed by panoramic ridge walks",
+      "recommended_duration": "2–4 hrs",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Brienz Pier",
+      "city": "Brienz",
+      "description": "Sunset spot; short lake cruises available",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Brienz",
+      "city": "Brienz",
+      "description": "Peaceful village on Lake Brienz known for woodcarving heritage and traditional chalets.",
+      "entry_fee": "Free",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Brunngasse",
+      "city": "Brienz",
+      "description": "Street of preserved wooden chalets overflowing with flowers, often regarded as one of Europe's prettiest streets.",
+      "entry_fee": "Free",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Brienz Rothorn Railway",
+      "city": "Brienz",
+      "description": "Historic vintage steam railway climbing through forests and alpine meadows with views over Lake Brienz.",
+      "hours": "Approx. 8:30 AM – 5:00 PM",
+      "tips": [
+        "In early season it may run only to Planalp Middle Station rather than the summit",
+        "Parking near the station"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Planalp Middle Station",
+      "city": "Brienz",
+      "description": "Mid-station on the Rothorn railway with alpine meadows, short walks, a small mountain café and views over Lake Brienz.",
+      "recommended_duration": "~1–1.5 hrs",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "name": "Brienz Village",
+      "city": "Brienz",
+      "description": "Peaceful lakeside village known for traditional wooden chalets, flower-lined streets and wood-carving shops.",
+      "hours": "Open throughout the day",
+      "entry_fee": "Free",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_date": "2026-05-25",
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Rösti",
+      "city": "Brienz",
+      "description": "Classic Swiss dish of crispy pan-fried grated potatoes, often topped with cheese, vegetables or herbs.",
+      "where_to_try": "Restaurant Löwen Brienz, Harder Kulm Panorama Restaurant, Restaurant Pilatus-Kulm",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_date": "2026-05-25",
+      "_source_format": "new"
+    },
+    {
+      "name": "Alpine Cheese Platters",
+      "city": "Brienz",
+      "description": "Fresh regional cheeses served with breads, fruits, nuts and preserves.",
+      "where_to_try": "Restaurant Löwen Brienz, Panorama Restaurant Titlis",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_date": "2026-05-25",
+      "_source_format": "new"
+    },
+    {
+      "name": "Fresh Swiss Pastries",
+      "city": "Brienz",
+      "description": "Simple, comforting pastries, perfect with morning coffee.",
+      "where_to_try": "Cafe Walz, Fellows Coffee Paris",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_date": "2026-05-25",
+      "_source_format": "new"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Swiss Wooden Handicrafts",
+      "city": "Brienz",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Brienz Village artisan shops",
+        "Interlaken souvenir boutiques"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_date": "2026-05-25",
+      "_source_format": "new"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Brienz",
+      "mode": "Steam railway",
+      "description": "Historic Brienz Rothorn steam railway.",
+      "how_to_use": "Parking near the station; may run only to Planalp Middle Station in early season.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    }
+  ],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [
+    {
+      "city": "Brienz",
+      "tip": "Brienz Rothorn Bahn typically runs only to Planalp middle station in early season (early May to early June)",
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria(1).docx",
+      "_source_date": "2025-05-21",
+      "_source_format": "new"
+    },
+    {
+      "city": "Brienz",
+      "tip": "Brienz Rothorn Railway may run only up to Planalp Middle Station in early-season conditions",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "Switzerland/All Inclusive Guide - Switzerland and Austria(1).docx",
+    "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+    "Europe/Kunal_Europe_All Inclusive Guide.docx",
+    "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+  ],
+  "currency": "CHF",
+  "_currency_source": {
+    "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+    "_source_date": "2026-05-25",
+    "_source_format": "new"
+  }
+}

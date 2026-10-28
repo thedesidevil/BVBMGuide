@@ -1,0 +1,352 @@
+{
+  "restaurants": [
+    {
+      "name": "Fuchs Bakery & Bistro",
+      "city": "Zermatt",
+      "cuisine_type": [
+        "Bakery",
+        "Café"
+      ],
+      "price_range": "₹800–1,500 per person",
+      "hours": "7:00 AM – 6:30 PM",
+      "area": "Zermatt village",
+      "must_try_dishes": [
+        "Fresh sandwiches",
+        "Pastries",
+        "Coffee"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "name": "Petit Royal Café Zermatt",
+      "city": "Zermatt",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹1,000–2,000 per person",
+      "hours": "8:00 AM – 6:00 PM",
+      "area": "Zermatt village",
+      "must_try_dishes": [
+        "Cakes",
+        "Quiche",
+        "Coffee"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "name": "Cup's Italian Coffee House Zermatt",
+      "city": "Zermatt",
+      "cuisine_type": [
+        "Italian",
+        "Café"
+      ],
+      "price_range": "₹1,000–2,000 per person",
+      "hours": "7:30 AM – 5:00 PM",
+      "area": "Zermatt village",
+      "must_try_dishes": [
+        "Paninis",
+        "Desserts",
+        "Coffee"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "name": "The Omnia Restaurant Zermatt",
+      "city": "Zermatt",
+      "price_range": "₹4,000–6,000 per person",
+      "hours": "7:00 PM – 10:00 PM",
+      "must_try_dishes": [
+        "Seasonal vegetarian dishes"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "name": "Walliserkanne Zermatt",
+      "city": "Zermatt",
+      "price_range": "₹2,500–4,000 per person",
+      "hours": "11:30 AM – 11:00 PM",
+      "must_try_dishes": [
+        "Veg rösti",
+        "Pasta"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "name": "Riffelhaus 1853 Restaurant",
+      "city": "Zermatt",
+      "price_range": "₹2,500–4,000 per person",
+      "hours": "11:30 AM – 3:30 PM",
+      "area": "Riffelberg",
+      "must_try_dishes": [
+        "Rösti",
+        "Vegetarian pasta",
+        "Soups"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Reached by Gornergrat train, Riffelberg stop",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "name": "Restaurant Alphitta Riffelalp",
+      "city": "Zermatt",
+      "price_range": "₹2,500–4,000 per person",
+      "hours": "9:00 AM – 5:00 PM",
+      "area": "Riffelalp",
+      "must_try_dishes": [
+        "Light vegetarian dishes",
+        "Salads"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Reached by Gornergrat train, Riffelalp stop",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Zermatt and Matterhorn Viewpoint",
+      "city": "Zermatt",
+      "description": "Car-free village; riverside walk to the Matterhorn viewpoint (4 min walk from station); optional Sunnegga or Gornergrat lifts for panoramas",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Bahnhofstrasse Zermatt",
+      "city": "Zermatt",
+      "description": "Main village street with shops and glimpses of the Matterhorn between rooftops",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "name": "Matterhorn Viewpoint Zermatt",
+      "city": "Zermatt",
+      "description": "Viewpoint about 5 mins' walk from Bahnhofstrasse",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "name": "Matterhorn Museum - Zermatlantis",
+      "city": "Zermatt",
+      "description": "Museum about 5–6 mins' walk from Bahnhofstrasse",
+      "hours": "3:00 PM – 6:00 PM",
+      "entry_fee": "~₹1,500 per person",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Hotel Alphubel Zermatt",
+      "city": "Zermatt",
+      "location": "~3–5 mins' walk from Zermatt Station, near Bahnhofstrasse and Gornergrat Bahn station",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Cheese Fondue",
+      "city": "Zermatt",
+      "description": "Melted cheese served with bread cubes for dipping",
+      "where_to_try": "Traditional Swiss restaurants in Zermatt and Interlaken",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "name": "Butter Gipfeli",
+      "city": "Zermatt",
+      "description": "Swiss croissant, flaky and buttery, slightly denser than a French croissant",
+      "where_to_try": "Local bakeries in Zurich and Zermatt",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "name": "Vegetable Ravioli / Swiss-style Pasta",
+      "city": "Zermatt",
+      "description": "Fresh pasta with seasonal vegetables and light sauces, common on Swiss-Italian influenced menus",
+      "vegetarian": true,
+      "where_to_try": "Cafés and restaurants in Zermatt and Interlaken",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "name": "Warm Alpine Vegetable Plates",
+      "city": "Zermatt",
+      "description": "Seasonal vegetables, grilled or sautéed, often served with local cheese or sauces",
+      "vegetarian": true,
+      "where_to_try": "Available across all destinations, especially scenic cafés",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "name": "Swiss Chocolate",
+      "city": "Zermatt",
+      "description": "High-quality artisan chocolate from classic milk to rich dark",
+      "where_to_try": "Chocolate boutiques in Zurich and Zermatt",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "name": "Swiss Hot Chocolate",
+      "city": "Zermatt",
+      "description": "Rich, velvety hot chocolate, ideal after a day in the mountains",
+      "where_to_try": "Cafés in Zermatt, Jungfraujoch and Gornergrat",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Swiss Chocolates",
+      "city": "Zermatt",
+      "category": "Food",
+      "where_to_buy": [
+        "Läderach Chocolate Boutique Zermatt",
+        "Village stores"
+      ],
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "item": "Swiss Watches & Accessories",
+      "city": "Zermatt",
+      "category": "Watches",
+      "where_to_buy": [
+        "Bucherer Zermatt",
+        "Premium stores"
+      ],
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "item": "Traditional Swiss Souvenirs (cowbells, wooden carvings, mini chalet models, magnets)",
+      "city": "Zermatt",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Zermatt Souvenir Shop",
+        "Village streets"
+      ],
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "item": "Swiss Textiles & Winter Accessories (scarves, gloves, wool products)",
+      "city": "Zermatt",
+      "category": "Clothing",
+      "where_to_buy": [
+        "Boutiques",
+        "Bayard Sport & Fashion Zermatt"
+      ],
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "item": "Swiss Art Prints & Photography (prints, postcards, framed photography)",
+      "city": "Zermatt",
+      "category": "Art",
+      "where_to_buy": [
+        "Local stores"
+      ],
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Zermatt",
+      "mode": "Gornergrat cogwheel train",
+      "description": "Direct cogwheel train from Zermatt Gornergrat Bahn station to the summit, ~35–40 mins, with stops at Rotenboden, Riffelberg and Riffelalp",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "~₹6,000–8,000 per person (discounted with Swiss Pass)",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Zermatt"
+      ],
+      "tip": "Amavita Apotheke Zermatt is open 8:30 AM–7:00 PM, with shorter hours on Sundays (10 AM–12 PM, 4–7 PM)",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Zermatt"
+      ],
+      "tip": "Dr. med. Dieter Stoessel's practice is closed on weekends",
+      "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+      "_source_date": "2026-04-22",
+      "_source_format": "new"
+    }
+  ],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+    "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx"
+  ],
+  "currency": "CHF",
+  "_currency_source": {
+    "_source_file": "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx",
+    "_source_date": "2026-04-22",
+    "_source_format": "new"
+  }
+}

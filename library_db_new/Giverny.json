@@ -1,0 +1,113 @@
+{
+  "restaurants": [
+    {
+      "name": "La Parenthese",
+      "city": "Giverny",
+      "cuisine_type": [
+        "Global fare"
+      ],
+      "hours": "10am-10pm",
+      "nearby_landmarks": [
+        "Monet's Garden, Giverny"
+      ],
+      "must_try_dishes": [
+        "Burgers",
+        "Pastas",
+        "Salads"
+      ],
+      "vegetarian_friendly": "true",
+      "notes": "Veg options available",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_date": "2024-06-12",
+      "_source_format": "old"
+    },
+    {
+      "name": "Au Coin du Pain'tre",
+      "city": "Giverny",
+      "cuisine_type": [
+        "Boulangerie",
+        "Cafe"
+      ],
+      "hours": "9am-7pm",
+      "nearby_landmarks": [
+        "Monet's Garden, Giverny"
+      ],
+      "must_try_dishes": [
+        "Viennoiseries",
+        "Coffee",
+        "Cocktails"
+      ],
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_date": "2024-06-12",
+      "_source_format": "old"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "House and Gardens of Claude Monet",
+      "city": "Giverny",
+      "description": "Monet's house, sprawling gardens, lily pond and Japanese bridge",
+      "recommended_duration": "2-3 hours",
+      "tips": [
+        "Benches are available to rest",
+        "Check the Giverny shuttle schedule"
+      ],
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_date": "2024-06-12",
+      "_source_format": "old"
+    },
+    {
+      "name": "Musée des Impressionnismes Giverny",
+      "city": "Giverny",
+      "description": "Museum housing a collection of Impressionist art",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_date": "2024-06-12",
+      "_source_format": "old"
+    },
+    {
+      "name": "Giverny village",
+      "city": "Giverny",
+      "description": "Charming village full of quaint shops, cafes and restaurants",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_date": "2024-06-12",
+      "_source_format": "old"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Giverny",
+      "mode": "Shuttle",
+      "description": "Giverny shuttle from Vernon station to Giverny village; check the shuttle schedule",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_date": "2024-06-12",
+      "_source_format": "old"
+    },
+    {
+      "city": "Giverny",
+      "mode": "Bus",
+      "description": "Bus number 10 goes directly from Vernon to the House of Claude Monet in about 20 minutes",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_date": "2024-06-12",
+      "_source_format": "old"
+    }
+  ],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "France/2. France- Final Detailed Itinerary.pdf"
+  ],
+  "currency": "EUR",
+  "_currency_source": {
+    "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+    "_source_date": "2024-06-12",
+    "_source_format": "old"
+  }
+}

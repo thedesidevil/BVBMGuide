@@ -1,0 +1,156 @@
+{
+  "restaurants": [
+    {
+      "name": "Full House Peruvian Cuisine",
+      "city": "Aguas Calientes",
+      "cuisine_type": [
+        "Peruvian"
+      ],
+      "price_range": "₹₹",
+      "hours": "10:30 AM –9:00 PM",
+      "ambience": "Cozy and relaxing with hand-crafted decor",
+      "highlights": [
+        "Riverside location with views of the town and passing trains",
+        "Upscale, authentic Peruvian cuisine",
+        "Among the top 100 best restaurants in Peru",
+        "Excellent service"
+      ],
+      "must_try_dishes": [
+        "Trout ceviche"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Vegan meals available",
+      "_source_file": "Peru/Craig_ All Inclusive Guide - Peru(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Julian Restaurant",
+      "city": "Aguas Calientes",
+      "cuisine_type": [
+        "Peruvian",
+        "International"
+      ],
+      "price_range": "₹₹",
+      "hours": "7:00 AM –10:00 PM",
+      "ambience": "Warm, cozy and familiar atmosphere",
+      "highlights": [
+        "Warm welcome and great service"
+      ],
+      "must_try_dishes": [
+        "Alpaca steak",
+        "Avocado with grilled veggies",
+        "Cheese stuffed chicken",
+        "Pisco Sour",
+        "Trout",
+        "Aji de gallina"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Peru/Craig_ All Inclusive Guide - Peru(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Chullos Restaurant and Craft Beer",
+      "city": "Aguas Calientes",
+      "cuisine_type": [
+        "Peruvian"
+      ],
+      "price_range": "₹₹",
+      "hours": "10:00 AM –10:00 PM",
+      "ambience": "Vibrant space",
+      "highlights": [
+        "Located in the heart of Aguas Calientes with views of the city"
+      ],
+      "must_try_dishes": [
+        "Craft beer",
+        "Chicken schnitzel with pesto pasta",
+        "Alpaca steak",
+        "Trout"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Peru/Craig_ All Inclusive Guide - Peru(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Machu Picchu",
+      "city": "Aguas Calientes",
+      "description": "Inca citadel reached by bus (30 min zigzag route) from Aguas Calientes; guided tour of main sites lasts approximately 2 hours",
+      "recommended_duration": "Guided tour approx. 2 hours",
+      "tips": [
+        "Present tickets and identification documents at the entrance"
+      ],
+      "_source_file": "Peru/Craig_ All Inclusive Guide - Peru(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Aguas Calientes",
+      "mode": "Bus",
+      "description": "Zigzag mountain bus from Aguas Calientes bus station to the Machu Picchu entrance, about 30 minutes",
+      "_source_file": "Peru/Craig_ All Inclusive Guide - Peru(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Aguas Calientes",
+      "mode": "Train",
+      "description": "Scenic trains (e.g., Incarail Voyager, Vistadome) run between Ollantaytambo and Aguas Calientes",
+      "covers": "Ollantaytambo to Aguas Calientes",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_date": "2025-05-31",
+      "_source_format": "old"
+    },
+    {
+      "city": "Aguas Calientes",
+      "mode": "Shuttle bus",
+      "description": "Shuttle bus from Aguas Calientes up to Machu Picchu",
+      "covers": "Aguas Calientes to Machu Picchu",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_date": "2025-05-31",
+      "_source_format": "old"
+    },
+    {
+      "city": "Aguas Calientes",
+      "mode": "Bus to Machu Picchu",
+      "description": "Zigzag mountain bus from Aguas Calientes bus station to the Machu Picchu citadel, about 30 minutes.",
+      "how_to_use": "Board at the Aguas Calientes bus station; take the bus back down after the visit.",
+      "_source_file": "South America/All Inclusive Guide - Peru_CRE.pdf",
+      "_source_date": "2025-06-27",
+      "_source_format": "old"
+    }
+  ],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "Peru/Craig_ All Inclusive Guide - Peru(1).docx",
+    "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+    "South America/All Inclusive Guide - Peru_CRE.pdf"
+  ],
+  "currency": "PEN",
+  "_currency_source": {
+    "_source_file": "Peru/Craig_ All Inclusive Guide - Peru(1).docx",
+    "_source_date": null,
+    "_source_format": "new"
+  }
+}

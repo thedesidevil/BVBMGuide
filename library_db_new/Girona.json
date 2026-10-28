@@ -1,0 +1,170 @@
+{
+  "restaurants": [
+    {
+      "name": "La Fabrica Girona",
+      "city": "Girona",
+      "cuisine_type": [
+        "Café-bistro"
+      ],
+      "price_range": "€15–20 per person",
+      "area": "Girona Old Town",
+      "ambience": "Modern café-bistro",
+      "highlights": [
+        "Great for light lunches"
+      ],
+      "must_try_dishes": [
+        "Salads",
+        "Sandwiches",
+        "Eggs",
+        "Cakes"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Vegetarian, chicken and seafood choices available",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.docx",
+      "_source_date": "2026-01-23",
+      "_source_format": "new",
+      "_replaced_from": "Spain/Sharlene_Spain_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Brots de Vi",
+      "city": "Girona",
+      "cuisine_type": [
+        "Catalan",
+        "Tapas"
+      ],
+      "price_range": "€20–25 per person",
+      "hours": "12:30–10:30 pm",
+      "area": "Girona Old Town",
+      "ambience": "Cozy Catalan spot",
+      "must_try_dishes": [
+        "Seasonal Catalan dishes",
+        "Tapas"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.docx",
+      "_source_date": "2026-01-23",
+      "_source_format": "new",
+      "_replaced_from": "Spain/Sharlene_Spain_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Casa Marieta",
+      "city": "Girona",
+      "cuisine_type": [
+        "Traditional Catalan"
+      ],
+      "price_range": "€25–30 per person",
+      "hours": "9:30 am–3:30 pm",
+      "area": "Girona Old Town",
+      "ambience": "Historic setting",
+      "highlights": [
+        "Good mix of veg, chicken and seafood"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.docx",
+      "_source_date": "2026-01-23",
+      "_source_format": "new",
+      "_replaced_from": "Spain/Sharlene_Spain_All Inclusive Guide(1).docx"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Girona Cathedral",
+      "city": "Girona",
+      "description": "Famous for having the widest Gothic nave in the world; grand staircase and façade",
+      "recommended_duration": "30–40 mins",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.docx",
+      "_source_date": "2026-01-23",
+      "_source_format": "new",
+      "_replaced_from": "Spain/Sharlene_Spain_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Call Jueu (Jewish Quarter)",
+      "city": "Girona",
+      "description": "One of Europe's best-preserved Jewish quarters with narrow, atmospheric stone alleys",
+      "recommended_duration": "30–45 mins",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.docx",
+      "_source_date": "2026-01-23",
+      "_source_format": "new",
+      "_replaced_from": "Spain/Sharlene_Spain_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Girona City Walls",
+      "city": "Girona",
+      "description": "Medieval walls with panoramic city views and multiple entry points near the Old Town",
+      "recommended_duration": "30–40 mins",
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.docx",
+      "_source_date": "2026-01-23",
+      "_source_format": "new",
+      "_replaced_from": "Spain/Sharlene_Spain_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Onyar River",
+      "city": "Girona",
+      "description": "Colorful riverside houses, Girona's postcard view",
+      "tips": [
+        "Best seen from Eiffel Bridge (Pont de les Peixateries Velles)"
+      ],
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.docx",
+      "_source_date": "2026-01-23",
+      "_source_format": "new",
+      "_replaced_from": "Spain/Sharlene_Spain_All Inclusive Guide(1).docx"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [
+    {
+      "city": "Girona",
+      "from": "Girona Railway Station",
+      "to": "Onyar River",
+      "stops": [
+        {
+          "name": "Girona Cathedral",
+          "suggested_stop": "Widest Gothic nave in the world"
+        },
+        {
+          "name": "Call Jueu",
+          "minutes": 45,
+          "suggested_stop": "Jewish quarter alleys"
+        },
+        {
+          "name": "Girona City Walls",
+          "minutes": 40,
+          "suggested_stop": "Walk the medieval walls"
+        },
+        {
+          "name": "Onyar River",
+          "suggested_stop": "Colorful riverside houses from Pont de les Peixateries Velles"
+        }
+      ],
+      "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.docx",
+      "_source_date": "2026-01-23",
+      "_source_format": "new"
+    }
+  ],
+  "season_notes": [],
+  "source_files": [
+    "Spain/Sharlene_Spain_All Inclusive Guide(1).docx",
+    "Spain/Sharlene_Spain_All Inclusive Guide.docx"
+  ],
+  "currency": "EUR",
+  "_currency_source": {
+    "_source_file": "Spain/Sharlene_Spain_All Inclusive Guide.docx",
+    "_source_date": "2026-01-23",
+    "_source_format": "new"
+  }
+}

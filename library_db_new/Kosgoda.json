@@ -1,0 +1,255 @@
+{
+  "restaurants": [
+    {
+      "name": "Sajee Restaurant",
+      "city": "Kosgoda",
+      "cuisine_type": [
+        "Sri Lankan"
+      ],
+      "price_range": "Approx. LKR 2,000 per person",
+      "hours": "8:00 AM – 10:00 PM",
+      "ambience": "Local Sri Lankan restaurant with authentic daily curries",
+      "highlights": [
+        "Traditional Sri Lankan vegetarian flavors"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx"
+    },
+    {
+      "name": "Nadee Indian Restaurant",
+      "city": "Kosgoda",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "Approx. LKR 2,000–3,000 per person",
+      "hours": "11:00 AM – 9:00 PM",
+      "ambience": "Casual, comfortable Indian restaurant",
+      "highlights": [
+        "Familiar vegetarian comfort meal"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.docx"
+    },
+    {
+      "name": "Olive Mate",
+      "city": "Kosgoda",
+      "cuisine_type": [
+        "Italian",
+        "Continental"
+      ],
+      "price_range": "Approx. LKR 2,000 per person",
+      "hours": "10:30 AM – 10:30 PM",
+      "ambience": "Relaxed café-style Italian setting",
+      "highlights": [
+        "Light continental vegetarian lunch"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.docx"
+    },
+    {
+      "name": "Red Lobster Tours & Restaurant",
+      "city": "Kosgoda",
+      "cuisine_type": [
+        "Sri Lankan",
+        "Seafood"
+      ],
+      "price_range": "INR 370–400",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "Coastal, casual, relaxed",
+      "highlights": [
+        "Scenic meal with clear vegetarian choices"
+      ],
+      "must_try_dishes": [
+        "Vegetable noodles",
+        "Vegetable fried rice",
+        "Stir-fried seasonal vegetables"
+      ],
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ],
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+      "_source_date": "2025-12-13",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Kosgoda Turtle Hatchery",
+      "city": "Kosgoda",
+      "description": "Turtle conservation centre where rescued eggs are incubated and hatchlings released; see Green, Olive Ridley and Hawksbill turtles",
+      "hours": "8:00 AM – 6:00 PM",
+      "entry_fee": "Approx. LKR 1,500 per person",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.docx"
+    },
+    {
+      "name": "Madu River Safari",
+      "city": "Kosgoda",
+      "description": "Boat safari through mangrove tunnels and small islands, with a cinnamon island visit, optional fish spa stop and bird watching",
+      "hours": "8:00 AM – 5:00 PM",
+      "entry_fee": "Approx. LKR 6,000–8,000 per private boat",
+      "recommended_duration": "1.5–2 hours",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Kosgoda Sea Turtle Conservation Project",
+      "city": "Kosgoda",
+      "description": "Responsible turtle conservation centre: learn about sea turtle species, see protected nesting sites, hatchery operations, rehabilitated turtles and seasonal release programs (when available). Gentle experience, good for families and nature-lovers.",
+      "hours": "8:30 AM to 6:30 PM",
+      "entry_fee": "LKR ~500–1,000 per person",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+      "_source_date": "2025-12-13",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx"
+    },
+    {
+      "name": "Madu River Boat Safari",
+      "city": "Kosgoda",
+      "description": "Boat ride through mangrove tunnels and small islands with a cinnamon island visit, optional fish spa stop and bird watching",
+      "hours": "8:00 AM – 5:00 PM",
+      "entry_fee": "Approx. LKR 6,000–8,000 per private boat",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Sheraton Kosgoda Turtle Beach Resort",
+      "city": "Kosgoda",
+      "location": "Beachfront, Kosgoda",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx"
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [
+    {
+      "city": "Kosgoda",
+      "service": "Hospital: Primary Medical Care Unit, Kosgoda",
+      "notes": "1 min drive from Sheraton Kosgoda",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+      "_source_date": "2025-12-13",
+      "_source_format": "new"
+    }
+  ],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Kosgoda"
+      ],
+      "tip": "Pharmacy and grocery: Wijaya Sri Pharmacy and Grocery, 2 min walk from Sheraton Kosgoda",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Kosgoda"
+      ],
+      "tip": "Nearest hospital: Primary Medical Care Unit Kosgoda, 1 min drive from Sheraton Kosgoda",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "route_guides": [
+    {
+      "city": "Kosgoda",
+      "from": "Kosgoda",
+      "to": "Colombo",
+      "stops": [],
+      "total_time": "Approx. 2–2.5 hours depending on traffic",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+      "_source_date": "2026-02-14",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.docx"
+    },
+    {
+      "city": "Kosgoda",
+      "from": "Kosgoda",
+      "to": "Galle Fort",
+      "total_time": "1 hr 5 min",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+      "_source_date": "2025-12-13",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx"
+    },
+    {
+      "city": "Kosgoda",
+      "from": "Kosgoda",
+      "to": "Kandy",
+      "total_time": "3.5–4 hours depending on traffic",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+      "_source_date": "2025-12-13",
+      "_source_format": "new",
+      "_replaced_from": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx"
+    }
+  ],
+  "season_notes": [
+    {
+      "city": "Kosgoda",
+      "tip": "Turtle conservation walk timings vary by season",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Kosgoda",
+      "tip": "Turtle release programs are seasonal",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Kosgoda",
+      "tip": "Hotel-organized turtle conservation walk timings vary by season",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+      "_source_date": "2025-12-13",
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.docx",
+    "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx",
+    "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx",
+    "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx"
+  ],
+  "currency": "LKR",
+  "_currency_source": {
+    "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
+    "_source_date": "2026-02-14",
+    "_source_format": "new"
+  }
+}

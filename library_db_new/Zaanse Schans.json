@@ -1,0 +1,98 @@
+{
+  "restaurants": [
+    {
+      "name": "De Kraai Pancake House",
+      "city": "Zaanse Schans",
+      "cuisine_type": [
+        "Dutch"
+      ],
+      "price_range": "₹1,200–1,800 pp",
+      "hours": "9 AM – 6 PM",
+      "ambience": "Traditional Dutch setting",
+      "highlights": [
+        "Local experience",
+        "Located inside Zaanse Schans"
+      ],
+      "must_try_dishes": [
+        "Veg Dutch pancakes"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-07",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Zaanse Schans",
+      "city": "Zaanse Schans",
+      "description": "Open-air-museum-style village with working windmills, wooden houses and canals; includes clog-making demonstrations, a cheese farm with free tastings, Juliana Bridge and World of Windmills museum area",
+      "tips": [
+        "Flat, easy walking paths suitable for seniors",
+        "Some windmills open to visitors for a small entry fee"
+      ],
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-07",
+      "_source_format": "new",
+      "_replaced_from": "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Zaans Museum",
+      "city": "Zaanse Schans",
+      "description": "Museum at the start of the Zaanse Schans walking path",
+      "_source_file": "Netherlands/All Inclusive Guide- Netherlands and Belgium(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [
+    {
+      "city": "Zaanse Schans",
+      "from": "Zaans Museum",
+      "to": "World of windmills",
+      "stops": [
+        {
+          "name": "Zaans Museum"
+        },
+        {
+          "name": "Wooden Shoe workshop"
+        },
+        {
+          "name": "Cheese Farm"
+        },
+        {
+          "name": "Juliana bridge"
+        },
+        {
+          "name": "World of windmills"
+        }
+      ],
+      "_source_file": "Netherlands/All Inclusive Guide- Netherlands and Belgium(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "season_notes": [],
+  "source_files": [
+    "Netherlands/All Inclusive Guide- Netherlands and Belgium(1).docx",
+    "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+    "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+  ],
+  "currency": "EUR",
+  "_currency_source": {
+    "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+    "_source_date": "2026-05-07",
+    "_source_format": "new"
+  }
+}

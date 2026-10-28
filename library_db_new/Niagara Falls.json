@@ -1,0 +1,143 @@
+{
+  "restaurants": [
+    {
+      "name": "Tha Dhaba on the Falls",
+      "city": "Niagara Falls",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "12pm-12am",
+      "must_try_dishes": [
+        "Gol gappe",
+        "Veg biryani",
+        "Amritsari kulcha"
+      ],
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Indian Kitchen King",
+      "city": "Niagara Falls",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "11am-10pm",
+      "must_try_dishes": [
+        "Paneer curries"
+      ],
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Zaica Indian Cuisine Niagara Falls",
+      "city": "Niagara Falls",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "12pm-9:30pm",
+      "highlights": [
+        "Buffet options"
+      ],
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Bombay Palace Eatery",
+      "city": "Niagara Falls",
+      "cuisine_type": [
+        "Indian",
+        "North Indian"
+      ],
+      "hours": "9:30am-10:30pm",
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Cave of the Winds and Maid of the Mist",
+      "city": "Niagara Falls",
+      "description": "Niagara Falls tour combining Cave of the Winds and Maid of the Mist, starting at 1 Rainbow Boulevard",
+      "recommended_duration": "5 hrs",
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new",
+      "_replaced_from": "USA/ALL INCLUSIVE GUIDE USA.docx"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Comfort Inn The Pointe",
+      "city": "Niagara Falls",
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new",
+      "_replaced_from": "USA/ALL INCLUSIVE GUIDE USA.docx"
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Salvadoran Pupusas",
+      "city": "Niagara Falls",
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new",
+      "_replaced_from": "USA/ALL INCLUSIVE GUIDE USA.docx"
+    },
+    {
+      "name": "Middle Eastern Falafel",
+      "city": "Niagara Falls",
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new",
+      "_replaced_from": "USA/ALL INCLUSIVE GUIDE USA.docx"
+    },
+    {
+      "name": "Vegetarian Tacos",
+      "city": "Niagara Falls",
+      "vegetarian": "true",
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new",
+      "_replaced_from": "USA/ALL INCLUSIVE GUIDE USA.docx"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [
+    {
+      "city": "Niagara Falls",
+      "tip": "In early to mid May, temperatures range from about 9°C to 20°C",
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Niagara Falls",
+      "tip": "Typical temperatures range from 9°C minimum to 20°C maximum",
+      "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+      "_source_date": "2025-05-01",
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "USA/ALL INCLUSIVE GUIDE USA.docx",
+    "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx"
+  ],
+  "currency": "USD",
+  "_currency_source": {
+    "_source_file": "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx",
+    "_source_date": "2025-05-01",
+    "_source_format": "new"
+  }
+}

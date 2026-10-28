@@ -1,0 +1,3741 @@
+{
+  "restaurants": [
+    {
+      "name": "Veggie castle",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Rs. 350-500 per person",
+      "hours": "9:30 am - 8:30 pm",
+      "highlights": [
+        "Vegan buffet"
+      ],
+      "vegetarian_friendly": "true",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Royal Rajasthan Indian Restaurant Hanoi since 1992",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "Rs 300-Rs 1000 per person",
+      "hours": "11:00 am - 11:30 pm",
+      "highlights": [
+        "Rajasthani food"
+      ],
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Xoi Yen",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹200–400 per person",
+      "hours": "6:00 AM – 12:00 AM",
+      "ambience": "Simple, local eatery known for comforting sticky rice dishes",
+      "must_try_dishes": [
+        "Sticky Rice with Shredded Chicken",
+        "Chicken & Mushroom Xoi",
+        "Mung bean sticky rice"
+      ],
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx"
+    },
+    {
+      "name": "MIAS Restaurant",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 900–1500 per person",
+      "hours": "10:00 AM – 10:00 PM",
+      "ambience": "Modern and elegant",
+      "area": "Old Quarter",
+      "highlights": [
+        "Creative interpretations of traditional dishes",
+        "Fresh ingredients"
+      ],
+      "must_try_dishes": [
+        "Fresh vegetable spring rolls",
+        "Grilled lemongrass chicken",
+        "Vietnamese seafood dishes"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx"
+    },
+    {
+      "name": "Tungs Kitchen",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Rs 350-750 per person",
+      "hours": "10am-10pm",
+      "ambience": "Regular restaurant setup",
+      "highlights": [
+        "Local cuisine"
+      ],
+      "vegetarian_friendly": "true",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx"
+    },
+    {
+      "name": "Duongs Restaurant",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Rs 300-Rs 1000 per person",
+      "hours": "11am-10pm",
+      "ambience": "Regular restaurant setup",
+      "highlights": [
+        "Local cuisine"
+      ],
+      "vegetarian_friendly": "true",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx"
+    },
+    {
+      "name": "Quan An Ngon",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 700–1200 per person",
+      "hours": "7:00 AM – 10:00 PM",
+      "ambience": "Traditional Vietnamese courtyard with multiple food stalls",
+      "area": "Old Quarter",
+      "highlights": [
+        "One of Hanoi's most famous dining venues",
+        "Multiple food stalls serving regional specialties"
+      ],
+      "must_try_dishes": [
+        "Fresh vegetable spring rolls",
+        "Lemongrass chicken",
+        "Seafood noodle soup"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx"
+    },
+    {
+      "name": "La tien beer street",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "hours": "Open Friday-Sunday 7pm-11pm",
+      "highlights": [
+        "Vietnamese beer"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx",
+      "_source_date": "2025-02-28",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "New Day Restaurant",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 600–1000 per person",
+      "hours": "10:00 AM – 12:00 AM",
+      "ambience": "Lively and casual",
+      "area": "Old Quarter",
+      "highlights": [
+        "Long-running Old Quarter favorite",
+        "Authentic Vietnamese comfort food"
+      ],
+      "must_try_dishes": [
+        "Fried spring rolls",
+        "Chicken curry with rice",
+        "Seafood noodle soup"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx"
+    },
+    {
+      "name": "RK Spice Indian Restaurant",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "Rs 300-Rs 750 per person",
+      "hours": "11:00am- 11:50pm",
+      "highlights": [
+        "Vegetarian gravies"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx",
+      "_source_date": "2025-02-28",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "MAAZI Old Quarter",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Indian",
+        "North Indian"
+      ],
+      "price_range": "INR 800–1,800 per person",
+      "hours": "11:00 AM – 1:00 AM",
+      "ambience": "Cozy, modern, elegant Indian dining",
+      "area": "Old Quarter & Hoan Kiem",
+      "highlights": [
+        "Stylish Indian restaurant in the Old Quarter",
+        "Elegant interiors",
+        "Extensive vegetarian-friendly menu"
+      ],
+      "must_try_dishes": [
+        "Paneer butter masala",
+        "Dal makhani",
+        "Veg biryani",
+        "Garlic naan",
+        "Pani puri"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx"
+    },
+    {
+      "name": "Tadka 2",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "Rs 300-Rs 750 per person",
+      "hours": "10:30am- 10:30pm",
+      "highlights": [
+        "Vegetarian gravies"
+      ],
+      "vegetarian_friendly": true,
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx",
+      "_source_date": "2025-02-28",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Giang Café",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Café",
+        "Vietnamese"
+      ],
+      "price_range": "INR 150–250",
+      "hours": "7:00 AM – 10:30 PM",
+      "ambience": "Cozy vintage interiors in a small alley",
+      "area": "Old Quarter",
+      "highlights": [
+        "Birthplace of Hanoi's egg coffee"
+      ],
+      "must_try_dishes": [
+        "Egg coffee",
+        "Vietnamese iced coffee"
+      ],
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx"
+    },
+    {
+      "name": "Ta Hien Beer Street",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "hours": "Open Friday-Sunday 7pm-11pm",
+      "highlights": [
+        "Iconic experience in Hanoi"
+      ],
+      "must_try_dishes": [
+        "Vietnamese Beer"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx"
+    },
+    {
+      "name": "Aha BaMi",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Rs 300-Rs 750 per person",
+      "hours": "Open until 10pm",
+      "must_try_dishes": [
+        "Veg Banh Mi"
+      ],
+      "vegetarian_friendly": "true",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx"
+    },
+    {
+      "name": "Katze Vegan & Vegetarian",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vegan",
+        "Vegetarian",
+        "Vietnamese"
+      ],
+      "price_range": "₹400–600 per person",
+      "hours": "11:00 AM – 11:30 PM",
+      "ambience": "Cozy, relaxed vegan café popular with conscious travelers",
+      "must_try_dishes": [
+        "Vegan pho",
+        "Mushroom stir-fries",
+        "Tofu stir-fry",
+        "Fresh juices"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx"
+    },
+    {
+      "name": "The Gourmet Corner Restaurant",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 1,500–3,000 per person",
+      "hours": "11:30 AM – 10:00 PM",
+      "ambience": "Romantic rooftop dining",
+      "area": "Old Quarter & Hoan Kiem",
+      "highlights": [
+        "Elegant rooftop restaurant with panoramic city views",
+        "Refined Vietnamese cuisine"
+      ],
+      "must_try_dishes": [
+        "Grilled prawns",
+        "Seafood spring rolls",
+        "Lamb dishes"
+      ],
+      "best_for": [
+        "couples"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx"
+    },
+    {
+      "name": "King Roti",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Dessert",
+        "Snacks"
+      ],
+      "price_range": "₹100–250 per person",
+      "hours": "Evening hours",
+      "ambience": "Warm rotis and sweet snacks",
+      "notes": "Optional dessert stop",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx"
+    },
+    {
+      "name": "Kem Trang Tien",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Ice cream",
+        "Dessert"
+      ],
+      "price_range": "INR 100–200",
+      "hours": "8:00 AM – 11:00 PM",
+      "area": "Old Quarter",
+      "highlights": [
+        "Famous Hanoi ice cream spot popular with locals for decades",
+        "Classic Vietnamese ice cream flavors"
+      ],
+      "must_try_dishes": [
+        "Coconut ice cream",
+        "Green bean ice cream"
+      ],
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx"
+    },
+    {
+      "name": "Caramen Duong Ha",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Dessert"
+      ],
+      "price_range": "Rs. 200-400 per person",
+      "hours": "8:00 AM - 10:00 PM",
+      "must_try_dishes": [
+        "Flan",
+        "Coconut ice cream"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx"
+    },
+    {
+      "name": "The Note Cafe",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Coffee Shop"
+      ],
+      "price_range": "Rs. 300-500 per person",
+      "hours": "8:00 AM - 10:00 PM",
+      "highlights": [
+        "Coffee, tea, light snacks"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx"
+    },
+    {
+      "name": "Bar Dinh Rooftop Lounge",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Rooftop bar"
+      ],
+      "price_range": "Rs 500-1000 per person",
+      "hours": "5:00 PM - 1:00 AM",
+      "highlights": [
+        "Cocktails, mocktails, bar food"
+      ],
+      "notes": "Located at Le Garden hotel; reservation in advance recommended; phone +84 962 206 606",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx"
+    },
+    {
+      "name": "Nha Hang Full Moon International Cuisine",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "International"
+      ],
+      "ambience": "Refined, modern, elegant décor with polished dark wood and soft lighting",
+      "highlights": [
+        "Private dining rooms and main hall",
+        "Live music on Friday and Saturday evenings",
+        "Suitable for family dinners, office gatherings or special events"
+      ],
+      "must_try_dishes": [
+        "Dimsums",
+        "Pho"
+      ],
+      "best_for": [
+        "family",
+        "groups"
+      ],
+      "_source_file": "Vietnam/Eating Out Guide_ Vietnam.pdf",
+      "_source_date": null,
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx"
+    },
+    {
+      "name": "Chim Quay Móc Mật",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Street food"
+      ],
+      "price_range": "Rs. 300 - 500 a dish",
+      "hours": "7am- 10:30 pm",
+      "ambience": "Raw street-level sidewalk stall with simple stools beside the fryer",
+      "highlights": [
+        "Sizzling quail",
+        "Sidewalk stall"
+      ],
+      "must_try_dishes": [
+        "Roast Quail"
+      ],
+      "_source_file": "Vietnam/Eating Out Guide_ Vietnam.pdf",
+      "_source_date": null,
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx"
+    },
+    {
+      "name": "Cha Ca Thang Long Restaurant",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Rs. 300 - 750",
+      "hours": "10:30 am - 9 pm",
+      "must_try_dishes": [
+        "Cha Ca"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx",
+      "_source_date": "2024-12-10",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice.docx"
+    },
+    {
+      "name": "Hai San Seafood restaurant",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese",
+        "Seafood"
+      ],
+      "hours": "10 am - 11 pm",
+      "must_try_dishes": [
+        "Seafood"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx",
+      "_source_date": "2024-12-10",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice.docx"
+    },
+    {
+      "name": "Pho Ga Nguyet",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 300–500 per person",
+      "hours": "6:30 AM – 1:00 PM & 4:00 PM – 10:30 PM",
+      "ambience": "Local eatery",
+      "area": "Old Quarter",
+      "highlights": [
+        "Specializes in Vietnamese chicken pho",
+        "Rich broth and fresh herbs"
+      ],
+      "must_try_dishes": [
+        "Chicken pho",
+        "Chicken noodle soup",
+        "Fresh herb sides"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx"
+    },
+    {
+      "name": "Banh Mi 25",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese",
+        "Street food"
+      ],
+      "price_range": "INR 250–500 per person",
+      "hours": "7:00 AM – 9:00 PM",
+      "ambience": "Local street-style eatery",
+      "highlights": [
+        "Popular local spot for banh mi sandwiches"
+      ],
+      "must_try_dishes": [
+        "Grilled chicken banh mi",
+        "Mixed seafood banh mi",
+        "Mango shake"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx"
+    },
+    {
+      "name": "MET Vietnamese Restaurant & Vegetarian Met 2",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Rs. 350-500 per dish",
+      "hours": "10am- 10:30 pm",
+      "nearby_landmarks": [
+        "Amara Hanoi Hotel, Hanoi"
+      ],
+      "must_try_dishes": [
+        "Banana flower salad",
+        "Green bean cake"
+      ],
+      "vegetarian_friendly": "true",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old"
+    },
+    {
+      "name": "AMY Indian Restaurant in Hanoi- Pure Veg",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "Rs. 350-500 per dish",
+      "hours": "8am-1:30 am",
+      "nearby_landmarks": [
+        "Amara Hanoi Hotel, Hanoi"
+      ],
+      "must_try_dishes": [
+        "Dal Makhani",
+        "Paratha",
+        "Kathi roll"
+      ],
+      "vegetarian_friendly": "true",
+      "notes": "Pure vegetarian",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old"
+    },
+    {
+      "name": "Victor Rooftop Bar & Restaurant",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Multicuisine"
+      ],
+      "hours": "10am- 11:45pm",
+      "ambience": "Rooftop bar",
+      "nearby_landmarks": [
+        "Amara Hanoi Hotel, Hanoi"
+      ],
+      "highlights": [
+        "Great cocktails"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old"
+    },
+    {
+      "name": "Bep Chay Hue Nhien - Vegan and Vegetarian Restaurant",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese",
+        "Vegan"
+      ],
+      "price_range": "Rs. 350-500 per dish",
+      "hours": "7am-10pm",
+      "nearby_landmarks": [
+        "Amara Hanoi Hotel, Hanoi"
+      ],
+      "must_try_dishes": [
+        "Tom yum",
+        "Mushroom soup",
+        "Veg bun rieu",
+        "Veg bun cha"
+      ],
+      "vegetarian_friendly": "true",
+      "notes": "Vegan and vegetarian restaurant",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old"
+    },
+    {
+      "name": "VY Veggie to Go",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Rs. 350 per dish",
+      "hours": "8am- 8pm",
+      "nearby_landmarks": [
+        "Temple of Literature, Hanoi"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Veg takeout restaurant",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old"
+    },
+    {
+      "name": "Taste of Vietnam",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹500–800 per person",
+      "hours": "10:00 AM – 9:00 PM",
+      "ambience": "Comfortable, homestyle setting focused on authentic flavors",
+      "must_try_dishes": [
+        "Pho",
+        "Stir-fried noodles",
+        "Vegetarian Vietnamese plates",
+        "Grilled fish with banana leaf",
+        "Chicken pho"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx"
+    },
+    {
+      "name": "Le's Path Coffee Cua Bac",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "Rs. 350-500 per dish",
+      "hours": "7:30am-10:30pm",
+      "highlights": [
+        "Coffee, juices, light eats"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old"
+    },
+    {
+      "name": "Off Street Fine Coffee",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "Rs. 350-500 per dish",
+      "hours": "8am-5pm, closed Mon",
+      "highlights": [
+        "Coffee, juices, light eats"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old"
+    },
+    {
+      "name": "Pho Ga Tien",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Rs. 350-500 per dish",
+      "hours": "6am-1pm",
+      "highlights": [
+        "Good option for a Vietnamese breakfast or lunch"
+      ],
+      "must_try_dishes": [
+        "Pho"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old"
+    },
+    {
+      "name": "The Daily Coffee 25 Yen Ninh",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "Rs. 350-500 per dish",
+      "hours": "7:30am-10:00pm",
+      "highlights": [
+        "Coffee, juices, light eats"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old"
+    },
+    {
+      "name": "Khue Restaurant",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "French",
+        "Vietnamese"
+      ],
+      "hours": "11am-10pm",
+      "ambience": "Fine dining",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old"
+    },
+    {
+      "name": "Duong's Restaurant",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 1,200–2,200 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Elegant contemporary Vietnamese dining",
+      "area": "Old Quarter",
+      "highlights": [
+        "Polished modern Vietnamese restaurant",
+        "Beautifully balanced local flavours"
+      ],
+      "must_try_dishes": [
+        "Vegetable spring rolls",
+        "Tofu claypot",
+        "Stir-fried morning glory",
+        "Vegetable fried rice"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mohnish_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Cha Ca Thang Long",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese",
+        "Northern Vietnamese"
+      ],
+      "price_range": "₹600 – ₹1,200 per person",
+      "hours": "9:00 AM – 11:00 PM",
+      "ambience": "Traditional Vietnamese restaurant with heritage charm",
+      "area": "Old Quarter",
+      "highlights": [
+        "Iconic Hanoi specialty experience"
+      ],
+      "must_try_dishes": [
+        "Cha Ca (turmeric fish with dill, cooked tableside)"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mohnish_All Inclusive Guide.docx"
+    },
+    {
+      "name": "The Note Coffee",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Cafe",
+        "Vietnamese"
+      ],
+      "price_range": "INR 300–700 per person",
+      "hours": "8:00 AM – 11:00 PM (Saturday & Sunday 7 AM - 11 PM)",
+      "ambience": "Cozy, artistic, photogenic café",
+      "area": "Old Quarter",
+      "highlights": [
+        "Walls entirely covered in colourful handwritten notes left by travellers",
+        "Warm, whimsical, distinctly local atmosphere"
+      ],
+      "must_try_dishes": [
+        "Coconut coffee",
+        "Mango smoothie",
+        "Chocolate waffle with ice cream",
+        "Fries",
+        "Fresh fruit yogurt"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mohnish_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Cafe Dinh",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Café"
+      ],
+      "hours": "7 AM–10 PM",
+      "ambience": "Hidden vintage café with old-world charm",
+      "highlights": [
+        "Famous for its egg coffee"
+      ],
+      "must_try_dishes": [
+        "Egg coffee",
+        "Vietnamese black coffee"
+      ],
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new"
+    },
+    {
+      "name": "Cộng Cà Phê",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Café"
+      ],
+      "hours": "7:30 AM–11:30 PM",
+      "ambience": "Retro military-themed interiors",
+      "highlights": [
+        "Famous café chain"
+      ],
+      "must_try_dishes": [
+        "Coconut coffee",
+        "Vietnamese iced coffee"
+      ],
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new"
+    },
+    {
+      "name": "Bun Bo Nam Bo Bach Phuong",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese",
+        "Noodles"
+      ],
+      "price_range": "₹200 – ₹400 per person",
+      "hours": "7:30 AM – 10:00 PM",
+      "ambience": "Local, no-frills eatery loved by locals",
+      "area": "Old Quarter",
+      "highlights": [
+        "Authentic Hanoi street-style meal"
+      ],
+      "must_try_dishes": [
+        "Bun Bo Nam Bo (dry vermicelli with beef, herbs & peanuts)"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Banh Cuon Ba Xuan",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹150 – ₹300 per person",
+      "hours": "6:30 AM – 1:30 PM | 3:30 - 11:30 PM",
+      "ambience": "Traditional breakfast/lunch spot with local charm",
+      "area": "Old Quarter",
+      "highlights": [
+        "Light, traditional Hanoi specialty"
+      ],
+      "must_try_dishes": [
+        "Steamed rice rolls (banh cuon) with dipping sauce"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "KOTO Van Mieu Training Restaurant",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese fusion"
+      ],
+      "price_range": "₹500 – ₹1,000 per person",
+      "hours": "8:00 AM – 10:00 PM",
+      "ambience": "Social enterprise café with modern interiors",
+      "area": "Old Quarter",
+      "highlights": [
+        "Meaningful dining experience with great food",
+        "Social enterprise training restaurant"
+      ],
+      "must_try_dishes": [
+        "Vietnamese fusion dishes",
+        "Fresh salads",
+        "Grilled options"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Duong's Restaurant Hanoi",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese",
+        "Modern Vietnamese"
+      ],
+      "price_range": "₹800 – ₹1,500 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Stylish, modern Vietnamese dining",
+      "area": "Old Quarter",
+      "highlights": [
+        "Refined Vietnamese cuisine"
+      ],
+      "must_try_dishes": [
+        "Butter garlic prawns",
+        "Green mango salad",
+        "Claypot eggplant"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Chops Old Quarter Hanoi",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Burgers",
+        "Grill",
+        "Western"
+      ],
+      "price_range": "₹800 – ₹1,400 per person",
+      "hours": "8:00 AM – 11:00 PM",
+      "ambience": "Trendy, urban burger and grill spot",
+      "area": "Old Quarter",
+      "highlights": [
+        "Casual, hearty dinner"
+      ],
+      "must_try_dishes": [
+        "BBQ pork ribs",
+        "Craft burgers",
+        "Loaded fries"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Pho 10 Ly Quoc Su",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese",
+        "Pho"
+      ],
+      "price_range": "₹200 – ₹400 per person",
+      "hours": "6:00 AM – 10:00 PM",
+      "ambience": "Busy, authentic local eatery",
+      "area": "Old Quarter",
+      "highlights": [
+        "Iconic Hanoi experience"
+      ],
+      "must_try_dishes": [
+        "Classic Hanoi-style beef pho"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Cau Go Vietnamese Cuisine",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 1,500–2,500 per person",
+      "hours": "10:00 AM – 10:00 PM",
+      "ambience": "Rooftop dining with lake views",
+      "area": "Old Quarter",
+      "nearby_landmarks": [
+        "Hoan Kiem Lake, Hanoi"
+      ],
+      "highlights": [
+        "Overlooks Hoan Kiem Lake",
+        "Elevated Vietnamese cuisine",
+        "Sophisticated atmosphere"
+      ],
+      "must_try_dishes": [
+        "Stir-fried vegetables",
+        "Tofu in claypot",
+        "Vegetable noodles",
+        "Mushroom fried rice"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Grills & Gravy Restaurant Hanoi",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹800 – ₹1,500 per person",
+      "hours": "11:00 AM – 11:30 PM",
+      "ambience": "Indian restaurant with modern interiors",
+      "area": "Old Quarter",
+      "highlights": [
+        "Indian comfort food"
+      ],
+      "must_try_dishes": [
+        "Butter chicken",
+        "Biryani",
+        "Kebabs"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Xoi Yen Hanoi",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese",
+        "Street food"
+      ],
+      "price_range": "₹150 – ₹300 per person",
+      "hours": "6:00 AM – 12:00 AM",
+      "ambience": "Casual, local eatery known for quick meals",
+      "area": "Old Quarter",
+      "highlights": [
+        "Quick, authentic local bite"
+      ],
+      "must_try_dishes": [
+        "Sticky rice with toppings (egg, chicken, or beans)"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "The Hanoi Social Club",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Café",
+        "Western"
+      ],
+      "price_range": "₹500 – ₹1,000 per person",
+      "hours": "8:00 AM – 11:00 PM",
+      "ambience": "Artistic, vintage-style café with cozy interiors",
+      "area": "Old Quarter",
+      "highlights": [
+        "Relaxed, café-style lunch"
+      ],
+      "must_try_dishes": [
+        "Quiche",
+        "Fresh salads",
+        "Cold brew coffee"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Pho Gia Truyen Bat Dan",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese",
+        "Pho"
+      ],
+      "price_range": "₹200 – ₹400 per person",
+      "hours": "6:00 AM – 10:00 AM & 6:00 PM – 8:30 PM",
+      "ambience": "Legendary local pho spot with authentic vibe",
+      "highlights": [
+        "Classic Hanoi dining"
+      ],
+      "must_try_dishes": [
+        "Traditional beef pho with rich broth"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Spice Viet Restaurant Hanoi",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "₹700 – ₹1,300 per person",
+      "hours": "6:00 AM – 9:30 PM",
+      "ambience": "Modern Vietnamese restaurant with elegant interiors",
+      "highlights": [
+        "Comfortable, well-rounded meal"
+      ],
+      "must_try_dishes": [
+        "Vietnamese set meals",
+        "Grilled meats",
+        "Fresh herbs platters"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "La Badiane Hanoi",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "French",
+        "Fine dining"
+      ],
+      "price_range": "₹1,500 – ₹2,500 per person",
+      "hours": "11:00 AM – 2:00 PM & 6:00 PM – 9:30 PM",
+      "ambience": "Fine-dining French restaurant with colonial charm",
+      "highlights": [
+        "Upscale dining experience"
+      ],
+      "must_try_dishes": [
+        "Duck confit",
+        "Steak",
+        "Gourmet desserts"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "The Note Coffee Hanoi",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Café",
+        "Coffee"
+      ],
+      "price_range": "₹300 – ₹600",
+      "hours": "8:00 AM – 10:30 PM",
+      "ambience": "Unique café covered in colorful sticky notes left by travelers",
+      "highlights": [
+        "Charming, casual stop to unwind"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Nola Cafe",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Café"
+      ],
+      "hours": "10:00 AM – 11:30 PM",
+      "ambience": "Quirky, artistic courtyard café",
+      "area": "Old Quarter",
+      "highlights": [
+        "Colorful décor, layered seating and vintage charm",
+        "Hidden café",
+        "Playful, vibrant shots"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Hidden Alley Cafe",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Café"
+      ],
+      "hours": "8:00 AM – 10:30 PM",
+      "ambience": "Rustic, cozy café",
+      "area": "Old Quarter",
+      "highlights": [
+        "Exposed brick, warm lighting and greenery",
+        "Cozy, editorial photography"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Lifted Coffee & Brunch",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Café",
+        "Brunch"
+      ],
+      "hours": "8:30 AM – 7:00 PM",
+      "ambience": "Chic, modern brunch café",
+      "area": "Old Quarter",
+      "highlights": [
+        "Airy interiors and beautifully plated dishes",
+        "Brunch and minimal visuals"
+      ],
+      "meal_slots": [
+        "breakfast"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Indian Dasco Kitchen & Cafe",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Indian",
+        "North Indian"
+      ],
+      "price_range": "INR 600–1,200 per person",
+      "hours": "10:30 AM – 10:30 PM",
+      "ambience": "Casual, homely, relaxed Indian café",
+      "area": "Old Quarter",
+      "highlights": [
+        "Authentic North Indian flavours",
+        "Warm hospitality",
+        "Cozy café-style setting"
+      ],
+      "must_try_dishes": [
+        "Paneer butter masala",
+        "Dal tadka",
+        "Veg biryani",
+        "Garlic naan",
+        "Masala chai"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Loading T Café",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Cafe",
+        "Vietnamese"
+      ],
+      "price_range": "INR 400–900 per person",
+      "hours": "8:00 AM – 6:00 PM",
+      "ambience": "Colonial-style elegant café",
+      "area": "Old Quarter",
+      "highlights": [
+        "Set in a restored French colonial villa",
+        "Soft natural light and vintage interiors",
+        "Delicate pastries"
+      ],
+      "must_try_dishes": [
+        "Coconut coffee",
+        "Passionfruit cheesecake",
+        "Butter croissant",
+        "Mango smoothie",
+        "Hot chocolate"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Mangoo's",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Asian",
+        "International"
+      ],
+      "price_range": "INR 900–1,800 per person",
+      "hours": "9:30 AM – 10:00 PM | 9:00 AM – 11:00 PM (Fri - Sun)",
+      "ambience": "Casual modern dining",
+      "area": "Mega Grand World, Ocean City",
+      "nearby_landmarks": [
+        "Mega Grand World Hanoi, Hanoi"
+      ],
+      "highlights": [
+        "Relaxed ambience",
+        "Mix of Asian and international favourites"
+      ],
+      "must_try_dishes": [
+        "Vegetable fried rice",
+        "Stir-fried noodles",
+        "Margherita pizza",
+        "Crispy tofu",
+        "Garlic bread"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Pizza Lala & Steak",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Italian",
+        "Pizza",
+        "Steakhouse"
+      ],
+      "price_range": "INR 1,000–2,200 per person",
+      "hours": "9:30 AM – 11:00 PM",
+      "ambience": "Trendy casual dining",
+      "area": "Mega Grand World, Ocean City",
+      "nearby_landmarks": [
+        "Mega Grand World Hanoi, Hanoi"
+      ],
+      "highlights": [
+        "Wood-fired pizzas, steaks and comfort food",
+        "Vibrant setting"
+      ],
+      "must_try_dishes": [
+        "Margherita pizza",
+        "Mushroom pizza",
+        "Creamy mushroom pasta",
+        "Garlic bread",
+        "Cheesy fries"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Ẩm Thực Hàn Quốc - Cơm Niêu Gia Đình Grand World - KTown",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "INR 1,000–2,000 per person",
+      "hours": "24/7",
+      "ambience": "Korean-themed lively dining",
+      "area": "K-Town, Mega Grand World",
+      "nearby_landmarks": [
+        "Mega Grand World Hanoi, Hanoi"
+      ],
+      "highlights": [
+        "Located in the K-Town zone",
+        "Hearty comfort meals and vibrant evening energy"
+      ],
+      "must_try_dishes": [
+        "Vegetable bibimbap",
+        "Kimchi fried rice",
+        "Tofu hotpot",
+        "Japchae noodles",
+        "Korean pancakes"
+      ],
+      "best_for": [
+        "friends",
+        "family"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "The Pizza Company Vincom Times City",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Italian",
+        "Pizza"
+      ],
+      "price_range": "INR 500–1,200 per person",
+      "hours": "10:00 AM – 10:00 PM",
+      "ambience": "Modern, casual, family-friendly restaurant",
+      "area": "Times City",
+      "nearby_landmarks": [
+        "Vincom Times City, Hanoi"
+      ],
+      "highlights": [
+        "Italian-style pizza chain inside the mall",
+        "Vegetarian pizzas and cheesy pastas"
+      ],
+      "must_try_dishes": [
+        "Margherita pizza",
+        "Veggie deluxe pizza",
+        "Truffle mushroom pasta",
+        "Garlic bread",
+        "Cheese wedges"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Crystal Jade Kitchen – Times City",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Cantonese",
+        "Chinese"
+      ],
+      "price_range": "INR 1,000–2,000 per person",
+      "hours": "11:00 AM – 2:00 PM | 5 PM - 9 PM",
+      "ambience": "Elegant contemporary dining",
+      "area": "Times City",
+      "nearby_landmarks": [
+        "Times City Mega Mall, Hanoi"
+      ],
+      "highlights": [
+        "Refined Asian restaurant inside the mall",
+        "Relaxed sit-down setting"
+      ],
+      "must_try_dishes": [
+        "Vegetable dumplings",
+        "Stir-fried noodles",
+        "Tofu with vegetables",
+        "Vegetable fried rice",
+        "Steamed buns"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Thai Express Vincom Times City",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "INR 700–1,500 per person",
+      "hours": "10:00 AM – 10:00 PM",
+      "ambience": "Contemporary, lively, family-friendly Thai restaurant",
+      "area": "Times City",
+      "nearby_landmarks": [
+        "Vincom Times City, Hanoi"
+      ],
+      "highlights": [
+        "Popular Thai chain",
+        "Thai curries and noodles"
+      ],
+      "must_try_dishes": [
+        "Vegetable pad thai",
+        "Green curry with rice",
+        "Tofu tom yum soup",
+        "Mango sticky rice",
+        "Thai milk tea"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Home Hanoi Restaurant",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese",
+        "Northern Vietnamese"
+      ],
+      "price_range": "INR 1,200–2,000 per person",
+      "hours": "11:00 AM – 1:30 PM | 5:30 PM - 9:30 PM",
+      "ambience": "Elegant villa dining",
+      "area": "Old Quarter",
+      "highlights": [
+        "Villa-style restaurant",
+        "Classic Northern Vietnamese cuisine in a calm, heritage-inspired setting"
+      ],
+      "must_try_dishes": [
+        "Crispy tofu",
+        "Vegetable spring rolls",
+        "Stir-fried mushrooms",
+        "Coconut dessert"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Tung's Kitchen",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 700–1,500 per person",
+      "hours": "10:00 AM – 10:30 PM",
+      "ambience": "Casual local dining",
+      "area": "Old Quarter & Hoan Kiem",
+      "highlights": [
+        "Cosy, highly rated local favourite",
+        "Flavourful Vietnamese comfort food with warm hospitality"
+      ],
+      "must_try_dishes": [
+        "Stir-fried seafood noodles",
+        "Grilled chicken",
+        "Fresh spring rolls"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Essence Restaurant Hanoi",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "INR 1,000–2,200 per person",
+      "hours": "6:30 AM – 10:00 AM | 11:30 AM - 10 PM",
+      "ambience": "Elegant Vietnamese dining",
+      "area": "Old Quarter & Hoan Kiem",
+      "highlights": [
+        "Refined Vietnamese flavours",
+        "Excellent service and elegant presentation"
+      ],
+      "must_try_dishes": [
+        "Lemongrass chicken",
+        "Seafood claypot",
+        "Pho"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Hidden Gem Coffee",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "INR 350–800 per person",
+      "hours": "7:00 AM – 10:00 PM",
+      "ambience": "Artistic eco café",
+      "highlights": [
+        "Eco-friendly design with artistic recycled décor"
+      ],
+      "must_try_dishes": [
+        "Vietnamese egg coffee",
+        "Fresh juices",
+        "Banana cake"
+      ],
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "old"
+    },
+    {
+      "name": "Dookki Vietnam – Times City",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Korean",
+        "Buffet"
+      ],
+      "price_range": "INR 700–1,500 per person",
+      "hours": "10:30 AM – 10:00 PM",
+      "ambience": "Casual vibrant Korean dining",
+      "area": "Times City Mall",
+      "highlights": [
+        "Korean buffet with interactive tteokbokki and hotpot"
+      ],
+      "must_try_dishes": [
+        "Seafood hotpot",
+        "Korean fried chicken",
+        "Ramen"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "old"
+    },
+    {
+      "name": "Kichi Kichi Hotpot – Times City",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Hotpot"
+      ],
+      "price_range": "INR 800–1,600 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Casual interactive dining",
+      "area": "Times City Mall",
+      "highlights": [
+        "Conveyor-style hotpot"
+      ],
+      "must_try_dishes": [
+        "Seafood hotpot",
+        "Prawns",
+        "Fish balls"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "old"
+    },
+    {
+      "name": "Chops Old Quarter",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Grill",
+        "Western"
+      ],
+      "price_range": "INR 1,000–2,000 per person",
+      "hours": "8:00 AM – 11:00 PM",
+      "ambience": "Casual modern dining",
+      "area": "Old Quarter & Hoan Kiem",
+      "highlights": [
+        "Known for grilled meats, burgers and seafood"
+      ],
+      "must_try_dishes": [
+        "Grilled chicken",
+        "Lamb burgers",
+        "Seafood platters"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "old"
+    },
+    {
+      "name": "Bun Cha Huong Lien",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Rs. 100 - 300",
+      "hours": "8 am - 8:30 pm",
+      "ambience": "Bustling, no-frills, stainless tables and plastic stools over two floors",
+      "highlights": [
+        "Photos of the Obama-and-Bourdain visit",
+        "Two airy floors"
+      ],
+      "must_try_dishes": [
+        "Bun Cha"
+      ],
+      "_source_file": "Vietnam/Eating Out Guide_ Vietnam.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Bun Cha Ta",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Rs. 200 - 400",
+      "hours": "8 am - 10 pm",
+      "ambience": "Intimate, laid-back multi-floor interior with wooden tables",
+      "highlights": [
+        "Air-conditioned upper rooms where guests remove shoes",
+        "Friendly staff guide you through the meal"
+      ],
+      "must_try_dishes": [
+        "Bun Cha"
+      ],
+      "_source_file": "Vietnam/Eating Out Guide_ Vietnam.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Bún Riêu Cua Thanh Hồng",
+      "city": "Hanoi",
+      "cuisine_type": [
+        "Vietnamese"
+      ],
+      "price_range": "Rs. 200 - 400",
+      "hours": "7 am - 10:30 pm",
+      "ambience": "Humble, simple wooden tables and chairs, street-food atmosphere",
+      "highlights": [
+        "Tomato-and-crab broth",
+        "Steady flow of locals"
+      ],
+      "must_try_dishes": [
+        "Bun Rieu"
+      ],
+      "_source_file": "Vietnam/Eating Out Guide_ Vietnam.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Ba Dinh Square",
+      "city": "Hanoi",
+      "description": "Centre of a large complex of historical and cultural sites including the Ho Chi Minh Mausoleum, One Pillar Pagoda and Presidential Palace",
+      "hours": "5 am - 10 pm everyday",
+      "recommended_duration": "About 1 hour",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx"
+    },
+    {
+      "name": "Ho Chi Minh Mausoleum",
+      "city": "Hanoi",
+      "description": "Mausoleum within the Ba Dinh complex",
+      "hours": "8 am to 11 am",
+      "tips": [
+        "Arriving later may mean seeing it only from outside"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx"
+    },
+    {
+      "name": "One Pillar Pagoda",
+      "city": "Hanoi",
+      "description": "Pagoda and tower structure built in the middle of a square lake.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx"
+    },
+    {
+      "name": "Presidential Palace",
+      "city": "Hanoi",
+      "description": "Can only be viewed from outside",
+      "hours": "5 am - 10 pm (Ba Dinh timings)",
+      "entry_fee": "No fees",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx"
+    },
+    {
+      "name": "Train Street",
+      "city": "Hanoi",
+      "description": "Narrow street with a railway line running between cafes",
+      "tips": [
+        "Visit one of the cafes and buy a beverage or snack to get the best view"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx"
+    },
+    {
+      "name": "Ngoc Son Temple",
+      "city": "Hanoi",
+      "description": "Historic temple on a small island in Hoan Kiem Lake, reached by the red Huc Bridge, dedicated to scholars, generals and spiritual figures",
+      "hours": "7:00 AM – 7:00 PM",
+      "entry_fee": "Approx. INR 120–150 per person",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx"
+    },
+    {
+      "name": "Thang Long Water Puppet Theatre",
+      "city": "Hanoi",
+      "description": "Traditional water puppet show bringing folk tales to life with live traditional music; suitable for adults and children",
+      "hours": "Show around 6:30 PM",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx"
+    },
+    {
+      "name": "Cau The Huc Bridge",
+      "city": "Hanoi",
+      "description": "Bridge on Hoan Kiem Lake that is lit up at night, opposite the Thang Long Water Puppet Theatre",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx",
+      "_source_date": "2025-02-28",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx"
+    },
+    {
+      "name": "Mega Grand World",
+      "city": "Hanoi",
+      "description": "Large-scale entertainment complex in Ocean City blending world cultural elements with modern Vietnamese flair; key features include The Venice, K-Town and Grand Voyage",
+      "hours": "9 am to 9 pm",
+      "entry_fee": "Free",
+      "tips": [
+        "Light fountain and fireworks show at The Venice at 8:30 pm"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra(1).docx",
+      "_source_date": null,
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Cau Bau (Incense Village)",
+      "city": "Hanoi",
+      "description": "Incense-making village about 1 hr by car from Hanoi.",
+      "hours": "7 am - 4 pm",
+      "entry_fee": "50,000 VND per person",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Dong Xuan Market",
+      "city": "Hanoi",
+      "description": "Hanoi's largest traditional market selling textiles, souvenirs, local snacks and household goods",
+      "hours": "6:00 AM – 6:00 PM",
+      "entry_fee": "Free",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx"
+    },
+    {
+      "name": "Hoan Kiem Lake",
+      "city": "Hanoi",
+      "description": "Cultural heart of Hanoi with tree-lined pathways, small red bridges and a peaceful atmosphere; lively with cafés and music in the evening",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx"
+    },
+    {
+      "name": "Dong Kinh Nghia Thuc Square",
+      "city": "Hanoi",
+      "description": "Pedestrian weekend night market/fair",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx"
+    },
+    {
+      "name": "Ta Hien Beer Street",
+      "city": "Hanoi",
+      "description": "Street of roadside bars and restaurants serving Vietnamese beer",
+      "hours": "Friday-Sunday 7pm-11pm",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx"
+    },
+    {
+      "name": "Temple of Literature",
+      "city": "Hanoi",
+      "description": "Vietnam's first national university, founded in 1070, with courtyards, lotus ponds and ancient stone steles honoring scholars",
+      "hours": "8:00 AM – 5:00 PM",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx"
+    },
+    {
+      "name": "St. Joseph's Cathedral",
+      "city": "Hanoi",
+      "description": "European-style cathedral in the Old Quarter",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx"
+    },
+    {
+      "name": "Ta Hien Beer Street and Old Quarter Night Market",
+      "city": "Hanoi",
+      "description": "Beer street plus the pedestrian weekend night market around Hoan Kiem Lake; the night market stretches from Hang Dao Street to Dong Xuan Market, about 3 km long",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx",
+      "_source_date": "2025-02-28",
+      "_source_format": "old"
+    },
+    {
+      "name": "Ho Chi Minh Mausoleum Complex",
+      "city": "Hanoi",
+      "description": "Complex with Ho Chi Minh's Mausoleum and his stilt house, where he lived on and off from 1958 to 1969.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old"
+    },
+    {
+      "name": "Hoan Kiem Lake and Ngoc Son Temple",
+      "city": "Hanoi",
+      "description": "Lake with Ngoc Son Temple, The Huc Bridge and Thap But (Pen Tower); the Old Train Street is nearby.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old"
+    },
+    {
+      "name": "Ho Chi Minh Complex",
+      "city": "Hanoi",
+      "description": "Area dedicated to Vietnam's founding father, with the Ho Chi Minh Mausoleum (viewed from outside only), the Presidential Palace, Ho Chi Minh's Stilt House and the One Pillar Pagoda",
+      "hours": "8:00 AM – 5:00 PM",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx"
+    },
+    {
+      "name": "Hanoi Old Quarter",
+      "city": "Hanoi",
+      "description": "Walkable historic district with narrow lanes of souvenir, silk, coffee, leather and handicraft shops, cafés and local eateries",
+      "tips": [
+        "Most lively after sunset"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Hanoi Train Street (Phung Hung)",
+      "city": "Hanoi",
+      "description": "Cafés line the railway tracks, with trains passing just inches away",
+      "tips": [
+        "Best visited late afternoon to early evening",
+        "Beverages are at own cost at the cafés"
+      ],
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx"
+    },
+    {
+      "name": "Mega Grand World (Grand World Hanoi)",
+      "city": "Hanoi",
+      "description": "Entertainment complex inspired by European canal towns with colorful architecture, boutique shopping streets, restaurants, cafés and evening cultural performances; good for strolling, photography and nightlife",
+      "hours": "10:00 AM – 11:00 PM",
+      "entry_fee": "Free entry (shopping, dining and shows are extra)",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new"
+    },
+    {
+      "name": "Hoan Kiem Lake Hanoi",
+      "city": "Hanoi",
+      "description": "Peaceful lake at the heart of Hanoi where locals gather for evening walks and tai chi.",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free",
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Ngoc Son Temple Hanoi",
+      "city": "Hanoi",
+      "description": "Small temple on an island in Hoan Kiem Lake, connected by a red bridge.",
+      "hours": "7:00 AM – 7:00 PM",
+      "entry_fee": "~₹100 – ₹150",
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Temple of Literature Hanoi",
+      "city": "Hanoi",
+      "description": "Vietnam's first university, set in peaceful courtyards with traditional architecture.",
+      "hours": "8:00 AM – 5:00 PM",
+      "entry_fee": "₹100 – ₹150",
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Mega Grand World Hanoi",
+      "city": "Hanoi",
+      "description": "Large entertainment complex in the Ocean City development outside central Hanoi with European-inspired architecture, canals, waterfront promenades, themed zones (The Venice, K-Town, Grand Voyage), shopping streets and cafés",
+      "hours": "Open daily: 9:00 AM – 9:00 PM",
+      "entry_fee": "Free",
+      "tips": [
+        "Most beautiful after sunset when the canals and buildings are illuminated",
+        "Fountain and fireworks show at The Venice around 8:30 PM"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "VinKE & Vinpearl Aquarium Times City",
+      "city": "Hanoi",
+      "description": "Indoor family entertainment complex inside Times City Mega Mall with aquarium tunnels, marine life and penguin exhibits, arcade zones, role-play city for children and simulated driving zones",
+      "hours": "Open daily: 10:00 AM – 10:00 PM",
+      "entry_fee": "Approx. INR 800–1,500 per person depending on activities",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Hang Gai Street (Silk Street)",
+      "city": "Hanoi",
+      "description": "Famous lane lined with boutiques selling silk garments, scarves, handcrafted items and premium souvenirs",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Hanoi Le Jardin Hotel & Spa",
+      "city": "Hanoi",
+      "location": "31 min by car from Noi Bai International Airport",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Eliana Premio Hotel",
+      "city": "Hanoi",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Super Hotel Candle",
+      "city": "Hanoi",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Dream Premium Hotel & Spa",
+      "city": "Hanoi",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx",
+      "_source_date": "2024-12-10",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice.docx"
+    },
+    {
+      "name": "Hanoi La Charm Hotel & Spa",
+      "city": "Hanoi",
+      "location": "About 45 min drive from the airport; Circle K 2 min walk, pharmacy 2-5 min walk",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx",
+      "_source_date": "2025-02-28",
+      "_source_format": "old"
+    },
+    {
+      "name": "Matilda Boutique and Spa Hotel",
+      "city": "Hanoi",
+      "location": "300 m from Hanoi La Charm Hotel & Spa; 10 min walk to Dong Xuan Market",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx",
+      "_source_date": "2025-02-28",
+      "_source_format": "old"
+    },
+    {
+      "name": "NYNA Old Quarter",
+      "city": "Hanoi",
+      "location": "Old Quarter; Circle K 4 min walk",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx",
+      "_source_date": "2025-02-28",
+      "_source_format": "old"
+    },
+    {
+      "name": "Amara Hanoi Hotel",
+      "city": "Hanoi",
+      "location": "24 min drive from the airport; near Hoan Kiem Lake and Old Quarter, 10 min walk to Dong Xuan Market",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old"
+    },
+    {
+      "name": "Flower Garden Hotel",
+      "city": "Hanoi",
+      "location": "31 min drive from Hanoi airport",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old"
+    },
+    {
+      "name": "Hotel Du Parc Hanoi",
+      "city": "Hanoi",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx"
+    },
+    {
+      "name": "Haibay Hotel",
+      "city": "Hanoi",
+      "location": "Old Quarter",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new"
+    },
+    {
+      "name": "Hai Bay Hotel Hanoi",
+      "city": "Hanoi",
+      "location": "Old Quarter, within walking distance of main sights; limited parking",
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "The Legend Hanoi Hotel",
+      "city": "Hanoi",
+      "location": "Old Quarter, walking distance to Hoan Kiem Lake, cafés and shopping streets; approx. 40–50 mins drive from Noi Bai International Airport",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Splendid Premium Hotel",
+      "city": "Hanoi",
+      "location": "Old Quarter, approx. 8 mins walk to Hoan Kiem Lake",
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "old"
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Pho Chay",
+      "city": "Hanoi",
+      "description": "Vegetarian version of Pho.",
+      "vegetarian": "true",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Xoi Chay / Com Chay",
+      "city": "Hanoi",
+      "description": "Vegetarian version of Xoi or Com (sticky rice), generally served with items such as chickpeas, coconut, sugar, mushrooms, broccoli, pepper, red chilli and onion",
+      "vegetarian": "true",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Rau Muong Xao Toi",
+      "city": "Hanoi",
+      "description": "Water spinach fried with garlic and herbs, topped with peanut powder; available in almost all restaurants.",
+      "vegetarian": "true",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Goi cuon chay",
+      "city": "Hanoi",
+      "description": "Vegetarian fresh Vietnamese spring rolls.",
+      "vegetarian": "true",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Banh Mi Chay",
+      "city": "Hanoi",
+      "description": "Vegetarian version of banh mi, a French-style baguette sandwich filled with tofu, cheese, fried eggs or vegetable salad.",
+      "vegetarian": "true",
+      "where_to_try": "Aha BaMi",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx"
+    },
+    {
+      "name": "Bun dau mam tom",
+      "city": "Hanoi",
+      "description": "Tofu and noodle dish with deep-fried tofu served with pungent purple mam tom dipping sauce.",
+      "vegetarian": "true",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Banh Khoai Tay Chien",
+      "city": "Hanoi",
+      "description": "Deep-fried potato cakes made with sweet potato, coconut and green beans, served with peanut dipping sauce.",
+      "vegetarian": "true",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Dau Sot Ca Chua",
+      "city": "Hanoi",
+      "description": "Yellow tofu pieces with tomato slices, green onion and Vietnamese herbs, best with steamed rice.",
+      "vegetarian": "true",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Cai Xao Nam",
+      "city": "Hanoi",
+      "description": "Bok choy fried with shiitake mushrooms, served with steamed sticky rice and tofu.",
+      "vegetarian": "true",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Chả Cá",
+      "city": "Hanoi",
+      "description": "Northern Vietnamese delicacy of marinated fish pan-fried with dill and turmeric, cooked tableside.",
+      "where_to_try": "Cha Ca Thang Long",
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mohnish_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Egg coffee",
+      "city": "Hanoi",
+      "description": "Creamy coffee dessert made with whipped egg yolk and condensed milk",
+      "vegetarian": true,
+      "where_to_try": "Giang Café",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx"
+    },
+    {
+      "name": "Xoi",
+      "city": "Hanoi",
+      "description": "Dense glutinous Vietnamese sticky rice in savoury or sweet versions.",
+      "where_to_try": "Xoi Yen",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx"
+    },
+    {
+      "name": "Phở",
+      "city": "Hanoi",
+      "description": "Slow-simmered broth with rice noodles and herbs; Hanoi-style beef pho.",
+      "where_to_try": "Pho 10 Ly Quoc Su, Pho Gia Truyen Bat Dan",
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx"
+    },
+    {
+      "name": "Ga tan",
+      "city": "Hanoi",
+      "description": "Chicken noodle-style broth soup.",
+      "vegetarian": "false",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Ga nuong",
+      "city": "Hanoi",
+      "description": "Honey marinated chicken grilled over flaming barbecues, tender with crispy skin.",
+      "vegetarian": "false",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Banh Mi",
+      "city": "Hanoi",
+      "description": "Mixed banh mi with pate, barbecued pork, ham, and sausage",
+      "where_to_try": "Banh Mi 25",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx",
+      "_source_date": "2024-12-10",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice.docx"
+    },
+    {
+      "name": "Nom hoa chuoi",
+      "city": "Hanoi",
+      "description": "Banana flower salad with green papaya, carrots, cilantro, chicken, salty fish sauce dressing and peanuts.",
+      "vegetarian": "false",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Gỏi cuốn",
+      "city": "Hanoi",
+      "description": "Fresh spring rolls in rice paper with leafy greens, mint, coriander, protein and garlic chive; ask for seafood or chicken.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Bún chả cá",
+      "city": "Hanoi",
+      "description": "Rice vermicelli with fish cakes and fresh herbs.",
+      "vegetarian": "false",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Chè",
+      "city": "Hanoi",
+      "description": "Sweet hot or cold dessert pudding or soup, with jellies, tropical fruit, coconut cream, lotus seed and crushed ice.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Hoa qua dam",
+      "city": "Hanoi",
+      "description": "Chunky blend of fresh tropical fruit in a cup, with shaved ice or condensed milk.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Nem ran",
+      "city": "Hanoi",
+      "description": "Bite-sized crispy fried spring rolls with veggie and meat filling and tangy dipping sauce; ask for crab or chicken as pork is common.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Xoi or Com Chay",
+      "city": "Hanoi",
+      "description": "Vegetarian sticky rice served with items such as chickpeas, coconut, sugar, mushrooms, broccoli, pepper, red chilli and onion.",
+      "vegetarian": "true",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Bánh xèo",
+      "city": "Hanoi",
+      "description": "Crispy pancakes filled with different meats",
+      "where_to_try": "Duongs restaurant",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx",
+      "_source_date": "2024-12-10",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice.docx"
+    },
+    {
+      "name": "Phở bò",
+      "city": "Hanoi",
+      "description": "Beef noodle soup",
+      "where_to_try": "Duongs restaurant",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx",
+      "_source_date": "2024-12-10",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice.docx"
+    },
+    {
+      "name": "Xôi xéo and Xôi gà",
+      "city": "Hanoi",
+      "description": "Sticky rice based dishes",
+      "where_to_try": "Xoi Yen",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx",
+      "_source_date": "2024-12-10",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice.docx"
+    },
+    {
+      "name": "Bún Chả",
+      "city": "Hanoi",
+      "description": "Hanoi favorite of smoky grilled pork with vermicelli, fresh herbs and a tangy dipping sauce.",
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx"
+    },
+    {
+      "name": "Nem cua bể",
+      "city": "Hanoi",
+      "description": "Crab spring rolls",
+      "where_to_try": "Tungs Kitchen",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx",
+      "_source_date": "2024-12-10",
+      "_source_format": "old"
+    },
+    {
+      "name": "Pho Ga",
+      "city": "Hanoi",
+      "description": "Flat rice noodles with boiled chicken in a hearty stock; pho is usually a beef dish.",
+      "where_to_try": "Pho Ga Tien",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old"
+    },
+    {
+      "name": "Chicken pho",
+      "city": "Hanoi",
+      "description": "Vietnamese chicken noodle soup with rich broth and fresh herbs",
+      "where_to_try": "Pho Ga Nguyet",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new"
+    },
+    {
+      "name": "Egg Coffee (Cà Phê Trứng)",
+      "city": "Hanoi",
+      "description": "Hanoi specialty of whipped egg yolk over strong coffee; creamy and dessert-like.",
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Phở Gà (Vietnamese Chicken Noodle Soup)",
+      "city": "Hanoi",
+      "description": "Slow-simmered broth with silky rice noodles, shredded chicken and fragrant herbs",
+      "where_to_try": "Pho 10 Ly Quoc Su, Pho Thin Hanoi",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Bánh Mì Gà / Hải Sản (Vietnamese Baguette Sandwich)",
+      "city": "Hanoi",
+      "description": "Crisp baguette filled with grilled chicken or seafood, pickled vegetables, herbs, pâté and sauces",
+      "where_to_try": "Banh Mi 25 Hanoi, Madam Khanh Hoi An",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Chả Cá (Turmeric Fish with Dill)",
+      "city": "Hanoi",
+      "description": "Turmeric-marinated fish grilled with dill and spring onions, served with rice noodles and herbs",
+      "where_to_try": "Cha Ca Thang Long Hanoi",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Lemongrass Chicken",
+      "city": "Hanoi",
+      "description": "Grilled chicken marinated with lemongrass, garlic and Vietnamese spices",
+      "where_to_try": "Madame Hien Restaurant Hanoi, Home Hoi An Vietnamese Restaurant",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Vietnamese Egg Coffee (Cà Phê Trứng)",
+      "city": "Hanoi",
+      "description": "Whipped egg cream layered over strong Vietnamese coffee; rich, creamy and dessert-like",
+      "where_to_try": "Loading T Cafe Hanoi, The Note Coffee Hanoi",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Coconut Coffee",
+      "city": "Hanoi",
+      "description": "Vietnamese coffee topped with creamy coconut foam",
+      "where_to_try": "Cong Caphe Hanoi, NAM House Cafe Da Nang",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Fresh Sugarcane Juice (Nước Mía)",
+      "city": "Hanoi",
+      "description": "Freshly pressed sugarcane juice served chilled over ice, popular on hot afternoons",
+      "where_to_try": "Hanoi Old Quarter street stalls, Hoi An Night Market, Da Nang beachside food streets",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Gỏi Cuốn (Fresh Spring Rolls)",
+      "city": "Hanoi",
+      "description": "Rice paper rolls filled with prawns, vermicelli, herbs and lettuce, served with peanut dipping sauce.",
+      "where_to_try": "Home Hoi An Vietnamese Restaurant, Madame Hien Restaurant Hanoi",
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "old"
+    },
+    {
+      "name": "Xôi xéo",
+      "city": "Hanoi",
+      "description": "Turmeric-infused sticky rice dish with savory toppings",
+      "where_to_try": "Xoi Yen",
+      "_source_file": "Vietnam/Eating Out Guide_ Vietnam.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Bún riêu",
+      "city": "Hanoi",
+      "description": "Noodle soup in tomato-and-crab broth",
+      "where_to_try": "Bún Riêu Cua Thanh Hồng",
+      "_source_file": "Vietnam/Eating Out Guide_ Vietnam.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Banh Cuon",
+      "city": "Hanoi",
+      "description": "Steamed rice crepes with crispy shallots",
+      "where_to_try": "Banh cuon ba xuan",
+      "_source_file": "Vietnam/Eating Out Guide_ Vietnam.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Bún bò Nam Bộ",
+      "city": "Hanoi",
+      "description": "Fire-grilled beef vermicelli",
+      "where_to_try": "Bún Bò Nam Bộ Bách Phương",
+      "_source_file": "Vietnam/Eating Out Guide_ Vietnam.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Hanoi",
+        "Sa Pa",
+        "Da Nang",
+        "Hoi An"
+      ],
+      "tip": "Avoid sidewalk restaurants unless they are known for their veg or chicken/seafood options",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Da Nang",
+        "Hoi An",
+        "Phu Quoc"
+      ],
+      "tip": "Watch belongings in crowded markets",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Da Nang",
+        "Hoi An",
+        "Phu Quoc"
+      ],
+      "tip": "Cross roads slowly and confidently",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Da Nang",
+        "Hoi An",
+        "Phu Quoc"
+      ],
+      "tip": "Keep valuables in crossbody bags or money belts in crowded areas",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Da Nang",
+        "Hoi An",
+        "Phu Quoc"
+      ],
+      "tip": "Avoid carrying passports daily; carry copies instead",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Da Nang",
+        "Hoi An",
+        "Phu Quoc"
+      ],
+      "tip": "Use hotel safes for passports, cash and jewelry",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Da Nang",
+        "Hoi An",
+        "Phu Quoc"
+      ],
+      "tip": "Stick to well-lit areas at night",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Vietnamese silk products (scarves, wall hangings)",
+      "city": "Hanoi",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Khai Silk",
+        "Duc Loi Silk",
+        "Hang Gai Street (Silk Street, open 9am-8pm)"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx"
+    },
+    {
+      "item": "Footwear",
+      "city": "Hanoi",
+      "category": "Footwear",
+      "where_to_buy": [
+        "Hang Dao street"
+      ],
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "item": "Vietnamese hand embroidery (pillowcases, napkins, table covers, bags)",
+      "city": "Hanoi",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Tan My Designs",
+        "May Store"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx"
+    },
+    {
+      "item": "Do paper products (notebooks, greeting cards, paintings, stationery sets)",
+      "city": "Hanoi",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Craft Link"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx"
+    },
+    {
+      "item": "Bamboo trays, baskets, chopsticks",
+      "city": "Hanoi",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Dong Xuan Market",
+        "Bamboo Shop: 4B Hang Hang Street"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx"
+    },
+    {
+      "item": "Magnet dolls in traditional Vietnamese dress",
+      "city": "Hanoi",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Dong Xuan Market"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx"
+    },
+    {
+      "item": "Vietnamese Coffee",
+      "city": "Hanoi",
+      "category": "Food & drink",
+      "where_to_buy": [
+        "Cong Caphe",
+        "Highlands Coffee",
+        "Maison Marou",
+        "Hanoi Old Quarter coffee boutiques"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx"
+    },
+    {
+      "item": "Green bean cake",
+      "city": "Hanoi",
+      "category": "Consumables",
+      "where_to_buy": [
+        "General Agency Golden Dragon Bean cake",
+        "Supermarkets"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx"
+    },
+    {
+      "item": "O Mai (traditional dry fruit snack mixed with salt, sugar, lime and chilli)",
+      "city": "Hanoi",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Hong Lam Store",
+        "Tien Tinh Store",
+        "Supermarkets"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx",
+      "_source_date": "2025-02-28",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Silvery jewellery",
+      "city": "Hanoi",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Hang Bac Street"
+      ],
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "item": "O Mai (traditional dried fruit snack mixed with salt, sugar, lime and chilli)",
+      "city": "Hanoi",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Hong Lam Store",
+        "Tien Tinh Store",
+        "Supermarkets"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice.docx"
+    },
+    {
+      "item": "General souvenirs",
+      "city": "Hanoi",
+      "category": "Markets",
+      "where_to_buy": [
+        "Dong Xuan Market (open 6am-6pm daily)",
+        "Souvenir shops near Hoan Kiem Lake"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx",
+      "_source_date": "2025-02-28",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx"
+    },
+    {
+      "item": "O Mai (traditional dried fruit snack with salt, sugar, lime and chilli)",
+      "city": "Hanoi",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Hong Lam Store",
+        "Tien Tinh Store",
+        "Supermarkets"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "item": "General souvenir shopping (bargaining expected)",
+      "city": "Hanoi",
+      "category": "Markets",
+      "where_to_buy": [
+        "Dong Xuan Market (open 6am-6pm daily)",
+        "Souvenir shops near Hoan Kiem Lake"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old"
+    },
+    {
+      "item": "Do paper products (notebooks, greeting cards, paintings, stationery)",
+      "city": "Hanoi",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Craft Link"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old"
+    },
+    {
+      "item": "O Mai (traditional dried fruit snack with salt, sugar, lime, chilli)",
+      "city": "Hanoi",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Hong Lam Store",
+        "Tien Tinh Store",
+        "Supermarkets"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old"
+    },
+    {
+      "item": "Silk scarves, stoles and ties",
+      "city": "Hanoi",
+      "category": "Textiles",
+      "where_to_buy": [
+        "Dong Xuan Market",
+        "Old Quarter Streets"
+      ],
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx"
+    },
+    {
+      "item": "Lacquerware trays, bowls and boxes",
+      "city": "Hanoi",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Dong Xuan Market",
+        "Old Quarter Streets"
+      ],
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx"
+    },
+    {
+      "item": "Bamboo and wooden handicrafts",
+      "city": "Hanoi",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Dong Xuan Market",
+        "Old Quarter Streets"
+      ],
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx"
+    },
+    {
+      "item": "Handmade ceramics",
+      "city": "Hanoi",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Dong Xuan Market",
+        "Old Quarter Streets"
+      ],
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx"
+    },
+    {
+      "item": "Ô Mai (Vietnamese Dried Fruit Snacks)",
+      "city": "Hanoi",
+      "category": "Food",
+      "where_to_buy": [
+        "Hong Lam Store",
+        "Tien Tinh Store"
+      ],
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new"
+    },
+    {
+      "item": "Handicrafts and souvenirs",
+      "city": "Hanoi",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Old Quarter"
+      ],
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "item": "Silk Products & Tailoring",
+      "city": "Hanoi",
+      "category": "Clothing & textiles",
+      "where_to_buy": [
+        "Hang Gai Street (Silk Street)",
+        "Yaly Couture Hoi An",
+        "Bebe Tailor Hoi An"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "item": "Lacquerware & Handcrafted Art",
+      "city": "Hanoi",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Dong Xuan Market",
+        "Hanoi Old Quarter art boutiques",
+        "Hoi An artisan galleries"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "item": "Vietnamese Spices & Sauces",
+      "city": "Hanoi",
+      "category": "Food & drink",
+      "where_to_buy": [
+        "Dong Xuan Market",
+        "Hoi An Central Market",
+        "Lotte Mart Da Nang"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "item": "Vietnamese Chocolates",
+      "city": "Hanoi",
+      "category": "Food & drink",
+      "where_to_buy": [
+        "Maison Marou Hanoi",
+        "Pheva Chocolate Da Nang",
+        "Lotte Mart Da Nang"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "item": "Vietnamese Conical Hats (Nón Lá)",
+      "city": "Hanoi",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Dong Xuan Market",
+        "Hoi An Night Market",
+        "Hanoi Old Quarter"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "item": "Ceramics & Pottery",
+      "city": "Hanoi",
+      "category": "Handicrafts",
+      "where_to_buy": [
+        "Bat Trang Ceramic Village",
+        "Hanoi artisan stores",
+        "boutique home décor shops"
+      ],
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "item": "Silk Products",
+      "city": "Hanoi",
+      "category": "Textiles",
+      "where_to_buy": [
+        "Hang Gai Street (Silk Street)"
+      ],
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "old"
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Hanoi",
+      "service": "Hospital",
+      "notes": "Vietnam - Cuba Friendship Hospital",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide- Shiva(1).docx"
+    },
+    {
+      "city": "Hanoi",
+      "service": "Pharmacy",
+      "notes": "Nha Thuoc Ngo, 222 Lê Duẩn",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new"
+    },
+    {
+      "city": "Hanoi",
+      "service": "Pharmacy – 24H Pharmacy",
+      "notes": "Open 24 hours, Old Quarter area",
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "city": "Hanoi",
+      "service": "Hospital – Vietnam - Cuba Friendship Hospital",
+      "notes": "Open 24 hours",
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Hanoi",
+        "Ha Long Bay",
+        "Da Nang",
+        "Hoi An",
+        "Ho Chi Minh City"
+      ],
+      "tip": "Activate roaming on your home number to receive messages such as OTPs, even without an international roaming plan",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva(1).docx",
+      "_source_date": null,
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Ha Long Bay",
+        "Ninh Binh"
+      ],
+      "tip": "Vietnam's international dialing code is +84",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Ha Long Bay",
+        "Da Nang",
+        "Hoi An",
+        "Ho Chi Minh City"
+      ],
+      "tip": "Vietnam international dialing code is +84",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Ha Long Bay",
+        "Da Nang",
+        "Hoi An",
+        "Ho Chi Minh City"
+      ],
+      "tip": "Domestic calls within Vietnam: dial 0 + area code + telephone number",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Ha Long Bay",
+        "Da Nang",
+        "Hoi An",
+        "Ho Chi Minh City"
+      ],
+      "tip": "International calls from Vietnam: dial 00 + country code + area code + telephone number",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Halong Bay",
+        "Da Nang",
+        "Hoi An",
+        "Phu Quoc",
+        "Ho Chi Minh City"
+      ],
+      "tip": "Activate international roaming on the home number to receive messages such as OTPs, even without a roaming plan",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Ha Long Bay",
+        "Ninh Binh",
+        "Da Nang",
+        "Hoi An",
+        "Ho Chi Minh City"
+      ],
+      "tip": "A data pack is needed to book Grab and Uber taxis on the go",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx",
+      "_source_date": "2025-02-28",
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Ha Long Bay",
+        "Ninh Binh",
+        "Da Nang",
+        "Hoi An",
+        "Ho Chi Minh City"
+      ],
+      "tip": "Activate roaming on your home number even without an international plan, to receive OTP messages",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx",
+      "_source_date": "2025-02-28",
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Ha Long Bay",
+        "Da Nang",
+        "Hoi An"
+      ],
+      "tip": "Activate roaming on the home number even without an international plan, to receive messages such as OTPs",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Ha Long Bay",
+        "Da Nang",
+        "Hoi An"
+      ],
+      "tip": "A data pack is needed to book Grab or Uber rides on the go",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Halong Bay",
+        "Da Nang",
+        "Hoi An",
+        "Ba Na Hills",
+        "Phu Quoc"
+      ],
+      "tip": "Wi-Fi is widely available in hotels, cafés and restaurants",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Hanoi"
+      ],
+      "tip": "Tourist SIM cards are sold at telecom counters in the Noi Bai International Airport arrival hall",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Da Nang",
+        "Hoi An",
+        "Hanoi",
+        "Ninh Binh"
+      ],
+      "tip": "Network coverage is strong in these cities",
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Da Nang",
+        "Hoi An",
+        "Ninh Binh"
+      ],
+      "tip": "Network coverage is strong in major cities",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Da Nang"
+      ],
+      "tip": "SIM cards can be bought in airport arrival halls",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Da Nang",
+        "Hoi An",
+        "Hanoi",
+        "Ninh Binh"
+      ],
+      "tip": "Network coverage is strong across the main cities",
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Da Nang",
+        "Hoi An",
+        "Hanoi",
+        "Ninh Binh"
+      ],
+      "tip": "4G is widely available; 5G is limited to select urban zones",
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Da Nang"
+      ],
+      "tip": "SIM cards can be bought in the arrival halls of Hanoi and Da Nang airports",
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Da Nang",
+        "Hoi An",
+        "Ninh Binh"
+      ],
+      "tip": "SIM cards are also sold at official telecom stores in city centres and local mobile shops near hotels",
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Da Nang",
+        "Hoi An",
+        "Ninh Binh"
+      ],
+      "tip": "A passport is mandatory for SIM registration, with a quick photo verification at the store",
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Da Nang",
+        "Hoi An",
+        "Ninh Binh"
+      ],
+      "tip": "An eSIM can be activated before arrival to avoid airport queues",
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "old"
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Hanoi",
+      "mode": "Walking",
+      "description": "The areas of Hanoi are incredibly walkable",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "city": "Hanoi",
+      "mode": "Walking",
+      "description": "Hanoi is very walkable",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra(1).docx",
+      "_source_date": null,
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide- Shiva(1).docx"
+    },
+    {
+      "city": "Hanoi",
+      "mode": "Walking",
+      "description": "Hanoi is very walkable; taxis are recommended for longer distances because they are affordable.",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "city": "Hanoi",
+      "mode": "Walking",
+      "description": "Hanoi is incredibly walkable; cabs are recommended for slightly longer distances because of affordability",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx",
+      "_source_date": "2024-12-10",
+      "_source_format": "old"
+    },
+    {
+      "city": "Hanoi",
+      "mode": "Walking",
+      "description": "The areas of Hanoi are very walkable; for longer distances cabs are affordable",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx",
+      "_source_date": "2025-02-28",
+      "_source_format": "old"
+    },
+    {
+      "city": "Hanoi",
+      "mode": "Walking",
+      "description": "The Hanoi area is very walkable",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old"
+    },
+    {
+      "city": "Hanoi",
+      "mode": "Shared limousine",
+      "description": "Shared limousine transfer from Hanoi Old Quarter hotels to Tuan Chau Harbor for Halong Bay day cruises, via the new expressway with a comfort break en route",
+      "covers": "Hanoi to Halong Bay (Tuan Chau Harbor)",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "city": "Hanoi",
+      "mode": "Airport taxi",
+      "description": "Taxi from Noi Bai International Airport to the Old Quarter takes approx. 40–45 minutes",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new"
+    },
+    {
+      "city": "Hanoi",
+      "mode": "Limousine bus to Sapa",
+      "description": "Shared limousine bus without a guide; approx. 5.5–6 hours, 320 km via the Hanoi–Lao Cai Expressway, with one or two rest stops. Departs on schedule and drops off in central Sapa; latecomers must arrange their own taxi",
+      "how_to_use": "Picked up from hotel in Hanoi Old Quarter; from the Sapa drop-off, take a short taxi to the hotel",
+      "covers": "Hanoi to Sapa transfer",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new"
+    },
+    {
+      "city": "Hanoi",
+      "mode": "Group shuttle bus to Halong Bay",
+      "description": "Day-trip shuttle via the modern Expressway to Tuan Chau Harbor, approx. 2.5–3 hours each way",
+      "how_to_use": "Hotel pick-up at 07:30–08:00 AM; be in the lobby on time or arrange your own taxi to catch up",
+      "covers": "Hanoi–Tuan Chau Harbor round trip",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new"
+    },
+    {
+      "city": "Hanoi",
+      "mode": "Local taxis",
+      "description": "Reliable taxi companies in Hanoi: Mai Linh Taxi, G7 Taxi.",
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "old"
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Hanoi"
+      ],
+      "tip": "Hong Ngoc General Hospital is a 1 min walk from Hanoi Le Jardin Hotel & Spa",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi"
+      ],
+      "tip": "Nhà Thuốc Tư Nhân 48 pharmacy is a 7 min walk from Hanoi Le Jardin Hotel & Spa",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi"
+      ],
+      "tip": "Vietnam Cuba Friendship Hospital in Hanoi is open 24 hrs",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx",
+      "_source_date": "2024-12-10",
+      "_source_format": "old",
+      "_replaced_from": "Vietnam/Vietnam- All Inclusive Guide_Janice.docx"
+    },
+    {
+      "cities": [
+        "Hanoi"
+      ],
+      "tip": "Pharmacies near Amara Hanoi Hotel: Nhà Thuốc 24 Hàng Nón and Free Health Check (3 min walk)",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi"
+      ],
+      "tip": "Hospitals about 8 min by taxi from Amara Hanoi Hotel: Vietnam - Cuba Friendship Hospital and Hoe Nhai General Hospital",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+      "_source_date": "2025-03-24",
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Hanoi",
+        "Halong Bay",
+        "Da Nang",
+        "Hoi An",
+        "Ba Na Hills",
+        "Phu Quoc"
+      ],
+      "tip": "Apply insect repellent in the evenings and near water",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Hanoi"
+      ],
+      "tip": "Vietnam-Cuba Friendship Hospital is about a 5-minute drive from Hotel Du Parc Hanoi",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    }
+  ],
+  "route_guides": [
+    {
+      "city": "Hanoi",
+      "from": "Hanoi",
+      "to": "Ha Long Bay",
+      "total_time": "2 hr 32 min by car",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "city": "Hanoi",
+      "from": "Hanoi",
+      "to": "Ninh Binh",
+      "total_time": "2-2.5 hrs by road",
+      "_source_file": "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "city": "Hanoi",
+      "from": "Hanoi",
+      "to": "Trang An",
+      "stops": [
+        {
+          "name": "Hoa Lu Ancient Citadel",
+          "suggested_stop": "Visit Dinh King Temple and Le King Temple"
+        },
+        {
+          "name": "Trang An Scenic Landscape Complex",
+          "suggested_stop": "Sampan ride through caves"
+        },
+        {
+          "name": "Mua Cave",
+          "suggested_stop": "Trek up Ngoa Long Mountain for rice valley views"
+        }
+      ],
+      "total_km": "110",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+      "_source_date": "2025-04-04",
+      "_source_format": "old"
+    },
+    {
+      "city": "Hanoi",
+      "from": "Hanoi",
+      "to": "Halong Bay",
+      "stops": [
+        {
+          "name": "Comfort stop en route"
+        }
+      ],
+      "total_time": "Approx. 2.5 – 3 hours via expressway",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new",
+      "_replaced_from": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx"
+    },
+    {
+      "city": "Hanoi",
+      "from": "Hanoi",
+      "to": "Halong Bay (Tuan Chau Harbor)",
+      "stops": [
+        {
+          "name": "Comfort break en route",
+          "minutes": 20
+        }
+      ],
+      "total_time": "~2.5–3 hours via the new expressway",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new"
+    },
+    {
+      "city": "Hanoi",
+      "from": "Hanoi Old Quarter",
+      "to": "Tuan Chau Harbor (Halong Bay)",
+      "stops": [
+        {
+          "name": "Highway rest stop",
+          "minutes": 20,
+          "suggested_stop": "Comfort break"
+        },
+        {
+          "name": "Tuan Chau Harbor",
+          "suggested_stop": "Board the day cruise"
+        }
+      ],
+      "total_time": "Approx. 2.5 – 3 hours",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new"
+    },
+    {
+      "city": "Hanoi",
+      "from": "Hanoi",
+      "to": "Sapa",
+      "stops": [
+        {
+          "name": "Expressway rest stop",
+          "suggested_stop": "Refreshments and stretching (one or two stops)"
+        }
+      ],
+      "total_km": 320,
+      "total_time": "Approx. 5.5 – 6 hours",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_date": "2026-04-14",
+      "_source_format": "new"
+    },
+    {
+      "city": "Hanoi",
+      "from": "Hanoi Noi Bai Airport",
+      "to": "Ninh Binh",
+      "stops": [
+        {
+          "name": "Ninh Binh"
+        }
+      ],
+      "total_time": "~2.5 – 3 hours via expressway",
+      "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-08",
+      "_source_format": "new"
+    },
+    {
+      "city": "Hanoi",
+      "from": "Noi Bai International Airport",
+      "to": "Hanoi Old Quarter",
+      "total_km": "28–30",
+      "total_time": "Approx. 40–50 mins depending on traffic",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_date": "2026-05-13",
+      "_source_format": "new"
+    }
+  ],
+  "season_notes": [
+    {
+      "city": "Hanoi",
+      "tip": "December is cooler at about 12–20°C; pack light jackets or hoodies for evenings",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "city": "Hanoi",
+      "tip": "December is cooler at about 12–20°C; carry light jackets for evenings",
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+      "_source_date": "2025-12-31",
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx",
+    "Vietnam/Vietnam- All Inclusive Guide- Shiva(1).docx",
+    "Vietnam/Vietnam- All Inclusive Guide-Antra(1).docx",
+    "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx",
+    "Vietnam/Vietnam- All Inclusive Guide_Janice.docx",
+    "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx",
+    "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx",
+    "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx",
+    "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx",
+    "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx",
+    "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx",
+    "Vietnam/Mohnish_All Inclusive Guide.docx",
+    "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
+    "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+    "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+    "Vietnam/Eating Out Guide_ Vietnam.pdf"
+  ],
+  "currency": "VND",
+  "_currency_source": {
+    "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+    "_source_date": "2026-05-13",
+    "_source_format": "new"
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "restaurants": [
+    {
+      "name": "Le Freti",
+      "city": "Annecy",
+      "cuisine_type": [
+        "Savoyard"
+      ],
+      "price_range": "Approx. INR 2,500–3,500 per person",
+      "hours": "12–2 PM | 7–10 PM",
+      "ambience": "Savoyard speciality restaurant",
+      "area": "Annecy Old Town",
+      "highlights": [
+        "Savoyard speciality restaurant",
+        "5 mins from canals"
+      ],
+      "must_try_dishes": [
+        "Cheese fondue",
+        "Raclette"
+      ],
+      "best_for": [
+        "Authentic Alpine cuisine"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "L'Etage",
+      "city": "Annecy",
+      "cuisine_type": [
+        "Savoyard",
+        "Regional"
+      ],
+      "price_range": "Approx. INR 2,500–3,500 per person",
+      "hours": "12–2 PM | 7–10 PM",
+      "ambience": "Cosy wood-beamed dining room",
+      "area": "Annecy Old Town",
+      "highlights": [
+        "Cosy wood-beamed dining room"
+      ],
+      "must_try_dishes": [
+        "Tartiflette",
+        "Grilled meats"
+      ],
+      "best_for": [
+        "Traditional regional dishes"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "La Table d'Élise",
+      "city": "Annecy",
+      "cuisine_type": [
+        "French"
+      ],
+      "price_range": "Approx. INR 3,000–4,500 per person",
+      "hours": "7 PM onwards",
+      "ambience": "Elegant, refined French dining",
+      "area": "Annecy Old Town",
+      "highlights": [
+        "Elegant, refined French dining"
+      ],
+      "must_try_dishes": [
+        "Seasonal French mains"
+      ],
+      "best_for": [
+        "Beautiful lakeside dinner"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Annecy Old Town (La Vieille Ville)",
+      "city": "Annecy",
+      "description": "Often called the 'Venice of the Alps'; pastel houses, canals, stone bridges, artisan boutiques and canal-side cafés",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Lake Annecy Boat Experience",
+      "city": "Annecy",
+      "description": "Seasonal lake cruise with clear water framed by alpine peaks and lakeside villas; lake promenade is good for strolling",
+      "hours": "Typically 10 AM – 5 PM (season dependent)",
+      "entry_fee": "Approx. INR 1,800–3,000 per person",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Château d'Annecy",
+      "city": "Annecy",
+      "description": "Hilltop château with sweeping views of terracotta rooftops and the lake; viewpoints nearby are worth the climb even without entering",
+      "hours": "10 AM – 5 PM (may vary seasonally)",
+      "entry_fee": "Approx. INR 800–1,000 per adult",
+      "tips": [
+        "About 15 mins uphill walk from Old Town"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Splendid Hotel Lac d'Annecy",
+      "city": "Annecy",
+      "location": "Lakeside, 5–10 mins drive from Annecy railway station",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Savoyard Fondue",
+      "city": "Annecy",
+      "description": "Melted Gruyère & Emmental cheese served with bread",
+      "vegetarian": "true",
+      "where_to_try": "Le Freti",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Raclette",
+      "city": "Annecy",
+      "description": "Melted Alpine cheese scraped over potatoes and vegetables (vegetarian style)",
+      "vegetarian": true,
+      "where_to_try": "Le Freti",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Savoy cheese (Reblochon, Tomme de Savoie)",
+      "city": "Annecy",
+      "category": "Food",
+      "where_to_buy": [
+        "Fromagerie shops in Vieille Ville"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Alpine handmade chocolates",
+      "city": "Annecy",
+      "category": "Food",
+      "where_to_buy": [
+        "Annecy Old Town"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Local herbal teas",
+      "city": "Annecy",
+      "category": "Food",
+      "where_to_buy": [
+        "Annecy Old Town"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Lake Annecy art prints",
+      "city": "Annecy",
+      "category": "Gifts & art",
+      "where_to_buy": [
+        "Lakeside gift stores near Lake Annecy",
+        "Annecy Old Town"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Cosy alpine knitwear",
+      "city": "Annecy",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Annecy Old Town"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Paris",
+        "Annecy",
+        "Chamonix",
+        "Freiburg",
+        "Baden-Baden",
+        "Strasbourg",
+        "Colmar",
+        "Reims"
+      ],
+      "tip": "Use a data SIM for navigation and translation",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "cities": [
+        "Paris",
+        "Annecy",
+        "Chamonix",
+        "Freiburg",
+        "Baden-Baden",
+        "Strasbourg",
+        "Colmar",
+        "Reims"
+      ],
+      "tip": "Wi-Fi is common but mobile data is more reliable",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "cities": [
+        "Paris",
+        "Annecy",
+        "Chamonix",
+        "Freiburg",
+        "Baden-Baden",
+        "Strasbourg",
+        "Colmar",
+        "Reims"
+      ],
+      "tip": "Carry a power bank for long travel days",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [
+    {
+      "city": "Annecy",
+      "from": "Annecy",
+      "to": "Chamonix",
+      "stops": [
+        {
+          "name": "Chamonix"
+        }
+      ],
+      "total_km": "100",
+      "total_time": "1 – 1.5 hrs",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    }
+  ],
+  "season_notes": [
+    {
+      "city": "Annecy",
+      "tip": "Lake boat cruises are seasonal and may not operate",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Annecy",
+      "tip": "Lake Annecy boat cruises are seasonal and operate only when open",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "France/Tanya and Shovit_All Inclusive Guide(1).docx",
+    "France/Tanya and Shovit_All Inclusive Guide(2).docx"
+  ],
+  "currency": "EUR",
+  "_currency_source": {
+    "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+    "_source_date": "2026-02-21",
+    "_source_format": "new"
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "restaurants": [
+    {
+      "name": "La Cantina del Pescatore",
+      "city": "Cinque Terre",
+      "cuisine_type": [
+        "Mediterranean"
+      ],
+      "price_range": "INR 2,500–4,500 per person",
+      "hours": "11:45 AM – 3:00 PM | 6:45 PM - 9:15 PM (Sunday Closed)",
+      "ambience": "Casual seaside",
+      "must_try_dishes": [
+        "Pesto pasta",
+        "Caprese salad"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "name": "Ristorante Miky",
+      "city": "Cinque Terre",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "INR 4,000–6,500 per person",
+      "hours": "12:30 PM – 4:30 PM | 7:00 PM - 10:30 PM",
+      "ambience": "Elegant with sea views",
+      "must_try_dishes": [
+        "Risotto",
+        "Pasta primavera"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "name": "Il Casello Cinque Terre",
+      "city": "Cinque Terre",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "INR 2,000–3,500 per person",
+      "hours": "11:00 AM – 6:00 PM",
+      "area": "Hillside above the village",
+      "ambience": "Relaxed hillside café with views",
+      "must_try_dishes": [
+        "Veg focaccia",
+        "Pasta"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "name": "Ristorante L'Ancora",
+      "city": "Cinque Terre",
+      "cuisine_type": [
+        "Ligurian",
+        "Italian"
+      ],
+      "price_range": "INR 3,000–5,000 per person",
+      "ambience": "Cozy seaside",
+      "highlights": [
+        "Vegetarian pasta and classic Ligurian dishes"
+      ],
+      "must_try_dishes": [
+        "Pesto pasta",
+        "Caprese salad"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Ristorante Belvedere",
+      "city": "Cinque Terre",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "INR 3,500–6,000 per person",
+      "hours": "6:30–10 pm",
+      "ambience": "Panoramic, overlooking the sea",
+      "highlights": [
+        "Vegetarian-friendly Italian dishes"
+      ],
+      "must_try_dishes": [
+        "Risotto",
+        "Vegetable pasta"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Da Eraldo",
+      "city": "Cinque Terre",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "INR 2,500–4,500 per person",
+      "hours": "6–9:30 pm",
+      "ambience": "Rustic, warm",
+      "highlights": [
+        "Vegetarian pasta options",
+        "No parking inside village"
+      ],
+      "must_try_dishes": [
+        "Pasta al pesto",
+        "Bruschetta"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Monterosso al Mare",
+      "city": "Cinque Terre",
+      "description": "Largest Cinque Terre village with sandy beaches and pastel houses; fully walkable",
+      "entry_fee": "Free",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "name": "Vernazza",
+      "city": "Cinque Terre",
+      "description": "Postcard-perfect harbour village surrounded by cliffs and colourful homes",
+      "entry_fee": "Free",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "name": "Manarola",
+      "city": "Cinque Terre",
+      "description": "Cliffside village famous for one of Italy’s most iconic sunset views",
+      "entry_fee": "Free",
+      "tips": [
+        "Visit the sunset viewpoint (short uphill walk)"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "name": "Riomaggiore",
+      "city": "Cinque Terre",
+      "description": "Seaside village with narrow lanes and colourful stacked houses",
+      "entry_fee": "Free",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Cinque Terre Behind",
+      "city": "Cinque Terre",
+      "location": "Near La Spezia Centrale / Cinque Terre rail connections",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Limoncino / Lemon Products",
+      "city": "Cinque Terre",
+      "category": "Food",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "item": "Sea salt & herbal blends",
+      "city": "Cinque Terre",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Coastal artwork",
+      "city": "Cinque Terre",
+      "category": "Art",
+      "where_to_buy": [],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Lemon products (limoncino, soaps, candies)",
+      "city": "Cinque Terre",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Cinque Terre",
+      "mode": "Regional train between villages",
+      "description": "Trains connect Monterosso, Vernazza, Manarola and Riomaggiore (~5–15 mins between villages); villages are walkable and car-restricted",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "city": "Cinque Terre",
+      "mode": "Intercity train to Rome",
+      "description": "La Spezia Centrale to Roma Termini, ~4 hrs 16 mins; arrive 30–40 mins before departure; right-side window recommended for best views",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "city": "Cinque Terre",
+      "mode": "Regional coastal train",
+      "description": "Regional trains link La Spezia, Monterosso, Vernazza, Manarola and Riomaggiore in short hops (~6–15 mins).",
+      "how_to_use": "Villages are largely pedestrian-only with narrow paths and stairs; drop luggage first and travel light.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Cinque Terre"
+      ],
+      "tip": "Farmacia Della Stazione is ~3 mins walk from Cinque Terre Behind (8:30 AM – 7:30 PM, closed Sundays)",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Cinque Terre",
+        "La Spezia"
+      ],
+      "tip": "Farmacia Della Stazione is a pharmacy near La Spezia station",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Cinque Terre",
+        "La Spezia"
+      ],
+      "tip": "CMD Centro Medico La Spezia Centro is a medical centre in La Spezia",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    }
+  ],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+    "Europe/Kunal_Europe_All Inclusive Guide.docx"
+  ],
+  "currency": "EUR",
+  "_currency_source": {
+    "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+    "_source_date": "2026-05-04",
+    "_source_format": "new"
+  }
+}

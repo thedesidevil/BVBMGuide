@@ -1,0 +1,192 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Pad Thai",
+      "city": "Thailand",
+      "description": "Wok-fried rice noodles with shrimp, chicken or tofu, balancing sweet, sour and savoury notes",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok(1).docx",
+      "_source_date": "2024-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Khanom Bueang (Crispy Crepes)",
+      "city": "Thailand",
+      "description": "Delicate sweet or savoury crepes with crisp exterior and soft filling; sweet versions use coconut cream or meringue",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok(1).docx",
+      "_source_date": "2024-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Mango Sticky Rice with Coconut Cream (Khao Neow Mamuang)",
+      "city": "Thailand",
+      "description": "Classic dessert of ripe mango with sticky rice cooked in coconut milk, drizzled with sweet coconut cream",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok(1).docx",
+      "_source_date": "2024-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Miang Kam",
+      "city": "Thailand",
+      "description": "Bite-sized northern Thai snack of betel leaves filled with chopped nuts, dried shrimp, ginger and other ingredients",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok(1).docx",
+      "_source_date": "2024-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Som Tam",
+      "city": "Thailand",
+      "description": "Spicy salad of shredded green papaya, chillies, dried shrimp, tomatoes, peanuts and fish sauce",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok(1).docx",
+      "_source_date": "2024-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Thai Green Curry",
+      "city": "Thailand",
+      "description": "Staple Thai curry; a vegetarian version can be requested",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok(1).docx",
+      "_source_date": "2024-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Cha Yen (Thai Tea)",
+      "city": "Thailand",
+      "description": "Vibrant orange black tea infused with aromatic spices, vanilla and orange blossom",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok(1).docx",
+      "_source_date": "2024-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Coconut Ice Cream (I-dtim Mat Phrao)",
+      "city": "Thailand",
+      "description": "Creamy ice cream served in a coconut shell with toppings such as roasted peanuts, sweet corn and sticky rice",
+      "_source_file": "Thailand/All Inclusive Guide for Pattaya and Bangkok(1).docx",
+      "_source_date": "2024-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Pad Thai (Vegetarian)",
+      "city": "Thailand",
+      "description": "Thailand's most famous noodle dish made with rice noodles, tofu, peanuts, lime and veggies.",
+      "vegetarian": "true",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_date": "2026-03-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Som Tam (Papaya Salad – Veg Version)",
+      "city": "Thailand",
+      "description": "Refreshing salad made with raw papaya, lime, chili and peanuts.",
+      "vegetarian": "true",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_date": "2026-03-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Thai Green Curry (Veg)",
+      "city": "Thailand",
+      "description": "Fragrant coconut curry with Thai basil, eggplant and vegetables.",
+      "vegetarian": "true",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_date": "2026-03-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Tom Yum Soup (Vegetarian)",
+      "city": "Thailand",
+      "description": "Hot and sour soup with lemongrass, kaffir lime, mushrooms and herbs.",
+      "vegetarian": "true",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_date": "2026-03-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Pad See Ew (Veg)",
+      "city": "Thailand",
+      "description": "Flat rice noodles stir-fried with soy sauce, Chinese broccoli and tofu.",
+      "vegetarian": "true",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_date": "2026-03-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Mango Sticky Rice",
+      "city": "Thailand",
+      "description": "Iconic Thai dessert of sweet sticky rice, coconut milk and ripe mango.",
+      "vegetarian": "true",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_date": "2026-03-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Morning Glory Stir-Fry (Pad Pak Boong)",
+      "city": "Thailand",
+      "description": "Water spinach stir-fried with garlic and soy sauce. Simple, flavorful and very local.",
+      "vegetarian": "true",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_date": "2026-03-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Vegetarian Spring Rolls",
+      "city": "Thailand",
+      "description": "Crispy rolls filled with glass noodles and vegetables, served with sweet chili sauce.",
+      "vegetarian": "true",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_date": "2026-03-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Massaman Curry (Veg)",
+      "city": "Thailand",
+      "description": "Mild, slightly sweet curry with potatoes, peanuts and coconut milk.",
+      "vegetarian": "true",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_date": "2026-03-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Thai Fried Rice (Veg)",
+      "city": "Thailand",
+      "description": "Jasmine rice stir-fried with vegetables, tofu and sauces.",
+      "vegetarian": "true",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_date": "2026-03-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Pineapple Fried Rice (Veg)",
+      "city": "Thailand",
+      "description": "Rice cooked with pineapple, cashews and veggies, often served in a pineapple shell.",
+      "vegetarian": "true",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_date": "2026-03-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Thai Iced Tea",
+      "city": "Thailand",
+      "description": "Sweet, creamy tea made with condensed milk.",
+      "vegetarian": "true",
+      "_source_file": "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx",
+      "_source_date": "2026-03-17",
+      "_source_format": "new"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "Thailand/All Inclusive Guide for Pattaya and Bangkok(1).docx",
+    "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx"
+  ]
+}

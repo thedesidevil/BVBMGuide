@@ -1,0 +1,561 @@
+{
+  "restaurants": [
+    {
+      "name": "Wisteria Deck (JW Marriott)",
+      "city": "Mussoorie",
+      "cuisine_type": [
+        "Indian",
+        "Vegetarian",
+        "Italian"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "7:00 AM – 11:00 PM",
+      "ambience": "Elegant all-day dining with panoramic mountain views",
+      "highlights": [
+        "Resort signature restaurant",
+        "Wide variety of vegetarian cuisine",
+        "Mountain views"
+      ],
+      "must_try_dishes": [
+        "Dal Bukhara",
+        "Paneer Tikka",
+        "Paneer Lababdar",
+        "Wood Fired Pizza",
+        "Seasonal Desserts"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Trout House Grill & Bar",
+      "city": "Mussoorie",
+      "cuisine_type": [
+        "Grill",
+        "Continental"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "7:00 PM – 11:00 PM",
+      "ambience": "Elegant indoor dining with scenic views",
+      "highlights": [
+        "Excellent vegetarian options on request"
+      ],
+      "must_try_dishes": [
+        "Cottage Cheese Steak",
+        "Seasonal Vegetables",
+        "Desserts",
+        "Veg Platter",
+        "Wood Fired Pizza",
+        "Garlic Bread"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "The Writer's Bar",
+      "city": "Mussoorie",
+      "cuisine_type": [
+        "Light bites",
+        "Desserts"
+      ],
+      "price_range": "₹800–1,500 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Relaxed",
+      "highlights": [
+        "Lighter bites and desserts"
+      ],
+      "must_try_dishes": [
+        "Pasta",
+        "Sandwiches",
+        "Signature Desserts"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "The Tavern Restaurant",
+      "city": "Mussoorie",
+      "cuisine_type": [
+        "Continental",
+        "North Indian"
+      ],
+      "price_range": "₹700–1,200 per person",
+      "hours": "11:00 AM – 11:30 PM",
+      "ambience": "Warm atmosphere with scenic valley views",
+      "highlights": [
+        "Long-standing Mussoorie favourite",
+        "Excellent vegetarian offerings"
+      ],
+      "must_try_dishes": [
+        "Vegetable Sizzler",
+        "Paneer Tikka",
+        "Garlic Naan",
+        "Veg Au Gratin"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Urban Turban Bistro",
+      "city": "Mussoorie",
+      "cuisine_type": [
+        "North Indian"
+      ],
+      "price_range": "₹700–1,200 per person",
+      "hours": "11:30 AM – 11:30 PM",
+      "ambience": "Stylish, contemporary, family-friendly",
+      "highlights": [
+        "North Indian favourites"
+      ],
+      "must_try_dishes": [
+        "Dal Makhani",
+        "Paneer Butter Masala",
+        "Tandoori Platter",
+        "Stuffed Kulcha"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Samvriddhi",
+      "city": "Mussoorie",
+      "cuisine_type": [
+        "North Indian",
+        "Jain",
+        "Pure Vegetarian"
+      ],
+      "price_range": "₹500–900 per person",
+      "hours": "11:00 AM – 11:00 PM",
+      "highlights": [
+        "Popular pure vegetarian restaurant",
+        "Caters well to families seeking Jain meals"
+      ],
+      "must_try_dishes": [
+        "Jain Thali",
+        "Paneer Butter Masala",
+        "Dal Tadka",
+        "Veg Pulao"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Pure vegetarian; Jain-friendly",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Yeti – The Himalayan Kitchen",
+      "city": "Mussoorie",
+      "cuisine_type": [
+        "Himalayan",
+        "Tibetan",
+        "Nepali",
+        "Bhutanese"
+      ],
+      "price_range": "₹600–1,000 per person",
+      "hours": "12:00 – 11:00 PM",
+      "highlights": [
+        "Authentic Himalayan and Tibetan cuisine",
+        "Flavours inspired by Nepal, Tibet and Bhutan"
+      ],
+      "must_try_dishes": [
+        "Vegetable Momos",
+        "Thukpa",
+        "Tingmo Bread",
+        "Vegetable Fried Rice"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Maharaja Restaurant",
+      "city": "Mussoorie",
+      "cuisine_type": [
+        "North Indian"
+      ],
+      "price_range": "₹500–1,000 per person",
+      "hours": "1:00 PM – 12:30 AM",
+      "highlights": [
+        "Long-standing family restaurant",
+        "Central location",
+        "Wide selection of vegetarian dishes"
+      ],
+      "must_try_dishes": [
+        "Shahi Paneer",
+        "Veg Kolhapuri",
+        "Jeera Rice",
+        "Butter Naan"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "The Pebble Street",
+      "city": "Mussoorie",
+      "cuisine_type": [
+        "North Indian",
+        "Chinese",
+        "Continental"
+      ],
+      "price_range": "₹700–1,200 per person",
+      "hours": "9:00 AM – 11:00 PM",
+      "ambience": "Lively, warm and welcoming",
+      "highlights": [
+        "Family-friendly mix of cuisines"
+      ],
+      "must_try_dishes": [
+        "Paneer Tikka",
+        "Veg Sizzler",
+        "Hakka Noodles",
+        "Brownie with Ice Cream"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Cafe Anahata",
+      "city": "Mussoorie",
+      "cuisine_type": [
+        "Cafe",
+        "Continental"
+      ],
+      "price_range": "₹700–1,300 per person",
+      "hours": "10:00 AM – 9:30 PM",
+      "ambience": "Peaceful atmosphere with beautiful views",
+      "highlights": [
+        "Wholesome menu",
+        "Scenic mountain café"
+      ],
+      "must_try_dishes": [
+        "Farm Fresh Pizza",
+        "Veg Burger",
+        "Pasta Alfredo",
+        "Hot Chocolate"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Camel's Back Road",
+      "city": "Mussoorie",
+      "description": "Scenic road named after a rock resembling a camel's hump, with mountain vistas, pine-scented air and views of the Doon Valley.",
+      "hours": "Open 24 Hours",
+      "entry_fee": "Free",
+      "tips": [
+        "Early mornings are best, with soft light and very little traffic",
+        "Pause at viewpoints along the road for photographs"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Cloud's End",
+      "city": "Mussoorie",
+      "description": "Tranquil retreat at the western edge of Mussoorie surrounded by dense oak and deodar forests, with quiet walking trails and valley panoramas.",
+      "hours": "Recommended visiting hours: 7:00 AM – 5:00 PM",
+      "entry_fee": "Approx. ₹200 per person (subject to change)",
+      "tips": [
+        "Visit during daylight hours",
+        "Avoid the forested sections after dark"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "George Everest House",
+      "city": "Mussoorie",
+      "description": "Former residence and observatory of Sir George Everest, the Surveyor General of India; a ridge-top viewpoint over the Doon Valley and snow-capped Himalayan ranges.",
+      "hours": "6:00 AM – 6:00 PM",
+      "entry_fee": "Approx. ₹200 per person (subject to change)",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Company Garden",
+      "city": "Mussoorie",
+      "description": "Garden with colourful flower beds, manicured lawns, boating facilities and small amusement rides; suitable for young children.",
+      "hours": "9:00 AM – 6:00 PM",
+      "entry_fee": "Approx. ₹50 per person",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "JW Marriott Mussoorie Walnut Grove Resort & Spa",
+      "city": "Mussoorie",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Vegetable Momos",
+      "city": "Mussoorie",
+      "description": "Popular Himalayan street food of steamed dumplings filled with vegetables, served with spicy chutney.",
+      "vegetarian": true,
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Thukpa",
+      "city": "Mussoorie",
+      "description": "Comforting Tibetan noodle soup packed with vegetables, well suited to cool mountain weather.",
+      "vegetarian": true,
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Hot Chocolate",
+      "city": "Mussoorie",
+      "description": "Hill-station favourite, enjoyable on cool evenings.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "name": "Freshly Baked Cakes & Cinnamon Rolls",
+      "city": "Mussoorie",
+      "description": "Mussoorie and Landour are known for bakeries and cafés serving freshly baked treats inspired by colonial heritage.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Mussoorie"
+      ],
+      "tip": "Avoid the forested sections of Cloud's End after dark",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Buransh (Rhododendron) Squash",
+      "city": "Mussoorie",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Local organic stores and speciality shops in Mussoorie and Dehradun"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "item": "Woollens & Handmade Shawls",
+      "city": "Mussoorie",
+      "category": "Textiles",
+      "where_to_buy": [
+        "Mall Road, Mussoorie",
+        "Tibetan Market, Mussoorie"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "item": "Handmade Wooden Crafts",
+      "city": "Mussoorie",
+      "category": "Crafts",
+      "where_to_buy": [
+        "Mall Road, Mussoorie",
+        "Paltan Bazaar, Dehradun"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "item": "Handmade Candles & Fragrances",
+      "city": "Mussoorie",
+      "category": "Crafts",
+      "where_to_buy": [
+        "Mall Road, Mussoorie"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "item": "Tibetan Handicrafts",
+      "city": "Mussoorie",
+      "category": "Crafts",
+      "where_to_buy": [
+        "Tibetan Market, Mussoorie"
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Mussoorie",
+        "Dhanaulti",
+        "Kanatal"
+      ],
+      "tip": "Carry motion sickness medication for winding hill roads if needed",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Dehradun",
+        "Mussoorie",
+        "Dhanaulti",
+        "Kanatal"
+      ],
+      "tip": "Carry mosquito repellent, a basic first-aid kit and personal prescription medicines",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    }
+  ],
+  "route_guides": [
+    {
+      "city": "Mussoorie",
+      "from": "Mussoorie",
+      "to": "Kanatal",
+      "stops": [
+        {
+          "name": "Eco Park, Dhanaulti",
+          "minutes": 120,
+          "suggested_stop": "Forest walking trails and viewpoints"
+        },
+        {
+          "name": "Surkanda Devi Temple",
+          "minutes": 20,
+          "suggested_stop": "Optional temple visit with Himalayan views"
+        },
+        {
+          "name": "Green Terrasse Restaurant Club Mahindra Kanatal",
+          "minutes": 30,
+          "suggested_stop": "Lunch with mountain views"
+        },
+        {
+          "name": "Kanatal",
+          "suggested_stop": "Resort check-in, nature walk and sunset"
+        }
+      ],
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    }
+  ],
+  "season_notes": [
+    {
+      "city": "Mussoorie",
+      "tip": "June has pleasant weather with cool mornings and evenings",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    },
+    {
+      "city": "Mussoorie",
+      "tip": "Occasional rain showers are possible in June, so pack light layers",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_date": "2026-06-17",
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "North India/Silky_Mussoorie_All_Inclusive_Guide.docx"
+  ],
+  "currency": "INR",
+  "_currency_source": {
+    "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+    "_source_date": "2026-06-17",
+    "_source_format": "new"
+  }
+}

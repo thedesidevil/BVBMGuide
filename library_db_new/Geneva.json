@@ -1,0 +1,467 @@
+{
+  "restaurants": [
+    {
+      "name": "Wasabi",
+      "city": "Geneva",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "hours": "8:30 am - 7:00 pm",
+      "area": "La Praille",
+      "ambience": "Light-filled, modern chain branch",
+      "highlights": [
+        "Located in La Praille Centre"
+      ],
+      "must_try_dishes": [
+        "Bento boxes",
+        "Sushi",
+        "Hot Japanese dishes"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris(2).docx",
+      "_source_date": "2025-04-27",
+      "_source_format": "old",
+      "_replaced_from": "Switzerland/All Inclusive Guide- Switzerland and Paris(1).docx"
+    },
+    {
+      "name": "Martelle Praille",
+      "city": "Geneva",
+      "cuisine_type": [
+        "Chocolate shop",
+        "Tea room"
+      ],
+      "hours": "10:00 am - 7:00 pm",
+      "area": "La Praille",
+      "highlights": [
+        "Located in La Praille Centre"
+      ],
+      "must_try_dishes": [
+        "Chocolate beverages",
+        "Tea",
+        "Viennoiseries"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris(2).docx",
+      "_source_date": "2025-04-27",
+      "_source_format": "old",
+      "_replaced_from": "Switzerland/All Inclusive Guide- Switzerland and Paris(1).docx"
+    },
+    {
+      "name": "Pizzeria Ristorante Molino",
+      "city": "Geneva",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "11:00 am - 11:00 pm",
+      "area": "La Praille",
+      "highlights": [
+        "Located in La Praille Centre"
+      ],
+      "must_try_dishes": [
+        "Pizza"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris(2).docx",
+      "_source_date": "2025-04-27",
+      "_source_format": "old",
+      "_replaced_from": "Switzerland/All Inclusive Guide- Switzerland and Paris(1).docx"
+    },
+    {
+      "name": "Les Armures",
+      "city": "Geneva",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "hours": "12:00 pm - 10:30 pm",
+      "ambience": "Casual, chalet-inspired interior",
+      "must_try_dishes": [
+        "Fondue",
+        "Raclette"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris(2).docx",
+      "_source_date": "2025-04-27",
+      "_source_format": "old",
+      "_replaced_from": "Switzerland/All Inclusive Guide- Switzerland and Paris(1).docx"
+    },
+    {
+      "name": "Tibits",
+      "city": "Geneva",
+      "cuisine_type": [
+        "Vegetarian",
+        "Buffet"
+      ],
+      "price_range": "INR 2,000–3,000 per person",
+      "hours": "6:30 AM – 10:30 PM (Sunday 8:00 AM - 10:00 PM)",
+      "ambience": "Elegant, contemporary interiors",
+      "highlights": [
+        "Buffet-style concept",
+        "Fresh seasonal preparations"
+      ],
+      "must_try_dishes": [
+        "Swiss rösti",
+        "Thai curry",
+        "Artisanal desserts"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "name": "Restaurant Les 5 Portes",
+      "city": "Geneva",
+      "cuisine_type": [
+        "European"
+      ],
+      "price_range": "Approx. INR 2,500–4,000 per person",
+      "hours": "Saturday 6 pm–1 am; Sunday 11 am–4 pm",
+      "ambience": "Cozy European interiors",
+      "highlights": [
+        "Artistic plating",
+        "Carefully crafted vegetarian-friendly dishes"
+      ],
+      "must_try_dishes": [
+        "Seasonal risotto",
+        "Truffle pasta",
+        "Gourmet desserts"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Inda-Bar",
+      "city": "Geneva",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "Approx. INR 2,000–3,500 per person",
+      "ambience": "Stylish contemporary",
+      "highlights": [
+        "Refined Indian dining",
+        "Comforting vegetarian flavors"
+      ],
+      "must_try_dishes": [
+        "Paneer tikka",
+        "Dal makhani",
+        "Saffron rice"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Little India Street Kitchen",
+      "city": "Geneva",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "INR 2,500–4,000 per person",
+      "hours": "6:30 PM – 11:00 PM",
+      "ambience": "Warm, contemporary",
+      "highlights": [
+        "Elevated vegetarian cuisine"
+      ],
+      "must_try_dishes": [
+        "Vegetable biryani",
+        "Paneer butter masala",
+        "Garlic naan"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "name": "Chez Ma Cousine Bourg-de-Four",
+      "city": "Geneva",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "INR 2,000–3,500 per person",
+      "area": "Bourg-de-Four, Old Town",
+      "ambience": "Cozy Swiss atmosphere",
+      "must_try_dishes": [
+        "Cheese rösti",
+        "Seasonal salads",
+        "Swiss desserts"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Jardin Anglais and Flower Clock",
+      "city": "Geneva",
+      "description": "Iconic Geneva sight",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris(2).docx",
+      "_source_date": "2025-04-27",
+      "_source_format": "old",
+      "_replaced_from": "Switzerland/All Inclusive Guide- Switzerland and Paris(1).docx"
+    },
+    {
+      "name": "United Nations Headquarters",
+      "city": "Geneva",
+      "description": "UN HQ in Geneva, can be viewed as an iconic sight",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "UN Headquarters",
+      "city": "Geneva",
+      "description": "United Nations HQ in Geneva, a sight to view",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris(2).docx",
+      "_source_date": "2025-04-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Palace of Nations",
+      "city": "Geneva",
+      "description": "Major diplomatic landmark with grand architecture, courtyards and landscaped grounds; adjacent Ariana Park has open lawns and peacocks.",
+      "entry_fee": "Approx. INR 1,800–2,200 per person (guided tour)",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "World Trade Organization",
+      "city": "Geneva",
+      "description": "Quick stop in Geneva’s international district with modern buildings, landscaped boulevards and Alpine views",
+      "hours": "Exterior accessible all day",
+      "entry_fee": "Free",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "name": "Vieille Ville (Geneva Old Town)",
+      "city": "Geneva",
+      "description": "Cobbled lanes, hidden courtyards, artisan boutiques, historic fountains and cafés.",
+      "entry_fee": "Free",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Lake Geneva Promenade",
+      "city": "Geneva",
+      "description": "Elegant lakeside promenade with sailboats and Alpine views.",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Jet d'Eau",
+      "city": "Geneva",
+      "description": "Iconic fountain rising above Lake Geneva with lakeside pier views.",
+      "hours": "Usually operational throughout the day",
+      "entry_fee": "Free",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "World Trade Organization area",
+      "city": "Geneva",
+      "description": "Quick stop in Geneva's international district with modern buildings, landscaped boulevards and distant Alpine views.",
+      "entry_fee": "Free",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Ramada Encore by Wyndham Geneva",
+      "city": "Geneva",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris(2).docx",
+      "_source_date": "2025-04-27",
+      "_source_format": "old",
+      "_replaced_from": "Switzerland/All Inclusive Guide- Switzerland and Paris(1).docx"
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Interlaken",
+        "Lucerne",
+        "Bern",
+        "Geneva",
+        "Paris"
+      ],
+      "tip": "International roaming packs can be activated on a home mobile number",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Interlaken",
+        "Lucerne",
+        "Bern",
+        "Geneva",
+        "Paris"
+      ],
+      "tip": "Keep roaming activated to receive SMS such as OTPs",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Interlaken",
+        "Lucerne",
+        "Lauterbrunnen",
+        "Jungfraujoch",
+        "Bern",
+        "Geneva",
+        "Zurich",
+        "Paris"
+      ],
+      "tip": "International roaming packs can be activated on a home number as an alternative to a local SIM",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris(2).docx",
+      "_source_date": "2025-04-27",
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Interlaken",
+        "Lucerne",
+        "Lauterbrunnen",
+        "Jungfraujoch",
+        "Bern",
+        "Geneva",
+        "Zurich",
+        "Paris"
+      ],
+      "tip": "Keep roaming activated to receive SMS such as OTPs, even without a roaming pack",
+      "_source_file": "Switzerland/All Inclusive Guide- Switzerland and Paris(2).docx",
+      "_source_date": "2025-04-27",
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Geneva",
+        "Zurich"
+      ],
+      "tip": "Swiss SIM cards are sold at Geneva Airport shops, Zurich Airport kiosks and Swisscom/Sunrise city stores",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Geneva",
+        "Zurich",
+        "Milan",
+        "Venice",
+        "Florence",
+        "Rome"
+      ],
+      "tip": "Download offline maps for Switzerland and northern and central Italy",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Geneva",
+        "Zurich",
+        "Milan",
+        "Venice",
+        "Florence",
+        "Rome"
+      ],
+      "tip": "Upload photos only on WiFi and avoid streaming on trains unless on an unlimited plan",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [
+    {
+      "city": "Geneva",
+      "from": "Geneva Airport",
+      "to": "Chamonix",
+      "stops": [
+        {
+          "name": "Palace of Nations",
+          "minutes": 10,
+          "suggested_stop": "Guided tour and Ariana Park"
+        },
+        {
+          "name": "World Trade Organization area",
+          "minutes": 5,
+          "suggested_stop": "Quick stop in the international district"
+        },
+        {
+          "name": "Vieille Ville",
+          "suggested_stop": "Old Town stroll and coffee"
+        },
+        {
+          "name": "Jet d'Eau",
+          "suggested_stop": "Lakeside pier photos"
+        },
+        {
+          "name": "Lake Geneva Promenade",
+          "suggested_stop": "Final lakeside stroll"
+        },
+        {
+          "name": "Chamonix",
+          "minutes": 95,
+          "suggested_stop": "Check in and explore the town centre"
+        }
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    }
+  ],
+  "season_notes": [],
+  "source_files": [
+    "Switzerland/All Inclusive Guide- Switzerland and Paris(1).docx",
+    "Switzerland/All Inclusive Guide- Switzerland and Paris(2).docx",
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+    "Europe/Kunal_Europe_All Inclusive Guide.docx"
+  ],
+  "currency": "CHF",
+  "_currency_source": {
+    "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+    "_source_date": "2026-05-04",
+    "_source_format": "new"
+  }
+}

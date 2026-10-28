@@ -1,0 +1,987 @@
+{
+  "restaurants": [
+    {
+      "name": "Tataki",
+      "city": "Goa",
+      "cuisine_type": [
+        "Asian Fusion",
+        "Sushi",
+        "Dim Sum",
+        "Thai"
+      ],
+      "price_range": "Approx. ₹1,000-1,500 per person",
+      "hours": "12:00 PM - 3:00 PM, 6:00 PM - 11:00 PM",
+      "ambience": "Stylish decor, vibrant atmosphere",
+      "highlights": [
+        "Immersive contemporary Asian dining",
+        "Live music"
+      ],
+      "must_try_dishes": [
+        "Sushi Sashimi Platter",
+        "Charcoal Black and White Dumplings",
+        "Pad Thai",
+        "Thai Red Curry",
+        "Jaggery Cheesecake"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Goa/Goa- All Inclusive Guide(1).docx",
+      "_source_date": "2025-02-06",
+      "_source_format": "new"
+    },
+    {
+      "name": "The Southern Deck",
+      "city": "Goa",
+      "cuisine_type": [
+        "Multi-cuisine",
+        "Seafood"
+      ],
+      "price_range": "INR 500–700",
+      "hours": "8:30 am to 1 am",
+      "ambience": "Beachfront, lively music, sea views",
+      "area": "South Goa",
+      "highlights": [
+        "Right on the beach",
+        "Seafood and tropical cocktails",
+        "Lively music"
+      ],
+      "notes": "Vegan options available",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Pedro's Bar & Restaurant",
+      "city": "Goa",
+      "cuisine_type": [
+        "Goan",
+        "Indian",
+        "Chinese",
+        "Continental",
+        "Seafood"
+      ],
+      "price_range": "INR 300–700",
+      "hours": "8 am to 2 am",
+      "ambience": "Laid-back beachside vibe with soulful music",
+      "area": "South Goa",
+      "highlights": [
+        "Beachside restaurant since 1969",
+        "Fresh seafood specialties",
+        "Sunset views"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "TikiBab Goa",
+      "city": "Goa",
+      "cuisine_type": [
+        "Barbecue",
+        "Cocktails"
+      ],
+      "price_range": "INR 500–700",
+      "hours": "11 am to 1 am",
+      "ambience": "Tropical beach party with live music",
+      "area": "South Goa",
+      "highlights": [
+        "Exotic cocktails",
+        "Sizzling barbecues",
+        "Live music"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Martins Corner",
+      "city": "Goa",
+      "cuisine_type": [
+        "Goan"
+      ],
+      "price_range": "INR 700–1000",
+      "hours": "11:30 am- 4pm; 6:30pm- 11:30 pm",
+      "ambience": "Spacious eatery adorned with Mario Miranda artwork",
+      "area": "Betalbatim, South Goa",
+      "highlights": [
+        "Authentic Goan cuisine",
+        "Began as a corner shop",
+        "Known for king crab and batter-fried calamari"
+      ],
+      "must_try_dishes": [
+        "King crab",
+        "Batter-fried calamari",
+        "Vindaloo",
+        "Xacuti",
+        "Recheado masala dishes"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Cota Cozinha",
+      "city": "Goa",
+      "cuisine_type": [
+        "Goan",
+        "Portuguese"
+      ],
+      "price_range": "INR 800- 1000",
+      "hours": "12pm- 3pm; 7pm- 11pm",
+      "ambience": "Cozy",
+      "area": "Betalbatim, South Goa",
+      "highlights": [
+        "Portuguese inspired cuisine",
+        "Seafood and traditional Goan curries"
+      ],
+      "notes": "Closed on Tuesday",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Cavatina",
+      "city": "Goa",
+      "cuisine_type": [
+        "Modern Goan"
+      ],
+      "price_range": "INR 2500- 3000",
+      "hours": "12:30- 3pm; 7-11pm",
+      "ambience": "Chic and sophisticated fine dining",
+      "area": "Benaulim, South Goa",
+      "highlights": [
+        "Chef Avinash Martins",
+        "Contemporary take on Goan cuisine with locally-sourced ingredients",
+        "Innovative cocktails and extensive wine list"
+      ],
+      "best_for": [
+        "couples"
+      ],
+      "notes": "Closed on Monday",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Zeebop Utorda",
+      "city": "Goa",
+      "cuisine_type": [
+        "Goan",
+        "Indian"
+      ],
+      "price_range": "INR 500- 1000",
+      "hours": "10am- 11pm",
+      "ambience": "Relaxed beachside setting with coastal views",
+      "area": "Utorda Beach, South Goa",
+      "highlights": [
+        "Fresh seafood",
+        "Scenic beach location"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Jamming Goat",
+      "city": "Goa",
+      "cuisine_type": [
+        "Multi-cuisine",
+        "Seafood",
+        "Indian",
+        "International"
+      ],
+      "price_range": "INR 900- 1200",
+      "hours": "12pm- 1 am",
+      "ambience": "Vibrant beachfront atmosphere with live music",
+      "area": "Utorda, South Goa",
+      "highlights": [
+        "Popular beachfront restaurant",
+        "Live music",
+        "Wide variety of dishes"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Robin's Ark",
+      "city": "Goa",
+      "cuisine_type": [
+        "Multi-cuisine",
+        "Indian",
+        "Continental"
+      ],
+      "price_range": "INR 700-1000",
+      "hours": "12pm-11pm",
+      "ambience": "Spacious bungalow setting with outdoor seating",
+      "area": "Cavelossim, South Goa",
+      "highlights": [
+        "Full bar",
+        "Good for casual meals or special occasions"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Lazy Goose",
+      "city": "Goa",
+      "cuisine_type": [
+        "Multi-cuisine",
+        "Seafood",
+        "Continental"
+      ],
+      "price_range": "Rs 900- 1000",
+      "hours": "12pm- 12 am",
+      "ambience": "Riverside location",
+      "area": "Nerul, North Goa",
+      "highlights": [
+        "Beautiful riverside location",
+        "Wide variety of seafood"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "St. Anthony's Baga",
+      "city": "Goa",
+      "cuisine_type": [
+        "Goan",
+        "Seafood",
+        "Indian"
+      ],
+      "price_range": "₹300 - ₹500",
+      "hours": "12:00 PM - 11:00 PM",
+      "ambience": "Welcoming, relaxed beach vibe",
+      "area": "Baga, North Goa",
+      "nearby_landmarks": [
+        "Baga Beach, Goa"
+      ],
+      "highlights": [
+        "Beachfront",
+        "Traditional Goan seafood"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Brittos",
+      "city": "Goa",
+      "cuisine_type": [
+        "Goan",
+        "Seafood",
+        "Continental",
+        "Chinese"
+      ],
+      "price_range": "₹500 - ₹800",
+      "hours": "9:00 AM - 12:00 AM",
+      "ambience": "Vibrant and friendly",
+      "area": "Baga, North Goa",
+      "highlights": [
+        "Beachfront next to the beach",
+        "Wide selection of seafood and continental dishes"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Jamun",
+      "city": "Goa",
+      "cuisine_type": [
+        "Regional Indian",
+        "Goan"
+      ],
+      "price_range": "Approx. ₹1,200–₹1,800",
+      "hours": "12:00 PM to 3:30 PM (4:15 PM Fri-Sun), 7 PM - 11:30 PM",
+      "ambience": "Vibrant, cozy, casual yet elegant with purple-hued decor inspired by jamun fruit",
+      "area": "North Goa",
+      "highlights": [
+        "Goan curry and other coastal flavors"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Gunpowder",
+      "city": "Goa",
+      "cuisine_type": [
+        "South Indian",
+        "Coastal"
+      ],
+      "price_range": "Approx. ₹1,000–₹1,500",
+      "hours": "12:30 PM to 4 PM, 7 PM to 11 PM",
+      "ambience": "Chic, rustic garden setting with vibrant decor; laid-back",
+      "area": "North Goa",
+      "highlights": [
+        "South Indian with a focus on coastal flavors"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "St. Anthony's",
+      "city": "Goa",
+      "cuisine_type": [
+        "Goan",
+        "Seafood",
+        "Indian"
+      ],
+      "price_range": "₹300 - ₹500",
+      "hours": "12:00 PM - 11:00 PM",
+      "ambience": "Welcoming, relaxed beach vibe",
+      "area": "Baga",
+      "nearby_landmarks": [
+        "Baga Beach, Goa"
+      ],
+      "highlights": [
+        "Beachfront",
+        "Traditional Goan seafood"
+      ],
+      "_source_file": "Goa/Ankush_Goa Guide.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Goa Science Centre and Planetarium",
+      "city": "Goa",
+      "description": "Science centre, planetarium and 3D show",
+      "hours": "9:30 am - 6 pm",
+      "entry_fee": "Rs. 250 for the family",
+      "recommended_duration": "2-3 hrs",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Big Foot",
+      "city": "Goa",
+      "description": "Museum in South Goa",
+      "hours": "9 am - 6 pm",
+      "entry_fee": "Rs. 150 per person",
+      "recommended_duration": "1-2 hrs",
+      "_source_file": "Goa/Goa- All Inclusive Guide(1).docx",
+      "_source_date": "2025-02-06",
+      "_source_format": "new"
+    },
+    {
+      "name": "Goa Chitra Museum",
+      "city": "Goa",
+      "hours": "9 am - 6 pm",
+      "entry_fee": "Rs. 300 per person",
+      "recommended_duration": "1-2 hrs",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Private Mangrove Boat Ride",
+      "city": "Goa",
+      "description": "Pre-booking recommended",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Reis Magos Fort",
+      "city": "Goa",
+      "description": "One of the most iconic landmarks in Goa with breathtaking views of the Arabian Sea, ideal for photography and sightseeing",
+      "hours": "9:30 am - 5 pm",
+      "recommended_duration": "1-2 hrs",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Big Foot Museum",
+      "city": "Goa",
+      "hours": "9 am - 6 pm",
+      "entry_fee": "Rs. 150 per person",
+      "recommended_duration": "1-2 hrs",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Basilica of Bom Jesus",
+      "city": "Goa",
+      "hours": "8 am - 6 pm",
+      "recommended_duration": "1-2 hrs",
+      "tips": [
+        "Hire a guide; government appointed guides are available",
+        "Guide price can be negotiated to ~Rs. 300 for a family"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Chapora Fort",
+      "city": "Goa",
+      "description": "Popular landmark with stunning architecture and panoramic views of the Arabian Sea; made famous by the film Dil Chahta Hai",
+      "hours": "10 am - 5 pm",
+      "recommended_duration": "1-2 hrs",
+      "tips": [
+        "Recreate the iconic Dil Chahta Hai shot here"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Tropical Spice Plantation Tour and Lunch",
+      "city": "Goa",
+      "description": "Pre-booking recommended",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Dolphin Watching Boat Ride",
+      "city": "Goa",
+      "description": "Pre-booking recommended",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Feni and Tapas Food Trail",
+      "city": "Goa",
+      "description": "Pre-booking recommended",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Iconic Bars of South Goa",
+      "city": "Goa",
+      "description": "Pre-booking recommended",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Agro by Trance",
+      "city": "Goa",
+      "location": "10 min drive from Dabolim airport",
+      "_source_file": "Goa/Goa- All Inclusive Guide(1).docx",
+      "_source_date": "2025-02-06",
+      "_source_format": "new"
+    },
+    {
+      "name": "Heritage Village Resort and Spa",
+      "city": "Goa",
+      "location": "Beach resort with pool and other facilities",
+      "_source_file": "Goa/Goa- All Inclusive Guide(1).docx",
+      "_source_date": "2025-02-06",
+      "_source_format": "new"
+    },
+    {
+      "name": "Fairfield by Marriott Goa Benaulim",
+      "city": "Goa",
+      "location": "Benaulim, South Goa; beach is a 5 minute walk",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "name": "Taj Cidade de Goa – Heritage",
+      "city": "Goa",
+      "location": "Heritage seaside retreat with riverfront setting and colonial-style architecture, near Panjim",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx",
+      "_source_date": "2026-02-05",
+      "_source_format": "new"
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Goan Fish/Prawn Curry",
+      "city": "Goa",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Crab Xec Xec",
+      "city": "Goa",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Chicken Cafreal",
+      "city": "Goa",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Chicken Vindaloo",
+      "city": "Goa",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Balchao",
+      "city": "Goa",
+      "description": "Spicy, vinegar based",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Caldin (Caldeen)",
+      "city": "Goa",
+      "description": "Made with green chilly and coconut",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Xacuti",
+      "city": "Goa",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Shark Ambot Tik",
+      "city": "Goa",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Fish Recheado",
+      "city": "Goa",
+      "description": "Stuffed fish with a spice mix",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Bebinca",
+      "city": "Goa",
+      "description": "Goa's iconic layered dessert made with coconut milk and jaggery; eggless versions available",
+      "where_to_try": "Black Sheep Bistro, premium cafés",
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Serradura",
+      "city": "Goa",
+      "description": "Dessert",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Poee",
+      "city": "Goa",
+      "description": "Bread made with wheat bran",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Kokum Sherbet",
+      "city": "Goa",
+      "description": "Refreshing, tangy-sweet non-alcoholic drink suited to Goa's warm weather",
+      "vegetarian": "true",
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Tender coconut water",
+      "city": "Goa",
+      "where_to_try": "Beachside vendors",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    },
+    {
+      "name": "Vegetable Xacuti",
+      "city": "Goa",
+      "description": "Rich, aromatic curry made with roasted coconut, poppy seeds and warm spices; deep, nutty and flavourful",
+      "vegetarian": "true",
+      "where_to_try": "Konkani Canteen, The Fisherman's Wharf",
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Veg Caldin",
+      "city": "Goa",
+      "description": "Light, mildly spiced coconut curry with a subtle sweetness",
+      "vegetarian": "true",
+      "where_to_try": "The Fisherman's Wharf",
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Mushroom / Paneer Cafreal",
+      "city": "Goa",
+      "description": "Vibrant green masala dish made with coriander, spices and tangy notes; bold and herbaceous",
+      "vegetarian": "true",
+      "where_to_try": "Martin's Corner, Black Sheep Bistro",
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Alsande Tonak",
+      "city": "Goa",
+      "description": "Traditional Goan curry made with black-eyed peas, coconut and spices; earthy and wholesome",
+      "vegetarian": "true",
+      "where_to_try": "Viva Panjim",
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Vegetable Vindaloo",
+      "city": "Goa",
+      "description": "Tangy, spicy curry with vinegar and spices, made with vegetables or paneer instead of meat",
+      "vegetarian": "true",
+      "where_to_try": "Black Sheep Bistro",
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Poi with Vegetable Bhaji",
+      "city": "Goa",
+      "description": "Local Goan whole wheat bread served with sautéed vegetables or curry",
+      "vegetarian": "true",
+      "where_to_try": "Local bakeries and cafés in Panjim",
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Dodol",
+      "city": "Goa",
+      "description": "Dense, chewy sweet made with coconut milk, jaggery and rice flour; deep caramel-like flavour",
+      "vegetarian": "true",
+      "where_to_try": "Local sweet shops in Panjim",
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Sol Kadi",
+      "city": "Goa",
+      "description": "Cooling digestive drink made with kokum and coconut milk; slightly tangy and soothing",
+      "vegetarian": "true",
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Caldin or Caldeen",
+      "city": "Goa",
+      "description": "Made with green chilly and coconut",
+      "_source_file": "Goa/Ankush_Goa Guide.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Goa"
+      ],
+      "tip": "Use registered taxis and drivers",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    },
+    {
+      "cities": [
+        "Goa"
+      ],
+      "tip": "Keep valuables minimal and use the hotel safe for documents",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Feni",
+      "city": "Goa",
+      "category": "Alcohol",
+      "where_to_buy": [
+        "Multiple places"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Goa- All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Cashew nuts",
+      "city": "Goa",
+      "category": "Food",
+      "where_to_buy": [
+        "Zantyes Panjim",
+        "Zantyes Margao"
+      ],
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    },
+    {
+      "item": "Kokum syrup",
+      "city": "Goa",
+      "category": "Food",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    },
+    {
+      "item": "Spices (Cinnamon, Nutmeg, Pepper)",
+      "city": "Goa",
+      "category": "Food",
+      "where_to_buy": [
+        "Local spice plantations"
+      ],
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "item": "Feni (Local Goan Spirit)",
+      "city": "Goa",
+      "category": "Alcohol",
+      "where_to_buy": [
+        "Government liquor stores",
+        "Reputed wine shops across Goa"
+      ],
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Goa",
+      "service": "Nearest large hospital: Manipal Hospital, Dona Paula",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    }
+  ],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Goa",
+      "mode": "Self-drive car hire",
+      "description": "Automatic Baleno available at Rs. 3000 per day",
+      "cost": "Rs. 3000 per day",
+      "how_to_use": "Arranged through travel partner Daryl (+91 93256 82180), who drops off and picks up the car at Dabolim airport according to flight timings",
+      "_source_file": "Goa/Goa- All Inclusive Guide(1).docx",
+      "_source_date": "2025-02-06",
+      "_source_format": "new"
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Goa"
+      ],
+      "tip": "Stay hydrated",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx",
+      "_source_date": "2026-02-05",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Goa"
+      ],
+      "tip": "Avoid the midday sun",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx",
+      "_source_date": "2026-02-05",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Goa"
+      ],
+      "tip": "Carry personal medicines and a small first-aid kit",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    },
+    {
+      "cities": [
+        "Goa"
+      ],
+      "tip": "Carry a reusable water bottle",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx"
+    },
+    {
+      "cities": [
+        "Goa"
+      ],
+      "tip": "Stay hydrated and avoid the midday sun",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new"
+    }
+  ],
+  "route_guides": [
+    {
+      "city": "Goa",
+      "from": "Goa",
+      "to": "Kolhapur",
+      "stops": [
+        {
+          "name": "Shri Mahalaxmi Bhojanalaya",
+          "minutes": 120,
+          "suggested_stop": "Meal stop (94 km)"
+        },
+        {
+          "name": "Amboli Rich Resto Pure Veg Restaurant",
+          "minutes": 170,
+          "suggested_stop": "Pure veg meal (118 km)"
+        }
+      ],
+      "total_km": "223",
+      "total_time": "~5:30 hrs",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    }
+  ],
+  "season_notes": [
+    {
+      "city": "Goa",
+      "tip": "Christmas gala dinners with music, live singing, dance performances and DJ are hosted by hotels on 25 December",
+      "_source_file": "Goa/Goa- All Inclusive Guide(1).docx",
+      "_source_date": "2025-02-06",
+      "_source_format": "new"
+    },
+    {
+      "city": "Goa",
+      "tip": "In February, pack light cottons",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx",
+      "_source_date": "2026-02-05",
+      "_source_format": "new"
+    },
+    {
+      "city": "Goa",
+      "tip": "In February, carry a light shawl or jacket for evenings",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx",
+      "_source_date": "2026-02-05",
+      "_source_format": "new"
+    },
+    {
+      "city": "Goa",
+      "tip": "Wear sunscreen, a hat and sunglasses",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx",
+      "_source_date": "2026-02-05",
+      "_source_format": "new"
+    },
+    {
+      "city": "Goa",
+      "tip": "In February pack light cottons and one light shawl or jacket for evenings",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new"
+    },
+    {
+      "city": "Goa",
+      "tip": "Carry sunscreen, hat and sunglasses",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new"
+    },
+    {
+      "city": "Goa",
+      "tip": "Start temple visits early in the morning to avoid heat and crowds",
+      "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+      "_source_date": "2026-02-12",
+      "_source_format": "new"
+    },
+    {
+      "city": "Goa",
+      "tip": "The monsoon season brings a slower pace and lush green landscapes",
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new"
+    },
+    {
+      "city": "Goa",
+      "tip": "Monsoon is a quieter, more intimate time to visit Goa",
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "Goa/Goa- All Inclusive Guide(1).docx",
+    "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+    "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx",
+    "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+    "Goa/Oishee_Goa_All Inclusive Guide.docx",
+    "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+    "Goa/Ankush_Goa Guide.pdf"
+  ],
+  "currency": "INR",
+  "_currency_source": {
+    "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+    "_source_date": "2026-08-24",
+    "_source_format": "new"
+  }
+}

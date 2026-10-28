@@ -1,0 +1,822 @@
+{
+  "restaurants": [
+    {
+      "name": "The Deck Café & Bar",
+      "city": "Nusa Lembongan",
+      "cuisine_type": [
+        "Seafood",
+        "Indonesian",
+        "International"
+      ],
+      "price_range": "Approx. INR 1,000–2,500 pp",
+      "hours": "7:30 AM–10:00 PM",
+      "ambience": "Stylish waterfront café and bar above the beach with relaxed island atmosphere and sunset views",
+      "area": "Jungut Batu",
+      "highlights": [
+        "Sunset drinks",
+        "Signature cocktails"
+      ],
+      "must_try_dishes": [
+        "Fresh seafood",
+        "Nasi Goreng Kampung",
+        "Spaghetti alle Vongole"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "name": "Ginger & Jamu",
+      "city": "Nusa Lembongan",
+      "cuisine_type": [
+        "Healthy",
+        "Plant-based"
+      ],
+      "price_range": "Approx. INR 500–1,200 pp",
+      "hours": "7:30 AM–9:00 PM",
+      "ambience": "Laid-back beachfront café",
+      "highlights": [
+        "Health-focused",
+        "Plant-based options"
+      ],
+      "must_try_dishes": [
+        "Smoothie bowls",
+        "Fresh salads",
+        "Vegan mains",
+        "Raw desserts",
+        "Signature jamu"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Vegan and plant-based options available",
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "name": "The Sampan",
+      "city": "Nusa Lembongan",
+      "cuisine_type": [
+        "Indonesian",
+        "Seafood",
+        "Grill"
+      ],
+      "price_range": "Approx. INR 400–1,000 pp",
+      "hours": "6:00 AM – 10:00 PM",
+      "ambience": "Lively, casual island atmosphere",
+      "highlights": [
+        "Broad menu of local and international favourites"
+      ],
+      "must_try_dishes": [
+        "Grilled Prawns",
+        "Fried Fish",
+        "Grilled Seafood",
+        "Grilled Chicken",
+        "Beef dishes"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Jala Restaurant",
+      "city": "Nusa Lembongan",
+      "cuisine_type": [
+        "Seafood",
+        "Indonesian"
+      ],
+      "price_range": "Approx. INR 800–1,800 pp",
+      "hours": "7:00 AM – 11:00 PM",
+      "ambience": "Elegant poolside with coastal views",
+      "area": "The Acala Shri Sedana",
+      "highlights": [
+        "Menu centred on locally sourced seafood and seasonal ingredients",
+        "Ocean views in a peaceful poolside setting"
+      ],
+      "must_try_dishes": [
+        "Jimbaran-style Grilled Fish",
+        "Grilled Tuna Steak",
+        "Australian Beef Steak",
+        "Fresh Catch of the Day"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Curry Traders Restaurant and Bar",
+      "city": "Nusa Lembongan",
+      "cuisine_type": [
+        "Indian",
+        "Sri Lankan",
+        "Asian"
+      ],
+      "price_range": "Approx. INR 1,000–1,800 pp",
+      "hours": "5:00 PM–11:00 PM | 12:00 PM–11:00 PM (Sundays)",
+      "ambience": "Cosy, relaxed island vibe",
+      "highlights": [
+        "Well-loved curries and seafood"
+      ],
+      "must_try_dishes": [
+        "Goan fish curry",
+        "Butter prawns",
+        "Tandoori naan",
+        "Kulfi"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "name": "Casa Bambù Cantina",
+      "city": "Nusa Lembongan",
+      "cuisine_type": [
+        "Mexican",
+        "Italian",
+        "Indonesian"
+      ],
+      "price_range": "Approx. INR 700–1,500 pp",
+      "hours": "10:00 AM–10:00 PM",
+      "ambience": "Vibrant bamboo-built restaurant",
+      "area": "Jungutbatu main street",
+      "highlights": [
+        "Fun casual dinner with cocktails"
+      ],
+      "must_try_dishes": [
+        "Tacos",
+        "Enchiladas",
+        "Burritos",
+        "Guacamole",
+        "Margaritas"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "name": "Little Prema Warung",
+      "city": "Nusa Lembongan",
+      "cuisine_type": [
+        "Seafood",
+        "Indonesian"
+      ],
+      "price_range": "Approx. INR 250–900 pp depending on the seafood selected",
+      "hours": "9:00 AM–10:00 PM",
+      "ambience": "No-frills local warung",
+      "area": "Jungutbatu",
+      "highlights": [
+        "Fresh catch displayed and charcoal-grilled",
+        "Popular, best to go early"
+      ],
+      "must_try_dishes": [
+        "Grilled snapper",
+        "Grilled prawns",
+        "Squid or octopus satay",
+        "Grilled corn with sambal"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "notes": "Popular spot; go early in the evening before the dinner rush",
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "name": "Nisi – House of Mediterranean",
+      "city": "Nusa Lembongan",
+      "cuisine_type": [
+        "Mediterranean",
+        "Greek",
+        "Italian",
+        "Spanish"
+      ],
+      "price_range": "Approx. INR 700–1,500 pp",
+      "hours": "7:00 AM – 11:00 PM",
+      "ambience": "Stylish, air-conditioned",
+      "area": "Jungutbatu",
+      "highlights": [
+        "Greek, Italian and Spanish influences",
+        "Quality meat and seafood in an air-conditioned setting"
+      ],
+      "must_try_dishes": [
+        "Lamb Kleftiko",
+        "Beef Kefta",
+        "Chicken Souvlaki",
+        "Butter Fish",
+        "Seafood Paella",
+        "Grilled Octopus"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "La Kaban",
+      "city": "Nusa Lembongan",
+      "cuisine_type": [
+        "French",
+        "Italian"
+      ],
+      "price_range": "Approx. INR 1,200–2,500 pp",
+      "hours": "12:00 PM–10:00 PM",
+      "ambience": "Charming, intimate and sophisticated",
+      "area": "Jungutbatu",
+      "highlights": [
+        "Elegant European dishes and seafood"
+      ],
+      "must_try_dishes": [
+        "Tuna avocado tartare",
+        "Seafood pasta",
+        "Pizzas",
+        "Cheese & charcuterie board"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "name": "Kayu Lembongan",
+      "city": "Nusa Lembongan",
+      "cuisine_type": [
+        "Cafe",
+        "Comfort food",
+        "Brunch"
+      ],
+      "price_range": "Approx. INR 500–1,200 pp",
+      "hours": "7:00 AM – 10:00 PM",
+      "ambience": "Relaxed, leafy garden setting",
+      "area": "Jungutbatu",
+      "highlights": [
+        "Garden-style café with wholesome dishes, brunch favourites and comfort food"
+      ],
+      "must_try_dishes": [
+        "Royale with Cheese Burger",
+        "Turkish Eggs",
+        "Chicken dishes",
+        "Epic Salads"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Warung Ten Poh",
+      "city": "Nusa Lembongan",
+      "cuisine_type": [
+        "Indonesian",
+        "Grill"
+      ],
+      "price_range": "Approx. INR 300–700 pp",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Casual local warung",
+      "highlights": [
+        "Authentic local flavours, grilled meats and seafood"
+      ],
+      "must_try_dishes": [
+        "Grilled Fish",
+        "Grilled Chicken",
+        "Chicken Satay",
+        "Fresh Seafood",
+        "Indonesian rice dishes"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Warung Putu",
+      "city": "Nusa Lembongan",
+      "cuisine_type": [
+        "Balinese",
+        "Indonesian",
+        "Asian"
+      ],
+      "price_range": "Approx. INR 300–700 pp",
+      "hours": "8:30 AM – 10:00 PM",
+      "ambience": "Small, locally run, relaxed",
+      "highlights": [
+        "Authentic local food and generous portions"
+      ],
+      "must_try_dishes": [
+        "Beef Rendang",
+        "Tuna Wrapped in Banana Leaves",
+        "Grilled Chicken",
+        "Seafood",
+        "Indonesian specialities"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Bumbu Oma Bali",
+      "city": "Nusa Lembongan",
+      "cuisine_type": [
+        "Balinese",
+        "Indonesian"
+      ],
+      "price_range": "Approx. INR 300–800 pp",
+      "hours": "8:00 AM – 10:00 PM",
+      "ambience": "Relaxed",
+      "area": "Dream Beach",
+      "nearby_landmarks": [
+        "Dream Beach, Nusa Lembongan",
+        "Yellow Bridge, Nusa Lembongan"
+      ],
+      "highlights": [
+        "Highly rated local restaurant with traditional Balinese and Indonesian cuisine"
+      ],
+      "must_try_dishes": [
+        "Crispy Duck",
+        "Chicken Satay",
+        "Beef Rendang",
+        "Grilled Fish",
+        "Balinese specialities"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Sandy Bay Beach Club",
+      "city": "Nusa Lembongan",
+      "cuisine_type": [
+        "Seafood",
+        "International"
+      ],
+      "price_range": "Approx. INR 700–1,500 pp",
+      "hours": "7:00 AM – 11:00 PM",
+      "ambience": "Stylish beachfront overlooking Sandy Bay and Devil's Tear",
+      "area": "Sandy Bay",
+      "nearby_landmarks": [
+        "Devil's Tear, Nusa Lembongan"
+      ],
+      "highlights": [
+        "Beachfront dining, good for sunset dinner or relaxed lunch"
+      ],
+      "must_try_dishes": [
+        "Seafood dishes",
+        "Grilled fish",
+        "Burgers",
+        "Fresh salads"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "notes": "Menu includes pork options; choose non-pork dishes if required",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Indi Warung Lembongan Bar & Grill",
+      "city": "Nusa Lembongan",
+      "cuisine_type": [
+        "Seafood",
+        "BBQ"
+      ],
+      "price_range": "Approx. INR 300–800 pp",
+      "hours": "10:00 AM – 10:30 PM",
+      "ambience": "Casual, easy-going",
+      "area": "Mushroom Beach",
+      "highlights": [
+        "Casual seafood and BBQ dining"
+      ],
+      "must_try_dishes": [
+        "Grilled seafood",
+        "Fresh fish",
+        "BBQ dishes",
+        "Chicken"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Alponte Ristorante",
+      "city": "Nusa Lembongan",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "Approx. INR 600–1,500 pp",
+      "hours": "8:00 AM – 10:00 PM",
+      "ambience": "Charming, relaxed",
+      "area": "Jungutbatu",
+      "highlights": [
+        "Authentic Italian favourites including fresh pasta and pizza"
+      ],
+      "must_try_dishes": [
+        "Pasta",
+        "Pizza",
+        "Seafood dishes",
+        "Chicken options"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Devil's Tear",
+      "city": "Nusa Lembongan",
+      "description": "Dramatic coastal viewpoint where waves crash against limestone cliffs and send up sprays of seawater, especially spectacular when the swell is strong.",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Dream Beach",
+      "city": "Nusa Lembongan",
+      "description": "White-sand cove backed by dramatic cliffs; one of Lembongan's most photogenic beaches.",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Sandy Bay Beach Club",
+      "city": "Nusa Lembongan",
+      "description": "Beach club for sunset drinks and snacks over the ocean.",
+      "tips": [
+        "Sunset is around 6:00 PM in September; arrive 30–45 minutes earlier",
+        "Stay after sunset for the changing colours"
+      ],
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "name": "Nusa Lembongan Mangrove Forest",
+      "city": "Nusa Lembongan",
+      "description": "Quiet mangrove boat experience on a traditional wooden boat through dense greenery, with a local boatman sharing information about the mangrove ecosystem.",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Yellow Bridge",
+      "city": "Nusa Lembongan",
+      "description": "Narrow yellow suspension bridge connecting Nusa Lembongan with Nusa Ceningan over a turquoise channel; a popular photo stop.",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "D'Nusa Beach Club And Resort",
+      "city": "Nusa Lembongan",
+      "location": "Nusa Lembongan",
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "name": "d'Nusa Beach Club & Resort",
+      "city": "Nusa Lembongan",
+      "location": "Light House Beach, Jungutbatu",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Ikan Bakar",
+      "city": "Nusa Lembongan",
+      "description": "Fresh fish grilled over charcoal and served with rice and Balinese sambal.",
+      "where_to_try": "Warung Bendega Lebih, The Sampan, Jala Restaurant, Kayumanis Seaside Restaurant",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx",
+      "_source_date": "2026-10-05",
+      "_source_format": "new"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Ubud",
+        "Nusa Lembongan",
+        "Nusa Penida"
+      ],
+      "tip": "Keep valuables secured at beaches, waterfalls and during boat transfers",
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Nusa Lembongan",
+        "Nusa Penida"
+      ],
+      "tip": "Currents and waves can be strong; check conditions before swimming",
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Nusa Penida",
+        "Nusa Lembongan"
+      ],
+      "tip": "Stay well back from unprotected cliff edges and blowholes",
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Nusa Lembongan",
+        "Nusa Ceningan",
+        "Sanur"
+      ],
+      "tip": "Keep valuables secured during boat transfers and at beaches",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx",
+      "_source_date": "2026-10-05",
+      "_source_format": "new"
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Handmade jewellery, beachwear, woven accessories, locally designed clothing, small artworks, island home décor",
+      "city": "Nusa Lembongan",
+      "category": "Island Finds",
+      "where_to_buy": [
+        "Small boutiques and independent shops around Jungutbatu"
+      ],
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "item": "Handmade jewellery, beachwear, woven accessories, locally designed clothing and small artworks",
+      "city": "Nusa Lembongan",
+      "category": "Island-inspired Finds",
+      "where_to_buy": [
+        "Small boutiques and independent shops around Jungutbatu"
+      ],
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Nusa Lembongan",
+      "service": "Nusa Medica Clinic Nusa Lembongan",
+      "notes": "Open 24/7",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx",
+      "_source_date": "2026-10-05",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx"
+    },
+    {
+      "city": "Nusa Lembongan",
+      "service": "Pharmacy – Farmasi",
+      "notes": "Open 8:30 AM – 7:30 PM",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new"
+    },
+    {
+      "city": "Nusa Lembongan",
+      "service": "Medical Clinic – Nusa Medica Clinic Nusa Lembongan",
+      "notes": "Open 24/7",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new"
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Ubud",
+        "Nusa Lembongan",
+        "Nusa Ceningan",
+        "Sanur"
+      ],
+      "tip": "Download offline Google Maps and save hotel names and addresses offline",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx",
+      "_source_date": "2026-10-05",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Nusa Lembongan",
+        "Nusa Ceningan",
+        "Sanur"
+      ],
+      "tip": "Download important travel information before the Nusa Lembongan/Ceningan boat transfer",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    },
+    {
+      "cities": [
+        "Ubud",
+        "Tegallalang",
+        "Kintamani",
+        "Tampaksiring",
+        "Nusa Lembongan",
+        "Nusa Ceningan",
+        "Sanur"
+      ],
+      "tip": "Download offline Google Maps for Bali",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Ubud",
+        "Tegallalang",
+        "Kintamani",
+        "Tampaksiring",
+        "Nusa Lembongan",
+        "Nusa Ceningan",
+        "Sanur"
+      ],
+      "tip": "Save hotel names and addresses offline",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new"
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Nusa Lembongan",
+      "mode": "Boat to Nusa Penida",
+      "description": "Short crossing; shared boat with private car on Nusa Penida for sightseeing.",
+      "how_to_use": "Secure footwear and belongings and follow the crew's instructions when boarding.",
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Nusa Penida",
+        "Nusa Lembongan"
+      ],
+      "tip": "Carry motion sickness pills for boat transfers",
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Sanur",
+        "Nusa Lembongan"
+      ],
+      "tip": "Carry motion-sickness tablets for fast-boat journeys",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new"
+    }
+  ],
+  "route_guides": [
+    {
+      "city": "Nusa Lembongan",
+      "from": "Jungutbatu, Nusa Lembongan",
+      "to": "Dream Beach",
+      "stops": [
+        {
+          "name": "Yellow Bridge",
+          "minutes": 20,
+          "suggested_stop": "Photo stop"
+        },
+        {
+          "name": "Blue Lagoon",
+          "suggested_stop": "Cliff and lagoon viewpoint"
+        },
+        {
+          "name": "Lunch on Nusa Ceningan/Lembongan",
+          "minutes": 5,
+          "suggested_stop": "Lunch"
+        },
+        {
+          "name": "Devil's Tear",
+          "minutes": 5,
+          "suggested_stop": "Wave spray viewpoint"
+        },
+        {
+          "name": "Dream Beach",
+          "minutes": 2,
+          "suggested_stop": "White-sand cove"
+        }
+      ],
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx",
+      "_source_date": "2026-10-05",
+      "_source_format": "new"
+    },
+    {
+      "city": "Nusa Lembongan",
+      "from": "Nusa Lembongan",
+      "to": "Nusa Lembongan",
+      "stops": [
+        {
+          "name": "Yellow Bridge",
+          "minutes": 20,
+          "suggested_stop": "Photo stop on the suspension bridge to Nusa Ceningan"
+        },
+        {
+          "name": "Blue Lagoon",
+          "suggested_stop": "Cliff and turquoise water viewpoint"
+        },
+        {
+          "name": "Devil's Tear",
+          "minutes": 5,
+          "suggested_stop": "Watch waves crash against the cliffs"
+        },
+        {
+          "name": "Dream Beach",
+          "minutes": 2,
+          "suggested_stop": "White-sand cove and photos"
+        }
+      ],
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new"
+    }
+  ],
+  "season_notes": [
+    {
+      "city": "Nusa Lembongan",
+      "tip": "Sunset is around 6:00 PM in September; arrive 30–45 minutes early for the best experience",
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+    "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx",
+    "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx"
+  ],
+  "currency": "IDR",
+  "_currency_source": {
+    "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+    "_source_date": "2026-10-20",
+    "_source_format": "new"
+  }
+}

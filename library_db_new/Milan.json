@@ -1,0 +1,932 @@
+{
+  "restaurants": [
+    {
+      "name": "Obicà Mozzarella Bar – Duomo",
+      "city": "Milan",
+      "area": "Duomo",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "EUR 25-35 per person",
+      "hours": "10:15 AM - 12 AM",
+      "ambience": "Modern and stylish with sleek interiors and a Duomo rooftop view",
+      "highlights": [
+        "Known for fresh mozzarella, simple Italian classics and sharing plates"
+      ],
+      "must_try_dishes": [
+        "Caprese salad with buffalo mozzarella (veg)",
+        "Pizza Margherita with bufala",
+        "Spaghetti alle cozze"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Al Cantinone",
+      "city": "Milan",
+      "area": "Duomo",
+      "cuisine_type": [
+        "Milanese"
+      ],
+      "price_range": "EUR 30-40 per person",
+      "hours": "6 AM - 1 AM",
+      "ambience": "Traditional Milanese osteria with vaulted ceilings, stone walls and cozy rustic charm",
+      "nearby_landmarks": [
+        "Galleria Vittorio Emanuele II, Milan"
+      ],
+      "must_try_dishes": [
+        "Risotto alla Milanese con funghi (veg version)",
+        "Petto di pollo alla griglia",
+        "Tagliolini al salmone"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Ristorante Galleria",
+      "city": "Milan",
+      "area": "Duomo",
+      "price_range": "EUR 35-45 per person",
+      "hours": "10 AM - 10 PM",
+      "ambience": "Elegant and historic, with people-watching terrace seats and refined interiors",
+      "nearby_landmarks": [
+        "Galleria Vittorio Emanuele II, Milan"
+      ],
+      "highlights": [
+        "Located inside the Galleria Vittorio Emanuele II"
+      ],
+      "must_try_dishes": [
+        "Insalata Caprese (veg)",
+        "Sea bass fillet with lemon sauce",
+        "Chicken scaloppine al vino bianco"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Mag Café",
+      "city": "Milan",
+      "area": "Navigli",
+      "price_range": "EUR 10-12 per drink",
+      "hours": "6-9 pm",
+      "ambience": "Retro, creative cocktail bar on the Naviglio Grande; cozy, trendy, a Milanese favorite",
+      "must_try_dishes": [
+        "Inventive cocktails (twists on Negroni, Spritz)"
+      ],
+      "notes": "Aperitivo spot",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Spritz Navigli",
+      "city": "Milan",
+      "area": "Navigli",
+      "price_range": "EUR 8-10 per drink",
+      "hours": "6-9 pm",
+      "ambience": "Laid-back and fun, overlooking the canal; casual but buzzing with locals",
+      "must_try_dishes": [
+        "Aperol and Campari spritz",
+        "Wine",
+        "Beers"
+      ],
+      "notes": "Aperitivo spot",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Manhattan Navigli",
+      "city": "Milan",
+      "area": "Navigli",
+      "price_range": "EUR 10-12 per drink",
+      "hours": "6:30-9:30 pm",
+      "ambience": "Trendy bar with indoor seating and a canal-side terrace",
+      "must_try_dishes": [
+        "Signature cocktails",
+        "Spritzes"
+      ],
+      "notes": "Aperitivo spot",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Trattoria Madonnina",
+      "city": "Milan",
+      "area": "Navigli",
+      "cuisine_type": [
+        "Milanese"
+      ],
+      "price_range": "EUR 20-40 per person",
+      "hours": "12 PM - 3 PM",
+      "ambience": "Retro-charming with checkered tablecloths, rustic décor and modest outdoor seating; relaxed and quintessentially Milanese",
+      "must_try_dishes": [
+        "Risotto alla Milanese",
+        "Risotto con ossobuco"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Osteria del Binari",
+      "city": "Milan",
+      "area": "Navigli",
+      "price_range": "EUR 30-40 per person",
+      "hours": "12:30 PM - 3:30 PM",
+      "ambience": "Charming, intimate osteria with classic ambiance; ideal for cozy dinners",
+      "must_try_dishes": [
+        "Mezzelune ortolane su vellutata di rapa rossa allo zenzero (vegetable-filled pasta on beetroot-ginger cream sauce)"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Ai Balestrari Sul Naviglio Pavese",
+      "city": "Milan",
+      "area": "Navigli",
+      "price_range": "EUR 20-30 per person",
+      "hours": "12 PM - 3 PM",
+      "ambience": "Rustic, tavern-style with outdoor tables overlooking the Naviglio Pavese; romantic and relaxed",
+      "must_try_dishes": [
+        "Cacio e pepe",
+        "Wood-oven pizzas",
+        "Supplì (fried rice balls)"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Joia",
+      "city": "Milan",
+      "cuisine_type": [
+        "Vegetarian",
+        "Fine dining"
+      ],
+      "price_range": "Approx. INR 6,000–10,000 per person",
+      "hours": "12:30 PM – 1:30 PM | 7:30 - 9:30 PM; closed Sunday & Monday",
+      "highlights": [
+        "Luxury vegetarian dining"
+      ],
+      "must_try_dishes": [
+        "Seasonal tasting menu",
+        "Truffle dishes",
+        "Gourmet desserts"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Flower Burger Milano",
+      "city": "Milan",
+      "cuisine_type": [
+        "Vegan",
+        "Burgers"
+      ],
+      "price_range": "Approx. INR 2,000–4,000 per person",
+      "hours": "12:00 PM – 3:00 PM | 7–10:15 pm",
+      "highlights": [
+        "Casual fun dinner"
+      ],
+      "must_try_dishes": [
+        "Vegan burgers",
+        "Loaded fries",
+        "Desserts"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Piz Milano",
+      "city": "Milan",
+      "cuisine_type": [
+        "Italian",
+        "Pizza"
+      ],
+      "price_range": "Approx. INR 2,500–4,500 per person",
+      "hours": "12:00 PM – 3:00 PM | 7:00 - 11:00 PM",
+      "area": "Duomo area",
+      "highlights": [
+        "Authentic Italian dinner"
+      ],
+      "must_try_dishes": [
+        "Margherita pizza",
+        "Burrata pizza",
+        "Tiramisu"
+      ],
+      "nearby_landmarks": [
+        "Duomo di Milano, Milan"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Biancolatte",
+      "city": "Milan",
+      "cuisine_type": [
+        "Café",
+        "Bakery"
+      ],
+      "price_range": "Approx. INR 1,500–3,000 per person",
+      "hours": "From 7:30 AM - 11:00 PM (Saturday & Sunday 8:30 AM - 11:00 PM)",
+      "ambience": "Stylish Milanese café with elegant interiors",
+      "highlights": [
+        "Fresh pastries",
+        "Artisanal coffee"
+      ],
+      "must_try_dishes": [
+        "Croissants",
+        "Cappuccino",
+        "Yogurt bowls"
+      ],
+      "meal_slots": [
+        "breakfast"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Pavé",
+      "city": "Milan",
+      "cuisine_type": [
+        "Bakery",
+        "Café"
+      ],
+      "price_range": "Approx. INR 1,500–2,500 per person",
+      "hours": "From 8:00 AM - 7:00 PM",
+      "ambience": "Warm interiors",
+      "highlights": [
+        "Artisan bakery café",
+        "Freshly baked breakfast selections"
+      ],
+      "must_try_dishes": [
+        "Brioche",
+        "Focaccia",
+        "Espresso"
+      ],
+      "meal_slots": [
+        "breakfast"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "California Bakery",
+      "city": "Milan",
+      "cuisine_type": [
+        "Café",
+        "American breakfast"
+      ],
+      "price_range": "Approx. INR 1,500–3,000 per person",
+      "hours": "From 9:00 AM - 8:00 PM",
+      "ambience": "Lively",
+      "highlights": [
+        "Generous vegetarian breakfast options",
+        "Excellent coffee"
+      ],
+      "must_try_dishes": [
+        "Pancakes",
+        "Avocado toast",
+        "Hot chocolate"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "breakfast"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Duomo di Milano",
+      "city": "Milan",
+      "description": "Gothic cathedral with intricate marble façade and lively piazza.",
+      "tips": [
+        "Especially beautiful at sunset and in the evening"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Galleria Vittorio Emanuele II",
+      "city": "Milan",
+      "description": "Historic glass-covered arcade beside the Duomo with luxury boutiques and cafés.",
+      "entry_fee": "Free to explore",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Brera District",
+      "city": "Milan",
+      "description": "Cobbled streets, art galleries and boutique shops near Piazza della Scala (La Scala Opera House)",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Navigli District",
+      "city": "Milan",
+      "description": "Canals designed by Leonardo da Vinci with cafés, vintage shops and art studios",
+      "tips": [
+        "Aperitivo hours begin around 5:30-6 pm"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "La Scala",
+      "city": "Milan",
+      "description": "World-renowned opera house, with guided tours covering its history",
+      "_source_file": "Italy/Italy- Final Itinerary with booking links.pdf",
+      "_source_date": "2024-12-31",
+      "_source_format": "old"
+    },
+    {
+      "name": "Castello Sforzesco",
+      "city": "Milan",
+      "description": "Grand castle that has served as a fortress, a palace and a museum",
+      "_source_file": "Italy/Italy- Final Itinerary with booking links.pdf",
+      "_source_date": "2024-12-31",
+      "_source_format": "old"
+    },
+    {
+      "name": "Parco Sempione",
+      "city": "Milan",
+      "description": "Beautiful park, perfect for a picnic or a leisurely stroll",
+      "_source_file": "Italy/Italy- Final Itinerary with booking links.pdf",
+      "_source_date": "2024-12-31",
+      "_source_format": "old"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Residenza Cenisio",
+      "city": "Milan",
+      "location": "About 5 mins walk from Cenisio Metro Station (M5 line)",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Risotto alla Milanese",
+      "city": "Milan",
+      "description": "Creamy saffron-infused risotto; vegetarian version available.",
+      "vegetarian": true,
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Supplì",
+      "city": "Milan",
+      "description": "Fried rice balls",
+      "where_to_try": "Ai Balestrari Sul Naviglio Pavese",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Pizza Margherita",
+      "city": "Milan",
+      "description": "Tomato, mozzarella and basil pizza.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Caprese Salad",
+      "city": "Milan",
+      "description": "Fresh mozzarella, tomatoes, basil and olive oil.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Cornetto + Cappuccino",
+      "city": "Milan",
+      "description": "Italian croissant paired with espresso or cappuccino, a classic breakfast.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Risotto ai Funghi Porcini",
+      "city": "Milan",
+      "description": "Creamy risotto with porcini mushrooms, especially in northern Italy",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Milan"
+      ],
+      "tip": "Petty theft is common; use cross-body bags and avoid wallets in back pockets",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Milan",
+        "Rome",
+        "Venice"
+      ],
+      "tip": "Keep bags in front and stay alert at Milano Centrale, Roma Termini and Venezia Santa Lucia",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Milan",
+        "Rome",
+        "Venice"
+      ],
+      "tip": "Keep luggage in sight and never leave bags unattended at Milano Centrale, Roma Termini and Venezia Santa Lucia",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Milan",
+        "Rome",
+        "Venice"
+      ],
+      "tip": "Keep bags in front in crowded areas and avoid loose pockets for phones and wallets",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Paris",
+        "Interlaken",
+        "Lucerne",
+        "Milan",
+        "Venice",
+        "Pienza",
+        "Amalfi",
+        "Rome"
+      ],
+      "tip": "Stay alert in crowded tourist spots such as the Eiffel Tower, Colosseum, train stations and Lucerne's bridge",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Paris",
+        "Interlaken",
+        "Lucerne",
+        "Milan",
+        "Venice",
+        "Pienza",
+        "Amalfi",
+        "Rome"
+      ],
+      "tip": "Keep valuables in a money belt or crossbody bag and avoid backpacks in metros",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Paris",
+        "Interlaken",
+        "Lucerne",
+        "Milan",
+        "Venice",
+        "Pienza",
+        "Amalfi",
+        "Rome"
+      ],
+      "tip": "Use registered taxis or rideshares and confirm the fare before entering",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Paris",
+        "Interlaken",
+        "Lucerne",
+        "Milan",
+        "Venice",
+        "Pienza",
+        "Amalfi",
+        "Rome"
+      ],
+      "tip": "Withdraw cash only from ATMs inside banks or shopping centers",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Paris",
+        "Interlaken",
+        "Lucerne",
+        "Milan",
+        "Venice",
+        "Pienza",
+        "Amalfi",
+        "Rome"
+      ],
+      "tip": "Avoid poorly lit alleys at night, especially around train stations",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Paris",
+        "Interlaken",
+        "Lucerne",
+        "Milan",
+        "Venice",
+        "Pienza",
+        "Amalfi",
+        "Rome"
+      ],
+      "tip": "Keep photocopies of passport and visa separately from the originals",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Designer Fashion & Accessories",
+      "city": "Milan",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Galleria Vittorio Emanuele II",
+        "Quadrilatero della Moda"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "item": "Italian Espresso & Coffee Blends",
+      "city": "Milan",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Caffè Vergnano",
+        "Lavazza flagship shops"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "item": "Panettone & Traditional Sweets",
+      "city": "Milan",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Pasticceria Marchesi",
+        "Peck"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "item": "Murano Glass Jewellery",
+      "city": "Milan",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "Specialty boutiques near Duomo"
+      ],
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "item": "Italian leather goods",
+      "city": "Milan",
+      "category": "Fashion",
+      "where_to_buy": [],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Designer accessories (scarves, sunglasses, perfumes)",
+      "city": "Milan",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Serravalle Designer Outlet"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Milan Design Stationery",
+      "city": "Milan",
+      "category": "Stationery",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "item": "Design stationery",
+      "city": "Milan",
+      "category": "Stationery",
+      "where_to_buy": [],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "item": "Panettone, gourmet coffee, risotto rice (Carnaroli/Arborio)",
+      "city": "Milan",
+      "category": "Food & gourmet",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old",
+      "_replaced_from": "France/Paris, Switzerland and Italy.pdf"
+    },
+    {
+      "item": "High-fashion accessories, leather goods, designer scarves, sleek stationery",
+      "city": "Milan",
+      "category": "Crafts & lifestyle",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "item": "Leather goods, designer scarves, sleek stationery, high-fashion accessories",
+      "city": "Milan",
+      "category": "Crafts & lifestyle",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old"
+    },
+    {
+      "item": "Franciacorta",
+      "city": "Milan",
+      "category": "Drinks",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Milan",
+        "Venice",
+        "Rome"
+      ],
+      "tip": "Italian SIM cards are sold at Milano Centrale, Venice Mestre / Santa Lucia kiosks and Rome Termini; passport required for registration",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Geneva",
+        "Zurich",
+        "Milan",
+        "Venice",
+        "Florence",
+        "Rome"
+      ],
+      "tip": "Download offline maps for Switzerland and northern and central Italy",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Geneva",
+        "Zurich",
+        "Milan",
+        "Venice",
+        "Florence",
+        "Rome"
+      ],
+      "tip": "Upload photos only on WiFi and avoid streaming on trains unless on an unlimited plan",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Milan",
+      "mode": "Metro, tram and bus",
+      "description": "1-Day ATM Public Transport Pass with unlimited travel for 24 hours",
+      "recommended_pass": "1-Day ATM Public Transport Pass",
+      "cost": "€7.60 per adult",
+      "covers": "Metro, trams and buses; useful for the Duomo, Navigli and Brera",
+      "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+      "_source_date": "2025-09-13",
+      "_source_format": "new"
+    },
+    {
+      "city": "Milan",
+      "mode": "Metro",
+      "description": "Metro M5 Line serves Cenisio; Centrale FS connects to Cenisio in ~20–25 mins; Cenisio to Duomo ~15 mins",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "city": "Milan",
+      "mode": "Shuttle to Serravalle Designer Outlet",
+      "description": "Direct shuttle from Milano Centrale, ~1 hr 15 mins each way (return ~1 hr 30 mins)",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "city": "Milan",
+      "mode": "Italo high-speed train to Venice",
+      "description": "Milano Centrale to Venezia Santa Lucia, ~2 hrs 30 mins; Prima Business class available with Fast Track",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "city": "Milan",
+      "mode": "Metro",
+      "description": "Metro M5 line from Centrale FS to Cenisio; Duomo reachable by metro.",
+      "how_to_use": "Use Milan's metro for transfers between Milano Centrale, hotels and the city centre.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "city": "Milan",
+      "mode": "Shuttle bus",
+      "description": "Direct shuttle services from Milano Centrale to Serravalle Designer Outlet and back.",
+      "how_to_use": "Board at Milano Centrale; return from the Serravalle Outlet shuttle stop.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "city": "Milan",
+      "mode": "High-speed train",
+      "description": "Italo high-speed train from Milano Centrale to Venezia Santa Lucia.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "city": "Milan",
+      "mode": "Public transport",
+      "description": "1-Day Public Transport Pass is worth it for sightseeing",
+      "recommended_pass": "1-Day Public Transport Pass",
+      "cost": "€7.60 per person",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "city": "Milan",
+      "mode": "Pass",
+      "description": "1-Day Public Transport Pass",
+      "recommended_pass": "Milan 1-Day Public Transport Pass",
+      "cost": "€7.60 per person",
+      "how_to_use": "Kids 11 years old travel free any day if accompanied by a paying adult",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old"
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Milan"
+      ],
+      "tip": "BENU Farmacia Milano N. 72 is ~10 mins walk from Residenza Cenisio (closed Sundays)",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Milan"
+      ],
+      "tip": "Santagostino medical centre is ~7 mins walk from Residenza Cenisio (7:30 AM – 8:30 PM, closed Sundays)",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Milan"
+      ],
+      "tip": "BENU Farmacia Milano N. 72 is a pharmacy in Milan",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Milan"
+      ],
+      "tip": "Santagostino is a medical centre in Milan",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    }
+  ],
+  "route_guides": [
+    {
+      "city": "Milan",
+      "from": "Milan",
+      "to": "Venice",
+      "total_time": "2 hr 28 min by train",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old"
+    }
+  ],
+  "season_notes": [],
+  "source_files": [
+    "Europe/Tejas - Europe All Inclusive Guide(1).docx",
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+    "Europe/Kunal_Europe_All Inclusive Guide.docx",
+    "France/Paris, Switzerland and Italy.pdf",
+    "Italy/Italy- Final Itinerary with booking links.pdf",
+    "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf"
+  ],
+  "currency": "EUR",
+  "_currency_source": {
+    "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+    "_source_date": "2026-05-04",
+    "_source_format": "new"
+  }
+}

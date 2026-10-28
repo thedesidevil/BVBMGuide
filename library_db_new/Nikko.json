@@ -1,0 +1,286 @@
+{
+  "restaurants": [
+    {
+      "name": "Meiji no Yakata",
+      "city": "Nikko",
+      "cuisine_type": [
+        "Western-Japanese fusion"
+      ],
+      "price_range": "₹1,500–2,500",
+      "hours": "11:00 AM – 7:30 PM",
+      "highlights": [
+        "Heritage-style dining"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Vegetarian options adaptable",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_date": "2026-04-01",
+      "_source_format": "new"
+    },
+    {
+      "name": "Hippari Dako",
+      "city": "Nikko",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹1,000–1,800",
+      "hours": "11:00 AM – 3:00 PM",
+      "highlights": [
+        "Local Japanese eatery",
+        "Casual, authentic vibe"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Veg options available",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_date": "2026-04-01",
+      "_source_format": "new"
+    },
+    {
+      "name": "Soba Shop Meiji no Yakata Annex",
+      "city": "Nikko",
+      "cuisine_type": [
+        "Soba",
+        "Japanese"
+      ],
+      "price_range": "₹800–1,500",
+      "hours": "11:00 AM – 7:30 PM",
+      "highlights": [
+        "Handmade soba noodles",
+        "Regional speciality"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Request veg broth",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_date": "2026-04-01",
+      "_source_format": "new"
+    },
+    {
+      "name": "Cafe the Season",
+      "city": "Nikko",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹800–1,500",
+      "hours": "11:00 AM – 7:00 PM",
+      "highlights": [
+        "Light meals, sandwiches, desserts",
+        "Relaxed café-style lunch"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_date": "2026-04-01",
+      "_source_format": "new"
+    },
+    {
+      "name": "Kegon Cafe and nearby food stalls",
+      "city": "Nikko",
+      "cuisine_type": [
+        "Café",
+        "Japanese snacks"
+      ],
+      "price_range": "¥300–¥1,000 for snacks",
+      "hours": "Approx. 8:30 AM–5 PM; stalls vary",
+      "area": "Kegon Falls",
+      "nearby_landmarks": [
+        "Kegon Waterfall, Nikko"
+      ],
+      "must_try_dishes": [
+        "Yuba croquette",
+        "Grilled konnyaku skewers"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    },
+    {
+      "name": "ZEN RESORT NIKKO",
+      "city": "Nikko",
+      "cuisine_type": [
+        "Japanese",
+        "Western-influenced"
+      ],
+      "price_range": "¥2,000–¥3,500 per person",
+      "hours": "Lunch 10:30 AM–4 PM; café 10:30 AM–4:30 PM",
+      "ambience": "Contemporary, lakeside with mountain views",
+      "area": "Lake Chuzenji",
+      "nearby_landmarks": [
+        "Lake Chuzenji, Nikko"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Nikko Day Trip",
+      "city": "Nikko",
+      "description": "Guided day trip from Tokyo to discover Nikko's natural beauty and history; guide meets at HANDS Ginza in front of the Diesel Shop (exit C8 from Ginza Station), tour departs 7 am",
+      "tips": [
+        "Arrive at the meeting point by 6:50 am"
+      ],
+      "_source_file": "Japan/All Inclusive Guide- Japan_PN(1).docx",
+      "_source_date": "2025-03-19",
+      "_source_format": "old"
+    },
+    {
+      "name": "Shinkyo Bridge",
+      "city": "Nikko",
+      "description": "Striking red bridge at the entrance to Nikko’s shrine area over the Daiya River",
+      "hours": "9:30 AM-3:30 PM",
+      "entry_fee": "Viewing from public areas is free",
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new",
+      "_replaced_from": "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Rinno-ji Temple",
+      "city": "Nikko",
+      "description": "Calm and historically significant Buddhist temple in the Nikko UNESCO complex",
+      "hours": "8:00 AM – 4:00 PM",
+      "entry_fee": "~₹300–500",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_date": "2026-04-01",
+      "_source_format": "new"
+    },
+    {
+      "name": "Toshogu Shrine",
+      "city": "Nikko",
+      "description": "Intricate, gold-accented shrine dedicated to Tokugawa Ieyasu; highlight of Nikko",
+      "hours": "9:00 AM – 4:00 PM",
+      "entry_fee": "~₹800–1,300",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_date": "2026-04-01",
+      "_source_format": "new"
+    },
+    {
+      "name": "Tamozawa Imperial Villa Memorial Park",
+      "city": "Nikko",
+      "description": "Elegant imperial retreat with peaceful gardens",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_date": "2026-04-01",
+      "_source_format": "new"
+    },
+    {
+      "name": "Kegon Falls",
+      "city": "Nikko",
+      "description": "Dramatic 100m waterfall, one of Japan's most iconic natural sights",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_date": "2026-04-01",
+      "_source_format": "new"
+    },
+    {
+      "name": "Lake Chuzenji",
+      "city": "Nikko",
+      "description": "Scenic mountain lake at the foot of Mount Nantai, known for clear water and autumn scenery",
+      "entry_fee": "Free for public lakeside areas",
+      "recommended_duration": "About 30 minutes",
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new",
+      "_replaced_from": "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Nikko Toshogu Shrine",
+      "city": "Nikko",
+      "description": "Elaborate mausoleum of Tokugawa Ieyasu with ornate carvings, Yomeimon Gate and the See No Evil monkeys",
+      "entry_fee": "Approximately ¥1,600 per adult for the grounds; additional areas may need separate admission",
+      "recommended_duration": "About 2.5 hours",
+      "tips": [
+        "Steps and uneven surfaces; wear comfortable shoes"
+      ],
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    },
+    {
+      "name": "Kegon Waterfall",
+      "city": "Nikko",
+      "description": "Waterfall of about 97 metres plunging from Lake Chuzenji into a forested gorge; optional elevator to lower platform",
+      "hours": "Elevator typically 8:00 AM–5:00 PM in November; last entry about 20 minutes before closing",
+      "entry_fee": "Elevator approximately ¥570 per adult",
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Yuba (Tofu Skin)",
+      "city": "Nikko",
+      "description": "Local speciality served simmered, in soups or over rice",
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    },
+    {
+      "name": "Yuba-don",
+      "city": "Nikko",
+      "description": "Cooked tofu skin over rice with a savoury sauce",
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    },
+    {
+      "name": "Nikko Soba",
+      "city": "Nikko",
+      "description": "Buckwheat noodles served hot or cold",
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    },
+    {
+      "name": "Dango",
+      "city": "Nikko",
+      "description": "Rice dumplings served with sweet glaze or soybean flour",
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [
+    {
+      "city": "Nikko",
+      "tip": "Autumn traffic around Nikko can delay the return journey",
+      "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+      "_source_date": "2026-10-19",
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "Japan/All Inclusive Guide- Japan_PN(1).docx",
+    "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+    "Japan/Shital- Japan- All Inclusive Guide.docx"
+  ],
+  "currency": "JPY",
+  "_currency_source": {
+    "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
+    "_source_date": "2026-10-19",
+    "_source_format": "new"
+  }
+}

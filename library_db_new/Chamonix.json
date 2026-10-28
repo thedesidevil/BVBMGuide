@@ -1,0 +1,863 @@
+{
+  "restaurants": [
+    {
+      "name": "La Calèche",
+      "city": "Chamonix",
+      "cuisine_type": [
+        "Savoyard"
+      ],
+      "price_range": "Approx. INR 3,000–4,000 per person",
+      "hours": "12–2 PM | 7–10 PM",
+      "ambience": "Traditional Savoyard alpine interiors with rustic wooden décor",
+      "area": "Chamonix",
+      "highlights": [
+        "Traditional Savoyard alpine interiors",
+        "Rustic wooden décor"
+      ],
+      "must_try_dishes": [
+        "Fondue",
+        "Raclette",
+        "Tartiflette"
+      ],
+      "best_for": [
+        "Classic mountain dining experience"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Le Panier des 4 Saisons",
+      "city": "Chamonix",
+      "cuisine_type": [
+        "French"
+      ],
+      "price_range": "Approx. INR 4,000–5,000 per person",
+      "hours": "7 PM onwards",
+      "ambience": "Intimate, refined French cuisine",
+      "area": "Chamonix",
+      "highlights": [
+        "Intimate, refined French cuisine"
+      ],
+      "must_try_dishes": [
+        "Seasonal French dishes"
+      ],
+      "best_for": [
+        "Elegant dinner option"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Munchie",
+      "city": "Chamonix",
+      "cuisine_type": [
+        "Asian fusion"
+      ],
+      "price_range": "Approx. INR 2,500–3,500 per person",
+      "hours": "6–10 PM",
+      "ambience": "Asian-fusion mountain favourite",
+      "area": "Chamonix",
+      "highlights": [
+        "Asian-fusion mountain favourite"
+      ],
+      "must_try_dishes": [
+        "Dumplings",
+        "Ramen",
+        "Stir-fries"
+      ],
+      "best_for": [
+        "Lighter, modern flavours"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Le Cap Horn",
+      "city": "Chamonix",
+      "cuisine_type": [
+        "European"
+      ],
+      "price_range": "Approx. INR 4,000–6,000 per person",
+      "hours": "12:00 PM – 2:00 PM | 7 PM - 10 PM",
+      "ambience": "Atmospheric, upscale",
+      "highlights": [
+        "One of Chamonix's most elegant dining spaces",
+        "Beautifully presented vegetarian-friendly dishes"
+      ],
+      "must_try_dishes": [
+        "Truffle risotto",
+        "Vegetable sushi",
+        "Mushroom pasta"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Atmosphère",
+      "city": "Chamonix",
+      "cuisine_type": [
+        "French",
+        "Grill"
+      ],
+      "price_range": "Approx. INR 3,000–4,000 per person",
+      "hours": "12–2 PM | 7–10 PM",
+      "ambience": "Riverside dining with glass façade",
+      "area": "Chamonix",
+      "highlights": [
+        "Riverside dining",
+        "Glass façade"
+      ],
+      "must_try_dishes": [
+        "Grilled meats",
+        "Pasta",
+        "French classics"
+      ],
+      "best_for": [
+        "Scenic dinner location"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Poco Loco",
+      "city": "Chamonix",
+      "cuisine_type": [
+        "Casual",
+        "Mexican"
+      ],
+      "price_range": "Approx. INR 2,000–3,000 per person",
+      "hours": "6–10 PM",
+      "area": "Chamonix",
+      "highlights": [
+        "Relaxed informal dining"
+      ],
+      "must_try_dishes": [
+        "Burgers",
+        "Burritos"
+      ],
+      "best_for": [
+        "Relaxed informal dinner"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Cool Cat Restaurant",
+      "city": "Chamonix",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "Approx. INR 1,800–3,000 per person",
+      "hours": "12:00 PM – 12:00 AM",
+      "ambience": "Relaxed, vibrant interiors, scenic outdoor seating",
+      "area": "Chamonix town centre",
+      "highlights": [
+        "Lively mountain-town café"
+      ],
+      "must_try_dishes": [
+        "Veg burgers",
+        "Loaded fries",
+        "Hot chocolate"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Gaufre de Chamonix",
+      "city": "Chamonix",
+      "cuisine_type": [
+        "Waffle café",
+        "Dessert"
+      ],
+      "price_range": "Approx. INR 1,000–2,000 per person",
+      "hours": "2:30 – 6:30 PM",
+      "area": "Chamonix town centre",
+      "highlights": [
+        "Sweet alpine stop"
+      ],
+      "must_try_dishes": [
+        "Belgian waffles",
+        "Nutella waffles",
+        "Cappuccino"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Rose du Pont Café",
+      "city": "Chamonix",
+      "cuisine_type": [
+        "Café",
+        "Bakery"
+      ],
+      "price_range": "Approx. INR 1,200–2,200 per person",
+      "hours": "8:00 AM – 10:30 PM",
+      "ambience": "Cozy riverside, peaceful",
+      "area": "Chamonix town centre",
+      "highlights": [
+        "Postcard-worthy alpine surroundings"
+      ],
+      "must_try_dishes": [
+        "Fresh pastries",
+        "Artisan desserts",
+        "Cappuccino"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Annapurna Restaurant",
+      "city": "Chamonix",
+      "cuisine_type": [
+        "Indian",
+        "Nepalese",
+        "Himalayan"
+      ],
+      "price_range": "Approx. INR 2,000–3,500 per person",
+      "hours": "11:30 AM – 11:00 PM",
+      "ambience": "Warm, Himalayan-inspired",
+      "highlights": [
+        "Comforting vegetarian Indian and Nepalese flavors"
+      ],
+      "must_try_dishes": [
+        "Vegetable momos",
+        "Paneer curry",
+        "Saffron rice"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "La Tablee",
+      "city": "Chamonix",
+      "cuisine_type": [
+        "Alpine bistro"
+      ],
+      "price_range": "Approx. INR 3,000–4,500 per person",
+      "hours": "12:00 PM – 5:00 PM, 6:30 PM – 10:00 PM",
+      "ambience": "Cozy chalet-style",
+      "highlights": [
+        "Refined vegetarian-friendly dishes"
+      ],
+      "must_try_dishes": [
+        "Mushroom risotto",
+        "Truffle pasta",
+        "Alpine desserts"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Restaurant Atmosphère",
+      "city": "Chamonix",
+      "cuisine_type": [
+        "European"
+      ],
+      "price_range": "Approx. INR 3,500–5,500 per person",
+      "hours": "12:00 PM – 1:30 PM | 6:30 PM - 10:00 PM",
+      "ambience": "Elegant riverside with scenic evening views",
+      "highlights": [
+        "Beautifully designed",
+        "Refined vegetarian options"
+      ],
+      "must_try_dishes": [
+        "Wild mushroom pasta",
+        "Grilled vegetables",
+        "Molten chocolate dessert"
+      ],
+      "best_for": [
+        "couples"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Satsuki",
+      "city": "Chamonix",
+      "cuisine_type": [
+        "Japanese-inspired"
+      ],
+      "price_range": "Approx. INR 3,500–5,500 per person",
+      "hours": "12:00 PM – 2:15 PM | 6:30 PM - 9:30 PM",
+      "ambience": "Modern alpine, chic",
+      "highlights": [
+        "Beautifully plated vegetarian dishes",
+        "Contemporary fine dining"
+      ],
+      "must_try_dishes": [
+        "Vegetarian sushi",
+        "Tempura vegetables",
+        "Ramen"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Sesame",
+      "city": "Chamonix",
+      "cuisine_type": [
+        "Mediterranean-Asian fusion"
+      ],
+      "price_range": "Approx. INR 1,900–2,900 per person",
+      "hours": "Daily, 10:00 AM – 11:00 PM",
+      "ambience": "Cozy alpine setting, café-style",
+      "area": "Chamonix centre",
+      "highlights": [
+        "Healthy, organic cuisine",
+        "Vegetarian-friendly"
+      ],
+      "must_try_dishes": [
+        "Vegan bowls",
+        "Tapas",
+        "Fresh smoothies",
+        "Truffle mushroom dishes"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "name": "Annapurna 2 Grill N' Curry",
+      "city": "Chamonix",
+      "cuisine_type": [
+        "North Indian"
+      ],
+      "price_range": "Approx. INR 1,900–2,900 per person",
+      "hours": "Daily, 11:30 AM – 10:30 PM",
+      "ambience": "Warm contemporary",
+      "highlights": [
+        "One of the most popular Indian restaurants in Chamonix",
+        "Excellent vegetarian options"
+      ],
+      "must_try_dishes": [
+        "Paneer butter masala",
+        "Dal makhani",
+        "Garlic naan",
+        "Biryani"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "name": "Yak",
+      "city": "Chamonix",
+      "cuisine_type": [
+        "Nepalese",
+        "Himalayan"
+      ],
+      "price_range": "Approx. INR 950–1,900 per person",
+      "hours": "12:00 PM – 2:30 PM & 6:00 PM – 9:00 PM; closed on Sunday",
+      "ambience": "Cozy interiors",
+      "highlights": [
+        "Highly rated",
+        "Flavorful dumplings",
+        "Vegetarian-friendly preparations"
+      ],
+      "must_try_dishes": [
+        "Veg momos",
+        "Tibetan noodles",
+        "Curry bowls"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Aiguille du Midi",
+      "city": "Chamonix",
+      "description": "Cable car rising to 3,842 m with panoramic views over the French, Swiss and Italian Alps, glass viewing platforms and close views of Mont Blanc.",
+      "entry_fee": "Approx. INR 7,500–9,500 per person",
+      "tips": [
+        "Go early in the morning",
+        "Paid parking near the cable car station",
+        "Carry light gloves and sun protection"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Chamonix Town Centre",
+      "city": "Chamonix",
+      "description": "Alpine town centre with wooden chalets, outdoor boutiques, bakeries and cafés.",
+      "entry_fee": "Free",
+      "tips": [
+        "Golden-hour evening walk is especially scenic"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Montenvers Railway",
+      "city": "Chamonix",
+      "description": "Historic red cogwheel train operating since 1908; about 20-minute ascent to Mer de Glace",
+      "hours": "Typically 8:30 AM – 4:30 PM (season dependent)",
+      "entry_fee": "Approx. INR 3,500–4,500 per adult",
+      "tips": [
+        "Public parking available near station"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Mer de Glace",
+      "city": "Chamonix",
+      "description": "France's largest glacier, nearly 7 km long; Ice Cave and Glaciorium museum depending on conditions",
+      "tips": [
+        "Ice cave access involves steps and may be closed depending on snow and weather",
+        "Gloves and proper footwear strongly recommended"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Les Planards",
+      "city": "Chamonix",
+      "description": "Beginner-friendly snow area with gentle sledging, snow play areas, short walks and alpine coaster (if operating)",
+      "hours": "Usually 10 AM – 5 PM (weather dependent)",
+      "entry_fee": "Pay-per-activity (~INR 1,000–2,000 depending on activity)",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Auberge du Manoir",
+      "city": "Chamonix",
+      "location": "Chalet-style boutique stay beneath Mont Blanc; hotel parking available",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Savoyard Fondue",
+      "city": "Chamonix",
+      "description": "Melted Gruyère and Emmental cheese served with bread (vegetarian)",
+      "vegetarian": true,
+      "where_to_try": "La Calèche",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Raclette",
+      "city": "Chamonix",
+      "description": "Melted Alpine cheese scraped over potatoes and vegetables",
+      "vegetarian": "true",
+      "where_to_try": "La Calèche",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Tartiflette",
+      "city": "Chamonix",
+      "where_to_try": "La Calèche",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new"
+    },
+    {
+      "name": "Poulet aux Morilles",
+      "city": "Chamonix",
+      "description": "Chicken with morel mushroom sauce, an Alpine region favourite",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Mont Blanc-themed souvenirs",
+      "city": "Chamonix",
+      "category": "Gifts",
+      "where_to_buy": [
+        "Chamonix Town Centre"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Winter accessories (gloves, beanies)",
+      "city": "Chamonix",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Outdoor boutiques for branded alpine wear"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Swiss-style alpine chocolates",
+      "city": "Chamonix",
+      "category": "Food",
+      "where_to_buy": [
+        "Chamonix Town Centre"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Herbal mountain liqueurs",
+      "city": "Chamonix",
+      "category": "Drinks",
+      "where_to_buy": [
+        "Chamonix Town Centre"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Paris",
+        "Annecy",
+        "Chamonix",
+        "Freiburg",
+        "Baden-Baden",
+        "Strasbourg",
+        "Colmar",
+        "Reims"
+      ],
+      "tip": "Use a data SIM for navigation and translation",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "cities": [
+        "Paris",
+        "Annecy",
+        "Chamonix",
+        "Freiburg",
+        "Baden-Baden",
+        "Strasbourg",
+        "Colmar",
+        "Reims"
+      ],
+      "tip": "Wi-Fi is common but mobile data is more reliable",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "cities": [
+        "Paris",
+        "Annecy",
+        "Chamonix",
+        "Freiburg",
+        "Baden-Baden",
+        "Strasbourg",
+        "Colmar",
+        "Reims"
+      ],
+      "tip": "Carry a power bank for long travel days",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Chamonix",
+      "mode": "Cable car",
+      "description": "Aiguille du Midi cable car to 3,842 m.",
+      "cost": "Approx. INR 7,500–9,500 per person",
+      "how_to_use": "Park in paid parking near the cable car station.",
+      "covers": "Ascent to Aiguille du Midi",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Chamonix"
+      ],
+      "tip": "Wear sunglasses and high-SPF sunscreen in snow areas as glare and UV reflect off snow",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Chamonix"
+      ],
+      "tip": "Wear sunglasses and sunscreen on snow because glare and reflected UV are strong",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Chamonix"
+      ],
+      "tip": "Pharmacie de la Vallée is 7 min walk from Auberge du Manoir",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Chamonix"
+      ],
+      "tip": "Pharmacie de la Vallée is ~7 mins walk from Auberge du Manoir (9:00 AM – 7:30 PM, closed Sundays)",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Chamonix"
+      ],
+      "tip": "Espace Médical du Mont Blanc medical centre is ~5 mins walk from Auberge du Manoir",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Chamonix"
+      ],
+      "tip": "Pharmacie de la Vallée is a pharmacy in Chamonix",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Chamonix"
+      ],
+      "tip": "Espace Médical du Mont Blanc is a medical centre in Chamonix",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Grindelwald",
+        "Chamonix"
+      ],
+      "tip": "Mild altitude sensitivity is possible above 2,000 m; stay hydrated, avoid heavy meals before ascent and move slowly at high viewpoints",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    }
+  ],
+  "route_guides": [
+    {
+      "city": "Chamonix",
+      "from": "Chamonix",
+      "to": "Freiburg",
+      "stops": [
+        {
+          "name": "Midway stop",
+          "suggested_stop": "Short comfort stop"
+        },
+        {
+          "name": "Freiburg"
+        }
+      ],
+      "total_km": "300",
+      "total_time": "4 – 4.5 hrs",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new",
+      "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "city": "Chamonix",
+      "from": "Chamonix",
+      "to": "Montreux",
+      "stops": [
+        {
+          "name": "Montreux Lakeside Promenade",
+          "suggested_stop": "Promenade walk"
+        },
+        {
+          "name": "Château de Chillon",
+          "minutes": 8,
+          "suggested_stop": "Medieval castle"
+        },
+        {
+          "name": "Montreux Old Town",
+          "minutes": 7,
+          "suggested_stop": "Old Town stroll"
+        }
+      ],
+      "total_time": "~2 hrs 15 mins",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    }
+  ],
+  "season_notes": [
+    {
+      "city": "Chamonix",
+      "tip": "Cable car operation and views are weather dependent",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Chamonix",
+      "tip": "Snow areas need waterproof shoes with grip, warm socks, gloves and a beanie",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Chamonix",
+      "tip": "March temperatures at altitude feel much colder than in town, even on sunny days, due to wind",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Chamonix",
+      "tip": "Aiguille du Midi operations are weather dependent and visibility can change quickly",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new"
+    },
+    {
+      "city": "Chamonix",
+      "tip": "Snow, wind and cold at elevation make gloves, beanie and waterproof shoes with grip advisable even on sunny days",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new"
+    },
+    {
+      "city": "Chamonix",
+      "tip": "Les Planards activities depend on snow conditions",
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+      "_source_date": "2026-02-21",
+      "_source_format": "new"
+    },
+    {
+      "city": "Chamonix",
+      "tip": "Gloves are important at Aiguille du Midi",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "France/Tanya and Shovit_All Inclusive Guide(1).docx",
+    "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+    "Europe/Kunal_Europe_All Inclusive Guide.docx"
+  ],
+  "currency": "EUR",
+  "_currency_source": {
+    "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
+    "_source_date": "2026-02-21",
+    "_source_format": "new"
+  }
+}

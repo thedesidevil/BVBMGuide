@@ -1,0 +1,492 @@
+{
+  "restaurants": [
+    {
+      "name": "Jamun",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Regional Indian",
+        "Goan"
+      ],
+      "price_range": "₹1,200–₹1,800 per person",
+      "hours": "12:00 PM – 3:30 PM (4:15 PM Fri-Sun), 7 PM – 11:30 PM",
+      "ambience": "Vibrant, cozy space with purple-hued decor inspired by jamun fruit; casual yet elegant",
+      "highlights": [
+        "Goan curry and coastal flavours"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx"
+    },
+    {
+      "name": "Gunpowder",
+      "city": "North Goa",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "₹800–1500 per person",
+      "hours": "12:00 PM – 11:00 PM",
+      "ambience": "Rustic, heritage-style bungalow in a Portuguese villa with leafy garden seating",
+      "area": "Assagao",
+      "highlights": [
+        "Portuguese villa setting",
+        "Garden seating"
+      ],
+      "must_try_dishes": [
+        "South Indian veg curries",
+        "Appams",
+        "Vegetable stews",
+        "Paneer ghee roast",
+        "Dosas"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx"
+    },
+    {
+      "name": "Bawri",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Contemporary Indian"
+      ],
+      "price_range": "₹800–1,200 per person",
+      "hours": "12:00 PM – 6:00 PM & 7:00 PM – 11:30 PM",
+      "ambience": "Modern, comfortable",
+      "highlights": [
+        "Polished contemporary Indian dining"
+      ],
+      "must_try_dishes": [
+        "Dal makhani",
+        "Paneer lababdar",
+        "Subzi of the day",
+        "Indian breads"
+      ],
+      "best_for": [
+        "Contemporary Indian dining"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Oishee_Goa_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Literati Bookstore & Café",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹500–800 per person",
+      "hours": "10:00 AM – 6:30 PM (Saturday, Sunday closed)",
+      "ambience": "Bookstore café in a restored Goan villa with greenery and cozy corners",
+      "area": "Calangute/Candolim belt",
+      "highlights": [
+        "Restored Goan villa",
+        "Curated book collection"
+      ],
+      "notes": "Bookstore café",
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new"
+    },
+    {
+      "name": "Mojigao",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Café",
+        "Vegetarian"
+      ],
+      "price_range": "₹800–1200 per person",
+      "hours": "8:00 AM – 10:30 PM",
+      "ambience": "Lush garden-style café with earthy, rustic vibe",
+      "area": "Assagao",
+      "highlights": [
+        "Garden setting",
+        "Beautifully plated dishes"
+      ],
+      "must_try_dishes": [
+        "Smoothie bowls",
+        "Wood-fired pizzas",
+        "Seasonal salads"
+      ],
+      "best_for": [
+        "brunch"
+      ],
+      "vegetarian_friendly": "true",
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new"
+    },
+    {
+      "name": "Artjuna",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Mediterranean",
+        "Café"
+      ],
+      "price_range": "₹800–1500 per person",
+      "hours": "7:30 AM – 10:30 PM",
+      "ambience": "Spacious bohemian café with outdoor seating, boutique store and relaxed community vibe",
+      "highlights": [
+        "Boutique store",
+        "Outdoor seating"
+      ],
+      "must_try_dishes": [
+        "Falafel platter",
+        "Hummus",
+        "Shakshuka (veg)",
+        "Smoothie bowls"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new"
+    },
+    {
+      "name": "Prana Café",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Vegan",
+        "Healthy"
+      ],
+      "price_range": "₹700–1200 per person",
+      "hours": "8:00 AM – 10:30 PM",
+      "ambience": "Wellness-focused café with a calm, minimal, conscious dining atmosphere",
+      "highlights": [
+        "Plant-based menu"
+      ],
+      "must_try_dishes": [
+        "Vegan bowls",
+        "Salads",
+        "Smoothies",
+        "Plant-based desserts"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new"
+    },
+    {
+      "name": "The Fisherman's Wharf (North Goa)",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Goan"
+      ],
+      "price_range": "₹1200–1800 per person",
+      "hours": "12:00 PM – 11:30 PM",
+      "ambience": "Riverside restaurant with lively Goan vibe and live music",
+      "highlights": [
+        "River views",
+        "Live music",
+        "Parking available"
+      ],
+      "must_try_dishes": [
+        "Veg recheado-style dishes",
+        "Goan veg curries",
+        "Starters",
+        "Mocktails"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new"
+    },
+    {
+      "name": "Pisco by the Beach",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Peruvian",
+        "Seafood"
+      ],
+      "price_range": "₹1500–2500 per person",
+      "hours": "12:30 PM – 12:00 AM",
+      "ambience": "Chic open-air beachfront restaurant with sunset views and music",
+      "highlights": [
+        "Sunset views",
+        "Lively yet relaxed vibe"
+      ],
+      "must_try_dishes": [
+        "Tres leches dessert",
+        "Pisco cocktails"
+      ],
+      "notes": "Go before 7 pm for sunset",
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new"
+    },
+    {
+      "name": "Pousada by the Beach",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Goan",
+        "Portuguese"
+      ],
+      "price_range": "₹1200–2000 per person",
+      "hours": "12:00 PM – 11:00 PM",
+      "ambience": "Peaceful, calm beachfront restaurant with direct sunset views",
+      "area": "Calangute",
+      "highlights": [
+        "Direct sunset views",
+        "Calm and scenic",
+        "Family and kid friendly"
+      ],
+      "must_try_dishes": [
+        "Veg starters",
+        "Serradura dessert"
+      ],
+      "best_for": [
+        "families"
+      ],
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new"
+    },
+    {
+      "name": "Thalassa",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "₹1500–2500 per person",
+      "hours": "9:00 AM – 12:30 AM",
+      "ambience": "Lively Greek taverna with sunset views and music",
+      "area": "Siolim",
+      "highlights": [
+        "Sunset views",
+        "Music"
+      ],
+      "must_try_dishes": [
+        "Greek salad",
+        "Mezze platters",
+        "Pita & dips"
+      ],
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new"
+    },
+    {
+      "name": "Bean Me Up",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Vegetarian",
+        "Vegan"
+      ],
+      "price_range": "₹800–1200 per person",
+      "hours": "9:00 AM – 10:30 PM",
+      "ambience": "Vegetarian and vegan café surrounded by greenery",
+      "area": "Vagator",
+      "highlights": [
+        "Wholesome meals"
+      ],
+      "must_try_dishes": [
+        "Vegan bowls",
+        "Smoothies",
+        "Breakfast platters"
+      ],
+      "vegetarian_friendly": "true",
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new"
+    },
+    {
+      "name": "The Project Café",
+      "city": "North Goa",
+      "price_range": "Approx. ₹200–1,200 per person",
+      "hours": "10:00 AM - 11:00 PM",
+      "ambience": "Relaxed",
+      "highlights": [
+        "Relaxed stop for coffee and a little something to eat"
+      ],
+      "best_for": [
+        "Coffee and a relaxed break"
+      ],
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new"
+    },
+    {
+      "name": "Babka",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Café",
+        "Bakery"
+      ],
+      "price_range": "Approx. ₹400–1,200 per person",
+      "hours": "9:00 AM – 6:30 PM (closed on Monday)",
+      "ambience": "Relaxed, charming",
+      "highlights": [
+        "Coffee with freshly prepared breads and sweet treats"
+      ],
+      "best_for": [
+        "Coffee, bakery treats and a leisurely afternoon pause"
+      ],
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new"
+    },
+    {
+      "name": "Hosa",
+      "city": "North Goa",
+      "cuisine_type": [
+        "South Indian"
+      ],
+      "price_range": "Approx. ₹800–2,000 per person",
+      "hours": "12:00 PM – 4:00 PM & 7:00 PM – 11:00 PM",
+      "ambience": "Relaxed",
+      "highlights": [
+        "South Indian-inspired menu"
+      ],
+      "best_for": [
+        "South Indian flavours and a relaxed café experience"
+      ],
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new"
+    },
+    {
+      "name": "Jamun Goa",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Regional Indian"
+      ],
+      "price_range": "₹1,200–1,800 per person",
+      "hours": "12:00 PM – 3:30 PM & 7:00 PM – 11:30 PM",
+      "ambience": "Vibrant and cosy, casual-yet-elegant, purple-hued décor inspired by the jamun fruit",
+      "highlights": [
+        "Purple-hued décor inspired by the jamun fruit"
+      ],
+      "must_try_dishes": [
+        "Tamatar Ki Chaat",
+        "Dahi Ke Kebab",
+        "Ker Sangri Kofte",
+        "Smoked Paneer Makhanwala"
+      ],
+      "best_for": [
+        "Regional Indian cuisine",
+        "Elegant dinner"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new"
+    },
+    {
+      "name": "Izumi",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "Approx. ₹1,500–2,500 per person",
+      "hours": "12:30–3:30 PM, 7–11:30 PM (closed on Tuesday)",
+      "ambience": "Contemporary and intimate",
+      "highlights": [
+        "Refined Japanese restaurant",
+        "Good for sushi and sashimi lovers"
+      ],
+      "must_try_dishes": [
+        "Veg Sushi",
+        "Sashimi",
+        "Japanese small plates"
+      ],
+      "best_for": [
+        "couples",
+        "Japanese cuisine",
+        "Date-night atmosphere"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new"
+    },
+    {
+      "name": "Petisco",
+      "city": "North Goa",
+      "cuisine_type": [
+        "Small plates",
+        "Contemporary"
+      ],
+      "price_range": "Approx. ₹1,000–1,500 per person",
+      "hours": "12:00 PM –1:00 AM",
+      "ambience": "Lively yet relaxed, social and easy-going",
+      "highlights": [
+        "Menu built around small plates and contemporary flavours"
+      ],
+      "must_try_dishes": [
+        "Small plates",
+        "Sharing dishes",
+        "Cocktails"
+      ],
+      "best_for": [
+        "friends",
+        "Sharing plates",
+        "Relaxed dining",
+        "Lively evening"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+      "_source_date": "2026-08-24",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Fort Aguada",
+      "city": "North Goa",
+      "description": "One of Goa's most iconic forts with panoramic views of the Arabian Sea and Sinquerim coastline; laterite walls and old lighthouse area",
+      "hours": "9:30 AM – 6:00 PM",
+      "entry_fee": "₹50 per person",
+      "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
+      "_source_date": "2026-03-23",
+      "_source_format": "new",
+      "_replaced_from": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx",
+    "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
+    "Goa/Oishee_Goa_All Inclusive Guide.docx",
+    "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx"
+  ],
+  "currency": "INR",
+  "_currency_source": {
+    "_source_file": "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx",
+    "_source_date": "2026-08-24",
+    "_source_format": "new"
+  }
+}

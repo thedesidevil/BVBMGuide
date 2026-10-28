@@ -1,0 +1,6085 @@
+{
+  "_blocklist": [
+    {
+      "city": "Apollo Bay",
+      "list": "restaurants",
+      "key": "bay test 1"
+    },
+    {
+      "city": "Cairns",
+      "list": "attractions",
+      "key": "koala viewing"
+    },
+    {
+      "city": "Cairns",
+      "list": "hotels",
+      "key": "airbnb"
+    },
+    {
+      "city": "Samarkand",
+      "list": "restaurants",
+      "key": "mj test 2"
+    }
+  ],
+  "_review_status": {
+    "Bangkok": {
+      "status": "pending"
+    },
+    "Pattaya": {
+      "status": "pending"
+    },
+    "Chiang Mai": {
+      "status": "pending"
+    },
+    "Langkawi": {
+      "status": "pending"
+    },
+    "Zurich": {
+      "status": "pending"
+    },
+    "Lucerne": {
+      "status": "pending"
+    },
+    "Interlaken": {
+      "status": "pending"
+    },
+    "Lauterbrunnen": {
+      "status": "pending"
+    },
+    "Venice": {
+      "status": "pending"
+    },
+    "Murano": {
+      "status": "pending"
+    },
+    "Florence": {
+      "status": "pending"
+    },
+    "Pisa": {
+      "status": "pending"
+    },
+    "Rome": {
+      "status": "pending"
+    },
+    "Schaffhausen": {
+      "status": "pending"
+    },
+    "Mysore": {
+      "status": "pending"
+    },
+    "Ooty": {
+      "status": "pending"
+    },
+    "Srirangapatna": {
+      "status": "pending"
+    },
+    "Bangalore": {
+      "status": "pending"
+    },
+    "Amsterdam": {
+      "status": "pending"
+    },
+    "Brussels": {
+      "status": "pending"
+    },
+    "Keukenhof": {
+      "status": "pending"
+    },
+    "Zaanse Schans": {
+      "status": "pending"
+    },
+    "Efteling": {
+      "status": "pending"
+    },
+    "Giethoorn": {
+      "status": "pending"
+    },
+    "Bruges": {
+      "status": "pending"
+    },
+    "Colombo": {
+      "status": "pending"
+    },
+    "Kandy": {
+      "status": "pending"
+    },
+    "Kalutara": {
+      "status": "pending"
+    },
+    "Pinnawala": {
+      "status": "pending"
+    },
+    "Mirissa": {
+      "status": "pending"
+    },
+    "Galle": {
+      "status": "pending"
+    },
+    "Geneva": {
+      "status": "pending"
+    },
+    "Paris": {
+      "status": "pending"
+    },
+    "Jungfraujoch": {
+      "status": "pending"
+    },
+    "Bern": {
+      "status": "pending"
+    },
+    "Cairns": {
+      "status": "pending"
+    },
+    "Sydney": {
+      "status": "pending"
+    },
+    "Melbourne": {
+      "status": "pending"
+    },
+    "Kuranda": {
+      "status": "pending"
+    },
+    "Yungaburra": {
+      "status": "pending"
+    },
+    "Manly": {
+      "status": "pending"
+    },
+    "Lorne": {
+      "status": "pending"
+    },
+    "Geelong": {
+      "status": "pending"
+    },
+    "Australia": {
+      "status": "pending"
+    },
+    "Twelve Apostles": {
+      "status": "pending"
+    },
+    "Hampi": {
+      "status": "pending"
+    },
+    "Anegundi": {
+      "status": "pending"
+    },
+    "Hanoi": {
+      "status": "pending"
+    },
+    "Ninh Binh": {
+      "status": "pending"
+    },
+    "Ha Long Bay": {
+      "status": "pending"
+    },
+    "London": {
+      "status": "pending"
+    },
+    "Hertford": {
+      "status": "pending"
+    },
+    "Hatfield": {
+      "status": "pending"
+    },
+    "Bibury": {
+      "status": "pending"
+    },
+    "Bourton-On-The-Water": {
+      "status": "pending"
+    },
+    "Stratford-Upon-Avon": {
+      "status": "pending"
+    },
+    "Oxford": {
+      "status": "pending"
+    },
+    "Cambridge": {
+      "status": "pending"
+    },
+    "Edinburgh": {
+      "status": "pending"
+    },
+    "Da Nang": {
+      "status": "pending"
+    },
+    "Ho Chi Minh City": {
+      "status": "pending"
+    },
+    "Hoi An": {
+      "status": "pending"
+    },
+    "Vietnam": {
+      "status": "pending"
+    },
+    "Sa Pa": {
+      "status": "pending"
+    },
+    "Phu Quoc": {
+      "status": "pending"
+    },
+    "Halong Bay": {
+      "status": "pending"
+    },
+    "Solapur": {
+      "status": "pending"
+    },
+    "Pune": {
+      "status": "pending"
+    },
+    "Shimla": {
+      "status": "pending"
+    },
+    "Kufri": {
+      "status": "pending"
+    },
+    "Mashobra": {
+      "status": "pending"
+    },
+    "Jibhi": {
+      "status": "pending"
+    },
+    "Bir Billing": {
+      "status": "pending"
+    },
+    "Shangarh": {
+      "status": "pending"
+    },
+    "Chandigarh": {
+      "status": "pending"
+    },
+    "Sri Lanka": {
+      "status": "pending"
+    },
+    "Southall": {
+      "status": "pending"
+    },
+    "Narkanda": {
+      "status": "pending"
+    },
+    "Tatapani": {
+      "status": "pending"
+    },
+    "Kasauli": {
+      "status": "pending"
+    },
+    "Pinjore": {
+      "status": "pending"
+    },
+    "Munnar": {
+      "status": "pending"
+    },
+    "Thekkady": {
+      "status": "pending"
+    },
+    "Kumarakom": {
+      "status": "pending"
+    },
+    "Kochi": {
+      "status": "pending"
+    },
+    "Ambalappuzha": {
+      "status": "pending"
+    },
+    "Kerala": {
+      "status": "pending"
+    },
+    "Tokyo": {
+      "status": "pending"
+    },
+    "Kyoto": {
+      "status": "pending"
+    },
+    "Osaka": {
+      "status": "pending"
+    },
+    "Mount Fuji": {
+      "status": "pending"
+    },
+    "Nikko": {
+      "status": "pending"
+    },
+    "Amanohashidate": {
+      "status": "pending"
+    },
+    "Ine": {
+      "status": "pending"
+    },
+    "Hiroshima": {
+      "status": "pending"
+    },
+    "Kure": {
+      "status": "pending"
+    },
+    "Nara": {
+      "status": "pending"
+    },
+    "Mt Fuji": {
+      "status": "pending"
+    },
+    "Miyajima": {
+      "status": "pending"
+    },
+    "Gangtok": {
+      "status": "pending"
+    },
+    "Darjeeling": {
+      "status": "pending"
+    },
+    "Kurseong": {
+      "status": "pending"
+    },
+    "Siliguri": {
+      "status": "pending"
+    },
+    "Hoa Lu": {
+      "status": "pending"
+    },
+    "Trang An": {
+      "status": "pending"
+    },
+    "Ba Na Hills": {
+      "status": "pending"
+    },
+    "My Tho": {
+      "status": "pending"
+    },
+    "Baku": {
+      "status": "pending"
+    },
+    "Gabala": {
+      "status": "pending"
+    },
+    "Sheki": {
+      "status": "pending"
+    },
+    "Shahdag": {
+      "status": "pending"
+    },
+    "Gobustan": {
+      "status": "pending"
+    },
+    "Absheron": {
+      "status": "pending"
+    },
+    "Luss": {
+      "status": "pending"
+    },
+    "Loch Lomond": {
+      "status": "pending"
+    },
+    "New York": {
+      "status": "pending"
+    },
+    "Washington Dc": {
+      "status": "pending"
+    },
+    "Niagara Falls": {
+      "status": "pending"
+    },
+    "Orlando": {
+      "status": "pending"
+    },
+    "Miami": {
+      "status": "pending"
+    },
+    "Shillong": {
+      "status": "pending"
+    },
+    "Dawki": {
+      "status": "pending"
+    },
+    "Mawlynnong": {
+      "status": "pending"
+    },
+    "Cherrapunjee": {
+      "status": "pending"
+    },
+    "Kaziranga": {
+      "status": "pending"
+    },
+    "Kohima": {
+      "status": "pending"
+    },
+    "Dimapur": {
+      "status": "pending"
+    },
+    "Guwahati": {
+      "status": "pending"
+    },
+    "Kisama": {
+      "status": "pending"
+    },
+    "Rhine Falls": {
+      "status": "pending"
+    },
+    "Engelberg": {
+      "status": "pending"
+    },
+    "Mürren": {
+      "status": "pending"
+    },
+    "Winterthur": {
+      "status": "pending"
+    },
+    "St. Moritz": {
+      "status": "pending"
+    },
+    "Udaipur": {
+      "status": "pending"
+    },
+    "Jaipur": {
+      "status": "pending"
+    },
+    "Rajasthan": {
+      "status": "pending"
+    },
+    "Seoul": {
+      "status": "pending"
+    },
+    "Busan": {
+      "status": "pending"
+    },
+    "Koh Samui": {
+      "status": "pending"
+    },
+    "Phuket": {
+      "status": "pending"
+    },
+    "Singapore": {
+      "status": "pending"
+    },
+    "Kurama": {
+      "status": "pending"
+    },
+    "Kibune": {
+      "status": "pending"
+    },
+    "Ine No Funaya": {
+      "status": "pending"
+    },
+    "Apollo Bay": {
+      "status": "pending"
+    },
+    "Emerald": {
+      "status": "pending"
+    },
+    "Daintree Rainforest": {
+      "status": "pending"
+    },
+    "Phillip Island": {
+      "status": "pending"
+    },
+    "Hunter Valley": {
+      "status": "pending"
+    },
+    "Newcastle": {
+      "status": "pending"
+    },
+    "Ubud": {
+      "status": "pending"
+    },
+    "Nusa Dua": {
+      "status": "pending"
+    },
+    "Seminyak": {
+      "status": "pending"
+    },
+    "Denpasar": {
+      "status": "pending"
+    },
+    "Tanah Lot": {
+      "status": "pending"
+    },
+    "Uluwatu": {
+      "status": "pending"
+    },
+    "Jimbaran": {
+      "status": "pending"
+    },
+    "Gili Trawangan": {
+      "status": "pending"
+    },
+    "Kuta": {
+      "status": "pending"
+    },
+    "Bali": {
+      "status": "pending"
+    },
+    "Padang Bai": {
+      "status": "pending"
+    },
+    "Koh Phangan": {
+      "status": "pending"
+    },
+    "Krabi": {
+      "status": "pending"
+    },
+    "Cusco": {
+      "status": "pending"
+    },
+    "Aguas Calientes": {
+      "status": "pending"
+    },
+    "Lima": {
+      "status": "pending"
+    },
+    "Puerto Maldonado": {
+      "status": "pending"
+    },
+    "Arequipa": {
+      "status": "pending"
+    },
+    "Chamarel": {
+      "status": "pending"
+    },
+    "Port Louis": {
+      "status": "pending"
+    },
+    "Bel Ombre": {
+      "status": "pending"
+    },
+    "Savanne": {
+      "status": "pending"
+    },
+    "Île Aux Cerfs": {
+      "status": "pending"
+    },
+    "Curepipe": {
+      "status": "pending"
+    },
+    "Vacoas": {
+      "status": "pending"
+    },
+    "Grand Bassin": {
+      "status": "pending"
+    },
+    "Bois Chéri": {
+      "status": "pending"
+    },
+    "Casela": {
+      "status": "pending"
+    },
+    "Grand Baie": {
+      "status": "pending"
+    },
+    "Floreal": {
+      "status": "pending"
+    },
+    "Mauritius": {
+      "status": "pending"
+    },
+    "Riche Terre": {
+      "status": "pending"
+    },
+    "Quatre Bornes": {
+      "status": "pending"
+    },
+    "Koh Larn": {
+      "status": "pending"
+    },
+    "Dubai": {
+      "status": "pending"
+    },
+    "Yas Island": {
+      "status": "pending"
+    },
+    "Abu Dhabi": {
+      "status": "pending"
+    },
+    "Ayutthaya": {
+      "status": "pending"
+    },
+    "Stirling": {
+      "status": "pending"
+    },
+    "Pitlochry": {
+      "status": "pending"
+    },
+    "Pelling": {
+      "status": "pending"
+    },
+    "Bagdogra": {
+      "status": "pending"
+    },
+    "Flic En Flac": {
+      "status": "pending"
+    },
+    "Black River Gorges": {
+      "status": "pending"
+    },
+    "North Mauritius": {
+      "status": "pending"
+    },
+    "Pamplemousses": {
+      "status": "pending"
+    },
+    "Pointe Aux Piments": {
+      "status": "pending"
+    },
+    "Mauritius Airport (Mru)": {
+      "status": "pending"
+    },
+    "Black River": {
+      "status": "pending"
+    },
+    "Nuwara Eliya": {
+      "status": "pending"
+    },
+    "Ella": {
+      "status": "pending"
+    },
+    "Kosgoda": {
+      "status": "pending"
+    },
+    "Peradeniya": {
+      "status": "pending"
+    },
+    "Ramboda": {
+      "status": "pending"
+    },
+    "Yala": {
+      "status": "pending"
+    },
+    "Ambalangoda": {
+      "status": "pending"
+    },
+    "Matale": {
+      "status": "pending"
+    },
+    "Port Blair": {
+      "status": "pending"
+    },
+    "Havelock Island": {
+      "status": "pending"
+    },
+    "Neil Island": {
+      "status": "pending"
+    },
+    "Baratang Island": {
+      "status": "pending"
+    },
+    "Chidiya Tapu": {
+      "status": "pending"
+    },
+    "Andaman Islands": {
+      "status": "pending"
+    },
+    "Bijapur": {
+      "status": "pending"
+    },
+    "Badami": {
+      "status": "pending"
+    },
+    "Sangeh": {
+      "status": "pending"
+    },
+    "Bedugul": {
+      "status": "pending"
+    },
+    "Lempuyang": {
+      "status": "pending"
+    },
+    "Tegalalang": {
+      "status": "pending"
+    },
+    "Kintamani": {
+      "status": "pending"
+    },
+    "Nusa Penida": {
+      "status": "pending"
+    },
+    "Sukawati": {
+      "status": "pending"
+    },
+    "Celuk": {
+      "status": "pending"
+    },
+    "Sanur": {
+      "status": "pending"
+    },
+    "Coorg": {
+      "status": "pending"
+    },
+    "Kabini": {
+      "status": "pending"
+    },
+    "Bentota": {
+      "status": "pending"
+    },
+    "Kurunegala": {
+      "status": "pending"
+    },
+    "Athens": {
+      "status": "pending"
+    },
+    "Mykonos": {
+      "status": "pending"
+    },
+    "Santorini": {
+      "status": "pending"
+    },
+    "Istanbul": {
+      "status": "pending"
+    },
+    "Ephesus": {
+      "status": "pending"
+    },
+    "Suzhou": {
+      "status": "pending"
+    },
+    "Hangzhou": {
+      "status": "pending"
+    },
+    "Nanjing": {
+      "status": "pending"
+    },
+    "Hong Kong": {
+      "status": "pending"
+    },
+    "Macau": {
+      "status": "pending"
+    },
+    "Yangzhou": {
+      "status": "pending"
+    },
+    "Barcelona": {
+      "status": "pending"
+    },
+    "Girona": {
+      "status": "pending"
+    },
+    "Valencia": {
+      "status": "pending"
+    },
+    "Málaga": {
+      "status": "pending"
+    },
+    "Seville": {
+      "status": "pending"
+    },
+    "Madrid": {
+      "status": "pending"
+    },
+    "Santiago De Compostela": {
+      "status": "pending"
+    },
+    "Granada": {
+      "status": "pending"
+    },
+    "Córdoba": {
+      "status": "pending"
+    },
+    "Caminito Del Rey": {
+      "status": "pending"
+    },
+    "Ronda": {
+      "status": "pending"
+    },
+    "Toledo": {
+      "status": "pending"
+    },
+    "Segovia": {
+      "status": "pending"
+    },
+    "Ávila": {
+      "status": "pending"
+    },
+    "Kuala Lumpur": {
+      "status": "pending"
+    },
+    "Genting Highlands": {
+      "status": "pending"
+    },
+    "Ipoh": {
+      "status": "pending"
+    },
+    "Penang": {
+      "status": "pending"
+    },
+    "George Town": {
+      "status": "pending"
+    },
+    "Seberang Perai": {
+      "status": "pending"
+    },
+    "Batu Gajah": {
+      "status": "pending"
+    },
+    "Kuala Sepetang": {
+      "status": "pending"
+    },
+    "Annecy": {
+      "status": "pending"
+    },
+    "Chamonix": {
+      "status": "pending"
+    },
+    "Freiburg": {
+      "status": "pending"
+    },
+    "Baden-Baden": {
+      "status": "pending"
+    },
+    "Strasbourg": {
+      "status": "pending"
+    },
+    "Colmar": {
+      "status": "pending"
+    },
+    "Reims": {
+      "status": "pending"
+    },
+    "Havelock (Swaraj Dweep)": {
+      "status": "pending"
+    },
+    "Neil Island (Shaheed Dweep)": {
+      "status": "pending"
+    },
+    "Thailand": {
+      "status": "pending"
+    },
+    "Panjim": {
+      "status": "pending"
+    },
+    "Goa": {
+      "status": "pending"
+    },
+    "Betalbatim": {
+      "status": "pending"
+    },
+    "Benaulim": {
+      "status": "pending"
+    },
+    "Margao": {
+      "status": "pending"
+    },
+    "Utorda": {
+      "status": "pending"
+    },
+    "Cavelossim": {
+      "status": "pending"
+    },
+    "Nerul": {
+      "status": "pending"
+    },
+    "Colva": {
+      "status": "pending"
+    },
+    "Tahiti": {
+      "status": "pending"
+    },
+    "Moorea": {
+      "status": "pending"
+    },
+    "Bora Bora": {
+      "status": "pending"
+    },
+    "Sentosa": {
+      "status": "pending"
+    },
+    "Key West": {
+      "status": "pending"
+    },
+    "Grindelwald": {
+      "status": "pending"
+    },
+    "Innsbruck": {
+      "status": "pending"
+    },
+    "Salzburg": {
+      "status": "pending"
+    },
+    "Hallstatt": {
+      "status": "pending"
+    },
+    "Wachau Valley": {
+      "status": "pending"
+    },
+    "Vienna": {
+      "status": "pending"
+    },
+    "Brienz": {
+      "status": "pending"
+    },
+    "Wattens": {
+      "status": "pending"
+    },
+    "Berchtesgaden": {
+      "status": "pending"
+    },
+    "Melk": {
+      "status": "pending"
+    },
+    "Dürnstein": {
+      "status": "pending"
+    },
+    "Klungkung": {
+      "status": "pending"
+    },
+    "Tanjung Benoa": {
+      "status": "pending"
+    },
+    "Bylakuppe": {
+      "status": "pending"
+    },
+    "Trou D'Eau Douce": {
+      "status": "pending"
+    },
+    "Inverness": {
+      "status": "pending"
+    },
+    "Mallaig": {
+      "status": "pending"
+    },
+    "Portree": {
+      "status": "pending"
+    },
+    "Isle Of Skye": {
+      "status": "pending"
+    },
+    "Almaty": {
+      "status": "pending"
+    },
+    "Shymbulak": {
+      "status": "pending"
+    },
+    "Issyk Lake": {
+      "status": "pending"
+    },
+    "Medeu": {
+      "status": "pending"
+    },
+    "Big Almaty Lake": {
+      "status": "pending"
+    },
+    "Tamgaly Tas": {
+      "status": "pending"
+    },
+    "Doha": {
+      "status": "pending"
+    },
+    "Locarno": {
+      "status": "pending"
+    },
+    "Tremezzo": {
+      "status": "pending"
+    },
+    "Menaggio": {
+      "status": "pending"
+    },
+    "Milan": {
+      "status": "pending"
+    },
+    "Foroglio": {
+      "status": "pending"
+    },
+    "Tenero": {
+      "status": "pending"
+    },
+    "Stans": {
+      "status": "pending"
+    },
+    "Ringgenberg": {
+      "status": "pending"
+    },
+    "Adelboden": {
+      "status": "pending"
+    },
+    "Basel": {
+      "status": "pending"
+    },
+    "Frankfurt": {
+      "status": "pending"
+    },
+    "Wertheim": {
+      "status": "pending"
+    },
+    "Zermatt": {
+      "status": "pending"
+    },
+    "Kandersteg": {
+      "status": "pending"
+    },
+    "Freiburg Im Breisgau": {
+      "status": "pending"
+    },
+    "Biel/Bienne": {
+      "status": "pending"
+    },
+    "Bamberg": {
+      "status": "pending"
+    },
+    "Como": {
+      "status": "pending"
+    },
+    "Minneriya": {
+      "status": "pending"
+    },
+    "Stow-On-The-Wold": {
+      "status": "pending"
+    },
+    "Bath": {
+      "status": "pending"
+    },
+    "Iver": {
+      "status": "pending"
+    },
+    "Stonehenge": {
+      "status": "pending"
+    },
+    "Cotswolds": {
+      "status": "pending"
+    },
+    "Windsor": {
+      "status": "pending"
+    },
+    "Palm Jumeirah": {
+      "status": "pending"
+    },
+    "Thiruvananthapuram": {
+      "status": "pending"
+    },
+    "Kovalam": {
+      "status": "pending"
+    },
+    "Kanyakumari": {
+      "status": "pending"
+    },
+    "Alleppey": {
+      "status": "pending"
+    },
+    "Brighton": {
+      "status": "pending"
+    },
+    "Broadway": {
+      "status": "pending"
+    },
+    "Gloucester": {
+      "status": "pending"
+    },
+    "Castle Combe": {
+      "status": "pending"
+    },
+    "Seven Sisters": {
+      "status": "pending"
+    },
+    "Jodhpur": {
+      "status": "pending"
+    },
+    "Kumbhalgarh": {
+      "status": "pending"
+    },
+    "Narlai": {
+      "status": "pending"
+    },
+    "Abhaneri": {
+      "status": "pending"
+    },
+    "Guda Bishnoi": {
+      "status": "pending"
+    },
+    "Pushkar": {
+      "status": "pending"
+    },
+    "Ranthambore": {
+      "status": "pending"
+    },
+    "Nathula Pass": {
+      "status": "pending"
+    },
+    "Kolhapur": {
+      "status": "pending"
+    },
+    "Chitradurga": {
+      "status": "pending"
+    },
+    "Batu Ferringhi": {
+      "status": "pending"
+    },
+    "Batu Caves": {
+      "status": "pending"
+    },
+    "North Goa": {
+      "status": "pending"
+    },
+    "Ponda": {
+      "status": "pending"
+    },
+    "Old Goa": {
+      "status": "pending"
+    },
+    "Fontainhas": {
+      "status": "pending"
+    },
+    "Ratnapura": {
+      "status": "pending"
+    },
+    "Kawaguchiko": {
+      "status": "pending"
+    },
+    "Dalhousie": {
+      "status": "pending"
+    },
+    "Khajjiar": {
+      "status": "pending"
+    },
+    "Mcleod Ganj": {
+      "status": "pending"
+    },
+    "Palampur": {
+      "status": "pending"
+    },
+    "Dharamshala": {
+      "status": "pending"
+    },
+    "Amritsar": {
+      "status": "pending"
+    },
+    "Ao Nang": {
+      "status": "pending"
+    },
+    "Patong": {
+      "status": "pending"
+    },
+    "Phi Phi Islands": {
+      "status": "pending"
+    },
+    "Mactan": {
+      "status": "pending"
+    },
+    "Cebu City": {
+      "status": "pending"
+    },
+    "Cordova": {
+      "status": "pending"
+    },
+    "Minglanilla": {
+      "status": "pending"
+    },
+    "Pererenan": {
+      "status": "pending"
+    },
+    "Lake Kawaguchiko": {
+      "status": "pending"
+    },
+    "Japan": {
+      "status": "pending"
+    },
+    "Bambolim": {
+      "status": "pending"
+    },
+    "South Goa": {
+      "status": "pending"
+    },
+    "Awaji Island": {
+      "status": "pending"
+    },
+    "Arashiyama": {
+      "status": "pending"
+    },
+    "Hakone": {
+      "status": "pending"
+    },
+    "Kamakura": {
+      "status": "pending"
+    },
+    "Enoshima": {
+      "status": "pending"
+    },
+    "Velankanni": {
+      "status": "pending"
+    },
+    "Pondicherry": {
+      "status": "pending"
+    },
+    "Auroville": {
+      "status": "pending"
+    },
+    "Chennai": {
+      "status": "pending"
+    },
+    "Trichy": {
+      "status": "pending"
+    },
+    "Tashkent": {
+      "status": "pending"
+    },
+    "Bukhara": {
+      "status": "pending"
+    },
+    "Samarkand": {
+      "status": "pending"
+    },
+    "Kolsai Lakes": {
+      "status": "pending"
+    },
+    "Charyn Canyon": {
+      "status": "pending"
+    },
+    "Oshino": {
+      "status": "pending"
+    },
+    "Sapa": {
+      "status": "pending"
+    },
+    "Mekong Delta": {
+      "status": "pending"
+    },
+    "Kalimpong": {
+      "status": "pending"
+    },
+    "Mount Rigi": {
+      "status": "pending"
+    },
+    "Gimmelwald": {
+      "status": "pending"
+    },
+    "Gornergrat": {
+      "status": "pending"
+    },
+    "Shivamogga": {
+      "status": "pending"
+    },
+    "Chikkamagaluru": {
+      "status": "pending"
+    },
+    "Dharmasthala": {
+      "status": "pending"
+    },
+    "Thirthahalli": {
+      "status": "pending"
+    },
+    "Sakrebyle": {
+      "status": "pending"
+    },
+    "Sringeri": {
+      "status": "pending"
+    },
+    "Karnataka": {
+      "status": "pending"
+    },
+    "Hyderabad": {
+      "status": "pending"
+    },
+    "Disneyland Paris": {
+      "status": "pending"
+    },
+    "Sun Siyam Olhuveli": {
+      "status": "pending"
+    },
+    "Malé": {
+      "status": "pending"
+    },
+    "Hulhumalé": {
+      "status": "pending"
+    },
+    "Lao Cai": {
+      "status": "pending"
+    },
+    "Cochin": {
+      "status": "pending"
+    },
+    "Athirappilly": {
+      "status": "pending"
+    },
+    "Jakhama": {
+      "status": "pending"
+    },
+    "Kigwema": {
+      "status": "pending"
+    },
+    "Pfutsero": {
+      "status": "pending"
+    },
+    "Zapami": {
+      "status": "pending"
+    },
+    "Khonoma": {
+      "status": "pending"
+    },
+    "Dzuleke": {
+      "status": "pending"
+    },
+    "Puliebadze": {
+      "status": "pending"
+    },
+    "Karangasem": {
+      "status": "pending"
+    },
+    "Ahmedabad": {
+      "status": "pending"
+    },
+    "Junagadh": {
+      "status": "pending"
+    },
+    "Somnath": {
+      "status": "pending"
+    },
+    "Dwarka": {
+      "status": "pending"
+    },
+    "Vadodara": {
+      "status": "pending"
+    },
+    "Agra": {
+      "status": "pending"
+    },
+    "Bharatpur": {
+      "status": "pending"
+    },
+    "Fatehpur Sikri": {
+      "status": "pending"
+    },
+    "Dehradun": {
+      "status": "pending"
+    },
+    "Mussoorie": {
+      "status": "pending"
+    },
+    "Kanatal": {
+      "status": "pending"
+    },
+    "Dhanaulti": {
+      "status": "pending"
+    },
+    "Uttarakhand": {
+      "status": "pending"
+    },
+    "Tegallalang": {
+      "status": "pending"
+    },
+    "Sacred Valley": {
+      "status": "pending"
+    },
+    "Machu Picchu": {
+      "status": "pending"
+    },
+    "Saligao": {
+      "status": "pending"
+    },
+    "Nagoa": {
+      "status": "pending"
+    },
+    "Assagao": {
+      "status": "pending"
+    },
+    "Reis Magos": {
+      "status": "pending"
+    },
+    "Torda": {
+      "status": "pending"
+    },
+    "Tirta Gangga": {
+      "status": "pending"
+    },
+    "Nusa Lembongan": {
+      "status": "pending"
+    },
+    "Leh": {
+      "status": "pending"
+    },
+    "Spituk": {
+      "status": "pending"
+    },
+    "Tampaksiring": {
+      "status": "pending"
+    },
+    "Nusa Ceningan": {
+      "status": "pending"
+    },
+    "Lisbon": {
+      "status": "pending"
+    },
+    "Belém": {
+      "status": "pending"
+    },
+    "Sintra": {
+      "status": "pending"
+    },
+    "Óbidos": {
+      "status": "pending"
+    },
+    "Fort Kochi": {
+      "status": "pending"
+    },
+    "Cairo": {
+      "status": "pending"
+    },
+    "Luxor": {
+      "status": "pending"
+    },
+    "Giza": {
+      "status": "pending"
+    },
+    "Saqqara": {
+      "status": "pending"
+    },
+    "Alexandria": {
+      "status": "pending"
+    },
+    "Casablanca": {
+      "status": "pending"
+    },
+    "Rabat": {
+      "status": "pending"
+    },
+    "Chefchaouen": {
+      "status": "pending"
+    },
+    "Fez": {
+      "status": "pending"
+    },
+    "Beni Mellal": {
+      "status": "pending"
+    },
+    "Marrakech": {
+      "status": "pending"
+    },
+    "Aswan": {
+      "status": "pending"
+    },
+    "Abu Simbel": {
+      "status": "pending"
+    },
+    "Kom Ombo": {
+      "status": "pending"
+    },
+    "Edfu": {
+      "status": "pending"
+    },
+    "Memphis": {
+      "status": "pending"
+    },
+    "Dahshur": {
+      "status": "pending"
+    },
+    "Almere": {
+      "status": "pending"
+    },
+    "Amalfi": {
+      "status": "pending"
+    },
+    "Salerno": {
+      "status": "pending"
+    },
+    "Selçuk": {
+      "status": "pending"
+    },
+    "Kusadasi": {
+      "status": "pending"
+    },
+    "Olympia": {
+      "status": "pending"
+    },
+    "Katakolon": {
+      "status": "pending"
+    },
+    "Zaandam": {
+      "status": "pending"
+    },
+    "Civitavecchia": {
+      "status": "pending"
+    },
+    "Eindhoven": {
+      "status": "pending"
+    },
+    "Montreux": {
+      "status": "pending"
+    },
+    "Gstaad": {
+      "status": "pending"
+    },
+    "Serravalle": {
+      "status": "pending"
+    },
+    "Venice Mestre": {
+      "status": "pending"
+    },
+    "Cinque Terre": {
+      "status": "pending"
+    },
+    "La Spezia": {
+      "status": "pending"
+    },
+    "Saanen": {
+      "status": "pending"
+    },
+    "Vernazza": {
+      "status": "pending"
+    },
+    "Monterosso Al Mare": {
+      "status": "pending"
+    },
+    "Manarola": {
+      "status": "pending"
+    },
+    "Riomaggiore": {
+      "status": "pending"
+    },
+    "Haarlem": {
+      "status": "pending"
+    },
+    "Rotterdam": {
+      "status": "pending"
+    },
+    "Cologne": {
+      "status": "pending"
+    },
+    "Bonn": {
+      "status": "pending"
+    },
+    "Versailles": {
+      "status": "pending"
+    },
+    "Mt. Rigi": {
+      "status": "pending"
+    },
+    "Chur": {
+      "status": "pending"
+    },
+    "Tirano": {
+      "status": "pending"
+    },
+    "Pienza": {
+      "status": "pending"
+    },
+    "Burano": {
+      "status": "pending"
+    },
+    "Montepulciano": {
+      "status": "pending"
+    },
+    "Ine Bay": {
+      "status": "pending"
+    },
+    "Oshino Hakkai": {
+      "status": "pending"
+    },
+    "Wengen": {
+      "status": "pending"
+    },
+    "Kashihara": {
+      "status": "pending"
+    },
+    "Fukuoka": {
+      "status": "pending"
+    },
+    "Mt Fuji Area": {
+      "status": "pending"
+    },
+    "San Quirico D'Orcia": {
+      "status": "pending"
+    },
+    "Maiori": {
+      "status": "pending"
+    },
+    "Ravello": {
+      "status": "pending"
+    },
+    "Watford": {
+      "status": "pending"
+    },
+    "Villejuif": {
+      "status": "pending"
+    },
+    "Giverny": {
+      "status": "pending"
+    },
+    "Uetendorf": {
+      "status": "pending"
+    },
+    "Switzerland": {
+      "status": "pending"
+    },
+    "Positano": {
+      "status": "pending"
+    },
+    "Naples": {
+      "status": "pending"
+    },
+    "Italy": {
+      "status": "pending"
+    },
+    "New York City": {
+      "status": "pending"
+    },
+    "Budapest": {
+      "status": "pending"
+    },
+    "Prague": {
+      "status": "pending"
+    },
+    "Český Krumlov": {
+      "status": "pending"
+    },
+    "Spitz": {
+      "status": "pending"
+    },
+    "Gosausee": {
+      "status": "pending"
+    },
+    "Weißenkirchen": {
+      "status": "pending"
+    },
+    "Djimbaran": {
+      "status": "pending"
+    },
+    "Boston": {
+      "status": "pending"
+    },
+    "Atlanta": {
+      "status": "pending"
+    },
+    "Phuntsholing": {
+      "status": "pending"
+    },
+    "Thimphu": {
+      "status": "pending"
+    },
+    "Punakha": {
+      "status": "pending"
+    },
+    "Phobjikha (Gangtey)": {
+      "status": "pending"
+    },
+    "Paro": {
+      "status": "pending"
+    }
+  },
+  "_processed_files": {
+    "Thailand/All Inclusive Guide for Bangkok and Pattaya.docx": {
+      "text_hash": "2607985ffff32acb2837c477aca096f76b3ae716",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Thailand",
+      "covered_cities": [
+        "Bangkok",
+        "Pattaya"
+      ],
+      "processed_at": "2026-10-28T08:28:38.357762+00:00"
+    },
+    "Singapore and Malaysia/All Inclusive Guide for Langkawi(1).docx": {
+      "text_hash": "9e0f91bc7e9963dab06b6ef7e54c370f1040182b",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Singapore and Malaysia",
+      "covered_cities": [
+        "Langkawi"
+      ],
+      "processed_at": "2026-10-28T08:28:38.364406+00:00"
+    },
+    "Switzerland/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy(1).docx": {
+      "text_hash": "64666d9d51e48e9627797d8e82b0b86539c7029d",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Switzerland",
+      "covered_cities": [
+        "Zurich",
+        "Schaffhausen",
+        "Lucerne",
+        "Interlaken",
+        "Lauterbrunnen",
+        "Venice",
+        "Murano",
+        "Burano",
+        "Florence",
+        "Pisa",
+        "Rome"
+      ],
+      "processed_at": "2026-10-28T08:30:13.616399+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.docx": {
+      "text_hash": "c109de384475ab7f682d74240e900b8d9fe13c94",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Bangalore",
+        "Srirangapatna",
+        "Mysore",
+        "Ooty"
+      ],
+      "processed_at": "2026-10-28T08:30:13.621495+00:00"
+    },
+    "Netherlands/All Inclusive Guide- Netherlands and Belgium(1).docx": {
+      "text_hash": "597ef5667ab4b0537cffeb41f6bf933a9b70f466",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Netherlands",
+      "covered_cities": [
+        "Amsterdam",
+        "Keukenhof",
+        "Zaanse Schans",
+        "Efteling",
+        "Giethoorn",
+        "Brussels",
+        "Bruges"
+      ],
+      "processed_at": "2026-10-28T08:30:13.632413+00:00"
+    },
+    "Srilanka/All Inclusive Guide- Sri Lanka.docx": {
+      "text_hash": "de11216d73856666374ce21c0801f647a7ce8053",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Srilanka",
+      "covered_cities": [
+        "Colombo",
+        "Pinnawala",
+        "Kandy",
+        "Kalutara",
+        "Mirissa",
+        "Galle"
+      ],
+      "processed_at": "2026-10-28T08:30:13.642963+00:00"
+    },
+    "Switzerland/All Inclusive Guide- Switzerland and Paris(1).docx": {
+      "text_hash": "a2bd2a6644c00c3eba2bd9e346f0feb8fe88236e",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Switzerland",
+      "covered_cities": [
+        "Zurich",
+        "Interlaken",
+        "Lucerne",
+        "Jungfraujoch",
+        "Lauterbrunnen",
+        "Bern",
+        "Geneva",
+        "Paris"
+      ],
+      "processed_at": "2026-10-28T08:30:13.667178+00:00"
+    },
+    "Australia/Australia- All Inclusive Guide(1).docx": {
+      "text_hash": "b3ca4a88bb92bd18bed2e486d1fa62bcc9a63391",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Australia",
+      "covered_cities": [
+        "Cairns",
+        "Kuranda",
+        "Yungaburra",
+        "Sydney",
+        "Manly",
+        "Melbourne",
+        "Lorne",
+        "Apollo Bay",
+        "Geelong"
+      ],
+      "processed_at": "2026-10-28T08:30:13.695474+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1)(1).docx": {
+      "text_hash": "f4313d278ee44ab21fb4df26ec260cd94c7286c3",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Hampi",
+        "Anegundi"
+      ],
+      "processed_at": "2026-10-28T08:30:13.710157+00:00"
+    },
+    "Vietnam/Kush_Vietnam- All Inclusive Guide(1).docx": {
+      "text_hash": "f5ae7a178907703c2281d05a294ff174af6c29a5",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Hanoi",
+        "Ha Long Bay",
+        "Ninh Binh"
+      ],
+      "processed_at": "2026-10-28T08:30:13.731024+00:00"
+    },
+    "England and Scotland/London- All Inclusive Guide(1).docx": {
+      "text_hash": "8c52448930ddc795cebfd870bc5403c7292adcac",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "England and Scotland",
+      "covered_cities": [
+        "London",
+        "Oxford",
+        "Cambridge",
+        "Hertford",
+        "Hatfield",
+        "Cotswolds",
+        "Bibury",
+        "Bourton-on-the-Water",
+        "Stratford-upon-Avon"
+      ],
+      "processed_at": "2026-10-28T08:31:12.499559+00:00"
+    },
+    "Vietnam/Vietnam- All Inclusive Guide- Shiva(1).docx": {
+      "text_hash": "e3e7a186d02e476432f65a6fb73dacb81130bb48",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Hanoi",
+        "Ha Long Bay",
+        "Da Nang",
+        "Hoi An",
+        "Ho Chi Minh City"
+      ],
+      "processed_at": "2026-10-28T08:31:59.097915+00:00"
+    },
+    "Vietnam/Vietnam- All Inclusive Guide-Antra(1).docx": {
+      "text_hash": "d31eee2a923ddc1dc054a3448f57131f83a8e354",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Hanoi",
+        "Ha Long Bay",
+        "Sa Pa",
+        "Da Nang",
+        "Hoi An"
+      ],
+      "processed_at": "2026-10-28T08:31:59.108765+00:00"
+    },
+    "Vietnam/Vietnam- All Inclusive Guide-Pallavi(1).docx": {
+      "text_hash": "e6656afeda330a4a69555acf460b14bd1feab7b0",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Hanoi",
+        "Ha Long Bay",
+        "Da Nang",
+        "Hoi An",
+        "Ho Chi Minh City"
+      ],
+      "processed_at": "2026-10-28T08:31:59.122653+00:00"
+    },
+    "Vietnam/Vietnam- All Inclusive Guide_Janice.docx": {
+      "text_hash": "1081ca210a75edf0fc93e5c27a724d56d420b316",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Hanoi",
+        "Halong Bay",
+        "Da Nang",
+        "Hoi An",
+        "Phu Quoc",
+        "Ho Chi Minh City"
+      ],
+      "processed_at": "2026-10-28T08:31:59.138521+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).docx": {
+      "text_hash": "df69364355cceeeb0155fa4084b0756f4a1d9712",
+      "order_date": "2024-10-27",
+      "fmt": "old",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Hampi",
+        "Solapur"
+      ],
+      "processed_at": "2026-10-28T08:31:59.147120+00:00"
+    },
+    "North India/Shimla and Jhibi- All Inclusive Travel Guide(1).docx": {
+      "text_hash": "08e7c6c8618009b433197cc520c1948a1491a41d",
+      "order_date": "2024-11-06",
+      "fmt": "old",
+      "folder": "North India",
+      "covered_cities": [
+        "Shimla",
+        "Kufri",
+        "Mashobra",
+        "Jibhi",
+        "Shangarh",
+        "Chandigarh",
+        "Bir Billing"
+      ],
+      "processed_at": "2026-10-28T08:31:59.163780+00:00"
+    },
+    "Vietnam/Vietnam- All Inclusive Guide_Janice(1).docx": {
+      "text_hash": "e690f825357729ee0f7826e15f3fca3ad695b11f",
+      "order_date": "2024-12-10",
+      "fmt": "old",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Hanoi",
+        "Halong Bay",
+        "Da Nang",
+        "Hoi An",
+        "Phu Quoc",
+        "Ho Chi Minh City"
+      ],
+      "processed_at": "2026-10-28T08:31:59.200739+00:00"
+    },
+    "Australia/Australia- All Inclusive Guide(2).docx": {
+      "text_hash": "26da746b30c3c4046c25b46d6d6589854bccf231",
+      "order_date": "2024-12-12",
+      "fmt": "old",
+      "folder": "Australia",
+      "covered_cities": [
+        "Cairns",
+        "Kuranda",
+        "Yungaburra",
+        "Sydney",
+        "Melbourne"
+      ],
+      "processed_at": "2026-10-28T08:32:33.955188+00:00"
+    },
+    "Srilanka/All Inclusive Guide- Sri Lanka(1).docx": {
+      "text_hash": "f2c3d87e8a2a5ea685a8593822f7b22d83b2fa9e",
+      "order_date": "2024-12-20",
+      "fmt": "old",
+      "folder": "Srilanka",
+      "covered_cities": [
+        "Colombo",
+        "Kandy",
+        "Pinnawala",
+        "Kalutara",
+        "Mirissa",
+        "Galle"
+      ],
+      "processed_at": "2026-10-28T08:32:57.009994+00:00"
+    },
+    "England and Scotland/London- All Inclusive Guide.docx": {
+      "text_hash": "be63752d5406d903c250f4de152a0980c22b8a5e",
+      "order_date": "2024-12-21",
+      "fmt": "old",
+      "folder": "England and Scotland",
+      "covered_cities": [
+        "London",
+        "Oxford",
+        "Cambridge",
+        "Hertford",
+        "Hatfield",
+        "Cotswolds",
+        "Bibury",
+        "Bourton-on-the-Water",
+        "Stratford-upon-Avon",
+        "Southall"
+      ],
+      "processed_at": "2026-10-28T08:33:03.987519+00:00"
+    },
+    "North India/All Inclusive Guide- Kufri, Shimla, Chandigarh(1).docx": {
+      "text_hash": "866228ae3ec6bd83fe6447a2fc9e16a1c9e380df",
+      "order_date": "2024-12-31",
+      "fmt": "old",
+      "folder": "North India",
+      "covered_cities": [
+        "Kufri",
+        "Shimla",
+        "Chandigarh",
+        "Narkanda",
+        "Mashobra",
+        "Tatapani",
+        "Kasauli",
+        "Pinjore",
+        "Amritsar"
+      ],
+      "processed_at": "2026-10-28T08:33:04.001318+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty(1).docx": {
+      "text_hash": "453b426b6fc42e9fbcc2ef1b7b99caec63b4d6b7",
+      "order_date": "2024-12-31",
+      "fmt": "old",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Mysore",
+        "Ooty",
+        "Srirangapatna"
+      ],
+      "processed_at": "2026-10-28T08:33:04.011182+00:00"
+    },
+    "Australia/For AI Test Australia- All Inclusive Guide.docx": {
+      "text_hash": "ec7c1221e1051b76bc75ca330620da6cee46a8ac",
+      "order_date": "2025-01-17",
+      "fmt": "old",
+      "folder": "Australia",
+      "covered_cities": [
+        "Cairns",
+        "Kuranda",
+        "Yungaburra",
+        "Sydney",
+        "Melbourne"
+      ],
+      "processed_at": "2026-10-28T08:33:33.603581+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala(1).docx": {
+      "text_hash": "be716477680609aab9d3ed0dce80f89551630f29",
+      "order_date": "2025-01-30",
+      "fmt": "old",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Munnar",
+        "Thekkady",
+        "Ambalappuzha",
+        "Kumarakom",
+        "Kochi"
+      ],
+      "processed_at": "2026-10-28T08:33:33.615380+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.docx": {
+      "text_hash": "476703c16898e996560b3c3be46d639607568be0",
+      "order_date": "2025-02-23",
+      "fmt": "old",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Munnar",
+        "Thekkady",
+        "Kumarakom",
+        "Kochi",
+        "Ambalappuzha"
+      ],
+      "processed_at": "2026-10-28T08:33:33.627988+00:00"
+    },
+    "Vietnam/Vietnam- All Inclusive Guide - Shruti(1).docx": {
+      "text_hash": "c0a08c51eb7a200f9eef37f5195d5e0392064b26",
+      "order_date": "2025-02-28",
+      "fmt": "old",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Hanoi",
+        "Ha Long Bay",
+        "Ninh Binh",
+        "Da Nang",
+        "Hoi An",
+        "Ho Chi Minh City"
+      ],
+      "processed_at": "2026-10-28T08:34:17.475320+00:00"
+    },
+    "Japan/All Inclusive Guide- Japan_PN(1).docx": {
+      "text_hash": "867bbef58e3513fa77f342e2a5a4e078f467b58e",
+      "order_date": "2025-03-19",
+      "fmt": "old",
+      "folder": "Japan",
+      "covered_cities": [
+        "Tokyo",
+        "Kyoto",
+        "Osaka",
+        "Hiroshima",
+        "Nara",
+        "Nikko",
+        "Mount Fuji",
+        "Amanohashidate",
+        "Ine",
+        "Kure"
+      ],
+      "processed_at": "2026-10-28T08:34:53.838428+00:00"
+    },
+    "Japan/All Inclusive Guide- Japan- Sandeep(1).docx": {
+      "text_hash": "5bf94e0942dedf54ac8f47692992650119e067c4",
+      "order_date": "2025-03-20",
+      "fmt": "old",
+      "folder": "Japan",
+      "covered_cities": [
+        "Tokyo",
+        "Kyoto",
+        "Osaka"
+      ],
+      "processed_at": "2026-10-28T08:34:53.850337+00:00"
+    },
+    "Vietnam/Vietnam- All Inclusive Guide-SS(1).docx": {
+      "text_hash": "67b8851caa827ce544c0db31682cb523d4273585",
+      "order_date": "2025-03-24",
+      "fmt": "old",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Hanoi",
+        "Ha Long Bay",
+        "Da Nang",
+        "Hoi An"
+      ],
+      "processed_at": "2026-10-28T08:34:53.865866+00:00"
+    },
+    "Switzerland/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.docx": {
+      "text_hash": "427ffdf372ffeb1e03a43fb85561a68fbeed7c4b",
+      "order_date": "2025-03-27",
+      "fmt": "old",
+      "folder": "Switzerland",
+      "covered_cities": [
+        "Zurich",
+        "Schaffhausen",
+        "Lucerne",
+        "Interlaken",
+        "Lauterbrunnen",
+        "Jungfraujoch",
+        "Venice",
+        "Murano",
+        "Burano",
+        "Florence",
+        "Pisa",
+        "Rome"
+      ],
+      "processed_at": "2026-10-28T08:35:29.603239+00:00"
+    },
+    "Japan/All Inclusive Guide- Japan- AK and families(1).docx": {
+      "text_hash": "7af1decb020bd0231f35198277f926da27d3648c",
+      "order_date": "2025-03-29",
+      "fmt": "old",
+      "folder": "Japan",
+      "covered_cities": [
+        "Tokyo",
+        "Mt Fuji",
+        "Kyoto",
+        "Nara",
+        "Osaka",
+        "Hiroshima",
+        "Miyajima"
+      ],
+      "processed_at": "2026-10-28T08:36:13.879998+00:00"
+    },
+    "Thailand/All Inclusive Guide for Bangkok and Pattaya(1).docx": {
+      "text_hash": "8da0252dd3043517900304a207a6d6ce4afb2a43",
+      "order_date": "2025-04-04",
+      "fmt": "old",
+      "folder": "Thailand",
+      "covered_cities": [
+        "Bangkok",
+        "Pattaya"
+      ],
+      "processed_at": "2026-10-28T08:36:13.888390+00:00"
+    },
+    "Northeast India/All Inclusive Guide- Sikkim and Darjeeling(1).docx": {
+      "text_hash": "b04636f25080a970ef9da958a1705e9a560a45f1",
+      "order_date": "2025-04-04",
+      "fmt": "old",
+      "folder": "Northeast India",
+      "covered_cities": [
+        "Siliguri",
+        "Gangtok",
+        "Darjeeling",
+        "Kurseong"
+      ],
+      "processed_at": "2026-10-28T08:36:13.899648+00:00"
+    },
+    "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad(1).docx": {
+      "text_hash": "573357d1c057a9551f0e817d330e09a27b347328",
+      "order_date": "2025-04-04",
+      "fmt": "old",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Hanoi",
+        "Hoa Lu",
+        "Trang An",
+        "Halong Bay",
+        "Da Nang",
+        "Hoi An",
+        "Ba Na Hills",
+        "Ho Chi Minh City",
+        "My Tho"
+      ],
+      "processed_at": "2026-10-28T08:36:13.920955+00:00"
+    },
+    "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide(1).docx": {
+      "text_hash": "7fbc99cf4c7e5462bc28f0ac453f4d0bae58369e",
+      "order_date": "2025-04-07",
+      "fmt": "old",
+      "folder": "Azerbaijan and Georgia",
+      "covered_cities": [
+        "Baku",
+        "Shahdag",
+        "Gabala",
+        "Sheki",
+        "Gobustan",
+        "Absheron"
+      ],
+      "processed_at": "2026-10-28T08:36:13.940373+00:00"
+    },
+    "Northeast India/Copy of All Inclusive Guide- Sikkim and Darjeeling.docx": {
+      "text_hash": "bb361ac3845ddceea59e0f18faa9e30c00026b3f",
+      "order_date": "2025-04-25",
+      "fmt": "old",
+      "folder": "Northeast India",
+      "covered_cities": [
+        "Siliguri",
+        "Gangtok",
+        "Darjeeling",
+        "Kurseong"
+      ],
+      "processed_at": "2026-10-28T08:36:13.961625+00:00"
+    },
+    "England and Scotland/Edinburgh- All Inclusive Guide(1).docx": {
+      "text_hash": "d4cb3e29954d78f5a89f7fafd57749e8aee54891",
+      "order_date": "2025-04-26",
+      "fmt": "old",
+      "folder": "England and Scotland",
+      "covered_cities": [
+        "Edinburgh",
+        "Loch Lomond",
+        "Luss"
+      ],
+      "processed_at": "2026-10-28T08:36:13.987290+00:00"
+    },
+    "Switzerland/All Inclusive Guide- Switzerland and Paris(2).docx": {
+      "text_hash": "b562884615343826ee94bab8ef0ef4a12f6a11ca",
+      "order_date": "2025-04-27",
+      "fmt": "old",
+      "folder": "Switzerland",
+      "covered_cities": [
+        "Zurich",
+        "Interlaken",
+        "Lucerne",
+        "Lauterbrunnen",
+        "Jungfraujoch",
+        "Bern",
+        "Geneva",
+        "Paris"
+      ],
+      "processed_at": "2026-10-28T08:37:28.114196+00:00"
+    },
+    "USA/ALL INCLUSIVE GUIDE USA.docx": {
+      "text_hash": "2c07ebc545e23ddede855e1aacf4e2c1b1381859",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "USA",
+      "covered_cities": [
+        "New York",
+        "Washington DC",
+        "Niagara Falls",
+        "Orlando",
+        "Miami",
+        "Key West"
+      ],
+      "processed_at": "2026-10-28T08:37:28.128107+00:00"
+    },
+    "Northeast India/All Inclusive Guide- Anitha- North East(1).docx": {
+      "text_hash": "bc3807d99e9bb3000f6288857cfb5fe0ddf4080e",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Northeast India",
+      "covered_cities": [
+        "Guwahati",
+        "Shillong",
+        "Dawki",
+        "Mawlynnong",
+        "Cherrapunjee",
+        "Kaziranga",
+        "Kohima",
+        "Kisama",
+        "Dimapur"
+      ],
+      "processed_at": "2026-10-28T08:37:28.145129+00:00"
+    },
+    "Switzerland/All Inclusive Guide- Nizam-Switzerland.docx": {
+      "text_hash": "daa7ef74aa30deab47cb25603978f1864f0ee627",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Switzerland",
+      "covered_cities": [
+        "Zurich",
+        "Winterthur",
+        "Bern",
+        "Rhine Falls",
+        "Lucerne",
+        "Engelberg",
+        "Interlaken",
+        "Lauterbrunnen",
+        "Mürren"
+      ],
+      "processed_at": "2026-10-28T08:37:28.170156+00:00"
+    },
+    "Rajasthan/All Inclusive Guide- Rajasthan_ Janice(1).docx": {
+      "text_hash": "bd0fc42218536fdcf7e4af10a60af34292e82605",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Rajasthan",
+      "covered_cities": [
+        "Udaipur",
+        "Jaipur",
+        "Rajasthan"
+      ],
+      "processed_at": "2026-10-28T08:37:28.189382+00:00"
+    },
+    "South Korea/All Inclusive Guide-South Korea.docx": {
+      "text_hash": "a0278cf7690d6ef139cc105fdb502093e753377d",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "South Korea",
+      "covered_cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "processed_at": "2026-10-28T08:37:28.211435+00:00"
+    },
+    "Thailand/All Inclusive Guide_Khyati_Thailand(1)(1).docx": {
+      "text_hash": "ee6a2a5e1d70db52a5208e9ee56928f40e561586",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Thailand",
+      "covered_cities": [
+        "Bangkok",
+        "Koh Samui",
+        "Phuket"
+      ],
+      "processed_at": "2026-10-28T08:37:28.228991+00:00"
+    },
+    "Thailand/All Inclusive Guide_Khyati_Thailand(1).docx": {
+      "text_hash": "acfd64934209d83a023d5595a3436c6b0da28418",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Thailand",
+      "covered_cities": [
+        "Bangkok",
+        "Koh Samui",
+        "Phuket"
+      ],
+      "processed_at": "2026-10-28T08:37:58.429296+00:00"
+    },
+    "Singapore and Malaysia/All Inclusive Guide_Singapore(1).docx": {
+      "text_hash": "32a49e29ae96f1074d178b5f0cf56983d20dd182",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Singapore and Malaysia",
+      "covered_cities": [
+        "Singapore"
+      ],
+      "processed_at": "2026-10-28T08:39:20.170680+00:00"
+    },
+    "Japan/Amit- All Inclusive Guide_Japan(1).docx": {
+      "text_hash": "b88999a714845a6c5b7342efb0ec4962ef156dae",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Japan",
+      "covered_cities": [
+        "Kyoto",
+        "Kurama",
+        "Kibune",
+        "Amanohashidate",
+        "Ine no Funaya",
+        "Osaka"
+      ],
+      "processed_at": "2026-10-28T08:39:20.190688+00:00"
+    },
+    "Australia/Australia - All Inclusive Guide - Bipasha(1).docx": {
+      "text_hash": "635f9e54b3914652d9dfbf2998ea1bc5d9dd07bd",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Australia",
+      "covered_cities": [
+        "Cairns",
+        "Kuranda",
+        "Daintree Rainforest",
+        "Melbourne",
+        "Lorne",
+        "Apollo Bay",
+        "Emerald",
+        "Phillip Island",
+        "Sydney",
+        "Newcastle",
+        "Hunter Valley",
+        "Manly"
+      ],
+      "processed_at": "2026-10-28T08:39:20.221466+00:00"
+    },
+    "Bali Indonesia/Bali Bliss All-Inclusive Guide - Desmond(1).docx": {
+      "text_hash": "914f856300b88f067df526d77757b7d390ff045c",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Bali Indonesia",
+      "covered_cities": [
+        "Ubud",
+        "Nusa Dua",
+        "Seminyak",
+        "Tanah Lot",
+        "Uluwatu",
+        "Denpasar"
+      ],
+      "processed_at": "2026-10-28T08:39:20.244500+00:00"
+    },
+    "Bali Indonesia/Bali Bliss All-Inclusive Guide - Priyankee and Varun(1).docx": {
+      "text_hash": "1ea071295043a52c93a8bfa1fd1271f5828e6148",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Bali Indonesia",
+      "covered_cities": [
+        "Bali",
+        "Nusa Dua",
+        "Uluwatu",
+        "Ubud",
+        "Gili Trawangan",
+        "Padang Bai",
+        "Seminyak",
+        "Kuta",
+        "Tanah Lot",
+        "Denpasar"
+      ],
+      "processed_at": "2026-10-28T08:39:20.271832+00:00"
+    },
+    "Bali Indonesia/Bali Bliss All-Inclusive Guide(1).docx": {
+      "text_hash": "a7c470e144615ab2542773ad50ac54f5262fff6a",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Bali Indonesia",
+      "covered_cities": [
+        "Bali",
+        "Ubud",
+        "Nusa Dua"
+      ],
+      "processed_at": "2026-10-28T08:39:20.290353+00:00"
+    },
+    "Thailand/Cloy_Thailand-All inclusive guide(1)(1).docx": {
+      "text_hash": "5db7f68c31144543e0fd225cb37e8d867227ebdc",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Thailand",
+      "covered_cities": [
+        "Bangkok",
+        "Phuket",
+        "Koh Phangan",
+        "Krabi"
+      ],
+      "processed_at": "2026-10-28T08:39:20.316066+00:00"
+    },
+    "Thailand/Cloy_Thailand-All inclusive guide(2).docx": {
+      "text_hash": "a461aba4864aa7bbb4a6b648d448b86a2029f1ad",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Thailand",
+      "covered_cities": [
+        "Bangkok",
+        "Phuket",
+        "Koh Phangan",
+        "Krabi"
+      ],
+      "processed_at": "2026-10-28T08:39:20.355334+00:00"
+    },
+    "Singapore and Malaysia/Copy of All Inclusive Guide_Singapore(1).docx": {
+      "text_hash": "78228cc319ae8ddafa7f7ebf52189b3a54bf1e00",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Singapore and Malaysia",
+      "covered_cities": [
+        "Singapore"
+      ],
+      "processed_at": "2026-10-28T08:40:58.871262+00:00"
+    },
+    "Peru/Craig_ All Inclusive Guide - Peru(1).docx": {
+      "text_hash": "62a82469f39f9c517e3aac9a93214b417369d919",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Peru",
+      "covered_cities": [
+        "Puerto Maldonado",
+        "Cusco",
+        "Aguas Calientes",
+        "Lima"
+      ],
+      "processed_at": "2026-10-28T08:40:58.888779+00:00"
+    },
+    "Mauritius/Divya and Amit_All Inclusive Guide_Mauritius.docx": {
+      "text_hash": "34b6638b89da3a9b978bab6f9d7157317bf39598",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Mauritius",
+      "covered_cities": [
+        "Bel Ombre",
+        "Savanne",
+        "Trou d'Eau Douce",
+        "Île aux Cerfs",
+        "Curepipe",
+        "Vacoas",
+        "Grand Bassin",
+        "Bois Chéri",
+        "Chamarel",
+        "Casela",
+        "Grand Baie",
+        "Floreal",
+        "Port Louis",
+        "Riche Terre",
+        "Quatre Bornes"
+      ],
+      "processed_at": "2026-10-28T08:40:58.918456+00:00"
+    },
+    "Thailand/Divya_All Inclusive Guide_Thailand(1).docx": {
+      "text_hash": "5c4fcd8b233e3108282ab371662f1c88e5283079",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Thailand",
+      "covered_cities": [
+        "Pattaya",
+        "Koh Larn",
+        "Bangkok",
+        "Koh Samui",
+        "Phuket"
+      ],
+      "processed_at": "2026-10-28T08:40:58.940423+00:00"
+    },
+    "Dubai and Abu Dhabi - UAE/Dubai and Abu Dhabi- All Inclusive Guide_Rituraj.docx": {
+      "text_hash": "33f9e658cab9415484c4e811a7fd639e2f060f77",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Dubai and Abu Dhabi - UAE",
+      "covered_cities": [
+        "Dubai",
+        "Abu Dhabi",
+        "Yas Island"
+      ],
+      "processed_at": "2026-10-28T08:40:58.955681+00:00"
+    },
+    "Dubai and Abu Dhabi - UAE/Hrishita_All Inclusive Guide_Dubai.docx": {
+      "text_hash": "d3d5832a0ed4b57d6c47467bf6ff40b27c614e1a",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Dubai and Abu Dhabi - UAE",
+      "covered_cities": [
+        "Dubai",
+        "Abu Dhabi"
+      ],
+      "processed_at": "2026-10-28T08:40:58.986150+00:00"
+    },
+    "Thailand/Kiran_Bangkok-All inclusive guide(1).docx": {
+      "text_hash": "fbd16c95906a3c41ddaa967a7fcc7f7b84f41de7",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Thailand",
+      "covered_cities": [
+        "Bangkok",
+        "Ayutthaya"
+      ],
+      "processed_at": "2026-10-28T08:42:06.275264+00:00"
+    },
+    "England and Scotland/Kush_Scotland_All Inclusive Guide(1).docx": {
+      "text_hash": "3db05c69f2b947a32682d510e7f5e1b485f9660d",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "England and Scotland",
+      "covered_cities": [
+        "Edinburgh",
+        "Loch Lomond",
+        "Stirling",
+        "Pitlochry"
+      ],
+      "processed_at": "2026-10-28T08:42:12.638378+00:00"
+    },
+    "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.docx": {
+      "text_hash": "935286fe7f46826cad15b0a36a5484292841c381",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Northeast India",
+      "covered_cities": [
+        "Bagdogra",
+        "Gangtok",
+        "Pelling",
+        "Kurseong",
+        "Darjeeling"
+      ],
+      "processed_at": "2026-10-28T08:42:12.656919+00:00"
+    },
+    "Mauritius/Mauritius All Inclusive Guide - Roma(1).docx": {
+      "text_hash": "61f4900b09d6f7a0869be5f3270ef849e2492d18",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Mauritius",
+      "covered_cities": [
+        "Flic en Flac",
+        "Casela",
+        "Black River Gorges",
+        "Chamarel",
+        "North Mauritius",
+        "Pamplemousses",
+        "Pointe aux Piments",
+        "Port Louis",
+        "Grand Baie",
+        "Quatre Bornes",
+        "Riche Terre"
+      ],
+      "processed_at": "2026-10-28T08:42:12.682071+00:00"
+    },
+    "Mauritius/Mauritius All Inclusive Guide - bak.docx": {
+      "text_hash": "fd434ba721b0c89733285c5119153e1be1218aed",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Mauritius",
+      "covered_cities": [
+        "Flic en Flac",
+        "Black River Gorges",
+        "Chamarel",
+        "North Mauritius",
+        "Pamplemousses",
+        "Pointe aux Piments",
+        "Port Louis",
+        "Quatre Bornes",
+        "Mauritius"
+      ],
+      "processed_at": "2026-10-28T08:42:12.711337+00:00"
+    },
+    "Mauritius/Mauritius All Inclusive Guide(1).docx": {
+      "text_hash": "2e61bdae655fe6ebb3a2bb5376a76a933b54dffa",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Mauritius",
+      "covered_cities": [
+        "Mauritius",
+        "Flic en Flac",
+        "Black River",
+        "Chamarel",
+        "North Mauritius",
+        "Pamplemousses",
+        "Pointe aux Piments",
+        "Port Louis",
+        "Quatre Bornes"
+      ],
+      "processed_at": "2026-10-28T08:42:12.743806+00:00"
+    },
+    "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.docx": {
+      "text_hash": "ab8774f3b39e82b97e338af3a4dba3eb8201a562",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Srilanka",
+      "covered_cities": [
+        "Colombo",
+        "Pinnawala",
+        "Kandy",
+        "Peradeniya",
+        "Ramboda",
+        "Nuwara Eliya",
+        "Ella",
+        "Yala",
+        "Galle",
+        "Kosgoda",
+        "Ambalangoda",
+        "Matale"
+      ],
+      "processed_at": "2026-10-28T08:42:29.079996+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Mr. Vincent Rangel_ All Inclusive Guide-Mysore.docx": {
+      "text_hash": "002ef29a579e5363e9575e9ecb4f185ecf09d581",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Mysore",
+        "Bangalore"
+      ],
+      "processed_at": "2026-10-28T08:42:37.714760+00:00"
+    },
+    "Andamans/Neha_All Inclusive Guide_Andamans(1).docx": {
+      "text_hash": "50b42d42ef5bd5c4665f8ae5fd974c92ef38e3a3",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Andamans",
+      "covered_cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island",
+        "Baratang Island",
+        "Chidiya Tapu",
+        "Andaman Islands"
+      ],
+      "processed_at": "2026-10-28T08:43:10.491580+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi(1).docx": {
+      "text_hash": "e95d4073ad5b955a6f6024353ed500006c146be4",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Pune",
+        "Solapur",
+        "Bijapur",
+        "Hampi",
+        "Anegundi",
+        "Badami"
+      ],
+      "processed_at": "2026-10-28T08:43:10.508424+00:00"
+    },
+    "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx": {
+      "text_hash": "64a0b9750635ef7ae30a2fae7d6067cc184c3ccd",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Bali Indonesia",
+      "covered_cities": [
+        "Ubud",
+        "Sangeh",
+        "Bedugul",
+        "Lempuyang",
+        "Tegalalang",
+        "Kintamani",
+        "Nusa Dua",
+        "Sanur",
+        "Nusa Penida",
+        "Uluwatu",
+        "Bali"
+      ],
+      "processed_at": "2026-10-28T08:43:38.917919+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.docx": {
+      "text_hash": "6fb15522d3f93c2e411fe9c6da03bcb119535e9f",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Bangalore",
+        "Mysore",
+        "Coorg",
+        "Kabini"
+      ],
+      "processed_at": "2026-10-28T08:43:38.931124+00:00"
+    },
+    "Srilanka/SS_All Inclusive Guide_Sri Lanka.docx": {
+      "text_hash": "7771834d94f895a81ebed404b2ad2ceecb7cfb13",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Srilanka",
+      "covered_cities": [
+        "Colombo",
+        "Kosgoda",
+        "Galle",
+        "Bentota",
+        "Kalutara",
+        "Kandy"
+      ],
+      "processed_at": "2026-10-28T08:43:50.897137+00:00"
+    },
+    "Greece and Turkey/Sample All Inclusive Guide.docx": {
+      "text_hash": "4646ff421df44819408d0c1dadc553ea204aa0cf",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Greece and Turkey",
+      "covered_cities": [
+        "Athens",
+        "Mykonos",
+        "Santorini",
+        "Istanbul",
+        "Ephesus"
+      ],
+      "processed_at": "2026-10-28T08:44:18.047412+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi(1).docx": {
+      "text_hash": "c7fc466b63dba066ef5675da8e52339a8df9501b",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Hampi"
+      ],
+      "processed_at": "2026-10-28T08:44:18.057936+00:00"
+    },
+    "China/Sanjeev-All Inclusive Guide_China.docx": {
+      "text_hash": "5762487885f2018f8da4450e586c9b1b6419ae05",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "China",
+      "covered_cities": [
+        "Suzhou",
+        "Hangzhou",
+        "Nanjing",
+        "Macau",
+        "Hong Kong"
+      ],
+      "processed_at": "2026-10-28T08:44:26.224490+00:00"
+    },
+    "Spain/Sharlene_Spain_All Inclusive Guide(1).docx": {
+      "text_hash": "5b5143e0b1e265c31f34b9a41690a9734b6471f0",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Spain",
+      "covered_cities": [
+        "Barcelona",
+        "Girona",
+        "Valencia",
+        "Málaga",
+        "Granada",
+        "Córdoba",
+        "Caminito del Rey",
+        "Seville",
+        "Ronda",
+        "Madrid",
+        "Toledo",
+        "Santiago de Compostela",
+        "Segovia",
+        "Ávila"
+      ],
+      "processed_at": "2026-10-28T08:44:40.191948+00:00"
+    },
+    "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide(1).docx": {
+      "text_hash": "8e4c3e74c1de99d1813a5bdb3626894c348894e9",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Singapore and Malaysia",
+      "covered_cities": [
+        "Kuala Lumpur",
+        "Genting Highlands",
+        "Batu Gajah",
+        "Ipoh",
+        "Kuala Sepetang",
+        "Penang",
+        "George Town",
+        "Batu Ferringhi",
+        "Seberang Perai"
+      ],
+      "processed_at": "2026-10-28T08:44:40.216346+00:00"
+    },
+    "France/Tanya and Shovit_All Inclusive Guide(1).docx": {
+      "text_hash": "74804b79a88df6dc2334e61c0af17628d19f6eeb",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "France",
+      "covered_cities": [
+        "Paris",
+        "Annecy",
+        "Chamonix",
+        "Freiburg",
+        "Baden-Baden",
+        "Strasbourg",
+        "Colmar",
+        "Reims"
+      ],
+      "processed_at": "2026-10-28T08:45:55.537875+00:00"
+    },
+    "Andamans/Tushar_All Inclusive Guide_Andamans(1).docx": {
+      "text_hash": "a7997b201f2ad84f086841b2ee7cacbca44eb762",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Andamans",
+      "covered_cities": [
+        "Port Blair",
+        "Havelock (Swaraj Dweep)",
+        "Neil Island (Shaheed Dweep)"
+      ],
+      "processed_at": "2026-10-28T08:45:55.551245+00:00"
+    },
+    "Dubai and Abu Dhabi - UAE/Dubai- All Inclusive Guide(1).docx": {
+      "text_hash": "45ea0a700fee29a3c1e724cbfbd4a20e4061d6d4",
+      "order_date": "2024-11-01",
+      "fmt": "new",
+      "folder": "Dubai and Abu Dhabi - UAE",
+      "covered_cities": [
+        "Dubai"
+      ],
+      "processed_at": "2026-10-28T08:45:55.562630+00:00"
+    },
+    "Thailand/All Inclusive Guide for Pattaya and Bangkok(1).docx": {
+      "text_hash": "5bb9b04361555a25c4bdf05ff0069c04bbd571ba",
+      "order_date": "2024-11-26",
+      "fmt": "new",
+      "folder": "Thailand",
+      "covered_cities": [
+        "Pattaya",
+        "Koh Larn",
+        "Bangkok"
+      ],
+      "processed_at": "2026-10-28T08:45:55.579782+00:00"
+    },
+    "Thailand/All Inclusive Guide for Pattaya and Bangkok.docx": {
+      "text_hash": "1da4de9d0395b287534e3db52ac64b1755b31b14",
+      "order_date": "2024-12-03",
+      "fmt": "new",
+      "folder": "Thailand",
+      "covered_cities": [
+        "Pattaya",
+        "Bangkok",
+        "Koh Larn"
+      ],
+      "processed_at": "2026-10-28T08:45:55.601033+00:00"
+    },
+    "Dubai and Abu Dhabi - UAE/Abu Dhabi and Dubai- All Inclusive Guide(1).docx": {
+      "text_hash": "088159c088d79be5184e69362b02727d42f21206",
+      "order_date": "2024-12-13",
+      "fmt": "new",
+      "folder": "Dubai and Abu Dhabi - UAE",
+      "covered_cities": [
+        "Abu Dhabi",
+        "Dubai"
+      ],
+      "processed_at": "2026-10-28T08:46:11.578435+00:00"
+    },
+    "Goa/Goa- All Inclusive Guide(1).docx": {
+      "text_hash": "86e1306fe30dadc194585e533b49aa9ba1de54c6",
+      "order_date": "2025-02-06",
+      "fmt": "new",
+      "folder": "Goa",
+      "covered_cities": [
+        "Goa",
+        "Panjim",
+        "Margao",
+        "Colva",
+        "Betalbatim",
+        "Benaulim",
+        "Utorda",
+        "Cavelossim",
+        "Nerul"
+      ],
+      "processed_at": "2026-10-28T08:46:11.603323+00:00"
+    },
+    "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx": {
+      "text_hash": "0a847240a664d4702192452fe43108b3ae0378e5",
+      "order_date": "2025-03-08",
+      "fmt": "new",
+      "folder": "French Polynesia",
+      "covered_cities": [
+        "Tahiti",
+        "Moorea",
+        "Bora Bora"
+      ],
+      "processed_at": "2026-10-28T08:46:11.616919+00:00"
+    },
+    "Singapore and Malaysia/SAMPLE_Singapore- All Inclusive Guide.docx": {
+      "text_hash": "e09c1d9f2752a4930561991ccccc647e904dccd8",
+      "order_date": "2025-03-08",
+      "fmt": "new",
+      "folder": "Singapore and Malaysia",
+      "covered_cities": [
+        "Singapore"
+      ],
+      "processed_at": "2026-10-28T08:46:55.226465+00:00"
+    },
+    "Dubai and Abu Dhabi - UAE/Dubai- All Inclusive Guide_Shakuntala(1).docx": {
+      "text_hash": "0c4db1a80a706f1bf7a8547ec7188c3fcf9668bd",
+      "order_date": "2025-03-21",
+      "fmt": "new",
+      "folder": "Dubai and Abu Dhabi - UAE",
+      "covered_cities": [
+        "Dubai"
+      ],
+      "processed_at": "2026-10-28T08:47:26.407156+00:00"
+    },
+    "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(1).docx": {
+      "text_hash": "63e9828bbbc5d4a0b1204439805a038f26b904b5",
+      "order_date": "2025-03-26",
+      "fmt": "new",
+      "folder": "Singapore and Malaysia",
+      "covered_cities": [
+        "Singapore",
+        "Sentosa"
+      ],
+      "processed_at": "2026-10-28T08:47:26.423528+00:00"
+    },
+    "Singapore and Malaysia/Singapore- All Inclusive Guide - Vishal(2)(1).docx": {
+      "text_hash": "6f64a6ed872088be69cd2ca5fb0bb27d0e224081",
+      "order_date": "2025-03-26",
+      "fmt": "new",
+      "folder": "Singapore and Malaysia",
+      "covered_cities": [
+        "Sentosa",
+        "Singapore"
+      ],
+      "processed_at": "2026-10-28T08:47:26.440493+00:00"
+    },
+    "USA/SAMPLE_ALL INCLUSIVE GUIDE US.docx": {
+      "text_hash": "342532500947c5cfb949eaa1cc005f6216bef839",
+      "order_date": "2025-05-01",
+      "fmt": "new",
+      "folder": "USA",
+      "covered_cities": [
+        "New York",
+        "Washington DC",
+        "Niagara Falls",
+        "Orlando",
+        "Miami",
+        "Key West"
+      ],
+      "processed_at": "2026-10-28T08:47:26.462690+00:00"
+    },
+    "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar(1).docx": {
+      "text_hash": "8aa65b452a0c422b180cd3a7262fd4a4b5b9651c",
+      "order_date": "2025-05-10",
+      "fmt": "new",
+      "folder": "Switzerland",
+      "covered_cities": [
+        "Interlaken",
+        "Lucerne",
+        "Mount Pilatus",
+        "Jungfraujoch",
+        "Lauterbrunnen",
+        "Grindelwald",
+        "Bern",
+        "Zurich"
+      ],
+      "processed_at": "2026-10-28T08:47:26.529111+00:00"
+    },
+    "Vietnam/All Inclusive Guide - Rupali - Vietnam(1).docx": {
+      "text_hash": "a4676b7d51e591771092ceb24d9b250cacea49e9",
+      "order_date": "2025-05-12",
+      "fmt": "new",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Da Nang",
+        "Hoi An"
+      ],
+      "processed_at": "2026-10-28T08:47:36.199295+00:00"
+    },
+    "Mauritius/Mauritius All Inclusive Guide - bak(1).docx": {
+      "text_hash": "3a1f0aedb5d774249e261776739592de172917f0",
+      "order_date": "2025-05-15",
+      "fmt": "new",
+      "folder": "Mauritius",
+      "covered_cities": [
+        "Flic en Flac",
+        "Black River",
+        "Chamarel",
+        "North Mauritius",
+        "Pamplemousses",
+        "Pointe aux Piments",
+        "Port Louis",
+        "Quatre Bornes"
+      ],
+      "processed_at": "2026-10-28T08:47:36.229910+00:00"
+    },
+    "Switzerland/All Inclusive Guide - Switzerland and Austria(1).docx": {
+      "text_hash": "a8078b801eeca9b902d38f05894918f2c2aaff3d",
+      "order_date": "2025-05-21",
+      "fmt": "new",
+      "folder": "Switzerland",
+      "covered_cities": [
+        "Interlaken",
+        "Faulensee",
+        "Jungfraujoch",
+        "Lucerne",
+        "Engelberg",
+        "Bern",
+        "Brienz",
+        "Lauterbrunnen",
+        "Mürren",
+        "Grindelwald",
+        "Zurich",
+        "Schaffhausen",
+        "Innsbruck",
+        "Wattens",
+        "Berchtesgaden",
+        "Salzburg",
+        "Hallstatt",
+        "Dürnstein",
+        "Melk",
+        "Wachau Valley",
+        "Vienna"
+      ],
+      "processed_at": "2026-10-28T08:49:12.546606+00:00"
+    },
+    "Bali Indonesia/Bali - All Inclusive Guide - Prashita(1).docx": {
+      "text_hash": "4cddb1c6b97b4b0a5c1598cc6ff62ecfb0f7a6e1",
+      "order_date": "2025-05-21",
+      "fmt": "new",
+      "folder": "Bali Indonesia",
+      "covered_cities": [
+        "Klungkung",
+        "Ubud",
+        "Nusa Penida",
+        "Tanjung Benoa",
+        "Kuta",
+        "Uluwatu",
+        "Denpasar",
+        "Jimbaran",
+        "Seminyak",
+        "Nusa Dua",
+        "Bali"
+      ],
+      "processed_at": "2026-10-28T08:49:12.571256+00:00"
+    },
+    "Japan/V2 - All Inclusive Guide- Japan- Sirisha(1).docx": {
+      "text_hash": "62e125ccdac3e91284f46f122f7006d4ed00cca5",
+      "order_date": "2025-05-27",
+      "fmt": "new",
+      "folder": "Japan",
+      "covered_cities": [
+        "Tokyo",
+        "Mt. Fuji",
+        "Kyoto",
+        "Osaka",
+        "Nara"
+      ],
+      "processed_at": "2026-10-28T08:49:43.590638+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya(1).docx": {
+      "text_hash": "7a08a2ff870f09989047cc53a6731b34d51123fd",
+      "order_date": "2025-05-29",
+      "fmt": "new",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Mysore",
+        "Coorg",
+        "Madikeri",
+        "Kabini",
+        "Bylakuppe"
+      ],
+      "processed_at": "2026-10-28T08:49:43.606211+00:00"
+    },
+    "Mauritius/Copy of Mauritius All Inclusive Guide - Pradeep(1).docx": {
+      "text_hash": "6dae9f4071212baae5f346d9e6488dde9c483887",
+      "order_date": "2025-05-29",
+      "fmt": "new",
+      "folder": "Mauritius",
+      "covered_cities": [
+        "Mauritius",
+        "Port Louis",
+        "Grand Baie",
+        "Quatre Bornes",
+        "Chamarel",
+        "Ile aux Cerfs"
+      ],
+      "processed_at": "2026-10-28T08:49:43.626504+00:00"
+    },
+    "Mauritius/Mauritius All Inclusive Guide - Oishee(1).docx": {
+      "text_hash": "50d3912ace9dd661e78f59e6dbb24bf58291699d",
+      "order_date": "2025-05-30",
+      "fmt": "new",
+      "folder": "Mauritius",
+      "covered_cities": [
+        "Trou d'Eau Douce",
+        "Pointe aux Piments",
+        "Casela",
+        "Black River Gorges",
+        "Chamarel",
+        "Pamplemousses",
+        "Grand Baie",
+        "Port Louis",
+        "Quatre Bornes",
+        "Riche Terre"
+      ],
+      "processed_at": "2026-10-28T08:49:43.682457+00:00"
+    },
+    "England and Scotland/All Inclusive Guide - Scotland - Smriti(1).docx": {
+      "text_hash": "f8df6f497d952d07580e0b7bb2c9ab18d5edb15b",
+      "order_date": "2025-06-13",
+      "fmt": "new",
+      "folder": "England and Scotland",
+      "covered_cities": [
+        "Edinburgh",
+        "Inverness",
+        "Isle of Skye",
+        "Portree",
+        "Mallaig",
+        "Fort William"
+      ],
+      "processed_at": "2026-10-28T08:49:43.708463+00:00"
+    },
+    "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.docx": {
+      "text_hash": "802c51b932b446cf6bce14596f4b0a9557903bf3",
+      "order_date": "2025-06-30",
+      "fmt": "new",
+      "folder": "Greece and Turkey",
+      "covered_cities": [
+        "Athens",
+        "Mykonos",
+        "Santorini",
+        "Istanbul",
+        "Ephesus"
+      ],
+      "processed_at": "2026-10-28T08:49:43.734869+00:00"
+    },
+    "Almaty Kazakhstan/Vineet_Final_All inclusive guide(1).docx": {
+      "text_hash": "30e87bd05fda61c9e79eb8610c94e7eebcccc5e8",
+      "order_date": "2025-07-17",
+      "fmt": "new",
+      "folder": "Almaty Kazakhstan",
+      "covered_cities": [
+        "Almaty",
+        "Issyk Lake",
+        "Medeu",
+        "Shymbulak",
+        "Big Almaty Lake",
+        "Tamgaly Tas"
+      ],
+      "processed_at": "2026-10-28T08:50:24.845804+00:00"
+    },
+    "Europe/Tejas - Europe All Inclusive Guide(1).docx": {
+      "text_hash": "4a30fee870f2c95255614ebdfadaffec888ce2b8",
+      "order_date": "2025-09-13",
+      "fmt": "new",
+      "folder": "Europe",
+      "covered_cities": [
+        "Doha",
+        "Zurich",
+        "Locarno",
+        "Ascona",
+        "Como",
+        "Tremezzo",
+        "Menaggio",
+        "Milan",
+        "Foroglio",
+        "Tenero",
+        "Stans",
+        "Lucerne",
+        "Zermatt",
+        "Ringgenberg",
+        "Brienz",
+        "Interlaken",
+        "Lauterbrunnen",
+        "Mürren",
+        "Kandersteg",
+        "Grindelwald",
+        "Adelboden",
+        "Basel",
+        "Freiburg im Breisgau",
+        "Biel/Bienne",
+        "Frankfurt",
+        "Bamberg",
+        "Wertheim"
+      ],
+      "processed_at": "2026-10-28T08:51:51.912301+00:00"
+    },
+    "Dubai and Abu Dhabi - UAE/Dubai and Abu Dhabi- All Inclusive Guide_Rituraj(1).docx": {
+      "text_hash": "7226ef13c269b03e0bff5e205300061c6b655193",
+      "order_date": "2025-10-13",
+      "fmt": "new",
+      "folder": "Dubai and Abu Dhabi - UAE",
+      "covered_cities": [
+        "Dubai",
+        "Abu Dhabi",
+        "Yas Island"
+      ],
+      "processed_at": "2026-10-28T08:51:51.930873+00:00"
+    },
+    "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx": {
+      "text_hash": "fb21e6878c621c17325b1c1fcfdd75ed43883ca0",
+      "order_date": "2025-10-15",
+      "fmt": "new",
+      "folder": "Srilanka",
+      "covered_cities": [
+        "Colombo",
+        "Minneriya",
+        "Kandy",
+        "Nuwara Eliya",
+        "Bentota"
+      ],
+      "processed_at": "2026-10-28T08:51:51.957085+00:00"
+    },
+    "England and Scotland/Edlyn London - All Inclusive Guide(1).docx": {
+      "text_hash": "f7f73d15a06d705368dcee1b7390eaea2648c838",
+      "order_date": "2025-10-17",
+      "fmt": "new",
+      "folder": "England and Scotland",
+      "covered_cities": [
+        "London",
+        "Iver",
+        "Cotswolds",
+        "Bourton-on-the-Water",
+        "Bibury",
+        "Stow-on-the-Wold",
+        "Stratford-upon-Avon",
+        "Bath",
+        "Edinburgh",
+        "Windsor",
+        "Stonehenge"
+      ],
+      "processed_at": "2026-10-28T08:51:58.866966+00:00"
+    },
+    "Dubai and Abu Dhabi - UAE/Shivani and Saurabh_Abu Dhabi and Dubai-All inclusive guide(1).docx": {
+      "text_hash": "efb04e918589b93aabbbcd11e1cebfcfe9e4b4f1",
+      "order_date": "2025-10-17",
+      "fmt": "new",
+      "folder": "Dubai and Abu Dhabi - UAE",
+      "covered_cities": [
+        "Abu Dhabi",
+        "Yas Island",
+        "Dubai",
+        "Palm Jumeirah"
+      ],
+      "processed_at": "2026-10-28T08:51:58.887483+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Faiz Kerela(1).docx": {
+      "text_hash": "1b2f9785c66d3b680d2d28f91cfed9e0362cc18f",
+      "order_date": "2025-10-19",
+      "fmt": "new",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Munnar",
+        "Thekkady",
+        "Kumarakom",
+        "Alleppey",
+        "Kochi",
+        "Kovalam",
+        "Kanyakumari",
+        "Thiruvananthapuram"
+      ],
+      "processed_at": "2026-10-28T08:51:58.912320+00:00"
+    },
+    "Dubai and Abu Dhabi - UAE/Dubai All Inclusive Guide(1).docx": {
+      "text_hash": "4692b2c140209f4f9f8e85dd238aa6900391fe8f",
+      "order_date": "2025-10-21",
+      "fmt": "new",
+      "folder": "Dubai and Abu Dhabi - UAE",
+      "covered_cities": [
+        "Dubai",
+        "Abu Dhabi"
+      ],
+      "processed_at": "2026-10-28T08:51:58.928984+00:00"
+    },
+    "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh(1).docx": {
+      "text_hash": "0ef36d7f888759cca3ea95c9ba49a6d357499ed4",
+      "order_date": "2025-10-22",
+      "fmt": "new",
+      "folder": "England and Scotland",
+      "covered_cities": [
+        "London",
+        "Iver",
+        "Stratford-upon-Avon",
+        "Cotswolds",
+        "Broadway",
+        "Bourton-on-the-Water",
+        "Gloucester",
+        "Castle Combe",
+        "Bath",
+        "Bibury",
+        "Stow-on-the-Wold",
+        "Edinburgh",
+        "Brighton",
+        "Seven Sisters"
+      ],
+      "processed_at": "2026-10-28T08:52:01.532569+00:00"
+    },
+    "Northeast India/All Inclusive Guide- Anitha- North East.docx": {
+      "text_hash": "b59a7fb8524afee6f12b0d51a28420284ca5e190",
+      "order_date": "2025-11-10",
+      "fmt": "new",
+      "folder": "Northeast India",
+      "covered_cities": [
+        "Guwahati",
+        "Shillong",
+        "Dawki",
+        "Mawlynnong",
+        "Cherrapunjee",
+        "Kaziranga",
+        "Kohima",
+        "Kisama",
+        "Dimapur"
+      ],
+      "processed_at": "2026-10-28T08:52:46.493295+00:00"
+    },
+    "Rajasthan/Aileen_All Inclusive Guide_Rajasthan(1).docx": {
+      "text_hash": "903b3444c060ceb1261a12963185dc647d5e85e2",
+      "order_date": "2025-11-12",
+      "fmt": "new",
+      "folder": "Rajasthan",
+      "covered_cities": [
+        "Jaipur",
+        "Abhaneri",
+        "Jodhpur",
+        "Guda Bishnoi",
+        "Kumbhalgarh",
+        "Narlai",
+        "Udaipur"
+      ],
+      "processed_at": "2026-10-28T08:53:25.579889+00:00"
+    },
+    "China/Sanjeev-All Inclusive Guide_China(1).docx": {
+      "text_hash": "c2e44809db98825d2a99a7b5407310e7a7ca07a8",
+      "order_date": "2025-11-14",
+      "fmt": "new",
+      "folder": "China",
+      "covered_cities": [
+        "Suzhou",
+        "Hangzhou",
+        "Nanjing",
+        "Macau",
+        "Hong Kong"
+      ],
+      "processed_at": "2026-10-28T08:53:34.278079+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide(1).docx": {
+      "text_hash": "8570598c997e25b6ca17f7f8f6b51f6fe9162fe1",
+      "order_date": "2025-11-27",
+      "fmt": "new",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Bangalore",
+        "Mysore",
+        "Coorg",
+        "Kabini"
+      ],
+      "processed_at": "2026-10-28T08:53:34.296680+00:00"
+    },
+    "Dubai and Abu Dhabi - UAE/Hrishita_All Inclusive Guide.docx": {
+      "text_hash": "f7a0e904d301ea728edd473c73550280082e0ca2",
+      "order_date": "2025-12-03",
+      "fmt": "new",
+      "folder": "Dubai and Abu Dhabi - UAE",
+      "covered_cities": [
+        "Dubai",
+        "Abu Dhabi"
+      ],
+      "processed_at": "2026-10-28T08:53:34.314248+00:00"
+    },
+    "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.docx": {
+      "text_hash": "77abd5c28e100e68e7afc2dff6e6914bd2da0471",
+      "order_date": "2025-12-07",
+      "fmt": "new",
+      "folder": "Rajasthan",
+      "covered_cities": [
+        "Jaipur",
+        "Jodhpur",
+        "Udaipur",
+        "Kumbhalgarh",
+        "Abhaneri",
+        "Guda Bishnoi",
+        "Narlai"
+      ],
+      "processed_at": "2026-10-28T08:53:34.338885+00:00"
+    },
+    "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan(1).docx": {
+      "text_hash": "4bd79081a26c2983e8ef7e5f9b48209f4afd9a3e",
+      "order_date": "2025-12-07",
+      "fmt": "new",
+      "folder": "Rajasthan",
+      "covered_cities": [
+        "Jaipur",
+        "Ranthambore",
+        "Pushkar",
+        "Jodhpur",
+        "Guda Bishnoi"
+      ],
+      "processed_at": "2026-10-28T08:53:38.283866+00:00"
+    },
+    "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx": {
+      "text_hash": "51e985e720b5ee10209ec3579d157051abbe0450",
+      "order_date": "2025-12-07",
+      "fmt": "new",
+      "folder": "Bali Indonesia",
+      "covered_cities": [
+        "Ubud",
+        "Bedugul",
+        "Lempuyang",
+        "Tegalalang",
+        "Kintamani",
+        "Nusa Dua",
+        "Sanur",
+        "Nusa Penida",
+        "Uluwatu",
+        "Sukawati",
+        "Kuta",
+        "Seminyak",
+        "Celuk",
+        "Bali"
+      ],
+      "processed_at": "2026-10-28T08:53:38.324213+00:00"
+    },
+    "Thailand/Divya_All Inclusive Guide_Thailand.docx": {
+      "text_hash": "1e91a89e7d35ecea50a99ff8b3d7b60951acb11c",
+      "order_date": "2025-12-08",
+      "fmt": "new",
+      "folder": "Thailand",
+      "covered_cities": [
+        "Pattaya",
+        "Koh Larn",
+        "Bangkok",
+        "Koh Samui",
+        "Phuket"
+      ],
+      "processed_at": "2026-10-28T08:54:10.425889+00:00"
+    },
+    "Rajasthan/Merlin_All Inclusive Guide_Rajasthan(1).docx": {
+      "text_hash": "4068ab3c97a72a6a71b59b6eef500a1ebdc0ecd3",
+      "order_date": "2025-12-12",
+      "fmt": "new",
+      "folder": "Rajasthan",
+      "covered_cities": [
+        "Jaipur"
+      ],
+      "processed_at": "2026-10-28T08:54:10.438719+00:00"
+    },
+    "Mauritius/Divya and Amit_All Inclusive Guide_Mauritius(1).docx": {
+      "text_hash": "14c888b7cab9c0a40099223f76b02f3d5b2684e0",
+      "order_date": "2025-12-13",
+      "fmt": "new",
+      "folder": "Mauritius",
+      "covered_cities": [
+        "Bel Ombre",
+        "Trou d'Eau Douce",
+        "Île aux Cerfs",
+        "Curepipe",
+        "Chamarel",
+        "Floreal",
+        "Port Louis"
+      ],
+      "processed_at": "2026-10-28T08:54:44.793420+00:00"
+    },
+    "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB(1).docx": {
+      "text_hash": "de0d2005a394c9f5ee566c6e7154ce22b719bcee",
+      "order_date": "2025-12-13",
+      "fmt": "new",
+      "folder": "Northeast India",
+      "covered_cities": [
+        "Gangtok",
+        "Nathula Pass",
+        "Pelling",
+        "Kurseong",
+        "Darjeeling",
+        "Bagdogra"
+      ],
+      "processed_at": "2026-10-28T08:54:54.426884+00:00"
+    },
+    "Srilanka/SS_All Inclusive Guide_Sri Lanka(1).docx": {
+      "text_hash": "b78bd4c1035cedef1db3ca9a91cfad49269ef591",
+      "order_date": "2025-12-13",
+      "fmt": "new",
+      "folder": "Srilanka",
+      "covered_cities": [
+        "Kosgoda",
+        "Galle",
+        "Kalutara",
+        "Bentota",
+        "Kandy",
+        "Colombo"
+      ],
+      "processed_at": "2026-10-28T08:55:00.454794+00:00"
+    },
+    "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx": {
+      "text_hash": "91f4cba6e4468c42d2905b62b90a21a3bfa333fb",
+      "order_date": "2025-12-15",
+      "fmt": "new",
+      "folder": "Goa",
+      "covered_cities": [
+        "Pune",
+        "Kolhapur",
+        "Goa",
+        "Panjim"
+      ],
+      "processed_at": "2026-10-28T08:55:00.469223+00:00"
+    },
+    "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam(1).docx": {
+      "text_hash": "6421cf63463ec627bc4732c96fccd47aacbb8604",
+      "order_date": "2025-12-15",
+      "fmt": "new",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Hanoi",
+        "Halong Bay",
+        "Da Nang",
+        "Hoi An",
+        "Ba Na Hills",
+        "Phu Quoc"
+      ],
+      "processed_at": "2026-10-28T08:55:07.493081+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.docx": {
+      "text_hash": "a5e2418fb1383332a30595f707f0771fb0a9cbab",
+      "order_date": "2025-12-15",
+      "fmt": "new",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Pune",
+        "Solapur",
+        "Bijapur",
+        "Hampi",
+        "Anegundi",
+        "Badami"
+      ],
+      "processed_at": "2026-10-28T08:55:07.515160+00:00"
+    },
+    "Rajasthan/Merlin_All Inclusive Guide_Rajasthan.docx": {
+      "text_hash": "7cfa947c9485245034c2a16e373f2f55677ad87b",
+      "order_date": "2025-12-16",
+      "fmt": "new",
+      "folder": "Rajasthan",
+      "covered_cities": [
+        "Jaipur"
+      ],
+      "processed_at": "2026-10-28T08:55:07.526423+00:00"
+    },
+    "England and Scotland/Kush_Scotland_All Inclusive Guide.docx": {
+      "text_hash": "5f54d2494694df732bad9b23f7a18b3c8e3103e1",
+      "order_date": "2025-12-17",
+      "fmt": "new",
+      "folder": "England and Scotland",
+      "covered_cities": [
+        "Edinburgh",
+        "Loch Lomond",
+        "Stirling",
+        "Pitlochry"
+      ],
+      "processed_at": "2026-10-28T08:55:26.401231+00:00"
+    },
+    "Andamans/Tushar_All Inclusive Guide_Andamans.docx": {
+      "text_hash": "787b8c46f4467997bc2925cadd5f229e4c491b56",
+      "order_date": "2025-12-24",
+      "fmt": "new",
+      "folder": "Andamans",
+      "covered_cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "processed_at": "2026-10-28T08:55:30.704524+00:00"
+    },
+    "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.docx": {
+      "text_hash": "dbd5054e5c7fe74fb21218fa5e54012001602d0d",
+      "order_date": "2025-12-29",
+      "fmt": "new",
+      "folder": "Rajasthan",
+      "covered_cities": [
+        "Jaipur",
+        "Ranthambore",
+        "Pushkar",
+        "Jodhpur"
+      ],
+      "processed_at": "2026-10-28T08:57:40.991284+00:00"
+    },
+    "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.docx": {
+      "text_hash": "584bcb563772e5b1ccf80fc42aad6e55673b3fa4",
+      "order_date": "2025-12-31",
+      "fmt": "new",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Hanoi",
+        "Halong Bay",
+        "Da Nang",
+        "Hoi An",
+        "Ba Na Hills",
+        "Phu Quoc"
+      ],
+      "processed_at": "2026-10-28T08:57:41.021396+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.docx": {
+      "text_hash": "1ad504326c0be39609a0c40299405c4384becde2",
+      "order_date": "2026-01-07",
+      "fmt": "new",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Hampi",
+        "Bangalore",
+        "Chitradurga"
+      ],
+      "processed_at": "2026-10-28T08:57:41.041288+00:00"
+    },
+    "Spain/Sharlene_Spain_All Inclusive Guide.docx": {
+      "text_hash": "e656e3d515be0993e90988587d25ec0f60cc95b9",
+      "order_date": "2026-01-23",
+      "fmt": "new",
+      "folder": "Spain",
+      "covered_cities": [
+        "Barcelona",
+        "Girona",
+        "Valencia",
+        "Málaga",
+        "Granada",
+        "Córdoba",
+        "Seville",
+        "Ronda",
+        "Madrid",
+        "Toledo",
+        "Santiago de Compostela",
+        "Segovia",
+        "Ávila"
+      ],
+      "processed_at": "2026-10-28T08:57:41.077957+00:00"
+    },
+    "Singapore and Malaysia/Shubhi and Rochak_Malaysia_All Inclusive Guide.docx": {
+      "text_hash": "c9553d9ac532a6b719221f244be12178df671e79",
+      "order_date": "2026-01-23",
+      "fmt": "new",
+      "folder": "Singapore and Malaysia",
+      "covered_cities": [
+        "Kuala Lumpur",
+        "Batu Caves",
+        "Genting Highlands",
+        "Batu Gajah",
+        "Ipoh",
+        "Kuala Sepetang",
+        "George Town",
+        "Batu Ferringhi",
+        "Seberang Perai"
+      ],
+      "processed_at": "2026-10-28T08:57:41.130327+00:00"
+    },
+    "Andamans/Neha_All Inclusive Guide_Andamans.docx": {
+      "text_hash": "7e6d2dd2f78c8e22096e9a2361ee1dd4ab10bc19",
+      "order_date": "2026-01-31",
+      "fmt": "new",
+      "folder": "Andamans",
+      "covered_cities": [
+        "Port Blair",
+        "Baratang Island",
+        "Chidiya Tapu",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "processed_at": "2026-10-28T08:57:41.169531+00:00"
+    },
+    "Goa/Mohit_s Parents- All Inclusive Guide- Goa(1).docx": {
+      "text_hash": "fc15e3722c6d760f3477fbbd4580a3a5a903d83f",
+      "order_date": "2026-02-05",
+      "fmt": "new",
+      "folder": "Goa",
+      "covered_cities": [
+        "Goa",
+        "Panjim",
+        "Ponda",
+        "Old Goa",
+        "Fontainhas",
+        "North Goa"
+      ],
+      "processed_at": "2026-10-28T08:57:41.226372+00:00"
+    },
+    "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx": {
+      "text_hash": "d59a12fa26fea795a2d0cca6dedfb4fa4a93aa4a",
+      "order_date": "2026-02-12",
+      "fmt": "new",
+      "folder": "Goa",
+      "covered_cities": [
+        "Goa",
+        "Panjim",
+        "Ponda",
+        "Old Goa",
+        "Fontainhas",
+        "North Goa"
+      ],
+      "processed_at": "2026-10-28T08:58:18.166690+00:00"
+    },
+    "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx": {
+      "text_hash": "a8afa8ecdf783263ec05bf1a9d0469acea60b719",
+      "order_date": "2026-02-14",
+      "fmt": "new",
+      "folder": "Srilanka",
+      "covered_cities": [
+        "Colombo",
+        "Pinnawala",
+        "Kandy",
+        "Nuwara Eliya",
+        "Ella",
+        "Yala",
+        "Galle",
+        "Kosgoda"
+      ],
+      "processed_at": "2026-10-28T08:59:01.588875+00:00"
+    },
+    "France/Tanya and Shovit_All Inclusive Guide(2).docx": {
+      "text_hash": "2dfc33ac5b9d885ecfcf09a6cb2cfd3f904f78fc",
+      "order_date": "2026-02-21",
+      "fmt": "new",
+      "folder": "France",
+      "covered_cities": [
+        "Paris",
+        "Annecy",
+        "Chamonix",
+        "Freiburg",
+        "Baden-Baden",
+        "Strasbourg",
+        "Colmar",
+        "Reims"
+      ],
+      "processed_at": "2026-10-28T09:00:00.428887+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Mr. Vincent Rangel_ All Inclusive Guide.docx": {
+      "text_hash": "f026d32c1c0b5c5b3f71ae241160707eb7f5fd43",
+      "order_date": "2026-02-24",
+      "fmt": "new",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Mysore",
+        "Bangalore"
+      ],
+      "processed_at": "2026-10-28T09:00:00.442878+00:00"
+    },
+    "South Korea/Kiran-South Korea-All Inclusive Guide.docx": {
+      "text_hash": "fd50ddc0f6e3cabc4ab5f8a0540c2a2bf02d0ed4",
+      "order_date": "2026-03-04",
+      "fmt": "new",
+      "folder": "South Korea",
+      "covered_cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "processed_at": "2026-10-28T09:00:00.456718+00:00"
+    },
+    "Japan/AA_All Inclusive Guide_Japan.docx": {
+      "text_hash": "c6a9e33c74b45d5a4d9d744d40d8f0faab4c28a3",
+      "order_date": "2026-03-08",
+      "fmt": "new",
+      "folder": "Japan",
+      "covered_cities": [
+        "Osaka",
+        "Kyoto",
+        "Nara",
+        "Amanohashidate",
+        "Ine",
+        "Tokyo",
+        "Kawaguchiko"
+      ],
+      "processed_at": "2026-10-28T09:00:00.494178+00:00"
+    },
+    "North India/Mr. Amit Sinkar- North India- All Inclusive Guide.docx": {
+      "text_hash": "e542b2f6744bee24ebacd6feecf32ca90ed1450b",
+      "order_date": "2026-03-13",
+      "fmt": "new",
+      "folder": "North India",
+      "covered_cities": [
+        "Amritsar",
+        "Dalhousie",
+        "Khajjiar",
+        "Dharamshala",
+        "McLeod Ganj",
+        "Palampur"
+      ],
+      "processed_at": "2026-10-28T09:00:00.536915+00:00"
+    },
+    "Thailand/Samruddhi- Thailand - All Inclusive Guide.docx": {
+      "text_hash": "2c3179b9e55fb83a3061eaee7457a58f0da002f5",
+      "order_date": "2026-03-17",
+      "fmt": "new",
+      "folder": "Thailand",
+      "covered_cities": [
+        "Krabi",
+        "Ao Nang",
+        "Phuket",
+        "Patong",
+        "Phi Phi Islands"
+      ],
+      "processed_at": "2026-10-28T09:00:00.576542+00:00"
+    },
+    "Philippines/Megha_Philippines_All Inclusive Guide.docx": {
+      "text_hash": "677550cb9b3f274150aadc1d5a505e8493ceb6f5",
+      "order_date": "2026-03-18",
+      "fmt": "new",
+      "folder": "Philippines",
+      "covered_cities": [
+        "Cebu City",
+        "Mactan",
+        "Cordova",
+        "Minglanilla"
+      ],
+      "processed_at": "2026-10-28T09:00:00.638114+00:00"
+    },
+    "Bali Indonesia/All Inclusive Guide- Bali.docx": {
+      "text_hash": "64e9a62e0f63b5af40e30cb7a049f060b5ec8e59",
+      "order_date": "2026-03-19",
+      "fmt": "new",
+      "folder": "Bali Indonesia",
+      "covered_cities": [
+        "Bali",
+        "Ubud",
+        "Nusa Penida",
+        "Pererenan",
+        "Seminyak",
+        "Kuta"
+      ],
+      "processed_at": "2026-10-28T09:00:17.890447+00:00"
+    },
+    "Japan/AA_All Inclusive Guide_Japan_v5.docx": {
+      "text_hash": "ebf9a16b4b22f024f1e18b10223a256d3ad58338",
+      "order_date": "2026-03-23",
+      "fmt": "new",
+      "folder": "Japan",
+      "covered_cities": [
+        "Osaka",
+        "Kyoto",
+        "Nara",
+        "Amanohashidate",
+        "Ine",
+        "Tokyo",
+        "Lake Kawaguchiko"
+      ],
+      "processed_at": "2026-10-28T09:02:19.433054+00:00"
+    },
+    "Goa/Oishee_Goa_All Inclusive Guide.docx": {
+      "text_hash": "9c18f3720bc63655c5c3f3ff857fdbb5c3632ab7",
+      "order_date": "2026-03-23",
+      "fmt": "new",
+      "folder": "Goa",
+      "covered_cities": [
+        "Goa",
+        "Bambolim",
+        "Panjim",
+        "North Goa",
+        "Ponda",
+        "South Goa"
+      ],
+      "processed_at": "2026-10-28T09:02:19.456316+00:00"
+    },
+    "Japan/Azhar_Japan_All Inclusive Guide.docx": {
+      "text_hash": "cfd51e74a6f5380ae2ac9470e05f6c20ae0588a9",
+      "order_date": "2026-03-25",
+      "fmt": "new",
+      "folder": "Japan",
+      "covered_cities": [
+        "Osaka",
+        "Kyoto",
+        "Arashiyama",
+        "Awaji Island",
+        "Tokyo",
+        "Hakone",
+        "Kamakura",
+        "Enoshima"
+      ],
+      "processed_at": "2026-10-28T09:02:44.714171+00:00"
+    },
+    "Japan/Amanda_Japan_All Inclusive Guide.docx": {
+      "text_hash": "48bcf49a9a91b5514d9379c3c03253c4f8733965",
+      "order_date": "2026-03-27",
+      "fmt": "new",
+      "folder": "Japan",
+      "covered_cities": [
+        "Osaka",
+        "Kyoto",
+        "Nara",
+        "Tokyo",
+        "Mt. Fuji"
+      ],
+      "processed_at": "2026-10-28T09:02:44.744029+00:00"
+    },
+    "Japan/AA_All Inclusive Guide_Japan(1).docx": {
+      "text_hash": "6b7fe267a23f56e7159adad7d0d8d7fa019d9fae",
+      "order_date": "2026-03-28",
+      "fmt": "new",
+      "folder": "Japan",
+      "covered_cities": [
+        "Osaka",
+        "Kyoto",
+        "Arashiyama",
+        "Nara",
+        "Amanohashidate",
+        "Ine",
+        "Tokyo",
+        "Lake Kawaguchiko"
+      ],
+      "processed_at": "2026-10-28T09:02:44.781450+00:00"
+    },
+    "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx": {
+      "text_hash": "e0535d5933309b0d6fec9f6e4422dfa456c9d216",
+      "order_date": "2026-03-30",
+      "fmt": "new",
+      "folder": "Japan",
+      "covered_cities": [
+        "Tokyo",
+        "Osaka",
+        "Kyoto",
+        "Nara",
+        "Mt. Fuji"
+      ],
+      "processed_at": "2026-10-28T09:02:44.814338+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Janice_TN_All Inclusive Guide.docx": {
+      "text_hash": "3e7a558907ef8e4cc7d5c61ca09550881209a12f",
+      "order_date": "2026-04-01",
+      "fmt": "new",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Trichy",
+        "Velankanni",
+        "Pondicherry",
+        "Auroville",
+        "Chennai"
+      ],
+      "processed_at": "2026-10-28T09:02:44.841725+00:00"
+    },
+    "Japan/TVP_Tokyo_All Inclusive Guide.docx": {
+      "text_hash": "025433b26989c6050886cc0248f21bbf08855eb8",
+      "order_date": "2026-04-01",
+      "fmt": "new",
+      "folder": "Japan",
+      "covered_cities": [
+        "Tokyo",
+        "Nikko",
+        "Kawaguchiko",
+        "Osaka"
+      ],
+      "processed_at": "2026-10-28T09:02:48.324018+00:00"
+    },
+    "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx": {
+      "text_hash": "75bae2f596c76ad83f50040d9227609f9f7156ba",
+      "order_date": "2026-04-08",
+      "fmt": "new",
+      "folder": "Almaty Kazakhstan",
+      "covered_cities": [
+        "Tashkent",
+        "Bukhara",
+        "Samarkand",
+        "Almaty",
+        "Charyn Canyon",
+        "Kolsai Lakes"
+      ],
+      "processed_at": "2026-10-28T09:04:26.960804+00:00"
+    },
+    "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx": {
+      "text_hash": "81f0273e8eeb686e948876025c470e63cca711a1",
+      "order_date": "2026-04-09",
+      "fmt": "new",
+      "folder": "Japan",
+      "covered_cities": [
+        "Osaka",
+        "Nara",
+        "Kyoto",
+        "Tokyo",
+        "Oshino",
+        "Kawaguchiko",
+        "Hakone"
+      ],
+      "processed_at": "2026-10-28T09:04:26.998860+00:00"
+    },
+    "Vietnam/Mohnish_All Inclusive Guide.docx": {
+      "text_hash": "902b7fa269ccc9f01ffa22b52d8c1bf6d345b261",
+      "order_date": "2026-04-14",
+      "fmt": "new",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Hanoi",
+        "Halong Bay",
+        "Sapa",
+        "Da Nang",
+        "Hoi An",
+        "Ho Chi Minh City",
+        "Mekong Delta"
+      ],
+      "processed_at": "2026-10-28T09:04:37.650824+00:00"
+    },
+    "Northeast India/Amit- Sikkim_All Inclusive Guide.docx": {
+      "text_hash": "1e837d708ea810794736aafce63c82bd7a55e771",
+      "order_date": "2026-04-21",
+      "fmt": "new",
+      "folder": "Northeast India",
+      "covered_cities": [
+        "Bagdogra",
+        "Pelling",
+        "Gangtok",
+        "Kalimpong"
+      ],
+      "processed_at": "2026-10-28T09:04:37.674088+00:00"
+    },
+    "Switzerland/Nidhi_Switzerland_All Inclusive Guide.docx": {
+      "text_hash": "f471791bdb7407e4af9f023ff7c18ba3c77dffcc",
+      "order_date": "2026-04-22",
+      "fmt": "new",
+      "folder": "Switzerland",
+      "covered_cities": [
+        "Zurich",
+        "Lucerne",
+        "Mount Rigi",
+        "Interlaken",
+        "Grindelwald",
+        "Mürren",
+        "Gimmelwald",
+        "Lauterbrunnen",
+        "Jungfraujoch",
+        "Zermatt",
+        "Gornergrat"
+      ],
+      "processed_at": "2026-10-28T09:04:37.729467+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Pratheek_Karnataka_All Inclusive Guide.docx": {
+      "text_hash": "dc4f2ec00f40d1d4f99a3e3a4f6b4d78dccc337c",
+      "order_date": "2026-04-23",
+      "fmt": "new",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Hyderabad",
+        "Chitradurga",
+        "Sakrebyle",
+        "Shivamogga",
+        "Chikkamagaluru",
+        "Dharmasthala",
+        "Sringeri",
+        "Thirthahalli",
+        "Kurnool"
+      ],
+      "processed_at": "2026-10-28T09:04:37.818749+00:00"
+    },
+    "France/Sneha_Europe_All Inclusive Guide(1).docx": {
+      "text_hash": "8cda65fbefe0480af33d668a5fea8dbe5174d6fd",
+      "order_date": "2026-04-24",
+      "fmt": "new",
+      "folder": "France",
+      "covered_cities": [
+        "Paris",
+        "Disneyland Paris",
+        "Lucerne",
+        "Engelberg",
+        "Interlaken",
+        "Grindelwald",
+        "Lauterbrunnen",
+        "Jungfraujoch",
+        "Zurich"
+      ],
+      "processed_at": "2026-10-28T09:04:50.347538+00:00"
+    },
+    "Maldives/Piyush_Maldives_All Inclusive Guide.docx": {
+      "text_hash": "aba3f221a4b94051c2bc322167a5c43e94a9653d",
+      "order_date": "2026-04-25",
+      "fmt": "new",
+      "folder": "Maldives",
+      "covered_cities": [
+        "Sun Siyam Olhuveli",
+        "Malé",
+        "Hulhumalé"
+      ],
+      "processed_at": "2026-10-28T09:04:50.361228+00:00"
+    },
+    "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx": {
+      "text_hash": "0c52e23de32b7629a317da18c05a88b690286162",
+      "order_date": "2026-05-04",
+      "fmt": "new",
+      "folder": "Northeast India",
+      "covered_cities": [
+        "Guwahati",
+        "Shillong",
+        "Cherrapunjee",
+        "Mawlynnong",
+        "Dawki"
+      ],
+      "processed_at": "2026-10-28T09:07:29.541604+00:00"
+    },
+    "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx": {
+      "text_hash": "53c633d1a57b96c4009c3a78f887ac121ce0958d",
+      "order_date": "2026-05-08",
+      "fmt": "new",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Da Nang",
+        "Hoi An",
+        "Ninh Binh",
+        "Hanoi",
+        "Halong Bay",
+        "Sapa"
+      ],
+      "processed_at": "2026-10-28T09:07:29.588580+00:00"
+    },
+    "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx": {
+      "text_hash": "1c9d406662c14dc51c092dfed68be12d460078b8",
+      "order_date": "2026-05-12",
+      "fmt": "new",
+      "folder": "Japan",
+      "covered_cities": [
+        "Tokyo",
+        "Kawaguchiko",
+        "Kyoto",
+        "Nara",
+        "Osaka",
+        "Singapore",
+        "Sentosa"
+      ],
+      "processed_at": "2026-10-28T09:07:29.984080+00:00"
+    },
+    "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx": {
+      "text_hash": "69c4de00e6d9e16354e70690d9b6c20b62d54800",
+      "order_date": "2026-05-13",
+      "fmt": "new",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Hanoi",
+        "Halong Bay",
+        "Ninh Binh",
+        "Da Nang",
+        "Hoi An"
+      ],
+      "processed_at": "2026-10-28T09:07:30.013348+00:00"
+    },
+    "South Korea/Farha_South Korea_ All Inclusive Guide.docx": {
+      "text_hash": "4a1d3799045960e679273166d60dddcd8f1f2802",
+      "order_date": "2026-05-19",
+      "fmt": "new",
+      "folder": "South Korea",
+      "covered_cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "processed_at": "2026-10-28T09:10:00.796518+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx": {
+      "text_hash": "cd809727086c101f3e269d1de1ee4a7047436a88",
+      "order_date": "2026-05-21",
+      "fmt": "new",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Cochin",
+        "Athirappilly",
+        "Munnar",
+        "Thekkady",
+        "Kerala"
+      ],
+      "processed_at": "2026-10-28T09:10:00.825789+00:00"
+    },
+    "Singapore and Malaysia/Yogesh_Singapore_All Inclusive Guide.docx": {
+      "text_hash": "04982c02ebf8f2950710256234de53f3c699d3a9",
+      "order_date": "2026-05-23",
+      "fmt": "new",
+      "folder": "Singapore and Malaysia",
+      "covered_cities": [
+        "Singapore",
+        "Sentosa"
+      ],
+      "processed_at": "2026-10-28T09:10:00.885418+00:00"
+    },
+    "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx": {
+      "text_hash": "bf1db0120fd6961eb1bdcfd230a7f98db1d98dcb",
+      "order_date": "2026-05-25",
+      "fmt": "new",
+      "folder": "South Korea",
+      "covered_cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "processed_at": "2026-10-28T09:10:00.946589+00:00"
+    },
+    "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx": {
+      "text_hash": "71c4b37b70373d0276b358bf89d535ba00849462",
+      "order_date": "2026-06-01",
+      "fmt": "new",
+      "folder": "Bali Indonesia",
+      "covered_cities": [
+        "Ubud",
+        "Lempuyang",
+        "Sanur",
+        "Nusa Penida",
+        "Kintamani",
+        "Nusa Dua",
+        "Tanjung Benoa",
+        "Kuta",
+        "Seminyak",
+        "Uluwatu",
+        "Denpasar"
+      ],
+      "processed_at": "2026-10-28T09:10:12.393022+00:00"
+    },
+    "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx": {
+      "text_hash": "9bf055ed2d8079050830db0b6c78e440ea0be002",
+      "order_date": "2026-06-05",
+      "fmt": "new",
+      "folder": "Northeast India",
+      "covered_cities": [
+        "Dimapur",
+        "Jakhama",
+        "Kigwema",
+        "Kisama",
+        "Pfutsero",
+        "Zapami",
+        "Kohima",
+        "Khonoma",
+        "Dzuleke",
+        "Puliebadze"
+      ],
+      "processed_at": "2026-10-28T09:11:03.627644+00:00"
+    },
+    "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx": {
+      "text_hash": "64ff65f045f3d8c5c6cb3cb2dd15398b9c3ef704",
+      "order_date": "2026-06-06",
+      "fmt": "new",
+      "folder": "Bali Indonesia",
+      "covered_cities": [
+        "Ubud",
+        "Kintamani",
+        "Karangasem",
+        "Sanur",
+        "Nusa Penida",
+        "Nusa Dua",
+        "Tanjung Benoa",
+        "Kuta",
+        "Seminyak",
+        "Tanah Lot",
+        "Uluwatu"
+      ],
+      "processed_at": "2026-10-28T09:12:27.168993+00:00"
+    },
+    "Gujarat/Shweta- Somnath+Dwaraka_All_Inclusive_Guide.docx": {
+      "text_hash": "4526c16d4d62c5d1bef9f4b7f8611973610846e1",
+      "order_date": "2026-06-07",
+      "fmt": "new",
+      "folder": "Gujarat",
+      "covered_cities": [
+        "Ahmedabad",
+        "Rajkot",
+        "Junagadh",
+        "Somnath",
+        "Dwarka",
+        "Bet Dwarka",
+        "Vadodara"
+      ],
+      "processed_at": "2026-10-28T09:12:27.199023+00:00"
+    },
+    "North India/Dilna_Agra_All Inclusive Guide.docx": {
+      "text_hash": "75e869b5a0931455fa8fbc218678af0f63af0a51",
+      "order_date": "2026-06-11",
+      "fmt": "new",
+      "folder": "North India",
+      "covered_cities": [
+        "Agra",
+        "Fatehpur Sikri",
+        "Bharatpur"
+      ],
+      "processed_at": "2026-10-28T09:12:41.546667+00:00"
+    },
+    "North India/Silky_Mussoorie_All_Inclusive_Guide.docx": {
+      "text_hash": "ad4244700ba06ffb10e81d8d9bca95ffe8ed3b8e",
+      "order_date": "2026-06-17",
+      "fmt": "new",
+      "folder": "North India",
+      "covered_cities": [
+        "Dehradun",
+        "Mussoorie",
+        "Dhanaulti",
+        "Kanatal"
+      ],
+      "processed_at": "2026-10-28T09:12:41.572794+00:00"
+    },
+    "England and Scotland/Bhushan- London - All Inclusive Guide_v3.docx": {
+      "text_hash": "c6c76bfeb751d7b109c54e6ff56a2faa82feb30a",
+      "order_date": "2026-06-27",
+      "fmt": "new",
+      "folder": "England and Scotland",
+      "covered_cities": [
+        "London"
+      ],
+      "processed_at": "2026-10-28T09:12:41.591397+00:00"
+    },
+    "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx": {
+      "text_hash": "98e3868a3ce7c951cec6473780126809382d3b64",
+      "order_date": "2026-07-01",
+      "fmt": "new",
+      "folder": "Bali Indonesia",
+      "covered_cities": [
+        "Ubud",
+        "Tegallalang",
+        "Kintamani",
+        "Sanur",
+        "Denpasar"
+      ],
+      "processed_at": "2026-10-28T09:12:41.622663+00:00"
+    },
+    "South America/Naren- Peru_All Inclusive Guide.docx": {
+      "text_hash": "381c9fd8fb385c2ae215d048fdfc4963f48cafa5",
+      "order_date": "2026-07-25",
+      "fmt": "new",
+      "folder": "South America",
+      "covered_cities": [
+        "Lima",
+        "Puerto Maldonado",
+        "Cusco",
+        "Sacred Valley",
+        "Machu Picchu"
+      ],
+      "processed_at": "2026-10-28T09:12:45.224451+00:00"
+    },
+    "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx": {
+      "text_hash": "3ab9ced5c97affcf51a701f995ccc641c6355b71",
+      "order_date": "2026-08-24",
+      "fmt": "new",
+      "folder": "Goa",
+      "covered_cities": [
+        "Saligao",
+        "Assagao",
+        "Reis Magos",
+        "Panjim",
+        "Nagoa",
+        "Torda",
+        "North Goa",
+        "Goa"
+      ],
+      "processed_at": "2026-10-28T09:13:11.599274+00:00"
+    },
+    "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx": {
+      "text_hash": "545bca80ed50dcc02b4582e797bb113dfd2520c9",
+      "order_date": "2026-08-29",
+      "fmt": "new",
+      "folder": "Bali Indonesia",
+      "covered_cities": [
+        "Denpasar",
+        "Ubud",
+        "Tirta Gangga",
+        "Kintamani",
+        "Sanur",
+        "Nusa Lembongan",
+        "Nusa Penida",
+        "Uluwatu",
+        "Jimbaran",
+        "Nusa Dua",
+        "Seminyak",
+        "Tanah Lot"
+      ],
+      "processed_at": "2026-10-28T09:14:21.019557+00:00"
+    },
+    "North India/Rashmi- Leh and Ladakh- All Inclusive Guide.docx": {
+      "text_hash": "e648aae17ceaf84e4aaa393c7b7c9ce7c08ac072",
+      "order_date": "2026-09-04",
+      "fmt": "new",
+      "folder": "North India",
+      "covered_cities": [
+        "Leh"
+      ],
+      "processed_at": "2026-10-28T09:14:21.030868+00:00"
+    },
+    "North India/Rashmi- Leh and Ladakh- All Inclusive Guide(1).docx": {
+      "text_hash": "0c9552ce23d1cc9af7ecce73fa194b7e16a7fd86",
+      "order_date": "2026-09-05",
+      "fmt": "new",
+      "folder": "North India",
+      "covered_cities": [
+        "Leh"
+      ],
+      "processed_at": "2026-10-28T09:14:21.044138+00:00"
+    },
+    "North India/Final_Rashmi- Leh and Ladakh- All Inclusive Guide.docx": {
+      "text_hash": "24c0d2ced0cf75ab85490a2e7b0241af27614dfa",
+      "order_date": "2026-09-06",
+      "fmt": "new",
+      "folder": "North India",
+      "covered_cities": [
+        "Leh",
+        "Spituk"
+      ],
+      "processed_at": "2026-10-28T09:14:21.061300+00:00"
+    },
+    "Vietnam/Ishita- Phu Quoc- All Inclusive Guide.docx": {
+      "text_hash": "ccbe2a3542094505add41d2d91725efb931a415e",
+      "order_date": "2026-09-14",
+      "fmt": "new",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Phu Quoc"
+      ],
+      "processed_at": "2026-10-28T09:14:21.078978+00:00"
+    },
+    "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx": {
+      "text_hash": "8729ced9a6472d8b622f8f3dc3b190726a0436c1",
+      "order_date": "2026-10-05",
+      "fmt": "new",
+      "folder": "Bali Indonesia",
+      "covered_cities": [
+        "Ubud",
+        "Tegallalang",
+        "Kintamani",
+        "Tampaksiring",
+        "Nusa Lembongan",
+        "Nusa Ceningan",
+        "Sanur"
+      ],
+      "processed_at": "2026-10-28T09:14:21.116516+00:00"
+    },
+    "Portugal/Jumana_Lisbon All Inclusive Guide(1).docx": {
+      "text_hash": "748efcc0e4e443bb414df659401aa115637ef3c2",
+      "order_date": "2026-10-05",
+      "fmt": "new",
+      "folder": "Portugal",
+      "covered_cities": [
+        "Lisbon",
+        "Belém",
+        "Sintra",
+        "Óbidos"
+      ],
+      "processed_at": "2026-10-28T09:14:29.148147+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Nidhi- Kerala- All Inclusive Guide_14102026.docx": {
+      "text_hash": "64c5a1bcb97bd2a59ce0324447c10ea90fa87846",
+      "order_date": "2026-10-14",
+      "fmt": "new",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Cochin",
+        "Munnar",
+        "Thekkady",
+        "Fort Kochi"
+      ],
+      "processed_at": "2026-10-28T09:14:48.589201+00:00"
+    },
+    "Greece and Turkey/Annie and Holly Cappadocia- All Inclusive Guide.docx": {
+      "text_hash": "f900d29f1170eff2b2f40557e6ad07abf3b5f795",
+      "order_date": "2026-10-19",
+      "fmt": "new",
+      "folder": "Greece and Turkey",
+      "covered_cities": [
+        "Istanbul"
+      ],
+      "processed_at": "2026-10-28T09:15:39.006350+00:00"
+    },
+    "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx": {
+      "text_hash": "207e0bb778342684bfddd97b02e9a4495e6f5453",
+      "order_date": "2026-10-20",
+      "fmt": "new",
+      "folder": "Bali Indonesia",
+      "covered_cities": [
+        "Ubud",
+        "Tegallalang",
+        "Kintamani",
+        "Tampaksiring",
+        "Nusa Lembongan",
+        "Nusa Ceningan",
+        "Sanur"
+      ],
+      "processed_at": "2026-10-28T09:17:01.443779+00:00"
+    },
+    "Greece and Turkey/Istanbul- All Inclusive Guide_ Annie, Heather, Holly.docx": {
+      "text_hash": "debd8b9f5ee5079eee7aa66dd4297f0449835426",
+      "order_date": "2026-10-20",
+      "fmt": "new",
+      "folder": "Greece and Turkey",
+      "covered_cities": [
+        "Istanbul"
+      ],
+      "processed_at": "2026-10-28T09:17:01.457171+00:00"
+    },
+    "Portugal/Jumana_Lisbon All Inclusive Guide.docx": {
+      "text_hash": "f7f0593c8be6dedf25990e541803beee7d18a3e3",
+      "order_date": "2026-10-20",
+      "fmt": "new",
+      "folder": "Portugal",
+      "covered_cities": [
+        "Lisbon",
+        "Sintra",
+        "Óbidos"
+      ],
+      "processed_at": "2026-10-28T09:17:01.473705+00:00"
+    },
+    "USA/Saumitra_NYC_All Inclusive Guide.docx": {
+      "text_hash": "a6dbf652540b7bd3f10c898f6efac9432a015449",
+      "order_date": "2026-10-20",
+      "fmt": "new",
+      "folder": "USA",
+      "covered_cities": [
+        "New York"
+      ],
+      "processed_at": "2026-10-28T09:17:01.484429+00:00"
+    },
+    "France/Sneha_Europe_All Inclusive Guide.docx": {
+      "text_hash": "b32a1230dc9c48e70de8939502f2ae1818ff169f",
+      "order_date": "2026-10-20",
+      "fmt": "new",
+      "folder": "France",
+      "covered_cities": [
+        "Paris",
+        "Disneyland Paris",
+        "Lucerne",
+        "Engelberg",
+        "Interlaken",
+        "Jungfraujoch",
+        "Grindelwald",
+        "Lauterbrunnen",
+        "Zurich"
+      ],
+      "processed_at": "2026-10-28T09:17:01.517611+00:00"
+    },
+    "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx": {
+      "text_hash": "46b3e1c9c6e57a7d108a1766230cd874e7b87423",
+      "order_date": null,
+      "fmt": "new",
+      "folder": "Egypt",
+      "covered_cities": [
+        "Cairo",
+        "Giza",
+        "Aswan",
+        "Abu Simbel",
+        "Kom Ombo",
+        "Edfu",
+        "Luxor",
+        "Memphis",
+        "Saqqara",
+        "Dahshur",
+        "Alexandria",
+        "Casablanca",
+        "Rabat",
+        "Chefchaouen",
+        "Fez",
+        "Beni Mellal",
+        "Marrakech"
+      ],
+      "processed_at": "2026-10-28T09:27:33.812386+00:00"
+    },
+    "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx": {
+      "text_hash": "23682badcf64745e129b41699443adac94b38f1f",
+      "order_date": "2025-12-29",
+      "fmt": "new",
+      "folder": "Egypt",
+      "covered_cities": [
+        "Cairo",
+        "Giza",
+        "Aswan",
+        "Abu Simbel",
+        "Kom Ombo",
+        "Edfu",
+        "Luxor",
+        "Memphis",
+        "Saqqara",
+        "Dahshur",
+        "Alexandria",
+        "Casablanca",
+        "Rabat",
+        "Chefchaouen",
+        "Fez",
+        "Beni Mellal",
+        "Marrakech"
+      ],
+      "processed_at": "2026-10-28T09:27:33.865255+00:00"
+    },
+    "Netherlands/Anurag_Europe_All Inclusive Guide.docx": {
+      "text_hash": "9cd3935073fa3b27e527bb0d9266ff1f4a9d6976",
+      "order_date": "2026-04-26",
+      "fmt": "new",
+      "folder": "Netherlands",
+      "covered_cities": [
+        "Amsterdam",
+        "Almere",
+        "Zaanse Schans",
+        "Zaandam",
+        "Keukenhof",
+        "Eindhoven",
+        "Florence",
+        "Pisa",
+        "Rome",
+        "Civitavecchia",
+        "Salerno",
+        "Amalfi",
+        "Santorini",
+        "Kusadasi",
+        "Selçuk",
+        "Katakolon",
+        "Olympia"
+      ],
+      "processed_at": "2026-10-28T09:28:05.524147+00:00"
+    },
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx": {
+      "text_hash": "59f7a72e8865bd75e293b1319e129a7cb541f999",
+      "order_date": "2026-05-03",
+      "fmt": "new",
+      "folder": "Europe",
+      "covered_cities": [
+        "Geneva",
+        "Chamonix",
+        "Montreux",
+        "Gstaad",
+        "Saanen",
+        "Interlaken",
+        "Lauterbrunnen",
+        "Grindelwald",
+        "Brienz",
+        "Lucerne",
+        "Rhine Falls",
+        "Zurich",
+        "Milan",
+        "Serravalle",
+        "Venice",
+        "Venice Mestre",
+        "Florence",
+        "Cinque Terre",
+        "La Spezia",
+        "Rome"
+      ],
+      "processed_at": "2026-10-28T09:31:02.422716+00:00"
+    },
+    "Europe/Kunal_Europe_All Inclusive Guide.docx": {
+      "text_hash": "8babe57838aec543e04bf6ba4ef73619342f357b",
+      "order_date": "2026-05-04",
+      "fmt": "new",
+      "folder": "Europe",
+      "covered_cities": [
+        "Geneva",
+        "Chamonix",
+        "Montreux",
+        "Gstaad",
+        "Saanen",
+        "Interlaken",
+        "Lauterbrunnen",
+        "Grindelwald",
+        "Brienz",
+        "Lucerne",
+        "Rhine Falls",
+        "Zurich",
+        "Milan",
+        "Serravalle",
+        "Venice",
+        "Venice Mestre",
+        "Florence",
+        "Cinque Terre",
+        "La Spezia",
+        "Monterosso al Mare",
+        "Vernazza",
+        "Manarola",
+        "Riomaggiore",
+        "Rome"
+      ],
+      "processed_at": "2026-10-28T09:31:21.386521+00:00"
+    },
+    "Europe/Sirisha_Europe_All Inclusive Guide.docx": {
+      "text_hash": "ba46bbb09e1f634050f25d25f260ed991eba23b7",
+      "order_date": "2026-05-07",
+      "fmt": "new",
+      "folder": "Europe",
+      "covered_cities": [
+        "Amsterdam",
+        "Haarlem",
+        "Zaanse Schans",
+        "Zaandam",
+        "Giethoorn",
+        "Rotterdam",
+        "Brussels",
+        "Bruges",
+        "Cologne",
+        "Bonn"
+      ],
+      "processed_at": "2026-10-28T09:31:21.428045+00:00"
+    },
+    "Europe/Vidhi_Europe_All Inclusive Guide.docx": {
+      "text_hash": "b47a3c32206fdce3deaf698b7106024abb35833e",
+      "order_date": "2026-05-14",
+      "fmt": "new",
+      "folder": "Europe",
+      "covered_cities": [
+        "Paris",
+        "Versailles",
+        "Disneyland Paris",
+        "Zurich",
+        "Rhine Falls",
+        "Lucerne",
+        "Mt. Rigi",
+        "Engelberg",
+        "Interlaken",
+        "Jungfraujoch",
+        "Grindelwald",
+        "Lauterbrunnen",
+        "Mürren",
+        "Chur",
+        "Tirano",
+        "Venice",
+        "Murano",
+        "Burano",
+        "Florence",
+        "Pisa",
+        "Montepulciano",
+        "Pienza",
+        "Rome"
+      ],
+      "processed_at": "2026-10-28T09:35:27.163823+00:00"
+    },
+    "Japan/Manjari_Japan_All Inclusive Guide.docx": {
+      "text_hash": "27b53e8bd632233a697efab6af8675b9a23f8750",
+      "order_date": "2026-05-15",
+      "fmt": "new",
+      "folder": "Japan",
+      "covered_cities": [
+        "Osaka",
+        "Amanohashidate",
+        "Ine Bay",
+        "Kyoto",
+        "Nara",
+        "Tokyo",
+        "Lake Kawaguchiko",
+        "Oshino Hakkai"
+      ],
+      "processed_at": "2026-10-28T09:35:27.214001+00:00"
+    },
+    "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx": {
+      "text_hash": "01f986e560251b5b2f6a92e6537620ae3543f622",
+      "order_date": "2026-05-25",
+      "fmt": "new",
+      "folder": "Switzerland",
+      "covered_cities": [
+        "Zurich",
+        "Rhine Falls",
+        "Interlaken",
+        "Lauterbrunnen",
+        "Wengen",
+        "Brienz",
+        "Lucerne",
+        "Engelberg",
+        "Paris",
+        "Disneyland Paris"
+      ],
+      "processed_at": "2026-10-28T09:35:27.323571+00:00"
+    },
+    "Japan/Akankshaa- Japan_All Inclusive Guide.docx": {
+      "text_hash": "26568b1f05f0ce51bd9c85a8b78700557b155bc7",
+      "order_date": "2026-06-11",
+      "fmt": "new",
+      "folder": "Japan",
+      "covered_cities": [
+        "Kyoto",
+        "Osaka",
+        "Tokyo",
+        "Kawaguchiko"
+      ],
+      "processed_at": "2026-10-28T09:38:15.726810+00:00"
+    },
+    "Japan/Shital- Japan- All Inclusive Guide.docx": {
+      "text_hash": "d460ab98020f452e9b9595bda4f28e3ae172ee9b",
+      "order_date": "2026-10-19",
+      "fmt": "new",
+      "folder": "Japan",
+      "covered_cities": [
+        "Osaka",
+        "Nara",
+        "Kashihara",
+        "Hiroshima",
+        "Miyajima",
+        "Fukuoka",
+        "Kyoto",
+        "Ine",
+        "Amanohashidate",
+        "Tokyo",
+        "Hakone",
+        "Mt Fuji Area",
+        "Nikko"
+      ],
+      "processed_at": "2026-10-28T09:38:15.786269+00:00"
+    },
+    "Goa/Ankush_Goa Guide.pdf": {
+      "text_hash": "1e052b9cb12aaff605aef8e5d694965604783d0a",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Goa",
+      "covered_cities": [
+        "Goa",
+        "Panjim"
+      ],
+      "processed_at": "2026-10-28T10:07:31.107502+00:00"
+    },
+    "Thailand/Arpita Thailand.pdf": {
+      "text_hash": "93cfa3e86deaacd9a2463a583d2f1305002b1219",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Thailand",
+      "covered_cities": [
+        "Pattaya",
+        "Koh Larn",
+        "Koh Samui",
+        "Bangkok"
+      ],
+      "processed_at": "2026-10-28T10:08:25.290135+00:00"
+    },
+    "England and Scotland/Edlyn London.pdf": {
+      "text_hash": "925c7011f8c4cca1f94a8dce56182faba406f7a0",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "England and Scotland",
+      "covered_cities": [
+        "London",
+        "Cotswolds",
+        "Stratford upon Avon",
+        "Bath",
+        "Edinburgh",
+        "Stonehenge",
+        "Windsor",
+        "Athens",
+        "Mykonos",
+        "Santorini",
+        "Istanbul",
+        "Ephesus",
+        "Selçuk"
+      ],
+      "processed_at": "2026-10-28T10:08:30.783340+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf": {
+      "text_hash": "af019213a7b35c305edc935523f99ae1b6dbaad4",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Munnar",
+        "Thekkady",
+        "Kumarakom",
+        "Alleppey",
+        "Kochi"
+      ],
+      "processed_at": "2026-10-28T10:08:30.812413+00:00"
+    },
+    "Rajasthan/Jaipur and Jodhpur Itinerary.pdf": {
+      "text_hash": "bfc8e126e06643798cdfbc12c7e574d0ac2ae8c5",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Rajasthan",
+      "covered_cities": [
+        "Jaipur",
+        "Jodhpur",
+        "Pushkar",
+        "Ajmer"
+      ],
+      "processed_at": "2026-10-28T10:08:30.839317+00:00"
+    },
+    "Dubai and Abu Dhabi - UAE/Kush_All Inclsuive Guide_Dubai.pdf": {
+      "text_hash": "c0f1a3e6d13a963ea1e63055c9700a771efb6e75",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Dubai and Abu Dhabi - UAE",
+      "covered_cities": [
+        "Dubai"
+      ],
+      "processed_at": "2026-10-28T10:09:40.600739+00:00"
+    },
+    "France/Paris, Switzerland and Italy.pdf": {
+      "text_hash": "d88bec185ab910b20793b0b55ac159e4f195ca32",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "France",
+      "covered_cities": [
+        "Paris",
+        "Interlaken",
+        "Lucerne",
+        "Engelberg",
+        "Milan",
+        "Venice",
+        "Pienza",
+        "San Quirico d'Orcia",
+        "Montepulciano",
+        "Amalfi",
+        "Maiori",
+        "Ravello",
+        "Rome",
+        "Zurich"
+      ],
+      "processed_at": "2026-10-28T10:10:57.274162+00:00"
+    },
+    "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf": {
+      "text_hash": "0bda16fc132650a9e3a764f07e7714c59c5766fe",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Azerbaijan and Georgia",
+      "covered_cities": [
+        "Baku",
+        "Gabala",
+        "Sheki"
+      ],
+      "processed_at": "2026-10-28T10:10:57.304276+00:00"
+    },
+    "Japan/Detailed Final Itinerary for Japan_05052024.pdf": {
+      "text_hash": "263210f98821c1a9137d2a593ddb00d9cbdb5027",
+      "order_date": "2024-05-22",
+      "fmt": "old",
+      "folder": "Japan",
+      "covered_cities": [
+        "Osaka",
+        "Hiroshima",
+        "Miyajima",
+        "Kyoto",
+        "Arashiyama",
+        "Amanohashidate",
+        "Nara",
+        "Tokyo",
+        "Hakone"
+      ],
+      "processed_at": "2026-10-28T10:10:57.352359+00:00"
+    },
+    "England and Scotland/1. England- Final Detailed Itinerary.pdf": {
+      "text_hash": "abda08061a995975e7f7b02c31d18574af3a6544",
+      "order_date": "2024-06-09",
+      "fmt": "old",
+      "folder": "England and Scotland",
+      "covered_cities": [
+        "London",
+        "Windsor",
+        "Watford"
+      ],
+      "processed_at": "2026-10-28T10:10:57.372640+00:00"
+    },
+    "France/2. France- Final Detailed Itinerary.pdf": {
+      "text_hash": "f9df3d130b4ed90d038b56bdaee9f36b407e178f",
+      "order_date": "2024-06-12",
+      "fmt": "old",
+      "folder": "France",
+      "covered_cities": [
+        "Paris",
+        "Giverny",
+        "Villejuif"
+      ],
+      "processed_at": "2026-10-28T10:10:57.401743+00:00"
+    },
+    "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf": {
+      "text_hash": "53ed562371dc93db296a476110e20917a6c92ef1",
+      "order_date": "2024-06-15",
+      "fmt": "old",
+      "folder": "Switzerland",
+      "covered_cities": [
+        "Uetendorf",
+        "Bern",
+        "Lucerne",
+        "Brienz",
+        "Grindelwald",
+        "Interlaken"
+      ],
+      "processed_at": "2026-10-28T10:11:43.211825+00:00"
+    },
+    "Italy/4. Italy- Final Detailed Itinerary.pdf": {
+      "text_hash": "05a8c1ab3a487dadc2656e948d648851f7720d95",
+      "order_date": "2024-06-19",
+      "fmt": "old",
+      "folder": "Italy",
+      "covered_cities": [
+        "Venice",
+        "Murano",
+        "Pisa",
+        "Rome",
+        "Naples",
+        "Positano",
+        "Amalfi",
+        "Ravello"
+      ],
+      "processed_at": "2026-10-28T10:12:06.556222+00:00"
+    },
+    "Italy/Italy- Final Itinerary with booking links.pdf": {
+      "text_hash": "28acad886aed51a1ffc005b0d299201b0f6ada2e",
+      "order_date": "2024-12-31",
+      "fmt": "old",
+      "folder": "Italy",
+      "covered_cities": [
+        "Rome",
+        "Naples",
+        "Florence",
+        "Pisa",
+        "Venice",
+        "Milan"
+      ],
+      "processed_at": "2026-10-28T10:12:06.597239+00:00"
+    },
+    "USA/NYC Plan.pdf": {
+      "text_hash": "b4189fc94f3ef7c9122db6191e42cad34e95d3b7",
+      "order_date": "2025-05-08",
+      "fmt": "old",
+      "folder": "USA",
+      "covered_cities": [
+        "New York City"
+      ],
+      "processed_at": "2026-10-28T10:12:06.649521+00:00"
+    },
+    "Bali Indonesia/Bali Bliss All-Inclusive Guide - Karthik.pdf": {
+      "text_hash": "fd8e4f75bd0902c461de924fe809303ac6de4519",
+      "order_date": "2025-05-19",
+      "fmt": "old",
+      "folder": "Bali Indonesia",
+      "covered_cities": [
+        "Ubud",
+        "Nusa Dua",
+        "Bali"
+      ],
+      "processed_at": "2026-10-28T10:12:06.707778+00:00"
+    },
+    "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf": {
+      "text_hash": "f19cb53a5cd17cee95c21dac9b1e7bed2d721278",
+      "order_date": "2025-05-31",
+      "fmt": "old",
+      "folder": "South America",
+      "covered_cities": [
+        "Lima",
+        "Cusco",
+        "Sacred Valley",
+        "Aguas Calientes",
+        "Machu Picchu",
+        "Puerto Maldonado"
+      ],
+      "processed_at": "2026-10-28T10:13:05.052611+00:00"
+    },
+    "England and Scotland/All Inclusive Guide-Edinburgh.pdf": {
+      "text_hash": "87d5866b102b0ac54980f70df77c190dc017b6b5",
+      "order_date": "2025-06-03",
+      "fmt": "old",
+      "folder": "England and Scotland",
+      "covered_cities": [
+        "Edinburgh",
+        "Loch Lomond"
+      ],
+      "processed_at": "2026-10-28T10:13:05.135793+00:00"
+    },
+    "South America/All Inclusive Guide - Peru_CRE.pdf": {
+      "text_hash": "99f4367076349c72397b710c3dbb39c02c223296",
+      "order_date": "2025-06-27",
+      "fmt": "old",
+      "folder": "South America",
+      "covered_cities": [
+        "Puerto Maldonado",
+        "Cusco",
+        "Aguas Calientes",
+        "Lima"
+      ],
+      "processed_at": "2026-10-28T10:13:37.676717+00:00"
+    },
+    "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf": {
+      "text_hash": "41347cfb0e26f9bf815e2ecac4a2f024625a0022",
+      "order_date": "2025-07-07",
+      "fmt": "old",
+      "folder": "Switzerland",
+      "covered_cities": [
+        "Zurich",
+        "Winterthur",
+        "Bern",
+        "Lucerne",
+        "Engelberg",
+        "Interlaken",
+        "Lauterbrunnen",
+        "Mürren",
+        "Jungfraujoch",
+        "Rhine Falls"
+      ],
+      "processed_at": "2026-10-28T10:13:37.734629+00:00"
+    },
+    "Almaty Kazakhstan/All Inclusive Guide_ Kazakhstan_Vineet.pdf": {
+      "text_hash": "243c41665dd293499cc64ce331289f2bd22d6279",
+      "order_date": "2025-07-09",
+      "fmt": "old",
+      "folder": "Almaty Kazakhstan",
+      "covered_cities": [
+        "Almaty",
+        "Issyk Lake",
+        "Medeu",
+        "Shymbulak"
+      ],
+      "processed_at": "2026-10-28T10:13:37.773031+00:00"
+    },
+    "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf": {
+      "text_hash": "fba8344f5cddee1052ba32f4a898da810f72ba6f",
+      "order_date": "2025-09-02",
+      "fmt": "old",
+      "folder": "France",
+      "covered_cities": [
+        "Paris",
+        "Interlaken",
+        "Lucerne",
+        "Engelberg",
+        "Zurich",
+        "Milan",
+        "Venice",
+        "Pienza",
+        "San Quirico d'Orcia",
+        "Maiori",
+        "Amalfi",
+        "Ravello",
+        "Rome"
+      ],
+      "processed_at": "2026-10-28T10:15:55.361869+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Mr. Hanief-Kerela_copy.pdf": {
+      "text_hash": "bb3f2aaa6fe96256c645b5a35cea4c6df2c97653",
+      "order_date": "2025-10-19",
+      "fmt": "old",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Munnar",
+        "Thekkady",
+        "Kumarakom",
+        "Alleppey",
+        "Kochi",
+        "Thiruvananthapuram",
+        "Kovalam",
+        "Kanyakumari"
+      ],
+      "processed_at": "2026-10-28T10:15:55.386373+00:00"
+    },
+    "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx": {
+      "text_hash": "2eac5d165d8f9d9da0915e8e983581f109596453",
+      "order_date": "2026-05-08",
+      "fmt": "old",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Hanoi",
+        "Halong Bay",
+        "Ninh Binh",
+        "Da Nang",
+        "Hoi An"
+      ],
+      "processed_at": "2026-10-28T10:15:55.425545+00:00"
+    },
+    "Austria/Itinerary- Budapest Prague Austria.docx": {
+      "text_hash": "e36e18d9e60ed6f9acf098530dc0179832fbe11d",
+      "order_date": "2026-08-27",
+      "fmt": "old",
+      "folder": "Austria",
+      "covered_cities": [
+        "Budapest",
+        "Prague",
+        "Český Krumlov",
+        "Salzburg",
+        "Hallstatt",
+        "Gosausee",
+        "Wachau Valley",
+        "Melk",
+        "Dürnstein",
+        "Spitz",
+        "Weißenkirchen",
+        "Vienna"
+      ],
+      "processed_at": "2026-10-28T10:15:55.473665+00:00"
+    },
+    "Dubai and Abu Dhabi - UAE/Abu Dhabi and Dubai.pdf": {
+      "text_hash": "94084cc79006a4f96387c1a596a95367462e028f",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Dubai and Abu Dhabi - UAE",
+      "covered_cities": [
+        "Abu Dhabi"
+      ],
+      "processed_at": "2026-10-28T10:15:55.506545+00:00"
+    },
+    "Bali Indonesia/Bali Travel Guide.pdf": {
+      "text_hash": "1d19c865f6d34f7d41b9d17289c86392a21f085e",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Bali Indonesia",
+      "covered_cities": [
+        "Bali",
+        "Denpasar",
+        "Kuta",
+        "Seminyak",
+        "Nusa Dua",
+        "Ubud",
+        "Jimbaran"
+      ],
+      "processed_at": "2026-10-28T10:16:19.096530+00:00"
+    },
+    "Bali Indonesia/Eating Out Guide- Bali.pdf": {
+      "text_hash": "79c2b4a5d776086b5cc2c3962c53aaa366e306c9",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Bali Indonesia",
+      "covered_cities": [
+        "Bali",
+        "Nusa Dua",
+        "Seminyak",
+        "Kuta",
+        "Sanur",
+        "Djimbaran"
+      ],
+      "processed_at": "2026-10-28T10:16:46.201680+00:00"
+    },
+    "Thailand/Eating Out Guide_ Bangkok_New.pdf": {
+      "text_hash": "de9fe274278e2998848f2d666c6f66aec3763e4b",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Thailand",
+      "covered_cities": [
+        "Bangkok"
+      ],
+      "processed_at": "2026-10-28T10:16:46.224307+00:00"
+    },
+    "Vietnam/Eating Out Guide_ Vietnam.pdf": {
+      "text_hash": "3c197b2e42f89654606d2010e4312f7bc4a4f1be",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Vietnam",
+      "covered_cities": [
+        "Hanoi",
+        "Da Nang",
+        "Hoi An",
+        "Ho Chi Minh City",
+        "Phu Quoc"
+      ],
+      "processed_at": "2026-10-28T10:17:32.395162+00:00"
+    },
+    "Northeast India/Gangtok eating out guide.pdf": {
+      "text_hash": "e2cd68df86f2d557ccd0d2bd45eeda5f2522c65f",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Northeast India",
+      "covered_cities": [
+        "Gangtok"
+      ],
+      "processed_at": "2026-10-28T10:17:32.404065+00:00"
+    },
+    "USA/Varun-Priyankee-Orlando-2024.pdf": {
+      "text_hash": "42955d5a9b078067b94cc56f6d9228b150af6054",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "USA",
+      "covered_cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "processed_at": "2026-10-28T10:17:33.317942+00:00"
+    },
+    "Switzerland/Where to eat in Switzerland.pdf": {
+      "text_hash": "ab65451d4939d4c48542c6f1be6479e1da68c639",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Switzerland",
+      "covered_cities": [
+        "Zurich",
+        "Lucerne",
+        "Interlaken",
+        "Lauterbrunnen",
+        "Montreux"
+      ],
+      "processed_at": "2026-10-28T10:17:33.342273+00:00"
+    },
+    "Bhutan/Copy of Bhutan.pdf": {
+      "text_hash": "53fc28af743ccd9ab096670db7ea2065a192cd19",
+      "order_date": null,
+      "fmt": "old",
+      "folder": "Bhutan",
+      "covered_cities": [
+        "Phuntsholing",
+        "Thimphu",
+        "Punakha",
+        "Phobjikha (Gangtey)",
+        "Paro"
+      ],
+      "processed_at": "2026-10-28T10:19:00.942140+00:00"
+    }
+  },
+  "_folder_coverage": {
+    "Thailand": [
+      "Bangkok",
+      "Pattaya",
+      "Koh Samui",
+      "Phuket",
+      "Koh Phangan",
+      "Krabi",
+      "Koh Larn",
+      "Ayutthaya",
+      "Ao Nang",
+      "Patong",
+      "Phi Phi Islands"
+    ],
+    "Singapore and Malaysia": [
+      "Langkawi",
+      "Singapore",
+      "Kuala Lumpur",
+      "Genting Highlands",
+      "Batu Gajah",
+      "Ipoh",
+      "Kuala Sepetang",
+      "Penang",
+      "George Town",
+      "Batu Ferringhi",
+      "Seberang Perai",
+      "Sentosa",
+      "Batu Caves"
+    ],
+    "Switzerland": [
+      "Zurich",
+      "Schaffhausen",
+      "Lucerne",
+      "Interlaken",
+      "Lauterbrunnen",
+      "Venice",
+      "Murano",
+      "Burano",
+      "Florence",
+      "Pisa",
+      "Rome",
+      "Jungfraujoch",
+      "Bern",
+      "Geneva",
+      "Paris",
+      "Winterthur",
+      "Rhine Falls",
+      "Engelberg",
+      "Mürren",
+      "Mount Pilatus",
+      "Grindelwald",
+      "Faulensee",
+      "Brienz",
+      "Innsbruck",
+      "Wattens",
+      "Berchtesgaden",
+      "Salzburg",
+      "Hallstatt",
+      "Dürnstein",
+      "Melk",
+      "Wachau Valley",
+      "Vienna",
+      "Locarno",
+      "Ascona",
+      "Foroglio",
+      "Tenero",
+      "Stans",
+      "Zermatt",
+      "Ringgenberg",
+      "Kandersteg",
+      "Adelboden",
+      "Basel",
+      "Biel/Bienne",
+      "Mount Rigi",
+      "Gimmelwald",
+      "Gornergrat",
+      "Montreux",
+      "Gstaad",
+      "Saanen",
+      "Mt. Rigi",
+      "Chur",
+      "Wengen",
+      "Disneyland Paris",
+      "Uetendorf"
+    ],
+    "Italy": [
+      "Venice",
+      "Murano",
+      "Burano",
+      "Florence",
+      "Pisa",
+      "Rome",
+      "Como",
+      "Tremezzo",
+      "Menaggio",
+      "Milan",
+      "Civitavecchia",
+      "Salerno",
+      "Amalfi",
+      "Serravalle",
+      "Venice Mestre",
+      "Cinque Terre",
+      "La Spezia",
+      "Monterosso al Mare",
+      "Vernazza",
+      "Manarola",
+      "Riomaggiore",
+      "Tirano",
+      "Montepulciano",
+      "Pienza",
+      "San Quirico d'Orcia",
+      "Maiori",
+      "Ravello",
+      "Naples",
+      "Positano"
+    ],
+    "Karnataka, Kerala and Tamil Nadu": [
+      "Bangalore",
+      "Srirangapatna",
+      "Mysore",
+      "Ooty",
+      "Hampi",
+      "Anegundi",
+      "Solapur",
+      "Munnar",
+      "Thekkady",
+      "Ambalappuzha",
+      "Kumarakom",
+      "Kochi",
+      "Pune",
+      "Bijapur",
+      "Badami",
+      "Coorg",
+      "Kabini",
+      "Madikeri",
+      "Bylakuppe",
+      "Alleppey",
+      "Kovalam",
+      "Kanyakumari",
+      "Thiruvananthapuram",
+      "Chitradurga",
+      "Trichy",
+      "Velankanni",
+      "Pondicherry",
+      "Auroville",
+      "Chennai",
+      "Hyderabad",
+      "Sakrebyle",
+      "Shivamogga",
+      "Chikkamagaluru",
+      "Dharmasthala",
+      "Sringeri",
+      "Thirthahalli",
+      "Kurnool",
+      "Cochin",
+      "Athirappilly",
+      "Kerala",
+      "Fort Kochi"
+    ],
+    "Netherlands": [
+      "Amsterdam",
+      "Keukenhof",
+      "Zaanse Schans",
+      "Efteling",
+      "Giethoorn",
+      "Brussels",
+      "Bruges",
+      "Almere",
+      "Zaandam",
+      "Eindhoven",
+      "Florence",
+      "Pisa",
+      "Rome",
+      "Civitavecchia",
+      "Salerno",
+      "Amalfi",
+      "Santorini",
+      "Kusadasi",
+      "Selçuk",
+      "Katakolon",
+      "Olympia",
+      "Haarlem",
+      "Rotterdam"
+    ],
+    "Belgium": [
+      "Brussels",
+      "Bruges"
+    ],
+    "Srilanka": [
+      "Colombo",
+      "Pinnawala",
+      "Kandy",
+      "Kalutara",
+      "Mirissa",
+      "Galle",
+      "Peradeniya",
+      "Ramboda",
+      "Nuwara Eliya",
+      "Ella",
+      "Yala",
+      "Kosgoda",
+      "Ambalangoda",
+      "Matale",
+      "Bentota",
+      "Minneriya"
+    ],
+    "France": [
+      "Paris",
+      "Annecy",
+      "Chamonix",
+      "Freiburg",
+      "Baden-Baden",
+      "Strasbourg",
+      "Colmar",
+      "Reims",
+      "Disneyland Paris",
+      "Lucerne",
+      "Engelberg",
+      "Interlaken",
+      "Grindelwald",
+      "Lauterbrunnen",
+      "Jungfraujoch",
+      "Zurich",
+      "Versailles",
+      "Milan",
+      "Venice",
+      "Pienza",
+      "San Quirico d'Orcia",
+      "Montepulciano",
+      "Amalfi",
+      "Maiori",
+      "Ravello",
+      "Rome",
+      "Giverny",
+      "Villejuif"
+    ],
+    "Australia": [
+      "Cairns",
+      "Kuranda",
+      "Yungaburra",
+      "Sydney",
+      "Manly",
+      "Melbourne",
+      "Lorne",
+      "Apollo Bay",
+      "Geelong",
+      "Daintree Rainforest",
+      "Emerald",
+      "Phillip Island",
+      "Newcastle",
+      "Hunter Valley"
+    ],
+    "Vietnam": [
+      "Hanoi",
+      "Ha Long Bay",
+      "Ninh Binh",
+      "Da Nang",
+      "Hoi An",
+      "Ho Chi Minh City",
+      "Sa Pa",
+      "Halong Bay",
+      "Phu Quoc",
+      "Hoa Lu",
+      "Trang An",
+      "Ba Na Hills",
+      "My Tho",
+      "Sapa",
+      "Mekong Delta"
+    ],
+    "England and Scotland": [
+      "London",
+      "Oxford",
+      "Cambridge",
+      "Hertford",
+      "Hatfield",
+      "Cotswolds",
+      "Bibury",
+      "Bourton-on-the-Water",
+      "Stratford-upon-Avon",
+      "Southall",
+      "Edinburgh",
+      "Loch Lomond",
+      "Luss",
+      "Stirling",
+      "Pitlochry",
+      "Inverness",
+      "Isle of Skye",
+      "Portree",
+      "Mallaig",
+      "Fort William",
+      "Iver",
+      "Stow-on-the-Wold",
+      "Bath",
+      "Windsor",
+      "Stonehenge",
+      "Broadway",
+      "Gloucester",
+      "Castle Combe",
+      "Brighton",
+      "Seven Sisters",
+      "Stratford upon Avon",
+      "Athens",
+      "Mykonos",
+      "Santorini",
+      "Istanbul",
+      "Ephesus",
+      "Selçuk",
+      "Watford"
+    ],
+    "North India": [
+      "Shimla",
+      "Kufri",
+      "Mashobra",
+      "Jibhi",
+      "Shangarh",
+      "Chandigarh",
+      "Bir Billing",
+      "Narkanda",
+      "Tatapani",
+      "Kasauli",
+      "Pinjore",
+      "Amritsar",
+      "Dalhousie",
+      "Khajjiar",
+      "Dharamshala",
+      "McLeod Ganj",
+      "Palampur",
+      "Agra",
+      "Fatehpur Sikri",
+      "Bharatpur",
+      "Dehradun",
+      "Mussoorie",
+      "Dhanaulti",
+      "Kanatal",
+      "Leh",
+      "Spituk"
+    ],
+    "Japan": [
+      "Tokyo",
+      "Kyoto",
+      "Osaka",
+      "Hiroshima",
+      "Nara",
+      "Nikko",
+      "Mount Fuji",
+      "Amanohashidate",
+      "Ine",
+      "Kure",
+      "Mt Fuji",
+      "Miyajima",
+      "Kurama",
+      "Kibune",
+      "Ine no Funaya",
+      "Mt. Fuji",
+      "Kawaguchiko",
+      "Lake Kawaguchiko",
+      "Arashiyama",
+      "Awaji Island",
+      "Hakone",
+      "Kamakura",
+      "Enoshima",
+      "Oshino",
+      "Singapore",
+      "Sentosa",
+      "Ine Bay",
+      "Oshino Hakkai",
+      "Kashihara",
+      "Fukuoka",
+      "Mt Fuji Area"
+    ],
+    "Northeast India": [
+      "Siliguri",
+      "Gangtok",
+      "Darjeeling",
+      "Kurseong",
+      "Guwahati",
+      "Shillong",
+      "Dawki",
+      "Mawlynnong",
+      "Cherrapunjee",
+      "Kaziranga",
+      "Kohima",
+      "Kisama",
+      "Dimapur",
+      "Bagdogra",
+      "Pelling",
+      "Nathula Pass",
+      "Kalimpong",
+      "Jakhama",
+      "Kigwema",
+      "Pfutsero",
+      "Zapami",
+      "Khonoma",
+      "Dzuleke",
+      "Puliebadze"
+    ],
+    "Azerbaijan and Georgia": [
+      "Baku",
+      "Shahdag",
+      "Gabala",
+      "Sheki",
+      "Gobustan",
+      "Absheron"
+    ],
+    "USA": [
+      "New York",
+      "Washington DC",
+      "Niagara Falls",
+      "Orlando",
+      "Miami",
+      "Key West",
+      "New York City",
+      "Boston",
+      "Atlanta"
+    ],
+    "Rajasthan": [
+      "Udaipur",
+      "Jaipur",
+      "Rajasthan",
+      "Abhaneri",
+      "Jodhpur",
+      "Guda Bishnoi",
+      "Kumbhalgarh",
+      "Narlai",
+      "Ranthambore",
+      "Pushkar",
+      "Ajmer"
+    ],
+    "South Korea": [
+      "Seoul",
+      "Busan"
+    ],
+    "Bali Indonesia": [
+      "Ubud",
+      "Nusa Dua",
+      "Seminyak",
+      "Tanah Lot",
+      "Uluwatu",
+      "Denpasar",
+      "Bali",
+      "Gili Trawangan",
+      "Padang Bai",
+      "Kuta",
+      "Sangeh",
+      "Bedugul",
+      "Lempuyang",
+      "Tegalalang",
+      "Kintamani",
+      "Sanur",
+      "Nusa Penida",
+      "Klungkung",
+      "Tanjung Benoa",
+      "Jimbaran",
+      "Sukawati",
+      "Celuk",
+      "Pererenan",
+      "Karangasem",
+      "Tegallalang",
+      "Tirta Gangga",
+      "Nusa Lembongan",
+      "Tampaksiring",
+      "Nusa Ceningan",
+      "Djimbaran"
+    ],
+    "Peru": [
+      "Puerto Maldonado",
+      "Cusco",
+      "Aguas Calientes",
+      "Lima"
+    ],
+    "Mauritius": [
+      "Bel Ombre",
+      "Savanne",
+      "Trou d'Eau Douce",
+      "Île aux Cerfs",
+      "Curepipe",
+      "Vacoas",
+      "Grand Bassin",
+      "Bois Chéri",
+      "Chamarel",
+      "Casela",
+      "Grand Baie",
+      "Floreal",
+      "Port Louis",
+      "Riche Terre",
+      "Quatre Bornes",
+      "Flic en Flac",
+      "Black River Gorges",
+      "North Mauritius",
+      "Pamplemousses",
+      "Pointe aux Piments",
+      "Mauritius",
+      "Black River",
+      "Ile aux Cerfs"
+    ],
+    "Dubai and Abu Dhabi - UAE": [
+      "Dubai",
+      "Abu Dhabi",
+      "Yas Island",
+      "Palm Jumeirah"
+    ],
+    "Andamans": [
+      "Port Blair",
+      "Havelock Island",
+      "Neil Island",
+      "Baratang Island",
+      "Chidiya Tapu",
+      "Andaman Islands",
+      "Havelock (Swaraj Dweep)",
+      "Neil Island (Shaheed Dweep)"
+    ],
+    "Greece and Turkey": [
+      "Athens",
+      "Mykonos",
+      "Santorini",
+      "Istanbul",
+      "Ephesus"
+    ],
+    "Greece": [
+      "Athens",
+      "Mykonos",
+      "Santorini",
+      "Katakolon",
+      "Olympia"
+    ],
+    "Türkiye": [
+      "Istanbul",
+      "Ephesus",
+      "Kusadasi",
+      "Selçuk"
+    ],
+    "China": [
+      "Suzhou",
+      "Hangzhou",
+      "Nanjing",
+      "Macau",
+      "Hong Kong"
+    ],
+    "Macau": [
+      "Macau"
+    ],
+    "Hong Kong": [
+      "Hong Kong"
+    ],
+    "Spain": [
+      "Barcelona",
+      "Girona",
+      "Valencia",
+      "Málaga",
+      "Granada",
+      "Córdoba",
+      "Caminito del Rey",
+      "Seville",
+      "Ronda",
+      "Madrid",
+      "Toledo",
+      "Santiago de Compostela",
+      "Segovia",
+      "Ávila"
+    ],
+    "Germany": [
+      "Freiburg",
+      "Baden-Baden",
+      "Berchtesgaden",
+      "Freiburg im Breisgau",
+      "Frankfurt",
+      "Bamberg",
+      "Wertheim",
+      "Cologne",
+      "Bonn"
+    ],
+    "Goa": [
+      "Goa",
+      "Panjim",
+      "Margao",
+      "Colva",
+      "Betalbatim",
+      "Benaulim",
+      "Utorda",
+      "Cavelossim",
+      "Nerul",
+      "Pune",
+      "Kolhapur",
+      "Ponda",
+      "Old Goa",
+      "Fontainhas",
+      "North Goa",
+      "Bambolim",
+      "South Goa",
+      "Saligao",
+      "Assagao",
+      "Reis Magos",
+      "Nagoa",
+      "Torda"
+    ],
+    "French Polynesia": [
+      "Tahiti",
+      "Moorea",
+      "Bora Bora"
+    ],
+    "Austria": [
+      "Innsbruck",
+      "Wattens",
+      "Salzburg",
+      "Hallstatt",
+      "Dürnstein",
+      "Melk",
+      "Wachau Valley",
+      "Vienna",
+      "Budapest",
+      "Prague",
+      "Český Krumlov",
+      "Gosausee",
+      "Spitz",
+      "Weißenkirchen"
+    ],
+    "Almaty Kazakhstan": [
+      "Almaty",
+      "Issyk Lake",
+      "Medeu",
+      "Shymbulak",
+      "Big Almaty Lake",
+      "Tamgaly Tas",
+      "Tashkent",
+      "Bukhara",
+      "Samarkand",
+      "Charyn Canyon",
+      "Kolsai Lakes"
+    ],
+    "Europe": [
+      "Doha",
+      "Zurich",
+      "Locarno",
+      "Ascona",
+      "Como",
+      "Tremezzo",
+      "Menaggio",
+      "Milan",
+      "Foroglio",
+      "Tenero",
+      "Stans",
+      "Lucerne",
+      "Zermatt",
+      "Ringgenberg",
+      "Brienz",
+      "Interlaken",
+      "Lauterbrunnen",
+      "Mürren",
+      "Kandersteg",
+      "Grindelwald",
+      "Adelboden",
+      "Basel",
+      "Freiburg im Breisgau",
+      "Biel/Bienne",
+      "Frankfurt",
+      "Bamberg",
+      "Wertheim",
+      "Geneva",
+      "Chamonix",
+      "Montreux",
+      "Gstaad",
+      "Saanen",
+      "Rhine Falls",
+      "Serravalle",
+      "Venice",
+      "Venice Mestre",
+      "Florence",
+      "Cinque Terre",
+      "La Spezia",
+      "Rome",
+      "Monterosso al Mare",
+      "Vernazza",
+      "Manarola",
+      "Riomaggiore",
+      "Amsterdam",
+      "Haarlem",
+      "Zaanse Schans",
+      "Zaandam",
+      "Giethoorn",
+      "Rotterdam",
+      "Brussels",
+      "Bruges",
+      "Cologne",
+      "Bonn",
+      "Paris",
+      "Versailles",
+      "Disneyland Paris",
+      "Mt. Rigi",
+      "Engelberg",
+      "Jungfraujoch",
+      "Chur",
+      "Tirano",
+      "Murano",
+      "Burano",
+      "Pisa",
+      "Montepulciano",
+      "Pienza"
+    ],
+    "Qatar": [
+      "Doha"
+    ],
+    "Philippines": [
+      "Cebu City",
+      "Mactan",
+      "Cordova",
+      "Minglanilla"
+    ],
+    "Uzbekistan": [
+      "Tashkent",
+      "Bukhara",
+      "Samarkand"
+    ],
+    "Kazakhstan": [
+      "Almaty",
+      "Charyn Canyon",
+      "Kolsai Lakes"
+    ],
+    "Maldives": [
+      "Sun Siyam Olhuveli",
+      "Malé",
+      "Hulhumalé"
+    ],
+    "Singapore": [
+      "Singapore",
+      "Sentosa"
+    ],
+    "Gujarat": [
+      "Ahmedabad",
+      "Rajkot",
+      "Junagadh",
+      "Somnath",
+      "Dwarka",
+      "Bet Dwarka",
+      "Vadodara"
+    ],
+    "South America": [
+      "Lima",
+      "Puerto Maldonado",
+      "Cusco",
+      "Sacred Valley",
+      "Machu Picchu",
+      "Aguas Calientes"
+    ],
+    "Portugal": [
+      "Lisbon",
+      "Belém",
+      "Sintra",
+      "Óbidos"
+    ],
+    "Egypt": [
+      "Cairo",
+      "Giza",
+      "Aswan",
+      "Abu Simbel",
+      "Kom Ombo",
+      "Edfu",
+      "Luxor",
+      "Memphis",
+      "Saqqara",
+      "Dahshur",
+      "Alexandria",
+      "Casablanca",
+      "Rabat",
+      "Chefchaouen",
+      "Fez",
+      "Beni Mellal",
+      "Marrakech"
+    ],
+    "Morocco": [
+      "Casablanca",
+      "Rabat",
+      "Chefchaouen",
+      "Fez",
+      "Beni Mellal",
+      "Marrakech"
+    ],
+    "UK": [
+      "London",
+      "Cotswolds",
+      "Stratford upon Avon",
+      "Bath",
+      "Edinburgh",
+      "Stonehenge",
+      "Windsor"
+    ],
+    "Hungary": [
+      "Budapest"
+    ],
+    "Czechia": [
+      "Prague",
+      "Český Krumlov"
+    ],
+    "Bhutan": [
+      "Phuntsholing",
+      "Thimphu",
+      "Punakha",
+      "Phobjikha (Gangtey)",
+      "Paro"
+    ]
+  }
+}

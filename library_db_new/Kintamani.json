@@ -1,0 +1,543 @@
+{
+  "restaurants": [
+    {
+      "name": "Grand Puncak Sari Restaurant",
+      "city": "Kintamani",
+      "cuisine_type": [
+        "Indonesian"
+      ],
+      "price_range": "INR 500–1,000 per person",
+      "hours": "8:00 AM – 5:00 PM",
+      "ambience": "Panoramic volcano-view restaurant overlooking Mount Batur and Lake Batur",
+      "area": "Lake Batur",
+      "must_try_dishes": [
+        "Vegetable Fried Rice",
+        "Balinese Vegetable Curry",
+        "Stir-Fried Seasonal Vegetables"
+      ],
+      "best_for": [
+        "spectacular volcano views"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_date": "2026-06-06",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx"
+    },
+    {
+      "name": "Paperhills Kintamani",
+      "city": "Kintamani",
+      "cuisine_type": [
+        "Café",
+        "Western"
+      ],
+      "price_range": "INR 700–1,500 per person",
+      "hours": "5:30 AM – 8:00 PM",
+      "ambience": "Stylish mountain café with sweeping views of Mount Batur",
+      "area": "Lake Batur",
+      "must_try_dishes": [
+        "Vegetarian Pasta",
+        "Wood-Fired Pizza",
+        "Fresh Fruit Smoothies"
+      ],
+      "best_for": [
+        "scenic lunch",
+        "contemporary café vibes"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_date": "2026-06-06",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx"
+    },
+    {
+      "name": "Akasa Specialty Coffee",
+      "city": "Kintamani",
+      "cuisine_type": [
+        "Café",
+        "Coffee"
+      ],
+      "price_range": "INR 400–900 per person",
+      "hours": "5:30 AM – 10:00 PM",
+      "ambience": "Modern café with mountain views and relaxed atmosphere",
+      "area": "Lake Batur",
+      "must_try_dishes": [
+        "Veggie Sandwiches",
+        "Mushroom Toast",
+        "Fresh Pastries"
+      ],
+      "best_for": [
+        "light meals",
+        "excellent coffee"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_date": "2026-06-06",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx"
+    },
+    {
+      "name": "Madhubann Kintamani – Pure Veg Indian Restaurant",
+      "city": "Kintamani",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "INR 700–1,500 per person",
+      "hours": "7:00 AM – 9:00 PM",
+      "ambience": "Warm pure vegetarian restaurant with panoramic views of the Kintamani highlands",
+      "area": "Lake Batur",
+      "must_try_dishes": [
+        "Paneer Butter Masala",
+        "Vegetable Biryani",
+        "Dal Tadka"
+      ],
+      "best_for": [
+        "pure vegetarian Indian cuisine with volcano and lake views"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Pure vegetarian",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_date": "2026-06-06",
+      "_source_format": "new"
+    },
+    {
+      "name": "AKASA",
+      "city": "Kintamani",
+      "cuisine_type": [
+        "Indonesian",
+        "Café"
+      ],
+      "price_range": "INR 300–900 per person",
+      "hours": "05:30 AM – 10:00 PM",
+      "ambience": "Stylish cliffside café and restaurant with cool mountain air and dramatic volcanic scenery",
+      "area": "Tegallalang & Kintamani Route",
+      "nearby_landmarks": [
+        "Kintamani Volcano Viewpoint, Kintamani"
+      ],
+      "highlights": [
+        "Panoramic views of Mount Batur and Lake Batur",
+        "Cliffside setting",
+        "Coffee breaks"
+      ],
+      "must_try_dishes": [
+        "Indonesian Rice Bowls",
+        "Signature Coffee",
+        "Grilled Specialties"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Parking available",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_date": "2026-07-01",
+      "_source_format": "new"
+    },
+    {
+      "name": "Lakeview Restaurant",
+      "city": "Kintamani",
+      "cuisine_type": [
+        "Indonesian",
+        "Balinese"
+      ],
+      "price_range": "INR 500–1,200 per person",
+      "hours": "03:00 AM – 09:00 PM",
+      "ambience": "Classic Kintamani dining venue with panoramic views of Mount Batur and Lake Batur",
+      "area": "Tegallalang & Kintamani Route",
+      "nearby_landmarks": [
+        "Kintamani Volcano Viewpoint, Kintamani"
+      ],
+      "highlights": [
+        "Panoramic views of Mount Batur and Lake Batur"
+      ],
+      "must_try_dishes": [
+        "Indonesian Buffet Selection",
+        "Grilled Fish",
+        "Local Balinese Dishes"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Parking available",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_date": "2026-07-01",
+      "_source_format": "new"
+    },
+    {
+      "name": "AKASA Kintamani Coffee & Bakery",
+      "city": "Kintamani",
+      "cuisine_type": [
+        "Cafe",
+        "Bakery"
+      ],
+      "price_range": "Approx. INR 400–900 pp",
+      "hours": "5:30 AM–10:00 PM",
+      "ambience": "Scenic mountain café with highland views",
+      "highlights": [
+        "Specialises in Kintamani coffee and fresh baked treats"
+      ],
+      "must_try_dishes": [
+        "Kintamani coffee",
+        "Freshly baked pastries and cakes"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "name": "Kedisan Kintamani Restaurant",
+      "city": "Kintamani",
+      "cuisine_type": [
+        "Indonesian"
+      ],
+      "price_range": "Approx. INR 800–1,800 pp",
+      "hours": "8:00 AM–8:00 PM",
+      "ambience": "Relaxed mountain atmosphere overlooking the Kintamani landscape",
+      "nearby_landmarks": [
+        "Kintamani Volcano Viewpoint, Kintamani"
+      ],
+      "highlights": [
+        "Wood-fire cooking"
+      ],
+      "must_try_dishes": [
+        "Ikan Kuah Kuning",
+        "Ocu Duck Breast",
+        "Nasi Goreng Udang",
+        "Wood-fired specialities"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "name": "Blue Mountains Bali",
+      "city": "Kintamani",
+      "cuisine_type": [
+        "Indonesian",
+        "International"
+      ],
+      "price_range": "Approx. INR 800–1,800 pp",
+      "hours": "6:00 AM–6:00 PM | 6:00 AM–9:00 PM (Fridays)",
+      "ambience": "Stylish mountain retreat with panoramic Kintamani views",
+      "nearby_landmarks": [
+        "Kintamani Volcano Viewpoint, Kintamani"
+      ],
+      "highlights": [
+        "Beautifully designed setting"
+      ],
+      "must_try_dishes": [
+        "Roman-style pizzas",
+        "Tuna Sambal Matah Pizza",
+        "Highland Hot Pot"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Kintamani Viewpoint",
+      "city": "Kintamani",
+      "description": "Volcano–lake panorama of Mount Batur and Lake Batur with cool mountain air",
+      "entry_fee": "Approx. ₹150–₹250 pp",
+      "recommended_duration": "30–45 mins",
+      "tips": [
+        "Mount Batur is often wrapped in mist in the morning"
+      ],
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+      "_source_date": "2025-12-07",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx"
+    },
+    {
+      "name": "Mount Batur Sunrise Trek",
+      "city": "Kintamani",
+      "description": "Guided sunrise trek up the 1,717 m active volcano with views over Lake Batur, Mount Abang and, on clear days, Mount Agung",
+      "hours": "Trek start approx. 4:00 AM",
+      "entry_fee": "Approx. INR 2,500–4,000 per person (including guide)",
+      "recommended_duration": "About 2 hours ascent and 1.5 hours descent",
+      "tips": [
+        "Wear trekking shoes and carry a light jacket or fleece, cap, sunglasses and a small backpack with water and snacks",
+        "Summit is cool before sunrise due to mountain breeze"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_date": "2026-06-01",
+      "_source_format": "new"
+    },
+    {
+      "name": "Batur Natural Hot Spring",
+      "city": "Kintamani",
+      "description": "Mineral-rich natural hot spring pools overlooking Lake Batur and volcanic peaks",
+      "hours": "7:00 AM – 7:00 PM",
+      "entry_fee": "Approx. INR 1,200–1,800 per person",
+      "recommended_duration": "1–2 hours",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_date": "2026-06-06",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx"
+    },
+    {
+      "name": "Mount Batur Sunrise Jeep",
+      "city": "Kintamani",
+      "description": "4WD jeep journey across black lava fields to watch sunrise over Mount Batur and Lake Batur without trekking",
+      "recommended_duration": "2–3 hours",
+      "tips": [
+        "Pre-dawn start; summit area is cool before sunrise so bring a light jacket or fleece"
+      ],
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_date": "2026-06-06",
+      "_source_format": "new"
+    },
+    {
+      "name": "Kintamani Volcano Viewpoint",
+      "city": "Kintamani",
+      "description": "Highland viewpoint over the Mount Batur caldera, Lake Batur and volcanic slopes; about 60 min from Ubud.",
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+    },
+    {
+      "name": "Coffee Plantation Experience",
+      "city": "Kintamani",
+      "description": "Informal plantation walk to see coffee, cocoa and spices, with tastings of coffees and herbal teas and an introduction to kopi luwak.",
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "name": "Kintamani Volcano View",
+      "city": "Kintamani",
+      "description": "Viewpoint with panoramic views of Mount Batur Volcano, Lake Batur and the surrounding highland scenery.",
+      "hours": "24/7",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Kintamani Coffee Plantation",
+      "city": "Kintamani",
+      "description": "Local coffee plantation visit covering the coffee-making process, with tastings of Balinese coffee and herbal teas.",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Kintamani Coffee",
+      "city": "Kintamani",
+      "description": "Coffee grown in the volcanic highlands around Mount Batur, often with bright acidity and subtle citrus and floral notes.",
+      "where_to_try": "AKASA Kintamani Coffee & Bakery, Tis Cafe, local coffee plantations around Kintamani",
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new",
+      "_replaced_from": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Ubud",
+        "Tegallalang",
+        "Kintamani",
+        "Sanur",
+        "Denpasar"
+      ],
+      "tip": "Keep valuables secured, especially at beaches and waterfalls",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_date": "2026-07-01",
+      "_source_format": "new"
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Kintamani Arabica coffee, Bali coffee beans, ground coffee, coffee gift packs, herbal teas",
+      "city": "Kintamani",
+      "category": "Coffee",
+      "where_to_buy": [
+        "Kintamani coffee plantations",
+        "AKASA Kintamani Coffee & Bakery",
+        "Specialty stores around Ubud"
+      ],
+      "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-08-29",
+      "_source_format": "new"
+    },
+    {
+      "item": "Kintamani Arabica coffee, ground coffee, gift packs and herbal teas",
+      "city": "Kintamani",
+      "category": "Coffee & Tea",
+      "where_to_buy": [
+        "Kintamani coffee plantations",
+        "AKASA Kintamani Coffee & Bakery",
+        "Specialty coffee stores around Ubud"
+      ],
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx",
+      "_source_date": "2026-10-05",
+      "_source_format": "new"
+    },
+    {
+      "item": "Kintamani Arabica coffee, coffee beans, ground coffee, coffee gift packs and herbal teas",
+      "city": "Kintamani",
+      "category": "Coffee & Tea",
+      "where_to_buy": [
+        "Kintamani coffee plantations",
+        "AKASA Kintamani Coffee & Bakery",
+        "Specialty coffee stores around Ubud"
+      ],
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Denpasar",
+        "Ubud",
+        "Tegallalang",
+        "Kintamani",
+        "Sanur"
+      ],
+      "tip": "Activate the SIM before leaving the airport",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_date": "2026-07-01",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Denpasar",
+        "Ubud",
+        "Tegallalang",
+        "Kintamani",
+        "Sanur"
+      ],
+      "tip": "Test Google Maps and WhatsApp before exiting the arrival area",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_date": "2026-07-01",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Denpasar",
+        "Ubud",
+        "Tegallalang",
+        "Kintamani",
+        "Sanur"
+      ],
+      "tip": "Keep home SIM active for OTP banking, with international roaming off if not required",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_date": "2026-07-01",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Denpasar",
+        "Ubud",
+        "Tegallalang",
+        "Kintamani",
+        "Sanur"
+      ],
+      "tip": "Download offline Google Maps for Bali as a backup",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_date": "2026-07-01",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Ubud",
+        "Tegallalang",
+        "Kintamani",
+        "Tampaksiring",
+        "Nusa Lembongan",
+        "Nusa Ceningan",
+        "Sanur"
+      ],
+      "tip": "Download offline Google Maps for Bali",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Ubud",
+        "Tegallalang",
+        "Kintamani",
+        "Tampaksiring",
+        "Nusa Lembongan",
+        "Nusa Ceningan",
+        "Sanur"
+      ],
+      "tip": "Save hotel names and addresses offline",
+      "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+      "_source_date": "2026-10-20",
+      "_source_format": "new"
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Ubud",
+        "Tegallalang",
+        "Kintamani",
+        "Sanur",
+        "Denpasar"
+      ],
+      "tip": "Stay hydrated as Bali's humidity can cause dehydration quickly",
+      "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+      "_source_date": "2026-07-01",
+      "_source_format": "new"
+    }
+  ],
+  "route_guides": [],
+  "season_notes": [
+    {
+      "city": "Kintamani",
+      "tip": "Temperatures at the Mount Batur summit can be cool before sunrise",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_date": "2026-06-06",
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "Bali Indonesia/Pratheek_All Inclusive Guide_Bali(1).docx",
+    "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
+    "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+    "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+    "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+    "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+    "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx",
+    "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx"
+  ],
+  "currency": "IDR",
+  "_currency_source": {
+    "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
+    "_source_date": "2026-10-20",
+    "_source_format": "new"
+  }
+}

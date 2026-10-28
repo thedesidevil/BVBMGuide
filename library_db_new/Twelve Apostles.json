@@ -1,0 +1,38 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [
+    {
+      "city": "Twelve Apostles",
+      "from": "Twelve Apostles",
+      "to": "Melbourne",
+      "stops": [
+        {
+          "name": "Colac",
+          "suggested_stop": "Colac Lake, the largest natural freshwater lake in Victoria"
+        },
+        {
+          "name": "Geelong",
+          "suggested_stop": "Little Creatures brewery"
+        }
+      ],
+      "total_time": "3 hrs",
+      "_source_file": "Australia/Australia- All Inclusive Guide(1).docx",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "season_notes": [],
+  "source_files": [
+    "Australia/Australia- All Inclusive Guide(1).docx"
+  ]
+}

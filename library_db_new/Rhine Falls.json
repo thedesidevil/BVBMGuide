@@ -1,0 +1,85 @@
+{
+  "restaurants": [
+    {
+      "name": "Schloss Laufen Restaurant",
+      "city": "Rhine Falls",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "Approx. ₹3,300–5,200",
+      "hours": "9:00 AM – 11:30 PM (Monday & tuesday 9 AM - 7 PM)",
+      "ambience": "Classic Swiss ambience",
+      "area": "Near Rhine Falls",
+      "nearby_landmarks": [
+        "Rhine Falls, Switzerland"
+      ],
+      "highlights": [
+        "Beside the Rhine Falls viewing area",
+        "Panoramic waterfall views"
+      ],
+      "must_try_dishes": [
+        "Vegetarian rösti",
+        "Cheese fondue",
+        "Seasonal pasta"
+      ],
+      "best_for": [
+        "Scenic lunch overlooking the waterfalls"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-14",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Rhine Falls",
+      "city": "Rhine Falls",
+      "description": "Europe's largest waterfall, with wooden viewing decks close to the falls and optional boat rides.",
+      "hours": "Open 24 hours",
+      "entry_fee": "Viewing access free; boat ride approx. INR 1,000–1,500 per person",
+      "tips": [
+        "Late afternoon light often creates rainbows across the mist",
+        "Yellow boat rides take you closer to the falls (seasonal)"
+      ],
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_date": "2026-05-25",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [
+    {
+      "city": "Rhine Falls",
+      "tip": "Boat rides generally operate 10:00 AM – 6:00 PM seasonally",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-14",
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "Switzerland/All Inclusive Guide- Nizam-Switzerland.docx",
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+    "Europe/Kunal_Europe_All Inclusive Guide.docx",
+    "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+    "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+  ],
+  "currency": "CHF",
+  "_currency_source": {
+    "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+    "_source_date": "2026-05-25",
+    "_source_format": "new"
+  }
+}

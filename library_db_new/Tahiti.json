@@ -1,0 +1,305 @@
+{
+  "restaurants": [
+    {
+      "name": "Le Retro",
+      "city": "Tahiti",
+      "cuisine_type": [
+        "French"
+      ],
+      "hours": "07:00 am – 11:00 pm",
+      "ambience": "Lively atmosphere",
+      "area": "Vaima Shopping Centre, Papeete",
+      "highlights": [
+        "Known for French cuisine"
+      ],
+      "must_try_dishes": [
+        "Crab cake",
+        "Shrimp curry",
+        "Tomato and mozzarella salad"
+      ],
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Yummy",
+      "city": "Tahiti",
+      "cuisine_type": [
+        "Creperie"
+      ],
+      "hours": "06:00 am – 04:00 pm; closed on Sunday",
+      "ambience": "Charming spot with a relaxed atmosphere",
+      "highlights": [
+        "Sweet and savory crepes made fresh to order",
+        "Classic French crepes and Tahitian-inspired creations"
+      ],
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Le Petite Maison",
+      "city": "Tahiti",
+      "cuisine_type": [
+        "French"
+      ],
+      "hours": "06:30 am – 10:00 pm; 7am – 2pm on Saturday; closed on Sunday",
+      "ambience": "Charming setting, bistro style",
+      "highlights": [
+        "French bistro-style restaurant offering traditional French cuisine"
+      ],
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Café Maeva Marche de Papeete",
+      "city": "Tahiti",
+      "cuisine_type": [
+        "French",
+        "Tahitian"
+      ],
+      "hours": "07:30 am – 3:30 pm",
+      "ambience": "Relaxed atmosphere with indoor and outdoor seating",
+      "area": "Papeete Market",
+      "nearby_landmarks": [
+        "Papeete Market, Tahiti"
+      ],
+      "highlights": [
+        "On the first floor of Papeete Market",
+        "Friendly service",
+        "Classic French dishes and local favorites"
+      ],
+      "notes": "Might not have breakfast service on Saturday",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Papeete Market",
+      "city": "Tahiti",
+      "description": "Vibrant market for souvenirs, local crafts and fresh produce",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Notre Dame Cathedral",
+      "city": "Tahiti",
+      "description": "Cathedral in Papeete",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Papeete Town Hall",
+      "city": "Tahiti",
+      "description": "Town hall inspired by the old palace of Queen Pomare",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Poisson Cru au lait de coco",
+      "city": "Tahiti",
+      "description": "Raw fish marinated in coconut milk and lime; similar to ceviche but with a creamy twist",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Poulet fafa",
+      "city": "Tahiti",
+      "description": "Chicken cooked with taro leaves and coconut milk, often prepared in a traditional underground oven (ahima'a) giving a smoky, earthy flavor",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Po'e",
+      "city": "Tahiti",
+      "description": "Sweet, starchy pudding made from taro, banana or pumpkin, cooked in an ahima'a and served with coconut cream",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Fafaru",
+      "city": "Tahiti",
+      "description": "Fish marinated in fermented seawater with crushed shrimp; strong aroma and flavor, an acquired taste",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Pahua Taioro",
+      "city": "Tahiti",
+      "description": "Clams soaked in fresh water for a few hours and combined with taioro, a condiment of fermented almonds, grated coconut, seawater and shrimps",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Firi Firi",
+      "city": "Tahiti",
+      "description": "Tahitian doughnuts made with flour, coconut milk and sugar, deep-fried; a popular breakfast treat often served with fruit or jam",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Chevrettes",
+      "city": "Tahiti",
+      "description": "Freshwater prawns, a local delicacy, grilled or cooked in a sauce of vanilla, coconut milk, rum and cream",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Breadfruit",
+      "city": "Tahiti",
+      "description": "Staple fruit that can be roasted, boiled or fried; starchy texture and mild flavor",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Coconut Crab",
+      "city": "Tahiti",
+      "description": "Large land crab prized for its rich and flavorful meat",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Taro",
+      "city": "Tahiti",
+      "description": "Staple root vegetable that can be boiled, mashed or baked",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Tahitian Black Pearls",
+      "city": "Tahiti",
+      "category": "Jewelry",
+      "where_to_buy": [
+        "Papeete's pearl markets",
+        "Pearl farms in Moorea"
+      ],
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "item": "Monoi Oil",
+      "city": "Tahiti",
+      "category": "Beauty products",
+      "where_to_buy": [
+        "Most shops"
+      ],
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "item": "Pareos",
+      "city": "Tahiti",
+      "category": "Clothing and textiles",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "item": "Wood Carvings",
+      "city": "Tahiti",
+      "category": "Crafts",
+      "where_to_buy": [
+        "Markets",
+        "Art galleries",
+        "Moorea's Artisanal Village"
+      ],
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "item": "Tifaifai",
+      "city": "Tahiti",
+      "category": "Textiles",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "item": "Shell Jewelry",
+      "city": "Tahiti",
+      "category": "Jewelry",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "item": "Local Food Products (honey, jams, noni juice)",
+      "city": "Tahiti",
+      "category": "Food",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    },
+    {
+      "item": "Souvenirs, local crafts and fresh produce",
+      "city": "Tahiti",
+      "category": "General",
+      "where_to_buy": [
+        "Papeete Market"
+      ],
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Tahiti"
+      ],
+      "tip": "Papeete airport does not offer free WiFi",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Tahiti",
+      "mode": "Ferry",
+      "description": "Ferry from the Papeete ferry terminal to Moorea",
+      "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+      "_source_date": "2025-03-08",
+      "_source_format": "new"
+    }
+  ],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx"
+  ],
+  "currency": "XPF",
+  "_currency_source": {
+    "_source_file": "French Polynesia/French Polynesia All Inclusive Guide - Apeksha and Nitin(1).docx",
+    "_source_date": "2025-03-08",
+    "_source_format": "new"
+  }
+}

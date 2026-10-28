@@ -1,0 +1,402 @@
+{
+  "restaurants": [
+    {
+      "name": "La Buca di Enea Pienza",
+      "city": "Pienza",
+      "cuisine_type": [
+        "Tuscan"
+      ],
+      "price_range": "Approx. ₹2,800–5,700",
+      "hours": "12:00 PM – 10:00 PM",
+      "ambience": "Rustic countryside",
+      "area": "Pienza historic centre",
+      "highlights": [
+        "Cozy Tuscan restaurant",
+        "Panoramic valley charm"
+      ],
+      "must_try_dishes": [
+        "Vegetarian pici pasta",
+        "Truffle ravioli",
+        "Tiramisu"
+      ],
+      "best_for": [
+        "Authentic Tuscan countryside lunch"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-14",
+      "_source_format": "new"
+    },
+    {
+      "name": "Sette di Vino Pienza",
+      "city": "Pienza",
+      "cuisine_type": [
+        "Tuscan"
+      ],
+      "price_range": "Approx. ₹1,900–4,200",
+      "hours": "12–2 pm, 7:30–9 pm (Wednesday Closed)",
+      "ambience": "Charming local atmosphere",
+      "area": "Near Pienza main square",
+      "highlights": [
+        "Small traditional Tuscan eatery"
+      ],
+      "must_try_dishes": [
+        "Vegetarian pasta",
+        "Bruschetta",
+        "Pecorino dishes"
+      ],
+      "best_for": [
+        "Casual Tuscan lunch"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-14",
+      "_source_format": "new"
+    },
+    {
+      "name": "Idyllium Pienza",
+      "city": "Pienza",
+      "cuisine_type": [
+        "Italian",
+        "Café"
+      ],
+      "price_range": "Approx. ₹2,400–4,700",
+      "hours": "12:00 PM – 11:30 PM",
+      "ambience": "Scenic terrace seating",
+      "area": "Piazza di Spagna, Pienza, near central piazza",
+      "highlights": [
+        "Elegant countryside café and restaurant"
+      ],
+      "must_try_dishes": [
+        "Risotto",
+        "Desserts",
+        "Italian coffee"
+      ],
+      "best_for": [
+        "Relaxed scenic lunch"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-14",
+      "_source_format": "new"
+    },
+    {
+      "name": "Ristorante Il Rossellino",
+      "city": "Pienza",
+      "cuisine_type": [
+        "Tuscan"
+      ],
+      "price_range": "EUR 20-30 per person",
+      "hours": "12 PM - 2:30 PM",
+      "ambience": "Elegant and intimate, with lovely outdoor seating",
+      "must_try_dishes": [
+        "Pici cacio e pepe"
+      ],
+      "notes": "Reservation strongly recommended",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old",
+      "_replaced_from": "France/Paris, Switzerland and Italy.pdf"
+    },
+    {
+      "name": "Trattoria Latte di Luna",
+      "city": "Pienza",
+      "cuisine_type": [
+        "Tuscan"
+      ],
+      "price_range": "EUR 20-30 per person",
+      "hours": "11:30 AM - 4:30 PM",
+      "ambience": "Charming, unpretentious family-run trattoria with a cozy patio",
+      "highlights": [
+        "Famous as a filming location for The English Patient"
+      ],
+      "must_try_dishes": [
+        "Buttery pappardelle with truffle shavings",
+        "Cacio e pepe spaghetti",
+        "Roast duck"
+      ],
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old",
+      "_replaced_from": "France/Paris, Switzerland and Italy.pdf"
+    },
+    {
+      "name": "La Buca di Enea",
+      "city": "Pienza",
+      "cuisine_type": [
+        "Tuscan"
+      ],
+      "price_range": "EUR 20-25 per person",
+      "hours": "24 hours",
+      "ambience": "Cozy and slightly off the beaten path, with gingham tablecloths and glazed ceramic plates; authentic and local",
+      "must_try_dishes": [
+        "Ribollita soup",
+        "Pecorino drizzled with honey"
+      ],
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old",
+      "_replaced_from": "France/Paris, Switzerland and Italy.pdf"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Pienza",
+      "city": "Pienza",
+      "description": "Tuscan village with scenic streets, cafés, boutiques, pecorino cheese and views over the Val d'Orcia.",
+      "hours": "Open throughout the day",
+      "entry_fee": "Free to explore",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-14",
+      "_source_format": "new"
+    },
+    {
+      "name": "Val d'Orcia",
+      "city": "Pienza",
+      "description": "UNESCO World Heritage valley famed for rolling hills, cypress-lined roads, vineyards and Renaissance towns",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old",
+      "_replaced_from": "France/Paris, Switzerland and Italy.pdf"
+    },
+    {
+      "name": "Chapel of Vitaleta",
+      "city": "Pienza",
+      "description": "Iconic postcard-perfect chapel of Tuscany, ideal for photos",
+      "hours": "09:00–19:00 (daily, may vary seasonally)",
+      "entry_fee": "Free",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old",
+      "_replaced_from": "France/Paris, Switzerland and Italy.pdf"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Ribollita",
+      "city": "Pienza",
+      "description": "Tuscan vegetable and bread soup",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old",
+      "_replaced_from": "France/Paris, Switzerland and Italy.pdf"
+    },
+    {
+      "name": "Pici Cacio e Pepe",
+      "city": "Pienza",
+      "where_to_try": "Ristorante Il Rossellino",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Pici",
+      "city": "Pienza",
+      "description": "Thick hand-rolled Tuscan pasta served with sauces such as cacio e pepe, artichoke, boscaiola or aglione",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old"
+    },
+    {
+      "name": "Pecorino di Pienza",
+      "city": "Pienza",
+      "description": "Local sheep's cheese, often drizzled with honey",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Paris",
+        "Interlaken",
+        "Lucerne",
+        "Milan",
+        "Venice",
+        "Pienza",
+        "Amalfi",
+        "Rome"
+      ],
+      "tip": "Stay alert in crowded tourist spots such as the Eiffel Tower, Colosseum, train stations and Lucerne's bridge",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Paris",
+        "Interlaken",
+        "Lucerne",
+        "Milan",
+        "Venice",
+        "Pienza",
+        "Amalfi",
+        "Rome"
+      ],
+      "tip": "Keep valuables in a money belt or crossbody bag and avoid backpacks in metros",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Paris",
+        "Interlaken",
+        "Lucerne",
+        "Milan",
+        "Venice",
+        "Pienza",
+        "Amalfi",
+        "Rome"
+      ],
+      "tip": "Use registered taxis or rideshares and confirm the fare before entering",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Paris",
+        "Interlaken",
+        "Lucerne",
+        "Milan",
+        "Venice",
+        "Pienza",
+        "Amalfi",
+        "Rome"
+      ],
+      "tip": "Withdraw cash only from ATMs inside banks or shopping centers",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Paris",
+        "Interlaken",
+        "Lucerne",
+        "Milan",
+        "Venice",
+        "Pienza",
+        "Amalfi",
+        "Rome"
+      ],
+      "tip": "Avoid poorly lit alleys at night, especially around train stations",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Paris",
+        "Interlaken",
+        "Lucerne",
+        "Milan",
+        "Venice",
+        "Pienza",
+        "Amalfi",
+        "Rome"
+      ],
+      "tip": "Keep photocopies of passport and visa separately from the originals",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Pecorino di Pienza cheese (vacuum-sealed), Tuscan olive oil",
+      "city": "Pienza",
+      "category": "Food & gourmet",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "item": "Tuscan red wines (Brunello di Montalcino, Vino Nobile di Montepulciano)",
+      "city": "Pienza",
+      "category": "Drinks",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "item": "Hand-painted ceramics, artisanal linens",
+      "city": "Pienza",
+      "category": "Crafts & lifestyle",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "item": "Pecorino di Pienza cheese (vacuum-sealed), Tuscan olive oil, local wines",
+      "city": "Pienza",
+      "category": "Food & gourmet",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old"
+    },
+    {
+      "item": "Hand-painted ceramics and artisanal linens",
+      "city": "Pienza",
+      "category": "Crafts & lifestyle",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old"
+    },
+    {
+      "item": "Brunello di Montalcino and Vino Nobile di Montepulciano wines",
+      "city": "Pienza",
+      "category": "Drinks",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Pienza",
+      "mode": "Public transport",
+      "description": "Pay as you go",
+      "recommended_pass": "Pay as you go",
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "city": "Pienza",
+      "mode": "Pay as you go",
+      "description": "Pay as you go is recommended",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_date": "2025-09-02",
+      "_source_format": "old"
+    }
+  ],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+    "France/Paris, Switzerland and Italy.pdf",
+    "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf"
+  ],
+  "currency": "EUR",
+  "_currency_source": {
+    "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+    "_source_date": "2026-05-14",
+    "_source_format": "new"
+  }
+}

@@ -87,7 +87,7 @@ Return ONLY a JSON object with this structure (omit any list or field with no da
 }}
 
 Rules:
-- Reusable facts only. Never copy client names, travel dates, booking references, confirmation numbers, day numbers, or client wording such as "your hotel", "your driver", "on Day 3". Rewrite a fact without them, or skip it.
+- Reusable facts only. Never copy client names, travel dates, booking references, confirmation numbers, day numbers ("on Day 3"), or text about one client's own booking (their named hotel, driver or flight). Generic advice that merely says "your hotel" or "your stay" (for example "book excursions through your hotel") is reusable: keep it. Rewrite a fact without client specifics, or skip it.
 - Skip any text containing ⚠, VERIFY, ADD RESTAURANT, PRICE UNKNOWN, WRITE PERSONAL LETTER or CHECK:, and any assistant chatter ("I would recommend", "Here are...").
 - Table rows appear as cells joined by " | ". Read them as content: old-format guides put each day in a table row (with meals and sights in cells); other lists such as souvenirs may also be tables.
 - covered_cities: every city, town or tourist area the guide covers. city_countries: the country of each covered city.

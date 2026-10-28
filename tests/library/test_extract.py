@@ -76,7 +76,7 @@ def test_prompt_names_every_list_and_field():
         assert f'"{field}"' in EXTRACTION_PROMPT, field
     rendered = EXTRACTION_PROMPT.format(text="DOC BODY")
     assert "DOC BODY" in rendered
-    for phrase in ("your hotel", " | "):
+    for phrase in ("booking references", "Generic advice that merely says", " | "):
         assert phrase in rendered
 
 

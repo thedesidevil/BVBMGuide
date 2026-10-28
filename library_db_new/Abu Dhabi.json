@@ -598,6 +598,107 @@
       "_source_file": "Dubai and Abu Dhabi - UAE/Shivani and Saurabh_Abu Dhabi and Dubai-All inclusive guide(1).docx",
       "_source_date": "2025-10-17",
       "_source_format": "new"
+    },
+    {
+      "name": "Gazebo Modern Indian",
+      "city": "Abu Dhabi",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "mid-range",
+      "ambience": "Family dining",
+      "nearby_landmarks": [
+        "Yas Mall, Abu Dhabi"
+      ],
+      "must_try_dishes": [
+        "Curries",
+        "Biryanis"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Moksh",
+      "city": "Abu Dhabi",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "mid-range",
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Sunset Life",
+      "city": "Abu Dhabi",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "budget",
+      "highlights": [
+        "Restaurant and Cafe"
+      ],
+      "must_try_dishes": [
+        "Pizza",
+        "Pasta",
+        "Sandwich",
+        "Quesadilla"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Kailash Parbat",
+      "city": "Abu Dhabi",
+      "area": "Yas Island",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "AED 55-70 per person",
+      "hours": "10:00 AM – 11:00 PM",
+      "ambience": "Casual dining in a food court setting",
+      "must_try_dishes": [
+        "Sarso Ka Saag with Makki Roti",
+        "Paneer Kofta Hara Masala",
+        "Dal Bhukara",
+        "Chole Bature"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -776,6 +877,58 @@
       "_source_file": "Dubai and Abu Dhabi - UAE/Dubai All Inclusive Guide(1).docx",
       "_source_date": "2025-10-21",
       "_source_format": "new"
+    },
+    {
+      "name": "Qasr Al Watan – Presidential Palace",
+      "city": "Abu Dhabi",
+      "description": "Palace of knowledge with soaring arches, luminous domes, cascading chandeliers, and geometric patterns",
+      "hours": "10:00 AM – 5:00 PM (last entry ~5:00 PM)",
+      "entry_fee": "Not specified",
+      "recommended_duration": "2-3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "SeaWorld",
+      "city": "Abu Dhabi",
+      "description": "Marine theme park",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Warner Bros",
+      "city": "Abu Dhabi",
+      "description": "Theme park",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Warner Bros. World Abu Dhabi",
+      "city": "Abu Dhabi",
+      "description": "The world's largest fully indoor theme park, bringing beloved cartoon & superhero worlds (DC Comics, Looney Tunes, Flintstones, etc.) to life in immersive, air-conditioned settings",
+      "hours": "Typically open from 11:00 AM to 8:00 PM on most days; evenings and weekend timings may be extended",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -900,6 +1053,51 @@
       "_source_file": "Dubai and Abu Dhabi - UAE/Hrishita_All Inclusive Guide.docx",
       "_source_date": "2025-12-03",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Dubai",
+        "Abu Dhabi"
+      ],
+      "tip": "Etisalat and Du are both widely used networks. Prepaid SIM cards are available for AED 50-100 depending on the plan and can be picked up at the airport.",
+      "_source_file": "Dubai and Abu Dhabi - UAE/Dubai and Abu Dhabi- All Inclusive Guide_Rituraj.pdf",
+      "_source_mtime": 1772384301.197269,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Dubai",
+        "Abu Dhabi"
+      ],
+      "tip": "DU's packages are slightly cheaper than Etisalat's. Most people in Dubai use Du sim cards.",
+      "_source_file": "Dubai and Abu Dhabi - UAE/Dubai and Abu Dhabi- All Inclusive Guide_Rituraj.pdf",
+      "_source_mtime": 1772384301.197269,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Dubai",
+        "Abu Dhabi"
+      ],
+      "tip": "Etisalat's 4G coverage is very good and available in every city and region. DU's 5G coverage is better than Etisalat's, but its 5G speed is slightly slower.",
+      "_source_file": "Dubai and Abu Dhabi - UAE/Dubai and Abu Dhabi- All Inclusive Guide_Rituraj.pdf",
+      "_source_mtime": 1772384301.197269,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "transport_options": [
@@ -935,6 +1133,45 @@
       "_source_file": "Dubai and Abu Dhabi - UAE/Dubai and Abu Dhabi- All Inclusive Guide_Rituraj(1).docx",
       "_source_date": "2025-10-13",
       "_source_format": "new"
+    },
+    {
+      "city": "Abu Dhabi",
+      "mode": "Taxi",
+      "description": "Can hire a taxi for the day (10 hrs)",
+      "_source_file": "Dubai and Abu Dhabi - UAE/Dubai and Abu Dhabi- All Inclusive Guide_Rituraj.pdf",
+      "_source_mtime": 1772384301.197269,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Abu Dhabi",
+      "mode": "Uber",
+      "description": "Generally more expensive but offers flat rate, could be more affordable during peak hours and longer distances",
+      "_source_file": "Dubai and Abu Dhabi - UAE/Dubai and Abu Dhabi- All Inclusive Guide_Rituraj.pdf",
+      "_source_mtime": 1772384301.197269,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Abu Dhabi",
+      "mode": "Uber",
+      "description": "Generally more expensive but offers flat rate, could work out more affordable during peak hours and for longer distances",
+      "_source_file": "Dubai and Abu Dhabi - UAE/Abu Dhabi and Dubai- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384298.7293658,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "health_tips": [
@@ -977,6 +1214,51 @@
       "_source_file": "Dubai and Abu Dhabi - UAE/Dubai and Abu Dhabi- All Inclusive Guide_Rituraj(1).docx",
       "_source_date": "2025-10-13",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Dubai",
+        "Abu Dhabi"
+      ],
+      "tip": "Travel Insurance recommended - TATA AIG",
+      "_source_file": "Dubai and Abu Dhabi - UAE/Abu Dhabi and Dubai- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384298.7293658,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Dubai",
+        "Abu Dhabi"
+      ],
+      "tip": "Carry doctors prescriptions/travel prescriptions for medicines (except over the counter meds)",
+      "_source_file": "Dubai and Abu Dhabi - UAE/Abu Dhabi and Dubai- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384298.7293658,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Dubai",
+        "Abu Dhabi"
+      ],
+      "tip": "Carry water with you whenever stepping out as weather can be warm during the day",
+      "_source_file": "Dubai and Abu Dhabi - UAE/Abu Dhabi and Dubai- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384298.7293658,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Abu Dhabi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "route_guides": [

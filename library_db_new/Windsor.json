@@ -44,7 +44,22 @@
   "hotels": [],
   "local_dishes": [],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Windsor"
+      ],
+      "tip": "If you visit beaches or rivers (e.g. near Windsor), follow posted advisories and avoid swimming in unsupervised areas",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Windsor",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "souvenirs": [],
   "emergency_contacts": [],
   "connectivity_tips": [],

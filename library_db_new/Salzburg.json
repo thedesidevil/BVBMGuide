@@ -366,6 +366,64 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "name": "Lake Königsee",
+      "city": "Salzburg",
+      "description": "Alpine lake with emerald-green waters surrounded by vertical cliffs, optional boat ride to St. Bartholomä Church",
+      "recommended_duration": "1.5-2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "St. Peter's Abbey & Cemetery",
+      "city": "Salzburg",
+      "description": "One of Europe's most beautiful historic cemeteries and a filming location associated with The Sound of Music.",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Residenzplatz & Mozartplatz",
+      "city": "Salzburg",
+      "description": "Elegant baroque squares forming the historic heart of Salzburg",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Getreidegasse",
+      "city": "Salzburg",
+      "description": "Narrow baroque lanes with hidden courtyards, elegant historic squares, cafés, bakeries, chocolate shops, and hidden passageways",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -376,6 +434,19 @@
       "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria(1).docx",
       "_source_date": "2025-05-21",
       "_source_format": "new"
+    },
+    {
+      "name": "Best Western Plus Amedia Art Salzburg",
+      "city": "Salzburg",
+      "location": "Salzburg",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
     }
   ],
   "local_dishes": [
@@ -405,6 +476,21 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "name": "Backhendl (Austrian Fried Chicken)",
+      "city": "Salzburg",
+      "description": "Traditional Austrian breaded and fried chicken",
+      "where_to_try": "Bärenwirt",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -419,6 +505,36 @@
       "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria(1).docx",
       "_source_date": "2025-05-21",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Salzburg"
+      ],
+      "tip": "Salzburg's public transport is simple and efficient and included in the mobility pass.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "cities": [
+        "Salzburg",
+        "Hallstatt",
+        "Gosausee"
+      ],
+      "tip": "Carry water, snacks, a light jacket, and comfortable walking shoes for the Hallstatt and Gosausee day trip.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
     }
   ],
   "souvenirs": [
@@ -441,6 +557,38 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "item": "Mozartkugel chocolates",
+      "city": "Salzburg",
+      "category": "Food",
+      "where_to_buy": [
+        "Café-Konditorei Fürst"
+      ],
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "item": "Freshly baked breads and pastries",
+      "city": "Salzburg",
+      "category": "Food",
+      "where_to_buy": [
+        "Stiftsbäckerei St. Peter"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
     }
   ],
   "emergency_contacts": [],
@@ -461,9 +609,119 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "city": "Salzburg",
+      "mode": "Trolleybus",
+      "description": "Trolleybus recommended for travel between hotel and Salzburg Old Town. Simple and efficient public transport network included in the mobility pass.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Salzburg",
+      "mode": "Taxi (Bolt)",
+      "description": "Bolt taxi recommended as an alternative to public transport for transfers around Salzburg.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Salzburg",
+      "mode": "Trolleybus",
+      "description": "Trolleybus recommended for travel between hotel and Salzburg Old Town. Salzburg's public transport is simple and efficient",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Salzburg",
+      "mode": "Public Transport (Mobility Pass)",
+      "description": "Salzburg's public transport network is included in the mobility pass",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Salzburg",
+      "mode": "Trolleybus / Public Transport",
+      "description": "Salzburg's public transport network is simple and efficient. Trolleybus recommended for travel between hotel and Old Town. Included in mobility pass.",
+      "recommended_pass": "Mobility pass",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Salzburg",
+      "mode": "Taxi (Bolt)",
+      "description": "Bolt taxi recommended as an alternative to public transport for transfers between hotel and Old Town.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Salzburg",
+      "mode": "Funicular",
+      "description": "Funicular used to ascend to Hohensalzburg Fortress from the base.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
     }
   ],
-  "health_tips": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Hallstatt",
+        "Gosausee",
+        "Wachau Valley",
+        "Salzburg"
+      ],
+      "tip": "Carry water, snacks, a light jacket, and comfortable walking shoes for full-day excursions including Hallstatt, Gosausee, and Wachau cycling.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Salzburg",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    }
+  ],
   "route_guides": [
     {
       "city": "Salzburg",

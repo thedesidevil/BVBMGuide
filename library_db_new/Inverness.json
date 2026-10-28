@@ -334,7 +334,21 @@
       "_source_format": "new"
     }
   ],
-  "transport_options": [],
+  "transport_options": [
+    {
+      "city": "Inverness",
+      "mode": "Bus",
+      "description": "Local transport within Inverness",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Inverness",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "health_tips": [],
   "route_guides": [
     {

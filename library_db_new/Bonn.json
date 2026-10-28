@@ -135,6 +135,55 @@
       "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-07",
       "_source_format": "new"
+    },
+    {
+      "name": "House of the History of the Federal Republic of Germany",
+      "city": "Bonn",
+      "description": "Engaging museum walking through Germany's post-war history with interactive exhibits",
+      "hours": "9 AM – 6 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Bonn",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Beethoven House, Bonn",
+      "city": "Bonn",
+      "description": "Birthplace of Ludwig van Beethoven offering an intimate and beautifully curated insight into the composer's life.",
+      "hours": "10 AM – 6 PM",
+      "entry_fee": "~₹900–1,200 pp",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Bonn",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "House of the History of the Federal Republic of Germany (Haus der Geschichte)",
+      "city": "Bonn",
+      "description": "Highly engaging museum walking through Germany's post-war history with interactive exhibits and real artefacts.",
+      "hours": "9 AM – 6 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Bonn",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [],
@@ -144,7 +193,22 @@
   "souvenirs": [],
   "emergency_contacts": [],
   "connectivity_tips": [],
-  "transport_options": [],
+  "transport_options": [
+    {
+      "city": "Bonn",
+      "mode": "Train",
+      "description": "Regional trains from Cologne to Bonn",
+      "cost": "₹700–1,200",
+      "_source_file": "Netherlands/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Bonn",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    }
+  ],
   "health_tips": [],
   "route_guides": [],
   "season_notes": [],

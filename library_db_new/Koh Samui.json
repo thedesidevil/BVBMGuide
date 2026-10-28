@@ -454,6 +454,41 @@
       "_source_file": "Thailand/Arpita Thailand.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Baitong Restaurant",
+      "city": "Koh Samui",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "price_range": "THB 100–200 pp",
+      "hours": "7 AM – 11 PM",
+      "ambience": "Resort's main restaurant",
+      "area": "Melati Beach Resort",
+      "highlights": [
+        "Happy to adapt dishes for vegetarians"
+      ],
+      "must_try_dishes": [
+        "Pad thai with tofu",
+        "Egg fried rice",
+        "Thai iced tea",
+        "egg fried rice"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "nearby_landmarks": [
+        "Melati Beach Resort, Koh Samui"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Koh Samui",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -500,6 +535,35 @@
       "_source_file": "Thailand/Arpita Thailand.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Samui Aquarium & Tiger Zoo",
+      "city": "Koh Samui",
+      "description": "Colorful aquariums and butterfly garden",
+      "hours": "10 AM – 4 PM",
+      "entry_fee": "THB 750–950 pp",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Koh Samui",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Big Buddha",
+      "city": "Koh Samui",
+      "description": "The Big Buddha in Pattaya is an 18-meter-tall golden statue perched atop Pratumnak Hill, offering panoramic views of the city and coastline. It's a revered spiritual site where visitors come to admire its grandeur and seek blessings",
+      "hours": "8 AM - 6 PM",
+      "entry_fee": "No entrance fees",
+      "recommended_duration": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Koh Samui",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -511,6 +575,19 @@
       "_source_date": null,
       "_source_format": "new",
       "_replaced_from": "Thailand/All Inclusive Guide_Khyati_Thailand(1)(1).docx"
+    },
+    {
+      "name": "Nora Buri Resort and Spa",
+      "city": "Koh Samui",
+      "location": null,
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Koh Samui",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "local_dishes": [],

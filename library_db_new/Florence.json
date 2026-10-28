@@ -1042,6 +1042,57 @@
       "_source_file": "Italy/Italy- Final Itinerary with booking links.pdf",
       "_source_date": "2024-12-31",
       "_source_format": "old"
+    },
+    {
+      "name": "Duomo di Firenze",
+      "city": "Florence",
+      "description": "Cathedral with climbable dome offering breathtaking views",
+      "hours": null,
+      "entry_fee": "EUR 30 per person (Brunelleschi Pass)",
+      "recommended_duration": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Dome of the Duomo",
+      "city": "Florence",
+      "description": "Iconic Renaissance architecture landmark designed by Filippo Brunelleschi in the 15th century, crowning the Cathedral of Santa Maria del Fiore",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Giotto's Campanile",
+      "city": "Florence",
+      "description": "Bell tower part of the Duomo complex",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Baptistery of St. John",
+      "city": "Florence",
+      "description": "Historic baptistery part of the Duomo complex",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -1191,6 +1242,80 @@
       "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-04",
       "_source_format": "new"
+    },
+    {
+      "name": "Neapolitan-Style Pizza (Veg Options)",
+      "city": "Florence",
+      "description": "Soft, airy crust with fresh toppings — simple but incredibly flavourful",
+      "vegetarian": true,
+      "where_to_try": "Pizzeria San Jacopino",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Schiacciata (Tuscan Flatbread Sandwich)",
+      "city": "Florence",
+      "description": "Crispy outside, soft inside — filled with cheeses, vegetables, and spreads",
+      "vegetarian": true,
+      "where_to_try": "Florentine bakeries",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Gelato (Authentic Italian Ice Cream)",
+      "city": "Florence",
+      "description": "Creamier and richer than regular ice cream — made fresh daily",
+      "vegetarian": true,
+      "where_to_try": "Italian gelaterias",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Pasta al Pesto (Tuscan twist)",
+      "city": "Florence",
+      "description": "Fresh basil pesto pasta — lighter than northern versions, rich in olive oil and herbs.",
+      "vegetarian": true,
+      "where_to_try": "Restaurants in Florence and Cinque Terre",
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Truffle Pasta",
+      "city": "Florence",
+      "description": "Fresh handmade pasta tossed in creamy truffle sauces and parmesan — a staple across Northern and Central Italy.",
+      "vegetarian": true,
+      "where_to_try": "Cantina e Cucina, Gio's, Zenzerino",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -1395,6 +1520,120 @@
       "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-14",
       "_source_format": "new"
+    },
+    {
+      "item": "Artisan Leather Bags",
+      "city": "Florence",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Tuscan leather workshops in Florence"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": "2026-05-03"
+    },
+    {
+      "item": "Balsamic vinegar",
+      "city": "Florence",
+      "category": "Food",
+      "where_to_buy": [
+        "San Lorenzo Market"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "item": "Handmade pasta",
+      "city": "Florence",
+      "category": "Food",
+      "where_to_buy": [
+        "San Lorenzo Market"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "item": "Truffle products",
+      "city": "Florence",
+      "category": "Food",
+      "where_to_buy": [
+        "San Lorenzo Market"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "item": "Handmade journals and Renaissance-inspired art",
+      "city": "Florence",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "San Lorenzo Market",
+        "Ponte Vecchio"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "item": "Artisanal stationery",
+      "city": "Florence",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "San Lorenzo Market"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "item": "Genuine Italian leather bags, wallets, belts, jackets",
+      "city": "Florence",
+      "category": "Fashion",
+      "where_to_buy": [
+        "San Lorenzo Market",
+        "Ponte Vecchio"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
     }
   ],
   "emergency_contacts": [
@@ -1606,6 +1845,76 @@
       "_source_file": "Italy/Italy- Final Itinerary with booking links.pdf",
       "_source_date": "2024-12-31",
       "_source_format": "old"
+    },
+    {
+      "city": "Florence",
+      "mode": "Tram",
+      "description": "Tram T1 connects Florence to surrounding areas including hotels",
+      "cost": "Varies",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1777149068.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": "2026-04-25"
+    },
+    {
+      "city": "Florence",
+      "mode": "Walking",
+      "description": "The centre of Florence is quite compact and walkable, most people get around on foot",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Florence",
+      "mode": "Bus/Tram",
+      "description": "Single ticket valid for 90 minutes, urban ticket for buses and trams",
+      "recommended_pass": "Agile 10 card",
+      "cost": "Single ticket €1.50, Urban ticket €1.70, Agile 10 card €14",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Florence",
+      "mode": "Tram / Bus",
+      "description": "Local trams and buses used for transfers within Florence. Tram Line T1 connects hotel area to Florence Santa Maria Novella station. Most attractions are within walking distance in the compact historic centre.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": "2026-05-03"
+    },
+    {
+      "city": "Florence",
+      "mode": "Walking",
+      "description": "Florence is a highly walkable city with many attractions close together. Cobblestone streets are common — comfortable footwear is essential.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Florence",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
     }
   ],
   "health_tips": [

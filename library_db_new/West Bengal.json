@@ -1,0 +1,322 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Shukto",
+      "city": "West Bengal",
+      "description": "A mildly bitter mixed-veg delicacy with milk & spices",
+      "vegetarian": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Kurseong"
+    },
+    {
+      "name": "Aloo Posto",
+      "city": "West Bengal",
+      "description": "Potatoes cooked in poppy seed paste",
+      "vegetarian": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Kurseong"
+    },
+    {
+      "name": "Kolkata Biryani",
+      "city": "West Bengal",
+      "description": "Light, aromatic biryani with potatoes, subtle spices",
+      "vegetarian": false,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Kurseong"
+    },
+    {
+      "name": "Macher Jhol",
+      "city": "West Bengal",
+      "description": "Classic Bengali fish curry (usually Rohu or Katla)",
+      "vegetarian": false,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Kurseong"
+    },
+    {
+      "name": "Chingri Malai Curry",
+      "city": "West Bengal",
+      "description": "Prawns cooked in creamy coconut milk gravy",
+      "vegetarian": false,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Kurseong"
+    }
+  ],
+  "phrases": [
+    {
+      "city": "West Bengal",
+      "english": "Hello",
+      "local": "Nomoshkar",
+      "category": "greeting",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Gangtok"
+    },
+    {
+      "city": "West Bengal",
+      "english": "Thank you",
+      "local": "Dhonnobad",
+      "category": "polite",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "city": "West Bengal",
+      "english": "How are you?",
+      "local": "Kemon achhen?",
+      "category": "greeting",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Gangtok"
+    },
+    {
+      "city": "West Bengal",
+      "english": "How much?",
+      "local": "Koto taka?",
+      "category": "food",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Kurseong"
+    },
+    {
+      "city": "West Bengal",
+      "english": "Please reduce the price",
+      "local": "Kom kore deben?",
+      "category": "food",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Kurseong"
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Sikkim",
+        "West Bengal"
+      ],
+      "tip": "Stay aware of your surroundings—avoid isolated areas, especially at night",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Sikkim",
+        "West Bengal"
+      ],
+      "tip": "Keep valuables close—use a money belt or secure bag",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Sikkim",
+        "West Bengal"
+      ],
+      "tip": "Use registered taxis / app-based cabs",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Shola (Pith) Craft",
+      "city": "West Bengal",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Darjeeling Mall Road"
+      ],
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Darjeeling"
+    },
+    {
+      "item": "Dokra Art",
+      "city": "West Bengal",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Darjeeling Mall Road"
+      ],
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Darjeeling"
+    },
+    {
+      "item": "Tea from Darjeeling",
+      "city": "West Bengal",
+      "category": "Food",
+      "where_to_buy": [
+        "Darjeeling Mall Road"
+      ],
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Kantha Work Products",
+      "city": "West Bengal",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Darjeeling Mall Road"
+      ],
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Darjeeling"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Sikkim",
+        "West Bengal"
+      ],
+      "tip": "Carry a basic first-aid kit (painkillers, band-aids, ORS, antiseptic, motion-sickness tablets)",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Sikkim",
+        "West Bengal"
+      ],
+      "tip": "Drink safe, bottled or purified water; avoid tap water",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "West Bengal"
+      ],
+      "tip": "Use mosquito repellent in humid regions",
+      "_source_file": "Northeast India/Mahendra_All Inclusive Guide_Sikkim+WB.pdf",
+      "_source_mtime": 1772384379.4043005,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "West Bengal",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": []
+}

@@ -605,6 +605,34 @@
       "_source_date": "2025-06-30",
       "_source_format": "new",
       "_replaced_from": "Greece and Turkey/Sample All Inclusive Guide.docx"
+    },
+    {
+      "name": "Plaka neighborhood",
+      "city": "Athens",
+      "description": "Walk through Plaka and explore neoclassical houses, quaint shops, and tavernas",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Athens",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Ancient Agora & Temple of Hephaestus",
+      "city": "Athens",
+      "description": "Center of ancient public life- Ancient Agora and Temple of Hephaestus",
+      "hours": "8:00 AM- 5:00 PM",
+      "entry_fee": "Pre-purchased tickets",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Athens",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -1026,6 +1054,21 @@
       "_source_date": "2025-06-30",
       "_source_format": "new",
       "_replaced_from": "Greece and Turkey/Sample All Inclusive Guide.docx"
+    },
+    {
+      "cities": [
+        "Athens",
+        "Istanbul"
+      ],
+      "tip": "Check local news or apps (like Google Alerts or Smart Traveler) for protests or strikes",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Athens",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "souvenirs": [

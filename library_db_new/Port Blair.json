@@ -212,6 +212,50 @@
       "_source_file": "Andamans/Tushar_All Inclusive Guide_Andamans.docx",
       "_source_date": "2025-12-24",
       "_source_format": "new"
+    },
+    {
+      "name": "Chidiya Tapu",
+      "city": "Port Blair",
+      "description": "Often called the 'Bird Island,' known for its forested coastline and dramatic sunsets. As the sun dips into the sea, the sky turns into deep oranges and purples",
+      "hours": "Best visited near sunset",
+      "entry_fee": "Free entry",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Cellular Jail & Museum",
+      "city": "Port Blair",
+      "description": "Historic Cellular Jail (National Memorial) with museum walkthrough to learn about the Freedom Struggle and prison history",
+      "hours": "9 AM to 12 PM and 2 PM to 5 PM",
+      "entry_fee": "₹30 pp",
+      "recommended_duration": "1.5–2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Light & Sound Show (National Memorial)",
+      "city": "Port Blair",
+      "description": "Light & Sound Show at the Cellular Jail / National Memorial",
+      "hours": "5:50 pm / 6:50 pm / 7:50 pm",
+      "entry_fee": "₹300 per person",
+      "recommended_duration": "1 hour",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -241,6 +285,19 @@
       "_source_date": "2025-12-24",
       "_source_format": "new",
       "_replaced_from": "Andamans/Tushar_All Inclusive Guide_Andamans(1).docx"
+    },
+    {
+      "name": "SeaShell, Port Blair",
+      "city": "Port Blair",
+      "location": "Port Blair",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "local_dishes": [
@@ -303,6 +360,19 @@
       "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.docx",
       "_source_date": "2026-01-31",
       "_source_format": "new"
+    },
+    {
+      "name": "Local coconut-based sweets & fresh tropical fruits",
+      "city": "Port Blair",
+      "description": "Traditional sweets made with coconut and fresh tropical fruits",
+      "vegetarian": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -357,6 +427,70 @@
       "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans(1).docx",
       "_source_date": null,
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Respect local marine rules — do not touch/damage coral; use reef-safe sunscreen where possible",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "For snorkeling/diving: always follow guide instructions. Bring motion-sickness meds if you're prone to seasickness",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Carry prescription meds in original packaging + scan of prescriptions",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Drink bottled water or ask hotels about drinking water",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "souvenirs": [
@@ -703,6 +837,175 @@
       "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.docx",
       "_source_date": "2026-01-31",
       "_source_format": "new"
+    },
+    {
+      "item": "Shell Crafts & Sea-Themed Souvenirs",
+      "city": "Port Blair",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Sagarika Emporium (Government Handicraft Emporium)",
+        "Aberdeen Bazaar"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Coconut & Cane Handicrafts",
+      "city": "Port Blair",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Sagarika Emporium",
+        "Samudrika Naval Marine Museum shop"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Spices & Island Flavours",
+      "city": "Port Blair",
+      "category": "Food",
+      "where_to_buy": [
+        "Aberdeen Bazaar spice shops",
+        "Khadi Emporium grocery wing"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Nicobari Tribal Handicrafts",
+      "city": "Port Blair",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Sagarika Emporium",
+        "Cottage Industries Emporium"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Local Art & Marine-Themed Paintings",
+      "city": "Port Blair",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Art galleries near Marina Park",
+        "Samudrika Museum shop"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Pearl Jewelry (Cultured)",
+      "city": "Port Blair",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Sagarika Emporium",
+        "certified jewelry stores in Aberdeen Bazaar"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Apparel & Island Wear",
+      "city": "Port Blair",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Aberdeen Bazaar clothing lanes"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Organic Beauty & Wellness Products",
+      "city": "Port Blair",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Government emporiums",
+        "wellness shops near MG Road"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Fridge Magnets, Keychains & Miniature Boats",
+      "city": "Port Blair",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Aberdeen Bazaar",
+        "Marina Park stalls"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Packaged Snacks Made Locally",
+      "city": "Port Blair",
+      "category": "Food",
+      "where_to_buy": [
+        "Local bakeries",
+        "ANIIDCO outlets"
+      ],
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [],
@@ -874,6 +1177,54 @@
       "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.docx",
       "_source_date": "2026-01-31",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Carry seasickness tablets (important for ferry rides between islands)",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Carry prescription medicines in sufficient stock",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Port Blair",
+        "Havelock Island",
+        "Neil Island"
+      ],
+      "tip": "Pack mosquito repellent for protection against insects",
+      "_source_file": "Andamans/Neha_All Inclusive Guide_Andamans.pdf",
+      "_source_mtime": 1772384330.3595996,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Port Blair",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "route_guides": [

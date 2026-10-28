@@ -103,6 +103,24 @@
       "_source_date": "2026-06-06",
       "_source_format": "new",
       "_replaced_from": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx"
+    },
+    {
+      "name": "Beachwalk Shopping Center, Kuta",
+      "city": "Kuta",
+      "description": "One of Bali's most popular shopping and lifestyle destinations located directly across from Kuta Beach. Features international brands, local boutiques, cafés, and beautifully landscaped open-air spaces.",
+      "hours": "10:00 AM – 10:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kuta",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -224,6 +242,38 @@
       "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.docx",
       "_source_date": "2025-12-07",
       "_source_format": "new"
+    },
+    {
+      "item": "Clothes and beachwear",
+      "city": "Kuta",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Kuta Art Market"
+      ],
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf",
+      "_source_mtime": 1772384386.5437362,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kuta",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Trinkets",
+      "city": "Kuta",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "Kuta Art Market"
+      ],
+      "_source_file": "Bali Indonesia/Pratheek_All Inclusive Guide_Bali.pdf",
+      "_source_mtime": 1772384386.5437362,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kuta",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [],

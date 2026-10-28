@@ -157,7 +157,21 @@
     }
   ],
   "attractions": [],
-  "hotels": [],
+  "hotels": [
+    {
+      "name": "Cinque Terre Behind",
+      "city": "La Spezia",
+      "location": "La Spezia, near La Spezia Centrale Station",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1777872516.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "La Spezia",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    }
+  ],
   "local_dishes": [],
   "phrases": [],
   "safety_tips": [],

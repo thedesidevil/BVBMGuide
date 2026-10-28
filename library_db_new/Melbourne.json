@@ -516,6 +516,60 @@
       "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
       "_source_date": null,
       "_source_format": "new"
+    },
+    {
+      "name": "MCG",
+      "city": "Melbourne",
+      "description": "Melbourne Cricket Ground",
+      "recommended_duration": "Full day",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Melbourne",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "12 apostles on Great Ocean Road",
+      "city": "Melbourne",
+      "description": "Famous rock formations viewable from dawn till dusk. Route passes by Lorne, Teddy's lookout, Apollo Bay",
+      "hours": "dawn till dusk",
+      "recommended_duration": "Full day (10 hours including drive)",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Melbourne",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "12 Apostles",
+      "city": "Melbourne",
+      "description": "Iconic rock formations on Great Ocean Road",
+      "hours": "Dawn till dusk",
+      "recommended_duration": "1-2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Melbourne",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Great Ocean Road & 12 Apostles",
+      "city": "Melbourne",
+      "description": "Scenic full-day road trip to the iconic Twelve Apostles via Great Ocean Road with stops at Lorne, Teddy's Lookout, and Apollo Bay",
+      "recommended_duration": "Full day",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Melbourne",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -525,6 +579,19 @@
       "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
       "_source_date": null,
       "_source_format": "new"
+    },
+    {
+      "name": "33 Rose Lane",
+      "city": "Melbourne",
+      "location": "20 min taxi ride from airport",
+      "_source_file": "Australia/Australia- All Inclusive Guide(1).pdf",
+      "_source_mtime": 1772384287.136402,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Melbourne",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "local_dishes": [
@@ -831,6 +898,36 @@
       "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
       "_source_date": null,
       "_source_format": "new"
+    },
+    {
+      "city": "Melbourne",
+      "mode": "Tram",
+      "description": "Free tram rides within the city centre (CBD) and the Docklands including areas around Flinders Street, Spring Street, La Trobe Street, Spencer Street, Bourke Street, Elizabeth Street, Victoria Street, and William Street",
+      "recommended_pass": "myki card for transport outside free tram zone",
+      "cost": "Free within CBD, myki card required outside free zone",
+      "_source_file": "Australia/Australia- All Inclusive Guide(1).pdf",
+      "_source_mtime": 1772384287.136402,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Melbourne",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Melbourne",
+      "mode": "Tram",
+      "description": "Free tram rides within the city centre (CBD) and the Docklands including areas around Flinders Street, Spring Street, La Trobe Street, Spencer Street",
+      "recommended_pass": "myki card for travel outside free tram zone",
+      "cost": "Free within CBD, myki card available from retail outlets and train stations",
+      "_source_file": "Australia/Australia- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384288.440096,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Melbourne",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "health_tips": [

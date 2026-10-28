@@ -253,6 +253,47 @@
       "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
       "_source_date": "2026-06-05",
       "_source_format": "new"
+    },
+    {
+      "name": "Puliebadze Peak",
+      "city": "Kohima",
+      "description": "A scenic viewpoint known for its rewarding hike and sweeping panoramas, with trails winding through shaded forest paths opening to expansive views of valleys and distant hills",
+      "hours": "8:30 AM – 12:30 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kohima",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "War Memorial & Museum",
+      "city": "Kohima",
+      "description": "Learn about the Battle of Kohima and Naga history",
+      "hours": "9:00 AM to 4:30 PM",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kohima",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Kisama (Naga Heritage Village)",
+      "city": "Kohima",
+      "description": "Hornbill Festival venue - cultural showcase of Naga tribes with dances, crafts, food stalls, and traditional performances",
+      "hours": "9:00 AM to 5:00 PM",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kohima",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -495,6 +536,89 @@
       "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
       "_source_date": "2026-06-05",
       "_source_format": "new"
+    },
+    {
+      "item": "Organic & Local Produce",
+      "city": "Kohima",
+      "category": "Food",
+      "where_to_buy": [
+        "Kohima Local Market"
+      ],
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kohima",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "item": "Naga Chilli Products (Raja Mircha)",
+      "city": "Kohima",
+      "category": "Food",
+      "where_to_buy": [
+        "Local Markets in Kohima",
+        "roadside stalls"
+      ],
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kohima",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "item": "Naga handloom textiles & shawls",
+      "city": "Kohima",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Kisama",
+        "Kohima bazaars"
+      ],
+      "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.pdf",
+      "_source_mtime": 1772384381.158248,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kohima",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Handcrafted tribal jewellery & beadwork",
+      "city": "Kohima",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Hornbill stalls",
+        "Kohima markets"
+      ],
+      "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.pdf",
+      "_source_mtime": 1772384381.158248,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kohima",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Tribal crafts",
+      "city": "Kohima",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Hornbill craft stalls (Kisama)"
+      ],
+      "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.pdf",
+      "_source_mtime": 1772384381.158248,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kohima",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [

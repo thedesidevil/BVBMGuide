@@ -768,6 +768,106 @@
       "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-07",
       "_source_format": "new"
+    },
+    {
+      "name": "Flo's Appetizing Bagel shop Amsterdam",
+      "city": "Amsterdam",
+      "cuisine_type": [
+        "Bagel"
+      ],
+      "hours": "9am-3pm",
+      "area": "Near Vondelpark",
+      "nearby_landmarks": [
+        "Vondelpark, Amsterdam"
+      ],
+      "must_try_dishes": [
+        "Bagel sandwiches"
+      ],
+      "highlights": [
+        "Closed on Mon"
+      ],
+      "source_files": [],
+      "vegetarian_friendly": true,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Vegan Junk Food Bar Amsterdam (De Pijp)",
+      "city": "Amsterdam",
+      "cuisine_type": [
+        "Vegan",
+        "Street Food"
+      ],
+      "price_range": "₹1,200–1,800 pp",
+      "hours": "12 PM – 10 PM",
+      "ambience": "Bold, vibrant, street-style",
+      "area": "De Pijp",
+      "nearby_landmarks": [
+        "Albert Cuyp Market, Amsterdam"
+      ],
+      "highlights": [
+        "Vegan options available",
+        "Fun, indulgent dining"
+      ],
+      "must_try_dishes": [
+        "Loaded fries",
+        "vegan burgers",
+        "Vegan burgers"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "SLA Amsterdam (De Pijp)",
+      "city": "Amsterdam",
+      "cuisine_type": [
+        "Healthy",
+        "Salads"
+      ],
+      "price_range": "₹1,000–1,500 pp",
+      "hours": "11:30 AM – 9 PM",
+      "ambience": "Clean, minimal, health-focused",
+      "area": "De Pijp",
+      "nearby_landmarks": [
+        "Albert Cuyp Market, Amsterdam"
+      ],
+      "highlights": [
+        "Vegan options available",
+        "Light, healthy meal"
+      ],
+      "must_try_dishes": [
+        "Fresh salads",
+        "bowls",
+        "Bowls"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -965,6 +1065,84 @@
       "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-07",
       "_source_format": "new"
+    },
+    {
+      "name": "Corpus Museum",
+      "city": "Amsterdam",
+      "description": "Interactive museum",
+      "hours": "9:00 AM TO 6:00 PM",
+      "source_files": [],
+      "recommended_duration": "3 hours",
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Amsterdam: 75-Minute Luxury Canal Cruise",
+      "city": "Amsterdam",
+      "description": "Guided cruise through UNESCO-listed canals with local skipper sharing stories",
+      "hours": "11:30 AM",
+      "recommended_duration": "75 minutes",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Amsterdam Canal Cruise (75-Minute Luxury)",
+      "city": "Amsterdam",
+      "description": "Guided luxury canal cruise passing under low bridges and alongside elegant 17th-century townhouses. Skipper shares stories of Amsterdam's maritime past and hidden gems.",
+      "hours": "11:30 AM (arrive by 11:00 AM)",
+      "recommended_duration": "75 minutes",
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "The Nine Streets (De 9 Straatjes)",
+      "city": "Amsterdam",
+      "description": "Quaint lanes in the Jordaan area with boutique shopping and cafés.",
+      "hours": "All day",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "STRAAT Museum (Street Art & Graffiti)",
+      "city": "Amsterdam",
+      "description": "Located in a massive industrial warehouse, showcasing bold large-scale street art from global artists. A contrast to classical museums.",
+      "hours": "10 AM – 5 PM",
+      "entry_fee": "~₹1,500–2,000 pp",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -1178,6 +1356,62 @@
       "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-07",
       "_source_format": "new"
+    },
+    {
+      "name": "Poffertjes (Mini Dutch Pancakes)",
+      "city": "Amsterdam",
+      "description": "Small, fluffy pancakes served with butter and powdered sugar — light, slightly crispy outside and soft inside",
+      "vegetarian": true,
+      "where_to_try": "Amsterdam cafés",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Stroopwafels (Caramel Waffles)",
+      "city": "Amsterdam",
+      "description": "Two thin waffle layers with warm caramel syrup in between — best enjoyed fresh and slightly gooey",
+      "vegetarian": true,
+      "where_to_try": "Van Wonderen Stroopwafels",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Dutch Coffee Culture",
+      "city": "Amsterdam",
+      "description": "Smooth, strong coffee served in cozy cafés — perfect for canal-side breaks",
+      "vegetarian": true,
+      "where_to_try": "Amsterdam cafés",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Appeltaart",
+      "city": "Amsterdam",
+      "description": "Dense, cinnamon-spiced apple pie with a buttery crust, often served with whipped cream",
+      "vegetarian": true,
+      "where_to_try": "Local bakeries",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -1210,6 +1444,117 @@
       "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-07",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Haarlem",
+        "Netherlands"
+      ],
+      "tip": "Always keep valuables in front zip bags or anti-theft backpacks.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Avoid carrying large cash amounts.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Use official taxi apps or hotel-arranged transfers.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Keep passport copies separate from originals.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Be cautious in crowded tourist hotspots and transport hubs.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Stick to well-lit areas at night, especially near canals or stations.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
     }
   ],
   "souvenirs": [
@@ -1410,6 +1755,56 @@
       "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-07",
       "_source_format": "new"
+    },
+    {
+      "item": "Wooden clog/bicycle/canal house/windmill themed souvenirs",
+      "city": "Amsterdam",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "Dam Square Souvenirs"
+      ],
+      "_source_file": "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+      "_source_mtime": 1772384274.3302393,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Dutch Cheese",
+      "city": "Amsterdam",
+      "category": "Food",
+      "where_to_buy": [
+        "Nieuwmarkt Farmers Market",
+        "Supermarkets"
+      ],
+      "_source_file": "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+      "_source_mtime": 1772384274.3302393,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Dutch Cheese (Gouda, Edam, Maasdam and Layden varieties)",
+      "city": "Amsterdam",
+      "category": "Food",
+      "where_to_buy": [
+        "Nieuwmarkt Farmers Market",
+        "Supermarkets"
+      ],
+      "_source_file": "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf",
+      "_source_mtime": 1772384275.5723488,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [],
@@ -1547,6 +1942,184 @@
       "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-07",
       "_source_format": "new"
+    },
+    {
+      "city": "Amsterdam",
+      "mode": "Public Transport",
+      "description": "Access to major highlights and more than 70 museums, city-wide public transport, canal cruise and bicycle rent",
+      "recommended_pass": "I Amsterdam City Card",
+      "cost": "100 EUR per person for 72 hours",
+      "_source_file": "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+      "_source_mtime": 1772384274.3302393,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Amsterdam",
+      "mode": "Public Transport",
+      "description": "Unlimited travel in Amsterdam and nearby regions",
+      "recommended_pass": "I Amsterdam- Amsterdam & Region Travel ticket",
+      "cost": "40.5 EUR per person for 3 days",
+      "_source_file": "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+      "_source_mtime": 1772384274.3302393,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Amsterdam",
+      "mode": "Public Transport",
+      "description": "Unlimited public transport within Amsterdam",
+      "recommended_pass": "Amsterdam Day Ticket",
+      "cost": "21 EUR per person for 3 days",
+      "_source_file": "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+      "_source_mtime": 1772384274.3302393,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Amsterdam",
+      "mode": "I Amsterdam City Card",
+      "description": "Access to all major highlights and more than 70 museums, city-wide public transport, canal cruise and bicycle rent",
+      "recommended_pass": "I Amsterdam City Card",
+      "cost": "100 EUR per person for 72 hours",
+      "_source_file": "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf",
+      "_source_mtime": 1772384275.5723488,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Amsterdam",
+      "mode": "Train",
+      "description": "NS trains connect Amsterdam to other Dutch cities and regions",
+      "recommended_pass": "Amsterdam & Region Travel Ticket",
+      "cost": "~€44 (~₹4,000) for 3 days",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1777149068.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-04-25"
+    },
+    {
+      "city": "Amsterdam",
+      "mode": "Tram",
+      "description": "Amsterdam trams cover the city center and surrounding areas",
+      "recommended_pass": "Contactless card payment",
+      "cost": "Varies",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1777149068.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-04-25"
+    },
+    {
+      "city": "Amsterdam",
+      "mode": "Bus",
+      "description": "Regional and local buses connect Amsterdam to nearby areas",
+      "recommended_pass": "Contactless card payment",
+      "cost": "Varies",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1777149068.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-04-25"
+    },
+    {
+      "city": "Amsterdam",
+      "mode": "Train",
+      "description": "Direct train from Schiphol Airport to Haarlem Station",
+      "cost": "~20 minutes",
+      "_source_file": "Netherlands/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    },
+    {
+      "city": "Amsterdam",
+      "mode": "Tram",
+      "description": "City transport within Amsterdam",
+      "cost": "Various routes",
+      "_source_file": "Netherlands/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    },
+    {
+      "city": "Amsterdam",
+      "mode": "City Pass (Multi-modal)",
+      "description": "All-in-one city pass covering 70+ museums, unlimited public transport, canal cruise, and bicycle rental.",
+      "recommended_pass": "I Amsterdam City Card",
+      "cost": "~€65–€100 (72 hrs ~€100 per person)",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    },
+    {
+      "city": "Amsterdam",
+      "mode": "Train & Regional Bus",
+      "description": "Unlimited travel in Amsterdam and nearby regions including bus, tram, metro, and train. Best for day trips to Haarlem and Zaanse Schans.",
+      "recommended_pass": "Amsterdam & Region Travel Ticket (GVB + Regional Transport)",
+      "cost": "~€21–€40.5 (3-day approx €40.5 per person)",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    },
+    {
+      "city": "Amsterdam",
+      "mode": "Metro / Tram / Bus",
+      "description": "Unlimited metro, tram, and bus travel within Amsterdam city zone.",
+      "recommended_pass": "GVB Public Transport Day Ticket",
+      "cost": "~€9–€21 per day",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amsterdam",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
     }
   ],
   "health_tips": [

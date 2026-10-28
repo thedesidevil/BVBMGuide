@@ -597,6 +597,66 @@
       "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
       "_source_date": "2026-05-04",
       "_source_format": "new"
+    },
+    {
+      "name": "Tring Tring - Shillong",
+      "city": "Shillong",
+      "cuisine_type": [
+        "Continental"
+      ],
+      "price_range": "₹800 – ₹1,500 per person",
+      "hours": "1:00 PM – 1:00 AM",
+      "ambience": "Lively, retro-themed with music-focused décor",
+      "must_try_dishes": [
+        "Burgers",
+        "continental dishes",
+        "cocktails"
+      ],
+      "best_for": [
+        "casual",
+        "fun dinner"
+      ],
+      "highlights": [
+        "Limited parking"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Rynsan, Shillong",
+      "city": "Shillong",
+      "cuisine_type": [
+        "Local",
+        "Khasi",
+        "Fusion"
+      ],
+      "price_range": "₹800 – ₹1,400 per person",
+      "hours": "1:00 PM – 9:30 PM, 1:00 PM – 10:00 PM(Fri-Sat), (closed on Sunday)",
+      "ambience": "Minimalist, modern with local influence",
+      "must_try_dishes": [
+        "Khasi dishes",
+        "fusion plates",
+        "Khasi-style dishes",
+        "smoked meats"
+      ],
+      "best_for": [
+        "local-meets-modern dining"
+      ],
+      "highlights": [
+        "Limited parking"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -880,9 +940,108 @@
       "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
       "_source_date": "2026-05-04",
       "_source_format": "new"
+    },
+    {
+      "name": "Smoked Chicken / Pork (Northeast Style)",
+      "city": "Shillong",
+      "description": "Smoky, earthy, and deeply flavourful—this dish reflects traditional cooking methods using firewood and local spices",
+      "vegetarian": false,
+      "where_to_try": "Rynsan, Shillong",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
-  "phrases": [],
+  "phrases": [
+    {
+      "city": "Shillong",
+      "english": "Hello",
+      "local": "Khublei",
+      "category": "greeting",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "city": "Shillong",
+      "english": "Thank you very much",
+      "local": "Khublei Shibun",
+      "category": "polite",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "city": "Shillong",
+      "english": "How are you?",
+      "local": "Kumno phi long?",
+      "category": "greeting",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "city": "Shillong",
+      "english": "Yes",
+      "local": "Hooid",
+      "category": "polite",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "city": "Shillong",
+      "english": "No",
+      "local": "Em",
+      "category": "polite",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "city": "Shillong",
+      "english": "Please",
+      "local": "Sngewbha",
+      "category": "polite",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    }
+  ],
   "safety_tips": [
     {
       "cities": [
@@ -914,6 +1073,53 @@
       "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
       "_source_date": "2026-05-04",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Shillong",
+        "Guwahati",
+        "Cherrapunjee"
+      ],
+      "tip": "Roads in Meghalaya are winding—avoid sudden movements while driving",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "cities": [
+        "Shillong",
+        "Cherrapunjee",
+        "Dawki"
+      ],
+      "tip": "Surfaces can be slippery at waterfalls — wear proper footwear",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "cities": [
+        "Shillong",
+        "Guwahati"
+      ],
+      "tip": "Network connectivity may be limited in remote areas",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
     }
   ],
   "souvenirs": [
@@ -1056,7 +1262,60 @@
       "_source_format": "new"
     }
   ],
-  "emergency_contacts": [],
+  "emergency_contacts": [
+    {
+      "city": "Shillong",
+      "service": "Police",
+      "number": "100",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "city": "Shillong",
+      "service": "Ambulance",
+      "number": "102 / 108",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "city": "Shillong",
+      "service": "Fire",
+      "number": "101",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "city": "Shillong",
+      "service": "National Emergency Helpline",
+      "number": "112",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    }
+  ],
   "connectivity_tips": [
     {
       "cities": [
@@ -1089,6 +1348,21 @@
       "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
       "_source_date": "2026-05-04",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Guwahati",
+        "Shillong"
+      ],
+      "tip": "Mobile signals vary — Guwahati & Shillong have good coverage",
+      "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.pdf",
+      "_source_mtime": 1772384381.158248,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "transport_options": [
@@ -1156,6 +1430,36 @@
       "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
       "_source_date": "2026-05-04",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Shillong",
+        "Guwahati",
+        "Cherrapunjee"
+      ],
+      "tip": "Use mosquito repellent, important for outdoor areas",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "cities": [
+        "Shillong"
+      ],
+      "tip": "Weather can be drying, use lip balm and moisturizer",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Shillong",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
     }
   ],
   "route_guides": [

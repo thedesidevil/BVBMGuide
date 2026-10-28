@@ -137,6 +137,21 @@
       "_source_file": "France/Tanya and Shovit_All Inclusive Guide(2).docx",
       "_source_date": "2026-02-21",
       "_source_format": "new"
+    },
+    {
+      "name": "Caracalla Thermal Spa",
+      "city": "Baden-Baden",
+      "description": "Relaxing thermal spa with indoor and outdoor pools",
+      "hours": "Typically 9 AM – 10 PM",
+      "entry_fee": "Approx. INR 3,000–4,000 per person (2–3 hrs access)",
+      "recommended_duration": "2-3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Baden-Baden",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -202,6 +217,40 @@
       "_source_date": "2026-02-21",
       "_source_format": "new",
       "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Spa skincare products",
+      "city": "Baden-Baden",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Baden-Baden Old Town",
+        "Boutique stores near Caracalla Spa"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Baden-Baden",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Spa skincare products (thermal-based)",
+      "city": "Baden-Baden",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Baden-Baden Old Town",
+        "Boutique stores near Caracalla Spa"
+      ],
+      "_source_file": "Germany/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384292.0339181,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Baden-Baden",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [],

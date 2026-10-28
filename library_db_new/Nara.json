@@ -274,6 +274,48 @@
       "_source_file": "Japan/Manjari_Japan_All Inclusive Guide.docx",
       "_source_date": "2026-05-15",
       "_source_format": "new"
+    },
+    {
+      "name": "Unagi",
+      "city": "Nara",
+      "description": "Grilled eel served over rice",
+      "vegetarian": false,
+      "where_to_try": "Edogawa Naramachi",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nara",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Tuna rice bowls",
+      "city": "Nara",
+      "description": "Fresh tuna served over rice",
+      "vegetarian": false,
+      "where_to_try": "Maguro Koya",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nara",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Udon",
+      "city": "Nara",
+      "description": "Thick wheat noodles in broth",
+      "vegetarian": true,
+      "where_to_try": "Kamaiki Udon Nara",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nara",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -299,6 +341,20 @@
       "_source_file": "Japan/AA_All Inclusive Guide_Japan(1).docx",
       "_source_date": "2026-03-28",
       "_source_format": "new"
+    },
+    {
+      "city": "Nara",
+      "mode": "Kintetsu",
+      "description": "Direct train from Kintetsu Namba to Kintetsu Nara",
+      "cost": "₹600-₹800 per person",
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan.pdf",
+      "_source_mtime": 1772384322.4841816,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nara",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "health_tips": [

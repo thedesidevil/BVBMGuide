@@ -1,5 +1,64 @@
 {
-  "restaurants": [],
+  "restaurants": [
+    {
+      "name": "The Swan Hotel",
+      "city": "Cotswolds",
+      "cuisine_type": [
+        "British"
+      ],
+      "price_range": "INR 2500 pp",
+      "hours": "12:00 pm – 3:00 pm",
+      "ambience": "Riverside elegance, British classics",
+      "area": "Bibury",
+      "highlights": [
+        "Riverside elegance",
+        "British classics"
+      ],
+      "must_try_dishes": [
+        "Cotswold lamb",
+        "roast chicken"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Cotswolds",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "The Old Bakery Tearoom",
+      "city": "Cotswolds",
+      "cuisine_type": [
+        "British"
+      ],
+      "price_range": "INR 1500 pp",
+      "hours": "10:00 am – 4:00 pm",
+      "ambience": "Cozy English tea room",
+      "area": "Stow-on-the-Wold",
+      "highlights": [
+        "Cozy English tea room"
+      ],
+      "must_try_dishes": [
+        "Cream tea",
+        "quiche",
+        "homemade scones"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Cotswolds",
+      "_source_format": "old",
+      "_source_date": null
+    }
+  ],
   "attractions": [
     {
       "name": "Cotswolds",

@@ -169,6 +169,31 @@
       "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
       "_source_date": "2026-05-04",
       "_source_format": "new"
+    },
+    {
+      "name": "The Table (Guwahati)",
+      "city": "Guwahati",
+      "cuisine_type": [
+        "Continental"
+      ],
+      "price_range": "₹1,000 – ₹1,800 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Stylish, modern dining with a refined yet relaxed setting",
+      "must_try_dishes": [
+        "Continental mains",
+        "pizzas",
+        "desserts"
+      ],
+      "best_for": [
+        "upscale casual dining"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Guwahati",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -236,7 +261,22 @@
       "_source_format": "new"
     }
   ],
-  "phrases": [],
+  "phrases": [
+    {
+      "city": "Guwahati",
+      "english": "Greeting",
+      "local": "Namaskar",
+      "category": "greeting",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Guwahati",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    }
+  ],
   "safety_tips": [
     {
       "cities": [
@@ -247,6 +287,66 @@
       "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
       "_source_date": "2026-05-04",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Shillong",
+        "Guwahati",
+        "Cherrapunjee"
+      ],
+      "tip": "Roads in Meghalaya are winding—avoid sudden movements while driving",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Guwahati",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "cities": [
+        "Shillong",
+        "Guwahati"
+      ],
+      "tip": "Network connectivity may be limited in remote areas",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Guwahati",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "cities": [
+        "Shillong",
+        "Guwahati"
+      ],
+      "tip": "Keep wallets, phones, and documents secure in crowded areas like Police Bazaar",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Guwahati",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "cities": [
+        "Guwahati"
+      ],
+      "tip": "Dress modestly at religious sites (covered shoulders & knees recommended)",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Guwahati",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
     }
   ],
   "souvenirs": [
@@ -261,6 +361,23 @@
       "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
       "_source_date": "2026-05-04",
       "_source_format": "new"
+    },
+    {
+      "item": "Assam Tea",
+      "city": "Guwahati",
+      "category": "Food",
+      "where_to_buy": [
+        "Purbashree Emporium",
+        "Fancy Bazaar"
+      ],
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Guwahati",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
     }
   ],
   "emergency_contacts": [],
@@ -284,10 +401,57 @@
       "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.docx",
       "_source_date": "2025-11-10",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Guwahati",
+        "Shillong"
+      ],
+      "tip": "Mobile signals vary — Guwahati & Shillong have good coverage",
+      "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.pdf",
+      "_source_mtime": 1772384381.158248,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Guwahati",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "transport_options": [],
-  "health_tips": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Shillong",
+        "Guwahati"
+      ],
+      "tip": "Carry motion sickness tablets for hilly drives",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Guwahati",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "cities": [
+        "Shillong",
+        "Guwahati",
+        "Cherrapunjee"
+      ],
+      "tip": "Use mosquito repellent, important for outdoor areas",
+      "_source_file": "Northeast India/Smriti_Meghalaya_All Inclusive Guide.docx",
+      "_source_mtime": 1777912938.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Guwahati",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    }
+  ],
   "route_guides": [
     {
       "city": "Guwahati",

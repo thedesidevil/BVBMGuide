@@ -1,0 +1,748 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Ezme",
+      "city": "Turkey",
+      "description": "A spicy mash of tomatoes, peppers, garlic, and herbs with a tangy kick",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Istanbul"
+    },
+    {
+      "name": "Adana Kebab",
+      "city": "Turkey",
+      "description": "Spicy minced lamb skewers grilled over charcoal, named after the southern city of Adana",
+      "vegetarian": false,
+      "where_to_try": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Istanbul"
+    },
+    {
+      "name": "Iskender Kebab",
+      "city": "Turkey",
+      "description": "Thin slices of döner meat served over pita, topped with tomato sauce, yogurt, and sizzling butter",
+      "vegetarian": false,
+      "where_to_try": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Istanbul"
+    },
+    {
+      "name": "Lahmacun",
+      "city": "Turkey",
+      "description": "Thin, crispy flatbread topped with minced meat, herbs, and spices—rolled up with lemon and parsley",
+      "vegetarian": false,
+      "where_to_try": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Istanbul"
+    },
+    {
+      "name": "Künefe",
+      "city": "Turkey",
+      "description": "A warm dessert of shredded dough (kadayıf) stuffed with soft cheese, baked and soaked in syrup. Best eaten hot",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Istanbul"
+    },
+    {
+      "name": "Turkish Tea (Çay)",
+      "city": "Turkey",
+      "description": "Strong black tea served in tulip-shaped glasses—always offered at any gathering",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Istanbul"
+    },
+    {
+      "name": "Turkish Coffee (Türk Kahvesi)",
+      "city": "Turkey",
+      "description": "Finely ground coffee brewed in a copper cezve, served unfiltered. Don't drink the grounds!",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Istanbul"
+    },
+    {
+      "name": "Turkish Coffee",
+      "city": "Turkey",
+      "description": "Finely ground coffee brewed in a copper cezve, served unfiltered. Don't drink the grounds!",
+      "vegetarian": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Ayran",
+      "city": "Turkey",
+      "description": "Cold salted yogurt drink—tangy, creamy, and perfect with spicy dishes",
+      "vegetarian": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Istanbul"
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Turkey",
+      "english": "Hello",
+      "local": "Merhaba",
+      "category": "greeting",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Gangtok"
+    },
+    {
+      "city": "Turkey",
+      "english": "Good morning",
+      "local": "Günaydın",
+      "category": "greeting",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "city": "Turkey",
+      "english": "Thank you",
+      "local": "Teşekkür ederim",
+      "category": "polite",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "city": "Turkey",
+      "english": "Please",
+      "local": "Lütfen",
+      "category": "polite",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Gangtok"
+    },
+    {
+      "city": "Turkey",
+      "english": "Yes",
+      "local": "Evet",
+      "category": "polite",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "city": "Turkey",
+      "english": "No",
+      "local": "Hayır",
+      "category": "polite",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "city": "Turkey",
+      "english": "How much is it?",
+      "local": "Bu ne kadar?",
+      "category": "food",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "city": "Turkey",
+      "english": "Good evening",
+      "local": "İyi akşamlar",
+      "category": "greeting",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "city": "Turkey",
+      "english": "Yes / No",
+      "local": "Evet / Hayır",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Turkey",
+      "english": "Excuse me / Sorry",
+      "local": "Affedersiniz",
+      "category": "polite",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Athens"
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Keep valuables secure and out of sight in busy areas",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Bali"
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Use a money belt or neck pouch for passports and extra cash",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Bali"
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Carry copies of travel documents (digital and paper)",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Avoid isolated alleys or beaches late at night",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Bali"
+    },
+    {
+      "cities": [
+        "Turkey"
+      ],
+      "tip": "Politely decline 'Let's Have a Drink' invitations from friendly locals",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Turkey"
+      ],
+      "tip": "Say 'no thanks' firmly to street vendors trying to place items in your hand",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "In mosques/churches: dress modestly and be respectful",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Turkey"
+      ],
+      "tip": "Let's Have a Drink Scam - A friendly local invites you to a bar—later, you're stuck with an outrageous bill. Politely decline",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Turkey"
+      ],
+      "tip": "Street Vendor Guilt Traps - Peddlers may try to place items in your hand, then guilt you into buying. Say 'no thanks' firmly",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Turkey"
+      ],
+      "tip": "Fake Carpet Dealers - Be cautious with 'special invites' to carpet shops claiming 'family business'",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Turkey"
+      ],
+      "tip": "Taxis without Meters- Always insist on using the meter. In Istanbul, use BiTaksi app (like Uber)",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2025-06-30"
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Turkish Towels (Pestemal) & Textiles",
+      "city": "Turkey",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Grand Bazaar"
+      ],
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Istanbul"
+    },
+    {
+      "item": "Tea Sets & Turkish Ceramics",
+      "city": "Turkey",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Grand Bazaar"
+      ],
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Istanbul"
+    },
+    {
+      "item": "Spices, Lokum (Turkish Delight), & Gourmet Gifts",
+      "city": "Turkey",
+      "category": "Food",
+      "where_to_buy": [
+        "Spice Bazaar",
+        "Hafız Mustafa 1864"
+      ],
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Istanbul"
+    },
+    {
+      "item": "Ancient-Era Replicas & Marble Carvings",
+      "city": "Turkey",
+      "category": "Antiques",
+      "where_to_buy": [
+        "Local stone shops around the Ephesus entrance",
+        "Selçuk market"
+      ],
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Ephesus"
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Turkey",
+      "service": "General Emergency",
+      "number": "112",
+      "notes": null,
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Turkey",
+      "service": "Police",
+      "number": "155",
+      "notes": null,
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Turkey",
+      "service": "Ambulance",
+      "number": "112",
+      "notes": null,
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Turkey",
+      "service": "Fire Department",
+      "number": "110",
+      "notes": null,
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Turkey",
+      "service": "Tourist Health Line",
+      "number": "+90 850 288 38 38",
+      "notes": "English",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Turkey",
+      "service": "Indian Consulate General",
+      "number": "+90 212 296 7131",
+      "notes": "Pera Palace Hotel, Tepebaşı, Beyoğlu, Istanbul",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Turkey",
+      "service": "Consulate General of India, Istanbul",
+      "number": "+90 212 296 7131",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2025-06-30"
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "eSIM-Friendly Providers good for traveling to multiple countries: Airalo, Holafly",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Turkey"
+      ],
+      "tip": "Paper SIMs: Turkcell. Buy at the airport. Passport is required to activate any Turkish SIM",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Turkey"
+      ],
+      "tip": "Paper SIM: Turkcell. Buy at the airport. Passport is required to activate any Turkish SIM",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Turkey"
+      ],
+      "tip": "Paper SIMs (Local): Turkcell. Buy at the airport. Passport is required to activate any Turkish SIM",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.pdf",
+      "_source_mtime": 1751302706.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2025-06-30"
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "No vaccines are mandatory for entry, but routine vaccinations and a few travel-related vaccines are recommended",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Turkey"
+      ],
+      "tip": "Tap water not recommended in many parts of Turkey. Be cautious with ice in drinks and unpeeled fruits from small vendors",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Greece",
+        "Turkey"
+      ],
+      "tip": "Carry prescriptions in original packaging + digital copy",
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Turkey"
+      ],
+      "tip": "Tap water is not recommended in many parts of Turkey. Be cautious with ice in drinks and unpeeled fruits from small vendors",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Turkey",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": []
+}

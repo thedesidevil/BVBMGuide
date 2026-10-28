@@ -61,10 +61,46 @@
       "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
       "_source_date": "2024-06-12",
       "_source_format": "old"
+    },
+    {
+      "name": "Taj Mahal Villejeuf",
+      "city": "Villejuif",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "12-2:30pm, 6-10:30pm",
+      "highlights": [
+        "Closed on Monday"
+      ],
+      "must_try_dishes": [
+        "Curries",
+        "rotis"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Villejuif",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [],
-  "hotels": [],
+  "hotels": [
+    {
+      "name": "Airbnb",
+      "city": "Villejuif",
+      "location": "78 Avenue de Paris Appartement B63, Villejuif, Île-de-France 94800, France",
+      "_source_file": "France/2. France- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384271.7324994,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Villejuif",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "local_dishes": [],
   "phrases": [],
   "safety_tips": [],

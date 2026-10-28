@@ -265,7 +265,20 @@
       "_source_format": "old"
     }
   ],
-  "hotels": [],
+  "hotels": [
+    {
+      "name": "Hotel Moderno",
+      "city": "Pisa",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pisa",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "local_dishes": [
     {
       "name": "Lasagna",
@@ -315,6 +328,32 @@
       "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
       "_source_date": "2024-06-19",
       "_source_format": "old"
+    },
+    {
+      "city": "Pisa",
+      "mode": "Public transport",
+      "description": "Pay as you go recommended since hotel is close to station and most sites",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pisa",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Pisa",
+      "mode": "Pay as you go",
+      "description": "Not recommended to buy a pass for less than a day visit",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pisa",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "health_tips": [],

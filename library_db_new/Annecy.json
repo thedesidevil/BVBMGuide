@@ -122,6 +122,36 @@
       "_source_date": "2026-02-21",
       "_source_format": "new",
       "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Annecy Old Town",
+      "city": "Annecy",
+      "description": "Venice of the Alps with pastel houses over turquoise canals",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free to explore",
+      "recommended_duration": "2-3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Annecy",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Lake Annecy",
+      "city": "Annecy",
+      "description": "Clear mountain lake with alpine views",
+      "hours": "Typically 10 AM – 5 PM (season dependent)",
+      "entry_fee": "Approx. INR 1,800–3,000 per person",
+      "recommended_duration": "2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Annecy",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -221,6 +251,22 @@
       "_source_date": "2026-02-21",
       "_source_format": "new",
       "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "Savoy Cheese",
+      "city": "Annecy",
+      "category": "Food",
+      "where_to_buy": [
+        "Fromagerie shops in Vieille Ville"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Annecy",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [],

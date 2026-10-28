@@ -48,6 +48,55 @@
       "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria(1).docx",
       "_source_date": "2025-05-21",
       "_source_format": "new"
+    },
+    {
+      "name": "Weingasthof Donabaum",
+      "city": "Wachau Valley",
+      "cuisine_type": [
+        "Austrian",
+        "Winery"
+      ],
+      "price_range": "₹₹",
+      "hours": "6:30 AM - 10:00 PM",
+      "ambience": "Family-run winery with outdoor tables among the vines",
+      "must_try_dishes": [
+        "Roasted pork with caraway",
+        "apricot chutney",
+        "Wachau white wine"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Wachau Valley",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Landhaus Bacher",
+      "city": "Wachau Valley",
+      "cuisine_type": [
+        "Austrian",
+        "Fine Dining"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "6:30 PM - 12:00 AM",
+      "ambience": "Fine dining with a Michelin star, blending classic and modern Austrian cuisine",
+      "must_try_dishes": [
+        "Seven-course tasting menu",
+        "beetroot tartare",
+        "caramelized goat cheese"
+      ],
+      "highlights": [
+        "Michelin star restaurant"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Wachau Valley",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -83,6 +132,62 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "name": "Melk Abbey",
+      "city": "Wachau Valley",
+      "description": "Grand baroque hilltop monastery overlooking the Danube",
+      "recommended_duration": "1 hour",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Wachau Valley",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Dürnstein",
+      "city": "Wachau Valley",
+      "description": "Historic Danube village with medieval town, Stiftskirche Cloister Tower and castle ruins where Richard the Lionheart was imprisoned",
+      "recommended_duration": "2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Wachau Valley",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Wachau Valley Cycling Route",
+      "city": "Wachau Valley",
+      "description": "Easy and scenic cycling route through terraced vineyards, riverside villages, and Wachau wine country. Mostly flat and beginner-friendly. Suggested stop at Weißenkirchen.",
+      "recommended_duration": "3 hours",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Wachau Valley",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "DDSG Blue Danube Cruise",
+      "city": "Wachau Valley",
+      "description": "Scenic cruise through Wachau Valley vineyards and riverside villages. Beautiful perspective of the Danube from the water. Board at DDSG Blue Danube dock near the Dürnstein river promenade.",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Wachau Valley",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -95,9 +200,57 @@
       "_source_format": "new"
     }
   ],
-  "local_dishes": [],
+  "local_dishes": [
+    {
+      "name": "Grüner Veltliner",
+      "city": "Wachau Valley",
+      "description": "Signature white wine of the Wachau region",
+      "vegetarian": true,
+      "where_to_try": "Domäne Wachau, Weingut und Heuriger Maria & Manfred Hick",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Wachau Valley",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Riesling",
+      "city": "Wachau Valley",
+      "description": "World-class white wine produced on the steep terraced slopes of the Wachau",
+      "vegetarian": true,
+      "where_to_try": "Domäne Wachau, Weinschenke St. Michael",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Wachau Valley",
+      "_source_format": "old",
+      "_source_date": null
+    }
+  ],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Wachau Valley"
+      ],
+      "tip": "Reconfirm exact DDSG Blue Danube cruise timings a few days before travel, as schedules may vary seasonally.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Wachau Valley",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    }
+  ],
   "souvenirs": [
     {
       "item": "Austrian wines, apricot liqueur, pumpkin seed oil",
@@ -109,12 +262,90 @@
       "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria(1).docx",
       "_source_date": "2025-05-21",
       "_source_format": "new"
+    },
+    {
+      "item": "Wachauer Laberl bread rolls",
+      "city": "Wachau Valley",
+      "category": "Food",
+      "where_to_buy": [
+        "Schmidl bakery in Dürnstein"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Wachau Valley",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
+    },
+    {
+      "item": "Wachau wine (Grüner Veltliner, Riesling)",
+      "city": "Wachau Valley",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Domäne Wachau",
+        "Boutique wine shops in Dürnstein"
+      ],
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Wachau Valley",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
     }
   ],
   "emergency_contacts": [],
   "connectivity_tips": [],
-  "transport_options": [],
-  "health_tips": [],
+  "transport_options": [
+    {
+      "city": "Wachau Valley",
+      "mode": "Bicycle",
+      "description": "Rental bikes available via Nextbike app or local rental shop in Spitz. Easy and scenic cycling route through terraced vineyards and riverside villages. Mostly flat and beginner-friendly.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Wachau Valley",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Wachau Valley",
+      "mode": "River Cruise (DDSG Blue Danube)",
+      "description": "Scenic cruise through Wachau Valley vineyards and riverside villages. Board at DDSG Blue Danube dock near the Dürnstein river promenade.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Wachau Valley",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Hallstatt",
+        "Gosausee",
+        "Wachau Valley",
+        "Salzburg"
+      ],
+      "tip": "Carry water, snacks, a light jacket, and comfortable walking shoes for full-day excursions including Hallstatt, Gosausee, and Wachau cycling.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Wachau Valley",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    }
+  ],
   "route_guides": [
     {
       "city": "Wachau Valley",

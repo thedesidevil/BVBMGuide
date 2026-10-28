@@ -181,6 +181,23 @@
       "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-07",
       "_source_format": "new"
+    },
+    {
+      "name": "Grote Markt, Haarlem",
+      "city": "Haarlem",
+      "description": "The heart of Haarlem, lined with historic buildings, cosy cafés, and the stunning St. Bavo's Church. A public square with warm golden glow in the evenings.",
+      "hours": "All day (public square)",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Haarlem",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -195,7 +212,24 @@
   ],
   "local_dishes": [],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Amsterdam",
+        "Haarlem",
+        "Netherlands"
+      ],
+      "tip": "Always keep valuables in front zip bags or anti-theft backpacks.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Haarlem",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    }
+  ],
   "souvenirs": [],
   "emergency_contacts": [],
   "connectivity_tips": [

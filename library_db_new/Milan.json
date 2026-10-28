@@ -341,6 +341,36 @@
       "_source_date": "2026-05-04",
       "_source_format": "new",
       "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Obicà Mozzarella Bar",
+      "city": "Milan",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "₹₹₹",
+      "hours": "9:30 AM – 7:30 PM",
+      "ambience": "Chic Italian restaurant",
+      "area": "Serravalle Outlet area",
+      "highlights": [
+        "Chic Italian dining"
+      ],
+      "must_try_dishes": [
+        "Burrata salad",
+        "vegetarian focaccia",
+        "pesto pasta"
+      ],
+      "best_for": [
+        "chic dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -408,6 +438,34 @@
       "_source_file": "Italy/Italy- Final Itinerary with booking links.pdf",
       "_source_date": "2024-12-31",
       "_source_format": "old"
+    },
+    {
+      "name": "Galleria Vittoria Emanuele II",
+      "city": "Milan",
+      "description": "A 19th century shopping arcade, famed for its glass dome, luxury boutiques, and cafés",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Serravalle Designer Outlet",
+      "city": "Milan",
+      "description": "One of Europe's largest luxury outlet destinations with Italian-style architecture, designer boutiques, and premium international brands",
+      "entry_fee": "Free Entry",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -419,6 +477,19 @@
       "_source_date": "2026-05-04",
       "_source_format": "new",
       "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Heart Hotel",
+      "city": "Milan",
+      "location": "Near Milano Centrale",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": "2025-09-02"
     }
   ],
   "local_dishes": [
@@ -737,6 +808,136 @@
       "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
       "_source_date": "2025-09-02",
       "_source_format": "old"
+    },
+    {
+      "item": "Panettone",
+      "city": "Milan",
+      "category": "Food",
+      "where_to_buy": [
+        "Local bakeries"
+      ],
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": "2025-09-02"
+    },
+    {
+      "item": "Gourmet coffee",
+      "city": "Milan",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Risotto rice (Carnaroli/Arborio)",
+      "city": "Milan",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "High-fashion accessories",
+      "city": "Milan",
+      "category": "Fashion",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Leather goods",
+      "city": "Milan",
+      "category": "Fashion",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Designer scarves",
+      "city": "Milan",
+      "category": "Fashion",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Sleek stationery",
+      "city": "Milan",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Risotto rice",
+      "city": "Milan",
+      "category": "Food",
+      "where_to_buy": [
+        "Gourmet stores"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Franciacorta (Lombardy)",
+      "city": "Milan",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "Italy/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384340.7984886,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [],
@@ -863,6 +1064,86 @@
       "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
       "_source_date": "2025-09-02",
       "_source_format": "old"
+    },
+    {
+      "city": "Milan",
+      "mode": "Tram",
+      "description": "Public transport connections to various districts",
+      "_source_file": "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384290.512721,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Milan",
+      "mode": "Metro",
+      "description": "Metro network connecting Milano Centrale to city areas like Cenisio M5 Line",
+      "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1777872516.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "city": "Milan",
+      "mode": "Shuttle",
+      "description": "Direct shuttle services from Milano Centrale to Serravalle Designer Outlet",
+      "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1777872516.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": "2026-05-04"
+    },
+    {
+      "city": "Milan",
+      "mode": "Metro/Tram",
+      "description": "Public transport connecting major attractions and districts",
+      "_source_file": "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384308.452988,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Milan",
+      "mode": "Metro/Tram",
+      "description": "Public transport system connecting major attractions",
+      "_source_file": "Italy/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384338.18424,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Milan",
+      "mode": "Metro",
+      "description": "Milan's metro network used for transfers within the city, including from Milano Centrale to hotel area (Cenisio on M5 Line) and to Duomo.",
+      "recommended_pass": null,
+      "cost": "Standard Rome metro ticket approx. INR 150–250 equivalent",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Milan",
+      "_source_format": "old",
+      "_source_date": "2026-05-03"
     }
   ],
   "health_tips": [

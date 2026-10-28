@@ -454,6 +454,21 @@
       "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-14",
       "_source_format": "new"
+    },
+    {
+      "name": "Jungfraujoch",
+      "city": "Lauterbrunnen",
+      "description": "Top of Europe with Sphinx Observatory, Ice Palace, and Alpine Sensation",
+      "recommended_duration": "3 hours",
+      "source_files": [],
+      "entry_fee": "CHF 225 (~INR 20,000) round trip",
+      "hours": "08:00 – 18:00",
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lauterbrunnen",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [],
@@ -500,6 +515,19 @@
       "_source_file": "Switzerland/Where to eat in Switzerland.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Rauchfleisch",
+      "city": "Lauterbrunnen",
+      "description": "Smoked meats like sausage or bacon, often served with cheese and potatoes",
+      "vegetarian": false,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lauterbrunnen",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -585,6 +613,34 @@
       "_source_file": "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
       "_source_date": "2025-07-07",
       "_source_format": "old"
+    },
+    {
+      "city": "Lauterbrunnen",
+      "mode": "Cogwheel Train",
+      "description": "Scenic train via Lauterbrunnen and Wengen to Kleine Scheidegg, then up to Jungfraujoch",
+      "_source_file": "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1772384364.4304612,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lauterbrunnen",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Lauterbrunnen",
+      "mode": "Mountain Train (Wengernalp Railway)",
+      "description": "Scenic mountain train from Lauterbrunnen to Wengen offering beautiful alpine views.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Covered under Swiss Travel Pass",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lauterbrunnen",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
     }
   ],
   "health_tips": [],

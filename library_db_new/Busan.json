@@ -1130,6 +1130,83 @@
       "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
       "_source_date": "2026-05-25",
       "_source_format": "new"
+    },
+    {
+      "name": "Halmae Gaya Milmyeon",
+      "city": "Busan",
+      "cuisine_type": [
+        "Korean"
+      ],
+      "price_range": "INR 700–1,000 per person",
+      "hours": "10:15 AM – 09:30 PM",
+      "area": "Haeundae",
+      "nearby_landmarks": [
+        "Haeundae Blueline Park, Busan"
+      ],
+      "highlights": [
+        "Busan specialty restaurant",
+        "Refreshing wheat noodles popular during warmer weather"
+      ],
+      "must_try_dishes": [
+        "Vegetable Milmyeon",
+        "Vegetable Dumplings (Mandu)",
+        "Cold Noodles with Vegetables",
+        "Milmyeon",
+        "Dumplings",
+        "Cold Noodles"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
+        "South Korea/Farha_South Korea_ All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "구름속의산책 steak, pizza, pasta",
+      "city": "Busan",
+      "cuisine_type": [
+        "Italian",
+        "Western"
+      ],
+      "price_range": "INR 1,000–1,600 per person",
+      "hours": "11:00 AM – 11:00 PM | 11:00 AM – 11:30 PM (Mon, Thu, Fri only)",
+      "area": "Near Songdo Marine Cable Car",
+      "nearby_landmarks": [
+        "Songdo Marine Cable Car, Busan"
+      ],
+      "highlights": [
+        "Sea-facing restaurant",
+        "Elevated views overlooking the coastline",
+        "Good for post-sunset dining"
+      ],
+      "must_try_dishes": [
+        "Margherita Pizza",
+        "Cream Pasta",
+        "Mushroom Pasta"
+      ],
+      "best_for": [
+        "casual",
+        "romantic"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -1372,6 +1449,52 @@
       "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
       "_source_date": "2026-05-25",
       "_source_format": "new"
+    },
+    {
+      "name": "Songdo Cable Car",
+      "city": "Busan",
+      "description": "Scenic cable car ride over coastline offering beautiful aerial views of sea, cliffs, and Songdo Beach",
+      "hours": "9:00 AM – 8:00 PM",
+      "entry_fee": "~INR 900–1,200",
+      "recommended_duration": "1-2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "BIFF Square",
+      "city": "Busan",
+      "description": "Famous area for street food, movie-themed streets, and lively evening energy",
+      "hours": "Best after 5:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Suyeongman Bay Yachting Center (Yacht Experience)",
+      "city": "Busan",
+      "description": "Premium yacht experience across Busan's waterfront. Evening cruises around Gwangalli with bridge lights illuminating the skyline. Includes snacks, refreshments, safety briefing, and storage service.",
+      "hours": "Tour Time: 06:30 PM (Reporting Time: 06:20 PM)",
+      "recommended_duration": "1-2 hours",
+      "source_files": [
+        "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -1522,10 +1645,85 @@
       "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
       "_source_date": "2026-05-25",
       "_source_format": "new"
+    },
+    {
+      "name": "Mayak gimbap",
+      "city": "Busan",
+      "description": "Mini seaweed rice rolls",
+      "vegetarian": true,
+      "where_to_try": "Gwangjang Market",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "tip": "Stay mindful of personal belongings in crowded areas such as markets and subway stations.",
+      "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779683024.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
+    },
+    {
+      "cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "tip": "Use only registered taxis from official airport taxi stands — avoid unauthorized drivers.",
+      "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779683024.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
+    },
+    {
+      "cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "tip": "Keep your hotel address saved in Korean for easy navigation.",
+      "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779683024.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
+    },
+    {
+      "cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "tip": "Keep copies of your passport, visa, insurance, and important documents in both physical and digital form throughout your journey.",
+      "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779683024.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
+    }
+  ],
   "souvenirs": [
     {
       "item": "Trendy fashion & accessories (socks, phone cases, jewelry, graphic T-shirts)",
@@ -1574,6 +1772,104 @@
       "_source_date": "2026-05-25",
       "_source_format": "new",
       "_replaced_from": "South Korea/Farha_South Korea_ All Inclusive Guide.docx"
+    },
+    {
+      "item": "Trendy Fashion & Cute Accessories",
+      "city": "Busan",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Seomyeon Underground Shopping Arcade"
+      ],
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-03-04"
+    },
+    {
+      "item": "Local Market Finds",
+      "city": "Busan",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Nampo-dong",
+        "BIFF Square"
+      ],
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-03-04"
+    },
+    {
+      "item": "Beachside Treats & Small Crafts",
+      "city": "Busan",
+      "category": "Food",
+      "where_to_buy": [
+        "Haeundae Market"
+      ],
+      "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
+      "_source_mtime": 1772595398.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-03-04"
+    },
+    {
+      "item": "Trendy Fashion & Cute Accessories (socks, phone cases, jewelry, graphic T-shirts)",
+      "city": "Busan",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Seomyeon Underground Shopping Arcade"
+      ],
+      "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779683024.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
+    },
+    {
+      "item": "Local Market Finds (keychains, magnets, Busan-themed gifts)",
+      "city": "Busan",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "Nampo-dong",
+        "BIFF Square"
+      ],
+      "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779683024.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
+    },
+    {
+      "item": "Beachside Treats & Small Crafts (local sweets, handcrafted souvenirs)",
+      "city": "Busan",
+      "category": "Food & Crafts",
+      "where_to_buy": [
+        "Haeundae Market"
+      ],
+      "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779683024.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
     }
   ],
   "emergency_contacts": [],
@@ -1617,6 +1913,126 @@
       "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
       "_source_date": "2026-05-25",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "tip": "eSIM is recommended for most convenient connectivity. Activate instantly before departure or upon arrival. No physical SIM swapping required. Reliable 4G/5G coverage across Seoul & Busan. Cost: ~INR 1,200–2,500 for 7–10 days (data-only plans).",
+      "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779683024.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
+    },
+    {
+      "cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "tip": "Physical Tourist SIM Cards are available at Incheon Airport (Seoul) and Gimhae Airport (Busan). Data-only or data + local call options. Passport required for purchase. Cost: ~INR 1,500–3,000 depending on duration.",
+      "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779683024.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
+    },
+    {
+      "cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "tip": "Pocket WiFi is available for multiple devices (3–5 devices). Must carry and charge the device daily. Pick-up and return at airport counters. Cost: ~INR 800–1,200 per day.",
+      "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779683024.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
+    },
+    {
+      "cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "tip": "Excellent mobile coverage in Seoul, Busan, subways, and tourist areas. Strong signal even underground in metro stations. Free WiFi available in cafés, malls, and hotels — but having personal data is highly recommended for navigation.",
+      "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779683024.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
+    },
+    {
+      "cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "tip": "eSIM is recommended for most convenient connectivity. Ideal if your phone supports eSIM. Activate instantly before departure or upon arrival. Reliable 4G/5G coverage across Seoul & Busan. Cost: ~INR 1,200–2,500 for 7–10 days (data-only plans).",
+      "_source_file": "South Korea/Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779139406.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-18"
+    },
+    {
+      "cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "tip": "Excellent mobile network coverage in Seoul, Busan, subways, and tourist areas. Strong signal even underground in metro stations. Free WiFi available in cafés, malls, and hotels — but having personal data is highly recommended for navigation.",
+      "_source_file": "South Korea/Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779139406.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-18"
+    },
+    {
+      "cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "tip": "South Korea uses Type C & Type F plugs. Voltage: 220V. Carry a universal adapter.",
+      "_source_file": "South Korea/Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779139406.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-18"
+    },
+    {
+      "cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "tip": "Recommended navigation apps: Naver Map (best for directions and public transport), KakaoMap (excellent for local navigation and real-time directions), and Subway Korea App (helpful for subway routes and transfers). Note: Google Maps is limited in Korea.",
+      "_source_file": "South Korea/Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779139406.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-18"
     }
   ],
   "transport_options": [
@@ -1650,6 +2066,36 @@
       "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
       "_source_date": "2026-03-04",
       "_source_format": "new"
+    },
+    {
+      "city": "Busan",
+      "mode": "Metro / Subway",
+      "description": "Fast, clean, and tourist-friendly subway system. Stations and signboards available in English, Korean, Japanese, and Chinese.",
+      "recommended_pass": "T-Money Card",
+      "cost": "Approx INR 80–180 per ride depending on distance",
+      "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779683024.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
+    },
+    {
+      "city": "Busan",
+      "mode": "Busan Metro",
+      "description": "Fast, clean, and tourist-friendly subway system. Stations and signboards available in English, Korean, Japanese, and Chinese.",
+      "recommended_pass": "T-Money Card",
+      "cost": "Approx INR 80–180 per ride depending on distance",
+      "_source_file": "South Korea/Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779139406.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-18"
     }
   ],
   "health_tips": [
@@ -1662,6 +2108,36 @@
       "_source_file": "South Korea/Kiran-South Korea-All Inclusive Guide.docx",
       "_source_date": "2026-03-04",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "tip": "Pharmacies are widely available across Seoul and Busan. While many pharmacists are helpful, English signage may sometimes be limited — having a translation app can be useful.",
+      "_source_file": "South Korea/25052026_Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779683024.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
+    },
+    {
+      "cities": [
+        "Seoul",
+        "Busan"
+      ],
+      "tip": "South Korea is 3 hours 30 minutes ahead of India. Try adjusting your sleep cycle slightly according to Korean time during the flight to reduce travel fatigue upon arrival.",
+      "_source_file": "South Korea/Farha_South Korea_ All Inclusive Guide.docx",
+      "_source_mtime": 1779139406.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Busan",
+      "_source_format": "old",
+      "_source_date": "2026-05-18"
     }
   ],
   "route_guides": [

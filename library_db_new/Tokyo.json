@@ -5615,6 +5615,159 @@
       "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
       "_source_date": "2026-10-19",
       "_source_format": "new"
+    },
+    {
+      "name": "丸天",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹800–1,500 per person",
+      "hours": "11 AM–2:30 PM",
+      "area": "Oshino Hakkai",
+      "nearby_landmarks": [
+        "Mt. Fuji, Tokyo"
+      ],
+      "highlights": [
+        "Tempura udon"
+      ],
+      "must_try_dishes": [
+        "Tempura udon",
+        "soba",
+        "grilled trout set"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Oshokujidokoro Irori",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹1,000–2,000 per person",
+      "hours": "11:30 AM–1:30 PM, 6–10 PM (closed on Tuesday)",
+      "area": "Oshino Hakkai",
+      "nearby_landmarks": [
+        "Mt. Fuji, Tokyo"
+      ],
+      "highlights": [
+        "Charcoal grilled fish"
+      ],
+      "must_try_dishes": [
+        "Charcoal grilled fish",
+        "vegetable sides",
+        "traditional set meals"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "御食事処はんのき食堂",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹800–1,500 per person",
+      "hours": "11 AM–3 PM (closed on Thursday)",
+      "area": "Oshino Hakkai",
+      "nearby_landmarks": [
+        "Mt. Fuji, Tokyo"
+      ],
+      "highlights": [
+        "Local molokheiya soba"
+      ],
+      "must_try_dishes": [
+        "Soba noodles",
+        "local molokheiya soba",
+        "light tempura"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Ain Soph. Toyosu",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Vegan"
+      ],
+      "price_range": "₹1,500–2,500",
+      "hours": "11:30 AM – 3:00 PM | 5 PM - 8 PM",
+      "ambience": "Relaxed, sit-down lunch",
+      "area": "Toyosu",
+      "highlights": [
+        "Vegan café"
+      ],
+      "best_for": [
+        "relaxed"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Indian Dining Spice インディアンダイニングスパイス",
+      "city": "Tokyo",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹1200–2200 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Cozy Indian restaurant serving comforting vegetarian curries",
+      "area": "Near Shinjuku",
+      "highlights": [
+        "Comforting vegetarian curries",
+        "Freshly baked naan"
+      ],
+      "must_try_dishes": [
+        "Paneer curry",
+        "Dal makhani",
+        "Butter naan"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -6734,6 +6887,341 @@
       "_source_file": "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
       "_source_date": "2024-05-22",
       "_source_format": "old"
+    },
+    {
+      "name": "Shinjuku Gyoen garden",
+      "city": "Tokyo",
+      "description": "Garden to view the cherry blossoms",
+      "hours": "9am-4pm everyday",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Team lab borderless",
+      "city": "Tokyo",
+      "description": "Digital art museum",
+      "hours": "9am-9pm Sun-Mon, closed on Tuesday",
+      "source_files": [],
+      "entry_fee": "Tickets bought online",
+      "recommended_duration": "Not specified",
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Mt Fuji",
+      "city": "Tokyo",
+      "description": "Day trip to Mt Fuji and hot springs",
+      "source_files": [],
+      "hours": "Day trip tour",
+      "recommended_duration": "Full day",
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "DisneySea",
+      "city": "Tokyo",
+      "description": "Disney theme park",
+      "hours": "9am-6:30pm every day",
+      "entry_fee": "Tickets bought online",
+      "recommended_duration": "Full day",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Disneyland",
+      "city": "Tokyo",
+      "description": "Disney theme park",
+      "hours": "8am-10pm every day",
+      "entry_fee": "Tickets bought online",
+      "recommended_duration": "Full day",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Asakasa Plaza",
+      "city": "Tokyo",
+      "description": "Spot the world's largest Time Turner",
+      "hours": "11:00 am - 9:00 pm",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Shibuya District",
+      "city": "Tokyo",
+      "description": "Known for its iconic scramble crossing and Hachiko statue",
+      "recommended_duration": "Evening",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Chureito Pagoda",
+      "city": "Tokyo",
+      "description": "One of Japan's most iconic views- a five-story pagoda framed with cherry blossoms and Mt. Fuji in the background",
+      "hours": "9 AM – 4 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Oshino Hakkai Village",
+      "city": "Tokyo",
+      "description": "A charming traditional village with clear spring water ponds fed by melted snow from Mt. Fuji",
+      "hours": "9 AM – 5 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Lake Kawaguchiko",
+      "city": "Tokyo",
+      "description": "Wide open views of the lake with Mt. Fuji rising in the background",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Mt. Fuji Panoramic Ropeway",
+      "city": "Tokyo",
+      "description": "A short cable car ride offering elevated views of Lake Kawaguchiko and surrounding mountains",
+      "hours": "9 AM – 5 PM",
+      "entry_fee": "~¥900",
+      "recommended_duration": "30 minutes",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Journey to the Center of the Earth",
+      "city": "Tokyo",
+      "description": "High-speed adventure ride through a volcanic world",
+      "recommended_duration": "One of the park's most iconic experiences",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Soaring: Fantastic Flight",
+      "city": "Tokyo",
+      "description": "Flight simulator across global landmarks",
+      "recommended_duration": "Beautiful, immersive, and extremely popular",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Sindbad's Storybook Voyage",
+      "city": "Tokyo",
+      "description": "Gentle boat ride with rich storytelling",
+      "recommended_duration": "Relaxing + visually charming",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "20,000 Leagues Under the Sea",
+      "city": "Tokyo",
+      "description": "Submarine-style deep-sea exploration",
+      "recommended_duration": "Unique concept + great mid-day ride",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Mermaid Lagoon",
+      "city": "Tokyo",
+      "description": "Indoor, whimsical zone (Little Mermaid theme)",
+      "recommended_duration": "Great for photos + lighter attractions",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Enchanted Tale of Beauty and the Beast",
+      "city": "Tokyo",
+      "description": "Must-do attraction in Fantasyland",
+      "recommended_duration": "Do first",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Pooh's Hunny Hunt",
+      "city": "Tokyo",
+      "description": "Popular attraction in Fantasyland",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Space Mountain",
+      "city": "Tokyo",
+      "description": "Classic space-themed roller coaster in Tomorrowland",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Haunted Mansion",
+      "city": "Tokyo",
+      "description": "Spooky dark ride attraction",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Pirates of the Caribbean",
+      "city": "Tokyo",
+      "description": "Boat ride through pirate scenes in Adventureland",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Haneda Airport",
+      "city": "Tokyo",
+      "description": "One of the world's most efficient and beautifully organized airports, offering a smooth introduction to Japan's incredible hospitality and precision.",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "teamLab Borderless Tokyo",
+      "city": "Tokyo",
+      "description": "One of Tokyo's most mesmerizing digital art experiences — a flowing world of moving light, sound, mirrors, projection art, and immersive spaces.",
+      "hours": "Usually 8:30 AM – 9:00 PM",
+      "entry_fee": "Approx. ₹2200–3200 per person",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Street Kart Shibuya",
+      "city": "Tokyo",
+      "description": "Experience Tokyo from a completely different perspective by driving through the city's streets in a themed go-kart, passing famous landmarks.",
+      "hours": "Various Slots Available",
+      "entry_fee": "INR 5,000–8,000 per person",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -6818,6 +7306,57 @@
       "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
       "_source_date": "2026-10-19",
       "_source_format": "new"
+    },
+    {
+      "name": "Richmond Hotel Premier Tokyo Schoele",
+      "city": "Tokyo",
+      "location": "Tokyo",
+      "_source_file": "Mauritius/All Inclusive Guide- Japan- AK and families.pdf",
+      "_source_mtime": 1772384260.0699809,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "name": "APA Sugamo Ekimae",
+      "city": "Tokyo",
+      "_source_file": "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
+      "_source_mtime": 1772384318.9773004,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "name": "Airbnb Yotsuya",
+      "city": "Tokyo",
+      "location": "Yotsuya, Shinjuku",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-05-11"
+    },
+    {
+      "name": "Airbnb",
+      "city": "Tokyo",
+      "location": "MV76+M9Q Edogawa City Tokyo Japan",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
     }
   ],
   "local_dishes": [
@@ -7444,6 +7983,109 @@
       "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
       "_source_date": "2026-10-19",
       "_source_format": "new"
+    },
+    {
+      "name": "Sukiyaki",
+      "city": "Tokyo",
+      "description": "Japanese hot pot with beef and vegetables",
+      "vegetarian": false,
+      "where_to_try": "MO-MO-PARADISE Kabukicho",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Tonkotsu ramen",
+      "city": "Tokyo",
+      "description": "Rich pork broth ramen",
+      "vegetarian": false,
+      "where_to_try": "Kyushu Jangara Ramen Harajuku",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Vegan Ramen",
+      "city": "Tokyo",
+      "description": "Japanese noodle soup made with plant-based broth, topped with vegetables, tofu, and other vegan ingredients",
+      "vegetarian": true,
+      "where_to_try": "T's Tantan Tokyo Station, T's Restaurant Shibuya, Vegan Ramen UZU Tokyo",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Onigiri (Rice Balls)",
+      "city": "Tokyo",
+      "description": "Rice triangles often filled with pickled plum (umeboshi) or seasoned vegetables",
+      "vegetarian": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Soba Noodles (Vegetarian)",
+      "city": "Tokyo",
+      "description": "Buckwheat noodles served cold with dipping sauce or hot in broth (confirm no fish stock)",
+      "vegetarian": true,
+      "where_to_try": "Soba Shop Meiji no Yakata Annex",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Vegan Gyoza",
+      "city": "Tokyo",
+      "description": "Japanese pan-fried dumplings filled with vegetables and plant-based ingredients",
+      "vegetarian": true,
+      "where_to_try": "Halal Wagyu & Vegan Ramen Gyumon Osaka Dotonbori, Gyoza Bar Keisuke",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Melon Pan",
+      "city": "Tokyo",
+      "description": "A popular Japanese sweet bread with a crispy cookie crust on the outside, famous in Asakusa",
+      "vegetarian": true,
+      "where_to_try": "Asakusa Kagetsudo",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -7498,6 +8140,34 @@
       "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
       "_source_date": "2026-10-19",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Tokyo"
+      ],
+      "tip": "Convenience Store: FamilyMart Nishikasai Station (3 min car drive from Tokyo Airbnb). Pharmacy: Kusunoki Pharmacy (2 min car drive). Hospital: Obanajunkanki Clinic (5 min car drive).",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
+    },
+    {
+      "cities": [
+        "Tokyo"
+      ],
+      "tip": "Scam: Bar & Club Overcharging – Promoters may lure tourists into bars that later add huge hidden charges, especially in Tokyo nightlife areas.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
     }
   ],
   "souvenirs": [
@@ -8517,6 +9187,127 @@
       "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
       "_source_date": "2026-10-19",
       "_source_format": "new"
+    },
+    {
+      "item": "Stationery & Luxury Paper Goods",
+      "city": "Tokyo",
+      "category": "Stationery",
+      "where_to_buy": [
+        "Itōya, Ginza"
+      ],
+      "_source_file": "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774846212.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-30"
+    },
+    {
+      "item": "Trendy fashion and gadgets",
+      "city": "Tokyo",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Shinjuku Shopping District",
+        "Shibuya",
+        "Tokyu Hands"
+      ],
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
+    },
+    {
+      "item": "Pokémon Merchandise",
+      "city": "Tokyo",
+      "category": "Anime & Gaming",
+      "where_to_buy": [
+        "Akihabara Electric Town",
+        "Tokyo Character Street",
+        "Nintendo Tokyo"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
+    },
+    {
+      "item": "Anime Figures",
+      "city": "Tokyo",
+      "category": "Anime & Gaming",
+      "where_to_buy": [
+        "Akihabara Electric Town",
+        "Tokyo Character Street"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
+    },
+    {
+      "item": "Manga",
+      "city": "Tokyo",
+      "category": "Anime & Gaming",
+      "where_to_buy": [
+        "Akihabara Electric Town",
+        "Tokyo Character Street"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
+    },
+    {
+      "item": "Nintendo Merchandise",
+      "city": "Tokyo",
+      "category": "Anime & Gaming",
+      "where_to_buy": [
+        "Akihabara Electric Town",
+        "Tokyo Character Street",
+        "Nintendo Tokyo"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
+    },
+    {
+      "item": "Studio Ghibli Goods",
+      "city": "Tokyo",
+      "category": "Anime & Gaming",
+      "where_to_buy": [
+        "Akihabara Electric Town",
+        "Tokyo Character Street"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
     }
   ],
   "emergency_contacts": [
@@ -8553,6 +9344,90 @@
       "_source_file": "Japan/Manjari_Japan_All Inclusive Guide.docx",
       "_source_date": "2026-05-15",
       "_source_format": "new"
+    },
+    {
+      "city": "Tokyo",
+      "service": "Himawari Medical Information Service",
+      "number": "03-5285-8181",
+      "notes": "English medical help",
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan_v5.docx",
+      "_source_mtime": 1774220998.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-22"
+    },
+    {
+      "city": "Tokyo",
+      "service": "Embassy of India",
+      "number": "+81-3-3262-2391 / 2392",
+      "notes": "Emergency (after hours): +81-80-3208-8622",
+      "_source_file": "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774846212.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-30"
+    },
+    {
+      "city": "Tokyo",
+      "service": "Embassy of India in Tokyo",
+      "number": "+81-3-3262-2391 to 2397",
+      "notes": "Address: 2-2-11 Kudan-Minami, Chiyoda-ku, Tokyo 102-0074, Japan. Working hours: Monday–Friday 9:00 AM – 5:30 PM",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
+    },
+    {
+      "city": "Tokyo",
+      "service": "Embassy of India – Main Line",
+      "number": "+81-3-3262-2391",
+      "notes": "Indian Embassy in Tokyo; address: 2-2-11 Kudan-Minami, Chiyoda-ku, Tokyo",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
+    },
+    {
+      "city": "Tokyo",
+      "service": "Embassy of India – Alternate Line",
+      "number": "+81-3-3262-2392",
+      "notes": "Indian Embassy in Tokyo",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
+    },
+    {
+      "city": "Tokyo",
+      "service": "Embassy of India – Emergency (after hours)",
+      "number": "+81-80-3208-8622",
+      "notes": "Indian Embassy emergency line for after-hours assistance",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
     }
   ],
   "connectivity_tips": [
@@ -9007,6 +9882,392 @@
       "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
       "_source_date": "2026-10-19",
       "_source_format": "new"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Shinkansen",
+      "description": "Bullet train from Shin-Osaka to Tokyo Station",
+      "cost": "Pre-booked",
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan.pdf",
+      "_source_mtime": 1772384322.4841816,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "JR Sobu Line",
+      "description": "Local train connecting various Tokyo destinations",
+      "cost": "₹200-₹300 per person",
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan.pdf",
+      "_source_mtime": 1772384322.4841816,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Narita Express",
+      "description": "Direct train from Tokyo Station to Narita Airport with reserved seating",
+      "cost": "₹2,000-₹3,000 per person",
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan.pdf",
+      "_source_mtime": 1772384322.4841816,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Narita Express",
+      "description": "Direct train from Tokyo Station to Narita Airport with reserved seating and luggage space",
+      "cost": "~₹2,000–₹3,000 per person",
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan_v5.docx",
+      "_source_mtime": 1774220998.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-22"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "JR Sobu Line",
+      "description": "Local train connecting central Tokyo areas",
+      "cost": "~₹250 for short distances",
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan_v5.docx",
+      "_source_mtime": 1774220998.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-22"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Metro/City transport",
+      "description": "City transportation system",
+      "recommended_pass": "City pass",
+      "cost": "24 hr ticket Rs. 440, 48hr ticket Rs. 650, free for below 5s",
+      "_source_file": "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
+      "_source_mtime": 1772384318.3183126,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Metro",
+      "description": "Primary transport within the city",
+      "_source_file": "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
+      "_source_mtime": 1772384318.9773004,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Shinkansen",
+      "description": "Japan's iconic bullet train journey - one of the world's most efficient and comfortable train journeys",
+      "recommended_pass": null,
+      "cost": "Varies by route",
+      "_source_file": "Japan/Revised_Amanda_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774846212.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-30"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "JR Yamanote Line",
+      "description": "Circular line connecting major Tokyo districts",
+      "recommended_pass": "Suica or PASMO card",
+      "cost": "Varies by distance",
+      "_source_file": "Japan/Amanda_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774630050.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-27"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Tokyo Metro",
+      "description": "Extensive subway network throughout Tokyo",
+      "recommended_pass": "Suica or PASMO card",
+      "cost": "Varies by distance",
+      "_source_file": "Japan/Amanda_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774630050.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-27"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "IC Card (ICOCA/Suica/PASMO)",
+      "description": "Rechargeable contactless smart card used for trains, subways, and buses. Simply tap in and tap out at gates. Cards are interchangeable between cities",
+      "recommended_pass": "ICOCA (Kansai region) or Suica (Tokyo region)",
+      "cost": "¥500 refundable deposit plus loaded amount (¥1,000–¥5,000 recommended to start)",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_mtime": 1775062968.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-04-01"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "JR Yamanote Line",
+      "description": "Major circular train line connecting key areas of Tokyo",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_mtime": 1775062968.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-04-01"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Tokyo Monorail",
+      "description": "Connects Haneda Airport to central Tokyo",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_mtime": 1775062968.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-04-01"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Narita Express",
+      "description": "Direct train service from Narita Airport to central Tokyo",
+      "cost": "~75–90 minutes travel time",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_mtime": 1775062968.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-04-01"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Yurikamome Line",
+      "description": "Automated transit system serving Odaiba and waterfront areas",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_mtime": 1775062968.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-04-01"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Disney Resort Line",
+      "description": "Monorail connecting Tokyo Disney Resort parks and hotels",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_mtime": 1775062968.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-04-01"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Shinkansen (Bullet Train)",
+      "description": "Fast, clean, and extremely comfortable for intercity travel such as Tokyo to Kyoto. Trains depart exactly on time.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-05-11"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Metro & Local Trains",
+      "description": "The easiest way to explore Tokyo, Kyoto, and Osaka. Recommended apps: Google Maps, Japan Travel by NAVITIME.",
+      "recommended_pass": "Suica or Pasmo IC card",
+      "cost": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-05-11"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Walking",
+      "description": "Japanese cities are highly walkable, especially areas like Shibuya, Harajuku, Gion, Arashiyama, and Dotonbori.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-05-11"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Private Transfer",
+      "description": "Private transfer arranged from Haneda Airport to stay. Approximate transfer time: 45 mins – 1 hr 15 mins depending on airport and traffic.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_mtime": 1778539990.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-05-11"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Toei Shinjuku Line",
+      "description": "Subway line connecting Shinjuku to Motoyawata, serving the Tokyo Airbnb area in Edogawa City.",
+      "recommended_pass": "Suica or PASMO card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "JR Sobu Line (Rapid)",
+      "description": "JR line from Motoyawata to Maihama (for Disneyland/DisneySea) and to Narita Airport.",
+      "recommended_pass": "Suica or PASMO card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Disney Resort Line (Monorail)",
+      "description": "Monorail connecting Maihama Station to Tokyo DisneySea Station. Travel time approximately 10 minutes.",
+      "recommended_pass": "Suica or PASMO card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Shinkansen (Bullet Train)",
+      "description": "World-famous high-speed bullet train connecting Shin-Osaka to Tokyo Station. Train NOZOMI 8 departs 10:06 AM, arrives 12:33 PM, travel time approximately 2 hours 27 minutes.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Tokyo Metro & JR Lines",
+      "description": "Extensive metro and rail network connecting all major districts in Tokyo including Shinjuku, Shibuya, Harajuku, Asakusa, Akihabara, and Ginza.",
+      "recommended_pass": "Suica or PASMO card",
+      "cost": "Approx. INR 120–180 per journey",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "JR Keiyo Line + Disney Resort Line",
+      "description": "Route from Tokyo Station via JR Keiyo Line to Maihama Station, then Disney Resort Line to Tokyo DisneySea Station.",
+      "recommended_pass": "Suica card",
+      "cost": "INR 250–450 per person",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
+    },
+    {
+      "city": "Tokyo",
+      "mode": "Narita Express",
+      "description": "Express train from Tokyo Station to Narita International Airport for departure.",
+      "recommended_pass": null,
+      "cost": "INR 1,500–2,000 per person",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
     }
   ],
   "health_tips": [
@@ -9040,6 +10301,48 @@
       "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
       "_source_date": "2026-06-11",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Tokyo"
+      ],
+      "tip": "Pharmacy near CITAN Hostel: Kawana Pharmacy, approx. 5 min walk. Hours: 08:30 AM–6:00 PM (closed Sat & Sun).",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
+    },
+    {
+      "cities": [
+        "Tokyo"
+      ],
+      "tip": "Medical Clinic near CITAN Hostel: Odenma Clinic, approx. 4 min walk. Hours: 9:30 AM–12:30 PM, 2–4:30 PM (Mon, Tue, Thu, Fri); 9:30 AM–12:30 PM (Wed); closed Sat & Sun.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
+    },
+    {
+      "cities": [
+        "Tokyo"
+      ],
+      "tip": "English-speaking medical information in Tokyo: Himawari Medical Information Service, phone 03-5285-8181, website: https://www.himawari.metro.tokyo.jp",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tokyo",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
     }
   ],
   "route_guides": [

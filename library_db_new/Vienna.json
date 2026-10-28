@@ -566,6 +566,31 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "name": "Café Central Vienna",
+      "city": "Vienna",
+      "cuisine_type": [
+        "Café",
+        "Viennese"
+      ],
+      "ambience": "Viennese institution since 1876, once frequented by Freud and Trotsky",
+      "must_try_dishes": [
+        "Wiener Melange",
+        "apple strudel",
+        "Sachertorte"
+      ],
+      "highlights": [
+        "Historic café since 1876",
+        "Once frequented by Freud and Trotsky"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -654,6 +679,36 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "name": "Naschmarkt Vienna",
+      "city": "Vienna",
+      "description": "Vienna's most famous open-air food market with 120+ stalls",
+      "recommended_duration": "1.5 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Vienna Historic Center Walk",
+      "city": "Vienna",
+      "description": "Explore grand imperial streets, elegant plazas, horse carriages, historic façades, and luxury storefronts. Highlights include St. Stephen's Cathedral, Graben, and Kohlmarkt.",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -664,6 +719,19 @@
       "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria(1).docx",
       "_source_date": "2025-05-21",
       "_source_format": "new"
+    },
+    {
+      "name": "Airbnb / Hotel",
+      "city": "Vienna",
+      "location": "Währinger Gürtel 118, Vienna 1090, Austria",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
     }
   ],
   "local_dishes": [
@@ -720,6 +788,54 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "name": "Schnitzel",
+      "city": "Vienna",
+      "description": "Classic Austrian breaded and fried meat cutlet. Turkey schnitzel options available at some restaurants.",
+      "where_to_try": "Schnitzelwirt",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Trzesniewski Open-Faced Rolls",
+      "city": "Vienna",
+      "description": "Iconic Viennese open-faced bread rolls with various toppings",
+      "where_to_try": "Buffet Trzesniewski Dorotheergasse",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Trzesniewski Bread Rolls",
+      "city": "Vienna",
+      "description": "Iconic Viennese open-faced small bread rolls with various toppings",
+      "where_to_try": "Buffet Trzesniewski Dorotheergasse",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -762,6 +878,135 @@
       "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria(1).docx",
       "_source_date": "2025-05-21",
       "_source_format": "new"
+    },
+    {
+      "item": "Zotter chocolates",
+      "city": "Vienna",
+      "category": "Food",
+      "where_to_buy": [
+        "Naschmarkt Vienna"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
+    },
+    {
+      "item": "Manner wafers",
+      "city": "Vienna",
+      "category": "Food",
+      "where_to_buy": [
+        "Manner Shop",
+        "Naschmarkt Vienna"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
+    },
+    {
+      "item": "Viennese spice blends",
+      "city": "Vienna",
+      "category": "Food",
+      "where_to_buy": [
+        "Naschmarkt Vienna"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
+    },
+    {
+      "item": "Viennese chocolates",
+      "city": "Vienna",
+      "category": "Food",
+      "where_to_buy": [
+        "Demel K. u. K. Hofzuckerbäcker"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
+    },
+    {
+      "item": "Handmade marzipan",
+      "city": "Vienna",
+      "category": "Food",
+      "where_to_buy": [
+        "Demel K. u. K. Hofzuckerbäcker"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
+    },
+    {
+      "item": "Small chocolate boxes with hand-painted wrappers",
+      "city": "Vienna",
+      "category": "Food",
+      "where_to_buy": [
+        "Altmann & Kühne"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
+    },
+    {
+      "item": "Local treats and small gifts",
+      "city": "Vienna",
+      "category": "Gifts",
+      "where_to_buy": [
+        "Naschmarkt"
+      ],
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "item": "Spices and fresh produce",
+      "city": "Vienna",
+      "category": "Food",
+      "where_to_buy": [
+        "Naschmarkt"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
     }
   ],
   "emergency_contacts": [],
@@ -774,6 +1019,84 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "city": "Vienna",
+      "mode": "Public Transport",
+      "description": "Comprehensive network of metro, trams and buses throughout the city",
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
+    },
+    {
+      "city": "Vienna",
+      "mode": "Metro / Tram",
+      "description": "U6 plus tram or U-Bahn combination recommended to travel from the Währinger Gürtel area toward the historic center (Innere Stadt). Travel time approximately 15–20 minutes.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Vienna",
+      "mode": "Taxi (Bolt)",
+      "description": "Bolt taxi recommended as a convenient alternative for transfers around Vienna.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Vienna",
+      "mode": "Metro / Tram (U-Bahn)",
+      "description": "U6 plus tram or U-Bahn combination recommended for travel from the Airbnb toward the historic center (Innere Stadt). Travel time approximately 15–20 minutes",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Vienna",
+      "mode": "Metro / Tram (U-Bahn)",
+      "description": "U6 plus tram or U-Bahn combination recommended for travel from accommodation to the historic center (Innere Stadt). Travel time approximately 15–20 minutes.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Vienna",
+      "mode": "Taxi (Bolt)",
+      "description": "Bolt taxi recommended as a convenient alternative for transfers across Vienna.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Vienna",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
     }
   ],
   "health_tips": [],

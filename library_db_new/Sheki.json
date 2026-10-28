@@ -160,9 +160,34 @@
       "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Sheki River",
+      "city": "Sheki",
+      "description": "Relax by the river or take a leisurely stroll through the city's charming streets",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Sheki",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
-  "hotels": [],
+  "hotels": [
+    {
+      "name": "Sheki Palace",
+      "city": "Sheki",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Sheki",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "local_dishes": [
     {
       "name": "Piti",
@@ -237,6 +262,38 @@
       "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "item": "handcrafted souvenirs, arts, and crafts",
+      "city": "Sheki",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Teze Bazaar"
+      ],
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Sheki",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Folk Art",
+      "city": "Sheki",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Teze Bazaar"
+      ],
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Sheki",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [],

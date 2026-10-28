@@ -130,6 +130,37 @@
       "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx",
       "_source_date": "2025-10-15",
       "_source_format": "new"
+    },
+    {
+      "name": "Indian Summer Restaurant Kandy",
+      "city": "Kandy",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "LKR 800 to 1,500 per person",
+      "hours": "11:00 AM – 11:00 PM",
+      "ambience": "Modern, vibrant décor with a cozy atmosphere; centrally located near Kandy's city center; offers a diverse menu catering to various dietary preferences",
+      "area": "Kandy city center",
+      "highlights": [
+        "Diverse menu",
+        "Various dietary preferences"
+      ],
+      "must_try_dishes": [
+        "Indian curries",
+        "rotis",
+        "rice"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kandy",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -232,6 +263,21 @@
       "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide.docx",
       "_source_date": "2026-02-14",
       "_source_format": "new"
+    },
+    {
+      "name": "Kandy Lake Club Cultural Show",
+      "city": "Kandy",
+      "description": "Cultural show",
+      "hours": "Start time is 5pm",
+      "entry_fee": "3500 LKR",
+      "recommended_duration": "1-2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kandy",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -258,6 +304,44 @@
       "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide(1).docx",
       "_source_date": "2025-10-15",
       "_source_format": "new"
+    },
+    {
+      "name": "Kandy-Golden Crown",
+      "city": "Kandy",
+      "_source_file": "Srilanka/Mr. Shishir_ Sri Lanka_ All Inclusive Guide.pdf",
+      "_source_mtime": 1772384328.2295675,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kandy",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "name": "Golden Crown Kandy",
+      "city": "Kandy",
+      "location": "Set amidst quiet hills, ~20 mins from Kandy town center",
+      "_source_file": "Srilanka/Mr. Gagandeep_All Inclusive Guide_Srilanka.pdf",
+      "_source_mtime": 1772384325.2217765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kandy",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "name": "Hotel Radisson",
+      "city": "Kandy",
+      "location": "Kandy",
+      "_source_file": "Srilanka/SS_All Inclusive Guide_Sri Lanka.pdf",
+      "_source_mtime": 1772384326.5408664,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kandy",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "local_dishes": [],

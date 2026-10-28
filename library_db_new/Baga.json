@@ -1,0 +1,74 @@
+{
+  "restaurants": [
+    {
+      "name": "St. Anthony's",
+      "city": "Baga",
+      "cuisine_type": [
+        "Goan",
+        "Seafood",
+        "Indian"
+      ],
+      "price_range": "₹300-500",
+      "hours": "12:00 PM - 11:00 PM",
+      "ambience": "Welcoming atmosphere and relaxed beach vibe",
+      "highlights": [
+        "Traditional Goan seafood",
+        "Beachfront location"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Baga",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Goa"
+    },
+    {
+      "name": "Brittos",
+      "city": "Baga",
+      "cuisine_type": [
+        "Goan",
+        "Seafood",
+        "Continental",
+        "Chinese"
+      ],
+      "price_range": "₹500-800",
+      "hours": "9:00 AM - 12:00 AM",
+      "ambience": "Vibrant, friendly ambiance right next to the beach",
+      "highlights": [
+        "Beachfront location",
+        "Wide selection of seafood"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Baga",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Goa"
+    }
+  ],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": []
+}

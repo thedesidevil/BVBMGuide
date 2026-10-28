@@ -278,9 +278,53 @@
       "_source_file": "Karnataka, Kerala and Tamil Nadu/Nidhi- Kerala- All Inclusive Guide_14102026.docx",
       "_source_date": "2026-10-14",
       "_source_format": "new"
+    },
+    {
+      "name": "Mattancherry Palace",
+      "city": "Cochin",
+      "description": "A 16th-century Portuguese-built palace, later renovated by the Dutch, renowned for its exquisite Kerala-style murals depicting Hindu epics",
+      "hours": "10:00 AM – 5:00 PM",
+      "entry_fee": "₹5 for adults, Children under 15: Free",
+      "recommended_duration": "1-2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Cochin",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Jewish Synagogue",
+      "city": "Cochin",
+      "description": "The oldest active synagogue in the Commonwealth, renowned for its rich history and unique blend of Jewish and local Kerala influences",
+      "hours": "10:00 AM – 12:00 PM & 3:00 PM – 5:00 PM",
+      "entry_fee": "₹5 for Indian visitors, ₹100 for foreign visitors",
+      "recommended_duration": "1 hour",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Cochin",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
-  "hotels": [],
+  "hotels": [
+    {
+      "name": "Forte Kochi",
+      "city": "Cochin",
+      "location": "Fort Kochi",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Faiz Kerela.pdf",
+      "_source_mtime": 1772384277.134858,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Cochin",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "local_dishes": [
     {
       "name": "Kerala Sadya",
@@ -371,6 +415,22 @@
       "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
       "_source_date": "2026-05-21",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Cochin",
+        "Munnar",
+        "Thekkady"
+      ],
+      "tip": "When visiting temples or certain religious spaces, remove footwear before entering and dress modestly with shoulders and knees covered where possible.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Cochin",
+      "_source_format": "old",
+      "_source_date": "2026-05-20"
     }
   ],
   "souvenirs": [
@@ -432,7 +492,21 @@
   ],
   "emergency_contacts": [],
   "connectivity_tips": [],
-  "transport_options": [],
+  "transport_options": [
+    {
+      "city": "Cochin",
+      "mode": "Private Car / Driver",
+      "description": "Private driver transfers used throughout the itinerary for airport pickup, inter-city travel between Cochin, Munnar, Thekkady and local sightseeing.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Cochin",
+      "_source_format": "old",
+      "_source_date": "2026-05-20"
+    }
+  ],
   "health_tips": [
     {
       "cities": [

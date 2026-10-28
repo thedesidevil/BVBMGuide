@@ -48,7 +48,21 @@
     }
   ],
   "attractions": [],
-  "hotels": [],
+  "hotels": [
+    {
+      "name": "Airbnb",
+      "city": "Uetendorf",
+      "location": "Postgässli 1 1. Stockwerk, Uetendorf, Bern 3661, Switzerland",
+      "_source_file": "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384314.1967638,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Uetendorf",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "local_dishes": [],
   "phrases": [],
   "safety_tips": [],

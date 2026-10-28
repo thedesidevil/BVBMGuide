@@ -204,6 +204,41 @@
       "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide - Coorg, Kabini, Mysore - Sandhya(1).docx",
       "_source_date": "2025-05-29",
       "_source_format": "new"
+    },
+    {
+      "name": "Kunphen Café",
+      "city": "Coorg",
+      "cuisine_type": [
+        "Tibetan",
+        "Vegetarian"
+      ],
+      "price_range": "₹150–400",
+      "hours": "9 AM – 6 PM",
+      "ambience": "Cozy Tibetan-style vegetarian café",
+      "area": "Bylakuppe",
+      "nearby_landmarks": [
+        "Tibetan Golden Temple (Namdroling Monastery), Coorg"
+      ],
+      "highlights": [
+        "Vegetarian only",
+        "Tibetan-style"
+      ],
+      "must_try_dishes": [
+        "Thukpa",
+        "Veg Momos",
+        "Ginger-Lemon Tea"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Coorg",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -407,7 +442,56 @@
     }
   ],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Mysore",
+        "Coorg",
+        "Kabini"
+      ],
+      "tip": "Removing footwear before entering temples/homes is customary",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Coorg",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Mysore",
+        "Coorg",
+        "Kabini"
+      ],
+      "tip": "Avoid loud conversation inside temples or wildlife parks",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Coorg",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Mysore",
+        "Coorg",
+        "Kabini"
+      ],
+      "tip": "Ask permission before photographing local people",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Coorg",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "souvenirs": [
     {
       "item": "Freshly Ground Coffee",
@@ -593,6 +677,37 @@
       "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide(1).docx",
       "_source_date": "2025-11-27",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Mysore",
+        "Coorg",
+        "Kabini"
+      ],
+      "tip": "Stay hydrated — weather is cool but can be dry",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Coorg",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Coorg",
+        "Kabini"
+      ],
+      "tip": "Wear full sleeves for nature walks & safaris",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Priya_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384284.7835283,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Coorg",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "route_guides": [

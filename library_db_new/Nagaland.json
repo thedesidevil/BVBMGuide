@@ -1,0 +1,485 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Smoked pork with bamboo shoot",
+      "city": "Nagaland",
+      "description": "Traditional Naga dish featuring smoked pork cooked with bamboo shoots",
+      "vegetarian": false,
+      "where_to_try": "Razhu Pru",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Kohima"
+    },
+    {
+      "name": "Axone dishes",
+      "city": "Nagaland",
+      "description": "Dishes made with fermented soybean, a traditional Naga ingredient",
+      "vegetarian": true,
+      "where_to_try": "Razhu Pru",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Kohima"
+    },
+    {
+      "name": "Naga thali",
+      "city": "Nagaland",
+      "description": "Traditional Naga meal served as a complete platter",
+      "vegetarian": false,
+      "where_to_try": "The Heritage",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Kohima"
+    },
+    {
+      "name": "Smoked pork",
+      "city": "Nagaland",
+      "description": "Naga cuisine specialty",
+      "vegetarian": false,
+      "where_to_try": "Festival stalls",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Kohima"
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Nagaland",
+      "english": "Hello",
+      "local": "Azu",
+      "category": "greeting",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13",
+      "_legacy_note": "same name also exists in Gangtok"
+    },
+    {
+      "city": "Nagaland",
+      "english": "Thank you",
+      "local": "Kukujo",
+      "category": "polite",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13",
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "city": "Nagaland",
+      "english": "Yes",
+      "local": "U",
+      "category": "polite",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13",
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "city": "Nagaland",
+      "english": "No",
+      "local": "Mhou",
+      "category": "polite",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13",
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "city": "Nagaland",
+      "english": "Goodbye",
+      "local": "Thezie",
+      "category": "greeting",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13",
+      "_legacy_note": "same name also exists in Gangtok"
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Nagaland"
+      ],
+      "tip": "Remote village roads and hilly routes can be uneven and winding, especially after dark",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "cities": [
+        "Nagaland"
+      ],
+      "tip": "Limited street lighting in smaller towns like Jakhama and Dzuleke — avoid late-night movement in isolated areas",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "cities": [
+        "Nagaland"
+      ],
+      "tip": "Trekking trails require careful walking and proper footwear",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "cities": [
+        "Nagaland"
+      ],
+      "tip": "Stay mindful of belongings in markets and crowded areas in Kohima",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "cities": [
+        "Nagaland"
+      ],
+      "tip": "Limited ATMs in remote regions — carry sufficient cash for village areas",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "cities": [
+        "Nagaland"
+      ],
+      "tip": "Network connectivity can be patchy outside Kohima — inform someone before heading into remote areas",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "cities": [
+        "Nagaland"
+      ],
+      "tip": "Check any restricted area permits (generally for parts of Nagaland some areas may require registration) — but the Hornbill & Kohima – Dimapur route is generally open for tourists; confirm with local authorities/agent before travel",
+      "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.pdf",
+      "_source_mtime": 1772384381.158248,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Meghalaya",
+        "Assam",
+        "Nagaland"
+      ],
+      "tip": "Ask before photographing people in villages",
+      "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.pdf",
+      "_source_mtime": 1772384381.158248,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Mawlynnong"
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Bamboo shoot preserves/chutneys",
+      "city": "Nagaland",
+      "category": "Food",
+      "where_to_buy": [
+        "Local markets"
+      ],
+      "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.pdf",
+      "_source_mtime": 1772384381.158248,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "city": "Nagaland",
+      "service": "Police",
+      "number": "100",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "city": "Nagaland",
+      "service": "Ambulance",
+      "number": "108",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "city": "Nagaland",
+      "service": "Fire Department",
+      "number": "101",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "city": "Nagaland",
+      "service": "National Emergency Helpline",
+      "number": "112",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    }
+  ],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Nagaland"
+      ],
+      "tip": "Stay well hydrated, especially during long drives and outdoor exploration",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "cities": [
+        "Nagaland"
+      ],
+      "tip": "Carry personal medication, as access may be limited in remote areas like Dzuleke and Jakhama",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "cities": [
+        "Nagaland"
+      ],
+      "tip": "Use insect repellent in forested and village areas",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13",
+      "_legacy_note": "same name also exists in Dzuleke"
+    },
+    {
+      "cities": [
+        "Nagaland"
+      ],
+      "tip": "Wear comfortable footwear and be cautious on uneven terrain during hikes",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "cities": [
+        "Nagaland"
+      ],
+      "tip": "Avoid consuming untreated water — prefer bottled or filtered water",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "cities": [
+        "Nagaland"
+      ],
+      "tip": "Eat freshly prepared food and choose clean, reliable dining options",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "cities": [
+        "Nagaland"
+      ],
+      "tip": "Keep a basic first-aid kit handy for minor issues",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "cities": [
+        "Nagaland"
+      ],
+      "tip": "No special vaccinations are mandatory for most travelers from India, but stay updated on routine immunizations",
+      "_source_file": "Northeast India/Evelyn_Nagaland_All Inclusive Guide.docx",
+      "_source_mtime": 1776042650.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
+    },
+    {
+      "cities": [
+        "Meghalaya",
+        "Assam",
+        "Nagaland"
+      ],
+      "tip": "Carry motion sickness pills if you're prone during long drives",
+      "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.pdf",
+      "_source_mtime": 1772384381.158248,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Meghalaya",
+        "Assam",
+        "Nagaland"
+      ],
+      "tip": "Pack insect repellent for village visits",
+      "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.pdf",
+      "_source_mtime": 1772384381.158248,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Nagaland",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": []
+}

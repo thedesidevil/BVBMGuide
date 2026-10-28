@@ -519,6 +519,110 @@
       "_source_file": "Thailand/Arpita Thailand.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Indian Touch 1",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "hours": "10:00 AM - 4:00 AM",
+      "nearby_landmarks": [
+        "Alcazar Cabaret Show, Pattaya"
+      ],
+      "highlights": [
+        "Vegetarian-friendly with vegan-option dishes"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pattaya",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Pizza and Coffee Koh Larn",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Italian",
+        "Pizza"
+      ],
+      "ambience": "Close to the Na ban Pier",
+      "area": "Koh Larn",
+      "highlights": [
+        "Located on Koh Larn island"
+      ],
+      "must_try_dishes": [
+        "mango smoothie"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pattaya",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Fat Submarine Cafe and Restaurant",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "ambience": "Great views; an insta-worthy cafe",
+      "area": "Koh Larn",
+      "highlights": [
+        "Instagram-worthy cafe",
+        "Great views"
+      ],
+      "must_try_dishes": [
+        "sandwiches",
+        "desserts",
+        "beverages"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pattaya",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Tawaen Beach Resort Restaurant",
+      "city": "Pattaya",
+      "cuisine_type": [
+        "Thai"
+      ],
+      "area": "Koh Larn",
+      "nearby_landmarks": [
+        "Tawaen beach, Pattaya"
+      ],
+      "highlights": [
+        "Located near Tawaen beach"
+      ],
+      "must_try_dishes": [
+        "pineapple fried rice",
+        "Pad Thai"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pattaya",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -711,6 +815,33 @@
       "_source_file": "Thailand/Arpita Thailand.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Coral Island (Koh Larn)",
+      "city": "Pattaya",
+      "description": "Postcard-perfect beaches with clear shallow waters, soft coral sand, and coconut palms swaying in the breeze.",
+      "hours": "7:00 AM – 6:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "Half day",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pattaya",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Koh Larn (Coral Island)",
+      "city": "Pattaya",
+      "description": "A beautiful island with pristine beaches, clear waters, and coral reefs. Great for snorkelling and diving",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pattaya",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -737,6 +868,19 @@
       "_source_date": "2024-12-03",
       "_source_format": "new",
       "_replaced_from": "Thailand/All Inclusive Guide for Pattaya and Bangkok(1).docx"
+    },
+    {
+      "name": "Pullman Pattaya Hotel G",
+      "city": "Pattaya",
+      "location": null,
+      "_source_file": "Thailand/Arpita Thailand.pdf",
+      "_source_mtime": 1772384357.1618776,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pattaya",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "local_dishes": [],

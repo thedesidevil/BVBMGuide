@@ -95,7 +95,21 @@
       "_source_format": "new"
     }
   ],
-  "hotels": [],
+  "hotels": [
+    {
+      "name": "Casa Andina Standard Machu Picchu",
+      "city": "Aguas Calientes",
+      "location": "Aguas Calientes",
+      "_source_file": "South America/All Inclusive Guide - Peru- Neha and Mayur.pdf",
+      "_source_mtime": 1748700574.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Aguas Calientes",
+      "_source_format": "old",
+      "_source_date": "2025-05-31"
+    }
+  ],
   "local_dishes": [],
   "phrases": [],
   "safety_tips": [],

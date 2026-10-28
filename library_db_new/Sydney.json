@@ -489,6 +489,29 @@
       "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
       "_source_date": null,
       "_source_format": "new"
+    },
+    {
+      "name": "Madam Ji - Indian Restaurant",
+      "city": "Sydney",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹₹",
+      "hours": "5 pm – 10 pm",
+      "highlights": [
+        "Great Indian food"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Sydney",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -582,6 +605,20 @@
       "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
       "_source_date": null,
       "_source_format": "new"
+    },
+    {
+      "name": "Ferry to Manly Beach",
+      "city": "Sydney",
+      "description": "Ferry ride from Circular Quay to Manly Beach for surfing, chilling, paddleboarding, or café-hopping",
+      "hours": "Operates every 15 mins, 20 mins each way",
+      "recommended_duration": "Half day",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Sydney",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -878,6 +915,20 @@
       "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
       "_source_date": null,
       "_source_format": "new"
+    },
+    {
+      "city": "Sydney",
+      "service": "Consulate in Sydney",
+      "number": "+61 2 9223 2702",
+      "notes": "Level 1, 265 Castlereagh St, Sydney NSW",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha.pdf",
+      "_source_mtime": 1772384289.4036164,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Sydney",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "connectivity_tips": [
@@ -969,6 +1020,21 @@
       "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
       "_source_date": null,
       "_source_format": "new"
+    },
+    {
+      "city": "Sydney",
+      "mode": "Public Transport",
+      "description": "Public transport network including trains, buses and ferries",
+      "recommended_pass": "Opal card or contactless credit card, debit card or mobile device",
+      "cost": "Varies by distance and mode",
+      "_source_file": "Australia/Australia- All Inclusive Guide(1).pdf",
+      "_source_mtime": 1772384287.136402,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Sydney",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "health_tips": [

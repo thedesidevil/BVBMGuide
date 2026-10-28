@@ -127,6 +127,102 @@
       "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
       "_source_date": "2025-09-02",
       "_source_format": "old"
+    },
+    {
+      "name": "Casa Raffaele Conforti Ristorante a Maiori Costiera Amalfitana",
+      "city": "Amalfi",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "mid-range",
+      "hours": "5 PM - 12 AM",
+      "ambience": "A retro-chic gem in a former tailor's shop, with vintage wooden shelving and a warmly minimal interior",
+      "highlights": [
+        "Retro-chic gem",
+        "Former tailor's shop",
+        "Vintage wooden shelving",
+        "Warmly minimal interior"
+      ],
+      "must_try_dishes": [
+        "cacio e pepe",
+        "bruschetta topped with artichokes",
+        "home made pasta"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amalfi",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Il Porticciolo Maiori",
+      "city": "Amalfi",
+      "cuisine_type": [
+        "Mediterranean"
+      ],
+      "price_range": "EUR 20 per person",
+      "hours": "8:15 AM - 3 AM",
+      "ambience": "A relaxed Mediterranean-style eatery just off the main street—casual and inviting",
+      "highlights": [
+        "Relaxed Mediterranean-style",
+        "Off main street"
+      ],
+      "must_try_dishes": [
+        "Campanian vegetable antipasti",
+        "simple pasta preparations",
+        "Fresh Mediterranean seafood dishes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "area": "Maiori",
+      "nearby_landmarks": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amalfi",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Casa Ferraiuolo Ristorante a Maiori Costiera Amalfitana",
+      "city": "Amalfi",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "EUR 25-30 per person",
+      "hours": "5 PM - 12 AM",
+      "ambience": "A retro-chic gem in a former tailor's shop, with vintage wooden shelving and a warmly minimal interior",
+      "area": "Maiori",
+      "nearby_landmarks": [],
+      "highlights": [
+        "Retro-chic gem",
+        "Former tailor's shop"
+      ],
+      "must_try_dishes": [
+        "cacio e pepe",
+        "bruschetta topped with artichokes",
+        "home made pasta",
+        "Cacio e pepe"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amalfi",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -166,9 +262,38 @@
       "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
       "_source_date": "2025-09-02",
       "_source_format": "old"
+    },
+    {
+      "name": "Ravello",
+      "city": "Amalfi",
+      "description": "A charming hilltop town known for its stunning gardens and breathtaking views",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amalfi",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
-  "hotels": [],
+  "hotels": [
+    {
+      "name": "Casa Raffaele Conforti",
+      "city": "Amalfi",
+      "location": "Amalfi Coast",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amalfi",
+      "_source_format": "old",
+      "_source_date": "2025-09-02"
+    }
+  ],
   "local_dishes": [
     {
       "name": "Amalfi lemon specialties",
@@ -336,6 +461,66 @@
       "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
       "_source_date": "2025-09-02",
       "_source_format": "old"
+    },
+    {
+      "item": "Limoncello",
+      "city": "Amalfi",
+      "category": "Food",
+      "where_to_buy": [
+        "Local shops"
+      ],
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amalfi",
+      "_source_format": "old",
+      "_source_date": "2025-09-02"
+    },
+    {
+      "item": "Vietri sul Mare ceramics",
+      "city": "Amalfi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Vietri sul Mare"
+      ],
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amalfi",
+      "_source_format": "old",
+      "_source_date": "2025-09-02"
+    },
+    {
+      "item": "Lemon-infused ceramics",
+      "city": "Amalfi",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amalfi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Candied citrus peels",
+      "city": "Amalfi",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Amalfi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [],

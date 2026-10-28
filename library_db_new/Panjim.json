@@ -630,6 +630,20 @@
       "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
       "_source_date": "2026-03-23",
       "_source_format": "new"
+    },
+    {
+      "name": "Azulejos Tile Painting Experience",
+      "city": "Panjim",
+      "description": "Learn the traditional art of Portuguese-style tile painting, a legacy of Goa's colonial past",
+      "hours": "Experience booked for 11 am",
+      "recommended_duration": "2-3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Panjim",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -683,6 +697,38 @@
       "_source_file": "Goa/Mohit_s Parents- All Inclusive Guide- Goa.docx",
       "_source_date": "2026-02-12",
       "_source_format": "new"
+    },
+    {
+      "name": "Poi with Vegetable Bhaji",
+      "city": "Panjim",
+      "description": "Local Goan whole wheat bread served with sautéed vegetables or curry; simple yet authentic",
+      "vegetarian": true,
+      "where_to_try": "Local bakeries and cafés in Panjim",
+      "source_files": [
+        "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Panjim",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Dodol",
+      "city": "Panjim",
+      "description": "A dense, chewy sweet made with coconut milk, jaggery, and rice flour; deep caramel-like flavour",
+      "vegetarian": true,
+      "where_to_try": "Local sweet shops in Panjim",
+      "source_files": [
+        "Goa/Oishee- Goa_Aug 2026_ All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Panjim",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],

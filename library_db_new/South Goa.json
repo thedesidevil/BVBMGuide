@@ -293,6 +293,173 @@
       "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
       "_source_date": "2026-03-23",
       "_source_format": "new"
+    },
+    {
+      "name": "Pedro's Bar & Restaurant",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Goan",
+        "Indian",
+        "Chinese",
+        "Continental",
+        "Seafood"
+      ],
+      "price_range": "₹300-700",
+      "hours": "8 am to 2 am",
+      "ambience": "Legendary beachside retreat since 1969 with laid-back vibe and soulful music",
+      "area": "Beachfront",
+      "highlights": [
+        "Operating since 1969",
+        "Fresh seafood specialties",
+        "Stunning sunsets"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "South Goa",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "TikiBab Goa",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Barbecue"
+      ],
+      "price_range": "₹500-700",
+      "hours": "11 am to 1 am",
+      "ambience": "Tropical paradise with live music creating ultimate beach party experience",
+      "area": "Beachfront",
+      "highlights": [
+        "Exotic cocktails",
+        "Sizzling barbecues",
+        "Live music"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "South Goa",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Cota Cozinha",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Goan",
+        "Portuguese"
+      ],
+      "price_range": "₹800-1000",
+      "hours": "12pm- 3pm; 7pm- 11pm. Closed on Tues",
+      "ambience": "Cozy ambiance with Portuguese inspired cuisine",
+      "area": "Betalbatim",
+      "highlights": [
+        "Portuguese inspired cuisine",
+        "Closed on Tuesdays"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "South Goa",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Cavatina",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Modern Goan"
+      ],
+      "price_range": "₹2500-3000",
+      "hours": "12:30- 3pm; 7-11pm. Closed on Monday",
+      "ambience": "Chic and sophisticated fine dining with contemporary take on Goan cuisine",
+      "area": "Benaulim",
+      "highlights": [
+        "Chef Avinash Martins",
+        "Innovative cocktails",
+        "Extensive wine list",
+        "Closed on Monday"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "South Goa",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Zeebop Utorda",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Goan",
+        "Indian"
+      ],
+      "price_range": "₹500-1000",
+      "hours": "10am- 11pm",
+      "ambience": "Quintessential beachside restaurant with serene coastal views",
+      "area": "Utorda Beach",
+      "highlights": [
+        "Fresh seafood",
+        "Scenic beauty",
+        "Sandy shores location"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "South Goa",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Jamming Goat",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "₹900-1200",
+      "hours": "12pm- 1 am",
+      "ambience": "Popular beachfront restaurant with vibrant atmosphere and live music",
+      "area": "Utorda",
+      "highlights": [
+        "Live music",
+        "Beachfront location",
+        "Vibrant atmosphere"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "South Goa",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Robin's Ark",
+      "city": "South Goa",
+      "cuisine_type": [
+        "Multi-cuisine"
+      ],
+      "price_range": "₹700-1000",
+      "hours": "12pm-11pm",
+      "ambience": "Spacious bungalow setting with outdoor seating and full bar",
+      "area": "Cavelossim",
+      "highlights": [
+        "Spacious bungalow setting",
+        "Outdoor seating",
+        "Full bar"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "South Goa",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -316,6 +483,20 @@
       "_source_file": "Goa/Oishee_Goa_All Inclusive Guide.docx",
       "_source_date": "2026-03-23",
       "_source_format": "new"
+    },
+    {
+      "name": "Houses of Goa Private Tour",
+      "city": "South Goa",
+      "description": "Heritage exploration tour",
+      "hours": "3:30 pm",
+      "recommended_duration": "2-3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "South Goa",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [

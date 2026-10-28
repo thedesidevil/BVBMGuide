@@ -451,6 +451,106 @@
       "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
       "_source_date": "2024-06-19",
       "_source_format": "old"
+    },
+    {
+      "name": "Pasticceria Ceccon",
+      "city": "Venice",
+      "cuisine_type": [
+        "Bakery",
+        "Café"
+      ],
+      "price_range": "₹",
+      "hours": "7:00 AM – 1:00 PM, 3:30 PM – 8:00 PM",
+      "ambience": "Traditional Venetian bakery in a local setting",
+      "area": "Venice Mestre",
+      "highlights": [
+        "Fresh pastries",
+        "Strong espresso",
+        "Classic Italian breakfast"
+      ],
+      "must_try_dishes": [
+        "Cornetto",
+        "Cappuccino",
+        "Fruit tart"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Bar Viale",
+      "city": "Venice",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹",
+      "hours": "6:00 AM – 12:00 AM",
+      "ambience": "Simple and popular local café",
+      "area": "Venice Mestre",
+      "highlights": [
+        "Quick morning stop"
+      ],
+      "must_try_dishes": [
+        "Espresso",
+        "Toast",
+        "Croissant"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Caffè Del Doge Mestre",
+      "city": "Venice",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹",
+      "hours": "7:00 AM – 6:30 PM",
+      "ambience": "Elegant coffee house",
+      "area": "Venice Mestre",
+      "highlights": [
+        "Premium Venetian coffee blends",
+        "Premium coffee experience"
+      ],
+      "must_try_dishes": [
+        "Cappuccino",
+        "Brioche",
+        "Pastries"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -572,6 +672,64 @@
       "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
       "_source_date": "2025-09-02",
       "_source_format": "old"
+    },
+    {
+      "name": "St. Marks Square",
+      "city": "Venice",
+      "description": "The heart of Venice with stunning Basilica di San Marco",
+      "recommended_duration": "2-3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Murano-Burano",
+      "city": "Venice",
+      "description": "Two charming islands near Venice known for their colourful houses",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Grand Canal Gondola Ride",
+      "city": "Venice",
+      "description": "Timeless Venetian tradition — gliding slowly through quiet canals beneath historic bridges while gondoliers navigate centuries-old waterways.",
+      "hours": "Booked Time: 5:45 PM",
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Burano Island",
+      "city": "Venice",
+      "description": "Colorful island village with brightly painted houses lining narrow canals, fishing boats, and lace shops.",
+      "hours": "Open throughout the day",
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -591,6 +749,44 @@
       "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-14",
       "_source_format": "new"
+    },
+    {
+      "name": "Royal San Marco",
+      "city": "Venice",
+      "location": "Near Venezia S Lucia",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2025-09-02"
+    },
+    {
+      "name": "Best Western Tritone",
+      "city": "Venice",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "name": "Campanile Venice Mestre",
+      "city": "Venice",
+      "location": "Venice Mestre",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-05-03"
     }
   ],
   "local_dishes": [
@@ -685,6 +881,54 @@
       "_source_date": "2025-09-02",
       "_source_format": "old",
       "_replaced_from": "France/Paris, Switzerland and Italy.pdf"
+    },
+    {
+      "name": "Cicchetti (Vegetarian Tapas Style)",
+      "city": "Venice",
+      "description": "Small Venetian snacks like marinated vegetables, cheese bruschetta, and fried polenta bites — perfect with canal-side dining.",
+      "vegetarian": true,
+      "where_to_try": "Canal-side restaurants and bars in Venice",
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Wood-Fired Margherita Pizza",
+      "city": "Venice",
+      "description": "Traditional Italian pizza with fresh tomato sauce, mozzarella, basil, and olive oil cooked in wood-fired ovens.",
+      "vegetarian": true,
+      "where_to_try": "Pizpaz, Chez Pippo, Cantina e Cucina",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Eggplant Parmigiana",
+      "city": "Venice",
+      "description": "A comforting baked Italian dish layered with eggplant, tomato sauce, basil, and cheese.",
+      "vegetarian": true,
+      "where_to_try": "Ristorante Piccolo Martini, Bernini",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -1114,6 +1358,192 @@
       "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
       "_source_date": "2025-09-02",
       "_source_format": "old"
+    },
+    {
+      "item": "Bellini mix",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Authentic Murano glass jewelry",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Masks from Carnevale",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Prosecco (Veneto)",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Artisanal biscuits",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Local bakeries"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Carnival masks",
+      "city": "Venice",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Local artisan shops"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Handcrafted jewelry",
+      "city": "Venice",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Venice shops and boutiques"
+      ],
+      "_source_file": "Italy/Italy- Final Itinerary with booking links.pdf",
+      "_source_mtime": 1772384341.8963616,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Traditional biscuits and pastries",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "The Baicoli Colussi - supermarkets",
+        "Majer",
+        "Pasticceria dal Mas"
+      ],
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Regional wines",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Poli grappa shop"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Italian coffee blends",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Rialto Market"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "item": "Bellini mixes",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Rialto Market"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "item": "Venetian chocolates",
+      "city": "Venice",
+      "category": "Food",
+      "where_to_buy": [
+        "Rialto Market"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
     }
   ],
   "emergency_contacts": [],
@@ -1271,6 +1701,106 @@
       "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
       "_source_date": "2025-09-02",
       "_source_format": "old"
+    },
+    {
+      "city": "Venice",
+      "mode": "Water transport",
+      "description": "Vaporetto, buses, Tram, People Mover service, and Trenitalia train service within Venice municipality",
+      "recommended_pass": "1 day pass",
+      "cost": "25 EUR",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Venice",
+      "mode": "Public Transport",
+      "description": "Includes Vaporetto, buses, Tram, People Mover service and Trenitalia train service within Venice municipality",
+      "recommended_pass": "1 day pass",
+      "cost": "25 EUR",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Venice",
+      "mode": "Vaporetto (Water Bus)",
+      "description": "Venice's water bus system providing access around the islands and Grand Canal. Accessible from St. Mark's Square and Rialto Bridge areas.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-05-03"
+    },
+    {
+      "city": "Venice",
+      "mode": "Gondola",
+      "description": "Traditional Venetian gondola ride through quiet canals beneath historic bridges. Booked experience at 5:45 PM from Grand Canal / St. Mark's Square area.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-05-03"
+    },
+    {
+      "city": "Venice",
+      "mode": "Vaporetto (Water Bus)",
+      "description": "Venice's primary public transport on water. Used to travel between islands (Burano, Murano) and across the main island.",
+      "recommended_pass": "Venice transport pass",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "city": "Venice",
+      "mode": "Walking",
+      "description": "Venice is explored mainly through walking. Google Maps walking routes in Venice can sometimes be confusing due to narrow lanes — allow extra time while navigating.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "city": "Venice",
+      "mode": "Water Taxi",
+      "description": "Private water taxi service available across Venice for faster point-to-point travel.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Venice",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
     }
   ],
   "health_tips": [],

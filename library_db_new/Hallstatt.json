@@ -243,9 +243,68 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "name": "Lake Hallstatt",
+      "city": "Hallstatt",
+      "description": "Alpine lake offering electric boat rentals and 1-hour cruises",
+      "recommended_duration": "1 hour",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Hallstatt Village",
+      "city": "Hallstatt",
+      "description": "Colorful lakeside streets, historic houses, waterfront viewpoints, charming cafés and local shops. Best enjoyed slowly.",
+      "recommended_duration": "3 hours",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Lakeside Promenade",
+      "city": "Hallstatt",
+      "description": "Classic postcard views of the village and mountains with best reflections earlier in the day",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
-  "hotels": [],
+  "hotels": [
+    {
+      "name": "Airbnb Hallstatt",
+      "city": "Hallstatt",
+      "location": "Hubnerangerweg 137, Hallstatt, 4830",
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
+    }
+  ],
   "local_dishes": [
     {
       "name": "Schaumrollen",
@@ -258,7 +317,106 @@
     }
   ],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Hallstatt"
+      ],
+      "tip": "Cars are not allowed inside the old town. Park at P1 or P2 parking lots and expect a short walk of 8–12 minutes into the village.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "cities": [
+        "Hallstatt"
+      ],
+      "tip": "Carry essentials with you before leaving the car as you cannot drive into the old town.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "cities": [
+        "Hallstatt"
+      ],
+      "tip": "The Hallstatt Skywalk is best attempted only if energy levels are good, queues are manageable, and weather visibility is clear.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "cities": [
+        "Hallstatt"
+      ],
+      "tip": "Cars are not allowed inside the old town — park at P1 or P2 parking lots and carry all essentials before leaving the car",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "cities": [
+        "Hallstatt"
+      ],
+      "tip": "Carry water, snacks, a light jacket, and comfortable walking shoes for the Hallstatt and Gosausee day trip",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "cities": [
+        "Hallstatt"
+      ],
+      "tip": "Cars are not allowed inside the old town. Park at P1 or P2 and expect a short walk of 8–12 minutes into the village.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "cities": [
+        "Hallstatt"
+      ],
+      "tip": "The Hallstatt Skywalk is best done after lunch before departing. Only attempt if energy levels are good, queues are manageable, and weather visibility is clear.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    }
+  ],
   "souvenirs": [
     {
       "item": "Apricot schnapps, salt cosmetics, handmade ceramic bells, lace doilies, wood carvings, linens",
@@ -268,6 +426,86 @@
       "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria(1).docx",
       "_source_date": "2025-05-21",
       "_source_format": "new"
+    },
+    {
+      "item": "Apricot schnapps",
+      "city": "Hallstatt",
+      "category": "Food",
+      "where_to_buy": [
+        "Local shops"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
+    },
+    {
+      "item": "Salt cosmetics",
+      "city": "Hallstatt",
+      "category": "Beauty",
+      "where_to_buy": [
+        "Local shops"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
+    },
+    {
+      "item": "Handmade ceramic bells",
+      "city": "Hallstatt",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Local shops"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
+    },
+    {
+      "item": "Gingerbread",
+      "city": "Hallstatt",
+      "category": "Food",
+      "where_to_buy": [
+        "Maislinger Bakery"
+      ],
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "item": "Pastries and gingerbread",
+      "city": "Hallstatt",
+      "category": "Food",
+      "where_to_buy": [
+        "Maislinger Bakery"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
     }
   ],
   "emergency_contacts": [],
@@ -280,9 +518,66 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "city": "Hallstatt",
+      "mode": "Car",
+      "description": "Scenic drive from Salzburg through the Austrian lake district and alpine countryside. Cars are not allowed inside the old town — park at P1 Parking Hallstatt or P2 Central Parking",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Hallstatt",
+      "mode": "Car",
+      "description": "Scenic drive from Salzburg to Hallstatt through the Austrian lake district (~1.5 hours). Cars not allowed inside the old town — park at P1 or P2 parking lots.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Hallstatt",
+      "mode": "Funicular",
+      "description": "Funicular from the upper village area to the Hallstatt Skywalk panoramic viewpoint.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
     }
   ],
-  "health_tips": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Hallstatt",
+        "Gosausee",
+        "Wachau Valley",
+        "Salzburg"
+      ],
+      "tip": "Carry water, snacks, a light jacket, and comfortable walking shoes for full-day excursions including Hallstatt, Gosausee, and Wachau cycling.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hallstatt",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    }
+  ],
   "route_guides": [
     {
       "city": "Hallstatt",

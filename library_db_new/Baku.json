@@ -453,6 +453,48 @@
       "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Gobustan National Park",
+      "city": "Baku",
+      "description": "Discover the fascinating rock art and petroglyphs dating back thousands of years",
+      "hours": "10am-5pm",
+      "entry_fee": "4 ANZ per person",
+      "recommended_duration": "3-4 hrs",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Baku",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Mud Volcanoes of Azerbaijan",
+      "city": "Baku",
+      "description": "Visit the unique mud volcanoes, a geological phenomenon that creates bubbling mud pools. There are about 300 mud volcanoes in Gobustan National Park",
+      "hours": "10am-5pm",
+      "entry_fee": "4 ANZ per person",
+      "recommended_duration": "3-4 hrs",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Baku",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Yanardah (Fire Mountain)",
+      "city": "Baku",
+      "description": "Natural gas fire which blazes continuously on hillside, flames jet 3 metres into the air",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Baku",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -462,6 +504,18 @@
       "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide(1).docx",
       "_source_date": "2025-04-07",
       "_source_format": "old"
+    },
+    {
+      "name": "Qafqaz Baku City",
+      "city": "Baku",
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Baku",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "local_dishes": [
@@ -820,6 +874,58 @@
       "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "item": "Jewelery (Azerbaijan's paisley-like buta, a Zoroastrian symbol for fire, is a recurring motif)",
+      "city": "Baku",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Resm",
+        "Theanjir"
+      ],
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Baku",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "handcrafted souvenirs, arts, and crafts (including jewelry, pottery, traditional Azerbaijani dolls, and leather items)",
+      "city": "Baku",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Nizami street",
+        "Şərq Bazarı",
+        "Bit Bazarı"
+      ],
+      "_source_file": "Azerbaijan and Georgia/Rimmi_Azerbaijan Final Itinerary.pdf",
+      "_source_mtime": 1772384266.655616,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Baku",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Jewelery (Azerbaijan's paisley-like buta, a Zoroastrian symbol for fire)",
+      "city": "Baku",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Resm",
+        "Theanjir"
+      ],
+      "_source_file": "Azerbaijan and Georgia/Azerbaijan- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384265.4457092,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Baku",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [],

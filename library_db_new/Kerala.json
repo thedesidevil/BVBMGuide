@@ -168,6 +168,66 @@
       "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
       "_source_date": "2026-05-21",
       "_source_format": "new"
+    },
+    {
+      "name": "Banana Chips",
+      "city": "Kerala",
+      "description": "Crispy and slightly sweet banana chips - popular snack",
+      "vegetarian": true,
+      "where_to_try": "Street vendors and local shops",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Kattan Chaya",
+      "city": "Kerala",
+      "description": "Strong black tea - local specialty",
+      "vegetarian": true,
+      "where_to_try": "Street vendors and tea stalls",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Kerala Sadya (Traditional Kerala Meal)",
+      "city": "Kerala",
+      "description": "A complete Kerala feast traditionally served on a banana leaf featuring rice, curries, pickles, avial, sambar, pachadi and desserts.",
+      "vegetarian": true,
+      "where_to_try": "Traditional Kerala restaurants",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Kerala Filter Coffee",
+      "city": "Kerala",
+      "description": "Freshly brewed strong coffee with a rich aroma, perfect during cool Munnar mornings.",
+      "vegetarian": true,
+      "where_to_try": "Sri Mu Saravana Bhavan and local cafés across Kerala",
+      "source_files": [
+        "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [
@@ -271,11 +331,153 @@
       "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
       "_source_date": "2026-05-21",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Keep your phone charged before long sightseeing days and share your live location with family if preferred.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": "2026-05-20"
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Keep hotel addresses and driver's contact details accessible at all times.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": "2026-05-20"
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Carry bottled water during sightseeing and stay hydrated, especially during city exploration in Cochin.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": "2026-05-20"
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Avoid carrying large amounts of cash. Keep passports, IDs and valuables safely stored and use hotel safes where available.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": "2026-05-20"
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Always ask permission before taking close-up photographs of local people, especially inside religious or cultural places.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": "2026-05-20"
     }
   ],
   "souvenirs": [],
-  "emergency_contacts": [],
-  "connectivity_tips": [],
+  "emergency_contacts": [
+    {
+      "city": "Kerala",
+      "service": "Police Emergency",
+      "number": "100",
+      "notes": null,
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": "2026-05-20"
+    },
+    {
+      "city": "Kerala",
+      "service": "Ambulance",
+      "number": "108",
+      "notes": null,
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": "2026-05-20"
+    },
+    {
+      "city": "Kerala",
+      "service": "Fire Emergency",
+      "number": "101",
+      "notes": null,
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": "2026-05-20"
+    },
+    {
+      "city": "Kerala",
+      "service": "National Emergency Helpline",
+      "number": "112",
+      "notes": null,
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": "2026-05-20"
+    }
+  ],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Consider an international roaming plan or a local SIM card upon arrival",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "transport_options": [],
   "health_tips": [
     {
@@ -313,6 +515,90 @@
       "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
       "_source_date": "2026-05-21",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Carry prescription medicines and travel insurance",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Use mosquito/insect repellent due to tropical climate",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Kerala.pdf",
+      "_source_mtime": 1772384277.8766136,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Kerala does not typically require any special or mandatory vaccinations for travellers arriving from India.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": "2026-05-20"
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Carry any regular prescription medicines in original packaging.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": "2026-05-20"
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Keep a small first-aid kit with pain relief medication, motion sickness tablets (helpful for Munnar hill roads), band-aids, antiseptic cream, medicines for acidity or stomach discomfort, and allergy medication if required.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": "2026-05-20"
+    },
+    {
+      "cities": [
+        "Kerala"
+      ],
+      "tip": "Carry any regular medications in your day bag during sightseeing and stay hydrated by carrying bottled water.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Rohini_Kerala_All Inclusive Guide.docx",
+      "_source_mtime": 1779311242.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kerala",
+      "_source_format": "old",
+      "_source_date": "2026-05-20"
     }
   ],
   "route_guides": [],

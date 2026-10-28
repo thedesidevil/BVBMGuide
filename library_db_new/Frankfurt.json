@@ -153,6 +153,188 @@
       "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
       "_source_date": "2025-09-13",
       "_source_format": "new"
+    },
+    {
+      "name": "Indian Curry Castle",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "EUR 25-40 per person",
+      "hours": "11 AM - 2:30 PM; 5:30 PM- 11 PM",
+      "ambience": "Cozy restaurant in Frankfurt's Old Town (Altstadt), warm décor, friendly local vibe—great for lunch or dinner after sightseeing",
+      "area": "Altstadt",
+      "must_try_dishes": [
+        "Butter chicken",
+        "Saag Paneer",
+        "Chana Masala with garlic naan"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Frankfurt",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Café Karin",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "EUR 15-25 per person",
+      "hours": "9 AM - 7 PM",
+      "ambience": "Cozy café with a Parisian flair, known for fresh, healthy lunches and a relaxed vibe",
+      "must_try_dishes": [
+        "Veggie quiche",
+        "Mediterranean salad",
+        "Smoked salmon with rösti",
+        "sandwiches"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Frankfurt",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Restaurant Margarete",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "CHF 20-30 per person",
+      "hours": "5 PM - 12 AM",
+      "ambience": "Stylish modern bistro with minimalist design and terrace seating; ideal for a slightly more elegant lunch",
+      "must_try_dishes": [
+        "Seasonal vegetable risotto",
+        "Chicken breast with herb jus",
+        "grilled fish"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Frankfurt",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "MainNizza",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "EUR 35-50 per person",
+      "hours": "11:30 AM - 12 AM",
+      "ambience": "Contemporary riverside restaurant with a large terrace overlooking the Main River; chic yet relaxed",
+      "must_try_dishes": [
+        "Truffle pasta",
+        "seasonal veggie mains",
+        "roast corn-fed chicken with sides"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Frankfurt",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Medici Restaurant",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "CHF 40-55 per person",
+      "hours": "11:30 AM - 10 PM",
+      "ambience": "Stylish modern bistro with minimalist design and terrace seating; ideal for a slightly more elegant lunch",
+      "must_try_dishes": [
+        "Parmesan risotto with seasonal vegetables",
+        "Sea bass filet with olive oil & lemon"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Frankfurt",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Zum Bitburger",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "German"
+      ],
+      "price_range": "CHF 25-40 per person",
+      "hours": "12 PM - 9 PM",
+      "ambience": "Traditional German restaurant & beerhouse—lively, rustic, and authentic, with hearty portions",
+      "must_try_dishes": [
+        "Käsespätzle",
+        "Breaded chicken schnitzel with potato salad"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Frankfurt",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Adolf Wagner",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "German"
+      ],
+      "price_range": "EUR 20-30 per person",
+      "hours": "11 AM - 12 AM",
+      "ambience": "One of Frankfurt's most famous Apfelwein taverns—rustic, bustling, with wooden benches and lively local vibes",
+      "area": "Sachsenhausen",
+      "must_try_dishes": [
+        "Handkäse mit Musik",
+        "breaded chicken schnitzel with potato salad"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Frankfurt",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Zum Gemalten Haus",
+      "city": "Frankfurt",
+      "cuisine_type": [
+        "German"
+      ],
+      "price_range": "CHF 20-35 per person",
+      "hours": "11 AM - 11 PM",
+      "ambience": "Historic tavern with colorful murals, a buzzing beer-garden feel, and live local energy—an institution in Sachsenhausen",
+      "area": "Sachsenhausen",
+      "must_try_dishes": [
+        "Potato pancakes with apple sauce",
+        "Roast chicken with rösti"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Frankfurt",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -203,6 +385,18 @@
       "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
       "_source_date": "2025-09-13",
       "_source_format": "new"
+    },
+    {
+      "name": "Frankfurt Cathedral",
+      "city": "Frankfurt",
+      "description": "Cathedral with tower offering panoramic city views",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Frankfurt",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -324,6 +518,45 @@
       "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
       "_source_date": "2025-09-13",
       "_source_format": "new"
+    },
+    {
+      "city": "Frankfurt",
+      "mode": "ICE Train",
+      "description": "High-speed rail connections throughout Germany",
+      "_source_file": "Qatar/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384290.512721,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Frankfurt",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Frankfurt",
+      "mode": "S-Bahn",
+      "description": "Suburban rail service connecting city center to airport and surrounding areas",
+      "_source_file": "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384308.452988,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Frankfurt",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Frankfurt",
+      "mode": "S-Bahn",
+      "description": "Suburban rail system connecting airport and city center",
+      "_source_file": "Italy/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384338.18424,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Frankfurt",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "health_tips": [],

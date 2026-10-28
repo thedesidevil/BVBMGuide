@@ -511,6 +511,100 @@
       "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-07",
       "_source_format": "new"
+    },
+    {
+      "name": "BackWERK Rotterdam Centraal",
+      "city": "Brussels",
+      "cuisine_type": [
+        "Bakery"
+      ],
+      "price_range": "₹500–900",
+      "hours": "6 AM – 7 PM",
+      "ambience": "Casual grab-and-go",
+      "area": "Rotterdam Centraal Station",
+      "highlights": [
+        "Quick transit meal"
+      ],
+      "must_try_dishes": [
+        "Veg sandwiches",
+        "pastries"
+      ],
+      "best_for": [
+        "quick"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Lebkov & Sons Rotterdam",
+      "city": "Brussels",
+      "cuisine_type": [
+        "Café"
+      ],
+      "price_range": "₹800–1,400",
+      "hours": "6 AM – 8 PM",
+      "ambience": "Modern café, quick service",
+      "highlights": [
+        "Efficient yet quality lunch before train"
+      ],
+      "must_try_dishes": [
+        "Veg sandwiches",
+        "soups"
+      ],
+      "best_for": [
+        "efficient",
+        "quality"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Wolf Sharing Food Market, Brussels",
+      "city": "Brussels",
+      "cuisine_type": [
+        "International",
+        "Street Food",
+        "Food Hall"
+      ],
+      "price_range": "₹1,200–2,200 pp",
+      "hours": "12 PM – 10:00 PM",
+      "ambience": "Energetic, trendy food hall with multiple cuisines",
+      "highlights": [
+        "Multiple cuisine options",
+        "Vibrant, casual dining"
+      ],
+      "must_try_dishes": [
+        "International street food",
+        "Asian bowls",
+        "tacos",
+        "Tacos"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -699,6 +793,50 @@
       "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-07",
       "_source_format": "new"
+    },
+    {
+      "name": "Manneken Pis",
+      "city": "Brussels",
+      "description": "Famous statue",
+      "hours": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Choco-Story Brussels",
+      "city": "Brussels",
+      "description": "Chocolate museum with live demonstrations, tastings, and interactive exhibits",
+      "hours": "10 AM – 6 PM",
+      "entry_fee": "₹1,200–1,500",
+      "recommended_duration": "2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Brussels Beer Tasting Tour (English Guided)",
+      "city": "Brussels",
+      "description": "Guided craft beer experience in a lively local bar setting with curated Belgian beer tastings and expert explanations.",
+      "hours": "18:00 (approx. 2–2.5 hours duration)",
+      "recommended_duration": "2–2.5 hours",
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -717,6 +855,19 @@
       "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-07",
       "_source_format": "new"
+    },
+    {
+      "name": "The Dominican",
+      "city": "Brussels",
+      "location": "15 mins by tram or 15 mins by cab from Brussels Midi station",
+      "_source_file": "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+      "_source_mtime": 1772384274.3302393,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "local_dishes": [
@@ -864,6 +1015,36 @@
       "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-07",
       "_source_format": "new"
+    },
+    {
+      "name": "Belgian Frites",
+      "city": "Brussels",
+      "description": "Belgium's iconic double-fried fries with a crispy exterior and fluffy interior, served with sauces",
+      "vegetarian": true,
+      "where_to_try": "Frituur Tabora",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Croquettes (Cheese)",
+      "city": "Brussels",
+      "description": "Crispy breadcrumb-coated bites with a rich, creamy cheese filling.",
+      "vegetarian": true,
+      "where_to_try": "Bouillon Bruxelles",
+      "source_files": [
+        "Europe/Sirisha_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -878,6 +1059,101 @@
       "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-07",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Avoid carrying large cash amounts.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Use official taxi apps or hotel-arranged transfers.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Keep passport copies separate from originals.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Be cautious in crowded tourist hotspots and transport hubs.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    },
+    {
+      "cities": [
+        "Amsterdam",
+        "Brussels",
+        "Cologne",
+        "Netherlands",
+        "Belgium",
+        "Germany"
+      ],
+      "tip": "Stick to well-lit areas at night, especially near canals or stations.",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
     }
   ],
   "souvenirs": [
@@ -1017,6 +1293,88 @@
       "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-07",
       "_source_format": "new"
+    },
+    {
+      "item": "Belgian Lace",
+      "city": "Brussels",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Specialist lace shops around Grand Place and historic center"
+      ],
+      "_source_file": "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+      "_source_mtime": 1772384274.3302393,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Tintin & Comics Merchandise",
+      "city": "Brussels",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "Comic book stores around Belgian Comic Strip Center"
+      ],
+      "_source_file": "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+      "_source_mtime": 1772384274.3302393,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Speculoos & Other Biscuits",
+      "city": "Brussels",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets",
+        "bakeries",
+        "specialty food shops"
+      ],
+      "_source_file": "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+      "_source_mtime": 1772384274.3302393,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Belgian Waffle Mix & Irons",
+      "city": "Brussels",
+      "category": "Food",
+      "where_to_buy": [
+        "Souvenir shops around Grand Place"
+      ],
+      "_source_file": "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+      "_source_mtime": 1772384274.3302393,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Condiments like mustard, frites sauce",
+      "city": "Brussels",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets"
+      ],
+      "_source_file": "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+      "_source_mtime": 1772384274.3302393,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [],
@@ -1111,6 +1469,95 @@
       "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-07",
       "_source_format": "new"
+    },
+    {
+      "city": "Brussels",
+      "mode": "Metro, Trams, Buses",
+      "description": "Unlimited travel on Brussels' metro, trams, and buses (STIB network) for 24 hours",
+      "recommended_pass": "STIB-MIVB Day Ticket",
+      "cost": "EUR 7.5",
+      "_source_file": "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+      "_source_mtime": 1772384274.3302393,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Brussels",
+      "mode": "Metro, Trams, Buses",
+      "description": "Rechargeable travel card for various tickets and passes including 1 or 3-day STIB passes",
+      "recommended_pass": "MOBIB Card",
+      "cost": "€6 for card",
+      "_source_file": "Belgium/All Inclusive Guide- Netherlands and Belgium.pdf",
+      "_source_mtime": 1772384274.3302393,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Brussels",
+      "mode": "Metro, Trams, Buses",
+      "description": "Rechargeable travel card for STIB network",
+      "recommended_pass": "MOBIB Card with 1 or 3-day STIB Pass",
+      "cost": "€6 for MOBIB card",
+      "_source_file": "Netherlands/All Inclusive Guide- Netherlands and Belgium.pdf",
+      "_source_mtime": 1772384275.5723488,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Brussels",
+      "mode": "Tram/Metro",
+      "description": "Public transport within Brussels",
+      "cost": "Various routes",
+      "_source_file": "Netherlands/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    },
+    {
+      "city": "Brussels",
+      "mode": "Metro / Tram / Bus",
+      "description": "Simple unlimited access across Brussels city network including metro, tram, and bus.",
+      "recommended_pass": "STIB-MIVB 24-Hour Ticket",
+      "cost": "~€7.50 per day",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
+    },
+    {
+      "city": "Brussels",
+      "mode": "Metro / Tram / Bus (Smart Card)",
+      "description": "Reusable smart card for longer stays with loadable 1-day or 3-day unlimited STIB passes. Available at metro stations, kiosks, STIB counters, and official app.",
+      "recommended_pass": "MOBIB Card + STIB Travel Pass",
+      "cost": "Card ~€6 (one-time) + travel pass ~€8–€18 depending on duration",
+      "_source_file": "Europe/Sirisha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778114484.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brussels",
+      "_source_format": "old",
+      "_source_date": "2026-05-07"
     }
   ],
   "health_tips": [

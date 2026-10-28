@@ -1033,6 +1033,84 @@
       "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Lombardis",
+      "city": "New York",
+      "cuisine_type": [
+        "Italian",
+        "Pizzeria"
+      ],
+      "hours": "12pm-11pm",
+      "area": "Little Italy, Lower Manhattan",
+      "must_try_dishes": [
+        "pizza"
+      ],
+      "source_files": [],
+      "highlights": [
+        "pizza"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Double Crispy Bakery",
+      "city": "New York",
+      "cuisine_type": [
+        "Chinese"
+      ],
+      "hours": "11am-8:30pm",
+      "area": "Chinatown, Lower Manhattan",
+      "highlights": [
+        "fish filet bun",
+        "steamed baos"
+      ],
+      "must_try_dishes": [
+        "fish filet bun",
+        "steamed baos"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Harpers Bread House",
+      "city": "New York",
+      "cuisine_type": [
+        "Chinese"
+      ],
+      "hours": "11am-8:30pm",
+      "area": "Chinatown, Lower Manhattan",
+      "highlights": [
+        "warm egg tart"
+      ],
+      "must_try_dishes": [
+        "egg tart"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -1458,6 +1536,47 @@
       "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Broadway Show - Harry Potter and the Cursed Child",
+      "city": "New York",
+      "description": "Unforgettable Broadway experience for the whole family",
+      "hours": "6:00 PM - 10:00 PM",
+      "recommended_duration": "3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Statue at Sunset Cruise",
+      "city": "New York",
+      "description": "Close views of the Statue of Liberty, with NYC skyline at golden hour",
+      "hours": "7:00 - 8:30 PM",
+      "recommended_duration": "1.5 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Statue of Liberty Tour",
+      "city": "New York",
+      "description": "Ferry tour to Statue of Liberty with pedestal climbing",
+      "recommended_duration": "3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -1486,6 +1605,19 @@
       "_source_file": "USA/Saumitra_NYC_All Inclusive Guide.docx",
       "_source_date": "2026-10-20",
       "_source_format": "new"
+    },
+    {
+      "name": "Best Western Empire State Hotel",
+      "city": "New York",
+      "location": "Manhattan",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "local_dishes": [
@@ -1627,6 +1759,19 @@
       "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Dimsums",
+      "city": "New York",
+      "description": "Chinese dumplings in Chinatown",
+      "where_to_try": "Shanghai 21",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -1693,6 +1838,24 @@
       "_source_file": "USA/Saumitra_NYC_All Inclusive Guide.docx",
       "_source_date": "2026-10-20",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Tipping people, especially at restaurants, is a norm. Restaurant waiters expect 18%-25% of total bill as tips. Also customary to add 10%-15% tips for taxi rides",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "souvenirs": [
@@ -1804,6 +1967,34 @@
       "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "city": "New York",
+      "service": "Consulate General of India",
+      "number": "+1 347-721-9243",
+      "notes": "Located at 3 E 64th St, New York, NY 10065",
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.pdf",
+      "_source_mtime": 1772384246.3359978,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "New York",
+      "service": "Emergency",
+      "number": "911",
+      "notes": "One number for any emergencies including medical emergencies and ambulance. Accessible from anywhere, even where there doesn't appear to be any cell signal",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "connectivity_tips": [
@@ -1855,6 +2046,24 @@
       "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Buy a sim card from TSIM. They offer both physical and eSIMs. If getting two sims, recommend getting a T-mobile one and an AT&T one",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "transport_options": [
@@ -1918,6 +2127,36 @@
       "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "city": "New York",
+      "mode": "Public Transport",
+      "description": "Excellent public transport system. Tap and pay using a card or phone.",
+      "recommended_pass": "Metro Card or OMNY card",
+      "cost": "Each metro ride costs $2.90 but transfers are free. Fares are capped at $34 for a week. Up to three children under 44 inches tall ride for free when with a fare-paying adult.",
+      "_source_file": "USA/ALL INCLUSIVE GUIDE USA.pdf",
+      "_source_mtime": 1772384246.3359978,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "New York",
+      "mode": "Subway and Bus",
+      "description": "Excellent public transport system. Finding parking can be very challenging and expensive",
+      "recommended_pass": "Metro Card",
+      "cost": "$15 load recommended. Each metro ride costs $2.90 but transfers are free. Fares are capped at $34 for a week. Children under 44 inches tall ride free when accompanied by an adult",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "health_tips": [
@@ -1956,6 +2195,57 @@
       "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Travel insurance recommended with $100,000 coverage for each family member. Tata AIG has a plan for Rs. 8370 with $100 deductible. visitorscoverage.com has a Patriot America Plus plan with zero deductible at $200",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Most places in the US are pretty dry and it is easy to get sunburnt, so carry and apply sunscreen (SPF 30) when out in the Sun",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Boston",
+        "New York"
+      ],
+      "tip": "Boston and NYC could get cold at night. Boston max temp: 15°C, min: 8°C. NYC pretty similar to Boston. Pack winter weather clothes accordingly",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "route_guides": [],

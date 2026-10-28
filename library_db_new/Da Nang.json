@@ -2078,6 +2078,107 @@
       "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
       "_source_date": "2026-05-08",
       "_source_format": "old"
+    },
+    {
+      "name": "Hoi An",
+      "city": "Da Nang",
+      "description": "UNESCO World Heritage site with Japanese Covered Bridge, coconut forest bamboo boat ride, and lantern release",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": "Afternoon/evening",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Japanese Covered Bridge",
+      "city": "Da Nang",
+      "description": "Beautiful wooden bridge built by the Japanese community in the 17th century",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Fantasy World",
+      "city": "Da Nang",
+      "description": "Adventure theme park at Ba Na Hills",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Han River",
+      "city": "Da Nang",
+      "description": "River with illuminated Dragon Bridge",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Love Lock Bridge",
+      "city": "Da Nang",
+      "description": "Romantic bridge in downtown Da Nang",
+      "recommended_duration": "30 minutes",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "French Village",
+      "city": "Da Nang",
+      "description": "European-style architecture, flower gardens, cafés, and Gothic-style churches at Ba Na Hills",
+      "recommended_duration": "2-3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Bach Dang Pedestrian Street (Da Nang Walking street)",
+      "city": "Da Nang",
+      "description": "Downtown Da Nang area with many street artists and restaurants/cafes or mobile food vans",
+      "hours": "Evening",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -2421,6 +2522,34 @@
       "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
       "_source_date": "2026-05-13",
       "_source_format": "new"
+    },
+    {
+      "name": "Ramie leaf cake (Banh it la gai)",
+      "city": "Da Nang",
+      "description": "Traditional cake",
+      "vegetarian": true,
+      "where_to_try": "Hoi An bakeries",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Baked coconut cracker (Banh dua nuong)",
+      "city": "Da Nang",
+      "description": "Coconut-based snack",
+      "vegetarian": true,
+      "where_to_try": "Hoi An bakeries",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -2537,6 +2666,141 @@
       "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
       "_source_date": "2026-05-13",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Da Nang",
+        "Hoi An"
+      ],
+      "tip": "Avoid beaches after dark – avoid isolated areas",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Da Nang",
+        "Hoi An"
+      ],
+      "tip": "Be careful with motorbike traffic – always use pedestrian crossings carefully",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Da Nang",
+        "Hoi An"
+      ],
+      "tip": "Watch out for taxi meter rigging – Always use trusted apps like Grab for safe pricing",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Da Nang",
+        "Hoi An"
+      ],
+      "tip": "Be aware of currency confusion – VND has high denominations; double-check notes before handing over",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Da Nang",
+        "Hoi An"
+      ],
+      "tip": "Don't carry all your cash/cards in one place",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Da Nang",
+        "Hoi An"
+      ],
+      "tip": "Use hotel safes for passports and valuables",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Da Nang",
+        "Hoi An"
+      ],
+      "tip": "Be cautious at night markets; petty theft is rare but possible",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Da Nang",
+        "Hoi An"
+      ],
+      "tip": "Carry a copy of your passport when exploring",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Da Nang",
+        "Vietnam"
+      ],
+      "tip": "Avoid beaches after dark — stick to well-lit areas and avoid secluded sections late at night.",
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_mtime": 1778695624.2020826,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-05-13"
     }
   ],
   "souvenirs": [
@@ -2720,6 +2984,188 @@
       "_source_file": "Vietnam/Edlyn_Vietnam_All Inclusive Guide.docx",
       "_source_date": "2026-05-08",
       "_source_format": "new"
+    },
+    {
+      "item": "Magnet dolls",
+      "city": "Da Nang",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Han Market"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-SS.pdf",
+      "_source_mtime": 1772384375.8524823,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Vietnamese silk products",
+      "city": "Da Nang",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Hoi An Silk Village",
+        "Quoc Huy Silk",
+        "B'lan Silk Tailor Shop",
+        "Han Market"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Vietnamese hand embroidery",
+      "city": "Da Nang",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Nguyen Hoan Street (night market)",
+        "Han Market"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Hoi An Lanterns",
+      "city": "Da Nang",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Ngoc Thu and Tuoi Ngoc store",
+        "Nguyen Hoan Street"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Bamboo products",
+      "city": "Da Nang",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Nguyen Hoan Street (night market)"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Thanh Ha Ceramic products",
+      "city": "Da Nang",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Thanh Ha Pottery Village, Hoi An"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Hoi An Leather products",
+      "city": "Da Nang",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Nguyen Hoang Street, Hoi An"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Hong Dao wine",
+      "city": "Da Nang",
+      "category": "Consumables",
+      "where_to_buy": [
+        "Specialty gift shops in Hoi An"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Magnet dolls - dressed in traditional Vietnamese dress",
+      "city": "Da Nang",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Han Market"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Magnet dolls - dressed in traditional Vietnamese dress with colourful prints",
+      "city": "Da Nang",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Han Market"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Do paper products",
+      "city": "Da Nang",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Han Market",
+        "Helio Night Market"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Antra.pdf",
+      "_source_mtime": 1772384366.3266962,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [
@@ -3104,6 +3550,63 @@
       "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
       "_source_date": "2026-05-08",
       "_source_format": "old"
+    },
+    {
+      "city": "Da Nang",
+      "mode": "Grab Taxi",
+      "description": "Convenient ride-hailing service for getting around the city",
+      "cost": null,
+      "_source_file": "Vietnam/Roma_North Vietnam_All Inclusive Guide.docx",
+      "_source_mtime": 1778201112.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-05-08"
+    },
+    {
+      "city": "Da Nang",
+      "mode": "Taxi",
+      "description": "23 minutes from Da Nang International Airport to hotel",
+      "cost": "Varies",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Da Nang",
+      "mode": "Grab",
+      "description": "Trusted ride-sharing app for safe pricing",
+      "cost": "Varies",
+      "_source_file": "Vietnam/All Inclusive Guide - Rupali - Vietnam.pdf",
+      "_source_mtime": 1772384368.5363646,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Da Nang",
+      "mode": "Private transfer",
+      "description": "Private vehicle transfers for excursions to Ba Na Hills, Hoi An, and airport transfers.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Vietnam/Roma_ Vietnam_All Inclusive Guide.docx",
+      "_source_mtime": 1778695624.2020826,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Da Nang",
+      "_source_format": "old",
+      "_source_date": "2026-05-13"
     }
   ],
   "health_tips": [

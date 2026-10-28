@@ -56,7 +56,23 @@
       "_source_format": "new"
     }
   ],
-  "attractions": [],
+  "attractions": [
+    {
+      "name": "Surkanda Devi Temple",
+      "city": "Kanatal",
+      "description": "Perched at an elevation of over 2,700 metres, one of Uttarakhand's revered Shakti Peeths. Offers breathtaking views of the Himalayan ranges. Accessible via uphill walk or ropeway (subject to operation).",
+      "hours": "6:00 AM – 7:00 PM",
+      "entry_fee": "Free Entry",
+      "recommended_duration": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kanatal",
+      "_source_format": "old",
+      "_source_date": null
+    }
+  ],
   "hotels": [
     {
       "name": "Vinyasa Resort",
@@ -68,7 +84,38 @@
   ],
   "local_dishes": [],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Mussoorie",
+        "Kanatal",
+        "Dhanaulti"
+      ],
+      "tip": "It is recommended to visit Cloud's End during daylight hours and avoid the forested sections after dark.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kanatal",
+      "_source_format": "old",
+      "_source_date": "2026-06-17"
+    },
+    {
+      "cities": [
+        "Kanatal"
+      ],
+      "tip": "Surkanda Devi Temple involves a moderate uphill walk. Plan accordingly, especially when travelling with young children or elderly guests.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kanatal",
+      "_source_format": "old",
+      "_source_date": "2026-06-17"
+    }
+  ],
   "souvenirs": [],
   "emergency_contacts": [],
   "connectivity_tips": [],
@@ -96,6 +143,139 @@
       "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
       "_source_date": "2026-06-17",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Mussoorie",
+        "Kanatal",
+        "Dhanaulti"
+      ],
+      "tip": "Motion sickness medication is recommended for hill roads with winding mountain routes.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kanatal",
+      "_source_format": "old",
+      "_source_date": "2026-06-17"
+    },
+    {
+      "cities": [
+        "Dehradun",
+        "Mussoorie",
+        "Kanatal",
+        "Dhanaulti"
+      ],
+      "tip": "Carry a basic first-aid kit and personal prescription medicines throughout the trip.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kanatal",
+      "_source_format": "old",
+      "_source_date": "2026-06-17"
+    },
+    {
+      "cities": [
+        "Dehradun",
+        "Mussoorie",
+        "Kanatal",
+        "Dhanaulti"
+      ],
+      "tip": "Use mosquito repellent, especially during outdoor activities and evening hours.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kanatal",
+      "_source_format": "old",
+      "_source_date": "2026-06-17"
+    },
+    {
+      "cities": [
+        "Mussoorie",
+        "Kanatal",
+        "Dhanaulti"
+      ],
+      "tip": "June brings occasional rain showers in the hills. Pack a compact umbrella or lightweight rain jacket.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kanatal",
+      "_source_format": "old",
+      "_source_date": "2026-06-17"
+    },
+    {
+      "cities": [
+        "Mussoorie",
+        "Kanatal",
+        "Dhanaulti"
+      ],
+      "tip": "Motion sickness medication is recommended for hill roads due to winding mountain drives.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kanatal",
+      "_source_format": "old",
+      "_source_date": "2026-06-17"
+    },
+    {
+      "cities": [
+        "Dehradun",
+        "Mussoorie",
+        "Kanatal",
+        "Dhanaulti"
+      ],
+      "tip": "Pack a basic first-aid kit and personal prescription medicines for the trip.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kanatal",
+      "_source_format": "old",
+      "_source_date": "2026-06-17"
+    },
+    {
+      "cities": [
+        "Dehradun",
+        "Mussoorie",
+        "Kanatal",
+        "Dhanaulti"
+      ],
+      "tip": "Apply sunscreen (SPF 30+) and use lip balm and moisturiser as the mountain climate can be drying.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kanatal",
+      "_source_format": "old",
+      "_source_date": "2026-06-17"
+    },
+    {
+      "cities": [
+        "Dehradun",
+        "Mussoorie",
+        "Kanatal",
+        "Dhanaulti"
+      ],
+      "tip": "Carry digital copies of all travel documents throughout the trip.",
+      "_source_file": "North India/Silky_Mussoorie_All_Inclusive_Guide.docx",
+      "_source_mtime": 1781705310.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kanatal",
+      "_source_format": "old",
+      "_source_date": "2026-06-17"
     }
   ],
   "route_guides": [],

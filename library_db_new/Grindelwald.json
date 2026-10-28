@@ -321,6 +321,36 @@
       "_source_file": "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
       "_source_date": "2024-06-15",
       "_source_format": "old"
+    },
+    {
+      "name": "\"Barrys Restaurant, Bar & Lounge\"",
+      "city": "Grindelwald",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "hours": "7am-11:30pm",
+      "area": "Eiger Mountain &Soul restaurant",
+      "must_try_dishes": [
+        "Great cocktails",
+        "Fondue",
+        "Lamb stew",
+        "truffle fondue",
+        "elderflower mousse",
+        "Lamb ragout",
+        "meringue with cream",
+        "Truffle fondue",
+        "Elderflower mousse"
+      ],
+      "highlights": [
+        "Reserve a table"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Grindelwald",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -431,6 +461,36 @@
       "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-04",
       "_source_format": "new"
+    },
+    {
+      "name": "First Cliff Walk at Grindelwald First",
+      "city": "Grindelwald",
+      "description": "Thrilling cliff walk suspended above the valley with panoramic mountain views",
+      "entry_fee": "Approx. INR 6,000–8,000 per person",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Grindelwald",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Grindelwald Terminal",
+      "city": "Grindelwald",
+      "description": "Modern station serving as the gateway into some of Switzerland's most breathtaking mountain scenery. Surrounded by dramatic alpine peaks.",
+      "hours": "Open throughout the day",
+      "entry_fee": "Parking charges applicable",
+      "recommended_duration": null,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Grindelwald",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [],
@@ -596,6 +656,76 @@
       "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-04",
       "_source_format": "new"
+    },
+    {
+      "city": "Grindelwald",
+      "mode": "Gondola",
+      "description": "Firstbahn Gondola to Grindelwald First summit",
+      "cost": "CHF 64 round trip",
+      "_source_file": "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1772384311.980408,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Grindelwald",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Grindelwald",
+      "mode": "Train",
+      "description": "Scenic mountain train winding through alpine valleys, tunnels, and mountain villages",
+      "cost": "Approx. INR 5,000–10,000 depending on route",
+      "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Grindelwald",
+      "_source_format": "old",
+      "_source_date": "2026-05-03"
+    },
+    {
+      "city": "Grindelwald",
+      "mode": "Firstbahn Gondola",
+      "description": "Gondola to Grindelwald First summit",
+      "cost": "CHF 64 (~INR 5,700) round trip",
+      "_source_file": "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1772384364.4304612,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Grindelwald",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Grindelwald",
+      "mode": "Cable Car (First Cable Car)",
+      "description": "Cable car from Grindelwald village to Grindelwald First viewpoint. Opens approximately 8:30 AM.",
+      "cost": "~₹6,000–8,000 per person (discount with Swiss Travel Pass)",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Grindelwald",
+      "_source_format": "old",
+      "_source_date": "2026-04-23"
+    },
+    {
+      "city": "Grindelwald",
+      "mode": "Cable Car",
+      "description": "Cable car from Grindelwald village to Grindelwald First. Approx. 25 mins.",
+      "cost": "Approx. ₹7,500–10,500 per person",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Grindelwald",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
     }
   ],
   "health_tips": [

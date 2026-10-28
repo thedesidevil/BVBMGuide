@@ -3340,6 +3340,68 @@
       "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
       "_source_date": "2026-10-19",
       "_source_format": "new"
+    },
+    {
+      "name": "Udon Yasan",
+      "city": "Osaka",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹700–1,200",
+      "hours": "10:30 AM – 9:00 PM",
+      "ambience": "Easy-to-digest, light meal",
+      "area": "Jo-Terrace Osaka",
+      "nearby_landmarks": [
+        "Osaka Castle, Osaka"
+      ],
+      "highlights": [
+        "Udon noodles",
+        "Simple veg broth options available"
+      ],
+      "best_for": [
+        "light"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Ippudo Ramen",
+      "city": "Osaka",
+      "cuisine_type": [
+        "Japanese",
+        "Ramen"
+      ],
+      "price_range": "¥1000–2000 per person",
+      "hours": "10:30 AM – 11:00 PM",
+      "area": "Shinsaibashi",
+      "nearby_landmarks": [
+        "Shinsaibashi Station, Osaka"
+      ],
+      "highlights": [
+        "Reliable and high-quality ramen"
+      ],
+      "must_try_dishes": [
+        "Shiromaru ramen",
+        "Akamaru ramen"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -3807,6 +3869,143 @@
       "_source_file": "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
       "_source_date": "2024-05-22",
       "_source_format": "old"
+    },
+    {
+      "name": "Universal Studios Osaka",
+      "city": "Osaka",
+      "description": "Theme park with exciting rides and shows based on popular movies and TV shows",
+      "hours": "9am-8pm",
+      "entry_fee": "Buy tickets in advance online",
+      "recommended_duration": "Full day",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "MinaLima Osaka art gallery",
+      "city": "Osaka",
+      "description": "See original graphic designs used in the Harry Potter & Fantastic Beasts movies",
+      "hours": "11:00 am–9:00 pm",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "National Museum of Art",
+      "city": "Osaka",
+      "description": "Underground museum showcasing modern and contemporary art from Japan and around the world, housed in a striking architectural design",
+      "hours": "10:00 AM – 5:00 PM (Fridays until 8:00 PM; closed Mondays)",
+      "entry_fee": "¥430",
+      "recommended_duration": "2-3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Hozenji Yokocho Alley",
+      "city": "Osaka",
+      "description": "Narrow, lantern-lit alley tucked behind Dotonbori with cobblestone path leading to intimate izakayas and the moss-covered Hozenji Temple",
+      "hours": "Open 24 hours",
+      "entry_fee": "Free entry",
+      "recommended_duration": "1 hour",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Super Nintendo World",
+      "city": "Osaka",
+      "description": "Nintendo-themed area including Mario Kart ride",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Wizarding World of Harry Potter Osaka",
+      "city": "Osaka",
+      "description": "Harry Potter themed area with Hogwarts + Forbidden Journey",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Jurassic Park The Ride Osaka",
+      "city": "Osaka",
+      "description": "Dinosaur-themed water ride",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Minion Park Osaka",
+      "city": "Osaka",
+      "description": "Despicable Me themed attraction area",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Kuchu Teien Observatory",
+      "city": "Osaka",
+      "description": "Panoramic Osaka skyline views from Umeda Sky Building",
+      "entry_fee": "₹1,000–1,500",
+      "recommended_duration": "1 hour",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Osaka Castle Museum",
+      "city": "Osaka",
+      "description": "One of Japan's most iconic historical landmarks surrounded by beautiful cherry blossoms.",
+      "hours": "9:00 AM – 5:00 PM",
+      "entry_fee": "¥600",
+      "recommended_duration": "1–2 hours",
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -3905,6 +4104,44 @@
       "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
       "_source_date": "2026-10-19",
       "_source_format": "new"
+    },
+    {
+      "name": "Hotel Sunlife",
+      "city": "Osaka",
+      "_source_file": "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
+      "_source_mtime": 1772384318.9773004,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "name": "Super Hotel Ōsaka",
+      "city": "Osaka",
+      "location": "Osaka",
+      "_source_file": "Japan/All Inclusive Guide- Japan_PN.pdf",
+      "_source_mtime": 1772384320.8260708,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "name": "Airbnb",
+      "city": "Osaka",
+      "location": "MG22+PC4 Osaka Japan (near Namba)",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
     }
   ],
   "local_dishes": [
@@ -4013,6 +4250,38 @@
       "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
       "_source_date": "2026-10-19",
       "_source_format": "new"
+    },
+    {
+      "name": "Butterbeer",
+      "city": "Osaka",
+      "description": "Iconic Harry Potter-themed drink available at Universal Studios Japan.",
+      "vegetarian": true,
+      "where_to_try": "Butterbeer Cart, Universal Studios Japan",
+      "source_files": [
+        "Japan/Azhar_Japan_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Poke Bowl",
+      "city": "Osaka",
+      "description": "Hawaiian-inspired bowl with fresh ingredients, popular in modern Japanese cafés",
+      "vegetarian": false,
+      "where_to_try": "3POKE Osaka Castle Park",
+      "source_files": [
+        "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -4058,6 +4327,20 @@
       "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
       "_source_date": "2026-10-19",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Osaka"
+      ],
+      "tip": "Convenience Store: FamilyMart (2 min car drive from Osaka Airbnb). Pharmacy: 3 min car drive. Hospital: Naniwa Ikuno Hospital (4 min car drive).",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
     }
   ],
   "souvenirs": [
@@ -4343,6 +4626,20 @@
       "_source_file": "Japan/Manjari_Japan_All Inclusive Guide.docx",
       "_source_date": "2026-05-15",
       "_source_format": "new"
+    },
+    {
+      "city": "Osaka",
+      "service": "Consulate General of India Osaka-Kobe",
+      "number": "+81-6-6261-7299 / 9299",
+      "notes": "Located in Osaka (Chuo-ku)",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
     }
   ],
   "connectivity_tips": [
@@ -4646,6 +4943,272 @@
       "_source_file": "Japan/Shital- Japan- All Inclusive Guide.docx",
       "_source_date": "2026-10-19",
       "_source_format": "new"
+    },
+    {
+      "city": "Osaka",
+      "mode": "Taxi",
+      "description": "Direct transport from Kansai International Airport to hotel",
+      "cost": "₹8,000-₹10,000 per taxi",
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan.pdf",
+      "_source_mtime": 1772384322.4841816,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Osaka",
+      "mode": "Nankai Airport Express",
+      "description": "Train from KIX to Namba Station, then Osaka Metro to Shinsaibashi",
+      "cost": "₹1,200-₹1,500 per person",
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan.pdf",
+      "_source_mtime": 1772384322.4841816,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Osaka",
+      "mode": "Nankai Airport Express",
+      "description": "Train from Kansai Airport to Namba Station",
+      "cost": "₹1,200–₹1,500 per person",
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan_v5.docx",
+      "_source_mtime": 1774220998.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-22"
+    },
+    {
+      "city": "Osaka",
+      "mode": "Taxi",
+      "description": "Direct transport from airport to hotel",
+      "cost": "₹8,000–₹10,000 per taxi from KIX",
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan_v5.docx",
+      "_source_mtime": 1774220998.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-22"
+    },
+    {
+      "city": "Osaka",
+      "mode": "Metro",
+      "description": "Metro system in Osaka",
+      "recommended_pass": "Metro pass",
+      "cost": "Rs 358 for 24 hr, Rs 660 for 48 hrs, free for below 5s",
+      "_source_file": "Japan/All Inclusive Guide- Japan- Sandeep.pdf",
+      "_source_mtime": 1772384318.3183126,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Osaka",
+      "mode": "Metro",
+      "description": "Primary transport within the city",
+      "_source_file": "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
+      "_source_mtime": 1772384318.9773004,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Osaka",
+      "mode": "Nankai Railway",
+      "description": "Airport express from Kansai Airport to Namba",
+      "cost": "Varies",
+      "_source_file": "Japan/Amanda_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774630050.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-27"
+    },
+    {
+      "city": "Osaka",
+      "mode": "Osaka Metro",
+      "description": "Subway system with color-coded lines",
+      "recommended_pass": "ICOCA card",
+      "cost": "Varies by distance",
+      "_source_file": "Japan/Amanda_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774630050.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-27"
+    },
+    {
+      "city": "Osaka",
+      "mode": "Shinkansen",
+      "description": "High-speed bullet train connecting major cities",
+      "cost": "Tokyo to Osaka ~2 hr 25 min",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_mtime": 1775062968.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-04-01"
+    },
+    {
+      "city": "Osaka",
+      "mode": "JR Loop Line",
+      "description": "Circular train line in Osaka connecting major areas",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_mtime": 1775062968.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-04-01"
+    },
+    {
+      "city": "Osaka",
+      "mode": "Metro Midosuji Line",
+      "description": "Major subway line in Osaka",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_mtime": 1775062968.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-04-01"
+    },
+    {
+      "city": "Osaka",
+      "mode": "Nankai Airport Express / Limited Express Rapi:t",
+      "description": "Train from Kansai International Airport to Namba Station. Frequency every 15–20 minutes.",
+      "cost": "~45 minutes travel time",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
+    },
+    {
+      "city": "Osaka",
+      "mode": "Osaka Metro Midosuji Line",
+      "description": "Red Line metro connecting Namba, Shinsaibashi, and Shin-Osaka. Key line for city travel.",
+      "recommended_pass": "ICOCA card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
+    },
+    {
+      "city": "Osaka",
+      "mode": "Osaka Metro Sennichimae Line",
+      "description": "Metro line connecting Namba area to Tsuruhashi for access to JR Loop Line.",
+      "recommended_pass": "ICOCA card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
+    },
+    {
+      "city": "Osaka",
+      "mode": "JR Osaka Loop Line",
+      "description": "Loop line connecting Osakajokoen (Osaka Castle), Sakuranomiya, and Namba areas.",
+      "recommended_pass": "ICOCA card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
+    },
+    {
+      "city": "Osaka",
+      "mode": "Yotsubashi Line",
+      "description": "Metro line from Namba to Nishi-Umeda/Nishi-Kujo for access to Universal Studios Japan.",
+      "recommended_pass": "ICOCA card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
+    },
+    {
+      "city": "Osaka",
+      "mode": "JR Yumesaki Line (Sakurajima Line)",
+      "description": "JR line from Nishi-Kujo to Universal City Station for Universal Studios Japan.",
+      "recommended_pass": "ICOCA card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
+    },
+    {
+      "city": "Osaka",
+      "mode": "JR Kobe Line (Special Rapid)",
+      "description": "Train from Shin-Osaka to Sannomiya Station for access to Awaji Island highway buses. Travel time approximately 25 minutes.",
+      "recommended_pass": "ICOCA card",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
+    },
+    {
+      "city": "Osaka",
+      "mode": "JR Kyoto Line (Rapid Service)",
+      "description": "Train service connecting Kyoto Station to Osaka, offering a smooth transition between the two cities.",
+      "recommended_pass": null,
+      "cost": "INR 350–500 per person",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
     }
   ],
   "health_tips": [
@@ -4679,6 +5242,34 @@
       "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
       "_source_date": "2026-06-11",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Osaka"
+      ],
+      "tip": "Pharmacy near Imano Osaka Shinsaibashi Hostel: Horie Pharmacy, approx. 2 min walk. Hours: 08:30–7:00 PM (Mon–Fri), 08:30–1:00 PM (Sat), closed Sunday.",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
+    },
+    {
+      "cities": [
+        "Osaka"
+      ],
+      "tip": "Medical Clinic near Imano Osaka Shinsaibashi Hostel: Nopoa Clinic, approx. 4 min walk. Hours: 10:00 AM–7:00 PM (closed Mon & Thu).",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1781133774.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Osaka",
+      "_source_format": "old",
+      "_source_date": "2026-06-10"
     }
   ],
   "route_guides": [

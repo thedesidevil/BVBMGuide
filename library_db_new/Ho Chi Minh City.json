@@ -623,6 +623,33 @@
       "_source_file": "Vietnam/Eating Out Guide_ Vietnam.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Saxn'Art Club",
+      "city": "Ho Chi Minh City",
+      "cuisine_type": [
+        "Bar"
+      ],
+      "price_range": "₹₂₂",
+      "hours": null,
+      "ambience": "A famous jazz club offering live performances from talented Vietnamese musicians",
+      "highlights": [
+        "Famous jazz club",
+        "Live performances",
+        "Talented Vietnamese musicians"
+      ],
+      "must_try_dishes": [],
+      "best_for": [
+        "romantic"
+      ],
+      "vegetarian_friendly": false,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Ho Chi Minh City",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -849,6 +876,19 @@
       "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
       "_source_date": "2026-04-14",
       "_source_format": "new"
+    },
+    {
+      "name": "Grand Lee Hotel",
+      "city": "Ho Chi Minh City",
+      "location": "30 min drive from airport",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Ho Chi Minh City",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "local_dishes": [
@@ -991,6 +1031,135 @@
       "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
       "_source_date": "2026-04-14",
       "_source_format": "new"
+    },
+    {
+      "item": "Do paper products - notebooks, greeting cards, paintings and stationery sets",
+      "city": "Ho Chi Minh City",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "An Dong Market"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Ho Chi Minh City",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Magnet dolls - dressed in traditional Vietnamese dress",
+      "city": "Ho Chi Minh City",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Ben Thanh"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide-Pallavi.pdf",
+      "_source_mtime": 1772384369.5915315,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Ho Chi Minh City",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Magnet dolls - dressed in traditional Vietnamese dress with colourful prints",
+      "city": "Ho Chi Minh City",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Ben Thanh"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide - Shruti.pdf",
+      "_source_mtime": 1772384376.9547212,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Ho Chi Minh City",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Vietnamese silk products",
+      "city": "Ho Chi Minh City",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Ben Thanh",
+        "An Dong Market"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Ho Chi Minh City",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Do paper products",
+      "city": "Ho Chi Minh City",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "An Dong Market"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Ho Chi Minh City",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Bamboo products",
+      "city": "Ho Chi Minh City",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Ben Thanh"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Ho Chi Minh City",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Magnet dolls",
+      "city": "Ho Chi Minh City",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Ben Thanh"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Vishnu Prasad.pdf",
+      "_source_mtime": 1772384370.8926897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Ho Chi Minh City",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Vietnamese hand embroidery",
+      "city": "Ho Chi Minh City",
+      "category": "Keepsakes",
+      "where_to_buy": [
+        "Ben Thanh"
+      ],
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide- Shiva.pdf",
+      "_source_mtime": 1772384367.6328678,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Ho Chi Minh City",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [
@@ -1116,6 +1285,21 @@
       "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
       "_source_date": "2026-04-14",
       "_source_format": "new"
+    },
+    {
+      "city": "Ho Chi Minh City",
+      "mode": "River Cruise",
+      "description": "Dinner cruises along the Saigon River with city skyline views",
+      "recommended_pass": null,
+      "cost": "Approx. INR 1500–3000 per person",
+      "_source_file": "Vietnam/Mohnish_All Inclusive Guide.docx",
+      "_source_mtime": 1776115654.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Ho Chi Minh City",
+      "_source_format": "old",
+      "_source_date": "2026-04-13"
     }
   ],
   "health_tips": [

@@ -237,6 +237,19 @@
       "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.docx",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Botanical Garden",
+      "city": "Ooty",
+      "description": "Sprawling 55-acre oasis in the Nilgiri Hills with diverse collection of over 1,000 plant species including rare and exotic varieties",
+      "hours": "7am-6:30pm",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Ooty",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -341,6 +354,23 @@
       "_source_date": "2024-12-31",
       "_source_format": "old",
       "_replaced_from": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.docx"
+    },
+    {
+      "item": "Toda Jewelry",
+      "city": "Ooty",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Main Bazaar",
+        "tribal handicraft shops"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/All Inclusive Guide- Mysore and Ooty.pdf",
+      "_source_mtime": 1772384280.5196347,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Ooty",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [],

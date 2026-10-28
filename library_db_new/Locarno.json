@@ -169,6 +169,18 @@
       "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
       "_source_date": "2025-09-13",
       "_source_format": "new"
+    },
+    {
+      "name": "Lake Maggiore",
+      "city": "Locarno",
+      "description": "Beautiful lake with promenade and boat rides to nearby towns like Ascona and Brissago Islands",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Locarno",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -231,7 +243,22 @@
   ],
   "emergency_contacts": [],
   "connectivity_tips": [],
-  "transport_options": [],
+  "transport_options": [
+    {
+      "city": "Locarno",
+      "mode": "PostBus",
+      "description": "Bus service to remote villages like Foroglio",
+      "recommended_pass": "Swiss Travel Pass",
+      "_source_file": "Italy/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384338.18424,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Locarno",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "health_tips": [],
   "route_guides": [
     {

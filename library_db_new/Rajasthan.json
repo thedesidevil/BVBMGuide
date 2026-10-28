@@ -164,12 +164,195 @@
       "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice(1).docx",
       "_source_date": null,
       "_source_format": "new"
+    },
+    {
+      "name": "Mirchi Vada",
+      "city": "Rajasthan",
+      "description": "Spicy, crisp, and iconic; best enjoyed hot with tamarind chutney",
+      "vegetarian": true,
+      "where_to_try": "Street vendors",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rajasthan",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Malpua with Rabri",
+      "city": "Rajasthan",
+      "description": "Traditional festive sweet",
+      "vegetarian": true,
+      "where_to_try": "LMB (Jaipur)",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rajasthan",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
-  "phrases": [],
-  "safety_tips": [],
+  "phrases": [
+    {
+      "city": "Rajasthan",
+      "english": "Hello",
+      "local": "Khamma Ghani",
+      "category": "greeting",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rajasthan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Rajasthan",
+      "english": "How are you?",
+      "local": "Kem Cho?",
+      "category": "greeting",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rajasthan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Rajasthan",
+      "english": "Thank you",
+      "local": "Dhanyavaad / Sukriya",
+      "category": "polite",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rajasthan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Dress modestly in temples and rural areas",
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rajasthan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Remove shoes before entering shrines",
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rajasthan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Tipping 5–10% at restaurants is appreciated",
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rajasthan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Avoid walking alone late at night in isolated areas",
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rajasthan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Use registered taxis or hotel transfers",
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rajasthan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Rajasthan"
+      ],
+      "tip": "Keep digital copies of travel documents",
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rajasthan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "souvenirs": [],
-  "emergency_contacts": [],
+  "emergency_contacts": [
+    {
+      "city": "Rajasthan",
+      "service": "Police",
+      "number": "100",
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rajasthan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Rajasthan",
+      "service": "Ambulance",
+      "number": "108",
+      "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384334.0605764,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rajasthan",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "connectivity_tips": [],
   "transport_options": [],
   "health_tips": [],

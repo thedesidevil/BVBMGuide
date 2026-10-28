@@ -133,6 +133,56 @@
       "_source_file": "Europe/Tejas - Europe All Inclusive Guide(1).docx",
       "_source_date": "2025-09-13",
       "_source_format": "new"
+    },
+    {
+      "name": "Dabbawalas Indian Corner",
+      "city": "Basel",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "CHF 20-30 per person",
+      "hours": "11:30 AM - 2 PM; 4:30 PM- 9 PM",
+      "ambience": "Bright, casual stall-/market-style Indian at Markthalle, Basel. Friendly, informal, good for lunch or dinner with quick service",
+      "area": "Markthalle",
+      "must_try_dishes": [
+        "Chicken curry",
+        "Thali",
+        "Masoor Daal with naan",
+        "Paneer curry",
+        "Palak Paneer"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Basel",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Bistro Union",
+      "city": "Basel",
+      "cuisine_type": [
+        "International"
+      ],
+      "price_range": "CHF 25-35 per person",
+      "hours": "9 AM - 5 PM",
+      "ambience": "Trendy brasserie-style spot with a relaxed vibe and terrace seating",
+      "must_try_dishes": [
+        "Seasonal vegetarian bowls",
+        "pasta",
+        "Crispy chicken burger with fries",
+        "fish and chips"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Basel",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -206,7 +256,21 @@
   ],
   "emergency_contacts": [],
   "connectivity_tips": [],
-  "transport_options": [],
+  "transport_options": [
+    {
+      "city": "Basel",
+      "mode": "Public Transport",
+      "description": "Integrated public transport system connecting major attractions",
+      "_source_file": "Switzerland/Tejas - Europe All Inclusive Guide.pdf",
+      "_source_mtime": 1772384308.452988,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Basel",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "health_tips": [],
   "route_guides": [],
   "season_notes": [],

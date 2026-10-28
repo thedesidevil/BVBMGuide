@@ -937,6 +937,34 @@
       "_source_file": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan.docx",
       "_source_date": "2025-12-29",
       "_source_format": "new"
+    },
+    {
+      "name": "Chokhi Dhani",
+      "city": "Jaipur",
+      "cuisine_type": [
+        "Rajasthani"
+      ],
+      "price_range": "₹1000 per person",
+      "hours": "10:00 AM - 10:30 PM",
+      "ambience": "Rajasthani village-themed experience with folk performances, camel rides (optional), and local cuisine",
+      "highlights": [
+        "Folk performances",
+        "Camel rides",
+        "Village-themed experience",
+        "Includes dinner"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -1186,6 +1214,35 @@
       "_source_file": "Rajasthan/Jaipur and Jodhpur Itinerary.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Chokhi Dhani Village Resort",
+      "city": "Jaipur",
+      "description": "Folk-themed cultural experience with traditional Rajasthani food and performances",
+      "hours": "5 PM - 10:30 PM",
+      "entry_fee": "₹1,000",
+      "recommended_duration": "3-4 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Elefantastic (Elephant Wildlife Sanctuary)",
+      "city": "Jaipur",
+      "description": "A sanctuary dedicated to rescued and rehabilitated elephants. This is not a tourist show — it is a compassionate interaction where you learn, connect, and support elephant welfare",
+      "hours": "9:00 AM - 6:00 PM",
+      "recommended_duration": "2-3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -1204,6 +1261,32 @@
       "_source_date": "2025-12-29",
       "_source_format": "new",
       "_replaced_from": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan(1).docx"
+    },
+    {
+      "name": "Spree Jaipur",
+      "city": "Jaipur",
+      "location": null,
+      "_source_file": "Rajasthan/Jaipur and Jodhpur Itinerary.pdf",
+      "_source_mtime": 1772384332.3169577,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "name": "Sahakar Marg",
+      "city": "Jaipur",
+      "location": "Sahakar Marg, Jaipur, Rajasthan 302007",
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "local_dishes": [
@@ -1295,6 +1378,32 @@
       "_source_file": "Rajasthan/Merlin_All Inclusive Guide_Rajasthan(1).docx",
       "_source_date": "2025-12-12",
       "_source_format": "new"
+    },
+    {
+      "name": "Mirchi Vada",
+      "city": "Jaipur",
+      "description": "Spicy, crisp, and iconic; best enjoyed hot with tamarind chutney",
+      "vegetarian": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Mawa Kachori",
+      "city": "Jaipur",
+      "description": "Spicy, crisp, and iconic; best enjoyed hot with tamarind chutney",
+      "vegetarian": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -1351,6 +1460,109 @@
       "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan(1).docx",
       "_source_date": "2025-11-12",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Jaipur"
+      ],
+      "tip": "Dress modestly in temples and rural areas",
+      "_source_file": "Rajasthan/Merlin_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384331.7238214,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Jaipur"
+      ],
+      "tip": "Remove shoes before entering shrines",
+      "_source_file": "Rajasthan/Merlin_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384331.7238214,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Udaipur",
+        "Jaipur"
+      ],
+      "tip": "Use verified transport apps like Uber/Ola or your hotel's car services",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Udaipur",
+        "Jaipur"
+      ],
+      "tip": "Taxi & Auto Rickshaw Scams: Driver claims your hotel is 'closed' or 'moved' and takes you to a commission-based shop or hotel- Always negotiate a fare or insist on the meter before boarding a local auto, and insist you are taken to your pre-booked hotel, directly",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Udaipur",
+        "Jaipur"
+      ],
+      "tip": "Fake Tour Guides: A 'friendly' person offers to show you around, then demands a large tip or drags you to overpriced shops. Only use licensed guides (e.g., arranged through your hotel or tourism office)",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Udaipur",
+        "Jaipur"
+      ],
+      "tip": "Commission Shops: Guides or drivers take you to shops where you are pressured to buy at inflated prices. Shop where you want. Avoid buying immediately—compare prices first. Politely decline offers from unsolicited 'helpers'",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Udaipur",
+        "Jaipur"
+      ],
+      "tip": "Fake Ticket Sellers: Locals outside attractions sell 'discounted' tickets that are fake or expired. Buy tickets online or at official counters only",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "souvenirs": [
@@ -1494,9 +1706,68 @@
       "_source_date": "2025-12-29",
       "_source_format": "new",
       "_replaced_from": "Rajasthan/Merlin_All Inclusive Guide_Rajasthan.docx"
+    },
+    {
+      "item": "Kundan jewelry",
+      "city": "Jaipur",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Johari Bazaar"
+      ],
+      "_source_file": "Rajasthan/Merlin_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384331.7238214,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Meenakari jewelry",
+      "city": "Jaipur",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Johari Bazaar"
+      ],
+      "_source_file": "Rajasthan/Merlin_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384331.7238214,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
-  "emergency_contacts": [],
+  "emergency_contacts": [
+    {
+      "city": "Jaipur",
+      "service": "Police",
+      "number": "100",
+      "_source_file": "Rajasthan/Merlin_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384331.7238214,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Jaipur",
+      "service": "Ambulance",
+      "number": "108",
+      "_source_file": "Rajasthan/Merlin_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384331.7238214,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "connectivity_tips": [],
   "transport_options": [
     {

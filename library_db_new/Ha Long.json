@@ -1,0 +1,44 @@
+{
+  "restaurants": [],
+  "attractions": [
+    {
+      "name": "Ha Long Bay Cruise",
+      "city": "Ha Long",
+      "description": "1 day cruise with wonderful sights of Ha Long Bay and water activities",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Ha Long",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Ha Long Bay"
+    },
+    {
+      "name": "Halong Bay Cruise",
+      "city": "Ha Long",
+      "description": "2D1N cruise with wonderful sights, water activities and onboard experiences",
+      "recommended_duration": "2 days 1 night",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Ha Long",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Halong Bay"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": []
+}

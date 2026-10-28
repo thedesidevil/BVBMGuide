@@ -182,6 +182,21 @@
       "_source_file": "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
       "_source_date": "2024-05-22",
       "_source_format": "old"
+    },
+    {
+      "name": "Kure Yamato Maritime Museum",
+      "city": "Hiroshima",
+      "description": "Maritime museum",
+      "hours": "9am- 6pm (closed on Tuesdays)",
+      "entry_fee": "500 Japanese yen",
+      "recommended_duration": "2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hiroshima",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -243,6 +258,19 @@
       "_source_file": "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
       "_source_date": "2024-05-22",
       "_source_format": "old"
+    },
+    {
+      "city": "Hiroshima",
+      "mode": "JR Ferry",
+      "description": "Ferry service to Miyajima, JR pass active only on JR ferry",
+      "_source_file": "Japan/Detailed Final Itinerary for Japan_05052024.pdf",
+      "_source_mtime": 1772384318.9773004,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hiroshima",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "health_tips": [],

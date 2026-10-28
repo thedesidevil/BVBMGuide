@@ -194,9 +194,64 @@
       "_source_file": "USA/NYC Plan.pdf",
       "_source_date": "2025-05-08",
       "_source_format": "old"
+    },
+    {
+      "name": "Harry Potter and the Cursed Child",
+      "city": "New York City",
+      "description": "Broadway show experience for the whole family",
+      "hours": "6:00 PM – 10:00 PM",
+      "recommended_duration": "3 hours including intermission",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York City",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Statue at Sunset Cruise",
+      "city": "New York City",
+      "description": "Circle Line cruise with close views of Statue of Liberty and NYC skyline at golden hour",
+      "hours": "7:00 – 8:30 PM",
+      "recommended_duration": "1.5 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York City",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "The High Line & Hudson Yards Vessel",
+      "city": "New York City",
+      "description": "Elevated park with city views, gardens, art installations, and futuristic honeycomb structure",
+      "recommended_duration": "2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York City",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
-  "hotels": [],
+  "hotels": [
+    {
+      "name": "The Time New York - JDV by Hyatt",
+      "city": "New York City",
+      "location": "Times Square area",
+      "_source_file": "USA/NYC Plan.pdf",
+      "_source_mtime": 1772384245.8185823,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York City",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "local_dishes": [],
   "phrases": [],
   "safety_tips": [],
@@ -219,6 +274,45 @@
       "_source_file": "USA/NYC Plan.pdf",
       "_source_date": "2025-05-08",
       "_source_format": "old"
+    },
+    {
+      "city": "New York City",
+      "mode": "Cab",
+      "description": "Quickest and easiest with luggage from JFK Airport to hotel, takes about 1 hour",
+      "_source_file": "USA/NYC Plan.pdf",
+      "_source_mtime": 1772384245.8185823,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York City",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "New York City",
+      "mode": "Subway",
+      "description": "C/E line to 50th St with 10-minute walk to Circle Line Cruise Terminal, about 25 minutes to 9/11 Memorial",
+      "_source_file": "USA/NYC Plan.pdf",
+      "_source_mtime": 1772384245.8185823,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York City",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "New York City",
+      "mode": "Walking",
+      "description": "10-15 minutes between hotel and Central Park/Times Square, attractions in Midtown within 5-10 minutes",
+      "_source_file": "USA/NYC Plan.pdf",
+      "_source_mtime": 1772384245.8185823,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "New York City",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "health_tips": [],

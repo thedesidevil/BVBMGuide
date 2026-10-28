@@ -421,6 +421,37 @@
       "_source_date": "2025-12-29",
       "_source_format": "new",
       "_replaced_from": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan(1).docx"
+    },
+    {
+      "name": "The Curry's, Jodhpur",
+      "city": "Jodhpur",
+      "cuisine_type": [
+        "North Indian",
+        "Rajasthani"
+      ],
+      "price_range": "₹900-1200",
+      "hours": "7 AM – 11:30 PM",
+      "ambience": "Elegant fine-dining serving North Indian and Rajasthani dishes",
+      "highlights": [
+        "Fine-dining",
+        "Elegant interiors"
+      ],
+      "must_try_dishes": [
+        "Laal maas",
+        "Paneer pasanda",
+        "Butter naan"
+      ],
+      "best_for": [
+        "fine dining"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jodhpur",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -531,6 +562,21 @@
       "_source_file": "Rajasthan/Jaipur and Jodhpur Itinerary.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Bishnoi Village, Guda Bishnoi",
+      "city": "Jodhpur",
+      "description": "Village safari to experience the Bishnoi community's traditional lifestyle and wildlife spotting",
+      "hours": "8:30 AM – 1:30 PM",
+      "entry_fee": "₹2000-3000 per jeep (approx.)",
+      "recommended_duration": "5 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jodhpur",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -550,6 +596,19 @@
       "_source_date": "2025-12-29",
       "_source_format": "new",
       "_replaced_from": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan(1).docx"
+    },
+    {
+      "name": "Raghvendra Heritage",
+      "city": "Jodhpur",
+      "location": null,
+      "_source_file": "Rajasthan/Jaipur and Jodhpur Itinerary.pdf",
+      "_source_mtime": 1772384332.3169577,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jodhpur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "local_dishes": [
@@ -749,6 +808,38 @@
       "_source_date": "2025-12-29",
       "_source_format": "new",
       "_replaced_from": "Rajasthan/Lakxmi_All Inclusive Guide_Rajasthan(1).docx"
+    },
+    {
+      "item": "Antiques",
+      "city": "Jodhpur",
+      "category": "Antiques",
+      "where_to_buy": [
+        "Clock Tower Market"
+      ],
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jodhpur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Silver trinkets",
+      "city": "Jodhpur",
+      "category": "Jewelry",
+      "where_to_buy": [
+        "Clock Tower Market"
+      ],
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jodhpur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [],

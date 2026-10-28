@@ -1490,6 +1490,64 @@
       "_source_file": "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
       "_source_date": "2024-06-15",
       "_source_format": "old"
+    },
+    {
+      "name": "Mt. Titlis",
+      "city": "Lucerne",
+      "description": "Mountain peak accessible by revolving cable car with glacier cave and cliff walk",
+      "hours": "8:30 AM to 5:00 PM",
+      "entry_fee": "Variable",
+      "recommended_duration": "6 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Mt. Pilatus Golden Trip",
+      "city": "Lucerne",
+      "description": "Includes boat ride, steepest cogwheel train, rotating gondola and cable car ride",
+      "recommended_duration": "4 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Mount Rigi Kulm",
+      "city": "Lucerne",
+      "description": "Mountain peak accessible by cogwheel train offering panoramic Alpine landscapes",
+      "hours": "Open year-round",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Lake Lucerne Cruise",
+      "city": "Lucerne",
+      "description": "Scenic boat journey across crystal-clear Lake Lucerne surrounded by alpine villages and distant snow-capped peaks.",
+      "hours": "Throughout the day",
+      "entry_fee": "Included with Swiss Travel Pass (or approx. ₹3,300–5,200 without pass)",
+      "recommended_duration": "1 hour",
+      "source_files": [
+        "Europe/Vidhi_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -1689,6 +1747,19 @@
       "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
       "_source_date": "2025-09-02",
       "_source_format": "old"
+    },
+    {
+      "name": "Chügelipaschtete",
+      "city": "Lucerne",
+      "description": "Lucerne Saffron Cake - a sweet and savory pastry filled with a mixture of rice, raisins, saffron, and sometimes meat",
+      "vegetarian": false,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -2067,6 +2138,103 @@
       "_source_file": "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
       "_source_date": "2024-06-15",
       "_source_format": "old"
+    },
+    {
+      "item": "Swiss jewelry",
+      "city": "Lucerne",
+      "category": "Luxury goods",
+      "where_to_buy": [
+        "Bucherer"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1772384311.980408,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Luzerner Lebkuchen",
+      "city": "Lucerne",
+      "category": "Food",
+      "where_to_buy": [
+        "Bachmann Confectionery"
+      ],
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
+    },
+    {
+      "item": "Swiss souvenirs",
+      "city": "Lucerne",
+      "category": "General",
+      "where_to_buy": [
+        "Casagrande Gift Shop"
+      ],
+      "_source_file": "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1772384364.4304612,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Luzerner Lebkuchen (gingerbread cookies)",
+      "city": "Lucerne",
+      "category": "Food",
+      "where_to_buy": [
+        "Bachmann Confectionery"
+      ],
+      "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
+    },
+    {
+      "item": "Swiss Army knives",
+      "city": "Lucerne",
+      "category": "Luxury",
+      "where_to_buy": [
+        "Bucherer Lucerne",
+        "Coop City Lucerne"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "item": "Luxury pens",
+      "city": "Lucerne",
+      "category": "Luxury",
+      "where_to_buy": [
+        "Bucherer Lucerne"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
     }
   ],
   "emergency_contacts": [
@@ -2244,6 +2412,106 @@
       "_source_file": "Switzerland/3. Switzerland- Final Detailed Itinerary.pdf",
       "_source_date": "2024-06-15",
       "_source_format": "old"
+    },
+    {
+      "city": "Lucerne",
+      "mode": "Railway",
+      "description": "Pilatus Railway - world's steepest cogwheel railway",
+      "cost": "Varies",
+      "_source_file": "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1772384311.980408,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Lucerne",
+      "mode": "Gondola",
+      "description": "Panorama Gondola from Kriens to Mount Pilatus summit",
+      "cost": "Varies",
+      "_source_file": "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1772384311.980408,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Lucerne",
+      "mode": "Panorama Gondola",
+      "description": "Gondola from Kriens to Mount Pilatus summit",
+      "_source_file": "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1772384364.4304612,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Lucerne",
+      "mode": "Train (Luzern–Interlaken Express)",
+      "description": "Scenic train route from Lucerne to Interlaken Ost, one of Switzerland's most scenic routes with lakes, waterfalls, and mountain views. Duration approximately 1 hour 50 minutes, runs every hour.",
+      "recommended_pass": "Swiss Travel Pass",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": "2026-04-23"
+    },
+    {
+      "city": "Lucerne",
+      "mode": "Cogwheel Train (Mt. Pilatus Railway)",
+      "description": "The world's steepest cogwheel train ascending Mt. Pilatus from Alpnachstad with dramatic cliffside views.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Partially discounted with Swiss Pass. Full excursion approx. INR 8,000–14,000",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
+    },
+    {
+      "city": "Lucerne",
+      "mode": "Gondola (Mt. Pilatus)",
+      "description": "Panoramic gondola descent from Mt. Pilatus toward Kriens with sweeping aerial views of forests, valleys, and Lake Lucerne.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Partially discounted with Swiss Pass",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
+    },
+    {
+      "city": "Lucerne",
+      "mode": "Lake Cruise (Boat)",
+      "description": "Scenic cruise across Lake Lucerne toward Vitznau. Approx. 1 hr boat ride.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Included with Swiss Travel Pass (or approx. ₹3,300–5,200 without pass)",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Lucerne",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
     }
   ],
   "health_tips": [

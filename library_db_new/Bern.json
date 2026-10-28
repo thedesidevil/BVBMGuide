@@ -420,7 +420,22 @@
       "_source_format": "old"
     }
   ],
-  "transport_options": [],
+  "transport_options": [
+    {
+      "city": "Bern",
+      "mode": "Train",
+      "description": "Frequent train service from Interlaken Ost Station to Bern Hauptbahnhof",
+      "cost": "CHF 25 (~INR 2,300) one-way",
+      "_source_file": "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1772384364.4304612,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Bern",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "health_tips": [],
   "route_guides": [],
   "season_notes": [],

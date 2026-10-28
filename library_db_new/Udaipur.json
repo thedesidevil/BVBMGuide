@@ -719,6 +719,21 @@
       "_source_date": "2025-12-07",
       "_source_format": "new",
       "_replaced_from": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan(1).docx"
+    },
+    {
+      "name": "Lake Pichola",
+      "city": "Udaipur",
+      "description": "Scenic lake with boat rides",
+      "hours": "9:00 AM - 6:00 PM",
+      "entry_fee": "₹400 for Adults, ₹200 for Children. Sunset boat ride ₹700 for Adults, ₹400 for children",
+      "recommended_duration": "2-3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Udaipur",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -794,6 +809,81 @@
       "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan(1).docx",
       "_source_date": "2025-11-12",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Udaipur",
+        "Jaipur"
+      ],
+      "tip": "Use verified transport apps like Uber/Ola or your hotel's car services",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Udaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Udaipur",
+        "Jaipur"
+      ],
+      "tip": "Taxi & Auto Rickshaw Scams: Driver claims your hotel is 'closed' or 'moved' and takes you to a commission-based shop or hotel- Always negotiate a fare or insist on the meter before boarding a local auto, and insist you are taken to your pre-booked hotel, directly",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Udaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Udaipur",
+        "Jaipur"
+      ],
+      "tip": "Fake Tour Guides: A 'friendly' person offers to show you around, then demands a large tip or drags you to overpriced shops. Only use licensed guides (e.g., arranged through your hotel or tourism office)",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Udaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Udaipur",
+        "Jaipur"
+      ],
+      "tip": "Commission Shops: Guides or drivers take you to shops where you are pressured to buy at inflated prices. Shop where you want. Avoid buying immediately—compare prices first. Politely decline offers from unsolicited 'helpers'",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Udaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Udaipur",
+        "Jaipur"
+      ],
+      "tip": "Fake Ticket Sellers: Locals outside attractions sell 'discounted' tickets that are fake or expired. Buy tickets online or at official counters only",
+      "_source_file": "Rajasthan/All Inclusive Guide- Rajasthan_ Janice.pdf",
+      "_source_mtime": 1772384334.7910106,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Udaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "souvenirs": [
@@ -937,6 +1027,70 @@
       "_source_date": "2025-12-07",
       "_source_format": "new",
       "_replaced_from": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan(1).docx"
+    },
+    {
+      "item": "Miniature paintings",
+      "city": "Udaipur",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Hathi Pol Bazaar"
+      ],
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Udaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Puppets",
+      "city": "Udaipur",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Hathi Pol Bazaar"
+      ],
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Udaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Silver jewelry",
+      "city": "Udaipur",
+      "category": "Jewelry",
+      "where_to_buy": [
+        "Bada Bazaar"
+      ],
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Udaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Colorful turbans",
+      "city": "Udaipur",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Bada Bazaar"
+      ],
+      "_source_file": "Rajasthan/Aileen_All Inclusive Guide_Rajasthan.pdf",
+      "_source_mtime": 1772384332.9142203,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Udaipur",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [],

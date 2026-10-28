@@ -1,0 +1,146 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Jadoh",
+      "city": "Meghalaya",
+      "description": "Rice with pork",
+      "vegetarian": false,
+      "where_to_try": "Mawlynnong Village Community Cafe",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Meghalaya",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Shillong"
+    },
+    {
+      "name": "Tungrymbai",
+      "city": "Meghalaya",
+      "description": "Fermented soybean curry",
+      "vegetarian": true,
+      "where_to_try": "Mawlynnong Village Community Cafe",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Meghalaya",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Mawlynnong"
+    },
+    {
+      "name": "Doh khleh",
+      "city": "Meghalaya",
+      "description": "Traditional Khasi dish",
+      "where_to_try": "Trattoria",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Meghalaya",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Shillong"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Meghalaya",
+        "Assam",
+        "Nagaland"
+      ],
+      "tip": "Ask before photographing people in villages",
+      "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.pdf",
+      "_source_mtime": 1772384381.158248,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Meghalaya",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Mawlynnong"
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Bamboo & cane handicrafts",
+      "city": "Meghalaya",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Local markets"
+      ],
+      "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.pdf",
+      "_source_mtime": 1772384381.158248,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Meghalaya",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Shillong"
+    },
+    {
+      "item": "Local jams/pickles",
+      "city": "Meghalaya",
+      "category": "Food",
+      "where_to_buy": [
+        "Local shops"
+      ],
+      "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.pdf",
+      "_source_mtime": 1772384381.158248,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Meghalaya",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Meghalaya",
+        "Assam",
+        "Nagaland"
+      ],
+      "tip": "Carry motion sickness pills if you're prone during long drives",
+      "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.pdf",
+      "_source_mtime": 1772384381.158248,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Meghalaya",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Meghalaya",
+        "Assam",
+        "Nagaland"
+      ],
+      "tip": "Pack insect repellent for village visits",
+      "_source_file": "Northeast India/All Inclusive Guide- Anitha- North East.pdf",
+      "_source_mtime": 1772384381.158248,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Meghalaya",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": []
+}

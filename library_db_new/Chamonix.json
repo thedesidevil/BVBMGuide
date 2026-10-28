@@ -503,6 +503,51 @@
       "_source_date": "2026-02-21",
       "_source_format": "new",
       "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Aiguille du Midi Cable Car",
+      "city": "Chamonix",
+      "description": "Cable car to 3,842 metres with Mont Blanc views",
+      "hours": "Typically 8:30 AM – 4:30/5 PM (weather dependent)",
+      "entry_fee": "Approx. INR 7,000–8,000 per adult",
+      "recommended_duration": "3-4 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Chamonix",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Montenvers Cogwheel Train",
+      "city": "Chamonix",
+      "description": "Historic train to Mer de Glace glacier",
+      "hours": "Typically 8:30 AM – 4:30 PM (season dependent)",
+      "entry_fee": "Approx. INR 3,500–4,500 per adult",
+      "recommended_duration": "3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Chamonix",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Montenvers Cogwheel Train to Mer de Glace",
+      "city": "Chamonix",
+      "description": "Historic train to France's largest glacier",
+      "hours": "Typically 8:30 AM – 4:30 PM (season dependent)",
+      "entry_fee": "Approx. INR 3,500–4,500 per adult",
+      "recommended_duration": "3-4 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Chamonix",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -605,6 +650,22 @@
       "_source_date": "2026-02-21",
       "_source_format": "new",
       "_replaced_from": "France/Tanya and Shovit_All Inclusive Guide(1).docx"
+    },
+    {
+      "item": "High-quality winter accessories",
+      "city": "Chamonix",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Outdoor boutiques for branded alpine wear"
+      ],
+      "_source_file": "France/Tanya and Shovit_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384269.1651094,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Chamonix",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [],

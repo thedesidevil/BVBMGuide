@@ -119,7 +119,35 @@
   "souvenirs": [],
   "emergency_contacts": [],
   "connectivity_tips": [],
-  "transport_options": [],
+  "transport_options": [
+    {
+      "city": "Awaji Island",
+      "mode": "Highway Bus",
+      "description": "The only practical way to reach Nijigen no Mori from Sannomiya Bus Terminal. No direct train access to the park.",
+      "cost": null,
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Awaji Island",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
+    },
+    {
+      "city": "Awaji Island",
+      "mode": "Highway Bus",
+      "description": "The only practical way to reach Nijigen no Mori from Sannomiya Bus Terminal. No direct train access to the park. Travel time 45–60 minutes.",
+      "_source_file": "Japan/Azhar_Japan_All Inclusive Guide.docx",
+      "_source_mtime": 1774407004.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Awaji Island",
+      "_source_format": "old",
+      "_source_date": "2026-03-25"
+    }
+  ],
   "health_tips": [],
   "route_guides": [],
   "season_notes": [],

@@ -180,6 +180,23 @@
       "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
       "_source_date": "2026-05-03",
       "_source_format": "new"
+    },
+    {
+      "name": "Manarola Sunset Viewpoint",
+      "city": "Cinque Terre",
+      "description": "Cliffside viewpoint where the entire village glows in golden-orange light as the sun sets over the Ligurian Sea.",
+      "hours": null,
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Cinque Terre",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -262,6 +279,21 @@
       "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-04",
       "_source_format": "new"
+    },
+    {
+      "city": "Cinque Terre",
+      "mode": "Regional Train (between villages)",
+      "description": "Best way to travel between Cinque Terre villages. Monterosso to Vernazza ~5–10 mins, Vernazza to Manarola ~10–15 mins, Manarola to Riomaggiore ~6 mins.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Cinque Terre",
+      "_source_format": "old",
+      "_source_date": "2026-05-03"
     }
   ],
   "health_tips": [

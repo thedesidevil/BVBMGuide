@@ -249,6 +249,33 @@
       "_source_date": "2025-04-25",
       "_source_format": "old",
       "_replaced_from": "Northeast India/All Inclusive Guide- Sikkim and Darjeeling(1).docx"
+    },
+    {
+      "name": "Toy Train Ride",
+      "city": "Darjeeling",
+      "description": "Heritage train ride from Darjeeling Train Station",
+      "hours": "Departure at 15:35, return at 17:20",
+      "recommended_duration": "2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Darjeeling",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Makaibari Tea Estate",
+      "city": "Darjeeling",
+      "description": "Tea estate visit en route to Siliguri",
+      "recommended_duration": "1 hour",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Darjeeling",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -259,6 +286,32 @@
       "_source_date": "2025-04-25",
       "_source_format": "old",
       "_replaced_from": "Northeast India/All Inclusive Guide- Sikkim and Darjeeling(1).docx"
+    },
+    {
+      "name": "Udaan Hotels",
+      "city": "Darjeeling",
+      "location": null,
+      "_source_file": "Northeast India/Copy of All Inclusive Guide- Sikkim and Darjeeling.pdf",
+      "_source_mtime": 1772384380.015991,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Darjeeling",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "name": "Dekeling Resort",
+      "city": "Darjeeling",
+      "location": null,
+      "_source_file": "Northeast India/Copy of All Inclusive Guide- Sikkim and Darjeeling.pdf",
+      "_source_mtime": 1772384380.015991,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Darjeeling",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "local_dishes": [
@@ -471,6 +524,21 @@
       "_source_file": "Northeast India/Copy of All Inclusive Guide- Sikkim and Darjeeling.docx",
       "_source_date": "2025-04-25",
       "_source_format": "old"
+    },
+    {
+      "city": "Darjeeling",
+      "mode": "Toy Train",
+      "description": "Joy ride departing at 15:35 from Darjeeling Train Station, arriving back at 17:20",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Northeast India/Copy of All Inclusive Guide- Sikkim and Darjeeling.pdf",
+      "_source_mtime": 1772384380.015991,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Darjeeling",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "health_tips": [

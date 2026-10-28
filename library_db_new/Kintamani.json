@@ -341,6 +341,23 @@
       "_source_date": "2026-10-20",
       "_source_format": "new",
       "_replaced_from": "Bali Indonesia/Dilna- Bali- All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Mount Batur Sunrise Jeep Experience",
+      "city": "Kintamani",
+      "description": "Journey across Mount Batur's black lava fields by 4WD jeep. Arriving before dawn, witness the first rays of sunlight illuminate the surrounding mountains, Lake Batur, and dramatic volcanic landscape.",
+      "hours": "Pre-dawn departure",
+      "entry_fee": null,
+      "recommended_duration": "2–3 hours",
+      "source_files": [
+        "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kintamani",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [],
@@ -370,6 +387,34 @@
       "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
       "_source_date": "2026-07-01",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Kintamani"
+      ],
+      "tip": "Temperatures at the Mount Batur summit can feel surprisingly cool before sunrise — carry a light jacket or fleece.",
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kintamani",
+      "_source_format": "old",
+      "_source_date": "2026-06-01"
+    },
+    {
+      "cities": [
+        "Kintamani"
+      ],
+      "tip": "For Mount Batur, wear comfortable trekking shoes, a light jacket or fleece, cap and sunglasses, and carry a small backpack with water and snacks. Temperatures at the summit can be cool before sunrise.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kintamani",
+      "_source_format": "old",
+      "_source_date": "2026-06-05"
     }
   ],
   "souvenirs": [
@@ -411,6 +456,24 @@
       "_source_file": "Bali Indonesia/Dilna- Bali- All Inclusive Guide.docx",
       "_source_date": "2026-10-20",
       "_source_format": "new"
+    },
+    {
+      "item": "Kintamani Coffee",
+      "city": "Kintamani",
+      "category": "Food & Drink",
+      "where_to_buy": [
+        "Krisna Oleh-Oleh Bali",
+        "Ubud Specialty Coffee Stores",
+        "Kintamani Coffee Plantations"
+      ],
+      "_source_file": "Bali Indonesia/Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780336018.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kintamani",
+      "_source_format": "old",
+      "_source_date": "2026-06-01"
     }
   ],
   "emergency_contacts": [],
@@ -498,7 +561,21 @@
       "_source_format": "new"
     }
   ],
-  "transport_options": [],
+  "transport_options": [
+    {
+      "city": "Kintamani",
+      "mode": "4WD Jeep",
+      "description": "4WD jeep used for the Mount Batur sunrise experience, traversing black lava fields before dawn.",
+      "_source_file": "Bali Indonesia/05062026_Apurva_Bali _All Inclusive Guide.docx",
+      "_source_mtime": 1780701760.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Kintamani",
+      "_source_format": "old",
+      "_source_date": "2026-06-05"
+    }
+  ],
   "health_tips": [
     {
       "cities": [

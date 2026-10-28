@@ -763,6 +763,31 @@
       "_source_file": "Vietnam/Eating Out Guide_ Vietnam.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Hoa Bien Restaurant",
+      "city": "Phu Quoc",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "price_range": "Rs. 350 - Rs. 800",
+      "hours": "9:00 AM – 11:00 PM",
+      "ambience": "Spacious, airy seafood spot near the island's welcome gate with street-view ambiance",
+      "area": "Duong Dong",
+      "must_try_dishes": [
+        "Budget-friendly seafood"
+      ],
+      "best_for": [
+        "family",
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Phu Quoc",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -1330,6 +1355,22 @@
       "_source_file": "Vietnam/Ishita- Phu Quoc- All Inclusive Guide.docx",
       "_source_date": "2026-09-14",
       "_source_format": "new"
+    },
+    {
+      "item": "Phu Quoc pepper (black, white & red varieties)",
+      "city": "Phu Quoc",
+      "category": "Food",
+      "where_to_buy": [
+        "Duong Dong Market"
+      ],
+      "_source_file": "Vietnam/Mukherjee_s_All Inclusive Guide_Vietnam.pdf",
+      "_source_mtime": 1772384373.4813194,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Phu Quoc",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [
@@ -1433,6 +1474,21 @@
       "_source_file": "Vietnam/Ishita- Phu Quoc- All Inclusive Guide.docx",
       "_source_date": "2026-09-14",
       "_source_format": "new"
+    },
+    {
+      "city": "Phu Quoc",
+      "mode": "Vin Bus",
+      "description": "Free shuttle bus service for rides to and from Phu Quoc Night Market. Take Vin Bus 17 or 19. Bus frequency every 10-20 mins. Runs from 6 am to midnight.",
+      "recommended_pass": null,
+      "cost": "Free",
+      "_source_file": "Vietnam/Vietnam- All Inclusive Guide_Janice.pdf",
+      "_source_mtime": 1772384372.1257439,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Phu Quoc",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "health_tips": [

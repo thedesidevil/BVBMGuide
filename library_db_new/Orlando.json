@@ -316,6 +316,86 @@
       "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Black Rooster Taqueira",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Mexican"
+      ],
+      "hours": "11am-3pm, 5-11pm (Closed on Monday)",
+      "area": "CBD",
+      "must_try_dishes": [
+        "Tacos",
+        "Chicken tinga",
+        "tacos"
+      ],
+      "source_files": [],
+      "highlights": [
+        "Chicken tinga",
+        "tacos"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Jeremiahs Italian Ice",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Ice cream"
+      ],
+      "hours": "12pm-10pm",
+      "must_try_dishes": [
+        "Ice cream"
+      ],
+      "source_files": [],
+      "highlights": [
+        "Ice cream chain"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Gideons Bakehouse",
+      "city": "Orlando",
+      "cuisine_type": [
+        "Bakery"
+      ],
+      "hours": "10am-7pm",
+      "area": "CBD",
+      "must_try_dishes": [
+        "Cookies and cakes",
+        "Cookies",
+        "cakes"
+      ],
+      "source_files": [],
+      "highlights": [
+        "Cookies and cakes"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -425,6 +505,93 @@
       "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Island of Adventure",
+      "city": "Orlando",
+      "description": "Theme park",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Orlando Outlet Marketplace",
+      "city": "Orlando",
+      "description": "Shopping outlet",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Premium Outlets",
+      "city": "Orlando",
+      "description": "Shopping outlet",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "The Mall at Millenia",
+      "city": "Orlando",
+      "description": "Shopping mall",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Cranes Roost Park",
+      "city": "Orlando",
+      "description": "Halloween party venue",
+      "entry_fee": "free",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "City of Winter Garden",
+      "city": "Orlando",
+      "description": "Halloween event",
+      "entry_fee": "free",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Oviedo Mall",
+      "city": "Orlando",
+      "description": "Halloween event",
+      "entry_fee": "free",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -435,6 +602,19 @@
       "_source_date": "2025-05-01",
       "_source_format": "new",
       "_replaced_from": "USA/ALL INCLUSIVE GUIDE USA.docx"
+    },
+    {
+      "name": "Airbnb - 8020 Tuscany Way 2206",
+      "city": "Orlando",
+      "location": "Davenport, FL",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "local_dishes": [
@@ -477,7 +657,26 @@
     }
   ],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Tipping people, especially at restaurants, is a norm. Restaurant waiters expect 18%-25% of total bill as tips. Also customary to add 10%-15% tips for taxi rides",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "souvenirs": [
     {
       "item": "Outlet shopping",
@@ -493,7 +692,22 @@
       "_source_format": "old"
     }
   ],
-  "emergency_contacts": [],
+  "emergency_contacts": [
+    {
+      "city": "Orlando",
+      "service": "Emergency",
+      "number": "911",
+      "notes": "One number for any emergencies including medical emergencies and ambulance. Accessible from anywhere, even where there doesn't appear to be any cell signal",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "connectivity_tips": [
     {
       "cities": [
@@ -507,6 +721,24 @@
       "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Buy a sim card from TSIM. They offer both physical and eSIMs. If getting two sims, recommend getting a T-mobile one and an AT&T one",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "transport_options": [
@@ -518,6 +750,19 @@
       "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "city": "Orlando",
+      "mode": "Rental Car",
+      "description": "Public transport isn't great. Finding parking shouldn't be a big deal so use rental car",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "health_tips": [
@@ -529,6 +774,57 @@
       "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Travel insurance recommended with $100,000 coverage for each family member. Tata AIG has a plan for Rs. 8370 with $100 deductible. visitorscoverage.com has a Patriot America Plus plan with zero deductible at $200",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Boston",
+        "New York",
+        "Orlando",
+        "Miami",
+        "Atlanta"
+      ],
+      "tip": "Most places in the US are pretty dry and it is easy to get sunburnt, so carry and apply sunscreen (SPF 30) when out in the Sun",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Orlando",
+        "Miami"
+      ],
+      "tip": "Florida should be pleasant but humid - max temp: 28°C, min: 24°C",
+      "_source_file": "USA/Varun-Priyankee-Orlando-2024.pdf",
+      "_source_mtime": 1772384247.3236897,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Orlando",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "route_guides": [],

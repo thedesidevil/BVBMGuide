@@ -208,6 +208,56 @@
       "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
       "_source_date": "2026-05-25",
       "_source_format": "new"
+    },
+    {
+      "name": "Elisa - Bistro & Terrasse",
+      "city": "Brienz",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "CHF 40-60 per person",
+      "hours": "6:30 PM - 11 PM",
+      "ambience": "Located at the Grandhotel Giessbach, offering panoramic views of Lake Brienz and the Giessbach Falls",
+      "nearby_landmarks": [
+        "Lake Brienz",
+        "Giessbach Falls"
+      ],
+      "must_try_dishes": [
+        "Fresh fish from Lake Brienz"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brienz",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Restaurant Lindenblüte, Hotel Lindenhof",
+      "city": "Brienz",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "CHF 40-60 per person",
+      "hours": "5:30 PM - 9:30 PM",
+      "ambience": "Situated along the shores of Lake Brienz, offering a romantic lakeside dining experience",
+      "nearby_landmarks": [
+        "Lake Brienz"
+      ],
+      "must_try_dishes": [
+        "seasonal mains"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brienz",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -309,6 +359,22 @@
       "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
       "_source_date": "2026-05-25",
       "_source_format": "new"
+    },
+    {
+      "name": "Lake Brienz Cruise",
+      "city": "Brienz",
+      "description": "Peaceful cruise across turquoise waters of Lake Brienz surrounded by dramatic mountains, waterfalls, and charming Swiss villages. Best enjoyed from open-air upper deck seating.",
+      "hours": "Boat schedules operate throughout the day",
+      "recommended_duration": "1 hr 15 mins (one way)",
+      "source_files": [
+        "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brienz",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [],
@@ -368,6 +434,20 @@
       "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-04",
       "_source_format": "new"
+    },
+    {
+      "city": "Brienz",
+      "mode": "Railway",
+      "description": "Historic Brienz Rothorn Railway - vintage steam-powered train climbing to panoramic viewpoints",
+      "cost": "Booked Activity",
+      "_source_file": "Switzerland/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Brienz",
+      "_source_format": "old",
+      "_source_date": "2026-05-03"
     }
   ],
   "health_tips": [],

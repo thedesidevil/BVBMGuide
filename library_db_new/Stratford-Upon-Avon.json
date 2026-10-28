@@ -141,7 +141,21 @@
       "_source_format": "new"
     }
   ],
-  "hotels": [],
+  "hotels": [
+    {
+      "name": "Local hotel or B&B",
+      "city": "Stratford-upon-Avon",
+      "location": "Central Stratford-upon-Avon",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Stratford-Upon-Avon",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "local_dishes": [
     {
       "name": "Sticky Toffee Pudding",

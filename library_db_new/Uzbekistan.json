@@ -1,0 +1,158 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Plov (Uzbek Pilaf)",
+      "city": "Uzbekistan",
+      "description": "The national dish of Uzbekistan, plov is a fragrant rice dish cooked with carrots, onions, spices, and usually lamb or chicken",
+      "vegetarian": false,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Uzbekistan",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Tashkent"
+    },
+    {
+      "name": "Manti",
+      "city": "Uzbekistan",
+      "description": "Large steamed dumplings typically filled with minced meat and onions. Vegetarian versions with pumpkin or potatoes are also sometimes available",
+      "vegetarian": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Uzbekistan",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Almaty"
+    },
+    {
+      "name": "Samsa",
+      "city": "Uzbekistan",
+      "description": "A popular street snack made from flaky baked pastry filled with meat, pumpkin, or vegetables, traditionally cooked in a clay oven known as a tandoor",
+      "vegetarian": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Uzbekistan",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Tashkent"
+    },
+    {
+      "name": "Lagman",
+      "city": "Uzbekistan",
+      "description": "A comforting noodle dish made with hand-pulled noodles, vegetables, and a rich broth or stir-fry sauce",
+      "vegetarian": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Uzbekistan",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Almaty"
+    },
+    {
+      "name": "Shashlik",
+      "city": "Uzbekistan",
+      "description": "Skewered grilled meat kebabs, typically served with fresh onions and flatbread. One of the most widely available dishes in Central Asia",
+      "vegetarian": false,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Uzbekistan",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Almaty"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Silk & Ikat Fabrics",
+      "city": "Uzbekistan",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Siab Bazaar in Samarkand",
+        "Artisan boutiques in the Old Town of Bukhara"
+      ],
+      "_source_file": "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx",
+      "_source_mtime": 1775604640.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Uzbekistan",
+      "_source_format": "old",
+      "_source_date": "2026-04-07",
+      "_legacy_note": "same name also exists in Bukhara"
+    },
+    {
+      "item": "Suzani Embroidery",
+      "city": "Uzbekistan",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Craft shops near Lyabi-Hauz Ensemble in Bukhara",
+        "Markets around Registan Square in Samarkand"
+      ],
+      "_source_file": "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx",
+      "_source_mtime": 1775604640.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Uzbekistan",
+      "_source_format": "old",
+      "_source_date": "2026-04-07",
+      "_legacy_note": "same name also exists in Bukhara"
+    },
+    {
+      "item": "Rishtan Ceramics",
+      "city": "Uzbekistan",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Markets across Tashkent and Samarkand"
+      ],
+      "_source_file": "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx",
+      "_source_mtime": 1775604640.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Uzbekistan",
+      "_source_format": "old",
+      "_source_date": "2026-04-07",
+      "_legacy_note": "same name also exists in Samarkand"
+    },
+    {
+      "item": "Hand-Carved Wooden Crafts",
+      "city": "Uzbekistan",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Craft markets around Chorsu Bazaar"
+      ],
+      "_source_file": "Almaty Kazakhstan/Uzbekistan and Kazhakstan- All Inclusive Guide_13032026.docx",
+      "_source_mtime": 1775604640.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Uzbekistan",
+      "_source_format": "old",
+      "_source_date": "2026-04-07",
+      "_legacy_note": "same name also exists in Tashkent"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": []
+}

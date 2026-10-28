@@ -334,7 +334,35 @@
       "_replaced_from": "France/Sneha_Europe_All Inclusive Guide(1).docx"
     }
   ],
-  "transport_options": [],
+  "transport_options": [
+    {
+      "city": "Jungfraujoch",
+      "mode": "Eiger Express Gondola",
+      "description": "Panoramic cable car from Grindelwald Terminal toward Eigergletscher station. Approx. 15 mins.",
+      "cost": "Approx. ₹18,500–24,500 per person including full Jungfraujoch access",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jungfraujoch",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "city": "Jungfraujoch",
+      "mode": "Jungfrau Railway",
+      "description": "Train from Eigergletscher station to Jungfraujoch – Top of Europe, Europe's highest railway station.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Jungfraujoch",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    }
+  ],
   "health_tips": [
     {
       "cities": [

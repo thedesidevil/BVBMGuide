@@ -913,6 +913,19 @@
       "_source_file": "Greece and Turkey/Istanbul- All Inclusive Guide_ Annie, Heather, Holly.docx",
       "_source_date": "2026-10-20",
       "_source_format": "new"
+    },
+    {
+      "name": "Taksim Square & Istiklal Street",
+      "city": "Istanbul",
+      "description": "Lively shopping and food boulevard",
+      "hours": "24 hours a day",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Istanbul",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -1563,6 +1576,35 @@
       "_source_file": "Greece and Turkey/Istanbul- All Inclusive Guide_ Annie, Heather, Holly.docx",
       "_source_date": "2026-10-20",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Athens",
+        "Istanbul"
+      ],
+      "tip": "Check local news or apps (like Google Alerts or Smart Traveler) for protests or strikes",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Istanbul",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Istanbul"
+      ],
+      "tip": "Taxis without Meters - Always insist on using the meter. In Istanbul, use BiTaksi app (like Uber)",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Istanbul",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "souvenirs": [

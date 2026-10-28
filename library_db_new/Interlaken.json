@@ -1253,6 +1253,101 @@
       "_source_file": "Switzerland/Where to eat in Switzerland.pdf",
       "_source_date": null,
       "_source_format": "old"
+    },
+    {
+      "name": "Restaurant Crystal Jungfraujoch",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "International",
+        "Swiss"
+      ],
+      "price_range": "₹2,500–4,000 per person",
+      "hours": "11:00 AM – 2:30 PM",
+      "ambience": "Panoramic dining",
+      "area": "Jungfraujoch Summit",
+      "highlights": [
+        "Scenic meal at the Top of Europe"
+      ],
+      "must_try_dishes": [
+        "Veg rösti",
+        "Pasta"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Bollywood Restaurant Jungfraujoch",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹2,500–4,000 per person",
+      "hours": "11:00 AM – 3:30 PM",
+      "ambience": "Indian",
+      "area": "Jungfraujoch Summit",
+      "highlights": [
+        "Familiar Indian flavours at the summit"
+      ],
+      "must_try_dishes": [
+        "Dal",
+        "Paneer"
+      ],
+      "best_for": [
+        "casual",
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Self Service Restaurant Jungfraujoch",
+      "city": "Interlaken",
+      "cuisine_type": [
+        "International",
+        "Fast Food"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "10:15 AM – 3:30 PM",
+      "ambience": "Casual",
+      "area": "Jungfraujoch Summit",
+      "highlights": [
+        "Quick meal at the summit"
+      ],
+      "must_try_dishes": [
+        "Pizza",
+        "Snacks"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "France/Sneha_Europe_All Inclusive Guide.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -1505,6 +1600,34 @@
       "_source_file": "Switzerland/All Inclusive Guide- Switzerland_Mr. Nizam.pdf",
       "_source_date": "2025-07-07",
       "_source_format": "old"
+    },
+    {
+      "name": "Jungfraujoch - Top of Europe",
+      "city": "Interlaken",
+      "description": "Alpine summit with glacier views, observatory, ice palace and snow activities",
+      "entry_fee": "CHF 210-240 (~INR 18,000-21,000) round trip",
+      "recommended_duration": "4 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Harder Kulm Viewpoint",
+      "city": "Interlaken",
+      "description": "Best view of Lakes Thun & Brienz and the Eiger, Mönch, and Jungfrau trio",
+      "entry_fee": "CHF 38 round trip",
+      "hours": "09:10–21:40",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -1573,6 +1696,19 @@
       "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
       "_source_date": "2026-05-25",
       "_source_format": "new"
+    },
+    {
+      "name": "Airbnb Faulensee",
+      "city": "Interlaken",
+      "location": "Interlakenstrasse 64, Faulensee, Bern 3705, Switzerland",
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
     }
   ],
   "local_dishes": [
@@ -2219,6 +2355,118 @@
       "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
       "_source_date": "2026-05-25",
       "_source_format": "new"
+    },
+    {
+      "item": "Typical souvenirs like fridge magnets, bottle openers, postcards",
+      "city": "Interlaken",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Edelweiss Shop"
+      ],
+      "_source_file": "France/All Inclusive Guide- Switzerland and Paris.pdf",
+      "_source_mtime": 1772384270.5404398,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Typical souvenirs",
+      "city": "Interlaken",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Edelweiss Shop"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Cow Bells (Miniature)",
+      "city": "Interlaken",
+      "category": "Artisan Crafts",
+      "where_to_buy": [
+        "Souvenir shops in Interlaken and Jungfrau region"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2026-05-03"
+    },
+    {
+      "item": "Alpine herbal teas",
+      "city": "Interlaken",
+      "category": "Food",
+      "where_to_buy": [
+        "Interlaken Old Town"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "item": "Swiss biscuits and desserts",
+      "city": "Interlaken",
+      "category": "Food",
+      "where_to_buy": [
+        "Interlaken Old Town"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "item": "Cowbells and Alpine wooden décor",
+      "city": "Interlaken",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Interlaken Old Town"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "item": "Handmade Swiss souvenirs",
+      "city": "Interlaken",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Interlaken Old Town"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
     }
   ],
   "emergency_contacts": [
@@ -2499,6 +2747,148 @@
       "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-10-20",
       "_source_format": "new"
+    },
+    {
+      "city": "Interlaken",
+      "mode": "Funicular",
+      "description": "Harderbahn Funicular to Harder Kulm viewpoint",
+      "cost": "CHF 38 round trip",
+      "_source_file": "Switzerland/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1772384311.980408,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Interlaken",
+      "mode": "Local Bus",
+      "description": "Public transport connecting train stations to accommodations and attractions",
+      "_source_file": "Switzerland/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
+    },
+    {
+      "city": "Interlaken",
+      "mode": "Train",
+      "description": "Interlaken–Lucerne Express, part of the scenic Golden Pass Line",
+      "cost": "Travel time approximately 2 hours",
+      "_source_file": "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1772384364.4304612,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Interlaken",
+      "mode": "Harderbahn Funicular",
+      "description": "Funicular to Harder Kulm viewpoint, departs every 30 mins",
+      "cost": "CHF 38 round trip",
+      "_source_file": "Austria/All Inclusive Guide Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1772384364.4304612,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Interlaken",
+      "mode": "Cable car",
+      "description": "Cable cars and funiculars to mountain destinations like Harder Kulm and Jungfraujoch",
+      "_source_file": "Austria/All Inclusive Guide - Switzerland and Austria - Omkar.pdf",
+      "_source_mtime": 1748240155.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2025-05-26"
+    },
+    {
+      "city": "Interlaken",
+      "mode": "Cogwheel Train to Jungfraujoch",
+      "description": "Train route from Interlaken Ost via Lauterbrunnen or Grindelwald, continuing via Kleine Scheidegg to Jungfraujoch (Top of Europe). Total travel time approximately 2–2.5 hours each way.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Covered/discounted with Swiss Travel Pass",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2026-04-23"
+    },
+    {
+      "city": "Interlaken",
+      "mode": "Lake Cruise",
+      "description": "Boat cruises on Lake Thun and Lake Brienz offering turquoise waters and mountain reflections. Cruises run throughout the day.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Covered/discounted with Swiss Travel Pass",
+      "_source_file": "France/Sneha_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1776987744.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2026-04-23"
+    },
+    {
+      "city": "Interlaken",
+      "mode": "Funicular (Harder Kulm)",
+      "description": "Funicular railway ascending to Harder Kulm viewpoint above Interlaken.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Usually discounted with Swiss Pass. Full ticket approx. INR 3,500–5,000",
+      "_source_file": "Switzerland/SS_Switzerland and Paris_All Inclusive Guide.docx",
+      "_source_mtime": 1779683478.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2026-05-25"
+    },
+    {
+      "city": "Interlaken",
+      "mode": "Funicular",
+      "description": "Funicular ride from Interlaken to Harder Kulm. Approx. 10 mins.",
+      "cost": "Approx. ₹4,700–6,600 per person",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "city": "Interlaken",
+      "mode": "GoldenPass Scenic Train",
+      "description": "Panoramic rail journey from Lucerne to Interlaken with large glass windows framing endless alpine scenery. Approx. 2 hrs scenic journey.",
+      "recommended_pass": "Swiss Travel Pass",
+      "cost": "Included with Swiss Travel Pass (seat reservations may cost extra)",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Interlaken",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
     }
   ],
   "health_tips": [

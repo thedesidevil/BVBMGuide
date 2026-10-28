@@ -177,9 +177,38 @@
       "_source_date": "2025-09-02",
       "_source_format": "old",
       "_replaced_from": "France/Paris, Switzerland and Italy.pdf"
+    },
+    {
+      "name": "San Quirico d'Orcia",
+      "city": "Pienza",
+      "description": "A charming medieval hill town in Val d'Orcia, known for its historic walls, Romanesque churches, and the Renaissance Horti Leonini gardens",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pienza",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
-  "hotels": [],
+  "hotels": [
+    {
+      "name": "Renaissance Apartment",
+      "city": "Pienza",
+      "location": "Corso Rossellino 85",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pienza",
+      "_source_format": "old",
+      "_source_date": "2025-09-02"
+    }
+  ],
   "local_dishes": [
     {
       "name": "Ribollita",
@@ -362,6 +391,92 @@
       "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
       "_source_date": "2025-09-02",
       "_source_format": "old"
+    },
+    {
+      "item": "Pecorino di Pienza cheese",
+      "city": "Pienza",
+      "category": "Food",
+      "where_to_buy": [
+        "Local cheese shops"
+      ],
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pienza",
+      "_source_format": "old",
+      "_source_date": "2025-09-02"
+    },
+    {
+      "item": "Pecorino di Pienza cheese (vacuum-sealed)",
+      "city": "Pienza",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pienza",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Tuscan olive oil",
+      "city": "Pienza",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pienza",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Local wines",
+      "city": "Pienza",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pienza",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Hand-painted ceramics",
+      "city": "Pienza",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pienza",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Artisanal linens",
+      "city": "Pienza",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Pienza",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [],

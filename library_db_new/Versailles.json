@@ -117,7 +117,21 @@
   "souvenirs": [],
   "emergency_contacts": [],
   "connectivity_tips": [],
-  "transport_options": [],
+  "transport_options": [
+    {
+      "city": "Versailles",
+      "mode": "RER C Train",
+      "description": "Train from Paris toward Versailles Château Rive Gauche station. Approx. 1 hr 15 mins from hotel.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Versailles",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    }
+  ],
   "health_tips": [],
   "route_guides": [],
   "season_notes": [],

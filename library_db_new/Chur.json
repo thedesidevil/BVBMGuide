@@ -88,7 +88,23 @@
       "_source_format": "new"
     }
   ],
-  "attractions": [],
+  "attractions": [
+    {
+      "name": "Bernina Express",
+      "city": "Chur",
+      "description": "Legendary panoramic train journey from Swiss Alps to northern Italy passing glaciers, alpine lakes, mountain passes, and the Landwasser Viaduct",
+      "hours": "Throughout the day",
+      "entry_fee": "Seat reservation fees approx. ₹2,400–4,200 per person (Swiss Pass may cover base fare)",
+      "recommended_duration": "4.5 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Chur",
+      "_source_format": "old",
+      "_source_date": null
+    }
+  ],
   "hotels": [
     {
       "name": "Hotel Surselva",
@@ -112,11 +128,58 @@
       "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-14",
       "_source_format": "new"
+    },
+    {
+      "item": "Local wool products and winter accessories",
+      "city": "Chur",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "Chur Old Town"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Chur",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "item": "Swiss mountain-themed gifts",
+      "city": "Chur",
+      "category": "Souvenirs",
+      "where_to_buy": [
+        "Chur Old Town"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Chur",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
     }
   ],
   "emergency_contacts": [],
   "connectivity_tips": [],
-  "transport_options": [],
+  "transport_options": [
+    {
+      "city": "Chur",
+      "mode": "Bernina Express",
+      "description": "Legendary panoramic train from Chur to Tirano, Italy. Approx. 4.5 hrs scenic rail journey passing glaciers, turquoise alpine lakes, and the Landwasser Viaduct.",
+      "cost": "Seat reservation fees approx. ₹2,400–4,200 per person (Swiss Pass may cover base fare)",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Chur",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    }
+  ],
   "health_tips": [],
   "route_guides": [],
   "season_notes": [],

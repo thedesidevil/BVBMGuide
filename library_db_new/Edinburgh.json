@@ -956,6 +956,167 @@
       "_source_file": "England and Scotland/All Inclusive Guide-Edinburgh.pdf",
       "_source_date": "2025-06-03",
       "_source_format": "old"
+    },
+    {
+      "name": "Coach House Coffee Shop",
+      "city": "Edinburgh",
+      "cuisine_type": [
+        "Local"
+      ],
+      "area": "Luss village",
+      "highlights": [
+        "enjoy a scone"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Howies",
+      "city": "Edinburgh",
+      "cuisine_type": [
+        "Scottish"
+      ],
+      "price_range": "INR 2400 pp",
+      "hours": "12:00 pm – 9:00 pm",
+      "ambience": "Local Scottish produce, casual feel",
+      "area": "Waterloo Place",
+      "highlights": [
+        "Local Scottish produce",
+        "casual feel"
+      ],
+      "must_try_dishes": [
+        "Haggis",
+        "Scottish salmon"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Oink",
+      "city": "Edinburgh",
+      "cuisine_type": [
+        "British"
+      ],
+      "price_range": "INR 1200 pp",
+      "hours": "11:00 am – 5:00 pm",
+      "ambience": "Fast, flavourful roast pork",
+      "area": "Victoria Street",
+      "highlights": [
+        "Fast",
+        "flavourful roast pork"
+      ],
+      "must_try_dishes": [
+        "Hog roast bap with apple sauce"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "The Gateway Restaurant",
+      "city": "Edinburgh",
+      "cuisine_type": [
+        "British"
+      ],
+      "price_range": "INR 1800 pp",
+      "hours": "10:00 am – 4:00 pm",
+      "ambience": "Garden-view, fresh seasonal food",
+      "area": "Royal Botanic Garden",
+      "nearby_landmarks": [
+        "Royal Botanic Garden Edinburgh"
+      ],
+      "highlights": [
+        "Garden-view",
+        "fresh seasonal food"
+      ],
+      "must_try_dishes": [
+        "Cullen skink",
+        "fishcake"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Mimi's Bakehouse",
+      "city": "Edinburgh",
+      "cuisine_type": [
+        "Bakery"
+      ],
+      "ambience": "Vintage bakery vibes, cake displays",
+      "area": "Leith",
+      "highlights": [
+        "Vintage bakery vibes",
+        "cake displays"
+      ],
+      "must_try_dishes": [
+        "Rainbow cake",
+        "salted caramel brownie"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Maggie Dickson",
+      "city": "Edinburgh",
+      "cuisine_type": [
+        "Pub"
+      ],
+      "price_range": "£10-20",
+      "hours": "11 AM – 1 PM",
+      "ambience": "cosy pub serving hearty meals, whisky and ale in an old-fashioned space with TVs",
+      "must_try_dishes": [
+        "fish and chips",
+        "burgers and nachos"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "attractions": [
@@ -1244,6 +1405,72 @@
       "_source_file": "England and Scotland/All Inclusive Guide-Edinburgh.pdf",
       "_source_date": "2025-06-03",
       "_source_format": "old"
+    },
+    {
+      "name": "Queen Elizabeth Forest Park",
+      "city": "Edinburgh",
+      "description": "Enjoy one of the many breathtaking trails",
+      "hours": "10:00 am to 5:00 pm",
+      "recommended_duration": "4 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Three Lochs scenic drive",
+      "city": "Edinburgh",
+      "description": "Scenic driving route",
+      "recommended_duration": "2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Balloch Castle",
+      "city": "Edinburgh",
+      "description": "Historic castle",
+      "recommended_duration": "1 hour",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Loch Lomond",
+      "city": "Edinburgh",
+      "description": "Beautiful loch",
+      "recommended_duration": "2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Modern Art Gallery One",
+      "city": "Edinburgh",
+      "description": "Art gallery",
+      "recommended_duration": "1 hour",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -1262,6 +1489,19 @@
       "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti(1).docx",
       "_source_date": "2025-06-13",
       "_source_format": "new"
+    },
+    {
+      "name": "Airbnb accommodation",
+      "city": "Edinburgh",
+      "location": "Central Edinburgh",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "local_dishes": [
@@ -1520,6 +1760,19 @@
       "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.docx",
       "_source_date": "2025-12-17",
       "_source_format": "new"
+    },
+    {
+      "name": "Scottish tablets/fudge",
+      "city": "Edinburgh",
+      "description": "medium-hard sweet that can be eaten on its own, mixed in with ice cream, or with other flavours, such as rum and raisin, chocolate orange, nuts",
+      "vegetarian": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -1570,6 +1823,21 @@
       "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.docx",
       "_source_date": "2025-12-17",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "London",
+        "Edinburgh"
+      ],
+      "tip": "Major spots like Borough Market, Covent Garden, and Edinburgh Castle can be busy — stay aware in pickpocket-prone areas",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "souvenirs": [
@@ -1843,6 +2111,22 @@
       "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.docx",
       "_source_date": "2025-12-17",
       "_source_format": "new"
+    },
+    {
+      "item": "Typical souvenirs like magnets, bottle openers with images like the Scottish Highlands, Edinburgh Castle, Loch Ness",
+      "city": "Edinburgh",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Souvenir shops all across"
+      ],
+      "_source_file": "England and Scotland/Edinburgh- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384252.273998,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [
@@ -1870,6 +2154,87 @@
       "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide(1).docx",
       "_source_date": "2025-10-17",
       "_source_format": "new"
+    },
+    {
+      "city": "Edinburgh",
+      "service": "Emergency services",
+      "number": "999",
+      "_source_file": "England and Scotland/Edinburgh- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384252.273998,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Edinburgh",
+      "service": "Police Non Emergency",
+      "number": "101",
+      "_source_file": "England and Scotland/Edinburgh- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384252.273998,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Edinburgh",
+      "service": "NHS Emergency",
+      "number": "111",
+      "notes": "24/7",
+      "_source_file": "England and Scotland/Edinburgh- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384252.273998,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Edinburgh",
+      "service": "Indian Embassy Honorary Consulate",
+      "number": "+44 131 229 2144",
+      "notes": "17A Abercromby Place",
+      "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.pdf",
+      "_source_mtime": 1772384255.991847,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Edinburgh",
+      "service": "Honorary Consulate",
+      "number": "+44 131 229 2144",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh.pdf",
+      "_source_mtime": 1772384250.6797686,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Edinburgh",
+      "service": "Indian Honorary Consulate",
+      "number": "+44 131 229 2144",
+      "notes": "Honorary Consulate",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384253.6307988,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "connectivity_tips": [
@@ -1988,6 +2353,20 @@
       "_source_file": "England and Scotland/All Inclusive Guide-Edinburgh.pdf",
       "_source_date": "2025-06-03",
       "_source_format": "old"
+    },
+    {
+      "cities": [
+        "Edinburgh"
+      ],
+      "tip": "There are many SIM Card providers in the UK. I would recommend Three. The best place to buy a sim card is at the airport kiosks. Even if you do not purchase an international roaming plan for your current India number, remember to activate roaming so that you receive messages (important for things like OTPs).",
+      "_source_file": "England and Scotland/Edinburgh- All Inclusive Guide.pdf",
+      "_source_mtime": 1772384252.273998,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "transport_options": [
@@ -2051,6 +2430,19 @@
       "_source_file": "England and Scotland/Kush_Scotland_All Inclusive Guide.docx",
       "_source_date": "2025-12-17",
       "_source_format": "new"
+    },
+    {
+      "city": "Edinburgh",
+      "mode": "Bus",
+      "description": "Public transport throughout the city",
+      "_source_file": "England and Scotland/All Inclusive Guide - Scotland - Smriti.pdf",
+      "_source_mtime": 1772384253.1273048,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Edinburgh",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "health_tips": [

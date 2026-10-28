@@ -69,6 +69,35 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "name": "Main Town Square",
+      "city": "Český Krumlov",
+      "description": "Colorful medieval streets, cafés, and charming corners.",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Český Krumlov",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Vltava River Walk",
+      "city": "Český Krumlov",
+      "description": "Walk along the scenic riverbanks. Explore quieter lanes and riverside viewpoints. One of the most relaxing parts of the town.",
+      "recommended_duration": "1 hour",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Český Krumlov",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [],
@@ -86,6 +115,71 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "city": "Český Krumlov",
+      "mode": "Bus (RegioJet)",
+      "description": "RegioJet bus from Na Knížecí Station in Prague to Český Krumlov. Comfortable countryside journey through southern Bohemia. Tickets booked. Departure 09:00, arrival 11:35.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Český Krumlov",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Český Krumlov",
+      "mode": "Taxi",
+      "description": "Taxi from bus station to the historic center recommended on arrival.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Český Krumlov",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Český Krumlov",
+      "mode": "Bus (RegioJet)",
+      "description": "RegioJet bus from Na Knížecí Station in Prague to Český Krumlov. Comfortable countryside journey through southern Bohemia. Tickets booked. Departs 09:00, arrives 11:35",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Český Krumlov",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Český Krumlov",
+      "mode": "Taxi",
+      "description": "Taxi recommended from bus station to the historic center of Český Krumlov",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Český Krumlov",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Český Krumlov",
+      "mode": "Bus (RegioJet)",
+      "description": "RegioJet bus from Prague (Na Knížecí Station) to Český Krumlov. Comfortable countryside journey through southern Bohemia. Duration approximately 2 hours 35 minutes (09:00–11:35). Tickets booked.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Český Krumlov",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
     }
   ],
   "health_tips": [],

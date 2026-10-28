@@ -519,6 +519,73 @@
       "_source_date": "2026-01-07",
       "_source_format": "new",
       "_replaced_from": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi(1).docx"
+    },
+    {
+      "name": "Sacred Center of Hampi",
+      "city": "Hampi",
+      "description": "Find Narasimha Shrine, the Krishna Temple, and the Badavilinga",
+      "recommended_duration": "1-1.5 hours total",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Tungabhadra River",
+      "city": "Hampi",
+      "description": "Enjoy a coracle ride on the river",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Anegundi",
+      "city": "Hampi",
+      "description": "Charming village with ancient temples and beautiful landscapes. Experience local culture",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Hazara Raama Temple",
+      "city": "Hampi",
+      "description": "15th-century Hindu temple dedicated to Lord Rama, known for its intricate carvings depicting scenes from the Ramayana",
+      "hours": "6am - 6pm",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Shri Achyutaraaya Swamy Temple",
+      "city": "Hampi",
+      "description": "16th-century architectural marvel dedicated to Lord Tiruvengalanatha, showcasing intricate carvings, sculpted pillars, and ornate details",
+      "hours": "5:30am - 1pm and 5:30pm - 9pm",
+      "entry_fee": "Free",
+      "recommended_duration": "30-60 minutes",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -537,10 +604,150 @@
       "_source_date": "2026-01-07",
       "_source_format": "new",
       "_replaced_from": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.docx"
+    },
+    {
+      "name": "Evolve Back",
+      "city": "Hampi",
+      "location": "Hampi",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.pdf",
+      "_source_mtime": 1772384284.0587995,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "local_dishes": [],
-  "phrases": [],
+  "phrases": [
+    {
+      "city": "Hampi",
+      "english": "Hello",
+      "local": "Namaskara",
+      "category": "greeting",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Hampi",
+      "english": "Thank You",
+      "local": "Dhanyavaadagalu",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Hampi",
+      "english": "How much?",
+      "local": "EshTu?",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Hampi",
+      "english": "Yes",
+      "local": "Haudu",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Hampi",
+      "english": "No",
+      "local": "Illa",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Hampi",
+      "english": "Please",
+      "local": "Dayavittu",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Hampi",
+      "english": "Water",
+      "local": "Neeru",
+      "category": "food",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Hampi",
+      "english": "Food",
+      "local": "Oota",
+      "category": "food",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Hampi",
+      "english": "Where is this?",
+      "local": "Idu elli ide?",
+      "category": "polite",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "safety_tips": [
     {
       "cities": [
@@ -568,6 +775,62 @@
       "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.docx",
       "_source_date": "2025-12-15",
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Wear comfortable walking shoes — ruins involve uneven terrain",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Carry a hat, sunglasses, and sunscreen; Hampi is warm and open",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Hydrate regularly",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Start early to enjoy monuments in pleasant morning light",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "souvenirs": [
@@ -723,6 +986,39 @@
       "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.docx",
       "_source_date": "2026-01-07",
       "_source_format": "new"
+    },
+    {
+      "item": "Lambani Crafts",
+      "city": "Hampi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Stores outside Virupaksha Temple"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Stone Artefacts",
+      "city": "Hampi",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Push carts close to famous ruins",
+        "Main bazaar stalls and carts"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Sandhya_All Inclusive Guide- Hampi.pdf",
+      "_source_mtime": 1772384276.1957111,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "emergency_contacts": [],
@@ -786,6 +1082,20 @@
       "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi(1).docx",
       "_source_date": null,
       "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Hampi"
+      ],
+      "tip": "Weather will be max 32 degrees and minimum 22 degrees - carry sunscreen and protective hat/cap for sun protection",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide.pdf",
+      "_source_mtime": 1772384281.3079963,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hampi",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "route_guides": [

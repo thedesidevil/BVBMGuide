@@ -1340,6 +1340,36 @@
       "_source_file": "Italy/Italy- Final Itinerary with booking links.pdf",
       "_source_date": "2024-12-31",
       "_source_format": "old"
+    },
+    {
+      "name": "St. Peters Square",
+      "city": "Rome",
+      "description": "Vatican square with Christmas tree and special events",
+      "hours": null,
+      "entry_fee": "Free",
+      "recommended_duration": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Campo de' Fiori",
+      "city": "Rome",
+      "description": "Historic square and market",
+      "hours": null,
+      "entry_fee": null,
+      "recommended_duration": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "hotels": [
@@ -1376,6 +1406,31 @@
       "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-14",
       "_source_format": "new"
+    },
+    {
+      "name": "Pinewood Rome Hotel",
+      "city": "Rome",
+      "location": "Near Rome Ostiense",
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2025-09-02"
+    },
+    {
+      "name": "Casa Vacanza",
+      "city": "Rome",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "local_dishes": [
@@ -1608,6 +1663,108 @@
       "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
       "_source_date": "2025-09-02",
       "_source_format": "old"
+    },
+    {
+      "name": "Cacio e Pepe (Vegetarian Roman Pasta)",
+      "city": "Rome",
+      "description": "A simple yet iconic dish made with pecorino cheese and black pepper — creamy, bold, and comforting",
+      "vegetarian": true,
+      "where_to_try": "Roman restaurants",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Amatriciana (Veg Version Available)",
+      "city": "Rome",
+      "description": "Traditionally meat-based, but many places offer vegetarian adaptations with rich tomato sauces",
+      "vegetarian": true,
+      "where_to_try": "Roman restaurants",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Supplì (Vegetarian Option)",
+      "city": "Rome",
+      "description": "Fried rice balls (veg versions available) — crispy outside, soft and cheesy inside",
+      "vegetarian": true,
+      "where_to_try": "Roman street food",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Gelato (Must-Have in Rome)",
+      "city": "Rome",
+      "description": "Fresh, intensely flavoured, and widely available — a daily ritual here",
+      "vegetarian": true,
+      "where_to_try": "Gelateria del Teatro",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Maritozzo",
+      "city": "Rome",
+      "description": "Traditional Roman pastry",
+      "vegetarian": true,
+      "where_to_try": "Regoli Pasticceria",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Carciofi alla Romana (Roman Artichokes)",
+      "city": "Rome",
+      "description": "Slow-cooked artichokes with herbs, garlic, and olive oil — tender and aromatic.",
+      "vegetarian": true,
+      "where_to_try": "Roman restaurants",
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Pasta all'Amatriciana (Vegetarian version)",
+      "city": "Rome",
+      "description": "Originally tomato-based pasta — vegetarian versions replace meat with vegetables while retaining rich sauce.",
+      "vegetarian": true,
+      "where_to_try": "Roman restaurants",
+      "source_files": [
+        "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
@@ -2077,6 +2234,250 @@
       "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
       "_source_date": "2025-09-02",
       "_source_format": "old"
+    },
+    {
+      "item": "Pecorino romano cheese",
+      "city": "Rome",
+      "category": "Food",
+      "where_to_buy": [
+        "Local markets"
+      ],
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2025-09-02"
+    },
+    {
+      "item": "Vatican rosaries",
+      "city": "Rome",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Vatican area"
+      ],
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2025-09-02"
+    },
+    {
+      "item": "Cured pecorino romano cheese",
+      "city": "Rome",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Artisanal pasta",
+      "city": "Rome",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Extra virgin olive oil",
+      "city": "Rome",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Handmade sandals",
+      "city": "Rome",
+      "category": "Fashion",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Rosaries & mosaics from the Vatican",
+      "city": "Rome",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Hand-bound leather journals",
+      "city": "Rome",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Antique prints",
+      "city": "Rome",
+      "category": "Artisan crafts",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Rosaries",
+      "city": "Rome",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Vatican area"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Mosaics",
+      "city": "Rome",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Vatican area"
+      ],
+      "_source_file": "Switzerland/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384315.5912898,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Regional wines",
+      "city": "Rome",
+      "category": "Food",
+      "where_to_buy": [
+        "Les Vignerons in Trastevere",
+        "Supermarkets"
+      ],
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Italian spices and gourmet pasta",
+      "city": "Rome",
+      "category": "Food",
+      "where_to_buy": [
+        "Via del Corso",
+        "Vatican souvenir shops"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "item": "Espresso blends",
+      "city": "Rome",
+      "category": "Food",
+      "where_to_buy": [
+        "Via del Corso"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "item": "Italian fashion accessories and scarves",
+      "city": "Rome",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Via del Corso"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
+    },
+    {
+      "item": "Premium leather goods",
+      "city": "Rome",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Via del Corso"
+      ],
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
     }
   ],
   "emergency_contacts": [
@@ -2088,6 +2489,19 @@
       "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
       "_source_date": "2026-05-14",
       "_source_format": "new"
+    },
+    {
+      "city": "Rome",
+      "service": "Embassy",
+      "number": "0039 064884642-3-4-5",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
     }
   ],
   "connectivity_tips": [
@@ -2290,6 +2704,107 @@
       "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
       "_source_date": "2025-09-02",
       "_source_format": "old"
+    },
+    {
+      "city": "Rome",
+      "mode": "Metro",
+      "description": "Rome metro system connects major areas of the city",
+      "cost": "Varies",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1777149068.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-04-25"
+    },
+    {
+      "city": "Rome",
+      "mode": "Train",
+      "description": "High-speed trains connect Rome to other Italian cities like Florence",
+      "cost": "₹2,500–4,000 per person (Florence to Rome)",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1777149068.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-04-25"
+    },
+    {
+      "city": "Rome",
+      "mode": "Metro, bus and train",
+      "description": "Unlimited access to metro, bus and train travel within Rome",
+      "recommended_pass": "24hr and 48hr transport passes",
+      "cost": "24hr (7 EUR) and 48hr (12.5 EUR)",
+      "_source_file": "Italy/4. Italy- Final Detailed Itinerary.pdf",
+      "_source_mtime": 1772384339.4136398,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Rome",
+      "mode": "Metro/Bus/Train",
+      "description": "Unlimited access to metro, bus and train travel within Rome",
+      "recommended_pass": "24hr or 48hr transport passes",
+      "cost": "24hr pass 7 EUR, 48hr pass 12.5 EUR",
+      "_source_file": "Italy/All Inclusive Guide- Aayush and Sonal- Switzerland and Italy.pdf",
+      "_source_mtime": 1772384343.3418624,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Rome",
+      "mode": "Metro",
+      "description": "Used for longer distances within Rome. Metro Line A connects Roma Termini to central areas including Repubblica and Barberini. Useful for hotel transfers.",
+      "recommended_pass": null,
+      "cost": "Standard ticket approx. INR 150–250 equivalent",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-05-03"
+    },
+    {
+      "city": "Rome",
+      "mode": "Leonardo Express Train",
+      "description": "Direct train from Roma Termini to Fiumicino Airport (FCO). Recommended for airport transfer on departure day.",
+      "recommended_pass": null,
+      "cost": null,
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_mtime": 1777831784.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-05-03"
+    },
+    {
+      "city": "Rome",
+      "mode": "Walking",
+      "description": "Rome is highly walkable with many attractions close together. Cobblestone streets are common — comfortable footwear is essential for long sightseeing days.",
+      "_source_file": "Europe/Vidhi_Europe_All Inclusive Guide.docx",
+      "_source_mtime": 1778731348.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Rome",
+      "_source_format": "old",
+      "_source_date": "2026-05-14"
     }
   ],
   "health_tips": [

@@ -335,9 +335,130 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "name": "Hungarian Parliament Building",
+      "city": "Budapest",
+      "description": "Iconic illuminated Parliament building viewed from the Buda side of the Danube. One of the best photography spots in the city.",
+      "recommended_duration": "30 minutes",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Tram 2",
+      "city": "Budapest",
+      "description": "Scenic tram ride along the Danube considered one of the most scenic tram rides in Europe. Offers views of Parliament, Chain Bridge, Buda Castle skyline, and the illuminated Danube promenade.",
+      "recommended_duration": "20 minutes",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Danube River Cruise",
+      "city": "Budapest",
+      "description": "Evening cruise with Budapest illuminated at night.",
+      "recommended_duration": "75 minutes",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Tram 2 Scenic Ride",
+      "city": "Budapest",
+      "description": "Scenic tram ride along the Danube toward Vigadó tér. Considered one of the most scenic tram rides in Europe. Views of Parliament, Chain Bridge, Buda Castle skyline, and the illuminated Danube promenade.",
+      "recommended_duration": "20 minutes",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Gellért Hill & Liberty Statue",
+      "city": "Budapest",
+      "description": "Walk uphill for panoramic city views. Overlook the Danube, bridges, and Parliament skyline.",
+      "recommended_duration": "1 hour 45 minutes",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Parliament Building Views from Buda Side",
+      "city": "Budapest",
+      "description": "Panoramic views of the illuminated Parliament building across the Danube, one of the best photography spots in the city",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Parliament Building (Illuminated Views)",
+      "city": "Budapest",
+      "description": "Panoramic views of the illuminated Parliament building across the Danube from the Buda side. One of the best photography spots in the city.",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
-  "hotels": [],
+  "hotels": [
+    {
+      "name": "Airbnb",
+      "city": "Budapest",
+      "location": "Asbóth utca 24, District VII",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    }
+  ],
   "local_dishes": [
     {
       "name": "Dobos cake",
@@ -365,10 +486,117 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "name": "Kürtőskalács (Chimney Cake)",
+      "city": "Budapest",
+      "description": "Famous Hungarian chimney cake, a sweet spit cake",
+      "vegetarian": true,
+      "where_to_try": "Kürtős Legenda",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Chimney Cake (Kürtőskalács)",
+      "city": "Budapest",
+      "description": "Traditional Hungarian sweet pastry cooked on a spit",
+      "vegetarian": true,
+      "where_to_try": "Kürtős Legenda",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Gyros / Turkish Pizza / Wraps",
+      "city": "Budapest",
+      "description": "Casual street food available opposite Szimpla Kert ruin bar",
+      "where_to_try": "Street food stalls opposite Szimpla Kert",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Paprika",
+      "city": "Budapest",
+      "description": "Hungary's iconic spice, available in many varieties at the Central Market Hall",
+      "vegetarian": true,
+      "where_to_try": "Central Market Hall",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": null
     }
   ],
   "phrases": [],
-  "safety_tips": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Budapest"
+      ],
+      "tip": "Carry a light jacket for the evening breeze by the river.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "cities": [
+        "Budapest"
+      ],
+      "tip": "Sunset is approximately 8:30–8:45 PM in late May — plan evening activities accordingly.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "cities": [
+        "Budapest"
+      ],
+      "tip": "Sunset is approximately 8:30–8:45 PM — plan evening activities accordingly.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    }
+  ],
   "souvenirs": [
     {
       "item": "Paprika",
@@ -380,6 +608,54 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "item": "Local food products and snacks",
+      "city": "Budapest",
+      "category": "Food",
+      "where_to_buy": [
+        "Central Market Hall"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "item": "Souvenirs",
+      "city": "Budapest",
+      "category": "General",
+      "where_to_buy": [
+        "Central Market Hall"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "item": "Local souvenirs and crafts",
+      "city": "Budapest",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Central Market Hall"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
     }
   ],
   "emergency_contacts": [],
@@ -418,6 +694,176 @@
       "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
       "_source_date": "2026-08-27",
       "_source_format": "old"
+    },
+    {
+      "city": "Budapest",
+      "mode": "Metro",
+      "description": "M1 Yellow Line used to reach Széchenyi Baths (Széchenyi fürdő stop).",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Budapest",
+      "mode": "Tram",
+      "description": "Tram 2 runs along the Danube on the Pest side. Board at Kossuth Lajos tér M stop and ride southbound toward Vigadó tér. Considered one of the most scenic tram rides in Europe. Tram 19 and Tram 41 run southbound along the Danube from Clark Ádám tér toward Gellért Hill area.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Budapest",
+      "mode": "Taxi (Bolt)",
+      "description": "Bolt taxi app recommended for transfers around Budapest.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Budapest",
+      "mode": "Metro",
+      "description": "Take M1 (Yellow Line) to Széchenyi fürdő for the thermal baths.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Budapest",
+      "mode": "Tram",
+      "description": "Tram 2 runs along the Danube on the Pest side — considered one of the most scenic tram rides in Europe. Board at Kossuth Lajos tér M stop and ride southbound toward Vigadó tér.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Budapest",
+      "mode": "Tram",
+      "description": "Tram 19 or Tram 41 southbound along the Danube from Clark Ádám tér toward Gellért Hill. Get off at Szent Gellért tér – Műegyetem.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Budapest",
+      "mode": "Taxi (Bolt)",
+      "description": "Bolt taxi recommended for transfers around the city, approximately 10–15 minutes for most journeys.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Budapest",
+      "mode": "Metro",
+      "description": "M1 Yellow Line recommended for travel to Széchenyi Baths",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Budapest",
+      "mode": "Tram",
+      "description": "Tram 2 runs along the Danube on the Pest side, considered one of the most scenic tram rides in Europe. Board at Kossuth Lajos tér M stop. Tram 19 and Tram 41 run southbound along the Danube from Clark Ádám tér",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Budapest",
+      "mode": "Taxi (Bolt)",
+      "description": "Bolt taxi app recommended for transfers around the city",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Budapest",
+      "mode": "Metro",
+      "description": "M1 (Yellow Line) used to reach Széchenyi Baths at Széchenyi fürdő stop.",
+      "cost": "Standard Budapest public transport fare",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Budapest",
+      "mode": "Tram",
+      "description": "Tram 2 runs along the Danube on the Pest side — considered one of the most scenic tram rides in Europe. Board at Kossuth Lajos tér M stop and ride southbound toward Vigadó tér. Tram 19 and Tram 41 run southbound along the Danube from Clark Ádám tér toward Gellért Hill.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Budapest",
+      "mode": "Taxi (Bolt)",
+      "description": "Bolt taxi recommended for transfers across the city, including to Széchenyi Baths (~10–15 mins) and to Fisherman's Bastion.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Budapest",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
     }
   ],
   "health_tips": [],

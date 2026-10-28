@@ -65,7 +65,34 @@
   "phrases": [],
   "safety_tips": [],
   "souvenirs": [],
-  "emergency_contacts": [],
+  "emergency_contacts": [
+    {
+      "city": "Hong Kong",
+      "service": "Emergency",
+      "number": "999",
+      "_source_file": "China/Sanjeev-All Inclusive Guide_China.pdf",
+      "_source_mtime": 1772384329.5979078,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hong Kong",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "city": "Hong Kong",
+      "service": "Indian Consulate",
+      "number": "+852-3970-9900",
+      "_source_file": "China/Sanjeev-All Inclusive Guide_China.pdf",
+      "_source_mtime": 1772384329.5979078,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Hong Kong",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    }
+  ],
   "connectivity_tips": [],
   "transport_options": [
     {

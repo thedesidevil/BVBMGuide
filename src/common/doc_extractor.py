@@ -77,14 +77,15 @@ def repair_truncated_json(text: str) -> Optional[dict]:
     return None
 
 
-def call_and_parse_checked(client: AIClient, prompt: str, label: str) -> tuple[Optional[dict], Optional[str]]:
+def call_and_parse_checked(client: AIClient, prompt: str, label: str,
+                           max_tokens: int = 32000) -> tuple[Optional[dict], Optional[str]]:
     """Send prompt in JSON mode; return ``(data, failure_reason)``.
 
     Reasons: ``"truncated"`` (finish_reason ``length``; never repaired),
     ``"unparseable"``, ``"api_error: <short message>"``. On success the reason is None.
     """
     try:
-        raw, finish = client.complete_json_full(prompt, max_tokens=32000)
+        raw, finish = client.complete_json_full(prompt, max_tokens=max_tokens)
     except Exception as e:
         print(f"[doc_extractor] AI call failed for {label}: {e}")
         msg = " ".join(str(e).split())

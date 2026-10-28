@@ -520,3 +520,90 @@ def test_pilot_cli_and_rebuild_use_ingest_client(tmp_path, monkeypatch):
     monkeypatch.setattr(pilot_mod, "extract_file", lambda *a: None)
     runner.invoke(cli.app, ["pilot", "--plan", str(tmp_path), "--models", "m1", "--out", str(tmp_path / "o")])
     assert seen and seen[0]["timeout"] == 600.0 and seen[0]["max_retries"] == 1 and seen[0]["model"] == "m1"
+
+
+def _patch_run_ingest(monkeypatch, seen):
+    from src.library.ingest_core import runner as runner_mod
+    from src.library.ingest_core.runner import IngestReport
+
+    def fake(entries, db, client, **k):
+        seen.update(k)
+        return IngestReport()
+
+    monkeypatch.setattr(runner_mod, "run_ingest", fake)
+
+
+def test_rebuild_max_output_tokens_option(tmp_path, monkeypatch):
+    d = _write_plan(tmp_path, 1)
+    monkeypatch.setattr("src.common.ai_provider.get_ai_client", lambda **k: _Client())
+    seen = {}
+    _patch_run_ingest(monkeypatch, seen)
+    res = runner.invoke(cli.app, ["rebuild", "--plan", str(d), "--db", str(tmp_path / "n"),
+                                  "--max-usd", "5", "--max-output-tokens", "64000"])
+    assert res.exit_code == 0, res.output
+    assert "Output token limit: 64000" in res.output
+    assert seen["max_output_tokens"] == 64000
+
+
+def test_rebuild_default_output_tokens_prints_no_extra_line(tmp_path, monkeypatch):
+    d = _write_plan(tmp_path, 1)
+    monkeypatch.setattr("src.common.ai_provider.get_ai_client", lambda **k: _Client())
+    seen = {}
+    _patch_run_ingest(monkeypatch, seen)
+    res = runner.invoke(cli.app, ["rebuild", "--plan", str(d), "--db", str(tmp_path / "n"),
+                                  "--max-usd", "5"])
+    assert res.exit_code == 0, res.output
+    assert "Output token limit" not in res.output
+    assert seen["max_output_tokens"] == 32000
+
+
+@pytest.mark.parametrize("bad", ["3999", "128001"])
+def test_rebuild_rejects_out_of_range_output_tokens(tmp_path, monkeypatch, bad):
+    d = _write_plan(tmp_path, 1)
+    res = runner.invoke(cli.app, ["rebuild", "--plan", str(d), "--db", str(tmp_path / "n"),
+                                  "--max-usd", "5", "--max-output-tokens", bad])
+    assert res.exit_code != 0
+
+
+def test_rebuild_resume_existing_db_processes_only_failed(tmp_path, monkeypatch):
+    from src.library.ingest_core import runner as runner_mod
+    from src.library.ingest_core.extract import Extraction, ExtractionError
+
+    d = _write_plan(tmp_path, 2)
+    db = tmp_path / "new"
+    monkeypatch.setattr("src.common.ai_provider.get_ai_client", lambda **k: _Client())
+    data = {"covered_cities": ["Rome"], "city_countries": {"Rome": "Italy"},
+            "restaurants": [{"name": "Alpha", "city": "Rome", "hours": "9-5"}]}
+    calls = []
+    fail_second = [True]
+
+    def fake(client, path, *a):
+        calls.append(Path(path).name)
+        if Path(path).name == "f1.docx" and fail_second[0]:
+            raise ExtractionError("truncated: f1.docx hit the output limit")
+        return Extraction(data=data if Path(path).name == "f0.docx" else
+                          {"covered_cities": ["Paris"], "city_countries": {"Paris": "France"},
+                           "restaurants": [{"name": "Beta", "city": "Paris", "hours": "9-5"}]},
+                          chunks=1, prompt_tokens=1, completion_tokens=1, usd=0.0)
+
+    monkeypatch.setattr(runner_mod, "extract_file", fake)
+    args = ["rebuild", "--plan", str(d), "--db", str(db), "--max-usd", "5", "--workers", "1"]
+    res = runner.invoke(cli.app, args)
+    assert res.exit_code == 0, res.output
+    assert "1 processed, 1 failed" in res.output
+    shard = db / "Rome.json"
+    before = shard.read_bytes()
+    mtime = shard.stat().st_mtime_ns
+    log = db / "_ingest_log" / "ingest_log.jsonl"
+    first_lines = log.read_text().splitlines()
+
+    fail_second[0] = False
+    calls.clear()
+    res = runner.invoke(cli.app, args + ["--max-output-tokens", "64000"])
+    assert res.exit_code == 0, res.output
+    assert calls == ["f1.docx"]
+    assert "1 processed, 0 failed, 1 skipped" in res.output
+    assert shard.read_bytes() == before and shard.stat().st_mtime_ns == mtime  # processed file's shard untouched
+    assert b"Beta" in (db / "Paris.json").read_bytes()
+    assert log.read_text().splitlines()[:len(first_lines)] == first_lines
+    assert len(log.read_text().splitlines()) > len(first_lines)

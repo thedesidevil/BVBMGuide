@@ -129,7 +129,7 @@ def merge_chunks(results: list[dict]) -> dict:
     return {k: v for k, v in merged.items() if v != []}
 
 
-def extract_file(client: AIClient, path: Path) -> Extraction | None:
+def extract_file(client: AIClient, path: Path, max_output_tokens: int = 32000) -> Extraction | None:
     """Extract library content from one file.
 
     Returns None when the file is unreadable or its text is under 200
@@ -137,6 +137,8 @@ def extract_file(client: AIClient, path: Path) -> Extraction | None:
     fails: a chunk whose response was truncated, unparseable, or an API error
     (a truncated chunk is never repaired into partial data). Text up to ``SINGLE_PASS_LIMIT`` is
     sent in one call; longer text is split and the chunks merged.
+
+    ``max_output_tokens`` is the output limit per model call; raise it to retry guides that were cut off.
 
     Token and cost figures are the delta of ``client.usage`` and
     ``client.cost_usd`` across this call, so they are only accurate when one
@@ -164,7 +166,8 @@ def extract_file(client: AIClient, path: Path) -> Extraction | None:
     failures: list[str] = []
     for i, chunk in enumerate(chunks):
         label = name if len(chunks) == 1 else f"{name} chunk {i + 1}/{len(chunks)}"
-        result, reason = call_and_parse_checked(client, EXTRACTION_PROMPT.format(text=chunk), label)
+        result, reason = call_and_parse_checked(client, EXTRACTION_PROMPT.format(text=chunk), label,
+                                                  max_tokens=max_output_tokens)
         if reason == "truncated":
             raise ExtractionError(f"truncated: {label} hit the output limit")
         if reason:

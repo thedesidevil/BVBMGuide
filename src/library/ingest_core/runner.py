@@ -85,6 +85,7 @@ def run_ingest(
     workers: int = 5,
     max_usd: float | None = None,
     checkpoint_every: int = 10,
+    max_output_tokens: int = 32000,
 ) -> IngestReport:
     """Ingest ``plan`` in order into ``db``. See the module docstring."""
     if workers < 1:
@@ -157,7 +158,10 @@ def run_ingest(
                           "no new extractions")
                     return
             i = todo[next_submit]
-            futures[i] = executor.submit(extract_file, client, Path(plan[i].path))
+            args = (client, Path(plan[i].path))
+            if max_output_tokens != 32000:
+                args += (max_output_tokens,)
+            futures[i] = executor.submit(extract_file, *args)
             next_submit += 1
 
     try:

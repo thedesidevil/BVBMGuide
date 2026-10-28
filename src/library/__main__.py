@@ -213,6 +213,10 @@ def rebuild(
         None, "--blocklist-from-git",
         help="Git commit whose removed items (plus audit-log deletes) are blocked in the new database",
     ),
+    max_output_tokens: int = typer.Option(
+        32000, "--max-output-tokens", min=4000, max=128000,
+        help="Output token limit per extraction call; raise it (e.g. 64000) to retry guides that were cut off",
+    ),
 ):
     """Run the paid ingest of a plan into a new, empty database folder."""
     import json
@@ -289,9 +293,12 @@ def rebuild(
         used = client.model + ("" if model else " (default from the environment; --model not given)")
         console.print(f"Model: {used}")
         console.print(f"Files to process: {len(todo)}")
-        console.print(f"Cost ceiling (--max-usd): ${max_usd:.2f}\n")
+        console.print(f"Cost ceiling (--max-usd): ${max_usd:.2f}")
+        if max_output_tokens != 32000:
+            console.print(f"Output token limit: {max_output_tokens}")
+        console.print()
         report = run_ingest(entries, db, client, log_dir=db_path / "_ingest_log",
-                            workers=workers, max_usd=max_usd)
+                            workers=workers, max_usd=max_usd, max_output_tokens=max_output_tokens)
     except KeyboardInterrupt:
         console.print("\nStopping: waiting for in-flight extractions to finish (up to 5 minutes). "
                       "Progress is saved; re-run the same command to resume.")

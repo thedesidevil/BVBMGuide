@@ -343,3 +343,24 @@ def test_extraction_error_reason_reaches_failed_and_log(tmp_path, memory_db, mon
     assert "truncated" in report.failed[0][1]
     line = json.loads((tmp_path / "logs" / "ingest_log.jsonl").read_text().splitlines()[0])
     assert line["status"] == "failed" and "truncated" in line["error"]
+
+
+def test_max_output_tokens_reaches_extract_file(tmp_path, memory_db, monkeypatch):
+    seen = []
+
+    def fake(client, path, max_output_tokens=32000):
+        seen.append(max_output_tokens)
+        return Extraction(data=_data("X"), chunks=1, prompt_tokens=1, completion_tokens=1, usd=0.0)
+
+    monkeypatch.setattr(runner_mod, "extract_file", fake)
+    run_ingest([_entry(tmp_path, "a.pdf")], memory_db, StubClient(), log_dir=tmp_path / "logs",
+               workers=1, max_output_tokens=64000)
+    assert seen == [64000]
+
+
+def test_default_max_output_tokens_keeps_two_arg_stubs_working(tmp_path, memory_db, monkeypatch):
+    fake = FakeExtractor({"a.pdf": _data("X")}, StubClient())
+    _patch(monkeypatch, fake)  # FakeExtractor.__call__ takes (client, path) only
+    report = run_ingest([_entry(tmp_path, "a.pdf")], memory_db, StubClient(), log_dir=tmp_path / "logs",
+                        workers=1)
+    assert len(report.processed) == 1

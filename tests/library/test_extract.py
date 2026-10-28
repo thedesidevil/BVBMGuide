@@ -279,3 +279,36 @@ def test_call_and_parse_checked_reasons():
     assert data is None and reason == "api_error: gateway down"
     # the legacy wrapper keeps repairing truncated JSON (verify service relies on it)
     assert call_and_parse(StubClient(['{"a": [1, 2']), "p", "l") == {"a": [1, 2]}
+
+
+class _RecClient:
+    """Records the max_tokens given to complete_json_full."""
+
+    def __init__(self):
+        self.seen = []
+        self.usage = {"prompt_tokens": 0, "completion_tokens": 0}
+        self.cost_usd = 0.0
+
+    def complete_json_full(self, prompt, max_tokens=None, **kwargs):
+        self.seen.append(max_tokens)
+        return '{"restaurants": [{"name": "A", "city": "Rome"}]}', "stop"
+
+
+def test_call_and_parse_checked_max_tokens_passthrough_and_default():
+    from src.common.doc_extractor import call_and_parse_checked
+
+    c = _RecClient()
+    call_and_parse_checked(c, "p", "l")
+    call_and_parse_checked(c, "p", "l", max_tokens=64000)
+    assert c.seen == [32000, 64000]
+
+
+def test_extract_file_max_output_tokens_passthrough_and_default(tmp_path):
+    p = tmp_path / "a.docx"
+    doc = Document()
+    doc.add_paragraph("Rome restaurant notes. " * 30)
+    doc.save(p)
+    c = _RecClient()
+    extract_file(c, p)
+    extract_file(c, p, 64000)
+    assert c.seen == [32000, 64000]

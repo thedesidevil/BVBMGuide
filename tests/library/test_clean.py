@@ -1,5 +1,7 @@
 import zipfile
 
+import pytest
+
 from src.library.ingest_core.clean import clean_extraction, is_v2_generated
 
 
@@ -36,7 +38,7 @@ def test_chatter_dropped():
 
 
 def test_client_specific_dropped():
-    data = {"safety_tips": [{"tip": "Ask your hotel for a map"}],
+    data = {"safety_tips": [{"tip": "Your booking reference is ABC12345"}],
             "attractions": [{"name": "Tower", "description": "Day 2 visit the tower"},
                             {"name": "Museum", "description": "Booking ref ABC123"}]}
     out, dropped = clean_extraction(data)
@@ -135,7 +137,7 @@ def test_country_content_list_shape_is_cleaned():
     data = {"country_content": [
         {"country": "Examplia", "currency": "EXA",
          "tipping": [{"tip": "⚠ VERIFY: x"}, {"tip": "Tipping is optional"}, {"tip": "  "}],
-         "dos_donts": [{"tip": "Ask your hotel to book"}]},
+         "dos_donts": [{"tip": "Your booking reference is ABC12345"}]},
         "garbage", None, 5,
         {"country": "Otherland",
          "scams": [{"tip": "I would recommend caution"}, {"tip": "Beware fake guides"}],
@@ -168,3 +170,37 @@ def test_marker_in_country_content_never_reaches_country_shard(memory_db):
     merge_extraction(memory_db, cleaned, FileMeta("e/a.docx", None, "new", "Examplia"))
     tips = [i["tip"] for i in memory_db.get_country_data("Examplia")["tipping"]]
     assert tips == ["Tipping is optional"]
+
+
+GENERIC_YOUR_HOTEL = [
+    "Book excursions through trusted operators or your hotel and avoid unlicensed tours",
+    "Beware phishing messages pretending to be from your hotel or booking site",
+    "Keep your hotel address written in Japanese for easy reference",
+    "Use official taxis or ride-hailing apps recommended by your hotel or guide",
+    "Pharmacies and hospitals are best noted near your hotel on arrival",
+    "Ensure your passport is valid for at least six months beyond your stay",
+]
+
+
+@pytest.mark.parametrize("text", GENERIC_YOUR_HOTEL)
+@pytest.mark.parametrize("list_name", ["safety_tips", "scams", "dos_donts"])
+def test_generic_second_person_advice_kept(text, list_name):
+    out, dropped = clean_extraction({list_name: [{"tip": text}]})
+    assert out[list_name] == [{"tip": text}] and dropped == []
+
+
+@pytest.mark.parametrize("text", GENERIC_YOUR_HOTEL)
+def test_generic_second_person_advice_kept_in_country_content(text):
+    out, dropped = clean_extraction({"country_content": [{"country": "Examplia", "scams": [{"tip": text}]}]})
+    assert out["country_content"][0]["scams"] == [{"tip": text}] and dropped == []
+
+
+@pytest.mark.parametrize("text", [
+    "Your booking reference is ABC12345",
+    "Confirmation number 99812",
+    "Day 3: transfer to the airport",
+    "Reservation ID 9",
+    "Booking no. 12345",
+])
+def test_client_specific_still_dropped(text):
+    assert _tip_reason(text) == ["client_specific"]

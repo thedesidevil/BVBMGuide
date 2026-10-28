@@ -12,8 +12,7 @@ from .identity import IDENTITY_FIELDS, item_key
 MARKER_RE = re.compile(r"⚠|(?i:ADD RESTAURANT|PRICE UNKNOWN|WRITE PERSONAL LETTER)|\bVERIFY\b|CHECK:")
 CHATTER_RE = re.compile(r"\bI would recommend\b|\bI['’]d (?:aim|keep|suggest|skip|treat|choose)\b|\bHere are clear\b|"
                         r"\bin your preferred format\b|\bLet me know if\b|\bas an AI\b", re.I)
-CLIENT_RE = re.compile(r"\byour (?:hotel|booking|flight|reservation|stay|itinerary)\b|"
-                       r"\b(?:booking|confirmation|reservation) (?:ref(?:erence)?\b|number\b|no(?:\.(?=\s|$|\d)|\s*\d|:)|id\b)", re.I)
+CLIENT_RE = re.compile(r"\b(?:booking|confirmation|reservation) (?:ref(?:erence)?\b|number\b|no(?:\.(?=\s|$|\d)|\s*\d|:)|id\b)", re.I)
 _DAY_START_RE = re.compile(r"^\s*Day \d+", re.I)
 
 

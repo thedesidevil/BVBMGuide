@@ -6,6 +6,8 @@ interface Column {
   label: string;
   type: "text" | "checkbox" | "tags";
   tagOptions?: string[];
+  /** Field that is legitimately empty for many rows: show a dash instead of "missing". */
+  optional?: boolean;
 }
 
 interface EditableTableProps {
@@ -15,7 +17,7 @@ interface EditableTableProps {
   onDelete: (index: number, reason: string) => void;
 }
 
-const ARRAY_FIELDS = ["cuisine_type", "must_try_dishes", "where_to_buy", "where_to_try"];
+const ARRAY_FIELDS = ["cuisine_type", "must_try_dishes", "where_to_buy", "where_to_try", "cities", "coverage_countries"];
 
 export function EditableTable({ columns, data, onDataChange, onDelete }: EditableTableProps) {
   const [editingRow, setEditingRow] = useState<number | null>(null);
@@ -174,11 +176,14 @@ export function EditableTable({ columns, data, onDataChange, onDelete }: Editabl
                         )}
                       </div>
                     )}
-                    {!isEditing && col.type === "text" && (
-                      <span className={row[col.key] ? "text-slate-700" : "text-amber-500 italic"}>
-                        {Array.isArray(row[col.key]) ? row[col.key].join(", ") : (row[col.key] || "⚠ missing")}
-                      </span>
-                    )}
+                    {!isEditing && col.type === "text" && (() => {
+                      const raw = row[col.key];
+                      const text = Array.isArray(raw) ? raw.join(", ") : raw;
+                      if (text) return <span className="text-slate-700">{text}</span>;
+                      return col.optional
+                        ? <span className="text-slate-300">–</span>
+                        : <span className="text-amber-500 italic">⚠ missing</span>;
+                    })()}
                     {!isEditing && col.type === "checkbox" && (
                       <input type="checkbox" checked={!!row[col.key]} readOnly className="w-[18px] h-[18px] accent-blue-500 pointer-events-none" />
                     )}

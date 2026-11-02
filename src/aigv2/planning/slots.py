@@ -186,16 +186,19 @@ def meal_start(meal: str, country: str, settings: Settings) -> time:
     return _t(settings.slot_windows[meal][0])
 
 
-def leave_by(dep: TransportLeg, domestic: bool) -> Optional[time]:
+def arrival_buffer_min(kind: str, domestic: bool) -> int:
+    if kind == "flight":
+        return 120 if domestic else 180
+    return 40 if kind == "train" else 60
+
+
+def leave_by(dep: TransportLeg, domestic: bool, road_min: Optional[int] = None) -> Optional[time]:
+    """Departure minus the arrival buffer and, when known, the road time to the port; floored to 5 minutes."""
     if not dep.depart:
         return None
-    if dep.kind == "flight":
-        minutes = 120 if domestic else 180
-    elif dep.kind == "train":
-        minutes = 40
-    else:
-        minutes = 60
-    return (dep.depart - timedelta(minutes=minutes)).time()
+    minutes = arrival_buffer_min(dep.kind, domestic) + (road_min or 0)
+    t = dep.depart - timedelta(minutes=minutes)
+    return t.replace(minute=t.minute - t.minute % 5, second=0, microsecond=0).time()
 
 
 def _norm_city(text: str) -> str:

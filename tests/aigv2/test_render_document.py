@@ -344,8 +344,8 @@ def test_meals_per_anchor_included_line_and_gap_markers():
 def test_departure_day_leave_by_and_no_overnight():
     block = day_block(load(), 3)
     assert "Breakfast — Included in your package" in block
-    assert "Leave for the airport by 11:00" in block
-    assert "⚠ VERIFY: departure time" in block
+    assert "Leave for the airport by 10:10, allowing about 50 min on the road and 3 hours before departure" in block
+    assert "⚠ VERIFY: departure time" not in block
     assert block.index("Leave for the airport by") > block.index("Breakfast — Included")
     assert "Pera Palace → Istanbul Airport" in block
     assert "Overnight in" not in block
@@ -353,7 +353,7 @@ def test_departure_day_leave_by_and_no_overnight():
 
 def test_domestic_flight_leave_by_two_hours():
     block = day_block(load(data(domestic=True, trip_scope="domestic")), 3)
-    assert "Leave for the airport by 12:00" in block
+    assert "Leave for the airport by 11:10, allowing about 50 min on the road and 2 hours" in block
 
 
 def test_intercity_train_day():
@@ -371,7 +371,7 @@ def test_intercity_train_day():
                   booking_by_item={}, price_by_restaurant={}, arrival=train, departure=train, prev_city="Paris")
     block = day_block(load(data(trip=t, days=[day1(), d])), 2)
     for s in ("Hotel P → Paris Gare de Lyon", "SNCF", "TGV 6601", "Coach 5, Seat 42", "09:00", "11:00", "2 h",
-              "Reach the station by 08:20", "PLATFORM\n7", "Lyon Part-Dieu → Hotel L", "Walk · 9 min",
+              "Reach the station by 08:00", "PLATFORM\n7", "Lyon Part-Dieu → Hotel L", "Walk · 9 min",
               "⚠ VERIFY: inter-city travel day logistics", "luggage", "Overnight in Lyon"):
         assert s in block, s
     assert block.index("Hotel P → Paris Gare de Lyon") < block.index("TGV 6601") < block.index("Lyon Part-Dieu → Hotel L")
@@ -704,3 +704,11 @@ def test_late_opening_note_for_optional_stop():
     assert _late_opening_note(opt, p, d, time(14)) == "Opens 5:00 PM: best visited later in the day"
     assert _late_opening_note(opt, p, d, time(18)) is None
     assert _late_opening_note(opt.model_copy(update={"optional": False}), p, d, time(14)) is None
+
+
+def test_departure_without_a_known_road_time_keeps_the_verify_marker():
+    d3 = day3()
+    d3.legs = {}
+    block = day_block(load(data(days=[day1(), day2(), d3])), 3)
+    assert "Leave for the airport by 11:00" in block and "allowing" not in block
+    assert "⚠ VERIFY: departure time" in block

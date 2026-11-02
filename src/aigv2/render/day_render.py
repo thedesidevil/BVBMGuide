@@ -8,7 +8,7 @@ from src.aigv2.library import norm_name
 from src.aigv2.models import HotelStay, Marker, Place, TransportLeg
 from src.aigv2.planning.late_night import is_late_night_landing, pickup_before_landing
 from src.aigv2.planning.meals import ChosenRestaurant
-from src.aigv2.planning.slots import MealSlot, ScheduledItem, is_optional, leave_by
+from src.aigv2.planning.slots import MealSlot, ScheduledItem, arrival_buffer_min, is_optional, leave_by
 from src.aigv2.planning.travel import Leg, drive_day_legs, leg_markers, leg_options
 from src.aigv2.render.blocks import add_card, add_eyebrow, add_link, add_slot_heading
 from src.aigv2.render.sections_render import marker_lines, minutes_text, place_markers, search_url, heading1
@@ -224,10 +224,18 @@ class DayRenderer:
                             stay.hotel, pickup=pick.time if pick and pick.time else None)
 
     def _departure(self, dep: TransportLeg, transport_card: bool, city: str) -> None:
-        by = leave_by(dep, self.data.domestic)
+        road = self._road_minutes(self.rd.legs.get("departure"))
+        by = leave_by(dep, self.data.domestic, road)
         if by:
-            self.doc.add_paragraph(f"{_REACH.get(dep.kind, 'Leave by')} {_hm(by)}")
-        marker_lines(self.doc, [_verify("departure time")])
+            line = f"{_REACH.get(dep.kind, 'Leave by')} {_hm(by)}"
+            if road:
+                hours = arrival_buffer_min(dep.kind, self.data.domestic)
+                buffer = f"{hours // 60} hours" if hours % 60 == 0 else f"{hours} minutes"
+                line += (f", allowing about {minutes_text(road)} on the road and {buffer} before departure "
+                         "for traffic and check-in")
+            self.doc.add_paragraph(line)
+        if not road:
+            marker_lines(self.doc, [_verify("departure time")])
         stay = self._stay(arriving=False)
         port = dep.from_place or _PORT[dep.kind]
         if stay:
@@ -237,6 +245,12 @@ class DayRenderer:
             marker_lines(self.doc, [_verify(f"hotel to leave from on {self.rd.date.isoformat()}")])
         if transport_card:
             self._transport_card(dep, dep.from_place, city)
+
+    @staticmethod
+    def _road_minutes(leg: Optional[Leg]) -> Optional[int]:
+        if leg is None or leg.no_route:
+            return None
+        return leg.drive_min if leg.drive_min is not None else leg.approx_min
 
     def _drive_stops(self) -> None:
         if not self.plan or not self.plan.drive_stops:

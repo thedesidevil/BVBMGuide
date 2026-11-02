@@ -2,7 +2,7 @@ from datetime import date, datetime, time
 
 from src.aigv2.config import Settings
 from src.aigv2.models import DayPlan, HotelStay, PlannedItem, Place, Stop, TransportLeg
-from src.aigv2.planning.slots import _slot_for, parse_time, schedule_day
+from src.aigv2.planning.slots import _slot_for, leave_by, parse_time, schedule_day
 
 D = date(2026, 11, 3)
 S = Settings(models={})
@@ -464,3 +464,11 @@ def test_required_stop_is_not_moved():
     pl["Sindhu Market"] = _with_hours("Sindhu Market", time(17, 0), time(22, 0))
     r = run(day([item("Sindhu Market")]), pl=pl)
     assert r.scheduled[0].start == time(9, 0)
+
+
+def test_leave_by_uses_buffer_and_road_time_rounded_down():
+    dep = leg(depart=datetime(2026, 10, 1, 13, 15))
+    assert leave_by(dep, False) == time(10, 15)
+    assert leave_by(dep, False, 83) == time(8, 50)
+    assert leave_by(dep, True, 40) == time(10, 35)
+    assert leave_by(leg(kind="train", depart=datetime(2026, 10, 1, 9, 0)), False, 20) == time(8, 0)

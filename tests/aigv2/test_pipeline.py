@@ -862,3 +862,17 @@ def test_bali_day5_multicity_replay():
     anchors = {m.meal: [a[0] for a in m.anchors] for m in res.meals}
     print("DAY5 anchors", anchors)
     assert all("MAYURA" not in a.upper() for names in anchors.values() for a in names)
+
+
+def test_boat_to_next_hotel_is_not_a_departure():
+    d = [D0 + timedelta(days=i) for i in range(4)]
+    trip = two_city_trip().model_copy(update={
+        "hotels": [HotelStay(city="Ubud", hotel="A", check_in=d[0], check_out=d[1], source="voucher"),
+                   HotelStay(city="Island", hotel="B", check_in=d[1], check_out=d[3], source="voucher")],
+        "transport": [TransportLeg(kind="boat", from_place="Harbour", to_place="Island",
+                                   depart=datetime(2027, 5, 11, 9, 15), source="t"),
+                      TransportLeg(kind="flight", from_place="Airport", to_place="X",
+                                   depart=datetime(2027, 5, 13, 13, 0), source="t")]})
+    assert pipeline._departure_idx(trip, d[1], set(d)) is None
+    assert pipeline._other_legs(trip, d[1], set()) == [0]
+    assert pipeline._departure_idx(trip, d[3], set(d)) == 1

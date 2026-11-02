@@ -1,4 +1,5 @@
 import json
+import math
 import re
 from collections import Counter
 from datetime import date, datetime
@@ -86,6 +87,18 @@ def _travel(meal: str, walk: Optional[int], drive: Optional[int], transit: Optio
         return None
     m, label = min(opts)
     return label, m
+
+
+_APPROX_KM = 5.0
+
+
+def _approx_car(meal: str, km: float, settings: Settings) -> Optional[tuple[str, int]]:
+    """No road route from Google (islands): estimate from straight-line distance, same limits as a real drive."""
+    if km > _APPROX_KM:
+        return None
+    mins = math.ceil(km * 3.0 + 5)
+    limit = settings.dinner_max_min if meal == "dinner" else settings.lunch_max_min
+    return ("By car (approx.)", mins) if mins <= limit else None
 
 
 def _words(text: str) -> set[str]:
@@ -338,6 +351,9 @@ class _Planner:
         out = []
         for (r, place, hours, verify), w, d, t in zip(batch, walk, drive, transit):
             travel = _travel(slot.meal, w, d, t, self.settings)
+            if travel is None and d is None and t is None and w is not None and w > self.settings.walk_max_min:
+                km = _haversine_km(a_xy[0], a_xy[1], place.lat, place.lng)
+                travel = _approx_car(slot.meal, km, self.settings)
             if travel is None:
                 detail = "distance unknown" if w is None and d is None and t is None else \
                     f"walk {w}, car {d}, public transport {t} min"

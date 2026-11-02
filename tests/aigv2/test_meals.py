@@ -518,3 +518,39 @@ def test_hotel_anchor_falls_to_city(tmp_path):
     picks, _ = plan(days, lib, places, rt, llm=FirstN())
     assert names(picks[0]) == ["Ubud One", "Ubud Two", "Ubud Three"]
     assert {c[1] for c in places.calls} == {"Ubud"}
+
+
+# ---- straight-line fallback when Google has no road route ----
+
+def _measure_one(walk, drive, transit, lat_deg):
+    from src.aigv2.planning.meals import _Planner
+    p = place("X", 0)
+    p = p.model_copy(update={"lat": lat_deg, "lng": 0.0})
+
+    class R:
+        def durations(self, origins, destinations, mode, when=None):
+            v = {"WALK": walk, "DRIVE": drive, "TRANSIT": transit}[mode]
+            return {(0, j): v for j in range(len(destinations))}
+
+    planner = _Planner(None, None, R(), Diet(), ["taxi"], None, Settings(models={}), "international")
+    planner._exclusions = []
+    slot = MealSlot(meal="lunch", start=time(12, 30), anchors=[])
+    return planner._measure([({"name": "X"}, p, p.hours, False)], (0.0, 0.0), date(2027, 3, 15), slot, "w")
+
+
+def test_no_road_route_uses_straight_line_estimate():
+    out = _measure_one(70, None, None, 1.2 / 111.19)
+    assert len(out) == 1 and out[0].travel_label == "By car (approx.)" and out[0].travel_min == 9
+
+
+def test_no_road_route_beyond_5km_still_too_far():
+    assert _measure_one(70, None, None, 12 / 111.19) == []
+
+
+def test_normal_drive_unchanged():
+    out = _measure_one(70, 15, None, 1.2 / 111.19)
+    assert out[0].travel_label == "By car" and out[0].travel_min == 15
+
+
+def test_no_walk_no_estimate():
+    assert _measure_one(None, None, None, 1.2 / 111.19) == []

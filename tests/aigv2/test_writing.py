@@ -376,3 +376,35 @@ def test_client_nationalities():
         assert client_nationalities(t.model_copy(update={"additional_notes": note})) == {"us"}
     assert client_nationalities(t.model_copy(update={"occasion": "British citizen birthday"})) == {"uk"}
     assert client_nationalities(t.model_copy(update={"additional_notes": "Stay at our US based hotel"})) == set()
+
+
+# ---- rate line and motion-sickness rule ----
+
+def test_rate_text_formats():
+    from src.aigv2.writing.sections import _rate_text
+    assert _rate_text("IDR", 0.0052) == "₹1 ≈ 190 IDR"
+    assert _rate_text("X", 0.9) == "1 X = ₹0.90"
+    assert _rate_text("X", 0.123) == "1 X = ₹0.123"
+    assert _rate_text("X", 90.5) == "1 X = ₹90.50"
+
+
+def test_money_line_has_no_date():
+    class Fx:
+        def rate(self, code, on=None):
+            return 0.0052
+    llm, _ = make(sec([{"heading": "Cards", "body": "Cards are widely accepted."}]))
+    s = write_section("money", [{"city": "Ubud", "country": "Indonesia"}], {}, trip(), llm, fx=Fx(),
+                      today=date(2026, 11, 2))
+    body = s.items[0].body
+    assert "₹1 ≈ 190 IDR" in body and "Indicative rate (check before you travel)" in body and "as of" not in body
+
+
+@pytest.mark.parametrize("ages,expect", [([5], True), ([11, 15], True), ([12], False), ([], False)])
+@pytest.mark.parametrize("key", ["packing", "health"])
+def test_child_motion_sickness_rule_iff_child_under_12(key, ages, expect):
+    llm, calls = make(sec([{"heading": "Layers", "body": "Bring a light jacket."}]))
+    t = trip()
+    t.travellers = Traveller(adults=2, kids_ages=ages)
+    write_section(key, [{"city": "Paris", "country": "France"}], {}, t, llm)
+    sent = json.dumps([c[1] for c in calls], default=str)
+    assert ("ask your paediatrician before giving any motion-sickness medicine" in sent) is expect

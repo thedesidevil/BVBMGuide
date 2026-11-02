@@ -189,6 +189,29 @@ def _validator(key: str, material: str, library: bool, restaurants: dict[str, st
     return validate
 
 
+def _rate_text(code: str, rate: float) -> str:
+    if rate < 0.1:
+        inv = 1 / rate
+        digits = len(str(int(inv)))
+        inv = round(inv, 2 - digits)
+        return f"₹1 ≈ {int(inv):,} {code}"
+    if rate >= 1:
+        return f"1 {code} = ₹{rate:,.2f}"
+    txt = f"{rate:.3g}"
+    return f"1 {code} = ₹{txt}{'0' * (2 - len(txt.split('.')[1]))}"
+
+
+_CHILD_RULE = ("Rule for motion sickness: a traveller is under 12, so ask your paediatrician before giving any "
+               "motion-sickness medicine to a young child; non-drug options: ginger, a seat at the back or middle of "
+               "the boat, fresh air, light meals; adults may carry tablets. Do not say to pack tablets for the child.")
+
+
+def _child_rule(key: str, trip) -> str:
+    if key in ("packing", "health") and any(a < 12 for a in trip.travellers.kids_ages):
+        return "\n" + _CHILD_RULE
+    return ""
+
+
 def _fx_item(country: str, shard: dict, fx, today: date) -> Optional[SectionItem]:
     code = city_currency(country, shard)
     if code == "INR":
@@ -202,7 +225,7 @@ def _fx_item(country: str, shard: dict, fx, today: date) -> Optional[SectionItem
         rate = None
     if rate is None:
         return SectionItem(heading=label, body="Please check today's exchange rate before you travel.", verify=True)
-    return SectionItem(heading=label, body=f"Today's rate: 1 {code} = ₹{rate:,.2f} (as of {today:%d %b %Y}).", verify=False)
+    return SectionItem(heading=label, body=f"{_rate_text(code, rate)}. Indicative rate (check before you travel).", verify=False)
 
 
 def _is_indian_mission(it: SectionItem) -> bool:
@@ -249,6 +272,7 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm) -> tuple[l
     mode = ("Format ONLY the library facts below into client-ready items. Add no facts, numbers, names or prices."
             if library else
             "No library facts exist. Write helpful general guidance, without exact prices, fees, times or provider names.")
+    extra += _child_rule(key, trip)
     prompt = (f"Section: {key}. Write {_FOCUS[key]}.\n{mode}\n{_trip_context(trip)}{extra}\n"
               f"Library facts (JSON): {material}")
     out = llm.run_json("write_sections", _SYSTEM, prompt, _SectionOut,

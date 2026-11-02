@@ -521,7 +521,8 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
         ds.result = schedule_day(dp, trip.hotels, trip.transport[arr] if arr is not None else None,
                                  trip.transport[dep] if dep is not None else None, ds.places, s, ds.country,
                                  trip.trip_scope == "domestic",
-                                 [trip.transport[i] for i in ds.other_legs] + _boat_legs(trip, dp.date))
+                                 [trip.transport[i] for i in ds.other_legs] + _boat_legs(trip, dp.date),
+                                 {n: t for n, b in ds.booking_by_item.items() if (t := parse_time(b.end_time))})
         ds.legs = _legs(ds, trip, deps)
         days.append(ds)
         prev = dp.city

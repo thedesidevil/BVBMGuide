@@ -876,3 +876,39 @@ def test_boat_to_next_hotel_is_not_a_departure():
     assert pipeline._departure_idx(trip, d[1], set(d)) is None
     assert pipeline._other_legs(trip, d[1], set()) == [0]
     assert pipeline._departure_idx(trip, d[3], set(d)) == 1
+
+
+def _bali_rebuild4_days():
+    from src.aigv2.planning.slots import resolve_day_city, schedule_day, parse_time
+    base = Path("/Users/mjain/library_backups/aigv2_bali_2026-11-02/run_rebuild4")
+    if not (base / "trip_plan.json").exists():
+        pytest.skip("saved Bali run not available")
+    trip = TripPlan.model_validate(json.loads((base / "trip_plan.json").read_text()))
+    for dp in trip.days:
+        dp.city = resolve_day_city(dp.city, dp.date, trip.hotels)
+    raw = json.loads((base / "places.json").read_text())["places"]
+    places = {k: Place.model_validate(v) if v else None for k, v in raw.items()}
+    td = {d.date for d in trip.days}
+    ordered = sorted(trip.days, key=lambda x: x.date)
+    ends = {d.date: (pipeline._arrival_idx(trip, d.date), pipeline._departure_idx(trip, d.date, td)) for d in ordered}
+    used = {i for pair in ends.values() for i in pair if i is not None}
+    out, prev = {}, None
+    for n, dp in enumerate(ordered, 1):
+        arr, dep = ends[dp.date]
+        view = pipeline._day_view(trip, dp.date, dp.city, prev, arr, dep, places)
+        oth = pipeline._other_legs(trip, dp.date, used)
+        bmap = pipeline._booking_map(trip, dp.items)
+        out[n] = schedule_day(dp, trip.hotels, trip.transport[arr] if arr is not None else None,
+                              trip.transport[dep] if dep is not None else None, view, Settings(models={}),
+                              "Indonesia", False, [trip.transport[i] for i in oth] + pipeline._boat_legs(trip, dp.date),
+                              {k: t for k, b in bmap.items() if (t := parse_time(b.end_time))})
+        prev = dp.city
+    return out
+
+
+def test_bali_lunch_anchor_replay():
+    res = _bali_rebuild4_days()
+    lunch = lambda n: [a[0] for m in res[n].meals if m.meal == "lunch" for a in m.anchors]
+    assert lunch(4) == ["Tirta Empul Temple"]
+    assert lunch(6) and lunch(6)[0] != "Dream Beach"
+    print("DAY6 lunch anchor", lunch(6), "DAY2", lunch(2))

@@ -220,6 +220,7 @@ def test_return_to_hotel_only_before_lunch():
 
 def test_unmatched_place_is_not_an_anchor():
     pl = places("Hotel H", "A", "B")
+    pl["A"] = pl["A"].model_copy(update={"match_ok": False})
     pl["B"] = pl["B"].model_copy(update={"match_ok": False})
     r = run(day([item("A"), item("B")]), pl=pl)
     assert meal(r, "lunch").anchors == [("Hotel H", (1.0, 2.0), 3)]
@@ -331,3 +332,57 @@ def test_resolve_day_city_night_stay_and_fallbacks():
     assert resolve_day_city("Ubud / Elsewhere", date(2026, 12, 1), _stays()) == "Elsewhere"
     assert resolve_day_city("Sanur", date(2026, 9, 28), _stays()) == "Sanur"
     assert resolve_day_city("", date(2026, 9, 28), _stays()) == ""
+
+
+# ---------- lunch anchor: nearest lunchtime, not last / vague ----------
+
+def tour(*names, start="08:00"):
+    return [item(n, time=start) for n in names]
+
+
+def lunch_anchor(items, pl, ends=None):
+    r = schedule_day(day(items), [stay()], None, None, pl, S, booking_ends=ends)
+    return meal(r, "lunch").anchors[0][0]
+
+
+def test_lunch_anchor_middle_of_three_same_time_stops():
+    pl = places("Hotel H", "A", "B", "C")
+    assert lunch_anchor(tour("A", "B", "C"), pl, {"A": time(16, 0)}) == "B"
+
+
+def test_lunch_anchor_four_stops_nearest_lunchtime():
+    pl = places("Hotel H", "A", "B", "C", "D")
+    # 09:00-17:00: centres 10:00, 12:00, 14:00, 16:00 -> B is nearest 12:30
+    assert lunch_anchor(tour("A", "B", "C", "D", start="09:00"), pl, {"A": time(17, 0)}) == "B"
+
+
+def test_lunch_anchor_default_window_is_eight_hours():
+    pl = places("Hotel H", "A", "B", "C")
+    assert lunch_anchor(tour("A", "B", "C"), pl) == "B"
+
+
+def test_lunch_anchor_skips_vague_name():
+    pl = places("Hotel H", "Coffee Plantation", "Tirta Empul")
+    assert lunch_anchor(tour("Tirta Empul", "Coffee Plantation"), pl) == "Tirta Empul"
+    assert lunch_anchor(tour("Tirta Empul", "Local Market Visit"), pl | {"Local Market Visit": place("Local Market Visit")}) == "Tirta Empul"
+
+
+def test_lunch_anchor_prefers_matched_place():
+    pl = places("Hotel H", "A", "C")
+    assert lunch_anchor(tour("A", "B", "C"), pl) in ("A", "C")
+
+
+def test_lunch_anchor_all_vague_falls_back():
+    pl = places("Hotel H", "Beach", "Temple", "Waterfall")
+    assert lunch_anchor(tour("Beach", "Temple", "Waterfall"), pl) == "Temple"
+
+
+def test_lunch_anchor_single_stop_and_distinct_times():
+    pl = places("Hotel H", "A", "B")
+    assert lunch_anchor([item("A")], pl) == "A"
+    assert lunch_anchor([item("A", time="09:00"), item("B", time="12:00")], pl) == "B"
+
+
+def test_tour_starting_after_lunch_start_lunches_at_hotel_first():
+    pl = places("Hotel H", "A", "B")
+    assert lunch_anchor(tour("A", "B", start="13:00"), pl) == "Hotel H"

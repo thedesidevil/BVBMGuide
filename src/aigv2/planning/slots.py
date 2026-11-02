@@ -26,6 +26,14 @@ _DEFAULT_CHECKIN = time(15, 0)
 _TIME_RE = re.compile(r"(\d{1,2})[:.](\d{2})(?:\s*([ap])\.?m\b)?|(\d{1,2})\s*([ap])\.?m\b", re.I)
 _DINNER_RULE = re.compile(r"dinner\s+(?:before|between|near)\s+(.+)", re.I)
 _SEA_DAY = re.compile(r"\bat sea\b|\bsea day\b", re.I)
+_TOUR_DEFAULT_MIN = 8 * 60
+_VAGUE_NAMES = {"coffee plantation", "local market", "market", "beach", "temple", "viewpoint", "viewpoint stop",
+                "waterfall", "shopping", "free time", "city tour", "sightseeing", "lunch"}
+_VAGUE_TAIL = re.compile(r"\s+(?:visit|tour)$")
+
+
+def _is_vague(name: str) -> bool:
+    return _VAGUE_TAIL.sub("", " ".join(name.casefold().split())) in _VAGUE_NAMES
 
 
 class ScheduledItem(BaseModel):
@@ -219,6 +227,7 @@ def schedule_day(
     country: str = "",
     domestic: bool = False,
     legs: Sequence[TransportLeg] = (),
+    booking_ends: Optional[dict[str, time]] = None,
 ) -> DayResult:
     res = DayResult(scheduled=_schedule_items(day, settings))
     rules = " ".join(day.meal_rules).lower()
@@ -326,6 +335,31 @@ def schedule_day(
         0 <= r.find("return to hotel") < r.find("lunch") for r in (x.lower() for x in day.meal_rules))
     port = bool(l_stay and l_stay.kind == "cruise")
 
+    def lunch_anchor_item() -> Optional[PlannedItem]:
+        pool = [s for s in res.scheduled if s.slot in ("morning", "afternoon") and real(s) and s.start <= l_start]
+        if not pool:
+            return None
+        all_real = [s for s in res.scheduled if s.slot in ("morning", "afternoon") and real(s)]
+
+        def est(s: ScheduledItem) -> float:
+            group = [g for g in all_real if g.start == s.start]
+            if len(group) < 2:
+                return _minutes(s.start)
+            end = next((_minutes(booking_ends[g.item.name]) for g in group
+                        if booking_ends and g.item.name in booking_ends), None)
+            begin = _minutes(s.start)
+            if end is None or end <= begin:
+                end = begin + _TOUR_DEFAULT_MIN
+            return begin + (group.index(s) + 0.5) * (end - begin) / len(group)
+
+        def matched(s: ScheduledItem) -> bool:
+            p = places.get(s.item.name)
+            return bool(p and p.match_ok)
+
+        target = _minutes(l_start)
+        best = min(pool, key=lambda s: (_is_vague(s.item.name), not matched(s), abs(est(s) - target)))
+        return best.item
+
     def lunch_spec():
         if at_hotel_rule or midday_checkin or midday_arrival:
             return hotel_spec(l_stay, 3)
@@ -334,8 +368,8 @@ def schedule_day(
             stops = _cumulative_stops(day, first or _t(settings.slot_windows["morning"][0]))
             name = min(stops, key=lambda x: abs(x[1] - 13 * 60))[0]
             return [(name, 3, ())]
-        if morning:
-            it = morning[-1].item
+        it = lunch_anchor_item()
+        if it:
             return [(it.locality or it.name, 3, (it.name,))]
         if port:
             return [(day.city, 3, ())]

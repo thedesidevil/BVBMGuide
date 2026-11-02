@@ -120,5 +120,36 @@ class RouteCache:
                                                  "fetched_at": datetime.now(timezone.utc).isoformat()})
 
 
+class NearbyCache:
+    """Disk cache of whole nearby-search answers (lists of places) for a point, type set and radius."""
+
+    def __init__(self, backend: StorageBackend, max_age_days: int):
+        self.backend = backend
+        self.max_age = timedelta(days=max_age_days)
+
+    @staticmethod
+    def _key(key: str) -> str:
+        return f"cache/nearby/{hashlib.sha1(key.encode('utf-8')).hexdigest()}.json"
+
+    def get(self, key: str) -> Optional[list[Place]]:
+        try:
+            raw = self.backend.read_json(self._key(key))
+            if not isinstance(raw, dict) or not isinstance(raw.get("places"), list):
+                return None
+            fetched = datetime.fromisoformat(raw["fetched_at"])
+            places = [Place.model_validate(x) for x in raw["places"]]
+        except (ValueError, TypeError, KeyError, UnicodeDecodeError):
+            return None
+        if fetched.tzinfo is None:
+            fetched = fetched.replace(tzinfo=timezone.utc)
+        if datetime.now(timezone.utc) - fetched > self.max_age:
+            return None
+        return places
+
+    def put(self, key: str, places: list[Place]) -> None:
+        self.backend.write_json(self._key(key), {"fetched_at": datetime.now(timezone.utc).isoformat(),
+                                                 "places": [p.model_dump(mode="json") for p in places]})
+
+
 def default_backend(settings: Settings) -> StorageBackend:
     return LocalStorageBackend(settings.data_root)

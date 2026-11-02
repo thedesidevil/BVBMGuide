@@ -382,3 +382,23 @@ def test_tears_retry_and_cap(tmp_path):
 def test_no_chain_when_first_matches(tmp_path):
     c, s = client(tmp_path, {"places": [gp("Kintamani Volcano View", addr="Kintamani, Ubud, Bali")]})
     assert c.find("KINTAMANI VOLCANO VIEW", "Ubud").match_ok and c.calls["text_search"] == 1
+
+
+def test_nearby_answers_are_cached_on_disk(tmp_path):
+    from src.aigv2.store import NearbyCache
+    backend = LocalStorageBackend(tmp_path)
+    s = FakeSession({"places": [gp("City Pharmacy", ptype="pharmacy")]})
+    c = PlacesClient("k", PlaceCache(backend, 30), session=s, nearby_cache=NearbyCache(backend, 30))
+    first = c.nearby(41.0, 29.0, ["pharmacy"], 1500, 5, "Istanbul")
+    again = c.nearby(41.0, 29.0, ["pharmacy"], 1500, 5, "Istanbul")
+    assert c.calls["nearby"] == 1 and [p.name for p in again] == [p.name for p in first] == ["City Pharmacy"]
+    other = c.nearby(41.0, 29.0, ["pharmacy"], 3000, 5, "Istanbul")
+    assert c.calls["nearby"] == 2 and other
+    # a fresh client on the same disk reuses it, an expired entry is ignored
+    c2 = PlacesClient("k", PlaceCache(backend, 30), session=FakeSession({"places": []}),
+                      nearby_cache=NearbyCache(backend, 30))
+    assert c2.nearby(41.0, 29.0, ["pharmacy"], 1500, 5, "Istanbul") and c2.calls["nearby"] == 0
+    c3 = PlacesClient("k", PlaceCache(backend, 30), session=FakeSession({"places": []}),
+                      nearby_cache=NearbyCache(backend, 0))
+    import time as _t; _t.sleep(0.01)
+    assert c3.nearby(41.0, 29.0, ["pharmacy"], 1500, 5, "Istanbul") == [] and c3.calls["nearby"] == 1

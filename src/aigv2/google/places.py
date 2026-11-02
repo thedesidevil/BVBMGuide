@@ -125,9 +125,11 @@ def _is_24h_week(hours: Optional[WeeklyHours]) -> bool:
 
 
 class PlacesClient:
-    def __init__(self, api_key: str, cache: PlaceCache, session: Optional[requests.Session] = None):
+    def __init__(self, api_key: str, cache: PlaceCache, session: Optional[requests.Session] = None,
+                 nearby_cache=None):
         self.api_key = api_key
         self.cache = cache
+        self.nearby_cache = nearby_cache
         self.session = session or requests.Session()
         self.calls: dict[str, int] = {"text_search": 0, "nearby": 0, "details": 0}
 
@@ -204,6 +206,18 @@ class PlacesClient:
         return place
 
     def nearby(
+        self, lat: float, lng: float, types: list[str], radius_m: int, max_results: int, city: Optional[str] = None
+    ) -> list[Place]:
+        key = f"{lat:.5f},{lng:.5f}|{','.join(sorted(types))}|{radius_m}|{max_results}|{city or ''}"
+        hit = self.nearby_cache.get(key) if self.nearby_cache else None
+        if hit is not None:
+            return hit
+        places = self._nearby_uncached(lat, lng, types, radius_m, max_results, city)
+        if self.nearby_cache:
+            self.nearby_cache.put(key, places)
+        return places
+
+    def _nearby_uncached(
         self, lat: float, lng: float, types: list[str], radius_m: int, max_results: int, city: Optional[str] = None
     ) -> list[Place]:
         found = self._nearby_once(lat, lng, types, radius_m, max_results, city)

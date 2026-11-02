@@ -28,7 +28,7 @@ from src.aigv2.preflight import apply_answers, run_checklist, unanswered
 from src.aigv2.qc import run_qc
 from src.aigv2.qc.report import PRICE_KEY, QCResult, write_report
 from src.aigv2.render.document import GuideData, RenderDay, output_filename, render_guide
-from src.aigv2.store import PlaceCache, RouteCache, RunStore, default_backend
+from src.aigv2.store import NearbyCache, PlaceCache, RouteCache, RunStore, default_backend
 from src.aigv2.verification import build_sheet
 from src.aigv2.writing.days import DayText, write_day
 from src.aigv2.writing.sections import SECTION_KEYS, SectionContent, write_section
@@ -85,7 +85,8 @@ def default_deps() -> Deps:
     key = os.environ.get("GOOGLE_MAPS_API_KEY", "")
     library_dir = Path(os.environ.get("AIGV2_LIBRARY_DB") or "library_db")
     return Deps(settings=settings, llm=StepLLM(settings), library=Library(library_dir),
-                places=PlacesClient(key, PlaceCache(backend, settings.cache_days)),
+                places=PlacesClient(key, PlaceCache(backend, settings.cache_days),
+                                    nearby_cache=NearbyCache(backend, settings.cache_days)),
                 routes=RoutesClient(key, cache=RouteCache(backend, settings.cache_days)),
                 fx=FxRates(backend), backend=backend)
 

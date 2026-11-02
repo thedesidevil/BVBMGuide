@@ -18,12 +18,12 @@ _BOTH = lambda name: [("city", name), ("country", name)]
 _LIB = {
     "dishes": [("city", "local_dishes")],
     "souvenirs": [("city", "souvenirs")],
-    "etiquette": _BOTH("phrases"),
-    "safety": _BOTH("safety_tips") + _BOTH("emergency_contacts"),
-    "connectivity": _BOTH("connectivity_tips"),
+    "etiquette": _BOTH("phrases") + [("country", "tipping"), ("country", "dos_donts")],
+    "safety": _BOTH("safety_tips") + _BOTH("emergency_contacts") + [("country", "scams"), ("country", "embassies")],
+    "connectivity": _BOTH("connectivity_tips") + [("country", "apps")],
     "getting_around": _BOTH("transport_options"),
-    "health": _BOTH("health_tips"),
-    "money": [],
+    "health": _BOTH("health_tips") + [("country", "insurance")],
+    "money": [("country", "money")],
     "packing": [],
 }
 _FOCUS = {

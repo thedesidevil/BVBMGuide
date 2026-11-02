@@ -202,6 +202,34 @@ def test_country_only_content_is_library(key, lib_key, tip):
     assert tip in calls[0][1]["messages"][-1]["content"]
 
 
+@pytest.mark.parametrize("key,lib_key,entry,text", [
+    ("etiquette", "tipping", {"tip": "Round up the taxi fare"}, "Round up the taxi fare"),
+    ("etiquette", "dos_donts", {"tip": "Remove shoes indoors"}, "Remove shoes indoors"),
+    ("safety", "scams", {"tip": "Beware of fake petition clipboards"}, "Beware of fake petition clipboards"),
+    ("safety", "embassies", {"name": "Embassy of Narnia", "city": "Paris", "phone": "+33 000", "address": "Rue Lune"},
+     "Embassy of Narnia"),
+    ("connectivity", "apps", {"name": "Citymapper", "purpose": "Offline transit maps"}, "Citymapper"),
+    ("health", "insurance", {"tip": "Carry your policy card"}, "Carry your policy card"),
+    ("money", "money", {"tip": "Cards are widely accepted"}, "Cards are widely accepted"),
+])
+def test_new_country_lists_are_library(key, lib_key, entry, text):
+    llm, calls = make(sec([{"heading": "Tip", "body": text}]))
+    s = write_section(key, [{"city": "Paris", "country": "France"}], {"France": {lib_key: [entry]}}, trip(), llm)
+    item = [i for i in s.items if text in i.body][0]  # money also has a leading Currency item
+    assert s.from_library and not item.verify
+    assert text in calls[0][1]["messages"][-1]["content"]
+
+
+def test_safety_library_embassy_goes_through_embassy_check():
+    entry = {"name": "Embassy of India", "city": "Paris", "phone": "+33 1", "address": "Somewhere"}
+    llm, _ = make(sec([{"heading": "Embassy of India", "body": "Somewhere in Paris."}]))
+    s = write_section("safety", [{"city": "Paris", "country": "France"}], {"France": {"embassies": [entry]}}, trip(),
+                      llm, places=FakePlaces(True))
+    assert s.from_library
+    e = [i for i in s.items if "Embassy of India" in i.heading][0]
+    assert "1 Rue X" in e.body and not e.verify
+
+
 def test_country_data_keyed_by_country_only():
     llm, calls = make(sec([{"heading": "Tip", "body": "ok"}]))
     s = write_section("health", [{"city": "Paris", "country": "France"}], {"Italy": {"health_tips": ["x"]}}, trip(), llm)

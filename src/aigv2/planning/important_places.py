@@ -2,6 +2,7 @@ from typing import Optional
 
 from pydantic import BaseModel, Field
 
+from src.aigv2.google.places import hospital_like, unwanted_name
 from src.aigv2.hours import format_week
 from src.aigv2.models import HotelStay, Marker, Place
 
@@ -46,7 +47,7 @@ def _wrap(place: Place, walk: Optional[int], drive: Optional[int]) -> NearbyPlac
 
 
 def _walkable(places, routes, origin, city: str, types: list[str], label: str, car: bool, skip: frozenset[str] = frozenset()) -> tuple[list[NearbyPlace], list[Marker]]:
-    found = [p for p in places.nearby(origin[0], origin[1], types, _NEAR_RADIUS_M, _REQUEST, city=city) if not (p.place_id and p.place_id in skip)]
+    found = [p for p in places.nearby(origin[0], origin[1], types, _NEAR_RADIUS_M, _REQUEST, city=city) if not (p.place_id and p.place_id in skip) and not unwanted_name(p.name)]
     walks = _measure(routes, origin, found, "WALK")
     drives = _measure(routes, origin, found, "DRIVE") if car else [None] * len(found)
     near = [(w, p, d) for p, w, d in zip(found, walks, drives) if w is not None and w <= _WALK_LIMIT_MIN]
@@ -60,11 +61,12 @@ def _walkable(places, routes, origin, city: str, types: list[str], label: str, c
 
 def _hospital(places, routes, origin, city: str) -> Optional[NearbyPlace]:
     found = places.nearby(origin[0], origin[1], ["hospital"], _HOSPITAL_RADIUS_M, _REQUEST, city=city)
+    found = [p for p in found if not unwanted_name(p.name, medical=True)]
     if not found:
         return None
     # always by drive regardless of trip modes: emergency means taxi or ambulance
     drives = _measure(routes, origin, found, "DRIVE")
-    ranked = sorted(zip(found, drives), key=lambda t: (t[1] is None, t[1] if t[1] is not None else 0))
+    ranked = sorted(zip(found, drives), key=lambda t: (not hospital_like(t[0].name), t[1] is None, t[1] if t[1] is not None else 0))
     p, d = ranked[0]
     nearby = _wrap(p, None, d)
     if d is None:

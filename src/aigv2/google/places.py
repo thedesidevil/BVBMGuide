@@ -28,6 +28,32 @@ _EXCLUDED_NAME_WORDS = (
     "cosmetic", "aesthetic", "veterinary", "equipment", "b.v.", "ltd", "gmbh", "petroleum", "fuel",
 )
 _CLINIC_TYPES = ["doctor", "medical_clinic"]
+_MEDICAL_TYPES = {"hospital", "doctor", "medical_clinic"}
+_UNWANTED_ANY = re.compile(
+    r"\b(?:rent\w*|tours?|snorkel\w*|snorkl\w*|diving|divers?|surf\w*|motor\w*|bikes?|scooters?|spa|massage\w*|laundry)\b"
+    r"|travel agen",
+    re.I,
+)
+_UNWANTED_MEDICAL = re.compile(
+    r"laborator|\blab\b|microbiolog|patholog|dental|dentist|\bgigi\b|orthodont|veterinar|\bvet\b|animal|\bpets?\b"
+    r"|cosmetic|beauty|aesthetic|skin clinic|eye clinic",
+    re.I,
+)
+_HOSPITAL_LIKE = re.compile(r"hospital|rumah sakit|\brs\b|emergency|medical cent(?:re|er)|clinic", re.I)
+
+
+def unwanted_name(name: str, medical: bool = False) -> bool:
+    """True for a place whose name shows it is not what we are looking for; 'emergency' in the name always keeps it."""
+    low = name.casefold()
+    if "emergency" in low:
+        return False
+    if any(w in low for w in _EXCLUDED_NAME_WORDS) or _UNWANTED_ANY.search(name):
+        return True
+    return medical and bool(_UNWANTED_MEDICAL.search(name))
+
+
+def hospital_like(name: str) -> bool:
+    return bool(_HOSPITAL_LIKE.search(name))
 _CLINIC_NOTE = "nearest clinic, not a hospital"
 _HOSPITAL_RADIUS_KM = 10
 _NEAR_KM = 25
@@ -248,10 +274,10 @@ class PlacesClient:
         }
         raw = self._post(SEARCH_NEARBY_URL, body, "nearby").get("places") or []
         wanted = set(types)
+        medical = bool(wanted & _MEDICAL_TYPES)
         out = []
         for r in raw:
-            name = _display(r).casefold()
-            if r.get("primaryType") not in wanted or any(w in name for w in _EXCLUDED_NAME_WORDS):
+            if r.get("primaryType") not in wanted or unwanted_name(_display(r), medical):
                 continue
             if not _has_location(r):
                 continue

@@ -402,3 +402,34 @@ def test_nearby_answers_are_cached_on_disk(tmp_path):
                       nearby_cache=NearbyCache(backend, 0))
     import time as _t; _t.sleep(0.01)
     assert c3.nearby(41.0, 29.0, ["pharmacy"], 1500, 5, "Istanbul") == [] and c3.calls["nearby"] == 1
+
+
+def test_nearby_drops_rentals_and_tour_operators_for_groceries(tmp_path):
+    c, _ = client(tmp_path, {"places": [
+        gp("Pandan rent motor bike and snorkling trips", ptype="convenience_store", pid="a"),
+        gp("Island Scooter Hire", ptype="convenience_store", pid="b"),
+        gp("Blue Spa Mart", ptype="convenience_store", pid="c"),
+        gp("Sunny Laundry Shop", ptype="convenience_store", pid="d"),
+        gp("Dive Centre Diving Store", ptype="convenience_store", pid="e"),
+        gp("Village Mini Market", ptype="convenience_store", pid="f"),
+        gp("Spar Supermarket", ptype="supermarket", pid="g"),
+    ]})
+    out = c.nearby(41.0, 29.0, ["supermarket", "convenience_store", "grocery_store"], 900, 6)
+    assert [p.place_id for p in out] == ["f", "g"]
+
+
+def test_nearby_hospital_drops_labs_dental_vets_beauty_but_keeps_emergency(tmp_path):
+    names = ["Poliklinik Gigi RS Ari Canti", "Laboratorium Mikrobiologi RSBM", "City Pathology Centre",
+             "Paws Veterinary Hospital", "Pet Vet Hospital", "Glow Beauty Hospital", "Skin Clinic Hospital",
+             "Eye Clinic Hospital", "Emergency Dental Hospital", "Sanur General Hospital"]
+    c, _ = client(tmp_path, {"places": [
+        gp(n, ptype="hospital", pid=f"p{i}", lat=41.001, lng=29.0) for i, n in enumerate(names)]})
+    out = c.nearby(41.0, 29.0, ["hospital"], 5000, 20)
+    assert sorted(p.name for p in out) == ["Emergency Dental Hospital", "Sanur General Hospital"]
+
+
+def test_medical_exclusions_do_not_apply_to_pharmacies_for_lab_words(tmp_path):
+    c, _ = client(tmp_path, {"places": [gp("Pet Pharmacy Rental", ptype="pharmacy", pid="a"),
+                                        gp("Kimia Farma", ptype="pharmacy", pid="b")]})
+    out = c.nearby(41.0, 29.0, ["pharmacy"], 900, 5)
+    assert [p.place_id for p in out] == ["b"]

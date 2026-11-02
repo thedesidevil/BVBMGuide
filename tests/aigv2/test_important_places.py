@@ -122,3 +122,18 @@ def test_place_in_both_lists_kept_only_in_pharmacies():
     r = _one([shared], [shared, g], [], {1.1: 2, 1.2: 3}, {})
     assert [n.place.name for n in r.pharmacies] == ["Shared"]
     assert [n.place.name for n in r.groceries] == ["G"]
+
+
+def test_grocery_and_hospital_names_filtered_and_hospital_like_preferred():
+    groc = [mk("Pandan rent motor bike and snorkling trips", 1.4), mk("Village Market", 1.5)]
+    hosp = [mk("Laboratorium Mikrobiologi RSBM", 1.6), mk("Poliklinik Gigi RS Ari Canti", 1.7),
+            mk("Sunrise Wellness", 1.8), mk("Sanur Hospital", 1.9)]
+    r = _one([], groc, hosp, {1.4: 3, 1.5: 5}, {1.6: 2, 1.7: 3, 1.8: 4, 1.9: 9})
+    assert [n.place.name for n in r.groceries] == ["Village Market"]
+    assert r.hospital.place.name == "Sanur Hospital"
+
+
+def test_hospital_none_marker_when_only_dental_and_labs():
+    r = _one([], [], [mk("Dental Lab", 1.6), mk("City Dentist", 1.7)], {}, {1.6: 2, 1.7: 3})
+    assert r.hospital is None
+    assert any(m.text == "no emergency hospital found nearby" for m in r.markers)

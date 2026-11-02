@@ -433,3 +433,19 @@ def test_medical_exclusions_do_not_apply_to_pharmacies_for_lab_words(tmp_path):
                                         gp("Kimia Farma", ptype="pharmacy", pid="b")]})
     out = c.nearby(41.0, 29.0, ["pharmacy"], 900, 5)
     assert [p.place_id for p in out] == ["b"]
+
+
+def test_simplified_retry_rejects_a_different_place(tmp_path):
+    # 'Marine Park' retry finds 'Ducks Marine Park': Google's name has a word the voucher never had -> not found
+    c, s = client(tmp_path, {"places": [gp("Marine Safari Bali", addr="Gianyar, Bali, Indonesia")]},
+                  {"places": [gp("Ducks Marine Park", addr="Gianyar, Bali, Indonesia", pid="duck")]})
+    place = c.find("MARINE PARK (SEA DRAGON PACKAGE)", "Bali")
+    assert place is None or not place.match_ok
+
+
+def test_simplified_retry_still_accepts_plural_and_reordered_names(tmp_path):
+    from src.aigv2.google.places import _adds_new_words
+    assert not _adds_new_words("DEVIL'S TEAR", "Devil's Tears", "Nusa Lembongan")
+    assert not _adds_new_words("MANGROVE BOAT EXPERIENCE AT NUSA LEMBONGAN MANGROVE FOREST",
+                               "Mangrove Forest Lembongan", "Nusa Lembongan")
+    assert _adds_new_words("KINTAMANI VOLCANO VIEW", "Mountain View House Kintamani", "Ubud")

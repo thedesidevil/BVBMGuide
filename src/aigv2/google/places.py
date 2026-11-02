@@ -101,6 +101,16 @@ def _simplified_names(name: str) -> list[str]:
     return out[:_MAX_RETRIES]
 
 
+def _stem(w: str) -> str:
+    return w[:-1] if len(w) > 3 and w.endswith("s") else w
+
+
+def _adds_new_words(original: str, found: str, city: str) -> bool:
+    """True when Google's name carries distinctive words the voucher name never had ('Ducks Marine Park' for 'Marine Park')."""
+    known = {_stem(w) for w in _tokens(original) | _tokens(city)}
+    return any(_stem(w) not in known for w in _tokens(found))
+
+
 def _add_note(place: Place, note: str) -> None:
     place.verify_note = f"{place.verify_note}; {note}" if place.verify_note else note
 
@@ -204,7 +214,7 @@ class PlacesClient:
             bare = _TRAILING_PAREN.sub("", name).strip()
             for q in _simplified_names(name):
                 retry = self._lookup(q, city, near, f"{q}|{city}")
-                if retry is not None and retry.match_ok:
+                if retry is not None and retry.match_ok and not _adds_new_words(name, retry.name, city):
                     if q != bare:
                         _add_note(retry, f"Matched using the simplified name '{q}'")
                     self.cache.put(f"{q}|{city}", retry)

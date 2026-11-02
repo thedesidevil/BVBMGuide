@@ -912,3 +912,19 @@ def test_bali_lunch_anchor_replay():
     assert lunch(4) == ["Tirta Empul Temple"]
     assert lunch(6) and lunch(6)[0] != "Dream Beach"
     print("DAY6 lunch anchor", lunch(6), "DAY2", lunch(2))
+
+
+def test_bali_day7_boat_order_and_no_car_leg():
+    res = _bali_rebuild4_days()[7]
+    names = [s.item.name for s in res.scheduled]
+    assert names[0].startswith("Fast boat")
+    assert names.index("Private transfer to Sanur for hotel check-in") < names.index("Shopping at ICON Mall/Sindhu Market")
+    assert names.index("Shopping at ICON Mall/Sindhu Market") < names.index("Dinner in Sanur")
+    boat_start = next(s.start for s in res.scheduled if s.item.name.startswith("Fast boat"))
+    assert all(s.start >= boat_start for s in res.scheduled)
+
+
+def test_boat_item_gets_boat_leg_not_car():
+    from src.aigv2.planning.travel import leg_options
+    leg = pipeline.boat_leg("Hotel", "Fast boat to X")
+    assert leg_options(leg, ["private_driver"], 10) == []

@@ -94,7 +94,23 @@ def _slot_for(t: time, settings: Settings) -> Slot:
     return "evening"
 
 
-def _schedule_items(day: DayPlan, settings: Settings) -> list[ScheduledItem]:
+def boat_floor(d: date, legs: Sequence[TransportLeg], stays: list[HotelStay],
+               skip: Sequence[Optional[TransportLeg]] = ()) -> Optional[time]:
+    """Earliest time an untimed activity may start on a day the group boats to a new hotel."""
+    if not any(s.check_in == d for s in stays):
+        return None
+    ends = []
+    for lg in legs:
+        if lg.kind != "boat" or not (lg.depart and lg.depart.date() == d) or any(lg is x for x in skip):
+            continue
+        end = lg.arrive if lg.arrive and lg.arrive.date() == d and lg.arrive > lg.depart \
+            else lg.depart + timedelta(minutes=_LEG_DEFAULT_MIN + _DEFAULT_BUFFER)
+        if end.date() == d:
+            ends.append(end.time())
+    return max(ends) if ends else None
+
+
+def _schedule_items(day: DayPlan, settings: Settings, floor: Optional[time] = None) -> list[ScheduledItem]:
     placed: list[tuple[PlannedItem, Optional[Slot], Optional[time]]] = []
     for it in day.items:
         start = parse_time(it.pickup_time) or parse_time(it.time)
@@ -110,7 +126,18 @@ def _schedule_items(day: DayPlan, settings: Settings) -> list[ScheduledItem]:
             counts[slot] += 1
     out = []
     used = {"morning": 0, "afternoon": 0, "evening": 0}
+    after_boat = 0
+    if floor is not None:
+        # transfers to the new hotel come first, then the other untimed items, all after the boat lands
+        placed = [p for p in placed if p[2]] + sorted([p for p in placed if not p[2]], key=lambda p: p[0].kind != "transfer")
     for it, slot, start in placed:
+        if floor is not None and start is None:
+            start = _plus(floor, _ITEM_MINUTES * after_boat)
+            if it.kind == "meal_out":
+                start = max(start, _t(settings.slot_windows["evening"][0]))
+            after_boat += 1
+            out.append(ScheduledItem(item=it, slot=_slot_for(start, settings), start=start))
+            continue
         if slot is None:
             slot = "morning" if counts["morning"] < _MORNING_CAP else "afternoon"
             counts[slot] += 1
@@ -229,7 +256,8 @@ def schedule_day(
     legs: Sequence[TransportLeg] = (),
     booking_ends: Optional[dict[str, time]] = None,
 ) -> DayResult:
-    res = DayResult(scheduled=_schedule_items(day, settings))
+    floor = boat_floor(day.date, legs, stays, (arrival, departure))
+    res = DayResult(scheduled=_schedule_items(day, settings, floor))
     rules = " ".join(day.meal_rules).lower()
     d = day.date
 

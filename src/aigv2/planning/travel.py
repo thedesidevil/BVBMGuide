@@ -27,7 +27,7 @@ class _Routes(Protocol):
     def transit_steps(self, origin, destination, when=None) -> list[TransitStep]: ...
 
 
-def boat_leg(from_name: str, to_name: str, minutes: int) -> Leg:
+def boat_leg(from_name: str, to_name: str, minutes: Optional[int] = None) -> Leg:
     return Leg(from_name=from_name, to_name=to_name, drive_min=minutes, kind="boat")
 
 

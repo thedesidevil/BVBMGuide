@@ -23,7 +23,7 @@ from src.aigv2.money import FxRates, city_currency, price_text
 from src.aigv2.planning.important_places import ImportantPlaces, important_places
 from src.aigv2.planning.meals import Exclusion, MealPick, PlanStats, plan_meals
 from src.aigv2.planning.slots import DayResult, parse_time, resolve_day_city, schedule_day
-from src.aigv2.planning.travel import Leg, compute_legs
+from src.aigv2.planning.travel import Leg, boat_leg, compute_legs
 from src.aigv2.preflight import apply_answers, run_checklist, unanswered
 from src.aigv2.qc import run_qc
 from src.aigv2.qc.report import PRICE_KEY, QCResult, write_report
@@ -386,6 +386,8 @@ def _legs(ds: DayState, trip: TripPlan, deps: Deps) -> dict[str, Leg]:
         leg = _pair(t.to_place, places.get(pkey(t.to_place, ds.city)), new.hotel, hotel(new), deps, modes)
     elif new and morning and pkey(morning.hotel, morning.city) != pkey(new.hotel, new.city):
         leg = _pair(morning.hotel, hotel(morning), new.hotel, hotel(new), deps, modes)
+    if leg and ds.arrival is None and (_boat_legs(trip, d) or any(trip.transport[i].kind == "boat" for i in ds.other_legs)):
+        leg = boat_leg(leg.from_name, leg.to_name, None)  # the crossing is by boat: no car time
     if leg:
         legs["arrival"] = leg
     if ds.departure is not None and morning:
@@ -398,8 +400,11 @@ def _legs(ds: DayState, trip: TripPlan, deps: Deps) -> dict[str, Leg]:
     tz = timezone(timedelta(hours=ds.utc_offset_hours)) if ds.utc_offset_hours is not None else None
     # on a day trip the client leaves by train/boat, so a hotel-to-first-stop drive would be wrong advice
     points = [(origin.hotel, _xy(hotel(origin)), None)] if origin and not ds.other_legs else []
+    boats = [s.item.name for s in ds.result.scheduled if s.item.kind in _ITEM_KINDS and _BOAT_BOOKING.search(s.item.name)]
+    for n in boats:
+        legs[n] = boat_leg(origin.hotel if origin else "", n, None)
     points += [(s.item.name, _xy(places.get(s.item.name)), datetime.combine(d, s.start, tzinfo=tz))
-               for s in ds.result.scheduled if s.item.kind in _ITEM_KINDS]
+               for s in ds.result.scheduled if s.item.kind in _ITEM_KINDS and s.item.name not in boats]
     points = [p for p in points if p[1] is not None]
     for leg in compute_legs([(n, xy) for n, xy, _ in points], deps.routes, modes, deps.settings.walk_max_min,
                             departures=[t for _, _, t in points[1:]]):

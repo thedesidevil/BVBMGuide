@@ -386,3 +386,34 @@ def test_lunch_anchor_single_stop_and_distinct_times():
 def test_tour_starting_after_lunch_start_lunches_at_hotel_first():
     pl = places("Hotel H", "A", "B")
     assert lunch_anchor(tour("A", "B", start="13:00"), pl) == "Hotel H"
+
+
+# ---------- nothing before the boat lands ----------
+
+def _boat_day(arrive=None):
+    dp = cday("X", BD)
+    dp.items = [item("Fast boat", kind="activity", time="12:00"), item("Shopping", kind="free_time"),
+                item("Dinner out", kind="meal_out"), item("Transfer to hotel", kind="transfer")]
+    st = [cstay("Y", "Old", date(2026, 9, 24), BD), cstay("X", "New", BD, date(2026, 10, 2))]
+    return schedule_day(dp, st, None, None, places("New", "Old"), S, legs=[boat(12, 0, arrive=arrive)])
+
+
+def test_nothing_before_boat_arrives_default_duration():
+    r = _boat_day()
+    got = [(s.item.name, s.start) for s in r.scheduled]
+    assert got[0] == ("Fast boat", time(12, 0))
+    assert [n for n, _ in got] == ["Fast boat", "Transfer to hotel", "Shopping", "Dinner out"]
+    assert all(t >= time(13, 50) for n, t in got[1:])
+    assert got[-1][1] >= time(17, 30)
+
+
+def test_nothing_before_boat_arrives_known_arrival():
+    r = _boat_day(arrive=datetime(2026, 9, 30, 12, 45))
+    assert r.scheduled[1].item.name == "Transfer to hotel" and r.scheduled[1].start == time(12, 45)
+
+
+def test_boat_floor_only_on_hotel_change_days():
+    from src.aigv2.planning.slots import boat_floor
+    b = boat(9, 0)
+    assert boat_floor(BD, [b], [cstay("X", "New", BD, date(2026, 10, 2))]) == time(10, 50)
+    assert boat_floor(BD, [b], [cstay("X", "Old", date(2026, 9, 24), date(2026, 10, 2))]) is None

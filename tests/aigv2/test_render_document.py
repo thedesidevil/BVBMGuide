@@ -599,3 +599,37 @@ def test_city_change_departure_links_use_previous_city():
     m = read_docx(render_guide(data(trip=t, days=[day1(), day2(), d3]), S))
     urls = {v.name: v.url for d in m.days for s in d.slots for v in s.venues}
     assert urls[f"{HOTEL} → Central Station"] == search_url("Central Station", "Istanbul")
+
+
+def _note_day(items):
+    d = day2()
+    d.result = DayResult(scheduled=[sched(i, "afternoon", time(14 + n)) for n, i in enumerate(items)],
+                         meals=[], tips=[], markers=[])
+    d.text = DayText(title="Sultans and Sunsets", intro="x",
+                     attractions=[AttractionText(name=i.name, description="Desc.") for i in items])
+    d.booking_by_item = {}
+    d.places = {HOTEL: place(HOTEL), **{i.name: place(i.name) for i in items}}
+    d.legs = {}
+    return load(data(days=[day1(), d, day3()]))
+
+
+def test_choose_one_optional_items_show_note_on_each_card():
+    note = "Choose one: Icon Mall or Sindhu Market. At own expense."
+    doc = _note_day([item("Icon Mall", kind="activity", optional=True, note=note),
+                     item("Sindhu Market", kind="activity", optional=True, note=note)])
+    block = day_block(doc, 2)
+    assert block.count("NOTE") == 2 and block.count(note) == 2
+    assert block.count("Optional") >= 2
+    for name in ("Icon Mall", "Sindhu Market"):
+        seg = block[block.index(name + "\n"):]
+        assert "Optional" in seg and "NOTE" in seg
+
+
+def test_unmatched_note_on_required_item_is_not_shown():
+    block = day_block(_note_day([item("Hagia Sophia", note="Check out at 10:30 AM")]), 2)
+    assert "Check out at 10:30 AM" not in block and "NOTE" not in block
+
+
+def test_own_expense_note_shows_even_when_not_optional():
+    block = day_block(_note_day([item("Hagia Sophia", note="At own expense.")]), 2)
+    assert "NOTE" in block and "At own expense." in block

@@ -288,6 +288,9 @@ class DayRenderer:
             facts.append(("DURATION", duration))
         elif at and at.duration:
             facts.append(("DURATION", [at.duration, _verify("duration")]))
+        note = (it.note or "").strip()
+        if note and (it.optional or note.lower().startswith("choose one") or "own expense" in note.lower()):
+            facts.append(("NOTE", note))
         if found and it.kind != "transfer":
             facts.append(("OPENING HOURS", format_for_day(p.hours, rd.date) if p.hours else _verify("opening hours")))
         for label, value, what in (("ENTRY FEE", at and at.entry_fee, "entry fee"),

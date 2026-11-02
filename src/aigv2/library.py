@@ -137,11 +137,37 @@ def diet_fits(restaurant: dict, diet: Diet) -> bool:
     return True
 
 
+_GENERIC = {"the", "of", "and", "de", "temple", "beach", "park", "market", "view", "point", "village", "bay",
+            "club", "resort", "hotel", "street", "road", "garden", "forest", "mountain", "lake", "island",
+            "museum", "palace", "waterfall", "cave"}
+
+
+def _landmark_words(text: str) -> list[str]:
+    """Words of the part before the first comma, folded, punctuation stripped."""
+    head = text.split(",")[0]
+    return re.findall(r"[a-z0-9]+", _fold(head).replace("'", ""))
+
+
+def _landmark_match(a: list[str], b: list[str]) -> bool:
+    if not a or not b:
+        return False
+    if a == b:
+        return len(a) > 1 or a[0] not in _GENERIC
+    short, long_ = (a, b) if len(a) <= len(b) else (b, a)
+    if len(short) < 2:
+        return False
+    n = len(short)
+    if not any(long_[i:i + n] == short for i in range(len(long_) - n + 1)):
+        return False
+    return any(w not in _GENERIC for w in short)
+
+
 class Library:
     def __init__(self, db_path: Path):
         self.root = Path(db_path)
         self._files = {p.stem.casefold(): p for p in self.root.glob("*.json") if not p.name.startswith("_")}
         self._coverage = self._load(self.root / "_index.json").get("_folder_coverage", {})
+        self._landmarks: dict[str, list[list[list[str]]]] | None = None
 
     @staticmethod
     def _load(path: Path) -> dict:
@@ -228,8 +254,52 @@ class Library:
         return self.city(city).get("restaurants", [])
 
     def restaurants_near(self, locality: str) -> list[dict]:
-        p = self._files.get(locality.strip().casefold())
-        return self._load(p).get("restaurants", []) if p else []
+        found = self.area_for(locality)
+        return found[1] if found else []
+
+    def area_for(self, anchor: str, city: str | None = None) -> tuple[str, list[dict]] | None:
+        """Restaurant file for an anchor: an exact shard name, else the area shard whose restaurants list the
+        anchor as a nearby landmark (never the anchor's own city shard)."""
+        a_fold = _fold(anchor.strip())
+        if not a_fold:
+            return None
+        by_fold = {_fold(p.stem): p for p in self._files.values()}
+        p = by_fold.get(a_fold)
+        if p:
+            return p.stem, self._load(p).get("restaurants", [])
+        words = _landmark_words(anchor)
+        if not words:
+            return None
+        skip = {_fold(n) for n in self._names(city)} if city else set()
+        best: tuple[int, str] | None = None
+        for stem, entries in self._landmark_index().items():
+            if _fold(stem) in skip:
+                continue
+            hits = sum(1 for lm in entries if any(_landmark_match(words, w) for w in lm))
+            if hits and (best is None or hits > best[0] or (hits == best[0] and stem < best[1])):
+                best = (hits, stem)
+        if best is None:
+            return None
+        return best[1], self._load(self._files[best[1].casefold()]).get("restaurants", [])
+
+    def _landmark_index(self) -> dict[str, list[list[list[str]]]]:
+        if self._landmarks is None:
+            idx: dict[str, list[list[list[str]]]] = {}
+            for p in self._files.values():
+                rs = self._load(p).get("restaurants", [])
+                entries = []
+                for r in rs if isinstance(rs, list) else []:
+                    lms = r.get("nearby_landmarks") if isinstance(r, dict) else None
+                    if isinstance(lms, str):
+                        lms = [lms]
+                    ws = [_landmark_words(x) for x in lms or [] if isinstance(x, str)]
+                    ws = [w for w in ws if w]
+                    if ws:
+                        entries.append(ws)
+                if entries:
+                    idx[p.stem] = entries
+            self._landmarks = idx
+        return self._landmarks
 
     def has_data(self, city: str) -> bool:
         return bool(self.restaurants(city))

@@ -282,19 +282,15 @@ def test_multiple_anchors_split_counts(tmp_path):
     assert names(picks[0]) == ["A", "B", "C"] and picks[0].markers == []
 
 
-def test_day_trip_lunch_uses_locality(tmp_path):
+def test_day_trip_lunch_uses_locality_then_city(tmp_path):
     titlis = ("Engelberg", (46.8, 8.4), 3)
     lib, pl, rt = world(tmp_path, [rest("Lucerne One"), rest("Lucerne Two"), rest("Lucerne Three")],
                         city="Lucerne", extra={"Engelberg": [rest("Alpine A"), rest("Alpine B")]})
     days = [(2, TUE, "Lucerne", [lunch(anchors=(titlis,))])]
-    for i in range(3):
-        days.append((3 + i, date(2026, 11, 4 + i), "Lucerne", [lunch(anchors=(titlis,))]))
-    picks, excl = plan(days, lib, pl, rt)
-    assert names(picks[0]) == ["Alpine A", "Alpine B"]
-    assert picks[0].markers[0].render() == "⚠ ADD RESTAURANT – Lunch, Day 2, near Engelberg"
-    assert {c[1] for c in pl.calls} == {"Engelberg"}
-    assert names(picks[1]) == ["Alpine A", "Alpine B"] and names(picks[2]) == []
-    assert ("Alpine A", "repeat_limit") in reasons(excl)
+    picks, excl = plan(days, lib, pl, rt, llm=FirstN())
+    assert names(picks[0]) == ["Alpine A", "Alpine B", "Lucerne One"]
+    assert [c[1] for c in pl.calls][:2] == ["Engelberg", "Engelberg"]
+    assert {c[1] for c in pl.calls} == {"Engelberg", "Lucerne"}
 
 
 def test_indian_option_guaranteed_when_available(tmp_path):
@@ -485,3 +481,40 @@ def test_transit_lookup_carries_meal_time():
     p = place("X", 0)
     planner._measure([({"name": "X"}, p, p.hours, False)], (1.0, 2.0), date(2027, 3, 15), slot, "w")
     assert ("TRANSIT", _dt(2027, 3, 15, 12, 30)) in seen and ("WALK", None) in seen
+
+
+# ---- area files for attractions ----
+
+def area_world(tmp_path):
+    areas = {
+        "Tampaksiring": [rest("Bararasa", nearby_landmarks=["Tirta Empul Temple, Tampaksiring"]),
+                         rest("Warung Tampak")],
+        "Ubud": [rest("Ubud One"), rest("Ubud Two"), rest("Ubud Three")],
+    }
+    lib = make_lib(tmp_path, areas)
+    names_ = [r["name"] for rs in areas.values() for r in rs]
+    pl = {n: place(n, i + 1) for i, n in enumerate(names_)}
+    rt = FakeRoutes(pl, {n: {"WALK": 5, "DRIVE": 4} for n in names_})
+    return lib, pl, rt
+
+
+def test_anchor_uses_area_then_city_with_area_hint(tmp_path):
+    lib, pl, rt = area_world(tmp_path)
+    anchor = ("TIRTA EMPUL TEMPLE", (41.0, 29.0), 3)
+    days = [(1, TUE, "Ubud", [lunch(anchors=(anchor,))])]
+    places = FakePlaces(pl)
+    picks, _ = plan(days, lib, places, rt, llm=FirstN())
+    assert names(picks[0])[:2] == ["Bararasa", "Warung Tampak"]
+    assert len(picks[0].restaurants) == 3
+    cities = [c[1] for c in places.calls]
+    assert cities[:2] == ["Tampaksiring", "Tampaksiring"] and "Ubud" in cities
+
+
+def test_hotel_anchor_falls_to_city(tmp_path):
+    lib, pl, rt = area_world(tmp_path)
+    anchor = ("SOME HOTEL UBUD", (41.0, 29.0), 3)
+    days = [(1, TUE, "Ubud", [lunch(anchors=(anchor,))])]
+    places = FakePlaces(pl)
+    picks, _ = plan(days, lib, places, rt, llm=FirstN())
+    assert names(picks[0]) == ["Ubud One", "Ubud Two", "Ubud Three"]
+    assert {c[1] for c in places.calls} == {"Ubud"}

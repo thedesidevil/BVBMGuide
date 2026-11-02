@@ -198,3 +198,37 @@ def test_country_missing_and_exact_unchanged(tmp_path):
     assert lib.country("Atlantis") == {}
     assert lib.country("france") == {"tipping": [{"tip": "France"}]}
     assert lib.country("Japan") == {}
+
+
+def _area_lib(tmp_path):
+    def w(name, rs):
+        (tmp_path / f"{name}.json").write_text(json.dumps({"restaurants": rs}), encoding="utf-8")
+    w("Tampaksiring", [{"name": "Bararasa", "nearby_landmarks": ["Tirta Empul Temple, Tampaksiring"]},
+                       {"name": "Other"}])
+    w("Nusa Lembongan", [{"name": "A", "nearby_landmarks": ["Blue Lagoon, Nusa Lembongan"]}])
+    w("Nusa Ceningan", [{"name": "B", "nearby_landmarks": ["Blue Lagoon, Nusa Ceningan"]},
+                        {"name": "C", "nearby_landmarks": ["Blue Lagoon"]}])
+    w("Ubud", [{"name": "U", "nearby_landmarks": ["Ubud Palace, Ubud", "Sacred Temple", "Padang Beach"]}])
+    w("Sanur", [{"name": "S", "nearby_landmarks": ["Sanur Beach"]}])
+    return Library(tmp_path)
+
+
+def test_area_for_landmark_match(tmp_path):
+    lib = _area_lib(tmp_path)
+    name, rs = lib.area_for("TIRTA EMPUL TEMPLE")
+    assert name == "Tampaksiring" and [r["name"] for r in rs] == ["Bararasa", "Other"]
+    assert lib.area_for("Blue Lagoon")[0] == "Nusa Ceningan"
+    assert lib.area_for("Ubud Palace")[0] == "Ubud"
+
+
+def test_area_for_rejects_lone_generic_word_and_hotel(tmp_path):
+    lib = _area_lib(tmp_path)
+    assert lib.area_for("Temple") is None
+    assert lib.area_for("Beach") is None
+    assert lib.area_for("Some Hotel Sanur") is None
+    assert lib.area_for("Ubud Palace", city="Ubud") is None
+
+
+def test_area_for_exact_shard_wins(tmp_path):
+    lib = _area_lib(tmp_path)
+    assert lib.area_for("sanur")[0] == "Sanur"

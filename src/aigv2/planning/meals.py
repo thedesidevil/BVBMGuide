@@ -119,9 +119,9 @@ class _Planner:
 
     def _shard(self, anchor_name: str, city: str) -> tuple[str, list[dict]]:
         if norm_name(anchor_name) != norm_name(city):
-            near = self.library.restaurants_near(anchor_name)
-            if near:
-                return anchor_name, near
+            found = self.library.area_for(anchor_name, city)
+            if found and found[1]:
+                return found
         return city, self.library.restaurants(city)
 
     def seed(self, city: str, pick: MealPick) -> None:
@@ -131,8 +131,14 @@ class _Planner:
             key = (norm_name(city), name)
             for a_name, _, _ in pick.slot.anchors:
                 shard, cands = self._shard(a_name, city)
-                if any(isinstance(r.get("name"), str) and norm_name(r["name"]) == name for r in cands):
-                    key = (norm_name(shard), name)
+                hit = [(shard, cands)]
+                if norm_name(shard) != norm_name(city):
+                    hit.append((city, self.library.restaurants(city)))
+                found = next((sh for sh, cs in hit
+                              if any(isinstance(r.get("name"), str) and norm_name(r["name"]) == name for r in cs)),
+                             None)
+                if found is not None:
+                    key = (norm_name(found), name)
                     break
             pid = _pid(c.place, key)
             self.places_by_day.setdefault(n, set()).add(pid)
@@ -229,12 +235,40 @@ class _Planner:
                 need_indian: bool) -> list[ChosenRestaurant]:
         a_name, a_xy, count = anchor
         shard, candidates = self._shard(a_name, city)
-        shard_key = norm_name(shard)
-        pool = self._pool(n, candidates, shard_key, _words(a_name), where, shard, a_xy, slot)
+        sources = [(shard, candidates)]
+        if norm_name(shard) != norm_name(city):
+            sources.append((city, self.library.restaurants(city)))
         places_today = self.places_by_day.setdefault(n, set())
         valid: list[ChosenRestaurant] = []
+        shard_of: dict[int, str] = {}
         budget = [0]
         seen_ids: dict[str, str] = {}
+        tried: set[str] = set()
+        for shard, candidates in sources:
+            if len(valid) >= count:
+                break
+            candidates = [r for r in candidates if norm_name(r.get("name") or "") not in tried]
+            tried |= {norm_name(r["name"]) for r in candidates if isinstance(r.get("name"), str)}
+            before = len(valid)
+            self._fill(n, day, shard, candidates, a_name, a_xy, slot, where, need_indian, count, valid,
+                       places_today, budget, seen_ids)
+            for c in valid[before:]:
+                shard_of[id(c)] = shard
+        chosen = valid if len(valid) <= count else self._rank(
+            valid, count, need_indian and any(is_indian(c.lib) for c in valid), slot, a_name, day)
+        for c in chosen:
+            key = (norm_name(shard_of[id(c)]), norm_name(c.lib["name"]))
+            pid = _pid(c.place, key)
+            places_today.add(pid)
+            self.uses_by_place[pid] += 1
+            self.names_by_day[n].add(key)
+            self.uses_by_name[key] += 1
+        return chosen
+
+    def _fill(self, n, day, shard, candidates, a_name, a_xy, slot, where, need_indian, count, valid,
+              places_today, budget, seen_ids) -> None:
+        shard_key = norm_name(shard)
+        pool = self._pool(n, candidates, shard_key, _words(a_name), where, shard, a_xy, slot)
         while pool:
             first = None
             if need_indian and not any(is_indian(c.lib) for c in valid):
@@ -254,17 +288,6 @@ class _Planner:
                 if checked:
                     batch.append(checked)
             valid.extend(self._measure(batch, a_xy, day, slot, where))
-
-        require_indian = need_indian and any(is_indian(c.lib) for c in valid)
-        chosen = valid if len(valid) <= count else self._rank(valid, count, require_indian, slot, a_name, day)
-        for c in chosen:
-            key = (shard_key, norm_name(c.lib["name"]))
-            pid = _pid(c.place, key)
-            places_today.add(pid)
-            self.uses_by_place[pid] += 1
-            self.names_by_day[n].add(key)
-            self.uses_by_name[key] += 1
-        return chosen
 
     def _check(self, r: dict, place: Optional[Place], shard_key: str, day: date, slot: MealSlot, where: str,
                places_today: set[str], seen_ids: dict[str, str]):

@@ -1,7 +1,8 @@
+import re
 from datetime import date, datetime, time
 from typing import Literal, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
 
 class WeeklyHours(BaseModel):
@@ -23,6 +24,12 @@ class Diet(BaseModel):
     pure_veg: bool = False
 
 
+_ROOM_WORDS = re.compile(
+    r"\b(room|suite|villa|bungalow|cottage|studio|deluxe|superior|premium|executive|standard|junior|twin|double|king|"
+    r"queen|family|balcony|view|bed|pool|lodge|tent|cabin|penthouse)\b", re.I)
+_TRAILING_ROOM = re.compile(r"^(.*?)\s*\(([^()]*)\)\s*$")
+
+
 class HotelStay(BaseModel):
     city: str
     hotel: str
@@ -33,6 +40,18 @@ class HotelStay(BaseModel):
     check_out_time: Optional[time] = None
     kind: Literal["hotel", "resort", "cruise", "sleeper_train", "lodge"] = "hotel"
     meal_plan: Literal["none", "breakfast", "half_board", "full_board", "all_inclusive"] = "none"
+    room_type: str = ""
+
+    @model_validator(mode="after")
+    def _split_room_type(self):
+        m = _TRAILING_ROOM.match(self.hotel.strip())
+        if m and m.group(1).strip() and _ROOM_WORDS.search(m.group(2)):
+            self.hotel = m.group(1).strip()
+            if not self.room_type:
+                self.room_type = m.group(2).strip()
+        else:
+            self.hotel = self.hotel.strip()
+        return self
 
 
 class TransportLeg(BaseModel):

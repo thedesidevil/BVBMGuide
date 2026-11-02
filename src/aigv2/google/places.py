@@ -32,6 +32,7 @@ _CLINIC_NOTE = "nearest clinic, not a hospital"
 _HOSPITAL_RADIUS_KM = 10
 _NEAR_KM = 25
 _MIN_OVERLAP = 0.6
+_TRAILING_PAREN = re.compile(r"\s*\([^()]*\)\s*$")
 _WEAK_COVERAGE = {
     "south korea", "korea", "seoul", "busan", "jeju", "incheon", "daegu", "gyeongju",
     "china", "beijing", "shanghai", "guangzhou", "shenzhen", "chengdu", "xian", "xi'an",
@@ -140,6 +141,18 @@ class PlacesClient:
             cached = self.cache.get(key)
             if cached is not None:
                 return cached
+        place = self._lookup(name, city, near, key)
+        bare = _TRAILING_PAREN.sub("", name).strip()
+        if (place is None or not place.match_ok) and bare and bare != name:
+            retry = self._lookup(bare, city, near, f"{bare}|{city}")
+            if retry is not None and retry.match_ok:
+                self.cache.put(f"{bare}|{city}", retry)
+                place = retry
+        if place is not None:
+            self.cache.put(key, place)
+        return place
+
+    def _lookup(self, name: str, city: str, near: Optional[tuple[float, float]], key: str) -> Optional[Place]:
         body: dict = {"textQuery": f"{name}, {city}", "languageCode": "en"}
         if near:
             body["locationBias"] = {
@@ -154,7 +167,6 @@ class PlacesClient:
         place = self._to_place(best, key, f"{name} {city}", ok)
         if weak_coverage(city):
             _add_note(place, _WEAK_NOTE)
-        self.cache.put(key, place)
         return place
 
     def nearby(

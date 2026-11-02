@@ -261,3 +261,67 @@ def test_nearby_link_names_city_and_skips_malformed(tmp_path):
     out = c.nearby(41.0, 29.0, ["pharmacy"], 1500, 5, city="Istanbul")
     assert [p.place_id for p in out] == ["ok"]
     assert "query=City+Pharmacy+Istanbul&query_place_id=ok" in out[0].maps_url
+
+
+# ---------- retry without a trailing parenthetical ----------
+
+def test_retry_without_parenthetical_once_and_cached_under_original_key(tmp_path):
+    c, s = client(tmp_path, {"places": [gp("Hotel Elsewhere", addr="Ubud, Bali")]},
+                  {"places": [gp("Tegallalang Rice Terrace", addr="Tegallalang, Ubud, Bali", pid="rt")]})
+    p = c.find("Tegallalang Rice Terrace (viewpoint and scenic cafe)", "Ubud")
+    assert p.match_ok and p.place_id == "rt"
+    assert c.calls["text_search"] == 2
+    assert s.posts[1][2]["textQuery"] == "Tegallalang Rice Terrace, Ubud"
+    again = c.find("Tegallalang Rice Terrace (viewpoint and scenic cafe)", "Ubud")
+    assert again.place_id == "rt" and c.calls["text_search"] == 2
+
+
+def test_no_retry_when_first_try_matches_or_no_parenthetical(tmp_path):
+    c, s = client(tmp_path, {"places": [gp("Marine Park Sea Dragon", addr="Nusa, Ubud")]})
+    assert c.find("Marine Park (Sea Dragon)", "Ubud").match_ok and c.calls["text_search"] == 1
+    c2, s2 = client(tmp_path / "b", {"places": [gp("Something Else", addr="Elsewhere")]})
+    assert c2.find("Mangrove boat experience", "Ubud").match_ok is False
+    assert c2.calls["text_search"] == 1 and len(s2.posts) == 1
+
+
+def test_retry_failure_keeps_original_result(tmp_path):
+    c, s = client(tmp_path, {"places": [gp("Other", addr="Ubud")]})
+    p = c.find("Marine Park (Sea Dragon)", "Ubud")
+    assert p.match_ok is False and c.calls["text_search"] == 2 and len(s.posts) == 2
+
+
+def test_taksu_like_case_end_to_end(tmp_path):
+    from datetime import date
+    from src.aigv2 import pipeline
+    from src.aigv2.models import HotelStay
+    c, s = client(tmp_path, {"places": [gp("Taksu Sanur Hotel and Spa Resort Bali", addr="Sanur, Bali", pid="t1")]},
+                  {"places": [gp("Taksu Sanur Hotel", addr="Sanur, Bali", pid="t2")]})
+    stay = HotelStay(city="Sanur", hotel="TAKSU SANUR HOTEL (Sanur beach)", check_in=date(2026, 9, 30),
+                     check_out=date(2026, 10, 1), source="voucher")
+    assert stay.hotel == "TAKSU SANUR HOTEL (Sanur beach)" and stay.room_type == ""
+    places = pipeline.resolve_places(_trip_with(stay), c, {})
+    got = places[pipeline.pkey(stay.hotel, "Sanur")]
+    assert got.match_ok and got.place_id == "t2" and c.calls["text_search"] == 2
+
+
+def _trip_with(stay):
+    from src.aigv2.models import Diet, Traveller, TripPlan
+    return TripPlan(client_names=["A"], travellers=Traveller(adults=2), diet=Diet(), travel_modes=["taxi"],
+                    hotels=[stay], transport=[], bookings=[], days=[], open_choices=[], vague_days=[],
+                    commentary_removed=[], trip_scope="international")
+
+
+def test_room_type_split_on_real_bali_hotels():
+    from datetime import date
+    from src.aigv2.models import HotelStay
+
+    def mk(h):
+        return HotelStay(city="X", hotel=h, check_in=date(2026, 1, 1), check_out=date(2026, 1, 2), source="voucher")
+    a = mk("MAYURA UBUD RETREAT (Deluxe Room)")
+    assert (a.hotel, a.room_type) == ("MAYURA UBUD RETREAT", "Deluxe Room")
+    b = mk("D'NUSA BEACH CLUB AND RESORT (Grand Deluxe Room)")
+    assert (b.hotel, b.room_type) == ("D'NUSA BEACH CLUB AND RESORT", "Grand Deluxe Room")
+    assert mk("Hotel X (Ubud)").hotel == "Hotel X (Ubud)" and mk("Hotel X (Ubud)").room_type == ""
+    r = mk("  Resort (Pool Villa) ")
+    assert (r.hotel, r.room_type) == ("Resort", "Pool Villa")
+    assert mk(" Plain Hotel ").hotel == "Plain Hotel"

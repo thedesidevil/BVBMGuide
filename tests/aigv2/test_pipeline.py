@@ -989,3 +989,14 @@ def test_day_facts_carry_google_address_of_each_stop():
     state = type("S", (), {"trip": trip, "picks": []})()
     facts = pipeline._day_facts(ds, state)
     assert facts["attractions"][0]["google_address"] == "Ceningan Island, Bali"
+
+
+def test_airport_code_endpoint_is_searched_as_an_airport():
+    class Rec:
+        def __init__(self): self.q = []
+        def find(self, name, city, near=None): self.q.append(name); return None
+    c, places = Rec(), {}
+    pipeline._endpoint("DPS", "Sanur", places, c)
+    pipeline._endpoint("Ngurah Rai Airport", "Sanur", places, c)
+    pipeline._endpoint("DPS", "Sanur", places, c)
+    assert c.q == ["DPS airport", "Ngurah Rai Airport"] and "dps|sanur" in places

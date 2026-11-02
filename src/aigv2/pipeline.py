@@ -362,9 +362,14 @@ def _boat_legs(trip: TripPlan, d: date) -> list[TransportLeg]:
     return out
 
 
+_IATA = re.compile(r"[A-Z]{3}")
+
+
 def _endpoint(name: str, city: str, places: dict, client) -> None:
+    """Transport endpoints are often airport codes ('DPS'): search them as '<code> airport', keep the key as is."""
     if name.strip() and pkey(name, city) not in places:
-        places[pkey(name, city)] = client.find(name, city)
+        query = f"{name.strip()} airport" if _IATA.fullmatch(name.strip()) else name
+        places[pkey(name, city)] = client.find(query, city)
 
 
 def _pair(a: str, pa: Optional[Place], b: str, pb: Optional[Place], deps: Deps, modes: list[str]) -> Optional[Leg]:

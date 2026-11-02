@@ -11,6 +11,7 @@ from src.aigv2.config import Settings
 from src.aigv2.hours import format_for_day, is_open_for, parse_library_hours
 from src.aigv2.library import diet_fits, is_indian, norm_name
 from src.aigv2.google.places import _haversine_km
+from src.aigv2.planning.travel import APPROX_LABEL, approx_car_minutes
 from src.aigv2.llm import LLMStepError
 from src.aigv2.models import Diet, Marker, Place, WeeklyHours
 from src.aigv2.planning.slots import Anchor, MealSlot
@@ -89,16 +90,13 @@ def _travel(meal: str, walk: Optional[int], drive: Optional[int], transit: Optio
     return label, m
 
 
-_APPROX_KM = 5.0
-
-
 def _approx_car(meal: str, km: float, settings: Settings) -> Optional[tuple[str, int]]:
     """No road route from Google (islands): estimate from straight-line distance, same limits as a real drive."""
-    if km > _APPROX_KM:
+    mins = approx_car_minutes(km)
+    if mins is None:
         return None
-    mins = math.ceil(km * 3.0 + 5)
     limit = settings.dinner_max_min if meal == "dinner" else settings.lunch_max_min
-    return ("By car (approx.)", mins) if mins <= limit else None
+    return (APPROX_LABEL, mins) if mins <= limit else None
 
 
 def _words(text: str) -> set[str]:

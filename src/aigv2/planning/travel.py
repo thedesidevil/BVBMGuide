@@ -4,9 +4,19 @@ from typing import Optional, Protocol
 
 from pydantic import BaseModel, Field
 
+from src.aigv2.google.places import _haversine_km
 from src.aigv2.models import Marker, Stop, TransitStep
 
 _CAR_MODES = {"taxi", "self_drive", "private_driver"}
+APPROX_KM = 5.0
+APPROX_LABEL = "By car (approx.)"
+
+
+def approx_car_minutes(km: float) -> Optional[int]:
+    """No road route from Google (small islands): estimate from the straight-line distance, only when <= 5 km."""
+    if km > APPROX_KM:
+        return None
+    return math.ceil(km * 3.0 + 5)
 
 
 class Leg(BaseModel):
@@ -20,6 +30,7 @@ class Leg(BaseModel):
     km: Optional[float] = None
     ticketed: bool = True
     no_route: bool = False
+    approx_min: Optional[int] = None
 
 
 class _Routes(Protocol):
@@ -70,6 +81,8 @@ def leg_options(leg: Leg, modes: list[str], walk_max: int) -> list[tuple[str, in
         opts.append(("By public transport", leg.transit_min))
     if not opts and leg.drive_min is not None:
         opts.append(("By car", leg.drive_min))
+    if not opts and leg.approx_min is not None:
+        opts.append((APPROX_LABEL, leg.approx_min))
     return opts
 
 
@@ -86,7 +99,7 @@ def leg_markers(leg: Leg, modes: list[str], walk_max: int) -> list[Marker]:
         (_CAR_MODES & set(modes) and leg.drive_min is not None)
         or ("public_transport" in modes and leg.transit_min is not None)
     )
-    if not walk_ok and not allowed:
+    if not walk_ok and not allowed and leg.approx_min is None:
         return [Marker(kind="VERIFY", text="travel mode for this leg")]
     return []
 
@@ -110,6 +123,9 @@ def compute_legs(points: list[tuple[str, tuple[float, float]]], routes: _Routes,
             and leg.transit_min is None
             and (leg.walk_min is None or leg.walk_min > min(walk_max, 10))
         )
+        if leg.no_route:
+            leg.approx_min = approx_car_minutes(_haversine_km(p1[0], p1[1], p2[0], p2[1]))
+            leg.no_route = leg.approx_min is None
         legs.append(leg)
     return legs
 

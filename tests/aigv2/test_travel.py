@@ -355,3 +355,29 @@ def test_default_deps_routes_client_has_cache(monkeypatch, tmp_path):
     deps = pipeline.default_deps()
     assert isinstance(deps.routes.cache, RouteCache)
     assert deps.routes.cache.backend is deps.backend
+
+
+class _NoRoad:
+    def durations(self, origins, destinations, mode, when=None):
+        return {(0, 0): None}
+
+    def transit_steps(self, origin, destination, when=None):
+        return []
+
+
+def test_leg_without_a_road_route_gets_an_approximate_car_time():
+    # about 2.2 km apart on an island: ceil(2.2 * 3 + 5) = 12
+    legs = compute_legs([("Blue Lagoon", (-8.6800, 115.4500)), ("Devil's Tear", (-8.6800, 115.4700))], _NoRoad(), ["taxi"])
+    assert legs[0].no_route is False and legs[0].approx_min == 12
+    assert leg_options(legs[0], ["taxi"], 10) == [("By car (approx.)", 12)]
+    assert leg_markers(legs[0], ["taxi"], 10) == []
+
+
+def test_far_leg_without_a_road_route_stays_no_route():
+    legs = compute_legs([("A", (-8.0, 115.0)), ("B", (-8.2, 115.2))], _NoRoad(), ["taxi"])
+    assert legs[0].no_route is True and legs[0].approx_min is None
+
+
+def test_meals_and_legs_share_the_estimate():
+    from src.aigv2.planning.travel import approx_car_minutes
+    assert approx_car_minutes(2.2) == 12 and approx_car_minutes(5.0) == 20 and approx_car_minutes(5.1) is None

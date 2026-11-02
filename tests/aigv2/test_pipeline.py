@@ -838,3 +838,27 @@ def test_bali_change_over_days_replay(deps):
     assert by[5]["lunch"].anchors[0][0].startswith("D'NUSA BEACH CLUB")
     assert "lunch" not in by[7]
     assert by[7]["dinner"].anchors[0][0].startswith("TAKSU SANUR HOTEL")
+
+
+def test_bali_day5_multicity_replay():
+    import json
+    from pathlib import Path
+    from src.aigv2.models import TripPlan
+    from src.aigv2.pipeline import _boat_legs, _day_view
+    from src.aigv2.planning.slots import resolve_day_city, schedule_day
+    base = Path("/Users/mjain/library_backups/aigv2_bali_2026-11-02/run_rebuild2")
+    if not (base / "trip_plan.json").exists():
+        pytest.skip("saved Bali run not available")
+    trip = TripPlan.model_validate(json.loads((base / "trip_plan.json").read_text()))
+    for dp in trip.days:
+        dp.city = resolve_day_city(dp.city, dp.date, trip.hotels)
+    assert [d.city for d in trip.days][4:] == ["Nusa Lembongan", "Nusa Lembongan", "Sanur", "Sanur"]
+    raw = json.loads((base / "places.json").read_text())["places"]
+    places = {k: Place.model_validate(v) if v else None for k, v in raw.items()}
+    dp = trip.days[4]
+    view = _day_view(trip, dp.date, dp.city, "Ubud", None, None, places)
+    res = schedule_day(dp, trip.hotels, None, None, view, Settings(models={}), "Indonesia", False,
+                       _boat_legs(trip, dp.date))
+    anchors = {m.meal: [a[0] for a in m.anchors] for m in res.meals}
+    print("DAY5 anchors", anchors)
+    assert all("MAYURA" not in a.upper() for names in anchors.values() for a in names)

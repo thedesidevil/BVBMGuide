@@ -138,6 +138,26 @@ def _norm_city(text: str) -> str:
     return " ".join(re.sub(r"[^\w]+", " ", text.casefold()).split())
 
 
+_CITY_SEP = re.compile(r"\s*(?:/|→|->|,|&|\s-\s|\s+to\s+|\s+and\s+)\s*", re.I)
+
+
+def split_city(text: str) -> list[str]:
+    return [p for p in (x.strip() for x in _CITY_SEP.split(text or "")) if p]
+
+
+def resolve_day_city(text: str, d: date, stays: list[HotelStay]) -> str:
+    """A day title like 'Ubud / Nusa Lembongan' names two cities: use the one the group sleeps in that night."""
+    parts = split_city(text)
+    if len(parts) < 2:
+        return text
+    night = [s for s in stays if s.check_in <= d < s.check_out]
+    for s in night:
+        for part in parts:
+            if _norm_city(part) == _norm_city(s.city):
+                return part
+    return parts[-1]
+
+
 def _stay_for(stays: list[HotelStay], d: date, meal: str, start: time, city: str = "") -> Optional[HotelStay]:
     out = [s for s in stays if s.check_in < d == s.check_out]
     new = [s for s in stays if s.check_in == d]

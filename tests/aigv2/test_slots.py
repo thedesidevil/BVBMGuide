@@ -300,3 +300,34 @@ def test_boat_leg_other_day_ignored_and_arrival_departure_not_double_handled():
                      places("Hotel H"), S, legs=[dep])
     r2 = schedule_day(dp, [stay(cin=date(2026, 9, 24), cout=date(2026, 10, 2))], None, dep, places("Hotel H"), S)
     assert r.meals == r2.meals
+
+
+# ---- multi-city day titles ----
+
+from src.aigv2.planning.slots import resolve_day_city, split_city
+
+
+def test_split_city_separators():
+    assert split_city("Ubud / Nusa Lembongan") == ["Ubud", "Nusa Lembongan"]
+    assert split_city("Paris → Lyon") == ["Paris", "Lyon"]
+    assert split_city("Paris -> Lyon") == ["Paris", "Lyon"]
+    assert split_city("Rome to Florence") == ["Rome", "Florence"]
+    assert split_city("Rome - Florence") == ["Rome", "Florence"]
+    assert split_city("Rome, Florence & Pisa and Siena") == ["Rome", "Florence", "Pisa", "Siena"]
+    assert split_city("") == []
+    assert split_city("Sanur") == ["Sanur"]
+
+
+def _stays():
+    return [HotelStay(city="Ubud", hotel="A", check_in=date(2026, 9, 24), check_out=date(2026, 9, 28), source="voucher"),
+            HotelStay(city="Nusa Lembongan", hotel="B", check_in=date(2026, 9, 28), check_out=date(2026, 9, 30),
+                      source="voucher")]
+
+
+def test_resolve_day_city_night_stay_and_fallbacks():
+    assert resolve_day_city("Ubud / Nusa Lembongan", date(2026, 9, 28), _stays()) == "Nusa Lembongan"
+    assert resolve_day_city("nusa lembongan / Ubud", date(2026, 9, 28), _stays()) == "nusa lembongan"
+    assert resolve_day_city("Ubud / Somewhere", date(2026, 9, 27), _stays()) == "Ubud"
+    assert resolve_day_city("Ubud / Elsewhere", date(2026, 12, 1), _stays()) == "Elsewhere"
+    assert resolve_day_city("Sanur", date(2026, 9, 28), _stays()) == "Sanur"
+    assert resolve_day_city("", date(2026, 9, 28), _stays()) == ""

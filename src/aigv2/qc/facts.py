@@ -163,3 +163,39 @@ def _travel(v, city, anchor, place: Place, places, routes, findings, day_no):
             findings.append(_f("travel_time_mismatch", f"{v.name}: guide says {label.lower()} {minutes} min from "
                                f"{anchor}, Google says {got} min", v.name, day_no))
     return "; ".join(guide), "; ".join(google)
+
+
+_ISLAND = re.compile(r"\b(?:Nusa\s+([A-Z][a-z]+)|([A-Z][a-z]+)\s+Island)\b")
+
+
+def _islands(text: str) -> set[str]:
+    return {(a or b).casefold() for a, b in _ISLAND.findall(text or "")}
+
+
+def island_prose_findings(doc: DocModel, trip: TripPlan, places) -> list:
+    """Prose that puts a stop on an island other than the one its Google address names. The island names are
+    learned from the trip's own addresses, so nothing is hard-coded."""
+    plan_days = sorted(trip.days, key=lambda d: d.date)
+    venues = []
+    for day in doc.days:
+        if day.index is None or not 1 <= day.index <= len(plan_days):
+            continue
+        for slot in day.slots:
+            for v in slot.venues:
+                if v.kind == "venue" and v.body:
+                    p = places.find(v.name, plan_days[day.index - 1].city)
+                    venues.append((day.index, v, p if p is not None and p.match_ok else None))
+    known = set().union(*(_islands(p.address) for _, _, p in venues if p)) if venues else set()
+    out = []
+    for day_no, v, p in venues:
+        own = _islands(p.address) if p else set()
+        if not own:
+            continue
+        for m in _ISLAND.finditer(v.body):
+            name = (m.group(1) or m.group(2)).casefold()
+            before = v.body[max(0, m.start() - 12):m.start()].casefold()
+            if name in known and name not in own and re.search(r"\b(on|of)\s+(the\s+)?(island\s+of\s+)?$", before):
+                out.append(_f("prose_island", f"{v.name}: the text puts it on {m.group(0)}, but its Google address names "
+                              f"{', '.join(sorted(i.title() for i in own))}", v.name, day_no))
+                break
+    return out

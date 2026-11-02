@@ -973,3 +973,19 @@ def test_saved_bali_trip_has_no_false_unplaced_markers():
     state = pipeline.PlanState.model_validate(json.load(open(path)))
     by_date = {d.date: d for d in state.days}
     assert all(pipeline._booking_placed(b, by_date[b.day], state.trip) for b in state.trip.bookings)
+
+
+def test_day_facts_carry_google_address_of_each_stop():
+    from src.aigv2.models import PlannedItem
+    from src.aigv2.planning.slots import ScheduledItem
+    trip = day_trip()
+    d = trip.days[0]
+    pl = Place(query="Blue Lagoon", place_id="p", name="Blue Lagoon", address="Ceningan Island, Bali", lat=1, lng=2,
+               status="OPERATIONAL", maps_url="u", fetched_at=datetime(2026, 1, 1), match_ok=True)
+    ds = pipeline.DayState(index=1, date=d.date, city=d.city, places={"Blue Lagoon": pl},
+                           result=pipeline.DayResult(scheduled=[ScheduledItem(
+                               item=PlannedItem(name="Blue Lagoon", kind="attraction", city=d.city),
+                               slot="morning", start=time(9, 0))]))
+    state = type("S", (), {"trip": trip, "picks": []})()
+    facts = pipeline._day_facts(ds, state)
+    assert facts["attractions"][0]["google_address"] == "Ceningan Island, Bali"

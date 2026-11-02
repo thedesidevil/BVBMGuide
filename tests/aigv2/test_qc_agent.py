@@ -381,3 +381,29 @@ def test_optional_stop_not_open_at_slot_is_a_warning():
 def test_sense_prompt_tells_reviewer_optional_hours_are_not_errors():
     from src.aigv2.qc.llm_checks import _SENSE_SYSTEM
     assert "optional or choose-one stop" in _SENSE_SYSTEM
+
+
+def _island_setup(text):
+    galata = late_place("Galata Tower").model_copy(update={"address": "Ceningan Island, Lembongan, Bali, Indonesia"})
+    mikla = late_place("Mikla").model_copy(update={"address": "Jungutbatu, Nusa Lembongan, Bali, Indonesia"})
+    raw = edit_text(render(), "A medieval stone tower.", text)
+    return read_docx(raw), FakePlaces(cached_places(**{"Galata Tower": galata, "Mikla": mikla}))
+
+
+def test_prose_naming_a_different_island_than_the_address_is_an_error():
+    from src.aigv2.qc.facts import island_prose_findings
+    doc, pl = _island_setup("A lovely cliff on Nusa Lembongan.")
+    fs = island_prose_findings(doc, trip(), pl)
+    assert [(f.rule, f.severity, f.anchor_text) for f in fs] == [("prose_island", "error", "Galata Tower")]
+    assert "Ceningan" in fs[0].message
+
+
+def test_prose_naming_the_address_island_is_fine():
+    from src.aigv2.qc.facts import island_prose_findings
+    doc, pl = _island_setup("A lovely cliff on Ceningan Island.")
+    assert island_prose_findings(doc, trip(), pl) == []
+
+
+def test_day_prompt_and_facts_carry_the_address_rule():
+    from src.aigv2.writing import days
+    assert "google_address or area" in days._SYSTEM

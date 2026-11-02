@@ -24,6 +24,7 @@ _SYSTEM = (
     "opening hours inside title, intro, description or free_time_idea. Use every attraction and restaurant name exactly "
     "as given and add no others. If you supply entry_fee, dress_code, tips, best_time or duration for an attraction "
     "they are unverified and will be flagged for a human, so leave them null unless you are confident. "
+    "Only name an island, district or city for a stop if it appears in that stop's google_address or area; otherwise leave it out. "
     "JSON shape: {\"title\": str, \"intro\": str, \"attractions\": [{\"name\": str, \"description\": str, "
     "\"entry_fee\": str|null, \"dress_code\": str|null, \"tips\": str|null, \"best_time\": str|null, "
     "\"duration\": str|null}], \"restaurants\": [{\"name\": str, \"ambience\": str, \"best_for\": str}], "

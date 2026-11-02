@@ -582,10 +582,17 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
     return state
 
 
+def _address(p: Optional[Place]) -> Optional[str]:
+    return p.address if p is not None and p.match_ok and p.address else None
+
+
 def _day_facts(ds: DayState, state: PlanState) -> dict:
     dp = next(d for d in state.trip.days if d.date == ds.date)
     attractions = [{"name": s.item.name, "kind": s.item.kind, "slot": s.slot, "note": s.item.note,
                     "optional": s.item.optional,
+                    "google_address": _address(ds.places.get(s.item.name)),
+                    "area": ds.library_attractions.get(s.item.name, {}).get("area")
+                    or ds.library_attractions.get(s.item.name, {}).get("location"),
                     "library_description": ds.library_attractions.get(s.item.name, {}).get("description")}
                    for s in ds.result.scheduled if s.item.kind in ("attraction", "activity")]
     restaurants, seen = [], set()

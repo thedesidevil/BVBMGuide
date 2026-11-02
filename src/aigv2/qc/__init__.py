@@ -1,6 +1,6 @@
 from src.aigv2.llm import LLMStepError
 from src.aigv2.qc.annotate import annotate
-from src.aigv2.qc.facts import check_facts
+from src.aigv2.qc.facts import check_facts, island_prose_findings
 from src.aigv2.qc.llm_checks import prose_fact_check, sense_check
 from src.aigv2.qc.reader import read_docx
 from src.aigv2.qc.report import QCResult, build_cost, marker_kinds, write_report
@@ -15,6 +15,10 @@ def run_qc(docx_bytes, trip, answers, library, places, routes, llm, exclusions, 
     findings = check_rules(doc, trip, library)
     fact_findings, rows = check_facts(doc, trip, places, routes, countries=countries, settings=settings)
     findings += fact_findings
+    try:
+        findings += island_prose_findings(doc, trip, places)
+    except Exception:  # a failed lookup must not stop QC
+        pass
     for name, check in (("prose_fact", lambda: prose_fact_check(doc, llm)),
                         ("sense", lambda: sense_check(doc, trip, llm, answers))):
         try:

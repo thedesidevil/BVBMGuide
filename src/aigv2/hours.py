@@ -157,6 +157,15 @@ def is_open_for(hours: WeeklyHours | None, day: date, start: time, minutes: int)
     return any(a <= s and s + minutes <= b for a, b in _intervals(hours, day.weekday()))
 
 
+def next_opening(hours: WeeklyHours | None, day: date, after: time) -> time | None:
+    """Start of the first opening interval on `day` that begins after `after` (None if none or already open)."""
+    if hours is None:
+        return None
+    a_min = after.hour * 60 + after.minute
+    starts = [a for a, _ in _intervals(hours, day.weekday()) if a_min < a < _DAY_MIN]
+    return _from_mins(min(starts)) if starts else None
+
+
 def _fmt12(t: time) -> str:
     m = _mins(t) % _DAY_MIN
     h, mi = divmod(m, 60)

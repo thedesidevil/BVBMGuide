@@ -9,7 +9,7 @@ from src.aigv2.config import Settings
 from src.aigv2.hours import format_for_day, is_open_for
 from src.aigv2.library import norm_name
 from src.aigv2.models import DayPlan, Place, TripPlan
-from src.aigv2.planning.slots import meal_start, parse_time
+from src.aigv2.planning.slots import is_optional, meal_start, parse_time
 from src.aigv2.qc.reader import DocModel, DocVenue
 from src.aigv2.qc.rules import _f
 
@@ -88,9 +88,11 @@ def check_facts(doc: DocModel, trip: TripPlan, places, routes, fresh: bool = Tru
                 if v.kind != "venue":
                     continue
                 start = _visit_time(v, slot.heading, plan, countries.get(plan.city, ""), settings)
+                item = next((it for it in plan.items if norm_name(it.name) == norm_name(v.name)), None)
                 try:
                     f, row = _check_venue(v, day.index, plan.date, plan.city, start,
-                                          near.group(1).strip() if near else None, places, routes, fresh)
+                                          near.group(1).strip() if near else None, places, routes, fresh,
+                                          optional=bool(item and is_optional(item)))
                 except _LOOKUP_ERRORS as e:
                     f = [_f("fact_check_failed", f"{v.name}: Google lookup failed ({e.__class__.__name__})",
                             v.name, day.index)]
@@ -106,7 +108,7 @@ def _row(v: DocVenue, day_no: int, google_hours: str, guide_travel: str, google_
 
 
 def _check_venue(v: DocVenue, day_no: int, d: date, city: str, start: Optional[time], anchor: Optional[str],
-                 places, routes, fresh: bool):
+                 places, routes, fresh: bool, optional: bool = False):
     cached = places.find(v.name, city)
     place = None
     if cached is not None and cached.match_ok:
@@ -131,7 +133,8 @@ def _check_venue(v: DocVenue, day_no: int, d: date, city: str, start: Optional[t
         findings.append(_unverified(v, day_no, "opening hours (unknown slot time)"))
     elif is_open_for(place.hours, d, start, _VISIT_MIN) is False:
         findings.append(_f("not_open_at_slot", f"{v.name} does not look open on {d:%a %d %b} at {start:%H:%M} "
-                           f"(Google: {format_for_day(place.hours, d)})", v.name, day_no))
+                           f"(Google: {format_for_day(place.hours, d)})", v.name, day_no,
+                           "warning" if optional else "error"))
     guide_travel, google_travel = _travel(v, city, anchor, place, places, routes, findings, day_no)
     return findings, _row(v, day_no, format_for_day(place.hours, d), guide_travel, google_travel, not findings)
 

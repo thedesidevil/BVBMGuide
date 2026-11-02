@@ -3,12 +3,12 @@ import re
 from datetime import date, datetime, time
 from typing import Optional
 
-from src.aigv2.hours import format_for_day
+from src.aigv2.hours import _fmt12, format_for_day, is_open_for, next_opening
 from src.aigv2.library import norm_name
 from src.aigv2.models import HotelStay, Marker, Place, TransportLeg
 from src.aigv2.planning.late_night import is_late_night_landing, pickup_before_landing
 from src.aigv2.planning.meals import ChosenRestaurant
-from src.aigv2.planning.slots import MealSlot, ScheduledItem, leave_by
+from src.aigv2.planning.slots import MealSlot, ScheduledItem, is_optional, leave_by
 from src.aigv2.planning.travel import Leg, drive_day_legs, leg_markers, leg_options
 from src.aigv2.render.blocks import add_card, add_eyebrow, add_link, add_slot_heading
 from src.aigv2.render.sections_render import marker_lines, minutes_text, place_markers, search_url, heading1
@@ -51,6 +51,14 @@ def _hm(dt: datetime) -> str:
 def _when(dt: datetime, d: date) -> str:
     """Time of day, plus the weekday and date when it falls on another day than the one being shown."""
     return _hm(dt) if dt.date() == d else f"{_hm(dt)}, {dt:%a} {dt.day} {dt:%b}"
+
+
+def _late_opening_note(it, p, d, start) -> Optional[str]:
+    """'Opens 5:00 PM: best visited later in the day' for an optional stop whose hours miss its slot."""
+    if p is None or not p.hours or not is_optional(it) or is_open_for(p.hours, d, start, 30) is not False:
+        return None
+    opening = next_opening(p.hours, d, start)
+    return f"Opens {_fmt12(opening)}: best visited later in the day" if opening else None
 
 
 class DayRenderer:
@@ -320,6 +328,9 @@ class DayRenderer:
         note = (it.note or "").strip()
         if note and (it.optional or note.lower().startswith("choose one") or "own expense" in note.lower()):
             facts.append(("NOTE", note))
+        late = _late_opening_note(it, p if found else None, rd.date, s.start)
+        if late:
+            facts.append(("NOTE", late))
         if found and it.kind != "transfer":
             facts.append(("OPENING HOURS", format_for_day(p.hours, rd.date) if p.hours else _verify("opening hours")))
         for label, value, what in (("ENTRY FEE", at and at.entry_fee, "entry fee"),

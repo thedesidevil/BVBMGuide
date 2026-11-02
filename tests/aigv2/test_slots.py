@@ -2,7 +2,7 @@ from datetime import date, datetime, time
 
 from src.aigv2.config import Settings
 from src.aigv2.models import DayPlan, HotelStay, PlannedItem, Place, Stop, TransportLeg
-from src.aigv2.planning.slots import parse_time, schedule_day
+from src.aigv2.planning.slots import _slot_for, parse_time, schedule_day
 
 D = date(2026, 11, 3)
 S = Settings(models={})
@@ -431,3 +431,36 @@ def test_region_day_city_uses_the_town_the_group_sleeps_in():
     assert region_day_city("Pisa", d, stays, lambda c: {"Pisa": 30, "Ubud": 10}.get(c, 0)) == "Pisa"
     assert region_day_city("Bali", date(2027, 5, 9), stays, size) == "Bali"
     assert region_day_city("Bali", d, stays, lambda c: 0) == "Bali"
+
+
+def _hours(start, end):
+    from src.aigv2.models import WeeklyHours
+    return WeeklyHours(periods={D.weekday(): [(start, end)]}, source="google")
+
+
+def _with_hours(name, start, end):
+    p = place(name, 5.0, 6.0)
+    p.hours = _hours(start, end)
+    return p
+
+
+def test_optional_stop_that_opens_in_the_evening_moves_to_its_opening():
+    pl = places("Hotel H", "Icon Mall")
+    pl["Sindhu Market"] = _with_hours("Sindhu Market", time(17, 0), time(22, 0))
+    r = run(day([item("Icon Mall", optional=True), item("Sindhu Market", optional=True, time=None)]), pl=pl)
+    got = {s.item.name: (s.slot, s.start) for s in r.scheduled}
+    assert got["Sindhu Market"] == (_slot_for(time(17, 0), S), time(17, 0))
+
+
+def test_optional_stop_opening_after_nine_pm_keeps_its_slot():
+    pl = places("Hotel H")
+    pl["Night Bar"] = _with_hours("Night Bar", time(21, 30), time(23, 59))
+    r = run(day([item("Night Bar", optional=True)]), pl=pl)
+    assert r.scheduled[0].start == time(9, 0)
+
+
+def test_required_stop_is_not_moved():
+    pl = places("Hotel H")
+    pl["Sindhu Market"] = _with_hours("Sindhu Market", time(17, 0), time(22, 0))
+    r = run(day([item("Sindhu Market")]), pl=pl)
+    assert r.scheduled[0].start == time(9, 0)

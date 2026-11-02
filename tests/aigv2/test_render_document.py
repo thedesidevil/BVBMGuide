@@ -691,3 +691,16 @@ def test_late_arrival_booking_is_accounted_for_by_qc_rules():
     doc = read_docx(render_guide(data(trip=t, days=[d, day2()]), S))
     assert [f for f in _bookings_shown(doc, t) if f.rule == "booking_missing"] == []
     assert any(s.heading == "Late night" for s in doc.days[0].slots)
+
+
+def test_late_opening_note_for_optional_stop():
+    from datetime import date, time
+    from src.aigv2.models import PlannedItem, WeeklyHours
+    from src.aigv2.render.day_render import _late_opening_note
+    d = date(2026, 9, 30)
+    p = place("Sindhu Market")
+    p.hours = WeeklyHours(periods={d.weekday(): [(time(17), time(22))]}, source="google")
+    opt = PlannedItem(name="Sindhu Market", kind="attraction", city="X", optional=True)
+    assert _late_opening_note(opt, p, d, time(14)) == "Opens 5:00 PM: best visited later in the day"
+    assert _late_opening_note(opt, p, d, time(18)) is None
+    assert _late_opening_note(opt.model_copy(update={"optional": False}), p, d, time(14)) is None

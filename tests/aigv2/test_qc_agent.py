@@ -365,3 +365,19 @@ def test_sense_prompt_has_no_late_night_fact_for_normal_trip(monkeypatch):
     llm, calls = fake_llm('{"issues": []}', monkeypatch)
     sense_check(read_docx(render()), trip(), llm)
     assert "late-night" not in calls[0][1]
+
+
+def test_optional_stop_not_open_at_slot_is_a_warning():
+    p = late_place("Topkapi Palace")
+    p.hours.periods = {d: [(time(8), time(9, 45))] for d in range(7)}
+    from src.aigv2.models import PlannedItem
+    t = trip()
+    t.days[1].items = [PlannedItem(name="Topkapi Palace", kind="attraction", city="Istanbul", optional=True)]
+    findings, _ = check_facts(read_docx(render()), t, FakePlaces(cached_places(**{"Topkapi Palace": p})), FakeRoutes())
+    hit = [f for f in findings if f.rule == "not_open_at_slot" and f.anchor_text == "Topkapi Palace"]
+    assert hit and hit[0].severity == "warning"
+
+
+def test_sense_prompt_tells_reviewer_optional_hours_are_not_errors():
+    from src.aigv2.qc.llm_checks import _SENSE_SYSTEM
+    assert "optional or choose-one stop" in _SENSE_SYSTEM

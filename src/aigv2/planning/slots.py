@@ -5,6 +5,7 @@ from typing import Literal, Optional, Sequence
 from pydantic import BaseModel, Field
 
 from src.aigv2.config import Settings
+from src.aigv2.hours import is_open_for, next_opening
 from src.aigv2.models import DayPlan, HotelStay, Marker, PlannedItem, Place, TransportLeg
 
 Slot = Literal["morning", "afternoon", "evening"]
@@ -148,6 +149,34 @@ def _schedule_items(day: DayPlan, settings: Settings, floor: Optional[time] = No
     return sorted(out, key=lambda s: s.start)
 
 
+_OPTIONAL_VISIT_MIN = 30
+_LATEST_OPTIONAL_OPENING = time(21, 0)
+
+
+def is_optional(it: PlannedItem) -> bool:
+    return it.optional or (it.note or "").strip().lower().startswith("choose one")
+
+
+def _shift_late_openers(res: "DayResult", d: date, places: dict[str, Optional[Place]], settings: Settings) -> None:
+    """An optional / choose-one stop that opens after its slot starts when the place opens, if that is the same evening."""
+    changed = False
+    for i, s in enumerate(res.scheduled):
+        it = s.item
+        if not is_optional(it) or it.kind not in ("attraction", "activity") or parse_time(it.time) or parse_time(it.pickup_time):
+            continue
+        p = places.get(it.name)
+        if not (p and p.match_ok and p.hours):
+            continue
+        if is_open_for(p.hours, d, s.start, _OPTIONAL_VISIT_MIN):
+            continue
+        opening = next_opening(p.hours, d, s.start)
+        if opening and opening < _LATEST_OPTIONAL_OPENING:
+            res.scheduled[i] = ScheduledItem(item=it, slot=_slot_for(opening, settings), start=opening)
+            changed = True
+    if changed:
+        res.scheduled.sort(key=lambda x: x.start)
+
+
 def meal_start(meal: str, country: str, settings: Settings) -> time:
     custom = settings.country_meal_windows.get(country, {}).get(meal)
     if custom:
@@ -268,6 +297,7 @@ def schedule_day(
 ) -> DayResult:
     floor = boat_floor(day.date, legs, stays, (arrival, departure))
     res = DayResult(scheduled=_schedule_items(day, settings, floor))
+    _shift_late_openers(res, day.date, places, settings)
     rules = " ".join(day.meal_rules).lower()
     d = day.date
 

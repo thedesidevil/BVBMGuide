@@ -18,7 +18,8 @@ _SENSE_SYSTEM = (
     "You are the final reviewer of a finished travel guide before it goes to a client. Given the guide text, the trip "
     "plan and the planner's answers, list anything that does not make sense or that a human should double-check: "
     "contradictions, impossible timings, wrong cities, advice that does not fit the travellers. Do not rewrite "
-    "anything and do not flag style. For each item copy a short phrase verbatim from the guide into 'quote'. "
+    "anything and do not flag style. An optional or choose-one stop whose card prints its own opening hours is not an "
+    "error even if those hours differ from the slot it sits in. For each item copy a short phrase verbatim from the guide into 'quote'. "
     'Answer in JSON: {"issues": [{"quote": "...", "problem": "...", "day": 2}]}, where day is the guide day number '
     'it concerns or null. Return {"issues": []} when all is fine.'
 )

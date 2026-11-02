@@ -206,8 +206,8 @@ def test_country_only_content_is_library(key, lib_key, tip):
     ("etiquette", "tipping", {"tip": "Round up the taxi fare"}, "Round up the taxi fare"),
     ("etiquette", "dos_donts", {"tip": "Remove shoes indoors"}, "Remove shoes indoors"),
     ("safety", "scams", {"tip": "Beware of fake petition clipboards"}, "Beware of fake petition clipboards"),
-    ("safety", "embassies", {"name": "Embassy of Narnia", "city": "Paris", "phone": "+33 000", "address": "Rue Lune"},
-     "Embassy of Narnia"),
+    ("safety", "embassies", {"name": "Embassy of India in Narnia", "city": "Paris", "phone": "+33 000", "address": "Rue Lune"},
+     "Embassy of India in Narnia"),
     ("connectivity", "apps", {"name": "Citymapper", "purpose": "Offline transit maps"}, "Citymapper"),
     ("health", "insurance", {"tip": "Carry your policy card"}, "Carry your policy card"),
     ("money", "money", {"tip": "Cards are widely accepted"}, "Cards are widely accepted"),
@@ -306,3 +306,33 @@ def test_dishes_where_to_try_diet_filtered():
     assert llm.cost_log[1]["fallback"] is True
     assert "Green Table" in s.items[0].body and "Le Boeuf" not in s.items[0].body
     assert "Le Boeuf" not in calls[0][1]["messages"][1]["content"].split("where_to_try: ", 1)[1].split("\n", 1)[0]
+
+
+def _safety_prompt(embassies):
+    llm, calls = make(sec([{"heading": "Tip", "body": "ok"}]))
+    s = write_section("safety", [{"city": "Paris", "country": "France"}], {"France": {"embassies": embassies}}, trip(),
+                      llm, places=FakePlaces(True))
+    return s, calls[0][1]["messages"][-1]["content"]
+
+
+def test_safety_only_indian_embassies_reach_writer():
+    indian = {"name": "Embassy of India", "city": "Paris", "phone": "+33 1", "address": "20 Rue Alexandre"}
+    us = {"name": "U.S. Embassy Cairo", "city": "Cairo", "phone": "+20 2", "address": "5 Tahrir"}
+    _, prompt = _safety_prompt([us, indian])
+    assert "Embassy of India" in prompt and "U.S. Embassy Cairo" not in prompt
+
+
+def test_safety_non_indian_embassies_dropped_but_embassy_item_still_checked():
+    us = {"name": "U.S. Consulate General Casablanca", "city": "Casablanca", "phone": "+212", "address": "8 Bd"}
+    reply = [{"heading": "Embassy of India", "body": "Somewhere in Paris."}]
+    llm, calls = make(sec(reply))
+    s = write_section("safety", [{"city": "Paris", "country": "France"}], {"France": {"embassies": [us]}}, trip(),
+                      llm, places=FakePlaces(True))
+    assert "Casablanca" not in calls[0][1]["messages"][-1]["content"]
+    e = [i for i in s.items if "Embassy of India" in i.heading][0]
+    assert "1 Rue X" in e.body and not e.verify
+
+
+def test_safety_nameless_embassy_without_india_dropped():
+    _, prompt = _safety_prompt([{"name": "Embassy", "city": "London", "phone": "+44 20"}])
+    assert "+44 20" not in prompt

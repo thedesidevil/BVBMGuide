@@ -109,8 +109,19 @@ def _library_items(key: str, cities: list[dict], cdatas: list[dict]) -> list:
                 out += _listify(c.get(name))
         else:
             for cd in cdatas:
-                out += _listify(cd.get(name))
+                items = _listify(cd.get(name))
+                if name == "embassies":  # the client is Indian: only Indian missions may be shown
+                    items = [e for e in items if _mentions_india(e)]
+                out += items
     return out
+
+
+def _mentions_india(entry) -> bool:
+    if isinstance(entry, dict):
+        text = " ".join(v for v in entry.values() if isinstance(v, str))
+    else:
+        text = str(entry)
+    return "india" in text.casefold()
 
 
 def _restaurant_names(cities: list[dict], diet) -> dict[str, str]:

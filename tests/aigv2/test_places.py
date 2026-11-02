@@ -281,7 +281,7 @@ def test_no_retry_when_first_try_matches_or_no_parenthetical(tmp_path):
     c, s = client(tmp_path, {"places": [gp("Marine Park Sea Dragon", addr="Nusa, Ubud")]})
     assert c.find("Marine Park (Sea Dragon)", "Ubud").match_ok and c.calls["text_search"] == 1
     c2, s2 = client(tmp_path / "b", {"places": [gp("Something Else", addr="Elsewhere")]})
-    assert c2.find("Mangrove boat experience", "Ubud").match_ok is False
+    assert c2.find("Mangrove boat ride", "Ubud").match_ok is False
     assert c2.calls["text_search"] == 1 and len(s2.posts) == 1
 
 
@@ -342,3 +342,43 @@ def test_peek_none_when_expired(tmp_path):
     c.find("Seher Restaurant", "Istanbul")
     c.cache.max_age = timedelta(seconds=-1)
     assert c.peek("Seher Restaurant", "Istanbul") is None
+
+
+# ---------- simplification retry chain ----------
+
+def test_simplified_names_chain():
+    from src.aigv2.google.places import _simplified_names
+    assert _simplified_names("MANGROVE BOAT EXPERIENCE AT NUSA LEMBONGAN MANGROVE FOREST") == [
+        "NUSA LEMBONGAN MANGROVE FOREST", "MANGROVE BOAT AT NUSA LEMBONGAN MANGROVE FOREST"]
+    assert _simplified_names("MARINE PARK (SEA DRAGON PACKAGE)") == ["MARINE PARK"]
+    assert _simplified_names("KINTAMANI VOLCANO VIEW") == ["KINTAMANI VOLCANO"]
+    assert _simplified_names("DEVIL'S TEAR") == ["DEVIL'S TEARS"]
+    assert _simplified_names("COFFEE PLANTATION") == []
+
+
+def test_chain_steps_run_in_order_and_note_set(tmp_path):
+    miss = {"places": [gp("Other", addr="Elsewhere")]}
+    hit = {"places": [gp("Nusa Lembongan Mangrove Forest", addr="Nusa Lembongan, Bali", pid="m")]}
+    c, s = client(tmp_path, miss, hit)
+    p = c.find("MANGROVE BOAT EXPERIENCE AT NUSA LEMBONGAN MANGROVE FOREST", "Nusa Lembongan")
+    assert p.match_ok and p.place_id == "m" and c.calls["text_search"] == 2
+    assert s.posts[1][2]["textQuery"] == "NUSA LEMBONGAN MANGROVE FOREST, Nusa Lembongan"
+    assert "simplified name" in p.verify_note
+    assert c.find("MANGROVE BOAT EXPERIENCE AT NUSA LEMBONGAN MANGROVE FOREST", "Nusa Lembongan").place_id == "m"
+    assert c.calls["text_search"] == 2
+
+
+def test_tears_retry_and_cap(tmp_path):
+    miss = {"places": [gp("Other", addr="Elsewhere")]}
+    hit = {"places": [gp("Devil's Tears", addr="Nusa Lembongan, Bali", pid="d")]}
+    c, s = client(tmp_path, miss, hit)
+    p = c.find("DEVIL'S TEAR", "Nusa Lembongan")
+    assert p.match_ok and s.posts[1][2]["textQuery"] == "DEVIL'S TEARS, Nusa Lembongan"
+    c2, s2 = client(tmp_path / "b", miss)
+    p2 = c2.find("A VIEW TOUR AT B (C PACKAGE)", "Ubud")
+    assert not p2.match_ok and c2.calls["text_search"] <= 4
+
+
+def test_no_chain_when_first_matches(tmp_path):
+    c, s = client(tmp_path, {"places": [gp("Kintamani Volcano View", addr="Kintamani, Ubud, Bali")]})
+    assert c.find("KINTAMANI VOLCANO VIEW", "Ubud").match_ok and c.calls["text_search"] == 1

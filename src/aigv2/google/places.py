@@ -49,6 +49,32 @@ def weak_coverage(country_or_city: str) -> bool:
     return any(p in _WEAK_COVERAGE for p in parts)
 
 
+_GENERIC_WORDS = re.compile(r"\b(?:package|tour|experience|view)\b", re.I)
+_AT_IN = re.compile(r"^.*\s(?:at|in)\s+", re.I)
+_MAX_RETRIES = 3
+
+
+def _simplified_names(name: str) -> list[str]:
+    """Deterministic fallback queries for a broad attraction name, most faithful first (at most _MAX_RETRIES)."""
+    out: list[str] = []
+
+    def add(q: str) -> None:
+        q = " ".join(q.split()).strip(" ,-")
+        if q and q.casefold() != name.casefold() and q.casefold() not in {x.casefold() for x in out}:
+            out.append(q)
+
+    bare = _TRAILING_PAREN.sub("", name).strip()
+    add(bare)
+    stripped = _GENERIC_WORDS.sub(" ", bare)
+    tail = _AT_IN.sub("", stripped) if _AT_IN.search(stripped) else stripped
+    add(tail)
+    add(stripped)
+    last = out[-1] if out else bare
+    if re.search(r"\btear$", last, re.I):
+        add(re.sub(r"(?i)tear$", lambda m: m.group(0) + ("S" if m.group(0).isupper() else "s"), last))
+    return out[:_MAX_RETRIES]
+
+
 def _add_note(place: Place, note: str) -> None:
     place.verify_note = f"{place.verify_note}; {note}" if place.verify_note else note
 
@@ -146,12 +172,16 @@ class PlacesClient:
             if cached is not None:
                 return cached
         place = self._lookup(name, city, near, key)
-        bare = _TRAILING_PAREN.sub("", name).strip()
-        if (place is None or not place.match_ok) and bare and bare != name:
-            retry = self._lookup(bare, city, near, f"{bare}|{city}")
-            if retry is not None and retry.match_ok:
-                self.cache.put(f"{bare}|{city}", retry)
-                place = retry
+        if place is None or not place.match_ok:
+            bare = _TRAILING_PAREN.sub("", name).strip()
+            for q in _simplified_names(name):
+                retry = self._lookup(q, city, near, f"{q}|{city}")
+                if retry is not None and retry.match_ok:
+                    if q != bare:
+                        _add_note(retry, f"Matched using the simplified name '{q}'")
+                    self.cache.put(f"{q}|{city}", retry)
+                    place = retry
+                    break
         if place is not None:
             self.cache.put(key, place)
         return place

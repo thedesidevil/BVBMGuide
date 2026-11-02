@@ -9,6 +9,7 @@ from pydantic import BaseModel, Field
 from src.aigv2.config import Settings
 from src.aigv2.hours import format_for_day, is_open_for, parse_library_hours
 from src.aigv2.library import diet_fits, is_indian, norm_name
+from src.aigv2.google.places import _haversine_km
 from src.aigv2.llm import LLMStepError
 from src.aigv2.models import Diet, Marker, Place, WeeklyHours
 from src.aigv2.planning.slots import Anchor, MealSlot
@@ -18,7 +19,9 @@ _MEAL_MINUTES = 60
 _MAX_USES = 2
 _BATCH = 6
 _SPARE = 2
-_LOOKUP_CAP = 25
+_ANCHOR_LOOKUPS = 9
+_CITY_CEILING = 60
+_KM_PER_MIN = 0.6
 _LOC_KEYS = ("area", "nearby_landmarks", "location")
 _STOP = {"the", "and", "near", "hotel", "restaurant", "cafe", "street", "road"}
 _CAPPED = object()
@@ -140,20 +143,32 @@ class _Planner:
     def _exclude(self, name: str, reason: Reason, where: str, detail: str) -> None:
         self.exclusions.append(Exclusion(name=name, reason=reason, detail=f"{where}: {detail}"))
 
-    def _resolve(self, name: str, shard: str, near: tuple[float, float]):
+    def _peek(self, name: str, shard: str) -> Optional[Place]:
+        peek = getattr(self.places, "peek", None)
+        return peek(name, shard) if callable(peek) else None
+
+    def _resolve(self, name: str, shard: str, near: tuple[float, float], budget: Optional[list[int]] = None):
         key = (norm_name(shard), norm_name(name))
         if key in self.resolved:
             return self.resolved[key]
         used = self.stats.lookups_by_city.get(shard, 0)
-        if used >= _LOOKUP_CAP:
+        cached = self._peek(name, shard)
+        if cached is not None:
+            self.resolved[key] = cached
+            return cached
+        if used >= _CITY_CEILING:
             if shard not in self.stats.capped_cities:
                 self.stats.capped_cities.append(shard)
+            return _CAPPED
+        if budget is not None and budget[0] >= _ANCHOR_LOOKUPS:
             return _CAPPED
         calls = getattr(self.places, "calls", None)
         before = calls.get("text_search", 0) if isinstance(calls, dict) else None
         place = self.places.find(name, shard, near=near)
         new = 1 if before is None else calls.get("text_search", 0) - before
         self.stats.lookups_by_city[shard] = used + new
+        if budget is not None:
+            budget[0] += new
         self.resolved[key] = place
         return place
 
@@ -174,7 +189,13 @@ class _Planner:
             pick.markers.extend(Marker(kind="ADD_RESTAURANT", text=where) for _ in range(count - len(chosen)))
         return pick
 
-    def _pool(self, n: int, candidates: list[dict], shard_key: str, anchor_words: set[str], where: str) -> list[dict]:
+    def _max_km(self, slot: MealSlot) -> float:
+        limit = self.settings.dinner_max_min if slot.meal == "dinner" else self.settings.lunch_max_min
+        return max(self.settings.walk_max_min, limit) * _KM_PER_MIN
+
+    def _pool(self, n: int, candidates: list[dict], shard_key: str, anchor_words: set[str], where: str,
+              shard: str = "", a_xy: Optional[tuple[float, float]] = None,
+              slot: Optional[MealSlot] = None) -> list[dict]:
         names_today = self.names_by_day.setdefault(n, set())
         pool, seen = [], set()
         for i, r in enumerate(candidates):
@@ -192,17 +213,27 @@ class _Planner:
             if self.uses_by_name[(shard_key, key)] >= _MAX_USES:
                 self._exclude(rname, "repeat_limit", where, f"already used {_MAX_USES} times")
                 continue
-            pool.append((-len(anchor_words & _location_words(r)), self.uses_by_name[(shard_key, key)], i, r))
-        return [r for *_, r in sorted(pool, key=lambda t: t[:3])]
+            dist = None
+            known = self._peek(rname, shard) if a_xy is not None and slot is not None else None
+            if known is not None and known.match_ok:
+                dist = _haversine_km(a_xy[0], a_xy[1], known.lat, known.lng)
+                if dist > self._max_km(slot):
+                    self._exclude(rname, "too_far", where, f"straight-line {dist:.1f} km")
+                    continue
+            pool.append((-len(anchor_words & _location_words(r)), self.uses_by_name[(shard_key, key)], i, r, dist))
+        near = sorted((t for t in pool if t[4] is not None), key=lambda t: t[4])
+        rest = sorted((t for t in pool if t[4] is None), key=lambda t: t[:3])
+        return [t[3] for t in near + rest]
 
     def _anchor(self, n: int, day: date, city: str, slot: MealSlot, anchor: Anchor, where: str,
                 need_indian: bool) -> list[ChosenRestaurant]:
         a_name, a_xy, count = anchor
         shard, candidates = self._shard(a_name, city)
         shard_key = norm_name(shard)
-        pool = self._pool(n, candidates, shard_key, _words(a_name), where)
+        pool = self._pool(n, candidates, shard_key, _words(a_name), where, shard, a_xy, slot)
         places_today = self.places_by_day.setdefault(n, set())
         valid: list[ChosenRestaurant] = []
+        budget = [0]
         seen_ids: dict[str, str] = {}
         while pool:
             first = None
@@ -216,7 +247,7 @@ class _Planner:
             while pool and taken < _BATCH:
                 r = pool.pop(0)
                 taken += 1
-                place = self._resolve(r["name"], shard, a_xy)
+                place = self._resolve(r["name"], shard, a_xy, budget)
                 if place is _CAPPED:
                     continue
                 checked = self._check(r, place, shard_key, day, slot, where, places_today, seen_ids)

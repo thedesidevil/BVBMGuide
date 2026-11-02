@@ -135,6 +135,10 @@ class PlacesClient:
         return place.model_copy(update={"status": raw.get("businessStatus") or "UNKNOWN", "hours": _hours(raw),
                                         "fetched_at": datetime.now(timezone.utc)})
 
+    def peek(self, name: str, city: str) -> Optional[Place]:
+        """The cached place `find` would return for this exact key; no HTTP call, no counters."""
+        return self.cache.get(f"{name}|{city}")
+
     def find(self, name: str, city: str, near: Optional[tuple[float, float]] = None, fresh: bool = False) -> Optional[Place]:
         key = f"{name}|{city}"
         if not fresh:

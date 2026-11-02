@@ -1,3 +1,4 @@
+from datetime import timedelta
 import json
 
 from src.aigv2.google.places import PlacesClient, weak_coverage
@@ -325,3 +326,19 @@ def test_room_type_split_on_real_bali_hotels():
     r = mk("  Resort (Pool Villa) ")
     assert (r.hotel, r.room_type) == ("Resort", "Pool Villa")
     assert mk(" Plain Hotel ").hotel == "Plain Hotel"
+
+
+def test_peek_returns_cached_without_calls_or_counters(tmp_path):
+    c, sess = client(tmp_path, {"places": [gp("Seher Restaurant")]})
+    assert c.peek("Seher Restaurant", "Istanbul") is None
+    got = c.find("Seher Restaurant", "Istanbul")
+    before = dict(c.calls)
+    assert c.peek("Seher Restaurant", "Istanbul") == got
+    assert c.calls == before and len(sess.posts) == 1
+
+
+def test_peek_none_when_expired(tmp_path):
+    c, _ = client(tmp_path, {"places": [gp("Seher Restaurant")]})
+    c.find("Seher Restaurant", "Istanbul")
+    c.cache.max_age = timedelta(seconds=-1)
+    assert c.peek("Seher Restaurant", "Istanbul") is None

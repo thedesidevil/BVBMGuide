@@ -336,13 +336,73 @@ def test_lazy_resolution_stops_after_enough_valid(tmp_path):
     assert all(len(c[1]) <= 6 for c in rt.calls)
 
 
-def test_lookup_cap_per_city(tmp_path):
-    rs = [rest(f"R{i}") for i in range(30)]
-    lib, pl, rt = world(tmp_path, rs, overrides={f"R{i}": place(f"R{i}", i + 1, status="CLOSED_PERMANENTLY") for i in range(30)})
-    picks, _, stats = run_plan([(1, TUE, "Istanbul", [lunch(), dinner()])], lib, pl, rt)
-    assert len(pl.calls) == 25 and stats.lookups_by_city == {"Istanbul": 25}
+class PeekPlaces(FakePlaces):
+    """FakePlaces with a disk-cache stand-in: names in `cached` are free to resolve and visible to peek."""
+
+    def __init__(self, places, cached=()):
+        super().__init__(places)
+        self.cached = set(cached)
+        self.peeks = []
+
+    def peek(self, name, city):
+        self.peeks.append(name)
+        return self.places.get(name) if name in self.cached else None
+
+    def find(self, name, city, near=None, fresh=False):
+        if name not in self.cached:
+            self.calls.append((name, city, near))
+        return self.places.get(name)
+
+
+def closed_world(tmp_path, n=30):
+    rs = [rest(f"R{i}") for i in range(n)]
+    return world(tmp_path, rs, overrides={f"R{i}": place(f"R{i}", i + 1, status="CLOSED_PERMANENTLY") for i in range(n)})
+
+
+def test_each_anchor_gets_its_own_lookup_budget(tmp_path):
+    lib, pl, rt = closed_world(tmp_path)
+    anchors = [("Galata Tower", (41.0, 29.0), 3), ("Hotel X", (41.1, 29.1), 3), ("Park Y", (41.2, 29.2), 3)]
+    picks, _, stats = run_plan([(1, TUE, "Istanbul", [lunch(anchors)]), (2, TUE, "Istanbul", [dinner(anchors)])],
+                               lib, pl, rt)
+    assert len(pl.calls) == 30 and stats.lookups_by_city == {"Istanbul": 30}
+    assert stats.capped_cities == []
+
+
+def test_city_ceiling_of_60_stops_lookups(tmp_path):
+    lib, pl, rt = closed_world(tmp_path, 100)
+    anchors = [(f"Anchor{i}", (41.0 + i, 29.0), 3) for i in range(9)]
+    picks, _, stats = run_plan([(1, TUE, "Istanbul", [lunch(anchors)])], lib, pl, rt)
+    assert len(pl.calls) == 60 and stats.lookups_by_city == {"Istanbul": 60}
     assert stats.capped_cities == ["Istanbul"]
-    assert [len(p.markers) for p in picks] == [3, 3]
+
+
+def test_peek_prefilter_skips_far_cached_and_orders_near_first(tmp_path):
+    rs = [rest(n) for n in ("Far", "Unknown", "Near2", "Near1")]
+    lib = make_lib(tmp_path, {"Istanbul": rs})
+    def at(name, idx, lat):
+        p = place(name, idx)
+        return p.model_copy(update={"lat": lat, "lng": 29.0})
+    pl_ = {"Far": at("Far", 1, 42.0), "Unknown": at("Unknown", 2, 41.001), "Near2": at("Near2", 3, 41.002),
+           "Near1": at("Near1", 4, 41.0005)}
+    places = PeekPlaces(pl_, cached={"Far", "Near2", "Near1"})
+    rt = FakeRoutes(pl_, {n: {"WALK": 5, "DRIVE": 4} for n in pl_})
+    picks, excl, stats = run_plan([(1, TUE, "Istanbul", [lunch()])], lib, places, rt, llm=FirstN())
+    assert ("Far", "too_far") in reasons(excl)
+    assert any(e.name == "Far" and "straight-line" in e.detail and " km" in e.detail for e in excl)
+    assert all(pl_["Far"].lat != d[0] for c in rt.calls for d in c[1])
+    assert names(picks[0]) == ["Near1", "Near2", "Unknown"]
+    assert places.calls and places.calls[0][0] == "Unknown"
+    assert stats.lookups_by_city == {"Istanbul": 1}
+
+
+def test_empty_cache_ordering_unchanged(tmp_path):
+    lib, pl, rt = world(tmp_path, [rest(f"R{i}") for i in range(8)])
+    places = PeekPlaces(pl.places)
+    run_plan([(1, TUE, "Istanbul", [lunch()])], lib, places, rt, llm=FirstN())
+    (tmp_path / "b").mkdir()
+    lib2, pl2, rt2 = world(tmp_path / "b", [rest(f"R{i}") for i in range(8)])
+    run_plan([(1, TUE, "Istanbul", [lunch()])], lib2, pl2, rt2, llm=FirstN())
+    assert [c[0] for c in places.calls] == [c[0] for c in pl2.calls]
 
 
 def test_location_overlap_resolved_first(tmp_path):

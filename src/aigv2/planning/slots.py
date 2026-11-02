@@ -193,6 +193,16 @@ def resolve_day_city(text: str, d: date, stays: list[HotelStay]) -> str:
     return parts[-1]
 
 
+def region_day_city(text: str, d: date, stays: list[HotelStay], size) -> str:
+    """A day labelled with a region ('Bali') while the group sleeps in a town ('Ubud'): use the town when the
+    region has a thinner restaurant list (size(city) -> number of library restaurants)."""
+    night = [s for s in stays if s.check_in <= d < s.check_out]
+    if not night or any(_norm_city(s.city) == _norm_city(text) for s in stays):
+        return text
+    best = max(night, key=lambda s: size(s.city))
+    return best.city if size(best.city) > size(text) else text
+
+
 def _stay_for(stays: list[HotelStay], d: date, meal: str, start: time, city: str = "") -> Optional[HotelStay]:
     out = [s for s in stays if s.check_in < d == s.check_out]
     new = [s for s in stays if s.check_in == d]

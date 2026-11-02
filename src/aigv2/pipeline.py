@@ -23,7 +23,7 @@ from src.aigv2.money import FxRates, city_currency, price_text
 from src.aigv2.planning.late_night import AIRPORT_PICKUP
 from src.aigv2.planning.important_places import ImportantPlaces, important_places
 from src.aigv2.planning.meals import Exclusion, MealPick, PlanStats, plan_meals
-from src.aigv2.planning.slots import DayResult, parse_time, resolve_day_city, schedule_day
+from src.aigv2.planning.slots import DayResult, parse_time, region_day_city, resolve_day_city, schedule_day
 from src.aigv2.planning.travel import Leg, boat_leg, compute_legs
 from src.aigv2.preflight import apply_answers, run_checklist, unanswered
 from src.aigv2.qc import run_qc
@@ -495,6 +495,7 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
     trip = apply_answers(TripPlan.model_validate(store.load_json("trip_plan.json")), _questions(store), answers)
     for dp in trip.days:
         dp.city = resolve_day_city(dp.city, dp.date, trip.hotels)
+        dp.city = region_day_city(dp.city, dp.date, trip.hotels, lambda c: len(deps.library.restaurants(c)))
     raw = (store.load_json("places.json") or {}).get("places", {})
     places = resolve_places(trip, deps.places, {k: Place.model_validate(v) if v else None for k, v in raw.items()})
     s = deps.settings

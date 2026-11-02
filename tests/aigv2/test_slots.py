@@ -417,3 +417,17 @@ def test_boat_floor_only_on_hotel_change_days():
     b = boat(9, 0)
     assert boat_floor(BD, [b], [cstay("X", "New", BD, date(2026, 10, 2))]) == time(10, 50)
     assert boat_floor(BD, [b], [cstay("X", "Old", date(2026, 9, 24), date(2026, 10, 2))]) is None
+
+
+def test_region_day_city_uses_the_town_the_group_sleeps_in():
+    from datetime import date
+    from src.aigv2.planning.slots import region_day_city
+    stays = [HotelStay(city="Ubud", hotel="H", check_in=date(2027, 5, 1), check_out=date(2027, 5, 5), source="voucher"),
+             HotelStay(city="Sanur", hotel="S", check_in=date(2027, 5, 5), check_out=date(2027, 5, 7), source="voucher")]
+    size = {"Bali": 13, "Ubud": 86, "Sanur": 26}.get
+    d = date(2027, 5, 2)
+    assert region_day_city("Bali", d, stays, size) == "Ubud"
+    assert region_day_city("Ubud", d, stays, size) == "Ubud"
+    assert region_day_city("Pisa", d, stays, lambda c: {"Pisa": 30, "Ubud": 10}.get(c, 0)) == "Pisa"
+    assert region_day_city("Bali", date(2027, 5, 9), stays, size) == "Bali"
+    assert region_day_city("Bali", d, stays, lambda c: 0) == "Bali"

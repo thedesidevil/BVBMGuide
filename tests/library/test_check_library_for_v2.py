@@ -41,8 +41,8 @@ def test_country_with_content_shows_tick_and_exits_0(check, tmp_path, capsys):
              {"Testville": {"local_dishes": [{"name": "Fake Stew"}]}})
     assert check.main(["--db", str(db)]) == 0
     row = _row(capsys.readouterr().out, "Examplia")
-    assert row["dishes"] == "✓" and row["etiquette"] == "–" and row["souvenirs"] == "–"
-    assert row["connectivity"] == "✓"  # country-level connectivity_tips
+    assert row["dishes"] == "✓" and row["etiquette"] == "✓" and row["souvenirs"] == "–"
+    assert row["connectivity"] == "✓"  # country-level connectivity_tips; etiquette now reads country tipping
     assert row["money"] == "n/a" and row["currency"] == "EXA"
 
 

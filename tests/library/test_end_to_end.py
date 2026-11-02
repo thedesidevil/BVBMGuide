@@ -118,7 +118,7 @@ def test_docx_to_plan_to_rebuild_to_v2_reader(tmp_path, monkeypatch, capsys):
     italy = library.country("Italy")
     assert italy["embassies"][0]["name"] == "Fake Indian Embassy"
     assert italy["currency"] == "EUR" and "city" not in italy["embassies"][0]
-    assert library.country("United States") == {}  # only the canonical name is a shard
+    assert library.country("United States") == usa  # alias resolves to the USA shard
     assert sorted(p.stem for p in (db / "_country").glob("*.json")) == ["Italy", "USA"]
 
     cities, cdatas = [rome], [italy]

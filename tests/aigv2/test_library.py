@@ -175,3 +175,26 @@ def test_corrupt_shard_raises(tmp_path):
     with pytest.raises(LibraryDataError):
         Library(tmp_path).restaurants("Rome")
     assert Library(tmp_path).restaurants("Missing") == []
+
+
+def _country_lib(tmp_path, *stems):
+    (tmp_path / "_country").mkdir()
+    for st in stems:
+        _write(tmp_path / "_country" / f"{st}.json", {"tipping": [{"tip": st}]})
+    return Library(tmp_path)
+
+
+@pytest.mark.parametrize("stem,asked", [
+    ("Türkiye", "Turkey"), ("Türkiye", "turkey"), ("Türkiye", "Türkiye"), ("Türkiye", "Turkiye"),
+    ("Turkey", "Türkiye"), ("USA", "United States"), ("UK", "United Kingdom"), ("UK", "England"),
+    ("UAE", "United Arab Emirates"), ("United States", "USA"),
+])
+def test_country_accent_and_alias_lookup(tmp_path, stem, asked):
+    assert _country_lib(tmp_path, stem).country(asked) == {"tipping": [{"tip": stem}]}
+
+
+def test_country_missing_and_exact_unchanged(tmp_path):
+    lib = _country_lib(tmp_path, "France", "Türkiye")
+    assert lib.country("Atlantis") == {}
+    assert lib.country("france") == {"tipping": [{"tip": "France"}]}
+    assert lib.country("Japan") == {}

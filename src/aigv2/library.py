@@ -1,5 +1,6 @@
 import json
 import re
+import unicodedata
 from pathlib import Path
 
 from src.aigv2.models import Diet
@@ -25,6 +26,28 @@ class LibraryDataError(Exception):
 
 def norm_name(s: str) -> str:
     return " ".join(s.casefold().split())
+
+
+def _fold(s: str) -> str:
+    """norm_name plus accent folding (NFKD, combining marks dropped)."""
+    d = unicodedata.normalize("NFKD", s)
+    return norm_name("".join(ch for ch in d if not unicodedata.combining(ch)))
+
+
+_COUNTRY_ALIASES = [
+    ("turkey", "turkiye"),
+    ("usa", "us", "united states", "united states of america"),
+    ("uk", "united kingdom", "great britain", "england", "scotland"),
+    ("uae", "united arab emirates"),
+]
+
+
+def _country_aliases(name: str) -> list[str]:
+    f = _fold(name)
+    for group in _COUNTRY_ALIASES:
+        if f in group:
+            return list(group)
+    return []
 
 
 def _has(text: str, term: str) -> bool:
@@ -192,8 +215,11 @@ class Library:
             return {}
         want = norm_name(country)
         folders = self._folders(self._names(country))
-        by_stem = {p.stem.casefold(): p for p in d.glob("*.json")}
-        for cand in [want, *(norm_name(f) for f in folders)]:
+        by_stem = {_fold(p.stem): p for p in d.glob("*.json")}
+        cands = [want, *(norm_name(f) for f in folders)]
+        cands += [a for c in list(cands) for a in _country_aliases(c)]
+        for cand in cands:
+            cand = _fold(cand)
             if cand in by_stem:
                 return self._load(by_stem[cand])
         return {}

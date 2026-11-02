@@ -750,3 +750,12 @@ def test_write_reports_every_failed_writer(deps, monkeypatch):
         build_run(store, answers, deps)
     msg = str(exc.value)
     assert "title down" in msg and "days down" in msg and "sections/title.json" in msg and "days/day_01.json" in msg
+
+
+def test_default_deps_library_path_from_env(monkeypatch, tmp_path):
+    (tmp_path / "Rome.json").write_text("{}", encoding="utf-8")
+    monkeypatch.setenv("AIGV2_LIBRARY_DB", str(tmp_path))
+    deps = pipeline.default_deps()
+    assert deps.library.root == tmp_path
+    monkeypatch.delenv("AIGV2_LIBRARY_DB")
+    assert pipeline.default_deps().library.root == Path("library_db")

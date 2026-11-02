@@ -4,6 +4,7 @@ from typing import Optional
 from pydantic import BaseModel, Field
 
 from src.aigv2.models import Answers, Finding, TripPlan
+from src.aigv2.planning.late_night import late_night_days, pickup_before_landing
 from src.aigv2.qc.reader import DocModel
 from src.aigv2.qc.rules import _f
 
@@ -53,10 +54,25 @@ def prose_fact_check(doc: DocModel, llm) -> list[Finding]:
     return [_f("prose_fact", i.problem, i.quote, _day_of(doc, i.quote) or i.day) for i in out.issues if i.problem]
 
 
+def late_night_facts(trip: TripPlan) -> list[str]:
+    out = []
+    for n, d, leg, pick in late_night_days(trip):
+        line = f"Day {n} is a late-night arrival: landing {leg.arrive:%H:%M} next calendar day ({leg.arrive:%a %d %b})"
+        if pick and pick.time:
+            line += f"; pick-up booked from {pick.time}"
+            if pickup_before_landing(pick.time, leg.arrive, d):
+                line += " (the driver is booked from then and waits for the landing, so a pick-up before landing is intended)"
+        out.append(line)
+    return out
+
+
 def sense_check(doc: DocModel, trip: TripPlan, llm, answers: Optional[Answers] = None) -> list[Finding]:
     if hasattr(answers, "model_dump"):
         answers = answers.model_dump(mode="json")
     prompt = (f"Guide text:\n{doc.text}\n\nTrip plan JSON:\n{trip.model_dump_json()}\n\n"
               f"Pre-flight answers:\n{json.dumps(answers or {}, ensure_ascii=False)}")
+    notes = late_night_facts(trip)
+    if notes:
+        prompt += "\n\nKnown facts (not errors):\n" + "\n".join(f"- {x}" for x in notes)
     out = llm.run_json("qc_sense", _SENSE_SYSTEM, prompt, _Issues)
     return [_f("sense", i.problem, i.quote, _day_of(doc, i.quote) or i.day) for i in out.issues if i.problem]

@@ -645,7 +645,49 @@ def test_late_night_arrival_day_shows_date_pickup_and_no_meals():
     t = trip(transport=[leg], bookings=[pick],
              hotels=[HotelStay(city="Istanbul", hotel=HOTEL, check_in=D1, check_out=D3, source="voucher")])
     block = day_block(load(data(trip=t, days=[d, day2()])), 1)
-    assert "00:10, Fri 30 Oct" in block and "PICKUP\n23:00" in block
+    assert "Lands 00:10 on Fri 30 Oct" in block and "PICKUP\n23:00" in block
     assert "Bali Airport → Pera Palace" in block and "arrive before check-in" not in block
     assert "Lunch" not in block and "Dinner" not in block
     assert block.rstrip().endswith("Overnight in Istanbul")
+
+
+def _late_setup():
+    leg = TransportLeg(kind="flight", from_place="SIN", to_place="DPS", arrive=datetime(2026, 10, 30, 0, 10),
+                       source="voucher", number="SQ 948")
+    pick = Booking(name="Arrival in Bali – airport pick-up and transfer to Pera Palace", day=D1, time="23:00",
+                   source="voucher", meeting_point="Bali Airport")
+    it = item("Airport pick-up and transfer to Pera Palace", kind="transfer")
+    it.pickup_time, it.time = "23:00", "23:00"
+    d = RenderDay(index=1, date=D1, city="Istanbul", text=DayText(title="Late arrival", intro="Rest well."),
+                  result=DayResult(scheduled=[sched(it, "evening", time(23, 0))]), places={HOTEL: place(HOTEL)},
+                  arrival=leg, arrival_booking=pick)
+    t = trip(transport=[leg], bookings=[pick],
+             hotels=[HotelStay(city="Istanbul", hotel=HOTEL, check_in=D1, check_out=D3, source="voucher")])
+    return t, d
+
+
+def test_late_night_day_labels_lands_date_pickup_line_and_booking_name():
+    t, d = _late_setup()
+    block = day_block(load(data(trip=t, days=[d, day2()])), 1)
+    assert "Late night" in block and "Evening" not in block
+    assert "Lands 00:10 on Fri 30 Oct" in block
+    assert ("booked from 23:00 and will wait for your arrival at 00:10" in block
+            and "Your driver will meet you at the airport after you land" in block)
+    assert "Your booking: Arrival in Bali – airport pick-up and transfer to Pera Palace" in block
+
+
+def test_no_pickup_line_when_pickup_is_after_landing_or_normal_arrival():
+    t, d = _late_setup()
+    d.arrival_booking = d.arrival_booking.model_copy(update={"time": "00:30"})
+    block = day_block(load(data(trip=t, days=[d, day2()])), 1)
+    assert "will wait for your arrival" not in block
+    assert "Late night" not in day_block(load(), 1)
+
+
+def test_late_arrival_booking_is_accounted_for_by_qc_rules():
+    from src.aigv2.qc.reader import read_docx
+    from src.aigv2.qc.rules import _bookings_shown
+    t, d = _late_setup()
+    doc = read_docx(render_guide(data(trip=t, days=[d, day2()]), S))
+    assert [f for f in _bookings_shown(doc, t) if f.rule == "booking_missing"] == []
+    assert any(s.heading == "Late night" for s in doc.days[0].slots)

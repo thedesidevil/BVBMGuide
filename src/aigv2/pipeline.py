@@ -20,6 +20,7 @@ from src.aigv2.llm import StepLLM
 from src.aigv2.models import (Answers, Booking, HotelStay, Marker, Place, Question, TransportLeg, TripPlan,
                               place_key)
 from src.aigv2.money import FxRates, city_currency, price_text
+from src.aigv2.planning.late_night import AIRPORT_PICKUP
 from src.aigv2.planning.important_places import ImportantPlaces, important_places
 from src.aigv2.planning.meals import Exclusion, MealPick, PlanStats, plan_meals
 from src.aigv2.planning.slots import DayResult, parse_time, resolve_day_city, schedule_day
@@ -296,7 +297,7 @@ def _arrival_idx(trip: TripPlan, d: date) -> Optional[int]:
     return max(hits)[1] if hits else None
 
 
-_AIRPORT_PICKUP = re.compile(r"airport.*(pick-?up|transfer|meet)|(pick-?up|transfer|meet).*airport", re.I)
+_AIRPORT_PICKUP = AIRPORT_PICKUP
 
 
 def _arrival_booking(trip: TripPlan, d: date, arrival: Optional[int], items) -> Optional[Booking]:

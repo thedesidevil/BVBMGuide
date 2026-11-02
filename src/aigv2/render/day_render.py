@@ -6,6 +6,7 @@ from typing import Optional
 from src.aigv2.hours import format_for_day
 from src.aigv2.library import norm_name
 from src.aigv2.models import HotelStay, Marker, Place, TransportLeg
+from src.aigv2.planning.late_night import is_late_night_landing, pickup_before_landing
 from src.aigv2.planning.meals import ChosenRestaurant
 from src.aigv2.planning.slots import MealSlot, ScheduledItem, leave_by
 from src.aigv2.planning.travel import Leg, drive_day_legs, leg_markers, leg_options
@@ -16,6 +17,7 @@ from src.aigv2.writing.days import AttractionText
 _PORT = {"flight": "Airport", "train": "Station", "boat": "Harbor", "bus": "Bus station", "other": "Arrival point"}
 _REACH = {"flight": "Leave for the airport by", "train": "Reach the station by", "boat": "Reach the harbor by"}
 _SLOT_TITLE = {"morning": "Morning", "afternoon": "Afternoon", "evening": "Evening"}
+_LATE_NIGHT_SLOT = "Late night"
 _SUNSET = re.compile(r"sunset", re.I)
 
 
@@ -171,7 +173,10 @@ class DayRenderer:
         if t.depart:
             facts.append(("DEPARTS", f"{_hm(t.depart)} · {t.from_place}" if t.from_place else _hm(t.depart)))
         if t.arrive:
-            at = _when(t.arrive, day) if day else _hm(t.arrive)
+            if day and is_late_night_landing(t, day):
+                at = f"Lands {_hm(t.arrive)} on {t.arrive:%a} {t.arrive.day} {t.arrive:%b}"
+            else:
+                at = _when(t.arrive, day) if day else _hm(t.arrive)
             facts.append(("ARRIVES", f"{at} · {t.to_place}" if t.to_place else at))
         if t.kind == "train" and t.depart and t.arrive and t.arrive > t.depart:
             mins = int((t.arrive - t.depart).total_seconds() // 60)
@@ -199,6 +204,14 @@ class DayRenderer:
             body = ("You arrive before check-in. If your room is not ready yet, ask the front desk to hold your "
                     "luggage while you head out.")
         pick = self.rd.arrival_booking
+        if pick:
+            self.doc.add_paragraph(f"Your booking: {pick.name}")
+        if pick and arr.arrive and is_late_night_landing(arr, self.rd.date):
+            before = pickup_before_landing(pick.time, arr.arrive, self.rd.date)
+            if before:
+                self.doc.add_paragraph(
+                    f"Your driver will meet you at the airport after you land, so a pick-up shown as {before} means "
+                    f"the driver is booked from {before} and will wait for your arrival at {_hm(arr.arrive)}.")
         self._transfer_card(f"{port} → {stay.hotel}", self._url(stay.hotel), self.rd.legs.get("arrival"), body,
                             stay.hotel, pickup=pick.time if pick and pick.time else None)
 
@@ -242,11 +255,18 @@ class DayRenderer:
             elif isinstance(e, ScheduledItem):
                 if e.slot != slot:
                     slot = e.slot
-                    add_slot_heading(self.doc, _SLOT_TITLE[slot])
+                    add_slot_heading(self.doc, _LATE_NIGHT_SLOT if self._late_night_item(e) else _SLOT_TITLE[slot])
                 self._item(e)
             else:
                 self._meal(e)
                 slot = None
+
+    def _late_night_item(self, s: ScheduledItem) -> bool:
+        """An evening item of a day whose flight lands after midnight, and which is the airport pick-up or starts at 22:00 or later."""
+        arr = self.rd.arrival
+        if s.slot != "evening" or not (arr and is_late_night_landing(arr, self.rd.date)):
+            return False
+        return s.item.kind == "transfer" or s.start >= time(22)
 
     def _travel_line(self, name: str) -> None:
         leg = self.rd.legs.get(name)

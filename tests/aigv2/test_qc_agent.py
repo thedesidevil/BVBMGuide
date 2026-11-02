@@ -347,3 +347,21 @@ def test_attraction_checked_at_booked_time():
                               FakeRoutes())
     hit = [f for f in findings if f.rule == "not_open_at_slot" and f.anchor_text == "Topkapi Palace"]
     assert hit and "10:00" in hit[0].message
+
+
+def test_sense_prompt_states_late_night_arrival_fact(monkeypatch):
+    from datetime import datetime
+    from src.aigv2.models import Booking, TransportLeg
+    from tests.aigv2.test_render_document import D1
+    llm, calls = fake_llm('{"issues": []}', monkeypatch)
+    leg = TransportLeg(kind="flight", from_place="SIN", to_place="DPS", arrive=datetime(2026, 10, 30, 0, 10), source="v")
+    pick = Booking(name="Airport pick-up and transfer", day=D1, time="23:00", source="voucher")
+    sense_check(read_docx(render()), trip(transport=[leg], bookings=[pick]), llm)
+    assert "Day 1 is a late-night arrival: landing 00:10 next calendar day" in calls[0][1]
+    assert "pick-up booked from 23:00" in calls[0][1]
+
+
+def test_sense_prompt_has_no_late_night_fact_for_normal_trip(monkeypatch):
+    llm, calls = fake_llm('{"issues": []}', monkeypatch)
+    sense_check(read_docx(render()), trip(), llm)
+    assert "late-night" not in calls[0][1]

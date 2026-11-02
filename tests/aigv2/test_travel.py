@@ -265,3 +265,93 @@ def test_compute_legs_passes_leg_times_to_transit():
     compute_legs([("A", (1, 1)), ("B", (2, 2)), ("C", (3, 3))], r, ["public_transport"], departures=[t1, t2])
     assert ("TRANSIT", t1) in r.whens and ("steps", t1) in r.whens and ("TRANSIT", t2) in r.whens
     assert ("WALK", None) in r.whens
+
+
+# ---------- persistent route cache ----------
+
+def _cached(tmp_path, *resps, days=30):
+    from src.aigv2.store import RouteCache
+    from src.library.ui.storage import LocalStorageBackend
+    backend = LocalStorageBackend(tmp_path)
+    s = FakeSession(*resps)
+    return RoutesClient("K", session=s, cache=RouteCache(backend, days)), s, backend
+
+
+def _ok(minutes_s="600s"):
+    return FakeResp([{"originIndex": 0, "destinationIndex": 0, "duration": minutes_s, "condition": "ROUTE_EXISTS"}])
+
+
+def test_route_cache_miss_then_hit_makes_no_call(tmp_path):
+    rc, s, _ = _cached(tmp_path, _ok())
+    assert rc.durations([(1.0, 2.0)], [(3.0, 4.0)], "DRIVE") == {(0, 0): 10}
+    assert rc.calls["matrix_elements"] == 1 and len(s.posts) == 1
+    assert rc.durations([(1.00001, 2.00001)], [(3.0, 4.0)], "DRIVE") == {(0, 0): 10}
+    assert rc.calls["matrix_elements"] == 1 and len(s.posts) == 1
+
+
+def test_route_cache_different_mode_or_coordinates_miss(tmp_path):
+    rc, s, _ = _cached(tmp_path, _ok())
+    rc.durations([(1.0, 2.0)], [(3.0, 4.0)], "DRIVE")
+    rc.durations([(1.0, 2.0)], [(3.0, 4.0)], "WALK")
+    rc.durations([(1.001, 2.0)], [(3.0, 4.0)], "DRIVE")
+    assert len(s.posts) == 3 and rc.calls["matrix_elements"] == 3
+
+
+def test_route_cache_transit_buckets_weekday_and_hour(tmp_path):
+    from datetime import datetime
+    rc, s, _ = _cached(tmp_path, _ok())
+    mon = datetime(2027, 3, 15, 12, 5)
+    rc.durations([(1.0, 2.0)], [(3.0, 4.0)], "TRANSIT", when=mon)
+    rc.durations([(1.0, 2.0)], [(3.0, 4.0)], "TRANSIT", when=datetime(2027, 3, 22, 12, 50))
+    assert len(s.posts) == 1
+    rc.durations([(1.0, 2.0)], [(3.0, 4.0)], "TRANSIT", when=datetime(2027, 3, 15, 13, 0))
+    rc.durations([(1.0, 2.0)], [(3.0, 4.0)], "TRANSIT", when=datetime(2027, 3, 16, 12, 5))
+    assert len(s.posts) == 3
+
+
+def test_route_cache_ttl_expiry(tmp_path):
+    import json
+    rc, s, backend = _cached(tmp_path, _ok(), _ok("1200s"), days=30)
+    rc.durations([(1.0, 2.0)], [(3.0, 4.0)], "DRIVE")
+    key = next(k for k in backend.list_keys("cache/routes/"))
+    raw = backend.read_json(key)
+    raw["fetched_at"] = "2020-01-01T00:00:00+00:00"
+    backend.write_json(key, raw)
+    assert rc.durations([(1.0, 2.0)], [(3.0, 4.0)], "DRIVE") == {(0, 0): 20} and len(s.posts) == 2
+
+
+def test_route_cache_does_not_store_failures(tmp_path):
+    none = FakeResp([{"originIndex": 0, "destinationIndex": 0, "condition": "ROUTE_NOT_FOUND"}])
+    rc, s, backend = _cached(tmp_path, none, _ok())
+    assert rc.durations([(1.0, 2.0)], [(3.0, 4.0)], "DRIVE") == {(0, 0): None}
+    assert list(backend.list_keys("cache/routes/")) == []
+    assert rc.durations([(1.0, 2.0)], [(3.0, 4.0)], "DRIVE") == {(0, 0): 10} and len(s.posts) == 2
+
+    class Boom(FakeResp):
+        def raise_for_status(self):
+            raise RuntimeError("500")
+    rc2, _, backend2 = _cached(tmp_path / "b", Boom([]))
+    try:
+        rc2.durations([(1.0, 2.0)], [(3.0, 4.0)], "DRIVE")
+    except RuntimeError:
+        pass
+    assert list(backend2.list_keys("cache/routes/")) == []
+
+
+def test_route_cache_partial_matrix_only_fetches_missing_elements(tmp_path):
+    rc, s, _ = _cached(tmp_path, _ok(), FakeResp([{"originIndex": 0, "destinationIndex": 0, "duration": "60s"}]))
+    rc.durations([(1.0, 2.0)], [(3.0, 4.0)], "DRIVE")
+    out = rc.durations([(1.0, 2.0), (5.0, 6.0)], [(3.0, 4.0)], "DRIVE")
+    assert out == {(0, 0): 10, (1, 0): 1}
+    assert rc.calls["matrix_elements"] == 2 and len(s.posts[1][2]["origins"]) == 1
+
+
+def test_default_deps_routes_client_has_cache(monkeypatch, tmp_path):
+    from src.aigv2 import pipeline
+    from src.aigv2.store import RouteCache
+    real = pipeline.load_settings
+    monkeypatch.setattr(pipeline, "load_settings", lambda: real().model_copy(update={"data_root": tmp_path}))
+    monkeypatch.setattr("dotenv.load_dotenv", lambda *a, **k: None)
+    deps = pipeline.default_deps()
+    assert isinstance(deps.routes.cache, RouteCache)
+    assert deps.routes.cache.backend is deps.backend

@@ -90,5 +90,35 @@ class PlaceCache:
         self.backend.write_json(self._key(key), place.model_dump(mode="json"))
 
 
+class RouteCache:
+    """Disk cache of single route-matrix elements (minutes between two points); failed lookups are never stored."""
+
+    def __init__(self, backend: StorageBackend, max_age_days: int):
+        self.backend = backend
+        self.max_age = timedelta(days=max_age_days)
+
+    @staticmethod
+    def _key(key: str) -> str:
+        return f"cache/routes/{hashlib.sha1(key.encode('utf-8')).hexdigest()}.json"
+
+    def get(self, key: str) -> Optional[int]:
+        try:
+            raw = self.backend.read_json(self._key(key))
+            if not isinstance(raw, dict) or not isinstance(raw.get("minutes"), int):
+                return None
+            fetched = datetime.fromisoformat(raw["fetched_at"])
+        except (ValueError, TypeError, KeyError, UnicodeDecodeError):
+            return None
+        if fetched.tzinfo is None:
+            fetched = fetched.replace(tzinfo=timezone.utc)
+        if datetime.now(timezone.utc) - fetched > self.max_age:
+            return None
+        return raw["minutes"]
+
+    def put(self, key: str, minutes: int) -> None:
+        self.backend.write_json(self._key(key), {"minutes": minutes,
+                                                 "fetched_at": datetime.now(timezone.utc).isoformat()})
+
+
 def default_backend(settings: Settings) -> StorageBackend:
     return LocalStorageBackend(settings.data_root)

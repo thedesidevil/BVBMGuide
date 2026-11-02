@@ -34,8 +34,9 @@ def departure_time(when: datetime, lng: float, now: datetime) -> str:
 
 
 class RoutesClient:
-    def __init__(self, api_key: str, session: Optional[requests.Session] = None):
+    def __init__(self, api_key: str, session: Optional[requests.Session] = None, cache=None):
         self.api_key = api_key
+        self.cache = cache
         self.session = session or requests.Session()
         self.calls: dict[str, int] = {"matrix_elements": 0, "directions": 0}
         self.now = lambda: datetime.now(timezone.utc)
@@ -57,23 +58,47 @@ class RoutesClient:
         mode: Literal["WALK", "DRIVE", "TRANSIT"],
         when: Optional[datetime] = None,
     ) -> dict[tuple[int, int], Optional[int]]:
-        self.calls["matrix_elements"] += len(origins) * len(destinations)
-        body = {
-            "origins": [{"waypoint": _waypoint(o)} for o in origins],
-            "destinations": [{"waypoint": _waypoint(d)} for d in destinations],
-            "travelMode": mode,
-        }
-        if mode == "TRANSIT" and when is not None and origins:
-            body["departureTime"] = departure_time(when, origins[0][1], self.now())
         out: dict[tuple[int, int], Optional[int]] = {
             (i, j): None for i in range(len(origins)) for j in range(len(destinations))
         }
+        keys = {pair: self._cache_key(origins[pair[0]], destinations[pair[1]], mode, when) for pair in out}
+        missing = []
+        for pair, key in keys.items():
+            hit = self.cache.get(key) if self.cache else None
+            if hit is None:
+                missing.append(pair)
+            else:
+                out[pair] = hit
+        if not missing:
+            return out
+        oi = sorted({i for i, _ in missing})
+        dj = sorted({j for _, j in missing})
+        sub_o, sub_d = [origins[i] for i in oi], [destinations[j] for j in dj]
+        self.calls["matrix_elements"] += len(sub_o) * len(sub_d)
+        body = {
+            "origins": [{"waypoint": _waypoint(o)} for o in sub_o],
+            "destinations": [{"waypoint": _waypoint(d)} for d in sub_d],
+            "travelMode": mode,
+        }
+        if mode == "TRANSIT" and when is not None and sub_o:
+            body["departureTime"] = departure_time(when, sub_o[0][1], self.now())
         for el in _elements(self._post(MATRIX_URL, MATRIX_MASK, body)):
             if el.get("condition", "ROUTE_EXISTS") != "ROUTE_EXISTS" or not el.get("duration"):
                 continue
             seconds = float(str(el["duration"]).rstrip("s"))
-            out[(el.get("originIndex", 0), el.get("destinationIndex", 0))] = math.ceil(seconds / 60)
+            try:
+                pair = (oi[el.get("originIndex", 0)], dj[el.get("destinationIndex", 0)])
+            except IndexError:
+                continue
+            out[pair] = math.ceil(seconds / 60)
+            if self.cache:
+                self.cache.put(keys[pair], out[pair])
         return out
+
+    @staticmethod
+    def _cache_key(o: tuple[float, float], d: tuple[float, float], mode: str, when: Optional[datetime]) -> str:
+        slot = f"{when.weekday()}-{when.hour}" if mode == "TRANSIT" and when is not None else "-"
+        return f"{o[0]:.4f},{o[1]:.4f}|{d[0]:.4f},{d[1]:.4f}|{mode}|{slot}"
 
     def transit_steps(self, origin: tuple[float, float], destination: tuple[float, float],
                       when: Optional[datetime] = None) -> list[TransitStep]:

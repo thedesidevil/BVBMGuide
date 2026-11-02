@@ -37,6 +37,9 @@ _COUNTRY_CURRENCY = {
 }
 
 
+_RUPEE_AMBIGUOUS = {"MUR", "LKR", "NPR", "PKR", "SCR"}  # their local symbol is also written Rs or ₹
+
+
 class FxUnavailable(Exception):
     pass
 
@@ -94,7 +97,9 @@ def parse_price(text: Optional[str], default_currency: str) -> Optional[tuple[st
         if not _CONNECTOR.match(gap):
             return None
     code = next(iter(currencies), default)
-    if not code or (code == "INR" and default != "INR"):
+    if not code:
+        return None
+    if code == "INR" and default in _RUPEE_AMBIGUOUS and not any(m.group("iso") == "INR" for m in _TOKEN.finditer(text)):
         return None
     low, high = numbers[0][0], numbers[-1][0]
     return code, min(low, high), max(low, high)
@@ -175,8 +180,10 @@ def price_text(lib_restaurant: dict, city_currency: str, fx, day: date) -> "str 
     if parsed is None:
         return unknown
     code, low, high = parsed
+    if code == "INR":
+        return _local("INR", low, high)
     if (city_currency or "").upper() == "INR":
-        return _local("INR", low, high) if code == "INR" else unknown
+        return unknown
     try:
         rate = fx.rate(code, day)
     except FxUnavailable:

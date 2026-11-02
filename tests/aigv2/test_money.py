@@ -178,9 +178,13 @@ def test_unrecognised_code_unknown_but_noise_allowed():
     assert parse_price("€25 PER PERSON", "EUR") == ("EUR", 25, 25)
 
 
-def test_inr_price_in_foreign_city_unknown():
-    assert parse_price("₹500", "EUR") is None
-    assert parse_price("INR 500", "THB") is None
+def test_inr_price_in_foreign_city_is_shown_in_rupees():
+    # library prices are written for Indian clients: an explicit rupee price is shown as is, no conversion
+    assert parse_price("₹500", "EUR") == ("INR", 500, 500)
+    assert parse_price("Approx. INR 900–2,000 pp", "IDR") == ("INR", 900, 2000)
+    assert price_text({"price_range": "INR 800–2,000 per person"}, "IDR", None, DAY) == "₹800–2,000"
+    assert price_text({"price_range": "₹1,500–2,800 for two"}, "IDR", None, DAY).kind == "PRICE_UNKNOWN"
+    assert price_text({"price_range": "€20"}, "INR", None, DAY).kind == "PRICE_UNKNOWN"
 
 
 def test_no_zero_inr():

@@ -101,7 +101,8 @@ def _countries(city_data: list[dict], country_data: dict) -> list[str]:
     return out or list(country_data or {}) or [""]
 
 
-def _library_items(key: str, cities: list[dict], cdatas: list[dict]) -> list:
+def _library_items(key: str, cities: list[dict], cdatas: list[dict], *,
+                   nationalities: frozenset[str] = frozenset()) -> list:
     out = []
     for scope, name in _LIB[key]:
         if scope == "city":
@@ -110,18 +111,42 @@ def _library_items(key: str, cities: list[dict], cdatas: list[dict]) -> list:
         else:
             for cd in cdatas:
                 items = _listify(cd.get(name))
-                if name == "embassies":  # the client is Indian: only Indian missions may be shown
-                    items = [e for e in items if _mentions_india(e)]
+                if name == "embassies":  # Indian by default; foreign missions only for that passport
+                    items = [e for e in items if _embassy_wanted(e, nationalities)]
                 out += items
     return out
 
 
-def _mentions_india(entry) -> bool:
+# (regex, nationality key) markers of a foreign mission in a library embassy entry
+_FOREIGN_MARKERS = [
+    (r"(?<![a-z])u\.s(?![a-z])", "us"), (r"\bus embassy", "us"), (r"united states", "us"), (r"american", "us"),
+    (r"british", "uk"), (r"\buk embassy", "uk"), (r"canadian", "canada"), (r"australian", "australia"),
+    (r"german embassy", "germany"), (r"french embassy", "france"), (r"japanese embassy", "japan"),
+    (r"chinese embassy", "china"),
+]
+_CITIZEN_PHRASES = {
+    "us": ["us citizen", "u.s. citizen", "us passport", "u.s. passport", "american citizen", "american passport",
+           "united states citizen", "holds a us passport", "traveling on a us passport"],
+    "uk": ["uk citizen", "british citizen", "british passport", "uk passport"],
+}
+
+
+def client_nationalities(trip) -> set[str]:
+    text = " ".join(t for t in (getattr(trip, "additional_notes", ""), getattr(trip, "occasion", ""))
+                    if isinstance(t, str)).casefold()
+    return {k for k, phrases in _CITIZEN_PHRASES.items() if any(p in text for p in phrases)}
+
+
+def _embassy_wanted(entry, nationalities) -> bool:
     if isinstance(entry, dict):
         text = " ".join(v for v in entry.values() if isinstance(v, str))
     else:
         text = str(entry)
-    return "india" in text.casefold()
+    text = text.casefold()
+    if "india" in text:
+        return True
+    found = {k for pat, k in _FOREIGN_MARKERS if re.search(pat, text)}
+    return not found or found <= set(nationalities)
 
 
 def _restaurant_names(cities: list[dict], diet) -> dict[str, str]:
@@ -212,7 +237,7 @@ def _embassy(items: list[SectionItem], places, city: str, international: bool) -
 
 
 def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm) -> tuple[list[SectionItem], bool]:
-    lib = _library_items(key, cities, cdatas)
+    lib = _library_items(key, cities, cdatas, nationalities=frozenset(client_nationalities(trip)))
     library = bool(lib)
     material = json.dumps(lib, ensure_ascii=False, default=str)
     restaurants = _restaurant_names(cities, trip.diet)

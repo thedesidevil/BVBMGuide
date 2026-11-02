@@ -315,11 +315,39 @@ def _safety_prompt(embassies):
     return s, calls[0][1]["messages"][-1]["content"]
 
 
-def test_safety_only_indian_embassies_reach_writer():
+def _us_trip():
+    return trip().model_copy(update={"additional_notes": "Client holds a US passport"})
+
+
+def _safety_prompt_for(embassies, t):
+    llm, calls = make(sec([{"heading": "Tip", "body": "ok"}]))
+    s = write_section("safety", [{"city": "Paris", "country": "France"}], {"France": {"embassies": embassies}}, t,
+                      llm, places=FakePlaces(True))
+    return s, calls[0][1]["messages"][-1]["content"]
+
+
+def test_safety_foreign_embassy_dropped_for_default_client():
     indian = {"name": "Embassy of India", "city": "Paris", "phone": "+33 1", "address": "20 Rue Alexandre"}
     us = {"name": "U.S. Embassy Cairo", "city": "Cairo", "phone": "+20 2", "address": "5 Tahrir"}
     _, prompt = _safety_prompt([us, indian])
     assert "Embassy of India" in prompt and "U.S. Embassy Cairo" not in prompt
+
+
+def test_safety_us_embassy_kept_for_us_client_and_india_item_still_checked():
+    us = {"name": "U.S. Embassy Cairo", "city": "Cairo", "phone": "+20 2", "address": "5 Tahrir"}
+    reply = [{"heading": "Embassy of India", "body": "Somewhere in Paris."}]
+    llm, calls = make(sec(reply))
+    s = write_section("safety", [{"city": "Paris", "country": "France"}], {"France": {"embassies": [us]}}, _us_trip(),
+                      llm, places=FakePlaces(True))
+    assert "U.S. Embassy Cairo" in calls[0][1]["messages"][-1]["content"]
+    e = [i for i in s.items if "Embassy of India" in i.heading][0]
+    assert "1 Rue X" in e.body and not e.verify
+
+
+def test_safety_embassy_mentioning_india_and_us_kept_for_default_client():
+    both = {"name": "Embassy of India, near the U.S. Embassy", "city": "Paris", "phone": "+33 9"}
+    _, prompt = _safety_prompt([both])
+    assert "+33 9" in prompt
 
 
 def test_safety_non_indian_embassies_dropped_but_embassy_item_still_checked():
@@ -333,6 +361,18 @@ def test_safety_non_indian_embassies_dropped_but_embassy_item_still_checked():
     assert "1 Rue X" in e.body and not e.verify
 
 
-def test_safety_nameless_embassy_without_india_dropped():
-    _, prompt = _safety_prompt([{"name": "Embassy", "city": "London", "phone": "+44 20"}])
-    assert "+44 20" not in prompt
+def test_safety_nameless_embassies_kept_for_default_client():
+    _, prompt = _safety_prompt([{"name": "Embassy", "city": "London", "phone": "+44 20"},
+                                {"name": "Embassy in Bern", "address": "Kirchenfeldstrasse 28, 3005 Bern",
+                                 "phone": "+41 31"}])
+    assert "+44 20" in prompt and "Kirchenfeldstrasse" in prompt
+
+
+def test_client_nationalities():
+    from src.aigv2.writing.sections import client_nationalities
+    t = trip()
+    assert client_nationalities(t) == set()
+    for note in ("Is a US citizen", "travels on a U.S. Passport", "American citizen", "Holds a US passport"):
+        assert client_nationalities(t.model_copy(update={"additional_notes": note})) == {"us"}
+    assert client_nationalities(t.model_copy(update={"occasion": "British citizen birthday"})) == {"uk"}
+    assert client_nationalities(t.model_copy(update={"additional_notes": "Stay at our US based hotel"})) == set()

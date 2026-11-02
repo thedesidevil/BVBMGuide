@@ -63,7 +63,7 @@ No test suite exists. No lint/format tooling is configured.
 Requires a `.env` file with:
 - `AI_API_KEY` — Anthropic or OpenAI API key
 - `AI_BASE_URL` — API endpoint (supports any OpenAI-compatible endpoint)
-- `AI_MODEL` — model name (e.g., `claude-opus-4-5`)
+- `AI_MODEL` — model name (e.g., `claude-sonnet-5-5`; do not use Opus-tier models without the owner's say-so)
 - `GOOGLE_MAPS_API_KEY` — for geocoding/proximity calculations
 
 ## Architecture

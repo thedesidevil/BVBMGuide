@@ -928,3 +928,48 @@ def test_boat_item_gets_boat_leg_not_car():
     from src.aigv2.planning.travel import leg_options
     leg = pipeline.boat_leg("Hotel", "Fast boat to X")
     assert leg_options(leg, ["private_driver"], 10) == []
+
+
+def _placed_state(item_names, start=time(9, 0), kind="attraction"):
+    from src.aigv2.models import PlannedItem
+    from src.aigv2.planning.slots import ScheduledItem
+    items = [ScheduledItem(item=PlannedItem(name=n, kind=kind, city="X"), slot="morning", start=start) for n in item_names]
+    ds = pipeline.DayState(index=1, date=date(2026, 9, 25), city="X", result=pipeline.DayResult(scheduled=items))
+    return ds
+
+
+def _placed_bk(name, t=None):
+    from src.aigv2.models import Booking
+    return Booking(name=name, day=date(2026, 9, 25), time=t, source="voucher")
+
+
+def test_tour_booking_is_placed_when_one_of_its_stops_is_in_the_day():
+    ds = _placed_state(["Tegallalang Rice Terrace (Viewpoint & Scenic Cafe)", "Ubud Palace"])
+    trip = day_trip()
+    b = _placed_bk("Tegallalang Rice Terrace, Ubud Palace and Ubud Market tour", "13:00")
+    assert pipeline._booking_placed(b, ds, trip)
+
+
+def test_tour_booking_is_placed_by_matching_start_time():
+    ds = _placed_state(["Yellow Bridge"], start=time(9, 0))
+    assert pipeline._booking_placed(_placed_bk("Nusa Lembongan tour", "09:00"), ds, day_trip())
+
+
+def test_genuinely_unplaced_booking_keeps_the_marker():
+    ds = _placed_state(["Yellow Bridge"], start=time(9, 0))
+    assert not pipeline._booking_placed(_placed_bk("Uffizi Skip-the-line", "10:00"), ds, day_trip())
+
+
+def test_transfer_booking_consumed_by_a_transfer_item_is_placed():
+    ds = _placed_state(["Hotel check-out and airport drop"], kind="transfer")
+    assert pipeline._booking_placed(_placed_bk("TAKSU SANUR HOTEL to Bali Airport transfer"), ds, day_trip())
+
+
+def test_saved_bali_trip_has_no_false_unplaced_markers():
+    import json, os
+    path = "/Users/mjain/library_backups/aigv2_bali_2026-11-02/run_rebuild8/plan.json"
+    if not os.path.exists(path):
+        pytest.skip("saved run not available")
+    state = pipeline.PlanState.model_validate(json.load(open(path)))
+    by_date = {d.date: d for d in state.days}
+    assert all(pipeline._booking_placed(b, by_date[b.day], state.trip) for b in state.trip.bookings)

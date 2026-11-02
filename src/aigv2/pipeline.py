@@ -423,11 +423,45 @@ def _booking_map(trip: TripPlan, items) -> dict[str, Booking]:
     return out
 
 
+_NAME_STOP = {"the", "and", "to", "of", "in", "at", "for", "with", "a", "an", "tour", "private", "transfer"}
+
+
+def _name_tokens(text: str) -> set[str]:
+    return {w for w in re.findall(r"\w+", norm_name(text)) if len(w) > 1 and w not in _NAME_STOP}
+
+
+def _names_match(item: str, booking: str) -> bool:
+    a, b = norm_name(item), norm_name(booking)
+    if a and b and (a in b or b in a):
+        return True
+    ta, tb = _name_tokens(item), _name_tokens(booking)
+    return bool(ta and tb and len(ta & tb) / min(len(ta), len(tb)) >= 0.5)
+
+
+def _booking_placed(b: Booking, ds: "DayState", trip: TripPlan) -> bool:
+    """A booking is in the plan when one of the day's stops carries its name, a stop starts at its time (tours),
+    or it is a transfer/boat that the arrival, departure or boat-leg logic already consumed."""
+    stops = [s for s in ds.result.scheduled]
+    if any(_names_match(s.item.name, b.name) for s in stops):
+        return True
+    t = parse_time(b.time)
+    if t is not None and any(s.start == t for s in stops):
+        return True
+    if _BOAT_BOOKING.search(b.name) and _boat_legs(trip, ds.date):
+        return True
+    if re.search(r"\btransfer\b|\bpick-?up\b|\bdrop\b", b.name, re.I) and (
+            ds.arrival is not None or ds.departure is not None or any(s.item.kind == "transfer" for s in stops)):
+        return True
+    return False
+
+
 def _unlinked_booking_markers(trip: TripPlan, days: list["DayState"]) -> None:
     linked = [b for d in days for b in [*d.booking_by_item.values(), d.arrival_booking] if b is not None]
     by_date = {d.date: d for d in days}
     for b in trip.bookings:
         if b in linked:
+            continue
+        if b.day in by_date and _booking_placed(b, by_date[b.day], trip):
             continue
         when = f" at {b.time}" if b.time else ""
         target = by_date.get(b.day)

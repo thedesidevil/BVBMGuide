@@ -129,7 +129,7 @@ def merge_chunks(results: list[dict]) -> dict:
     return {k: v for k, v in merged.items() if v != []}
 
 
-def extract_file(client: AIClient, path: Path, max_output_tokens: int = 32000) -> Extraction | None:
+def extract_file(client: AIClient, path: Path, max_output_tokens: int = 64000) -> Extraction | None:
     """Extract library content from one file.
 
     Returns None when the file is unreadable or its text is under 200

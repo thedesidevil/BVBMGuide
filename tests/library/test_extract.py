@@ -299,8 +299,8 @@ def test_call_and_parse_checked_max_tokens_passthrough_and_default():
 
     c = _RecClient()
     call_and_parse_checked(c, "p", "l")
-    call_and_parse_checked(c, "p", "l", max_tokens=64000)
-    assert c.seen == [32000, 64000]
+    call_and_parse_checked(c, "p", "l", max_tokens=32000)
+    assert c.seen == [64000, 32000]
 
 
 def test_extract_file_max_output_tokens_passthrough_and_default(tmp_path):
@@ -310,5 +310,5 @@ def test_extract_file_max_output_tokens_passthrough_and_default(tmp_path):
     doc.save(p)
     c = _RecClient()
     extract_file(c, p)
-    extract_file(c, p, 64000)
-    assert c.seen == [32000, 64000]
+    extract_file(c, p, 32000)
+    assert c.seen == [64000, 32000]

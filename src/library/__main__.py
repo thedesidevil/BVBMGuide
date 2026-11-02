@@ -214,8 +214,8 @@ def rebuild(
         help="Git commit whose removed items (plus audit-log deletes) are blocked in the new database",
     ),
     max_output_tokens: int = typer.Option(
-        32000, "--max-output-tokens", min=4000, max=128000,
-        help="Output token limit per extraction call; raise it (e.g. 64000) to retry guides that were cut off",
+        64000, "--max-output-tokens", min=4000, max=128000,
+        help="Output token limit per extraction call; raise it (max 128000) if guides are still cut off",
     ),
 ):
     """Run the paid ingest of a plan into a new, empty database folder."""
@@ -294,7 +294,7 @@ def rebuild(
         console.print(f"Model: {used}")
         console.print(f"Files to process: {len(todo)}")
         console.print(f"Cost ceiling (--max-usd): ${max_usd:.2f}")
-        if max_output_tokens != 32000:
+        if max_output_tokens != 64000:
             console.print(f"Output token limit: {max_output_tokens}")
         console.print()
         report = run_ingest(entries, db, client, log_dir=db_path / "_ingest_log",

@@ -539,10 +539,10 @@ def test_rebuild_max_output_tokens_option(tmp_path, monkeypatch):
     seen = {}
     _patch_run_ingest(monkeypatch, seen)
     res = runner.invoke(cli.app, ["rebuild", "--plan", str(d), "--db", str(tmp_path / "n"),
-                                  "--max-usd", "5", "--max-output-tokens", "64000"])
+                                  "--max-usd", "5", "--max-output-tokens", "32000"])
     assert res.exit_code == 0, res.output
-    assert "Output token limit: 64000" in res.output
-    assert seen["max_output_tokens"] == 64000
+    assert "Output token limit: 32000" in res.output
+    assert seen["max_output_tokens"] == 32000
 
 
 def test_rebuild_default_output_tokens_prints_no_extra_line(tmp_path, monkeypatch):
@@ -554,7 +554,7 @@ def test_rebuild_default_output_tokens_prints_no_extra_line(tmp_path, monkeypatc
                                   "--max-usd", "5"])
     assert res.exit_code == 0, res.output
     assert "Output token limit" not in res.output
-    assert seen["max_output_tokens"] == 32000
+    assert seen["max_output_tokens"] == 64000
 
 
 @pytest.mark.parametrize("bad", ["3999", "128001"])

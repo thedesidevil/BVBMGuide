@@ -49,7 +49,7 @@ For each file:
 │     Truncated at 50,000 characters                      │
 │                                                         │
 │  b) Send to AI with extraction prompt                   │
-│     max_tokens = 32,000                                 │
+│     max_tokens = 64,000                                 │
 │     timeout = 300s                                      │
 │                                                         │
 │  c) Parse JSON response                                 │

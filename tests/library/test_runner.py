@@ -348,7 +348,7 @@ def test_extraction_error_reason_reaches_failed_and_log(tmp_path, memory_db, mon
 def test_max_output_tokens_reaches_extract_file(tmp_path, memory_db, monkeypatch):
     seen = []
 
-    def fake(client, path, max_output_tokens=32000):
+    def fake(client, path, max_output_tokens=64000):
         seen.append(max_output_tokens)
         return Extraction(data=_data("X"), chunks=1, prompt_tokens=1, completion_tokens=1, usd=0.0)
 
@@ -364,3 +364,17 @@ def test_default_max_output_tokens_keeps_two_arg_stubs_working(tmp_path, memory_
     report = run_ingest([_entry(tmp_path, "a.pdf")], memory_db, StubClient(), log_dir=tmp_path / "logs",
                         workers=1)
     assert len(report.processed) == 1
+
+
+def test_default_output_limit_is_64000_and_smaller_is_honoured(tmp_path, memory_db, monkeypatch):
+    seen = []
+
+    def fake(client, path, max_output_tokens=64000):
+        seen.append(max_output_tokens)
+        return Extraction(data=_data("X"), chunks=1, prompt_tokens=1, completion_tokens=1, usd=0.0)
+
+    monkeypatch.setattr(runner_mod, "extract_file", fake)
+    run_ingest([_entry(tmp_path, "a.pdf")], memory_db, StubClient(), log_dir=tmp_path / "l1", workers=1)
+    run_ingest([_entry(tmp_path, "b.pdf")], memory_db, StubClient(), log_dir=tmp_path / "l2",
+               workers=1, max_output_tokens=32000)
+    assert seen == [64000, 32000]

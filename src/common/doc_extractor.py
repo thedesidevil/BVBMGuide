@@ -78,7 +78,7 @@ def repair_truncated_json(text: str) -> Optional[dict]:
 
 
 def call_and_parse_checked(client: AIClient, prompt: str, label: str,
-                           max_tokens: int = 32000) -> tuple[Optional[dict], Optional[str]]:
+                           max_tokens: int = 64000) -> tuple[Optional[dict], Optional[str]]:
     """Send prompt in JSON mode; return ``(data, failure_reason)``.
 
     Reasons: ``"truncated"`` (finish_reason ``length``; never repaired),

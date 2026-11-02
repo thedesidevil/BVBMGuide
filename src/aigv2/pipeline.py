@@ -109,6 +109,7 @@ class DayState(BaseModel):
     prev_city: Optional[str] = None
     utc_offset_hours: Optional[float] = None
     booking_by_item: dict[str, Booking] = Field(default_factory=dict)
+    arrival_booking: Optional[Booking] = None
     library_attractions: dict[str, dict] = Field(default_factory=dict)
 
 
@@ -284,9 +285,24 @@ def _utc_offset(country: str, d: date) -> Optional[float]:
 
 
 def _arrival_idx(trip: TripPlan, d: date) -> Optional[int]:
-    hits = [(l.arrive, i) for i, l in enumerate(trip.transport) if l.arrive and l.arrive.date() == d and any(
-        s.check_in == d or (l.arrive.hour < 5 and s.check_in == d - timedelta(days=1)) for s in trip.hotels)]
+    """A late-night landing (before 05:00) the day after a stay's first night belongs to that night's day."""
+    nxt = d + timedelta(days=1)
+    stays_in = any(s.check_in == d for s in trip.hotels)
+    hits = [(l.arrive, i) for i, l in enumerate(trip.transport) if l.arrive and stays_in and (
+        l.arrive.date() == d or (l.arrive.hour < 5 and l.arrive.date() == nxt))]
     return max(hits)[1] if hits else None
+
+
+_AIRPORT_PICKUP = re.compile(r"airport.*(pick-?up|transfer|meet)|(pick-?up|transfer|meet).*airport", re.I)
+
+
+def _arrival_booking(trip: TripPlan, d: date, arrival: Optional[int], items) -> Optional[Booking]:
+    """The airport pick-up/transfer booking of the day that owns the arrival, when no planned item covers it."""
+    if arrival is None or trip.transport[arrival].kind != "flight":
+        return None
+    placed = {norm_name(i.name) for i in items} | {i.booking_ref for i in items if i.booking_ref}
+    return next((b for b in trip.bookings if b.day == d and _AIRPORT_PICKUP.search(b.name)
+                 and b.name not in placed and norm_name(b.name) not in placed), None)
 
 
 def _departure_idx(trip: TripPlan, d: date, trip_days: set[date]) -> Optional[int]:
@@ -373,7 +389,7 @@ def _booking_map(trip: TripPlan, items) -> dict[str, Booking]:
 
 
 def _unlinked_booking_markers(trip: TripPlan, days: list["DayState"]) -> None:
-    linked = [b for d in days for b in d.booking_by_item.values()]
+    linked = [b for d in days for b in [*d.booking_by_item.values(), d.arrival_booking] if b is not None]
     by_date = {d.date: d for d in days}
     for b in trip.bookings:
         if b in linked:
@@ -469,6 +485,7 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
                       places=_day_view(trip, dp.date, dp.city, prev, arr, dep, places),
                       utc_offset_hours=_utc_offset(countries.get(dp.city, ""), dp.date),
                       booking_by_item=_booking_map(trip, dp.items),
+                      arrival_booking=_arrival_booking(trip, dp.date, arr, dp.items),
                       library_attractions=_library_attractions(deps.library, dp.city, dp.items))
         ds.result = schedule_day(dp, trip.hotels, trip.transport[arr] if arr is not None else None,
                                  trip.transport[dep] if dep is not None else None, ds.places, s, ds.country,
@@ -568,6 +585,7 @@ def _render_days(store: RunStore, state: PlanState, deps: Deps) -> list[RenderDa
             index=ds.index, date=ds.date, city=ds.city,
             text=DayText.model_validate(store.load_json(f"days/day_{ds.index:02d}.json")),
             result=ds.result, meals=picks, legs=ds.legs, places=ds.places, booking_by_item=ds.booking_by_item,
+            arrival_booking=ds.arrival_booking,
             price_by_restaurant=prices, arrival=t[ds.arrival] if ds.arrival is not None else None,
             departure=t[ds.departure] if ds.departure is not None else None, prev_city=ds.prev_city,
             other_transport=[t[i] for i in ds.other_legs],

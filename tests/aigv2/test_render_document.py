@@ -633,3 +633,19 @@ def test_unmatched_note_on_required_item_is_not_shown():
 def test_own_expense_note_shows_even_when_not_optional():
     block = day_block(_note_day([item("Hagia Sophia", note="At own expense.")]), 2)
     assert "NOTE" in block and "At own expense." in block
+
+
+def test_late_night_arrival_day_shows_date_pickup_and_no_meals():
+    leg = TransportLeg(kind="flight", from_place="SIN", to_place="Bali Airport", arrive=datetime(2026, 10, 30, 0, 10),
+                       source="voucher", number="SQ 948")
+    pick = Booking(name="Airport pick-up and transfer to Pera Palace", day=D1, time="23:00", source="voucher",
+                   meeting_point="Bali Airport")
+    d = RenderDay(index=1, date=D1, city="Istanbul", text=DayText(title="Late arrival", intro="Rest well."),
+                  result=DayResult(), places={HOTEL: place(HOTEL)}, arrival=leg, arrival_booking=pick)
+    t = trip(transport=[leg], bookings=[pick],
+             hotels=[HotelStay(city="Istanbul", hotel=HOTEL, check_in=D1, check_out=D3, source="voucher")])
+    block = day_block(load(data(trip=t, days=[d, day2()])), 1)
+    assert "00:10, Fri 30 Oct" in block and "PICKUP\n23:00" in block
+    assert "Bali Airport → Pera Palace" in block and "arrive before check-in" not in block
+    assert "Lunch" not in block and "Dinner" not in block
+    assert block.rstrip().endswith("Overnight in Istanbul")

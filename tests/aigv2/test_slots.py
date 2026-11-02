@@ -224,3 +224,8 @@ def test_unmatched_place_is_not_an_anchor():
     r = run(day([item("A"), item("B")]), pl=pl)
     assert meal(r, "lunch").anchors == [("Hotel H", (1.0, 2.0), 3)]
     assert any(m.text == "location of B unknown" for m in r.markers)
+
+
+def test_late_night_arrival_next_day_no_meals_keeps_items():
+    r = run(day([item("A")], d=date(2026, 11, 3)), stays=[stay(cin=D)], arrival=leg(arrive=datetime(2026, 11, 4, 0, 10)))
+    assert r.meals == [] and len(r.scheduled) == 1

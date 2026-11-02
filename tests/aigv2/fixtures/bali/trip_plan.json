@@ -1,0 +1,507 @@
+{
+  "client_names": [
+    "Test Client One"
+  ],
+  "travellers": {
+    "adults": 2,
+    "kids_ages": [
+      2
+    ],
+    "notes": "No special requirements.",
+    "child_counts": {}
+  },
+  "diet": {
+    "restrictions": [],
+    "allergies": [],
+    "likes": [],
+    "pure_veg": false
+  },
+  "travel_modes": [
+    "taxi"
+  ],
+  "hotels": [
+    {
+      "city": "Ubud",
+      "hotel": "MAYURA UBUD RETREAT (Deluxe Room)",
+      "check_in": "2026-09-24",
+      "check_out": "2026-09-28",
+      "source": "voucher",
+      "check_in_time": "14:00:00",
+      "check_out_time": "12:00:00",
+      "kind": "hotel",
+      "meal_plan": "breakfast"
+    },
+    {
+      "city": "Nusa Lembongan",
+      "hotel": "D'NUSA BEACH CLUB AND RESORT (Grand Deluxe Room)",
+      "check_in": "2026-09-28",
+      "check_out": "2026-09-30",
+      "source": "voucher",
+      "check_in_time": "14:00:00",
+      "check_out_time": "12:00:00",
+      "kind": "hotel",
+      "meal_plan": "breakfast"
+    },
+    {
+      "city": "Sanur",
+      "hotel": "TAKSU SANUR HOTEL (Suite no balcony)",
+      "check_in": "2026-09-30",
+      "check_out": "2026-10-01",
+      "source": "voucher",
+      "check_in_time": "14:00:00",
+      "check_out_time": "12:00:00",
+      "kind": "hotel",
+      "meal_plan": "breakfast"
+    }
+  ],
+  "transport": [
+    {
+      "kind": "flight",
+      "from_place": "SIN",
+      "to_place": "DPS",
+      "depart": null,
+      "arrive": "2026-09-25T00:10:00",
+      "ref": "IND/PB/2026/2411",
+      "source": "voucher",
+      "pax_label": "",
+      "operator": "Singapore Airlines",
+      "number": "SQ 948",
+      "seat": "",
+      "platform": ""
+    },
+    {
+      "kind": "flight",
+      "from_place": "DPS",
+      "to_place": "SIN",
+      "depart": "2026-10-01T13:15:00",
+      "arrive": null,
+      "ref": "IND/PB/2026/2411",
+      "source": "voucher",
+      "pax_label": "",
+      "operator": "Singapore Airlines",
+      "number": "SQ 938",
+      "seat": "",
+      "platform": ""
+    }
+  ],
+  "bookings": [
+    {
+      "name": "Airport pick-up and transfer to MAYURA UBUD RETREAT",
+      "day": "2026-09-24",
+      "time": "23:00",
+      "source": "voucher",
+      "end_time": null,
+      "meeting_point": "BALI INTERNATIONAL AIRPORT",
+      "duration": "",
+      "instructions": [
+        "MIDNIGHT ARRIVAL AT 00:10 ON 25 SEPTEMBER (NIGHT OF 24 SEPTEMBER)",
+        "Driver will come to the airport at 11:00 PM."
+      ],
+      "timed": true,
+      "pax_label": "",
+      "included_in_package": true
+    },
+    {
+      "name": "Tegallalang Rice Terrace, Ubud Palace and Ubud Market tour",
+      "day": "2026-09-25",
+      "time": "13:00",
+      "source": "voucher",
+      "end_time": "18:00",
+      "meeting_point": "Hotel",
+      "duration": "",
+      "instructions": [
+        "Private transfer without guide.",
+        "Back to hotel."
+      ],
+      "timed": true,
+      "pax_label": "",
+      "included_in_package": true
+    },
+    {
+      "name": "MARINE PARK (SEA DRAGON PACKAGE)",
+      "day": "2026-09-26",
+      "time": "09:00",
+      "source": "voucher",
+      "end_time": "16:00",
+      "meeting_point": "Hotel",
+      "duration": "",
+      "instructions": [
+        "Private basis.",
+        "Back to hotel."
+      ],
+      "timed": true,
+      "pax_label": "",
+      "included_in_package": true
+    },
+    {
+      "name": "Kintamani Volcano View, Tirta Empul Temple and Coffee Plantation tour",
+      "day": "2026-09-27",
+      "time": "08:00",
+      "source": "voucher",
+      "end_time": "18:00",
+      "meeting_point": "Hotel",
+      "duration": "",
+      "instructions": [
+        "Private transfer without guide.",
+        "Back to hotel.",
+        "Woman on menstruation cycle is not permitted to enter the temple."
+      ],
+      "timed": true,
+      "pax_label": "",
+      "included_in_package": true
+    },
+    {
+      "name": "Transfer to Sanur Harbour, shared fast boat to Nusa Lembongan and mangrove boat experience",
+      "day": "2026-09-28",
+      "time": "07:00",
+      "source": "voucher",
+      "end_time": "17:00",
+      "meeting_point": "MAYURA UBUD RETREAT",
+      "duration": "",
+      "instructions": [
+        "Hotel check-out at 07:00 AM.",
+        "Fast boat check-in at 08:15 AM.",
+        "Shared fast boat departs Sanur Harbour at 09:15 AM.",
+        "Hotel check-in in Nusa Lembongan."
+      ],
+      "timed": true,
+      "pax_label": "",
+      "included_in_package": true
+    },
+    {
+      "name": "Nusa Lembongan tour: Yellow Bridge, Blue Lagoon, Devil's Tear and Dream Beach",
+      "day": "2026-09-29",
+      "time": "09:00",
+      "source": "voucher",
+      "end_time": "18:00",
+      "meeting_point": "Hotel",
+      "duration": "",
+      "instructions": [
+        "Private tour.",
+        "Back to hotel."
+      ],
+      "timed": true,
+      "pax_label": "",
+      "included_in_package": true
+    },
+    {
+      "name": "Transfer to Sanur Harbour, shared fast boat to Sanur and private transfer for hotel check-in",
+      "day": "2026-09-30",
+      "time": "10:30",
+      "source": "voucher",
+      "end_time": "21:00",
+      "meeting_point": "D'NUSA BEACH CLUB AND RESORT",
+      "duration": "",
+      "instructions": [
+        "Hotel check-out at 10:30 AM.",
+        "Fast boat check-in at 11:00 AM.",
+        "Shared fast boat departs at 12:00 PM."
+      ],
+      "timed": true,
+      "pax_label": "",
+      "included_in_package": true
+    },
+    {
+      "name": "Private transfer from TAKSU SANUR HOTEL to Bali Airport",
+      "day": "2026-10-01",
+      "time": null,
+      "source": "voucher",
+      "end_time": null,
+      "meeting_point": "TAKSU SANUR HOTEL",
+      "duration": "",
+      "instructions": [
+        "Hotel check-out and airport drop."
+      ],
+      "timed": false,
+      "pax_label": "",
+      "included_in_package": true
+    }
+  ],
+  "days": [
+    {
+      "date": "2026-09-24",
+      "title": "Arrival in Bali",
+      "city": "Ubud",
+      "items": [],
+      "meal_rules": [
+        "No Meals"
+      ],
+      "drive_stops": []
+    },
+    {
+      "date": "2026-09-25",
+      "title": "Tegallalang Rice Terrace, Ubud Palace and Ubud Market",
+      "city": "Ubud",
+      "items": [
+        {
+          "name": "Tegallalang Rice Terrace (viewpoint and scenic cafe)",
+          "kind": "attraction",
+          "city": "Ubud",
+          "time": null,
+          "slot_hint": "afternoon",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": ""
+        },
+        {
+          "name": "Ubud Palace",
+          "kind": "attraction",
+          "city": "Ubud",
+          "time": null,
+          "slot_hint": "afternoon",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": ""
+        },
+        {
+          "name": "Ubud Market",
+          "kind": "attraction",
+          "city": "Ubud",
+          "time": null,
+          "slot_hint": "afternoon",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": ""
+        }
+      ],
+      "meal_rules": [
+        "Breakfast"
+      ],
+      "drive_stops": []
+    },
+    {
+      "date": "2026-09-26",
+      "title": "Marine Park",
+      "city": "Ubud",
+      "items": [
+        {
+          "name": "Marine Park (Sea Dragon Package)",
+          "kind": "attraction",
+          "city": "Ubud",
+          "time": null,
+          "slot_hint": "morning",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": ""
+        }
+      ],
+      "meal_rules": [
+        "Breakfast"
+      ],
+      "drive_stops": []
+    },
+    {
+      "date": "2026-09-27",
+      "title": "Kintamani Volcano View, Tirta Empul Temple and Coffee Plantation",
+      "city": "Ubud",
+      "items": [
+        {
+          "name": "Kintamani Volcano View",
+          "kind": "attraction",
+          "city": "Ubud",
+          "time": null,
+          "slot_hint": "morning",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": ""
+        },
+        {
+          "name": "Tirta Empul Temple",
+          "kind": "attraction",
+          "city": "Ubud",
+          "time": null,
+          "slot_hint": "morning",
+          "note": "Woman on menstruation cycle is not permitted to enter the temple.",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": ""
+        },
+        {
+          "name": "Coffee Plantation",
+          "kind": "attraction",
+          "city": "Ubud",
+          "time": null,
+          "slot_hint": "afternoon",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": ""
+        }
+      ],
+      "meal_rules": [
+        "Breakfast"
+      ],
+      "drive_stops": []
+    },
+    {
+      "date": "2026-09-28",
+      "title": "Nusa Lembongan and mangrove boat experience",
+      "city": "Nusa Lembongan",
+      "items": [
+        {
+          "name": "Mangrove boat experience at Nusa Lembongan Mangrove Forest",
+          "kind": "activity",
+          "city": "Nusa Lembongan",
+          "time": null,
+          "slot_hint": "afternoon",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": ""
+        }
+      ],
+      "meal_rules": [
+        "Breakfast"
+      ],
+      "drive_stops": []
+    },
+    {
+      "date": "2026-09-29",
+      "title": "Nusa Lembongan tour",
+      "city": "Nusa Lembongan",
+      "items": [
+        {
+          "name": "Yellow Bridge",
+          "kind": "attraction",
+          "city": "Nusa Lembongan",
+          "time": null,
+          "slot_hint": "morning",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": ""
+        },
+        {
+          "name": "Blue Lagoon",
+          "kind": "attraction",
+          "city": "Nusa Lembongan",
+          "time": null,
+          "slot_hint": "morning",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": ""
+        },
+        {
+          "name": "Devil's Tear",
+          "kind": "attraction",
+          "city": "Nusa Lembongan",
+          "time": null,
+          "slot_hint": "afternoon",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": ""
+        },
+        {
+          "name": "Dream Beach",
+          "kind": "attraction",
+          "city": "Nusa Lembongan",
+          "time": null,
+          "slot_hint": "afternoon",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": ""
+        }
+      ],
+      "meal_rules": [
+        "Breakfast"
+      ],
+      "drive_stops": []
+    },
+    {
+      "date": "2026-09-30",
+      "title": "Fast boat to Sanur, shopping and dinner",
+      "city": "Sanur",
+      "items": [
+        {
+          "name": "Dinner in Sanur (at own expense)",
+          "kind": "meal_out",
+          "city": "Sanur",
+          "time": null,
+          "slot_hint": "evening",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": ""
+        }
+      ],
+      "meal_rules": [
+        "Breakfast",
+        "DINNER IN SANUR (AT OWN EXPENSE)"
+      ],
+      "drive_stops": []
+    },
+    {
+      "date": "2026-10-01",
+      "title": "Departure from Bali",
+      "city": "Sanur",
+      "items": [],
+      "meal_rules": [
+        "Breakfast"
+      ],
+      "drive_stops": []
+    }
+  ],
+  "open_choices": [
+    {
+      "day": "2026-09-30",
+      "text": "SHOPPING AT ICON MALL/SINDHU MARKET (AT OWN EXPENSE)",
+      "options": [
+        "ICON MALL",
+        "SINDHU MARKET"
+      ]
+    }
+  ],
+  "vague_days": [],
+  "commentary_removed": [],
+  "trip_scope": "international",
+  "budget": "mid-range",
+  "occasion": "family",
+  "additional_notes": "Family with kids (one child, 2 years old). No special requirements."
+}

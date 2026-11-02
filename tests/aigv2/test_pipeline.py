@@ -460,8 +460,9 @@ def test_early_arrival_and_after_midnight_departure():
                          source="t"),
             TransportLeg(kind="flight", from_place="Airport", to_place="X", depart=datetime(2027, 5, 13, 1, 30),
                          source="t")]})
-    assert pipeline._arrival_idx(trip, d[1]) == 0
-    assert pipeline._arrival_idx(trip, d[0]) is None
+    # late-night arrival (02:30 on d[1]) belongs to the hotel night of d[0]
+    assert pipeline._arrival_idx(trip, d[0]) == 0
+    assert pipeline._arrival_idx(trip, d[1]) is None
     assert pipeline._departure_idx(trip, d[2], {d[0], d[1], d[2]}) == 1
     assert pipeline._departure_idx(trip, d[2], {d[0], d[1], d[2], d[2] + timedelta(days=1)}) is None
     late = trip.model_copy(update={"transport": [trip.transport[1].model_copy(
@@ -759,3 +760,38 @@ def test_default_deps_library_path_from_env(monkeypatch, tmp_path):
     assert deps.library.root == tmp_path
     monkeypatch.delenv("AIGV2_LIBRARY_DB")
     assert pipeline.default_deps().library.root == Path("library_db")
+
+
+# ---------- late-night arrival belongs to the night-of day ----------
+
+BALI = Path(__file__).parent / "fixtures" / "bali"
+
+
+def _bali_trip(check_in: date) -> TripPlan:
+    trip = TripPlan.model_validate(json.loads((BALI / "trip_plan.json").read_text(encoding="utf-8")))
+    trip.hotels[0].check_in = check_in
+    return trip
+
+
+def test_arrival_idx_late_night_answers():
+    night, arrival_day = date(2026, 9, 24), date(2026, 9, 25)
+    t24 = _bali_trip(night)
+    assert pipeline._arrival_idx(t24, night) == 0
+    assert pipeline._arrival_idx(t24, arrival_day) is None
+    t25 = _bali_trip(arrival_day)
+    assert pipeline._arrival_idx(t25, night) is None
+    assert pipeline._arrival_idx(t25, arrival_day) == 0
+
+
+def test_bali_late_night_arrival_pipeline(deps):
+    store = RunStore.create(deps.backend)
+    store.save_bytes("trip_plan.json", (BALI / "trip_plan.json").read_bytes())
+    store.save_bytes("questions.json", (BALI / "questions.json").read_bytes())
+    answers = json.loads((BALI / "answers.json").read_text(encoding="utf-8"))
+    state = pipeline._plan(store, answers, deps)
+    d1, d2 = state.days[0], state.days[1]
+    assert d1.date == date(2026, 9, 24) and d1.arrival is not None and d1.result.meals == []
+    assert d1.arrival_booking is not None and d1.arrival_booking.time == "23:00"
+    assert d2.arrival is None and "breakfast" in [m.meal for m in d2.result.meals]
+    text = "\n".join(m.text for d in state.days for m in d.result.markers)
+    assert "Airport pick-up" not in text

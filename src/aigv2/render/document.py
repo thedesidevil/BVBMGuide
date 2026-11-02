@@ -40,6 +40,7 @@ class RenderDay(BaseModel):
     legs: dict[str, Leg] = Field(default_factory=dict)
     places: dict[str, Optional[Place]] = Field(default_factory=dict)
     booking_by_item: dict[str, Booking] = Field(default_factory=dict)
+    arrival_booking: Optional[Booking] = None
     price_by_restaurant: dict[str, str | Marker] = Field(default_factory=dict)
     arrival: Optional[TransportLeg] = None
     departure: Optional[TransportLeg] = None

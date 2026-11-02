@@ -201,8 +201,10 @@ def schedule_day(
     if dep and dep.depart.time() < _PACKED_BREAKFAST_BEFORE:
         res.tips.append("Ask the hotel for a packed breakfast")
     early = arr_t is not None and arr_t < _EARLY_ARRIVAL_BEFORE
+    next_night = bool(arrival and arrival.arrive and arrival.arrive.date() == d + timedelta(days=1)
+                      and arrival.arrive.hour < 5)
     sea = bool(_SEA_DAY.search(f"{day.title} {day.city}")) and any(s.kind == "cruise" for s in stays)
-    if early or sea:
+    if early or next_night or sea:
         return res
 
     flagged: set[str] = set()

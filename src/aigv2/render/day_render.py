@@ -46,6 +46,11 @@ def _hm(dt: datetime) -> str:
     return dt.strftime("%H:%M")
 
 
+def _when(dt: datetime, d: date) -> str:
+    """Time of day, plus the weekday and date when it falls on another day than the one being shown."""
+    return _hm(dt) if dt.date() == d else f"{_hm(dt)}, {dt:%a} {dt.day} {dt:%b}"
+
+
 class DayRenderer:
     def __init__(self, doc, data, rd, walk_max: int):
         self.doc, self.data, self.rd, self.walk_max = doc, data, rd, walk_max
@@ -140,7 +145,7 @@ class DayRenderer:
         marker_lines(self.doc, self._hotel_markers(stay.hotel))
 
     def _transfer_card(self, title: str, url: str, leg: Optional[Leg], body: Optional[str],
-                       hotel: Optional[str]) -> None:
+                       hotel: Optional[str], pickup: Optional[str] = None) -> None:
         if leg is None:
             facts = [("TRANSFER", _verify("transfer time")), ("COST", _verify("transfer cost"))]
             markers = []
@@ -148,10 +153,12 @@ class DayRenderer:
             opts = self._options(leg)
             facts = [("TRANSFER", opts or _verify("transfer time")), ("COST", _verify("transfer cost"))]
             markers = leg_markers(leg, self.data.modes, self.walk_max)
+        if pickup:
+            facts.insert(0, ("PICKUP", pickup))
         add_card(self.doc, title, url, facts, body, [])
         marker_lines(self.doc, markers + (self._hotel_markers(hotel) if hotel else []))
 
-    def _transport_card(self, t: TransportLeg, link_to: str, city: str = "") -> None:
+    def _transport_card(self, t: TransportLeg, link_to: str, city: str = "", day: Optional[date] = None) -> None:
         kind = {"flight": "Flight", "train": "Train", "boat": "Boat", "bus": "Bus"}.get(t.kind, "Transfer")
         title = f"{kind}: {t.from_place} to {t.to_place}" if t.from_place and t.to_place else kind
         facts: list = []
@@ -164,7 +171,8 @@ class DayRenderer:
         if t.depart:
             facts.append(("DEPARTS", f"{_hm(t.depart)} · {t.from_place}" if t.from_place else _hm(t.depart)))
         if t.arrive:
-            facts.append(("ARRIVES", f"{_hm(t.arrive)} · {t.to_place}" if t.to_place else _hm(t.arrive)))
+            at = _when(t.arrive, day) if day else _hm(t.arrive)
+            facts.append(("ARRIVES", f"{at} · {t.to_place}" if t.to_place else at))
         if t.kind == "train" and t.depart and t.arrive and t.arrive > t.depart:
             mins = int((t.arrive - t.depart).total_seconds() // 60)
             facts.append(("DURATION", [minutes_text(mins), _verify("duration (check time zones)")]))
@@ -178,7 +186,7 @@ class DayRenderer:
     def _arrival(self, arr: TransportLeg) -> None:
         stay = self._stay(arriving=True)
         if arr is not self.rd.departure:
-            self._transport_card(arr, arr.to_place, self.rd.city)
+            self._transport_card(arr, arr.to_place, self.rd.city, self.rd.date)
         else:
             self._transport_card(arr, arr.from_place, self.rd.prev_city or self.rd.city)
         if stay is None:
@@ -187,11 +195,12 @@ class DayRenderer:
         port = arr.to_place or _PORT[arr.kind]
         body = None
         check_in = stay.check_in_time or time(15)
-        if arr.arrive and stay.check_in == self.rd.date and arr.arrive.time() < check_in:
+        if arr.arrive and stay.check_in == self.rd.date == arr.arrive.date() and arr.arrive.time() < check_in:
             body = ("You arrive before check-in. If your room is not ready yet, ask the front desk to hold your "
                     "luggage while you head out.")
+        pick = self.rd.arrival_booking
         self._transfer_card(f"{port} → {stay.hotel}", self._url(stay.hotel), self.rd.legs.get("arrival"), body,
-                            stay.hotel)
+                            stay.hotel, pickup=pick.time if pick and pick.time else None)
 
     def _departure(self, dep: TransportLeg, transport_card: bool, city: str) -> None:
         by = leave_by(dep, self.data.domestic)

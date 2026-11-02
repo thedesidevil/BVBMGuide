@@ -7,7 +7,7 @@ from .hours import is_open_for
 from .intake.attachments import ZIP_MAX_BYTES, ZIP_MAX_FILES, Attachment
 from .intake.template import IntakeFields
 from .library import Library
-from .models import Answers, DayPlan, HotelStay, PlannedItem, Place, Question, TransportLeg, TripPlan, place_key
+from .models import Answers, DayPlan, HotelStay, OpenChoice, PlannedItem, Place, Question, TransportLeg, TripPlan, place_key
 
 DIET_LABEL = "Diet (restrictions, allergies, likes)"
 BOOKING_WORDS = re.compile(r"ticket|booking|voucher|confirmation|reservation|e-?ticket", re.I)
@@ -403,8 +403,8 @@ def validate_answers(questions: list[Question], answers: Answers) -> dict[str, s
                 if q.options and ans not in q.options:
                     reason = f"choose one of {', '.join(q.options)}"
         elif q.kind == "open_choice":
-            if q.options and not any(_same(ans, o) for o in q.options):
-                reason = f"choose one of {', '.join(q.options)}"
+            if q.options and not _selected_options(ans, q.options):
+                reason = f"choose one of {', '.join(q.options)}" + (" or both" if len(q.options) > 1 else "")
         elif q.kind == "no_library":
             if ans.lower() not in ("proceed", "stop"):
                 reason = "answer Proceed or Stop"
@@ -450,12 +450,31 @@ def _modes(answer: str) -> list[str]:
     return [m for m in MODES if any(re.search(rf"\b{w}(?:s|es)?\b", low) for w in MODE_WORDS[m])]
 
 
-def _items_for_choice(dp: DayPlan, chosen: str, options: list[str]) -> list[PlannedItem]:
-    others = [o for o in options if not _same(o, chosen)]
-    return [
-        it for it in dp.items
-        if not any(_same(it.name, o) for o in others) or _same(it.name, chosen)
-    ]
+def _selected_options(answer: str, options: list[str]) -> list[str]:
+    if re.search(r"\b(both|all|either|any)\b", answer, re.I):
+        return list(options)
+    return [o for o in options if _same(answer, o)]
+
+
+def _readable(option: str) -> str:
+    return option.title() if option.isupper() else option
+
+
+def _apply_open_choice(dp: DayPlan, oc: OpenChoice, selected: list[str]) -> None:
+    others = [o for o in oc.options if o not in selected]
+    dp.items = [it for it in dp.items if not any(_same(it.name, o) for o in others)]
+    missing = [o for o in selected if not any(_same(it.name, o) for it in dp.items)]
+    names = [_readable(o) for o in selected]
+    own = " At own expense." if "own expense" in oc.text.lower() else ""
+    if len(selected) > 1:
+        note = f"Choose one: {', '.join(names[:-1])} or {names[-1]}.{own}"
+    else:
+        note = own.strip()
+    for o in missing:
+        dp.items.append(PlannedItem(
+            name=_readable(o), kind="activity", city=dp.city, slot_hint="afternoon",
+            optional=len(selected) > 1, note=note,
+        ))
 
 
 def apply_answers(plan: TripPlan, questions: list[Question], answers: Answers) -> TripPlan:
@@ -491,7 +510,7 @@ def apply_answers(plan: TripPlan, questions: list[Question], answers: Answers) -
             oc = plan.open_choices[n]
             for dp in out.days:
                 if oc.day is None or dp.date == oc.day:
-                    dp.items = _items_for_choice(dp, ans, oc.options)
+                    _apply_open_choice(dp, oc, _selected_options(ans, oc.options))
             drop_choices.add(n)
         elif kind == "vague_day":
             vd = _iso(suffix, q.id)

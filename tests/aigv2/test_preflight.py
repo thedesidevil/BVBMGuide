@@ -413,3 +413,67 @@ def test_see_attachments_with_punctuation_still_asks_diet(tmp_path):
     assert {"Diet (restrictions, allergies, likes)", "Itinerary"} <= intake.see_attachments
     assert "Diet (restrictions, allergies, likes)" not in intake.values
     assert ids(ask(make(diet=Diet()), intake=intake)) == ["missing:diet"]
+
+
+BALI_TEXT = "SHOPPING AT ICON MALL/SINDHU MARKET (AT OWN EXPENSE)"
+
+
+def _bali_plan(day=date(2026, 10, 10), items=(), options=("ICON MALL", "SINDHU MARKET")):
+    days = [DayPlan(date=date(2026, 10, 10), title="t", city="Paris", items=list(items)), *make().days[1:]]
+    return make(days=days, open_choices=[OpenChoice(day=day, text=BALI_TEXT, options=list(options))])
+
+
+@pytest.mark.parametrize("answer", ["both", "ICON MALL and SINDHU MARKET", "offer both options"])
+def test_open_choice_both_adds_optional_items(answer):
+    keep = PlannedItem(name="Beach", kind="attraction", city="Paris")
+    plan = _bali_plan(items=[keep])
+    qs = ask(plan)
+    assert validate_answers(qs, {"open_choice:0": answer}) == {}
+    out = apply_answers(plan, qs, {"open_choice:0": answer})
+    items = out.days[0].items
+    assert [i.name for i in items] == ["Beach", "Icon Mall", "Sindhu Market"]
+    assert items[0] == keep
+    for it in items[1:]:
+        assert it.optional and it.kind == "activity" and it.city == "Paris" and it.slot_hint == "afternoon"
+    assert items[1].note == "Choose one: Icon Mall or Sindhu Market. At own expense."
+    assert out.open_choices == []
+    assert len(plan.days[0].items) == 1 and len(plan.open_choices) == 1
+
+
+def test_open_choice_single_option_not_day_items():
+    plan = _bali_plan()
+    out = apply_answers(plan, ask(plan), {"open_choice:0": "Sindhu Market"})
+    assert [(i.name, i.optional, i.note) for i in out.days[0].items] == [("Sindhu Market", False, "At own expense.")]
+    assert out.open_choices == []
+
+
+def test_open_choice_options_are_day_items():
+    items = [PlannedItem(name="Top of the Rock", kind="attraction", city="Paris", note="x"),
+             PlannedItem(name="Empire State Building", kind="attraction", city="Paris")]
+    oc = OpenChoice(day=date(2026, 10, 10), text="views", options=["Top of the Rock", "Empire State Building"])
+    days = [DayPlan(date=date(2026, 10, 10), title="t", city="Paris", items=items), *make().days[1:]]
+    plan = make(days=days, open_choices=[oc])
+    out = apply_answers(plan, ask(plan), {"open_choice:0": "Empire State Building"})
+    assert [i.name for i in out.days[0].items] == ["Empire State Building"]
+    out = apply_answers(plan, ask(plan), {"open_choice:0": "both"})
+    assert out.days[0].items == items
+
+
+def test_open_choice_invalid_mentions_options():
+    plan = _bali_plan()
+    qs = ask(plan)
+    msg = validate_answers(qs, {"open_choice:0": "Mall of America"})["open_choice:0"]
+    assert "ICON MALL" in msg and "SINDHU MARKET" in msg and "both" in msg
+    assert validate_answers(qs, {"open_choice:0": "  "}) == {}
+    assert ids(unanswered(qs, {"open_choice:0": ""})) == ["open_choice:0"]
+    out = apply_answers(plan, qs, {"open_choice:0": "Mall of America"})
+    assert out.days[0].items == [] and len(out.open_choices) == 1
+
+
+def test_open_choice_no_day_skips_days_that_have_it():
+    has = PlannedItem(name="Icon Mall", kind="attraction", city="Paris", note="mine")
+    days = [DayPlan(date=date(2026, 10, 10), title="t", city="Paris", items=[has]), *make().days[1:]]
+    plan = make(days=days, open_choices=[OpenChoice(day=None, text="x", options=["Icon Mall"])])
+    out = apply_answers(plan, ask(plan), {"open_choice:0": "icon mall"})
+    assert out.days[0].items == [has]
+    assert all([i.name for i in d.items] == ["Icon Mall"] for d in out.days[1:])

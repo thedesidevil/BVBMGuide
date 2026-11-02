@@ -168,7 +168,8 @@ def _numbers(text: str) -> set[str]:
     return set(re.findall(r"\d+", text))
 
 
-def _validator(key: str, material: str, library: bool, restaurants: dict[str, str]):
+def _validator(key: str, material: str, library: bool, restaurants: dict[str, str],
+               allowed_hospitals: Optional[list[str]] = None):
     known = _numbers(material)
 
     def validate(out: _SectionOut) -> list[str]:
@@ -181,6 +182,10 @@ def _validator(key: str, material: str, library: bool, restaurants: dict[str, st
                 problems.append(f"'{it.heading}' contains theme-park strategy not in the facts")
             if library and not _numbers(blob) <= known:
                 problems.append(f"'{it.heading}' contains numbers that are not in the library facts")
+            if allowed_hospitals is not None:
+                extra = _unlisted_hospitals(blob, allowed_hospitals)
+                if extra:
+                    problems.append(f"'{it.heading}' names hospitals that Important Places does not list: {extra}")
             if key == "dishes":
                 bad = [w for w in it.where_to_try if norm_name(w) not in restaurants]
                 if bad:
@@ -260,8 +265,37 @@ def _embassy(items: list[SectionItem], places, city: str, international: bool) -
     return out
 
 
-def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm) -> tuple[list[SectionItem], bool]:
+_HOSPITAL_MENTION = re.compile(
+    r"(?:[A-Z][\w'’.&-]*\s+){0,4}(?:Hospital|Clinic|Medical\s+(?:Care|Cent(?:er|re))|Rumah\s+Sakit)(?:\s+[A-Z0-9][\w'’.&-]*){0,3}")
+
+
+def hospital_mentions(text: str) -> list[str]:
+    return [m.group(0).strip() for m in _HOSPITAL_MENTION.finditer(text or "")]
+
+
+def _unlisted_hospitals(text: str, allowed: list[str]) -> list[str]:
+    ok = [norm_name(a) for a in allowed]
+    return [m for m in hospital_mentions(text) if not any(norm_name(m) in a or a in norm_name(m) for a in ok)]
+
+
+def hospital_facts(important) -> list[dict]:
+    """The Important Places hospital entries (nearest hospital Google found per stay) as plain facts."""
+    out = []
+    for e in important or []:
+        h = getattr(e, "hospital", None)
+        if h is None:
+            continue
+        out.append({"city": e.city, "near_hotel": e.hotel, "name": h.place.name, "address": h.place.address,
+                    "opening_hours": h.hours_text, "drive_minutes": h.drive_min})
+    return out
+
+
+def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=None) -> tuple[list[SectionItem], bool]:
     lib = _library_items(key, cities, cdatas, nationalities=frozenset(client_nationalities(trip)))
+    hospitals = hospital_facts(important) if key == "safety" and important is not None else None
+    allowed = [h["name"] for h in hospitals] if hospitals is not None else None
+    if allowed is not None:  # library facts may not name a hospital other than the ones Important Places lists
+        lib = [x for x in lib if not _unlisted_hospitals(json.dumps(x, ensure_ascii=False, default=str), allowed)]
     library = bool(lib)
     material = json.dumps(lib, ensure_ascii=False, default=str)
     restaurants = _restaurant_names(cities, trip.diet)
@@ -270,6 +304,11 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm) -> tuple[l
         extra = "\nCountry facts: " + json.dumps(cdatas, ensure_ascii=False, default=str)
     if key == "dishes":
         extra += "\nLibrary restaurants allowed in where_to_try: " + json.dumps(sorted(restaurants.values()), ensure_ascii=False)
+    if hospitals is not None:
+        extra += ("\nAuthoritative hospitals (the same ones listed under Important Places; hours and drive times as given): "
+                  + json.dumps(hospitals, ensure_ascii=False, default=str)
+                  + "\nName only these hospitals or clinics, and no others. Do not name any other hospital, clinic or "
+                    "medical centre. If the list is empty, name no hospital.")
     mode = ("Format ONLY the library facts below into client-ready items. Add no facts, numbers, names or prices."
             if library else
             "No library facts exist. Write helpful general guidance, without exact prices, fees, times or provider names.")
@@ -277,7 +316,7 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm) -> tuple[l
     prompt = (f"Section: {key}. Write {_FOCUS[key]}.\n{mode}\n{_trip_context(trip)}{extra}\n"
               f"Library facts (JSON): {material}")
     out = llm.run_json("write_sections", _SYSTEM, prompt, _SectionOut,
-                       validate=_validator(key, material + extra, library, restaurants))
+                       validate=_validator(key, material + extra, library, restaurants, allowed))
     flag_ai = not library and key != "packing"
     items = []
     for it in out.items:
@@ -301,7 +340,7 @@ _REMOTE_GUIDANCE = [
 
 def write_section(key: str, city_data: list[dict], country_data: dict, trip, llm, *,
                   places=None, fx=None, today: Optional[date] = None,
-                  remote_area: bool = False, high_altitude: bool = False) -> Optional[SectionContent]:
+                  remote_area: bool = False, high_altitude: bool = False, important=None) -> Optional[SectionContent]:
     if key not in SECTION_KEYS:
         raise ValueError(f"unknown section key: {key}")
     domestic = trip.trip_scope == "domestic"
@@ -319,7 +358,7 @@ def write_section(key: str, city_data: list[dict], country_data: dict, trip, llm
         else:
             cities = city_data
             cdatas = [_slice_country(country_data, c) for c in _countries(city_data, country_data)]
-        items, library = _one(key, cities, cdatas, trip, llm)
+        items, library = _one(key, cities, cdatas, trip, llm, important)
         all_lib = all_lib and library
         if key == "money" and not domestic:
             fx_item = _fx_item(country, next((c for c in cities if c.get("currency")), {}), fx, today)

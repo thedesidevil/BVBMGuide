@@ -632,7 +632,7 @@ def _write(store: RunStore, state: PlanState, deps: Deps) -> None:
             name = f"sections/{key}.json"
             if not store.has(name):
                 jobs[name] = pool.submit(write_section, key, city_data, country_data, state.trip, deps.llm,
-                                         places=deps.places, fx=deps.fx, today=date.today())
+                                         places=deps.places, fx=deps.fx, today=date.today(), important=state.important)
         if not store.has("sections/title.json"):
             jobs["sections/title.json"] = pool.submit(write_title, state.trip, deps.llm)
     errors: list[tuple[str, Exception]] = []

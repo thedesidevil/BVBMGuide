@@ -421,3 +421,34 @@ def test_prompts_carry_the_voice_rule_and_no_first_person():
     assert "Begin the day's sightseeing at Tegallalang" in days._SYSTEM
     assert "Keep these saved in your phone" in sections._SYSTEM
     assert "'we'" in title._SYSTEM
+
+
+def _important(name="BIMC Hospital Nusa Dua"):
+    from datetime import datetime as dt
+    from src.aigv2.models import Place
+    from src.aigv2.planning.important_places import ImportantPlaces, NearbyPlace
+    pl = Place(query=name, place_id="h", name=name, address="Jl. Nusa Dua", lat=1, lng=2, status="OPERATIONAL",
+               maps_url="u", fetched_at=dt(2026, 1, 1), match_ok=True)
+    return [ImportantPlaces(city="Paris", hotel="H", hospital=NearbyPlace(place=pl, drive_min=12, hours_text="Open 24 hours"))]
+
+
+def test_safety_prompt_lists_important_places_hospital_as_authoritative():
+    llm, calls = make(sec([{"heading": "Medical help", "body": "BIMC Hospital Nusa Dua is a 12 minute drive."}]))
+    lib = {"France": {"emergency_contacts": ["Dial 112"]}}
+    write_section("safety", [{"city": "Paris", "country": "France"}], lib, trip(), llm, important=_important())
+    prompt = calls[0][1]["messages"][-1]["content"]
+    assert "BIMC Hospital Nusa Dua" in prompt and "Name only these hospitals" in prompt and "Open 24 hours" in prompt
+
+
+def test_safety_rejects_a_hospital_important_places_does_not_list():
+    bad = sec([{"heading": "Medical help", "body": "Ari Canti Hospital is open 24/7."}])
+    good = sec([{"heading": "Medical help", "body": "BIMC Hospital Nusa Dua is the nearest hospital."}])
+    llm, calls = make(bad + [] if False else [bad, good])
+    s = write_section("safety", [{"city": "Paris", "country": "France"}], {}, trip(), llm, important=_important())
+    assert "BIMC" in s.items[0].body and len(calls) == 2
+
+
+def test_library_safety_lines_naming_another_hospital_are_dropped():
+    from src.aigv2.writing.sections import _unlisted_hospitals
+    assert _unlisted_hospitals("Ari Canti Hospital is open 24/7", ["BIMC Hospital Nusa Dua"]) == ["Ari Canti Hospital"]
+    assert _unlisted_hospitals("Go to BIMC Hospital Nusa Dua", ["BIMC Hospital Nusa Dua"]) == []

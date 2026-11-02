@@ -712,3 +712,12 @@ def test_departure_without_a_known_road_time_keeps_the_verify_marker():
     block = day_block(load(data(days=[day1(), day2(), d3])), 3)
     assert "Leave for the airport by 11:00" in block and "allowing" not in block
     assert "⚠ VERIFY: departure time" in block
+
+
+def test_midnight_pickup_item_is_late_night_even_when_scheduled_in_the_morning():
+    t, d = _late_setup()
+    d.result = DayResult(scheduled=[sched(d.result.scheduled[0].item, "morning", time(9, 0))])
+    d.arrival_booking = None
+    block = day_block(load(data(trip=t, days=[d, day2()])), 1)
+    assert "Late night" in block and "Morning" not in block
+    assert "Your representative and driver will meet you after you land at 00:10." in block

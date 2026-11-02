@@ -284,11 +284,11 @@ class DayRenderer:
                 slot = None
 
     def _late_night_item(self, s: ScheduledItem) -> bool:
-        """An evening item of a day whose flight lands after midnight, and which is the airport pick-up or starts at 22:00 or later."""
+        """An item of a day whose flight lands after midnight that is the airport pick-up (any slot) or starts at 22:00 or later."""
         arr = self.rd.arrival
-        if s.slot != "evening" or not (arr and is_late_night_landing(arr, self.rd.date)):
+        if not (arr and is_late_night_landing(arr, self.rd.date)):
             return False
-        return s.item.kind == "transfer" or s.start >= time(22)
+        return s.item.kind == "transfer" or (s.slot == "evening" and s.start >= time(22))
 
     def _travel_line(self, name: str) -> None:
         leg = self.rd.legs.get(name)
@@ -314,6 +314,9 @@ class DayRenderer:
             self.doc.add_paragraph(rd.text.free_time_idea or it.name)
             self.free_time_used = True
             return
+        if it.kind == "transfer" and self._late_night_item(s):
+            self.doc.add_paragraph(f"Your representative and driver will meet you after you land at "
+                                   f"{_hm(self.rd.arrival.arrive)}.")
         self._travel_line(it.name)
         at: Optional[AttractionText] = self.texts.get(norm_name(it.name))
         p = rd.places.get(it.name)

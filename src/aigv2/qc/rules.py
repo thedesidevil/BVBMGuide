@@ -364,6 +364,36 @@ def _prose(doc: DocModel) -> list[Finding]:
     return out
 
 
+FIRST_PLURAL_RE = re.compile(r"(?<![\w'’-])(?:we|we['’](?:d|ll|re|ve)|our|ours|us)(?![\w'’-])", re.I)
+_QUOTED = re.compile(r"[\"“][^\"”]*[\"”]")
+_SENTENCE = re.compile(r"(?<=[.!?])\s+")
+_SIGN_OFF = re.compile(r"^Bon Voyage by Marina\b", re.I)
+
+
+def _voice(doc: DocModel) -> list[Finding]:
+    """House voice: no first-person plural, except in the opening letter and the Thank You page."""
+    out, in_letter = [], False
+    for p in doc.paragraphs:
+        text = p.text.strip()
+        if p.day is None and text.startswith("Dear "):
+            in_letter = True
+        if in_letter and (p.day is not None or text.casefold().startswith("your all-inclusive guide")):
+            in_letter = False
+        if in_letter:
+            if _SIGN_OFF.match(text):
+                in_letter = False
+            continue
+        if p.section == THANK_YOU:
+            continue
+        for sentence in _SENTENCE.split(_QUOTED.sub(" ", text)):
+            m = FIRST_PLURAL_RE.search(sentence)
+            if m:
+                out.append(_f("voice_first_person", f"First-person plural voice ('{m.group(0)}'); write about the place "
+                              "or address the client as 'you'", sentence.strip(), p.day))
+                break
+    return out
+
+
 def _utm_links(doc: DocModel) -> list[Finding]:
     out, seen = [], set()
     for text, url in doc.links:
@@ -424,5 +454,5 @@ def check_rules(doc: DocModel, trip: TripPlan, library: Library) -> list[Finding
     return (_section_order(doc, trip) + _day_sequence(doc) + _days(doc, trip) + _title(doc, trip, library)
             + _venue_link(doc) + _hotels(doc, trip) + _transport_times(doc, trip) + _transport_coverage(doc, trip)
             + _bookings_shown(doc, trip)
-            + _meals(doc, trip, library) + _walk(doc) + _prose(doc) + _utm_links(doc) + _commentary(doc, trip)
+            + _meals(doc, trip, library) + _walk(doc) + _prose(doc) + _voice(doc) + _utm_links(doc) + _commentary(doc, trip)
             + _markers(doc))

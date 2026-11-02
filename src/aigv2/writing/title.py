@@ -5,7 +5,7 @@ from pydantic import BaseModel
 _SYSTEM = (
     "You are luna, the writer for Bon Voyage by Marina travel guides. Respond with a single JSON object "
     "{\"title\": str}. Write a creative, destination-specific title of 2 to 5 words in American English. "
-    "Never use the phrase 'All Inclusive Guide'. No emojis, no quotes."
+    "Never use 'we' or 'our'. Never use the phrase 'All Inclusive Guide'. No emojis, no quotes."
 )
 _GENERIC = {"your", "my", "our", "the", "a", "an", "of", "to", "and", "trip", "travel", "guide", "holiday",
             "vacation", "journey", "adventure", "adventures", "itinerary", "tour", "tours", "plan", "travels"}

@@ -50,7 +50,7 @@ FACTS = {"date": "2026-10-01", "city": "Paris", "travellers": "2 adults", "occas
 def day_reply(desc="A lovely start.", extra=False):
     atts = [{"name": "Louvre", "description": desc}] + ([{"name": "Eiffel"}] if extra else [])
     atts = [{**a, "description": a.get("description", "x")} for a in atts]
-    return {"title": "Paris", "intro": "We begin gently.", "attractions": atts,
+    return {"title": "Paris", "intro": "The day begins gently.", "attractions": atts,
             "restaurants": [{"name": "Chez A", "ambience": "cozy", "best_for": "dinner"}]}
 
 
@@ -408,3 +408,16 @@ def test_child_motion_sickness_rule_iff_child_under_12(key, ages, expect):
     write_section(key, [{"city": "Paris", "country": "France"}], {}, t, llm)
     sent = json.dumps([c[1] for c in calls], default=str)
     assert ("ask your paediatrician before giving any motion-sickness medicine" in sent) is expect
+
+
+def test_prompts_carry_the_voice_rule_and_no_first_person():
+    import re
+    from src.aigv2.writing import days, sections, title
+    for system in (days._SYSTEM, sections._SYSTEM):
+        assert "NEVER use the words we" in system
+        assert "Style examples" in system
+        assert "first-person" not in system
+        assert not re.search(r"(?<!NEVER use the words )\bWe\b", system.replace("we, we'd", ""))
+    assert "Begin the day's sightseeing at Tegallalang" in days._SYSTEM
+    assert "Keep these saved in your phone" in sections._SYSTEM
+    assert "'we'" in title._SYSTEM

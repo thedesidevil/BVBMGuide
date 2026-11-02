@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field
 from src.aigv2.library import diet_fits, norm_name
 from src.aigv2.models import Marker
 from src.aigv2.money import FxUnavailable, city_currency
+from src.aigv2.writing.voice import SECTION_EXAMPLES, VOICE_RULE
 
 SECTION_KEYS = ("packing", "connectivity", "health", "getting_around", "dishes", "souvenirs", "etiquette",
                 "safety", "money")
@@ -40,8 +41,8 @@ _FOCUS = {
 }
 _SYSTEM = (
     "You are luna, the writer for Bon Voyage by Marina travel guides. Respond with a single JSON object "
-    "{\"items\": [{\"heading\": str, \"body\": str, \"where_to_try\": [str]}]}. Write in warm, first-person 'we' voice, "
-    "in American English, never salesy, with no emojis. Never write theme-park strategy tips unless the facts contain "
+    "{\"items\": [{\"heading\": str, \"body\": str, \"where_to_try\": [str]}]}. Write in American English, "
+    "never salesy, with no emojis. " + VOICE_RULE + " " + SECTION_EXAMPLES + " Never write theme-park strategy tips unless the facts contain "
     "them. where_to_try is only used for dishes and may be empty."
 )
 _PROVIDERS = ("Airalo", "Holafly", "Tata AIG", "BookMyForex", "Niyo", "Viettel", "Dialog", "T-Mobile", "Vodafone",

@@ -77,7 +77,7 @@ def day1():
                     markers=[Marker(kind="ADD_RESTAURANT", text=f"Dinner, Day 1, near {HOTEL}")])
     return RenderDay(
         index=1, date=D1, city="Istanbul",
-        text=DayText(title="Welcome to Istanbul", intro="We begin gently.",
+        text=DayText(title="Welcome to Istanbul", intro="The day begins gently.",
                      attractions=[AttractionText(name="Galata Tower", description="A medieval stone tower.")],
                      restaurants=[RestaurantText(name="Mikla", ambience="Rooftop views", best_for="Special dinner")]),
         result=DayResult(scheduled=[sched(galata, "afternoon", time(16))], meals=[dinner]),

@@ -497,3 +497,22 @@ def test_card_kinds_from_renderer_labels():
     assert kinds["Flight: Mumbai to Istanbul Airport"] == "transport"
     assert kinds["Istanbul Airport → Pera Palace"] == "transfer"
     assert kinds["Mikla"] == kinds["Galata Tower"] == "venue"
+
+
+def test_voice_first_person_plural_is_an_error(library):
+    for text in ("We can enjoy a scenic view at Tegallalang.", "We'd pack lightweight clothes.", "Our guide waits."):
+        fs = findings(render(with_intro(text)), library, "voice_first_person")
+        assert fs and fs[0].severity == "error" and fs[0].day == 1
+
+
+def test_voice_check_ignores_quotes_and_second_person(library):
+    assert not findings(render(with_intro("Enjoy the view. The sign reads \"Welcome to us all\".")), library,
+                        "voice_first_person")
+    assert not findings(render(with_intro("Business hours: Campus Bus.")), library, "voice_first_person")
+
+
+def test_voice_check_skips_thank_you_and_letter(library):
+    raw = render()
+    assert not findings(raw, library, "voice_first_person")  # the thank-you text uses 'we'
+    doc = read_docx(raw)
+    assert any(p.section == "Thank You" and " we " in f" {p.text.lower()} " for p in doc.paragraphs)

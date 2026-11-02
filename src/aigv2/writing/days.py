@@ -5,6 +5,7 @@ from typing import Optional
 from pydantic import BaseModel, Field
 
 from src.aigv2.library import norm_name
+from src.aigv2.writing.voice import DAY_EXAMPLES, VOICE_RULE
 
 DAY_FACTS_KEYS = ("date", "city", "attractions", "restaurants", "travellers", "occasion")
 
@@ -18,7 +19,7 @@ _FACT_PATTERNS = [
 
 _SYSTEM = (
     "You are luna, the writer for Bon Voyage by Marina travel guides. Respond with a single JSON object only. "
-    "Write in warm, first-person 'we' voice, in American English, never salesy, with no emojis. "
+    "Write in American English, never salesy, with no emojis. " + VOICE_RULE + " " + DAY_EXAMPLES + " "
     "You may use ONLY the facts given. Do not invent or state times, durations, distances, prices, percentages or "
     "opening hours inside title, intro, description or free_time_idea. Use every attraction and restaurant name exactly "
     "as given and add no others. If you supply entry_fee, dress_code, tips, best_time or duration for an attraction "

@@ -1,6 +1,6 @@
 import re
 from datetime import date, datetime, time, timedelta
-from typing import Literal, Optional
+from typing import Literal, Optional, Sequence
 
 from pydantic import BaseModel, Field
 
@@ -17,6 +17,9 @@ _HOTEL_ARRIVAL_BUFFER = {"flight": 60}
 _DEFAULT_BUFFER = 20
 _LATE_LUNCH_CUTOFF = time(15, 0)
 _NO_DINNER_AFTER = time(21, 0)
+_LATEST_LUNCH = time(13, 30)
+_LEG_DEFAULT_MIN = 90
+_LEG_MARGIN_MIN = 30
 _EARLY_ARRIVAL_BEFORE = time(5, 0)
 _PACKED_BREAKFAST_BEFORE = time(7, 0)
 _DEFAULT_CHECKIN = time(15, 0)
@@ -131,13 +134,22 @@ def leave_by(dep: TransportLeg, domestic: bool) -> Optional[time]:
     return (dep.depart - timedelta(minutes=minutes)).time()
 
 
-def _stay_for(stays: list[HotelStay], d: date, meal: str, start: time) -> Optional[HotelStay]:
+def _norm_city(text: str) -> str:
+    return " ".join(re.sub(r"[^\w]+", " ", text.casefold()).split())
+
+
+def _stay_for(stays: list[HotelStay], d: date, meal: str, start: time, city: str = "") -> Optional[HotelStay]:
     out = [s for s in stays if s.check_in < d == s.check_out]
     new = [s for s in stays if s.check_in == d]
     mid = [s for s in stays if s.check_in < d < s.check_out]
     if meal == "breakfast":
         cands = [s for s in stays if s.check_in < d <= s.check_out]
         return cands[0] if cands else None
+    if city and len(out) + len(new) + len(mid) > 1:
+        want = _norm_city(city)
+        match = lambda xs: [s for s in xs if _norm_city(s.city) == want]
+        if match(out) or match(new) or match(mid):
+            out, new, mid = match(out), match(new), match(mid)
     if meal == "lunch":
         if mid:
             return mid[0]
@@ -186,6 +198,7 @@ def schedule_day(
     settings: Settings,
     country: str = "",
     domestic: bool = False,
+    legs: Sequence[TransportLeg] = (),
 ) -> DayResult:
     res = DayResult(scheduled=_schedule_items(day, settings))
     rules = " ".join(day.meal_rules).lower()
@@ -269,7 +282,21 @@ def schedule_day(
 
     # lunch
     l_start = meal_start("lunch", country, settings)
-    l_stay = _stay_for(stays, d, "lunch", l_start)
+    l_stay = _stay_for(stays, d, "lunch", l_start, day.city)
+    l_drop = False
+    for lg in legs:
+        if not (lg.depart and lg.depart.date() == d) or lg == arrival or lg == departure:
+            continue
+        end = lg.arrive if lg.arrive and lg.arrive.date() == d and lg.arrive > lg.depart \
+            else lg.depart + timedelta(minutes=_LEG_DEFAULT_MIN)
+        margin = timedelta(minutes=_LEG_MARGIN_MIN)
+        ls = datetime.combine(d, l_start)
+        if lg.depart - margin <= ls <= end + margin:
+            shifted = end + margin
+            if shifted.date() != d or shifted.time() > _LATEST_LUNCH:
+                l_drop = True
+                break
+            l_start = shifted.time()
     new = [s for s in stays if s.check_in == d]
     midday_checkin = any(s.check_in_time and time(11) <= s.check_in_time <= time(13) for s in new)
     midday_arrival = hotel_arr is not None and time(11) <= hotel_arr <= time(13)
@@ -294,12 +321,12 @@ def schedule_day(
             return [(day.city, 3, ())]
         return hotel_spec(l_stay, 3)
 
-    if not late:
+    if not late and not l_drop:
         add("lunch", l_start, l_stay, lunch_spec)
 
     # dinner
     d_start = meal_start("dinner", country, settings)
-    d_stay = _stay_for(stays, d, "dinner", d_start)
+    d_stay = _stay_for(stays, d, "dinner", d_start, day.city)
     evening = [s for s in res.scheduled if s.slot == "evening" and real(s)]
 
     def dinner_spec():

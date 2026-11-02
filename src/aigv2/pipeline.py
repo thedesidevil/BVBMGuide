@@ -17,11 +17,12 @@ from src.aigv2.intake.extract import extract_trip
 from src.aigv2.intake.template import IntakeFields, parse_template
 from src.aigv2.library import Library, norm_name
 from src.aigv2.llm import StepLLM
-from src.aigv2.models import Answers, Booking, HotelStay, Marker, Place, Question, TripPlan, place_key
+from src.aigv2.models import (Answers, Booking, HotelStay, Marker, Place, Question, TransportLeg, TripPlan,
+                              place_key)
 from src.aigv2.money import FxRates, city_currency, price_text
 from src.aigv2.planning.important_places import ImportantPlaces, important_places
 from src.aigv2.planning.meals import Exclusion, MealPick, PlanStats, plan_meals
-from src.aigv2.planning.slots import DayResult, schedule_day
+from src.aigv2.planning.slots import DayResult, parse_time, schedule_day
 from src.aigv2.planning.travel import Leg, compute_legs
 from src.aigv2.preflight import apply_answers, run_checklist, unanswered
 from src.aigv2.qc import run_qc
@@ -333,6 +334,29 @@ def _other_legs(trip: TripPlan, d: date, used: set[int]) -> list[int]:
     return [i for i, l in enumerate(trip.transport) if i not in used and _leg_date(l) == d]
 
 
+_BOAT_BOOKING = re.compile(r"\b(fast[- ]?boat|ferry|speed ?boat)\b|\btransfer\b.*\bboat\b|\bboat\b.*\btransfer\b", re.I)
+_DEPARTS_AT = re.compile(r"\bdepart\w*\b[^\n]*?\bat\s+(\d{1,2}[:.]\d{2}\s*(?:[ap]\.?m\b)?)", re.I)
+
+
+def _boat_legs(trip: TripPlan, d: date) -> list[TransportLeg]:
+    """Boat/ferry transfers exist only as bookings; give the lunch planner a departure time (no arrival)."""
+    out = []
+    for b in trip.bookings:
+        if b.day != d or not _BOAT_BOOKING.search(b.name):
+            continue
+        t = None
+        for line in b.instructions:
+            m = _DEPARTS_AT.search(line)
+            t = parse_time(m.group(1)) if m else None
+            if t:
+                break
+        t = t or parse_time(b.time)
+        if t:
+            out.append(TransportLeg(kind="boat", from_place=b.meeting_point or b.name, to_place=b.name,
+                                    depart=datetime.combine(d, t), source="booking"))
+    return out
+
+
 def _endpoint(name: str, city: str, places: dict, client) -> None:
     if name.strip() and pkey(name, city) not in places:
         places[pkey(name, city)] = client.find(name, city)
@@ -490,7 +514,8 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
                       library_attractions=_library_attractions(deps.library, dp.city, dp.items))
         ds.result = schedule_day(dp, trip.hotels, trip.transport[arr] if arr is not None else None,
                                  trip.transport[dep] if dep is not None else None, ds.places, s, ds.country,
-                                 trip.trip_scope == "domestic")
+                                 trip.trip_scope == "domestic",
+                                 [trip.transport[i] for i in ds.other_legs] + _boat_legs(trip, dp.date))
         ds.legs = _legs(ds, trip, deps)
         days.append(ds)
         prev = dp.city

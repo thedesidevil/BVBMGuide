@@ -14,7 +14,7 @@ from src.aigv2 import pipeline
 from src.aigv2.config import STEPS, Settings
 from src.aigv2.library import Library
 from src.aigv2.llm import StepLLM
-from src.aigv2.models import Place, WeeklyHours
+from src.aigv2.models import Booking, Place, WeeklyHours
 from src.aigv2.pipeline import Deps, UnansweredQuestions, build_run, cost_summary, regenerate, requalify, start_run
 from src.library.ui.storage import LocalStorageBackend
 
@@ -795,3 +795,46 @@ def test_bali_late_night_arrival_pipeline(deps):
     assert d2.arrival is None and "breakfast" in [m.meal for m in d2.result.meals]
     text = "\n".join(m.text for d in state.days for m in d.result.markers)
     assert "Airport pick-up" not in text
+
+
+# ---------- boat bookings as lunch-shifting legs; Bali change-over days ----------
+
+def _boat_trip(bookings):
+    trip = TripPlan.model_validate(json.loads((BALI / "trip_plan.json").read_text(encoding="utf-8")))
+    trip.bookings = bookings
+    return trip
+
+
+def _bk(name, day, time_=None, instr=()):
+    return Booking(name=name, day=day, time=time_, source="voucher", instructions=list(instr))
+
+
+def test_boat_legs_parse_cases():
+    d = date(2026, 9, 30)
+    t = _boat_trip([
+        _bk("Fast boat to Sanur", d, "10:30", ["Shared fast boat departs at 12:00 PM."]),
+        _bk("Fast boat to Lembongan", d, "07:00", ["Shared fast boat departs Sanur Harbour at 09:15 AM."]),
+        _bk("Ferry crossing", d, "08:00", ["Boat departs at 14:45"]),
+        _bk("Boat transfer", d, "11:15", ["no time here"]),
+        _bk("Boat transfer none", d, None, []),
+        _bk("Museum tour", d, "12:00", ["Tour departs at 12:00"]),
+        _bk("Fast boat other day", date(2026, 10, 1), "09:00", []),
+    ])
+    got = [(l.to_place, l.depart.time(), l.arrive, l.kind) for l in pipeline._boat_legs(t, d)]
+    assert got == [("Fast boat to Sanur", time(12, 0), None, "boat"),
+                   ("Fast boat to Lembongan", time(9, 15), None, "boat"),
+                   ("Ferry crossing", time(14, 45), None, "boat"),
+                   ("Boat transfer", time(11, 15), None, "boat")]
+
+
+def test_bali_change_over_days_replay(deps):
+    store = RunStore.create(deps.backend)
+    for f in ("trip_plan.json", "questions.json", "places.json"):
+        store.save_bytes(f, (BALI / f).read_bytes())
+    answers = json.loads((BALI / "answers.json").read_text(encoding="utf-8"))
+    state = pipeline._plan(store, answers, deps)
+    by = {d.index: {m.meal: m for m in d.result.meals} for d in state.days}
+    assert by[1] == {}
+    assert by[5]["lunch"].anchors[0][0].startswith("D'NUSA BEACH CLUB")
+    assert "lunch" not in by[7]
+    assert by[7]["dinner"].anchors[0][0].startswith("TAKSU SANUR HOTEL")

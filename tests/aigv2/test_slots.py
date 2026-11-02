@@ -229,3 +229,74 @@ def test_unmatched_place_is_not_an_anchor():
 def test_late_night_arrival_next_day_no_meals_keeps_items():
     r = run(day([item("A")], d=date(2026, 11, 3)), stays=[stay(cin=D)], arrival=leg(arrive=datetime(2026, 11, 4, 0, 10)))
     assert r.meals == [] and len(r.scheduled) == 1
+
+
+# ---------- change-over days and in-day boat legs ----------
+
+def cstay(city, hotel, cin, cout):
+    return HotelStay(city=city, hotel=hotel, check_in=cin, check_out=cout, source="voucher")
+
+
+def cday(city, d, **kw):
+    return DayPlan(date=d, title="Day", city=city, items=[], meal_rules=[], drive_stops=[], **kw)
+
+
+CD = date(2026, 9, 28)
+OLD = cstay("Ubud", "Old H", date(2026, 9, 24), CD)
+NEW = cstay("Nusa Lembongan", "New H", CD, date(2026, 9, 30))
+
+
+def test_stay_for_change_over_lunch_and_dinner_prefer_day_city():
+    from src.aigv2.planning.slots import _stay_for
+    st = [OLD, NEW]
+    assert _stay_for(st, CD, "lunch", time(12, 30), "Nusa Lembongan") is NEW
+    assert _stay_for(st, CD, "dinner", time(19, 30), "nusa-lembongan") is NEW
+    assert _stay_for(st, CD, "lunch", time(12, 30), "Ubud") is OLD
+
+
+def test_stay_for_breakfast_unchanged_and_fallback_without_city_match():
+    from src.aigv2.planning.slots import _stay_for
+    st = [OLD, NEW]
+    assert _stay_for(st, CD, "breakfast", time(7, 30), "Nusa Lembongan") is OLD
+    assert _stay_for(st, CD, "lunch", time(12, 30), "Elsewhere") is OLD
+    assert _stay_for(st, CD, "lunch", time(12, 30)) is OLD
+
+
+BD = date(2026, 9, 30)
+
+
+def boat(h, m, arrive=None, d=BD):
+    return TransportLeg(kind="boat", from_place="a", to_place="b", depart=datetime(d.year, d.month, d.day, h, m),
+                        arrive=arrive, source="t")
+
+
+def lunch_run(legs, **kw):
+    dp = cday("X", BD)
+    return schedule_day(dp, [stay(cin=date(2026, 9, 24), cout=date(2026, 10, 2))], None, None,
+                        places("Hotel H"), S, legs=legs, **kw)
+
+
+def test_boat_leg_shifts_lunch():
+    r = lunch_run([boat(12, 0, arrive=datetime(2026, 9, 30, 12, 45))])
+    assert meal(r, "lunch").start == time(13, 15)
+
+
+def test_boat_leg_default_duration_drops_lunch_past_1330():
+    assert meal(lunch_run([boat(12, 0)]), "lunch") is None
+
+
+def test_boat_leg_ending_before_lunch_no_change():
+    r = lunch_run([boat(8, 0)])
+    assert meal(r, "lunch").start == time(12, 30)
+    r = lunch_run([boat(8, 0, arrive=datetime(2026, 9, 30, 11, 0))])
+    assert meal(r, "lunch").start == time(12, 30)
+
+
+def test_boat_leg_other_day_ignored_and_arrival_departure_not_double_handled():
+    assert meal(lunch_run([boat(12, 0, d=date(2026, 10, 1))]), "lunch").start == time(12, 30)
+    dep = boat(12, 0)
+    dp = cday("X", BD)
+    r = schedule_day(dp, [stay(cin=date(2026, 9, 24), cout=date(2026, 10, 2))], None, dep,
+                     places("Hotel H"), S, legs=[dep])
+    r2 = schedule_day(dp, [stay(cin=date(2026, 9, 24), cout=date(2026, 10, 2))], None, dep, places("Hotel H"), S)
+    assert r.meals == r2.meals

@@ -1,4 +1,8 @@
-"""Build the renderer-agnostic Guide from a finished run (GuideData). Mirrors render/day_render.py::DayRenderer."""
+"""Build the renderer-agnostic Guide from a finished run (GuideData).
+
+Logic mirrored from render/day_render.py::DayRenderer; that module is removed in plan Task 27,
+so the copied logic here is accepted debt.
+"""
 from datetime import date, datetime, time
 from typing import Optional
 
@@ -122,8 +126,16 @@ class _Day:
             self.out.append(g.SimpleCard(when="Free time", heading="Free time", text=rd.text.free_time_idea))
         if dep and not early_dep and not cruise:
             self._departure(dep, transport_card=True, city=rd.city)
+        else:
+            self._overnight(cruise)
         self.marks(rd.result.markers)  # day-level review notes close the page
         return g.Page(kind="day", title=title, bookmark=f"day_{rd.index}", components=self.out)
+
+    def _overnight(self, cruise: Optional[HotelStay]) -> None:
+        d = self.rd.date
+        ship = cruise or next((x for x in self.data.trip.hotels if x.kind == "cruise" and x.check_in <= d < x.check_out), None)
+        text = f"Overnight on board {ship.hotel}" if ship else f"Overnight in {self.rd.city}"
+        self.out.append(g.SimpleCard(when="Evening", part="Evening", heading=text))
 
     def _port_day(self, arr, dep) -> None:
         if arr and arr.arrive:
@@ -238,6 +250,8 @@ class _Day:
             self._transfer(f"{stay.hotel} → {port}", search_url(port, city), rd.legs.get("departure"), line, None,
                            when=_hm(by) if by else "Departure")
         else:
+            if line:
+                self.out.append(g.SimpleCard(when=_hm(by), heading=line))
             self.marks([_verify(f"hotel to leave from on {rd.date.isoformat()}")])
         if transport_card:
             self._transport(dep, dep.from_place, city)
@@ -410,26 +424,30 @@ class _Day:
         cuisine = lib.get("cuisine_type")
         cuisines = [str(x) for x in cuisine] if isinstance(cuisine, list) else ([str(cuisine)] if cuisine else [])
         price = rd.price_by_restaurant.get(name) or Marker(kind="PRICE_UNKNOWN", text="")
+        if isinstance(price, Marker):
+            price = g.MarkerRef(kind=price.kind, text=name if price.kind == "PRICE_UNKNOWN" else price.text)
         marks: list = []
         hours = c.hours_text.strip() or None
         if hours is None:
-            marks.append(g.MarkerRef(kind="VERIFY", text="opening hours"))
+            marks.append(g.MarkerRef(kind="VERIFY", text=f"{name}: opening hours"))
         elif c.hours_verify:
-            marks.append(g.MarkerRef(kind="VERIFY", text="opening hours from the library"))
+            marks.append(g.MarkerRef(kind="VERIFY", text=f"{name}: opening hours from the library"))
         dishes = lib.get("must_try_dishes")
         rt = self.rtexts.get(norm_name(name))
+        travel = f"{c.travel_label} · {c.travel_min} min"
         if self.self_drive:
             pk = self._parking(lib)
             if isinstance(pk, Marker):
-                marks.append(_ref(pk))
+                marks.append(g.MarkerRef(kind="VERIFY", text=f"{name}: parking"))
+            else:
+                travel += f" · Parking: {pk}"
         marks += [_ref(m) for m in place_markers(c.place)]
         text = " ".join(x for x in (rt.ambience if rt else "", f"Best for {rt.best_for}" if rt and rt.best_for else "") if x)
         return g.Restaurant(
             name=name, maps_url=c.place.maps_url or search_url(name, rd.city), cuisines=cuisines,
             veg=lib.get("vegetarian_friendly") is True, text=text,
             must_try=", ".join(str(x) for x in dishes[:3]) if isinstance(dishes, list) and dishes else "",
-            hours=hours, price=_ref(price) if isinstance(price, Marker) else price,
-            travel=f"{c.travel_label} · {c.travel_min} min"), marks
+            hours=hours, price=price, travel=travel), marks
 
 
 def build_day_page(rd: RenderDay, data: GuideData, settings) -> g.Page:

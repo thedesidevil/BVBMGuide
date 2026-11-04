@@ -8,6 +8,8 @@ from pydantic import BaseModel, Field
 from src.aigv2.library import diet_fits, norm_name
 from src.aigv2.models import Marker
 from src.aigv2.money import FxUnavailable, city_currency
+from src.aigv2.writing import structured as st
+from src.aigv2.writing.structured import App, Contact, Dish, EmergencyNumber, Phrase, Souvenir  # noqa: F401
 from src.aigv2.writing.voice import SECTION_EXAMPLES, VOICE_RULE
 
 SECTION_KEYS = ("packing", "connectivity", "health", "getting_around", "dishes", "souvenirs", "etiquette",
@@ -62,9 +64,23 @@ class SectionItem(BaseModel):
     verify: bool = False
 
 
+class SectionGroup(BaseModel):
+    title: str
+    items: list[SectionItem] = Field(default_factory=list)
+
+
 class SectionContent(BaseModel):
     key: str
     items: list[SectionItem] = Field(default_factory=list)
+    groups: list[SectionGroup] = Field(default_factory=list)
+    apps: list[App] = Field(default_factory=list)
+    phrases: list[Phrase] = Field(default_factory=list)
+    dos: list[str] = Field(default_factory=list)
+    donts: list[str] = Field(default_factory=list)
+    numbers: list[EmergencyNumber] = Field(default_factory=list)
+    contacts: list[Contact] = Field(default_factory=list)
+    dishes: list[Dish] = Field(default_factory=list)
+    souvenirs: list[Souvenir] = Field(default_factory=list)
     from_library: bool = True
     by_country: dict[str, list[SectionItem]] = Field(default_factory=dict)
     markers: list[Marker] = Field(default_factory=list)
@@ -76,8 +92,14 @@ class _ItemOut(BaseModel):
     where_to_try: list[str] = Field(default_factory=list)
 
 
+class _GroupOut(BaseModel):
+    title: str
+    items: list[str] = Field(default_factory=list)
+
+
 class _SectionOut(BaseModel):
-    items: list[_ItemOut]
+    items: list[_ItemOut] = Field(default_factory=list)
+    groups: list[_GroupOut] = Field(default_factory=list)
 
 
 def needs_verify(text: str) -> bool:
@@ -102,10 +124,11 @@ def _countries(city_data: list[dict], country_data: dict) -> list[str]:
     return out or list(country_data or {}) or [""]
 
 
-def _library_items(key: str, cities: list[dict], cdatas: list[dict], *,
-                   nationalities: frozenset[str] = frozenset()) -> list:
-    out = []
+def _library_named(key: str, cities: list[dict], cdatas: list[dict], *,
+                   nationalities: frozenset[str] = frozenset()) -> dict[str, list]:
+    named: dict[str, list] = {}
     for scope, name in _LIB[key]:
+        out = named.setdefault(name, [])
         if scope == "city":
             for c in cities:
                 out += _listify(c.get(name))
@@ -115,7 +138,12 @@ def _library_items(key: str, cities: list[dict], cdatas: list[dict], *,
                 if name == "embassies":  # Indian by default; foreign missions only for that passport
                     items = [e for e in items if _embassy_wanted(e, nationalities)]
                 out += items
-    return out
+    return named
+
+
+def _library_items(key: str, cities: list[dict], cdatas: list[dict], *,
+                   nationalities: frozenset[str] = frozenset()) -> list:
+    return [x for v in _library_named(key, cities, cdatas, nationalities=nationalities).values() for x in v]
 
 
 # (regex, nationality key) markers of a foreign mission in a library embassy entry
@@ -169,13 +197,21 @@ def _numbers(text: str) -> set[str]:
 
 
 def _validator(key: str, material: str, library: bool, restaurants: dict[str, str],
-               allowed_hospitals: Optional[list[str]] = None):
+               allowed_hospitals: Optional[list[str]] = None, child: bool = False):
     known = _numbers(material)
 
     def validate(out: _SectionOut) -> list[str]:
         problems = []
-        if not out.items:
+        if not out.items and not (key == "packing" and out.groups):
             problems.append("items must not be empty")
+        if key == "packing" and out.groups:
+            problems += st.group_problems([g.title for g in out.groups], child)
+            for g in out.groups:
+                blob = g.title + " " + " ".join(g.items)
+                if needs_verify(blob):
+                    problems.append(f"group '{g.title}' contains prices or provider names")
+                if library and not _numbers(blob) <= known:
+                    problems.append(f"group '{g.title}' contains numbers that are not in the library facts")
         for it in out.items:
             blob = it.heading + " " + it.body
             if _THEME.search(blob) and not _THEME.search(material):
@@ -290,12 +326,16 @@ def hospital_facts(important) -> list[dict]:
     return out
 
 
-def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=None) -> tuple[list[SectionItem], bool]:
-    lib = _library_items(key, cities, cdatas, nationalities=frozenset(client_nationalities(trip)))
+def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=None):
+    named = _library_named(key, cities, cdatas, nationalities=frozenset(client_nationalities(trip)))
+    lib = [x for v in named.values() for x in v]
     hospitals = hospital_facts(important) if key == "safety" and important is not None else None
     allowed = [h["name"] for h in hospitals] if hospitals is not None else None
     if allowed is not None:  # library facts may not name a hospital other than the ones Important Places lists
-        lib = [x for x in lib if not _unlisted_hospitals(json.dumps(x, ensure_ascii=False, default=str), allowed)]
+        def listed(x):
+            return not _unlisted_hospitals(json.dumps(x, ensure_ascii=False, default=str), allowed)
+        lib = [x for x in lib if listed(x)]
+        named = {k: [x for x in v if listed(x)] for k, v in named.items()}
     library = bool(lib)
     material = json.dumps(lib, ensure_ascii=False, default=str)
     restaurants = _restaurant_names(cities, trip.diet)
@@ -313,10 +353,13 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
             if library else
             "No library facts exist. Write helpful general guidance, without exact prices, fees, times or provider names.")
     extra += _child_rule(key, trip)
+    child = any(a < 12 for a in trip.travellers.kids_ages)
+    if key == "packing":
+        extra += _PACKING_GROUPS_RULE + (_CHILD_GROUP_RULE if child else " Do not include a 'For your little one' group.")
     prompt = (f"Section: {key}. Write {_FOCUS[key]}.\n{mode}\n{_trip_context(trip)}{extra}\n"
               f"Library facts (JSON): {material}")
     out = llm.run_json("write_sections", _SYSTEM, prompt, _SectionOut,
-                       validate=_validator(key, material + extra, library, restaurants, allowed))
+                       validate=_validator(key, material + extra, library, restaurants, allowed, child))
     flag_ai = not library and key != "packing"
     items = []
     for it in out.items:
@@ -325,8 +368,26 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
             body += " Where to try: " + ", ".join(restaurants[norm_name(w)] for w in it.where_to_try) + "."
         items.append(SectionItem(heading=it.heading, body=body,
                                  verify=flag_ai or needs_verify(it.heading + " " + body)))
-    return items, library
+    fields: dict = {}
+    if key == "packing" and out.groups:
+        groups = st.order_groups(out.groups)
+        fields["groups"] = [SectionGroup(title=g.title, items=[SectionItem(heading=i.strip(), body="")
+                                                                for i in g.items if i.strip()][:8]) for g in groups]
+        items = [SectionItem(heading=g.title, body=", ".join(i.heading for i in g.items)) for g in fields["groups"]]
+    else:
+        fields = st.extract(key, named, [r for c in cities for r in c.get("restaurants", [])
+                                         if isinstance(r, dict) and r.get("name") and r["name"] in restaurants.values()])
+    return items, library, fields
 
+
+_PACKING_GROUPS_RULE = (
+    "\nAlso return the packing list as \"groups\": [{\"title\": str, \"items\": [str]}] using only these titles, in this "
+    "order, only when relevant: Clothing, Footwear, Beach & Island Days (only if the itinerary has water, boat or beach "
+    "activities), Sun & Day Trips, Temple Visits (only if temples or religious sites appear), Electronics, Health & "
+    "Comfort, Travel Documents. Each group has 3 to 8 short items, single phrases and not sentences, in the imperative or as "
+    "noun phrases. Plug type and insurance facts from the library may go under Electronics and Travel Documents. "
+    "items may then be empty.")
+_CHILD_GROUP_RULE = " A traveller is under 12, so add a final group titled \"For your little one\"."
 
 _REMOTE_GUIDANCE = [
     ("Altitude", "At high altitude, ascend gradually, drink plenty of water, rest on arrival and avoid alcohol on the first day. "
@@ -336,6 +397,21 @@ _REMOTE_GUIDANCE = [
     ("Low network", "Mobile coverage can be patchy or absent in remote areas. Download offline maps, keep key phone numbers "
                     "and bookings saved offline, and tell your hotel your route."),
 ]
+
+
+def _merge_fields(parts: list[dict]) -> dict:
+    merged: dict = {}
+    for p in parts:
+        for k, v in p.items():
+            merged[k] = merged.get(k, []) + [x for x in v if x not in merged.get(k, [])]
+    if "phrases" in merged:
+        merged["phrases"] = merged["phrases"][:st.PHRASE_CAP]
+    for k in ("dos", "donts"):
+        if k in merged:
+            merged[k] = merged[k][:st.DO_CAP]
+    if "numbers" in merged:
+        merged["numbers"] = merged["numbers"][:st.NUMBER_CAP]
+    return merged
 
 
 def write_section(key: str, city_data: list[dict], country_data: dict, trip, llm, *,
@@ -351,6 +427,7 @@ def write_section(key: str, city_data: list[dict], country_data: dict, trip, llm
     grouped = key in COUNTRY_KEYS and len(countries) > 1
     by_country: dict[str, list[SectionItem]] = {}
     all_lib = True
+    fields_by_country: list[dict] = []
     for country in countries:
         if key in COUNTRY_KEYS:
             cities = [c for c in city_data if not country or not c.get("country") or c["country"] == country]
@@ -358,7 +435,8 @@ def write_section(key: str, city_data: list[dict], country_data: dict, trip, llm
         else:
             cities = city_data
             cdatas = [_slice_country(country_data, c) for c in _countries(city_data, country_data)]
-        items, library = _one(key, cities, cdatas, trip, llm, important)
+        items, library, fields = _one(key, cities, cdatas, trip, llm, important)
+        fields_by_country.append(fields)
         all_lib = all_lib and library
         if key == "money" and not domestic:
             fx_item = _fx_item(country, next((c for c in cities if c.get("currency")), {}), fx, today)
@@ -375,4 +453,4 @@ def write_section(key: str, city_data: list[dict], country_data: dict, trip, llm
         by_country[country] = items
     flat = [i for items in by_country.values() for i in items]
     return SectionContent(key=key, items=flat, from_library=all_lib,
-                          by_country=by_country if grouped else {})
+                          by_country=by_country if grouped else {}, **_merge_fields(fields_by_country))

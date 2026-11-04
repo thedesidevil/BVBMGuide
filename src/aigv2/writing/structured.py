@@ -124,6 +124,22 @@ def extract_contacts(emergency, embassies) -> list[Contact]:
     return out
 
 
+def _words(text: str) -> list[str]:
+    return re.findall(r"[^\W_]+", norm_name(text))
+
+
+def _same_dish(dish: str, entry: str) -> bool:
+    a, b = _words(dish), _words(entry)
+    if not a or not b:
+        return False
+    if a == b:
+        return True
+    short, long_ = (a, b) if len(a) <= len(b) else (b, a)
+    if len(short) < 2:
+        return False
+    return any(long_[i:i + len(short)] == short for i in range(len(long_) - len(short) + 1))
+
+
 def extract_dishes(items, restaurants: list[dict]) -> list[Dish]:
     """restaurants: library restaurant dicts already restricted to the allowed (diet-fitting) set."""
     out, seen = [], set()
@@ -132,12 +148,11 @@ def extract_dishes(items, restaurants: list[dict]) -> list[Dish]:
         if not name or name.casefold() in seen:
             continue
         seen.add(name.casefold())
-        key = norm_name(name)
         where = []
         for r in restaurants:
             must = r.get("must_try_dishes")
-            blob = norm_name(" | ".join(must if isinstance(must, list) else [must] if isinstance(must, str) else []))
-            if key and key in blob and r["name"] not in where:
+            entries = must if isinstance(must, list) else [must] if isinstance(must, str) else []
+            if any(_same_dish(name, e) for e in entries if isinstance(e, str)) and r["name"] not in where:
                 where.append(r["name"])
         out.append(Dish(name=name, description=_s(d.get("description")), where_to_try=where))
     return out

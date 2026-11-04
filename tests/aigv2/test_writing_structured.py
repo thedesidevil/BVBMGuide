@@ -121,3 +121,31 @@ def test_souvenirs_grouped_by_category():
     s = _run("souvenirs", [{"city": "Ubud", "country": "Indonesia", "souvenirs": sv}], {})
     assert [(x.title, x.what, x.places) for x in s.souvenirs] == [
         ("Textiles", "Batik, Ikat", ["Market", "Shop"]), ("Food", "Coffee", ["Farm"])]
+
+
+@pytest.mark.parametrize("dish,entry,expect", [
+    ("Nasi", "Nasi Goreng", False), ("Nasi Goreng", "Nasi Goreng (with egg)", True),
+    ("Nasi Goreng", "Chicken Nasi Goreng", True), ("rice", "price", False), ("rice", "Rice", True),
+    ("Sate Lilit", "Sate Lilit", True), ("Nasi Goreng", "Nasi Campur", False)])
+def test_dish_matching_whole_words(dish, entry, expect):
+    cities = [{"city": "Ubud", "country": "Indonesia", "local_dishes": [{"name": dish}],
+               "restaurants": [{"name": "W", "must_try_dishes": [entry]}]}]
+    assert bool(_run("dishes", cities, {}).dishes[0].where_to_try) is expect
+
+
+def test_curly_apostrophe_dont_goes_to_donts():
+    s = _run("etiquette", [{"city": "Ubud", "country": "Indonesia"}],
+             {"Indonesia": {"dos_donts": [{"tip": "Don’t point your feet"}, {"tip": "Smile"}]}})
+    assert s.donts == ["Don’t point your feet"] and s.dos == ["Smile"]
+
+
+def test_old_saved_section_json_loads():
+    s = SectionContent.model_validate({"key": "safety", "items": [{"heading": "h", "body": "b"}], "from_library": True})
+    assert s.numbers == [] and s.groups == [] and s.dishes == []
+
+
+def test_multi_country_merge_documents_current_dedup():
+    cities = [{"city": "Ubud", "country": "Indonesia"}, {"city": "Hanoi", "country": "Vietnam"}]
+    cd = {"Indonesia": {"apps": [{"name": "Grab", "purpose": "A"}]}, "Vietnam": {"apps": [{"name": "Grab", "purpose": "A"}, {"name": "Be", "purpose": "B"}]}}
+    s = _run("connectivity", cities, cd)
+    assert [a.name for a in s.apps] == ["Grab", "Be"]

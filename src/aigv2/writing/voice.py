@@ -1,4 +1,5 @@
 """The house voice shared by every writing prompt (modelled on the hand-curated guides)."""
+import re
 
 VOICE_RULE = (
     "VOICE: write in the Bon Voyage by Marina house voice. Be warm and descriptive. Describe the place or activity "
@@ -27,3 +28,11 @@ SECTION_EXAMPLES = (
 )
 
 TITLE_RULE = "Never address the reader as 'we' or 'our'."
+
+# first-person plural; lower-case "us" only, so "US" (the country) is not flagged
+_WE = re.compile(r"(?<![\w'’-])(?:(?i:we|we['’](?:d|ll|re|ve)|our|ours)|us)(?![\w'’-])")
+
+
+def first_person_problems(label: str, text) -> list[str]:
+    m = _WE.search(text) if isinstance(text, str) else None
+    return [f"{label} uses '{m.group(0)}'; never write we, our or us; address the client as 'you'"] if m else []

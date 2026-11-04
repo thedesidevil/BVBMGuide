@@ -10,7 +10,7 @@ PACKING_GROUPS = ("Clothing", "Footwear", "Beach & Island Days", "Sun & Day Trip
                   "Health & Comfort", "Travel Documents", "For your little one")
 CHILD_GROUP = "For your little one"
 
-PHRASE_CAP, DO_CAP, SOUVENIR_CAP, NUMBER_CAP = 12, 8, 8, 4
+PHRASE_CAP, DO_CAP, SOUVENIR_CAP, NUMBER_CAP, DISH_CAP = 12, 8, 8, 4, 12
 
 
 class App(BaseModel):
@@ -108,7 +108,22 @@ def extract_numbers(items) -> list[EmergencyNumber]:
     return out[:NUMBER_CAP]
 
 
+def _digits(s: str) -> str:
+    return re.sub(r"\D", "", s)
+
+
 def extract_contacts(emergency, embassies) -> list[Contact]:
+    out = _extract_contacts(emergency, embassies)
+    seen, uniq = set(), []
+    for c in out:  # the same mission/line often arrives from several source guides
+        key = (c.kind, _digits(c.phone)) if c.phone else (c.kind, c.name.casefold())
+        if key not in seen:
+            seen.add(key)
+            uniq.append(c)
+    return uniq
+
+
+def _extract_contacts(emergency, embassies) -> list[Contact]:
     out = []
     for e in _dicts(emergency):
         svc = _s(e.get("service"))
@@ -143,6 +158,7 @@ def _same_dish(dish: str, entry: str) -> bool:
 def extract_dishes(items, restaurants: list[dict]) -> list[Dish]:
     """restaurants: library restaurant dicts already restricted to the allowed (diet-fitting) set."""
     out, seen = [], set()
+    allowed = {norm_name(r["name"]): r["name"] for r in restaurants if r.get("name")}
     for d in _dicts(items):
         name = _s(d.get("name"))
         if not name or name.casefold() in seen:
@@ -154,8 +170,14 @@ def extract_dishes(items, restaurants: list[dict]) -> list[Dish]:
             entries = must if isinstance(must, list) else [must] if isinstance(must, str) else []
             if any(_same_dish(name, e) for e in entries if isinstance(e, str)) and r["name"] not in where:
                 where.append(r["name"])
+        own = d.get("where_to_try")  # the library dish's own list, kept only for allowed restaurants
+        for w in re.split(r"\s*[,;]\s*", own) if isinstance(own, str) else [x for x in own or [] if isinstance(x, str)]:
+            hit = allowed.get(norm_name(w))
+            if hit and hit not in where:
+                where.append(hit)
         out.append(Dish(name=name, description=_s(d.get("description")), where_to_try=where))
-    return out
+    # keep the dishes that say where to try them first (stable), then the order given
+    return sorted(out, key=lambda d: not d.where_to_try)[:DISH_CAP]
 
 
 def extract_souvenirs(items) -> list[Souvenir]:

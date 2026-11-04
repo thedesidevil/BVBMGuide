@@ -3,14 +3,14 @@ import re
 from datetime import date
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
 from src.aigv2.library import diet_fits, norm_name
 from src.aigv2.models import Marker
 from src.aigv2.money import FxUnavailable, city_currency
 from src.aigv2.writing import structured as st
 from src.aigv2.writing.structured import App, Contact, Dish, EmergencyNumber, Phrase, Souvenir  # noqa: F401
-from src.aigv2.writing.voice import SECTION_EXAMPLES, VOICE_RULE
+from src.aigv2.writing.voice import SECTION_EXAMPLES, VOICE_RULE, first_person_problems
 
 SECTION_KEYS = ("packing", "connectivity", "health", "getting_around", "dishes", "souvenirs", "etiquette",
                 "safety", "money")
@@ -97,9 +97,40 @@ class _GroupOut(BaseModel):
     items: list[str] = Field(default_factory=list)
 
 
+_JSON_IN_BODY = re.compile(r'"groups"\s*:|\{\s*"title"\s*:')
+
+
+def _lift_groups(items: list[_ItemOut]):
+    """Salvage groups JSON that the model put inside an item body: (groups, remaining items) or None."""
+    dec = json.JSONDecoder()
+    for n, it in enumerate(items):
+        for m in re.finditer(r"\{", it.body):
+            try:
+                obj, _ = dec.raw_decode(it.body[m.start():])
+            except ValueError:
+                continue
+            if isinstance(obj, dict) and isinstance(obj.get("groups"), list):
+                try:
+                    groups = [_GroupOut(**g) for g in obj["groups"]]
+                except (TypeError, ValueError):
+                    continue
+                lead = it.body[:m.start()].strip()
+                rest = items[:n] + ([_ItemOut(heading=it.heading, body=lead)] if lead else []) + items[n + 1:]
+                return groups, rest
+    return None
+
+
 class _SectionOut(BaseModel):
     items: list[_ItemOut] = Field(default_factory=list)
     groups: list[_GroupOut] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def _salvage_groups(self):
+        if not self.groups:
+            lifted = _lift_groups(self.items)
+            if lifted:
+                self.groups, self.items = lifted
+        return self
 
 
 def needs_verify(text: str) -> bool:
@@ -208,12 +239,16 @@ def _validator(key: str, material: str, library: bool, restaurants: dict[str, st
             problems += st.group_problems([g.title for g in out.groups], child)
             for g in out.groups:
                 blob = g.title + " " + " ".join(g.items)
+                problems += first_person_problems(f"group '{g.title}'", blob)
                 if needs_verify(blob):
                     problems.append(f"group '{g.title}' contains prices or provider names")
                 if library and not _numbers(blob) <= known:
                     problems.append(f"group '{g.title}' contains numbers that are not in the library facts")
         for it in out.items:
             blob = it.heading + " " + it.body
+            if _JSON_IN_BODY.search(it.body):
+                problems.append(f"'{it.heading}' body contains JSON; put groups in the top-level \"groups\" field and write plain text in bodies")
+            problems += first_person_problems(f"'{it.heading}'", blob)
             if _THEME.search(blob) and not _THEME.search(material):
                 problems.append(f"'{it.heading}' contains theme-park strategy not in the facts")
             if library and not _numbers(blob) <= known:

@@ -1,3 +1,4 @@
+import logging
 import os
 import re
 from concurrent.futures import ThreadPoolExecutor
@@ -35,6 +36,8 @@ from src.aigv2.store import NearbyCache, PlaceCache, RouteCache, RunStore, defau
 from src.aigv2.verification import build_sheet
 from src.aigv2.writing.days import DayText, write_day
 from src.aigv2.writing.sections import SECTION_KEYS, SectionContent, write_section
+
+log = logging.getLogger(__name__)
 from src.aigv2.writing.thanks import ThankYouText, write_thank_you
 from src.aigv2.writing.title import write_title
 from src.library.ui.storage import StorageBackend
@@ -643,6 +646,9 @@ def _section_inputs(state: PlanState, library: Library) -> tuple[list[dict], dic
         country = state.countries.get(c, "")
         if country and country not in country_data:
             country_data[country] = library.country(country) or library.country(c)
+            if not country_data[country]:
+                log.warning("no country-level library data for %s (dos/don'ts, apps, embassies, money will be empty); "
+                            "check AIGV2_LIBRARY_DB points at the rebuilt library", country)
     return city_data, country_data
 
 

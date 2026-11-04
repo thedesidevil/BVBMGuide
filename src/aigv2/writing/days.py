@@ -5,7 +5,7 @@ from typing import Optional
 from pydantic import BaseModel, Field
 
 from src.aigv2.library import norm_name
-from src.aigv2.writing.voice import DAY_EXAMPLES, VOICE_RULE
+from src.aigv2.writing.voice import DAY_EXAMPLES, VOICE_RULE, first_person_problems
 
 DAY_FACTS_KEYS = ("date", "city", "attractions", "restaurants", "travellers", "occasion")
 
@@ -82,6 +82,11 @@ def _validator(day_facts: dict):
             problems.append("attraction names must equal the input names exactly, with no additions or omissions")
         if sorted(norm_name(r.name) for r in day.restaurants) != want_r:
             problems.append("restaurant names must equal the input names exactly, with no additions or omissions")
+        for label, text in [("title", day.title), ("intro", day.intro), ("free_time_idea", day.free_time_idea)] + \
+                [(f"description of {a.name}", a.description) for a in day.attractions] + \
+                [(f"ambience of {r.name}", r.ambience) for r in day.restaurants] + \
+                [(f"best_for of {r.name}", r.best_for) for r in day.restaurants]:
+            problems += first_person_problems(label, text)
         problems += prose_fact_problems("title", day.title)
         problems += prose_fact_problems("intro", day.intro)
         problems += prose_fact_problems("free_time_idea", day.free_time_idea)

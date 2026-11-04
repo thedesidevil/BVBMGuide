@@ -1,5 +1,7 @@
 import re
 
+from src.aigv2.writing.voice import first_person_problems
+
 from pydantic import BaseModel
 
 _SYSTEM = (
@@ -30,6 +32,7 @@ def _validate(out: TitleOut) -> list[str]:
         problems.append("title must not contain 'All Inclusive Guide'")
     if _EMOJI.search(t):
         problems.append("title must not contain emojis")
+    problems += first_person_problems("title", t)
     if words and all(re.sub(r"\W", "", w).casefold() in _GENERIC for w in words):
         problems.append("title is generic; make it destination-specific")
     return problems

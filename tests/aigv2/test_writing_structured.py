@@ -149,3 +149,71 @@ def test_multi_country_merge_documents_current_dedup():
     cd = {"Indonesia": {"apps": [{"name": "Grab", "purpose": "A"}]}, "Vietnam": {"apps": [{"name": "Grab", "purpose": "A"}, {"name": "Be", "purpose": "B"}]}}
     s = _run("connectivity", cities, cd)
     assert [a.name for a in s.apps] == ["Grab", "Be"]
+
+
+# ---- gap fixes: JSON-in-body packing, dish cap, first-person check, contact dedupe
+import json as _json
+
+from src.aigv2.writing import structured as _st
+
+_GROUPS = {"groups": [{"title": "Clothing", "items": ["Light layers", "Sandals", "Hat"]}]}
+
+
+def test_packing_json_in_body_is_salvaged_into_groups():
+    body = "Season: Warm and humid.\n\n" + _json.dumps(_GROUPS)
+    s, _ = _pack({"items": [{"heading": "Packing list", "body": body}]})
+    assert [g.title for g in s.groups] == ["Clothing"]
+    assert not any("{" in i.body for i in s.items)
+    assert all(i.body.startswith("Season") or i.body == "" or "Light" in i.body for i in s.items)
+
+
+def test_packing_json_in_body_triggers_retry():
+    bad = {"items": [{"heading": "Cabin", "body": 'see {"title": "Clothing", "items": ["x"]} here'}]}
+    good = {"items": [{"heading": "Tip", "body": "Pack light."}], "groups": _GROUPS["groups"]}
+    llm, calls = make(bad, good)
+    s = write_section("packing", [{"city": "Paris", "country": "France"}], {}, trip(), llm)
+    assert len(calls) == 2 and [g.title for g in s.groups] == ["Clothing"]
+
+
+def test_dishes_capped_preferring_where_to_try():
+    dishes = [{"name": f"Dish {i} special", "description": "d"} for i in range(30)]
+    rest = [{"name": "Warung A", "must_try_dishes": ["Dish 25 special"]}]
+    out = _st.extract_dishes(dishes, rest)
+    assert len(out) == _st.DISH_CAP == 12
+    assert out[0].name == "Dish 25 special" and out[0].where_to_try == ["Warung A"]
+    assert [d.name for d in out[1:4]] == ["Dish 0 special", "Dish 1 special", "Dish 2 special"]
+
+
+def test_dish_own_where_to_try_string_filtered_to_allowed():
+    out = _st.extract_dishes([{"name": "Mie Goreng", "where_to_try": "SEJA Restaurant, Not Allowed Cafe"}],
+                             [{"name": "SEJA Restaurant"}])
+    assert out[0].where_to_try == ["SEJA Restaurant"]
+
+
+def test_contacts_deduped_across_sources():
+    em = [{"service": "Tourist Police", "number": "+62 361 754 599"}] * 3
+    assert len(_st.extract_contacts(em, [])) == 1
+
+
+def test_section_rejects_first_person_plural_and_retries():
+    bad = {"items": [{"heading": "Tips", "body": "We recommend a hat."}]}
+    good = {"items": [{"heading": "Tips", "body": "Carry a hat."}]}
+    llm, calls = make(bad, good)
+    s = write_section("health", [{"city": "Paris", "country": "France"}], {}, trip(), llm)
+    assert len(calls) == 2 and s.items[0].body == "Carry a hat."
+
+
+def test_day_and_title_reject_first_person():
+    from src.aigv2.writing import days, title
+    from tests.aigv2.test_writing import FACTS, day_reply
+    llm, calls = make(day_reply(desc="Our guide will meet you."), day_reply())
+    days.write_day(FACTS, llm)
+    assert len(calls) == 2
+    assert title._validate(title.TitleOut(title="Our Bali Dream")) != []
+    assert title._validate(title.TitleOut(title="Bali, US Style")) == []
+
+
+def test_first_person_check_ignores_country_us():
+    from src.aigv2.writing.voice import first_person_problems
+    assert first_person_problems("x", "A US citizen should call the US embassy.") == []
+    assert first_person_problems("x", "Let us help; we'd love to.")

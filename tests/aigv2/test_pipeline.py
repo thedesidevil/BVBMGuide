@@ -79,7 +79,7 @@ def _day(prompt: str) -> str:
     facts = json.loads(prompt.split("\n", 1)[1])
     return json.dumps({
         "title": f"Exploring {facts['city']}", "intro": "The day moves gently.",
-        "attractions": [{"name": a["name"], "description": "A favorite of ours."} for a in facts["attractions"]],
+        "attractions": [{"name": a["name"], "description": "A local favorite."} for a in facts["attractions"]],
         "restaurants": [{"name": r["name"], "ambience": "Relaxed", "best_for": "Families"} for r in facts["restaurants"]],
         "free_time_idea": None})
 

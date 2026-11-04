@@ -69,11 +69,16 @@ def _fields(doc):
     return out
 
 
-def test_page_numbers_use_pageref_fields_with_cached_values():
-    f = dict(_fields(_build(pages={"day_1": 5, "sec_packing": 25, "thank_you": 38})))
-    assert f["day_1"] == "5" and f["sec_packing"] == "25" and f["thank_you"] == "38"
+def test_known_numbers_are_plain_runs_unknown_are_pageref():
+    doc = _build(pages={"day_1": 5, "sec_packing": 25, "thank_you": 38})
+    f = dict(_fields(doc))
+    assert "day_1" not in f and "sec_packing" not in f and "thank_you" not in f
     assert f["day_2"] == "–"
+    txt = _text(doc)
+    assert "p." + TOC.NB + "5" in txt and "25" in txt and "38" in txt
+    assert not list(doc.element.body.iter(qn("w:fldSimple")))
     assert len(_fields(_build())) == 3 + 5 + 1
+    assert all(c == "–" for _, c in _fields(_build()))
 
 
 def test_numbers_share_one_right_tab_per_block():
@@ -82,6 +87,10 @@ def test_numbers_share_one_right_tab_per_block():
         if any("PAGEREF" in (i.text or "") for i in p.iter(qn("w:instrText"))):
             tabs = p.findall(".//" + qn("w:tab") + "[@" + qn("w:val") + "='right']")
             assert len(tabs) == 1
+    full = _build(pages={f"day_{i}": i for i in (1, 2, 3)})
+    for p in full.element.body.iter(qn("w:p")):
+        if "p." + TOC.NB in "".join(t.text or "" for t in p.iter(qn("w:t"))):
+            assert len(p.findall(".//" + qn("w:tab") + "[@" + qn("w:val") + "='right']")) == 1
     assert all(t.get(qn("w:leader")) in (None, "none") for t in doc.element.body.iter(qn("w:tab")))
 
 
@@ -130,7 +139,7 @@ def test_toc_in_full_document():
 
 def test_page_map_graceful_without_soffice(monkeypatch):
     monkeypatch.setattr(shutil, "which", lambda *_: None)
-    assert TOC.page_map(b"x", {"a": "A"}) == {}
+    assert TOC.page_map(b"x", {"a": "A"}, skip_pages=0) == {}
 
 
 @pytest.mark.skipif(shutil.which("soffice") is None or shutil.which("pdftotext") is None, reason="no soffice")
@@ -142,6 +151,39 @@ def test_page_map_finds_titles():
         doc.add_paragraph(t)
     buf = io.BytesIO()
     doc.save(buf)
-    got = TOC.page_map(buf.getvalue(), {"a": "Alpha Title", "c": "Charlie Title", "x": "Nope"}, start_page=4)
+    got = TOC.page_map(buf.getvalue(), {"a": "Alpha Title", "c": "Charlie Title", "x": "Nope"}, skip_pages=0, start_page=4)
     assert got == {"a": 4, "c": 6}
     assert TOC.page_map(buf.getvalue(), {"a": "Alpha Title"}, skip_pages=1) == {}
+
+
+@pytest.mark.parametrize("title,expect", [
+    ("Day 1 – Tue, 1 Sept | X", (1, "Tue", "1 Sep", "X")),
+    ("Day 12 — Wed, 30 Sep | A | B", (12, "Wed", "30 Sep", "A | B")),
+    ("Day 3 - Mon, 3 Mar | Y", (3, "Mon", "3 Mar", "Y")),
+    ("Day 4 – Tues, 4 Sept | Z", (4, "Tue", "4 Sep", "Z")),
+])
+def test_day_title_regex_tolerant(title, expect):
+    assert TOC._parse_day(title) == expect
+
+
+def test_day_title_nonsense_falls_back():
+    assert TOC._parse_day("Welcome to Bali") is None
+
+
+@pytest.mark.skipif(shutil.which("soffice") is None or shutil.which("pdftotext") is None, reason="no soffice")
+def test_page_map_matches_headings_only_after_skipped_pages():
+    doc = Document()
+    doc.add_paragraph("Contents")
+    for t in ("Getting Around", "Money", "Missing Thing"):
+        doc.add_paragraph(t)
+    for head, body in (("Getting Around", "Taxis are easy."), ("Money", "see Getting Around and Missing Thing"),
+                       ("Other", "Money matters here")):
+        doc.add_page_break()
+        doc.add_paragraph(head)
+        for _ in range(6):
+            doc.add_paragraph("filler line")
+        doc.add_paragraph(body)
+    buf = io.BytesIO()
+    doc.save(buf)
+    got = TOC.page_map(buf.getvalue(), {"g": "Getting Around", "m": "Money", "x": "Missing Thing"}, skip_pages=1)
+    assert got == {"g": 2, "m": 3}

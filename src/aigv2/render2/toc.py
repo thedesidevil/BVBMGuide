@@ -21,7 +21,7 @@ WHILE_THERE = [f"sec_{k}" for k, _ in _legacy.WHILE_THERE]
 GAP_BEFORE_SECOND_BLOCK_PT = 14
 NUM_PAD = 0.35  # cm: right padding of the day cards
 DASH = "–"
-_DAY_RE = re.compile(r"^Day\s+(\d+)\s*[–-]\s*(\w{3}),\s*(\d{1,2}\s+\w{3})\s*\|\s*(.+)$")
+_DAY_RE = re.compile(r"^Day\s+(\d+)\s*[–—-]\s*([A-Za-z]{3,9})\.?,\s*(\d{1,2})\s+([A-Za-z]{3,9})\.?\s*\|\s*(.+)$")
 _MONTHS = {"Jan": "January", "Feb": "February", "Mar": "March", "Apr": "April", "May": "May", "Jun": "June",
            "Jul": "July", "Aug": "August", "Sep": "September", "Oct": "October", "Nov": "November",
            "Dec": "December"}
@@ -29,7 +29,8 @@ _MONTHS = {"Jan": "January", "Feb": "February", "Mar": "March", "Apr": "April", 
 
 def _parse_day(title: str):
     m = _DAY_RE.match(title.strip())
-    return (int(m.group(1)), m.group(2), m.group(3), m.group(4).strip()) if m else None
+    return (int(m.group(1)), m.group(2)[:3].title(), f"{int(m.group(3))} {m.group(4)[:3].title()}",
+            m.group(5).strip()) if m else None
 
 
 def _full_date(dm: str) -> str:
@@ -47,11 +48,14 @@ def date_range(guide: Guide) -> str:
 
 
 def _number(p, bookmark_name: str, pages: Optional[dict], prefix: str = "", **kw) -> None:
-    """Page number as a PAGEREF field; the cached result is the known number (or a dash)."""
+    """Known number: a plain run (Google Docs does not evaluate PAGEREF). Unmeasured: a PAGEREF with a dash."""
+    n = (pages or {}).get(bookmark_name)
+    if n is not None:
+        R(p, f"{prefix}{n}", **kw)
+        return
     if prefix:
         R(p, prefix, **kw)
-    n = (pages or {}).get(bookmark_name)
-    K.field(p, f"PAGEREF {bookmark_name} \\h", str(n) if n is not None else DASH, **kw)
+    K.field(p, f"PAGEREF {bookmark_name} \\h", DASH, **kw)
 
 
 def _header(doc, guide: Guide) -> None:
@@ -151,13 +155,17 @@ def render_toc(doc, guide: Guide, pages: Optional[dict] = None) -> None:
         _entry(doc, ty, W, pages)
 
 
-def page_map(docx_bytes: bytes, titles: dict[str, str], skip_pages: int = 0, start_page: int = 1) -> dict[str, int]:
+def page_map(docx_bytes: bytes, titles: dict[str, str], *, skip_pages: int, start_page: int = 1) -> dict[str, int]:
     """bookmark -> displayed page number, found by rendering to PDF and searching each page's text for the title.
+
+    skip_pages: number of leading PDF pages to ignore (letter + contents pages); only later pages are matched.
+    A title matches a page only when found in the first five non-empty lines (the heading area).
 
     Returns {} when soffice or pdftotext is unavailable or conversion fails."""
     if not (shutil.which("soffice") and shutil.which("pdftotext")):
         return {}
     norm = lambda s: re.sub(r"\s+", " ", s).strip()
+    head = lambda raw: norm(" ".join([ln for ln in raw.splitlines() if ln.strip()][:5]))
     with tempfile.TemporaryDirectory() as tmp:
         src = Path(tmp) / "guide.docx"
         src.write_bytes(docx_bytes)
@@ -168,7 +176,7 @@ def page_map(docx_bytes: bytes, titles: dict[str, str], skip_pages: int = 0, sta
             pdf = Path(tmp) / "guide.pdf"
             n = int(re.search(r"Pages:\s+(\d+)", subprocess.run(["pdfinfo", str(pdf)], check=True,
                                                                 capture_output=True, text=True).stdout).group(1))
-            texts = [norm(subprocess.run(["pdftotext", "-f", str(i), "-l", str(i), str(pdf), "-"], check=True,
+            texts = [head(subprocess.run(["pdftotext", "-f", str(i), "-l", str(i), str(pdf), "-"], check=True,
                                          capture_output=True, text=True).stdout) for i in range(1, n + 1)]
         except (subprocess.SubprocessError, OSError, AttributeError):
             return {}

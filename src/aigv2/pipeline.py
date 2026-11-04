@@ -746,13 +746,22 @@ def _render_qc(store: RunStore, state: PlanState, answers: Answers, deps: Deps) 
                          domestic=state.trip.trip_scope == "domestic",
                          thanks=ThankYouText.model_validate(store.load_json("sections/thanks.json"))
                          if store.has("sections/thanks.json") else None)
-        docx = render_guide(data, deps.settings)
+        guide = None
+        if deps.settings.renderer == "new":
+            from src.aigv2.render2.render import render_guide2
+            guide = build_guide(data, deps.settings)
+            docx = render_guide2(guide)
+        else:
+            docx = render_guide(data, deps.settings)
         annotated, result, report = run_qc(docx, state.trip, answers, deps.library, deps.places, deps.routes,
                                            deps.llm, state.exclusions, deps.settings.google_usd_per_call,
                                            countries=state.countries, settings=deps.settings)
         _, report_data = write_report(result, state.exclusions, result.cost)
         store.save_bytes("guide.docx", annotated)
-        _save_guide_model(store, data, deps)
+        if guide is not None:
+            store.save_json("guide.json", guide)
+        else:
+            _save_guide_model(store, data, deps)
         store.save_bytes("qc_report.md", (report + "\n" + _stats_md(state.stats)).encode("utf-8"))
         store.save_json("qc_report.json", {**report_data, "plan_stats": state.stats.model_dump(mode="json")})
     if not store.has("verification.xlsx"):

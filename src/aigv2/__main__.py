@@ -17,6 +17,17 @@ def _path(store: RunStore, name: str) -> str:
     return str(Path(base) / store.key(name)) if base is not None else store.key(name)
 
 
+def _apply_renderer(deps, renderer: Optional[str]) -> None:
+    if renderer is None:
+        return
+    if renderer not in ("old", "new"):
+        raise typer.BadParameter("must be 'old' or 'new'", param_hint="--renderer")
+    deps.settings = deps.settings.model_copy(update={"renderer": renderer})
+
+
+_RENDERER_OPT = typer.Option(None, "--renderer", help="old|new (default: AIGV2_RENDERER env, else old)")
+
+
 def _store(deps, run_id: str) -> RunStore:
     store = RunStore(deps.backend, run_id)
     if not store.has("trip_plan.json"):
@@ -92,9 +103,11 @@ def start(attachments: Optional[list[Path]] = typer.Argument(None, help="Attachm
 
 
 @app.command()
-def build(run_id: str, answers: Path = typer.Option(..., "--answers", help='JSON {"question_id": "answer"}')):
+def build(run_id: str, answers: Path = typer.Option(..., "--answers", help='JSON {"question_id": "answer"}'),
+          renderer: Optional[str] = _RENDERER_OPT):
     """Build the guide, run QC and write the verification sheet."""
     deps = pipeline.default_deps()
+    _apply_renderer(deps, renderer)
     store = _store(deps, run_id)
     data = json.loads(answers.read_text(encoding="utf-8"))
     _print_build(store, _build_errors(lambda: pipeline.build_run(store, data, deps)))
@@ -102,9 +115,11 @@ def build(run_id: str, answers: Path = typer.Option(..., "--answers", help='JSON
 
 @app.command()
 def regenerate(run_id: str, day: list[int] = typer.Option([], "--day", help="Day number to rewrite"),
-               section: list[str] = typer.Option([], "--section", help="Section key to rewrite")):
+               section: list[str] = typer.Option([], "--section", help="Section key to rewrite"),
+               renderer: Optional[str] = _RENDERER_OPT):
     """Rewrite chosen days/sections, re-render and re-run QC (previous outputs kept as .vN)."""
     deps = pipeline.default_deps()
+    _apply_renderer(deps, renderer)
     store = _store(deps, run_id)
     _print_build(store, _build_errors(lambda: pipeline.regenerate(store, list(day), list(section), deps)))
 

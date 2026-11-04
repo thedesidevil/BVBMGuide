@@ -1131,3 +1131,43 @@ def test_thanks_checkpointed(deps):
     assert len(steps(deps.llm, "thanks")) == 1
     build_run(store, answers, deps)
     assert len(steps(deps.llm, "thanks")) == 1
+
+
+def test_new_renderer_flag(deps, monkeypatch):
+    from src.aigv2.render2 import toc as render2_toc
+    monkeypatch.setattr(render2_toc, "page_map", lambda *a, **k: {})
+    deps.settings.renderer = "new"
+    store, _, result = built(deps)
+    doc = Document(io.BytesIO(store.load_bytes("guide.docx")))
+    assert "Thank You" in [p.text for p in doc.paragraphs if p.style.name == "Heading 1"]
+    assert store.has("guide.json") and not store.has("guide_error.txt")
+
+
+def test_old_renderer_default(deps):
+    assert deps.settings.renderer == "old"
+    store, _, _ = built(deps)
+    assert day_headers(store.load_bytes("guide.docx"))
+
+
+def test_load_settings_renderer_env(monkeypatch):
+    from src.aigv2.config import load_settings
+    monkeypatch.delenv("AIGV2_RENDERER", raising=False)
+    assert load_settings().renderer == "old"
+    monkeypatch.setenv("AIGV2_RENDERER", "NEW")
+    assert load_settings().renderer == "new"
+    monkeypatch.setenv("AIGV2_RENDERER", "bogus")
+    assert load_settings().renderer == "old"
+
+
+def test_cli_renderer_option(deps, tmp_path, monkeypatch):
+    from src.aigv2.__main__ import app
+    store, questions, answers = started(deps)
+    ans = tmp_path / "answers.json"
+    ans.write_text(json.dumps(answers), encoding="utf-8")
+    monkeypatch.setattr(pipeline, "default_deps", lambda: deps)
+    out = CliRunner().invoke(app, ["build", store.run_id, "--answers", str(ans), "--renderer", "bogus"])
+    assert out.exit_code != 0 and "renderer" in out.output.lower()
+    seen = []
+    monkeypatch.setattr(pipeline, "build_run", lambda s, a, d: seen.append(d.settings.renderer) or (_ for _ in ()).throw(ValueError("stop")))
+    CliRunner().invoke(app, ["build", store.run_id, "--answers", str(ans), "--renderer", "new"])
+    assert seen == ["new"]

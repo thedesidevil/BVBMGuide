@@ -5,7 +5,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH as AL
 from docx.oxml.ns import qn
 
 from src.aigv2.guide.model import (BookingCard, ChecklistCard, Fact, JourneyStrip, Link, MarkerRef, Opener, SightseeingCard,
-                                   SimpleCard, YourDay)
+                                   SimpleCard, YourDay, Option, OptionCards, ReviewMarkerBlock)
 from src.aigv2.render2 import kit as K
 from src.aigv2.render2 import theme as T
 
@@ -270,3 +270,85 @@ def render_booking_card(doc, W: float, c: BookingCard) -> None:
         _keep_all(cell)
         _booking_strip(t.rows[1].cells[0], _inner_w(W), c)
     K.spacer(doc, CARD_GAP_PT)
+
+
+# ---------- option cards ("or" pairs, stacked for 3+) and the staff marker block ----------
+OR_GUTTER_CM = 1.0
+OPT_PAD = (0.5, 0.6, 0.55, 0.6)
+
+
+def _option_head(doc, c: OptionCards) -> None:
+    p = K.np(doc, before=10, after=2, align=AL.CENTER, keep=True)
+    K.R(p, c.eyebrow, size=8, color=T.GOLD_INK, bold=True, caps=True, spacing=2.0)
+    p = K.np(doc, after=0, align=AL.CENTER, keep=True, style="Heading 2")
+    K.R(p, c.heading, font=T.HEAD, size=22, color=T.NAVY, bold=False)
+    p = K.ornament(doc, before=3, after=4, w=2.4)
+    p.paragraph_format.keep_with_next = True
+    chip = c.chip or ("At your own expense" if c.own_expense else "")
+    if chip:
+        p = K.np(doc, after=12, align=AL.CENTER, keep=True)
+        K.R(p, K.DIAMOND_GLYPH + K.NB, size=6, color=T.AMBER)
+        K.R(p, chip, size=7.5, color=T.GOLD_INK, bold=True)
+        K.R(p, K.NB + K.DIAMOND_GLYPH, size=6, color=T.AMBER)
+
+
+def _facts_column(cell, inner_w: float, facts: list[Fact]) -> None:
+    if not facts:
+        return
+    t = K.tbl(cell, len(facts), [inner_w], margins=(0.1, 0, 0.1, 0))
+    for i, f in enumerate(facts):
+        fc = t.rows[i].cells[0]
+        K.borders(fc, t=(T.POWDER, 4) if i == 0 else None, b=(T.POWDER, 4))
+        K.R(K.np(fc, after=1), f.label.upper(), size=7, color=T.SLATE, bold=True, spacing=1.4)
+        vp = K.np(fc)
+        if f.link and f.link.url:
+            K.link(vp, f.link.url, f.value, size=13, color=T.NAVY, bold=False)
+        else:
+            K.R(vp, f.value, font=T.HEAD, size=13, color=T.NAVY)
+    K.spacer(cell, 9)
+
+
+def _fill_option(cell, inner_w: float, o: Option) -> None:
+    K.R(K.np(cell, after=4, keep=True, style="Eyebrow"), o.label.upper(), size=8, color=T.GOLD_INK, bold=True,
+        spacing=1.6)
+    _title(cell, o.name, size=19)
+    _facts_column(cell, inner_w, o.facts)
+    _body(cell, o.text, after=0)
+    if o.note:
+        p = K.np(cell, before=8, after=0, line=1.2)
+        K.R(p, o.note, font=T.HEAD, size=12.5, italic=True, color=T.GOLD_INK)
+    K.close(cell, 1)
+
+
+def _style_option_cell(cell) -> None:
+    K.cell_shade(cell, T.WHITE)
+    K.cell_margins(cell, top=OPT_PAD[0], left=OPT_PAD[1], bottom=OPT_PAD[2], right=OPT_PAD[3])
+    K.borders(cell, l=CARD_BAR, t=(T.CARD_EDGE, 4), b=(T.POWDER, 6), r=(T.CARD_EDGE, 4))
+
+
+def render_option_cards(doc, W: float, c: OptionCards) -> None:
+    _option_head(doc, c)
+    n = len(c.options)
+    if n == 2:
+        cw = (W - OR_GUTTER_CM) / 2
+        t = K.tbl(doc, 1, [cw, OR_GUTTER_CM, cw], margins=OPT_PAD)  # indent = left pad, so the edge aligns
+        K.row_keep(t.rows[0])
+        K.cell_margins(t.rows[0].cells[1], top=0, left=0, bottom=0, right=0)
+        for i, o in enumerate(c.options):
+            cell = t.rows[0].cells[i * 2]
+            _style_option_cell(cell)
+            _fill_option(cell, cw - OPT_PAD[1] - OPT_PAD[3], o)
+        g = t.rows[0].cells[1]
+        K.cell_valign(g, "center")
+        K.R(K.np(g, align=AL.CENTER), "or", font=T.HEAD, size=15, italic=True, color=T.SLATE)
+        K.spacer(doc, CARD_GAP_PT)
+    else:
+        for o in c.options:
+            _, cell = _card(doc, W)
+            _fill_option(cell, _inner_w(W), o)
+            _end_card(doc, cell)
+
+
+def render_marker_block(doc, W: float, c: ReviewMarkerBlock) -> None:
+    for m in c.markers:
+        K.review_marker(doc, m.kind, m.text)

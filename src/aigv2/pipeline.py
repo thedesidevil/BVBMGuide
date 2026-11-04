@@ -10,6 +10,7 @@ from zoneinfo import ZoneInfo
 from pydantic import BaseModel, Field
 
 from src.aigv2.config import STEPS, Settings, load_settings
+from src.aigv2.guide.build import build_guide
 from src.aigv2.google.places import PlacesClient
 from src.aigv2.google.routes import RoutesClient
 from src.aigv2.intake.attachments import read_attachments
@@ -40,6 +41,7 @@ WRITERS = 6
 REGEN_SECTIONS = (*SECTION_KEYS, "title")
 _ITEM_KINDS = ("attraction", "activity", "meal_out")
 _OUTPUTS = ("guide.docx", "qc_report.md", "qc_report.json", "verification.xlsx")
+_STALE_ON_REGEN = ("guide.json", "guide_error.txt")
 _EXCL_DAY = re.compile(r"^\w+, Day (\d+), ")
 DOMESTIC_HEALTH_CHECK = ("Altitude / remote area / sea travel not assessed — add health and mountain-road guidance "
                          "if this trip goes above 2,500 m, to a remote area, or involves sea travel")
@@ -687,6 +689,14 @@ def _stats_md(stats: PlanStats) -> str:
     return "\n".join(lines) + "\n"
 
 
+def _save_guide_model(store: RunStore, data: GuideData, deps: Deps) -> None:
+    """Save guide.json; never fail the build (the docx is the product during the transition)."""
+    try:
+        store.save_json("guide.json", build_guide(data, deps.settings))
+    except Exception as exc:
+        store.save_bytes("guide_error.txt", f"{type(exc).__name__}: {exc}".encode("utf-8"))
+
+
 def _render_qc(store: RunStore, state: PlanState, answers: Answers, deps: Deps) -> QCResult:
     if store.has("guide.docx") and store.has("qc_report.json"):
         result = QCResult.model_validate(store.load_json("qc_report.json"))
@@ -709,6 +719,7 @@ def _render_qc(store: RunStore, state: PlanState, answers: Answers, deps: Deps) 
                                            countries=state.countries, settings=deps.settings)
         _, report_data = write_report(result, state.exclusions, result.cost)
         store.save_bytes("guide.docx", annotated)
+        _save_guide_model(store, data, deps)
         store.save_bytes("qc_report.md", (report + "\n" + _stats_md(state.stats)).encode("utf-8"))
         store.save_json("qc_report.json", {**report_data, "plan_stats": state.stats.model_dump(mode="json")})
     if not store.has("verification.xlsx"):
@@ -763,6 +774,8 @@ def _regenerate(store: RunStore, state: PlanState, answers: Answers, days: list[
             stem, ext = name.rsplit(".", 1)
             store.save_bytes(f"{stem}.v{v}.{ext}", data)
             store.delete(name)
+    for name in _STALE_ON_REGEN:
+        store.delete(name)
     for n in days:
         store.delete(f"days/day_{n:02d}.json")
     for key in sections:

@@ -109,6 +109,17 @@ def regenerate(run_id: str, day: list[int] = typer.Option([], "--day", help="Day
     _print_build(store, _build_errors(lambda: pipeline.regenerate(store, list(day), list(section), deps)))
 
 
+@app.command("guide-json")
+def guide_json(run_id: str):
+    """Print the path of a run's guide.json (the structured guide model)."""
+    deps = pipeline.default_deps()
+    store = _store(deps, run_id)
+    if not store.has("guide.json"):
+        typer.echo(f"Run {run_id} has no guide.json (build it, or see guide_error.txt in the run folder)")
+        raise typer.Exit(1)
+    typer.echo(str(Path(_path(store, "guide.json")).resolve()))
+
+
 @app.command()
 def qc(edited: Path = typer.Argument(..., help="Edited guide .docx"),
        run: str = typer.Option(..., "--run", help="Run id the guide came from (required: QC needs its trip plan)")):

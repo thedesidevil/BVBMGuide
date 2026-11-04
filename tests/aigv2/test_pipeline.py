@@ -1000,3 +1000,47 @@ def test_airport_code_endpoint_is_searched_as_an_airport():
     pipeline._endpoint("Ngurah Rai Airport", "Sanur", places, c)
     pipeline._endpoint("DPS", "Sanur", places, c)
     assert c.q == ["DPS airport", "Ngurah Rai Airport"] and "dps|sanur" in places
+
+
+# ---------- guide.json ----------
+
+
+def test_guide_json_saved(deps):
+    from src.aigv2.guide.model import Guide
+    store, _, _ = built(deps)
+    assert store.has("guide.json")
+    guide = Guide.model_validate(store.load_json("guide.json"))
+    days = [p.title for p in guide.pages if p.kind == "day"]
+    assert len(days) == 4
+    assert days == day_headers(store.load_bytes("guide.docx"))
+
+
+def test_guide_failure_does_not_break_build(deps, monkeypatch):
+    def boom(*a, **k):
+        raise RuntimeError("guide boom")
+    monkeypatch.setattr("src.aigv2.pipeline.build_guide", boom)
+    store, _, result = built(deps)
+    assert result.docx_name.endswith(".docx")
+    assert store.has("guide.docx") and not store.has("guide.json")
+    assert "guide boom" in store.load_bytes("guide_error.txt").decode()
+
+
+def test_regenerate_refreshes_guide_json(deps):
+    from src.aigv2.guide.model import Guide
+    store, _, _ = built(deps)
+    store.delete("guide.json")
+    regenerate(store, [2], [], deps)
+    assert store.has("guide.json")
+    Guide.model_validate(store.load_json("guide.json"))
+
+
+def test_cli_guide_json(deps, monkeypatch):
+    from src.aigv2.__main__ import app
+    monkeypatch.setattr(pipeline, "default_deps", lambda: deps)
+    store, _, _ = built(deps)
+    out = CliRunner().invoke(app, ["guide-json", store.run_id])
+    assert out.exit_code == 0, out.output
+    assert Path(out.output.strip()).is_absolute() and Path(out.output.strip()).exists()
+    store.delete("guide.json")
+    out = CliRunner().invoke(app, ["guide-json", store.run_id])
+    assert out.exit_code == 1 and "no guide.json" in out.output

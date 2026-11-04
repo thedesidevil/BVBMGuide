@@ -288,7 +288,7 @@ def _option_head(doc, c: OptionCards) -> None:
     if chip:
         p = K.np(doc, after=12, align=AL.CENTER, keep=True)
         K.R(p, K.DIAMOND_GLYPH + K.NB, size=6, color=T.AMBER)
-        K.R(p, chip, size=7.5, color=T.GOLD_INK, bold=True)
+        K.R(p, chip, size=7.5, color=T.GOLD_INK, bold=False)
         K.R(p, K.NB + K.DIAMOND_GLYPH, size=6, color=T.AMBER)
 
 
@@ -302,7 +302,7 @@ def _facts_column(cell, inner_w: float, facts: list[Fact]) -> None:
         K.R(K.np(fc, after=1), f.label.upper(), size=7, color=T.SLATE, bold=True, spacing=1.4)
         vp = K.np(fc)
         if f.link and f.link.url:
-            K.link(vp, f.link.url, f.value, size=13, color=T.NAVY, bold=False)
+            K.link(vp, f.link.url, f.value, font=T.HEAD, size=13, color=T.NAVY, bold=False)
         else:
             K.R(vp, f.value, font=T.HEAD, size=13, color=T.NAVY)
     K.spacer(cell, 9)
@@ -344,8 +344,11 @@ def render_option_cards(doc, W: float, c: OptionCards) -> None:
         K.spacer(doc, CARD_GAP_PT)
     else:
         for o in c.options:
-            _, cell = _card(doc, W)
-            _fill_option(cell, _inner_w(W), o)
+            t = K.tbl(doc, 1, [W], margins=OPT_PAD)
+            K.row_keep(t.rows[0])
+            cell = t.rows[0].cells[0]
+            _style_option_cell(cell)
+            _fill_option(cell, W - OPT_PAD[1] - OPT_PAD[3], o)
             _end_card(doc, cell)
 
 

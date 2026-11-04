@@ -1,3 +1,11 @@
+import io
+import json
+from datetime import date, datetime
+from pathlib import Path
+from types import SimpleNamespace
+
+import pytest
+from docx import Document
 from docx.oxml.ns import qn
 from src.aigv2.render2 import theme as _T
 
@@ -5,9 +13,13 @@ T_POWDER, T_FROST = _T.POWDER, _T.FROST
 from docx.shared import Cm
 
 from src.aigv2.guide.model import (ChecklistCard, Fact, JourneyStop, JourneyStrip, Link, MarkerRef, Opener,
-                                   SightseeingCard, SimpleCard, YourDay)
+                                   OptionCards, Option, Page, ReviewMarkerBlock, SightseeingCard, SimpleCard, YourDay)
 from src.aigv2.render2 import day_components as D
+from src.aigv2.guide.build import build_day_page
+from src.aigv2.models import HotelStay, Marker, TransportLeg
+from src.aigv2.render.document import GuideData
 from src.aigv2.render2 import frame as F
+from src.aigv2.render2 import render as RN
 
 W_SEEN = {}
 
@@ -297,7 +309,7 @@ def _checklist(items):
     return ChecklistCard(when="10:00 AM", kind="Check-out", title=Link(text="Hotel"), lead="Before", items=items)
 
 
-def _reopen(doc):
+def reopen(doc):
     import io
     from docx import Document
     b = io.BytesIO()
@@ -309,12 +321,12 @@ def _reopen(doc):
 def test_checklist_zero_items_has_no_nested_table():
     doc = _rendered(_checklist([]), D.render_checklist_card)
     assert not doc.tables[0].rows[0].cells[0].tables
-    assert len(_reopen(doc).tables) == 1
+    assert len(reopen(doc).tables) == 1
 
 
 def test_checklist_one_item_right_cell_empty():
     doc = _rendered(_checklist(["only"]), D.render_checklist_card)
-    nt = _reopen(doc).tables[0].rows[0].cells[0].tables[0]
+    nt = reopen(doc).tables[0].rows[0].cells[0].tables[0]
     assert [p.text for p in nt.rows[0].cells[0].paragraphs if p.text.startswith("◆")] == ["◆ only"] or \
         len([p for p in nt.rows[0].cells[0].paragraphs if "only" in p.text]) == 1
     assert [p.text for p in nt.rows[0].cells[2].paragraphs] == [""]
@@ -454,28 +466,12 @@ def test_booking_card_from_guide_build_output():
 
 
 # ---------------- Task 19: option cards, marker block, day assembler ----------------
-import io as _io
-import json as _json
-from datetime import date as _date, datetime as _dt
-from pathlib import Path as _Path
-
-import pytest as _pytest
-from docx import Document as _Document
-
-from src.aigv2.guide.build import build_day_page
-from src.aigv2.guide.model import Option, OptionCards, ReviewMarkerBlock
-from src.aigv2.models import HotelStay, Marker, TransportLeg
-from src.aigv2.render.document import GuideData
-from src.aigv2.render2 import render as RN
-
-from types import SimpleNamespace as _NS
-
-_FIX = _Path(__file__).parent / "fixtures" / "bali_guide" / "guide_data.json"
-_SET = _NS(walk_max_min=10)
+_FIX = Path(__file__).parent / "fixtures" / "bali_guide" / "guide_data.json"
+_SET = SimpleNamespace(walk_max_min=10)
 
 
 def _data():
-    return GuideData.model_validate(_json.loads(_FIX.read_text(encoding="utf-8")))
+    return GuideData.model_validate(json.loads(_FIX.read_text(encoding="utf-8")))
 
 
 def _dpage(index, data=None):
@@ -522,6 +518,7 @@ def test_option_cards_chip_and_heading():
     D.render_option_cards(doc, W, _oc(2, chip=None, own_expense=True))
     ps = doc.paragraphs
     chip = next(p for p in ps if "At your own expense" in p.text)
+    assert not any(r.bold for r in chip.runs if "own expense" in r.text)
     assert chip.text.strip().startswith("◆") and chip.text.strip().endswith("◆")
     head = next(p for p in ps if p.text == "Two ways to spend the evening")
     assert head.style.name == "Heading 2"
@@ -571,7 +568,7 @@ def test_render_day_page_dispatch_unknown_component_raises():
 
     doc, W = _doc()
     pg = Page.model_construct(kind="day", title="t", bookmark="b", components=[Weird()])
-    with _pytest.raises(TypeError, match="no renderer for Weird"):
+    with pytest.raises(TypeError, match="no renderer for Weird"):
         RN.render_day_page(doc, W, pg)
 
 
@@ -582,10 +579,10 @@ def _render_page(pg):
     return doc
 
 
-def _reopen(doc):
-    buf = _io.BytesIO()
+def reopen(doc):
+    buf = io.BytesIO()
     doc.save(buf)
-    return _Document(_io.BytesIO(buf.getvalue()))
+    return Document(io.BytesIO(buf.getvalue()))
 
 
 def _flow_paras(doc):
@@ -593,11 +590,11 @@ def _flow_paras(doc):
     return ["".join(t.text or "" for t in p.iter(qn("w:t"))) for p in doc.element.body.iter(qn("w:p"))]
 
 
-def test_bali_days_render_without_exception_and_reopen():
+def test_bali_days_render_without_exception_andreopen():
     data = _data()
     for d in data.days:
         doc = _render_page(_dpage(d.index, data))
-        assert _reopen(doc).paragraphs
+        assert reopen(doc).paragraphs
 
 
 def _idx(texts_, needle, start=0):
@@ -607,67 +604,151 @@ def _idx(texts_, needle, start=0):
     raise AssertionError(f"{needle!r} not found after {start}")
 
 
-def test_day2_text_order():
-    pg = _dpage(2)
-    doc = _reopen(_render_page(pg))
-    ts = _flow_paras(doc)
-    op = pg.components[0]
-    sights = [c for c in pg.components if c.type == "SightseeingCard"]
-    bf = pg.components[2]
-    i = _idx(ts, f"DAY {op.number}")
-    i = _idx(ts, f"DAY {op.number}")
-    for needle in (pg.title.split("|")[0] if False else op.title[0], "YOUR DAY", bf.heading, sights[0].name.text,
-                   "Lunch near", sights[-1].name.text, "Dinner near"):
-        i = _idx(ts, needle, i + 1)
-
-
-def test_day5_has_journey_strip_before_first_card():
-    pg = _dpage(5)
-    kinds = [c.type for c in pg.components]
-    assert "JourneyStrip" in kinds
-    doc = _reopen(_render_page(pg))
-    body = list(doc.element.body)
-    first_tbl = next(e for e in body if e.tag == qn("w:tbl"))
-    strip = next(c for c in pg.components if c.type == "JourneyStrip")
-    assert strip.stops[0].label in _tbl_text(first_tbl).upper() or strip.stops[0].name.text in _tbl_text(first_tbl)
-
-
-def test_day7_option_cards_before_dinner():
-    pg = _dpage(7)
-    oc = next(c for c in pg.components if c.type == "OptionCards")
-    boat = [c for c in pg.components if c.type == "BookingCard"]
-    ts = _flow_paras(_reopen(_render_page(pg)))
-    o1 = _idx(ts, "OPTION 1")
-    din = _idx(ts, "Dinner", o1)
-    assert o1 < din
-    if boat:
-        assert _idx(ts, boat[0].title.text) < o1
-    assert oc.options
-
-
-def test_day8_checklist_then_airport_transfer():
-    pg = _dpage(8)
-    kinds = [c.type for c in pg.components]
-    assert "ChecklistCard" in kinds
-    ts = _flow_paras(_reopen(_render_page(pg)))
-    ck = next(c for c in pg.components if c.type == "ChecklistCard")
-    bk = [c for c in pg.components if c.type == "BookingCard"][-1]
-    assert _idx(ts, ck.title.text if hasattr(ck.title, "text") else ck.title) < _idx(ts, bk.title.text)
-
-
-def test_cruise_day_and_domestic_one_day_trip_render():
-    data = _data()
-    data.trip.hotels = [HotelStay(city="Ubud", hotel="Ship One", check_in=_date(2026, 9, 24),
-                                  check_out=_date(2026, 9, 28), source="voucher", kind="cruise")]
-    rd = next(d for d in data.days if d.index == 2)
-    rd.arrival = TransportLeg(kind="boat", from_place="A", to_place="Benoa", arrive=_dt(2026, 9, 25, 8, 0), source="t")
-    assert _reopen(_render_page(_dpage(2, data))).paragraphs
-    data2 = _data()
-    next(d for d in data2.days if d.index == 2).places = {}
-    assert _reopen(_render_page(_dpage(2, data2))).paragraphs
-
-
 def test_every_component_type_of_guide_model_day_pages_has_a_renderer():
     data = _data()
     seen = {type(c).__name__ for d in data.days for c in _dpage(d.index, data).components}
     assert seen and seen <= set(RN.RENDERERS_BY_NAME)
+
+
+def test_option_padding_identical_for_1_2_3_options():
+    def pads(n):
+        doc, W = _doc()
+        D.render_option_cards(doc, W, _oc(n))
+        out = set()
+        for tb in doc.tables:
+            for c in tb.rows[0].cells:
+                if "OPTION" in c.text:
+                    mar = c._tc.tcPr.find(qn("w:tcMar"))
+                    out.add(tuple(int(mar.find(qn(f"w:{s}")).get(qn("w:w"))) for s in ("top", "left", "bottom", "right")))
+        return out
+    assert pads(1) == pads(2) == pads(3) and len(pads(2)) == 1
+
+
+def test_linked_fact_in_option_card_uses_cormorant():
+    doc, W = _doc()
+    oc = _oc(2)
+    oc.options[0].facts = [Fact(label="Site", value="Visit", link=Link(text="Visit", url="https://x.example"))]
+    D.render_option_cards(doc, W, oc)
+    fonts = {rf.get(qn("w:ascii")) for h in doc.tables[0]._tbl.iter(qn("w:hyperlink")) for rf in h.iter(qn("w:rFonts"))}
+    assert fonts == {"Cormorant Garamond"} or all("Cormorant" in f for f in fonts)
+
+
+# ---- position-based order over body elements ----
+def body_order(doc):
+    """[(kind, text, title)] for each top-level paragraph ('p') and table ('t'); for a table, text is its first
+    non-empty paragraph and title is its first Heading 3 paragraph text (else '')."""
+    out = []
+    for e in doc.element.body:
+        if e.tag == qn("w:p"):
+            out.append(("p", "".join(x.text or "" for x in e.iter(qn("w:t"))), ""))
+        elif e.tag == qn("w:tbl"):
+            paras = ["".join(x.text or "" for x in p.iter(qn("w:t"))) for p in e.iter(qn("w:p"))]
+            first = next((x for x in paras if x.strip()), "")
+            title = ""
+            for p in e.iter(qn("w:p")):
+                st = p.find(qn("w:pPr") + "/" + qn("w:pStyle"))
+                if st is not None and st.get(qn("w:val")) in ("Heading3", "Heading 3"):
+                    title = "".join(x.text or "" for x in p.iter(qn("w:t")))
+                    break
+            out.append(("t", first, title))
+    return out
+
+
+def first_index(order, needle, start=0, kind=None, title=False):
+    for i in range(start, len(order)):
+        k, text, ttl = order[i]
+        if kind and k != kind:
+            continue
+        if needle in (ttl if title else text):
+            return i
+    raise AssertionError(f"{needle!r} not found after element {start}")
+
+
+def _rendered_order(pg):
+    return body_order(reopen(_render_page(pg)))
+
+
+def test_day2_text_order():
+    pg = _dpage(2)
+    order = _rendered_order(pg)
+    op = pg.components[0]
+    sights = [c for c in pg.components if c.type == "SightseeingCard"]
+    bf = pg.components[2]
+    idx = [first_index(order, f"DAY {op.number}")]
+    for needle in (op.title[0], "YOUR DAY"):
+        idx.append(first_index(order, needle, idx[-1] + 1, kind="p"))
+    idx.append(first_index(order, bf.heading, idx[-1] + 1, title=True))
+    idx.append(first_index(order, sights[0].name.text, idx[-1] + 1, title=True))
+    idx.append(first_index(order, "Lunch near", idx[-1] + 1, kind="p"))
+    idx.append(first_index(order, sights[-1].name.text, idx[-1] + 1, title=True))
+    idx.append(first_index(order, "Dinner near", idx[-1] + 1, kind="p"))
+    assert idx == sorted(set(idx))
+
+
+def test_day5_has_journey_strip_before_first_card():
+    pg = _dpage(5)
+    assert pg.components[2].type == "JourneyStrip"
+    order = _rendered_order(pg)
+    yd = first_index(order, "YOUR DAY", kind="p")
+    strip = first_index([(k, x.upper(), t) for k, x, t in order], pg.components[2].stops[0].label.upper(), yd + 1, kind="t")
+    first_card = next(i for i in range(yd + 1, len(order)) if order[i][0] == "t" and order[i][2])
+    assert yd < strip < first_card
+
+
+def _day7_order_ok(order, boat, opts_heading):
+    b = first_index(order, boat, title=True)
+    ck = first_index(order, "TAKSU SANUR HOTEL", b + 1, title=True)
+    oh = first_index(order, opts_heading, ck + 1, kind="p")
+    o1 = first_index(order, "OPTION 1", oh + 1, kind="t")
+    dn = first_index(order, "Dinner near", o1 + 1, kind="p")
+    assert b < ck < oh < o1 < dn
+
+
+def test_day7_option_cards_before_dinner():
+    pg = _dpage(7)
+    boats = [c for c in pg.components if c.type == "BookingCard" and "Harbour" in c.title.text]
+    assert boats, "fixture changed: Day 7 has no boat card"
+    oc = next(c for c in pg.components if c.type == "OptionCards")
+    order = _rendered_order(pg)
+    _day7_order_ok(order, boats[0].title.text, oc.heading)
+    swapped = Page.model_construct(kind=pg.kind, title=pg.title, bookmark=pg.bookmark,
+                                   components=[pg.components[1], pg.components[0]] + list(pg.components[2:]))
+    bad = _rendered_order(swapped)
+    with pytest.raises(AssertionError):
+        _day7_order_ok(bad[::-1], boats[0].title.text, oc.heading)
+
+
+def test_day8_checklist_then_airport_transfer():
+    pg = _dpage(8)
+    ck = next(c for c in pg.components if c.type == "ChecklistCard")
+    bks = [c for c in pg.components if c.type == "BookingCard"]
+    assert len(bks) >= 2, "fixture changed: expected airport transfer + flight"
+    order = _rendered_order(pg)
+    yd = first_index(order, "YOUR DAY", kind="p")
+    a = first_index(order, ck.title.text if hasattr(ck.title, "text") else ck.title, yd + 1, title=True)
+    b = first_index(order, bks[0].title.text, a + 1, title=True)
+    c = first_index(order, bks[-1].title.text, b + 1, title=True)
+    assert yd < a < b < c
+
+
+def _check_rendered(data):
+    pg = _dpage(2, data)
+    order = _rendered_order(pg)
+    op = pg.components[0]
+    assert first_index(order, f"DAY {op.number}") >= 0
+    first_sched = next(c for c in pg.components if c.type in ("SimpleCard", "SightseeingCard"))
+    ttl = first_sched.heading if first_sched.type == "SimpleCard" else first_sched.name.text
+    first_index(order, ttl, title=True)
+
+
+def test_cruise_day_and_domestic_one_day_trip_render():
+    data = _data()
+    data.trip.hotels = [HotelStay(city="Ubud", hotel="Ship One", check_in=date(2026, 9, 24),
+                                  check_out=date(2026, 9, 28), source="voucher", kind="cruise")]
+    rd = next(d for d in data.days if d.index == 2)
+    rd.arrival = TransportLeg(kind="boat", from_place="A", to_place="Benoa", arrive=datetime(2026, 9, 25, 8, 0),
+                              source="t")
+    _check_rendered(data)
+    data2 = _data()
+    next(d for d in data2.days if d.index == 2).places = {}
+    _check_rendered(data2)

@@ -21,8 +21,11 @@ _TRANSPORT_FACTS = {"DEPARTS", "ARRIVES", "SERVICE", "OPERATOR"}
 _TRANSPORT_TITLE = re.compile(r"^(Flight|Train|Boat|Bus|Transfer)(: .+)?$")
 _SLOT_WORDS = {"morning", "afternoon", "evening", "late night"}
 _SLOT_CLOSE = re.compile(r"^(Leave for the airport by|Reach the (station|harbor|harbour) by|Leave by|Overnight (in|on board))")
+DAY_EYEBROW_STYLE = "day eyebrow"
+EYEBROW_STYLES = {"eyebrow", DAY_EYEBROW_STYLE}
+DAY_EYEBROW_NUM = re.compile(r"DAY\s*(\d+)\s*[·•\-–—]", re.I)
 _DAY_EYEBROW = re.compile(r"DAY\s*(\d+)\s*[·•\-–—]\s*([A-Za-z]+),?\s*(\d{1,2})\s+([A-Za-z]+)", re.I)
-_EYEBROW_STYLES = {"eyebrow", "day eyebrow"}
+_PREPARED_FOR = re.compile(r"^Prepared for\b")
 _PLACEHOLDER_TABLE = "placeholder card"
 _BOOKING_REF = re.compile(r"^BOOKING REFERENCE\s+(.+)$", re.I)
 _ALIASES = {"PER PERSON": "PRICE", "FOR TWO": "PRICE FOR TWO", "OPEN": "OPENING HOURS", "FROM HERE": "GETTING THERE"}
@@ -250,6 +253,10 @@ class _Reader:
 
     def _title_fallback(self) -> None:
         front = [t for t in self.sections.get("", []) if t.casefold() != _KICKER]
+        for i, t in enumerate(front):  # new layout: no cover; the TOC header is "<title>" then "Prepared for ..."
+            if i and _PREPARED_FOR.match(t) and not front[i - 1].startswith(("Dear ", "⚠")):
+                self.title = front[i - 1]
+                return
         for i, t in enumerate(front):
             if _SUBTITLE.match(t):
                 self.title = front[i - 1] if i and not front[i - 1].startswith("Dear ") and "⚠" not in front[i - 1] else ""
@@ -259,22 +266,24 @@ class _Reader:
         text = _ptext(p)
         links = self._links(p)
         self.links.extend(links)
-        if text and self._style_name(p) == "day eyebrow":
+        if text and self._style_name(p) == DAY_EYEBROW_STYLE:
             m = _DAY_EYEBROW.search(text)
             if m:  # new layout: "DAY N · WEEKDAY, D MONTH" sits above the title heading
                 self.pending_day = (int(m.group(1)), m.group(2)[:3].title(), m.group(3), m.group(4)[:3].title())
                 self.pending_text = text
                 return
         level = self._level(p, text)
+        if level != 1 and text and not text.startswith("⚠"):
+            self.pending_day = None  # an eyebrow only counts when the very next text is the title heading
         if level == 0 and not self.title:
             self.title = text
         if level in (1, 2) or _SLOT_CLOSE.match(text):
             self.travel = None
         if level == 1 and text:
-            self.headings.append((1, text))
             self.slot = None
             m = DAY_RE.match(text)
             pend, self.pending_day = self.pending_day, None
+            self.headings.append((1, f"Day {pend[0]} – {pend[1]}, {pend[2]} {pend[3]} | {text}" if pend and not m else text))
             if m:
                 self.day = DocDay(header=text, index=int(m.group(1)))
                 self.days.append(self.day)
@@ -387,7 +396,7 @@ class _Reader:
             text = _ptext(el)
             links = self._links(el)
             self.links.extend(links)
-            if text and self._style_name(el) in _EYEBROW_STYLES:
+            if text and self._style_name(el) in EYEBROW_STYLES:
                 eyebrow = True  # a kicker line, never the card title
             elif title is None and text:
                 title, url = text, (links[0][1] if links else None)

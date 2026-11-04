@@ -7,6 +7,7 @@ from docx.oxml.ns import qn
 from docx.text.paragraph import Paragraph
 
 from src.aigv2.models import Finding, Marker
+from src.aigv2.qc.reader import DAY_EYEBROW_NUM, DAY_EYEBROW_STYLE
 from src.aigv2.render.blocks import add_marker
 
 
@@ -25,16 +26,17 @@ def _style_id(p) -> str:
 
 
 _DAY_RX = re.compile(r"^Day\s*(\d+)\s*[–—:\-|,]")
-_EYEBROW_RX = re.compile(r"DAY\s*(\d+)\s*[·•\-–—]", re.I)  # new layout: "◆ DAY 2 · FRIDAY, 25 SEPTEMBER ◆"
+_EYEBROW_RX = DAY_EYEBROW_NUM  # new layout: "◆ DAY 2 · FRIDAY, 25 SEPTEMBER ◆"
+_DAY_EYEBROW_ID = DAY_EYEBROW_STYLE.replace(" ", "")
 
 
 def _day_map(paras) -> dict[int, int | None]:
     out, current, prev = {}, None, None
     for p in paras:
-        if _style_id(p) == "dayeyebrow" and _EYEBROW_RX.search(_text(p)):
+        if _style_id(p) == _DAY_EYEBROW_ID and _EYEBROW_RX.search(_text(p)):
             current = int(_EYEBROW_RX.search(_text(p)).group(1))
         elif _style_id(p) in ("heading1", "heading 1"):
-            if prev is not None and _style_id(prev) == "dayeyebrow":
+            if prev is not None and _style_id(prev) == _DAY_EYEBROW_ID:
                 out[id(p)] = current
                 prev = p
                 continue
@@ -57,10 +59,11 @@ def _find(paras, needle: str, day=None, days=None):
 def _day_header(paras, day):
     if day is None:
         return None
-    eyebrow = next((p for p in paras if _style_id(p) == "dayeyebrow" and (m := _EYEBROW_RX.search(_text(p)))
+    eyebrow = next((p for p in paras if _style_id(p) == _DAY_EYEBROW_ID and (m := _EYEBROW_RX.search(_text(p)))
                     and int(m.group(1)) == day), None)
-    if eyebrow is not None:
-        return eyebrow
+    if eyebrow is not None:  # annotate after the title heading, never between it and its eyebrow
+        nxt = eyebrow.getnext()
+        return nxt if nxt is not None and nxt.tag == qn("w:p") and _style_id(nxt).startswith("heading") else eyebrow
     hits = [p for p in paras if _DAY_RX.match(_text(p)) and int(_DAY_RX.match(_text(p)).group(1)) == day
             and not _internal_link(p)]
     return next((p for p in hits if _style_id(p).startswith("heading")), hits[0] if hits else None)

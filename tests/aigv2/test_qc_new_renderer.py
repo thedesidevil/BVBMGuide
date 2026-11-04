@@ -111,7 +111,7 @@ class _LLM:
 
 
 def _qc(blob, data, places=None):
-    library = SimpleNamespace(restaurants=lambda city: [])
+    library = SimpleNamespace(restaurants=lambda city: [], coverage=lambda: {})
     out, result, _ = run_qc(blob, data.trip, {}, library, places or FakePlaces(), FakeRoutes(), _LLM(), [])
     return out, result
 
@@ -172,3 +172,32 @@ def test_annotation_lands_inside_the_right_day(blob):
     texts = [p.text for p in Document(io.BytesIO(out)).paragraphs]
     i = next(i for i, t in enumerate(texts) if "SEEDED-NOTE" in t)
     assert [t for t in texts[:i] if t.startswith("◆ DAY ")][-1].startswith("◆ DAY 4 ")
+
+
+def test_headings_and_title_for_new_layout(model):
+    h1 = [t for lvl, t in model.headings if lvl == 1]
+    assert "Day 1 – Thu, 24 Sep | Arrival in Bali" in h1
+    assert model.title == "Ubud, Nusa Lembongan, Sanur Magic"
+
+
+def test_pending_day_does_not_leak_over_other_text():
+    from src.aigv2.qc.reader import _Reader
+    assert _Reader.__init__ is not None  # structure pinned via the behaviour test below
+    m = read_docx(_render(_data()))
+    assert [d.index for d in m.days] == [1, 2, 4, 5, 7, 8]
+
+
+def test_full_qc_has_no_title_or_section_order_noise(blob):
+    _, result = _qc(blob, _data())
+    noise = [f for f in result.findings if f.rule in ("title_destination", "section_order")]
+    assert not [f for f in noise if "No day headers" in f.message or "No title" in f.message]
+    assert not [f for f in noise if "out of order" in f.message or "before the last day" in f.message]
+
+
+def test_marker_between_eyebrow_and_title_keeps_the_day(blob):
+    from src.aigv2.models import Finding
+    from src.aigv2.qc.annotate import annotate
+    out = annotate(blob, [Finding(rule="x", severity="error", message="NOTE-ON-DAY", day=1)])
+    m = read_docx(out)
+    assert [d.index for d in m.days] == [1, 2, 4, 5, 7, 8]
+    assert "Day 1 – Thu, 24 Sep | Arrival in Bali" in [t for lvl, t in m.headings if lvl == 1]

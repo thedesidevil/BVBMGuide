@@ -10,14 +10,16 @@ from src.aigv2.guide import model as g
 from src.aigv2.hours import _fmt12, format_for_day, is_open_for, next_opening
 from src.aigv2.library import norm_name
 from src.aigv2.models import HotelStay, Marker, TransportLeg
+from src.aigv2.planning.important_places import ImportantPlaces, NearbyPlace
 from src.aigv2.planning.late_night import is_late_night_landing, pickup_before_landing
 from src.aigv2.planning.meals import ChosenRestaurant, MealPick
 from src.aigv2.planning.slots import MealSlot, ScheduledItem, arrival_buffer_min, is_optional, leave_by
 from src.aigv2.planning.travel import Leg, drive_day_legs, leg_markers, leg_options
 from src.aigv2.render.day_render import _PORT, _REACH, _SLOT_TITLE, day_header, sunset_time
-from src.aigv2.render.document import GuideData, RenderDay, destinations
+from src.aigv2.render.document import BEFORE_YOU_GO, WHILE_THERE, GuideData, RenderDay, _present, destinations
 from src.aigv2.render.sections_render import minutes_text, place_markers, search_url
 from src.aigv2.writing.days import AttractionText
+from src.aigv2.writing.sections import SectionContent, SectionItem
 
 _LATE = "Late night"
 _KIND = {"flight": "Flight", "train": "Train", "boat": "Boat", "bus": "Bus"}
@@ -450,6 +452,69 @@ class _Day:
             hours=hours, price=price, travel=travel), marks
 
 
+# ------------------------------------------------------------------ reference pages
+_TITLES = dict(BEFORE_YOU_GO + WHILE_THERE)
+
+
+def _paras(items: list[SectionItem]) -> list[g.TitledPara]:
+    return [g.TitledPara(heading=i.heading, body=i.body) for i in items]
+
+
+def build_reference_page(key: str, content: SectionContent, data: GuideData) -> g.Page:
+    title = _TITLES.get(key, key.replace("_", " ").title())
+    eyebrow = "BEFORE YOU GO" if key in dict(BEFORE_YOU_GO) else "WHILE YOU'RE THERE"
+    comps: list = [g.ReferenceOpener(eyebrow=eyebrow, title=title, intro="")]
+    items = list(content.items)
+    if content.by_country:
+        many = len(content.by_country) > 1
+        for country, its in content.by_country.items():
+            head = [g.TitledPara(heading=country or "General", body="")] if many else []
+            comps.append(g.TitledParas(items=head + _paras(its)))
+            items += its
+    else:
+        comps.append(g.TitledParas(items=_paras(content.items)))
+    marks = [g.MarkerRef(kind="VERIFY", text=i.heading) for i in items if i.verify]
+    marks += [_ref(x) for x in content.markers]
+    if marks:
+        comps.append(g.ReviewMarkerBlock(markers=marks))
+    return g.Page(kind="reference", title=title, bookmark=f"sec_{key}", components=comps)
+
+
+def _span(a: date, b: date) -> str:
+    if (a.month, a.year) == (b.month, b.year):
+        return f"{a.day} \u2013 {b.day} {b:%B}"
+    return f"{a.day} {a:%B} \u2013 {b.day} {b:%B}"
+
+
+def _nearby(n: NearbyPlace, city: str) -> g.NearbyPlace:
+    p = n.place
+    return g.NearbyPlace(name=g.Link(text=p.name, url=p.maps_url or search_url(p.name, city)),
+                         walk_min=n.walk_min, drive_min=n.drive_min, hours_text=n.hours_text, phone=p.phone,
+                         markers=[_ref(x) for x in n.markers + place_markers(p, n.markers)])
+
+
+def build_important_page(entries: list[ImportantPlaces], data: Optional[GuideData] = None) -> Optional[g.Page]:
+    if not entries:
+        return None
+    stays = data.trip.hotels if data else []
+    places = {name: p for d in (data.days if data else []) for name, p in d.places.items()}
+    hotels = []
+    for e in entries:
+        stay = next((s for s in stays if norm_name(s.hotel) == norm_name(e.hotel)), None)
+        p = places.get(e.hotel)
+        url = p.maps_url if p is not None and p.match_ok else search_url(e.hotel, e.city)
+        hotels.append(g.HotelPlaces(
+            hotel=g.Link(text=e.hotel, url=url), city=e.city,
+            dates=_span(stay.check_in, stay.check_out) if stay else "",
+            pharmacies=[_nearby(n, e.city) for n in e.pharmacies],
+            groceries=[_nearby(n, e.city) for n in e.groceries],
+            hospitals=[_nearby(e.hospital, e.city)] if e.hospital else [],
+            markers=[_ref(x) for x in e.markers]))
+    title = _TITLES["important"]
+    return g.Page(kind="reference", title=title, bookmark="sec_important", components=[
+        g.ReferenceOpener(eyebrow="WHILE YOU'RE THERE", title=title, intro=""), g.PlaceGroups(hotels=hotels)])
+
+
 def build_day_page(rd: RenderDay, data: GuideData, settings) -> g.Page:
     return _Day(rd, data, settings.walk_max_min).build()
 
@@ -463,6 +528,12 @@ def build_guide(data: GuideData, settings) -> g.Guide:
         g.ReviewMarkerBlock(markers=[g.MarkerRef(kind="WRITE_LETTER", text="")])])
     pages = [letter, g.Page(kind="toc", title="Contents", bookmark="toc")]
     pages += [build_day_page(rd, data, settings) for rd in data.days]
+    for key, _ in BEFORE_YOU_GO + WHILE_THERE:
+        if not _present(data, key):
+            continue
+        ref = build_important_page(data.important, data) if key == "important" else build_reference_page(key, data.sections[key], data)
+        if ref is not None:
+            pages.append(ref)
     pages.append(g.Page(kind="thank_you", title="Thank You", bookmark="thank_you"))
     return g.Guide(client=names[0] if names else "Guest", destination=dest, title=data.title,
                    subtitle=f"All Inclusive Guide – {dest}", pages=pages)

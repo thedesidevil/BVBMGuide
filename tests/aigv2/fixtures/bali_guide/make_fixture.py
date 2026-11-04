@@ -1,4 +1,4 @@
-"""One-off: slice the saved Bali run into guide_data.json (Days 1, 2, 4, 5 and 7 only, client anonymised).
+"""One-off: slice the saved Bali run into guide_data.json (Days 1, 2, 4, 5, 7 and 8 only, client anonymised).
 
 Usage: python3 tests/aigv2/fixtures/bali_guide/make_fixture.py <run_dir>
 Read-only on the run folder. Mirrors src/aigv2/pipeline.py::_render_days / _render_qc.
@@ -15,7 +15,7 @@ from src.aigv2.planning.slots import schedule_day
 from src.aigv2.render.document import GuideData, RenderDay
 from src.aigv2.writing.days import DayText
 
-KEEP = (1, 2, 4, 5, 7)
+KEEP = (1, 2, 4, 5, 7, 8)
 
 
 class _NoFx:

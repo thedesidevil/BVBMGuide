@@ -89,7 +89,7 @@ def test_missing_hours_gives_marker_not_blank():
 def test_build_guide_wraps_day_pages():
     data = load()
     g = build_guide(data, SETTINGS)
-    assert [pg.kind for pg in g.pages] == ["letter", "toc", "day", "day", "day", "day", "day", "thank_you"]
+    assert [pg.kind for pg in g.pages] == ["letter", "toc", "day", "day", "day", "day", "day", "day", "thank_you"]
     letter = g.pages[0].components
     assert letter[0].paragraphs == [] and letter[1].markers == [MarkerRef(kind="WRITE_LETTER", text="")]
     assert g.client == "Test Client One" and g.title == data.title
@@ -256,3 +256,41 @@ def test_day7_option_cards():
     checkin = next(i for i, c in enumerate(comps) if c.type == "BookingCard" and c.kind == "Check-in")
     dinner = next(i for i, c in enumerate(comps) if c.type == "MealBlock" and c.meal == "dinner")
     assert boat < transfer < checkin < at < dinner
+
+
+def _day8_cards(rd=None, data=None):
+    data = data or load()
+    p = build_day_page(rd or day(data, 8), data, SETTINGS)
+    marks = [mk for c in p.components if c.type == "ReviewMarkerBlock" for mk in c.markers]
+    return p.components, marks
+
+
+def test_day8_departure_cards():
+    from src.aigv2.planning.slots import arrival_buffer_min, leave_by
+    from src.aigv2.planning.travel import Leg
+    data = load()
+    comps, marks = _day8_cards(data=data)
+    types = [c.type for c in comps]
+    check = next(c for c in comps if c.type == "ChecklistCard")
+    assert "Your child's essentials" in check.items and len(check.items) == 7
+    assert check.lead == "Complete check-out and keep these in your hand luggage:"
+    xfer = next(c for c in comps if c.type == "BookingCard" and c.kind == "AIRPORT TRANSFER")
+    flight = next(c for c in comps if c.type == "BookingCard" and c.kind == "Flight")
+    assert types.index("ChecklistCard") < comps.index(xfer) < comps.index(flight)
+    assert "giving about" in xfer.text and "before the 13:15 departure" in xfer.text
+    # no road leg: buffer only, and the VERIFY marker stays
+    dep = day(data, 8).departure
+    assert [f.value for f in xfer.facts if f.label == "Margin"] == ["About 3 hours"]
+    assert any(mk.kind == "VERIFY" and mk.text == "departure time" for mk in marks)
+    assert "buffer only" in xfer.text
+    # with a 45 minute road leg
+    rd = day(data, 8)
+    legs = dict(rd.legs)
+    legs["departure"] = Leg(from_name="a", to_name="b", drive_min=45, kind="drive")
+    comps2, marks2 = _day8_cards(rd.model_copy(update={"legs": legs}), data)
+    x2 = next(c for c in comps2 if c.type == "BookingCard" and c.kind == "AIRPORT TRANSFER")
+    by = leave_by(dep, False, 45)
+    assert by == time(9, 30) and arrival_buffer_min("flight", False) == 180
+    assert "approximately 9:30 AM" in x2.text and "about 3 hours before" in x2.text
+    assert not any(mk.text == "departure time" for mk in marks2)
+    assert "buffer only" not in x2.text

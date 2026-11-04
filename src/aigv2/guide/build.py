@@ -7,6 +7,7 @@ from datetime import date, datetime, time
 from typing import Optional
 
 from src.aigv2.guide import model as g
+from src.aigv2.guide.departure import departure_checklist
 from src.aigv2.hours import _fmt12, format_for_day, is_open_for, next_opening
 from src.aigv2.library import norm_name
 from src.aigv2.models import HotelStay, Marker, TransportLeg
@@ -136,7 +137,7 @@ class _Day:
         if rd.text.free_time_idea and not self.free_time_used:
             self.out.append(g.SimpleCard(when="Free time", heading="Free time", text=rd.text.free_time_idea))
         if dep and not early_dep and not cruise:
-            self._departure(dep, transport_card=True, city=rd.city)
+            self._departure(dep, transport_card=True, city=rd.city, final=True)
         else:
             self._overnight(cruise)
         self.marks(rd.result.markers)  # day-level review notes close the page
@@ -326,10 +327,50 @@ class _Day:
                        stay.hotel, pickup=pick.time if pick and pick.time else None,
                        when=_hm(arr.arrive) if arr.arrive else "Arrival")
 
-    def _departure(self, dep: TransportLeg, transport_card: bool, city: str) -> None:
+    @staticmethod
+    def _margin_text(minutes: int) -> str:
+        h, m = divmod(minutes, 60)
+        if m == 0:
+            return f"{h} hour{'s' if h != 1 else ''}"
+        if m == 30 and h:
+            return f"{h}½ hours"
+        return f"{minutes} minutes"
+
+    def _final_flight_cards(self, dep: TransportLeg, stay: HotelStay, road: Optional[int], by: time,
+                            leg: Optional[Leg]) -> None:
+        """Check-out checklist, then the airport transfer with leave-by facts (final day, flight, hotel known)."""
+        rd, data = self.rd, self.data
+        hotel = g.Link(text=stay.hotel, url=self._url(stay.hotel))
+        self.out.append(g.ChecklistCard(
+            when="Check-out", kind="CHECK-OUT", title=g.Link(text=f"Check out of {stay.hotel}", url=hotel.url),
+            lead="Complete check-out and keep these in your hand luggage:",
+            items=departure_checklist(data.trip.travellers, not data.domestic)))
+        buffer = arrival_buffer_min(dep.kind, data.domestic)
+        margin = self._margin_text(buffer)
+        at = _fmt12(by)
+        pairs = [g.Fact(label="Leave", value=f"approximately {at}"),
+                 g.Fact(label="From", value=stay.hotel, link=hotel),
+                 g.Fact(label="Flight", value=f"Departs {_hm(dep.depart)}"),
+                 g.Fact(label="Margin", value=f"About {margin}")]
+        text = (f"Leave {stay.hotel} at approximately {at}, giving about {margin} before the {_hm(dep.depart)} "
+                "departure: a comfortable margin for traffic, luggage and airport formalities.")
+        if not road:
+            text += " This time allows for the airport buffer only; the road time is still to be confirmed."
+        port = dep.from_place or _PORT[dep.kind]
+        self.out.append(g.BookingCard(when=at, kind="AIRPORT TRANSFER",
+                                      title=g.Link(text=f"{stay.hotel} → {port}", url=search_url(port, rd.city)),
+                                      facts=pairs, text=text))
+        self.marks(([] if road else [_verify("departure time")]) + (leg_markers(leg, data.modes, self.walk_max) if leg else []))
+
+    def _departure(self, dep: TransportLeg, transport_card: bool, city: str, final: bool = False) -> None:
         rd = self.rd
         road = self._road_minutes(rd.legs.get("departure"))
         by = leave_by(dep, self.data.domestic, road)
+        if final and by and dep.kind == "flight" and dep.depart and self._stay(arriving=False):
+            self._final_flight_cards(dep, self._stay(arriving=False), road, by, rd.legs.get("departure"))
+            if transport_card:
+                self._transport(dep, dep.from_place, city)
+            return
         line = None
         if by:
             line = f"{_REACH.get(dep.kind, 'Leave by')} {_hm(by)}"

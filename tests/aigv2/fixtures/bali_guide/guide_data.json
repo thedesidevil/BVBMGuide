@@ -487,6 +487,32 @@
      "DINNER IN SANUR (AT OWN EXPENSE)"
     ],
     "drive_stops": []
+   },
+   {
+    "date": "2026-10-01",
+    "title": "Departure from Bali",
+    "city": "Sanur",
+    "items": [
+     {
+      "name": "Hotel check-out and airport drop",
+      "kind": "transfer",
+      "city": "Sanur",
+      "time": null,
+      "slot_hint": "any",
+      "note": "",
+      "optional": false,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     }
+    ],
+    "meal_rules": [
+     "Breakfast"
+    ],
+    "drive_stops": []
    }
   ],
   "open_choices": [],
@@ -4578,6 +4604,336 @@
      "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
     }
    },
+   "lands_next_day": false,
+   "driver_from": null
+  },
+  {
+   "index": 8,
+   "date": "2026-10-01",
+   "city": "Sanur",
+   "text": {
+    "title": "Departure from Bali",
+    "intro": "We’ll keep our plans simple as we leave Bali together as a family.",
+    "attractions": [],
+    "restaurants": [],
+    "free_time_idea": null
+   },
+   "result": {
+    "scheduled": [
+     {
+      "item": {
+       "name": "Hotel check-out and airport drop",
+       "kind": "transfer",
+       "city": "Sanur",
+       "time": null,
+       "slot_hint": "any",
+       "note": "",
+       "optional": false,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": null
+      },
+      "slot": "morning",
+      "start": "09:00:00"
+     }
+    ],
+    "meals": [
+     {
+      "meal": "breakfast",
+      "start": "07:30:00",
+      "anchors": [],
+      "included": true,
+      "unanchored": false
+     }
+    ],
+    "tips": [],
+    "markers": [
+     {
+      "kind": "VERIFY",
+      "text": "booking 'TAKSU SANUR HOTEL to Bali Airport transfer' is not placed in the day plan"
+     }
+    ]
+   },
+   "meals": [],
+   "legs": {},
+   "places": {
+    "taksu sanur hotel|sanur": {
+     "query": "TAKSU SANUR HOTEL|Sanur",
+     "place_id": "ChIJg_UKXL5B0i0RG1yXu705PfM",
+     "name": "Taksu Sanur Hotel",
+     "address": "Jl. Sudamala No.26, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+     "lat": -8.705838199999999,
+     "lng": 115.25594930000001,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "0": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "1": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "2": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "3": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "4": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "5": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "6": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": "http://www.taksusanur.com/",
+     "phone": "+62 361 283401",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=TAKSU+SANUR+HOTEL+Sanur&query_place_id=ChIJg_UKXL5B0i0RG1yXu705PfM",
+     "fetched_at": "2026-11-02T10:57:25.491222Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "TAKSU SANUR HOTEL": {
+     "query": "TAKSU SANUR HOTEL|Sanur",
+     "place_id": "ChIJg_UKXL5B0i0RG1yXu705PfM",
+     "name": "Taksu Sanur Hotel",
+     "address": "Jl. Sudamala No.26, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+     "lat": -8.705838199999999,
+     "lng": 115.25594930000001,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "0": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "1": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "2": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "3": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "4": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "5": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "6": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": "http://www.taksusanur.com/",
+     "phone": "+62 361 283401",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=TAKSU+SANUR+HOTEL+Sanur&query_place_id=ChIJg_UKXL5B0i0RG1yXu705PfM",
+     "fetched_at": "2026-11-02T10:57:25.491222Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "dps|sanur": {
+     "query": "DPS|Sanur",
+     "place_id": "ChIJHyEloSBB0i0RGoQXaUKT7qU",
+     "name": "PONDOK JAS DPS",
+     "address": "8723+4HH, Jl. Tirtanadi, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+     "lat": -8.6996795,
+     "lng": 115.2539702,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "6": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "0": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "1": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "2": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "3": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "4": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "5": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": null,
+     "phone": "+62 821-4472-2224",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=DPS+Sanur&query_place_id=ChIJHyEloSBB0i0RGoQXaUKT7qU",
+     "fetched_at": "2026-11-02T10:00:00.049959Z",
+     "match_ok": false,
+     "verify_note": null
+    },
+    "DPS": {
+     "query": "DPS|Sanur",
+     "place_id": "ChIJHyEloSBB0i0RGoQXaUKT7qU",
+     "name": "PONDOK JAS DPS",
+     "address": "8723+4HH, Jl. Tirtanadi, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+     "lat": -8.6996795,
+     "lng": 115.2539702,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "6": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "0": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "1": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "2": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "3": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "4": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "5": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": null,
+     "phone": "+62 821-4472-2224",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=DPS+Sanur&query_place_id=ChIJHyEloSBB0i0RGoQXaUKT7qU",
+     "fetched_at": "2026-11-02T10:00:00.049959Z",
+     "match_ok": false,
+     "verify_note": null
+    },
+    "Hotel check-out and airport drop": null
+   },
+   "booking_by_item": {},
+   "arrival_booking": null,
+   "price_by_restaurant": {},
+   "arrival": null,
+   "departure": {
+    "kind": "flight",
+    "from_place": "DPS",
+    "to_place": "SIN",
+    "depart": "2026-10-01T13:15:00",
+    "arrive": null,
+    "ref": "IND/PB/2026/2411",
+    "source": "voucher",
+    "pax_label": "",
+    "operator": "Singapore Airlines",
+    "number": "SQ 938",
+    "seat": "",
+    "platform": "",
+    "duration_min": null,
+    "check_in": null
+   },
+   "other_transport": [],
+   "prev_city": "Sanur",
+   "utc_offset_hours": null,
+   "library_attractions": {},
    "lands_next_day": false,
    "driver_from": null
   }

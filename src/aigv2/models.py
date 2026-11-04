@@ -67,6 +67,8 @@ class TransportLeg(BaseModel):
     number: str = ""
     seat: str = ""
     platform: str = ""
+    duration_min: Optional[int] = None  # crossing time, only when the voucher states it
+    check_in: Optional[datetime] = None  # boat/ferry check-in, only when the voucher states it
 
 
 class Booking(BaseModel):

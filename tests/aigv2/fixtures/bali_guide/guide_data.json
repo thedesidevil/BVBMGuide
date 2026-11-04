@@ -72,7 +72,9 @@
     "operator": "Singapore Airlines",
     "number": "SQ 948",
     "seat": "",
-    "platform": ""
+    "platform": "",
+    "duration_min": null,
+    "check_in": null
    },
    {
     "kind": "flight",
@@ -86,7 +88,9 @@
     "operator": "Singapore Airlines",
     "number": "SQ 938",
     "seat": "",
-    "platform": ""
+    "platform": "",
+    "duration_min": null,
+    "check_in": null
    },
    {
     "kind": "boat",
@@ -100,7 +104,9 @@
     "operator": "",
     "number": "",
     "seat": "",
-    "platform": ""
+    "platform": "",
+    "duration_min": null,
+    "check_in": "2026-09-28T08:15:00"
    },
    {
     "kind": "boat",
@@ -114,7 +120,9 @@
     "operator": "",
     "number": "",
     "seat": "",
-    "platform": ""
+    "platform": "",
+    "duration_min": null,
+    "check_in": "2026-09-30T11:00:00"
    }
   ],
   "bookings": [
@@ -374,6 +382,45 @@
      "Breakfast"
     ],
     "drive_stops": []
+   },
+   {
+    "date": "2026-09-28",
+    "title": "Transfer to Nusa Lembongan and Mangrove Boat Experience",
+    "city": "Nusa Lembongan",
+    "items": [
+     {
+      "name": "Transfer to Sanur Harbour",
+      "kind": "transfer",
+      "city": "Ubud",
+      "time": "07:00",
+      "slot_hint": "any",
+      "note": "",
+      "optional": false,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": ""
+     },
+     {
+      "name": "Mangrove Boat Experience at Nusa Lembongan Mangrove Forest",
+      "kind": "activity",
+      "city": "Nusa Lembongan",
+      "time": null,
+      "slot_hint": "any",
+      "note": "",
+      "optional": false,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": ""
+     }
+    ],
+    "meal_rules": [
+     "Breakfast"
+    ],
+    "drive_stops": []
    }
   ],
   "open_choices": [],
@@ -614,7 +661,9 @@
     "operator": "Singapore Airlines",
     "number": "SQ 948",
     "seat": "",
-    "platform": ""
+    "platform": "",
+    "duration_min": null,
+    "check_in": null
    },
    "departure": null,
    "other_transport": [],
@@ -2634,6 +2683,961 @@
      "_replaced_from": "Bali Indonesia/05062026_Test_Bali _All Inclusive Guide.docx"
     }
    },
+   "lands_next_day": false,
+   "driver_from": null
+  },
+  {
+   "index": 5,
+   "date": "2026-09-28",
+   "city": "Nusa Lembongan",
+   "text": {
+    "title": "Transfer to Nusa Lembongan and Mangrove Boat Experience",
+    "intro": "We’ll make our way to Nusa Lembongan and enjoy a boat outing at the mangrove forest, with a range of lunch and dinner options to choose from.",
+    "attractions": [
+     {
+      "name": "Mangrove Boat Experience at Nusa Lembongan Mangrove Forest",
+      "description": "We can explore the mangrove forest by boat during the Mangrove Boat Experience.",
+      "entry_fee": null,
+      "dress_code": null,
+      "tips": null,
+      "best_time": null,
+      "duration": null
+     }
+    ],
+    "restaurants": [
+     {
+      "name": "The Sampan",
+      "ambience": "A broad menu of local and international favourites.",
+      "best_for": "Lunch with Indonesian dishes, seafood, and grill options."
+     },
+     {
+      "name": "Kayu Lembongan",
+      "ambience": "A garden-style café serving wholesome dishes, brunch favourites, and comfort food.",
+      "best_for": "Lunch with café fare and comfort food."
+     },
+     {
+      "name": "Nisi – House of Mediterranean",
+      "ambience": "An air-conditioned setting with Greek, Italian, and Spanish influences.",
+      "best_for": "Lunch with Mediterranean dishes, meat, and seafood."
+     },
+     {
+      "name": "Curry Traders Restaurant and Bar",
+      "ambience": "A restaurant and bar known for curries and seafood.",
+      "best_for": "Dinner with Indian, Sri Lankan, and Asian dishes."
+     },
+     {
+      "name": "Little Prema Warung",
+      "ambience": "A popular warung where the fresh catch is displayed and charcoal-grilled.",
+      "best_for": "Dinner with seafood and Indonesian dishes; it’s best to go early."
+     },
+     {
+      "name": "Ginger & Jamu",
+      "ambience": "A health-focused restaurant with plant-based options.",
+      "best_for": "Dinner with healthy, plant-based options."
+     }
+    ],
+    "free_time_idea": null
+   },
+   "result": {
+    "scheduled": [
+     {
+      "item": {
+       "name": "Transfer to Sanur Harbour",
+       "kind": "transfer",
+       "city": "Ubud",
+       "time": "07:00",
+       "slot_hint": "any",
+       "note": "",
+       "optional": false,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": ""
+      },
+      "slot": "morning",
+      "start": "07:00:00"
+     },
+     {
+      "item": {
+       "name": "Mangrove Boat Experience at Nusa Lembongan Mangrove Forest",
+       "kind": "activity",
+       "city": "Nusa Lembongan",
+       "time": null,
+       "slot_hint": "any",
+       "note": "",
+       "optional": false,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": ""
+      },
+      "slot": "morning",
+      "start": "11:05:00"
+     }
+    ],
+    "meals": [
+     {
+      "meal": "breakfast",
+      "start": "07:30:00",
+      "anchors": [],
+      "included": true,
+      "unanchored": false
+     },
+     {
+      "meal": "lunch",
+      "start": "12:30:00",
+      "anchors": [
+       [
+        "D'NUSA BEACH CLUB AND RESORT",
+        [
+         -8.6646133,
+         115.4501372
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     },
+     {
+      "meal": "dinner",
+      "start": "19:30:00",
+      "anchors": [
+       [
+        "D'NUSA BEACH CLUB AND RESORT",
+        [
+         -8.6646133,
+         115.4501372
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     }
+    ],
+    "tips": [],
+    "markers": [
+     {
+      "kind": "VERIFY",
+      "text": "location of Mangrove Boat Experience at Nusa Lembongan Mangrove Forest unknown"
+     },
+     {
+      "kind": "VERIFY",
+      "text": "booking 'Transfer to Sanur Harbour, shared fast boat and Mangrove Boat Experience' at 07:00 is not placed in the day plan"
+     }
+    ]
+   },
+   "meals": [
+    {
+     "slot": {
+      "meal": "lunch",
+      "start": "12:30:00",
+      "anchors": [
+       [
+        "D'NUSA BEACH CLUB AND RESORT",
+        [
+         -8.6646133,
+         115.4501372
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     },
+     "day_index": 5,
+     "restaurants": [
+      {
+       "lib": {
+        "name": "The Sampan",
+        "city": "Nusa Lembongan",
+        "cuisine_type": [
+         "Indonesian",
+         "Seafood",
+         "Grill"
+        ],
+        "price_range": "Approx. INR 400–1,000 pp",
+        "hours": "6:00 AM – 10:00 PM",
+        "ambience": "Lively, casual island atmosphere",
+        "highlights": [
+         "Broad menu of local and international favourites"
+        ],
+        "must_try_dishes": [
+         "Grilled Prawns",
+         "Fried Fish",
+         "Grilled Seafood",
+         "Grilled Chicken",
+         "Beef dishes"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-10-20",
+        "_source_format": "new",
+        "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+       },
+       "place": {
+        "query": "The Sampan|Nusa Lembongan",
+        "place_id": "ChIJS6Lz6HJt0i0R9ShseYBIGhc",
+        "name": "The Sampan",
+        "address": "Pulau Nusa Lembongan, Jungutbatu, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771, Indonesia",
+        "lat": -8.665534899999999,
+        "lng": 115.451358,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "06:00:00",
+            "22:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "06:00:00",
+            "22:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "06:00:00",
+            "22:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "06:00:00",
+            "22:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "06:00:00",
+            "22:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "06:00:00",
+            "22:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "06:00:00",
+            "22:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": null,
+        "phone": "+62 813-2341-6722",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=The+Sampan+Nusa+Lembongan&query_place_id=ChIJS6Lz6HJt0i0R9ShseYBIGhc",
+        "fetched_at": "2026-11-02T10:00:23.521012Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 3,
+       "travel_label": "Walk",
+       "hours_text": "6:00 AM – 10:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Kayu Lembongan",
+        "city": "Nusa Lembongan",
+        "cuisine_type": [
+         "Cafe",
+         "Comfort food",
+         "Brunch"
+        ],
+        "price_range": "Approx. INR 500–1,200 pp",
+        "hours": "7:00 AM – 10:00 PM",
+        "ambience": "Relaxed, leafy garden setting",
+        "area": "Jungutbatu",
+        "highlights": [
+         "Garden-style café with wholesome dishes, brunch favourites and comfort food"
+        ],
+        "must_try_dishes": [
+         "Royale with Cheese Burger",
+         "Turkish Eggs",
+         "Chicken dishes",
+         "Epic Salads"
+        ],
+        "meal_slots": [
+         "lunch"
+        ],
+        "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-10-20",
+        "_source_format": "new",
+        "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+       },
+       "place": {
+        "query": "Kayu Lembongan|Nusa Lembongan",
+        "place_id": "ChIJ4eanYFNt0i0R6MxYKTz-PgI",
+        "name": "Kayu Lembongan",
+        "address": "Jl. Jungutbatu, Nusa Lembongan, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771, Indonesia",
+        "lat": -8.6710195,
+        "lng": 115.44979090000001,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "http://www.kayulembongan.com/",
+        "phone": "+62 878-5180-6128",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Kayu+Lembongan+Nusa+Lembongan&query_place_id=ChIJ4eanYFNt0i0R6MxYKTz-PgI",
+        "fetched_at": "2026-11-02T10:00:25.892197Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 3,
+       "travel_label": "By car",
+       "hours_text": "7:00 AM – 10:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Nisi – House of Mediterranean",
+        "city": "Nusa Lembongan",
+        "cuisine_type": [
+         "Mediterranean",
+         "Greek",
+         "Italian",
+         "Spanish"
+        ],
+        "price_range": "Approx. INR 700–1,500 pp",
+        "hours": "7:00 AM – 11:00 PM",
+        "ambience": "Stylish, air-conditioned",
+        "area": "Jungutbatu",
+        "highlights": [
+         "Greek, Italian and Spanish influences",
+         "Quality meat and seafood in an air-conditioned setting"
+        ],
+        "must_try_dishes": [
+         "Lamb Kleftiko",
+         "Beef Kefta",
+         "Chicken Souvlaki",
+         "Butter Fish",
+         "Seafood Paella",
+         "Grilled Octopus"
+        ],
+        "meal_slots": [
+         "lunch"
+        ],
+        "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-10-20",
+        "_source_format": "new",
+        "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+       },
+       "place": {
+        "query": "Nisi – House of Mediterranean|Nusa Lembongan",
+        "place_id": "ChIJZdwSnuZt0i0Rek8XQdv0ipQ",
+        "name": "Nisi - House of Mediterranean",
+        "address": "Nusa Lembongan, Jl. Jungutbatu, Jungutbatu, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80711, Indonesia",
+        "lat": -8.671626999999999,
+        "lng": 115.4494658,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "http://nisilembongan.co/",
+        "phone": "+62 819-3006-2023",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Nisi+%E2%80%93+House+of+Mediterranean+Nusa+Lembongan&query_place_id=ChIJZdwSnuZt0i0Rek8XQdv0ipQ",
+        "fetched_at": "2026-11-02T10:00:25.305801Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 4,
+       "travel_label": "By car",
+       "hours_text": "7:00 AM – 10:00 PM",
+       "hours_verify": false
+      }
+     ],
+     "markers": []
+    },
+    {
+     "slot": {
+      "meal": "dinner",
+      "start": "19:30:00",
+      "anchors": [
+       [
+        "D'NUSA BEACH CLUB AND RESORT",
+        [
+         -8.6646133,
+         115.4501372
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     },
+     "day_index": 5,
+     "restaurants": [
+      {
+       "lib": {
+        "name": "Curry Traders Restaurant and Bar",
+        "city": "Nusa Lembongan",
+        "cuisine_type": [
+         "Indian",
+         "Sri Lankan",
+         "Asian"
+        ],
+        "price_range": "Approx. INR 1,000–1,800 pp",
+        "hours": "5:00 PM–11:00 PM | 12:00 PM–11:00 PM (Sundays)",
+        "ambience": "Cosy, relaxed island vibe",
+        "highlights": [
+         "Well-loved curries and seafood"
+        ],
+        "must_try_dishes": [
+         "Goan fish curry",
+         "Butter prawns",
+         "Tandoori naan",
+         "Kulfi"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-08-29",
+        "_source_format": "new"
+       },
+       "place": {
+        "query": "Curry Traders Restaurant and Bar|Nusa Lembongan",
+        "place_id": "ChIJxyJDyWht0i0RyiJzvpqhQ5E",
+        "name": "Curry Traders Restaurant and Bar",
+        "address": "Jl. Jungutbatu, Jungutbatu, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771, Indonesia",
+        "lat": -8.6672347,
+        "lng": 115.4506428,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "12:00:00",
+            "23:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "17:00:00",
+            "23:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "17:00:00",
+            "23:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "17:00:00",
+            "23:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "17:00:00",
+            "23:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "17:00:00",
+            "23:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "17:00:00",
+            "23:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "http://wa.me/+6282146684894",
+        "phone": "+62 821-4668-4894",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Curry+Traders+Restaurant+and+Bar+Nusa+Lembongan&query_place_id=ChIJxyJDyWht0i0RyiJzvpqhQ5E",
+        "fetched_at": "2026-11-02T10:00:24.096165Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 6,
+       "travel_label": "Walk",
+       "hours_text": "5:00 PM – 11:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Little Prema Warung",
+        "city": "Nusa Lembongan",
+        "cuisine_type": [
+         "Seafood",
+         "Indonesian"
+        ],
+        "price_range": "Approx. INR 250–900 pp depending on the seafood selected",
+        "hours": "9:00 AM–10:00 PM",
+        "ambience": "No-frills local warung",
+        "area": "Jungutbatu",
+        "highlights": [
+         "Fresh catch displayed and charcoal-grilled",
+         "Popular, best to go early"
+        ],
+        "must_try_dishes": [
+         "Grilled snapper",
+         "Grilled prawns",
+         "Squid or octopus satay",
+         "Grilled corn with sambal"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "notes": "Popular spot; go early in the evening before the dinner rush",
+        "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-08-29",
+        "_source_format": "new"
+       },
+       "place": {
+        "query": "Little Prema Warung|Nusa Lembongan",
+        "place_id": "ChIJC5Mkds1t0i0RrAfrmDtbgnI",
+        "name": "Little Prema Warung (local food)",
+        "address": "Lembongan island, Jungutbatu, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771, Indonesia",
+        "lat": -8.668049,
+        "lng": 115.45037920000001,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "09:00:00",
+            "22:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "09:00:00",
+            "22:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "09:00:00",
+            "22:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "09:00:00",
+            "22:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "09:00:00",
+            "22:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "09:00:00",
+            "22:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "09:00:00",
+            "22:30:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": null,
+        "phone": "+62 812-3686-1251",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Little+Prema+Warung+Nusa+Lembongan&query_place_id=ChIJC5Mkds1t0i0RrAfrmDtbgnI",
+        "fetched_at": "2026-11-02T10:00:24.991634Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 7,
+       "travel_label": "Walk",
+       "hours_text": "9:00 AM – 10:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Ginger & Jamu",
+        "city": "Nusa Lembongan",
+        "cuisine_type": [
+         "Healthy",
+         "Plant-based"
+        ],
+        "price_range": "Approx. INR 500–1,200 pp",
+        "hours": "7:30 AM–9:00 PM",
+        "ambience": "Laid-back beachfront café",
+        "highlights": [
+         "Health-focused",
+         "Plant-based options"
+        ],
+        "must_try_dishes": [
+         "Smoothie bowls",
+         "Fresh salads",
+         "Vegan mains",
+         "Raw desserts",
+         "Signature jamu"
+        ],
+        "vegetarian_friendly": "true",
+        "meal_slots": [
+         "lunch"
+        ],
+        "notes": "Vegan and plant-based options available",
+        "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-08-29",
+        "_source_format": "new"
+       },
+       "place": {
+        "query": "Ginger & Jamu|Nusa Lembongan",
+        "place_id": "ChIJVVVVVZlt0i0RXSr-FDflZ1w",
+        "name": "Ginger & Jamu",
+        "address": "Jungutbatu, Nusa Penida, Klungkung Regency, Bali 80771, Indonesia",
+        "lat": -8.668990899999999,
+        "lng": 115.44798080000001,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "07:30:00",
+            "21:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "07:30:00",
+            "21:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "07:30:00",
+            "21:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "07:30:00",
+            "21:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "07:30:00",
+            "21:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "07:30:00",
+            "21:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "07:30:00",
+            "21:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "https://gingerandjamu.com/",
+        "phone": "+62 821-3451-6106",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Ginger+%26+Jamu+Nusa+Lembongan&query_place_id=ChIJVVVVVZlt0i0RXSr-FDflZ1w",
+        "fetched_at": "2026-11-02T10:00:23.270496Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 4,
+       "travel_label": "By car",
+       "hours_text": "7:30 AM – 9:00 PM",
+       "hours_verify": false
+      }
+     ],
+     "markers": []
+    }
+   ],
+   "legs": {
+    "arrival": {
+     "from_name": "MAYURA UBUD RETREAT",
+     "to_name": "D'NUSA BEACH CLUB AND RESORT",
+     "walk_min": null,
+     "drive_min": null,
+     "transit_min": null,
+     "transit_steps": [],
+     "kind": "boat",
+     "km": null,
+     "ticketed": true,
+     "no_route": false,
+     "approx_min": null
+    }
+   },
+   "places": {
+    "mayura ubud retreat|ubud": {
+     "query": "MAYURA UBUD RETREAT|Ubud",
+     "place_id": "ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "name": "Mayura Ubud Retreat",
+     "address": "Jl. Bangkilesan, Banjar Kawan Desa Mas, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.5468956,
+     "lng": 115.2693623,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "http://www.mayuraubud.com/",
+     "phone": "+62 361 4792956",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=MAYURA+UBUD+RETREAT+Ubud&query_place_id=ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "fetched_at": "2026-11-02T10:57:24.763405Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "MAYURA UBUD RETREAT": {
+     "query": "MAYURA UBUD RETREAT|Ubud",
+     "place_id": "ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "name": "Mayura Ubud Retreat",
+     "address": "Jl. Bangkilesan, Banjar Kawan Desa Mas, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.5468956,
+     "lng": 115.2693623,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "http://www.mayuraubud.com/",
+     "phone": "+62 361 4792956",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=MAYURA+UBUD+RETREAT+Ubud&query_place_id=ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "fetched_at": "2026-11-02T10:57:24.763405Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "d'nusa beach club and resort|nusa lembongan": {
+     "query": "D'NUSA BEACH CLUB AND RESORT|Nusa Lembongan",
+     "place_id": "ChIJxaQtt3Jt0i0ROuMF_dXcows",
+     "name": "d'Nusa Beach Club and Resort",
+     "address": "Nusa Lembongan, Light House Beach, Br. Kaja, Jungutbatu, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771, Indonesia",
+     "lat": -8.6646133,
+     "lng": 115.4501372,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "https://dnusaresortlembongan.com/",
+     "phone": "+62 811-3989-168",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=D%27NUSA+BEACH+CLUB+AND+RESORT+Nusa+Lembongan&query_place_id=ChIJxaQtt3Jt0i0ROuMF_dXcows",
+     "fetched_at": "2026-11-02T10:57:25.109329Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "D'NUSA BEACH CLUB AND RESORT": {
+     "query": "D'NUSA BEACH CLUB AND RESORT|Nusa Lembongan",
+     "place_id": "ChIJxaQtt3Jt0i0ROuMF_dXcows",
+     "name": "d'Nusa Beach Club and Resort",
+     "address": "Nusa Lembongan, Light House Beach, Br. Kaja, Jungutbatu, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771, Indonesia",
+     "lat": -8.6646133,
+     "lng": 115.4501372,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "https://dnusaresortlembongan.com/",
+     "phone": "+62 811-3989-168",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=D%27NUSA+BEACH+CLUB+AND+RESORT+Nusa+Lembongan&query_place_id=ChIJxaQtt3Jt0i0ROuMF_dXcows",
+     "fetched_at": "2026-11-02T10:57:25.109329Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "Transfer to Sanur Harbour": null,
+    "Mangrove Boat Experience at Nusa Lembongan Mangrove Forest": {
+     "query": "Mangrove Boat Experience at Nusa Lembongan Mangrove Forest|Nusa Lembongan",
+     "place_id": "ChIJ-zu7WABt0i0RqiSn3Yhr4_s",
+     "name": "Mangrove Forest Lembongan",
+     "address": "8CJX+C63, Jungutbatu, Nusa Penida, Klungkung Regency, Bali 80771, Indonesia",
+     "lat": -8.6669336,
+     "lng": 115.46759399999999,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "6": [
+        [
+         "08:00:00",
+         "17:00:00"
+        ]
+       ],
+       "0": [
+        [
+         "08:00:00",
+         "17:30:00"
+        ]
+       ],
+       "1": [
+        [
+         "08:00:00",
+         "17:30:00"
+        ]
+       ],
+       "2": [
+        [
+         "08:00:00",
+         "17:30:00"
+        ]
+       ],
+       "3": [
+        [
+         "08:00:00",
+         "17:30:00"
+        ]
+       ],
+       "4": [
+        [
+         "08:00:00",
+         "17:30:00"
+        ]
+       ],
+       "5": [
+        [
+         "08:00:00",
+         "17:30:00"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": "http://mangrovetour.my.canva.site/",
+     "phone": "+62 823-3952-6191",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=Mangrove+Boat+Experience+at+Nusa+Lembongan+Mangrove+Forest+Nusa+Lembongan&query_place_id=ChIJ-zu7WABt0i0RqiSn3Yhr4_s",
+     "fetched_at": "2026-11-02T09:38:17.801433Z",
+     "match_ok": false,
+     "verify_note": null
+    }
+   },
+   "booking_by_item": {},
+   "arrival_booking": null,
+   "price_by_restaurant": {
+    "The Sampan": "₹400–1,000",
+    "Kayu Lembongan": "₹500–1,200",
+    "Nisi – House of Mediterranean": "₹700–1,500",
+    "Curry Traders Restaurant and Bar": "₹1,000–1,800",
+    "Little Prema Warung": "₹250–900",
+    "Ginger & Jamu": "₹500–1,200"
+   },
+   "arrival": null,
+   "departure": null,
+   "other_transport": [
+    {
+     "kind": "boat",
+     "from_place": "Sanur Harbour",
+     "to_place": "Nusa Lembongan",
+     "depart": "2026-09-28T09:15:00",
+     "arrive": null,
+     "ref": "IND/PB/2026/2411",
+     "source": "voucher",
+     "pax_label": "",
+     "operator": "",
+     "number": "",
+     "seat": "",
+     "platform": "",
+     "duration_min": null,
+     "check_in": "2026-09-28T08:15:00"
+    }
+   ],
+   "prev_city": "Ubud",
+   "utc_offset_hours": null,
+   "library_attractions": {},
    "lands_next_day": false,
    "driver_from": null
   }

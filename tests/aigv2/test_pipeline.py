@@ -15,7 +15,8 @@ from src.aigv2 import pipeline
 from src.aigv2.config import STEPS, Settings
 from src.aigv2.library import Library
 from src.aigv2.llm import StepLLM
-from src.aigv2.models import Booking, Place, WeeklyHours
+from src.aigv2.models import Booking, Place, TransportLeg, WeeklyHours
+from src.aigv2.planning.boat import enrich_boat_legs, parse_boat_type, parse_check_in, parse_crossing_min
 from src.aigv2.pipeline import Deps, UnansweredQuestions, build_run, cost_summary, regenerate, requalify, start_run
 from src.library.ui.storage import LocalStorageBackend
 
@@ -1055,3 +1056,29 @@ def test_late_facts_for_bali_arrival():
     assert pipeline._late_facts(ds, trip) == {"lands_next_day": True, "driver_from": time(23, 0)}
     ds2 = SimpleNamespace(date=date(2026, 9, 25), arrival=None, arrival_booking=None)
     assert pipeline._late_facts(ds2, trip) == {"lands_next_day": False, "driver_from": None}
+
+
+def test_boat_leg_facts():
+    d = date(2026, 9, 28)
+    t = _boat_trip([_bk("Transfer to Sanur Harbour and shared fast boat", d, "07:00",
+                        ["Hotel check-in in Nusa Lembongan.", "Shared fast boat ETD 09:15 AM; check in at 08:15 AM."])])
+    (leg,) = pipeline._boat_legs(t, d)
+    assert leg.depart == datetime(2026, 9, 28, 9, 15) and leg.check_in == datetime(2026, 9, 28, 8, 15)
+    assert leg.duration_min is None
+    t.transport = [TransportLeg(kind="boat", from_place="Sanur Harbour", to_place="Nusa Lembongan",
+                                depart=datetime(2026, 9, 28, 9, 15), source="voucher")]
+    (got,) = enrich_boat_legs(t).transport
+    assert got.check_in == datetime(2026, 9, 28, 8, 15) and got.duration_min is None
+
+
+def test_boat_regex_helpers():
+    assert parse_check_in(["Fast boat check-in at 08:15 AM."]) == "08:15 AM"
+    assert parse_check_in(["Check in by 7.30 am"]) == "7.30 am"
+    assert parse_check_in(["Hotel check-in at 2:00 PM"]) is None
+    assert parse_check_in(["Be early"]) is None
+    assert parse_crossing_min(["The crossing takes approx. 30 min."]) == 30
+    assert parse_crossing_min(["Journey about 45 minutes"]) == 45
+    assert parse_crossing_min(["Crossing takes 30-45 min"]) is None
+    assert parse_crossing_min(["Boat departs at 09:15"]) is None
+    assert parse_boat_type(["Shared fast boat ETD"]) == "Shared fast boat"
+    assert parse_boat_type(["nothing"]) is None

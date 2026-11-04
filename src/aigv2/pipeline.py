@@ -21,6 +21,7 @@ from src.aigv2.llm import StepLLM
 from src.aigv2.models import (Answers, Booking, HotelStay, Marker, Place, Question, TransportLeg, TripPlan,
                               place_key)
 from src.aigv2.money import FxRates, city_currency, price_text
+from src.aigv2.planning.boat import BOAT_BOOKING, DEPARTS_AT, enrich_boat_legs, parse_check_in, parse_crossing_min
 from src.aigv2.planning.late_night import AIRPORT_PICKUP, driver_time, is_late_night_landing
 from src.aigv2.planning.important_places import ImportantPlaces, important_places
 from src.aigv2.planning.meals import Exclusion, MealPick, PlanStats, plan_meals
@@ -341,8 +342,8 @@ def _other_legs(trip: TripPlan, d: date, used: set[int]) -> list[int]:
     return [i for i, l in enumerate(trip.transport) if i not in used and _leg_date(l) == d]
 
 
-_BOAT_BOOKING = re.compile(r"\b(fast[- ]?boat|ferry|speed ?boat)\b|\btransfer\b.*\bboat\b|\bboat\b.*\btransfer\b", re.I)
-_DEPARTS_AT = re.compile(r"\bdepart\w*\b[^\n]*?\bat\s+(\d{1,2}[:.]\d{2}\s*(?:[ap]\.?m\b)?)", re.I)
+_BOAT_BOOKING = BOAT_BOOKING
+_DEPARTS_AT = DEPARTS_AT
 
 
 def _boat_legs(trip: TripPlan, d: date) -> list[TransportLeg]:
@@ -359,8 +360,11 @@ def _boat_legs(trip: TripPlan, d: date) -> list[TransportLeg]:
                 break
         t = t or parse_time(b.time)
         if t:
+            ci = parse_time(parse_check_in(b.instructions))
             out.append(TransportLeg(kind="boat", from_place=b.meeting_point or b.name, to_place=b.name,
-                                    depart=datetime.combine(d, t), source="booking"))
+                                    depart=datetime.combine(d, t), source="booking",
+                                    check_in=datetime.combine(d, ci) if ci else None,
+                                    duration_min=parse_crossing_min(b.instructions)))
     return out
 
 
@@ -404,6 +408,13 @@ def _legs(ds: DayState, trip: TripPlan, deps: Deps) -> dict[str, Leg]:
         leg = _pair(morning.hotel, hotel(morning), t.from_place, port, deps, modes)
         if leg:
             legs["departure"] = leg
+    boat = next((trip.transport[i] for i in ([ds.arrival, ds.departure] + ds.other_legs)
+                 if i is not None and trip.transport[i].kind == "boat" and trip.transport[i].from_place.strip()), None)
+    if boat and morning:  # hotel -> harbour by road; absent when the harbour is not placed (never guessed)
+        harbour = places.get(pkey(boat.from_place, ds.prev_city or ds.city)) or places.get(pkey(boat.from_place, ds.city))
+        road = _pair(morning.hotel, hotel(morning), boat.from_place, harbour, deps, modes)
+        if road:
+            legs["boat_pickup"] = road
     origin = new or morning
     tz = timezone(timedelta(hours=ds.utc_offset_hours)) if ds.utc_offset_hours is not None else None
     # on a day trip the client leaves by train/boat, so a hotel-to-first-stop drive would be wrong advice
@@ -533,7 +544,8 @@ def _start(store: RunStore, intake_path: Path | None, paths: list[Path], deps: D
 def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
     if store.has("plan.json"):
         return _load_plan(store)
-    trip = apply_answers(TripPlan.model_validate(store.load_json("trip_plan.json")), _questions(store), answers)
+    trip = enrich_boat_legs(apply_answers(TripPlan.model_validate(store.load_json("trip_plan.json")),
+                                          _questions(store), answers))
     for dp in trip.days:
         dp.city = resolve_day_city(dp.city, dp.date, trip.hotels)
         dp.city = region_day_city(dp.city, dp.date, trip.hotels, lambda c: len(deps.library.restaurants(c)))
@@ -558,6 +570,9 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
             _endpoint(trip.transport[arr].to_place, dp.city, places, deps.places)
         if dep is not None:
             _endpoint(trip.transport[dep].from_place, prev or dp.city, places, deps.places)
+        for i in _other_legs(trip, dp.date, used):
+            if trip.transport[i].kind == "boat":
+                _endpoint(trip.transport[i].from_place, prev or dp.city, places, deps.places)
         ds = DayState(index=n, date=dp.date, city=dp.city, country=countries.get(dp.city, ""),
                       result=DayResult(), arrival=arr, departure=dep, prev_city=prev,
                       other_legs=_other_legs(trip, dp.date, used),

@@ -10,6 +10,7 @@ from src.aigv2.guide import model as g
 from src.aigv2.hours import _fmt12, format_for_day, is_open_for, next_opening
 from src.aigv2.library import norm_name
 from src.aigv2.models import HotelStay, Marker, TransportLeg
+from src.aigv2.planning.boat import boat_bookings, parse_boat_type
 from src.aigv2.planning.important_places import ImportantPlaces, NearbyPlace
 from src.aigv2.planning.late_night import is_late_night_landing, pickup_before_landing
 from src.aigv2.planning.meals import ChosenRestaurant, MealPick
@@ -105,6 +106,9 @@ class _Day:
         title = day_header(rd.index, rd.date, rd.text.title)
         self.out = [g.Opener(number=rd.index, weekday=f"{rd.date:%A}", date=f"{rd.date.day} {rd.date:%B}",
                              title=[rd.text.title], intro=rd.text.intro), g.YourDay()]
+        strip = self._journey_strip()
+        if strip:
+            self.out.append(strip)
         if rd.result.tips:
             self.out.append(g.SimpleCard(when="Today", part="Good to know", heading="Good to know",
                                          text="\n".join(rd.result.tips)))
@@ -132,6 +136,71 @@ class _Day:
             self._overnight(cruise)
         self.marks(rd.result.markers)  # day-level review notes close the page
         return g.Page(kind="day", title=title, bookmark=f"day_{rd.index}", components=self.out)
+
+    def _boat_leg(self) -> Optional[TransportLeg]:
+        rd = self.rd
+        legs = [rd.arrival, rd.departure] + list(rd.other_transport)
+        return next((t for t in legs if t is not None and t.kind == "boat" and t.from_place.strip()), None)
+
+    def _place_link(self, name: str, city: str = "") -> g.Link:
+        p = self.rd.places.get(name)
+        found = p is not None and p.match_ok
+        return g.Link(text=p.name if found and p.name else name,
+                      url=p.maps_url if found else search_url(name, city or self.rd.city))
+
+    def _journey_strip(self) -> Optional[g.JourneyStrip]:
+        """Hotel -> harbour -> destination for a day with a boat crossing; only stated facts become text."""
+        t = self._boat_leg()
+        if t is None:
+            return None
+        rd, trip, d = self.rd, self.data.trip, self.rd.date
+        booking = next(iter(boat_bookings(trip, t)), None)
+        morning = next((s for s in trip.hotels if s.check_in < d <= s.check_out), None)
+        new = next((s for s in trip.hotels if s.check_in == d), None)
+        leave = parse_time(booking.time) if booking else None
+        harbour_time = " · ".join(x for x in (
+            f"Check-in {_fmt12(t.check_in.time())}" if t.check_in else "",
+            f"Departs {_fmt12(t.depart.time())}" if t.depart else "") if x) or None
+        stops: list[g.JourneyStop] = []
+        legs: list[str] = []
+        road = self._road_minutes(rd.legs.get("boat_pickup"))
+        if morning:
+            stops.append(g.JourneyStop(label=morning.city, name=self._place_link(morning.hotel, morning.city),
+                                       time=f"Leave {_fmt12(leave)}" if leave else None))
+            legs.append(f"Approx. {road} min by car" if road else "")
+        stops.append(g.JourneyStop(label="Harbour", name=g.Link(text=t.from_place, url=self._url(t.from_place)),
+                                   time=harbour_time))
+        legs.append(f"Approx. {t.duration_min} min by boat" if t.duration_min else "")
+        if new:
+            stops.append(g.JourneyStop(label=new.city, name=self._place_link(new.hotel, new.city),
+                                       time=f"Check-in from {_fmt12(new.check_in_time)}" if new.check_in_time else None))
+        elif t.to_place.strip():
+            stops.append(g.JourneyStop(label="Arrive", name=g.Link(text=t.to_place, url=self._url(t.to_place))))
+        else:
+            legs.pop()
+        return g.JourneyStrip(stops=stops, legs=legs)
+
+    def _boat_card(self, t: TransportLeg, city: str) -> None:
+        trip = self.data.trip
+        booking = next(iter(boat_bookings(trip, t)), None)
+        pairs: list = []
+        if t.check_in:
+            pairs.append(("CHECK IN", f"{_hm(t.check_in)} · {t.from_place}" if t.from_place else _hm(t.check_in)))
+        if t.depart:
+            pairs.append(("DEPARTS", f"{_hm(t.depart)} · {t.from_place}" if t.from_place else _hm(t.depart)))
+        if t.duration_min:
+            pairs.append(("CROSSING", f"Approx. {t.duration_min} min"))
+        boat_type = parse_boat_type(booking.instructions) if booking else None
+        if boat_type:
+            pairs.append(("TYPE", boat_type))
+        facts, marks = _facts(pairs)
+        at_time = t.check_in or t.depart or t.arrive
+        self.out.append(g.BookingCard(
+            when=_fmt12(at_time.time()) if at_time else "Boat", kind="FAST BOAT",
+            title=g.Link(text=f"{t.from_place} to {t.to_place}" if t.to_place else t.from_place,
+                         url=self._url(t.from_place)),
+            subtitle=None, facts=facts, ref=t.ref or None))
+        self.marks(marks)
 
     def _overnight(self, cruise: Optional[HotelStay]) -> None:
         d = self.rd.date
@@ -177,6 +246,8 @@ class _Day:
         self.marks(fmarks + [_ref(m) for m in markers + (self._hotel_markers(hotel) if hotel else [])])
 
     def _transport(self, t: TransportLeg, link_to: str, city: str = "", day: Optional[date] = None) -> None:
+        if t.kind == "boat":
+            return self._boat_card(t, city)
         kind = _KIND.get(t.kind, "Transfer")
         title = f"{kind}: {t.from_place} to {t.to_place}" if t.from_place and t.to_place else kind
         pairs: list = []

@@ -1,4 +1,4 @@
-"""One-off: slice the saved Bali run into guide_data.json (Days 1, 2 and 4 only, client anonymised).
+"""One-off: slice the saved Bali run into guide_data.json (Days 1, 2, 4 and 5 only, client anonymised).
 
 Usage: python3 tests/aigv2/fixtures/bali_guide/make_fixture.py <run_dir>
 Read-only on the run folder. Mirrors src/aigv2/pipeline.py::_render_days / _render_qc.
@@ -9,10 +9,11 @@ from pathlib import Path
 
 from src.aigv2.money import city_currency, price_text
 from src.aigv2.pipeline import PlanState, _late_facts
+from src.aigv2.planning.boat import enrich_boat_legs
 from src.aigv2.render.document import GuideData, RenderDay
 from src.aigv2.writing.days import DayText
 
-KEEP = (1, 2, 4)
+KEEP = (1, 2, 4, 5)
 
 
 class _NoFx:
@@ -23,6 +24,7 @@ class _NoFx:
 
 def main(run: Path) -> None:
     state = PlanState.model_validate(json.loads((run / "plan.json").read_text()))
+    state.trip = enrich_boat_legs(state.trip)  # the saved trip predates check_in / duration_min
     days = []
     for ds in state.days:
         if ds.index not in KEEP:

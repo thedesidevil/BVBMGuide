@@ -3,6 +3,7 @@ import json
 from ..llm import StepLLM
 from ..models import TripPlan
 from .attachments import Attachment
+from ..planning.boat import enrich_boat_legs
 from .template import IntakeFields
 
 SYSTEM_PROMPT = """You extract a structured trip plan for a travel agency from the team's intake form and attachments. Return ONLY a JSON object that matches the schema given in the user message.
@@ -24,6 +25,7 @@ Rules:
 - "Pure veg" wording sets diet.pure_veg=true (and add "vegetarian" to restrictions).
 - Drive-day stops named in the inputs become drive_stops on that day.
 - Per-passenger tickets: legs with the same ref, flight/train number and departure are ONE leg; list it once (pax_label may list the passengers).
+- Boat or ferry legs (kind "boat"): set check_in (the boat check-in time, for example from "check in at 08:15 AM") and duration_min (crossing time in whole minutes) ONLY when the voucher states them in words. Never infer, estimate or compute them; leave them null otherwise.
 - Dates are ISO (YYYY-MM-DD); if the year is missing, infer it only from other dated inputs. Times are 24h.
 - trip_scope is "domestic" only when the whole trip stays within the client's home country India, else "international".
 - Attachments listed as image-only could not be read; do not guess their content.
@@ -94,4 +96,4 @@ def _build_prompt(intake: IntakeFields | None, attachments: list[Attachment]) ->
 def extract_trip(intake: IntakeFields | None, attachments: list[Attachment], llm: StepLLM) -> TripPlan:
     plan = llm.run_json("extract", SYSTEM_PROMPT, _build_prompt(intake, attachments), TripPlan,
                         validate=validate_trip, max_tokens=16000)
-    return dedupe_legs(plan)
+    return enrich_boat_legs(dedupe_legs(plan))

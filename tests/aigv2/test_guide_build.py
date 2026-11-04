@@ -89,7 +89,7 @@ def test_missing_hours_gives_marker_not_blank():
 def test_build_guide_wraps_day_pages():
     data = load()
     g = build_guide(data, SETTINGS)
-    assert [pg.kind for pg in g.pages] == ["letter", "toc", "day", "day", "day", "thank_you"]
+    assert [pg.kind for pg in g.pages] == ["letter", "toc", "day", "day", "day", "day", "thank_you"]
     letter = g.pages[0].components
     assert letter[0].paragraphs == [] and letter[1].markers == [MarkerRef(kind="WRITE_LETTER", text="")]
     assert g.client == "Test Client One" and g.title == data.title
@@ -199,3 +199,37 @@ def test_day1_late_arrival_cards():
     text = json.dumps(dumped, ensure_ascii=False)
     assert "Lands 00:10 on Fri 25 Sep" in text
     assert "driver is booked from 23:00 and will wait for your arrival at 00:10" in text
+
+
+def test_journey_strip_day5():
+    p = page(5)
+    comps = p.components
+    strip = next(c for c in comps if isinstance(c, m.JourneyStrip))
+    assert isinstance(comps[comps.index(strip) - 1], m.YourDay)
+    names = [s.name.text.upper() for s in strip.stops]
+    assert names == ["MAYURA UBUD RETREAT", "SANUR HARBOUR", "D'NUSA BEACH CLUB AND RESORT"]
+    assert strip.stops[0].time == "Leave 7:00 AM"
+    assert strip.stops[1].time == "Check-in 8:15 AM · Departs 9:15 AM"
+    assert len(strip.legs) == len(strip.stops) - 1
+    assert strip.legs[1] == ""  # the voucher states no crossing time: nothing invented
+    boat = next(c for c in comps if isinstance(c, m.BookingCard) and c.kind == "FAST BOAT")
+    labels = [f.label for f in boat.facts]
+    assert "Check in" in labels and "Departs" in labels and "Crossing" not in labels
+
+
+def test_journey_strip_road_leg_and_crossing_only_when_known():
+    from src.aigv2.planning.travel import Leg
+    data = load()
+    rd = day(data, 5)
+    legs = dict(rd.legs)
+    legs["boat_pickup"] = Leg(from_name="MAYURA UBUD RETREAT", to_name="Sanur Harbour", drive_min=60, kind="drive")
+    boat = rd.arrival if rd.arrival and rd.arrival.kind == "boat" else next(t for t in rd.other_transport if t.kind == "boat")
+    boat = boat.model_copy(update={"duration_min": 35})
+    other = [boat if t.kind == "boat" else t for t in rd.other_transport]
+    rd = rd.model_copy(update={"legs": legs, "other_transport": other, **({"arrival": boat} if rd.arrival else {})})
+    p = build_day_page(rd, data, SETTINGS)
+    strip = next(c for c in p.components if isinstance(c, m.JourneyStrip))
+    assert strip.legs[0].startswith("Approx. ") and "min" in strip.legs[0]
+    assert strip.legs[1] == "Approx. 35 min by boat"
+    card = next(c for c in p.components if isinstance(c, m.BookingCard) and c.kind == "FAST BOAT")
+    assert ("Crossing", "Approx. 35 min") in [(f.label, f.value) for f in card.facts]

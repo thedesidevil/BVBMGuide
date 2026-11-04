@@ -29,12 +29,20 @@ def _w(tag: str) -> str:
 
 
 def find_cormorant() -> list[Path]:
-    """TTFs found in ~/Library/Fonts, else the bundled assets/fonts folder, else []."""
-    for folder in (Path.home() / "Library" / "Fonts", ASSETS / "fonts"):
-        found = [folder / n for n in _FILES if (folder / n).is_file()]
-        if found:
-            return found
-    return []
+    """Per-file lookup: ~/Library/Fonts first, then bundled assets/fonts. [] if none."""
+    folders = []
+    try:
+        folders.append(Path.home() / "Library" / "Fonts")
+    except (RuntimeError, KeyError):
+        pass
+    folders.append(ASSETS / "fonts")
+    found = []
+    for name in _FILES:
+        for folder in folders:
+            if (folder / name).is_file():
+                found.append(folder / name)
+                break
+    return found
 
 
 def _fs_type(data: bytes) -> int:

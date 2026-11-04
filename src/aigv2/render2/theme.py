@@ -45,11 +45,13 @@ def contrast(fg: str, bg: str) -> float:
 
 
 # Every (text, background) pair the design uses; all must be >= 4.5:1.
-PAIRS: list[tuple[str, str]] = [
-    (INK, WHITE), (INK, FROST), (INK, HARBOUR_FILL),
-    (SLATE, WHITE), (SLATE, FROST), (SLATE, HARBOUR_FILL),
-    (ROYAL, WHITE), (ROYAL, FROST),
-    (GOLD_INK, WHITE), (GOLD_INK, FROST), (GOLD_INK, TAUPE_TINT),
-    (CRIMSON, WHITE), (CRIMSON, FROST),
-    (AMBER, NAVY), (POWDER, NAVY), (WHITE, NAVY),
-]
+_LIGHT = (WHITE, FROST, HARBOUR_FILL, TAUPE_TINT)
+PAIRS: list[tuple[str, str]] = (
+    [(fg, bg) for fg in (INK, NAVY, SLATE, GOLD_INK) for bg in _LIGHT]
+    + [(ROYAL, bg) for bg in _LIGHT]
+    + [(WHITE, ROYAL), (WHITE, NAVY), (POWDER, NAVY), (AMBER, NAVY)]
+    + [(CRIMSON, WHITE), (CRIMSON, FROST)]
+)
+
+# Crimson text is only legal on these grounds (on HARBOUR_FILL it is 4.49:1).
+CRIMSON_ALLOWED_BG = (WHITE, FROST)

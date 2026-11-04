@@ -9,8 +9,9 @@ from src.aigv2.render2 import theme as T
 from src.aigv2.render2.kit import PPR_ORDER, REVIEW_STYLE, el, insert_ordered, style
 
 PLACEHOLDER_TABLE = "Placeholder Card (internal)"
+PLACEHOLDER_STYLE = "Placeholder (internal)"
 STYLE_NAMES = ("Normal", "Heading 1", "Heading 2", "Heading 3", "Eyebrow", "Day Eyebrow", "Body", "BodyLead", "CardLabel",
-               "Fact Label", "Fact Value", REVIEW_STYLE)
+               "Fact Label", "Fact Value", REVIEW_STYLE, PLACEHOLDER_STYLE)
 
 
 def _outline(st, level: int) -> None:
@@ -72,4 +73,5 @@ def install_styles(doc) -> None:
           base="Normal")
     style(doc, "Fact Value", font=T.HEAD, size=13, color=T.INK, base="Normal")
     _review_marker_style(doc)
+    style(doc, PLACEHOLDER_STYLE, font=T.BODYF, size=10, color=T.SLATE, italic=True, base="Normal")
     _placeholder_table_style(doc)

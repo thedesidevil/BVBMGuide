@@ -1,4 +1,4 @@
-"""One-off: slice the saved Bali run into guide_data.json (Days 1, 2, 4 and 5 only, client anonymised).
+"""One-off: slice the saved Bali run into guide_data.json (Days 1, 2, 4, 5 and 7 only, client anonymised).
 
 Usage: python3 tests/aigv2/fixtures/bali_guide/make_fixture.py <run_dir>
 Read-only on the run folder. Mirrors src/aigv2/pipeline.py::_render_days / _render_qc.
@@ -7,13 +7,15 @@ import json
 import sys
 from pathlib import Path
 
+from src.aigv2.config import Settings
 from src.aigv2.money import city_currency, price_text
 from src.aigv2.pipeline import PlanState, _late_facts
 from src.aigv2.planning.boat import enrich_boat_legs
+from src.aigv2.planning.slots import schedule_day
 from src.aigv2.render.document import GuideData, RenderDay
 from src.aigv2.writing.days import DayText
 
-KEEP = (1, 2, 4, 5)
+KEEP = (1, 2, 4, 5, 7)
 
 
 class _NoFx:
@@ -33,10 +35,20 @@ def main(run: Path) -> None:
         picks = [p for p in state.picks if p.day_index == ds.index]
         cur = city_currency(ds.country, None) or ""
         prices = {c.lib["name"]: price_text(c.lib, cur, _NoFx(), ds.date) for p in picks for c in p.restaurants}
+        result = ds.result
+        if ds.index == 7:  # the saved run predates option groups: regroup the open choice and reschedule
+            dp = next(x for x in state.trip.days if x.date == ds.date).model_copy(deep=True)
+            for it in dp.items:
+                if it.optional and it.note.lower().startswith("choose one"):
+                    it.option_group = "choice-0"
+            result = schedule_day(dp, state.trip.hotels, t[ds.arrival] if ds.arrival is not None else None,
+                                  t[ds.departure] if ds.departure is not None else None, ds.places,
+                                  Settings(models={}), ds.country, state.trip.trip_scope == "domestic",
+                                  [t[i] for i in ds.other_legs])
         days.append(RenderDay(
             index=ds.index, date=ds.date, city=ds.city,
             text=DayText.model_validate(json.loads((run / f"days/day_{ds.index:02d}.json").read_text())),
-            result=ds.result, meals=picks, legs=ds.legs, places=ds.places, booking_by_item=ds.booking_by_item,
+            result=result, meals=picks, legs=ds.legs, places=ds.places, booking_by_item=ds.booking_by_item,
             arrival_booking=ds.arrival_booking, price_by_restaurant=prices,
             arrival=t[ds.arrival] if ds.arrival is not None else None,
             departure=t[ds.departure] if ds.departure is not None else None, prev_city=ds.prev_city,

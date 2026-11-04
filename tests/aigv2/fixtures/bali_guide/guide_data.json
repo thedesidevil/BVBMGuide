@@ -269,7 +269,8 @@
       "locality": "",
       "includes_meal": [],
       "pickup_time": null,
-      "pickup_place": ""
+      "pickup_place": "",
+      "option_group": null
      }
     ],
     "meal_rules": [
@@ -294,7 +295,8 @@
       "locality": "",
       "includes_meal": [],
       "pickup_time": null,
-      "pickup_place": ""
+      "pickup_place": "",
+      "option_group": null
      },
      {
       "name": "Ubud Palace",
@@ -308,7 +310,8 @@
       "locality": "",
       "includes_meal": [],
       "pickup_time": null,
-      "pickup_place": ""
+      "pickup_place": "",
+      "option_group": null
      },
      {
       "name": "Ubud Market",
@@ -322,7 +325,8 @@
       "locality": "",
       "includes_meal": [],
       "pickup_time": null,
-      "pickup_place": ""
+      "pickup_place": "",
+      "option_group": null
      }
     ],
     "meal_rules": [
@@ -347,7 +351,8 @@
       "locality": "",
       "includes_meal": [],
       "pickup_time": null,
-      "pickup_place": ""
+      "pickup_place": "",
+      "option_group": null
      },
      {
       "name": "Tirta Empul Temple",
@@ -361,7 +366,8 @@
       "locality": "",
       "includes_meal": [],
       "pickup_time": null,
-      "pickup_place": ""
+      "pickup_place": "",
+      "option_group": null
      },
      {
       "name": "Coffee Plantation",
@@ -375,7 +381,8 @@
       "locality": "",
       "includes_meal": [],
       "pickup_time": null,
-      "pickup_place": ""
+      "pickup_place": "",
+      "option_group": null
      }
     ],
     "meal_rules": [
@@ -400,7 +407,8 @@
       "locality": "",
       "includes_meal": [],
       "pickup_time": null,
-      "pickup_place": ""
+      "pickup_place": "",
+      "option_group": null
      },
      {
       "name": "Mangrove Boat Experience at Nusa Lembongan Mangrove Forest",
@@ -414,11 +422,69 @@
       "locality": "",
       "includes_meal": [],
       "pickup_time": null,
-      "pickup_place": ""
+      "pickup_place": "",
+      "option_group": null
      }
     ],
     "meal_rules": [
      "Breakfast"
+    ],
+    "drive_stops": []
+   },
+   {
+    "date": "2026-09-30",
+    "title": "Nusa Lembongan to Sanur",
+    "city": "Sanur",
+    "items": [
+     {
+      "name": "Dinner in Sanur",
+      "kind": "meal_out",
+      "city": "Sanur",
+      "time": null,
+      "slot_hint": "any",
+      "note": "At own expense.",
+      "optional": false,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     },
+     {
+      "name": "Icon Mall",
+      "kind": "activity",
+      "city": "Nusa Lembongan / Sanur",
+      "time": null,
+      "slot_hint": "afternoon",
+      "note": "Choose one: Icon Mall or Sindhu Market. At own expense.",
+      "optional": true,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     },
+     {
+      "name": "Sindhu Market",
+      "kind": "activity",
+      "city": "Nusa Lembongan / Sanur",
+      "time": null,
+      "slot_hint": "afternoon",
+      "note": "Choose one: Icon Mall or Sindhu Market. At own expense.",
+      "optional": true,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     }
+    ],
+    "meal_rules": [
+     "Breakfast",
+     "DINNER IN SANUR (AT OWN EXPENSE)"
     ],
     "drive_stops": []
    }
@@ -459,7 +525,8 @@
        "locality": "",
        "includes_meal": [],
        "pickup_time": null,
-       "pickup_place": ""
+       "pickup_place": "",
+       "option_group": null
       },
       "slot": "morning",
       "start": "09:00:00"
@@ -758,7 +825,8 @@
        "locality": "",
        "includes_meal": [],
        "pickup_time": null,
-       "pickup_place": ""
+       "pickup_place": "",
+       "option_group": null
       },
       "slot": "morning",
       "start": "09:00:00"
@@ -776,7 +844,8 @@
        "locality": "",
        "includes_meal": [],
        "pickup_time": null,
-       "pickup_place": ""
+       "pickup_place": "",
+       "option_group": null
       },
       "slot": "morning",
       "start": "10:30:00"
@@ -794,7 +863,8 @@
        "locality": "",
        "includes_meal": [],
        "pickup_time": null,
-       "pickup_place": ""
+       "pickup_place": "",
+       "option_group": null
       },
       "slot": "afternoon",
       "start": "14:00:00"
@@ -1861,7 +1931,8 @@
        "locality": "",
        "includes_meal": [],
        "pickup_time": null,
-       "pickup_place": ""
+       "pickup_place": "",
+       "option_group": null
       },
       "slot": "morning",
       "start": "09:00:00"
@@ -1879,7 +1950,8 @@
        "locality": "",
        "includes_meal": [],
        "pickup_time": null,
-       "pickup_place": ""
+       "pickup_place": "",
+       "option_group": null
       },
       "slot": "morning",
       "start": "10:30:00"
@@ -1897,7 +1969,8 @@
        "locality": "",
        "includes_meal": [],
        "pickup_time": null,
-       "pickup_place": ""
+       "pickup_place": "",
+       "option_group": null
       },
       "slot": "afternoon",
       "start": "14:00:00"
@@ -2753,7 +2826,8 @@
        "locality": "",
        "includes_meal": [],
        "pickup_time": null,
-       "pickup_place": ""
+       "pickup_place": "",
+       "option_group": null
       },
       "slot": "morning",
       "start": "07:00:00"
@@ -2771,7 +2845,8 @@
        "locality": "",
        "includes_meal": [],
        "pickup_time": null,
-       "pickup_place": ""
+       "pickup_place": "",
+       "option_group": null
       },
       "slot": "morning",
       "start": "11:05:00"
@@ -3638,6 +3713,871 @@
    "prev_city": "Ubud",
    "utc_offset_hours": null,
    "library_attractions": {},
+   "lands_next_day": false,
+   "driver_from": null
+  },
+  {
+   "index": 7,
+   "date": "2026-09-30",
+   "city": "Sanur",
+   "text": {
+    "title": "Nusa Lembongan to Sanur",
+    "intro": "We make our way from Nusa Lembongan to Sanur, with a choice of an afternoon stop at Icon Mall or Sindhu Market and dinner options for our family.",
+    "attractions": [
+     {
+      "name": "Icon Mall",
+      "description": "One option for the afternoon; the visit is at our own expense.",
+      "entry_fee": null,
+      "dress_code": null,
+      "tips": null,
+      "best_time": null,
+      "duration": null
+     },
+     {
+      "name": "Sindhu Market",
+      "description": "An informal local market with small shops, handicrafts, souvenirs and local goods. It is one option for the afternoon, at our own expense.",
+      "entry_fee": null,
+      "dress_code": null,
+      "tips": null,
+      "best_time": null,
+      "duration": null
+     }
+    ],
+    "restaurants": [
+     {
+      "name": "Sumak Turkish Cuisine Sanur",
+      "ambience": "Not specified in the verified details.",
+      "best_for": "Traditional Anatolian flavours, grilled meats, kebabs, meze and Turkish breads."
+     },
+     {
+      "name": "Warung Blanjong",
+      "ambience": "A garden-style setting.",
+      "best_for": "Authentic Balinese home-style cooking at a long-standing local favourite."
+     },
+     {
+      "name": "COSTA - Beach Restaurant Sanur",
+      "ambience": "An elegant open-air setting with a beachfront location and ocean views.",
+      "best_for": "Mediterranean, seafood and Italian cuisine."
+     }
+    ],
+    "free_time_idea": null
+   },
+   "result": {
+    "scheduled": [
+     {
+      "item": {
+       "name": "Icon Mall",
+       "kind": "activity",
+       "city": "Nusa Lembongan / Sanur",
+       "time": null,
+       "slot_hint": "afternoon",
+       "note": "Choose one: Icon Mall or Sindhu Market. At own expense.",
+       "optional": true,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": "choice-0"
+      },
+      "slot": "afternoon",
+      "start": "15:20:00"
+     },
+     {
+      "item": {
+       "name": "Sindhu Market",
+       "kind": "activity",
+       "city": "Nusa Lembongan / Sanur",
+       "time": null,
+       "slot_hint": "afternoon",
+       "note": "Choose one: Icon Mall or Sindhu Market. At own expense.",
+       "optional": true,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": "choice-0"
+      },
+      "slot": "afternoon",
+      "start": "15:20:00"
+     },
+     {
+      "item": {
+       "name": "Dinner in Sanur",
+       "kind": "meal_out",
+       "city": "Sanur",
+       "time": null,
+       "slot_hint": "any",
+       "note": "At own expense.",
+       "optional": false,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": null
+      },
+      "slot": "evening",
+      "start": "17:30:00"
+     }
+    ],
+    "meals": [
+     {
+      "meal": "breakfast",
+      "start": "07:30:00",
+      "anchors": [],
+      "included": true,
+      "unanchored": false
+     },
+     {
+      "meal": "dinner",
+      "start": "19:30:00",
+      "anchors": [
+       [
+        "TAKSU SANUR HOTEL",
+        [
+         -8.705838199999999,
+         115.25594930000001
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     }
+    ],
+    "tips": [],
+    "markers": []
+   },
+   "meals": [
+    {
+     "slot": {
+      "meal": "dinner",
+      "start": "19:30:00",
+      "anchors": [
+       [
+        "TAKSU SANUR HOTEL",
+        [
+         -8.705838199999999,
+         115.25594930000001
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     },
+     "day_index": 7,
+     "restaurants": [
+      {
+       "lib": {
+        "name": "Sumak Turkish Cuisine Sanur",
+        "city": "Sanur",
+        "cuisine_type": [
+         "Turkish"
+        ],
+        "price_range": "Approx. INR 700–1,500 pp",
+        "hours": "10:00 AM – 11:00 PM",
+        "ambience": "Elegant",
+        "area": "Taksu Sanur",
+        "highlights": [
+         "Traditional Anatolian flavours with a strong selection of grilled meats, kebabs, meze and Turkish breads"
+        ],
+        "must_try_dishes": [
+         "Adana Kebab",
+         "Mixed Grill",
+         "Lahmacun",
+         "Bursa Kebab",
+         "Beef/chicken Tava"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-10-20",
+        "_source_format": "new",
+        "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+       },
+       "place": {
+        "query": "Sumak Turkish Cuisine Sanur|Sanur",
+        "place_id": "ChIJ643Pe0JB0i0RqWHPIMakg1s",
+        "name": "Sumak Turkish Cuisine Sanur",
+        "address": "Jl. Sudamala No.26, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+        "lat": -8.7058343,
+        "lng": 115.2559592,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "11:00:00",
+            "23:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "http://www.sumakbali.com/",
+        "phone": "+62 811-3095-2626",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Sumak+Turkish+Cuisine+Sanur+Sanur&query_place_id=ChIJ643Pe0JB0i0RqWHPIMakg1s",
+        "fetched_at": "2026-11-02T10:00:41.391095Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 0,
+       "travel_label": "Walk",
+       "hours_text": "11:00 AM – 11:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Warung Blanjong",
+        "city": "Sanur",
+        "cuisine_type": [
+         "Balinese"
+        ],
+        "price_range": "INR 300–900 per person",
+        "hours": "07:00 AM – 10:00 PM",
+        "ambience": "Relaxed garden-style setting with a warm Balinese atmosphere",
+        "area": "Sanur",
+        "highlights": [
+         "Long-standing local favourite",
+         "Authentic Balinese home-style cooking",
+         "Garden-style setting"
+        ],
+        "must_try_dishes": [
+         "Nasi Campur Bali",
+         "Chicken Satay",
+         "Pepes Ikan (Balinese Fish in Banana Leaf)"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "notes": "Parking available",
+        "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+        "_source_date": "2026-07-01",
+        "_source_format": "new"
+       },
+       "place": {
+        "query": "Warung Blanjong|Sanur",
+        "place_id": "ChIJN-gjPWlB0i0RLkGLsPrdDJQ",
+        "name": "Warung Blanjong",
+        "address": "Jl. Danau Poso No.78, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali, Indonesia",
+        "lat": -8.705597,
+        "lng": 115.2560616,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "https://warungblanjong.shop/",
+        "phone": "+62 361 285613",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Warung+Blanjong+Sanur&query_place_id=ChIJN-gjPWlB0i0RLkGLsPrdDJQ",
+        "fetched_at": "2026-11-02T10:00:41.704470Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 1,
+       "travel_label": "Walk",
+       "hours_text": "7:00 AM – 10:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "COSTA - Beach Restaurant Sanur",
+        "city": "Sanur",
+        "cuisine_type": [
+         "Mediterranean",
+         "Seafood",
+         "Italian"
+        ],
+        "price_range": "INR 1,000–2,500 per person",
+        "hours": "10:00 AM – 11:00 PM",
+        "ambience": "Stylish beachfront restaurant combining Mediterranean charm with a relaxed tropical atmosphere, open-air setting with sea breeze",
+        "area": "Sanur",
+        "highlights": [
+         "Beachfront location",
+         "Ocean views",
+         "Elegant open-air setting",
+         "One of Sanur's most popular dining spots"
+        ],
+        "must_try_dishes": [
+         "Fresh Seafood",
+         "Handmade Pasta",
+         "Artisan Pizza"
+        ],
+        "meal_slots": [
+         "lunch"
+        ],
+        "notes": "Parking available",
+        "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+        "_source_date": "2026-07-01",
+        "_source_format": "new"
+       },
+       "place": {
+        "query": "COSTA - Beach Restaurant Sanur|Sanur",
+        "place_id": "ChIJK12jNaFB0i0REHd4u4szsJ0",
+        "name": "COSTA - Beach Restaurant Sanur",
+        "address": "Jl. Cemara No.3, Sanur, Denpasar Selatan, Kota Denpasar, Bali 80227, Indonesia",
+        "lat": -8.709971699999999,
+        "lng": 115.2581699,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "https://costasanur.com/",
+        "phone": "+62 877-7609-8232",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=COSTA+-+Beach+Restaurant+Sanur+Sanur&query_place_id=ChIJK12jNaFB0i0REHd4u4szsJ0",
+        "fetched_at": "2026-11-02T10:00:39.847424Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 6,
+       "travel_label": "By car",
+       "hours_text": "10:00 AM – 11:00 PM",
+       "hours_verify": false
+      }
+     ],
+     "markers": []
+    }
+   ],
+   "legs": {
+    "arrival": {
+     "from_name": "D'NUSA BEACH CLUB AND RESORT",
+     "to_name": "TAKSU SANUR HOTEL",
+     "walk_min": null,
+     "drive_min": null,
+     "transit_min": null,
+     "transit_steps": [],
+     "kind": "boat",
+     "km": null,
+     "ticketed": true,
+     "no_route": false,
+     "approx_min": null
+    },
+    "Sindhu Market": {
+     "from_name": "Icon Mall",
+     "to_name": "Sindhu Market",
+     "walk_min": 13,
+     "drive_min": 9,
+     "transit_min": null,
+     "transit_steps": [],
+     "kind": "",
+     "km": null,
+     "ticketed": true,
+     "no_route": false,
+     "approx_min": null
+    }
+   },
+   "places": {
+    "d'nusa beach club and resort|nusa lembongan": {
+     "query": "D'NUSA BEACH CLUB AND RESORT|Nusa Lembongan",
+     "place_id": "ChIJxaQtt3Jt0i0ROuMF_dXcows",
+     "name": "d'Nusa Beach Club and Resort",
+     "address": "Nusa Lembongan, Light House Beach, Br. Kaja, Jungutbatu, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771, Indonesia",
+     "lat": -8.6646133,
+     "lng": 115.4501372,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "https://dnusaresortlembongan.com/",
+     "phone": "+62 811-3989-168",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=D%27NUSA+BEACH+CLUB+AND+RESORT+Nusa+Lembongan&query_place_id=ChIJxaQtt3Jt0i0ROuMF_dXcows",
+     "fetched_at": "2026-11-02T10:57:25.109329Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "D'NUSA BEACH CLUB AND RESORT": {
+     "query": "D'NUSA BEACH CLUB AND RESORT|Nusa Lembongan",
+     "place_id": "ChIJxaQtt3Jt0i0ROuMF_dXcows",
+     "name": "d'Nusa Beach Club and Resort",
+     "address": "Nusa Lembongan, Light House Beach, Br. Kaja, Jungutbatu, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771, Indonesia",
+     "lat": -8.6646133,
+     "lng": 115.4501372,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "https://dnusaresortlembongan.com/",
+     "phone": "+62 811-3989-168",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=D%27NUSA+BEACH+CLUB+AND+RESORT+Nusa+Lembongan&query_place_id=ChIJxaQtt3Jt0i0ROuMF_dXcows",
+     "fetched_at": "2026-11-02T10:57:25.109329Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "taksu sanur hotel|sanur": {
+     "query": "TAKSU SANUR HOTEL|Sanur",
+     "place_id": "ChIJg_UKXL5B0i0RG1yXu705PfM",
+     "name": "Taksu Sanur Hotel",
+     "address": "Jl. Sudamala No.26, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+     "lat": -8.705838199999999,
+     "lng": 115.25594930000001,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "0": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "1": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "2": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "3": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "4": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "5": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "6": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": "http://www.taksusanur.com/",
+     "phone": "+62 361 283401",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=TAKSU+SANUR+HOTEL+Sanur&query_place_id=ChIJg_UKXL5B0i0RG1yXu705PfM",
+     "fetched_at": "2026-11-02T10:57:25.491222Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "TAKSU SANUR HOTEL": {
+     "query": "TAKSU SANUR HOTEL|Sanur",
+     "place_id": "ChIJg_UKXL5B0i0RG1yXu705PfM",
+     "name": "Taksu Sanur Hotel",
+     "address": "Jl. Sudamala No.26, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+     "lat": -8.705838199999999,
+     "lng": 115.25594930000001,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "0": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "1": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "2": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "3": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "4": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "5": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "6": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": "http://www.taksusanur.com/",
+     "phone": "+62 361 283401",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=TAKSU+SANUR+HOTEL+Sanur&query_place_id=ChIJg_UKXL5B0i0RG1yXu705PfM",
+     "fetched_at": "2026-11-02T10:57:25.491222Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "Dinner in Sanur": {
+     "query": "Dinner in Sanur|Sanur",
+     "place_id": "ChIJK12jNaFB0i0REHd4u4szsJ0",
+     "name": "COSTA - Beach Restaurant Sanur",
+     "address": "Jl. Cemara No.3, Sanur, Denpasar Selatan, Kota Denpasar, Bali 80227, Indonesia",
+     "lat": -8.709971699999999,
+     "lng": 115.2581699,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "6": [
+        [
+         "10:00:00",
+         "23:00:00"
+        ]
+       ],
+       "0": [
+        [
+         "10:00:00",
+         "23:00:00"
+        ]
+       ],
+       "1": [
+        [
+         "10:00:00",
+         "23:00:00"
+        ]
+       ],
+       "2": [
+        [
+         "10:00:00",
+         "23:00:00"
+        ]
+       ],
+       "3": [
+        [
+         "10:00:00",
+         "23:00:00"
+        ]
+       ],
+       "4": [
+        [
+         "10:00:00",
+         "23:00:00"
+        ]
+       ],
+       "5": [
+        [
+         "10:00:00",
+         "23:00:00"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": "https://costasanur.com/",
+     "phone": "+62 877-7609-8232",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=Dinner+in+Sanur+Sanur&query_place_id=ChIJK12jNaFB0i0REHd4u4szsJ0",
+     "fetched_at": "2026-11-02T09:38:19.790181Z",
+     "match_ok": false,
+     "verify_note": null
+    },
+    "Icon Mall": {
+     "query": "Icon Mall|Nusa Lembongan / Sanur",
+     "place_id": "ChIJybN_QQBB0i0RVIazfZeP1Ak",
+     "name": "Icon Mall Beach",
+     "address": "Jl. Segara Ayu No.36, Sanur, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+     "lat": -8.687020799999999,
+     "lng": 115.2652821,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "6": [
+        [
+         "10:00:00",
+         "22:00:00"
+        ]
+       ],
+       "0": [
+        [
+         "10:00:00",
+         "22:00:00"
+        ]
+       ],
+       "1": [
+        [
+         "10:00:00",
+         "22:00:00"
+        ]
+       ],
+       "2": [
+        [
+         "10:00:00",
+         "22:00:00"
+        ]
+       ],
+       "3": [
+        [
+         "10:00:00",
+         "22:00:00"
+        ]
+       ],
+       "4": [
+        [
+         "10:00:00",
+         "22:00:00"
+        ]
+       ],
+       "5": [
+        [
+         "10:00:00",
+         "22:00:00"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": null,
+     "phone": null,
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=Icon+Mall+Nusa+Lembongan+%2F+Sanur&query_place_id=ChIJybN_QQBB0i0RVIazfZeP1Ak",
+     "fetched_at": "2026-11-02T15:30:09.696873Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "Sindhu Market": {
+     "query": "Sindhu Market|Nusa Lembongan / Sanur",
+     "place_id": "ChIJh9SNZDVA0i0RzptNzMnYR8M",
+     "name": "Sindhu Night Market",
+     "address": "8776+W29, Jl. Pasar No.2, Sanur, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+     "lat": -8.6851101,
+     "lng": 115.259878,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "6": [
+        [
+         "17:00:00",
+         "22:00:00"
+        ]
+       ],
+       "0": [
+        [
+         "17:00:00",
+         "22:00:00"
+        ]
+       ],
+       "1": [
+        [
+         "17:00:00",
+         "22:00:00"
+        ]
+       ],
+       "2": [
+        [
+         "17:00:00",
+         "22:00:00"
+        ]
+       ],
+       "3": [
+        [
+         "17:00:00",
+         "22:00:00"
+        ]
+       ],
+       "4": [
+        [
+         "17:00:00",
+         "22:00:00"
+        ]
+       ],
+       "5": [
+        [
+         "17:00:00",
+         "22:00:00"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": null,
+     "phone": null,
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=Sindhu+Market+Nusa+Lembongan+%2F+Sanur&query_place_id=ChIJh9SNZDVA0i0RzptNzMnYR8M",
+     "fetched_at": "2026-11-02T15:30:10.015083Z",
+     "match_ok": true,
+     "verify_note": null
+    }
+   },
+   "booking_by_item": {},
+   "arrival_booking": null,
+   "price_by_restaurant": {
+    "Sumak Turkish Cuisine Sanur": "₹700–1,500",
+    "Warung Blanjong": "₹300–900",
+    "COSTA - Beach Restaurant Sanur": "₹1,000–2,500"
+   },
+   "arrival": null,
+   "departure": null,
+   "other_transport": [
+    {
+     "kind": "boat",
+     "from_place": "Nusa Lembongan",
+     "to_place": "Sanur Harbour",
+     "depart": "2026-09-30T12:00:00",
+     "arrive": null,
+     "ref": "IND/PB/2026/2411",
+     "source": "voucher",
+     "pax_label": "",
+     "operator": "",
+     "number": "",
+     "seat": "",
+     "platform": "",
+     "duration_min": null,
+     "check_in": "2026-09-30T11:00:00"
+    }
+   ],
+   "prev_city": "Nusa Lembongan",
+   "utc_offset_hours": null,
+   "library_attractions": {
+    "Sindhu Market": {
+     "name": "Sindhu Market",
+     "city": "Sanur",
+     "description": "Informal local market with small shops, handicrafts, souvenirs and local goods.",
+     "hours": "5:00 PM – 10:00 PM",
+     "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+     "_source_date": "2026-10-20",
+     "_source_format": "new",
+     "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+    }
+   },
    "lands_next_day": false,
    "driver_from": null
   }

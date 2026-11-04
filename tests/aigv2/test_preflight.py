@@ -124,6 +124,17 @@ def test_open_choice_applied():
     assert len(plan.days[0].items) == 3
 
 
+def test_open_choice_both_shares_a_group_and_single_does_not():
+    day = DayPlan(date=date(2026, 10, 10), title="t", city="Paris", items=[])
+    plan = make(days=[day, *make().days[1:]],
+                open_choices=[OpenChoice(day=date(2026, 10, 10), text="views", options=["Top of the Rock", "Empire State Building"])])
+    qs = ask(plan)
+    both = apply_answers(plan, qs, {"open_choice:0": "both"}).days[0].items
+    assert len(both) == 2 and {i.option_group for i in both} == {"choice-0"}
+    one = apply_answers(plan, qs, {"open_choice:0": "Top of the Rock"}).days[0].items
+    assert [i.option_group for i in one] == [None]
+
+
 def test_vague_day_answer():
     plan = make(vague_days=[date(2026, 10, 11)])
     qs = ask(plan)

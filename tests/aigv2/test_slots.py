@@ -472,3 +472,27 @@ def test_leave_by_uses_buffer_and_road_time_rounded_down():
     assert leave_by(dep, False, 83) == time(8, 50)
     assert leave_by(dep, True, 40) == time(10, 35)
     assert leave_by(leg(kind="train", depart=datetime(2026, 10, 1, 9, 0)), False, 20) == time(8, 0)
+
+
+def test_option_group_members_share_a_start_and_advance_the_clock_once():
+    r = run(day([item("A", slot_hint="afternoon"),
+                 item("B", optional=True, slot_hint="afternoon", option_group="choice-0"),
+                 item("C", optional=True, slot_hint="afternoon", option_group="choice-0"),
+                 item("Fado show", slot_hint="afternoon")]))
+    got = {s.item.name: s.start for s in r.scheduled}
+    assert got["B"] == got["C"] == time(15, 30)
+    assert got["Fado show"] == time(17, 0)
+    assert {s.item.name: s.option_group for s in r.scheduled}["B"] == "choice-0"
+
+
+def test_ungrouped_optional_items_stay_sequential():
+    r = run(day([item("B", optional=True, slot_hint="afternoon"), item("C", optional=True, slot_hint="afternoon")]))
+    assert r.scheduled[0].start != r.scheduled[1].start
+
+
+def test_grouped_late_opener_stays_with_its_group():
+    pl = places("Hotel H", "Icon Mall")
+    pl["Sindhu Market"] = _with_hours("Sindhu Market", time(17, 0), time(22, 0))
+    r = run(day([item("Icon Mall", optional=True, slot_hint="afternoon", option_group="g"),
+                 item("Sindhu Market", optional=True, slot_hint="afternoon", option_group="g")]), pl=pl)
+    assert r.scheduled[0].start == r.scheduled[1].start

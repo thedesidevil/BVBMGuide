@@ -61,6 +61,7 @@ class _Day:
         self.plan = next((p for p in data.trip.days if p.date == rd.date), None)
         self.out: list = []
         self.free_time_used = False
+        self._after_boat: Optional[tuple[TransportLeg, object]] = None
 
     # ---- helpers
     def marks(self, markers) -> None:
@@ -125,7 +126,11 @@ class _Day:
             if arr:
                 self._arrival(arr)
             else:
-                self._check_in()
+                boat = self._arrival_boat()
+                if boat is None:
+                    self._check_in()
+                else:
+                    self._after_boat = (boat, self._check_in)
         self._drive_stops()
         self._timeline()
         if rd.text.free_time_idea and not self.free_time_used:
@@ -217,6 +222,14 @@ class _Day:
         if (arr and arr.arrive) or (dep and dep.depart):
             self.marks([_verify("docking and all-aboard times")])
 
+    def _arrival_boat(self) -> Optional[TransportLeg]:
+        """The boat that carries the group to a new city today (the hotel cards then follow the boat card)."""
+        rd = self.rd
+        if not rd.prev_city or norm_name(rd.prev_city) == norm_name(rd.city):
+            return None
+        return next((t for t in rd.other_transport
+                     if t.kind == "boat" and t.depart and t.depart.date() == rd.date), None)
+
     def _check_in(self) -> None:
         stay = next((s for s in self.data.trip.hotels if s.check_in == self.rd.date), None)
         if stay is None:
@@ -231,6 +244,15 @@ class _Day:
                                       kind="Check-in", title=g.Link(text=stay.hotel, url=self._url(stay.hotel)),
                                       facts=facts))
         self.marks(self._hotel_markers(stay.hotel))
+
+    def _hotel_check_in_card(self) -> None:
+        stay = next((s for s in self.data.trip.hotels if s.check_in == self.rd.date), None)
+        if stay is None:
+            return
+        facts = [g.Fact(label="Check-in", value=f"from {_fmt12(stay.check_in_time)}")] if stay.check_in_time else []
+        self.out.append(g.BookingCard(when=_fmt12(stay.check_in_time) if stay.check_in_time else "Check-in",
+                                      kind="Check-in", title=g.Link(text=stay.hotel, url=self._url(stay.hotel)),
+                                      facts=facts))
 
     def _transfer(self, title, url, leg: Optional[Leg], body, hotel, pickup=None, when="Transfer") -> None:
         if leg is None:
@@ -346,21 +368,65 @@ class _Day:
         entries += [((t.depart or t.arrive).time(), -1, i, t) for i, t in enumerate(rd.other_transport)
                     if t.depart or t.arrive]
         slot = None
+        done_groups: set[str] = set()
         for _, _, _, e in sorted(entries, key=lambda x: x[:3]):
             if isinstance(e, TransportLeg):
                 self._transport(e, e.to_place)
                 self.marks([_verify(f"day-trip transport {e.from_place or '?'} → {e.to_place or '?'}: confirm "
                                     "times and how to reach the departure point")])
                 slot = None
+                if self._after_boat and e is self._after_boat[0]:
+                    after, self._after_boat = self._after_boat[1], None
+                    after()
+                    self._hotel_check_in_card()
             elif isinstance(e, ScheduledItem):
                 part = None
                 if e.slot != slot:
                     slot = e.slot
                     part = _LATE if self._late_night_item(e) else _SLOT_TITLE[slot]
+                if e.option_group:
+                    if e.option_group not in done_groups:
+                        done_groups.add(e.option_group)
+                        self._option_cards(e)
+                    continue
                 self._item(e, part)
             else:
                 self._meal(e)
                 slot = None
+
+    def _option_cards(self, first: ScheduledItem) -> None:
+        """One OptionCards block for every scheduled item sharing the first item's option_group."""
+        rd = self.rd
+        members = [m for m in rd.result.scheduled if m.option_group == first.option_group]
+        options: list[g.Option] = []
+        marks: list = []
+        for n, m in enumerate(members, 1):
+            saved, self.out = self.out, []
+            try:
+                self._item(m, None)
+                card = next((c for c in self.out if c.type == "SightseeingCard"), None)
+            finally:
+                self.out = saved
+            if card is None:
+                continue
+            p = rd.places.get(m.item.name)
+            note = None
+            if p is not None and p.match_ok and p.hours and is_open_for(p.hours, rd.date, m.start, 30) is False:
+                opening = next_opening(p.hours, rd.date, m.start)
+                if opening:
+                    note = f"Best visited later in the day: it opens at {_fmt12(opening)}"
+            options.append(g.Option(label=f"OPTION {n}", name=card.name,
+                                    facts=[f for f in card.facts if f.label != "Note"], text=card.text, note=note))
+            marks += card.markers
+        if not options:
+            return
+        own = any("own expense" in f"{m.item.note}".lower() for m in members)
+        self.out.append(g.OptionCards(
+            eyebrow=f"{_SLOT_TITLE[first.slot].upper()}  ·  YOUR CHOICE",
+            heading=" or ".join(o.name.text for o in options),
+            chip="At your own expense" if own else None, own_expense=own, options=options))
+        if marks:
+            self.out.append(g.ReviewMarkerBlock(markers=marks))
 
     def _late_night_item(self, s: ScheduledItem) -> bool:
         arr = self.rd.arrival

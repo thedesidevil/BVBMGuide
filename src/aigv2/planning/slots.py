@@ -42,6 +42,10 @@ class ScheduledItem(BaseModel):
     slot: Slot
     start: time
 
+    @property
+    def option_group(self) -> Optional[str]:
+        return self.item.option_group
+
 
 class MealSlot(BaseModel):
     meal: Literal["breakfast", "lunch", "dinner"]
@@ -131,13 +135,21 @@ def _schedule_items(day: DayPlan, settings: Settings, floor: Optional[time] = No
     if floor is not None:
         # transfers to the new hotel come first, then the other untimed items, all after the boat lands
         placed = [p for p in placed if p[2]] + sorted([p for p in placed if not p[2]], key=lambda p: p[0].kind != "transfer")
+    group_at: dict[str, ScheduledItem] = {}
     for it, slot, start in placed:
+        first = group_at.get(it.option_group) if it.option_group else None
+        if first is not None:
+            # open choices share one stop: same start, the clock does not advance again
+            out.append(ScheduledItem(item=it, slot=first.slot, start=first.start))
+            continue
         if floor is not None and start is None:
             start = _plus(floor, _ITEM_MINUTES * after_boat)
             if it.kind == "meal_out":
                 start = max(start, _t(settings.slot_windows["evening"][0]))
             after_boat += 1
             out.append(ScheduledItem(item=it, slot=_slot_for(start, settings), start=start))
+            if it.option_group:
+                group_at[it.option_group] = out[-1]
             continue
         if slot is None:
             slot = "morning" if counts["morning"] < _MORNING_CAP else "afternoon"
@@ -146,6 +158,8 @@ def _schedule_items(day: DayPlan, settings: Settings, floor: Optional[time] = No
             start = _plus(_t(settings.slot_windows[slot][0]), _ITEM_MINUTES * used[slot])
         used[slot] += 1
         out.append(ScheduledItem(item=it, slot=slot, start=start))
+        if it.option_group:
+            group_at[it.option_group] = out[-1]
     return sorted(out, key=lambda s: s.start)
 
 
@@ -162,7 +176,7 @@ def _shift_late_openers(res: "DayResult", d: date, places: dict[str, Optional[Pl
     changed = False
     for i, s in enumerate(res.scheduled):
         it = s.item
-        if not is_optional(it) or it.kind not in ("attraction", "activity") or parse_time(it.time) or parse_time(it.pickup_time):
+        if it.option_group or not is_optional(it) or it.kind not in ("attraction", "activity") or parse_time(it.time) or parse_time(it.pickup_time):
             continue
         p = places.get(it.name)
         if not (p and p.match_ok and p.hours):

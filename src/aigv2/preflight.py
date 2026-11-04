@@ -460,7 +460,7 @@ def _readable(option: str) -> str:
     return option.title() if option.isupper() else option
 
 
-def _apply_open_choice(dp: DayPlan, oc: OpenChoice, selected: list[str]) -> None:
+def _apply_open_choice(dp: DayPlan, oc: OpenChoice, selected: list[str], n: int = 0) -> None:
     others = [o for o in oc.options if o not in selected]
     dp.items = [it for it in dp.items if not any(_same(it.name, o) for o in others)]
     missing = [o for o in selected if not any(_same(it.name, o) for it in dp.items)]
@@ -474,6 +474,7 @@ def _apply_open_choice(dp: DayPlan, oc: OpenChoice, selected: list[str]) -> None
         dp.items.append(PlannedItem(
             name=_readable(o), kind="activity", city=dp.city, slot_hint="afternoon",
             optional=len(selected) > 1, note=note,
+            option_group=f"choice-{n}" if len(selected) > 1 else None,
         ))
 
 
@@ -510,7 +511,7 @@ def apply_answers(plan: TripPlan, questions: list[Question], answers: Answers) -
             oc = plan.open_choices[n]
             for dp in out.days:
                 if oc.day is None or dp.date == oc.day:
-                    _apply_open_choice(dp, oc, _selected_options(ans, oc.options))
+                    _apply_open_choice(dp, oc, _selected_options(ans, oc.options), n)
             drop_choices.add(n)
         elif kind == "vague_day":
             vd = _iso(suffix, q.id)

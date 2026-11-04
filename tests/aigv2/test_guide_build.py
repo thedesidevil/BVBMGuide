@@ -89,7 +89,7 @@ def test_missing_hours_gives_marker_not_blank():
 def test_build_guide_wraps_day_pages():
     data = load()
     g = build_guide(data, SETTINGS)
-    assert [pg.kind for pg in g.pages] == ["letter", "toc", "day", "day", "day", "day", "thank_you"]
+    assert [pg.kind for pg in g.pages] == ["letter", "toc", "day", "day", "day", "day", "day", "thank_you"]
     letter = g.pages[0].components
     assert letter[0].paragraphs == [] and letter[1].markers == [MarkerRef(kind="WRITE_LETTER", text="")]
     assert g.client == "Test Client One" and g.title == data.title
@@ -233,3 +233,26 @@ def test_journey_strip_road_leg_and_crossing_only_when_known():
     assert strip.legs[1] == "Approx. 35 min by boat"
     card = next(c for c in p.components if isinstance(c, m.BookingCard) and c.kind == "FAST BOAT")
     assert ("Crossing", "Approx. 35 min") in [(f.label, f.value) for f in card.facts]
+
+
+def test_day7_option_cards():
+    comps = page(7).components
+    types = [c.type for c in comps]
+    assert types.count("OptionCards") == 1
+    oc = next(c for c in comps if c.type == "OptionCards")
+    assert len(oc.options) == 2 and oc.own_expense is True
+    assert oc.eyebrow.startswith("AFTERNOON") and oc.eyebrow.endswith("YOUR CHOICE")
+    assert oc.heading == "Icon Mall or Sindhu Market"
+    hours = {o.name.text: next(f.value for f in o.facts if f.label == "Opening hours") for o in oc.options}
+    assert hours == {"Icon Mall": "10:00 AM – 10:00 PM", "Sindhu Market": "5:00 PM – 10:00 PM"}
+    notes = {o.name.text: o.note for o in oc.options}
+    assert notes["Icon Mall"] is None and "Best visited later in the day" in notes["Sindhu Market"]
+    assert "5:00 PM" in notes["Sindhu Market"]
+    # no separate cards for the two options
+    assert not [c for c in comps if c.type == "SightseeingCard" and c.name.text in hours]
+    at = types.index("OptionCards")
+    boat = next(i for i, c in enumerate(comps) if c.type == "BookingCard" and c.kind == "FAST BOAT")
+    transfer = next(i for i, c in enumerate(comps) if c.type == "BookingCard" and c.kind == "Transfer" and "TAKSU" in c.title.text.upper())
+    checkin = next(i for i, c in enumerate(comps) if c.type == "BookingCard" and c.kind == "Check-in")
+    dinner = next(i for i, c in enumerate(comps) if c.type == "MealBlock" and c.meal == "dinner")
+    assert boat < transfer < checkin < at < dinner

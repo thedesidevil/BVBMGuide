@@ -98,6 +98,7 @@ class PlannedItem(BaseModel):
     includes_meal: list[Literal["breakfast", "lunch", "dinner"]] = Field(default_factory=list)
     pickup_time: Optional[str] = None
     pickup_place: str = ""
+    option_group: Optional[str] = None
 
 
 class Stop(BaseModel):

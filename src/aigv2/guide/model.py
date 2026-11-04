@@ -121,6 +121,7 @@ class OptionCards(_M):
     eyebrow: str
     heading: str
     chip: Optional[str] = None
+    own_expense: bool = False
     options: list[Option]
 
 

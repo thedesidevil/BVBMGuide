@@ -21,6 +21,11 @@ _TRANSPORT_FACTS = {"DEPARTS", "ARRIVES", "SERVICE", "OPERATOR"}
 _TRANSPORT_TITLE = re.compile(r"^(Flight|Train|Boat|Bus|Transfer)(: .+)?$")
 _SLOT_WORDS = {"morning", "afternoon", "evening", "late night"}
 _SLOT_CLOSE = re.compile(r"^(Leave for the airport by|Reach the (station|harbor|harbour) by|Leave by|Overnight (in|on board))")
+_DAY_EYEBROW = re.compile(r"DAY\s*(\d+)\s*[·•\-–—]\s*([A-Za-z]+),?\s*(\d{1,2})\s+([A-Za-z]+)", re.I)
+_EYEBROW_STYLES = {"eyebrow", "day eyebrow"}
+_PLACEHOLDER_TABLE = "placeholder card"
+_BOOKING_REF = re.compile(r"^BOOKING REFERENCE\s+(.+)$", re.I)
+_ALIASES = {"PER PERSON": "PRICE", "FOR TWO": "PRICE FOR TWO", "OPEN": "OPENING HOURS", "FROM HERE": "GETTING THERE"}
 _HEADING_STYLE = re.compile(r"^heading\s*([1-3])$", re.I)
 _SUBTITLE = re.compile(r"^All[\s-]*Inclusive Guide\b", re.I)
 _KICKER = "your all-inclusive guide"
@@ -124,6 +129,14 @@ class _Reader:
         self.section = ""
         self.slot: Optional[DocSlot] = None
         self.travel: Optional[DocPara] = None
+        self.pending_day: Optional[tuple[int, str, str, str]] = None
+        self.pending_text = ""
+
+    def _style_name(self, p) -> str:
+        ppr = p.pPr if p.tag == qn("w:p") else None
+        ps = ppr.find(qn("w:pStyle")) if ppr is not None else None
+        sid = (ps.get(qn("w:val")) or "") if ps is not None else ""
+        return self.styles.get(sid, (sid, None))[0].casefold()
 
     def _links(self, p) -> list[tuple[str, str]]:
         out = []
@@ -246,6 +259,12 @@ class _Reader:
         text = _ptext(p)
         links = self._links(p)
         self.links.extend(links)
+        if text and self._style_name(p) == "day eyebrow":
+            m = _DAY_EYEBROW.search(text)
+            if m:  # new layout: "DAY N · WEEKDAY, D MONTH" sits above the title heading
+                self.pending_day = (int(m.group(1)), m.group(2)[:3].title(), m.group(3), m.group(4)[:3].title())
+                self.pending_text = text
+                return
         level = self._level(p, text)
         if level == 0 and not self.title:
             self.title = text
@@ -255,12 +274,19 @@ class _Reader:
             self.headings.append((1, text))
             self.slot = None
             m = DAY_RE.match(text)
+            pend, self.pending_day = self.pending_day, None
             if m:
                 self.day = DocDay(header=text, index=int(m.group(1)))
+                self.days.append(self.day)
+            elif pend:
+                n, wd, d, mon = pend
+                self.day = DocDay(header=f"Day {n} – {wd}, {d} {mon} | {text}", index=n)
                 self.days.append(self.day)
             else:
                 self.day, self.section = None, text
                 self.sections.setdefault(text, [])
+            if pend:
+                self._record(self.pending_text)
             self._record(text)
             return
         if level in (2, 3) and text:
@@ -291,17 +317,65 @@ class _Reader:
 
     def _table(self, tbl) -> None:
         cells = _cells(tbl)
-        if len(cells) == 1:
-            self._card(cells[0])
+        if self._style_name_tbl(tbl) == _PLACEHOLDER_TABLE:
+            return  # staff-only dashed placeholder: the ADD RESTAURANT marker paragraph above it is the one marker
+        rows = tbl.findall(qn("w:tr"))
+        if len(cells) == 1 or (cells and all(len(r.findall(qn("w:tc"))) == 1 for r in rows)):
+            self._card(cells[0], cells[1:])
             return
         for p in _all_paras(tbl):
             self.links.extend(self._links(p))
             self._record(_ptext(p))
 
-    def _card(self, tc) -> None:
+    def _style_name_tbl(self, tbl) -> str:
+        ps = tbl.find(qn("w:tblPr") + "/" + qn("w:tblStyle"))
+        sid = (ps.get(qn("w:val")) or "") if ps is not None else ""
+        return self.styles.get(sid, (sid, None))[0].casefold().replace(" (internal)", "")
+
+    def _restaurant_rows(self, nt) -> list[DocVenue]:
+        """New meal card: a nested table of rows [name + blurb | PER PERSON / OPEN / FROM HERE stack]."""
+        out = []
+        for tr in nt.findall(qn("w:tr")):
+            tcs = tr.findall(qn("w:tc"))
+            if len(tcs) != 2:
+                return []
+            left = [p for p in _all_paras(tcs[0]) if _ptext(p)]
+            links = [(t, u) for p in left[:1] for t, u in self._links(p) if MAPS_RE.match(u)]
+            if not links:
+                return []
+            facts = {}
+            lines = [t for t in (_ptext(p) for p in _all_paras(tcs[1])) if t]
+            i = 0
+            while i < len(lines) - 1:
+                if _is_label(lines[i]):
+                    facts[lines[i]] = lines[i + 1]
+                    if lines[i] in _ALIASES:
+                        facts[_ALIASES[lines[i]]] = lines[i + 1]
+                    i += 2
+                else:
+                    i += 1
+            for p in left:
+                self.links.extend(self._links(p))
+            for p in _all_paras(tcs[1]):
+                self.links.extend(self._links(p))
+            texts = [_ptext(p) for p in left]
+            out.append(DocVenue(name=links[0][0] or texts[0], url=links[0][1], facts=facts,
+                                body="\n".join(texts[1:]), travel=facts.get("FROM HERE", ""), kind="venue"))
+            for p in [*left, *_all_paras(tcs[1])]:
+                self._record(_ptext(p), venue=out[-1].name)
+        return out
+
+    def _card(self, tc, extra=()) -> None:
         title, url, facts, body, paras = None, None, {}, [], []
+        eyebrow = False
         for el in _children(tc):
             if el.tag == qn("w:tbl"):
+                if title is None:
+                    rest = self._restaurant_rows(el)
+                    if rest:
+                        for v in rest:
+                            self._add_venue(v)
+                        continue
                 for p in _all_paras(el):
                     self.links.extend(self._links(p))
                     paras.append(self._record(_ptext(p)))
@@ -313,13 +387,29 @@ class _Reader:
             text = _ptext(el)
             links = self._links(el)
             self.links.extend(links)
-            if title is None and text:
+            if text and self._style_name(el) in _EYEBROW_STYLES:
+                eyebrow = True  # a kicker line, never the card title
+            elif title is None and text:
                 title, url = text, (links[0][1] if links else None)
                 if self._style_level(el) == 3:
                     self.headings.append((3, text))
             elif text:
                 body.append(text)
             paras.append(self._record(text))
+        for xc in extra:  # further rows of a one-column card, e.g. "BOOKING REFERENCE ..."
+            for p in _all_paras(xc):
+                text = _ptext(p)
+                self.links.extend(self._links(p))
+                m = _BOOKING_REF.match(text)
+                if m:
+                    facts["REFERENCE"] = m.group(1).strip()
+                elif text:
+                    body.append(text)
+                paras.append(self._record(text))
+        if title and eyebrow and not url and not facts:
+            title = None  # an unlinked note card ("Overnight in Ubud"), not a place
+        if title and eyebrow and self.slot is not None and MEAL_SLOT_RE.match(self.slot.heading):
+            self.slot = None  # a timed card after the restaurants starts a new part of the day
         if title:
             for para in paras:
                 if para is not None:
@@ -335,6 +425,8 @@ def _card_kind(title: str, facts: dict[str, str]) -> str:
         return "transfer"
     if "CHECK-IN" in facts:
         return "hotel"
+    if "→" in title and not facts:
+        return "transfer"
     return "venue"
 
 

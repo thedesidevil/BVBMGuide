@@ -295,10 +295,9 @@ def test_card_title_and_facts_are_reader_independent():
 import pytest  # noqa: E402
 
 
-@pytest.mark.xfail(strict=True, reason="Task 23 adapts qc/reader.py _card to skip Eyebrow paragraphs")
 def test_qc_reader_sees_card_title_and_facts():
     m = _qc_model()
-    v = m.section_venues[0]
+    v = (m.section_venues or m.days[0].slots[0].venues)[0]
     assert v.name == "Tegalalang Terraces"
     assert v.url == "https://m.example/t"
     assert v.facts.get("GETTING THERE") == "30 min by car"

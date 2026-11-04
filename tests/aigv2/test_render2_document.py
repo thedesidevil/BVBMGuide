@@ -128,7 +128,6 @@ def test_reader_reads_without_error_and_headings_present(blob, guide):
     assert read_docx(blob) is not None
 
 
-@pytest.mark.xfail(strict=True, reason="Task 23 adapts qc/reader.py to the render2 layout")
 def test_reader_sees_all_days_and_slots(blob, guide):
     from src.aigv2.qc.reader import read_docx
     m = read_docx(blob)

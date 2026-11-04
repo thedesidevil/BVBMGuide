@@ -255,6 +255,9 @@ def _day_view(trip: TripPlan, d: date, city: str, prev_city: Optional[str], arri
     if arrival is not None and trip.transport[arrival].to_place.strip():
         name = trip.transport[arrival].to_place
         view[pkey(name, city)] = view[name] = places.get(pkey(name, city))
+    for t in trip.transport:  # a boat's harbour is resolved by _plan for every boat day, even a day trip
+        if t.kind == "boat" and t.from_place.strip() and _leg_date(t) == d:
+            view.setdefault(pkey(t.from_place, prev_city or city), places.get(pkey(t.from_place, prev_city or city)))
     dp = next((x for x in trip.days if x.date == d), None)
     for it in (dp.items if dp else []):
         view[it.name] = places.get(pkey(it.name, it.city or city))

@@ -1077,8 +1077,46 @@ def test_boat_regex_helpers():
     assert parse_check_in(["Hotel check-in at 2:00 PM"]) is None
     assert parse_check_in(["Be early"]) is None
     assert parse_crossing_min(["The crossing takes approx. 30 min."]) == 30
-    assert parse_crossing_min(["Journey about 45 minutes"]) == 45
+    assert parse_crossing_min(["Boat journey about 45 minutes"]) == 45
     assert parse_crossing_min(["Crossing takes 30-45 min"]) is None
     assert parse_crossing_min(["Boat departs at 09:15"]) is None
     assert parse_boat_type(["Shared fast boat ETD"]) == "Shared fast boat"
     assert parse_boat_type(["nothing"]) is None
+
+
+def test_boat_pickup_leg_when_boat_is_a_day_leg(deps):
+    d = [D0 + timedelta(days=i) for i in range(3)]
+    trip = two_city_trip()
+    trip.hotels = [HotelStay(city="Ubud", hotel="Ubud Retreat", check_in=d[0], check_out=d[1], source="voucher"),
+                   HotelStay(city="Lembongan", hotel="Lembongan Resort", check_in=d[1], check_out=d[2], source="voucher")]
+    trip.transport = [TransportLeg(kind="boat", from_place="Sanur Harbour", to_place="Lembongan",
+                                   depart=datetime.combine(d[1], time(9, 15)), source="voucher"),
+                       TransportLeg(kind="boat", from_place="Lembongan", to_place="Sanur Harbour",
+                                    depart=datetime.combine(d[2], time(12, 0)), source="voucher")]
+    trip.days = [DayPlan(date=x, title="x", city=c) for x, c in zip(d, ["Ubud", "Lembongan", "Lembongan"])]
+    deps.places, deps.routes = CityPlaces(), RecordingRoutes()
+    store = seeded(deps, trip)
+    build_run(store, {}, deps)
+    state = pipeline._load_plan(store)
+    day = state.days[1]
+    assert day.other_legs == [0] and "boat_pickup" in day.legs
+    assert day.legs["boat_pickup"].to_name == "Sanur Harbour"
+    minutes = day.legs["boat_pickup"].drive_min
+    assert minutes
+    from src.aigv2.guide import model as m
+    from src.aigv2.guide.build import build_day_page
+    from src.aigv2.render.document import RenderDay
+    rd = RenderDay(index=2, date=day.date, city=day.city, text=pipeline.DayText(title="t", intro="i"),
+                   result=day.result, legs=day.legs, places=day.places, prev_city=day.prev_city,
+                   other_transport=[state.trip.transport[0]])
+    data = pipeline.GuideData(trip=state.trip, title="T", days=[rd], sections={}, important=[],
+                              trip_scope="international", modes=["taxi"], domestic=False)
+    page = build_day_page(rd, data, SimpleNamespace(walk_max_min=10))
+    strip = next(c for c in page.components if isinstance(c, m.JourneyStrip))
+    assert strip.legs[0] == f"Approx. {minutes} min by car"
+
+
+def test_crossing_minutes_ignores_road_lines():
+    assert parse_crossing_min(["Drive to Sanur Harbour takes 60 min"]) is None
+    assert parse_crossing_min(["Hotel transfer takes 45 minutes"]) is None
+    assert parse_crossing_min(["The crossing takes about 35 min"]) == 35

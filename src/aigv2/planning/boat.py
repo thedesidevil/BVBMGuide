@@ -14,6 +14,8 @@ DEPARTS_AT = re.compile(r"(?:\bdepart\w*\b[^\n]*?\bat\s+|\bETD\s*:?\s*)(\d{1,2}[
 _TIME = r"(\d{1,2}[:.]\d{2}\s*(?:[ap]\.?m\b)?)"
 CHECK_IN_AT = re.compile(r"\bcheck[- ]?in\b[^\n]*?\b(?:at|by)\s+" + _TIME, re.I)
 CROSSING_MIN = re.compile(r"\b(?:crossing|takes|journey)\b\s*(?:is\s+|takes\s+)?(?:about|approx\w*\.?|around)?\s*(\d{1,3})\s*(?:min\b|mins\b|minutes\b)(?!\s*[-–])", re.I)
+_BOATY = re.compile(r"\b(crossing|boat|ferry|sea|ride)\b", re.I)
+_ROADY = re.compile(r"\b(drive|driving|transfer|pick-?up|car|road|hotel)\b", re.I)
 BOAT_TYPE = re.compile(r"\b((?:shared|private)\s+(?:fast\s?boat|speed\s?boat|ferry))\b", re.I)
 
 
@@ -31,6 +33,8 @@ def parse_check_in(lines: list[str]) -> Optional[str]:
 def parse_crossing_min(lines: list[str]) -> Optional[int]:
     """Minutes when one number is stated ("crossing takes about 30 min"); a range like 30-45 is left unset."""
     for line in lines:
+        if not _BOATY.search(line) or (_ROADY.search(line) and not re.search(r"\bcrossing\b", line, re.I)):
+            continue
         m = CROSSING_MIN.search(line)
         if m:
             return int(m.group(1))

@@ -1,0 +1,173 @@
+"""Reference-section components for render2 (first half): opener, fact row, titled paras, panels, app grid,
+checklist groups. Google-Docs-safe: tables, paragraph borders and diamond glyphs only (no boxes, no run borders)."""
+from __future__ import annotations
+
+from typing import Callable, Optional, Sequence
+
+from docx.enum.text import WD_ALIGN_PARAGRAPH as AL
+from docx.shared import Cm, Pt
+
+from src.aigv2.guide.model import (AppGrid, ChecklistGroups, FactRowBlock, NotePanel, ReferenceOpener, TipPanel,
+                                   TitledParas)
+from src.aigv2.render2 import kit as K
+from src.aigv2.render2 import theme as T
+
+PANEL_PAD = (0.32, 0.5, 0.36, 0.5)  # top, left, bottom, right (cm)
+PANEL_GAP_PT = 10
+_PT_CM = 28.35
+
+
+def _grid(doc, W: float, items: Sequence, render: Callable, ncols: int = 2, gap: float = 1.0,
+          after_row: float = 14):
+    """Airy grid of independent blocks; rows can't split; an odd count leaves the last cell empty."""
+    if not items:
+        return None
+    ncols = 1 if len(items) == 1 else ncols
+    cw = (W - gap * (ncols - 1)) / ncols
+    widths: list[float] = []
+    for i in range(ncols):
+        widths += [cw] + ([gap] if i < ncols - 1 else [])
+    rows = -(-len(items) // ncols)
+    t = K.tbl(doc, rows, widths)
+    for i, it in enumerate(items):
+        r, c = divmod(i, ncols)
+        cell = t.rows[r].cells[c * 2]
+        if r < rows - 1:
+            K.cell_margins(cell, bottom=after_row / _PT_CM)
+        render(cell, cw, it)
+        K.close(cell, 1)
+    for row in t.rows:
+        K.row_keep(row)
+    for row in t.rows:  # empty cells (gutters, padding) must end in a paragraph
+        for cell in row.cells:
+            K.close(cell, 1)
+    K.spacer(doc, 10)
+    return t
+
+
+def render_reference_opener(doc, W: float, c: ReferenceOpener, *, bookmark: Optional[str] = None) -> None:
+    p = K.diamond_eyebrow(doc, c.eyebrow, color=T.GOLD_INK, before=0, after=6)
+    p.alignment = AL.CENTER
+    K.R(p, K.NB + K.DIAMOND_GLYPH, size=6, color=T.AMBER)
+    for r in p.runs:
+        if r.font.size is not None and r.font.size.pt == 7.5:
+            r.font.size = Pt(8)
+    p = K.np(doc, after=0, align=AL.CENTER, keep=True, line=1.0, style="Heading 1")
+    K.R(p, c.title, font=T.HEAD, size=26, color=T.NAVY, bold=False)
+    if bookmark:
+        K.bookmark(p, bookmark)
+    p = K.ornament(doc, before=8, after=10, w=2.6)
+    p.paragraph_format.keep_with_next = True
+    if c.intro:
+        p = K.np(doc, after=18, align=AL.CENTER, line=1.25, indent=1.2)
+        p.paragraph_format.right_indent = Cm(1.2)
+        K.R(p, c.intro, font=T.HEAD, size=13.5, italic=True, color=T.SLATE)
+
+
+def render_fact_row(doc, W: float, c: FactRowBlock) -> None:
+    n = len(c.facts)
+    if not n:
+        return
+    t = K.tbl(doc, 1, [W / n] * n, margins=(0.22, 0.3, 0.24, 0.3))
+    K.row_keep(t.rows[0])
+    for i, f in enumerate(c.facts):
+        cell = t.rows[0].cells[i]
+        K.borders(cell, t=(T.POWDER, 4), b=(T.POWDER, 4), l=(T.POWDER, 4) if i else None)
+        p = K.np(cell, after=3, align=AL.CENTER, style="Fact Label")
+        K.R(p, f.label.upper(), size=7, color=T.SLATE, bold=True, spacing=1.4)
+        p = K.np(cell, align=AL.CENTER, line=1.0)
+        if f.link and f.link.url:
+            K.link(p, f.link.url, f.value, size=17, color=T.ROYAL, bold=True)
+        else:
+            K.R(p, f.value, font=T.HEAD, size=17, bold=True, color=T.ROYAL)
+        K.close(cell, 1)
+    K.spacer(doc, 16)
+
+
+def _titled_para(cell, w: float, item) -> None:
+    p = K.np(cell, after=4, keep=True, line=1.0)
+    K.R(p, item.heading, font=T.HEAD, size=16, color=T.NAVY)
+    K.R(K.np(cell, line=1.45, style="Body"), item.body, size=10)
+
+
+def render_titled_paras(doc, W: float, c: TitledParas) -> None:
+    _grid(doc, W, c.items, _titled_para, ncols=2, gap=1.0, after_row=14)
+
+
+def _panel(doc, W: float, fill: str, bar: str):
+    t = K.tbl(doc, 1, [W], margins=PANEL_PAD)
+    K.row_keep(t.rows[0])
+    cell = t.rows[0].cells[0]
+    K.cell_shade(cell, fill)
+    K.borders(cell, l=(bar, 18), t=None, b=None, r=None)
+    return cell
+
+
+def _panel_title(cell, text: str, color: str) -> None:
+    p = K.np(cell, after=6, keep=True, style="Eyebrow")
+    K.R(p, text, size=7.5, color=color, bold=True, caps=True, spacing=1.8)
+
+
+def _panel_items(cell, inner_w: float, items: list[str], columns: int) -> None:
+    def put(c, its):
+        for it in its:
+            p = K.diamond_item(c, it, indent=0.55, after=3, size=9.5)
+            p.paragraph_format.line_spacing = 1.38
+    if not items:
+        return
+    if columns >= 2 and len(items) > 1:
+        gap = 0.6
+        cw = (inner_w - gap) / 2
+        half = -(-len(items) // 2)
+        t = K.tbl(cell, 1, [cw, gap, cw])
+        put(t.rows[0].cells[0], items[:half])
+        put(t.rows[0].cells[2], items[half:])
+        for c in t.rows[0].cells:
+            K.close(c, 1)
+    else:
+        put(cell, items)
+
+
+def _end_panel(doc, cell) -> None:
+    K.close(cell, 1)
+    K.spacer(doc, PANEL_GAP_PT)
+
+
+def render_tip_panel(doc, W: float, c: TipPanel) -> None:
+    cell = _panel(doc, W, T.HARBOUR_FILL, T.ROYAL)
+    _panel_title(cell, c.title, T.ROYAL)
+    _panel_items(cell, W - PANEL_PAD[1] - PANEL_PAD[3], c.items, c.columns)  # checks=True still uses diamonds
+    _end_panel(doc, cell)
+
+
+def render_note_panel(doc, W: float, c: NotePanel) -> None:
+    cell = _panel(doc, W, T.TAUPE_TINT, T.TAUPE)
+    _panel_title(cell, c.title, T.GOLD_INK)
+    if c.text:
+        K.R(K.np(cell, after=4 if c.items else 0, line=1.45, style="Body"), c.text, size=10)
+    _panel_items(cell, W - PANEL_PAD[1] - PANEL_PAD[3], c.items, 1)
+    _end_panel(doc, cell)
+
+
+def _app(cell, w: float, app) -> None:
+    p = K.np(cell, after=3, line=1.0)
+    K.R(p, app.name, font=T.HEAD, size=15, color=T.NAVY)
+    K.hairline(p, T.POWDER, space=2)
+    K.R(K.np(cell, line=1.3), app.use, size=9.5, color=T.SLATE)
+
+
+def render_app_grid(doc, W: float, c: AppGrid) -> None:
+    _grid(doc, W, c.apps, _app, ncols=3, gap=0.7, after_row=10)
+
+
+def _group(cell, w: float, g) -> None:
+    p = K.np(cell, after=6, keep=True, line=1.0)
+    K.R(p, g.title, font=T.HEAD, size=15, color=T.NAVY)
+    K.hairline(p, T.POWDER, space=2)
+    for it in g.items:
+        p = K.diamond_item(cell, it, indent=0.62, after=3, size=10)
+        p.paragraph_format.line_spacing = 1.32
+
+
+def render_checklist_groups(doc, W: float, c: ChecklistGroups) -> None:
+    _grid(doc, W, c.groups, _group, ncols=2, gap=1.0, after_row=14)

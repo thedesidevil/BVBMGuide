@@ -471,7 +471,7 @@ def build_reference_page(key: str, content: SectionContent, data: GuideData) -> 
             head = [g.TitledPara(heading=country or "General", body="")] if many else []
             comps.append(g.TitledParas(items=head + _paras(its)))
             items += its
-    else:
+    elif content.items:
         comps.append(g.TitledParas(items=_paras(content.items)))
     marks = [g.MarkerRef(kind="VERIFY", text=i.heading) for i in items if i.verify]
     marks += [_ref(x) for x in content.markers]
@@ -481,16 +481,21 @@ def build_reference_page(key: str, content: SectionContent, data: GuideData) -> 
 
 
 def _span(a: date, b: date) -> str:
-    if (a.month, a.year) == (b.month, b.year):
+    if a.year != b.year:
+        return f"{a.day} {a:%B} {a.year} \u2013 {b.day} {b:%B} {b.year}"
+    if a.month == b.month:
         return f"{a.day} \u2013 {b.day} {b:%B}"
     return f"{a.day} {a:%B} \u2013 {b.day} {b:%B}"
 
 
 def _nearby(n: NearbyPlace, city: str) -> g.NearbyPlace:
     p = n.place
+    marks = [_ref(x) for x in n.markers + place_markers(p, n.markers)]
+    if n.walk_min is None and n.drive_min is None:
+        marks.append(g.MarkerRef(kind="VERIFY", text=f"{p.name}: travel time from the hotel"))
     return g.NearbyPlace(name=g.Link(text=p.name, url=p.maps_url or search_url(p.name, city)),
                          walk_min=n.walk_min, drive_min=n.drive_min, hours_text=n.hours_text, phone=p.phone,
-                         markers=[_ref(x) for x in n.markers + place_markers(p, n.markers)])
+                         markers=marks)
 
 
 def build_important_page(entries: list[ImportantPlaces], data: Optional[GuideData] = None) -> Optional[g.Page]:
@@ -499,8 +504,12 @@ def build_important_page(entries: list[ImportantPlaces], data: Optional[GuideDat
     stays = data.trip.hotels if data else []
     places = {name: p for d in (data.days if data else []) for name, p in d.places.items()}
     hotels = []
+    unused = sorted(stays, key=lambda s: s.check_in)
     for e in entries:
-        stay = next((s for s in stays if norm_name(s.hotel) == norm_name(e.hotel)), None)
+        same = [s for s in unused if norm_name(s.hotel) == norm_name(e.hotel)]
+        stay = next((s for s in same if norm_name(s.city) == norm_name(e.city)), same[0] if same else None)
+        if stay is not None:
+            unused.remove(stay)
         p = places.get(e.hotel)
         url = p.maps_url if p is not None and p.match_ok else search_url(e.hotel, e.city)
         hotels.append(g.HotelPlaces(

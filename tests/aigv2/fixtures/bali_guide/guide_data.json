@@ -245,6 +245,31 @@
   ],
   "days": [
    {
+    "date": "2026-09-24",
+    "title": "Arrival in Bali",
+    "city": "Ubud",
+    "items": [
+     {
+      "name": "Airport pick-up and transfer to MAYURA UBUD RETREAT",
+      "kind": "transfer",
+      "city": "Ubud",
+      "time": null,
+      "slot_hint": "any",
+      "note": "Midnight arrival at 00:10 on 25 September.",
+      "optional": false,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": ""
+     }
+    ],
+    "meal_rules": [
+     "No Meals"
+    ],
+    "drive_stops": []
+   },
+   {
     "date": "2026-09-25",
     "title": "Tegallalang Rice Terrace, Ubud Palace and Ubud Market",
     "city": "Ubud",
@@ -361,6 +386,244 @@
  },
  "title": "Ubud, Nusa Lembongan, Sanur Magic",
  "days": [
+  {
+   "index": 1,
+   "date": "2026-09-24",
+   "city": "Ubud",
+   "text": {
+    "title": "Arrival in Bali",
+    "intro": "We arrive in Ubud as a family, with our two-year-old along for the day.",
+    "attractions": [],
+    "restaurants": [],
+    "free_time_idea": null
+   },
+   "result": {
+    "scheduled": [
+     {
+      "item": {
+       "name": "Airport pick-up and transfer to MAYURA UBUD RETREAT",
+       "kind": "transfer",
+       "city": "Ubud",
+       "time": null,
+       "slot_hint": "any",
+       "note": "Midnight arrival at 00:10 on 25 September.",
+       "optional": false,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": ""
+      },
+      "slot": "morning",
+      "start": "09:00:00"
+     }
+    ],
+    "meals": [],
+    "tips": [],
+    "markers": []
+   },
+   "meals": [],
+   "legs": {},
+   "places": {
+    "mayura ubud retreat|ubud": {
+     "query": "MAYURA UBUD RETREAT|Ubud",
+     "place_id": "ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "name": "Mayura Ubud Retreat",
+     "address": "Jl. Bangkilesan, Banjar Kawan Desa Mas, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.5468956,
+     "lng": 115.2693623,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "http://www.mayuraubud.com/",
+     "phone": "+62 361 4792956",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=MAYURA+UBUD+RETREAT+Ubud&query_place_id=ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "fetched_at": "2026-11-02T10:57:24.763405Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "MAYURA UBUD RETREAT": {
+     "query": "MAYURA UBUD RETREAT|Ubud",
+     "place_id": "ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "name": "Mayura Ubud Retreat",
+     "address": "Jl. Bangkilesan, Banjar Kawan Desa Mas, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.5468956,
+     "lng": 115.2693623,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "http://www.mayuraubud.com/",
+     "phone": "+62 361 4792956",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=MAYURA+UBUD+RETREAT+Ubud&query_place_id=ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "fetched_at": "2026-11-02T10:57:24.763405Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "dps|ubud": {
+     "query": "DPS|Ubud",
+     "place_id": "ChIJgb3r5Q890i0Rq97Q0rOxEeg",
+     "name": "ATM Mandiri DPS SB UBUDPASARSENI",
+     "address": "Jl. Raya Ubud No.14, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.507427999999999,
+     "lng": 115.2640485,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "0": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "1": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "2": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "3": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "4": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "5": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "6": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": "http://www.bankmandiri.co.id/",
+     "phone": "+62 21 52997777",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=DPS+Ubud&query_place_id=ChIJgb3r5Q890i0Rq97Q0rOxEeg",
+     "fetched_at": "2026-11-02T09:59:56.270129Z",
+     "match_ok": false,
+     "verify_note": null
+    },
+    "DPS": {
+     "query": "DPS|Ubud",
+     "place_id": "ChIJgb3r5Q890i0Rq97Q0rOxEeg",
+     "name": "ATM Mandiri DPS SB UBUDPASARSENI",
+     "address": "Jl. Raya Ubud No.14, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.507427999999999,
+     "lng": 115.2640485,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "0": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "1": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "2": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "3": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "4": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "5": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "6": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": "http://www.bankmandiri.co.id/",
+     "phone": "+62 21 52997777",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=DPS+Ubud&query_place_id=ChIJgb3r5Q890i0Rq97Q0rOxEeg",
+     "fetched_at": "2026-11-02T09:59:56.270129Z",
+     "match_ok": false,
+     "verify_note": null
+    },
+    "Airport pick-up and transfer to MAYURA UBUD RETREAT": null
+   },
+   "booking_by_item": {
+    "Airport pick-up and transfer to MAYURA UBUD RETREAT": {
+     "name": "Airport pick-up and transfer to MAYURA UBUD RETREAT",
+     "day": "2026-09-25",
+     "time": "00:10",
+     "source": "voucher",
+     "end_time": null,
+     "meeting_point": "Bali International Airport",
+     "duration": "",
+     "instructions": [
+      "Driver will come to the airport at 11:00 PM."
+     ],
+     "timed": true,
+     "pax_label": "",
+     "included_in_package": true
+    }
+   },
+   "arrival_booking": null,
+   "price_by_restaurant": {},
+   "arrival": {
+    "kind": "flight",
+    "from_place": "SIN",
+    "to_place": "DPS",
+    "depart": null,
+    "arrive": "2026-09-25T00:10:00",
+    "ref": "IND/PB/2026/2411",
+    "source": "voucher",
+    "pax_label": "",
+    "operator": "Singapore Airlines",
+    "number": "SQ 948",
+    "seat": "",
+    "platform": ""
+   },
+   "departure": null,
+   "other_transport": [],
+   "prev_city": null,
+   "utc_offset_hours": null,
+   "library_attractions": {},
+   "lands_next_day": true,
+   "driver_from": null
+  },
   {
    "index": 2,
    "date": "2026-09-25",
@@ -1465,7 +1728,9 @@
      "_source_format": "new",
      "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
     }
-   }
+   },
+   "lands_next_day": false,
+   "driver_from": null
   },
   {
    "index": 4,
@@ -2368,7 +2633,9 @@
      "_source_format": "new",
      "_replaced_from": "Bali Indonesia/05062026_Test_Bali _All Inclusive Guide.docx"
     }
-   }
+   },
+   "lands_next_day": false,
+   "driver_from": null
   }
  ],
  "sections": {},

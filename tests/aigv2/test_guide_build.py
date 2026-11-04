@@ -89,11 +89,11 @@ def test_missing_hours_gives_marker_not_blank():
 def test_build_guide_wraps_day_pages():
     data = load()
     g = build_guide(data, SETTINGS)
-    assert [pg.kind for pg in g.pages] == ["letter", "toc", "day", "day", "thank_you"]
+    assert [pg.kind for pg in g.pages] == ["letter", "toc", "day", "day", "day", "thank_you"]
     letter = g.pages[0].components
     assert letter[0].paragraphs == [] and letter[1].markers == [MarkerRef(kind="WRITE_LETTER", text="")]
     assert g.client == "Test Client One" and g.title == data.title
-    assert [c.type for c in g.pages[2].components][:2] == ["Opener", "YourDay"]
+    assert [c.type for c in g.pages[3].components][:2] == ["Opener", "YourDay"]
 
 
 def test_day_markers_ride_on_the_day():
@@ -170,3 +170,32 @@ def test_self_drive_parking_text_survives():
     assert "Parking: Free lot behind" in lunch.restaurants[0].travel
     marks = [mk.text for b in p.components if b.type == "ReviewMarkerBlock" for mk in b.markers]
     assert any(t.endswith(": parking") for t in marks)
+
+
+def _walk(node):
+    yield node
+    if isinstance(node, dict):
+        for v in node.values():
+            yield from _walk(v)
+    elif isinstance(node, list):
+        for v in node:
+            yield from _walk(v)
+
+
+def test_day1_late_arrival_cards():
+    from src.aigv2.models import TripPlan
+    from src.aigv2.planning.late_night import driver_time
+    data = load()
+    rd = day(data, 1)
+    bali = Path(__file__).parent / "fixtures" / "bali" / "trip_plan.json"
+    trip = TripPlan.model_validate(json.loads(bali.read_text(encoding="utf-8")))
+    pick = next(b for b in trip.bookings if b.time == "23:00")
+    rd = rd.model_copy(update={"arrival_booking": pick, "driver_from": driver_time(pick)})
+    assert rd.lands_next_day and rd.driver_from == time(23, 0)
+    p = build_day_page(rd, data, SETTINGS)
+    dumped = p.model_dump(mode="json")
+    nodes = [n for n in _walk(dumped) if isinstance(n, dict)]
+    assert not [n for n in nodes if n.get("type") in ("MealBlock", "PlaceholderMeal")]
+    text = json.dumps(dumped, ensure_ascii=False)
+    assert "Lands 00:10 on Fri 25 Sep" in text
+    assert "driver is booked from 23:00 and will wait for your arrival at 00:10" in text

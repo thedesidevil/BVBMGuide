@@ -1,4 +1,4 @@
-"""One-off: slice the saved Bali run into guide_data.json (Day 2 and Day 4 only, client anonymised).
+"""One-off: slice the saved Bali run into guide_data.json (Days 1, 2 and 4 only, client anonymised).
 
 Usage: python3 tests/aigv2/fixtures/bali_guide/make_fixture.py <run_dir>
 Read-only on the run folder. Mirrors src/aigv2/pipeline.py::_render_days / _render_qc.
@@ -8,11 +8,11 @@ import sys
 from pathlib import Path
 
 from src.aigv2.money import city_currency, price_text
-from src.aigv2.pipeline import PlanState
+from src.aigv2.pipeline import PlanState, _late_facts
 from src.aigv2.render.document import GuideData, RenderDay
 from src.aigv2.writing.days import DayText
 
-KEEP = (2, 4)
+KEEP = (1, 2, 4)
 
 
 class _NoFx:
@@ -39,7 +39,7 @@ def main(run: Path) -> None:
             arrival=t[ds.arrival] if ds.arrival is not None else None,
             departure=t[ds.departure] if ds.departure is not None else None, prev_city=ds.prev_city,
             other_transport=[t[i] for i in ds.other_legs], utc_offset_hours=ds.utc_offset_hours,
-            library_attractions=ds.library_attractions))
+            library_attractions=ds.library_attractions, **_late_facts(ds, state.trip)))
     trip = state.trip.model_copy(update={"days": [d for d in state.trip.days if d.date in {x.date for x in days}]})
     data = GuideData(trip=trip, title=json.loads((run / "sections/title.json").read_text())["title"], days=days,
                      sections={}, important=[], trip_scope=trip.trip_scope, modes=trip.travel_modes,

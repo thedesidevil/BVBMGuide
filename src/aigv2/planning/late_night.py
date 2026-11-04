@@ -1,6 +1,6 @@
 """Late-night arrivals: a landing before 05:00 the calendar day after a stay's first night belongs to that night's day."""
 import re
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, time, timedelta
 from typing import Optional
 
 from src.aigv2.models import Booking, TransportLeg, TripPlan
@@ -24,6 +24,16 @@ def pickup_before_landing(pickup_time: Optional[str], landing: datetime, d: date
     if start >= landing:
         return None
     return f"{t:%H:%M}"
+
+
+def driver_time(booking: Booking) -> Optional[time]:
+    """When the driver starts: a time in the booking's instructions ("Driver will come ... at 11:00 PM"), else its own time."""
+    from src.aigv2.planning.slots import parse_time
+    for line in (l for l in booking.instructions if re.search(r"driver|pick-?up", l, re.I)):
+        t = parse_time(line)
+        if t is not None:
+            return t
+    return parse_time(booking.time)
 
 
 def late_night_days(trip: TripPlan) -> list[tuple[int, date, TransportLeg, Optional[Booking]]]:

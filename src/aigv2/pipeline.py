@@ -21,7 +21,7 @@ from src.aigv2.llm import StepLLM
 from src.aigv2.models import (Answers, Booking, HotelStay, Marker, Place, Question, TransportLeg, TripPlan,
                               place_key)
 from src.aigv2.money import FxRates, city_currency, price_text
-from src.aigv2.planning.late_night import AIRPORT_PICKUP
+from src.aigv2.planning.late_night import AIRPORT_PICKUP, driver_time, is_late_night_landing
 from src.aigv2.planning.important_places import ImportantPlaces, important_places
 from src.aigv2.planning.meals import Exclusion, MealPick, PlanStats, plan_meals
 from src.aigv2.planning.slots import DayResult, parse_time, region_day_city, resolve_day_city, schedule_day
@@ -662,6 +662,13 @@ def _write(store: RunStore, state: PlanState, deps: Deps) -> None:
         raise RuntimeError(f"{len(errors)} writers failed — {detail}") from errors[0][1]
 
 
+def _late_facts(ds, trip: TripPlan) -> dict:
+    """lands_next_day / driver_from for a day's arrival leg and airport booking."""
+    leg = trip.transport[ds.arrival] if ds.arrival is not None else None
+    return {"lands_next_day": bool(leg and is_late_night_landing(leg, ds.date)),
+            "driver_from": driver_time(ds.arrival_booking) if ds.arrival_booking else None}
+
+
 def _render_days(store: RunStore, state: PlanState, deps: Deps) -> list[RenderDay]:
     out = []
     for ds in state.days:
@@ -677,7 +684,8 @@ def _render_days(store: RunStore, state: PlanState, deps: Deps) -> list[RenderDa
             price_by_restaurant=prices, arrival=t[ds.arrival] if ds.arrival is not None else None,
             departure=t[ds.departure] if ds.departure is not None else None, prev_city=ds.prev_city,
             other_transport=[t[i] for i in ds.other_legs],
-            utc_offset_hours=ds.utc_offset_hours, library_attractions=ds.library_attractions))
+            utc_offset_hours=ds.utc_offset_hours, library_attractions=ds.library_attractions,
+            **_late_facts(ds, state.trip)))
     return out
 
 

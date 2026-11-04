@@ -13,7 +13,7 @@ from src.aigv2.models import HotelStay, Marker, TransportLeg
 from src.aigv2.planning.important_places import ImportantPlaces, NearbyPlace
 from src.aigv2.planning.late_night import is_late_night_landing, pickup_before_landing
 from src.aigv2.planning.meals import ChosenRestaurant, MealPick
-from src.aigv2.planning.slots import MealSlot, ScheduledItem, arrival_buffer_min, is_optional, leave_by
+from src.aigv2.planning.slots import MealSlot, ScheduledItem, arrival_buffer_min, is_optional, leave_by, parse_time
 from src.aigv2.planning.travel import Leg, drive_day_legs, leg_markers, leg_options
 from src.aigv2.render.day_render import _PORT, _REACH, _SLOT_TITLE, day_header, sunset_time
 from src.aigv2.render.document import BEFORE_YOU_GO, WHILE_THERE, GuideData, RenderDay, _present, destinations
@@ -222,8 +222,9 @@ class _Day:
         pick = rd.arrival_booking
         if pick:
             lines.insert(0, f"Your booking: {pick.name}")
-        if pick and arr.arrive and is_late_night_landing(arr, rd.date):
-            before = pickup_before_landing(pick.time, arr.arrive, rd.date)
+        if pick and arr.arrive and (rd.lands_next_day or is_late_night_landing(arr, rd.date)):
+            driver = rd.driver_from or parse_time(pick.time)
+            before = pickup_before_landing(f"{driver:%H:%M}" if driver else None, arr.arrive, rd.date)
             if before:
                 lines.insert(1, f"Your driver will meet you at the airport after you land, so a pick-up shown as "
                                 f"{before} means the driver is booked from {before} and will wait for your arrival "

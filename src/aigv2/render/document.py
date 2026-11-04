@@ -1,6 +1,6 @@
 import io
 import re
-from datetime import date
+from datetime import date, time
 from typing import Optional
 
 from docx.enum.section import WD_SECTION
@@ -48,6 +48,8 @@ class RenderDay(BaseModel):
     prev_city: Optional[str] = None
     utc_offset_hours: Optional[float] = None
     library_attractions: dict[str, dict] = Field(default_factory=dict)
+    lands_next_day: bool = False
+    driver_from: Optional[time] = None
 
 
 class GuideData(BaseModel):

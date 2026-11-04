@@ -3,6 +3,7 @@ import io
 import json
 import re
 from datetime import datetime, time
+from types import SimpleNamespace
 from pathlib import Path
 
 import pytest
@@ -1044,3 +1045,13 @@ def test_cli_guide_json(deps, monkeypatch):
     store.delete("guide.json")
     out = CliRunner().invoke(app, ["guide-json", store.run_id])
     assert out.exit_code == 1 and "no guide.json" in out.output
+
+
+def test_late_facts_for_bali_arrival():
+    trip = _bali_trip(date(2026, 9, 24))
+    arr = next(i for i, l in enumerate(trip.transport) if l.kind == "flight")
+    pick = next(b for b in trip.bookings if b.time == "23:00")
+    ds = SimpleNamespace(date=date(2026, 9, 24), arrival=arr, arrival_booking=pick)
+    assert pipeline._late_facts(ds, trip) == {"lands_next_day": True, "driver_from": time(23, 0)}
+    ds2 = SimpleNamespace(date=date(2026, 9, 25), arrival=None, arrival_booking=None)
+    assert pipeline._late_facts(ds2, trip) == {"lands_next_day": False, "driver_from": None}

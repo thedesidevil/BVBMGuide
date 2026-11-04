@@ -80,6 +80,11 @@ def test_card_look():
     for s in ("top", "right", "bottom"):
         assert _sz(c, s).get(qn("w:color")) == "BCD0EA"
     assert _card(_render()).rows[0]._tr.trPr.find(qn("w:cantSplit")) is not None
+    n = _nested(_render())
+    for row in n.rows[1:]:
+        for cell in row.cells:
+            b = _sz(cell._tc, "top")
+            assert b.get(qn("w:color")) == "BCD0EA" and b.get(qn("w:sz")) == "6"
 
 
 def test_three_rows_with_links_chips_and_stack():
@@ -154,6 +159,12 @@ def test_placeholder_footprint_matches_harbour():
     gh = [g.get(qn("w:w")) for g in _nested(h)._tbl.tblGrid.findall(qn("w:gridCol"))]
     gp = [g.get(qn("w:w")) for g in _nested(p)._tbl.tblGrid.findall(qn("w:gridCol"))]
     assert gh == gp
+    mar = lambda d: _card(d).rows[0].cells[0]._tc.tcPr.find(qn("w:tcMar"))
+    assert (mar(h) is None) == (mar(p) is None)
+    ph = _card(p)._tbl.tblPr.find(qn("w:tblCellMar"))
+    hh = _card(h)._tbl.tblPr.find(qn("w:tblCellMar"))
+    from lxml import etree
+    assert etree.tostring(ph) == etree.tostring(hh)
     assert _card(p).style.name == "Placeholder Card (internal)"
     labels = [x.text for r in _nested(p).rows for x in r.cells[0].paragraphs if x.text.startswith("ADD RESTAURANT")]
     assert labels == ["ADD RESTAURANT 1", "ADD RESTAURANT 2", "ADD RESTAURANT 3"]
@@ -209,3 +220,52 @@ def test_qc_reader_meal_slot():
     doc.save(buf)
     m = read_docx(buf.getvalue())
     assert (2, "Lunch near Ubud Palace") in m.headings
+
+
+import pytest
+
+
+@pytest.mark.parametrize("raw,expected", [
+    ("Approx. INR 800–1,500 pp", ("PER PERSON, APPROX.", "INR 800–1,500")),
+    ("INR 800–1,800 per person", ("PER PERSON", "INR 800–1,800")),
+    ("₹1,500–2,800 for two", ("FOR TWO", "₹1,500–2,800")),
+    ("Approx INR 500 per person", ("PER PERSON, APPROX.", "INR 500")),
+    ("~INR 500 pp", ("PER PERSON, APPROX.", "INR 500")),
+    ("INR 1,000–2,200", ("PER PERSON", "INR 1,000–2,200")),
+    ("approx. ₹900 for 2", ("FOR TWO, APPROX.", "₹900")),
+    ("INR 6,000 per night", ("PER NIGHT", "INR 6,000")),
+])
+def test_price_basis(raw, expected):
+    assert M._price(raw) == expected
+
+
+def _markers(cell):
+    return [p.text for p in cell.paragraphs if p.style.name == "Review Marker (internal)"]
+
+
+def test_missing_fields_get_verify_markers():
+    a = _nested(_render(_block([_r(1, name="Casa", price=None)]))).rows[0].cells[0]
+    assert len(_markers(a)) == 1 and "VERIFY: Casa: price" in _markers(a)[0]
+    a = _nested(_render(_block([_r(1, name="Casa", hours=None, travel=None)]))).rows[0].cells[0]
+    ms = _markers(a)
+    assert len(ms) == 2 and any("Casa: opening hours" in m for m in ms) and any("Casa: travel time" in m for m in ms)
+
+
+def test_complete_restaurant_has_no_markers():
+    for row in _nested(_render()).rows:
+        assert _markers(row.cells[0]) == []
+
+
+def test_marker_price_not_duplicated():
+    a = _nested(_render(_block([_r(1, price=MarkerRef(kind="PRICE_UNKNOWN", text="x"))]))).rows[0].cells[0]
+    assert len(_markers(a)) == 1
+
+
+def test_empty_restaurants_fall_back_to_placeholder():
+    doc = _render(MealBlock(meal="lunch", eyebrow="LUNCH", heading="Lunch near Ubud Palace", restaurants=[]))
+    assert _card(doc).style.name == "Placeholder Card (internal)" and len(_nested(doc).rows) == 3
+
+
+def test_placeholder_count_clamped():
+    assert len(_nested(_ph(0)).rows) == 1
+    assert len(_nested(_ph(20)).rows) == 6

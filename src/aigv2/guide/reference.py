@@ -8,10 +8,15 @@ from src.aigv2.render.sections_render import search_url
 from src.aigv2.writing.sections import SectionContent, SectionItem
 from src.aigv2.writing.structured import CHILD_GROUP
 
-_BOAT = re.compile(r"boat|crossing|motion|paediatrician|pediatrician", re.I)
+_BOAT_HEAD = re.compile(r"boat|ferry|crossing|motion|sea", re.I)
+_PAED = re.compile(r"paediatrician|pediatrician", re.I)
 _MARKET = re.compile(r"tipping|market|bargain", re.I)
 _EYEBROW = {"tourist_police": "TOURIST POLICE", "consulate": "INDIAN CONSULATE", "embassy": "EMBASSY"}
 _DIAL = re.compile(r"^\+(\d{1,4})(?=[\s\-()]|$)")
+
+
+def _is_boat(i: SectionItem) -> bool:
+    return bool(_BOAT_HEAD.search(i.heading) or _PAED.search(i.body))
 
 
 def paras(items: list[SectionItem]) -> list[g.TitledPara]:
@@ -80,7 +85,7 @@ def _connectivity(c: SectionContent, data) -> list:
 
 
 def _health(c: SectionContent, data) -> list:
-    boat = [i for i in c.items if _BOAT.search(i.heading) or _BOAT.search(i.body)]
+    boat = [i for i in c.items if _is_boat(i)]
     rest = [i for i in c.items if i not in boat]
     out = _titled(rest)
     if boat:
@@ -149,12 +154,14 @@ _BUILDERS = {"packing": _packing, "money": _money, "connectivity": _connectivity
 
 def structured_components(key: str, c: SectionContent, data) -> Optional[list]:
     """Components after the opener, or None to use the generic TitledParas path."""
+    if len(c.by_country) > 1:
+        return None  # per-country structured components are a later task
     fn = _BUILDERS.get(key)
     has = any([c.groups, c.apps, c.phrases, c.dos, c.donts, c.numbers, c.contacts, c.dishes, c.souvenirs])
     if key == "money":
         has = any(i.heading.startswith("Currency") and not i.verify and "Indicative rate" in i.body for i in c.items)
     elif key == "health":
-        has = any(_BOAT.search(i.heading) or _BOAT.search(i.body) for i in c.items)
+        has = any(_is_boat(i) for i in c.items)
     if not fn or not has:
         return None
     return fn(c, data)

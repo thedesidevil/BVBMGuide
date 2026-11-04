@@ -121,3 +121,45 @@ def test_full_guide_roundtrip_with_structured_sections():
     guide = build_guide(data, SETTINGS)
     assert any(c.type == "DishGrid" for p in guide.pages for c in p.components)
     assert m.Guide.model_validate_json(guide.model_dump_json()) == guide
+
+
+def _two_country(key, **kw):
+    return SectionContent(key=key, items=[_it("a", "b"), _it("c", "d")],
+                          by_country={"Alpha": [_it("a", "b")], "Beta": [_it("c", "d")]}, **kw)
+
+
+def test_two_country_safety_and_etiquette_use_generic_path():
+    s = _two_country("safety", numbers=[EmergencyNumber(service="Police", number="+99")],
+                     contacts=[Contact(name="Desk", phone="+99 1", kind="embassy")])
+    p = build_reference_page("safety", s, load())
+    assert types(p) == ["ReferenceOpener", "TitledParas", "TitledParas"]
+    assert p.components[1].items[0].heading == "Alpha"
+    e = _two_country("etiquette", dos=["x"], donts=["y"], phrases=[Phrase(local="a", english="b")],
+                     markers=[])
+    assert types(build_reference_page("etiquette", e, load())) == ["ReferenceOpener", "TitledParas", "TitledParas"]
+
+
+def test_single_country_by_country_keeps_structured_and_dial_suffix():
+    s = SectionContent(key="safety", items=[_it("a", "b", verify=True)], by_country={"Alpha": [_it("a", "b", verify=True)]},
+                       numbers=[EmergencyNumber(service="Police", number="+1242 919")])
+    p = build_reference_page("safety", s, load())
+    assert types(p)[:2] == ["ReferenceOpener", "EmergencyStrip"]
+    assert p.components[1].dial == "International dial code for Alpha: +1242"
+    assert p.components[-1].type == "ReviewMarkerBlock"
+
+
+def test_health_body_only_matches_paediatrician():
+    c = SectionContent(key="health", items=[_it("Staying hydrated", "Avoid motion sickness tablets without advice.")])
+    assert types(build_reference_page("health", c, load())) == ["ReferenceOpener", "TitledParas"]
+    c = SectionContent(key="health", items=[_it("Boat crossings", "Rough.")])
+    assert types(build_reference_page("health", c, load()))[-1] == "NotePanel"
+    c = SectionContent(key="health", items=[_it("Little ones", "Ask your paediatrician first.")])
+    assert types(build_reference_page("health", c, load()))[-1] == "NotePanel"
+
+
+def test_dial_no_separator_edge():
+    from src.aigv2.guide.reference import _dial
+    c = SectionContent(key="safety", numbers=[EmergencyNumber(service="P", number="+1242")])
+    assert _dial(c, None) == "International dial code: +1242"
+    c = SectionContent(key="safety", numbers=[EmergencyNumber(service="P", number="+12429191234")])
+    assert _dial(c, None) is None

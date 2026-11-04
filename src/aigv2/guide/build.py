@@ -648,6 +648,7 @@ def build_reference_page(key: str, content: SectionContent, data: GuideData) -> 
     structured = structured_components(key, content, data)
     if structured is not None:
         comps += structured
+        items += [i for its in content.by_country.values() for i in its if i not in items]
     elif content.by_country:
         many = len(content.by_country) > 1
         for country, its in content.by_country.items():

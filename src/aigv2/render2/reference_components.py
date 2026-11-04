@@ -7,9 +7,11 @@ from typing import Callable, Optional, Sequence
 from docx.enum.text import WD_ALIGN_PARAGRAPH as AL
 from docx.shared import Cm, Pt
 
-from src.aigv2.guide.model import (AppGrid, ChecklistGroups, FactRowBlock, NotePanel, ReferenceOpener, TipPanel,
-                                   TitledParas)
+from src.aigv2.guide.model import (AppGrid, ChecklistGroups, ContactCards, DishGrid, DosDonts, EmergencyStrip,
+                                   FactRowBlock, Link, NotePanel, PhraseTable, PlaceGroups, ReferenceOpener,
+                                   SouvenirGrid, TipPanel, TitledParas)
 from src.aigv2.render2 import kit as K
+from src.aigv2.render2.day_components import _card, _end_card, _inner_w
 from src.aigv2.render2 import theme as T
 
 PANEL_PAD = (0.32, 0.5, 0.36, 0.5)  # top, left, bottom, right (cm)
@@ -171,3 +173,220 @@ def _group(cell, w: float, g) -> None:
 
 def render_checklist_groups(doc, W: float, c: ChecklistGroups) -> None:
     _grid(doc, W, c.groups, _group, ncols=2, gap=1.0, after_row=14)
+
+
+# ---------- second half: place groups, dishes, souvenirs, do/don't, phrases, emergency, contacts ----------
+def _label(cell, text: str, color: str, size: float = 7, after: float = 2, bold: bool = True):
+    p = K.np(cell, after=after, keep=True, line=1.0)
+    K.R(p, text, size=size, color=color, bold=bold, caps=True, spacing=1.2)
+    return p
+
+
+def _links_line(cell, links: Sequence[Link], size: float = 9.5, after: float = 0, lead: Optional[str] = None) -> None:
+    p = K.np(cell, after=after, line=1.35)
+    if lead:
+        K.R(p, lead + "  ", size=7, color=T.GOLD_INK, bold=True, caps=True, spacing=1.2)
+    for i, l in enumerate(links):
+        if i:
+            K.R(p, "  ·  ", size=size, color=T.SLATE)
+        if l.url:
+            K.link(p, l.url, l.text, font=T.BODYF, size=size, color=T.NAVY, bold=False)
+        else:
+            K.R(p, l.text, size=size, color=T.NAVY)
+
+
+def _travel_text(walk: Optional[int], drive: Optional[int]) -> str:
+    parts = ([f"Walk {walk} min"] if walk is not None else []) + ([f"By car {drive} min"] if drive is not None else [])
+    return " · ".join(parts) if parts else "Travel time not confirmed"
+
+
+def _place(cell, pl, first: bool) -> None:
+    p = K.np(cell, before=0 if first else 7, after=1, keep=True, line=1.0)
+    if pl.name.url:
+        K.link(p, pl.name.url, pl.name.text, size=13.5, color=T.NAVY, bold=False)
+    else:
+        K.R(p, pl.name.text, font=T.HEAD, size=13.5, color=T.NAVY)
+    K.R(K.np(cell, after=1, line=1.25), _travel_text(pl.walk_min, pl.drive_min), size=9, color=T.SLATE)
+    p = K.np(cell, after=1, line=1.25)
+    if pl.hours_text and pl.hours_text.strip():
+        K.R(p, pl.hours_text, size=9)
+    else:
+        K.R(p, "Hours not listed", size=9, color=T.SLATE, italic=True)
+    if pl.phone:
+        K.R(K.np(cell, after=1, line=1.25), pl.phone, size=9)
+    for m in pl.markers:
+        K.review_marker(cell, m.kind, m.text)
+
+
+def _place_column(cell, header: str, places) -> None:
+    p = K.np(cell, after=5, keep=True, line=1.0)
+    K.R(p, header, size=7.5, color=T.ROYAL, bold=True, caps=True, spacing=1.4)
+    K.hairline(p, T.POWDER, space=2)
+    if not places:
+        K.R(K.np(cell, line=1.25), "None listed nearby.", size=9.5, color=T.SLATE, italic=True)
+    for i, pl in enumerate(places):
+        _place(cell, pl, i == 0)
+    K.close(cell, 1)
+
+
+def render_place_groups(doc, W: float, c: PlaceGroups) -> None:
+    gap = 0.55
+    cw = (_inner_w(W) - 2 * gap) / 3
+    for h in c.hotels:
+        _, cell = _card(doc, W)
+        p = K.np(cell, after=2, keep=True, style="Eyebrow")
+        K.R(p, h.city.upper(), size=8, color=T.GOLD_INK, bold=True, spacing=1.6)
+        K.R(p, " ", size=8)
+        K.R(p, K.DIAMOND_GLYPH, size=5.5, color=T.AMBER)
+        K.R(p, " ", size=8)
+        K.R(p, h.dates.upper(), size=7.5, color=T.SLATE, bold=True, spacing=1.6)
+        p = K.np(cell, after=8, keep=True, line=1.0, style="Heading 3")
+        K.R(p, "Near ", font=T.HEAD, size=20, color=T.NAVY, bold=False)
+        if h.hotel.url:
+            K.link(p, h.hotel.url, h.hotel.text, size=20, color=T.NAVY, bold=False)
+        else:
+            K.R(p, h.hotel.text, font=T.HEAD, size=20, color=T.NAVY, bold=False)
+        for m in h.markers:
+            K.review_marker(cell, m.kind, m.text)
+        t = K.tbl(cell, 1, [cw, gap, cw, gap, cw])
+        K.row_keep(t.rows[0])
+        cells = t.rows[0].cells
+        _place_column(cells[0], "Pharmacies", h.pharmacies)
+        _place_column(cells[2], "Groceries", h.groceries)
+        _place_column(cells[4], "Hospital", h.hospitals)
+        K.close(cells[1], 1)
+        K.close(cells[3], 1)
+        _end_card(doc, cell)
+
+
+def _dish(cell, w: float, d) -> None:
+    p = K.np(cell, after=2, keep=True, line=1.0)
+    K.R(p, d.name, font=T.HEAD, size=18, color=T.NAVY)
+    K.R(K.np(cell, after=5, line=1.45, keep=bool(d.where)), d.desc, size=10)
+    if d.where:
+        _links_line(cell, d.where, lead="Where to try")
+
+
+def render_dish_grid(doc, W: float, c: DishGrid) -> None:
+    _grid(doc, W, c.dishes, _dish, ncols=2, gap=1.0, after_row=14)
+
+
+def _souvenir(cell, w: float, s) -> None:
+    p = K.np(cell, after=5, keep=True, line=1.0)
+    K.R(p, s.title, font=T.HEAD, size=16, color=T.NAVY)
+    K.hairline(p, T.POWDER, space=2)
+    _label(cell, "What to buy", T.SLATE)
+    K.R(K.np(cell, after=5, line=1.4, keep=bool(s.places)), s.what, size=9.5)
+    if s.places:
+        _label(cell, "Best places to buy", T.GOLD_INK)
+        _links_line(cell, s.places)
+
+
+def render_souvenir_grid(doc, W: float, c: SouvenirGrid) -> None:
+    _grid(doc, W, c.categories, _souvenir, ncols=2, gap=1.0, after_row=14)
+
+
+def _do_dont_side(cell, heading: str, items: list[str], good: bool) -> None:
+    p = K.np(cell, after=6, keep=True, line=1.0)
+    K.R(p, heading, font=T.HEAD, size=18, color=T.NAVY)
+    K.hairline(p, T.POWDER, space=2)
+    for it in items:
+        p = K.np(cell, after=4, line=1.35, indent=0.55, hanging=0.55)
+        K.tabs(p, [("left", 0.55, None)])
+        if good:
+            K.R(p, K.DIAMOND_GLYPH, size=6, color=T.AMBER)
+        else:
+            K.R(p, "×", size=11, color=T.CRIMSON, bold=True)
+        K.R(p, "\t" + it, size=10)
+    K.close(cell, 1)
+
+
+def render_dos_donts(doc, W: float, c: DosDonts) -> None:
+    gap = 1.0
+    cw = (W - gap) / 2
+    t = K.tbl(doc, 1, [cw, gap, cw])
+    K.row_keep(t.rows[0])
+    cells = t.rows[0].cells
+    _do_dont_side(cells[0], "Do", c.do, True)
+    _do_dont_side(cells[2], "Don\u2019t", c.dont, False)
+    K.close(cells[1], 1)
+    K.spacer(doc, 14)
+
+
+def render_phrase_table(doc, W: float, c: PhraseTable) -> None:
+    n = len(c.phrases)
+    if not n:
+        return
+    gap, pw = 0.8, 4.3
+    mw = (W - gap) / 2 - pw
+    rows = -(-n // 2)
+    t = K.tbl(doc, rows, [pw, mw, gap, pw, mw], margins=(0.14, 0.0, 0.14, 0.15))
+    edge = (T.POWDER, 4)
+    for r in range(rows):
+        row = t.rows[r]
+        K.row_keep(row)
+        for side in (0, 1):
+            k = r + side * rows
+            cells = row.cells[side * 3: side * 3 + 2]
+            if k >= n:
+                for cell in cells:
+                    K.close(cell, 1)
+                continue
+            ph = c.phrases[k]
+            K.R(K.np(cells[0], line=1.0), ph.local, font=T.HEAD, size=14, italic=True, color=T.NAVY)
+            K.R(K.np(cells[1], line=1.25), ph.english, size=9.5, color=T.SLATE)
+            for cell in cells:
+                K.cell_borders(cell, top=edge if r == 0 else None, bottom=edge)
+                K.cell_valign(cell, "center")
+                K.close(cell, 1)
+        K.close(row.cells[2], 1)
+    K.spacer(doc, 14)
+
+
+def render_emergency_strip(doc, W: float, c: EmergencyStrip) -> None:
+    n = len(c.numbers)
+    if not n:
+        return
+    t = K.tbl(doc, 1, [W / n] * n, margins=(0.35, 0.15, 0.35, 0.15))
+    K.row_keep(t.rows[0])
+    for i, e in enumerate(c.numbers):
+        cell = t.rows[0].cells[i]
+        K.cell_shade(cell, T.WHITE)
+        K.cell_borders(cell, top=(T.ROYAL, 12), bottom=(T.POWDER, 6),
+                       left=(T.CARD_EDGE if i == 0 else T.POWDER, 4),
+                       right=(T.CARD_EDGE, 4) if i == n - 1 else None)
+        K.R(K.np(cell, after=2, align=AL.CENTER, line=1.0), e.number, font=T.HEAD, size=26, bold=True, color=T.ROYAL)
+        p = K.np(cell, align=AL.CENTER, line=1.0)
+        K.R(p, e.service, size=7, color=T.SLATE, caps=True, spacing=1.2)
+        K.close(cell, 1)
+    if c.dial:
+        K.R(K.np(doc, before=6, after=0, align=AL.CENTER, line=1.0), c.dial, font=T.HEAD, size=12.5, italic=True,
+            color=T.SLATE)
+    K.spacer(doc, 14)
+
+
+def render_contact_cards(doc, W: float, c: ContactCards) -> None:
+    n = len(c.cards)
+    if not n:
+        return
+    t = K.tbl(doc, 1, [W / n] * n, margins=(0.42, 0.6, 0.45, 0.6))
+    K.row_keep(t.rows[0])
+    for i, k in enumerate(c.cards):
+        cell = t.rows[0].cells[i]
+        K.cell_shade(cell, T.WHITE)
+        K.borders(cell, l=(T.AMBER, 27) if i == 0 else (T.POWDER, 4), t=(T.CARD_EDGE, 4), b=(T.POWDER, 6),
+                  r=(T.CARD_EDGE, 4))
+        K.R(K.np(cell, after=3, keep=True, line=1.0), k.eyebrow.upper(), size=7.5, color=T.GOLD_INK, bold=True,
+            spacing=1.4)
+        p = K.np(cell, after=3 if (k.phone or k.note) else 0, keep=True, line=1.0)
+        if k.name.url:
+            K.link(p, k.name.url, k.name.text, size=16, color=T.NAVY, bold=False)
+        else:
+            K.R(p, k.name.text, font=T.HEAD, size=16, color=T.NAVY)
+        if k.phone:
+            K.R(K.np(cell, after=3 if k.note else 0, keep=bool(k.note), line=1.0), k.phone, font=T.HEAD, size=17,
+                bold=True, color=T.ROYAL)
+        if k.note:
+            K.R(K.np(cell, line=1.3), k.note, size=9.5, color=T.SLATE)
+        K.close(cell, 1)
+    K.spacer(doc, 14)

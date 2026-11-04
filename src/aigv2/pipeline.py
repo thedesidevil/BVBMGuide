@@ -35,11 +35,12 @@ from src.aigv2.store import NearbyCache, PlaceCache, RouteCache, RunStore, defau
 from src.aigv2.verification import build_sheet
 from src.aigv2.writing.days import DayText, write_day
 from src.aigv2.writing.sections import SECTION_KEYS, SectionContent, write_section
+from src.aigv2.writing.thanks import ThankYouText, write_thank_you
 from src.aigv2.writing.title import write_title
 from src.library.ui.storage import StorageBackend
 
 WRITERS = 6
-REGEN_SECTIONS = (*SECTION_KEYS, "title")
+REGEN_SECTIONS = (*SECTION_KEYS, "title", "thanks")
 _ITEM_KINDS = ("attraction", "activity", "meal_out")
 _OUTPUTS = ("guide.docx", "qc_report.md", "qc_report.json", "verification.xlsx")
 _STALE_ON_REGEN = ("guide.json", "guide_error.txt")
@@ -660,6 +661,8 @@ def _write(store: RunStore, state: PlanState, deps: Deps) -> None:
                                          places=deps.places, fx=deps.fx, today=date.today(), important=state.important)
         if not store.has("sections/title.json"):
             jobs["sections/title.json"] = pool.submit(write_title, state.trip, deps.llm)
+        if not store.has("sections/thanks.json"):
+            jobs["sections/thanks.json"] = pool.submit(write_thank_you, state.trip, deps.llm, state.countries)
     errors: list[tuple[str, Exception]] = []
     for name, fut in jobs.items():
         try:
@@ -669,6 +672,8 @@ def _write(store: RunStore, state: PlanState, deps: Deps) -> None:
             continue
         if name == "sections/title.json":
             store.save_json(name, {"title": out})
+        elif name == "sections/thanks.json":
+            store.save_json(name, out.model_dump(mode="json"))
         elif name.startswith("sections/"):
             store.save_json(name, {"content": out.model_dump(mode="json") if out else None})
         else:
@@ -738,7 +743,9 @@ def _render_qc(store: RunStore, state: PlanState, answers: Answers, deps: Deps) 
         data = GuideData(trip=state.trip, title=store.load_json("sections/title.json")["title"],
                          days=_render_days(store, state, deps), sections=sections, important=state.important,
                          trip_scope=state.trip.trip_scope, modes=state.trip.travel_modes,
-                         domestic=state.trip.trip_scope == "domestic")
+                         domestic=state.trip.trip_scope == "domestic",
+                         thanks=ThankYouText.model_validate(store.load_json("sections/thanks.json"))
+                         if store.has("sections/thanks.json") else None)
         docx = render_guide(data, deps.settings)
         annotated, result, report = run_qc(docx, state.trip, answers, deps.library, deps.places, deps.routes,
                                            deps.llm, state.exclusions, deps.settings.google_usd_per_call,

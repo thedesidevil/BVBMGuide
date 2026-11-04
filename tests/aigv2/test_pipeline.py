@@ -90,6 +90,8 @@ REPLIES = {
     "write_days": _day,
     "write_sections": lambda p: json.dumps({"items": [{"heading": "Good to know", "body": "Plan ahead and enjoy."}]}),
     "title": lambda p: json.dumps({"title": "Manhattan Lights Ahead"}),
+    "thanks": lambda p: json.dumps({"paragraphs": ["Thank you for the opportunity to plan your trip to New York.",
+                                                   "Bon Voyage by Marina is a message away."]}),
     "qc_prose": lambda p: json.dumps({"issues": []}),
     "qc_sense": lambda p: json.dumps({"issues": []}),
 }
@@ -1120,3 +1122,12 @@ def test_crossing_minutes_ignores_road_lines():
     assert parse_crossing_min(["Drive to Sanur Harbour takes 60 min"]) is None
     assert parse_crossing_min(["Hotel transfer takes 45 minutes"]) is None
     assert parse_crossing_min(["The crossing takes about 35 min"]) == 35
+
+
+def test_thanks_checkpointed(deps):
+    store, answers, _ = built(deps)
+    assert store.has("sections/thanks.json")
+    assert store.load_json("sections/thanks.json")["sign_off"] == "With love,"
+    assert len(steps(deps.llm, "thanks")) == 1
+    build_run(store, answers, deps)
+    assert len(steps(deps.llm, "thanks")) == 1

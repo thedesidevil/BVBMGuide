@@ -11,6 +11,8 @@ _WANTED = 2
 _REQUEST = 6
 _NEAR_RADIUS_M = 900
 _HOSPITAL_RADIUS_M = 10_000
+_CAR_RADIUS_M = 3000
+_CAR_LIMIT_MIN = 15
 _GROCERY_TYPES = ["supermarket", "convenience_store", "grocery_store"]
 _CAR_MODES = {"taxi", "self_drive", "private_driver"}
 
@@ -59,6 +61,14 @@ def _walkable(places, routes, origin, city: str, types: list[str], label: str, c
     return picked, markers
 
 
+def _pharmacy_by_car(places, routes, origin, city: str) -> list[NearbyPlace]:
+    found = [p for p in places.nearby(origin[0], origin[1], ["pharmacy"], _CAR_RADIUS_M, _REQUEST, city=city) if not unwanted_name(p.name)]
+    drives = _measure(routes, origin, found, "DRIVE")
+    near = [(d, p) for p, d in zip(found, drives) if d is not None and d <= _CAR_LIMIT_MIN]
+    near.sort(key=lambda t: t[0])
+    return [_wrap(p, None, d) for d, p in near[:_WANTED]]
+
+
 def _hospital(places, routes, origin, city: str) -> Optional[NearbyPlace]:
     found = places.nearby(origin[0], origin[1], ["hospital"], _HOSPITAL_RADIUS_M, _REQUEST, city=city)
     found = [p for p in found if not unwanted_name(p.name, medical=True)]
@@ -93,6 +103,11 @@ def important_places(
             continue
         origin = (hotel.lat, hotel.lng)
         entry.pharmacies, m1 = _walkable(places, routes, origin, stay.city, ["pharmacy"], "pharmacies", car)
+        if not entry.pharmacies:
+            by_car = _pharmacy_by_car(places, routes, origin, stay.city)
+            if by_car:
+                entry.pharmacies = by_car
+                m1 = [Marker(kind="VERIFY", text=f"no pharmacy within a {_WALK_LIMIT_MIN}-minute walk; nearest by car shown")]
         taken = frozenset(n.place.place_id for n in entry.pharmacies)
         entry.groceries, m2 = _walkable(places, routes, origin, stay.city, _GROCERY_TYPES, "groceries", car, taken)
         entry.markers = m1 + m2

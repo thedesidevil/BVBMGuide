@@ -294,3 +294,16 @@ def test_day8_departure_cards():
     assert "approximately 9:30 AM" in x2.text and "about 3 hours before" in x2.text
     assert not any(mk.text == "departure time" for mk in marks2)
     assert "buffer only" not in x2.text
+
+
+def test_thank_you_page_components():
+    from src.aigv2.writing.thanks import ThankYouText
+    data = load()
+    data.thanks = ThankYouText(paragraphs=["One.", "Two."])
+    pg = build_guide(data, SETTINGS).pages[-1]
+    c = pg.components[0]
+    assert pg.kind == "thank_you" and c.paragraphs == ["One.", "Two."]
+    assert c.signoff == "With love," and c.signature == "Bon Voyage by Marina"
+    data.thanks = None
+    c = build_guide(data, SETTINGS).pages[-1].components[0]
+    assert len(c.paragraphs) == 2 and "Bali" in c.paragraphs[0] or "It has been" in c.paragraphs[0]

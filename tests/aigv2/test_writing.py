@@ -10,6 +10,7 @@ from src.aigv2.models import Diet, HotelStay, Traveller, TripPlan, DayPlan, Plan
 from src.aigv2.money import FxUnavailable
 from src.aigv2.writing.days import write_day
 from src.aigv2.writing.sections import write_section
+from src.aigv2.writing.thanks import write_thank_you
 from src.aigv2.writing.title import write_title
 
 
@@ -31,7 +32,7 @@ class FakeClient:
 def make(luna, sol=None):
     calls = []
     replies = {"gpt-6-luna": luna, "gpt-6.1-sol": sol if sol is not None else luna}
-    settings = Settings(models={s: "gpt-6-luna" for s in ("write_days", "write_sections", "title")})
+    settings = Settings(models={s: "gpt-6-luna" for s in ("write_days", "write_sections", "title", "thanks")})
     return StepLLM(settings, client_factory=lambda m: FakeClient(m, replies, calls)), calls
 
 
@@ -452,3 +453,33 @@ def test_library_safety_lines_naming_another_hospital_are_dropped():
     from src.aigv2.writing.sections import _unlisted_hospitals
     assert _unlisted_hospitals("Ari Canti Hospital is open 24/7", ["BIMC Hospital Nusa Dua"]) == ["Ari Canti Hospital"]
     assert _unlisted_hospitals("Go to BIMC Hospital Nusa Dua", ["BIMC Hospital Nusa Dua"]) == []
+
+
+GOOD = {"paragraphs": ["Thank you for the opportunity to plan your trip to Paris.", "Bon Voyage by Marina is a message away."]}
+
+
+def test_thank_you_valid():
+    llm, _ = make(GOOD)
+    out = write_thank_you(trip(), llm)
+    assert out.paragraphs == GOOD["paragraphs"] and out.sign_off == "With love,"
+
+
+def test_thank_you_we_retried_then_fallback():
+    bad = {"paragraphs": ["We hope Paris is wonderful for you."]}
+    llm, calls = make([bad, bad], [bad, bad])
+    out = write_thank_you(trip(), llm)
+    assert len(calls) == 2 and "Paris" in out.paragraphs[0] and out.sign_off == "With love,"
+    assert not any(w in " ".join(out.paragraphs).lower().split() for w in ("we", "our", "us"))
+
+
+def test_thank_you_retry_recovers():
+    llm, calls = make([{"paragraphs": ["We love Paris."]}, GOOD])
+    assert write_thank_you(trip(), llm).paragraphs == GOOD["paragraphs"] and len(calls) == 2
+
+
+@pytest.mark.parametrize("paras", [["Enjoy your holiday, it will be wonderful."], ["Paris a.", "Paris b.", "Paris c."],
+                                   ["Paris " + "x" * 330], ["Paris awaits, call +91 86000 15316."]])
+def test_thank_you_rejected(paras):
+    llm, calls = make({"paragraphs": paras})
+    out = write_thank_you(trip(), llm)
+    assert len(calls) == 2 and out.paragraphs[0].startswith("It has been a pleasure")

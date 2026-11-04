@@ -137,3 +137,39 @@ def test_hospital_none_marker_when_only_dental_and_labs():
     r = _one([], [], [mk("Dental Lab", 1.6), mk("City Dentist", 1.7)], {}, {1.6: 2, 1.7: 3})
     assert r.hospital is None
     assert any(m.text == "no emergency hospital found nearby" for m in r.markers)
+
+
+class CountingPlaces(FakePlaces):
+    def nearby(self, lat, lng, types, radius_m, max_results, city=None):
+        if types == ["pharmacy"] and radius_m == 3000:
+            self.calls.append((lat, types, radius_m, max_results, city))
+            return self.by_origin[(lat, "pharmacy_car")]
+        return super().nearby(lat, lng, types, radius_m, max_results, city)
+
+
+def _car_run(walkable, car_found, drive):
+    places = CountingPlaces({(1.0, "pharmacy"): [mk("Near", 1.1)] if walkable else [mk("Far", 1.2)],
+                             (1.0, "pharmacy_car"): car_found, (1.0, "grocery"): [mk("G", 1.4, hours=None)], (1.0, "hospital"): []})
+    r = important_places([stay("H1", "Ubud")], {"H1": mk("H1", 1.0)}, places, FakeRoutes({1.1: 3, 1.2: 40, 1.4: 5}, drive), [])[0]
+    return r, places
+
+
+def test_pharmacy_car_fallback():
+    r, places = _car_run(False, [mk("Car", 1.3), mk("TooFar", 1.5)], {1.3: 8, 1.5: 25})
+    assert [(n.place.name, n.drive_min, n.walk_min) for n in r.pharmacies] == [("Car", 8, None)]
+    texts = [m.text for m in r.markers]
+    assert "no pharmacy within a 10-minute walk; nearest by car shown" in texts
+    assert not any("fewer than 2 pharmacies" in t for t in texts)
+    assert len([c for c in places.calls if c[2] == 3000]) == 1
+    assert any(m.text == "opening hours unknown" for m in r.groceries[0].markers)
+
+
+def test_no_car_search_when_walkable_pharmacy():
+    r, places = _car_run(True, [mk("Car", 1.3)], {1.3: 8})
+    assert [n.place.name for n in r.pharmacies] == ["Near"]
+    assert not [c for c in places.calls if c[2] == 3000]
+
+
+def test_car_fallback_nothing_keeps_old_marker():
+    r, _ = _car_run(False, [mk("TooFar", 1.5)], {1.5: 25})
+    assert r.pharmacies == [] and any("fewer than 2 pharmacies" in m.text for m in r.markers)

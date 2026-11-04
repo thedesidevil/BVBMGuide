@@ -19,6 +19,7 @@ from src.aigv2.render.sections_render import render_important, render_section, r
 from src.aigv2.render.theme import ASSETS, GOLD, PPR_ORDER, new_document, ordered_insert
 from src.aigv2.writing.days import DayText
 from src.aigv2.writing.sections import SectionContent
+from src.aigv2.writing.thanks import ThankYouText
 
 __all__ = ["GuideData", "RenderDay", "day_header", "output_filename", "render_guide", "sunset_time"]
 
@@ -61,6 +62,7 @@ class GuideData(BaseModel):
     trip_scope: str
     modes: list[str]
     domestic: bool
+    thanks: Optional[ThankYouText] = None
 
 
 def destinations(trip: TripPlan) -> list[str]:

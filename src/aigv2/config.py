@@ -4,7 +4,7 @@ from pathlib import Path
 
 from pydantic import BaseModel, Field, model_validator
 
-STEPS = ["extract", "rank", "write_days", "write_sections", "title", "qc_prose", "qc_sense"]
+STEPS = ["extract", "rank", "write_days", "write_sections", "title", "thanks", "qc_prose", "qc_sense"]
 # Unconfirmed estimates (Places API (New) Enterprise SKUs incl. Place Details with opening hours, Routes Essentials
 # per element) — confirm against Google's price list before relying on them.
 _BANNED_MODEL = re.compile(r"(?:^|[/:])gpt-6(?:\.0)?-sol(?:$|[^.\d])", re.I)

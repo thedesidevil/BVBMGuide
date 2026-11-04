@@ -14,6 +14,7 @@ from src.aigv2.library import norm_name
 from src.aigv2.models import HotelStay, Marker, TransportLeg
 from src.aigv2.planning.boat import boat_bookings, parse_boat_type
 from src.aigv2.planning.important_places import ImportantPlaces, NearbyPlace
+from src.aigv2.writing.thanks import SIGN_OFF, SIGNATURE, fallback_text
 from src.aigv2.planning.late_night import is_late_night_landing, pickup_before_landing
 from src.aigv2.planning.meals import ChosenRestaurant, MealPick
 from src.aigv2.planning.slots import MealSlot, ScheduledItem, arrival_buffer_min, is_optional, leave_by, parse_time
@@ -727,6 +728,8 @@ def build_guide(data: GuideData, settings) -> g.Guide:
         ref = build_important_page(data.important, data) if key == "important" else build_reference_page(key, data.sections[key], data)
         if ref is not None:
             pages.append(ref)
-    pages.append(g.Page(kind="thank_you", title="Thank You", bookmark="thank_you"))
+    thanks = data.thanks or fallback_text(data.trip, None)
+    pages.append(g.Page(kind="thank_you", title="Thank You", bookmark="thank_you", components=[
+        g.ThankYou(paragraphs=list(thanks.paragraphs), signoff=SIGN_OFF, signature=SIGNATURE)]))
     return g.Guide(client=names[0] if names else "Guest", destination=dest, title=data.title,
                    subtitle=f"All Inclusive Guide – {dest}", pages=pages)

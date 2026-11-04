@@ -711,11 +711,20 @@ def test_day7_option_cards_before_dinner():
     oc = next(c for c in pg.components if c.type == "OptionCards")
     order = _rendered_order(pg)
     _day7_order_ok(order, boats[0].title.text, oc.heading)
-    swapped = Page.model_construct(kind=pg.kind, title=pg.title, bookmark=pg.bookmark,
-                                   components=[pg.components[1], pg.components[0]] + list(pg.components[2:]))
-    bad = _rendered_order(swapped)
+    comps = list(pg.components)
+    i, j = comps.index(boats[0]), comps.index(oc)
+    comps[i], comps[j] = comps[j], comps[i]
+    mutated = Page.model_construct(kind=pg.kind, title=pg.title, bookmark=pg.bookmark, components=comps)
     with pytest.raises(AssertionError):
-        _day7_order_ok(bad[::-1], boats[0].title.text, oc.heading)
+        _day7_order_ok(_rendered_order(mutated), boats[0].title.text, oc.heading)
+
+
+def _day8_order_ok(order, ck_title, transfer_title, flight_title):
+    yd = first_index(order, "YOUR DAY", kind="p")
+    a = first_index(order, ck_title, yd + 1, title=True)
+    b = first_index(order, transfer_title, a + 1, title=True)
+    c = first_index(order, flight_title, b + 1, title=True)
+    assert yd < a < b < c
 
 
 def test_day8_checklist_then_airport_transfer():
@@ -723,12 +732,15 @@ def test_day8_checklist_then_airport_transfer():
     ck = next(c for c in pg.components if c.type == "ChecklistCard")
     bks = [c for c in pg.components if c.type == "BookingCard"]
     assert len(bks) >= 2, "fixture changed: expected airport transfer + flight"
-    order = _rendered_order(pg)
-    yd = first_index(order, "YOUR DAY", kind="p")
-    a = first_index(order, ck.title.text if hasattr(ck.title, "text") else ck.title, yd + 1, title=True)
-    b = first_index(order, bks[0].title.text, a + 1, title=True)
-    c = first_index(order, bks[-1].title.text, b + 1, title=True)
-    assert yd < a < b < c
+    ck_t = ck.title.text if hasattr(ck.title, "text") else ck.title
+    args = (ck_t, bks[0].title.text, bks[-1].title.text)
+    _day8_order_ok(_rendered_order(pg), *args)
+    comps = list(pg.components)
+    i, j = comps.index(ck), comps.index(bks[0])
+    comps[i], comps[j] = comps[j], comps[i]
+    mutated = Page.model_construct(kind=pg.kind, title=pg.title, bookmark=pg.bookmark, components=comps)
+    with pytest.raises(AssertionError):
+        _day8_order_ok(_rendered_order(mutated), *args)
 
 
 def _check_rendered(data):

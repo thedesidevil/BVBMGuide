@@ -8,6 +8,7 @@ from typing import Optional
 
 from src.aigv2.guide import model as g
 from src.aigv2.guide.departure import departure_checklist
+from src.aigv2.guide.reference import structured_components
 from src.aigv2.hours import _fmt12, format_for_day, is_open_for, next_opening
 from src.aigv2.library import norm_name
 from src.aigv2.models import HotelStay, Marker, TransportLeg
@@ -644,7 +645,10 @@ def build_reference_page(key: str, content: SectionContent, data: GuideData) -> 
     eyebrow = "BEFORE YOU GO" if key in dict(BEFORE_YOU_GO) else "WHILE YOU'RE THERE"
     comps: list = [g.ReferenceOpener(eyebrow=eyebrow, title=title, intro="")]
     items = list(content.items)
-    if content.by_country:
+    structured = structured_components(key, content, data)
+    if structured is not None:
+        comps += structured
+    elif content.by_country:
         many = len(content.by_country) > 1
         for country, its in content.by_country.items():
             head = [g.TitledPara(heading=country or "General", body="")] if many else []

@@ -91,7 +91,7 @@ def default_deps() -> Deps:
     settings = load_settings()
     backend = default_backend(settings)
     key = os.environ.get("GOOGLE_MAPS_API_KEY", "")
-    library_dir = Path(os.environ.get("AIGV2_LIBRARY_DB") or "library_db")
+    library_dir = Path(os.environ.get("AIGV2_LIBRARY_DB") or "library_db_new")
     return Deps(settings=settings, llm=StepLLM(settings), library=Library(library_dir),
                 places=PlacesClient(key, PlaceCache(backend, settings.cache_days),
                                     nearby_cache=NearbyCache(backend, settings.cache_days)),

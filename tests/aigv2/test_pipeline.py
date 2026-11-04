@@ -763,7 +763,7 @@ def test_default_deps_library_path_from_env(monkeypatch, tmp_path):
     deps = pipeline.default_deps()
     assert deps.library.root == tmp_path
     monkeypatch.delenv("AIGV2_LIBRARY_DB")
-    assert pipeline.default_deps().library.root == Path("library_db")
+    assert pipeline.default_deps().library.root == Path("library_db_new")
 
 
 # ---------- late-night arrival belongs to the night-of day ----------

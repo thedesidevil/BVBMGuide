@@ -240,8 +240,6 @@ def test_checklist_card_two_columns():
     right = [p for p in nt.rows[0].cells[2].paragraphs if p.text.startswith("◆")]
     assert (len(left), len(right)) == (4, 3)
     assert nt.rows[0]._tr.trPr.find(qn("w:cantSplit")) is not None
-    ps = [p.text for p in cell.paragraphs]
-    assert ps.index("Before you go") < len(ps)
     assert cell._tc.index(cell.paragraphs[[p.text for p in cell.paragraphs].index("Before you go")]._p) < \
         cell._tc.index(nt._tbl)
 
@@ -258,7 +256,7 @@ def test_cards_end_with_gap_spacer():
     assert last.text == "" and last._p.getprevious() is doc.tables[0]._tbl
 
 
-def test_qc_reader_sees_card_title_and_facts():
+def _qc_model():
     import io
     from src.aigv2.qc.reader import read_docx
     doc, W = _doc()
@@ -266,11 +264,62 @@ def test_qc_reader_sees_card_title_and_facts():
     D.render_sightseeing_card(doc, W, _sight())
     buf = io.BytesIO()
     doc.save(buf)
-    m = read_docx(buf.getvalue())
-    # The eyebrow line is the first paragraph in the card, so until Task 23 adapts the reader the venue is
-    # named after it; the title paragraph and the glance facts are still visible to the reader.
+    return read_docx(buf.getvalue())
+
+
+def test_card_title_and_facts_are_reader_independent():
+    doc = _rendered(_sight())
+    cell = doc.tables[0].rows[0].cells[0]
+    h = [p for p in cell.paragraphs if p.style.name == "Heading 3"]
+    assert [p.text for p in h] == ["Tegalalang Terraces"]
+    assert h[0]._p.find(qn("w:hyperlink")) is not None
+    first = cell.tables[0].rows[0].cells[0]
+    assert [p.text for p in first.paragraphs] == ["GETTING THERE", "30 min by car"]
+
+
+import pytest  # noqa: E402
+
+
+@pytest.mark.xfail(strict=True, reason="Task 23 adapts qc/reader.py _card to skip Eyebrow paragraphs")
+def test_qc_reader_sees_card_title_and_facts():
+    m = _qc_model()
     v = m.section_venues[0]
+    assert v.name == "Tegalalang Terraces"
+    assert v.url == "https://m.example/t"
     assert v.facts.get("GETTING THERE") == "30 min by car"
-    assert v.name == "1:00 PM ◆ AFTERNOON"
-    assert any(p.text == "Tegalalang Terraces" for p in m.paragraphs)
-    assert ("https://m.example/t") in [u for _, u in m.links]
+    assert (3, "Tegalalang Terraces") in m.headings
+
+
+def _checklist(items):
+    return ChecklistCard(when="10:00 AM", kind="Check-out", title=Link(text="Hotel"), lead="Before", items=items)
+
+
+def _reopen(doc):
+    import io
+    from docx import Document
+    b = io.BytesIO()
+    doc.save(b)
+    b.seek(0)
+    return Document(b)
+
+
+def test_checklist_zero_items_has_no_nested_table():
+    doc = _rendered(_checklist([]), D.render_checklist_card)
+    assert not doc.tables[0].rows[0].cells[0].tables
+    assert len(_reopen(doc).tables) == 1
+
+
+def test_checklist_one_item_right_cell_empty():
+    doc = _rendered(_checklist(["only"]), D.render_checklist_card)
+    nt = _reopen(doc).tables[0].rows[0].cells[0].tables[0]
+    assert [p.text for p in nt.rows[0].cells[0].paragraphs if p.text.startswith("◆")] == ["◆ only"] or \
+        len([p for p in nt.rows[0].cells[0].paragraphs if "only" in p.text]) == 1
+    assert [p.text for p in nt.rows[0].cells[2].paragraphs] == [""]
+
+
+def test_sightseeing_minimal_card():
+    c = SightseeingCard(when="9:00 AM", name=Link(text="Spot"))
+    doc = _rendered(c)
+    cell = doc.tables[0].rows[0].cells[0]
+    assert not cell.tables
+    assert [p.text for p in cell.paragraphs if p.text] == ["9:00 AM", "Spot"]

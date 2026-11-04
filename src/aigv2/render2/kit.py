@@ -18,7 +18,8 @@ from docx.oxml.ns import qn
 from docx.shared import Cm, Pt, RGBColor
 
 from src.aigv2.render2 import theme as T
-from src.aigv2.render2.theme import BODYF, GOLD_INK, HEAD, INK, POWDER, ROYAL, SLATE, WHITE
+from src.aigv2.models import Marker
+from src.aigv2.render2.theme import BODYF, GOLD_INK, HEAD, INK, POWDER, ROYAL
 
 RPR_ORDER = ["rStyle", "rFonts", "b", "bCs", "i", "iCs", "caps", "smallCaps", "strike", "dstrike", "outline",
              "shadow", "emboss", "imprint", "noProof", "snapToGrid", "vanish", "webHidden", "color", "spacing",
@@ -523,9 +524,14 @@ def diamond_eyebrow(cont, text: str, *, color: str = GOLD_INK, before: float = 6
 
 
 # ---------- review marker ----------
+MARKER_KINDS = ("ADD_RESTAURANT", "VERIFY", "PRICE_UNKNOWN", "WRITE_LETTER", "CHECK")
+
+
 def review_marker(container, kind: str, text: str):
-    """Staff-only marker paragraph (style 'Review Marker (internal)'); style defined in styles.py."""
+    """Staff-only marker paragraph (style 'Review Marker (internal)'); wording mirrors Marker.render()."""
+    if kind not in MARKER_KINDS:
+        raise ValueError(f"unknown marker kind: {kind!r}")
+    safe = text.replace(" · ", ", ").replace("⚠", "").strip()
     p = container.add_paragraph(style=REVIEW_STYLE)
-    label = kind.replace("_", " ")
-    p.add_run(f"⚠ {label}: {text}" + DOT.replace(" · ", "  ·  ") + "staff only")
+    p.add_run(Marker(kind=kind, text=safe).render() + "  ·  staff only")
     return p

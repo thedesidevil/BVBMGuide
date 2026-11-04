@@ -151,3 +151,35 @@ def test_install_styles_idempotent():
     assert len(doc.styles.element.findall(qn("w:style"))) == n
     names = [s.name for s in doc.styles]
     assert names.count("Review Marker (internal)") == 1 and names.count("Placeholder Card (internal)") == 1
+
+
+def test_review_marker_mirrors_marker_render():
+    from src.aigv2.models import Marker
+    from src.aigv2.qc.reader import MARKER_RE
+    from src.aigv2.qc.rules import _MARKER_KIND
+    doc = K.new_doc()
+    install_styles(doc)
+    for kind in K.MARKER_KINDS:
+        p = K.review_marker(doc, kind, "some text")
+        assert p.text == Marker(kind=kind, text="some text").render() + "  ·  staff only"
+        found = MARKER_RE.findall(p.text)
+        assert len(found) == 1 and _MARKER_KIND.match(found[0])
+    assert K.review_marker(doc, "ADD_RESTAURANT", "x").text.startswith("⚠ ADD RESTAURANT – x")
+    assert "WRITE PERSONAL LETTER" in K.review_marker(doc, "WRITE_LETTER", "x").text
+
+
+def test_review_marker_guards_free_text():
+    from src.aigv2.qc.reader import MARKER_RE
+    from src.aigv2.qc.rules import _MARKER_KIND
+    doc = K.new_doc()
+    install_styles(doc)
+    p = K.review_marker(doc, "VERIFY", "hours · check ⚠ twice")
+    found = MARKER_RE.findall(p.text)
+    assert len(found) == 1 and found[0] == "⚠ VERIFY: hours, check  twice"
+    assert _MARKER_KIND.match(found[0]).group(1) == "VERIFY"
+
+
+def test_review_marker_unknown_kind_raises():
+    import pytest
+    with pytest.raises(ValueError):
+        K.review_marker(K.new_doc(), "NOPE", "x")

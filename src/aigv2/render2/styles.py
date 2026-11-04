@@ -9,7 +9,7 @@ from src.aigv2.render2 import theme as T
 from src.aigv2.render2.kit import PPR_ORDER, REVIEW_STYLE, el, insert_ordered, style
 
 PLACEHOLDER_TABLE = "Placeholder Card (internal)"
-STYLE_NAMES = ("Normal", "Heading 1", "Heading 2", "Heading 3", "Eyebrow", "Body", "BodyLead", "CardLabel",
+STYLE_NAMES = ("Normal", "Heading 1", "Heading 2", "Heading 3", "Eyebrow", "Day Eyebrow", "Body", "BodyLead", "CardLabel",
                "Fact Label", "Fact Value", REVIEW_STYLE)
 
 
@@ -62,6 +62,8 @@ def install_styles(doc) -> None:
     _heading(doc, "Heading 2", 1, 22, AL.CENTER)
     _heading(doc, "Heading 3", 2, 20, AL.LEFT)
     style(doc, "Eyebrow", font=T.BODYF, size=7.5, color=T.ROYAL, bold=True, caps=True, spacing=1.5, base="Normal")
+    style(doc, "Day Eyebrow", font=T.BODYF, size=8.5, color=T.ROYAL, bold=True, caps=True, spacing=2.2,
+          keep_next=True, align=AL.CENTER, base="Normal")
     style(doc, "Body", font=T.BODYF, size=10, color=T.INK, line=1.45, after=4, base="Normal")
     style(doc, "BodyLead", font=T.BODYF, size=10.5, color=T.INK, line=1.5, after=6, base="Normal")
     style(doc, "CardLabel", font=T.BODYF, size=7.5, color=T.GOLD_INK, bold=True, caps=True, spacing=1.0,

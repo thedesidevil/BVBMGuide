@@ -4,7 +4,7 @@ from __future__ import annotations
 from docx.enum.text import WD_ALIGN_PARAGRAPH as AL
 from docx.oxml.ns import qn
 
-from src.aigv2.guide.model import (ChecklistCard, Fact, JourneyStrip, Link, MarkerRef, Opener, SightseeingCard,
+from src.aigv2.guide.model import (BookingCard, ChecklistCard, Fact, JourneyStrip, Link, MarkerRef, Opener, SightseeingCard,
                                    SimpleCard, YourDay)
 from src.aigv2.render2 import kit as K
 from src.aigv2.render2 import theme as T
@@ -219,3 +219,54 @@ def render_checklist_card(doc, W: float, c: ChecklistCard) -> None:
                 p.paragraph_format.line_spacing = 1.35
             K.close(cc, 1)
     _end_card(doc, cell)
+
+
+# ---------- booking cards (flight, transfer, boat, hotel check-in/out) ----------
+def _booking_title(cell, c: BookingCard) -> None:
+    p = K.np(cell, after=2 if c.subtitle else 10, keep=True, line=1.0, style="Heading 3")
+    if c.prefix:
+        K.R(p, c.prefix, font=T.HEAD, size=20, color=T.NAVY, bold=False)
+    if c.title.url:
+        K.link(p, c.title.url, c.title.text, size=20, color=T.NAVY, bold=False)
+    else:
+        K.R(p, c.title.text, font=T.HEAD, size=20, color=T.NAVY, bold=False)
+
+
+def _keep_all(cell) -> None:
+    for p in cell._tc.iter(qn("w:p")):
+        K.insert_ordered(p.get_or_add_pPr(), K.el("w:keepNext"), K.PPR_ORDER) \
+            if p.pPr is None or p.pPr.find(qn("w:keepNext")) is None else None
+
+
+def _booking_strip(cell, inner_w: float, c: BookingCard) -> None:
+    K.cell_shade(cell, T.FROST)
+    K.cell_margins(cell, top=0.13, bottom=0.13)
+    K.borders(cell, l=CARD_BAR, t=(T.CARD_EDGE, 4), b=(T.POWDER, 6), r=(T.CARD_EDGE, 4))
+    p = K.np(cell, line=1.0)
+    K.tabs(p, [("right", inner_w, None)])
+    if c.ref:
+        K.R(p, "BOOKING REFERENCE", size=6.5, color=T.SLATE, bold=True, spacing=1.3)
+        K.R(p, K.NB * 3, size=9)
+        K.R(p, c.ref, size=9, color=T.NAVY)
+    K.R(p, "\t")
+    if c.note:
+        K.R(p, c.note, font=T.HEAD, size=11.5, italic=True, color=T.SLATE)
+
+
+def render_booking_card(doc, W: float, c: BookingCard) -> None:
+    strip = bool(c.ref or c.note)
+    t = K.tbl(doc, 2 if strip else 1, [W], margins=CARD_PAD)
+    cell = t.rows[0].cells[0]
+    K.cell_shade(cell, T.WHITE)
+    K.borders(cell, l=CARD_BAR, t=(T.CARD_EDGE, 4), r=(T.CARD_EDGE, 4), b=None if strip else (T.POWDER, 6))
+    _eyebrow_line(cell, c.when, c.kind)
+    _booking_title(cell, c)
+    _subtitle(cell, c.subtitle)
+    _glance(cell, _inner_w(W), c.facts)
+    _body(cell, c.text, after=0)
+    K.close(cell, 1)
+    if strip:
+        K.cell_margins(cell, bottom=0.42)
+        _keep_all(cell)
+        _booking_strip(t.rows[1].cells[0], _inner_w(W), c)
+    K.spacer(doc, CARD_GAP_PT)

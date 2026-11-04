@@ -1,4 +1,7 @@
 from docx.oxml.ns import qn
+from src.aigv2.render2 import theme as _T
+
+T_POWDER, T_FROST = _T.POWDER, _T.FROST
 from docx.shared import Cm
 
 from src.aigv2.guide.model import (ChecklistCard, Fact, JourneyStop, JourneyStrip, Link, MarkerRef, Opener,
@@ -323,3 +326,128 @@ def test_sightseeing_minimal_card():
     cell = doc.tables[0].rows[0].cells[0]
     assert not cell.tables
     assert [p.text for p in cell.paragraphs if p.text] == ["9:00 AM", "Spot"]
+
+
+# ---------- booking cards ----------
+def _booking(**kw):
+    from src.aigv2.guide.model import BookingCard
+    d = dict(when="Arrival", kind="Flight", title=Link(text="Flight to Bali"),
+             facts=[Fact(label="Flight", value="QR 960"), Fact(label="From", value="Doha"),
+                    Fact(label="To", value="Denpasar"), Fact(label="Lands", value="00:10")],
+             text="", ref="ABC123", note="Flight details as on your booking")
+    d.update(kw)
+    return BookingCard(**d)
+
+
+def _bk(c):
+    return _rendered(c, D.render_booking_card)
+
+
+def _edge(tc, side):
+    return tc.find(qn("w:tcPr")).find(qn("w:tcBorders")).find(qn("w:" + side))
+
+
+def test_booking_card_without_strip_is_one_row():
+    t = _bk(_booking(ref=None, note=None)).tables[0]
+    assert len(t.rows) == 1
+    assert _edge(t.rows[0].cells[0]._tc, "bottom").get(qn("w:color")) == T_POWDER
+
+
+def test_booking_card_with_strip_two_rows():
+    t = _bk(_booking()).tables[0]
+    assert len(t.rows) == 2
+    assert _edge(t.rows[0].cells[0]._tc, "bottom").get(qn("w:val")) == "nil"
+    s = t.rows[1].cells[0]._tc
+    assert s.find(qn("w:tcPr")).find(qn("w:shd")).get(qn("w:fill")) == T_FROST
+    assert _edge(s, "bottom").get(qn("w:color")) == T_POWDER
+    txt = t.rows[1].cells[0].text
+    assert txt.startswith("BOOKING REFERENCE") and "ABC123" in txt and "Flight details as on your booking" in txt
+    assert txt.index("ABC123") < txt.index("\t") < txt.index("Flight details")
+    assert s.find(".//" + qn("w:tab")) is not None
+
+
+def test_strip_only_note():
+    t = _bk(_booking(ref=None)).tables[0]
+    assert "BOOKING REFERENCE" not in t.rows[1].cells[0].text
+    assert "Flight details as on your booking" in t.rows[1].cells[0].text
+
+
+def test_strip_only_ref():
+    t = _bk(_booking(note=None)).tables[0]
+    assert len(t.rows) == 2 and "ABC123" in t.rows[1].cells[0].text
+
+
+def test_title_prefix_and_link():
+    c = _booking(prefix="Return to ", title=Link(text="Hotel X", url="https://m.example/h"))
+    p = next(p for p in _bk(c).tables[0].rows[0].cells[0].paragraphs if p.style.name == "Heading 3")
+    assert p.text == "Return to Hotel X"
+    hl = p._p.findall(qn("w:hyperlink"))
+    assert len(hl) == 1 and "".join(t.text for t in hl[0].iter(qn("w:t"))) == "Hotel X"
+    c = _booking(prefix="Return to ", title=Link(text="Hotel X"))
+    p = next(p for p in _bk(c).tables[0].rows[0].cells[0].paragraphs if p.style.name == "Heading 3")
+    assert p.text == "Return to Hotel X" and not p._p.findall(qn("w:hyperlink"))
+
+
+def _glance_texts(doc):
+    g = doc.tables[0].rows[0].cells[0].tables[0]
+    return [p.text for r in g.rows for c in r.cells for p in c.paragraphs]
+
+
+def test_fact_labels_uppercase_and_separate_paragraphs():
+    c = _booking(facts=[Fact(label="Meeting point", value="Bali Airport")])
+    t = _glance_texts(_bk(c))
+    assert "MEETING POINT" in t and "Bali Airport" in t
+
+
+def test_flight_transport_labels_preserved_for_qc():
+    facts = [Fact(label=l, value="x") for l in ("Departs", "Arrives", "Service", "Operator")]
+    t = _glance_texts(_bk(_booking(facts=facts)))
+    for l in ("DEPARTS", "ARRIVES", "SERVICE", "OPERATOR"):
+        assert l in t
+
+
+def _all_paras(el):
+    return el.findall(".//" + qn("w:p"))
+
+
+def test_all_paragraphs_keep_with_next_in_row1():
+    row = _bk(_booking(text="Some text.")).tables[0].rows[0]
+    ps = _all_paras(row._tr)
+    assert ps and all(p.find(qn("w:pPr")) is not None and p.find(qn("w:pPr")).find(qn("w:keepNext")) is not None
+                      for p in ps)
+
+
+def test_rows_cant_split():
+    for r in _bk(_booking()).tables[0].rows:
+        assert r._tr.trPr.find(qn("w:cantSplit")) is not None
+
+
+def test_booking_card_followed_by_gap():
+    doc = _bk(_booking())
+    assert doc.paragraphs[-1].text == "" and doc.paragraphs[-1]._p.getprevious() is doc.tables[0]._tbl
+
+
+def test_hotel_card_has_no_strip():
+    c = _booking(kind="Check-in", ref=None, note=None, facts=[Fact(label="Room", value="Villa")])
+    assert len(_bk(c).tables[0].rows) == 1
+
+
+def test_booking_card_from_guide_build_output():
+    import io
+    import docx
+    from tests.aigv2.test_guide_build import load, day, SETTINGS
+    from src.aigv2.guide.build import build_day_page
+    data = load()
+    cards = []
+    for i in (1, 5):
+        cards += [c for c in build_day_page(day(data, i), data, SETTINGS).components if c.type == "BookingCard"]
+    assert cards
+    doc, W = _doc()
+    for c in cards:
+        D.render_booking_card(doc, W, c)
+    buf = io.BytesIO()
+    doc.save(buf)
+    docx.Document(io.BytesIO(buf.getvalue()))
+    flight = next(c for c in cards if c.kind == "Flight")
+    txt = " ".join(_glance_texts(_bk(flight)))
+    assert "ARRIVES" in txt and "Lands 00:10" in txt  # real data carries "Lands" in the value

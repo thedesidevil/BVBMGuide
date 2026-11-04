@@ -1,4 +1,5 @@
 import io
+import re
 import json
 from pathlib import Path
 from types import SimpleNamespace
@@ -50,15 +51,16 @@ def test_section_count_matches_pages(guide, doc):
 
 
 def test_page_order(guide, doc):
-    t = _texts(doc)
-    marks = ["Dear", "Ubud, Nusa Lembongan, Sanur Magic"]
-    days = [" ".join(c.title) for p in guide.pages if p.kind == "day" for c in p.components
-            if isinstance(c, M.Opener)]
-    marks += days + ["Tailored Packing List", "Thank You"]
-    pos = []
-    for m in marks:
-        pos.append(next(i for i, x in enumerate(t) if x.startswith(m) or x.replace("\n", " ").startswith(m)))
-    assert pos == sorted(pos)
+    heads = [p.text.replace("\n", " ") for p in doc.paragraphs if p.style.name == "Heading 1"]
+    want = []
+    for pg in guide.pages:
+        if pg.kind == "day":
+            want.append(" ".join(next(c for c in pg.components if isinstance(c, M.Opener)).title))
+        elif pg.kind == "reference":
+            want.append(next(c for c in pg.components if isinstance(c, M.ReferenceOpener)).title)
+        elif pg.kind == "thank_you":
+            want.append("Thank You")
+    assert heads == want
 
 
 def test_all_day_headings_present(guide, doc):
@@ -121,17 +123,60 @@ def test_fonts_embedded_when_found(blob):
     assert any(n.startswith("word/fonts/") for n in names)
 
 
-def test_reader_parses_days(blob):
+def test_reader_reads_without_error_and_headings_present(blob, guide):
     from src.aigv2.qc.reader import read_docx
-    m = read_docx(blob)
-    assert m is not None
+    assert read_docx(blob) is not None
 
 
 @pytest.mark.xfail(strict=True, reason="Task 23 adapts qc/reader.py to the render2 layout")
-def test_reader_sees_all_days_and_slots(blob):
+def test_reader_sees_all_days_and_slots(blob, guide):
     from src.aigv2.qc.reader import read_docx
     m = read_docx(blob)
-    assert len(m.days) == 8
+    assert len(m.days) == sum(1 for p in guide.pages if p.kind == "day")
     for d in m.days:
         for s in d.slots:
             assert s.venues or s.markers
+
+
+def test_registry_covers_every_component():
+    import typing
+    from src.aigv2.render2.render import RENDERERS
+    union = typing.get_args(M.Component)[0]
+    classes = typing.get_args(union)
+    assert classes
+    missing = [c.__name__ for c in classes if c not in RENDERERS]
+    assert missing == []
+
+
+def test_embed_failure_returns_unembedded(guide, monkeypatch):
+    if not FN.find_cormorant():
+        pytest.skip("Cormorant not installed")
+    def boom(*a, **k):
+        raise RuntimeError("x")
+    monkeypatch.setattr(FN, "embed_fonts", boom)
+    out = render_guide2(guide)
+    assert not any(n.startswith("word/fonts/") for n in ZipFile(io.BytesIO(out)).namelist())
+    Document(io.BytesIO(out))
+
+
+def test_toc_numbers_match_final_page_map(guide, blob):
+    import shutil
+    if not (shutil.which("soffice") and shutil.which("pdftotext")):
+        pytest.skip("soffice/pdftotext missing")
+    from src.aigv2.render2 import document as DOC
+    from src.aigv2.render2 import toc as TOC
+    titles = {p.bookmark: DOC._heading(p) for p in guide.pages if p.kind in ("day", "reference", "thank_you")}
+    skip = DOC._skip_pages(blob, guide, titles, 1)
+    final = TOC.page_map(blob, titles, skip_pages=skip)
+    assert final
+    d = Document(io.BytesIO(blob))
+    shown = {}
+    for para in d.element.body.iter(qn("w:p")):
+        h = para.find(qn("w:hyperlink"))
+        if h is None or h.get(qn("w:anchor")) is None:
+            continue
+        txt = "".join(t.text or "" for t in para.iter(qn("w:t")))
+        tail = re.search(r"(\d+)\s*$", txt).group(1)
+        shown[h.get(qn("w:anchor"))] = tail
+    assert shown
+    assert {k: str(v) for k, v in final.items()} == shown

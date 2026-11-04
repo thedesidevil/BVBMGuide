@@ -1,4 +1,5 @@
 import json
+import re
 from datetime import date, datetime, time
 from pathlib import Path
 from types import SimpleNamespace
@@ -6,7 +7,7 @@ from src.aigv2.guide import MarkerRef
 from src.aigv2.guide import model as m
 from src.aigv2.guide.build import build_day_page, build_guide
 from src.aigv2.models import HotelStay, Marker, TransportLeg
-from src.aigv2.render.document import GuideData
+from src.aigv2.render.document import GuideData, destinations
 
 SETTINGS = SimpleNamespace(walk_max_min=10)
 FIX = Path(__file__).parent / "fixtures" / "bali_guide" / "guide_data.json"
@@ -306,4 +307,7 @@ def test_thank_you_page_components():
     assert c.signoff == "With love," and c.signature == "Bon Voyage by Marina"
     data.thanks = None
     c = build_guide(data, SETTINGS).pages[-1].components[0]
-    assert len(c.paragraphs) == 2 and "Bali" in c.paragraphs[0] or "It has been" in c.paragraphs[0]
+    assert len(c.paragraphs) == 2
+    assert destinations(data.trip)[0] in c.paragraphs[0]
+    text = " ".join(c.paragraphs).lower()
+    assert not re.search(r"\b(we|our|us)\b", text)

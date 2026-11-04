@@ -14,7 +14,6 @@ from src.aigv2.library import norm_name
 from src.aigv2.models import HotelStay, Marker, TransportLeg
 from src.aigv2.planning.boat import boat_bookings, parse_boat_type
 from src.aigv2.planning.important_places import ImportantPlaces, NearbyPlace
-from src.aigv2.writing.thanks import SIGN_OFF, SIGNATURE, fallback_text
 from src.aigv2.planning.late_night import is_late_night_landing, pickup_before_landing
 from src.aigv2.planning.meals import ChosenRestaurant, MealPick
 from src.aigv2.planning.slots import MealSlot, ScheduledItem, arrival_buffer_min, is_optional, leave_by, parse_time
@@ -24,6 +23,7 @@ from src.aigv2.render.document import BEFORE_YOU_GO, WHILE_THERE, GuideData, Ren
 from src.aigv2.render.sections_render import minutes_text, place_markers, search_url
 from src.aigv2.writing.days import AttractionText
 from src.aigv2.writing.sections import SectionContent, SectionItem
+from src.aigv2.writing.thanks import SIGN_OFF, SIGNATURE, fallback_text
 
 _LATE = "Late night"
 _KIND = {"flight": "Flight", "train": "Train", "boat": "Boat", "bus": "Bus"}

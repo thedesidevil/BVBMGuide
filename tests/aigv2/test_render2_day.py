@@ -1,7 +1,8 @@
 from docx.oxml.ns import qn
 from docx.shared import Cm
 
-from src.aigv2.guide.model import JourneyStop, JourneyStrip, Link, Opener, YourDay
+from src.aigv2.guide.model import (ChecklistCard, Fact, JourneyStop, JourneyStrip, Link, MarkerRef, Opener,
+                                   SightseeingCard, SimpleCard, YourDay)
 from src.aigv2.render2 import day_components as D
 from src.aigv2.render2 import frame as F
 
@@ -119,3 +120,157 @@ def test_opener_without_intro():
     doc = _opened(intro="")
     assert not any("A slow" in t for t in texts(doc))
     assert any(t.startswith("Ubud") for t in texts(doc))
+
+
+# ---------- cards (Task 16) ----------
+from src.aigv2.models import Marker  # noqa: E402
+from src.aigv2.render2 import theme as _T  # noqa: E402
+
+
+def _sight(**kw):
+    d = dict(when="1:00 PM", part="Afternoon", name=Link(text="Tegalalang Terraces", url="https://m.example/t"),
+             subtitle="Rice terraces", facts=[Fact(label="Getting there", value="30 min by car"),
+                                              Fact(label="Hours", value="8 am - 6 pm"),
+                                              Fact(label="Entry", value="IDR 20,000",
+                                                   link=Link(text="x", url="https://m.example/e"))],
+             text="Walk the terraces.", tips=["Wear shoes", "Bring water"],
+             markers=[MarkerRef(kind="VERIFY", text="opening hours")])
+    d.update(kw)
+    return SightseeingCard(**d)
+
+
+def _rendered(c, fn=None):
+    doc, W = _doc()
+    (fn or D.render_sightseeing_card)(doc, W, c)
+    return doc
+
+
+def _tc(doc):
+    return doc.tables[0]._tbl.find(".//" + qn("w:tc"))
+
+
+def _cell_paras(doc):
+    return doc.tables[0].rows[0].cells[0].paragraphs
+
+
+def test_card_is_single_cell_table_with_cant_split():
+    doc = _rendered(_sight())
+    t = doc.tables[0]
+    assert len(t.rows) == 1 and len(t.rows[0].cells) == 1
+    assert t.rows[0]._tr.trPr.find(qn("w:cantSplit")) is not None
+
+
+def test_card_bar_and_edges():
+    b = _tc(_rendered(_sight())).find(qn("w:tcPr")).find(qn("w:tcBorders"))
+    def g(side):
+        e = b.find(qn("w:" + side))
+        return e.get(qn("w:color")), e.get(qn("w:sz"))
+    assert g("left") == (_T.AMBER, "27")
+    assert g("bottom") == (_T.POWDER, "6")
+    assert g("top") == (_T.CARD_EDGE, "4") and g("right") == (_T.CARD_EDGE, "4")
+    assert _tc(_rendered(_sight())).find(qn("w:tcPr")).find(qn("w:shd")).get(qn("w:fill")) == _T.WHITE
+
+
+def test_sightseeing_title_is_hyperlink_in_heading3():
+    doc = _rendered(_sight())
+    p = next(p for p in _cell_paras(doc) if p.style.name == "Heading 3")
+    h = p._p.find(qn("w:hyperlink"))
+    assert h is not None and p.text == "Tegalalang Terraces"
+    assert doc.part.rels[h.get(qn("r:id"))].target_ref == "https://m.example/t"
+    doc = _rendered(_sight(name=Link(text="Plain")))
+    p = next(p for p in _cell_paras(doc) if p.style.name == "Heading 3")
+    assert p._p.find(qn("w:hyperlink")) is None and p.text == "Plain"
+
+
+def test_eyebrow_text_and_style():
+    p = _cell_paras(_rendered(_sight()))[0]
+    assert p.style.name == "Eyebrow" and p.text == "1:00 PM ◆ AFTERNOON"
+    p = _cell_paras(_rendered(_sight(part=None)))[0]
+    assert p.text == "1:00 PM"
+
+
+def test_glance_two_columns_and_odd_fact():
+    doc = _rendered(_sight())
+    g = doc.tables[0].rows[0].cells[0].tables[0]
+    assert len(g.rows) == 2
+    assert g.rows[1].cells[2].text.strip() == ""
+    first = g.rows[0].cells[0]
+    assert [p.text for p in first.paragraphs] == ["GETTING THERE", "30 min by car"]
+    assert g.rows[1].cells[0]._tc.findall(".//" + qn("w:hyperlink"))
+
+
+def test_getting_there_label_present_for_qc():
+    doc = _rendered(_sight())
+    texts_ = [p.text for p in doc.tables[0].rows[0].cells[0].tables[0].rows[0].cells[0].paragraphs]
+    assert "GETTING THERE" in texts_ and "30 min by car" in texts_
+
+
+def test_good_to_know_is_diamond_list():
+    ps = [p.text for p in _cell_paras(_rendered(_sight()))]
+    i = ps.index("GOOD TO KNOW")
+    assert ps[i + 1].startswith("◆") and ps[i + 1].endswith("Wear shoes")
+    assert ps[i + 2].startswith("◆") and "Bring water" in ps[i + 2]
+    assert "GOOD TO KNOW" not in [p.text for p in _cell_paras(_rendered(_sight(tips=[])))]
+
+
+def test_markers_use_review_style_inside_card():
+    doc = _rendered(_sight())
+    ms = [p for p in _cell_paras(doc) if p.style.name == "Review Marker (internal)"]
+    assert [m.text for m in ms] == [Marker(kind="VERIFY", text="opening hours").render() + "  ·  staff only"]
+
+
+def test_simple_card_has_no_glance_or_tips():
+    doc = _rendered(SimpleCard(when="9:00 AM", part="Morning", heading="Breakfast", text="Slow start."),
+                    D.render_simple_card)
+    cell = doc.tables[0].rows[0].cells[0]
+    assert not cell.tables
+    assert "GOOD TO KNOW" not in cell.text
+    h = next(p for p in cell.paragraphs if p.style.name == "Heading 3")
+    assert h.text == "Breakfast" and h._p.find(qn("w:hyperlink")) is None
+
+
+def test_checklist_card_two_columns():
+    c = ChecklistCard(when="10:00 AM", kind="Check-out", title=Link(text="Hotel", url="https://m.example/h"),
+                      lead="Before you go", items=[f"item{i}" for i in range(7)])
+    doc = _rendered(c, D.render_checklist_card)
+    cell = doc.tables[0].rows[0].cells[0]
+    nt = cell.tables[0]
+    assert len(nt.rows) == 1 and len(nt.rows[0].cells) == 3
+    left = [p for p in nt.rows[0].cells[0].paragraphs if p.text.startswith("◆")]
+    right = [p for p in nt.rows[0].cells[2].paragraphs if p.text.startswith("◆")]
+    assert (len(left), len(right)) == (4, 3)
+    assert nt.rows[0]._tr.trPr.find(qn("w:cantSplit")) is not None
+    ps = [p.text for p in cell.paragraphs]
+    assert ps.index("Before you go") < len(ps)
+    assert cell._tc.index(cell.paragraphs[[p.text for p in cell.paragraphs].index("Before you go")]._p) < \
+        cell._tc.index(nt._tbl)
+
+
+def test_long_text_card_does_not_split():
+    doc = _rendered(_sight(text="word " * 120, name=Link(text="T" * 90, url="https://m.example/t")))
+    assert len(doc.tables[0].rows) == 1
+    assert doc.tables[0].rows[0]._tr.trPr.find(qn("w:cantSplit")) is not None
+
+
+def test_cards_end_with_gap_spacer():
+    doc = _rendered(_sight())
+    last = doc.paragraphs[-1]
+    assert last.text == "" and last._p.getprevious() is doc.tables[0]._tbl
+
+
+def test_qc_reader_sees_card_title_and_facts():
+    import io
+    from src.aigv2.qc.reader import read_docx
+    doc, W = _doc()
+    D.render_opener(doc, W, _opener())
+    D.render_sightseeing_card(doc, W, _sight())
+    buf = io.BytesIO()
+    doc.save(buf)
+    m = read_docx(buf.getvalue())
+    # The eyebrow line is the first paragraph in the card, so until Task 23 adapts the reader the venue is
+    # named after it; the title paragraph and the glance facts are still visible to the reader.
+    v = m.section_venues[0]
+    assert v.facts.get("GETTING THERE") == "30 min by car"
+    assert v.name == "1:00 PM ◆ AFTERNOON"
+    assert any(p.text == "Tegalalang Terraces" for p in m.paragraphs)
+    assert ("https://m.example/t") in [u for _, u in m.links]

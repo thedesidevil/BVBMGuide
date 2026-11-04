@@ -4,7 +4,8 @@ from __future__ import annotations
 from docx.enum.text import WD_ALIGN_PARAGRAPH as AL
 from docx.oxml.ns import qn
 
-from src.aigv2.guide.model import JourneyStrip, Opener, YourDay
+from src.aigv2.guide.model import (ChecklistCard, Fact, JourneyStrip, Link, MarkerRef, Opener, SightseeingCard,
+                                   SimpleCard, YourDay)
 from src.aigv2.render2 import kit as K
 from src.aigv2.render2 import theme as T
 
@@ -88,3 +89,133 @@ def render_journey_strip(doc, W: float, c: JourneyStrip) -> None:
             _leg_cell(cell, c.legs[k] if k < len(c.legs) else "")
         K.close(cell)
     K.spacer(doc, 16)
+
+
+# ---------- cards (shared helpers are reused by the booking cards) ----------
+CARD_PAD = (0.5, 0.75, 0.55, 0.75)  # top, left, bottom, right inside a card (cm)
+CARD_BAR = (T.AMBER, 27)
+CARD_GAP_PT = 12
+
+
+def _card(doc, W: float):
+    """One-cell white card: amber left bar, pale top/right edges, powder bottom edge; never splits."""
+    t = K.tbl(doc, 1, [W], margins=CARD_PAD)
+    K.row_keep(t.rows[0])
+    cell = t.rows[0].cells[0]
+    K.cell_shade(cell, T.WHITE)
+    K.borders(cell, l=CARD_BAR, t=(T.CARD_EDGE, 4), b=(T.POWDER, 6), r=(T.CARD_EDGE, 4))
+    return t, cell
+
+
+def _end_card(doc, cell, gap: float = CARD_GAP_PT) -> None:
+    K.close(cell, 1)
+    K.spacer(doc, gap)
+
+
+def _inner_w(W: float) -> float:
+    return W - CARD_PAD[1] - CARD_PAD[3]
+
+
+def _eyebrow_line(cell, when: str, part: str | None = None) -> None:
+    p = K.np(cell, after=4, keep=True, style="Eyebrow")
+    K.R(p, when.upper(), size=8, color=T.GOLD_INK, bold=True, spacing=1.6)
+    if part:
+        K.R(p, " ", size=8)
+        K.R(p, K.DIAMOND_GLYPH, size=5.5, color=T.AMBER)
+        K.R(p, " ", size=8)
+        K.R(p, part.upper(), size=7.5, color=T.SLATE, bold=True, spacing=1.6)
+
+
+def _title(cell, name: Link | str, size: float = 20, has_sub: bool = False) -> None:
+    link = name if isinstance(name, Link) else Link(text=name)
+    p = K.np(cell, after=2 if has_sub else 10, keep=True, line=1.0, style="Heading 3")
+    if link.url:
+        K.link(p, link.url, link.text, size=size, color=T.NAVY, bold=False)
+    else:
+        K.R(p, link.text, font=T.HEAD, size=size, color=T.NAVY, bold=False)
+
+
+def _subtitle(cell, text: str | None) -> None:
+    if text:
+        K.R(K.np(cell, after=10, keep=True), text, font=T.HEAD, size=13, italic=True, color=T.SLATE)
+
+
+def _body(cell, text: str, after: float = 2) -> None:
+    if text:
+        K.R(K.np(cell, after=after, line=1.45), text, size=10)
+
+
+def _glance(cell, inner_w: float, facts: list[Fact]) -> None:
+    """Two-column label-over-value grid with powder hairlines; odd count leaves the last cell empty."""
+    if not facts:
+        return
+    gap = 0.8
+    cw = (inner_w - gap) / 2
+    t = K.tbl(cell, -(-len(facts) // 2), [cw, gap, cw], margins=(0.13, 0, 0.13, 0))
+    for i, f in enumerate(facts):
+        r, c = divmod(i, 2)
+        fc = t.rows[r].cells[c * 2]
+        K.borders(fc, t=(T.POWDER, 4) if r == 0 else None, b=(T.POWDER, 4))
+        K.R(K.np(fc, after=2), f.label.upper(), size=7, color=T.SLATE, bold=True, spacing=1.4)
+        vp = K.np(fc)
+        if f.link and f.link.url:
+            K.link(vp, f.link.url, f.value, size=13, color=T.NAVY, bold=False)
+        else:
+            K.R(vp, f.value, font=T.HEAD, size=13, color=T.NAVY)
+    if len(facts) % 2:
+        K.borders(t.rows[-1].cells[2], t=None, b=None)
+    K.spacer(cell, 10)
+
+
+def _tips(cell, tips: list[str]) -> None:
+    if not tips:
+        return
+    p = K.np(cell, before=8, after=5, keep=True)
+    K.R(p, "GOOD TO KNOW", size=7.5, color=T.ROYAL, bold=True, spacing=1.8)
+    for tip in tips:
+        p = K.diamond_item(cell, tip, size=9.5, after=3)
+        p.paragraph_format.line_spacing = 1.38
+
+
+def _markers(cell, markers: list[MarkerRef]) -> None:
+    for m in markers:
+        K.review_marker(cell, m.kind, m.text)
+
+
+def render_sightseeing_card(doc, W: float, c: SightseeingCard) -> None:
+    _, cell = _card(doc, W)
+    _eyebrow_line(cell, c.when, c.part)
+    _title(cell, c.name, has_sub=bool(c.subtitle))
+    _subtitle(cell, c.subtitle)
+    _glance(cell, _inner_w(W), c.facts)
+    _markers(cell, c.markers)
+    _body(cell, c.text)
+    _tips(cell, c.tips)
+    _end_card(doc, cell)
+
+
+def render_simple_card(doc, W: float, c: SimpleCard) -> None:
+    _, cell = _card(doc, W)
+    _eyebrow_line(cell, c.when, c.part)
+    _title(cell, c.heading)
+    _body(cell, c.text, after=0)
+    _end_card(doc, cell)
+
+
+def render_checklist_card(doc, W: float, c: ChecklistCard) -> None:
+    _, cell = _card(doc, W)
+    _eyebrow_line(cell, c.when, c.kind)
+    _title(cell, c.title)
+    _body(cell, c.lead, after=6)
+    if c.items:
+        half = -(-len(c.items) // 2)
+        gap = 0.6
+        cw = (_inner_w(W) - gap) / 2
+        nt = K.tbl(cell, 1, [cw, gap, cw])
+        for ci, chunk in ((0, c.items[:half]), (2, c.items[half:])):
+            cc = nt.rows[0].cells[ci]
+            for item in chunk:
+                p = K.diamond_item(cc, item, size=10, after=3)
+                p.paragraph_format.line_spacing = 1.35
+            K.close(cc, 1)
+    _end_card(doc, cell)

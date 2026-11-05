@@ -107,8 +107,7 @@ def _day_card(doc, W: float, page: Page, pages) -> None:
 
 _ENTRY_PT = 13
 ENTRY_LINE_PT = 14.5  # exact line height of an entry (13 pt type)
-DOT_SZ = 10  # eighths of a pt (1.25 pt dots)
-DOT_LIFT_CM = 0.06  # the rule sits just under the title baseline, not at the cell floor
+MIN_DOTS_CELL_CM = 1.0
 TITLE_SLACK = 1.12  # Google Docs measures text wider than PIL: the title cell is sized with this margin
 TITLE_PAD_CM = 0.3
 NUM_CELL_CM = 0.9
@@ -139,22 +138,41 @@ def measure_cm(text: str, size: float = _ENTRY_PT) -> float:
     return pts / 28.35
 
 
-def entry_widths(title: str, width: float) -> tuple[float, float, float]:
-    """(title cell, filler cell, number cell) widths in cm; they always sum to `width`."""
+def column_title_cm(titles: list, width: float) -> float:
+    """Shared title-cell width of a column: widest title * slack + bullet + pad (capped so the filler survives)."""
+    want = max((measure_cm(t) for t in titles), default=0.0) * TITLE_SLACK + 0.6 + TITLE_PAD_CM
+    return min(want, width - MIN_NUM_CELL_CM - MIN_FILLER_CM)
+
+
+def entry_widths(title: str, width: float, title_cm: Optional[float] = None) -> tuple[float, float, float]:
+    """(title cell, filler cell, number cell) widths in cm; they always sum to `width`.
+    title_cm: shared column title width (so the dots of every row start at the same x)."""
     num = NUM_CELL_CM
-    # the title cell holds the diamond glyph + gap + title
-    want = measure_cm(title) * TITLE_SLACK + 0.6 + TITLE_PAD_CM
-    cap = width - max(num, MIN_NUM_CELL_CM) - MIN_FILLER_CM
-    tw = min(want, cap)
+    tw = title_cm if title_cm is not None else column_title_cm([title], width)
     return tw, width - tw - num, num
 
 
-def _entry(cont, page: Page, width: float, pages) -> None:
-    tw, fw, nw = entry_widths(page.title, width)
+DOT_UNIT = ".\u00a0"  # dot + no-break space: airy leader that Docs cannot break
+DOT_FILL = 0.8  # the dots occupy at most this share of the filler cell (a 20% wider font still fits)
+
+
+def dots_for(fill_cm: float, scale: float = 1.0) -> str:
+    """A run of dots measuring <= DOT_FILL of the filler cell (at `scale` x the measured font); '' if < 1 cm."""
+    if fill_cm < MIN_DOTS_CELL_CM:
+        return ""
+    unit = measure_cm(DOT_UNIT) * scale
+    n = int(fill_cm * DOT_FILL / unit) if unit > 0 else 0
+    return DOT_UNIT * n if n > 0 else ""
+
+
+def _entry(cont, page: Page, width: float, pages, title_cm: Optional[float] = None) -> None:
+    tw, fw, nw = entry_widths(page.title, width, title_cm)
     t = tbl(cont, 1, [tw, fw, nw])
     c_title, c_fill, c_num = t.rows[0].cells
     for c in (c_title, c_fill, c_num):
         K.cell_valign(c, "bottom")
+    K.cell_nowrap(c_fill)
+    K.cell_nowrap(c_num)
     p = np(c_title, after=0)
     p.paragraph_format.left_indent = Cm(0.6)
     p.paragraph_format.first_line_indent = Cm(-0.6)
@@ -162,12 +180,10 @@ def _entry(cont, page: Page, width: float, pages) -> None:
     K.R(p, K.DIAMOND_GLYPH, size=6, color=T.AMBER)
     K.R(p, "\t")
     anchor_link(p, page.bookmark, page.title, font=T.HEAD, size=13, bold=True, color=T.INK)
-    p.paragraph_format.line_spacing = Pt(ENTRY_LINE_PT)  # tight exact line: the dotted rule sits close to the baseline
-    # filler: its bottom border is the dotted rule; a tiny paragraph keeps the row height set by the title
-    K.cell_borders(c_fill, bottom=(T.DOT_RULE, DOT_SZ, "dotted"))
-    K.cell_margins(c_fill, bottom=DOT_LIFT_CM)
-    p = np(c_fill, after=0)
-    K.R(p, " ", size=2)
+    p.paragraph_format.line_spacing = Pt(ENTRY_LINE_PT)  # exact line: all three cells share one baseline
+    p = np(c_fill, after=0, align=AL.RIGHT)  # real dot characters on the baseline, no cell border
+    K.R(p, dots_for(fw).rstrip("\u00a0"), font=T.HEAD, size=13, bold=True, color=T.DOT_RULE)
+    p.paragraph_format.line_spacing = Pt(ENTRY_LINE_PT)
     p = np(c_num, after=0, align=AL.RIGHT)
     _number(p, page.bookmark, pages, font=T.HEAD, size=13, bold=True, color=T.ROYAL)
     p.paragraph_format.line_spacing = Pt(ENTRY_LINE_PT)
@@ -207,8 +223,9 @@ def render_toc(doc, guide: Guide, pages: Optional[dict] = None) -> None:
     for ci, (label, items) in zip((0, 2), (("Before you go", before), ("While you're there", while_))):
         c = t.rows[0].cells[ci]
         eyebrow(np(c, after=3), label, color=T.GOLD_INK)
+        tcm = column_title_cm([pg.title for pg in items], cw)
         for pg in items:
-            _entry(c, pg, cw, pages)
+            _entry(c, pg, cw, pages, tcm)
         close(c, 1)
     ty = next((p for p in guide.pages if p.kind == "thank_you"), None)
     if ty is not None:

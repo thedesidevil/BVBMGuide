@@ -110,12 +110,12 @@ def test_page_number_restart_only_first_section():
 def test_background_is_solid_cream_by_default():
     doc = K.new_doc()
     bg = doc.element.find(qn("w:background"))
-    assert bg.get(qn("w:color")) == "FDFBF7" and len(bg) == 0
+    assert bg.get(qn("w:color")) == "FFFEFB" and len(bg) == 0
     assert doc.element[0] is bg
     g = K.new_doc(gradient=T.GRAD)
     assert any(e.tag.endswith("}fill") for e in g.element.find(qn("w:background")).iter())
     assert not any(e.tag.endswith("}fill") for e in doc.element.find(qn("w:background")).iter())
-    assert g.element.find(qn("w:background")).get(qn("w:color")) == "FDFBF7"
+    assert g.element.find(qn("w:background")).get(qn("w:color")) == "FFFEFB"
 
 
 def test_chips_are_plain_text():

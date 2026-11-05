@@ -393,6 +393,10 @@ def cell_margins(c, top=None, left=None, bottom=None, right=None) -> None:
     insert_ordered(c._tc.get_or_add_tcPr(), m, TCPR_ORDER)
 
 
+def cell_nowrap(c) -> None:
+    insert_ordered(c._tc.get_or_add_tcPr(), el("w:noWrap"), TCPR_ORDER)
+
+
 def cell_valign(c, v: str = "center") -> None:
     insert_ordered(c._tc.get_or_add_tcPr(), el("w:vAlign", val=v), TCPR_ORDER)
 

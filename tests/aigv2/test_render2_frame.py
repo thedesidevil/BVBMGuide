@@ -87,7 +87,7 @@ def test_page_number_start_only_on_first_section():
 def test_background_present_once_and_solid():
     doc, _, _ = _build()
     bgs = list(doc.element.iter(qn("w:background")))
-    assert len(bgs) == 1 and bgs[0].get(qn("w:color")) == "FDFBF7"
+    assert len(bgs) == 1 and bgs[0].get(qn("w:color")) == "FFFEFB"
 
 
 def test_all_header_footer_runs_noproof():

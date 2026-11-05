@@ -200,7 +200,7 @@ def _tcw(tc):
     return int(tc.find(qn("w:tcPr")).find(qn("w:tcW")).get(qn("w:w")))
 
 
-def test_entries_are_three_cell_rows_with_dotted_filler():
+def test_entries_are_three_cell_rows_with_dot_characters():
     doc = _build(pages={"sec_packing": 25, "thank_you": 38})
     tabs = _entry_tables(doc)
     assert len(tabs) == 5 + 1  # 5 sections + thank you
@@ -208,14 +208,42 @@ def test_entries_are_three_cell_rows_with_dotted_filler():
         tr = t.find(qn("w:tr"))
         assert tr.find(qn("w:trPr")).find(qn("w:cantSplit")) is not None
         title, fill, num = tr.findall(qn("w:tc"))
-        b = fill.find(qn("w:tcPr")).find(qn("w:tcBorders")).find(qn("w:bottom"))
-        assert b.get(qn("w:val")) == "dotted"
+        assert fill.find(qn("w:tcPr")).find(qn("w:tcBorders")) is None  # no dotted cell border any more
+        assert fill.find(qn("w:tcPr")).find(qn("w:noWrap")) is not None
         for tc in (title, fill, num):
             assert tc.find(qn("w:tcPr")).find(qn("w:vAlign")).get(qn("w:val")) == "bottom"
+            sp = tc.find(qn("w:p")).find(qn("w:pPr")).find(qn("w:spacing"))
+            assert sp.get(qn("w:lineRule")) == "exact" and sp.get(qn("w:line")) == str(int(TOC.ENTRY_LINE_PT * 20))
         assert num.find(qn("w:p")).find(qn("w:pPr")).find(qn("w:jc")).get(qn("w:val")) == "right"
-        assert "." * 3 not in "".join(x.text or "" for x in t.iter(qn("w:t")))  # no text dots
+        assert "." * 3 not in "".join(x.text or "" for x in title.iter(qn("w:t")))
+    # the full-width Thank You row has room for a dot run, in the DOT_RULE colour, right aligned
+    ty = tabs[-1].find(qn("w:tr")).findall(qn("w:tc"))[1]
+    run = ty.find(".//" + qn("w:r"))
+    assert set("".join(x.text for x in run.iter(qn("w:t"))).replace("\u00a0", "")) == {"."}
+    assert run.find(qn("w:rPr")).find(qn("w:color")).get(qn("w:val")) == T.DOT_RULE
+    assert ty.find(qn("w:p")).find(qn("w:pPr")).find(qn("w:jc")).get(qn("w:val")) == "right"
     txt = _text(doc)
     assert "25" in txt and "38" in txt
+
+
+def test_columns_share_one_title_width_and_number_is_last_cell():
+    doc = _build(pages={"sec_packing": 25, "sec_health": 31})
+    in_cells = [_tcw(t.find(qn("w:tr")).findall(qn("w:tc"))[0]) for t in _entry_tables(doc)
+                if t.getparent().tag == qn("w:tc")]
+    assert len(in_cells) == 5 and len(set(in_cells)) <= 2  # one shared width per column
+    nums = ["".join(x.text or "" for x in t.find(qn("w:tr")).findall(qn("w:tc"))[-1].iter(qn("w:t")))
+            for t in _entry_tables(doc)]
+    assert "25" in nums and "31" in nums
+
+
+def test_dot_run_fits_filler_even_when_font_is_20_percent_wider():
+    for fill in (1.0, 2.5, 6.0, 12.0):
+        dots = TOC.dots_for(fill)
+        assert dots
+        w = TOC.measure_cm(dots)
+        assert w <= 0.85 * fill
+        assert w * 1.2 <= fill
+    assert TOC.dots_for(0.9) == ""
 
 
 def test_title_cell_has_slack_over_measured_width_even_when_font_is_wider():

@@ -419,6 +419,8 @@ class _Reader:
             title = None  # an unlinked note card ("Overnight in Ubud"), not a place
         if title and eyebrow and self.slot is not None and MEAL_SLOT_RE.match(self.slot.heading):
             self.slot = None  # a timed card after the restaurants starts a new part of the day
+        if title and self.day is None and not url and not facts and not eyebrow:
+            title = None  # reference prose (a titled paragraph), not a place card
         if title:
             for para in paras:
                 if para is not None:

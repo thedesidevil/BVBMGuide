@@ -163,3 +163,39 @@ def test_dial_no_separator_edge():
     assert _dial(c, None) == "International dial code: +1242"
     c = SectionContent(key="safety", numbers=[EmergencyNumber(service="P", number="+12429191234")])
     assert _dial(c, None) is None
+
+
+def test_money_library_paras_with_fx():
+    from src.aigv2.writing.structured import Para
+    fx = _it("Currency: XYZ", "1 XYZ = ₹2.00. Indicative rate (check before you travel).")
+    c = SectionContent(key="money", items=[fx, _it("llm", "x")], money=[Para(heading="Cards", body="Widely accepted.")])
+    p = build_reference_page("money", c, load())
+    assert types(p) == ["ReferenceOpener", "FactRowBlock", "TitledParas", "NotePanel"]
+    assert [i.heading for i in p.components[2].items] == ["Cards"]
+    only = SectionContent(key="money", items=[_it("llm", "x")], money=[Para(heading="Cards", body="y")])
+    assert types(build_reference_page("money", only, load())) == ["ReferenceOpener", "TitledParas"]
+
+
+def test_connectivity_facts_and_airport_panel():
+    from src.aigv2.writing.structured import SimInfo
+    c = SectionContent(key="connectivity", items=[_it("eSIM", "Buy.")], sims=[SimInfo(provider="Telkomsel", plan="15 GB", options="SIM or eSIM")],
+                       steps=["Test the SIM"], apps=[App(name="A", purpose="r")])
+    p = build_reference_page("connectivity", c, load())
+    assert types(p) == ["ReferenceOpener", "FactRowBlock", "TitledParas", "TipPanel", "AppGrid"]
+    assert [f.label for f in p.components[1].facts] == ["Recommended provider", "Suggested data plan", "Options"]
+    assert p.components[3].title == "Before you leave the airport" and p.components[3].items == ["Test the SIM"]
+
+
+def test_getting_around_library_transport():
+    from src.aigv2.writing.structured import Para
+    c = SectionContent(key="getting_around", items=[_it("llm", "x")], transport=[Para(heading="Taxi", body="Use meter.")])
+    p = build_reference_page("getting_around", c, load())
+    assert p.components[1].items == [m.TitledPara(heading="Taxi", body="Use meter.")]
+
+
+def test_contact_cards_capped_with_priority_and_rest_listed():
+    cs = [Contact(name="Embassy A", phone="1", kind="embassy"), Contact(name="Embassy B", phone="2", kind="embassy"),
+          Contact(name="Consulate", phone="3", kind="consulate"), Contact(name="Tourist Police", phone="4", kind="tourist_police")]
+    p = build_reference_page("safety", SectionContent(key="safety", contacts=cs), load())
+    assert [k.name.text for k in p.components[1].cards] == ["Tourist Police", "Consulate", "Embassy A"]
+    assert p.components[2].items == [m.TitledPara(heading="Other contacts", body="Embassy B - 2")]

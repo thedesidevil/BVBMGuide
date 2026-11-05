@@ -11,6 +11,7 @@ PACKING_GROUPS = ("Clothing", "Footwear", "Beach & Island Days", "Sun & Day Trip
 CHILD_GROUP = "For your little one"
 
 PHRASE_CAP, DO_CAP, SOUVENIR_CAP, NUMBER_CAP, DISH_CAP = 12, 8, 8, 4, 12
+TRANSPORT_CAP, STEP_CAP, MONEY_TIPS_PER_GROUP = 8, 6, 4
 
 
 class App(BaseModel):
@@ -47,6 +48,17 @@ class Souvenir(BaseModel):
     places: list[str] = Field(default_factory=list)
 
 
+class Para(BaseModel):
+    heading: str
+    body: str
+
+
+class SimInfo(BaseModel):
+    provider: str
+    plan: str = ""
+    options: str = ""
+
+
 def _s(v) -> str:
     return v.strip() if isinstance(v, str) else ""
 
@@ -75,18 +87,46 @@ def extract_phrases(items) -> list[Phrase]:
     return out[:PHRASE_CAP]
 
 
+_STOP = frozenset("a an the and or of in on at to for with by from is are be as it its this that your you can may "
+                  "not no but if into about".split())
+
+
+def _content_words(text: str) -> frozenset[str]:
+    return frozenset(w for w in re.findall(r"[^\W_]+", text.casefold()) if w not in _STOP)
+
+
+def near_duplicate(a: str, b: str, threshold: float = 0.6) -> bool:
+    """Token Jaccard similarity of the content words (stop words removed) >= threshold."""
+    x, y = _content_words(a), _content_words(b)
+    if not x or not y:
+        return a.casefold().strip() == b.casefold().strip()
+    return len(x & y) / len(x | y) >= threshold
+
+
+def dedupe_similar(tips: list[str]) -> list[str]:
+    """Drop near-duplicates, keeping the first position but the shorter wording."""
+    out: list[str] = []
+    for t in tips:
+        for i, o in enumerate(out):
+            if near_duplicate(t, o):
+                if len(t) < len(o):
+                    out[i] = t
+                break
+        else:
+            out.append(t)
+    return out
+
+
 _DONT = re.compile(r"^\s*(?:don['’]t|do not|never|avoid|no)\b", re.I)
 
 
 def extract_dos_donts(items) -> tuple[list[str], list[str]]:
-    dos, donts, seen = [], [], set()
+    dos, donts = [], []
     for t in _dicts(items):
         tip = _s(t.get("tip"))
-        if not tip or tip.casefold() in seen:
-            continue
-        seen.add(tip.casefold())
-        (donts if _DONT.match(tip) else dos).append(tip)
-    return dos[:DO_CAP], donts[:DO_CAP]
+        if tip:
+            (donts if _DONT.match(tip) else dos).append(tip)
+    return dedupe_similar(dos)[:DO_CAP], dedupe_similar(donts)[:DO_CAP]
 
 
 _NUMBER_KINDS = [("Police", re.compile(r"police", re.I)), ("Ambulance", re.compile(r"ambulance|medical", re.I)),
@@ -196,10 +236,112 @@ def extract_souvenirs(items) -> list[Souvenir]:
             for t, g in list(groups.items())[:SOUVENIR_CAP]]
 
 
+_MONEY_GROUPS = [("Currency exchange", re.compile(r"exchange|forex|money changer|changer", re.I)),
+                 ("ATMs", re.compile(r"\batms?\b|cash machine", re.I)),
+                 ("Cards", re.compile(r"\bcards?\b|contactless", re.I)),
+                 ("Cash", re.compile(r"\bcash\b|small notes|small change", re.I)),
+                 ("Tipping", re.compile(r"\btips?\b|tipping", re.I))]
+MONEY_ORDER = ["Cards", "Cash", "ATMs", "Currency exchange", "Tipping", "Good to know"]
+
+
+def _sentence(t: str) -> str:
+    t = t.strip()
+    return t if t[-1:] in ".!?" else t + "."
+
+
+def _drop_contained(tips: list[str]) -> list[str]:
+    """Drop a tip whose normalised text is contained in another (keeping the longer) or near-duplicates."""
+    out: list[str] = []
+    for t in tips:
+        n = norm_name(t)
+        for i, o in enumerate(out):
+            m = norm_name(o)
+            if n in m or m in n or near_duplicate(t, o):
+                if len(t) > len(o) and (n in m or m in n):
+                    out[i] = t
+                elif len(t) < len(o) and not (n in m or m in n):
+                    out[i] = t
+                break
+        else:
+            out.append(t)
+    return out
+
+
+def extract_money(items) -> list[Para]:
+    """Library money tips grouped into titled paragraphs by keyword; nothing is rewritten."""
+    tips = _drop_contained([x for x in (_s(t.get("tip")) for t in _dicts(items)) if x])
+    groups: dict[str, list[str]] = {}
+    for t in tips:
+        title = next((g for g, pat in _MONEY_GROUPS if pat.search(t)), "Good to know")
+        groups.setdefault(title, []).append(t)
+    return [Para(heading=g, body=" ".join(_sentence(t) for t in groups[g][:MONEY_TIPS_PER_GROUP]))
+            for g in MONEY_ORDER if g in groups]
+
+
+def _mode_words(mode: str) -> frozenset[str]:
+    return frozenset(w for w in re.findall(r"[^\W_]+", mode.casefold()) if w not in ("and", "or", "the"))
+
+
+def extract_transport(items) -> list[Para]:
+    """One paragraph per mode; modes whose words are contained in another's (Grab / Grab and Gojek) are merged."""
+    merged: list[dict] = []
+    for o in _dicts(items):
+        mode = _s(o.get("mode"))
+        words = _mode_words(mode)
+        if not words:
+            continue
+        m = next((x for x in merged if words <= x["w"] or x["w"] <= words), None)
+        if m is None:
+            m = {"mode": mode, "w": words, "desc": "", "how": ""}
+            merged.append(m)
+        elif len(words) > len(m["w"]):
+            m["mode"], m["w"] = mode, words
+        for k, f in (("desc", "description"), ("how", "how_to_use")):
+            v = _s(o.get(f))
+            if len(v) > len(m[k]):
+                m[k] = v
+    out = []
+    for m in merged:
+        body = " ".join(_sentence(x) for x in (m["desc"], m["how"]) if x)
+        if body:
+            out.append(Para(heading=m["mode"], body=body))
+    return out[:TRANSPORT_CAP]
+
+
+_IMPERATIVE = re.compile(r"^(activate|test|check|make sure|ensure|confirm|turn|switch|connect|install|download|keep|"
+                         r"carry|show|bring|buy|pick|ask|use|set|scan|register|insert|restart|save|top)\b", re.I)
+
+
+def extract_sim(items) -> tuple[list[SimInfo], list[str]]:
+    """(SIM facts, imperative airport steps) from the library connectivity tips."""
+    tips = [t for t in _dicts(items) if _s(t.get("provider"))]
+    first = next((t for t in tips if _s(t.get("kind")).casefold() == "sim"), None)
+    if not first:
+        return [], []
+    prov = _s(first.get("provider"))
+    kinds = {_s(t.get("kind")).casefold() for t in tips if _s(t.get("provider")).casefold() == prov.casefold()}
+    options = "SIM or eSIM" if {"sim", "esim"} <= kinds else "SIM"
+    plan = re.sub(r"^\s*suggested data plan\s*:\s*", "", _s(first.get("price_text")), flags=re.I)
+    steps: list[str] = []
+    for t in tips:
+        if _s(t.get("provider")).casefold() != prov.casefold():
+            continue
+        for sent in re.split(r"(?<=[.!?])\s+", _s(t.get("notes"))):
+            sent = sent.strip().rstrip(".")
+            if sent and _IMPERATIVE.match(sent) and sent.casefold() not in {x.casefold() for x in steps}:
+                steps.append(sent[0].upper() + sent[1:])
+    return [SimInfo(provider=prov, plan=plan, options=options)], steps[:STEP_CAP]
+
+
 def extract(key: str, named: dict[str, list], restaurants: list[dict]) -> dict:
     """Typed SectionContent fields for `key` from the (already filtered) named library lists."""
     if key == "connectivity":
-        return {"apps": extract_apps(named.get("apps"))}
+        sims, steps = extract_sim(named.get("connectivity_tips"))
+        return {"apps": extract_apps(named.get("apps")), "sims": sims, "steps": steps}
+    if key == "money":
+        return {"money": extract_money((named.get("money") or []) + (named.get("tipping") or []))}
+    if key == "getting_around":
+        return {"transport": extract_transport(named.get("transport_options"))}
     if key == "etiquette":
         dos, donts = extract_dos_donts(named.get("dos_donts"))
         return {"phrases": extract_phrases(named.get("phrases")), "dos": dos, "donts": donts}

@@ -12,6 +12,8 @@ _BOAT_HEAD = re.compile(r"boat|ferry|crossing|motion|sea", re.I)
 _PAED = re.compile(r"paediatrician|pediatrician", re.I)
 _MARKET = re.compile(r"tipping|market|bargain", re.I)
 _EYEBROW = {"tourist_police": "TOURIST POLICE", "consulate": "INDIAN CONSULATE", "embassy": "EMBASSY"}
+_CONTACT_RANK = {"tourist_police": 0, "consulate": 1, "embassy": 2}
+CONTACT_CAP = 3
 _DIAL = re.compile(r"^\+(\d{1,4})(?=[\s\-()]|$)")
 
 
@@ -65,23 +67,40 @@ def _packing(c: SectionContent, data) -> list:
 def _money(c: SectionContent, data) -> list:
     fx = next((i for i in c.items if i.heading.startswith("Currency") and not i.verify
                and "Indicative rate" in i.body), None)
+    body = [i for i in c.items if i is not fx]
+    lib = [g.TitledPara(heading=p.heading, body=p.body) for p in c.money]
     if not fx:
-        return _titled(c.items)
+        return [g.TitledParas(items=lib)] if lib else _titled(c.items)
     facts = []
     if ":" in fx.heading:
         facts.append(g.Fact(label="Currency", value=fx.heading.split(":", 1)[1].strip()))
     facts.append(g.Fact(label="Indicative rate", value=fx.body))
-    out: list = [g.FactRowBlock(facts=facts)] + _titled([i for i in c.items if i is not fx])
+    out: list = [g.FactRowBlock(facts=facts)] + ([g.TitledParas(items=lib)] if lib else _titled(body))
     note = fx.body[fx.body.index("Indicative rate"):]
     out.append(g.NotePanel(title="PLEASE NOTE", text=note))
     return out
 
 
 def _connectivity(c: SectionContent, data) -> list:
-    out = _titled(c.items)
+    out: list = []
+    if c.sims:
+        s = c.sims[0]
+        facts = [g.Fact(label="Recommended provider", value=s.provider)]
+        if s.plan:
+            facts.append(g.Fact(label="Suggested data plan", value=s.plan))
+        if s.options:
+            facts.append(g.Fact(label="Options", value=s.options))
+        out.append(g.FactRowBlock(facts=facts))
+    out += _titled(c.items)
+    if c.steps:
+        out.append(g.TipPanel(title="Before you leave the airport", items=c.steps, columns=2, checks=True))
     if c.apps:
         out.append(g.AppGrid(apps=[g.App(name=a.name, use=a.purpose) for a in c.apps]))
     return out
+
+
+def _getting_around(c: SectionContent, data) -> list:
+    return [g.TitledParas(items=[g.TitledPara(heading=p.heading, body=p.body) for p in c.transport])]
 
 
 def _health(c: SectionContent, data) -> list:
@@ -142,14 +161,19 @@ def _safety(c: SectionContent, data) -> list:
                                     dial=_dial(c, data)))
     if c.contacts:
         city = _city(data)
+        ranked = sorted(c.contacts, key=lambda k: _CONTACT_RANK.get(k.kind, 2))  # stable
         out.append(g.ContactCards(cards=[
             g.Contact(eyebrow=_EYEBROW.get(k.kind, "EMBASSY"), name=g.Link(text=k.name, url=search_url(k.name, city)),
-                      phone=k.phone or None, note=k.note or None) for k in c.contacts]))
+                      phone=k.phone or None, note=k.note or None) for k in ranked[:CONTACT_CAP]]))
+        rest = [f"{k.name} - {k.phone}" if k.phone else k.name for k in ranked[CONTACT_CAP:]]
+        if rest:
+            out.append(g.TitledParas(items=[g.TitledPara(heading="Other contacts", body="; ".join(rest))]))
     return out + _titled(c.items)
 
 
 _BUILDERS = {"packing": _packing, "money": _money, "connectivity": _connectivity, "health": _health,
-             "dishes": _dishes, "souvenirs": _souvenirs, "etiquette": _etiquette, "safety": _safety}
+             "dishes": _dishes, "souvenirs": _souvenirs, "etiquette": _etiquette, "safety": _safety,
+             "getting_around": _getting_around}
 
 
 def structured_components(key: str, c: SectionContent, data) -> Optional[list]:
@@ -157,9 +181,10 @@ def structured_components(key: str, c: SectionContent, data) -> Optional[list]:
     if len(c.by_country) > 1:
         return None  # per-country structured components are a later task
     fn = _BUILDERS.get(key)
-    has = any([c.groups, c.apps, c.phrases, c.dos, c.donts, c.numbers, c.contacts, c.dishes, c.souvenirs])
+    has = any([c.groups, c.apps, c.phrases, c.dos, c.donts, c.numbers, c.contacts, c.dishes, c.souvenirs, c.sims, c.steps, c.transport])
     if key == "money":
-        has = any(i.heading.startswith("Currency") and not i.verify and "Indicative rate" in i.body for i in c.items)
+        has = bool(c.money) or any(i.heading.startswith("Currency") and not i.verify and "Indicative rate" in i.body
+                                   for i in c.items)
     elif key == "health":
         has = any(_is_boat(i) for i in c.items)
     if not fn or not has:

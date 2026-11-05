@@ -217,3 +217,50 @@ def test_first_person_check_ignores_country_us():
     from src.aigv2.writing.voice import first_person_problems
     assert first_person_problems("x", "A US citizen should call the US embassy.") == []
     assert first_person_problems("x", "Let us help; we'd love to.")
+
+
+def test_dos_near_duplicates_dropped():
+    from src.aigv2 import writing  # noqa: F401
+    from src.aigv2.writing.structured import extract_dos_donts
+    tips = [{"tip": "Bargain politely in open markets; a haggle can reduce prices by 30-40%"},
+            {"tip": "Greet with a smile and a light bow"},
+            {"tip": "Bargain politely with a smile; a haggle can reduce prices by 30-40% in open markets"},
+            {"tip": "Greet with a smile and a light bow"}, {"tip": "Dress modestly at temples"}]
+    dos, _ = extract_dos_donts(tips)
+    assert dos == ["Bargain politely in open markets; a haggle can reduce prices by 30-40%",
+                   "Greet with a smile and a light bow", "Dress modestly at temples"]
+
+
+def test_money_groups_dedupe_and_fallback_group():
+    from src.aigv2.writing.structured import extract_money
+    tips = [{"tip": "Credit cards are widely accepted"}, {"tip": "Some eateries are cash only"},
+            {"tip": "Use ATMs inside proper establishments"}, {"tip": "Use ATMs inside proper establishments, not roadside"},
+            {"tip": "Use only authorized money changers"}, {"tip": "Tipping is not mandatory"},
+            {"tip": "Pack light"}]
+    got = {p.heading: p.body for p in extract_money(tips)}
+    assert list(got) == ["Cards", "Cash", "ATMs", "Currency exchange", "Tipping", "Good to know"]
+    assert got["ATMs"] == "Use ATMs inside proper establishments, not roadside."
+    assert extract_money([]) == []
+
+
+def test_transport_dedupes_modes_prefers_longest():
+    from src.aigv2.writing.structured import extract_transport
+    out = extract_transport([
+        {"mode": "Ride-hailing (Grab/Gojek)", "description": "Short", "how_to_use": "Use apps"},
+        {"mode": "Ride-hailing (Grab / Gojek)", "description": "A much longer description", "how_to_use": "Book in app."},
+        {"mode": "Scooter", "description": "Cheap"}])
+    assert len(out) == 2
+    assert out[0].body == "A much longer description. Book in app."
+    assert out[1].body == "Cheap."
+
+
+def test_sim_facts_and_airport_steps():
+    from src.aigv2.writing.structured import extract_sim
+    tips = [{"provider": "Telkomsel", "kind": "sim", "price_text": "Suggested data plan: 15–25 GB",
+             "notes": "Covers Bali. Available at the airport. Activate and test the SIM, Google Maps and WhatsApp before leaving the airport."},
+            {"provider": "Telkomsel", "kind": "esim", "notes": "Check your device supports eSIM."}]
+    sims, steps = extract_sim(tips)
+    assert (sims[0].provider, sims[0].plan, sims[0].options) == ("Telkomsel", "15–25 GB", "SIM or eSIM")
+    assert steps == ["Activate and test the SIM, Google Maps and WhatsApp before leaving the airport",
+                     "Check your device supports eSIM"]
+    assert extract_sim([{"provider": "X", "kind": "esim"}]) == ([], [])

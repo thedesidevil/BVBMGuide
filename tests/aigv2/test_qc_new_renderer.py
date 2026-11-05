@@ -201,3 +201,18 @@ def test_marker_between_eyebrow_and_title_keeps_the_day(blob):
     m = read_docx(out)
     assert [d.index for d in m.days] == [1, 2, 4, 5, 7, 8]
     assert "Day 1 – Thu, 24 Sep | Arrival in Bali" in [t for lvl, t in m.headings if lvl == 1]
+
+
+def test_reference_prose_titles_are_not_venues():
+    from src.aigv2.writing.sections import SectionContent, SectionItem
+    from src.aigv2.guide.build import build_reference_page
+    from src.aigv2.writing.structured import Para
+    data = _data()
+    guide = build_guide(data, SimpleNamespace(walk_max_min=10))
+    c = SectionContent(key="getting_around", items=[SectionItem(heading="x", body="y")],
+                       transport=[Para(heading="Zebra Taxi Mode", body="Use the meter.")])
+    guide.pages.insert(-1, build_reference_page("getting_around", c, data))
+    m = read_docx(render_guide2(guide))
+    assert "Zebra Taxi Mode" in m.text
+    assert "Zebra Taxi Mode" not in {v.name for v in m.section_venues}
+    assert not [v for v in m.section_venues if not v.url]

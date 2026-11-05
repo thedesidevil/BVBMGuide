@@ -26,7 +26,7 @@ _LIB = {
     "connectivity": _BOTH("connectivity_tips") + [("country", "apps")],
     "getting_around": _BOTH("transport_options"),
     "health": _BOTH("health_tips") + [("country", "insurance")],
-    "money": [("country", "money")],
+    "money": [("country", "money"), ("country", "tipping")],
     "packing": [],
 }
 _FOCUS = {
@@ -81,6 +81,10 @@ class SectionContent(BaseModel):
     contacts: list[Contact] = Field(default_factory=list)
     dishes: list[Dish] = Field(default_factory=list)
     souvenirs: list[Souvenir] = Field(default_factory=list)
+    money: list[st.Para] = Field(default_factory=list)
+    transport: list[st.Para] = Field(default_factory=list)
+    sims: list[st.SimInfo] = Field(default_factory=list)
+    steps: list[str] = Field(default_factory=list)
     from_library: bool = True
     by_country: dict[str, list[SectionItem]] = Field(default_factory=dict)
     markers: list[Marker] = Field(default_factory=list)

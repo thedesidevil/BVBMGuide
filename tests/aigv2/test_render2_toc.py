@@ -226,39 +226,83 @@ def test_entries_are_three_cell_rows_with_dot_characters():
     assert "25" in txt and "38" in txt
 
 
-def test_columns_share_one_title_width_and_number_is_last_cell():
-    doc = _build(pages={"sec_packing": 25, "sec_health": 31})
-    in_cells = [_tcw(t.find(qn("w:tr")).findall(qn("w:tc"))[0]) for t in _entry_tables(doc)
-                if t.getparent().tag == qn("w:tc")]
-    assert len(in_cells) == 5 and len(set(in_cells)) <= 2  # one shared width per column
-    nums = ["".join(x.text or "" for x in t.find(qn("w:tr")).findall(qn("w:tc"))[-1].iter(qn("w:t")))
-            for t in _entry_tables(doc)]
-    assert "25" in nums and "31" in nums
+def _guide_real():
+    import json
+    from pathlib import Path
+    f = Path("aigv2_data/runs/20261105-gdocs-check6/guide.json")
+    if not f.is_file():
+        pytest.skip("saved guide not available")
+    return Guide.model_validate_json(f.read_text())
 
 
-def test_dot_run_fits_filler_even_when_font_is_20_percent_wider():
-    for fill in (1.0, 2.5, 6.0, 12.0):
-        dots = TOC.dots_for(fill)
-        assert dots
-        w = TOC.measure_cm(dots)
-        assert w <= 0.85 * fill
+def _txt(tc):
+    return "".join(x.text or "" for x in tc.iter(qn("w:t")))
+
+
+def test_real_guide_every_row_has_dots_wide_number_zero_margins_no_wrap():
+    doc = _build(_guide_real(), pages={"sec_packing": 25, "sec_health": 34})
+    rows = _entry_tables(doc)
+    assert len(rows) >= 11
+    for t in rows:
+        title, fill, num = t.find(qn("w:tr")).findall(qn("w:tc"))
+        dots = _txt(fill).replace("\u00a0", "")
+        assert dots.count(".") >= 4 and set(dots) == {"."}, _txt(title)
+        assert _tcw(num) >= 1.3 * 567 - 1
+        assert _tcw(fill) >= 1.05 * 567 - 1
+        for tc in (title, fill, num):
+            mar = tc.find(qn("w:tcPr")).find(qn("w:tcMar"))
+            assert mar.find(qn("w:left")).get(qn("w:w")) == "0" and mar.find(qn("w:right")).get(qn("w:w")) == "0"
+            assert tc.find(qn("w:tcPr")).find(qn("w:noWrap")) is not None
+        assert num.find(qn("w:p")).find(qn("w:pPr")).find(qn("w:jc")).get(qn("w:val")) == "right"
+        for cm in t.find(qn("w:tblPr")).find(qn("w:tblCellMar")):
+            assert cm.get(qn("w:w")) == "0"
+        sz = title.findall(".//" + qn("w:sz"))[-1].get(qn("w:val"))
+        assert int(sz) >= 22
+        ttl = _txt(title).replace("\t", "").strip()
+        ttl = ttl[ttl.index(" ") + 1:] if ttl and not ttl[0].isalnum() else ttl
+        assert _tcw(title) >= TOC.measure_cm(ttl, int(sz) / 2) * 1.06 * 567 - 1
+    assert "34" in _text(doc)
+
+
+def test_real_guide_dots_fit_filler_at_1_0_and_1_2():
+    g = _guide_real()
+    before, while_ = TOC._split_refs(g)
+    cw = (18.2 - TOC.COL_GUTTER_CM) / 2  # TOC page text width
+    for items in (before, while_):
+        titles = [p.title for p in items]
+        sz = TOC.column_font_pt(titles, cw)
+        assert 11 <= sz <= 12
+        for ttl in titles:
+            tw, fw, nw = TOC.entry_widths(ttl, cw, sz)
+            assert tw + fw + nw == pytest.approx(cw) and fw >= TOC.MIN_FILLER_CM - 1e-6
+            d = TOC.dots_for(fw)
+            assert d.count(".") >= 4
+            assert TOC.measure_cm(d, TOC.DOT_PT) <= 0.9 * fw
+            assert TOC.measure_cm(d, TOC.DOT_PT) * 1.2 <= fw + 1e-6 or fw < 2.5  # 1.2x font still inside the filler
+            assert tw >= TOC.measure_cm(ttl, sz) * 1.06 + TOC.BULLET_CM
+
+
+def test_dot_run_at_most_75_percent_of_filler_when_roomy():
+    for fill in (2.0, 2.5, 6.0, 12.0):
+        d = TOC.dots_for(fill)
+        assert d.count(".") >= 4
+        w = TOC.measure_cm(d, TOC.DOT_PT)
+        assert w <= 0.75 * fill + 1e-6
         assert w * 1.2 <= fill
-    assert TOC.dots_for(0.9) == ""
+    assert TOC.dots_for(0.5) == ""
 
 
-def test_title_cell_has_slack_over_measured_width_even_when_font_is_wider():
+def test_title_cell_has_slack_over_measured_width():
     for title in ("Tailored Packing List", "Safety & Emergency Contacts", "Mobile Connectivity & SIM Guide",
                   "Thank You", "Souvenir Shopping Guide"):
-        for width in (8.4, 18.2):
+        for width in (8.4, 17.2):
             tw, fw, nw = TOC.entry_widths(title, width)
             assert tw + fw + nw == pytest.approx(width)
-            assert nw >= 0.9 and fw > 0
-            need = 1.1 * TOC.measure_cm(title) + 0.6  # 10% wider title text + bullet glyph and gap
-            # titles that fill the column are capped (number cell keeps >= 0.9 cm) and may wrap inside their own cell
-            assert tw >= need or fw <= TOC.MIN_FILLER_CM + 1e-6
-            assert tw >= 1.04 * TOC.measure_cm(title) + 0.6
+            assert nw >= 1.3
+            assert tw >= TOC.measure_cm(title) * 1.06 + TOC.BULLET_CM - 1e-6 or fw <= 0
 
 
 def test_overlong_title_degrades_gracefully():
     tw, fw, nw = TOC.entry_widths("A very long title " * 6, 8.8)
-    assert tw + fw + nw == pytest.approx(8.8) and nw >= 0.9 and fw >= 0.3
+    assert tw + fw + nw == pytest.approx(8.8) and nw >= 1.3 and fw >= -1e-9
+    assert TOC.dots_for(fw) == ""

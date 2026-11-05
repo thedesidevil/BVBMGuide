@@ -40,10 +40,16 @@ def pages_for(guide: Guide, gpath: Path) -> dict:
     return {b: i + 3 for i, b in enumerate(titles)}
 
 
-def build(guide: Guide, pages: dict, out: Path) -> Path:
+def build(guide: Guide, pages: dict, out: Path, font_scale: float = 1.0) -> Path:
     doc = F.new_guide_doc(guide.client, guide.destination)
     F.add_guide_section(doc, "toc", F.guide_label(guide.client, guide.destination), first=True)
     TOC.render_toc(doc, guide, pages)
+    if font_scale != 1.0:  # worst-case simulation: entry-table type wider (cells keep their 1.0x widths)
+        from docx.oxml.ns import qn
+        for tr in doc.element.body.iter(qn("w:tr")):
+            if len(tr.findall(qn("w:tc"))) == 3:
+                for sz in tr.iter(qn("w:sz")):
+                    sz.set(qn("w:val"), str(round(int(sz.get(qn("w:val"))) * font_scale)))
     out.mkdir(parents=True, exist_ok=True)
     path = out / "toc_only.docx"
     doc.save(str(path))
@@ -56,11 +62,12 @@ def main() -> None:
     ap.add_argument("--out", default=str(ROOT / ".superpowers/lookfeel/toc_only"))
     ap.add_argument("--data-root", default=str(ROOT / "aigv2_data"))
     ap.add_argument("--dpi", type=int, default=110)
+    ap.add_argument("--font-scale", type=float, default=1.0, help="simulate wider entry fonts (e.g. 1.2)")
     a = ap.parse_args()
     gpath = find_guide(a.target, a.data_root)
     guide = Guide.model_validate_json(gpath.read_text())
     out = Path(a.out)
-    docx = build(guide, pages_for(guide, gpath), out)
+    docx = build(guide, pages_for(guide, gpath), out, a.font_scale)
     from preview_guide import preview
     n = preview(docx, out, dpi=a.dpi)
     print(docx)

@@ -105,14 +105,21 @@ def _day_card(doc, W: float, page: Page, pages) -> None:
     spacer(doc, 2)
 
 
-_ENTRY_PT = 13
-ENTRY_LINE_PT = 14.5  # exact line height of an entry (13 pt type)
-MIN_DOTS_CELL_CM = 1.0
-TITLE_SLACK = 1.12  # Google Docs measures text wider than PIL: the title cell is sized with this margin
-TITLE_PAD_CM = 0.3
-NUM_CELL_CM = 0.9
-MIN_NUM_CELL_CM = 0.9
-MIN_FILLER_CM = 0.3
+_ENTRY_PT = 12
+ENTRY_LINE_PT = 14  # exact line height of an entry (12 pt type)
+TITLE_SLACK = 1.06  # title cell = own measured width * slack + bullet + pad
+BULLET_CM = 0.45
+TITLE_PAD_CM = 0.1
+NUM_CELL_CM = 1.3
+MIN_NUM_CELL_CM = 1.3
+MIN_FILLER_CM = 1.05  # every row keeps at least this much room for dots
+MIN_ENTRY_PT = 11
+DOT_PT = 11
+DOT_PAD = "\u00a0\u00a0"
+DOT_UNIT = ".\u00a0"  # dot + no-break space: airy leader that Docs cannot break
+DOT_FILL = 0.75  # the dots occupy at most this share of the filler cell
+MIN_DOTS = 4
+COL_GUTTER_CM = 0.4
 _font_cache: dict = {}
 
 
@@ -138,54 +145,60 @@ def measure_cm(text: str, size: float = _ENTRY_PT) -> float:
     return pts / 28.35
 
 
-def column_title_cm(titles: list, width: float) -> float:
-    """Shared title-cell width of a column: widest title * slack + bullet + pad (capped so the filler survives)."""
-    want = max((measure_cm(t) for t in titles), default=0.0) * TITLE_SLACK + 0.6 + TITLE_PAD_CM
-    return min(want, width - MIN_NUM_CELL_CM - MIN_FILLER_CM)
+def column_font_pt(titles: list, width: float) -> float:
+    """Entry type size of a column: 12 pt, stepped down (never below 11) until the widest title leaves a filler >= MIN_FILLER_CM."""
+    widest = max(titles, key=lambda t: measure_cm(t), default="")
+    size = float(_ENTRY_PT)
+    while size > MIN_ENTRY_PT:
+        if entry_widths(widest, width, size)[1] >= MIN_FILLER_CM:
+            break
+        size -= 0.5
+    return max(size, float(MIN_ENTRY_PT))
 
 
-def entry_widths(title: str, width: float, title_cm: Optional[float] = None) -> tuple[float, float, float]:
-    """(title cell, filler cell, number cell) widths in cm; they always sum to `width`.
-    title_cm: shared column title width (so the dots of every row start at the same x)."""
+def entry_widths(title: str, width: float, size: float = _ENTRY_PT) -> tuple[float, float, float]:
+    """(title cell, filler cell, number cell) widths in cm; they always sum to `width`. Per row, own measured title."""
     num = NUM_CELL_CM
-    tw = title_cm if title_cm is not None else column_title_cm([title], width)
+    tw = measure_cm(title, size) * TITLE_SLACK + BULLET_CM + TITLE_PAD_CM
+    tw = min(tw, width - num)
     return tw, width - tw - num, num
 
 
-DOT_UNIT = ".\u00a0"  # dot + no-break space: airy leader that Docs cannot break
-DOT_FILL = 0.8  # the dots occupy at most this share of the filler cell (a 20% wider font still fits)
-
-
 def dots_for(fill_cm: float, scale: float = 1.0) -> str:
-    """A run of dots measuring <= DOT_FILL of the filler cell (at `scale` x the measured font); '' if < 1 cm."""
-    if fill_cm < MIN_DOTS_CELL_CM:
+    """NBSP padding + '.'+NBSP units, right-aligned in the filler; <= DOT_FILL of it (relaxed to 0.9 and one NBSP pad
+    only when the filler is too tight for MIN_DOTS); '' when even that does not fit."""
+    unit = measure_cm(DOT_UNIT, DOT_PT) * scale
+    if unit <= 0:
         return ""
-    unit = measure_cm(DOT_UNIT) * scale
-    n = int(fill_cm * DOT_FILL / unit) if unit > 0 else 0
-    return DOT_UNIT * n if n > 0 else ""
+    for share, pad in ((DOT_FILL, DOT_PAD), (0.9, DOT_PAD[:1])):
+        pw = measure_cm(pad, DOT_PT) * scale
+        n = int((fill_cm * share - pw) / unit)
+        if n >= MIN_DOTS:
+            return pad + DOT_UNIT * n
+    return ""
 
 
-def _entry(cont, page: Page, width: float, pages, title_cm: Optional[float] = None) -> None:
-    tw, fw, nw = entry_widths(page.title, width, title_cm)
+def _entry(cont, page: Page, width: float, pages, size: float = _ENTRY_PT) -> None:
+    tw, fw, nw = entry_widths(page.title, width, size)
     t = tbl(cont, 1, [tw, fw, nw])
     c_title, c_fill, c_num = t.rows[0].cells
     for c in (c_title, c_fill, c_num):
         K.cell_valign(c, "bottom")
-    K.cell_nowrap(c_fill)
-    K.cell_nowrap(c_num)
+        K.cell_margins(c, left=0, right=0)
+        K.cell_nowrap(c)
     p = np(c_title, after=0)
-    p.paragraph_format.left_indent = Cm(0.6)
-    p.paragraph_format.first_line_indent = Cm(-0.6)
-    K.tabs(p, [("left", 0.6, None)])
+    p.paragraph_format.left_indent = Cm(BULLET_CM)
+    p.paragraph_format.first_line_indent = Cm(-BULLET_CM)
+    K.tabs(p, [("left", BULLET_CM, None)])
     K.R(p, K.DIAMOND_GLYPH, size=6, color=T.AMBER)
     K.R(p, "\t")
-    anchor_link(p, page.bookmark, page.title, font=T.HEAD, size=13, bold=True, color=T.INK)
+    anchor_link(p, page.bookmark, page.title, font=T.HEAD, size=size, bold=True, color=T.INK)
     p.paragraph_format.line_spacing = Pt(ENTRY_LINE_PT)  # exact line: all three cells share one baseline
     p = np(c_fill, after=0, align=AL.RIGHT)  # real dot characters on the baseline, no cell border
-    K.R(p, dots_for(fw).rstrip("\u00a0"), font=T.HEAD, size=13, bold=True, color=T.DOT_RULE)
+    K.R(p, dots_for(fw).rstrip("\u00a0"), font=T.HEAD, size=DOT_PT, color=T.DOT_RULE)
     p.paragraph_format.line_spacing = Pt(ENTRY_LINE_PT)
     p = np(c_num, after=0, align=AL.RIGHT)
-    _number(p, page.bookmark, pages, font=T.HEAD, size=13, bold=True, color=T.ROYAL)
+    _number(p, page.bookmark, pages, font=T.HEAD, size=size, bold=True, color=T.ROYAL)
     p.paragraph_format.line_spacing = Pt(ENTRY_LINE_PT)
     spacer(cont, 4)
 
@@ -218,14 +231,14 @@ def render_toc(doc, guide: Guide, pages: Optional[dict] = None) -> None:
     np(doc, before=GAP_BEFORE_SECOND_BLOCK_PT, after=0)
     _section_title(doc)
     before, while_ = _split_refs(guide)
-    cw = (W - 0.6) / 2
-    t = tbl(doc, 1, [cw, 0.6, cw])
+    cw = (W - COL_GUTTER_CM) / 2
+    t = tbl(doc, 1, [cw, COL_GUTTER_CM, cw])
     for ci, (label, items) in zip((0, 2), (("Before you go", before), ("While you're there", while_))):
         c = t.rows[0].cells[ci]
         eyebrow(np(c, after=3), label, color=T.GOLD_INK)
-        tcm = column_title_cm([pg.title for pg in items], cw)
+        sz = column_font_pt([pg.title for pg in items], cw)
         for pg in items:
-            _entry(c, pg, cw, pages, tcm)
+            _entry(c, pg, cw, pages, sz)
         close(c, 1)
     ty = next((p for p in guide.pages if p.kind == "thank_you"), None)
     if ty is not None:

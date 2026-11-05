@@ -17,7 +17,7 @@ HARBOUR_FILL = "EDF3FB"
 HARBOUR_EDGE = "BCD0EA"
 CARD_EDGE = "BCD0EA"  # stronger than before so white cards separate from the white page
 WHITE = "FFFFFF"
-CREAM = "FFFEFB"  # barely-warm white page ground (FDFBF7 still read beige-grey in Google Docs)
+CREAM = "FBFCFE"  # barely-warm white page ground (FDFBF7 still read beige-grey in Google Docs)
 PAGE_BG = CREAM  # solid: Google Docs drops gradients
 
 HEAD = "Cormorant Garamond"

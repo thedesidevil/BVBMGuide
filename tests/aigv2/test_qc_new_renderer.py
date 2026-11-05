@@ -223,3 +223,18 @@ def test_at_your_hotel_parses_as_zero_walk():
     from src.aigv2.qc.reader import DocVenue
     v = DocVenue(name="x", url="", facts={"GETTING THERE": "At your hotel"}, body="", kind="venue")
     assert _guide_travel(v) == [("Walk", 0)]
+
+
+def test_dish_and_souvenir_links_still_read():
+    import io
+    from src.aigv2.guide import model as m
+    from src.aigv2.render2 import frame as F
+    from src.aigv2.render2 import reference_components as RC
+    doc = F.new_guide_doc("Dilna K", "Bali")
+    _, W = F.add_guide_section(doc, "reference", F.guide_label("Dilna K", "Bali"), first=True)
+    RC.render_dish_grid(doc, W, m.DishGrid(dishes=[m.Dish(name="Soto", desc="Soup. Hot.", where=[m.Link(text="Warung A", url="https://m/a")])]))
+    RC.render_souvenir_grid(doc, W, m.SouvenirGrid(categories=[m.Souvenir(title="Textiles", what="Batik, sarongs", places=[m.Link(text="Ubud Market", url="https://m/u")])]))
+    buf = io.BytesIO()
+    doc.save(buf)
+    links = read_docx(buf.getvalue()).links
+    assert ("Warung A", "https://m/a") in links and ("Ubud Market", "https://m/u") in links

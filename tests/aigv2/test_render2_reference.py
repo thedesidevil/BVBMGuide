@@ -500,3 +500,41 @@ def test_titled_para_is_heading_with_hairline_and_diamond_per_sentence():
     single = _doc()
     RC.render_titled_paras(single[0], single[1], m.TitledParas(items=[m.TitledPara(heading="Tip", body="Tip ten percent.")]))
     assert single[0].element.body.xml.count(RC.K.DIAMOND_GLYPH) == 1
+
+
+def _paras(cell):
+    return [("".join(t.text or "" for t in p.iter(qn("w:t")))) for p in cell.findall(qn("w:p"))]
+
+
+def test_dish_description_is_diamond_bullets_with_where_bullet():
+    doc, W = _doc()
+    RC.render_dish_grid(doc, W, m.DishGrid(dishes=[
+        m.Dish(name="Soto", desc="A rich soup with turmeric and herbs. Served with rice and lime wedges.",
+               where=[m.Link(text="Warung A", url="https://m/a"), m.Link(text="Warung B", url="https://m/b")])]))
+    c0 = _cells(_tables(doc)[0])[0]
+    ps = _paras(c0)
+    assert ps[0] == "Soto"
+    assert c0.findall(qn("w:p"))[0].find(qn("w:pPr") + "/" + qn("w:pBdr") + "/" + qn("w:bottom")).get(qn("w:color")) == T.POWDER
+    bullets = [p for p in ps[1:] if p.startswith("◆")]
+    assert len(bullets) == 3  # two description sentences + the where bullet
+    assert "Where to try" in bullets[-1] and " · " in bullets[-1].replace("  ·  ", " · ")
+    assert _hlinks(c0) == ["Warung A", "Warung B"]
+
+
+def test_souvenir_items_bulleted_and_places_one_per_bullet():
+    doc, W = _doc()
+    RC.render_souvenir_grid(doc, W, m.SouvenirGrid(categories=[
+        m.Souvenir(title="Textiles", what="Batik, sarongs, Batik and sarongs, scarves (silk, cotton)",
+                   places=[m.Link(text="Market", url="https://m/x"), m.Link(text="Mall", url="https://m/y")])]))
+    c0 = _cells(_tables(doc)[0])[0]
+    bl = [p for p in _paras(c0) if p.startswith("◆")]
+    assert len(bl) == 2 + 2  # "Batik and sarongs" absorbs Batik and sarongs; + two places
+    assert _hlinks(c0) == ["Market", "Mall"]
+
+
+def test_many_places_share_bullets():
+    doc, W = _doc()
+    places = [m.Link(text=f"P{i}", url=f"https://m/{i}") for i in range(6)]
+    RC.render_souvenir_grid(doc, W, m.SouvenirGrid(categories=[m.Souvenir(title="T", what="a", places=places)]))
+    bl = [p for p in _paras(_cells(_tables(doc)[0])[0]) if p.startswith("◆")]
+    assert len(bl) == 1 + 3

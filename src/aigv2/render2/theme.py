@@ -10,13 +10,14 @@ FROST = "F4F6FA"
 SLATE = "4A525E"
 TAUPE = "C4B3A1"
 TAUPE_TINT = "F3EFEA"
+DOT_RULE = "A8957E"  # darkened taupe: TOC dotted leaders must read on the cream page
 AMBER = "DEA350"
 GOLD_INK = "8F5A16"
 HARBOUR_FILL = "EDF3FB"
 HARBOUR_EDGE = "BCD0EA"
 CARD_EDGE = "BCD0EA"  # stronger than before so white cards separate from the white page
 WHITE = "FFFFFF"
-CREAM = "FAF7F1"  # the original start colour of the locked page gradient (very light beige)
+CREAM = "FDFBF7"  # barely-warm white page ground (FAF7F1 read too dark/dull in Google Docs)
 PAGE_BG = CREAM  # solid: Google Docs drops gradients
 
 HEAD = "Cormorant Garamond"

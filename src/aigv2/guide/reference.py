@@ -3,6 +3,7 @@ import re
 from typing import Optional
 
 from src.aigv2.guide import model as g
+from src.aigv2.guide.dedupe import distinct, souvenir_items
 from src.aigv2.library import norm_name
 from src.aigv2.render.sections_render import search_url
 from src.aigv2.writing.sections import SectionContent, SectionItem
@@ -131,8 +132,12 @@ def _souvenirs(c: SectionContent, data) -> list:
     if not c.souvenirs:
         return _titled(c.items)
     pl = known_places(data)
-    return [g.SouvenirGrid(categories=[g.Souvenir(title=s.title, what=s.what,
-                                                  places=[_link(n, data, pl) for n in s.places]) for s in c.souvenirs])]
+    def place_names(names):
+        keep = set(distinct([n for n in names if n.strip()]))
+        return [n for n in names if n.strip() and (n[0].upper() + n[1:]) in keep]
+    return [g.SouvenirGrid(categories=[
+        g.Souvenir(title=s.title, what=", ".join(souvenir_items(s.what)) or s.what,
+                   places=[_link(n, data, pl) for n in place_names(s.places)]) for s in c.souvenirs])]
 
 
 def _etiquette(c: SectionContent, data) -> list:

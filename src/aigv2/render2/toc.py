@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Optional
 
 from docx.enum.text import WD_ALIGN_PARAGRAPH as AL
-from docx.shared import Cm
+from docx.shared import Cm, Pt
 
 from src.aigv2.guide.model import Guide, Page
 from src.aigv2.render import document as _legacy
@@ -106,6 +106,9 @@ def _day_card(doc, W: float, page: Page, pages) -> None:
 
 
 _ENTRY_PT = 13
+ENTRY_LINE_PT = 14.5  # exact line height of an entry (13 pt type)
+DOT_SZ = 10  # eighths of a pt (1.25 pt dots)
+DOT_LIFT_CM = 0.06  # the rule sits just under the title baseline, not at the cell floor
 TITLE_SLACK = 1.12  # Google Docs measures text wider than PIL: the title cell is sized with this margin
 TITLE_PAD_CM = 0.3
 NUM_CELL_CM = 0.9
@@ -159,13 +162,15 @@ def _entry(cont, page: Page, width: float, pages) -> None:
     K.R(p, K.DIAMOND_GLYPH, size=6, color=T.AMBER)
     K.R(p, "\t")
     anchor_link(p, page.bookmark, page.title, font=T.HEAD, size=13, bold=True, color=T.INK)
+    p.paragraph_format.line_spacing = Pt(ENTRY_LINE_PT)  # tight exact line: the dotted rule sits close to the baseline
     # filler: its bottom border is the dotted rule; a tiny paragraph keeps the row height set by the title
-    K.cell_borders(c_fill, bottom=(T.TAUPE, 6, "dotted"))
-    K.cell_margins(c_fill, bottom=0)
+    K.cell_borders(c_fill, bottom=(T.DOT_RULE, DOT_SZ, "dotted"))
+    K.cell_margins(c_fill, bottom=DOT_LIFT_CM)
     p = np(c_fill, after=0)
     K.R(p, " ", size=2)
     p = np(c_num, after=0, align=AL.RIGHT)
     _number(p, page.bookmark, pages, font=T.HEAD, size=13, bold=True, color=T.ROYAL)
+    p.paragraph_format.line_spacing = Pt(ENTRY_LINE_PT)
     spacer(cont, 4)
 
 

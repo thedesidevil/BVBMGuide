@@ -327,27 +327,55 @@ def render_place_groups(doc, W: float, c: PlaceGroups) -> None:
         _end_card(doc, cell)
 
 
+def _heading(cell, text: str, size: float = 16, after: float = 6) -> None:
+    p = K.np(cell, after=after, keep=True, line=1.0)
+    K.R(p, text, font=T.HEAD, size=size, color=T.NAVY)
+    K.hairline(p, T.POWDER, space=2)
+
+
+def _link_runs(p, links: Sequence[Link], size: float, sep: str = "  ·  ") -> None:
+    for i, l in enumerate(links):
+        if i:
+            K.R(p, sep, size=size, color=T.SLATE)
+        if l.url:
+            K.link(p, l.url, l.text, font=T.BODYF, size=size, color=T.NAVY, bold=False)
+        else:
+            K.R(p, l.text, size=size, color=T.NAVY)
+
+
 def _dish(cell, w: float, d) -> None:
-    p = K.np(cell, after=2, keep=True, line=1.0)
-    K.R(p, d.name, font=T.HEAD, size=18, color=T.NAVY)
-    K.R(K.np(cell, after=5, line=1.45, keep=bool(d.where)), d.desc, size=10)
+    _heading(cell, d.name, size=18)
+    for ln in (bullet_items(d.desc) or [d.desc]) if d.desc.strip() else []:
+        K.diamond_item(cell, ln, indent=0.62, after=4, size=10).paragraph_format.line_spacing = 1.32
     if d.where:
-        _links_line(cell, d.where, lead="Where to try")
+        def runs(p):
+            K.R(p, "Where to try  ", size=7, color=T.GOLD_INK, bold=True, caps=True, spacing=1.2)
+            _link_runs(p, d.where, 9.5)
+        K.diamond_item(cell, runs, indent=0.62, after=0, size=9.5).paragraph_format.line_spacing = 1.32
 
 
 def render_dish_grid(doc, W: float, c: DishGrid) -> None:
     _grid(doc, W, c.dishes, _dish, ncols=2, gap=1.0, after_row=14)
 
 
+PLACES_PER_LINE = 2  # beyond this many places, bullets carry two links each
+PLACES_ONE_PER_BULLET = 5
+
+
 def _souvenir(cell, w: float, s) -> None:
-    p = K.np(cell, after=5, keep=True, line=1.0)
-    K.R(p, s.title, font=T.HEAD, size=16, color=T.NAVY)
-    K.hairline(p, T.POWDER, space=2)
+    from src.aigv2.guide.dedupe import souvenir_items
+    _heading(cell, s.title)
     _label(cell, "What to buy", T.SLATE)
-    K.R(K.np(cell, after=5, line=1.4, keep=bool(s.places)), s.what, size=9.5)
+    for it in souvenir_items(s.what) or [s.what]:
+        K.diamond_item(cell, it, indent=0.62, after=3, size=9.5).paragraph_format.line_spacing = 1.3
     if s.places:
-        _label(cell, "Best places to buy", T.GOLD_INK)
-        _links_line(cell, s.places)
+        p = _label(cell, "Best places to buy", T.GOLD_INK)
+        p.paragraph_format.space_before = Pt(5)
+        per = 1 if len(s.places) <= PLACES_ONE_PER_BULLET else PLACES_PER_LINE
+        for i in range(0, len(s.places), per):
+            chunk = s.places[i:i + per]
+            K.diamond_item(cell, lambda p, ch=chunk: _link_runs(p, ch, 9.5), indent=0.62, after=3,
+                           size=9.5).paragraph_format.line_spacing = 1.3
 
 
 def render_souvenir_grid(doc, W: float, c: SouvenirGrid) -> None:

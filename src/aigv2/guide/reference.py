@@ -10,6 +10,10 @@ from src.aigv2.writing.structured import CHILD_GROUP
 
 _BOAT_HEAD = re.compile(r"boat|ferry|crossing|motion|sea", re.I)
 _PAED = re.compile(r"paediatrician|pediatrician", re.I)
+_PHRASE_ITEM = re.compile(r"phrases", re.I)
+_APPS_ITEM = re.compile(r"\bapps\b", re.I)
+_NUMBERS_ITEM = re.compile(r"emergency numbers?", re.I)
+_CONSULAR_ITEM = re.compile(r"consul|embass", re.I)
 _MARKET = re.compile(r"tipping|market|bargain", re.I)
 _EYEBROW = {"tourist_police": "TOURIST POLICE", "consulate": "INDIAN CONSULATE", "embassy": "EMBASSY"}
 _CONTACT_RANK = {"tourist_police": 0, "consulate": 1, "embassy": 2}
@@ -61,7 +65,7 @@ def _packing(c: SectionContent, data) -> list:
     for x in c.groups:
         if x.title == CHILD_GROUP and x.items:
             out.append(g.TipPanel(title=CHILD_GROUP, items=[i.heading for i in x.items], columns=2, checks=True))
-    return out + _titled(c.items)
+    return out if c.groups else out + _titled(c.items)  # items only summarise the groups: fallback when none
 
 
 def _money(c: SectionContent, data) -> list:
@@ -93,7 +97,7 @@ def _connectivity(c: SectionContent, data) -> list:
         if s.options:
             facts.append(g.Fact(label="Options", value=s.options))
         out.append(g.FactRowBlock(facts=facts))
-    out += _titled(c.items)
+    out += _titled([i for i in c.items if not (c.apps and _APPS_ITEM.search(i.heading))])
     if c.steps:
         out.append(g.TipPanel(title="Before you leave the airport", items=c.steps, columns=2, checks=True))
     if c.apps:
@@ -142,7 +146,9 @@ def _etiquette(c: SectionContent, data) -> list:
     market = [i for i in c.items if _MARKET.search(i.heading)]
     if market:
         out.append(g.NotePanel(title="MARKETS AND TIPPING", items=[f"{i.heading}: {i.body}" for i in market]))
-    return out + _titled([i for i in c.items if i not in market])
+    def dup(i):  # prose that only repeats the phrase table
+        return bool(c.phrases and _PHRASE_ITEM.search(i.heading))
+    return out + _titled([i for i in c.items if i not in market and not dup(i)])
 
 
 def _dial(c: SectionContent, data) -> Optional[str]:
@@ -170,7 +176,9 @@ def _safety(c: SectionContent, data) -> list:
         rest = [f"{k.name} - {k.phone}" if k.phone else k.name for k in ranked[CONTACT_CAP:]]
         if rest:
             out.append(g.TitledParas(items=[g.TitledPara(heading="Other contacts", body="; ".join(rest))]))
-    return out + _titled(c.items)
+    def dup(i):  # prose repeating the numbers strip or the embassy/consulate cards
+        return bool((c.numbers and _NUMBERS_ITEM.search(i.heading)) or (c.contacts and _CONSULAR_ITEM.search(i.heading)))
+    return out + _titled([i for i in c.items if not dup(i)])
 
 
 _BUILDERS = {"packing": _packing, "money": _money, "connectivity": _connectivity, "health": _health,

@@ -199,3 +199,47 @@ def test_contact_cards_capped_with_priority_and_rest_listed():
     p = build_reference_page("safety", SectionContent(key="safety", contacts=cs), load())
     assert [k.name.text for k in p.components[1].cards] == ["Tourist Police", "Consulate", "Embassy A"]
     assert p.components[2].items == [m.TitledPara(heading="Other contacts", body="Embassy B - 2")]
+
+
+def _texts(page):
+    import json
+    return json.dumps(page.model_dump(), ensure_ascii=False)
+
+
+def test_packing_groups_not_repeated_as_prose():
+    from src.aigv2.guide.build import build_reference_page
+    from src.aigv2.writing.sections import SectionContent, SectionGroup, SectionItem
+    titles = ["Clothing", "Footwear", "Electronics"]
+    groups = [SectionGroup(title=t, items=[SectionItem(heading=f"{t} thing", body="")]) for t in titles]
+    items = [SectionItem(heading=t, body=f"{t} thing") for t in titles]
+    page = build_reference_page("packing", SectionContent(key="packing", items=items, groups=groups), None)
+    assert not [c for c in page.components if type(c).__name__ == "TitledParas"]
+    for t in titles:
+        assert _texts(page).count(f'"{t}"') == 1
+
+
+def test_packing_items_still_used_without_groups():
+    from src.aigv2.guide.build import build_reference_page
+    from src.aigv2.writing.sections import SectionContent, SectionItem
+    page = build_reference_page("packing", SectionContent(key="packing", items=[SectionItem(heading="X", body="y")]), None)
+    assert [c for c in page.components if type(c).__name__ == "TitledParas"]
+
+
+def test_etiquette_safety_connectivity_prose_not_duplicated():
+    from src.aigv2.guide.reference import structured_components
+    from src.aigv2.writing.sections import SectionContent, SectionItem
+    from src.aigv2.writing.structured import App, Contact, EmergencyNumber, Phrase
+    I = lambda h: SectionItem(heading=h, body="b")
+    def heads(comps):
+        return [p.heading for c in comps if type(c).__name__ == "TitledParas" for p in c.items]
+    et = SectionContent(key="etiquette", phrases=[Phrase(local="a", english="b")], dos=["x"], donts=["y"],
+                        items=[I("Greetings and useful phrases"), I("Temple and everyday etiquette"), I("Local customs")])
+    assert heads(structured_components("etiquette", et, None)) == ["Temple and everyday etiquette", "Local customs"]
+    sf = SectionContent(key="safety", numbers=[EmergencyNumber(service="Police", number="110")],
+                        contacts=[Contact(name="C", phone="1", kind="consulate")],
+                        items=[I("Everyday Safety"), I("Emergency Numbers"), I("Indian Consular Assistance")])
+    class D: days = []
+    assert heads(structured_components("safety", sf, D)) == ["Everyday Safety"]
+    cn = SectionContent(key="connectivity", apps=[App(name="Grab", purpose="rides")],
+                        items=[I("Mobile data"), I("Useful apps and offline access")])
+    assert heads(structured_components("connectivity", cn, None)) == ["Mobile data"]

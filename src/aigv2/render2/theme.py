@@ -16,7 +16,8 @@ HARBOUR_FILL = "EDF3FB"
 HARBOUR_EDGE = "BCD0EA"
 CARD_EDGE = "BCD0EA"  # stronger than before so white cards separate from the white page
 WHITE = "FFFFFF"
-PAGE_BG = WHITE  # pure white: Google Docs renders a tinted w:background as a dull grey page
+CREAM = "FAF7F1"  # the original start colour of the locked page gradient (very light beige)
+PAGE_BG = CREAM  # solid: Google Docs drops gradients
 
 HEAD = "Cormorant Garamond"
 HEAD_FALLBACK = "Garamond"
@@ -46,13 +47,13 @@ def contrast(fg: str, bg: str) -> float:
 
 
 # Every (text, background) pair the design uses; all must be >= 4.5:1.
-_LIGHT = (WHITE, FROST, HARBOUR_FILL, TAUPE_TINT)
+_LIGHT = (WHITE, FROST, HARBOUR_FILL, TAUPE_TINT, CREAM)
 PAIRS: list[tuple[str, str]] = (
     [(fg, bg) for fg in (INK, NAVY, SLATE, GOLD_INK) for bg in _LIGHT]
     + [(ROYAL, bg) for bg in _LIGHT]
     + [(WHITE, ROYAL), (WHITE, NAVY), (POWDER, NAVY), (AMBER, NAVY)]
-    + [(CRIMSON, WHITE), (CRIMSON, FROST)]
+    + [(CRIMSON, WHITE), (CRIMSON, FROST), (CRIMSON, CREAM)]
 )
 
 # Crimson text is only legal on these grounds (on HARBOUR_FILL it is 4.49:1).
-CRIMSON_ALLOWED_BG = (WHITE, FROST)
+CRIMSON_ALLOWED_BG = (WHITE, FROST, CREAM)

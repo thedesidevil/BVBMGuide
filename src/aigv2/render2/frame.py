@@ -31,7 +31,7 @@ def guide_label(client: str, destination: str) -> str:
 
 
 def new_guide_doc(client: str, destination: str):
-    """A4 doc with the solid white background and render2 styles. The caller builds the label via
+    """A4 doc with the solid cream background and render2 styles. The caller builds the label via
     guide_label(client, destination) and passes it to add_guide_section."""
     doc = K.new_doc()
     install_styles(doc)

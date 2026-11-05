@@ -107,15 +107,15 @@ def test_page_number_restart_only_first_section():
     assert not list(doc.element.iter(qn("w:pgNumType")))
 
 
-def test_background_is_solid_frost_by_default():
+def test_background_is_solid_cream_by_default():
     doc = K.new_doc()
     bg = doc.element.find(qn("w:background"))
-    assert bg.get(qn("w:color")) == "FFFFFF" and len(bg) == 0
+    assert bg.get(qn("w:color")) == "FAF7F1" and len(bg) == 0
     assert doc.element[0] is bg
     g = K.new_doc(gradient=T.GRAD)
     assert any(e.tag.endswith("}fill") for e in g.element.find(qn("w:background")).iter())
     assert not any(e.tag.endswith("}fill") for e in doc.element.find(qn("w:background")).iter())
-    assert g.element.find(qn("w:background")).get(qn("w:color")) == "FFFFFF"
+    assert g.element.find(qn("w:background")).get(qn("w:color")) == "FAF7F1"
 
 
 def test_chips_are_plain_text():

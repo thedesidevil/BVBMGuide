@@ -35,7 +35,8 @@ def test_day2_components_order():
     assert p.components[2].part == "Breakfast"
     # The real Day 2 has no return leg (no transport for a mid-stay sightseeing day), so no BookingCard;
     # the day-level VERIFY (tour booking not placed) closes the page as a ReviewMarkerBlock.
-    assert kinds[3:] == ["SightseeingCard", "SightseeingCard", "MealBlock", "SightseeingCard", "MealBlock",
+    assert p.components[3].part == "Your booking"  # the tour voucher is named ahead of its stops
+    assert kinds[3:] == ["SimpleCard", "SightseeingCard", "SightseeingCard", "MealBlock", "SightseeingCard", "MealBlock",
                          "SimpleCard", "ReviewMarkerBlock"]
     assert p.components[-2].heading == "Overnight in Ubud"
     assert [c.meal for c in p.components if c.type == "MealBlock"] == ["lunch", "dinner"]
@@ -355,3 +356,43 @@ def test_restaurant_description_drops_not_specified_filler():
     lunch = next(c for c in p.components if c.type == "MealBlock" and c.meal == "lunch")
     r0 = next(r for r in lunch.restaurants if r.name == name)
     assert r0.text == "Best for grilled meats"
+
+
+def test_every_trip_booking_name_is_in_the_rendered_guide():
+    """Regression: tour/transfer bookings no item card carried only reached the guide via a 'not placed' marker."""
+    from src.aigv2.models import TripPlan
+    from src.aigv2.qc.reader import read_docx
+    from src.aigv2.render2.render import render_guide2
+    from src.aigv2.library import norm_name
+    data = load()
+    assert [b.name for b in data.trip.bookings][2] != ""  # fixture trip carries the 8 bookings
+    for rd in data.days:  # as in a fresh plan: no 'not placed' markers
+        rd.result.markers[:] = [mk for mk in rd.result.markers if "not placed" not in mk.text]
+    guide = build_guide(data, SETTINGS)
+    blob = norm_name(read_docx(render_guide2(guide)).text)
+    trip = data.trip
+    assert len(trip.bookings) == 8
+    # the fixture has no render days for the activity-only days 3 and 6: clone a tour day for each, as a fresh plan has them
+    base = day(data, 4)
+    for idx, d_, bk_name in ((3, date(2026, 9, 26), "Marine Park (Sea Dragon Package)"),
+                             (6, date(2026, 9, 29), "Nusa Lembongan tour")):
+        bk = next(b for b in trip.bookings if b.day == d_ and norm_name(b.name).startswith(norm_name(bk_name)[:10]))
+        sc = base.result.scheduled[0]
+        item = sc.item.model_copy(update={"name": bk_name if idx == 3 else "Yellow Bridge"})
+        rd = base.model_copy(deep=True, update={"index": idx, "date": d_, "booking_by_item": {item.name: bk} if idx == 3 else {}})
+        rd.result.scheduled[:] = [sc.model_copy(update={"item": item})]
+        rd.result.markers[:] = []
+        data.days.append(rd)
+    data.days.sort(key=lambda r: r.index)
+    blob = norm_name(read_docx(render_guide2(build_guide(data, SETTINGS))).text)
+    missing = [b.name for b in trip.bookings if norm_name(b.name) not in blob]
+    assert not missing
+
+
+def test_day5_check_in_card_sits_at_its_time_after_the_morning_activity():
+    p = page(5)
+    order = [(c.type, getattr(c, "kind", None), getattr(c, "when", None)) for c in p.components
+             if c.type in ("BookingCard", "SightseeingCard", "MealBlock")]
+    kinds = [o[1] or o[0] for o in order]
+    mangrove = max(i for i, k in enumerate(kinds) if k == "SightseeingCard")
+    assert kinds.index("FAST BOAT") < mangrove < kinds.index("Check-in")

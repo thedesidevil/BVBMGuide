@@ -32,6 +32,10 @@ _BRAND = "Bon Voyage by Marina"
 _NOT_SPECIFIED = re.compile(r"\s*Not specified[^.]*\.\s*", re.I)  # library filler sentence, never client-facing
 
 
+class _CheckInAt:
+    """Timeline placeholder for the hotel check-in card of a boat day."""
+
+
 def _ref(m: Marker) -> g.MarkerRef:
     return g.MarkerRef(kind=m.kind, text=m.text)
 
@@ -137,7 +141,9 @@ class _Day:
                 else:
                     self._after_boat = (boat, self._check_in)
         self._drive_stops()
+        start = len(self.out)
         self._timeline()
+        self._unshown_bookings(start)
         if rd.text.free_time_idea and not self.free_time_used:
             self.out.append(g.SimpleCard(when="Free time", heading="Free time", text=rd.text.free_time_idea))
         if dep and not early_dep and not cruise:
@@ -397,6 +403,30 @@ class _Day:
         if transport_card:
             self._transport(dep, dep.from_place, city)
 
+    def _unshown_bookings(self, start: int) -> None:
+        """Every voucher booking of the day appears by name: bookings no item card carries (a tour covering several
+        stops, a boat or hotel transfer) get a 'Your booking' card ahead of the day's first place card."""
+        rd = self.rd
+        shown = {norm_name(b.name) for d in self.data.days
+                 for b in [*d.booking_by_item.values(), d.arrival_booking] if b is not None}
+        cards = []
+        for b in self.data.trip.bookings:
+            if b.day != rd.date or norm_name(b.name) in shown:
+                continue
+            shown.add(norm_name(b.name))
+            bits = []
+            if b.timed and b.time:
+                bits.append(b.time + (f"–{b.end_time}" if b.end_time else ""))
+            elif not b.timed:
+                bits.append("Valid all day")
+            if b.meeting_point:
+                bits.append(f"Meeting point: {b.meeting_point}")
+            if b.included_in_package:
+                bits.append("Included in your package")
+            cards.append(g.SimpleCard(when="Booked", part="Your booking", heading=b.name, text=" · ".join(bits)))
+        at = next((i for i in range(start, len(self.out)) if self.out[i].type == "SightseeingCard"), len(self.out))
+        self.out[at:at] = cards
+
     def _drive_stops(self) -> None:
         if not self.plan or not self.plan.drive_stops:
             return
@@ -420,6 +450,11 @@ class _Day:
             if word and any(m.meal == word and not m.included for m in rd.result.meals):
                 self._meal_notes[word] = e  # the itinerary's "Dinner in X" line becomes the dinner block's note
         entries = [x for x in entries if x[3] not in self._meal_notes.values()]
+        stay_in = next((s for s in self.data.trip.hotels if s.check_in == rd.date), None)
+        defer_check_in = bool(self._after_boat and stay_in is not None and stay_in.check_in_time
+                              and stay_in.check_in_time > self._after_boat[0].depart.time())
+        if defer_check_in:  # the room is ready from its check-in time: the card sits there, after earlier activities
+            entries.append((stay_in.check_in_time, 2, 0, _CheckInAt()))
         for _, _, _, e in sorted(entries, key=lambda x: x[:3]):
             if isinstance(e, TransportLeg):
                 self._transport(e, e.to_place)
@@ -429,7 +464,10 @@ class _Day:
                 if self._after_boat and e is self._after_boat[0]:
                     after, self._after_boat = self._after_boat[1], None
                     after()
-                    self._hotel_check_in_card()
+                    if not defer_check_in:
+                        self._hotel_check_in_card()
+            elif isinstance(e, _CheckInAt):
+                self._hotel_check_in_card()
             elif isinstance(e, ScheduledItem):
                 part = None
                 if e.slot != slot:

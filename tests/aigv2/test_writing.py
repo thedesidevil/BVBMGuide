@@ -575,3 +575,26 @@ def test_booking_lunch_included_reads_voucher_text():
     assert booking_lunch_included(mk("Includes lunch and snorkel gear")) is True
     assert booking_lunch_included(mk("Lunch not included")) is False
     assert booking_lunch_included(mk("No lunch provided")) is False
+
+
+def test_pharmacy_names_must_come_from_important_places():
+    from src.aigv2.writing.sections import _unlisted_pharmacies, pharmacy_mentions
+    assert _unlisted_pharmacies("ApotekKU Campuhan Ubud is a 24-hour pharmacy.", ["Apotek Adapotek Mas"]) != []
+    assert _unlisted_pharmacies("Apotek Adapotek Mas is close by.", ["Apotek Adapotek Mas"]) == []
+    assert pharmacy_mentions("Ask the hotel for the nearest pharmacy.") == []
+
+
+def test_health_rejects_unlisted_pharmacy_and_prompt_lists_them():
+    from datetime import datetime as dt
+    from src.aigv2.models import Place
+    from src.aigv2.planning.important_places import NearbyPlace
+    imp = _important()
+    pl = Place(query="a", place_id="p", name="Apotek Adapotek Mas", address="Jl. Mas", lat=1, lng=2, status="OPERATIONAL",
+               maps_url="u", fetched_at=dt(2026, 1, 1), match_ok=True)
+    imp[0].pharmacies = [NearbyPlace(place=pl, walk_min=5, hours_text="Open 24 hours")]
+    bad = sec([{"heading": "Pharmacy", "body": "ApotekKU Campuhan Ubud is a 24-hour pharmacy."}])
+    good = sec([{"heading": "Pharmacy", "body": "Apotek Adapotek Mas is a short walk away."}])
+    llm, calls = make(bad, good)
+    s = write_section("health", [{"city": "Paris", "country": "France"}], {}, trip(), llm, important=imp)
+    assert "Adapotek" in s.items[0].body and len(calls) == 2
+    assert "Name only these pharmacies" in calls[0][1]["messages"][-1]["content"]

@@ -271,7 +271,8 @@ def _numbers(text: str) -> set[str]:
 
 
 def _validator(key: str, material: str, library: bool, restaurants: dict[str, str],
-               allowed_hospitals: Optional[list[str]] = None, child: bool = False):
+               allowed_hospitals: Optional[list[str]] = None, child: bool = False,
+               allowed_pharmacies: Optional[list[str]] = None):
     known = _numbers(material)
 
     def validate(out: _SectionOut) -> list[str]:
@@ -300,6 +301,10 @@ def _validator(key: str, material: str, library: bool, restaurants: dict[str, st
                 extra = _unlisted_hospitals(blob, allowed_hospitals)
                 if extra:
                     problems.append(f"'{it.heading}' names hospitals that Important Places does not list: {extra}")
+            if allowed_pharmacies is not None:
+                extra = _unlisted_pharmacies(blob, allowed_pharmacies)
+                if extra:
+                    problems.append(f"'{it.heading}' names pharmacies that Important Places does not list: {extra}")
             if key == "dishes":
                 bad = [w for w in it.where_to_try if norm_name(w) not in restaurants]
                 if bad:
@@ -392,6 +397,33 @@ def _unlisted_hospitals(text: str, allowed: list[str]) -> list[str]:
     return [m for m in hospital_mentions(text) if not any(norm_name(m) in a or a in norm_name(m) for a in ok)]
 
 
+_PHARMACY_MENTION = re.compile(
+    r"(?:[A-Z][\w'’.&-]*\s+){0,3}(?:Apotek\w*|Apotik\w*|Pharmacy|Farmasi|Kimia\s+Farma)(?:\s+[A-Z0-9][\w'’.&-]*){0,3}")
+_GENERIC_PHARMACY = {"apotek", "apotik", "pharmacy", "farmasi", "the", "a", "your", "local", "24", "hour"}
+
+
+def pharmacy_mentions(text: str) -> list[str]:
+    """Named pharmacies only: a bare 'pharmacy' / 'Apotek' is generic and not a name."""
+    out = []
+    for m in _PHARMACY_MENTION.finditer(text or ""):
+        words = [w for w in re.findall(r"[\w'’.&-]+", m.group(0).casefold()) if w not in _GENERIC_PHARMACY]
+        if words:
+            out.append(m.group(0).strip())
+    return out
+
+
+def _unlisted_pharmacies(text: str, allowed: list[str]) -> list[str]:
+    ok = [norm_name(a) for a in allowed]
+    return [m for m in pharmacy_mentions(text) if not any(norm_name(m) in a or a in norm_name(m) for a in ok)]
+
+
+def pharmacy_facts(important) -> list[dict]:
+    """The Important Places pharmacy entries per stay as plain facts."""
+    return [{"city": e.city, "near_hotel": e.hotel, "name": p.place.name, "address": p.place.address,
+             "opening_hours": p.hours_text}
+            for e in important or [] for p in getattr(e, "pharmacies", [])]
+
+
 def hospital_facts(important) -> list[dict]:
     """The Important Places hospital entries (nearest hospital Google found per stay) as plain facts."""
     out = []
@@ -408,13 +440,18 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
     named = _library_named(key, cities, cdatas, nationalities=frozenset(client_nationalities(trip)),
                            other_places=other_places)
     lib = [x for v in named.values() for x in v]
-    hospitals = hospital_facts(important) if key == "safety" and important is not None else None
+    medical = key in ("safety", "health") and important is not None
+    hospitals = hospital_facts(important) if medical else None
+    pharmacies = pharmacy_facts(important) if medical else None
+    allowed_ph = [x["name"] for x in pharmacies] if pharmacies is not None else None
     allowed = [h["name"] for h in hospitals] if hospitals is not None else None
     if allowed is not None:  # library facts may not name a hospital other than the ones Important Places lists
         def listed(x):
             return not _unlisted_hospitals(json.dumps(x, ensure_ascii=False, default=str), allowed)
-        lib = [x for x in lib if listed(x)]
-        named = {k: [x for x in v if listed(x)] for k, v in named.items()}
+        def listed_all(x):
+            return listed(x) and not _unlisted_pharmacies(json.dumps(x, ensure_ascii=False, default=str), allowed_ph or [])
+        lib = [x for x in lib if listed_all(x)]
+        named = {k: [x for x in v if listed_all(x)] for k, v in named.items()}
     library = bool(lib)
     material = json.dumps(lib, ensure_ascii=False, default=str)
     restaurants = _restaurant_names(cities, trip.diet)
@@ -428,6 +465,9 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
                   + json.dumps(hospitals, ensure_ascii=False, default=str)
                   + "\nName only these hospitals or clinics, and no others. Do not name any other hospital, clinic or "
                     "medical centre. If the list is empty, name no hospital.")
+        extra += ("\nAuthoritative pharmacies (the same ones listed under Important Places): "
+                  + json.dumps(pharmacies, ensure_ascii=False, default=str)
+                  + "\nName only these pharmacies, and no others. If the list is empty, name no pharmacy.")
     mode = ("Format ONLY the library facts below into client-ready items. Add no facts, numbers, names or prices."
             if library else
             "No library facts exist. Write helpful general guidance, without exact prices, fees, times or provider names.")
@@ -438,7 +478,7 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
     prompt = (f"Section: {key}. Write {_FOCUS[key]}.\n{mode}\n{_trip_context(trip)}{extra}\n"
               f"Library facts (JSON): {material}")
     out = llm.run_json("write_sections", _SYSTEM, prompt, _SectionOut,
-                       validate=_validator(key, material + extra, library, restaurants, allowed, child))
+                       validate=_validator(key, material + extra, library, restaurants, allowed, child, allowed_ph))
     flag_ai = not library and key != "packing"
     items = []
     for it in out.items:

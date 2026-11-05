@@ -632,7 +632,7 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
                                  _item_windows(trip, dp.date, dp.items))
         ds.legs = _legs(ds, trip, deps)
         space_after_lunch(ds.result, s, {n: _leg_minutes(l) for n, l in ds.legs.items()},
-                          frozenset(_item_windows(trip, dp.date, dp.items)))
+                          _item_windows(trip, dp.date, dp.items))
         days.append(ds)
         prev = dp.city
     _unlinked_booking_markers(trip, days)

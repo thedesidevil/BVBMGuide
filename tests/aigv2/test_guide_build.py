@@ -282,9 +282,10 @@ def test_day8_departure_cards():
     # no road leg: a leave-by time only, no margin number claimed, and the VERIFY marker stays
     dep = day(data, 8).departure
     assert "leave-by time" in xfer.text and "giving about" not in xfer.text and "13:15 departure" in xfer.text
-    assert not any(f.label == "Margin" for f in xfer.facts) and "3 hours" not in xfer.text
+    assert not any(f.label == "Margin" for f in xfer.facts)
+    assert "leave-by time" in xfer.text and "3 hours before departure" in xfer.text and "9:45 AM" in xfer.text
     assert any(mk.kind == "VERIFY" and mk.text == "departure time" for mk in marks)
-    assert "buffer only" in xfer.text
+    assert "30-minute allowance" in xfer.text
     # with a 45 minute road leg
     rd = day(data, 8)
     legs = dict(rd.legs)

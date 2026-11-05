@@ -126,7 +126,7 @@ def test_early_arrival_no_meals():
 
 
 def test_departure_suppresses_meals_and_packed_breakfast_tip():
-    r = run(day(), departure=leg(depart=datetime(2026, 11, 3, 16, 0)))
+    r = run(day(), departure=leg(depart=datetime(2026, 11, 3, 17, 0)))
     assert meal(r, "lunch") and meal(r, "dinner") is None
     r = run(day(), departure=leg(depart=datetime(2026, 11, 3, 16, 0)), domestic=True)
     assert meal(r, "dinner") is None
@@ -468,7 +468,7 @@ def test_required_stop_is_not_moved():
 
 def test_leave_by_uses_buffer_and_road_time_rounded_down():
     dep = leg(depart=datetime(2026, 10, 1, 13, 15))
-    assert leave_by(dep, False) == time(10, 15)
+    assert leave_by(dep, False) == time(9, 45)  # 3 h arrival buffer + 30 min unconfirmed road allowance
     assert leave_by(dep, False, 83) == time(8, 50)
     assert leave_by(dep, True, 40) == time(10, 35)
     assert leave_by(leg(kind="train", depart=datetime(2026, 10, 1, 9, 0)), False, 20) == time(8, 0)
@@ -521,7 +521,7 @@ def test_checkout_and_airport_drop_at_leave_by_time_not_default_9am():
     dep = leg(depart=datetime(2026, 11, 3, 13, 15))
     r = run(day([item("Hotel check-out and airport drop", kind="transfer")]), [stay(cout=D)], None, dep, domestic=False)
     s = r.scheduled[0]
-    assert s.start == time(10, 15) and s.slot == "morning"
+    assert s.start == time(9, 45) and s.slot == "morning"
 
 
 def test_breakfast_before_an_early_pickup():
@@ -594,3 +594,20 @@ def test_post_lunch_spacing_leaves_timed_and_package_days_alone():
     r = run(day([item("A"), item("B"), item("C", time="13:00")]))
     space_after_lunch(r, _S4, {"C": 41})
     assert {s.item.name: s.start for s in r.scheduled}["C"] == time(13, 0)
+
+
+def test_voucher_window_stop_after_lunch_waits_for_lunch_plus_drive():
+    from src.aigv2.planning.slots import space_after_lunch
+    S4 = Settings(models={}, slot_windows={"morning": ("08:00", "12:00"), "lunch": ("12:30", "14:00"),
+                                           "afternoon": ("13:00", "17:30"), "dinner": ("19:30", "21:30"),
+                                           "evening": ("18:00", "22:00")})
+    names = ["Kintamani Volcano View", "Tirta Empul Temple", "Coffee Plantation"]
+    win = {n: (time(8, 0), time(18, 0)) for n in names}
+    r = schedule_day(day([item(n) for n in names]), [stay()], None, None, places("Hotel H", *names), S4,
+                     windows=win)
+    got = {s.item.name: s.start for s in r.scheduled}
+    assert got["Kintamani Volcano View"] == time(8, 0)
+    space_after_lunch(r, S4, {"Coffee Plantation": 41}, win)
+    got = {s.item.name: s.start for s in r.scheduled}
+    assert got["Kintamani Volcano View"] == time(8, 0)  # anchored to the window start
+    assert got["Coffee Plantation"] >= time(14, 26)

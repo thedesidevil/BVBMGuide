@@ -710,7 +710,7 @@ def test_departure_without_a_known_road_time_keeps_the_verify_marker():
     d3 = day3()
     d3.legs = {}
     block = day_block(load(data(days=[day1(), day2(), d3])), 3)
-    assert "Leave for the airport by 11:00" in block and "allowing" not in block
+    assert "Leave for the airport by 10:30" in block and "allowing" not in block
     assert "⚠ VERIFY: departure time" in block
 
 

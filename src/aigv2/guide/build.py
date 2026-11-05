@@ -392,8 +392,9 @@ class _Day:
                     f"{_hm(dep.depart)} departure: a comfortable margin for luggage and airport formalities.")
         else:
             text = (f"Leave {stay.hotel} by approximately {at} for the {_hm(dep.depart)} departure. This is a "
-                    "leave-by time that allows for the airport buffer only; the road time is still to be confirmed, "
-                    "so it may need to be earlier.")
+                    "leave-by time that allows the recommended airport arrival "
+                    f"({self._margin_text(arrival_buffer_min(dep.kind, data.domestic))} before departure) plus a "
+                    "30-minute allowance for the road; the road time is still to be confirmed, so it may need to be earlier.")
         port = dep.from_place or _PORT[dep.kind]
         self.out.append(g.BookingCard(when=at, kind="AIRPORT TRANSFER",
                                       title=g.Link(text=f"{nice_name(stay.hotel)} → {self._port_title(port, dep)}",

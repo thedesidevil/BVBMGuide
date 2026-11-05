@@ -190,7 +190,7 @@ _UNKNOWN_TRAVEL_MIN = 30
 
 
 def space_after_lunch(res: "DayResult", settings: Settings, travel: Optional[dict[str, Optional[int]]] = None,
-                      fixed: frozenset[str] = frozenset()) -> None:
+                      windows: Optional[dict[str, tuple[time, time]]] = None) -> None:
     """Untimed stops that fall after lunch start no earlier than lunch end plus the drive to them (a conservative
     30 minutes when the drive is unknown); later untimed stops are pushed on so the order never inverts."""
     lunch = next((m for m in res.meals if m.meal == "lunch" and not m.included and not m.in_package), None)
@@ -203,7 +203,9 @@ def space_after_lunch(res: "DayResult", settings: Settings, travel: Optional[dic
         it = s.item
         if s.start < lunch.start or it.kind not in ("attraction", "activity"):
             continue
-        movable = not (it.time or it.pickup_time or it.option_group or it.name in fixed)
+        w = (windows or {}).get(it.name)
+        # the first stop of a voucher window is anchored to the window start; later ones may move
+        movable = not (it.time or it.pickup_time or it.option_group or (w and s.start == w[0]))
         if movable:
             mins = travel.get(it.name)
             need = floor + (mins if mins is not None else _UNKNOWN_TRAVEL_MIN)
@@ -260,6 +262,9 @@ def meal_start(meal: str, country: str, settings: Settings) -> time:
     return _t(settings.slot_windows[meal][0])
 
 
+_UNKNOWN_ROAD_MIN = 30  # conservative allowance for the road when the drive time is not confirmed
+
+
 def arrival_buffer_min(kind: str, domestic: bool) -> int:
     if kind == "flight":
         return 120 if domestic else 180
@@ -270,7 +275,7 @@ def leave_by(dep: TransportLeg, domestic: bool, road_min: Optional[int] = None) 
     """Departure minus the arrival buffer and, when known, the road time to the port; floored to 5 minutes."""
     if not dep.depart:
         return None
-    minutes = arrival_buffer_min(dep.kind, domestic) + (road_min or 0)
+    minutes = arrival_buffer_min(dep.kind, domestic) + (road_min if road_min else _UNKNOWN_ROAD_MIN if dep.kind == "flight" else 0)
     t = dep.depart - timedelta(minutes=minutes)
     return t.replace(minute=t.minute - t.minute % 5, second=0, microsecond=0).time()
 

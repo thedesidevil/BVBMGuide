@@ -119,7 +119,7 @@ def _inner_w(W: float) -> float:
 def _eyebrow_line(cell, when: str, part: str | None = None) -> None:
     p = K.np(cell, after=4, keep=True, style="Eyebrow")
     K.R(p, when.upper(), size=8, color=T.GOLD_INK, bold=True, spacing=1.6)
-    if part:
+    if part and part.strip().casefold() != when.strip().casefold():
         K.R(p, " ", size=8)
         K.R(p, K.DIAMOND_GLYPH, size=5.5, color=T.AMBER)
         K.R(p, " ", size=8)
@@ -130,7 +130,7 @@ def _title(cell, name: Link | str, size: float = 20, has_sub: bool = False) -> N
     link = name if isinstance(name, Link) else Link(text=name)
     p = K.np(cell, after=2 if has_sub else 10, keep=True, line=1.0, style="Heading 3")
     if link.url:
-        K.link(p, link.url, link.text, size=size, color=T.NAVY, bold=False)
+        K.link(p, link.url, link.text, size=size, color=T.ROYAL, bold=False)
     else:
         K.R(p, link.text, font=T.HEAD, size=size, color=T.NAVY, bold=False)
 
@@ -150,8 +150,9 @@ def _glance(cell, inner_w: float, facts: list[Fact]) -> None:
     if not facts:
         return
     gap = 0.8
-    cw = (inner_w - gap) / 2
-    t = K.tbl(cell, -(-len(facts) // 2), [cw, gap, cw], margins=(0.13, 0, 0.13, 0))
+    single = len(facts) == 1  # a lone fact spans the full width instead of leaving half the row empty
+    cw = inner_w if single else (inner_w - gap) / 2
+    t = K.tbl(cell, -(-len(facts) // 2), [cw] if single else [cw, gap, cw], margins=(0.13, 0, 0.13, 0))
     for i, f in enumerate(facts):
         r, c = divmod(i, 2)
         fc = t.rows[r].cells[c * 2]
@@ -162,7 +163,7 @@ def _glance(cell, inner_w: float, facts: list[Fact]) -> None:
             K.link(vp, f.link.url, f.value, size=13, color=T.NAVY, bold=False)
         else:
             K.R(vp, f.value, font=T.HEAD, size=13, color=T.NAVY)
-    if len(facts) % 2:
+    if len(facts) % 2 and not single:
         K.borders(t.rows[-1].cells[2], t=None, b=None)
     K.spacer(cell, 10)
 
@@ -227,7 +228,7 @@ def _booking_title(cell, c: BookingCard) -> None:
     if c.prefix:
         K.R(p, c.prefix, font=T.HEAD, size=20, color=T.NAVY, bold=False)
     if c.title.url:
-        K.link(p, c.title.url, c.title.text, size=20, color=T.NAVY, bold=False)
+        K.link(p, c.title.url, c.title.text, size=20, color=T.ROYAL, bold=False)
     else:
         K.R(p, c.title.text, font=T.HEAD, size=20, color=T.NAVY, bold=False)
 

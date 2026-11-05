@@ -74,9 +74,11 @@ def _money(c: SectionContent, data) -> list:
     facts = []
     if ":" in fx.heading:
         facts.append(g.Fact(label="Currency", value=fx.heading.split(":", 1)[1].strip()))
-    facts.append(g.Fact(label="Indicative rate", value=fx.body))
+    i = fx.body.index("Indicative rate")
+    rate = fx.body[:i].strip()
+    facts.append(g.Fact(label="Indicative rate", value=rate.rstrip(" .") or fx.body))
     out: list = [g.FactRowBlock(facts=facts)] + ([g.TitledParas(items=lib)] if lib else _titled(body))
-    note = fx.body[fx.body.index("Indicative rate"):]
+    note = "Indicative rate; check before you travel."
     out.append(g.NotePanel(title="PLEASE NOTE", text=note))
     return out
 

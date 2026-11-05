@@ -216,3 +216,10 @@ def test_reference_prose_titles_are_not_venues():
     assert "Zebra Taxi Mode" in m.text
     assert "Zebra Taxi Mode" not in {v.name for v in m.section_venues}
     assert not [v for v in m.section_venues if not v.url]
+
+
+def test_at_your_hotel_parses_as_zero_walk():
+    from src.aigv2.qc.facts import _guide_travel
+    from src.aigv2.qc.reader import DocVenue
+    v = DocVenue(name="x", url="", facts={"GETTING THERE": "At your hotel"}, body="", kind="venue")
+    assert _guide_travel(v) == [("Walk", 0)]

@@ -696,7 +696,7 @@ def test_day5_has_journey_strip_before_first_card():
 
 def _day7_order_ok(order, boat, opts_heading):
     b = first_index(order, boat, title=True)
-    ck = first_index(order, "TAKSU SANUR HOTEL", b + 1, title=True)
+    ck = first_index(order, "Taksu Sanur Hotel", b + 1, title=True)
     oh = first_index(order, opts_heading, ck + 1, kind="p")
     o1 = first_index(order, "OPTION 1", oh + 1, kind="t")
     dn = first_index(order, "Dinner near", o1 + 1, kind="p")

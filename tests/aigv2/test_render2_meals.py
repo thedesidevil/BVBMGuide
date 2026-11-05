@@ -269,3 +269,9 @@ def test_empty_restaurants_fall_back_to_placeholder():
 def test_placeholder_count_clamped():
     assert len(_nested(_ph(0)).rows) == 1
     assert len(_nested(_ph(20)).rows) == 6
+
+
+def test_zero_minute_walk_reads_at_your_hotel():
+    from src.aigv2.render2.meals import travel_text
+    assert travel_text("Walk · 0 min") == "At your hotel"
+    assert travel_text("Walk · 5 min") == "Walk · 5 min"

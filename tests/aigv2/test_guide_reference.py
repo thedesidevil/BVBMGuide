@@ -33,7 +33,7 @@ def test_money_fact_row_only_with_fx_item():
     p = build_reference_page("money", c, load())
     assert types(p) == ["ReferenceOpener", "FactRowBlock", "TitledParas", "NotePanel"]
     assert p.components[1].facts[0] == m.Fact(label="Currency", value="XYZ")
-    assert p.components[1].facts[1].value == fx.body
+    assert p.components[1].facts[1].value == "1 XYZ = ₹2.00"
     assert p.components[2].items == [m.TitledPara(heading="Cards", body="Widely accepted.")]
     assert p.components[3].title == "PLEASE NOTE"
     plain = SectionContent(key="money", items=[_it("Cards", "x")])

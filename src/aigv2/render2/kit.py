@@ -72,7 +72,7 @@ def insert_ordered(parent, child, order: Sequence[str]):
 
 # ---------- document ----------
 def new_doc(margins_cm=(2.0, 1.4, 1.7, 1.4), header_cm: float = 0.7, footer_cm: float = 0.6,
-            gradient: Optional[str] = None, background: str = T.FROST):
+            gradient: Optional[str] = None, background: str = T.PAGE_BG):
     """A4 document with a SOLID page background (VML gradient only if `gradient` is passed)."""
     doc = Document()
     s = doc.sections[0]

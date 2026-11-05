@@ -187,3 +187,14 @@ def test_page_map_matches_headings_only_after_skipped_pages():
     doc.save(buf)
     got = TOC.page_map(buf.getvalue(), {"g": "Getting Around", "m": "Money", "x": "Missing Thing"}, skip_pages=1)
     assert got == {"g": 2, "m": 3}
+
+
+def test_leader_dots_monotonic_and_safe():
+    from src.aigv2.render2.toc import leader_dots
+    lens = [len(leader_dots(t, "29", 8.4)) for t in ("Thank You", "Tailored Packing List", "Health & Vaccination")]
+    if not any(lens):
+        import pytest
+        pytest.skip("Cormorant font not available")
+    assert lens[0] > lens[1] > lens[2] > 0
+    assert leader_dots("A very long title " * 6, "29", 8.4) == ""
+    assert set(leader_dots("Thank You", "29", 8.4).strip()) == {"."}

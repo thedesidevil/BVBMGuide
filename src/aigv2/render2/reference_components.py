@@ -89,6 +89,12 @@ def render_fact_row(doc, W: float, c: FactRowBlock) -> None:
 def _titled_para(cell, w: float, item) -> None:
     p = K.np(cell, after=4, keep=True, line=1.0)
     K.R(p, item.heading, font=T.HEAD, size=16, color=T.NAVY)
+    lines = [x.strip() for x in item.body.split("\n") if x.strip()]
+    if len(lines) > 1:  # a list (e.g. packing): one diamond bullet per line, hanging indent, air between items
+        for ln in lines:
+            q = K.diamond_item(cell, ln, indent=0.62, after=4, size=10)
+            q.paragraph_format.line_spacing = 1.32
+        return
     K.R(K.np(cell, line=1.45, style="Body"), item.body, size=10)
 
 
@@ -167,7 +173,7 @@ def _group(cell, w: float, g) -> None:
     K.R(p, g.title, font=T.HEAD, size=15, color=T.NAVY)
     K.hairline(p, T.POWDER, space=2)
     for it in g.items:
-        p = K.diamond_item(cell, it, indent=0.62, after=3, size=10)
+        p = K.diamond_item(cell, it, indent=0.62, after=4, size=10)
         p.paragraph_format.line_spacing = 1.32
 
 
@@ -291,13 +297,14 @@ def _do_dont_side(cell, heading: str, items: list[str], good: bool) -> None:
     K.R(p, heading, font=T.HEAD, size=18, color=T.NAVY)
     K.hairline(p, T.POWDER, space=2)
     for it in items:
-        p = K.np(cell, after=4, line=1.35, indent=0.55, hanging=0.55)
-        K.tabs(p, [("left", 0.55, None)])
         if good:
-            K.R(p, K.DIAMOND_GLYPH, size=6, color=T.AMBER)
+            p = K.diamond_item(cell, it, indent=0.55, after=4, size=10)
         else:
+            p = K.np(cell, after=4, indent=0.55, hanging=0.55)
+            K.tabs(p, [("left", 0.55, None)])
             K.R(p, "×", size=11, color=T.CRIMSON, bold=True)
-        K.R(p, "\t" + it, size=10)
+            K.R(p, "\t" + it, size=10)
+        p.paragraph_format.line_spacing = 1.35
     K.close(cell, 1)
 
 

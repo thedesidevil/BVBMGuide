@@ -102,6 +102,16 @@ def _left(cell, r: Restaurant) -> None:
             K.review_marker(cell, "VERIFY", f"{r.name}: {what}")
 
 
+_AT_HOTEL = re.compile(r"^\s*(walk|by car)\s*·\s*0\s*min\s*$", re.I)
+
+
+def travel_text(travel: str | None) -> str:
+    """'Walk · 0 min' means the restaurant is at the hotel."""
+    if travel and _AT_HOTEL.match(travel):
+        return "At your hotel"
+    return travel or DASH
+
+
 def render_meal_block(doc, W: float, block: MealBlock) -> None:
     if not block.restaurants:  # never a blank card: fall back to the staff placeholder
         render_placeholder_meal(doc, W, PlaceholderMeal(meal=block.meal, eyebrow=block.eyebrow,
@@ -121,7 +131,7 @@ def render_meal_block(doc, W: float, block: MealBlock) -> None:
         label, value = _price(r.price)
         _stack(b, label, value, big=True)
         _stack(b, "OPEN", r.hours or DASH)
-        _stack(b, "FROM HERE", r.travel or DASH, after=0)
+        _stack(b, "FROM HERE", travel_text(r.travel), after=0)
         K.close(a, 1)
         K.close(b, 1)
     K.close(c, 1)

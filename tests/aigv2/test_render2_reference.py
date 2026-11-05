@@ -428,3 +428,24 @@ def test_emergency_strip_long_numbers_shrink():
     RC.render_emergency_strip(doc, W, m.EmergencyStrip(numbers=nums))
     sizes = [tc.findall(qn("w:p"))[0].find(".//" + qn("w:sz")).get(qn("w:val")) for tc in _cells(_tables(doc)[0])]
     assert sizes == ["52", "40", "34"]
+
+
+def test_multiline_titled_para_gets_diamond_bullets():
+    from docx import Document
+    from src.aigv2.guide import model as m
+    from src.aigv2.render2 import reference_components as RC
+    from src.aigv2.render2 import kit as K
+    doc = K.new_doc()
+    RC.render_titled_paras(doc, 17.0, m.TitledParas(items=[m.TitledPara(heading="Clothing", body="One\nTwo\nThree")]))
+    xml = doc.element.xml
+    assert xml.count(K.DIAMOND_GLYPH) == 3 and "w:hanging" in xml
+
+
+def test_do_item_uses_diamond_and_dont_cross():
+    from src.aigv2.guide import model as m
+    from src.aigv2.render2 import reference_components as RC
+    from src.aigv2.render2 import kit as K
+    doc = K.new_doc()
+    RC.render_dos_donts(doc, 17.0, m.DosDonts(do=["a"], dont=["b"]))
+    xml = doc.element.xml
+    assert K.DIAMOND_GLYPH in xml and "×" in xml

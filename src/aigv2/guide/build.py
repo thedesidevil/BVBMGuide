@@ -40,6 +40,16 @@ def nice_name(name: str) -> str:
     return name.title() if name and name.isupper() and not _IATA.match(name) else name
 
 
+_CHOOSE = re.compile(r"\s*Choose [^.;]+? or [^.;]+?;\s*any expenses are your own\.\s*", re.I)
+_SHOUT = re.compile(r"\b[A-Z][A-Z'’&-]+(?:\s+[A-Z][A-Z'’&-]+)+\b")
+_CLOCK = re.compile(r"^\s*\d{1,2}[:.]\d{2}")
+
+
+def nice_text(text: str) -> str:
+    """De-shout runs of 2+ capitalised words inside a title ('transfer to MAYURA UBUD RETREAT')."""
+    return _SHOUT.sub(lambda m: m.group(0).title(), text) if text else text
+
+
 def port_name(name: str, kind: str, place_name: Optional[str] = None) -> str:
     """A readable airport/station/harbour name: Google's name when matched, 'Airport (DPS)' for a bare code."""
     if place_name:
@@ -274,7 +284,7 @@ class _Day:
             return
         facts = [g.Fact(label="Check-in", value=f"from {stay.check_in_time:%H:%M}")] if stay.check_in_time else []
         self.out.append(g.BookingCard(when=_fmt12(stay.check_in_time) if stay.check_in_time else "Check-in",
-                                      kind="Check-in", title=g.Link(text=stay.hotel, url=self._url(stay.hotel)),
+                                      kind="Check-in", title=g.Link(text=nice_name(stay.hotel), url=self._url(stay.hotel)),
                                       facts=facts))
         self.marks(self._hotel_markers(stay.hotel))
 
@@ -284,7 +294,7 @@ class _Day:
             return
         facts = [g.Fact(label="Check-in", value=f"from {_fmt12(stay.check_in_time)}")] if stay.check_in_time else []
         self.out.append(g.BookingCard(when=_fmt12(stay.check_in_time) if stay.check_in_time else "Check-in",
-                                      kind="Check-in", title=g.Link(text=stay.hotel, url=self._url(stay.hotel)),
+                                      kind="Check-in", title=g.Link(text=nice_name(stay.hotel), url=self._url(stay.hotel)),
                                       facts=facts))
 
     def _transfer(self, title, url, leg: Optional[Leg], body, hotel, pickup=None, when="Transfer") -> None:
@@ -534,8 +544,9 @@ class _Day:
                 opening = next_opening(p.hours, rd.date, m.start)
                 if opening:
                     note = f"Best visited later in the day: it opens at {_fmt12(opening)}"
+            text = _CHOOSE.sub(" ", card.text).strip() if len(members) > 1 else card.text
             options.append(g.Option(label=f"OPTION {n}", name=card.name,
-                                    facts=[f for f in card.facts if f.label != "Note"], text=card.text, note=note))
+                                    facts=[f for f in card.facts if f.label != "Note"], text=text, note=note))
             marks += card.markers
         if not options:
             return
@@ -587,7 +598,9 @@ class _Day:
             if not b.timed:
                 pairs.append(("YOUR BOOKING", "Valid all day"))
             elif b.time:
-                pairs.append(("YOUR BOOKING", b.time + (f"–{b.end_time}" if b.end_time else "")))
+                bt = b.time + (f"–{b.end_time}" if b.end_time else "")
+                label = ("PICK-UP TIME" if it.kind == "transfer" else "TIME") if _CLOCK.match(bt) else "YOUR BOOKING"
+                pairs.append((label, bt))
             else:
                 pairs.append(("YOUR BOOKING", _verify("booking time")))
             if b.meeting_point:
@@ -641,7 +654,7 @@ class _Day:
                                          f"{_hm(rd.arrival.arrive)}; confirm with the operator"))
             text = f"Your representative and driver will meet you after you land at {_hm(rd.arrival.arrive)}. {text}".strip()
         self.out.append(g.SightseeingCard(
-            when=when, part=part, name=g.Link(text=it.name, url=p.maps_url if found else search_url(it.name, rd.city)),
+            when=when, part=part, name=g.Link(text=nice_text(it.name), url=p.maps_url if found else search_url(it.name, rd.city)),
             facts=facts, text=text, tips=list(b.instructions) if b else [],
             markers=fmarks + [_ref(m) for m in marks + place_markers(p)]))
 
@@ -684,7 +697,7 @@ class _Day:
             take = len(rest) if i == len(anchors) - 1 else max(count - len(mine), 0)
             chunk, rest = rest[:take], rest[take:]
             markers = [m for m in markers if m not in mine]
-            self._meal_block(slot, eyebrow, f"{meal} near {name}", chunk, mine, count)
+            self._meal_block(slot, eyebrow, f"{meal} near {nice_name(name)}", chunk, mine, count)
         self.marks(markers)
 
     def _meal_block(self, slot, eyebrow, heading, chunk, mine, count) -> None:

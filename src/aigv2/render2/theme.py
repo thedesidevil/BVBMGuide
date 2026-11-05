@@ -14,8 +14,9 @@ AMBER = "DEA350"
 GOLD_INK = "8F5A16"
 HARBOUR_FILL = "EDF3FB"
 HARBOUR_EDGE = "BCD0EA"
-CARD_EDGE = "D3DFEF"
+CARD_EDGE = "BCD0EA"  # stronger than before so white cards separate from the white page
 WHITE = "FFFFFF"
+PAGE_BG = WHITE  # pure white: Google Docs renders a tinted w:background as a dull grey page
 
 HEAD = "Cormorant Garamond"
 HEAD_FALLBACK = "Garamond"

@@ -17,7 +17,7 @@ _NEAR = re.compile(r"\bnear\s+(.+)$", re.I)
 _TRAVEL = re.compile(r"(Walk|By car|By public transport)\s*·\s*(\d+)\s*min", re.I)
 _MODES = {"walk": "WALK", "by car": "DRIVE", "by public transport": "TRANSIT"}
 _MEALS = ("breakfast", "lunch", "dinner")
-_TIME_FACTS = ("YOUR BOOKING", "PICKUP", "TIME")
+_TIME_FACTS = ("YOUR BOOKING", "PICK-UP TIME", "PICKUP", "TIME")
 _LOOKUP_ERRORS = (requests.RequestException, ValueError, KeyError)
 _UNVERIFIED = "Not verified"
 _VISIT_MIN = 30
@@ -59,6 +59,8 @@ def _minutes_text(mode: str, minutes: int) -> str:
 
 def _guide_travel(v: DocVenue) -> list[tuple[str, int]]:
     text = v.facts.get("GETTING THERE", "")
+    if re.fullmatch(r"\s*At your hotel\s*", text, re.I):
+        return [("Walk", 0)]
     return [(m.group(1), int(m.group(2))) for m in _TRAVEL.finditer(text)]
 
 

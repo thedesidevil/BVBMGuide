@@ -104,9 +104,48 @@ def _day_card(doc, W: float, page: Page, pages) -> None:
     spacer(doc, 2)
 
 
+_ENTRY_PT = 13
+_ENTRY_INDENT_CM = 0.6
+_DOT_MARGIN = 3  # dots left unused before the number (font fallback / rounding safety)
+_font_cache: dict = {}
+
+
+def _bold_font(size: float):
+    """PIL font for Cormorant Garamond Bold at `size` pt (1 px = 1 pt), or None when unavailable."""
+    if size not in _font_cache:
+        f = None
+        try:
+            from PIL import ImageFont
+            from src.aigv2.render2.fonts import find_cormorant
+            path = next((x for x in find_cormorant() if x.name.endswith("-Bold.ttf")), None)
+            f = ImageFont.truetype(str(path), size * 8) if path else None  # x8 for sub-pt precision
+        except Exception:
+            f = None
+        _font_cache[size] = f
+    return _font_cache[size]
+
+
+def leader_dots(title: str, number: str, width_cm: float, size: float = _ENTRY_PT) -> str:
+    """Explicit dot run (" ....") filling the gap between title and right-aligned number.
+
+    Google Docs drops tab leaders, so the dots are real characters. Empty when the title is too long or the
+    font is unavailable. Never wide enough to wrap (keeps a margin of a few dots)."""
+    f = _bold_font(size)
+    if f is None:
+        return ""
+    w = lambda s: f.getlength(s) / 8
+    avail = (width_cm - _ENTRY_INDENT_CM) * 28.35 - w(title) - w(number)
+    n = int((avail - w(" ")) // w(".")) - _DOT_MARGIN
+    return " " + "." * n if n >= 3 else ""
+
+
 def _entry(cont, page: Page, width: float, pages) -> None:
     def runs(p):
         anchor_link(p, page.bookmark, page.title, font=T.HEAD, size=13, bold=True, color=T.INK)
+        num = str((pages or {}).get(page.bookmark, DASH))
+        dots = leader_dots(page.title, num, width)
+        if dots:
+            R(p, dots, font=T.HEAD, size=13, bold=True, color=T.TAUPE)
         R(p, "\t")
         _number(p, page.bookmark, pages, font=T.HEAD, size=13, bold=True, color=T.ROYAL)
     p = diamond_item(cont, runs, after=4)

@@ -443,3 +443,10 @@ def test_package_lunch_note_follows_voucher_text():
                                       "whether it is included.")
     assert note("Private basis.", "Lunch included.") == "Lunch is included in your package."
     assert "confirm with the operator" in note("Lunch not included.")
+
+
+def test_nice_text_and_choose_sentence():
+    from src.aigv2.guide.build import nice_text, _CHOOSE
+    assert nice_text("Airport pick-up and transfer to MAYURA UBUD RETREAT") == "Airport pick-up and transfer to Mayura Ubud Retreat"
+    assert nice_text("Icon Mall") == "Icon Mall"
+    assert _CHOOSE.sub(" ", "Nice. Choose A or B; any expenses are your own.").strip() == "Nice."

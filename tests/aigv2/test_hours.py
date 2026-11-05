@@ -126,7 +126,7 @@ def test_nnbsp_parsed():
 def test_format_week():
     roh = {"periods": [{"open": _g(d, 9), "close": _g(d, 18)} for d in range(1, 6)]
            + [{"open": _g(6, 9), "close": _g(6, 13)}]}
-    assert hours.format_week(hours.from_google(roh)) == "9–6 Mon–Fri · 9–1 Sat · Closed Sun"
+    assert hours.format_week(hours.from_google(roh)) == "9:00 AM – 6:00 PM Mon–Fri · 9:00 AM – 1:00 PM Sat · Closed Sun"
     assert hours.format_week(None) == "Hours unknown"
 
 

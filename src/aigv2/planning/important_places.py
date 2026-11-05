@@ -1,3 +1,4 @@
+import re
 from typing import Optional
 
 from pydantic import BaseModel, Field
@@ -15,6 +16,15 @@ _CAR_RADIUS_M = 3000
 _CAR_LIMIT_MIN = 15
 _GROCERY_TYPES = ["supermarket", "convenience_store", "grocery_store"]
 _CAR_MODES = {"taxi", "self_drive", "private_driver"}
+_HOSPITAL_FAR_MIN = 15
+_CLINIC_TYPES = ["doctor", "medical_clinic"]
+# a food venue is not a grocery or convenience store (the cached Place carries no Google types, so the name decides)
+_FOOD_NAME = re.compile(r"\b(?:warung|warteg|rumah makan|restaurant|resto|cafe|café|coffee|bakery|bakso|nasi|kitchen|"
+                        r"eatery|bistro|bar|grill|diner|food court|pizza|sate|ayam|mie)\b", re.I)
+
+
+def food_venue(name: str) -> bool:
+    return bool(_FOOD_NAME.search(name))
 
 
 class NearbyPlace(BaseModel):
@@ -49,7 +59,8 @@ def _wrap(place: Place, walk: Optional[int], drive: Optional[int]) -> NearbyPlac
 
 
 def _walkable(places, routes, origin, city: str, types: list[str], label: str, car: bool, skip: frozenset[str] = frozenset()) -> tuple[list[NearbyPlace], list[Marker]]:
-    found = [p for p in places.nearby(origin[0], origin[1], types, _NEAR_RADIUS_M, _REQUEST, city=city) if not (p.place_id and p.place_id in skip) and not unwanted_name(p.name)]
+    found = [p for p in places.nearby(origin[0], origin[1], types, _NEAR_RADIUS_M, _REQUEST, city=city) if not (p.place_id and p.place_id in skip) and not unwanted_name(p.name)
+             and not (types is _GROCERY_TYPES and food_venue(p.name))]
     walks = _measure(routes, origin, found, "WALK")
     drives = _measure(routes, origin, found, "DRIVE") if car else [None] * len(found)
     near = [(w, p, d) for p, w, d in zip(found, walks, drives) if w is not None and w <= _WALK_LIMIT_MIN]
@@ -84,6 +95,28 @@ def _hospital(places, routes, origin, city: str) -> Optional[NearbyPlace]:
     return nearby
 
 
+def _nearer_clinic(hospital: Optional[NearbyPlace], places, routes, origin, city: str) -> Optional[NearbyPlace]:
+    """When no hospital is within 15 minutes, a clinic already in the nearby cache (never a new Google call) that is
+    nearer takes the hospital slot, with a note that it is a clinic."""
+    if hospital is not None and hospital.drive_min is not None and hospital.drive_min <= _HOSPITAL_FAR_MIN:
+        return hospital
+    peek = getattr(places, "nearby_peek", None)
+    if not callable(peek):
+        return hospital
+    found = [p for p in peek(origin[0], origin[1], _CLINIC_TYPES, _HOSPITAL_RADIUS_M, _REQUEST, city=city)
+             if not unwanted_name(p.name, medical=True)]
+    if not found:
+        return hospital
+    drives = _measure(routes, origin, found, "DRIVE")
+    ranked = sorted(((d, p) for p, d in zip(found, drives) if d is not None), key=lambda t: t[0])
+    if not ranked or (hospital is not None and hospital.drive_min is not None and ranked[0][0] >= hospital.drive_min):
+        return hospital
+    d, p = ranked[0]
+    nearby = _wrap(p, None, d)
+    nearby.markers.append(Marker(kind="VERIFY", text=f"{p.name} is a clinic, not a hospital; confirm emergency cover"))
+    return nearby
+
+
 def important_places(
     stays: list[HotelStay], hotel_places: dict[str, Place], places, routes, modes: list[str]
 ) -> list[ImportantPlaces]:
@@ -112,6 +145,7 @@ def important_places(
         entry.groceries, m2 = _walkable(places, routes, origin, stay.city, _GROCERY_TYPES, "groceries", car, taken)
         entry.markers = m1 + m2
         entry.hospital = _hospital(places, routes, origin, stay.city)
+        entry.hospital = _nearer_clinic(entry.hospital, places, routes, origin, stay.city)
         if entry.hospital is None:
             entry.markers.append(Marker(kind="VERIFY", text="no emergency hospital found nearby"))
         out.append(entry)

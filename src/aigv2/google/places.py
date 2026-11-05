@@ -253,6 +253,12 @@ class PlacesClient:
             self.nearby_cache.put(key, places)
         return places
 
+    def nearby_peek(self, lat: float, lng: float, types: list[str], radius_m: int, max_results: int,
+                    city: Optional[str] = None) -> list[Place]:
+        """Cached answer only; never calls Google (empty on a miss)."""
+        key = f"{lat:.5f},{lng:.5f}|{','.join(sorted(types))}|{radius_m}|{max_results}|{city or ''}"
+        return (self.nearby_cache.get(key) if self.nearby_cache else None) or []
+
     def _nearby_uncached(
         self, lat: float, lng: float, types: list[str], radius_m: int, max_results: int, city: Optional[str] = None
     ) -> list[Place]:

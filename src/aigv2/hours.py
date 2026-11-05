@@ -214,6 +214,6 @@ def format_week(hours: WeeklyHours | None) -> str:
         elif is_24h(p):
             text = "24 hours"
         else:
-            text = " & ".join(f"{_compact(x, False)}–{_compact(y, True)}" for x, y in p)
+            text = " & ".join(f"{_fmt12(x)} – {_fmt12(y)}" for x, y in p)
         parts.append(f"{text} {label}")
     return " · ".join(parts)

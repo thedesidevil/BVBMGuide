@@ -210,6 +210,7 @@ class NearbyPlace(_M):
     drive_min: Optional[int] = None
     hours_text: Optional[str] = None
     phone: Optional[str] = None
+    address: Optional[str] = None
     markers: list[MarkerRef] = Field(default_factory=list)
 
 

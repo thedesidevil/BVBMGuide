@@ -9,7 +9,8 @@ from typing import Optional
 
 from src.aigv2.guide import model as g
 from src.aigv2.guide.departure import departure_checklist
-from src.aigv2.guide.reference import structured_components
+from src.aigv2.guide.reference import (FACILITY_KEYS, HOSPITALS_NOTE_TITLE, hospitals_note_text, strip_facility_items,
+                                       structured_components)
 from src.aigv2.hours import _fmt12, format_for_day, is_open_for, next_opening
 from src.aigv2.library import norm_name
 from src.aigv2.models import HotelStay, Marker, TransportLeg, booking_lunch_included
@@ -754,6 +755,10 @@ def build_reference_page(key: str, content: SectionContent, data: GuideData) -> 
     title = _TITLES.get(key, key.replace("_", " ").title())
     eyebrow = "BEFORE YOU GO" if key in dict(BEFORE_YOU_GO) else "WHILE YOU'RE THERE"
     comps: list = [g.ReferenceOpener(eyebrow=eyebrow, title=title, intro="")]
+    if key in FACILITY_KEYS:  # hospitals and pharmacies are listed once, under Important Places
+        content = content.model_copy(update={
+            "items": strip_facility_items(content.items),
+            "by_country": {k: strip_facility_items(v) for k, v in content.by_country.items()}})
     items = list(content.items)
     structured = structured_components(key, content, data)
     if structured is not None:
@@ -767,6 +772,8 @@ def build_reference_page(key: str, content: SectionContent, data: GuideData) -> 
             items += its
     elif content.items:
         comps.append(g.TitledParas(items=_paras(content.items)))
+    if key in FACILITY_KEYS and data.important:
+        comps.append(g.NotePanel(title=HOSPITALS_NOTE_TITLE, text=hospitals_note_text()))
     marks = [g.MarkerRef(kind="VERIFY", text=i.heading) for i in items if i.verify]
     marks += [_ref(x) for x in content.markers]
     if marks:
@@ -789,7 +796,7 @@ def _nearby(n: NearbyPlace, city: str) -> g.NearbyPlace:
         marks.append(g.MarkerRef(kind="VERIFY", text=f"{p.name}: travel time from the hotel"))
     return g.NearbyPlace(name=g.Link(text=p.name, url=p.maps_url or search_url(p.name, city)),
                          walk_min=n.walk_min, drive_min=n.drive_min, hours_text=n.hours_text, phone=p.phone,
-                         markers=marks)
+                         address=(p.address or None), markers=marks)
 
 
 def build_important_page(entries: list[ImportantPlaces], data: Optional[GuideData] = None) -> Optional[g.Page]:

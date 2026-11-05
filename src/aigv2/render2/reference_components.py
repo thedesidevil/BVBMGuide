@@ -272,6 +272,8 @@ def _place(cell, pl, first: bool) -> None:
         K.link(p, pl.name.url, pl.name.text, size=13.5, color=T.NAVY, bold=False)
     else:
         K.R(p, pl.name.text, font=T.HEAD, size=13.5, color=T.NAVY)
+    if pl.address and pl.address.strip():
+        K.R(K.np(cell, after=2, line=1.25), pl.address.strip(), size=8, color=T.SLATE)
     K.R(K.np(cell, after=1, line=1.25), _travel_text(pl.walk_min, pl.drive_min), size=9, color=T.SLATE)
     p = K.np(cell, after=1, line=1.25)
     if pl.hours_text and pl.hours_text.strip():

@@ -200,3 +200,32 @@ def structured_components(key: str, c: SectionContent, data) -> Optional[list]:
     if not fn or not has:
         return None
     return fn(c, data)
+
+
+_FACILITY_HEAD = re.compile(r"hospital|pharmac|apotek|clinic|medical\s+(?:care|help|centre|center)|"
+                            r"medical help and emergency", re.I)
+FACILITY_KEYS = ("health", "safety")
+HOSPITALS_NOTE_TITLE = "HOSPITALS AND PHARMACIES"
+
+
+def hospitals_note_text(page: Optional[int] = None) -> str:
+    where = "Important Places Around Your Stays" + (f" (page {page})" if page else "")
+    return f"Hospitals and pharmacies near each of your stays are listed under {where}."
+
+
+def strip_facility_items(items: list[SectionItem]) -> list[SectionItem]:
+    """Drop hospital/pharmacy/clinic items (Important Places is the one home for them); sentences that still name a
+    facility are cut from the remaining items, and an item left empty is dropped."""
+    from src.aigv2.writing.sections import hospital_mentions, pharmacy_mentions
+    sent = re.compile(r"(?<=[.!?])\s+|\n+")
+    out = []
+    for i in items:
+        if _FACILITY_HEAD.search(i.heading):
+            continue
+        parts = [x for x in sent.split(i.body) if x.strip()]
+        kept = [x for x in parts if not (hospital_mentions(x) or pharmacy_mentions(x))]
+        if len(kept) == len(parts):
+            out.append(i)
+        elif kept:
+            out.append(i.model_copy(update={"body": " ".join(kept)}))
+    return out

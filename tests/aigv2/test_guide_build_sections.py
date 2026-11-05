@@ -157,3 +157,69 @@ def test_by_country_verify_items_become_markers():
     c = _sec("etiquette", items=[], by_country={"A": [SectionItem(heading="Tipping", body="b", verify=True)]})
     block = build_reference_page("etiquette", c, _data()).components[-1]
     assert block.markers == [m.MarkerRef(kind="VERIFY", text="Tipping")]
+
+
+def _facility_sections():
+    health = _sec("health", items=[
+        SectionItem(heading="Vaccinations", body="No vaccines are mandatory for entry."),
+        SectionItem(heading="Hospitals", body="Ubud: Ari Canti Hospital, Jl. Raya Mas. Open 24 hours."),
+        SectionItem(heading="Pharmacies", body="Ubud: Apotek Ari Putra MAS, Jl. Raya Mas.")])
+    safety = _sec("safety", items=[
+        SectionItem(heading="Everyday safety", body="Keep valuables close. Ask Ari Canti Hospital for help."),
+        SectionItem(heading="Hospitals and pharmacies", body="Ubud: Ari Canti Hospital."),
+        SectionItem(heading="Medical help and emergency contacts", body="Call 112."),
+        SectionItem(heading="Hospitals near your stays", body="Ubud: Ari Canti Hospital.")])
+    return {"health": health, "safety": safety}
+
+
+def test_health_and_safety_drop_facility_listings_and_point_to_important_places():
+    data = _data(_facility_sections(), important=[ImportantPlaces(city="Ubud", hotel="H", hospital=_near("Ari Canti Hospital"))])
+    for key in ("health", "safety"):
+        page = build_reference_page(key, data.sections[key], data)
+        text = page.model_dump_json()
+        assert "Ari Canti" not in text and "Apotek" not in text
+        assert "Hospitals and pharmacies near each of your stays are listed under Important Places Around Your Stays" in text
+    h = build_reference_page("health", data.sections["health"], data)
+    assert [p.heading for p in h.components[1].items] == ["Vaccinations"]
+    s = build_reference_page("safety", data.sections["safety"], data)
+    assert [p.heading for p in s.components[1].items] == ["Everyday safety"]
+    assert s.components[1].items[0].body == "Keep valuables close."
+
+
+def test_no_cross_reference_without_important_places():
+    data = _data(_facility_sections())
+    assert "listed under Important Places" not in build_reference_page("health", data.sections["health"], data).model_dump_json()
+
+
+def test_important_card_carries_address_hours_phone_travel_and_link():
+    near = _near("Ari Canti Hospital", walk=None, drive=6, hours="24 hours Mon–Sun")
+    near.place.phone = "+62 813-9024-9270"
+    near.place.address = "Jl. Raya Mas No.69, Mas, Ubud"
+    page = build_important_page([ImportantPlaces(city="Ubud", hotel="H", hospital=near)])
+    hosp = page.components[1].hotels[0].hospitals[0]
+    assert hosp.address == "Jl. Raya Mas No.69, Mas, Ubud" and hosp.phone == "+62 813-9024-9270"
+    assert hosp.hours_text == "24 hours Mon–Sun" and hosp.drive_min == 6 and hosp.name.url
+    from src.aigv2.render2 import frame as F
+    from src.aigv2.render2 import reference_components as RC
+    doc = F.new_guide_doc("A B", "Bali")
+    _, W = F.add_guide_section(doc, "reference", F.guide_label("A B", "Bali"), first=True)
+    RC.render_place_groups(doc, W, page.components[1])
+    txt = "".join(t.text or "" for t in doc.element.body.iter("{http://schemas.openxmlformats.org/wordprocessingml/2006/main}t"))
+    for want in ("Jl. Raya Mas No.69, Mas, Ubud", "+62 813-9024-9270", "24 hours Mon–Sun", "By car 6 min", "Ari Canti Hospital"):
+        assert want in txt
+
+
+def test_saved_run_health_and_safety_lose_all_facility_names():
+    import json
+    from pathlib import Path
+    import pytest
+    run = Path("aigv2_data/runs/20261105-gdocs-check4")
+    if not (run / "sections/health.json").exists():
+        pytest.skip("saved run not available")
+    plan = json.loads((run / "plan.json").read_text())["important"]
+    names = [p["place"]["name"] for e in plan for p in e["pharmacies"]] + [e["hospital"]["place"]["name"] for e in plan]
+    data = _data({}, important=[ImportantPlaces.model_validate(e) for e in plan])
+    for key in ("health", "safety"):
+        c = SectionContent.model_validate(json.loads((run / f"sections/{key}.json").read_text())["content"])
+        text = build_reference_page(key, c, data).model_dump_json()
+        assert not [n for n in names if n in text]

@@ -608,14 +608,9 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
         extra = "\nCountry facts: " + json.dumps(cdatas, ensure_ascii=False, default=str)
     if key == "dishes":
         extra += "\nLibrary restaurants allowed in where_to_try: " + json.dumps(sorted(restaurants.values()), ensure_ascii=False)
-    if hospitals is not None:
-        extra += ("\nAuthoritative hospitals (the same ones listed under Important Places; hours and drive times as given): "
-                  + json.dumps(hospitals, ensure_ascii=False, default=str)
-                  + "\nName only these hospitals or clinics, and no others. Do not name any other hospital, clinic or "
-                    "medical centre. If the list is empty, name no hospital.")
-        extra += ("\nAuthoritative pharmacies (the same ones listed under Important Places): "
-                  + json.dumps(pharmacies, ensure_ascii=False, default=str)
-                  + "\nName only these pharmacies, and no others. If the list is empty, name no pharmacy.")
+    if hospitals is not None:  # facilities live under Important Places only: the writer must not repeat them
+        extra += ("\nDo not name hospitals, clinics or pharmacies, and give no addresses, hours or drive times for them; "
+                  "they are listed under Important Places. Do not write a Hospitals, Pharmacies or Medical care item.")
     mode = ("Format ONLY the library facts below into client-ready items. Add no facts, numbers, names or prices."
             if library else
             "No library facts exist. Write helpful general guidance, without exact prices, fees, times or provider names.")

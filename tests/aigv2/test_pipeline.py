@@ -1171,3 +1171,25 @@ def test_cli_renderer_option(deps, tmp_path, monkeypatch):
     monkeypatch.setattr(pipeline, "build_run", lambda s, a, d: seen.append(d.settings.renderer) or (_ for _ in ()).throw(ValueError("stop")))
     CliRunner().invoke(app, ["build", store.run_id, "--answers", str(ans), "--renderer", "new"])
     assert seen == ["new"]
+
+
+def test_item_windows_from_saved_bali_voucher():
+    from datetime import time as _t
+    base = Path(__file__).parent / "fixtures" / "bali" / "trip_plan.json"
+    trip = TripPlan.model_validate(json.loads(base.read_text()))
+    dp = next(d for d in trip.days if d.date == date(2026, 9, 25))
+    w = pipeline._item_windows(trip, dp.date, dp.items)
+    assert set(w) == {i.name for i in dp.items}
+    assert set(w.values()) == {(_t(13, 0), _t(18, 0))}
+    from src.aigv2.planning.slots import schedule_day
+    res = schedule_day(dp, trip.hotels, None, None, {}, Settings(models={}), "Indonesia", False, (), {}, w)
+    assert res.scheduled[0].start == _t(13, 0)
+    assert all(_t(13, 0) <= s.start < _t(18, 0) for s in res.scheduled)
+    assert all(m.start < _t(13, 0) for m in res.meals if m.meal == "lunch")
+
+
+def test_booking_window_facts_shape():
+    from datetime import time as _t
+    f = pipeline.booking_window_facts((_t(9, 0), _t(16, 0)), True)
+    assert f == {"start": "09:00", "end": "16:00", "hours": 7.0, "lunch_in_package": True}
+    assert pipeline.booking_window_facts(None, False) is None

@@ -159,8 +159,45 @@ def _countries(city_data: list[dict], country_data: dict) -> list[str]:
     return out or list(country_data or {}) or [""]
 
 
+_PLACE_FILTERED = {"transport_options", "souvenirs"}
+_NON_TEXT_KEYS = {"city", "cities", "country", "category", "mode"}
+
+
+def _place_regex(places) -> Optional[re.Pattern]:
+    names = sorted({p.strip() for p in places or () if p and p.strip()}, key=len, reverse=True)
+    if not names:
+        return None
+    return re.compile(r"(?<![\w])(?:" + "|".join(re.escape(n) for n in names) + r")(?![\w])", re.I)
+
+
+def _entry_text(x) -> str:
+    if isinstance(x, dict):
+        return " ".join(_entry_text(v) for k, v in x.items() if k not in _NON_TEXT_KEYS and not str(k).startswith("_"))
+    if isinstance(x, (list, tuple)):
+        return " ".join(_entry_text(v) for v in x)
+    return x if isinstance(x, str) else ""
+
+
+_AIRPORT_PHRASE = re.compile(r"\b[\w'-]+(?:\s+[\w'-]+)?\s+(?:International\s+)?Airport\b", re.I)
+
+
+def drop_other_places(items: list, rx: Optional[re.Pattern]) -> list:
+    """Library entries that name a destination outside this trip are dropped; a where_to_buy list just loses those places."""
+    if rx is None:
+        return items
+    out = []
+    for it in items:
+        if isinstance(it, dict) and isinstance(it.get("where_to_buy"), list):
+            kept = [w for w in it["where_to_buy"] if not (isinstance(w, str) and rx.search(w))]
+            it = {**it, "where_to_buy": kept}
+        if not rx.search(_AIRPORT_PHRASE.sub(" ", _entry_text(it))):
+            out.append(it)
+    return out
+
+
 def _library_named(key: str, cities: list[dict], cdatas: list[dict], *,
-                   nationalities: frozenset[str] = frozenset()) -> dict[str, list]:
+                   nationalities: frozenset[str] = frozenset(), other_places=()) -> dict[str, list]:
+    rx = _place_regex(other_places)
     named: dict[str, list] = {}
     for scope, name in _LIB[key]:
         out = named.setdefault(name, [])
@@ -173,6 +210,8 @@ def _library_named(key: str, cities: list[dict], cdatas: list[dict], *,
                 if name == "embassies":  # Indian by default; foreign missions only for that passport
                     items = [e for e in items if _embassy_wanted(e, nationalities)]
                 out += items
+        if name in _PLACE_FILTERED:
+            named[name] = drop_other_places(out, rx)
     return named
 
 
@@ -365,8 +404,9 @@ def hospital_facts(important) -> list[dict]:
     return out
 
 
-def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=None):
-    named = _library_named(key, cities, cdatas, nationalities=frozenset(client_nationalities(trip)))
+def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=None, other_places=()):
+    named = _library_named(key, cities, cdatas, nationalities=frozenset(client_nationalities(trip)),
+                           other_places=other_places)
     lib = [x for v in named.values() for x in v]
     hospitals = hospital_facts(important) if key == "safety" and important is not None else None
     allowed = [h["name"] for h in hospitals] if hospitals is not None else None
@@ -455,7 +495,8 @@ def _merge_fields(parts: list[dict]) -> dict:
 
 def write_section(key: str, city_data: list[dict], country_data: dict, trip, llm, *,
                   places=None, fx=None, today: Optional[date] = None,
-                  remote_area: bool = False, high_altitude: bool = False, important=None) -> Optional[SectionContent]:
+                  remote_area: bool = False, high_altitude: bool = False, important=None,
+                  other_places=()) -> Optional[SectionContent]:
     if key not in SECTION_KEYS:
         raise ValueError(f"unknown section key: {key}")
     domestic = trip.trip_scope == "domestic"
@@ -474,7 +515,7 @@ def write_section(key: str, city_data: list[dict], country_data: dict, trip, llm
         else:
             cities = city_data
             cdatas = [_slice_country(country_data, c) for c in _countries(city_data, country_data)]
-        items, library, fields = _one(key, cities, cdatas, trip, llm, important)
+        items, library, fields = _one(key, cities, cdatas, trip, llm, important, other_places)
         fields_by_country.append(fields)
         all_lib = all_lib and library
         if key == "money" and not domestic:

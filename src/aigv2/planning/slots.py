@@ -116,10 +116,31 @@ def boat_floor(d: date, legs: Sequence[TransportLeg], stays: list[HotelStay],
     return max(ends) if ends else None
 
 
-def _schedule_items(day: DayPlan, settings: Settings, floor: Optional[time] = None) -> list[ScheduledItem]:
+_WINDOW_STEP_MAX_MIN = 150
+
+
+def _window_starts(day: DayPlan, windows: Optional[dict[str, tuple[time, time]]]) -> dict[int, time]:
+    """Start times for untimed items a voucher window covers: the first at the window start, the rest spread across it."""
+    groups: dict[tuple[time, time], list[PlannedItem]] = {}
+    for it in day.items:
+        w = (windows or {}).get(it.name)
+        if w and not (parse_time(it.pickup_time) or parse_time(it.time)) and not it.option_group:
+            groups.setdefault(w, []).append(it)
+    out: dict[int, time] = {}
+    for (start, end), items in groups.items():
+        span = _minutes(end) - _minutes(start)
+        step = min(_WINDOW_STEP_MAX_MIN, max(span // len(items) // 5 * 5, 5)) if span > 0 else _ITEM_MINUTES
+        for i, it in enumerate(items):
+            out[id(it)] = _plus(start, step * i)
+    return out
+
+
+def _schedule_items(day: DayPlan, settings: Settings, floor: Optional[time] = None,
+                    windows: Optional[dict[str, tuple[time, time]]] = None) -> list[ScheduledItem]:
+    forced = _window_starts(day, windows)
     placed: list[tuple[PlannedItem, Optional[Slot], Optional[time]]] = []
     for it in day.items:
-        start = parse_time(it.pickup_time) or parse_time(it.time)
+        start = parse_time(it.pickup_time) or parse_time(it.time) or forced.get(id(it))
         if start:
             placed.append((it, _slot_for(start, settings), start))
         elif it.slot_hint != "any":
@@ -166,6 +187,9 @@ def _schedule_items(day: DayPlan, settings: Settings, floor: Optional[time] = No
 
 _OPTIONAL_VISIT_MIN = 30
 _FULL_DAY_PACKAGE_MIN = 6 * 60
+_WINDOW_LUNCH_CLASH_MIN = 120
+_WINDOW_LUNCH_LEAD_MIN = 90
+_EARLIEST_LUNCH = time(11, 0)
 _BREAKFAST_LEAD_MIN = 45
 _EARLIEST_BREAKFAST = time(5, 30)
 _LATEST_OPTIONAL_OPENING = time(21, 0)
@@ -315,9 +339,10 @@ def schedule_day(
     domestic: bool = False,
     legs: Sequence[TransportLeg] = (),
     booking_ends: Optional[dict[str, time]] = None,
+    windows: Optional[dict[str, tuple[time, time]]] = None,
 ) -> DayResult:
     floor = boat_floor(day.date, legs, stays, (arrival, departure))
-    res = DayResult(scheduled=_schedule_items(day, settings, floor))
+    res = DayResult(scheduled=_schedule_items(day, settings, floor, windows))
     _shift_late_openers(res, day.date, places, settings)
     rules = " ".join(day.meal_rules).lower()
     d = day.date
@@ -427,6 +452,10 @@ def schedule_day(
                 l_drop = True
                 break
             l_start = shifted.time()
+    for w_start in sorted({w[0] for w in (windows or {}).values()}):
+        if l_start < w_start < _plus(l_start, _WINDOW_LUNCH_CLASH_MIN):
+            # the tour leaves right after the usual lunch hour: eat before the pick-up, not mid-transfer
+            l_start = max(_plus(w_start, -_WINDOW_LUNCH_LEAD_MIN), _EARLIEST_LUNCH)
     new = [s for s in stays if s.check_in == d]
     midday_checkin = any(s.check_in_time and time(11) <= s.check_in_time <= time(13) for s in new)
     midday_arrival = hotel_arr is not None and time(11) <= hotel_arr <= time(13)

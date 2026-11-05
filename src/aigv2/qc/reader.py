@@ -429,15 +429,20 @@ class _Reader:
                                      kind=_card_kind(title, facts)))
 
 
+_CHECKOUT_TITLE = re.compile(r"^Check out of\b", re.I)
+
+
 def _card_kind(title: str, facts: dict[str, str]) -> str:
+    if _CHECKOUT_TITLE.match(title):
+        return "checkout"  # the hotel is not an attraction: no hours lookup, no name check
     if _TRANSPORT_FACTS & facts.keys() or _TRANSPORT_TITLE.match(title):
         return "transport"
     if "TRANSFER" in facts:
         return "transfer"
     if "CHECK-IN" in facts:
         return "hotel"
-    if "→" in title and not facts:
-        return "transfer"
+    if "→" in title:
+        return "transfer"  # incl. the airport-transfer card, which carries leave-by facts
     return "venue"
 
 

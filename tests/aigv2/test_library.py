@@ -232,3 +232,10 @@ def test_area_for_rejects_lone_generic_word_and_hotel(tmp_path):
 def test_area_for_exact_shard_wins(tmp_path):
     lib = _area_lib(tmp_path)
     assert lib.area_for("sanur")[0] == "Sanur"
+
+
+def test_other_destinations_excludes_trip_cities_and_region_name(tmp_path):
+    _write(tmp_path / "_index.json", {"_folder_coverage": {"Bali Indonesia": ["Ubud", "Nusa Dua", "Bali", "Kuta", "Sanur"]}})
+    lib = Library(tmp_path)
+    assert lib.other_destinations(["Ubud", "Sanur"]) == {"Nusa Dua", "Kuta"}
+    assert lib.other_destinations(["Nowhere"]) == set()

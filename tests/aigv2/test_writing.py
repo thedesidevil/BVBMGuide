@@ -491,3 +491,55 @@ def test_island_in_prose_must_match_google_address():
     assert island_problems("Blue Lagoon", "A cliff pool on Nusa Lembongan.", addr)
     assert not island_problems("Blue Lagoon", "A cliff pool on Ceningan Island.", addr)
     assert not island_problems("Blue Lagoon", "A cliff pool on Nusa Lembongan.", None)
+
+
+# ---- booking window framing (Bali day 3: 09:00-16:00 package called "the morning")
+
+WIN = {"booking_window": {"start": "09:00", "end": "16:00", "hours": 7.0, "lunch_in_package": True}}
+
+
+def _reply(intro):
+    r = day_reply()
+    r["intro"] = intro
+    return r
+
+
+def test_long_booking_rejects_morning_intro_and_retries():
+    llm, calls = make([_reply("Spend the morning at the park.")], [_reply("A full day out on the water.")])
+    out = write_day({**FACTS, **WIN}, llm)
+    assert out.intro == "A full day out on the water." and llm.cost_log[1]["fallback"] is True
+
+
+def test_short_or_missing_window_allows_morning_intro():
+    for facts in (FACTS, {**FACTS, "booking_window": {"start": "09:00", "end": "12:00", "hours": 3.0,
+                                                      "lunch_in_package": False}}):
+        llm, _ = make(_reply("Spend the morning at the park."))
+        assert write_day(facts, llm).intro == "Spend the morning at the park."
+
+
+def test_prompt_mentions_booking_window():
+    from src.aigv2.writing import days
+    assert "booking_window" in days._SYSTEM
+
+
+# ---- library places outside the trip
+
+def test_drop_other_places_filters_entries_and_where_to_buy():
+    import re
+    from src.aigv2.writing.sections import _place_regex, drop_other_places
+    rx = _place_regex(["Nusa Dua", "Kuta"])
+    items = [{"mode": "Grab", "description": "Casual outings such as Ubud cafe hopping and Nusa Dua to nearby restaurants"},
+             {"mode": "Taxi", "description": "From Denpasar International Airport (DPS) to Ubud"},
+             {"item": "Batik", "where_to_buy": ["Ubud Art Market", "Bali Collection (Nusa Dua)", "Kuta Beach Walk"]}]
+    out = drop_other_places(items, rx)
+    assert [i.get("mode") or i["item"] for i in out] == ["Taxi", "Batik"]
+    assert out[1]["where_to_buy"] == ["Ubud Art Market"]
+    assert drop_other_places(items, None) == items
+
+
+def test_other_places_reach_library_named_for_transport():
+    from src.aigv2.writing.sections import _library_named
+    cities = [{"city": "Ubud", "country": "Indonesia", "transport_options": [
+        {"mode": "Grab", "description": "Short rides in Nusa Dua"}, {"mode": "Taxi", "description": "Ubud to airport"}]}]
+    named = _library_named("getting_around", cities, [{}], other_places=["Nusa Dua"])
+    assert [o["mode"] for o in named["transport_options"]] == ["Taxi"]

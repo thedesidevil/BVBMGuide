@@ -207,6 +207,20 @@ class Library:
                     out.append(c)
         return out
 
+    def other_destinations(self, cities: list[str]) -> set[str]:
+        """Destination names the library files under the same folders as these cities, minus the cities themselves
+        and the region name of the folder (e.g. 'Bali' for 'Bali Indonesia')."""
+        own = {c.casefold() for city in cities for c in self._names(city)}
+        out: set[str] = set()
+        for f in self._folders([n for city in cities for n in self._names(city)]):
+            words = norm_name(f).split()
+            for c in self._coverage.get(f, []):
+                cw = norm_name(c).split()
+                if not cw or c.casefold() in own or words[: len(cw)] == cw:
+                    continue
+                out.add(c)
+        return out
+
     def _shards(self, names: list[str]) -> list[dict]:
         seen, shards = set(), []
         for n in names:

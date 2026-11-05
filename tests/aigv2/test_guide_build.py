@@ -396,3 +396,25 @@ def test_day5_check_in_card_sits_at_its_time_after_the_morning_activity():
     kinds = [o[1] or o[0] for o in order]
     mangrove = max(i for i, k in enumerate(kinds) if k == "SightseeingCard")
     assert kinds.index("FAST BOAT") < mangrove < kinds.index("Check-in")
+
+
+def test_port_and_hotel_names_read_in_proper_case():
+    from src.aigv2.guide.build import nice_name, port_name
+    assert nice_name("TAKSU SANUR HOTEL") == "Taksu Sanur Hotel" and nice_name("DPS") == "DPS"
+    assert port_name("DPS", "flight") == "Airport (DPS)"
+    assert port_name("DPS", "flight", "Ngurah Rai International Airport") == "Ngurah Rai International Airport"
+    assert port_name("", "boat") == "Harbor"
+
+
+def test_day8_transfer_title_is_proper_case():
+    comps, _ = _day8_cards()
+    xfer = next(c for c in comps if c.type == "BookingCard" and c.kind == "AIRPORT TRANSFER")
+    assert xfer.title.text.startswith("Taksu Sanur Hotel → ") and "TAKSU" not in xfer.title.text
+    chk = next(c for c in comps if c.type == "ChecklistCard")
+    assert "TAKSU" not in chk.title.text
+
+
+def test_day5_arrival_transfer_is_labelled_by_the_boat_origin():
+    comps = page(5).components
+    t = next(c for c in comps if c.type == "BookingCard" and c.kind == "Transfer" and "→" in c.title.text)
+    assert not t.title.text.startswith("Ubud") and t.title.text.startswith("Nusa Lembongan")

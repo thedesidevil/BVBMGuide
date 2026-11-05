@@ -32,6 +32,24 @@ _BRAND = "Bon Voyage by Marina"
 _NOT_SPECIFIED = re.compile(r"\s*Not specified[^.]*\.\s*", re.I)  # library filler sentence, never client-facing
 
 
+_IATA = re.compile(r"^[A-Z]{3}$")
+
+
+def nice_name(name: str) -> str:
+    """Voucher names arrive in capitals ('TAKSU SANUR HOTEL'); show them in normal case."""
+    return name.title() if name and name.isupper() and not _IATA.match(name) else name
+
+
+def port_name(name: str, kind: str, place_name: Optional[str] = None) -> str:
+    """A readable airport/station/harbour name: Google's name when matched, 'Airport (DPS)' for a bare code."""
+    if place_name:
+        return place_name
+    name = (name or "").strip()
+    if _IATA.match(name):
+        return f"{_PORT.get(kind, 'Airport')} ({name})"
+    return nice_name(name) or _PORT.get(kind, "Airport")
+
+
 class _CheckInAt:
     """Timeline placeholder for the hotel check-in card of a boat day."""
 
@@ -92,6 +110,10 @@ class _Day:
         p = self.rd.places.get(name)
         return p.maps_url if p is not None and p.match_ok else search_url(name, self.rd.city)
 
+    def _port_title(self, port: str, t: TransportLeg) -> str:
+        p = self.rd.places.get(port)
+        return port_name(port, t.kind, p.name if p is not None and p.match_ok and p.name else None)
+
     def _options(self, leg: Leg) -> list[str]:
         return [label if label.startswith("about") else f"{label} · {m} min"
                 for label, m in leg_options(leg, self.data.modes, self.walk_max)]
@@ -139,7 +161,7 @@ class _Day:
                 if boat is None:
                     self._check_in()
                 else:
-                    self._after_boat = (boat, self._check_in)
+                    self._after_boat = (boat, lambda: self._check_in(boat.to_place))
         self._drive_stops()
         start = len(self.out)
         self._timeline()
@@ -241,14 +263,14 @@ class _Day:
         return next((t for t in rd.other_transport
                      if t.kind == "boat" and t.depart and t.depart.date() == rd.date), None)
 
-    def _check_in(self) -> None:
+    def _check_in(self, origin: str = "") -> None:
         stay = next((s for s in self.data.trip.hotels if s.check_in == self.rd.date), None)
         if stay is None:
             return
         prev = self.rd.prev_city
         if prev and norm_name(prev) != norm_name(self.rd.city):
-            self._transfer(f"{prev} → {stay.hotel}", self._url(stay.hotel), self.rd.legs.get("arrival"), None,
-                           stay.hotel, when="Arrival")
+            self._transfer(f"{nice_name(origin or prev)} → {nice_name(stay.hotel)}", self._url(stay.hotel),
+                           self.rd.legs.get("arrival"), None, stay.hotel, when="Arrival")
             return
         facts = [g.Fact(label="Check-in", value=f"from {stay.check_in_time:%H:%M}")] if stay.check_in_time else []
         self.out.append(g.BookingCard(when=_fmt12(stay.check_in_time) if stay.check_in_time else "Check-in",
@@ -333,7 +355,8 @@ class _Day:
                 lines.insert(1, f"Your driver will meet you at the airport after you land, so a pick-up shown as "
                                 f"{before} means the driver is booked from {before} and will wait for your arrival "
                                 f"at {_hm(arr.arrive)}.")
-        self._transfer(f"{port} → {stay.hotel}", self._url(stay.hotel), rd.legs.get("arrival"), "\n".join(lines) or None,
+        self._transfer(f"{self._port_title(port, arr)} → {nice_name(stay.hotel)}", self._url(stay.hotel),
+                       rd.legs.get("arrival"), "\n".join(lines) or None,
                        stay.hotel, pickup=pick.time if pick and pick.time else None,
                        when=_hm(arr.arrive) if arr.arrive else "Arrival")
 
@@ -352,7 +375,7 @@ class _Day:
         rd, data = self.rd, self.data
         hotel = g.Link(text=stay.hotel, url=self._url(stay.hotel))
         self.out.append(g.ChecklistCard(
-            when="Check-out", kind="CHECK-OUT", title=g.Link(text=f"Check out of {stay.hotel}", url=hotel.url),
+            when="Check-out", kind="CHECK-OUT", title=g.Link(text=f"Check out of {nice_name(stay.hotel)}", url=hotel.url),
             lead="Complete check-out and keep these in your hand luggage:",
             items=departure_checklist(data.trip.travellers, not data.domestic)))
         buffer = arrival_buffer_min(dep.kind, data.domestic)
@@ -368,7 +391,8 @@ class _Day:
             text += " This time allows for the airport buffer only; the road time is still to be confirmed."
         port = dep.from_place or _PORT[dep.kind]
         self.out.append(g.BookingCard(when=at, kind="AIRPORT TRANSFER",
-                                      title=g.Link(text=f"{stay.hotel} → {port}", url=search_url(port, rd.city)),
+                                      title=g.Link(text=f"{nice_name(stay.hotel)} → {self._port_title(port, dep)}",
+                                                   url=search_url(port, rd.city)),
                                       facts=pairs, text=text))
         self.marks(([] if road else [_verify("departure time")]) + (leg_markers(leg, data.modes, self.walk_max) if leg else []))
 
@@ -394,7 +418,7 @@ class _Day:
         stay = self._stay(arriving=False)
         port = dep.from_place or _PORT[dep.kind]
         if stay:
-            self._transfer(f"{stay.hotel} → {port}", search_url(port, city), rd.legs.get("departure"), line, None,
+            self._transfer(f"{nice_name(stay.hotel)} → {self._port_title(port, dep)}", search_url(port, city), rd.legs.get("departure"), line, None,
                            when=_hm(by) if by else "Departure")
         else:
             if line:

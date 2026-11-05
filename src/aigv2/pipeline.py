@@ -448,6 +448,32 @@ def _booking_map(trip: TripPlan, items) -> dict[str, Booking]:
     return out
 
 
+def _item_windows(trip: TripPlan, d: date, items) -> dict[str, tuple[time, time]]:
+    """Voucher time windows (start and end both stated) for the day's sightseeing items: a tour booking that names
+    several stops covers each of them. Boat/airport bookings are handled by their own logic."""
+    out: dict[str, tuple[time, time]] = {}
+    for b in trip.bookings:
+        s, e = parse_time(b.time), parse_time(b.end_time)
+        if b.day != d or not b.timed or s is None or e is None or e <= s:
+            continue
+        if _BOAT_BOOKING.search(b.name) or _AIRPORT_PICKUP.search(b.name):
+            continue
+        for it in items:
+            if it.kind in ("attraction", "activity") and it.name not in out and (
+                    (it.booking_ref and b.name == it.booking_ref) or _names_match(it.name, b.name)):
+                out[it.name] = (s, e)
+    return out
+
+
+def booking_window_facts(window: Optional[tuple[time, time]], in_package_lunch: bool) -> Optional[dict]:
+    if window is None:
+        return None
+    s, e = window
+    return {"start": s.strftime("%H:%M"), "end": e.strftime("%H:%M"),
+            "hours": round(((e.hour * 60 + e.minute) - (s.hour * 60 + s.minute)) / 60, 1),
+            "lunch_in_package": in_package_lunch}
+
+
 _NAME_STOP = {"the", "and", "to", "of", "in", "at", "for", "with", "a", "an", "tour", "private", "transfer"}
 
 
@@ -592,7 +618,8 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
                                  trip.transport[dep] if dep is not None else None, ds.places, s, ds.country,
                                  trip.trip_scope == "domestic",
                                  [trip.transport[i] for i in ds.other_legs] + _boat_legs(trip, dp.date),
-                                 {n: t for n, b in ds.booking_by_item.items() if (t := parse_time(b.end_time))})
+                                 {n: t for n, b in ds.booking_by_item.items() if (t := parse_time(b.end_time))},
+                                 _item_windows(trip, dp.date, dp.items))
         ds.legs = _legs(ds, trip, deps)
         days.append(ds)
         prev = dp.city
@@ -633,9 +660,15 @@ def _day_facts(ds: DayState, state: PlanState) -> dict:
                 seen.add(norm_name(c.lib["name"]))
                 restaurants.append({"name": c.lib["name"], "meal": p.slot.meal, "cuisine": c.lib.get("cuisine_type"),
                                     "highlights": c.lib.get("highlights")})
-    return {"date": ds.date.isoformat(), "city": ds.city, "planned_title": dp.title, "attractions": attractions,
-            "restaurants": restaurants, "travellers": state.trip.travellers.model_dump(mode="json"),
-            "occasion": state.trip.occasion}
+    windows = _item_windows(state.trip, ds.date, dp.items)
+    covered = [windows[s.item.name] for s in ds.result.scheduled if s.item.name in windows]
+    facts = {"date": ds.date.isoformat(), "city": ds.city, "planned_title": dp.title, "attractions": attractions,
+             "restaurants": restaurants, "travellers": state.trip.travellers.model_dump(mode="json"),
+             "occasion": state.trip.occasion}
+    if covered:
+        w = max(covered, key=lambda x: (x[1].hour * 60 + x[1].minute) - (x[0].hour * 60 + x[0].minute))
+        facts["booking_window"] = booking_window_facts(w, any(m.in_package for m in ds.result.meals))
+    return facts
 
 
 def _section_inputs(state: PlanState, library: Library) -> tuple[list[dict], dict]:
@@ -655,6 +688,8 @@ def _section_inputs(state: PlanState, library: Library) -> tuple[list[dict], dic
 def _write(store: RunStore, state: PlanState, deps: Deps) -> None:
     jobs: dict[str, Any] = {}
     city_data, country_data = _section_inputs(state, deps.library)
+    trip_cities = list(dict.fromkeys([d.city for d in state.days] + [h.city for h in state.trip.hotels]))
+    other_places = sorted(deps.library.other_destinations(trip_cities))
     with ThreadPoolExecutor(max_workers=WRITERS) as pool:
         for ds in state.days:
             name = f"days/day_{ds.index:02d}.json"
@@ -664,7 +699,8 @@ def _write(store: RunStore, state: PlanState, deps: Deps) -> None:
             name = f"sections/{key}.json"
             if not store.has(name):
                 jobs[name] = pool.submit(write_section, key, city_data, country_data, state.trip, deps.llm,
-                                         places=deps.places, fx=deps.fx, today=date.today(), important=state.important)
+                                         places=deps.places, fx=deps.fx, today=date.today(), important=state.important,
+                                         other_places=other_places)
         if not store.has("sections/title.json"):
             jobs["sections/title.json"] = pool.submit(write_title, state.trip, deps.llm)
         if not store.has("sections/thanks.json"):

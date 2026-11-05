@@ -527,3 +527,34 @@ def test_checkout_and_airport_drop_at_leave_by_time_not_default_9am():
 def test_breakfast_before_an_early_pickup():
     r = run(day([item("Transfer to harbour", kind="transfer", time="07:00")]), [stay(meal_plan="breakfast")])
     assert meal(r, "breakfast").start == time(6, 15)
+
+
+# ---- voucher time windows (Bali day 2: tour booked 13:00-18:00)
+
+def test_window_places_first_item_at_booking_start_and_spreads_inside():
+    win = {n: (time(13, 0), time(18, 0)) for n in ("A", "B", "C")}
+    r = run(day([item("A"), item("B"), item("C")]), windows=win)
+    starts = [s.start for s in r.scheduled]
+    assert starts[0] == time(13, 0)
+    assert all(time(13, 0) <= t < time(18, 0) for t in starts) and starts == sorted(starts)
+    assert [s.item.name for s in r.scheduled] == ["A", "B", "C"]
+
+
+def test_window_lunch_is_before_the_tour_pickup():
+    win = {n: (time(13, 0), time(18, 0)) for n in ("A", "B", "C")}
+    r = run(day([item("A"), item("B"), item("C")]), windows=win)
+    lunch = meal(r, "lunch")
+    assert lunch is not None and lunch.start < time(13, 0) and not lunch.in_package
+
+
+def test_window_ignored_for_explicitly_timed_items_and_absent_windows():
+    r = run(day([item("A", time="15:00"), item("B")]), windows={"A": (time(13, 0), time(18, 0))})
+    assert {s.item.name: s.start for s in r.scheduled}["A"] == time(15, 0)
+    assert run(day([item("A")])).scheduled[0].start == time(9, 0)
+
+
+def test_full_day_window_starts_at_booking_start():
+    r = run(day([item("A", kind="activity")]), windows={"A": (time(9, 0), time(16, 0))},
+            booking_ends={"A": time(16, 0)})
+    assert r.scheduled[0].start == time(9, 0)
+    assert meal(r, "lunch").in_package

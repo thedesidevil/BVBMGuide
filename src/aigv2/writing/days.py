@@ -24,6 +24,8 @@ _SYSTEM = (
     "opening hours inside title, intro, description or free_time_idea. Use every attraction and restaurant name exactly "
     "as given and add no others. If you supply entry_fee, dress_code, tips, best_time or duration for an attraction "
     "they are unverified and will be flagged for a human, so leave them null unless you are confident. "
+    "If booking_window is given, the covered stops happen inside that window: never describe the day or the intro as a "
+    "morning, afternoon or evening plan when the window is six hours or longer; call it a full-day or day-long outing. "
     "Only name an island, district or city for a stop if it appears in that stop's google_address or area; otherwise leave it out. "
     "JSON shape: {\"title\": str, \"intro\": str, \"attractions\": [{\"name\": str, \"description\": str, "
     "\"entry_fee\": str|null, \"dress_code\": str|null, \"tips\": str|null, \"best_time\": str|null, "
@@ -83,6 +85,26 @@ def island_problems(name: str, text: Optional[str], address: Optional[str]) -> l
     return []
 
 
+_PART_OF_DAY = re.compile(r"\b(?:the|this|a|an|in the|every|each)\s+(?:morning|afternoon|evening)\b|\b(?:morning|afternoon|evening)\s+(?:at|of|visit|session|activity|tour)\b", re.I)
+_LONG_BOOKING_HOURS = 6
+
+
+def long_booking(day_facts: dict) -> bool:
+    w = day_facts.get("booking_window") or {}
+    try:
+        return float(w.get("hours") or 0) >= _LONG_BOOKING_HOURS
+    except (TypeError, ValueError):
+        return False
+
+
+def part_of_day_problems(day_facts: dict, intro: Optional[str]) -> list[str]:
+    """A booking of six hours or more is a full-day (or most-of-the-day) plan: the intro may not frame it as one part of the day."""
+    m = _PART_OF_DAY.search(intro or "") if long_booking(day_facts) else None
+    return [f"intro frames the day as a part of the day ('{m.group(0)}') but the booking runs "
+            f"{day_facts['booking_window']['start']}-{day_facts['booking_window']['end']}; "
+            "describe it as a full-day or day-long experience"] if m else []
+
+
 def _check_facts(day_facts: dict) -> None:
     missing = [k for k in DAY_FACTS_KEYS if k not in day_facts]
     if missing:
@@ -110,9 +132,12 @@ def _validator(day_facts: dict):
             problems += first_person_problems(label, text)
         problems += prose_fact_problems("title", day.title)
         problems += prose_fact_problems("intro", day.intro)
+        problems += part_of_day_problems(day_facts, day.intro)
         problems += prose_fact_problems("free_time_idea", day.free_time_idea)
         for a in day.attractions:
             problems += prose_fact_problems(f"description of {a.name}", a.description)
+            if long_booking(day_facts):
+                problems += part_of_day_problems(day_facts, a.description)
             problems += island_problems(a.name, a.description, addr.get(norm_name(a.name)))
         for r in day.restaurants:
             problems += prose_fact_problems(f"ambience of {r.name}", r.ambience)

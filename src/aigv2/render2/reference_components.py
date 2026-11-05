@@ -2,6 +2,7 @@
 checklist groups. Google-Docs-safe: tables, paragraph borders and diamond glyphs only (no boxes, no run borders)."""
 from __future__ import annotations
 
+import re
 from typing import Callable, Optional, Sequence
 
 from docx.enum.text import WD_ALIGN_PARAGRAPH as AL
@@ -94,16 +95,66 @@ def render_fact_row(doc, W: float, c: FactRowBlock) -> None:
     K.spacer(doc, 16)
 
 
+_ABBREV = ("e.g", "i.e", "etc", "approx", "St", "No", "Mr", "Mrs", "Ms", "Dr", "vs", "Rp", "Rs", "Mt", "Jl", "Ave",
+           "Inc", "Ltd", "a.m", "p.m", "min", "max", "approx", "est", "cf")
+_MIN_ITEM = 25
+_LONG_PART = 90
+
+
+def _sentences(text: str) -> list[str]:
+    """Split on sentence ends ('. ', '! ', '? ') that do not follow an abbreviation or a single capital/number."""
+    out, start = [], 0
+    for m in re.finditer(r"([.!?])(?:[\"\u201d')]*)\s+(?=[A-Z0-9\u201c\"(])", text):
+        word = re.search(r"(\S+)$", text[start:m.start() + 1])
+        w = word.group(1).rstrip(".!?") if word else ""
+        if m.group(1) == "." and (w in _ABBREV or w.lower() in {a.lower() for a in _ABBREV}
+                                  or re.fullmatch(r"[A-Za-z]|\d+", w.split("(")[-1])):
+            continue
+        out.append(text[start:m.end()].strip())
+        start = m.end()
+    out.append(text[start:].strip())
+    return [x for x in out if x]
+
+
+def _merge_fragments(parts: list[str]) -> list[str]:
+    items: list[str] = []
+    for part in parts:
+        if items and len(part) < _MIN_ITEM:
+            items[-1] += " " + part
+        else:
+            items.append(part)
+    if len(items) > 1 and len(items[0]) < _MIN_ITEM:  # a short leading fragment joins the next item
+        items[1] = items[0] + " " + items[1]
+        items = items[1:]
+    return items
+
+
+def bullet_items(body: str) -> list[str]:
+    """Body text -> short readable bullet items. Each line stays its own item; within a line, split on sentence
+    ends (and on ';' in long sentences); fragments under 25 chars are merged into a neighbour."""
+    out: list[str] = []
+    for line in (x.strip() for x in body.split("\n")):
+        if not line:
+            continue
+        parts: list[str] = []
+        for sent in _sentences(line):
+            if ";" in sent and len(sent) > _LONG_PART:
+                pieces = [x.strip() for x in re.split(r";\s+", sent) if x.strip()]
+                pieces = [(x if x.endswith((".", "!", "?")) else x + ".") for x in pieces]
+                parts += [x[0].upper() + x[1:] for x in pieces]
+            else:
+                parts.append(sent)
+        out += _merge_fragments(parts)
+    return out
+
+
 def _titled_para(cell, w: float, item) -> None:
-    p = K.np(cell, after=4, keep=True, line=1.0)
+    p = K.np(cell, after=6, keep=True, line=1.0)
     K.R(p, item.heading, font=T.HEAD, size=16, color=T.NAVY)
-    lines = [x.strip() for x in item.body.split("\n") if x.strip()]
-    if len(lines) > 1:  # a list (e.g. packing): one diamond bullet per line, hanging indent, air between items
-        for ln in lines:
-            q = K.diamond_item(cell, ln, indent=0.62, after=4, size=10)
-            q.paragraph_format.line_spacing = 1.32
-        return
-    K.R(K.np(cell, line=1.45, style="Body"), item.body, size=10)
+    K.hairline(p, T.POWDER, space=2)
+    for ln in bullet_items(item.body) or [item.body]:
+        q = K.diamond_item(cell, ln, indent=0.62, after=4, size=10)
+        q.paragraph_format.line_spacing = 1.32
 
 
 def render_titled_paras(doc, W: float, c: TitledParas) -> None:

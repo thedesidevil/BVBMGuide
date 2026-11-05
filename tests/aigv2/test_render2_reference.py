@@ -470,3 +470,33 @@ def test_short_titled_para_row_still_unsplittable():
     doc, W = _doc()
     RC.render_titled_paras(doc, W, m.TitledParas(items=[m.TitledPara(heading="h", body="short")]))
     assert _tables(doc)[0].find(".//" + qn("w:cantSplit")) is not None
+
+
+def test_bullet_items_split_sentences_but_not_abbreviations():
+    body = ("Cards are accepted in hotels, e.g. at the Ubud Palace gift shop. Small warungs take cash only. "
+            "Carry small notes for St. Paul parking at gate No. 5, approx. Rp 20,000. OK.")
+    items = RC.bullet_items(body)
+    assert items[0].endswith("gift shop.")
+    assert any("St. Paul" in i and "No. 5" in i and "approx. Rp" in i for i in items)
+    assert all(len(i) >= 25 for i in items[:-1] + [items[-1]] if len(items) > 1)
+    assert RC.bullet_items("Tip 10%.") == ["Tip 10%."]
+    assert RC.bullet_items("One line here is fine\nSecond line is fine too") == [
+        "One line here is fine", "Second line is fine too"]
+
+
+def test_bullet_items_split_long_semicolon_parts():
+    body = ("Use the airport ATM on arrival for small notes of rupiah and keep receipts; "
+            "avoid street changers that offer rates far above the bank rate shown on screen.")
+    assert len(RC.bullet_items(body)) == 2
+
+
+def test_titled_para_is_heading_with_hairline_and_diamond_per_sentence():
+    doc, W = _doc()
+    RC.render_titled_paras(doc, W, m.TitledParas(items=[m.TitledPara(
+        heading="Cards", body="Cards work in hotels and bigger shops. Warungs prefer cash and small notes.")]))
+    xml = doc.element.body.xml
+    assert xml.count(RC.K.DIAMOND_GLYPH) == 2
+    assert "w:pBdr" in xml
+    single = _doc()
+    RC.render_titled_paras(single[0], single[1], m.TitledParas(items=[m.TitledPara(heading="Tip", body="Tip ten percent.")]))
+    assert single[0].element.body.xml.count(RC.K.DIAMOND_GLYPH) == 1

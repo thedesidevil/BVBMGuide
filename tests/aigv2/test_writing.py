@@ -106,7 +106,7 @@ def test_section_ai_marked_verify():
 
 
 def test_packing_never_verify():
-    llm, _ = make(sec([{"heading": "Layers", "body": "Bring a light jacket."}]))
+    llm, _ = make({"items": [], "groups": [{"title": "Clothing", "items": ["Light jacket"]}]})
     s = write_section("packing", CITY, {}, trip(), llm)
     assert not s.items[0].verify
 
@@ -687,3 +687,46 @@ def test_packing_template_no_child_group():
     llm, _ = make(sec([{"heading": "P", "body": "we **x**"}]))
     s = write_section("packing", CITY, {}, _packing_trip(), llm)
     assert "For your little one" not in [g.title for g in s.groups]
+
+
+PROSE = [{"heading": h, "body": b} for h, b in [
+    ("Clothing", "Light tops; a rain jacket; one layer. September is sunny."),
+    ("Footwear", "Walking shoes; sandals"), ("Electronics", "Type C and Type F adapter; power bank"),
+    ("Mystery", "Some lead text.")]]
+
+
+def test_prose_items_salvaged_into_groups():
+    from src.aigv2.writing.sections import _SectionOut
+    out = _SectionOut(items=PROSE)
+    assert [g.title for g in out.groups] == ["Clothing", "Footwear", "Electronics"]
+    assert out.groups[0].items == ["Light tops", "a rain jacket", "one layer", "September is sunny"]
+    assert [i.heading for i in out.items] == ["Mystery"]
+
+
+def test_prose_items_split_on_sentences_and_cap():
+    from src.aigv2.writing.sections import _SectionOut
+    body = ". ".join(f"Thing {i}" for i in range(12)) + "."
+    out = _SectionOut(items=[{"heading": h, "body": body} for h in ("Clothing", "Footwear", "Temple Visits")])
+    assert len(out.groups[0].items) == 8
+
+
+def test_two_prose_items_not_salvaged_and_packing_requires_groups():
+    from src.aigv2.writing.sections import _SectionOut, _validator
+    out = _SectionOut(items=PROSE[:2])
+    assert not out.groups
+    assert any("as groups" in p for p in _validator("packing", "", False, {})(out))
+
+
+def test_prose_packing_end_to_end_gets_groups():
+    llm, _ = make(sec(PROSE))
+    s = write_section("packing", CITY, {}, trip(), llm)
+    assert len(llm.cost_log) == 1 and [g.title for g in s.groups] == ["Clothing", "Footwear", "Electronics"]
+
+
+def test_realistic_primary_groups_shape_accepted_for_toddler():
+    titles = ["Clothing", "Footwear", "Beach & Island Days", "Sun & Day Trips", "Temple Visits", "Electronics",
+              "Health & Comfort", "Travel Documents", "For your little one"]
+    groups = [{"title": t, "items": ["Type C and Type F adapter", "Sunscreen SPF 50", "Passports valid 6 months"]} for t in titles]
+    llm, _ = make({"items": [], "groups": groups})
+    s = write_section("packing", CITY, {}, _packing_trip(child=True), llm)
+    assert len(llm.cost_log) == 1 and len(s.groups) == 9

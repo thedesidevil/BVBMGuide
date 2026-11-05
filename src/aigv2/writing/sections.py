@@ -178,6 +178,24 @@ def _lift_markdown_groups(items: list[_ItemOut]):
     return None
 
 
+def _split_phrases(body: str) -> list[str]:
+    parts = [q for x in body.split(";") for q in re.split(r"(?<=[.!?])\s+", x)]
+    return [x.strip().rstrip(".").strip() for x in parts if x.strip().rstrip(".").strip()]
+
+
+def _lift_item_groups(items: list[_ItemOut]):
+    """Salvage packing groups written as prose items whose headings are group titles."""
+    hits = [(n, _ALLOWED_TITLES.get(_title_key(it.heading))) for n, it in enumerate(items)]
+    hits = [(n, t) for n, t in hits if t]
+    if len(hits) < 3:
+        return None
+    seen: dict[str, list[str]] = {}
+    for n, t in hits:
+        seen.setdefault(t, []).extend(_split_phrases(strip_markdown(items[n].body)))
+    rest = [it for n, it in enumerate(items) if n not in {h[0] for h in hits}]
+    return [_GroupOut(title=t, items=v[:8]) for t, v in seen.items() if v], rest
+
+
 class _SectionOut(BaseModel):
     items: list[_ItemOut] = Field(default_factory=list)
     groups: list[_GroupOut] = Field(default_factory=list)
@@ -185,7 +203,7 @@ class _SectionOut(BaseModel):
     @model_validator(mode="after")
     def _salvage_groups(self):
         if not self.groups:
-            lifted = _lift_groups(self.items) or _lift_markdown_groups(self.items)
+            lifted = _lift_groups(self.items) or _lift_markdown_groups(self.items) or _lift_item_groups(self.items)
             if lifted:
                 self.groups, self.items = lifted
         return self
@@ -335,6 +353,8 @@ def _validator(key: str, material: str, library: bool, restaurants: dict[str, st
         medical: list[str] = []
         if not out.items and not (key == "packing" and out.groups):
             problems.append("items must not be empty")
+        if key == "packing" and not out.groups:
+            problems.append("return the packing list as groups: [{\"title\": str, \"items\": [str]}], one short phrase per item, not prose items")
         if key == "packing" and out.groups:
             problems += st.group_problems([g.title for g in out.groups], child)
             for g in out.groups:

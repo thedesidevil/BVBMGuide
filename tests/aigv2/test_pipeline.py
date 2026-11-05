@@ -88,7 +88,9 @@ REPLIES = {
     "extract": lambda p: (FIX / "expected_trip_plan.json").read_text(encoding="utf-8"),
     "rank": _rank,
     "write_days": _day,
-    "write_sections": lambda p: json.dumps({"items": [{"heading": "Good to know", "body": "Plan ahead and enjoy."}]}),
+    "write_sections": lambda p: json.dumps(
+        {"items": [], "groups": [{"title": "Clothing", "items": ["Light layers"]}]} if p.startswith("Section: packing")
+        else {"items": [{"heading": "Good to know", "body": "Plan ahead and enjoy."}]}),
     "title": lambda p: json.dumps({"title": "Manhattan Lights Ahead"}),
     "thanks": lambda p: json.dumps({"paragraphs": ["Thank you for the opportunity to plan your trip to New York.",
                                                    "Bon Voyage by Marina is a message away."]}),

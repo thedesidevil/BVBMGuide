@@ -53,6 +53,7 @@ class MealSlot(BaseModel):
     anchors: list[Anchor] = Field(default_factory=list)
     included: bool = False
     unanchored: bool = False
+    in_package: bool = False  # a full-day package covers this meal window: no restaurant options
 
 
 class DayResult(BaseModel):
@@ -164,6 +165,9 @@ def _schedule_items(day: DayPlan, settings: Settings, floor: Optional[time] = No
 
 
 _OPTIONAL_VISIT_MIN = 30
+_FULL_DAY_PACKAGE_MIN = 6 * 60
+_BREAKFAST_LEAD_MIN = 45
+_EARLIEST_BREAKFAST = time(5, 30)
 _LATEST_OPTIONAL_OPENING = time(21, 0)
 
 
@@ -327,6 +331,13 @@ def schedule_day(
     cutoff = leave_by(dep, domestic) if dep else None
     if dep and dep.depart.time() < _PACKED_BREAKFAST_BEFORE:
         res.tips.append("Ask the hotel for a packed breakfast")
+    if dep and cutoff:
+        # the untimed "check-out and airport drop" happens at the leave-by time, not at a default 9:00
+        for i, sc in enumerate(res.scheduled):
+            if sc.item.kind == "transfer" and not sc.item.time and not sc.item.pickup_time \
+                    and re.search(r"airport|station|port", sc.item.name, re.I):
+                res.scheduled[i] = ScheduledItem(item=sc.item, slot=_slot_for(cutoff, settings), start=cutoff)
+        res.scheduled.sort(key=lambda x: x.start)
     early = arr_t is not None and arr_t < _EARLY_ARRIVAL_BEFORE
     next_night = bool(arrival and arrival.arrive and arrival.arrive.date() == d + timedelta(days=1)
                       and arrival.arrive.hour < 5)
@@ -389,6 +400,11 @@ def schedule_day(
     # breakfast
     b_start = meal_start("breakfast", country, settings)
     b_stay = _stay_for(stays, d, "breakfast", b_start)
+    if res.scheduled and res.scheduled[0].start <= b_start:
+        # an early pick-up: breakfast comes before the group leaves, not after
+        b_start = _plus(res.scheduled[0].start, -_BREAKFAST_LEAD_MIN)
+        if b_start < _EARLIEST_BREAKFAST or b_start > res.scheduled[0].start:
+            b_stay = None
     if b_stay and not (arr_t and arr_t > b_start):
         out_rule = "breakfast out" in rules
         if _included("breakfast", b_stay, res.scheduled, d) or out_rule:
@@ -460,7 +476,13 @@ def schedule_day(
             return [(day.city, 3, ())]
         return hotel_spec(l_stay, 3)
 
-    if not late and not l_drop:
+    covering = next((s for s in res.scheduled if booking_ends and s.item.name in booking_ends
+                     and real(s) and s.start <= l_start < booking_ends[s.item.name]
+                     and sum(1 for x in res.scheduled if x.start == s.start and real(x)) == 1
+                     and _minutes(booking_ends[s.item.name]) - _minutes(s.start) >= _FULL_DAY_PACKAGE_MIN), None)
+    if covering is not None and not (cutoff is not None and l_start >= cutoff):
+        res.meals.append(MealSlot(meal="lunch", start=l_start, in_package=True))
+    elif not late and not l_drop:
         add("lunch", l_start, l_stay, lunch_spec)
 
     # dinner

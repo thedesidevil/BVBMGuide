@@ -264,3 +264,10 @@ def test_sim_facts_and_airport_steps():
     assert steps == ["Activate and test the SIM, Google Maps and WhatsApp before leaving the airport",
                      "Check your device supports eSIM"]
     assert extract_sim([{"provider": "X", "kind": "esim"}]) == ([], [])
+
+
+def test_known_bad_phrases_dropped():
+    from src.aigv2.writing.structured import extract_phrases
+    out = extract_phrases([{"local": "Tempat", "english": "Please"}, {"local": "Nyak", "english": "Yes"},
+                           {"local": "Tolong", "english": "Please"}])
+    assert [p.local for p in out] == ["Tolong"]

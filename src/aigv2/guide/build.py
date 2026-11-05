@@ -3,6 +3,7 @@
 Logic mirrored from render/day_render.py::DayRenderer; that module is removed in plan Task 27,
 so the copied logic here is accepted debt.
 """
+import re
 from datetime import date, datetime, time
 from typing import Optional
 
@@ -28,6 +29,7 @@ from src.aigv2.writing.thanks import SIGN_OFF, SIGNATURE, fallback_text
 _LATE = "Late night"
 _KIND = {"flight": "Flight", "train": "Train", "boat": "Boat", "bus": "Bus"}
 _BRAND = "Bon Voyage by Marina"
+_NOT_SPECIFIED = re.compile(r"\s*Not specified[^.]*\.\s*", re.I)  # library filler sentence, never client-facing
 
 
 def _ref(m: Marker) -> g.MarkerRef:
@@ -412,6 +414,12 @@ class _Day:
                     if t.depart or t.arrive]
         slot = None
         done_groups: set[str] = set()
+        self._meal_notes = {}
+        for e in list(rd.result.scheduled):
+            word = next((w for w in ("lunch", "dinner") if e.item.kind == "meal_out" and w in e.item.name.lower()), None)
+            if word and any(m.meal == word and not m.included for m in rd.result.meals):
+                self._meal_notes[word] = e  # the itinerary's "Dinner in X" line becomes the dinner block's note
+        entries = [x for x in entries if x[3] not in self._meal_notes.values()]
         for _, _, _, e in sorted(entries, key=lambda x: x[:3]):
             if isinstance(e, TransportLeg):
                 self._transport(e, e.to_place)
@@ -480,6 +488,9 @@ class _Day:
     def _item(self, s: ScheduledItem, part: Optional[str]) -> None:
         it, rd = s.item, self.rd
         when = it.time or _fmt12(s.start)
+        late_transfer = it.kind == "transfer" and self._late_night_item(s)
+        if late_transfer and not it.time:
+            when = _hm(rd.arrival.arrive)
         if it.kind == "free_time":
             self.out.append(g.SimpleCard(when=when, part="Free time", heading="Free time",
                                          text=rd.text.free_time_idea or it.name))
@@ -553,7 +564,13 @@ class _Day:
         if p is not None and p.status not in ("OPERATIONAL", "UNKNOWN"):
             marks.append(_verify(f"Google lists this place as {p.status.replace('_', ' ').lower()}"))
         text = at.description if at and at.description else ""
-        if it.kind == "transfer" and self._late_night_item(s):
+        if late_transfer:
+            for line in (b.instructions if b else []):
+                t = parse_time(line)
+                before = pickup_before_landing(f"{t:%H:%M}" if t else None, rd.arrival.arrive, rd.date)
+                if before:
+                    marks.append(_verify(f"driver pick-up time: voucher says {before} but the flight lands "
+                                         f"{_hm(rd.arrival.arrive)}; confirm with the operator"))
             text = f"Your representative and driver will meet you after you land at {_hm(rd.arrival.arrive)}. {text}".strip()
         self.out.append(g.SightseeingCard(
             when=when, part=part, name=g.Link(text=it.name, url=p.maps_url if found else search_url(it.name, rd.city)),
@@ -574,8 +591,16 @@ class _Day:
     def _meal(self, slot: MealSlot) -> None:
         meal, rd = slot.meal.capitalize(), self.rd
         eyebrow = f"{_fmt12(slot.start)}  ·  {slot.meal.upper()}"
+        noted = getattr(self, "_meal_notes", {}).get(slot.meal)
+        if noted is not None and "own expense" in (noted.item.note or "").lower():
+            eyebrow += "  ·  AT YOUR OWN EXPENSE"
         if slot.included:
             self.out.append(g.SimpleCard(when=_fmt12(slot.start), part=meal, heading=f"{meal} — Included in your package"))
+            return
+        if slot.in_package:
+            self.out.append(g.SimpleCard(when=_fmt12(slot.start), part=meal, heading=f"{meal} during your package",
+                                         text="Lunch falls within your full-day package: confirm with the operator "
+                                              "whether it is included."))
             return
         pick: Optional[MealPick] = next((m for m in rd.meals if m.slot.meal == slot.meal and m.slot.start == slot.start), None)
         anchors = slot.anchors if not slot.unanchored and slot.anchors else [(rd.city, None, 3)]
@@ -626,6 +651,7 @@ class _Day:
                 travel += f" · Parking: {pk}"
         marks += [_ref(m) for m in place_markers(c.place)]
         text = " ".join(x for x in (rt.ambience if rt else "", f"Best for {rt.best_for}" if rt and rt.best_for else "") if x)
+        text = _NOT_SPECIFIED.sub("", text).strip()
         return g.Restaurant(
             name=name, maps_url=c.place.maps_url or search_url(name, rd.city), cuisines=cuisines,
             veg=lib.get("vegetarian_friendly") is True, text=text,

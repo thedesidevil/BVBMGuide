@@ -419,3 +419,12 @@ def test_real_sections_render():
     doc.save(buf)
     buf.seek(0)
     assert Document(buf).paragraphs
+
+
+def test_emergency_strip_long_numbers_shrink():
+    doc, W = _doc()
+    nums = [m.EmergencyNumber(service=s, number=n) for s, n in
+            [("a", "110"), ("b", "+62 118 / 119"), ("c", "+62 361 227 911 / 12")]]
+    RC.render_emergency_strip(doc, W, m.EmergencyStrip(numbers=nums))
+    sizes = [tc.findall(qn("w:p"))[0].find(".//" + qn("w:sz")).get(qn("w:val")) for tc in _cells(_tables(doc)[0])]
+    assert sizes == ["52", "40", "34"]

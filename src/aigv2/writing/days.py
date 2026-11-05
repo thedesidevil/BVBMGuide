@@ -63,6 +63,26 @@ def prose_fact_problems(label: str, text: Optional[str]) -> list[str]:
             for p in _FACT_PATTERNS for m in [p.search(text)] if m]
 
 
+_ISLAND = re.compile(r"\b(?:Nusa\s+([A-Z][a-z]+)|([A-Z][a-z]+)\s+Island)\b")
+_ON_ISLAND = re.compile(r"\b(?:on|of)\s+(?:the\s+)?(?:island\s+of\s+)?$", re.I)
+
+
+def _islands(text: Optional[str]) -> set[str]:
+    return {(a or b).casefold() for a, b in _ISLAND.findall(text or "")}
+
+
+def island_problems(name: str, text: Optional[str], address: Optional[str]) -> list[str]:
+    """Prose may not put a stop on an island other than the one its Google address names."""
+    own = _islands(address)
+    if not own or not text:
+        return []
+    for m in _ISLAND.finditer(text):
+        if (m.group(1) or m.group(2)).casefold() not in own and _ON_ISLAND.search(text[max(0, m.start() - 16):m.start()]):
+            return [f"description of {name} puts it on {m.group(0)}, but its address names "
+                    f"{', '.join(sorted(i.title() for i in own))}; name only the island in google_address or omit it"]
+    return []
+
+
 def _check_facts(day_facts: dict) -> None:
     missing = [k for k in DAY_FACTS_KEYS if k not in day_facts]
     if missing:
@@ -74,6 +94,7 @@ def _names(items: list) -> list[str]:
 
 
 def _validator(day_facts: dict):
+    addr = {norm_name(i["name"]): i.get("google_address") for i in day_facts["attractions"]}
     want_a, want_r = sorted(_names(day_facts["attractions"])), sorted(_names(day_facts["restaurants"]))
 
     def validate(day: DayText) -> list[str]:
@@ -92,6 +113,7 @@ def _validator(day_facts: dict):
         problems += prose_fact_problems("free_time_idea", day.free_time_idea)
         for a in day.attractions:
             problems += prose_fact_problems(f"description of {a.name}", a.description)
+            problems += island_problems(a.name, a.description, addr.get(norm_name(a.name)))
         for r in day.restaurants:
             problems += prose_fact_problems(f"ambience of {r.name}", r.ambience)
             problems += prose_fact_problems(f"best_for of {r.name}", r.best_for)

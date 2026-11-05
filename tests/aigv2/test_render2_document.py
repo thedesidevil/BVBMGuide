@@ -134,7 +134,7 @@ def test_reader_sees_all_days_and_slots(blob, guide):
     assert len(m.days) == sum(1 for p in guide.pages if p.kind == "day")
     for d in m.days:
         for s in d.slots:
-            assert s.venues or s.markers
+            assert s.venues or s.markers or " or " in s.heading  # an options card holds its venues in cells
 
 
 def test_registry_covers_every_component():

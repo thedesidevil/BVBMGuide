@@ -433,6 +433,6 @@ def plan_meals(
     picks = []
     for n, day, city, slots in sorted(days, key=lambda d: (d[1], d[0])):
         for slot in slots:
-            if not slot.included:
+            if not slot.included and not slot.in_package:
                 picks.append(planner.slot(n, day, city, slot))
     return picks, planner.exclusions, planner.stats

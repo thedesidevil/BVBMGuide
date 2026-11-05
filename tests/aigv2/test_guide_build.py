@@ -311,3 +311,47 @@ def test_thank_you_page_components():
     assert destinations(data.trip)[0] in c.paragraphs[0]
     text = " ".join(c.paragraphs).lower()
     assert not re.search(r"\b(we|our|us)\b", text)
+
+
+# ---------- Bali QC fixes (todo B) ----------
+
+def _texts(p):
+    return [(c.type, getattr(c, "when", None), getattr(c, "part", None), getattr(c, "heading", None))
+            for c in p.components]
+
+
+def test_day1_late_pickup_card_time_is_landing_and_voucher_time_flagged():
+    from src.aigv2.models import TripPlan
+    from src.aigv2.planning.late_night import driver_time
+    data = load()
+    rd = day(data, 1)
+    trip = TripPlan.model_validate(json.loads((Path(__file__).parent / "fixtures" / "bali" / "trip_plan.json").read_text(encoding="utf-8")))
+    book = next(b for b in trip.bookings if b.time == "23:00").model_copy(update={"time": "00:10", "instructions": ["Driver will come to the airport at 11:00 PM."]})
+    rd = rd.model_copy(update={"booking_by_item": {k: book for k in rd.booking_by_item}})
+    p = build_day_page(rd, data, SETTINGS)
+    card = next(c for c in p.components if c.type == "SightseeingCard")
+    assert card.when == "00:10" and card.part == "Late night"
+    assert any(mk.kind == "VERIFY" and "driver pick-up" in mk.text for mk in card.markers)
+
+
+def test_day7_dinner_in_sanur_is_not_a_second_dinner_card():
+    p = page(7)
+    names = [getattr(getattr(c, "name", None), "text", None) for c in p.components]
+    assert "Dinner in Sanur" not in names
+    dinner = [c for c in p.components if c.type == "MealBlock" and c.meal == "dinner"]
+    assert len(dinner) == 1 and "OWN EXPENSE" in dinner[0].eyebrow
+
+
+def test_restaurant_description_drops_not_specified_filler():
+    data = load()
+    rd = day(data, 2)
+    pick = next(x for x in rd.meals if x.slot.meal == "lunch")
+    name = pick.restaurants[0].lib["name"]
+    rt = next(r for r in rd.text.restaurants if r.name == name) if any(r.name == name for r in rd.text.restaurants) else None
+    assert rt is not None
+    rt.ambience = "Not specified in the verified details."
+    rt.best_for = "grilled meats"
+    p = build_day_page(rd, data, SETTINGS)
+    lunch = next(c for c in p.components if c.type == "MealBlock" and c.meal == "lunch")
+    r0 = next(r for r in lunch.restaurants if r.name == name)
+    assert r0.text == "Best for grilled meats"

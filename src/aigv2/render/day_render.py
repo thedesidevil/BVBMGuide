@@ -393,6 +393,10 @@ class DayRenderer:
             p = self.doc.add_paragraph()
             p.add_run(f"{meal} — Included in your package").bold = True
             return
+        if slot.in_package:
+            p = self.doc.add_paragraph()
+            p.add_run(f"{meal} during your package: confirm with the operator whether it is included.").bold = True
+            return
         pick = next((m for m in self.rd.meals if m.slot.meal == slot.meal and m.slot.start == slot.start), None)
         if pick is None:
             for name, _, count in (slot.anchors if not slot.unanchored and slot.anchors else [(self.rd.city, None, 3)]):

@@ -77,10 +77,16 @@ def extract_apps(items) -> list[App]:
     return out
 
 
+# Library entries known to be mistranslated at ingest ("tempat" means place, "nyak" is not a word for yes).
+KNOWN_BAD_PHRASES = {("tempat", "please"), ("nyak", "yes")}
+
+
 def extract_phrases(items) -> list[Phrase]:
     out, seen = [], set()
     for p in _dicts(items):
         loc, eng = _s(p.get("local")), _s(p.get("english"))
+        if (loc.casefold(), eng.casefold()) in KNOWN_BAD_PHRASES:
+            continue
         if loc and eng and loc.casefold() not in seen:
             seen.add(loc.casefold())
             out.append(Phrase(local=loc, english=eng))

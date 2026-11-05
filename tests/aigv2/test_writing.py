@@ -483,3 +483,11 @@ def test_thank_you_rejected(paras):
     llm, calls = make({"paragraphs": paras})
     out = write_thank_you(trip(), llm)
     assert len(calls) == 2 and out.paragraphs[0].startswith("It has been a pleasure")
+
+
+def test_island_in_prose_must_match_google_address():
+    from src.aigv2.writing.days import island_problems
+    addr = "Ceningan Island, Lembongan, Kec. Nusa Penida, Bali"
+    assert island_problems("Blue Lagoon", "A cliff pool on Nusa Lembongan.", addr)
+    assert not island_problems("Blue Lagoon", "A cliff pool on Ceningan Island.", addr)
+    assert not island_problems("Blue Lagoon", "A cliff pool on Nusa Lembongan.", None)

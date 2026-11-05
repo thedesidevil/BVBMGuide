@@ -496,3 +496,34 @@ def test_grouped_late_opener_stays_with_its_group():
     r = run(day([item("Icon Mall", optional=True, slot_hint="afternoon", option_group="g"),
                  item("Sindhu Market", optional=True, slot_hint="afternoon", option_group="g")]), pl=pl)
     assert r.scheduled[0].start == r.scheduled[1].start
+
+
+# ---------- a lone full-day package covers lunch ----------
+
+def test_full_day_package_replaces_lunch_options():
+    r = schedule_day(day([item("Marine Park", time="09:00")]), [stay()], None, None, places("Hotel H", "Marine Park"), S,
+                     booking_ends={"Marine Park": time(16, 0)})
+    m = meal(r, "lunch")
+    assert m.in_package and not m.anchors and not m.included
+    assert meal(r, "dinner").anchors
+
+
+def test_short_or_shared_tour_keeps_lunch_options():
+    pl = places("Hotel H", "A", "B")
+    r = schedule_day(day([item("A", time="09:00")]), [stay()], None, None, pl, S, booking_ends={"A": time(13, 0)})
+    assert not meal(r, "lunch").in_package
+    r = schedule_day(day([item("A", time="09:00"), item("B", time="09:00")]), [stay()], None, None, pl, S,
+                     booking_ends={"A": time(16, 0)})
+    assert not meal(r, "lunch").in_package
+
+
+def test_checkout_and_airport_drop_at_leave_by_time_not_default_9am():
+    dep = leg(depart=datetime(2026, 11, 3, 13, 15))
+    r = run(day([item("Hotel check-out and airport drop", kind="transfer")]), [stay(cout=D)], None, dep, domestic=False)
+    s = r.scheduled[0]
+    assert s.start == time(10, 15) and s.slot == "morning"
+
+
+def test_breakfast_before_an_early_pickup():
+    r = run(day([item("Transfer to harbour", kind="transfer", time="07:00")]), [stay(meal_plan="breakfast")])
+    assert meal(r, "breakfast").start == time(6, 15)

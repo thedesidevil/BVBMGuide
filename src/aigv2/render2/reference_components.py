@@ -355,7 +355,8 @@ def render_emergency_strip(doc, W: float, c: EmergencyStrip) -> None:
         K.cell_borders(cell, top=(T.ROYAL, 12), bottom=(T.POWDER, 6),
                        left=(T.CARD_EDGE if i == 0 else T.POWDER, 4),
                        right=(T.CARD_EDGE, 4) if i == n - 1 else None)
-        K.R(K.np(cell, after=2, align=AL.CENTER, line=1.0), e.number, font=T.HEAD, size=26, bold=True, color=T.ROYAL)
+        size = 26 if len(e.number) <= 10 else 20 if len(e.number) <= 14 else 17  # keep long strings on one line
+        K.R(K.np(cell, after=2, align=AL.CENTER, line=1.0), e.number, font=T.HEAD, size=size, bold=True, color=T.ROYAL)
         p = K.np(cell, align=AL.CENTER, line=1.0)
         K.R(p, e.service, size=7, color=T.SLATE, caps=True, spacing=1.2)
         K.close(cell, 1)

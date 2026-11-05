@@ -37,8 +37,9 @@ class StepLLM:
         obj, problems = self._attempt(step, model, system, prompt, schema, validate, max_tokens, False)
         if obj is not None:
             return obj
+        log.warning("step %s: %s rejected: %s", step, model, problems)
         retry_prompt = prompt + "\n\nYour previous answer was rejected for these problems:\n" + \
-            "\n".join(f"- {p}" for p in problems) + "\nReturn corrected JSON only."
+            "\n".join(f"- {p}" for p in problems) + "\nReturn corrected JSON only. Plain text only, no markdown; for packing return the groups field."
         obj, problems = self._attempt(step, self.settings.fallback_model, system, retry_prompt,
                                       schema, validate, max_tokens, True)
         if obj is not None:

@@ -635,3 +635,55 @@ def test_unlisted_medical_name_is_sanitised_after_retries_not_raised():
     llm, calls = make(ok)
     s = write_section("health", [{"city": "Sanur", "country": "France"}], {}, trip(), llm, important=imp)
     assert len(calls) == 1 and "ApotekKU Sanur" in s.items[0].body
+
+
+MD_BODY = ("Warm and humid.\n\n**Clothing**\n- Light outfits\n- Sleepwear\n\n**Beach & Island Days:**\n- Swimsuits\n"
+           "* Dry bag\n\n**Mystery**\n- ignored\n\n**For your little one**\n• Diapers")
+
+
+def _packing_trip(child=False):
+    t = trip()
+    if child:
+        t.travellers = Traveller(adults=2, kids_ages=[2])
+    return t
+
+
+def test_markdown_packing_salvaged_into_groups():
+    llm, _ = make(sec([{"heading": "Packing", "body": MD_BODY}]))
+    s = write_section("packing", CITY, {}, _packing_trip(child=True), llm)
+    assert len(llm.cost_log) == 1
+    assert [g.title for g in s.groups] == ["Clothing", "Beach & Island Days", "For your little one"]
+    assert [i.heading for i in s.groups[1].items] == ["Swimsuits", "Dry bag"]
+    assert all("**" not in i.body and "- " not in i.body for i in s.items)
+
+
+def test_markdown_title_tolerance_and_and():
+    from src.aigv2.writing.sections import _SectionOut
+    out = _SectionOut(items=[{"heading": "x", "body": "Sun and Day Trips:\n- Hat\n- Sunscreen"}])
+    assert [g.title for g in out.groups] == ["Sun & Day Trips"] and not out.items
+
+
+def test_markdown_in_other_section_is_rejected_then_retried():
+    bad = sec([{"heading": "Cards", "body": "**Cards**\n- Visa accepted"}])
+    good = sec([{"heading": "Cards", "body": "Visa is accepted."}])
+    llm, calls = make([bad], [good])
+    s = write_section("health", [{"city": "Paris", "country": "France"}], {}, trip(), llm)
+    assert llm.cost_log[1]["fallback"] is True and s.items[0].body == "Visa is accepted."
+    assert "no markdown" in calls[1][1]["messages"][1]["content"]
+
+
+def test_packing_template_when_everything_fails():
+    bad = sec([{"heading": "Packing", "body": "**Only prose** that is not groups, we pack"}])
+    llm, _ = make(bad)
+    t = _packing_trip(child=True)
+    s = write_section("packing", CITY, {"France": {"plugs": [{"type": "E"}]}}, t, llm)
+    titles = [g.title for g in s.groups]
+    assert titles[0] == "Clothing" and titles[-1] == "For your little one"
+    assert all("**" not in i.body for i in s.items) and all(i.verify for i in s.items)
+    assert any("type E" in i.heading for g in s.groups for i in g.items)
+
+
+def test_packing_template_no_child_group():
+    llm, _ = make(sec([{"heading": "P", "body": "we **x**"}]))
+    s = write_section("packing", CITY, {}, _packing_trip(), llm)
+    assert "For your little one" not in [g.title for g in s.groups]

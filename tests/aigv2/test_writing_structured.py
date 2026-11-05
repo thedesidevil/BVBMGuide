@@ -38,8 +38,8 @@ def test_little_one_group_iff_child_under_12(age, expect):
 def test_unknown_group_title_rejected():
     s, llm = _pack([_g("Gadgets"), _g("Clothing")])
     assert [g.title for g in s.groups] == ["Clothing"]
-    with pytest.raises(LLMStepError):
-        _pack(_g("Gadgets"))
+    s2, llm2 = _pack(_g("Gadgets"))  # both models fail: deterministic template, flagged for review
+    assert len(llm2.cost_log) == 2 and s2.groups[0].title == "Clothing" and all(i.verify for i in s2.items)
 
 
 def test_packing_group_with_price_rejected():

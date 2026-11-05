@@ -449,3 +449,24 @@ def test_do_item_uses_diamond_and_dont_cross():
     RC.render_dos_donts(doc, 17.0, m.DosDonts(do=["a"], dont=["b"]))
     xml = doc.element.xml
     assert K.DIAMOND_GLYPH in xml and "×" in xml
+
+
+def test_long_titled_para_can_split_and_opener_keeps_with_next():
+    doc, W = _doc()
+    RC.render_reference_opener(doc, W, m.ReferenceOpener(eyebrow="E", title="Tailored Packing List", intro="intro"))
+    body = "\n".join(f"item {i}" for i in range(30))
+    RC.render_titled_paras(doc, W, m.TitledParas(items=[m.TitledPara(heading="Packing", body=body)]))
+    t = _tables(doc)[-1]
+    assert t.find(".//" + qn("w:cantSplit")) is None
+    assert t.find(".//" + qn("w:keepLines")) is None
+    paras = t.findall(".//" + qn("w:p"))
+    assert paras[0].find(".//" + qn("w:keepNext")) is not None  # heading stays with first line
+    assert all(p.find(".//" + qn("w:keepNext")) is None for p in paras[2:])
+    last_open = [p for p in doc.element.body.findall(qn("w:p")) if "intro" in _text(p)][0]
+    assert last_open.find(".//" + qn("w:keepNext")) is not None
+
+
+def test_short_titled_para_row_still_unsplittable():
+    doc, W = _doc()
+    RC.render_titled_paras(doc, W, m.TitledParas(items=[m.TitledPara(heading="h", body="short")]))
+    assert _tables(doc)[0].find(".//" + qn("w:cantSplit")) is not None

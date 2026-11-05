@@ -5,6 +5,7 @@ from __future__ import annotations
 from typing import Callable, Optional, Sequence
 
 from docx.enum.text import WD_ALIGN_PARAGRAPH as AL
+from docx.oxml.ns import qn
 from docx.shared import Cm, Pt
 
 from src.aigv2.guide.model import (AppGrid, ChecklistGroups, ContactCards, DishGrid, DosDonts, EmergencyStrip,
@@ -20,7 +21,7 @@ _PT_CM = 28.35
 
 
 def _grid(doc, W: float, items: Sequence, render: Callable, ncols: int = 2, gap: float = 1.0,
-          after_row: float = 14):
+          after_row: float = 14, split_long: Callable = None):
     """Airy grid of independent blocks; rows can't split; an odd count leaves the last cell empty."""
     if not items:
         return None
@@ -38,8 +39,14 @@ def _grid(doc, W: float, items: Sequence, render: Callable, ncols: int = 2, gap:
             K.cell_margins(cell, bottom=after_row / _PT_CM)
         render(cell, cw, it)
         K.close(cell, 1)
-    for row in t.rows:
-        K.row_keep(row)
+    for r, row in enumerate(t.rows):  # a long item may break across pages; short ones stay whole
+        long_row = split_long and any(split_long(it) for it in items[r * ncols:(r + 1) * ncols])
+        trPr = row._tr.get_or_add_trPr()
+        if long_row:
+            for e in trPr.findall(qn("w:cantSplit")):  # K.tbl marks every row unsplittable
+                trPr.remove(e)
+        else:
+            K.row_keep(row)
     for row in t.rows:  # empty cells (gutters, padding) must end in a paragraph
         for cell in row.cells:
             K.close(cell, 1)
@@ -64,6 +71,7 @@ def render_reference_opener(doc, W: float, c: ReferenceOpener, *, bookmark: Opti
         p = K.np(doc, after=18, align=AL.CENTER, line=1.25, indent=1.2)
         p.paragraph_format.right_indent = Cm(1.2)
         K.R(p, c.intro, font=T.HEAD, size=13.5, italic=True, color=T.SLATE)
+        p.paragraph_format.keep_with_next = True  # the title block never sits alone at the foot of a page
 
 
 def render_fact_row(doc, W: float, c: FactRowBlock) -> None:
@@ -99,7 +107,8 @@ def _titled_para(cell, w: float, item) -> None:
 
 
 def render_titled_paras(doc, W: float, c: TitledParas) -> None:
-    _grid(doc, W, c.items, _titled_para, ncols=2, gap=1.0, after_row=14)
+    _grid(doc, W, c.items, _titled_para, ncols=2, gap=1.0, after_row=14,
+          split_long=lambda it: len(it.body.split("\n")) > 6 or len(it.body) > 600)
 
 
 def _panel(doc, W: float, fill: str, bar: str):

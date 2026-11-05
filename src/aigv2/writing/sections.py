@@ -127,6 +127,57 @@ def _lift_groups(items: list[_ItemOut]):
     return None
 
 
+def _title_key(text: str) -> str:
+    t = re.sub(r"[*_#:]", " ", text.lower()).replace("&", " and ")
+    return " ".join(re.sub(r"[^a-z ]", " ", t).split())
+
+
+_ALLOWED_TITLES = {_title_key(t): t for t in st.PACKING_GROUPS}
+_BULLET = re.compile(r"^\s*(?:[-*\u2022])\s+(.*\S)\s*$")
+_TITLE_LINE = re.compile(r"^\s*(?:#+\s*)?(?:\*\*|__)?\s*([^*_:]+?)\s*:?\s*(?:\*\*|__)?\s*:?\s*$")
+_MARKDOWN_LINE = re.compile(r"^\s*(?:[-*\u2022]\s|#)")
+
+
+def has_markdown(text: str) -> bool:
+    return "**" in text or any(_MARKDOWN_LINE.match(ln) for ln in text.split("\n"))
+
+
+def strip_markdown(text: str) -> str:
+    lines = []
+    for ln in text.split("\n"):
+        ln = re.sub(r"^\s*(?:#+\s*|[-*\u2022]\s+)", "", ln).replace("**", "").replace("__", "")
+        lines.append(ln.rstrip())
+    return "\n".join(lines).strip()
+
+
+def _lift_markdown_groups(items: list[_ItemOut]):
+    """Salvage packing groups written as markdown ('**Title**' then '- item' lines) inside an item body."""
+    for n, it in enumerate(items):
+        lead: list[str] = []
+        groups: dict[str, list[str]] = {}
+        cur: Optional[list[str]] = None
+        for ln in it.body.split("\n"):
+            b = _BULLET.match(ln)
+            if b:
+                if cur is not None:
+                    cur.append(b.group(1).replace("**", "").strip())
+                continue
+            if not ln.strip():
+                continue
+            t = _TITLE_LINE.match(ln)
+            if t and ("**" in ln or ln.rstrip().endswith(":") or ln.lstrip().startswith("#")):
+                allowed = _ALLOWED_TITLES.get(_title_key(t.group(1)))
+                cur = groups.setdefault(allowed, []) if allowed else None
+                continue
+            if cur is None and not groups:
+                lead.append(ln.strip())
+        if groups:
+            lead_txt = " ".join(lead).strip()
+            rest = items[:n] + ([_ItemOut(heading=it.heading, body=lead_txt)] if lead_txt else []) + items[n + 1:]
+            return [_GroupOut(title=k, items=v) for k, v in groups.items() if v], rest
+    return None
+
+
 class _SectionOut(BaseModel):
     items: list[_ItemOut] = Field(default_factory=list)
     groups: list[_GroupOut] = Field(default_factory=list)
@@ -134,7 +185,7 @@ class _SectionOut(BaseModel):
     @model_validator(mode="after")
     def _salvage_groups(self):
         if not self.groups:
-            lifted = _lift_groups(self.items)
+            lifted = _lift_groups(self.items) or _lift_markdown_groups(self.items)
             if lifted:
                 self.groups, self.items = lifted
         return self
@@ -295,6 +346,9 @@ def _validator(key: str, material: str, library: bool, restaurants: dict[str, st
                     problems.append(f"group '{g.title}' contains numbers that are not in the library facts")
         for it in out.items:
             blob = it.heading + " " + it.body
+            if has_markdown(it.heading) or has_markdown(it.body):
+                problems.append(f"'{it.heading}' uses markdown (**, #, or lines starting with -, * or a bullet); plain text only, "
+                                "no markdown; for packing return the groups field")
             if _JSON_IN_BODY.search(it.body):
                 problems.append(f"'{it.heading}' body contains JSON; put groups in the top-level \"groups\" field and write plain text in bodies")
             problems += first_person_problems(f"'{it.heading}'", blob)
@@ -557,6 +611,8 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
                            validate=_validator(key, material + extra, library, restaurants, allowed, child, allowed_ph,
                                                place_cities, held.append))
     except LLMStepError:
+        if key == "packing":  # never fail a build over packing: use the deterministic template
+            return (_packing_template(cdatas, trip, child, cities), False, _template_fields(cdatas, trip, child, cities))
         if not held:
             raise
         # only a hospital/pharmacy name was wrong after the retries: cut those sentences and flag for a human
@@ -568,7 +624,8 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
         body = it.body
         if key == "dishes" and it.where_to_try:
             body += " Where to try: " + ", ".join(restaurants[norm_name(w)] for w in it.where_to_try) + "."
-        items.append(SectionItem(heading=it.heading, body=body,
+        body = strip_markdown(body)
+        items.append(SectionItem(heading=strip_markdown(it.heading), body=body,
                                  verify=flag_ai or needs_verify(it.heading + " " + body) or (sanitized and getattr(it, "verify", False))))
     fields: dict = {}
     if key == "packing" and out.groups:
@@ -580,6 +637,40 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
         fields = st.extract(key, named, [r for c in cities for r in c.get("restaurants", [])
                                          if isinstance(r, dict) and r.get("name") and r["name"] in restaurants.values()])
     return items, library, fields
+
+
+def _template_groups(cdatas: list[dict], trip, child: bool, cities: list[dict]) -> list[SectionGroup]:
+    """Season/activity template used when the writer fails to return packing groups."""
+    acts = " ".join(i.name for d in trip.days for i in d.items).lower()
+    wet = re.search(r"beach|snorkel|boat|island|dive|cruise|swim|pool|rafting|waterfall|surf", acts)
+    temple = re.search(r"temple|shrine|mosque|church|monastery|pura|wat\b|cathedral", acts)
+    plugs = sorted({str(p.get("type")).strip() for c in cdatas for p in _listify(c.get("plugs"))
+                    if isinstance(p, dict) and p.get("type")})
+    def g(title, items):
+        return SectionGroup(title=title, items=[SectionItem(heading=i, body="") for i in items])
+    out = [g("Clothing", ["Light, breathable outfits", "A light layer for evenings", "Sleepwear", "Underwear and socks"]),
+           g("Footwear", ["Comfortable walking shoes", "Sandals", "Easy-on shoes"])]
+    if wet:
+        out.append(g("Beach & Island Days", ["Swimwear and cover-ups", "Quick-dry towel", "Waterproof phone pouch"]))
+    out.append(g("Sun & Day Trips", ["Hat and sunglasses", "Sunscreen", "Compact umbrella or rain jacket", "Refillable water bottle"]))
+    if temple:
+        out.append(g("Temple Visits", ["Clothing that covers shoulders and knees", "Light scarf or sarong"]))
+    out.append(g("Electronics", ["Travel adapter" + (f" (type {', '.join(plugs)})" if plugs else ""),
+                                 "Chargers and power bank"]))
+    out.append(g("Health & Comfort", ["Personal medicines", "Basic first-aid kit", "Insect repellent"]))
+    out.append(g("Travel Documents", ["Passports and copies", "Visa or entry documents", "Travel insurance papers"]))
+    if child:
+        out.append(g("For your little one", ["Diapers or spare clothes", "Familiar snacks", "Comfort item"]))
+    return out
+
+
+def _template_fields(cdatas, trip, child, cities) -> dict:
+    return {"groups": _template_groups(cdatas, trip, child, cities)}
+
+
+def _packing_template(cdatas, trip, child, cities) -> list[SectionItem]:
+    groups = _template_groups(cdatas, trip, child, cities)
+    return [SectionItem(heading=g.title, body=", ".join(i.heading for i in g.items), verify=True) for g in groups]
 
 
 _PACKING_GROUPS_RULE = (

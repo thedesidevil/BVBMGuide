@@ -174,7 +174,13 @@ def test_toc_numbers_match_final_page_map(guide, blob):
         h = para.find(qn("w:hyperlink"))
         if h is None or h.get(qn("w:anchor")) is None:
             continue
-        txt = "".join(t.text or "" for t in para.iter(qn("w:t")))
+        row = para.getparent()
+        while row is not None and row.tag != qn("w:tr"):
+            row = row.getparent()
+        if row is not None and len(row.findall(qn("w:tc"))) == 3:  # section entry: number is the last cell
+            txt = "".join(t.text or "" for t in row.findall(qn("w:tc"))[-1].iter(qn("w:t")))
+        else:
+            txt = "".join(t.text or "" for t in para.iter(qn("w:t")))
         tail = re.search(r"(\d+)\s*$", txt).group(1)
         shown[h.get(qn("w:anchor"))] = tail
     assert shown

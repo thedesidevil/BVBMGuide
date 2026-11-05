@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Optional
 
 from docx.enum.text import WD_ALIGN_PARAGRAPH as AL
+from docx.shared import Cm
 
 from src.aigv2.guide.model import Guide, Page
 from src.aigv2.render import document as _legacy
@@ -105,8 +106,11 @@ def _day_card(doc, W: float, page: Page, pages) -> None:
 
 
 _ENTRY_PT = 13
-_ENTRY_INDENT_CM = 0.6
-_DOT_MARGIN = 3  # dots left unused before the number (font fallback / rounding safety)
+TITLE_SLACK = 1.12  # Google Docs measures text wider than PIL: the title cell is sized with this margin
+TITLE_PAD_CM = 0.3
+NUM_CELL_CM = 0.9
+MIN_NUM_CELL_CM = 0.9
+MIN_FILLER_CM = 0.3
 _font_cache: dict = {}
 
 
@@ -125,31 +129,44 @@ def _bold_font(size: float):
     return _font_cache[size]
 
 
-def leader_dots(title: str, number: str, width_cm: float, size: float = _ENTRY_PT) -> str:
-    """Explicit dot run (" ....") filling the gap between title and right-aligned number.
-
-    Google Docs drops tab leaders, so the dots are real characters. Empty when the title is too long or the
-    font is unavailable. Never wide enough to wrap (keeps a margin of a few dots)."""
+def measure_cm(text: str, size: float = _ENTRY_PT) -> float:
+    """Estimated width of `text` in Cormorant Bold at `size` pt (generous per-char fallback when no font)."""
     f = _bold_font(size)
-    if f is None:
-        return ""
-    w = lambda s: f.getlength(s) / 8
-    avail = (width_cm - _ENTRY_INDENT_CM) * 28.35 - w(title) - w(number)
-    n = int((avail - w(" ")) // w(".")) - _DOT_MARGIN
-    return " " + "." * n if n >= 3 else ""
+    pts = f.getlength(text) / 8 if f is not None else len(text) * size * 0.5
+    return pts / 28.35
+
+
+def entry_widths(title: str, width: float) -> tuple[float, float, float]:
+    """(title cell, filler cell, number cell) widths in cm; they always sum to `width`."""
+    num = NUM_CELL_CM
+    # the title cell holds the diamond glyph + gap + title
+    want = measure_cm(title) * TITLE_SLACK + 0.6 + TITLE_PAD_CM
+    cap = width - max(num, MIN_NUM_CELL_CM) - MIN_FILLER_CM
+    tw = min(want, cap)
+    return tw, width - tw - num, num
 
 
 def _entry(cont, page: Page, width: float, pages) -> None:
-    def runs(p):
-        anchor_link(p, page.bookmark, page.title, font=T.HEAD, size=13, bold=True, color=T.INK)
-        num = str((pages or {}).get(page.bookmark, DASH))
-        dots = leader_dots(page.title, num, width)
-        if dots:
-            R(p, dots, font=T.HEAD, size=13, bold=True, color=T.TAUPE)
-        R(p, "\t")
-        _number(p, page.bookmark, pages, font=T.HEAD, size=13, bold=True, color=T.ROYAL)
-    p = diamond_item(cont, runs, after=4)
-    K.tabs(p, [("left", 0.6, None), ("right", width, None)])
+    tw, fw, nw = entry_widths(page.title, width)
+    t = tbl(cont, 1, [tw, fw, nw])
+    c_title, c_fill, c_num = t.rows[0].cells
+    for c in (c_title, c_fill, c_num):
+        K.cell_valign(c, "bottom")
+    p = np(c_title, after=0)
+    p.paragraph_format.left_indent = Cm(0.6)
+    p.paragraph_format.first_line_indent = Cm(-0.6)
+    K.tabs(p, [("left", 0.6, None)])
+    K.R(p, K.DIAMOND_GLYPH, size=6, color=T.AMBER)
+    K.R(p, "\t")
+    anchor_link(p, page.bookmark, page.title, font=T.HEAD, size=13, bold=True, color=T.INK)
+    # filler: its bottom border is the dotted rule; a tiny paragraph keeps the row height set by the title
+    K.cell_borders(c_fill, bottom=(T.TAUPE, 6, "dotted"))
+    K.cell_margins(c_fill, bottom=0)
+    p = np(c_fill, after=0)
+    K.R(p, " ", size=2)
+    p = np(c_num, after=0, align=AL.RIGHT)
+    _number(p, page.bookmark, pages, font=T.HEAD, size=13, bold=True, color=T.ROYAL)
+    spacer(cont, 4)
 
 
 def _section_title(doc) -> None:

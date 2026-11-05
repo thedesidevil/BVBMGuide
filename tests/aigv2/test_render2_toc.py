@@ -43,7 +43,7 @@ def _links(doc):
 
 def test_rows_are_days_plus_sections():
     doc = _build()
-    assert len(doc.tables) == 1 + 3  # 3 day cards + the two-column table
+    assert len(doc.tables) == 1 + 3 + 1  # 3 day cards + the two-column table + the Thank You entry
     links = _links(doc)
     assert {"day_1", "day_2", "day_3"} <= set(links)
     assert len([k for k in links if k.startswith("sec_")]) == 5
@@ -86,7 +86,7 @@ def test_numbers_share_one_right_tab_per_block():
     for p in doc.element.body.iter(qn("w:p")):
         if any("PAGEREF" in (i.text or "") for i in p.iter(qn("w:instrText"))):
             tabs = p.findall(".//" + qn("w:tab") + "[@" + qn("w:val") + "='right']")
-            assert len(tabs) == 1
+            assert len(tabs) <= 1  # day cards: one right tab; section entries: a right-aligned number cell
     full = _build(pages={f"day_{i}": i for i in (1, 2, 3)})
     for p in full.element.body.iter(qn("w:p")):
         if "p." + TOC.NB in "".join(t.text or "" for t in p.iter(qn("w:t"))):
@@ -127,7 +127,7 @@ def test_day_title_parsing_falls_back():
     doc = _build(_guide(day_titles=["Arrival", "Day 2 – Fri, 25 Sep | Rice", "End"]))
     links = _links(doc)
     assert links["day_1"] == "Arrival" and links["day_2"] == "Rice"
-    assert len(doc.tables) == 4
+    assert len(doc.tables) == 5
 
 
 def test_toc_in_full_document():
@@ -189,12 +189,48 @@ def test_page_map_matches_headings_only_after_skipped_pages():
     assert got == {"g": 2, "m": 3}
 
 
-def test_leader_dots_monotonic_and_safe():
-    from src.aigv2.render2.toc import leader_dots
-    lens = [len(leader_dots(t, "29", 8.4)) for t in ("Thank You", "Tailored Packing List", "Health & Vaccination")]
-    if not any(lens):
-        import pytest
-        pytest.skip("Cormorant font not available")
-    assert lens[0] > lens[1] > lens[2] > 0
-    assert leader_dots("A very long title " * 6, "29", 8.4) == ""
-    assert set(leader_dots("Thank You", "29", 8.4).strip()) == {"."}
+def _entry_tables(doc):
+    return [t for t in doc.element.body.iter(qn("w:tbl"))
+            if len(t.find(qn("w:tr")).findall(qn("w:tc"))) == 3 and t.find(".//" + qn("w:tbl") ) is None
+            and t.getparent().tag == qn("w:body") or t.getparent().tag == qn("w:tc") and
+            len(t.find(qn("w:tr")).findall(qn("w:tc"))) == 3]
+
+
+def _tcw(tc):
+    return int(tc.find(qn("w:tcPr")).find(qn("w:tcW")).get(qn("w:w")))
+
+
+def test_entries_are_three_cell_rows_with_dotted_filler():
+    doc = _build(pages={"sec_packing": 25, "thank_you": 38})
+    tabs = _entry_tables(doc)
+    assert len(tabs) == 5 + 1  # 5 sections + thank you
+    for t in tabs:
+        tr = t.find(qn("w:tr"))
+        assert tr.find(qn("w:trPr")).find(qn("w:cantSplit")) is not None
+        title, fill, num = tr.findall(qn("w:tc"))
+        b = fill.find(qn("w:tcPr")).find(qn("w:tcBorders")).find(qn("w:bottom"))
+        assert b.get(qn("w:val")) == "dotted"
+        for tc in (title, fill, num):
+            assert tc.find(qn("w:tcPr")).find(qn("w:vAlign")).get(qn("w:val")) == "bottom"
+        assert num.find(qn("w:p")).find(qn("w:pPr")).find(qn("w:jc")).get(qn("w:val")) == "right"
+        assert "." * 3 not in "".join(x.text or "" for x in t.iter(qn("w:t")))  # no text dots
+    txt = _text(doc)
+    assert "25" in txt and "38" in txt
+
+
+def test_title_cell_has_slack_over_measured_width_even_when_font_is_wider():
+    for title in ("Tailored Packing List", "Safety & Emergency Contacts", "Mobile Connectivity & SIM Guide",
+                  "Thank You", "Souvenir Shopping Guide"):
+        for width in (8.4, 18.2):
+            tw, fw, nw = TOC.entry_widths(title, width)
+            assert tw + fw + nw == pytest.approx(width)
+            assert nw >= 0.9 and fw > 0
+            need = 1.1 * TOC.measure_cm(title) + 0.6  # 10% wider title text + bullet glyph and gap
+            # titles that fill the column are capped (number cell keeps >= 0.9 cm) and may wrap inside their own cell
+            assert tw >= need or fw <= TOC.MIN_FILLER_CM + 1e-6
+            assert tw >= 1.04 * TOC.measure_cm(title) + 0.6
+
+
+def test_overlong_title_degrades_gracefully():
+    tw, fw, nw = TOC.entry_widths("A very long title " * 6, 8.8)
+    assert tw + fw + nw == pytest.approx(8.8) and nw >= 0.9 and fw >= 0.3

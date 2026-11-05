@@ -2,7 +2,7 @@
 import re
 
 MAX_ITEMS = 8
-_SYN = {"fabric": "textile", "craft": "handicraft"}
+_SYN = {"fabric": "textile", "craft": "handicraft", "anyone": "people", "someone": "people", "person": "people"}
 _STOP = {"and", "the", "of", "a", "an", "with", "or", "in"}
 
 

@@ -51,6 +51,7 @@ class RenderDay(BaseModel):
     library_attractions: dict[str, dict] = Field(default_factory=dict)
     lands_next_day: bool = False
     driver_from: Optional[time] = None
+    airport_min: Optional[int] = None  # library road time airport -> hotel city, used only when no route was computed
 
 
 class GuideData(BaseModel):

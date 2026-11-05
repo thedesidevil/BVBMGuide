@@ -63,14 +63,15 @@ def test_getting_around_generic():
 
 def test_dishes_where_links():
     data = load()
-    known = next(pl for d in data.days for pl in d.places.values() if pl and pl.maps_url)
-    c = SectionContent(key="dishes", dishes=[Dish(name="Dish A", description="Tasty", where_to_try=[known.name, "Unknown Warung"])])
+    chosen = next(c for d in data.days for mp in d.meals for c in mp.restaurants)
+    c = SectionContent(key="dishes", dishes=[Dish(name="Dish A", description="Tasty",
+                                                   where_to_try=[chosen.lib["name"], "Unknown Warung"])])
     p = build_reference_page("dishes", c, data)
     assert types(p) == ["ReferenceOpener", "DishGrid"]
     d = p.components[1].dishes[0]
     assert (d.name, d.desc) == ("Dish A", "Tasty")
-    assert d.where[0] == m.Link(text=known.name, url=known.maps_url)
-    assert d.where[1].url == search_url("Unknown Warung", data.days[0].city)
+    # only restaurants picked in this guide's meal blocks are linked; the unknown warung is dropped
+    assert d.where == [m.Link(text=chosen.lib["name"], url=chosen.place.maps_url)]
     nodish = SectionContent(key="dishes", items=[_it("a", "b")])
     assert types(build_reference_page("dishes", nodish, data)) == ["ReferenceOpener", "TitledParas"]
 
@@ -229,7 +230,7 @@ def test_etiquette_safety_connectivity_prose_not_duplicated():
     from src.aigv2.guide.reference import structured_components
     from src.aigv2.writing.sections import SectionContent, SectionItem
     from src.aigv2.writing.structured import App, Contact, EmergencyNumber, Phrase
-    I = lambda h: SectionItem(heading=h, body="b")
+    I = lambda h: SectionItem(heading=h, body=f"Body text about {h}.")
     def heads(comps):
         return [p.heading for c in comps if type(c).__name__ == "TitledParas" for p in c.items]
     et = SectionContent(key="etiquette", phrases=[Phrase(local="a", english="b")], dos=["x"], donts=["y"],

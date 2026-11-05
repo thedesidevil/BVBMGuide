@@ -22,7 +22,7 @@ from src.aigv2.llm import StepLLM
 from src.aigv2.models import (Answers, Booking, booking_lunch_included, HotelStay, Marker, Place, Question, TransportLeg, TripPlan,
                               place_key)
 from src.aigv2.money import FxRates, city_currency, price_text
-from src.aigv2.planning.attraction_match import is_generic_name, lookup, parse_minutes, good_to_know
+from src.aigv2.planning.attraction_match import airport_transfer_minutes, is_generic_name, lookup, parse_minutes, good_to_know
 from src.aigv2.planning.boat import BOAT_BOOKING, DEPARTS_AT, enrich_boat_legs, parse_check_in, parse_crossing_min
 from src.aigv2.planning.late_night import AIRPORT_PICKUP, driver_time, is_late_night_landing
 from src.aigv2.planning.important_places import ImportantPlaces, important_places
@@ -809,6 +809,8 @@ def _render_days(store: RunStore, state: PlanState, deps: Deps) -> list[RenderDa
             departure=t[ds.departure] if ds.departure is not None else None, prev_city=ds.prev_city,
             other_transport=[t[i] for i in ds.other_legs],
             utc_offset_hours=ds.utc_offset_hours, library_attractions=ds.library_attractions,
+            airport_min=(airport_transfer_minutes(deps.library.city(ds.city).get("transport_options", []), ds.city)
+                         if ds.arrival is not None and t[ds.arrival].kind == "flight" else None),
             **_late_facts(ds, state.trip)))
     return out
 

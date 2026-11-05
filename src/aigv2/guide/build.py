@@ -63,6 +63,15 @@ def port_name(name: str, kind: str, place_name: Optional[str] = None) -> str:
     return nice_name(name) or _PORT.get(kind, "Airport")
 
 
+_ITEM_MIN = 90  # a stop's default length when its end is not known
+_FREE_GAP_MIN = 120  # an early evening this long is free
+_TRAVEL_BACK_MIN = 30
+
+
+class _ReturnBeat:
+    pass
+
+
 class _CheckInAt:
     """Timeline placeholder for the hotel check-in card of a boat day."""
 
@@ -300,11 +309,18 @@ class _Day:
                                       kind="Check-in", title=g.Link(text=nice_name(stay.hotel), url=self._url(stay.hotel)),
                                       facts=facts))
 
-    def _transfer(self, title, url, leg: Optional[Leg], body, hotel, pickup=None, when="Transfer") -> None:
-        if leg is None:
-            pairs, markers = [("TRANSFER", _verify("transfer time")), ("COST", _verify("transfer cost"))], []
+    def _transfer(self, title, url, leg: Optional[Leg], body, hotel, pickup=None, when="Transfer",
+                  library_min: Optional[int] = None) -> None:
+        opts = self._options(leg) if leg is not None else []
+        if library_min and not opts:
+            # no route was computed: the library guides' own airport-to-city road time, flagged for a check
+            time_fact = [f"Approx. {minutes_text(library_min)} by car", _verify("transfer time (from the library guides)")]
         else:
-            pairs = [("TRANSFER", self._options(leg) or _verify("transfer time")), ("COST", _verify("transfer cost"))]
+            time_fact = opts or _verify("transfer time")
+        if leg is None:
+            pairs, markers = [("TRANSFER", time_fact), ("COST", _verify("transfer cost"))], []
+        else:
+            pairs = [("TRANSFER", time_fact), ("COST", _verify("transfer cost"))]
             markers = leg_markers(leg, self.data.modes, self.walk_max)
         if pickup:
             pairs.insert(0, ("PICKUP", pickup))
@@ -371,7 +387,8 @@ class _Day:
         self._transfer(f"{self._port_title(port, arr)} → {nice_name(stay.hotel)}", self._url(stay.hotel),
                        rd.legs.get("arrival"), "\n".join(lines) or None,
                        stay.hotel, pickup=pick.time if pick and pick.time else None,
-                       when=_hm(arr.arrive) if arr.arrive else "Arrival")
+                       when=_hm(arr.arrive) if arr.arrive else "Arrival",
+                       library_min=rd.airport_min if arr.kind == "flight" else None)
 
     @staticmethod
     def _margin_text(minutes: int) -> str:
@@ -498,7 +515,14 @@ class _Day:
                               and stay_in.check_in_time > self._after_boat[0].depart.time())
         if defer_check_in:  # the room is ready from its check-in time: the card sits there, after earlier activities
             entries.append((stay_in.check_in_time, 2, 0, _CheckInAt()))
+        beat = self._return_beat_time()
+        if beat is not None:
+            entries.append((beat, 1, 99, _ReturnBeat()))
         for _, _, _, e in sorted(entries, key=lambda x: x[:3]):
+            if isinstance(e, _ReturnBeat):
+                self.out.append(g.SimpleCard(when=_fmt12(round15(beat)), part="Evening", heading="Return to your hotel",
+                                             text="Return to your hotel to unwind before dinner."))
+                continue
             if isinstance(e, TransportLeg):
                 self._transport(e, e.to_place)
                 self.marks([_verify(f"day-trip transport {e.from_place or '?'} → {e.to_place or '?'}: confirm "
@@ -525,6 +549,25 @@ class _Day:
             else:
                 self._meal(e)
                 slot = None
+
+    def _return_beat_time(self) -> Optional[time]:
+        """A 'return to the hotel' beat only when the day's last stop ends well before dinner (a free early evening)."""
+        rd = self.rd
+        dinner = next((m for m in rd.result.meals if m.meal == "dinner" and not m.included), None)
+        stops = [s for s in rd.result.scheduled if s.item.kind in ("attraction", "activity") and not s.item.optional]
+        if dinner is None or not stops or rd.departure is not None or rd.other_transport:
+            return None
+        end = 0
+        for s in stops:  # a stop takes its default length
+            end = max(end, s.start.hour * 60 + s.start.minute + _ITEM_MIN)
+        for b in self.data.trip.bookings:  # a booked window that day runs to its end time
+            b_end = parse_time(b.end_time) if b.day == rd.date and b.end_time else None
+            if b_end:
+                end = max(end, b_end.hour * 60 + b_end.minute)
+        if end + _FREE_GAP_MIN > dinner.start.hour * 60 + dinner.start.minute:
+            return None
+        end += _TRAVEL_BACK_MIN
+        return time(end // 60, end % 60)
 
     def _option_cards(self, first: ScheduledItem) -> None:
         """One OptionCards block for every scheduled item sharing the first item's option_group."""

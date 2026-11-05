@@ -95,3 +95,34 @@ def parse_minutes(text) -> Optional[int]:
         return None
     n = float(m.group(2) or m.group(1))
     return round(n * 60) if m.group(3).lower().startswith("h") else round(n)
+
+
+_UNIT = re.compile(r"(\d+(?:\.\d+)?)\s*(hours?|hrs?|h|minutes?|mins?)\b", re.I)
+
+
+def _segment_minutes(seg: str) -> Optional[int]:
+    total, found = 0.0, False
+    for n, unit in _UNIT.findall(seg):
+        found = True
+        total += float(n) * (60 if unit.lower().startswith("h") else 1)
+    return round(total) if found else None
+
+
+def airport_transfer_minutes(options: list[dict], city: str) -> Optional[int]:
+    """Airport-to-city road time from the library's own transport_options text: used only when every airport entry
+    for the city gives the same figure (the upper end of a range); otherwise None and the VERIFY marker stays."""
+    vals = set()
+    for o in options:
+        if not isinstance(o, dict) or norm_name(str(o.get("city", ""))) != norm_name(city):
+            continue
+        text = str(o.get("description") or "")
+        if "airport" not in text.lower():
+            continue
+        for clause in re.split(r";|,\s|\.\s+(?=[A-Z])", text):
+            c = clause.lower()
+            if norm_name(city) in c and "airport" in c.replace("dps", "airport") and "harbour" not in c:
+                parts = [_segment_minutes(x) for x in re.split(r"\s*[\u2013\u2014]\s*", clause)]
+                parts = [x for x in parts if x]
+                if parts:
+                    vals.add(max(parts))
+    return vals.pop() if len(vals) == 1 else None

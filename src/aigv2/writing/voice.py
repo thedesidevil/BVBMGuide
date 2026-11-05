@@ -13,6 +13,9 @@ DAY_EXAMPLES = (
     "'Begin the day's sightseeing at Tegallalang Rice Terrace, one of Bali's signature agricultural landscapes. "
     "The terraces cascade down the valley in vivid layers of green.' "
     "'Enjoy a relaxed breakfast at the hotel and keep the morning free for some downtime.' "
+    "Write as a warm planner speaking to the client: where the day has slack, say so in a short leisure beat such as "
+    "'Enjoy a slow breakfast at your hotel before heading out' or 'Return to your hotel to unwind before dinner'. "
+    "A leisure beat only suggests rest; it never states a time, duration or fact. "
     "Restaurants: 'A relaxed garden-style restaurant in central Ubud, offering a mix of Italian and American-inspired "
     "dishes in a cosy, greenery-filled setting.'"
 )

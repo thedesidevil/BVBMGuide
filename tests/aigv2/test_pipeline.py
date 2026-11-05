@@ -1191,5 +1191,6 @@ def test_item_windows_from_saved_bali_voucher():
 def test_booking_window_facts_shape():
     from datetime import time as _t
     f = pipeline.booking_window_facts((_t(9, 0), _t(16, 0)), True)
-    assert f == {"start": "09:00", "end": "16:00", "hours": 7.0, "lunch_in_package": True}
+    assert f == {"start": "09:00", "end": "16:00", "hours": 7.0, "lunch_in_package": True,
+                 "lunch_included": None}
     assert pipeline.booking_window_facts(None, False) is None

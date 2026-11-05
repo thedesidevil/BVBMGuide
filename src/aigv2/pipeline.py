@@ -19,14 +19,15 @@ from src.aigv2.intake.extract import extract_trip
 from src.aigv2.intake.template import IntakeFields, parse_template
 from src.aigv2.library import Library, norm_name
 from src.aigv2.llm import StepLLM
-from src.aigv2.models import (Answers, Booking, HotelStay, Marker, Place, Question, TransportLeg, TripPlan,
+from src.aigv2.models import (Answers, Booking, booking_lunch_included, HotelStay, Marker, Place, Question, TransportLeg, TripPlan,
                               place_key)
 from src.aigv2.money import FxRates, city_currency, price_text
 from src.aigv2.planning.boat import BOAT_BOOKING, DEPARTS_AT, enrich_boat_legs, parse_check_in, parse_crossing_min
 from src.aigv2.planning.late_night import AIRPORT_PICKUP, driver_time, is_late_night_landing
 from src.aigv2.planning.important_places import ImportantPlaces, important_places
 from src.aigv2.planning.meals import Exclusion, MealPick, PlanStats, plan_meals
-from src.aigv2.planning.slots import DayResult, parse_time, region_day_city, resolve_day_city, schedule_day
+from src.aigv2.planning.slots import (DayResult, parse_time, region_day_city, resolve_day_city, schedule_day,
+                                      space_after_lunch)
 from src.aigv2.planning.travel import Leg, boat_leg, compute_legs
 from src.aigv2.preflight import apply_answers, run_checklist, unanswered
 from src.aigv2.qc import run_qc
@@ -392,6 +393,14 @@ def _pair(a: str, pa: Optional[Place], b: str, pb: Optional[Place], deps: Deps, 
     return compute_legs([(a, xa), (b, xb)], deps.routes, modes, deps.settings.walk_max_min)[0]
 
 
+def _leg_minutes(leg: Leg) -> Optional[int]:
+    """Quickest known way to cover a leg, or None when no route was found (never guessed)."""
+    if leg.no_route:
+        return None
+    known = [m for m in (leg.drive_min, leg.transit_min, leg.walk_min) if m is not None]
+    return min(known) if known else None
+
+
 def _legs(ds: DayState, trip: TripPlan, deps: Deps) -> dict[str, Leg]:
     d, modes, legs, places = ds.date, trip.travel_modes, {}, ds.places
     morning, new = _morning_stay(trip, d), _new_stay(trip, d)
@@ -465,13 +474,14 @@ def _item_windows(trip: TripPlan, d: date, items) -> dict[str, tuple[time, time]
     return out
 
 
-def booking_window_facts(window: Optional[tuple[time, time]], in_package_lunch: bool) -> Optional[dict]:
+def booking_window_facts(window: Optional[tuple[time, time]], in_package_lunch: bool,
+                         lunch_included: Optional[bool] = None) -> Optional[dict]:
     if window is None:
         return None
     s, e = window
     return {"start": s.strftime("%H:%M"), "end": e.strftime("%H:%M"),
             "hours": round(((e.hour * 60 + e.minute) - (s.hour * 60 + s.minute)) / 60, 1),
-            "lunch_in_package": in_package_lunch}
+            "lunch_in_package": in_package_lunch, "lunch_included": lunch_included}
 
 
 _NAME_STOP = {"the", "and", "to", "of", "in", "at", "for", "with", "a", "an", "tour", "private", "transfer"}
@@ -621,6 +631,8 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
                                  {n: t for n, b in ds.booking_by_item.items() if (t := parse_time(b.end_time))},
                                  _item_windows(trip, dp.date, dp.items))
         ds.legs = _legs(ds, trip, deps)
+        space_after_lunch(ds.result, s, {n: _leg_minutes(l) for n, l in ds.legs.items()},
+                          frozenset(_item_windows(trip, dp.date, dp.items)))
         days.append(ds)
         prev = dp.city
     _unlinked_booking_markers(trip, days)
@@ -667,7 +679,9 @@ def _day_facts(ds: DayState, state: PlanState) -> dict:
              "occasion": state.trip.occasion}
     if covered:
         w = max(covered, key=lambda x: (x[1].hour * 60 + x[1].minute) - (x[0].hour * 60 + x[0].minute))
-        facts["booking_window"] = booking_window_facts(w, any(m.in_package for m in ds.result.meals))
+        inc = [booking_lunch_included(b) for b in ds.booking_by_item.values()]
+        lunch_inc = True if True in inc else (False if False in inc else None)
+        facts["booking_window"] = booking_window_facts(w, any(m.in_package for m in ds.result.meals), lunch_inc)
     return facts
 
 

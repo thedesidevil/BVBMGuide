@@ -558,3 +558,39 @@ def test_full_day_window_starts_at_booking_start():
             booking_ends={"A": time(16, 0)})
     assert r.scheduled[0].start == time(9, 0)
     assert meal(r, "lunch").in_package
+
+
+# ---- post-lunch spacing (Bali day 4: Tirta Empul lunch 12:30, Coffee Plantation 13:00 but 41 min away)
+
+_S4 = Settings(models={}, slot_windows={"morning": ("08:00", "12:00"), "lunch": ("12:30", "14:00"),
+                                         "afternoon": ("13:00", "17:30"), "dinner": ("19:30", "21:30"),
+                                         "evening": ("18:00", "22:00")})
+
+
+def _bali_day4():
+    return schedule_day(day([item("Kintamani Volcano View"), item("Tirta Empul Temple"), item("Coffee Plantation")]), [stay()], None, None,
+                        places("Hotel H", "Kintamani Volcano View", "Tirta Empul Temple", "Coffee Plantation"), _S4)
+
+
+def test_post_lunch_stop_waits_for_lunch_end_plus_known_drive():
+    from src.aigv2.planning.slots import space_after_lunch
+    r = _bali_day4()
+    assert {s.item.name: s.start for s in r.scheduled}["Coffee Plantation"] == time(13, 0)
+    space_after_lunch(r, _S4, {"Coffee Plantation": 41})
+    got = {s.item.name: (s.slot, s.start) for s in r.scheduled}
+    assert got["Coffee Plantation"] == ("afternoon", time(14, 26))  # 12:30 + 75 min lunch + 41 min drive
+    assert got["Tirta Empul Temple"][1] == time(9, 30) and got["Kintamani Volcano View"][1] == time(8, 0)
+
+
+def test_post_lunch_stop_uses_conservative_buffer_when_drive_unknown():
+    from src.aigv2.planning.slots import space_after_lunch
+    r = _bali_day4()
+    space_after_lunch(r, _S4, {})
+    assert {s.item.name: s.start for s in r.scheduled}["Coffee Plantation"] == time(14, 15)
+
+
+def test_post_lunch_spacing_leaves_timed_and_package_days_alone():
+    from src.aigv2.planning.slots import space_after_lunch
+    r = run(day([item("A"), item("B"), item("C", time="13:00")]))
+    space_after_lunch(r, _S4, {"C": 41})
+    assert {s.item.name: s.start for s in r.scheduled}["C"] == time(13, 0)

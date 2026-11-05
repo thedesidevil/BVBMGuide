@@ -85,6 +85,19 @@ class Booking(BaseModel):
     included_in_package: bool = False
 
 
+_LUNCH_NEG = re.compile(r"\b(?:no|not|without|excl(?:uding|udes?)|except|own expense)\b[^.;]{0,25}\blunch\b|\blunch\b[^.;]{0,25}"
+                        r"\b(?:not|excluded|extra|own expense|at your own|payable)\b", re.I)
+
+
+def booking_lunch_included(b: "Booking") -> Optional[bool]:
+    """True only when the voucher text itself says lunch is part of the booking; False when it says it is not;
+    None when the voucher is silent (a full-day package window alone proves nothing about lunch)."""
+    text = " ".join([b.name, b.duration, b.meeting_point, *b.instructions])
+    if not re.search(r"\blunch\b", text, re.I):
+        return None
+    return False if _LUNCH_NEG.search(text) else True
+
+
 class PlannedItem(BaseModel):
     name: str
     kind: Literal["attraction", "activity", "meal_out", "transfer", "free_time"]

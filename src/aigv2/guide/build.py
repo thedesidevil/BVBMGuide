@@ -12,7 +12,7 @@ from src.aigv2.guide.departure import departure_checklist
 from src.aigv2.guide.reference import structured_components
 from src.aigv2.hours import _fmt12, format_for_day, is_open_for, next_opening
 from src.aigv2.library import norm_name
-from src.aigv2.models import HotelStay, Marker, TransportLeg
+from src.aigv2.models import HotelStay, Marker, TransportLeg, booking_lunch_included
 from src.aigv2.planning.boat import boat_bookings, parse_boat_type
 from src.aigv2.planning.important_places import ImportantPlaces, NearbyPlace
 from src.aigv2.planning.late_night import is_late_night_landing, pickup_before_landing
@@ -378,17 +378,22 @@ class _Day:
             when="Check-out", kind="CHECK-OUT", title=g.Link(text=f"Check out of {nice_name(stay.hotel)}", url=hotel.url),
             lead="Complete check-out and keep these in your hand luggage:",
             items=departure_checklist(data.trip.travellers, not data.domestic)))
-        buffer = arrival_buffer_min(dep.kind, data.domestic)
-        margin = self._margin_text(buffer)
         at = _fmt12(by)
         pairs = [g.Fact(label="Leave", value=f"approximately {at}"),
                  g.Fact(label="From", value=stay.hotel, link=hotel),
-                 g.Fact(label="Flight", value=f"Departs {_hm(dep.depart)}"),
-                 g.Fact(label="Margin", value=f"About {margin}")]
-        text = (f"Leave {stay.hotel} at approximately {at}, giving about {margin} before the {_hm(dep.depart)} "
-                "departure: a comfortable margin for traffic, luggage and airport formalities.")
-        if not road:
-            text += " This time allows for the airport buffer only; the road time is still to be confirmed."
+                 g.Fact(label="Flight", value=f"Departs {_hm(dep.depart)}")]
+        if road:
+            # margin at the airport = departure minus (leave time + confirmed road time)
+            left = datetime.combine(dep.depart.date(), by)
+            minutes = int((dep.depart.replace(tzinfo=None) - left).total_seconds() // 60) - road
+            margin = self._margin_text(max(minutes, 0))
+            pairs.append(g.Fact(label="Margin", value=f"About {margin}"))
+            text = (f"Leave {stay.hotel} at approximately {at}, giving about {margin} at the airport before the "
+                    f"{_hm(dep.depart)} departure: a comfortable margin for luggage and airport formalities.")
+        else:
+            text = (f"Leave {stay.hotel} by approximately {at} for the {_hm(dep.depart)} departure. This is a "
+                    "leave-by time that allows for the airport buffer only; the road time is still to be confirmed, "
+                    "so it may need to be earlier.")
         port = dep.from_place or _PORT[dep.kind]
         self.out.append(g.BookingCard(when=at, kind="AIRPORT TRANSFER",
                                       title=g.Link(text=f"{nice_name(stay.hotel)} → {self._port_title(port, dep)}",
@@ -660,9 +665,11 @@ class _Day:
             self.out.append(g.SimpleCard(when=_fmt12(slot.start), part=meal, heading=f"{meal} — Included in your package"))
             return
         if slot.in_package:
+            stated = [booking_lunch_included(b) for b in rd.booking_by_item.values()]
+            text = ("Lunch is included in your package." if True in stated else
+                    "Lunch falls within your full-day package; confirm with the operator whether it is included.")
             self.out.append(g.SimpleCard(when=_fmt12(slot.start), part=meal, heading=f"{meal} during your package",
-                                         text="Lunch falls within your full-day package: confirm with the operator "
-                                              "whether it is included."))
+                                         text=text))
             return
         pick: Optional[MealPick] = next((m for m in rd.meals if m.slot.meal == slot.meal and m.slot.start == slot.start), None)
         anchors = slot.anchors if not slot.unanchored and slot.anchors else [(rd.city, None, 3)]

@@ -26,6 +26,8 @@ _SYSTEM = (
     "they are unverified and will be flagged for a human, so leave them null unless you are confident. "
     "If booking_window is given, the covered stops happen inside that window: never describe the day or the intro as a "
     "morning, afternoon or evening plan when the window is six hours or longer; call it a full-day or day-long outing. "
+    "Say a meal is included in a package only when booking_window.lunch_included is true; if it is false or null, do not "
+    "say or imply lunch is included (lunch_in_package only means the window spans lunchtime). "
     "Only name an island, district or city for a stop if it appears in that stop's google_address or area; otherwise leave it out. "
     "JSON shape: {\"title\": str, \"intro\": str, \"attractions\": [{\"name\": str, \"description\": str, "
     "\"entry_fee\": str|null, \"dress_code\": str|null, \"tips\": str|null, \"best_time\": str|null, "
@@ -105,6 +107,17 @@ def part_of_day_problems(day_facts: dict, intro: Optional[str]) -> list[str]:
             "describe it as a full-day or day-long experience"] if m else []
 
 
+_LUNCH_CLAIM = re.compile(r"\blunch\b[^.;]{0,40}\b(?:is |are )?(?:included|covered|provided)\b|"
+                          r"\b(?:includes?|including|with|covers?|provides?)\b[^.;]{0,25}\blunch\b", re.I)
+
+
+def lunch_claim_problems(day_facts: dict, label: str, text: Optional[str]) -> list[str]:
+    w = day_facts.get("booking_window") or {}
+    m = _LUNCH_CLAIM.search(text or "") if w and w.get("lunch_included") is not True else None
+    return [f"{label} says lunch is included ('{m.group(0)}') but the voucher does not state that; "
+            "do not claim or imply a meal is included"] if m else []
+
+
 def _check_facts(day_facts: dict) -> None:
     missing = [k for k in DAY_FACTS_KEYS if k not in day_facts]
     if missing:
@@ -133,9 +146,11 @@ def _validator(day_facts: dict):
         problems += prose_fact_problems("title", day.title)
         problems += prose_fact_problems("intro", day.intro)
         problems += part_of_day_problems(day_facts, day.intro)
+        problems += lunch_claim_problems(day_facts, "intro", day.intro)
         problems += prose_fact_problems("free_time_idea", day.free_time_idea)
         for a in day.attractions:
             problems += prose_fact_problems(f"description of {a.name}", a.description)
+            problems += lunch_claim_problems(day_facts, f"description of {a.name}", a.description)
             if long_booking(day_facts):
                 problems += part_of_day_problems(day_facts, a.description)
             problems += island_problems(a.name, a.description, addr.get(norm_name(a.name)))

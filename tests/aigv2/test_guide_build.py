@@ -279,10 +279,10 @@ def test_day8_departure_cards():
     xfer = next(c for c in comps if c.type == "BookingCard" and c.kind == "AIRPORT TRANSFER")
     flight = next(c for c in comps if c.type == "BookingCard" and c.kind == "Flight")
     assert types.index("ChecklistCard") < comps.index(xfer) < comps.index(flight)
-    assert "giving about" in xfer.text and "before the 13:15 departure" in xfer.text
-    # no road leg: buffer only, and the VERIFY marker stays
+    # no road leg: a leave-by time only, no margin number claimed, and the VERIFY marker stays
     dep = day(data, 8).departure
-    assert [f.value for f in xfer.facts if f.label == "Margin"] == ["About 3 hours"]
+    assert "leave-by time" in xfer.text and "giving about" not in xfer.text and "13:15 departure" in xfer.text
+    assert not any(f.label == "Margin" for f in xfer.facts) and "3 hours" not in xfer.text
     assert any(mk.kind == "VERIFY" and mk.text == "departure time" for mk in marks)
     assert "buffer only" in xfer.text
     # with a 45 minute road leg
@@ -293,7 +293,8 @@ def test_day8_departure_cards():
     x2 = next(c for c in comps2 if c.type == "BookingCard" and c.kind == "AIRPORT TRANSFER")
     by = leave_by(dep, False, 45)
     assert by == time(9, 30) and arrival_buffer_min("flight", False) == 180
-    assert "approximately 9:30 AM" in x2.text and "about 3 hours before" in x2.text
+    assert "approximately 9:30 AM" in x2.text and "about 3 hours at the airport before" in x2.text
+    assert [f.value for f in x2.facts if f.label == "Margin"] == ["About 3 hours"]  # 13:15 - (9:30 + 45 min road)
     assert not any(mk.text == "departure time" for mk in marks2)
     assert "buffer only" not in x2.text
 
@@ -418,3 +419,26 @@ def test_day5_arrival_transfer_is_labelled_by_the_boat_origin():
     comps = page(5).components
     t = next(c for c in comps if c.type == "BookingCard" and c.kind == "Transfer" and "→" in c.title.text)
     assert not t.title.text.startswith("Ubud") and t.title.text.startswith("Nusa Lembongan")
+
+
+def test_package_lunch_note_follows_voucher_text():
+    from datetime import date as _d
+    from src.aigv2.models import Booking
+    data = load()
+    rd = day(data, 2)
+    meals = [m.model_copy(update={"in_package": True, "included": False, "anchors": []}) if m.meal == "lunch" else m
+             for m in rd.result.meals]
+    if not any(m.meal == "lunch" for m in meals):
+        from src.aigv2.planning.slots import MealSlot
+        meals.append(MealSlot(meal="lunch", start=time(12, 30), in_package=True))
+    res = rd.result.model_copy(update={"meals": meals})
+
+    def note(*instructions):
+        bk = Booking(name="Sea Dragon Package", day=rd.date, source="voucher", instructions=list(instructions))
+        rd2 = rd.model_copy(update={"result": res, "booking_by_item": {"Sea Dragon Package": bk}})
+        comps = build_day_page(rd2, data, SETTINGS).components
+        return next(c.text for c in comps if c.type == "SimpleCard" and "during your package" in (c.heading or ""))
+    assert note("Private basis.") == ("Lunch falls within your full-day package; confirm with the operator "
+                                      "whether it is included.")
+    assert note("Private basis.", "Lunch included.") == "Lunch is included in your package."
+    assert "confirm with the operator" in note("Lunch not included.")

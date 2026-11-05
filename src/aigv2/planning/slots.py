@@ -185,6 +185,38 @@ def _schedule_items(day: DayPlan, settings: Settings, floor: Optional[time] = No
     return sorted(out, key=lambda s: s.start)
 
 
+_LUNCH_DURATION_MIN = 75
+_UNKNOWN_TRAVEL_MIN = 30
+
+
+def space_after_lunch(res: "DayResult", settings: Settings, travel: Optional[dict[str, Optional[int]]] = None,
+                      fixed: frozenset[str] = frozenset()) -> None:
+    """Untimed stops that fall after lunch start no earlier than lunch end plus the drive to them (a conservative
+    30 minutes when the drive is unknown); later untimed stops are pushed on so the order never inverts."""
+    lunch = next((m for m in res.meals if m.meal == "lunch" and not m.included and not m.in_package), None)
+    if lunch is None:
+        return
+    travel = travel or {}
+    floor = _minutes(lunch.start) + _LUNCH_DURATION_MIN
+    changed = False
+    for i, s in enumerate(res.scheduled):
+        it = s.item
+        if s.start < lunch.start or it.kind not in ("attraction", "activity"):
+            continue
+        movable = not (it.time or it.pickup_time or it.option_group or it.name in fixed)
+        if movable:
+            mins = travel.get(it.name)
+            need = floor + (mins if mins is not None else _UNKNOWN_TRAVEL_MIN)
+            if _minutes(s.start) < need < 24 * 60:
+                new = time(need // 60, need % 60)
+                res.scheduled[i] = ScheduledItem(item=it, slot=_slot_for(new, settings), start=new)
+                changed = True
+                s = res.scheduled[i]
+        floor = max(floor, _minutes(s.start) + _ITEM_MINUTES)
+    if changed:
+        res.scheduled.sort(key=lambda x: x.start)
+
+
 _OPTIONAL_VISIT_MIN = 30
 _FULL_DAY_PACKAGE_MIN = 6 * 60
 _WINDOW_LUNCH_CLASH_MIN = 120

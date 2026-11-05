@@ -543,3 +543,35 @@ def test_other_places_reach_library_named_for_transport():
         {"mode": "Grab", "description": "Short rides in Nusa Dua"}, {"mode": "Taxi", "description": "Ubud to airport"}]}]
     named = _library_named("getting_around", cities, [{}], other_places=["Nusa Dua"])
     assert [o["mode"] for o in named["transport_options"]] == ["Taxi"]
+
+
+# ---- lunch-included claims need the voucher to say so (Bali day 3)
+
+def test_lunch_claim_rejected_unless_voucher_states_it():
+    claim = _reply("A full day out on the water. The package includes lunch during the outing.")
+    ok = _reply("A full day out on the water.")
+    for li in (None, False):
+        facts = {**FACTS, "booking_window": {**WIN["booking_window"], "lunch_included": li}}
+        llm, _ = make(claim, ok)
+        assert write_day(facts, llm).intro == "A full day out on the water."
+    facts = {**FACTS, "booking_window": {**WIN["booking_window"], "lunch_included": True}}
+    llm, _ = make(claim)
+    assert "includes lunch" in write_day(facts, llm).intro
+
+
+def test_lunch_claim_in_attraction_description_rejected():
+    r = day_reply()
+    r["attractions"][0]["description"] = "The Sea Dragon Package includes lunch during the Marine Park experience."
+    llm, _ = make(r, day_reply())
+    out = write_day({**FACTS, **WIN}, llm)
+    assert "lunch" not in out.attractions[0].description.lower()
+
+
+def test_booking_lunch_included_reads_voucher_text():
+    from src.aigv2.models import Booking, booking_lunch_included
+    from datetime import date as _d
+    mk = lambda *ins: Booking(name="Tour", day=_d(2026, 9, 26), source="voucher", instructions=list(ins))
+    assert booking_lunch_included(mk("Private basis.")) is None
+    assert booking_lunch_included(mk("Includes lunch and snorkel gear")) is True
+    assert booking_lunch_included(mk("Lunch not included")) is False
+    assert booking_lunch_included(mk("No lunch provided")) is False

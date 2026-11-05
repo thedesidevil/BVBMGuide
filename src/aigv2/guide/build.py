@@ -17,6 +17,8 @@ from src.aigv2.models import HotelStay, Marker, TransportLeg, booking_lunch_incl
 from src.aigv2.planning.boat import boat_bookings, parse_boat_type
 from src.aigv2.planning.important_places import ImportantPlaces, NearbyPlace
 from src.aigv2.planning.late_night import is_late_night_landing, pickup_before_landing
+from src.aigv2.planning.attraction_match import good_to_know, is_generic_name
+from src.aigv2.planning.slots import round15
 from src.aigv2.planning.meals import ChosenRestaurant, MealPick, wrong_meal
 from src.aigv2.planning.slots import MealSlot, ScheduledItem, arrival_buffer_min, is_optional, leave_by, parse_time
 from src.aigv2.planning.travel import Leg, drive_day_legs, leg_markers, leg_options
@@ -567,7 +569,7 @@ class _Day:
 
     def _item(self, s: ScheduledItem, part: Optional[str]) -> None:
         it, rd = s.item, self.rd
-        when = it.time or _fmt12(s.start)
+        when = it.time or _fmt12(round15(s.start))
         late_transfer = it.kind == "transfer" and self._late_night_item(s)
         if late_transfer and not it.time:
             when = _hm(rd.arrival.arrive)
@@ -620,14 +622,23 @@ class _Day:
             opening = next_opening(p.hours, rd.date, s.start)
             if opening:
                 pairs.append(("NOTE", f"Opens {_fmt12(opening)}: best visited later in the day"))
+        lib_hours = lib.get("hours") if isinstance(lib.get("hours"), str) and lib.get("hours").strip() else None
         if found and it.kind != "transfer":
-            pairs.append(("OPENING HOURS", format_for_day(p.hours, rd.date) if p.hours else _verify("opening hours")))
-        for label, value, what in (("ENTRY FEE", at and at.entry_fee, "entry fee"),
-                                   ("DRESS CODE", at and at.dress_code, "dress code"),
-                                   ("BEST TIME", at and at.best_time, "best time"),
-                                   ("TIP", at and at.tips, "tip")):
-            if value:
+            pairs.append(("OPENING HOURS", format_for_day(p.hours, rd.date) if p.hours else
+                          [lib_hours, _verify("opening hours from the library")] if lib_hours else _verify("opening hours")))
+        elif lib_hours and it.kind != "transfer":
+            pairs.append(("OPENING HOURS", [lib_hours, _verify("opening hours from the library")]))
+        unverified = bool(lib.get("_needs_verification") or lib.get("_legacy"))
+        for label, key, value, what in (("ENTRY FEE", "entry_fee", at and at.entry_fee, "entry fee"),
+                                        ("DRESS CODE", "dress_code", at and at.dress_code, "dress code"),
+                                        ("BEST TIME", "best_time", at and at.best_time, "best time")):
+            lib_val = lib.get(key) if isinstance(lib.get(key), str) and lib.get(key).strip() else None
+            if lib_val:
+                pairs.append((label, [lib_val, _verify(what)] if unverified else lib_val))
+            elif value:
                 pairs.append((label, [value, _verify(what)]))
+        if at and at.tips and not good_to_know(lib):
+            pairs.append(("TIP", [at.tips, _verify("tip")]))
         if self.self_drive:
             pairs.append(("PARKING", self._parking(lib)))
         sunset = self._sunset(it, at, p if found else None)
@@ -642,10 +653,11 @@ class _Day:
             facts.append(g.Fact(label="Tickets and entry fees", value="official website",
                                 link=g.Link(text="official website", url=p.website)))
         if not found and it.kind != "transfer":
-            marks.append(_verify("place not found on Google"))
+            marks.append(_verify("location not specified in the voucher" if is_generic_name(it.name) and not lib
+                                 else "place not found on Google"))
         if p is not None and p.status not in ("OPERATIONAL", "UNKNOWN"):
             marks.append(_verify(f"Google lists this place as {p.status.replace('_', ' ').lower()}"))
-        text = at.description if at and at.description else ""
+        text = at.description if at and at.description else (lib.get("description") or "")
         if late_transfer:
             for line in (b.instructions if b else []):
                 t = parse_time(line)
@@ -654,9 +666,11 @@ class _Day:
                     marks.append(_verify(f"driver pick-up time: voucher says {before} but the flight lands "
                                          f"{_hm(rd.arrival.arrive)}; confirm with the operator"))
             text = f"Your representative and driver will meet you after you land at {_hm(rd.arrival.arrive)}. {text}".strip()
+        know = good_to_know(lib)
+        instructions = [t for t in (b.instructions if b else []) if t.strip().casefold() not in {k.casefold() for k in know}]
         self.out.append(g.SightseeingCard(
             when=when, part=part, name=g.Link(text=nice_text(it.name), url=p.maps_url if found else search_url(it.name, rd.city)),
-            facts=facts, text=text, tips=list(b.instructions) if b else [],
+            facts=facts, text=text, tips=know + instructions,
             markers=fmarks + [_ref(m) for m in marks + place_markers(p)]))
 
     def _sunset(self, it, at, p):
@@ -685,7 +699,8 @@ class _Day:
                     "Lunch falls within your full-day package; confirm with the operator whether it is included.")
             self.out.append(g.SimpleCard(when=_fmt12(slot.start), part=meal, heading=f"{meal} during your package",
                                          text=text))
-            return
+            if not slot.anchors:
+                return
         pick: Optional[MealPick] = next((m for m in rd.meals if m.slot.meal == slot.meal and m.slot.start == slot.start), None)
         anchors = slot.anchors if not slot.unanchored and slot.anchors else [(rd.city, None, 3)]
         rest, markers = (list(pick.restaurants), list(pick.markers)) if pick else ([], [])

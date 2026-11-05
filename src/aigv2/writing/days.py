@@ -29,6 +29,8 @@ _SYSTEM = (
     "Say a meal is included in a package only when booking_window.lunch_included is true; if it is false or null, do not "
     "say or imply lunch is included (lunch_in_package only means the window spans lunchtime). "
     "Only name an island, district or city for a stop if it appears in that stop's google_address or area; otherwise leave it out. "
+    "If a stop has matched=false, its location is unknown: do not name any place, district, village or area for it, "
+    "and do not describe what it is like beyond what its name and note say. "
     "JSON shape: {\"title\": str, \"intro\": str, \"attractions\": [{\"name\": str, \"description\": str, "
     "\"entry_fee\": str|null, \"dress_code\": str|null, \"tips\": str|null, \"best_time\": str|null, "
     "\"duration\": str|null}], \"restaurants\": [{\"name\": str, \"ambience\": str, \"best_for\": str}], "
@@ -118,6 +120,18 @@ def lunch_claim_problems(day_facts: dict, label: str, text: Optional[str]) -> li
             "do not claim or imply a meal is included"] if m else []
 
 
+_IN_PLACE = re.compile(r"\b(?:in|at|near|around|outside)\s+(?:the\s+)?(?:[A-Z][\w'’-]+)(?:\s+[A-Z][\w'’-]+)*")
+
+
+def unmatched_locality_problems(name: str, matched, generic, text: Optional[str]) -> list[str]:
+    """A stop whose place was not found (or only has a generic name) may not be put 'in <Locality>' by the writer."""
+    body = re.sub(re.escape(name), " ", text or "", flags=re.I) if matched is False else ""
+    body = re.sub(re.escape(re.sub(r"\s*\(.*?\)", "", name).strip()), " ", body, flags=re.I) if body else body
+    m = _IN_PLACE.search(body) if matched is False else None
+    return [f"description of {name} names a place ('{m.group(0)}') but this stop's location is unknown; "
+            "do not name any locality for it"] if m else []
+
+
 def _check_facts(day_facts: dict) -> None:
     missing = [k for k in DAY_FACTS_KEYS if k not in day_facts]
     if missing:
@@ -130,6 +144,7 @@ def _names(items: list) -> list[str]:
 
 def _validator(day_facts: dict):
     addr = {norm_name(i["name"]): i.get("google_address") for i in day_facts["attractions"]}
+    matched = {norm_name(i["name"]): (i.get("matched"), i.get("generic_name")) for i in day_facts["attractions"]}
     want_a, want_r = sorted(_names(day_facts["attractions"])), sorted(_names(day_facts["restaurants"]))
 
     def validate(day: DayText) -> list[str]:
@@ -153,6 +168,7 @@ def _validator(day_facts: dict):
             problems += lunch_claim_problems(day_facts, f"description of {a.name}", a.description)
             if long_booking(day_facts):
                 problems += part_of_day_problems(day_facts, a.description)
+            problems += unmatched_locality_problems(a.name, *matched.get(norm_name(a.name), (None, None)), a.description)
             problems += island_problems(a.name, a.description, addr.get(norm_name(a.name)))
         for r in day.restaurants:
             problems += prose_fact_problems(f"ambience of {r.name}", r.ambience)

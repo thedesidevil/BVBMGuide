@@ -102,6 +102,30 @@ def _veg_fits(r: dict, pure: bool) -> bool:
     return r.get("vegetarian_friendly") is True or veg_cuisine or is_indian(r)
 
 
+_VEG_TAGS = ("vegetarian", "vegan", "plant-based", "plant based", "pure veg", "veg")
+_NEUTRAL_TAGS = ("healthy", "cafe", "café", "juice bar", "organic", "raw", "smoothie bowls", "wellness")
+_VEG_ONLY_TEXT = re.compile(
+    r"\b(?:purely|strictly|100%|entirely|exclusively|all)[- ](?:vegetarian|vegan|plant-based)\b|"
+    r"\bpure[- ]veg(?:etarian)?\b|\b(?:vegetarian|vegan)[- ]only\b|\b(?:vegan|vegetarian|plant-based) (?:caf[eé]|restaurant)\b",
+    re.I)
+
+
+def is_veg_only(restaurant: dict) -> bool:
+    """Conservative: the venue itself is vegetarian-only / vegan / plant-based (cuisine tags are only veg tags, or its
+    text says so). 'Vegetarian-friendly' and 'vegetarian options available' are NOT veg-only."""
+    tags = [norm_name(c) for c in _cuisines(restaurant)]
+    core = [t for t in tags if t not in _NEUTRAL_TAGS]
+    if core and all(t in _VEG_TAGS for t in core):
+        return True
+    text = " ".join([norm_name(restaurant.get("name") or ""), _text(restaurant, ("highlights", "notes", "ambience"))])
+    return bool(_VEG_ONLY_TEXT.search(text))
+
+
+def wants_veg(diet: Diet) -> bool:
+    """The client explicitly asked for vegetarian or vegan food."""
+    return diet.pure_veg or any(_kind(norm_name(x)) for x in [*diet.restrictions, *diet.allergies] if x.strip())
+
+
 def _terms(restriction: str) -> list[str]:
     core = restriction
     for p in ("nothing ", "no ", "avoid "):
@@ -248,6 +272,21 @@ class Library:
                         keys.add(k)
                         bucket.append(item)
         return merged
+
+    def region_attractions(self, city: str) -> list[dict]:
+        """Attractions filed under the other cities of the same library folder (e.g. Ceningan for Lembongan)."""
+        names = self._names(city)
+        own = {n.casefold() for n in names}
+        out: list[dict] = []
+        for f in self._folders(names):
+            if re.search(r" and |&|\+", f.casefold()):
+                continue
+            for c in self._coverage.get(f, []):
+                if c.casefold() in own:
+                    continue
+                for shard in self._shards([c]):
+                    out += [a for a in shard.get("attractions", []) if isinstance(a, dict)]
+        return out
 
     def country(self, country: str) -> dict:
         d = self.root / "_country"

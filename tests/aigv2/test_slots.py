@@ -500,12 +500,21 @@ def test_grouped_late_opener_stays_with_its_group():
 
 # ---------- a lone full-day package covers lunch ----------
 
-def test_full_day_package_replaces_lunch_options():
+def test_full_day_package_keeps_note_and_offers_options_at_a_matched_stop():
     r = schedule_day(day([item("Marine Park", time="09:00")]), [stay()], None, None, places("Hotel H", "Marine Park"), S,
                      booking_ends={"Marine Park": time(16, 0)})
     m = meal(r, "lunch")
-    assert m.in_package and not m.anchors and not m.included
+    assert m.in_package and not m.included
+    assert m.anchors == [("Marine Park", (2.0, 3.0), 3)] and m.max_min == 20
     assert meal(r, "dinner").anchors
+
+
+def test_full_day_package_unmatched_stop_keeps_the_note_only():
+    pl = {"Hotel H": place("Hotel H"), "Marine Park": None}
+    r = schedule_day(day([item("Marine Park", time="09:00")]), [stay()], None, None, pl, S,
+                     booking_ends={"Marine Park": time(16, 0)})
+    m = meal(r, "lunch")
+    assert m.in_package and not m.anchors and m.max_min is None
 
 
 def test_short_or_shared_tour_keeps_lunch_options():

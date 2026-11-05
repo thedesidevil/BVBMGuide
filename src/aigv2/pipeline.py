@@ -22,11 +22,12 @@ from src.aigv2.llm import StepLLM
 from src.aigv2.models import (Answers, Booking, booking_lunch_included, HotelStay, Marker, Place, Question, TransportLeg, TripPlan,
                               place_key)
 from src.aigv2.money import FxRates, city_currency, price_text
+from src.aigv2.planning.attraction_match import is_generic_name, lookup, parse_minutes, good_to_know
 from src.aigv2.planning.boat import BOAT_BOOKING, DEPARTS_AT, enrich_boat_legs, parse_check_in, parse_crossing_min
 from src.aigv2.planning.late_night import AIRPORT_PICKUP, driver_time, is_late_night_landing
 from src.aigv2.planning.important_places import ImportantPlaces, important_places
 from src.aigv2.planning.meals import Exclusion, MealPick, PlanStats, plan_meals
-from src.aigv2.planning.slots import (DayResult, parse_time, region_day_city, resolve_day_city, schedule_day,
+from src.aigv2.planning.slots import (DayResult, DEFAULT_STOP_MIN, parse_time, region_day_city, resolve_day_city, schedule_day,
                                       space_after_lunch)
 from src.aigv2.planning.travel import Leg, boat_leg, compute_legs
 from src.aigv2.preflight import apply_answers, run_checklist, unanswered
@@ -233,8 +234,11 @@ def _new_stay(trip: TripPlan, d: date) -> Optional[HotelStay]:
 pkey = place_key
 
 
-def resolve_places(trip: TripPlan, client, places: dict[str, Optional[Place]]) -> dict[str, Optional[Place]]:
-    """Resolve hotels and itinerary items; keys are pkey(name, city) so same-named places in two cities stay apart."""
+def resolve_places(trip: TripPlan, client, places: dict[str, Optional[Place]],
+                   library: Optional[Library] = None) -> dict[str, Optional[Place]]:
+    """Resolve hotels and itinerary items; keys are pkey(name, city) so same-named places in two cities stay apart.
+    With a library: a generic category name ('Coffee Plantation') is never sent to a place search or kept from the
+    cache unless the library has exactly one such attraction. Unmatched specific names stay unmatched."""
     for h in trip.hotels:
         if pkey(h.hotel, h.city) not in places:
             places[pkey(h.hotel, h.city)] = client.find(h.hotel, h.city)
@@ -243,9 +247,20 @@ def resolve_places(trip: TripPlan, client, places: dict[str, Optional[Place]]) -
         near = _xy(places.get(pkey(stay.hotel, stay.city))) if stay else None
         for it in dp.items:
             k = pkey(it.name, it.city or dp.city)
-            if it.kind not in ("free_time", "transfer") and k not in places:
+            if it.kind in ("free_time", "transfer"):
+                continue
+            hit = _library_hit(library, it.city or dp.city, it.name) if library is not None else None
+            if is_generic_name(it.name) and hit is None:
+                places[k] = None  # no proper name: the voucher does not say which place
+                continue
+            if k not in places:
                 places[k] = client.find(it.name, it.city or dp.city, near=near)
     return places
+
+
+def _library_hit(library: Library, city: str, name: str):
+    return lookup(name, [a for a in library.city(city).get("attractions", []) if isinstance(a, dict)],
+                  library.region_attractions(city))
 
 
 def _day_view(trip: TripPlan, d: date, city: str, prev_city: Optional[str], arrival: Optional[int],
@@ -534,9 +549,32 @@ def _unlinked_booking_markers(trip: TripPlan, days: list["DayState"]) -> None:
 
 
 def _library_attractions(library: Library, city: str, items) -> dict[str, dict]:
-    lib = {norm_name(a["name"]): a for a in library.city(city).get("attractions", [])
-           if isinstance(a, dict) and isinstance(a.get("name"), str)}
-    return {it.name: lib[norm_name(it.name)] for it in items if norm_name(it.name) in lib}
+    """The library record behind each stop (same name; a trailing parenthetical is ignored)."""
+    out: dict[str, dict] = {}
+    for it in items:
+        if it.kind not in ("attraction", "activity"):
+            continue
+        hit = _library_hit(library, city, it.name)
+        if hit:
+            out[it.name] = hit[0]
+    return out
+
+
+def _durations(ds_items, lib: dict[str, dict], bookings: dict[str, Booking]) -> dict[str, int]:
+    out = {}
+    for it in ds_items:
+        m = parse_minutes(lib.get(it.name, {}).get("recommended_duration") or lib.get(it.name, {}).get("duration")
+                          or (bookings[it.name].duration if it.name in bookings else ""))
+        out[it.name] = m or DEFAULT_STOP_MIN
+    return out
+
+
+def _package_lunch_options(ds: "DayState") -> None:
+    """A package lunch the voucher says is included gets no restaurant options; otherwise they are offered with the note."""
+    if any(booking_lunch_included(b) is True for b in ds.booking_by_item.values()):
+        for m in ds.result.meals:
+            if m.in_package:
+                m.anchors, m.max_min = [], None
 
 
 def _questions(store: RunStore) -> list[Question]:
@@ -573,7 +611,7 @@ def _start(store: RunStore, intake_path: Path | None, paths: list[Path], deps: D
     intake = parse_template(intake_path) if intake_path else IntakeFields()
     attachments = read_attachments(paths)
     trip = extract_trip(intake, attachments, deps.llm)
-    places = resolve_places(trip, deps.places, {})
+    places = resolve_places(trip, deps.places, {}, deps.library)
     questions = run_checklist(trip, intake, attachments, deps.library, places, deps.settings)
     store.save_json("intake.json", intake)
     store.save_json("attachments.json", {"attachments": [a.model_dump(mode="json") for a in attachments]})
@@ -593,7 +631,8 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
         dp.city = resolve_day_city(dp.city, dp.date, trip.hotels)
         dp.city = region_day_city(dp.city, dp.date, trip.hotels, lambda c: len(deps.library.restaurants(c)))
     raw = (store.load_json("places.json") or {}).get("places", {})
-    places = resolve_places(trip, deps.places, {k: Place.model_validate(v) if v else None for k, v in raw.items()})
+    places = resolve_places(trip, deps.places, {k: Place.model_validate(v) if v else None for k, v in raw.items()},
+                            deps.library)
     s = deps.settings
     countries: dict[str, str] = {}
     for dp in trip.days:
@@ -616,23 +655,27 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
         for i in _other_legs(trip, dp.date, used):
             if trip.transport[i].kind == "boat":
                 _endpoint(trip.transport[i].from_place, prev or dp.city, places, deps.places)
+        lib_att = _library_attractions(deps.library, dp.city, dp.items)
+        booked = _booking_map(trip, dp.items)
+        durs = _durations(dp.items, lib_att, booked)
         ds = DayState(index=n, date=dp.date, city=dp.city, country=countries.get(dp.city, ""),
                       result=DayResult(), arrival=arr, departure=dep, prev_city=prev,
                       other_legs=_other_legs(trip, dp.date, used),
                       places=_day_view(trip, dp.date, dp.city, prev, arr, dep, places),
                       utc_offset_hours=_utc_offset(countries.get(dp.city, ""), dp.date),
-                      booking_by_item=_booking_map(trip, dp.items),
+                      booking_by_item=booked,
                       arrival_booking=_arrival_booking(trip, dp.date, arr, dp.items),
-                      library_attractions=_library_attractions(deps.library, dp.city, dp.items))
+                      library_attractions=lib_att)
         ds.result = schedule_day(dp, trip.hotels, trip.transport[arr] if arr is not None else None,
                                  trip.transport[dep] if dep is not None else None, ds.places, s, ds.country,
                                  trip.trip_scope == "domestic",
                                  [trip.transport[i] for i in ds.other_legs] + _boat_legs(trip, dp.date),
                                  {n: t for n, b in ds.booking_by_item.items() if (t := parse_time(b.end_time))},
-                                 _item_windows(trip, dp.date, dp.items))
+                                 _item_windows(trip, dp.date, dp.items), durs)
+        _package_lunch_options(ds)
         ds.legs = _legs(ds, trip, deps)
         space_after_lunch(ds.result, s, {n: _leg_minutes(l) for n, l in ds.legs.items()},
-                          _item_windows(trip, dp.date, dp.items))
+                          _item_windows(trip, dp.date, dp.items), durs)
         days.append(ds)
         prev = dp.city
     _unlinked_booking_markers(trip, days)
@@ -659,6 +702,8 @@ def _day_facts(ds: DayState, state: PlanState) -> dict:
     attractions = [{"name": s.item.name, "kind": s.item.kind, "slot": s.slot, "note": s.item.note,
                     "optional": s.item.optional,
                     "google_address": _address(ds.places.get(s.item.name)),
+                    "matched": bool(ds.places.get(s.item.name) and ds.places[s.item.name].match_ok),
+                    "generic_name": is_generic_name(s.item.name),
                     "area": ds.library_attractions.get(s.item.name, {}).get("area")
                     or ds.library_attractions.get(s.item.name, {}).get("location"),
                     "library_description": ds.library_attractions.get(s.item.name, {}).get("description")}

@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 from src.aigv2.config import Settings
 from src.aigv2.hours import format_for_day, is_open_for, parse_library_hours
-from src.aigv2.library import diet_fits, is_indian, norm_name
+from src.aigv2.library import diet_fits, is_indian, is_veg_only, norm_name, wants_veg
 from src.aigv2.google.places import _haversine_km
 from src.aigv2.planning.travel import APPROX_LABEL, approx_car_minutes
 from src.aigv2.llm import LLMStepError
@@ -21,6 +21,7 @@ _MEAL_MINUTES = 60
 _MAX_USES = 2
 _BATCH = 6
 _SPARE = 2
+_DINNER_RELAX_MIN = 5
 _ANCHOR_LOOKUPS = 9
 _CITY_CEILING = 60
 _KM_PER_MIN = 0.6
@@ -77,11 +78,20 @@ def _effective_hours(lib: dict, place: Place) -> tuple[Optional[WeeklyHours], bo
     return None, False
 
 
-def _travel(meal: str, walk: Optional[int], drive: Optional[int], transit: Optional[int],
+def _limit(slot_or_meal, settings: Settings) -> int:
+    """Car-time cap for a meal: the slot's own cap when it has one (rural lunch anchors, relaxed dinners)."""
+    own = getattr(slot_or_meal, "max_min", None)
+    if own:
+        return own
+    meal = getattr(slot_or_meal, "meal", slot_or_meal)
+    return settings.dinner_max_min if meal == "dinner" else settings.lunch_max_min
+
+
+def _travel(meal, walk: Optional[int], drive: Optional[int], transit: Optional[int],
             settings: Settings) -> Optional[tuple[str, int]]:
     if walk is not None and walk <= settings.walk_max_min:
         return "Walk", walk
-    limit = settings.dinner_max_min if meal == "dinner" else settings.lunch_max_min
+    limit = _limit(meal, settings)
     opts = [(m, label) for label, m in (("By car", drive), ("By public transport", transit))
             if m is not None and m <= limit]
     if not opts:
@@ -90,12 +100,12 @@ def _travel(meal: str, walk: Optional[int], drive: Optional[int], transit: Optio
     return label, m
 
 
-def _approx_car(meal: str, km: float, settings: Settings) -> Optional[tuple[str, int]]:
+def _approx_car(meal, km: float, settings: Settings) -> Optional[tuple[str, int]]:
     """No road route from Google (islands): estimate from straight-line distance, same limits as a real drive."""
     mins = approx_car_minutes(km)
     if mins is None:
         return None
-    limit = settings.dinner_max_min if meal == "dinner" else settings.lunch_max_min
+    limit = _limit(meal, settings)
     return (APPROX_LABEL, mins) if mins <= limit else None
 
 
@@ -207,8 +217,7 @@ class _Planner:
         return pick
 
     def _max_km(self, slot: MealSlot) -> float:
-        limit = self.settings.dinner_max_min if slot.meal == "dinner" else self.settings.lunch_max_min
-        return max(self.settings.walk_max_min, limit) * _KM_PER_MIN
+        return max(self.settings.walk_max_min, _limit(slot, self.settings)) * _KM_PER_MIN
 
     def _pool(self, n: int, candidates: list[dict], shard_key: str, anchor_words: set[str], where: str,
               shard: str = "", a_xy: Optional[tuple[float, float]] = None,
@@ -224,6 +233,9 @@ class _Planner:
             if not diet_fits(r, self.diet):
                 self._exclude(rname, "diet", where, "not known to fit the client's diet")
                 continue
+            if is_veg_only(r) and not wants_veg(self.diet):
+                self._exclude(rname, "diet", where, "vegetarian-only venue; the client did not ask for vegetarian")
+                continue
             if (shard_key, key) in names_today:
                 self._exclude(rname, "repeat_limit", where, "already used this day")
                 continue
@@ -238,17 +250,19 @@ class _Planner:
                     self._exclude(rname, "too_far", where, f"straight-line {dist:.1f} km")
                     continue
             pool.append((-len(anchor_words & _location_words(r)), self.uses_by_name[(shard_key, key)], i, r, dist))
-        near = sorted((t for t in pool if t[4] is not None), key=lambda t: t[4])
-        rest = sorted((t for t in pool if t[4] is None), key=lambda t: t[:3])
-        ordered = [t[3] for t in near + rest]
+        # a restaurant already used on another day goes behind every unused one (stay-wide variety)
+        ordered = []
+        for used in (False, True):
+            tier = [t for t in pool if (t[1] > 0) is used]
+            near = sorted((t for t in tier if t[4] is not None), key=lambda t: t[4])
+            rest = sorted((t for t in tier if t[4] is None), key=lambda t: t[:3])
+            ordered += [t[3] for t in near + rest]
         if slot is not None:  # venues whose own text is for another meal go last
             ordered = ([r for r in ordered if not wrong_meal(r.get("best_for"), slot.meal)]
                        + [r for r in ordered if wrong_meal(r.get("best_for"), slot.meal)])
         return ordered
 
-    def _anchor(self, n: int, day: date, city: str, slot: MealSlot, anchor: Anchor, where: str,
-                need_indian: bool) -> list[ChosenRestaurant]:
-        a_name, a_xy, count = anchor
+    def _collect(self, n, day, city, slot, a_name, a_xy, where, need_indian, count):
         shard, candidates = self._shard(a_name, city)
         sources = [(shard, candidates)]
         if norm_name(shard) != norm_name(city):
@@ -269,8 +283,40 @@ class _Planner:
                        places_today, budget, seen_ids)
             for c in valid[before:]:
                 shard_of[id(c)] = shard
-        chosen = valid if len(valid) <= count else self._rank(
-            valid, count, need_indian and any(is_indian(c.lib) for c in valid), slot, a_name, day)
+        return valid, shard_of
+
+    def _fresh(self, c: ChosenRestaurant, shard_of: dict) -> bool:
+        return self.uses_by_name[(norm_name(shard_of[id(c)]), norm_name(c.lib["name"]))] == 0
+
+    def _anchor(self, n: int, day: date, city: str, slot: MealSlot, anchor: Anchor, where: str,
+                need_indian: bool) -> list[ChosenRestaurant]:
+        a_name, a_xy, count = anchor
+        places_today = self.places_by_day.setdefault(n, set())
+        mark = len(self.exclusions)
+        valid, shard_of = self._collect(n, day, city, slot, a_name, a_xy, where, need_indian, count)
+        fresh = [c for c in valid if self._fresh(c, shard_of)]
+        if len(fresh) < count and slot.meal == "dinner" and not slot.max_min:
+            # too few new restaurants within the dinner cap: allow five more minutes in the car before repeating
+            wider = slot.model_copy(update={"max_min": self.settings.dinner_max_min + _DINNER_RELAX_MIN})
+            mark2 = len(self.exclusions)
+            v2, s2 = self._collect(n, day, city, wider, a_name, a_xy, where, need_indian, count)
+            f2 = [c for c in v2 if self._fresh(c, s2)]
+            if len(f2) > len(fresh):
+                valid, shard_of, fresh = v2, s2, f2
+                del self.exclusions[mark:mark2]
+            else:
+                del self.exclusions[mark2:]
+        repeats = [c for c in valid if c not in fresh]
+        if len(fresh) >= count:
+            valid = fresh
+            chosen = valid if len(valid) <= count else self._rank(
+                valid, count, need_indian and any(is_indian(c.lib) for c in valid), slot, a_name, day)
+        else:
+            need = count - len(fresh)
+            extra = repeats if len(repeats) <= need else self._rank(
+                repeats, need, need_indian and not any(is_indian(c.lib) for c in fresh)
+                and any(is_indian(c.lib) for c in repeats), slot, a_name, day)
+            chosen = fresh + extra
         for c in chosen:
             key = (norm_name(shard_of[id(c)]), norm_name(c.lib["name"]))
             pid = _pid(c.place, key)
@@ -352,10 +398,10 @@ class _Planner:
         transit = mins("TRANSIT") if self.transit else [None] * len(batch)
         out = []
         for (r, place, hours, verify), w, d, t in zip(batch, walk, drive, transit):
-            travel = _travel(slot.meal, w, d, t, self.settings)
+            travel = _travel(slot, w, d, t, self.settings)
             if travel is None and d is None and t is None and w is not None and w > self.settings.walk_max_min:
                 km = _haversine_km(a_xy[0], a_xy[1], place.lat, place.lng)
-                travel = _approx_car(slot.meal, km, self.settings)
+                travel = _approx_car(slot, km, self.settings)
             if travel is None:
                 detail = "distance unknown" if w is None and d is None and t is None else \
                     f"walk {w}, car {d}, public transport {t} min"
@@ -450,6 +496,6 @@ def plan_meals(
     picks = []
     for n, day, city, slots in sorted(days, key=lambda d: (d[1], d[0])):
         for slot in slots:
-            if not slot.included and not slot.in_package:
+            if not slot.included and (not slot.in_package or slot.anchors):
                 picks.append(planner.slot(n, day, city, slot))
     return picks, planner.exclusions, planner.stats

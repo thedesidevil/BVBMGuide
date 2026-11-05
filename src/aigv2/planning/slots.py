@@ -53,7 +53,8 @@ class MealSlot(BaseModel):
     anchors: list[Anchor] = Field(default_factory=list)
     included: bool = False
     unanchored: bool = False
-    in_package: bool = False  # a full-day package covers this meal window: no restaurant options
+    in_package: bool = False  # a full-day package covers this meal window (options only when anchors are known)
+    max_min: Optional[int] = None  # car-time cap for this slot when it differs from the settings (rural anchors)
 
 
 class DayResult(BaseModel):
@@ -92,6 +93,12 @@ def _minutes(t: time) -> int:
     return t.hour * 60 + t.minute
 
 
+def round15(t: time) -> time:
+    """Display time: the nearest quarter hour (an estimated start is never shown as 2:54 PM)."""
+    m = (_minutes(t) + 7) // 15 * 15
+    return time(m // 60 % 24, m % 60)
+
+
 def _slot_for(t: time, settings: Settings) -> Slot:
     if t < _t(settings.slot_windows["morning"][1]):
         return "morning"
@@ -119,8 +126,15 @@ def boat_floor(d: date, legs: Sequence[TransportLeg], stays: list[HotelStay],
 _WINDOW_STEP_MAX_MIN = 150
 
 
-def _window_starts(day: DayPlan, windows: Optional[dict[str, tuple[time, time]]]) -> dict[int, time]:
-    """Start times for untimed items a voucher window covers: the first at the window start, the rest spread across it."""
+_COMPACT_TRAVEL_MIN = 20  # allowance for the drive between stops when packing a short window
+DEFAULT_STOP_MIN = 45  # a stop with no known duration
+
+
+def _window_starts(day: DayPlan, windows: Optional[dict[str, tuple[time, time]]],
+                   durations: Optional[dict[str, int]] = None) -> dict[int, time]:
+    """Start times for untimed items a voucher window covers: the first at the window start, the rest spread across it.
+    A short window (under six hours) with known durations is packed: each stop starts when the previous one ends
+    plus an allowance for the drive, so the day has no invented gaps."""
     groups: dict[tuple[time, time], list[PlannedItem]] = {}
     for it in day.items:
         w = (windows or {}).get(it.name)
@@ -129,6 +143,15 @@ def _window_starts(day: DayPlan, windows: Optional[dict[str, tuple[time, time]]]
     out: dict[int, time] = {}
     for (start, end), items in groups.items():
         span = _minutes(end) - _minutes(start)
+        if durations is not None and 0 < span < _FULL_DAY_PACKAGE_MIN:
+            t, packed = 0, []
+            for it in items:
+                packed.append(t)
+                t += durations.get(it.name, DEFAULT_STOP_MIN) + _COMPACT_TRAVEL_MIN
+            if packed[-1] < span:
+                for it, off in zip(items, packed):
+                    out[id(it)] = _plus(start, off)
+                continue
         step = min(_WINDOW_STEP_MAX_MIN, max(span // len(items) // 5 * 5, 5)) if span > 0 else _ITEM_MINUTES
         for i, it in enumerate(items):
             out[id(it)] = _plus(start, step * i)
@@ -136,8 +159,9 @@ def _window_starts(day: DayPlan, windows: Optional[dict[str, tuple[time, time]]]
 
 
 def _schedule_items(day: DayPlan, settings: Settings, floor: Optional[time] = None,
-                    windows: Optional[dict[str, tuple[time, time]]] = None) -> list[ScheduledItem]:
-    forced = _window_starts(day, windows)
+                    windows: Optional[dict[str, tuple[time, time]]] = None,
+                    durations: Optional[dict[str, int]] = None) -> list[ScheduledItem]:
+    forced = _window_starts(day, windows, durations)
     placed: list[tuple[PlannedItem, Optional[Slot], Optional[time]]] = []
     for it in day.items:
         start = parse_time(it.pickup_time) or parse_time(it.time) or forced.get(id(it))
@@ -190,7 +214,8 @@ _UNKNOWN_TRAVEL_MIN = 30
 
 
 def space_after_lunch(res: "DayResult", settings: Settings, travel: Optional[dict[str, Optional[int]]] = None,
-                      windows: Optional[dict[str, tuple[time, time]]] = None) -> None:
+                      windows: Optional[dict[str, tuple[time, time]]] = None,
+                      durations: Optional[dict[str, int]] = None) -> None:
     """Untimed stops that fall after lunch start no earlier than lunch end plus the drive to them (a conservative
     30 minutes when the drive is unknown); later untimed stops are pushed on so the order never inverts."""
     lunch = next((m for m in res.meals if m.meal == "lunch" and not m.included and not m.in_package), None)
@@ -214,7 +239,7 @@ def space_after_lunch(res: "DayResult", settings: Settings, travel: Optional[dic
                 res.scheduled[i] = ScheduledItem(item=it, slot=_slot_for(new, settings), start=new)
                 changed = True
                 s = res.scheduled[i]
-        floor = max(floor, _minutes(s.start) + _ITEM_MINUTES)
+        floor = max(floor, _minutes(s.start) + (durations or {}).get(it.name, _ITEM_MINUTES))
     if changed:
         res.scheduled.sort(key=lambda x: x.start)
 
@@ -224,6 +249,7 @@ _FULL_DAY_PACKAGE_MIN = 6 * 60
 _WINDOW_LUNCH_CLASH_MIN = 120
 _WINDOW_LUNCH_LEAD_MIN = 90
 _EARLIEST_LUNCH = time(11, 0)
+_RURAL_LUNCH_MAX_MIN = 20
 _BREAKFAST_LEAD_MIN = 45
 _EARLIEST_BREAKFAST = time(5, 30)
 _LATEST_OPTIONAL_OPENING = time(21, 0)
@@ -377,9 +403,10 @@ def schedule_day(
     legs: Sequence[TransportLeg] = (),
     booking_ends: Optional[dict[str, time]] = None,
     windows: Optional[dict[str, tuple[time, time]]] = None,
+    durations: Optional[dict[str, int]] = None,
 ) -> DayResult:
     floor = boat_floor(day.date, legs, stays, (arrival, departure))
-    res = DayResult(scheduled=_schedule_items(day, settings, floor, windows))
+    res = DayResult(scheduled=_schedule_items(day, settings, floor, windows, durations))
     _shift_late_openers(res, day.date, places, settings)
     rules = " ".join(day.meal_rules).lower()
     d = day.date
@@ -450,14 +477,14 @@ def schedule_day(
             res.markers.append(Marker(kind="VERIFY", text=f"no hotel known for {d.isoformat()}"))
         return []
 
-    def add(meal: str, start: time, stay: Optional[HotelStay], spec) -> None:
+    def add(meal: str, start: time, stay: Optional[HotelStay], spec, max_min: Optional[int] = None) -> None:
         if cutoff is not None and start >= cutoff:
             return
         if _included(meal, stay, res.scheduled, d):
             res.meals.append(MealSlot(meal=meal, start=start, included=True))
             return
         found = anchors(spec(), stay)
-        res.meals.append(MealSlot(meal=meal, start=start, anchors=found, unanchored=not found))
+        res.meals.append(MealSlot(meal=meal, start=start, anchors=found, unanchored=not found, max_min=max_min))
 
     # breakfast
     b_start = meal_start("breakfast", country, settings)
@@ -546,10 +573,22 @@ def schedule_day(
                      and real(s) and s.start <= l_start < booking_ends[s.item.name]
                      and sum(1 for x in res.scheduled if x.start == s.start and real(x)) == 1
                      and _minutes(booking_ends[s.item.name]) - _minutes(s.start) >= _FULL_DAY_PACKAGE_MIN), None)
+    tour_day = any(_minutes(w[1]) - _minutes(w[0]) >= _FULL_DAY_PACKAGE_MIN for w in (windows or {}).values())
+    # a lunch taken out on a long tour day is anchored on the stop where the group is at lunchtime: the
+    # countryside around it needs a wider drive than a hotel in town
+    rural_cap = _RURAL_LUNCH_MAX_MIN if tour_day and not (at_hotel_rule or midday_checkin or midday_arrival) \
+        and not day.drive_stops else None
     if covering is not None and not (cutoff is not None and l_start >= cutoff):
-        res.meals.append(MealSlot(meal="lunch", start=l_start, in_package=True))
+        slot = MealSlot(meal="lunch", start=l_start, in_package=True)
+        it = lunch_anchor_item()
+        p = places.get(it.name) if it else None
+        if it is not None and p is not None and p.match_ok and not _is_vague(it.name):
+            # options are offered at the stop where the group is at lunchtime; the unmatched case keeps the note only
+            slot.anchors = [(it.locality or it.name, (p.lat, p.lng), 3)]
+            slot.max_min = _RURAL_LUNCH_MAX_MIN
+        res.meals.append(slot)
     elif not late and not l_drop:
-        add("lunch", l_start, l_stay, lunch_spec)
+        add("lunch", l_start, l_stay, lunch_spec, rural_cap if rural_cap and lunch_anchor_item() is not None else None)
 
     # dinner
     d_start = meal_start("dinner", country, settings)

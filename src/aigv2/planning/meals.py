@@ -240,7 +240,11 @@ class _Planner:
             pool.append((-len(anchor_words & _location_words(r)), self.uses_by_name[(shard_key, key)], i, r, dist))
         near = sorted((t for t in pool if t[4] is not None), key=lambda t: t[4])
         rest = sorted((t for t in pool if t[4] is None), key=lambda t: t[:3])
-        return [t[3] for t in near + rest]
+        ordered = [t[3] for t in near + rest]
+        if slot is not None:  # venues whose own text is for another meal go last
+            ordered = ([r for r in ordered if not wrong_meal(r.get("best_for"), slot.meal)]
+                       + [r for r in ordered if wrong_meal(r.get("best_for"), slot.meal)])
+        return ordered
 
     def _anchor(self, n: int, day: date, city: str, slot: MealSlot, anchor: Anchor, where: str,
                 need_indian: bool) -> list[ChosenRestaurant]:
@@ -400,6 +404,19 @@ class _Planner:
         if validate(out):
             return _fallback(valid, count, require_indian)
         return [by_name[p] for p in out.picks]
+
+
+_MEAL_WORDS = ("breakfast", "lunch", "dinner")
+
+
+def meals_named(text) -> set[str]:
+    return {m for m in _MEAL_WORDS if isinstance(text, str) and re.search(rf"\b{m}\b", text, re.I)}
+
+
+def wrong_meal(best_for, meal: str) -> bool:
+    """True when the venue's own text names meals and the slot's meal is not one of them."""
+    said = meals_named(best_for)
+    return bool(said) and meal not in said
 
 
 def _pid(place: Place, name_key: tuple[str, str]) -> str:

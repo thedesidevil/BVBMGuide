@@ -16,7 +16,7 @@ from src.aigv2.models import HotelStay, Marker, TransportLeg, booking_lunch_incl
 from src.aigv2.planning.boat import boat_bookings, parse_boat_type
 from src.aigv2.planning.important_places import ImportantPlaces, NearbyPlace
 from src.aigv2.planning.late_night import is_late_night_landing, pickup_before_landing
-from src.aigv2.planning.meals import ChosenRestaurant, MealPick
+from src.aigv2.planning.meals import ChosenRestaurant, MealPick, wrong_meal
 from src.aigv2.planning.slots import MealSlot, ScheduledItem, arrival_buffer_min, is_optional, leave_by, parse_time
 from src.aigv2.planning.travel import Leg, drive_day_legs, leg_markers, leg_options
 from src.aigv2.render.day_render import _PORT, _REACH, _SLOT_TITLE, day_header, sunset_time
@@ -692,11 +692,11 @@ class _Day:
             self.out.append(g.PlaceholderMeal(meal=slot.meal, eyebrow=eyebrow, heading=heading, count=count))
             self.marks(mine)
             return
-        built = [self._restaurant(c) for c in chunk]
+        built = [self._restaurant(c, slot.meal) for c in chunk]
         self.out.append(g.MealBlock(meal=slot.meal, eyebrow=eyebrow, heading=heading, restaurants=[r for r, _ in built]))
         self.marks([m for _, ms in built for m in ms] + mine)
 
-    def _restaurant(self, c: ChosenRestaurant) -> tuple[g.Restaurant, list]:
+    def _restaurant(self, c: ChosenRestaurant, meal: str = "") -> tuple[g.Restaurant, list]:
         rd, lib = self.rd, c.lib
         name = lib.get("name", c.place.name)
         cuisine = lib.get("cuisine_type")
@@ -720,7 +720,7 @@ class _Day:
             else:
                 travel += f" · Parking: {pk}"
         marks += [_ref(m) for m in place_markers(c.place)]
-        text = " ".join(x for x in (rt.ambience if rt else "", f"Best for {rt.best_for}" if rt and rt.best_for else "") if x)
+        text = " ".join(x for x in (rt.ambience if rt else "", f"Best for {rt.best_for}" if rt and rt.best_for and not (meal and wrong_meal(rt.best_for, meal)) else "") if x)
         text = _NOT_SPECIFIED.sub("", text).strip()
         return g.Restaurant(
             name=name, maps_url=c.place.maps_url or search_url(name, rd.city), cuisines=cuisines,

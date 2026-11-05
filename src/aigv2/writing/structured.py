@@ -160,12 +160,16 @@ def _digits(s: str) -> str:
 
 def extract_contacts(emergency, embassies) -> list[Contact]:
     out = _extract_contacts(emergency, embassies)
-    seen, uniq = set(), []
+    seen, uniq = {}, []
     for c in out:  # the same mission/line often arrives from several source guides
-        key = (c.kind, _digits(c.phone)) if c.phone else (c.kind, c.name.casefold())
+        key = _digits(c.phone) if c.phone else (c.kind, c.name.casefold())
+        if c.phone and c.kind == "tourist_police":
+            key = ("tp", key)
         if key not in seen:
-            seen.add(key)
+            seen[key] = len(uniq)
             uniq.append(c)
+        elif c.kind == "consulate" and uniq[seen[key]].kind == "embassy":
+            uniq[seen[key]] = c  # a consulate sharing an embassy's line is the accurate name
     return uniq
 
 

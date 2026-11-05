@@ -554,3 +554,10 @@ def test_normal_drive_unchanged():
 
 def test_no_walk_no_estimate():
     assert _measure_one(None, None, None, 1.2 / 111.19) == []
+
+
+def test_wrong_meal_detection():
+    from src.aigv2.planning.meals import wrong_meal
+    assert wrong_meal("A fun casual dinner with cocktails.", "lunch")
+    assert not wrong_meal("A relaxed lunch by the beach or a sunset dinner.", "lunch")
+    assert not wrong_meal("Curries and seafood.", "lunch")

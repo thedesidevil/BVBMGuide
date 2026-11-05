@@ -271,3 +271,13 @@ def test_known_bad_phrases_dropped():
     out = extract_phrases([{"local": "Tempat", "english": "Please"}, {"local": "Nyak", "english": "Yes"},
                            {"local": "Tolong", "english": "Please"}])
     assert [p.local for p in out] == ["Tolong"]
+
+
+def test_embassy_sharing_consulate_phone_keeps_consulate():
+    em = [{"name": "Indian Embassy Bali", "phone": "+62 361 259502", "city": "Bali"},
+          {"name": "Consulate General of India – Denpasar", "phone": "+62 361 259502", "city": "Denpasar"},
+          {"name": "Embassy of India – Jakarta", "phone": "+62 21 315 8537", "city": "Jakarta"}]
+    out = _st.extract_contacts([], em)
+    assert [c.name for c in out] == ["Consulate General of India – Denpasar", "Embassy of India – Jakarta"]
+    out2 = _st.extract_contacts([], list(reversed(em[:2])))
+    assert [c.name for c in out2] == ["Consulate General of India – Denpasar"]

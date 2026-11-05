@@ -598,3 +598,40 @@ def test_health_rejects_unlisted_pharmacy_and_prompt_lists_them():
     s = write_section("health", [{"city": "Paris", "country": "France"}], {}, trip(), llm, important=imp)
     assert "Adapotek" in s.items[0].body and len(calls) == 2
     assert "Name only these pharmacies" in calls[0][1]["messages"][-1]["content"]
+
+
+# ---- tolerant medical-name matching and never failing the build on it
+
+SANUR = ["Apotek Kimia Farma Danau Poso",
+         "ApotekKU Sanur - 24/7 Pharmacy Bali - Online Med Delivery Service & IV Drips"]
+
+
+def test_listed_pharmacy_with_city_words_is_accepted():
+    from src.aigv2.writing.sections import _unlisted_pharmacies
+    c = ("Sanur", "Ubud")
+    assert _unlisted_pharmacies("Visit Sanur ApotekKU Sanur, open 24 hours.", SANUR, c) == []
+    assert _unlisted_pharmacies("ApotekKU Sanur is close.", SANUR, c) == []
+    assert _unlisted_pharmacies("Apotek Kimia Farma is nearby.", SANUR, c) == []
+    assert _unlisted_pharmacies("Try ApotekKU Campuhan Ubud.", SANUR, c) != [] and "Campuhan" in _unlisted_pharmacies("Try ApotekKU Campuhan Ubud.", SANUR, c)[0]
+    assert _unlisted_pharmacies("Any local pharmacy in Sanur can help.", SANUR, c) == []
+
+
+def test_unlisted_medical_name_is_sanitised_after_retries_not_raised():
+    from datetime import datetime as dt
+    from src.aigv2.models import Place
+    from src.aigv2.planning.important_places import NearbyPlace
+    imp = _important()
+    pl = Place(query="a", place_id="p", name="ApotekKU Sanur - 24/7 Pharmacy Bali", address="Jl", lat=1, lng=2,
+               status="OPERATIONAL", maps_url="u", fetched_at=dt(2026, 1, 1), match_ok=True)
+    imp[0].city = "Sanur"
+    imp[0].pharmacies = [NearbyPlace(place=pl, walk_min=5, hours_text="Open 24 hours")]
+    bad = sec([{"heading": "Pharmacy in Sanur",
+                "body": "Pick up basics at ApotekKU Campuhan Ubud. Ask your hotel about the nearest pharmacy."}])
+    llm, calls = make(bad, bad)
+    s = write_section("health", [{"city": "Sanur", "country": "France"}], {}, trip(), llm, important=imp)
+    assert len(calls) == 2
+    assert "Campuhan" not in s.items[0].body and "nearest pharmacy" in s.items[0].body and s.items[0].verify
+    ok = sec([{"heading": "Pharmacy in Sanur", "body": "Sanur ApotekKU Sanur is open 24 hours."}])
+    llm, calls = make(ok)
+    s = write_section("health", [{"city": "Sanur", "country": "France"}], {}, trip(), llm, important=imp)
+    assert len(calls) == 1 and "ApotekKU Sanur" in s.items[0].body

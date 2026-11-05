@@ -1,10 +1,12 @@
 import json
 import re
+import unicodedata
 from datetime import date
 from typing import Optional
 
 from pydantic import BaseModel, Field, model_validator
 
+from src.aigv2.llm import LLMStepError
 from src.aigv2.library import diet_fits, norm_name
 from src.aigv2.models import Marker
 from src.aigv2.money import FxUnavailable, city_currency
@@ -94,6 +96,7 @@ class _ItemOut(BaseModel):
     heading: str
     body: str
     where_to_try: list[str] = Field(default_factory=list)
+    verify: bool = False
 
 
 class _GroupOut(BaseModel):
@@ -272,11 +275,13 @@ def _numbers(text: str) -> set[str]:
 
 def _validator(key: str, material: str, library: bool, restaurants: dict[str, str],
                allowed_hospitals: Optional[list[str]] = None, child: bool = False,
-               allowed_pharmacies: Optional[list[str]] = None):
+               allowed_pharmacies: Optional[list[str]] = None, place_cities: tuple = (),
+               on_medical_only=None):
     known = _numbers(material)
 
     def validate(out: _SectionOut) -> list[str]:
         problems = []
+        medical: list[str] = []
         if not out.items and not (key == "packing" and out.groups):
             problems.append("items must not be empty")
         if key == "packing" and out.groups:
@@ -298,18 +303,20 @@ def _validator(key: str, material: str, library: bool, restaurants: dict[str, st
             if library and not _numbers(blob) <= known:
                 problems.append(f"'{it.heading}' contains numbers that are not in the library facts")
             if allowed_hospitals is not None:
-                extra = _unlisted_hospitals(blob, allowed_hospitals)
+                extra = _unlisted_hospitals(blob, allowed_hospitals, place_cities)
                 if extra:
-                    problems.append(f"'{it.heading}' names hospitals that Important Places does not list: {extra}")
+                    medical.append(f"'{it.heading}' names hospitals that Important Places does not list: {extra}")
             if allowed_pharmacies is not None:
-                extra = _unlisted_pharmacies(blob, allowed_pharmacies)
+                extra = _unlisted_pharmacies(blob, allowed_pharmacies, place_cities)
                 if extra:
-                    problems.append(f"'{it.heading}' names pharmacies that Important Places does not list: {extra}")
+                    medical.append(f"'{it.heading}' names pharmacies that Important Places does not list: {extra}")
             if key == "dishes":
                 bad = [w for w in it.where_to_try if norm_name(w) not in restaurants]
                 if bad:
                     problems.append(f"where_to_try names not in the library restaurants: {bad}")
-        return problems
+        if medical and not problems and on_medical_only is not None:
+            on_medical_only(out)  # remembered so a build never hard-fails on a medical name: see sanitize_medical_names
+        return problems + medical
 
     return validate
 
@@ -392,29 +399,93 @@ def hospital_mentions(text: str) -> list[str]:
     return [m.group(0).strip() for m in _HOSPITAL_MENTION.finditer(text or "")]
 
 
-def _unlisted_hospitals(text: str, allowed: list[str]) -> list[str]:
-    ok = [norm_name(a) for a in allowed]
-    return [m for m in hospital_mentions(text) if not any(norm_name(m) in a or a in norm_name(m) for a in ok)]
-
-
 _PHARMACY_MENTION = re.compile(
     r"(?:[A-Z][\w'’.&-]*\s+){0,3}(?:Apotek\w*|Apotik\w*|Pharmacy|Farmasi|Kimia\s+Farma)(?:\s+[A-Z0-9][\w'’.&-]*){0,3}")
-_GENERIC_PHARMACY = {"apotek", "apotik", "pharmacy", "farmasi", "the", "a", "your", "local", "24", "hour"}
+_GENERIC_PHARMACY = frozenset({
+    "apotek", "apotik", "pharmacy", "pharmacies", "farmasi", "the", "a", "an", "your", "local", "24", "7", "hour", "hours",
+    "online", "delivery", "service", "med", "iv", "drips", "and", "of", "open", "daily"})
+_GENERIC_HOSPITAL = frozenset({
+    "hospital", "clinic", "medical", "care", "center", "centre", "rumah", "sakit", "rs", "the", "a", "an", "and", "of",
+    "24", "7", "hour", "hours", "international", "emergency"})
+
+
+def _tokens(text: str, generic: frozenset, cities: tuple = ()) -> frozenset:
+    """Accent-folded word tokens without generic words or city names."""
+    d = unicodedata.normalize("NFKD", text or "")
+    d = "".join(ch for ch in d if not unicodedata.combining(ch)).casefold()
+    drop = set(generic)
+    for c in cities:
+        drop |= set(re.findall(r"\w+", unicodedata.normalize("NFKD", c).casefold()))
+    return frozenset(w for w in re.findall(r"\w+", d) if w not in drop)
+
+
+def _strip_cities(mention: str, cities: tuple) -> str:
+    """Drop city words from the front (and back) of an extracted name: 'Sanur ApotekKU Sanur' -> 'ApotekKU'."""
+    city_words = {w for c in cities for w in re.findall(r"\w+", c.casefold())}
+    words = mention.split()
+    while words and words[0].casefold().strip(".,'’") in city_words:
+        words.pop(0)
+    while words and words[-1].casefold().strip(".,'’") in city_words:
+        words.pop()
+    return " ".join(words)
+
+
+def _unlisted(mentions: list[str], allowed: list[str], generic: frozenset, cities: tuple) -> list[str]:
+    ok = [_tokens(a, generic, cities) for a in allowed]
+    out = []
+    for m in mentions:
+        t = _tokens(m, generic, cities)
+        if not t:
+            continue  # nothing but generic words and city names: not a name
+        # leading capitalised words ('Visit Sanur ApotekKU') may be sentence text, not part of the name
+        words = m.split()
+        if any(a and (_tokens(" ".join(words[i:]), generic, cities) <= a or a <= _tokens(" ".join(words[i:]), generic, cities))
+               and _tokens(" ".join(words[i:]), generic, cities) for a in ok for i in range(len(words))):
+            continue
+        out.append(_strip_cities(m, cities) or m)
+    return out
+
+
+def _unlisted_hospitals(text: str, allowed: list[str], cities: tuple = ()) -> list[str]:
+    return _unlisted(hospital_mentions(text), allowed, _GENERIC_HOSPITAL, tuple(cities))
 
 
 def pharmacy_mentions(text: str) -> list[str]:
     """Named pharmacies only: a bare 'pharmacy' / 'Apotek' is generic and not a name."""
+    return [m.group(0).strip() for m in _PHARMACY_MENTION.finditer(text or "")
+            if _tokens(m.group(0), _GENERIC_PHARMACY)]
+
+
+def _unlisted_pharmacies(text: str, allowed: list[str], cities: tuple = ()) -> list[str]:
+    return _unlisted(pharmacy_mentions(text), allowed, _GENERIC_PHARMACY, tuple(cities))
+
+
+_SENTENCE = re.compile(r"(?<=[.!?])\s+")
+
+
+def _bad_names(text: str, hosp: Optional[list[str]], phar: Optional[list[str]], cities: tuple) -> list[str]:
+    return (_unlisted_hospitals(text, hosp, cities) if hosp is not None else []) + \
+           (_unlisted_pharmacies(text, phar, cities) if phar is not None else [])
+
+
+def sanitize_medical_names(items: list, hosp: Optional[list[str]], phar: Optional[list[str]], cities: tuple = ()) -> list:
+    """Last resort once the writer keeps naming a hospital/pharmacy Important Places does not list: remove the
+    sentences that name it (a heading is made generic) and flag the item for a human."""
     out = []
-    for m in _PHARMACY_MENTION.finditer(text or ""):
-        words = [w for w in re.findall(r"[\w'’.&-]+", m.group(0).casefold()) if w not in _GENERIC_PHARMACY]
-        if words:
-            out.append(m.group(0).strip())
+    for it in items:
+        if not _bad_names(it.heading + " " + it.body, hosp, phar, cities):
+            out.append(it)
+            continue
+        heading = it.heading
+        if _bad_names(heading, hosp, phar, cities):
+            heading = "Medical help"
+        kept = [x for x in _SENTENCE.split(it.body) if x and not _bad_names(x, hosp, phar, cities)]
+        if kept:
+            out.append(it.model_copy(update={"heading": heading, "body": " ".join(kept), "verify": True}))
+    if not out and items:
+        out.append(type(items[0])(heading="Medical help", verify=True,
+                                  body="Ask your hotel to direct you to the nearest pharmacy or hospital."))
     return out
-
-
-def _unlisted_pharmacies(text: str, allowed: list[str]) -> list[str]:
-    ok = [norm_name(a) for a in allowed]
-    return [m for m in pharmacy_mentions(text) if not any(norm_name(m) in a or a in norm_name(m) for a in ok)]
 
 
 def pharmacy_facts(important) -> list[dict]:
@@ -445,11 +516,14 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
     pharmacies = pharmacy_facts(important) if medical else None
     allowed_ph = [x["name"] for x in pharmacies] if pharmacies is not None else None
     allowed = [h["name"] for h in hospitals] if hospitals is not None else None
+    place_cities = tuple(dict.fromkeys([c.get("city") for c in cities if c.get("city")]
+                                       + [e.city for e in important or [] if getattr(e, "city", None)]))
+    held: list = []
     if allowed is not None:  # library facts may not name a hospital other than the ones Important Places lists
         def listed(x):
-            return not _unlisted_hospitals(json.dumps(x, ensure_ascii=False, default=str), allowed)
+            return not _unlisted_hospitals(json.dumps(x, ensure_ascii=False, default=str), allowed, place_cities)
         def listed_all(x):
-            return listed(x) and not _unlisted_pharmacies(json.dumps(x, ensure_ascii=False, default=str), allowed_ph or [])
+            return listed(x) and not _unlisted_pharmacies(json.dumps(x, ensure_ascii=False, default=str), allowed_ph or [], place_cities)
         lib = [x for x in lib if listed_all(x)]
         named = {k: [x for x in v if listed_all(x)] for k, v in named.items()}
     library = bool(lib)
@@ -477,8 +551,17 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
         extra += _PACKING_GROUPS_RULE + (_CHILD_GROUP_RULE if child else " Do not include a 'For your little one' group.")
     prompt = (f"Section: {key}. Write {_FOCUS[key]}.\n{mode}\n{_trip_context(trip)}{extra}\n"
               f"Library facts (JSON): {material}")
-    out = llm.run_json("write_sections", _SYSTEM, prompt, _SectionOut,
-                       validate=_validator(key, material + extra, library, restaurants, allowed, child, allowed_ph))
+    sanitized = False
+    try:
+        out = llm.run_json("write_sections", _SYSTEM, prompt, _SectionOut,
+                           validate=_validator(key, material + extra, library, restaurants, allowed, child, allowed_ph,
+                                               place_cities, held.append))
+    except LLMStepError:
+        if not held:
+            raise
+        # only a hospital/pharmacy name was wrong after the retries: cut those sentences and flag for a human
+        out = held[-1].model_copy(update={"items": sanitize_medical_names(held[-1].items, allowed, allowed_ph, place_cities)})
+        sanitized = True
     flag_ai = not library and key != "packing"
     items = []
     for it in out.items:
@@ -486,7 +569,7 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
         if key == "dishes" and it.where_to_try:
             body += " Where to try: " + ", ".join(restaurants[norm_name(w)] for w in it.where_to_try) + "."
         items.append(SectionItem(heading=it.heading, body=body,
-                                 verify=flag_ai or needs_verify(it.heading + " " + body)))
+                                 verify=flag_ai or needs_verify(it.heading + " " + body) or (sanitized and getattr(it, "verify", False))))
     fields: dict = {}
     if key == "packing" and out.groups:
         groups = st.order_groups(out.groups)

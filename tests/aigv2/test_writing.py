@@ -433,12 +433,13 @@ def _important(name="BIMC Hospital Nusa Dua"):
     return [ImportantPlaces(city="Paris", hotel="H", hospital=NearbyPlace(place=pl, drive_min=12, hours_text="Open 24 hours"))]
 
 
-def test_safety_prompt_lists_important_places_hospital_as_authoritative():
-    llm, calls = make(sec([{"heading": "Medical help", "body": "BIMC Hospital Nusa Dua is a 12 minute drive."}]))
+def test_safety_prompt_tells_writer_not_to_name_facilities():
+    llm, calls = make(sec([{"heading": "Medical help", "body": "Ask your hotel to call a doctor if you feel unwell."}]))
     lib = {"France": {"emergency_contacts": ["Dial 112"]}}
     write_section("safety", [{"city": "Paris", "country": "France"}], lib, trip(), llm, important=_important())
     prompt = calls[0][1]["messages"][-1]["content"]
-    assert "BIMC Hospital Nusa Dua" in prompt and "Name only these hospitals" in prompt and "Open 24 hours" in prompt
+    assert "BIMC Hospital Nusa Dua" not in prompt and "Open 24 hours" not in prompt
+    assert "Do not name hospitals, clinics or pharmacies" in prompt and "listed under Important Places" in prompt
 
 
 def test_safety_rejects_a_hospital_important_places_does_not_list():
@@ -584,7 +585,7 @@ def test_pharmacy_names_must_come_from_important_places():
     assert pharmacy_mentions("Ask the hotel for the nearest pharmacy.") == []
 
 
-def test_health_rejects_unlisted_pharmacy_and_prompt_lists_them():
+def test_health_rejects_unlisted_pharmacy_and_prompt_does_not_list_them():
     from datetime import datetime as dt
     from src.aigv2.models import Place
     from src.aigv2.planning.important_places import NearbyPlace
@@ -597,7 +598,7 @@ def test_health_rejects_unlisted_pharmacy_and_prompt_lists_them():
     llm, calls = make(bad, good)
     s = write_section("health", [{"city": "Paris", "country": "France"}], {}, trip(), llm, important=imp)
     assert "Adapotek" in s.items[0].body and len(calls) == 2
-    assert "Name only these pharmacies" in calls[0][1]["messages"][-1]["content"]
+    assert "Adapotek" not in calls[0][1]["messages"][-1]["content"]  # facilities are listed under Important Places only
 
 
 # ---- tolerant medical-name matching and never failing the build on it

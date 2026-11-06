@@ -89,6 +89,8 @@ class SectionContent(BaseModel):
     steps: list[str] = Field(default_factory=list)
     from_library: bool = True
     by_country: dict[str, list[SectionItem]] = Field(default_factory=dict)
+    numbers_by_country: dict[str, list[EmergencyNumber]] = Field(default_factory=dict)
+    contacts_by_country: dict[str, list[Contact]] = Field(default_factory=dict)
     markers: list[Marker] = Field(default_factory=list)
 
 
@@ -267,15 +269,66 @@ def drop_other_places(items: list, rx: Optional[re.Pattern]) -> list:
     return out
 
 
+_RAIL_PASS = re.compile(r"eurail|interrail|swiss\s+(?:travel\s+)?pass|swiss\s+half[- ]fare|half[- ]fare\s+card|"
+                        r"\bgeneral\s+abonnement|\bGA\s+travelcard|rail\s+pass", re.I)
+_VACCINE_DISEASE = re.compile(r"hepatitis\s*a|typhoid", re.I)
+WESTERN_EUROPE = {"france", "switzerland", "germany", "austria", "italy", "spain", "netherlands", "belgium", "uk",
+                  "united kingdom", "portugal", "luxembourg", "czechia", "denmark", "sweden", "norway", "ireland"}
+_AIRPORT_WORD = re.compile(r"\bairport\b|\b(?:CDG|ORY|Orly|Roissy|Charles de Gaulle|Beauvais)\b", re.I)
+
+
+def trip_mentions_rail_pass(trip) -> bool:
+    text = " ".join([getattr(trip, "additional_notes", "") or ""] + [b.name for b in getattr(trip, "bookings", [])]
+                    + [getattr(t, "source", "") or "" for t in getattr(trip, "transport", [])]
+                    + [i.name + " " + i.note for d in getattr(trip, "days", []) for i in d.items])
+    return bool(_RAIL_PASS.search(text))
+
+
+def _flight_cities(trip) -> set[str]:
+    """Normalised names of the cities the trip flies into or out of (the last day's city for a departure leg)."""
+    out: set[str] = set()
+    days = sorted(getattr(trip, "days", []), key=lambda d: d.date)
+    for t in getattr(trip, "transport", []):
+        if t.kind != "flight":
+            continue
+        for place in (t.from_place, t.to_place):
+            if place and place.strip():
+                out.add(norm_name(place))
+        when = (t.depart or t.arrive)
+        day = next((d for d in days if when and d.date == when.date()), None)
+        if day is not None:
+            out.add(norm_name(day.city))
+    return out
+
+
+def reference_filter(key: str, name: str, items: list, *, trip=None, cities: list[dict] = (), countries=()) -> list:
+    """Drop library facts that do not fit the trip: rail passes when no pass is mentioned (getting around), airport
+    transfer facts for a city the trip never flies from or to, hepatitis A / typhoid advice for Western Europe."""
+    if trip is None or not items:
+        return items
+    out = items
+    if key == "getting_around":
+        if not trip_mentions_rail_pass(trip):
+            out = [x for x in out if not _RAIL_PASS.search(_entry_text(x))]
+    if key == "health" and countries and {norm_name(c) for c in countries} <= WESTERN_EUROPE:
+        out = [x for x in out if not _VACCINE_DISEASE.search(_entry_text(x))]
+    return out
+
+
 def _library_named(key: str, cities: list[dict], cdatas: list[dict], *,
-                   nationalities: frozenset[str] = frozenset(), other_places=()) -> dict[str, list]:
+                   nationalities: frozenset[str] = frozenset(), other_places=(), trip=None, countries=()) -> dict[str, list]:
     rx = _place_regex(other_places)
     named: dict[str, list] = {}
     for scope, name in _LIB[key]:
         out = named.setdefault(name, [])
         if scope == "city":
+            flown = _flight_cities(trip) if trip is not None and key == "getting_around" else None
             for c in cities:
-                out += _listify(c.get(name))
+                got = _listify(c.get(name))
+                if flown is not None and norm_name(c.get("city", "")) not in flown:
+                    # airport facts of a city the trip never flies into or out of (Paris airports for a train trip)
+                    got = [x for x in got if not _AIRPORT_WORD.search(_entry_text(x))]
+                out += got
         else:
             for cd in cdatas:
                 items = _listify(cd.get(name))
@@ -284,6 +337,7 @@ def _library_named(key: str, cities: list[dict], cdatas: list[dict], *,
                 out += items
         if name in _PLACE_FILTERED:
             named[name] = drop_other_places(out, rx)
+        named[name] = reference_filter(key, name, named[name], trip=trip, cities=cities, countries=countries)
     return named
 
 
@@ -583,7 +637,8 @@ def hospital_facts(important) -> list[dict]:
 
 def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=None, other_places=()):
     named = _library_named(key, cities, cdatas, nationalities=frozenset(client_nationalities(trip)),
-                           other_places=other_places)
+                           other_places=other_places, trip=trip,
+                           countries=[c["country"] for c in cities if c.get("country")])
     lib = [x for v in named.values() for x in v]
     medical = key in ("safety", "health") and important is not None
     hospitals = hospital_facts(important) if medical else None
@@ -761,5 +816,9 @@ def write_section(key: str, city_data: list[dict], country_data: dict, trip, llm
                 items = extra + items
         by_country[country] = items
     flat = [i for items in by_country.values() for i in items]
+    extra: dict = {}
+    if grouped and key == "safety":
+        extra = {"numbers_by_country": {c: f["numbers"] for c, f in zip(countries, fields_by_country) if f.get("numbers")},
+                 "contacts_by_country": {c: f["contacts"] for c, f in zip(countries, fields_by_country) if f.get("contacts")}}
     return SectionContent(key=key, items=flat, from_library=all_lib,
-                          by_country=by_country if grouped else {}, **_merge_fields(fields_by_country))
+                          by_country=by_country if grouped else {}, **extra, **_merge_fields(fields_by_country))

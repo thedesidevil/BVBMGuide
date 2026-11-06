@@ -108,7 +108,29 @@ def _packing(c: SectionContent, data) -> list:
     return out if c.groups else out + _titled(c.items)  # items only summarise the groups: fallback when none
 
 
+def _money_multi(c: SectionContent, data) -> list:
+    """Several countries: one currency row listing each currency with its country and its indicative rate."""
+    cur, rates = [], []
+    for country, its in c.by_country.items():
+        fx = next((i for i in its if i.heading.startswith("Currency") and not i.verify and "Indicative rate" in i.body), None)
+        if fx is None or ":" not in fx.heading:
+            continue
+        code = fx.heading.split(":", 1)[1].strip()
+        cur.append(f"{code} ({country})" if country else code)
+        rates.append(fx.body[:fx.body.index("Indicative rate")].strip().rstrip(" ."))
+    if not cur:
+        return []
+    facts = [g.Fact(label="Currency", value=" · ".join(cur)), g.Fact(label="Indicative rate", value=" · ".join(rates))]
+    rest = [i for its in c.by_country.values() for i in its if not i.heading.startswith("Currency")]
+    out: list = [g.FactRowBlock(facts=facts)]
+    out += _titled(dedupe_sentences(rest))
+    out.append(g.NotePanel(title="PLEASE NOTE", text="Indicative rates; check before you travel."))
+    return out
+
+
 def _money(c: SectionContent, data) -> list:
+    if len(c.by_country) > 1:
+        return _money_multi(c, data)
     fx = next((i for i in c.items if i.heading.startswith("Currency") and not i.verify
                and "Indicative rate" in i.body), None)
     body = dedupe_sentences([i for i in c.items if i is not fx])
@@ -334,7 +356,42 @@ def contact_city(name: str) -> str:
     return m.group(1).strip() if m else ""
 
 
+def _contact_cards(contacts, data, country: Optional[str] = None) -> list:
+    ranked = sorted(contacts, key=lambda k: _CONTACT_RANK.get(k.kind, 2))  # stable
+    out: list = [g.ContactCards(country=country, cards=[
+        g.Contact(eyebrow=_EYEBROW.get(k.kind, "EMBASSY"), name=g.Link(text=k.name, url=search_url(k.name, contact_city(k.name) or (_city(data) if k.kind == "tourist_police" else ""))),
+                  phone=k.phone or None, note=k.note or None) for k in ranked[:CONTACT_CAP]])]
+    rest = [f"{k.name} - {k.phone}" if k.phone else k.name for k in ranked[CONTACT_CAP:]]
+    if rest:
+        out.append(g.TitledParas(items=[g.TitledPara(heading="Other contacts", body="; ".join(rest))]))
+    return out
+
+
+def _safety_multi(c: SectionContent, data) -> list:
+    """Several countries: an emergency-numbers strip and contact cards per country, each under its country label."""
+    out: list = []
+    for country in c.by_country:
+        nums = c.numbers_by_country.get(country, [])
+        cons = c.contacts_by_country.get(country, [])
+        dial = None
+        for s in [n.number for n in nums] + [x.phone for x in cons]:
+            m = _DIAL.match(s.strip())
+            if m:
+                dial = f"International dial code for {country}: +{m.group(1)}"
+                break
+        if nums:
+            out.append(g.EmergencyStrip(country=country, dial=dial,
+                                        numbers=[g.EmergencyNumber(service=n.service, number=n.number) for n in nums]))
+        if cons:
+            out += _contact_cards(cons, data, country)
+    def dup(i):
+        return bool((c.numbers and _NUMBERS_ITEM.search(i.heading)) or (c.contacts and _CONSULAR_ITEM.search(i.heading)))
+    return out + _titled([i for i in c.items if not dup(i)])
+
+
 def _safety(c: SectionContent, data) -> list:
+    if len(c.by_country) > 1:
+        return _safety_multi(c, data)
     out: list = []
     if c.numbers:
         out.append(g.EmergencyStrip(numbers=[g.EmergencyNumber(service=n.service, number=n.number) for n in c.numbers],
@@ -360,7 +417,12 @@ _BUILDERS = {"packing": _packing, "money": _money, "connectivity": _connectivity
 def structured_components(key: str, c: SectionContent, data) -> Optional[list]:
     """Components after the opener, or None to use the generic TitledParas path."""
     if len(c.by_country) > 1:
-        return None  # per-country structured components are a later task
+        # the other sections stay prose when the trip spans countries; safety needs the per-country numbers/cards,
+        # money the per-country currency rows
+        if key == "safety" and not (c.numbers_by_country or c.contacts_by_country):
+            return None
+        if key not in ("safety", "money"):
+            return None
     fn = _BUILDERS.get(key)
     has = any([c.groups, c.apps, c.phrases, c.dos, c.donts, c.numbers, c.contacts, c.dishes, c.souvenirs, c.sims, c.steps, c.transport])
     if key == "money":

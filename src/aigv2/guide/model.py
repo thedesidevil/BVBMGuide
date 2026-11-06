@@ -276,6 +276,7 @@ class EmergencyStrip(_M):
     type: Literal["EmergencyStrip"] = "EmergencyStrip"
     numbers: list[EmergencyNumber]
     dial: Optional[str] = None
+    country: Optional[str] = None
 
 
 class Contact(_M):
@@ -288,6 +289,7 @@ class Contact(_M):
 class ContactCards(_M):
     type: Literal["ContactCards"] = "ContactCards"
     cards: list[Contact]
+    country: Optional[str] = None
 
 
 # ------------------------------------------------------------------ letter / thank-you

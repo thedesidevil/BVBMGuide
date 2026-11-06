@@ -440,10 +440,16 @@ def render_phrase_table(doc, W: float, c: PhraseTable) -> None:
     K.spacer(doc, 14)
 
 
+def _country_label(doc, text: Optional[str]) -> None:
+    if text:
+        K.eyebrow(K.np(doc, before=4, after=4, keep=True, line=1.0), text.upper(), color=T.GOLD_INK, size=8.5, spacing=1.6)
+
+
 def render_emergency_strip(doc, W: float, c: EmergencyStrip) -> None:
     n = len(c.numbers)
     if not n:
         return
+    _country_label(doc, c.country)
     t = K.tbl(doc, 1, [W / n] * n, margins=(0.35, 0.15, 0.35, 0.15))
     K.row_keep(t.rows[0])
     for i, e in enumerate(c.numbers):
@@ -467,6 +473,7 @@ def render_contact_cards(doc, W: float, c: ContactCards) -> None:
     n = len(c.cards)
     if not n:
         return
+    _country_label(doc, c.country)
     t = K.tbl(doc, 1, [W / n] * n, margins=(0.42, 0.6, 0.45, 0.6))
     K.row_keep(t.rows[0])
     for i, k in enumerate(c.cards):

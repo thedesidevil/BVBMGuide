@@ -195,3 +195,81 @@ def test_library_country_prefers_the_cities_own_folder(tmp_path):
     lib = Library(tmp_path)
     assert pipeline._library_country(lib, "Paris") == "France"
     assert pipeline._library_country(lib, "Lucerne") == "Switzerland"
+
+
+def test_reference_filters_for_a_western_europe_train_trip():
+    from src.aigv2.writing.sections import _library_named
+    trip = _trip()
+    trip.transport.append(TransportLeg(kind="flight", from_place="Zurich", to_place="Mumbai", source="answer",
+                                       depart=datetime(2026, 5, 9, 16, 30)))
+    paris = {"city": "Paris", "country": "France", "transport_options": [
+        {"mode": "Airport", "details": "RER B from Charles de Gaulle airport to the city"},
+        {"mode": "Metro", "details": "Buy a carnet of tickets"},
+        {"mode": "Pass", "details": "The Swiss Travel Pass covers trains"}]}
+    zurich = {"city": "Zurich", "country": "Switzerland", "transport_options": [
+        {"mode": "Airport", "details": "Train from Zurich Airport to the main station"}]}
+    got = _library_named("getting_around", [paris, zurich], [{}], trip=trip, countries=["France", "Switzerland"])
+    modes = [x["mode"] for x in got["transport_options"]]
+    assert modes == ["Metro", "Airport"]
+    trip.additional_notes += " Swiss Travel Pass bought."
+    got = _library_named("getting_around", [paris], [{}], trip=trip, countries=["France"])
+    assert "Pass" in [x["mode"] for x in got["transport_options"]]
+    health = {"city": "Paris", "country": "France", "health_tips": [
+        {"tip": "Hepatitis A and typhoid vaccines are advised for Europe"}, {"tip": "Carry your prescriptions"}]}
+    got = _library_named("health", [health], [{}], trip=trip, countries=["France", "Switzerland"])
+    assert len(got["health_tips"]) == 1
+
+
+def _multi_content():
+    from src.aigv2.writing.sections import SectionContent, SectionItem
+    from src.aigv2.writing.structured import Contact, EmergencyNumber
+    return SectionContent(
+        key="safety", items=[SectionItem(heading="Scams", body="Be alert.")],
+        by_country={"France": [SectionItem(heading="Scams", body="Be alert.")], "Switzerland": []},
+        numbers_by_country={"France": [EmergencyNumber(service="Ambulance", number="15")],
+                            "Switzerland": [EmergencyNumber(service="Ambulance", number="144")]},
+        contacts_by_country={"France": [Contact(name="Embassy of India, Paris", phone="+33 1 40 50 70 70", kind="embassy")],
+                             "Switzerland": [Contact(name="Embassy of India, Bern", phone="+41 31 350 11 30", kind="embassy")]},
+        numbers=[EmergencyNumber(service="Ambulance", number="15"), EmergencyNumber(service="Ambulance", number="144")])
+
+
+def test_multi_country_safety_has_strip_and_cards_per_country():
+    from src.aigv2.guide import model as g
+    from src.aigv2.guide.reference import structured_components
+    comps = structured_components("safety", _multi_content(), None)
+    strips = [c for c in comps if isinstance(c, g.EmergencyStrip)]
+    cards = [c for c in comps if isinstance(c, g.ContactCards)]
+    assert [s.country for s in strips] == ["France", "Switzerland"] and [s.numbers[0].number for s in strips] == ["15", "144"]
+    assert [c.country for c in cards] == ["France", "Switzerland"]
+    assert strips[0].dial == "International dial code for France: +33"
+
+
+def test_multi_country_money_shows_both_currencies():
+    from src.aigv2.guide import model as g
+    from src.aigv2.guide.reference import structured_components
+    from src.aigv2.writing.sections import SectionContent, SectionItem
+    c = SectionContent(key="money", by_country={
+        "France": [SectionItem(heading="Currency: EUR", body="1 EUR = ₹105.00. Indicative rate (check before you travel).")],
+        "Switzerland": [SectionItem(heading="Currency: CHF", body="1 CHF = ₹112.00. Indicative rate (check before you travel).")]},
+        items=[SectionItem(heading="Currency: EUR", body="1 EUR = ₹105.00. Indicative rate (check before you travel).")])
+    comps = structured_components("money", c, None)
+    row = next(x for x in comps if isinstance(x, g.FactRowBlock))
+    vals = {f.label: f.value for f in row.facts}
+    assert vals["Currency"] == "EUR (France) · CHF (Switzerland)"
+    assert "₹105.00" in vals["Indicative rate"] and "₹112.00" in vals["Indicative rate"]
+
+
+def test_multi_country_safety_renders():
+    from docx import Document
+    from src.aigv2.guide import model as g
+    from src.aigv2.guide.reference import structured_components
+    from src.aigv2.render2 import reference_components as RC
+    comps = structured_components("safety", _multi_content(), None)
+    doc = Document()
+    for c in comps:
+        if isinstance(c, g.EmergencyStrip):
+            RC.render_emergency_strip(doc, 16.0, c)
+        elif isinstance(c, g.ContactCards):
+            RC.render_contact_cards(doc, 16.0, c)
+    text = "\n".join(p.text for p in doc.paragraphs)
+    assert "FRANCE" in text and "SWITZERLAND" in text

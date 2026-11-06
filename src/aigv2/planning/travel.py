@@ -9,6 +9,7 @@ from src.aigv2.models import Marker, Stop, TransitStep
 
 _CAR_MODES = {"taxi", "self_drive", "private_driver"}
 APPROX_KM = 5.0
+TRANSIT_WALK_MIN = 15  # longest walk when public transport is the only motorised mode
 APPROX_LABEL = "By car (approx.)"
 
 

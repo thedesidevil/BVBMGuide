@@ -4,6 +4,7 @@ from datetime import date
 from typing import Iterable, Optional
 
 from src.aigv2.library import Library, diet_fits, norm_name
+from src.aigv2.planning.travel import TRANSIT_WALK_MIN
 from src.aigv2.models import Finding, TransportLeg, TripPlan
 from src.aigv2.qc.reader import MAPS_RE, MEAL_SLOT_RE, SECTION_TITLES, THANK_YOU, DocDay, DocModel, DocSlot, DocVenue
 from src.aigv2.render.document import BEFORE_YOU_GO, WHILE_THERE
@@ -233,23 +234,31 @@ def _walk_minutes(text: str) -> Optional[int]:
     return max(mins) if mins else None
 
 
-def _walk(doc: DocModel) -> list[Finding]:
+def walk_limit_for(trip: TripPlan) -> int:
+    """Same cap the planner uses: 10 min, or 15 when public transport is the only motorised mode."""
+    modes = set(getattr(trip, "travel_modes", None) or [])
+    if "public_transport" in modes and not ({"taxi", "self_drive", "private_driver"} & modes):
+        return max(10, TRANSIT_WALK_MIN)
+    return 10
+
+
+def _walk(doc: DocModel, limit: int = 10) -> list[Finding]:
     out, seen = [], set()
     for d in doc.days:
         for s in d.slots:
             for v in s.venues:
                 blob = "\n".join([v.travel, v.body, *(f"{k} {val}" for k, val in v.facts.items())])
                 mins, key = _walk_minutes(blob), (d.index, norm_name(v.name))
-                if mins is not None and mins > 10 and key not in seen:
+                if mins is not None and mins > limit and key not in seen:
                     seen.add(key)
-                    out.append(_f("walk_limit", f"Walk of {mins} min to '{v.name}' (limit 10)", v.name, d.index))
+                    out.append(_f("walk_limit", f"Walk of {mins} min to '{v.name}' (limit {limit})", v.name, d.index))
     for p in doc.paragraphs:
         if p.day is None or p.venue is not None:
             continue
         mins, key = _walk_minutes(p.text), (p.day, p.text)
-        if mins is not None and mins > 10 and key not in seen:
+        if mins is not None and mins > limit and key not in seen:
             seen.add(key)
-            out.append(_f("walk_limit", f"Walk of {mins} min (limit 10)", p.text, p.day))
+            out.append(_f("walk_limit", f"Walk of {mins} min (limit {limit})", p.text, p.day))
     return out
 
 
@@ -454,5 +463,5 @@ def check_rules(doc: DocModel, trip: TripPlan, library: Library) -> list[Finding
     return (_section_order(doc, trip) + _day_sequence(doc) + _days(doc, trip) + _title(doc, trip, library)
             + _venue_link(doc) + _hotels(doc, trip) + _transport_times(doc, trip) + _transport_coverage(doc, trip)
             + _bookings_shown(doc, trip)
-            + _meals(doc, trip, library) + _walk(doc) + _prose(doc) + _voice(doc) + _utm_links(doc) + _commentary(doc, trip)
+            + _meals(doc, trip, library) + _walk(doc, walk_limit_for(trip)) + _prose(doc) + _voice(doc) + _utm_links(doc) + _commentary(doc, trip)
             + _markers(doc))

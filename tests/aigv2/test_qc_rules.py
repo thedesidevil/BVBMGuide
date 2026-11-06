@@ -516,3 +516,20 @@ def test_voice_check_skips_thank_you_and_letter(library):
     assert not findings(raw, library, "voice_first_person")  # the thank-you text uses 'we'
     doc = read_docx(raw)
     assert any(p.section == "Thank You" and " we " in f" {p.text.lower()} " for p in doc.paragraphs)
+
+
+def test_walk_limit_matches_planner_for_public_transport_only(library):
+    from src.aigv2.qc.rules import walk_limit_for
+    t = trip()
+    t.travel_modes = ["public_transport"]
+    assert walk_limit_for(t) == 15
+    t.travel_modes = ["taxi", "public_transport"]
+    assert walk_limit_for(t) == 10
+    d1 = day1()
+    d1.meals[0].restaurants[0] = chosen("Mikla", minutes=13)
+    d1.meals[0].restaurants[0].travel_label = "Walk"
+    t2 = trip()
+    t2.travel_modes = ["public_transport"]
+    assert not findings(render(data(days=[d1, day2(), day3()])), library, "walk_limit", t2)
+    d1.meals[0].restaurants[0].travel_min = 16
+    assert findings(render(data(days=[d1, day2(), day3()])), library, "walk_limit", t2)

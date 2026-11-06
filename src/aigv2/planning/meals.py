@@ -11,7 +11,7 @@ from src.aigv2.config import Settings
 from src.aigv2.hours import format_for_day, is_open_for, parse_library_hours
 from src.aigv2.library import diet_tier, is_indian, is_veg_only, norm_name, soft_veg_diet, veg_dishes, wants_veg
 from src.aigv2.google.places import _haversine_km
-from src.aigv2.planning.travel import APPROX_LABEL, approx_car_minutes
+from src.aigv2.planning.travel import APPROX_LABEL, TRANSIT_WALK_MIN, approx_car_minutes
 from src.aigv2.llm import LLMStepError
 from src.aigv2.models import Diet, Marker, Place, WeeklyHours
 from src.aigv2.planning.slots import Anchor, MealSlot
@@ -24,7 +24,7 @@ _SPARE = 2
 _DINNER_RELAX_MIN = 5
 _ANCHOR_LOOKUPS = 9
 _CITY_CEILING = 60
-_TRANSIT_WALK_MIN = 15
+_TRANSIT_WALK_MIN = TRANSIT_WALK_MIN
 _TRANSIT_MAX_MIN = 25
 _KM_PER_MIN = 0.6
 _LOC_KEYS = ("area", "nearby_landmarks", "location")

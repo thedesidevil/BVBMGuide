@@ -1,5 +1,5 @@
 import re
-from datetime import date, time
+from datetime import date, datetime, time
 from typing import Optional
 
 import requests
@@ -137,11 +137,12 @@ def _check_venue(v: DocVenue, day_no: int, d: date, city: str, start: Optional[t
         findings.append(_f("not_open_at_slot", f"{v.name} does not look open on {d:%a %d %b} at {start:%H:%M} "
                            f"(Google: {format_for_day(place.hours, d)})", v.name, day_no,
                            "warning" if optional else "error"))
-    guide_travel, google_travel = _travel(v, city, anchor, place, places, routes, findings, day_no)
+    guide_travel, google_travel = _travel(v, city, anchor, place, places, routes, findings, day_no,
+                                          datetime.combine(d, start) if start is not None else None)
     return findings, _row(v, day_no, format_for_day(place.hours, d), guide_travel, google_travel, not findings)
 
 
-def _travel(v, city, anchor, place: Place, places, routes, findings, day_no):
+def _travel(v, city, anchor, place: Place, places, routes, findings, day_no, when=None):
     if not anchor:
         return "", ""
     legs = _guide_travel(v)
@@ -155,7 +156,8 @@ def _travel(v, city, anchor, place: Place, places, routes, findings, day_no):
     guide, google = [], []
     for label, minutes in legs:
         mode = _MODES[label.casefold()]
-        got = routes.durations([(a.lat, a.lng)], [(place.lat, place.lng)], mode).get((0, 0))
+        got = routes.durations([(a.lat, a.lng)], [(place.lat, place.lng)], mode,
+                               when=when if mode == "TRANSIT" else None).get((0, 0))  # same departure the planner used
         guide.append(_minutes_text(label, minutes))
         if got is None:
             findings.append(_unverified(v, day_no, f"{label.lower()} travel time (no Google route)"))

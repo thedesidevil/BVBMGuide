@@ -194,6 +194,28 @@ def diet_tier(r: dict, diet: Diet) -> int | None:
     return 2
 
 
+_MEAT_WORDS = re.compile(
+    r"\b(?:chicken|lamb|mutton|beef|veal|pork|bacon|ham|sausages?|bratwurst|wurst|salami|duck|goose|turkey|fish|trout|"
+    r"salmon|tuna|cod|perch|pike|shrimps?|prawns?|crab|lobster|seafood|oysters?|mussels?|squid|calamari|meat|steak|"
+    r"foie gras|escargots?|snails?|liver|tartare|carpaccio|rabbit|venison|ribs?|jerky|anchov(?:y|ies)|sushi|sashimi|"
+    r"cervelas|geschnetzeltes|bouillabaisse|coq au vin|boeuf|bourguignon|confit)\b", re.I)
+_VEG_HINT = re.compile(r"\b(?:vegetarian|veggie|meatless|meat-free|vegan|plant-based)\b", re.I)
+
+
+def dish_fits_diet(text: str, diet: Diet) -> bool:
+    """For vegetarian/vegan clients: False when the dish text names meat or fish (unless it says vegetarian)."""
+    if not wants_veg(diet) or not isinstance(text, str):
+        return True
+    return bool(_VEG_HINT.search(text)) or not _MEAT_WORDS.search(text)
+
+
+def veg_dishes(dishes, diet: Diet) -> list:
+    """The list with meat/fish dishes removed for vegetarian clients (non-strings kept as they are)."""
+    if not isinstance(dishes, list):
+        return dishes
+    return [d for d in dishes if not isinstance(d, str) or dish_fits_diet(d, diet)]
+
+
 _GENERIC = {"the", "of", "and", "de", "temple", "beach", "park", "market", "view", "point", "village", "bay",
             "club", "resort", "hotel", "street", "road", "garden", "forest", "mountain", "lake", "island",
             "museum", "palace", "waterfall", "cave"}

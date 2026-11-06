@@ -731,3 +731,14 @@ def test_realistic_primary_groups_shape_accepted_for_toddler():
     llm, _ = make({"items": [], "groups": groups})
     s = write_section("packing", CITY, {}, _packing_trip(child=True), llm)
     assert len(llm.cost_log) == 1 and len(s.groups) == 9
+
+
+def test_dishes_reference_filter_drops_meat_for_vegetarian_trip():
+    from types import SimpleNamespace
+    from src.aigv2.models import Diet
+    from src.aigv2.writing.sections import reference_filter
+    items = [{"name": "Butter chicken"}, {"name": "Rösti"}, {"name": "Zürcher Geschnetzeltes"}, {"name": "Raclette"}]
+    veg = SimpleNamespace(diet=Diet(restrictions=["vegetarian"]), days=[])
+    assert [x["name"] for x in reference_filter("dishes", "local_dishes", items, trip=veg)] == ["Rösti", "Raclette"]
+    anyone = SimpleNamespace(diet=Diet(), days=[])
+    assert len(reference_filter("dishes", "local_dishes", items, trip=anyone)) == 4

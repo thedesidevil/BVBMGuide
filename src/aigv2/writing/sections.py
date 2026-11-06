@@ -7,7 +7,7 @@ from typing import Optional
 from pydantic import BaseModel, Field, model_validator
 
 from src.aigv2.llm import LLMStepError
-from src.aigv2.library import diet_fits, norm_name
+from src.aigv2.library import diet_fits, dish_fits_diet, norm_name, wants_veg
 from src.aigv2.models import Marker
 from src.aigv2.money import FxUnavailable, city_currency
 from src.aigv2.writing import structured as st
@@ -310,6 +310,8 @@ def reference_filter(key: str, name: str, items: list, *, trip=None, cities: lis
     if key == "getting_around":
         if not trip_mentions_rail_pass(trip):
             out = [x for x in out if not _RAIL_PASS.search(_entry_text(x))]
+    if key == "dishes" and name == "local_dishes" and getattr(trip, "diet", None) and wants_veg(trip.diet):
+        out = [x for x in out if dish_fits_diet(x.get("name", "") if isinstance(x, dict) else str(x), trip.diet)]
     if key == "health" and countries and {norm_name(c) for c in countries} <= WESTERN_EUROPE:
         out = [x for x in out if not _VACCINE_DISEASE.search(_entry_text(x))]
     return out
@@ -670,6 +672,10 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
             if library else
             "No library facts exist. Write helpful general guidance, without exact prices, fees, times or provider names.")
     extra += _child_rule(key, trip)
+    if key in ("dishes", "souvenirs") and wants_veg(trip.diet):
+        extra += ("\nThe whole family is vegetarian: never recommend or mention dishes containing meat, fish or seafood "
+                  "(no chicken, lamb, beef, pork, ham, sausage, fish, trout, salmon, shrimp, foie gras, escargot); "
+                  "skip a dish that has no vegetarian version.")
     child = any(a < 12 for a in trip.travellers.kids_ages)
     if key == "packing":
         extra += _PACKING_GROUPS_RULE + (_CHILD_GROUP_RULE if child else " Do not include a 'For your little one' group.")

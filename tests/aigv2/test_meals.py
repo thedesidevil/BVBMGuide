@@ -588,3 +588,17 @@ def test_non_vegetarian_diet_unchanged_by_unknown_tier(tmp_path):
     lib, pl, rt = world(tmp_path, [rest("A", veg=None), rest("B", veg=None), rest("C", veg=None)])
     picks, _ = plan([(3, TUE, "Istanbul", [lunch()])], lib, pl, rt)
     assert names(picks[0]) == ["A", "B", "C"] and not any(c.diet_verify for c in picks[0].restaurants)
+
+
+def test_veg_client_must_try_loses_meat_dishes(tmp_path):
+    from src.aigv2.library import dish_fits_diet, veg_dishes
+    d = Diet(restrictions=["vegetarian"])
+    assert not dish_fits_diet("Butter chicken", d) and not dish_fits_diet("Grilled Trout", d)
+    assert dish_fits_diet("Paneer tikka", d) and dish_fits_diet("Vegetarian ham-style roll", d)
+    assert dish_fits_diet("Butter chicken", Diet())
+    assert veg_dishes(["Butter chicken", "Dal makhani", "Escargot"], d) == ["Dal makhani"]
+    lib, pl, rt = world(tmp_path, [rest("A", must_try_dishes=["Butter chicken", "Dal"]), rest("B"), rest("C")])
+    picks, _ = plan([(3, TUE, "Istanbul", [lunch()])], lib, pl, rt, diet=d)
+    assert picks[0].restaurants[0].lib["must_try_dishes"] == ["Dal"]
+    picks, _ = plan([(3, TUE, "Istanbul", [lunch()])], lib, pl, rt)
+    assert picks[0].restaurants[0].lib["must_try_dishes"] == ["Butter chicken", "Dal"]

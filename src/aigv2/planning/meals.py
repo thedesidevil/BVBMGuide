@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 from src.aigv2.config import Settings
 from src.aigv2.hours import format_for_day, is_open_for, parse_library_hours
-from src.aigv2.library import diet_tier, is_indian, is_veg_only, norm_name, soft_veg_diet, wants_veg
+from src.aigv2.library import diet_tier, is_indian, is_veg_only, norm_name, soft_veg_diet, veg_dishes, wants_veg
 from src.aigv2.google.places import _haversine_km
 from src.aigv2.planning.travel import APPROX_LABEL, approx_car_minutes
 from src.aigv2.llm import LLMStepError
@@ -434,6 +434,8 @@ class _Planner:
                     f"walk {w}, car {d}, public transport {t} min"
                 self._exclude(r["name"], "too_far", where, detail)
                 continue
+            if wants_veg(self.diet) and isinstance(r.get("must_try_dishes"), list):
+                r = {**r, "must_try_dishes": veg_dishes(r["must_try_dishes"], self.diet)}  # no meat dishes for veg clients
             out.append(ChosenRestaurant(lib=r, place=place, travel_min=travel[1], travel_label=travel[0],
                                         hours_text=format_for_day(hours, day), hours_verify=verify,
                                         diet_verify=self._unknown_diet))

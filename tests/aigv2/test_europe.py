@@ -273,3 +273,16 @@ def test_multi_country_safety_renders():
             RC.render_contact_cards(doc, 16.0, c)
     text = "\n".join(p.text for p in doc.paragraphs)
     assert "FRANCE" in text and "SWITZERLAND" in text
+
+
+def test_eiffel_choice_and_image_line_merge_into_one_timed_item():
+    from src.aigv2.models import Question
+    from src.aigv2.preflight import apply_answers
+    trip = _trip()
+    ans = json.loads((FIX / "answers_final.json").read_text())
+    qs = [Question(id="open_choice:0", kind="open_choice", text="x"),
+          Question(id=next(k for k in ans if k.startswith("image_details")), kind="image_details", text="x")]
+    out = apply_answers(trip, qs, ans)
+    d = next(d for d in out.days if d.date == date(2026, 5, 2))
+    eiffel = [i for i in d.items if "eiffel" in i.name.lower() or "2nd floor" in i.name.lower()]
+    assert [(i.name, i.time) for i in eiffel] == [("Eiffel Tower (2nd floor)", "10:45")]

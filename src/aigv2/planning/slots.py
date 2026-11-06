@@ -410,7 +410,43 @@ def is_full_day(it: PlannedItem, durations: Optional[dict[str, int]] = None,
     return bool(FULL_DAY_NAME.search(f"{it.name} {it.note}"))
 
 
-_JOURNEY_LINE = re.compile(r"(?:scenic |direct |morning |afternoon )?(?:train|flight|bus|coach|ferry)(?: journey| ride| transfer)?\\s+(?:to|from)\\s+.+", re.I)
+_JOURNEY_LINE = re.compile(r"(?:scenic |direct |morning |afternoon )?(?:train|flight|bus|coach|ferry|travel)(?: journey| ride| transfer)?\s+(?:to|from)\s+.+", re.I)
+
+
+def is_journey_item(it: PlannedItem) -> bool:
+    """An untimed itinerary line that moves the group between hotel cities ('Scenic train to Interlaken')."""
+    return it.kind == "transfer" and not it.time and not it.pickup_time and bool(_JOURNEY_LINE.fullmatch(it.name.strip()))
+
+
+def after_journey(res: "DayResult", minutes: Optional[int], settings: Settings) -> None:
+    """Untimed visits that would start before an inter-city journey has ended (journey start + its minutes + 30)
+    start after it instead, one after another. Visits already after the journey are left alone."""
+    if not minutes:
+        return
+    j = next((s for s in res.scheduled if is_journey_item(s.item)), None)
+    if j is None:
+        return
+    floor = _minutes(j.start) + minutes + _LEG_MARGIN_MIN
+    floor = (floor + 14) // 15 * 15
+    changed = False
+    moved_ends: list[int] = []
+    for i, s in enumerate(res.scheduled):
+        it = s.item
+        if s is j or it.kind == "transfer" or it.time or it.pickup_time or it.option_group or _minutes(s.start) >= floor \
+                or _minutes(s.start) < _minutes(j.start) or floor >= 24 * 60:
+            continue
+        new = time(floor // 60, floor % 60)
+        res.scheduled[i] = ScheduledItem(item=it, slot=_slot_for(new, settings), start=new)
+        floor += _ITEM_MINUTES
+        moved_ends.append(floor)
+        changed = True
+    if changed:
+        res.scheduled.sort(key=lambda x: x.start)
+        lunch = next((m for m in res.meals if m.meal == "lunch" and not m.included and not m.in_package), None)
+        if lunch is not None:
+            end = max(moved_ends)
+            if _minutes(lunch.start) < end and end <= _minutes(_LATEST_LUNCH) + 60:
+                lunch.start = round15(time(end // 60, end % 60))
 
 
 def _is_journey_line(it: PlannedItem) -> bool:
@@ -420,6 +456,11 @@ def _is_journey_line(it: PlannedItem) -> bool:
 _RESTATES_DEPARTURE = re.compile(
     r"(?:(?:flight|train|bus|ferry)(?: home| departure)?|departure|departure flight|fly home|check[- ]?out(?: and departure)?)",
     re.I)
+_RESTATES_ARRIVAL = re.compile(r"(?:arrival|arrive|arriving)(?:\s+(?:in|at|into|to)\s+[\w .'-]+)?", re.I)
+_ONWARD_LATE_LUNCH_CUTOFF = time(16, 0)
+_ONWARD_TRAIN_MIN = 75  # Basel -> Lucerne style leg that the tickets do not cover
+_DEPARTURE_LUNCH_NEEDED_MIN = 135  # lunch (75) + 60 spare before leave-by
+_DEPARTURE_LUNCH_MAX_MIN = 15
 _FIREWORKS = re.compile(r"fireworks?|light show|illumination", re.I)
 _FIREWORKS_AT = time(21, 30)
 
@@ -486,6 +527,13 @@ def schedule_day(
     d = day.date
 
     arr = arrival.arrive if arrival and arrival.arrive and arrival.arrive.date() == d else None
+    onward = False
+    if arr and arrival.kind == "train" and arrival.to_place.strip():
+        new_stay = next((x for x in stays if x.check_in == d), None)
+        if new_stay is not None and not station_in_city(arrival.to_place, new_stay.city):
+            # the ticket ends short of the hotel city (Paris -> Basel for Lucerne): the unticketed rest takes time
+            arr = arr + timedelta(minutes=_ONWARD_TRAIN_MIN)
+            onward = True
     arr_t = arr.time() if arr else None
     hotel_arr = None
     if arr:
@@ -500,6 +548,12 @@ def schedule_day(
         res.scheduled = [sc for sc in res.scheduled if not _is_journey_line(sc.item) and not (
             sc.item.kind == "transfer" and not sc.item.time and not sc.item.pickup_time
             and _RESTATES_DEPARTURE.fullmatch(sc.item.name.strip()))]
+    if arrival is not None and arr is not None:
+        # the booking card shows the arrival; an untimed itinerary line that only restates it ("Arrival in Paris")
+        # would otherwise sit at a default 9:00 AM before the train even lands
+        res.scheduled = [sc for sc in res.scheduled if not (
+            sc.item.kind == "transfer" and not sc.item.time and not sc.item.pickup_time
+            and _RESTATES_ARRIVAL.fullmatch(sc.item.name.strip()))]
     if dep and cutoff:
         # the untimed "check-out and airport drop" happens at the leave-by time, not at a default 9:00
         for i, sc in enumerate(res.scheduled):
@@ -565,15 +619,28 @@ def schedule_day(
     full_day = next((s.item for s in res.scheduled if is_full_day(s.item, durations, windows)), None)
     meal_cutoff = None if arrival is not None and arrival is departure else cutoff
 
+    def included_lunch(stay: Optional[HotelStay]) -> bool:
+        return _included("lunch", stay, res.scheduled, d)
+
     def add(meal: str, start: time, stay: Optional[HotelStay], spec, max_min: Optional[int] = None) -> None:
         if meal_cutoff is not None and start >= meal_cutoff:
             return
+        if meal == "lunch" and dep is not None and meal_cutoff is not None and not included_lunch(stay):
+            # departure day: a sit-down lunch needs an hour to spare before leave-by, and a restaurant close by
+            if _minutes(meal_cutoff) - (_minutes(start) + _LUNCH_DURATION_MIN) < 60:
+                res.tips.append("Lunch: have a light meal at the airport")
+                return
+            max_min = _DEPARTURE_LUNCH_MAX_MIN
         if _included(meal, stay, res.scheduled, d):
             res.meals.append(MealSlot(meal=meal, start=start, included=True))
             return
         found = anchors(spec(), stay)
         label = None
-        if not found and meal == "lunch" and full_day is not None and not at_hotel_rule:
+        if not found and meal == "lunch" and visit_first and not at_hotel_rule:
+            seen = lunch_anchor_item()
+            label = re.sub(r"\s*\([^)]*\)", "", seen.name).strip() if seen else None
+        elif not found and (meal == "lunch" or (meal == "dinner" and show_at_park)) and full_day is not None \
+                and not at_hotel_rule:
             label = re.sub(r"\s*\([^)]*\)", "", full_day.name).strip()  # no hotel-city restaurants for a lunch elsewhere
         res.meals.append(MealSlot(meal=meal, start=start, anchors=found, unanchored=not found, max_min=max_min,
                                   near_label=label))
@@ -613,16 +680,18 @@ def schedule_day(
             # the tour leaves right after the usual lunch hour: eat before the pick-up, not mid-transfer
             l_start = max(_plus(w_start, -_WINDOW_LUNCH_LEAD_MIN), _EARLIEST_LUNCH)
     if hotel_arr is not None and hotel_arr > l_start and arrival is not None and arrival.depart \
-            and arrival.depart.date() == d and arrival.depart.time() < l_start:
+            and arrival.depart.date() == d and (arrival.depart.time() < l_start or onward):
         l_start = round15(hotel_arr)  # still on the train/flight at the usual lunch hour: lunch follows the arrival
     new = [s for s in stays if s.check_in == d]
     midday_checkin = any(s.check_in_time and time(11) <= s.check_in_time <= time(13) for s in new)
     midday_arrival = hotel_arr is not None and time(11) <= hotel_arr <= time(13)
-    late = hotel_arr is not None and hotel_arr > _LATE_LUNCH_CUTOFF
+    late = hotel_arr is not None and hotel_arr > (_ONWARD_LATE_LUNCH_CUTOFF if onward else _LATE_LUNCH_CUTOFF)
     morning = [s for s in res.scheduled if s.slot == "morning" and real(s)]
     at_hotel_rule = "lunch at hotel" in rules or any(
         0 <= r.find("return to hotel") < r.find("lunch") for r in (x.lower() for x in day.meal_rules))
     port = bool(l_stay and l_stay.kind == "cruise")
+    show_at_park = full_day is not None and not at_hotel_rule and any(
+        _FIREWORKS.search(x.item.name) for x in res.scheduled)
 
     def lunch_anchor_item() -> Optional[PlannedItem]:
         pool = [s for s in res.scheduled if s.slot in ("morning", "afternoon") and real(s) and s.start <= l_start]
@@ -649,7 +718,18 @@ def schedule_day(
         best = min(pool, key=lambda s: (_is_vague(s.item.name), not matched(s), abs(est(s) - target)))
         return best.item
 
+    # a hotel-change day whose visits come before the untimed journey: lunch is where the visits are, not at the new hotel
+    journey = next((x for x in res.scheduled if is_journey_item(x.item)), None)
+    visit_first = bool(journey is not None and arrival is None and any(
+        real(x) and x.start < journey.start for x in res.scheduled))
+
     def lunch_spec():
+        if visit_first and not at_hotel_rule:
+            it = lunch_anchor_item()
+            p = places.get(it.name) if it else None
+            if it is not None and p is not None and p.match_ok:
+                return [(it.locality or it.name, 3, (it.name,))]
+            return []
         if full_day is not None and not at_hotel_rule:
             p = places.get(full_day.name)
             if p is not None and p.match_ok:
@@ -697,6 +777,10 @@ def schedule_day(
 
     def dinner_spec():
         joined = " ".join(day.meal_rules)
+        if show_at_park:
+            # a late show at the park: dinner is at the park before it, not an hour away at the hotel
+            p = places.get(full_day.name)
+            return [(full_day.locality or full_day.name, 3, (full_day.name,))] if p is not None and p.match_ok else []
         names = "|".join(["hotel"] + ([re.escape(d_stay.hotel)] if d_stay else []))
         if re.search(rf"dinner\s+(?:at|in|near|before|after)?\s*(?:the\s+|my\s+|your\s+)?(?:{names})\b", joined, re.I):
             return hotel_spec(d_stay, 3)

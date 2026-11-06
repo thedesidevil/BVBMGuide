@@ -28,7 +28,7 @@ from src.aigv2.planning.late_night import AIRPORT_PICKUP, driver_time, is_late_n
 from src.aigv2.planning.important_places import ImportantPlaces, important_places
 from src.aigv2.planning.meals import Exclusion, MealPick, PlanStats, plan_meals
 from src.aigv2.google.places import _overlap
-from src.aigv2.planning.slots import (DayResult, DEFAULT_STOP_MIN, parse_time, region_day_city, resolve_day_city, schedule_day,
+from src.aigv2.planning.slots import (DayResult, DEFAULT_STOP_MIN, after_journey, parse_time, region_day_city, resolve_day_city, schedule_day,
                                       space_after_lunch)
 from src.aigv2.planning.travel import Leg, boat_leg, compute_legs
 from src.aigv2.preflight import apply_answers, run_checklist, unanswered
@@ -712,6 +712,8 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
                                  _item_windows(trip, dp.date, dp.items), durs)
         _package_lunch_options(ds)
         ds.legs = _legs(ds, trip, deps)
+        if "arrival" in ds.legs:  # untimed 'Scenic train to X': the visits start after the journey has ended
+            after_journey(ds.result, _leg_minutes(ds.legs["arrival"]), s)
         space_after_lunch(ds.result, s, {n: _leg_minutes(l) for n, l in ds.legs.items()},
                           _item_windows(trip, dp.date, dp.items), durs)
         days.append(ds)

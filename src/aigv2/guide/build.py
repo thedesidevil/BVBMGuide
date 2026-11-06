@@ -18,7 +18,7 @@ from src.aigv2.planning.boat import boat_bookings, parse_boat_type
 from src.aigv2.planning.important_places import ImportantPlaces, NearbyPlace
 from src.aigv2.planning.late_night import is_late_night_landing, pickup_before_landing
 from src.aigv2.planning.attraction_match import good_to_know, is_generic_name
-from src.aigv2.planning.slots import round15
+from src.aigv2.planning.slots import is_journey_item, round15
 from src.aigv2.planning.meals import ChosenRestaurant, MealPick, wrong_meal
 from src.aigv2.planning.slots import MealSlot, ScheduledItem, station_in_city, is_full_day, arrival_buffer_min, is_optional, leave_by, parse_time
 from src.aigv2.planning.attraction_match import parse_minutes
@@ -68,6 +68,7 @@ def port_name(name: str, kind: str, place_name: Optional[str] = None) -> str:
 _ITEM_MIN = 90  # a stop's default length when its end is not known
 _FREE_GAP_MIN = 120  # an early evening this long is free
 _TRAVEL_BACK_MIN = 30
+_EARLIEST_BEAT_MIN = 15 * 60
 
 
 class _ReturnBeat:
@@ -113,6 +114,7 @@ class _Day:
         self.out: list = []
         self.free_time_used = False
         self._after_boat: Optional[tuple[TransportLeg, object]] = None
+        self._after_journey: Optional[tuple[ScheduledItem, object]] = None
 
     # ---- helpers
     def marks(self, markers) -> None:
@@ -182,7 +184,13 @@ class _Day:
                 self._arrival(arr)
             else:
                 boat = self._arrival_boat()
-                if boat is None:
+                jr = next((x for x in rd.result.scheduled if is_journey_item(x.item)), None)
+                if boat is None and jr is not None and rd.prev_city and norm_name(rd.prev_city) != norm_name(rd.city) \
+                        and any(x.start < jr.start and x.item.kind in ("attraction", "activity")
+                                for x in rd.result.scheduled):
+                    # visits come first, then the journey: the transfer card follows the journey line
+                    self._after_journey = (jr, self._check_in)
+                elif boat is None:
                     self._check_in()
                 else:
                     self._after_boat = (boat, lambda: self._check_in(boat.to_place))
@@ -528,7 +536,7 @@ class _Day:
             entries.append((beat, 1, 99, _ReturnBeat()))
         for _, _, _, e in sorted(entries, key=lambda x: x[:3]):
             if isinstance(e, _ReturnBeat):
-                self.out.append(g.SimpleCard(when=_fmt12(round15(beat)), part="Evening", heading="Return to your hotel",
+                self.out.append(g.SimpleCard(when=_fmt12(round15(beat)), part="Evening" if beat >= time(17, 0) else "Afternoon", heading="Return to your hotel",
                                              text="Return to your hotel to unwind before dinner."))
                 continue
             if isinstance(e, TransportLeg):
@@ -544,6 +552,11 @@ class _Day:
             elif isinstance(e, _CheckInAt):
                 self._hotel_check_in_card()
             elif isinstance(e, ScheduledItem):
+                if self._after_journey is not None and e is self._after_journey[0]:
+                    self._item(e, None)
+                    after, self._after_journey = self._after_journey[1], None
+                    after()
+                    continue
                 part = None
                 if e.slot != slot:
                     slot = e.slot
@@ -562,8 +575,13 @@ class _Day:
         """A 'return to the hotel' beat only when the day's last stop ends well before dinner (a free early evening)."""
         rd = self.rd
         dinner = next((m for m in rd.result.meals if m.meal == "dinner" and not m.included), None)
-        stops = [s for s in rd.result.scheduled if s.item.kind in ("attraction", "activity") and not s.item.optional]
+        # optional / choose-one stops count: the afternoon is not free when a cruise is planned in it
+        stops = [s for s in rd.result.scheduled if s.item.kind in ("attraction", "activity")]
         if dinner is None or not stops or rd.departure is not None or rd.other_transport:
+            return None
+        if rd.prev_city and norm_name(rd.prev_city) != norm_name(rd.city):
+            return None  # an inter-city travel day has no relaxed return to the hotel
+        if any(s.item.kind == "transfer" for s in rd.result.scheduled):
             return None
         libdur = {n: parse_minutes(a.get("recommended_duration") or a.get("duration")) or 0
                   for n, a in rd.library_attractions.items()}
@@ -579,6 +597,8 @@ class _Day:
         if end + _FREE_GAP_MIN > dinner.start.hour * 60 + dinner.start.minute:
             return None
         end += _TRAVEL_BACK_MIN
+        if end < _EARLIEST_BEAT_MIN:
+            return None  # right after lunch there is nothing to unwind from yet
         return time(end // 60, end % 60)
 
     def _option_cards(self, first: ScheduledItem) -> None:

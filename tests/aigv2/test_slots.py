@@ -126,7 +126,7 @@ def test_early_arrival_no_meals():
 
 
 def test_departure_suppresses_meals_and_packed_breakfast_tip():
-    r = run(day(), departure=leg(depart=datetime(2026, 11, 3, 17, 0)))
+    r = run(day(), departure=leg(depart=datetime(2026, 11, 3, 19, 0)))
     assert meal(r, "lunch") and meal(r, "dinner") is None
     r = run(day(), departure=leg(depart=datetime(2026, 11, 3, 16, 0)), domestic=True)
     assert meal(r, "dinner") is None
@@ -620,3 +620,53 @@ def test_voucher_window_stop_after_lunch_waits_for_lunch_plus_drive():
     got = {s.item.name: s.start for s in r.scheduled}
     assert got["Kintamani Volcano View"] == time(8, 0)  # anchored to the window start
     assert got["Coffee Plantation"] >= time(14, 26)
+
+
+def test_restated_arrival_line_dropped_on_arrival_day():
+    arr = TransportLeg(kind="train", from_place="Brussels", to_place="X Central", depart=datetime(2026, 11, 3, 9, 39),
+                       arrive=datetime(2026, 11, 3, 11, 9), source="t")
+    r = run(day([item("Arrival in X", kind="transfer"), item("Old town", slot_hint="afternoon")]), arrival=arr)
+    assert [s.item.name for s in r.scheduled] == ["Old town"]
+    assert all(s.start >= time(12, 0) for s in r.scheduled)
+
+
+def test_onward_unticketed_train_pushes_lunch_after_estimated_arrival():
+    arr = TransportLeg(kind="train", from_place="Paris Est", to_place="Bale SBB", depart=datetime(2026, 11, 3, 10, 22),
+                       arrive=datetime(2026, 11, 3, 13, 26), source="t")
+    r = run(day(), stays=[stay(cin=D)], arrival=arr)
+    lunch = meal(r, "lunch")
+    assert lunch is None or lunch.start >= time(15, 0)
+
+
+def test_departure_day_lunch_only_with_an_hour_to_spare():
+    dep = leg(depart=datetime(2026, 11, 3, 16, 30))  # leave-by about 13:00
+    r = run(day(), departure=dep)
+    assert meal(r, "lunch") is None and "Lunch: have a light meal at the airport" in r.tips
+    r = run(day(), departure=leg(depart=datetime(2026, 11, 3, 19, 0)))
+    assert meal(r, "lunch") is not None and meal(r, "lunch").max_min == 15
+
+
+def test_dinner_at_the_park_when_a_show_ends_the_day():
+    pl = places("Hotel H", "Disneyland Paris (1 Day Pass)")
+    r = run(day([item("Disneyland Paris (1 Day Pass)"), item("Optional fireworks in the evening", kind="activity",
+                                                             slot_hint="evening")]), pl=pl)
+    dn = meal(r, "dinner")
+    assert dn.anchors and dn.anchors[0][0] == "Disneyland Paris (1 Day Pass)"
+    r = run(day([item("Disneyland Paris (1 Day Pass)"), item("Optional fireworks", kind="activity", slot_hint="evening")]),
+            pl=places("Hotel H"))
+    assert meal(r, "dinner").unanchored and meal(r, "dinner").near_label == "Disneyland Paris"
+
+
+def test_after_journey_pushes_early_visits_and_lunch():
+    from src.aigv2.planning.slots import after_journey, is_journey_item
+    r = run(day([item("Scenic train to Y", kind="transfer"), item("Explore Hoeweg")]))
+    assert is_journey_item(r.scheduled[0].item) and r.scheduled[1].start == time(10, 30)
+    after_journey(r, 146, S)
+    visit = next(s for s in r.scheduled if s.item.name == "Explore Hoeweg")
+    assert visit.start >= time(11, 30)  # 9:00 + 146 min + 30 min, quarter hour
+    lunch = meal(r, "lunch")
+    assert lunch.start >= time(13, 0)
+    r2 = run(day([item("Scenic train to Y", kind="transfer"), item("Explore Hoeweg")]))
+    before = [s.start for s in r2.scheduled]
+    after_journey(r2, None, S)
+    assert [s.start for s in r2.scheduled] == before

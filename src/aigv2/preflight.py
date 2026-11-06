@@ -463,6 +463,17 @@ def _readable(option: str) -> str:
     return option.title() if option.isupper() else option
 
 
+def _choice_base(text: str, options: list[str]) -> str:
+    """'Timed visit to Eiffel Tower (Summit or 2nd floor)' -> 'Eiffel Tower': a bare option such as '2nd floor' is
+    not a place on its own. Empty when the text has no 'visit/tour/ticket to X' head or the options are places."""
+    m = re.search(r"\b(?:visit|tour|ticket|entry|admission|tickets)\s+(?:to|of|for)\s+(?:the\s+)?([^()]+?)\s*(?:\(|$)", text, re.I)
+    if not m or not re.search(r"\(", text):
+        return ""
+    base = m.group(1).strip(" ,.-")
+    low = base.casefold()
+    return "" if not base or any(low in o.casefold() or o.casefold() in low for o in options) else base
+
+
 def _apply_open_choice(dp: DayPlan, oc: OpenChoice, selected: list[str], n: int = 0) -> None:
     others = [o for o in oc.options if o not in selected]
     dp.items = [it for it in dp.items if not any(_same(it.name, o) for o in others)]
@@ -475,9 +486,10 @@ def _apply_open_choice(dp: DayPlan, oc: OpenChoice, selected: list[str], n: int 
         note = own.strip()
     if re.match(r"\s*(?:return|back|stay|overnight)\b", oc.text, re.I):
         return  # where to sleep or return to is not an activity card
+    base = _choice_base(oc.text, oc.options)
     for o in missing:
         dp.items.append(PlannedItem(
-            name=_readable(o), kind="activity", city=dp.city, slot_hint="afternoon",
+            name=f"{base} ({_readable(o)})" if base else _readable(o), kind="activity", city=dp.city, slot_hint="afternoon",
             optional=len(selected) > 1, note=note,
             option_group=f"choice-{n}" if len(selected) > 1 else None,
         ))
@@ -514,6 +526,12 @@ def _apply_image_details(out: TripPlan, original: TripPlan, ans: str) -> None:
         hhmm = f"{t.hour:02d}:{t.minute:02d}"
         known = [it.name + " " + it.note for it in dp.items] + [b.name for b in out.bookings if b.day == day] \
             + [oc.text for oc in original.open_choices if oc.day == day]
+        # an untimed activity of the day that the screenshot line names gets the booked time (one card, not two)
+        untimed = next((it for it in dp.items if not it.time and it.kind in ("activity", "attraction")
+                        and not it.option_group and _stems(name) & _stems(it.name)), None)
+        if untimed is not None and not any(b.day == day and _stems(name) & _stems(b.name) for b in out.bookings):
+            untimed.time = hhmm
+            continue
         if any(it.time == hhmm for it in dp.items) or any(b.day == day and b.time == hhmm for b in out.bookings) \
                 or any(_stems(name) & _stems(k) for k in known):
             continue

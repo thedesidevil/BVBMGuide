@@ -278,6 +278,23 @@ WESTERN_EUROPE = {"france", "switzerland", "germany", "austria", "italy", "spain
 _AIRPORT_WORD = re.compile(r"\bairport\b|\b(?:CDG|ORY|Orly|Roissy|Charles de Gaulle|Beauvais)\b", re.I)
 
 
+_SENT_SPLIT = re.compile(r"(?<=[.!])\s+")
+
+
+def strip_pass_claims(value):
+    """Sentences that mention a rail / travel pass are removed (a field that is only such a claim is dropped):
+    used when the trip has no pass, so the guide never tells the client something is 'covered by' one."""
+    if isinstance(value, str):
+        kept = [x for x in _SENT_SPLIT.split(value) if not _RAIL_PASS.search(x)]
+        return " ".join(kept).strip()
+    if isinstance(value, list):
+        return [v for v in (strip_pass_claims(x) for x in value) if v not in ("", None, [], {})]
+    if isinstance(value, dict):
+        out = {k: strip_pass_claims(v) for k, v in value.items()}
+        return {k: v for k, v in out.items() if v not in ("", None, [], {}) or value[k] in ("", None, [], {})}
+    return value
+
+
 def trip_mentions_rail_pass(trip) -> bool:
     text = " ".join([getattr(trip, "additional_notes", "") or ""] + [b.name for b in getattr(trip, "bookings", [])]
                     + [getattr(t, "source", "") or "" for t in getattr(trip, "transport", [])]
@@ -691,6 +708,8 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
     named = _library_named(key, cities, cdatas, nationalities=frozenset(client_nationalities(trip)),
                            other_places=other_places, trip=trip,
                            countries=[c["country"] for c in cities if c.get("country")])
+    if not trip_mentions_rail_pass(trip):
+        named = {k: strip_pass_claims(v) for k, v in named.items()}
     if not getattr(trip, "trip_scope", "") == "domestic":
         named = {k: strip_inr_conversion(v) for k, v in named.items()}  # the section states its own INR rate
     lib = [x for v in named.values() for x in v]

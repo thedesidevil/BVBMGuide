@@ -326,3 +326,12 @@ def test_section_inputs_dishes_come_from_the_city_own_shard():
     state = SimpleNamespace(days=[SimpleNamespace(city="Lucerne")], countries={"Lucerne": "Switzerland"})
     city_data, _ = _section_inputs(state, Lib())
     assert [d["name"] for d in city_data[0]["local_dishes"]] == ["Rösti"]
+
+
+def test_pass_claims_dropped_unless_the_trip_has_a_pass():
+    from src.aigv2.writing.sections import strip_pass_claims, trip_mentions_rail_pass
+    assert not trip_mentions_rail_pass(_trip())
+    assert strip_pass_claims("Covered by Swiss Travel Pass depending on route and boat category") == ""
+    assert strip_pass_claims("Boats run all day. Included with Swiss Travel Pass; seats extra. Walk on.") == "Boats run all day. Walk on."
+    assert strip_pass_claims({"mode": "Lake Cruise", "recommended_pass": "Swiss Travel Pass", "cost": "CHF 29"}) == \
+        {"mode": "Lake Cruise", "cost": "CHF 29"}

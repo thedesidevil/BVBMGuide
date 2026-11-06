@@ -19,6 +19,7 @@ from src.aigv2.planning.important_places import ImportantPlaces, NearbyPlace
 from src.aigv2.planning.late_night import is_late_night_landing, pickup_before_landing
 from src.aigv2.planning.attraction_match import good_to_know, is_generic_name
 from src.aigv2.money import strip_inr_conversion
+from src.aigv2.writing.sections import strip_pass_claims, trip_mentions_rail_pass
 from src.aigv2.planning.slots import is_journey_item, round15
 from src.aigv2.planning.meals import ChosenRestaurant, MealPick, wrong_meal
 from src.aigv2.planning.slots import MealSlot, ScheduledItem, station_in_city, is_full_day, arrival_buffer_min, is_optional, leave_by, parse_time
@@ -711,6 +712,8 @@ class _Day:
             lib_val = lib.get(key) if isinstance(lib.get(key), str) and lib.get(key).strip() else None
             if lib_val and key == "entry_fee" and not self.data.domestic:
                 lib_val = strip_inr_conversion(lib_val)  # a stale rupee figure disagrees with the guide's own rate
+            if lib_val and not trip_mentions_rail_pass(self.data.trip):
+                lib_val = strip_pass_claims(lib_val) or None  # "covered by Swiss Travel Pass" when the trip has none
             if lib_val:
                 pairs.append((label, [lib_val, _verify(what)] if unverified else lib_val))
             elif value:

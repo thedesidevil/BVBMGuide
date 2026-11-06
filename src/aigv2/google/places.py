@@ -36,7 +36,8 @@ _UNWANTED_ANY = re.compile(
 )
 _UNWANTED_MEDICAL = re.compile(
     r"laborator|\blab\b|microbiolog|patholog|dental|dentist|\bgigi\b|orthodont|veterinar|\bvet\b|animal|\bpets?\b"
-    r"|cosmetic|beauty|aesthetic|skin clinic|eye clinic",
+    r"|cosmetic|beauty|aesthetic|skin clinic|eye clinic"
+    r"|radiolog|\bimaging\b|diagnostic|r\u00f6ntgen|roentgen|\binstitut(?:e|o)?\b|\binstitut\b|\bscan\b|\bmri\b|\bIRG\b",
     re.I,
 )
 _HOSPITAL_LIKE = re.compile(r"hospital|rumah sakit|\brs\b|emergency|medical cent(?:re|er)|clinic", re.I)

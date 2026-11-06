@@ -173,3 +173,11 @@ def test_no_car_search_when_walkable_pharmacy():
 def test_car_fallback_nothing_keeps_old_marker():
     r, _ = _car_run(False, [mk("TooFar", 1.5)], {1.5: 25})
     assert r.pharmacies == [] and any("fewer than 2 pharmacies" in m.text for m in r.markers)
+
+
+def test_radiology_and_institute_names_are_not_hospital_candidates():
+    from src.aigv2.google.places import unwanted_name
+    for n in ("Institut für Radiologie, Spitäler fmi AG", "IRG", "City Diagnostic Imaging", "Radiology Institute"):
+        assert unwanted_name(n, medical=True), n
+    for n in ("Spital Interlaken", "Hospital Lariboisière", "Klinik Hirslanden", "Emergency Institute Hospital"):
+        assert not unwanted_name(n, medical=True), n

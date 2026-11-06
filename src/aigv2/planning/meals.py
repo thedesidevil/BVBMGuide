@@ -415,14 +415,22 @@ class _Planner:
             return []
         dests = [(p.lat, p.lng) for _, p, _, _ in batch]
 
-        def mins(mode: str) -> list[Optional[int]]:
+        def mins(mode: str, only: Optional[list[int]] = None) -> list[Optional[int]]:
+            idx = list(range(len(dests))) if only is None else only
+            if not idx:
+                return [None] * len(dests)
             when = datetime.combine(day, slot.start) if mode == "TRANSIT" else None
-            got = self.routes.durations([a_xy], dests, mode, when=when)
-            return [got.get((0, j)) for j in range(len(dests))]
+            got = self.routes.durations([a_xy], [dests[j] for j in idx], mode, when=when)
+            out_ = [None] * len(dests)
+            for k, j in enumerate(idx):
+                out_[j] = got.get((0, k))
+            return out_
 
         walk = mins("WALK")
-        drive = mins("DRIVE") if self.car else [None] * len(batch)
-        transit = mins("TRANSIT") if self.transit else [None] * len(batch)
+        # a venue within the walking cap is shown as a walk: no drive or transit time is needed for it
+        far = [j for j, w in enumerate(walk) if w is None or w > self.settings.walk_max_min]
+        drive = mins("DRIVE", far) if self.car else [None] * len(batch)
+        transit = mins("TRANSIT", far) if self.transit else [None] * len(batch)
         out = []
         for (r, place, hours, verify), w, d, t in zip(batch, walk, drive, transit):
             travel = _travel(slot, w, d, t, self.settings)

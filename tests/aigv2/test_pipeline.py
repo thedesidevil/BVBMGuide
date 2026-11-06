@@ -91,7 +91,7 @@ REPLIES = {
     "write_sections": lambda p: json.dumps(
         {"items": [], "groups": [{"title": "Clothing", "items": ["Light layers"]}]} if p.startswith("Section: packing")
         else {"items": [{"heading": "Good to know", "body": "Plan ahead and enjoy."}]}),
-    "title": lambda p: json.dumps({"title": "Manhattan Lights Ahead"}),
+    "title": lambda p: json.dumps({"title": p.split("Destinations in order: ")[1].split("\n")[0].split(",")[0] + " Lights Ahead"}),
     "thanks": lambda p: json.dumps({"paragraphs": ["Thank you for the opportunity to plan your trip to New York.",
                                                    "Bon Voyage by Marina is a message away."]}),
     "qc_prose": lambda p: json.dumps({"issues": []}),
@@ -556,7 +556,7 @@ def test_failed_build_saves_partial_and_cost(deps, tmp_path, monkeypatch):
     out = CliRunner().invoke(app, ["build", store.run_id, "--answers", str(ans)])
     assert out.exit_code == 1 and "FAILED: RuntimeError: title service down" in out.output
     assert "Cost this run: $" in out.output and "  Google " in out.output
-    monkeypatch.setitem(REPLIES, "title", lambda p: json.dumps({"title": "Manhattan Lights Ahead"}))
+    monkeypatch.setitem(REPLIES, "title", lambda p: json.dumps({"title": "New York Lights Ahead"}))
     before = len(steps(deps.llm, "write_days"))
     build_run(store, answers, deps)
     assert len(steps(deps.llm, "write_days")) == before and store.has("guide.docx")

@@ -211,7 +211,8 @@ def test_walk_only_without_car_modes(tmp_path):
 def test_routes_batched_per_anchor_and_mode(tmp_path):
     lib, pl, rt = world(tmp_path, [rest("A"), rest("B"), rest("C"), rest("D")])
     plan([(1, TUE, "Istanbul", [lunch()])], lib, pl, rt, llm=FakeLLM(["A", "B", "C"]))
-    assert len(rt.calls) == 2
+    # every venue is within the walking cap: one WALK matrix, no DRIVE call for venues that are walked to
+    assert [c[2] for c in rt.calls] == ["WALK"]
     assert all(len(c[1]) == 4 and c[0] == ((41.0, 29.0),) for c in rt.calls)
     assert all(c[2] == (41.0, 29.0) and c[1] == "Istanbul" for c in pl.calls)
 
@@ -473,7 +474,7 @@ def test_transit_lookup_carries_meal_time():
 
         def durations(self, origins, destinations, mode, when=None):
             seen.append((mode, when))
-            return {(0, j): 5 for j in range(len(destinations))}
+            return {(0, j): (40 if mode == "WALK" else 5) for j in range(len(destinations))}
 
     from src.aigv2.planning.meals import _Planner
     planner = _Planner(None, None, R(), Diet(), ["public_transport"], None, Settings(models={}), "international")
@@ -602,3 +603,11 @@ def test_veg_client_must_try_loses_meat_dishes(tmp_path):
     assert picks[0].restaurants[0].lib["must_try_dishes"] == ["Dal"]
     picks, _ = plan([(3, TUE, "Istanbul", [lunch()])], lib, pl, rt)
     assert picks[0].restaurants[0].lib["must_try_dishes"] == ["Butter chicken", "Dal"]
+
+
+def test_route_calls_skipped_for_walkable_and_for_straight_line_too_far(tmp_path):
+    lib, pl, rt = world(tmp_path, [rest("Near"), rest("Far")], minutes={"Near": {"WALK": 4, "DRIVE": 3},
+                                                                          "Far": {"WALK": 90, "DRIVE": 12}})
+    plan([(1, TUE, "Istanbul", [lunch()])], lib, pl, rt)
+    modes = [(c[2], len(c[1])) for c in rt.calls]
+    assert modes == [("WALK", 2), ("DRIVE", 1)]  # the walkable venue is not sent to DRIVE

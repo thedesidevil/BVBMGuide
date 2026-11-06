@@ -80,6 +80,7 @@ def check_facts(doc: DocModel, trip: TripPlan, places, routes, fresh: bool = Tru
     settings = settings or Settings(models={})
     countries = countries or {}
     plan_days = sorted(trip.days, key=lambda d: d.date)
+    fresh_memo: dict = {}
     for day in doc.days:
         if day.index is None or not 1 <= day.index <= len(plan_days):
             continue
@@ -94,7 +95,7 @@ def check_facts(doc: DocModel, trip: TripPlan, places, routes, fresh: bool = Tru
                 try:
                     f, row = _check_venue(v, day.index, plan.date, plan.city, start,
                                           near.group(1).strip() if near else None, places, routes, fresh,
-                                          optional=bool(item and is_optional(item)))
+                                          optional=bool(item and is_optional(item)), fresh_memo=fresh_memo)
                 except _LOOKUP_ERRORS as e:
                     f = [_f("fact_check_failed", f"{v.name}: Google lookup failed ({e.__class__.__name__})",
                             v.name, day.index)]
@@ -110,14 +111,17 @@ def _row(v: DocVenue, day_no: int, google_hours: str, guide_travel: str, google_
 
 
 def _check_venue(v: DocVenue, day_no: int, d: date, city: str, start: Optional[time], anchor: Optional[str],
-                 places, routes, fresh: bool, optional: bool = False):
+                 places, routes, fresh: bool, optional: bool = False, fresh_memo: Optional[dict] = None):
     cached = places.find(v.name, city)
     place = None
     if cached is not None and cached.match_ok:
         if not fresh:
             place = cached
         elif cached.place_id:
-            place = places.fresh_status(cached)
+            memo = fresh_memo if fresh_memo is not None else {}
+            if cached.place_id not in memo:  # one Place Details call per place, however many days list it
+                memo[cached.place_id] = places.fresh_status(cached)
+            place = memo[cached.place_id]
         else:
             place = places.find(v.name, city, near=(cached.lat, cached.lng), fresh=True)
     if place is None or not place.match_ok:

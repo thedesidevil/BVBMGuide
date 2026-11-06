@@ -286,3 +286,26 @@ def test_eiffel_choice_and_image_line_merge_into_one_timed_item():
     d = next(d for d in out.days if d.date == date(2026, 5, 2))
     eiffel = [i for i in d.items if "eiffel" in i.name.lower() or "2nd floor" in i.name.lower()]
     assert [(i.name, i.time) for i in eiffel] == [("Eiffel Tower (2nd floor)", "10:45")]
+
+
+def test_transport_options_off_the_trip_are_dropped():
+    from src.aigv2.writing.sections import transport_off_trip
+    trip = _trip()
+    for mode, desc in [("Taxi (Charles de Gaulle Airport to Bercy)", "about 1 hr 10 mins"),
+                       ("TGV (Gare de Lyon to Annecy)", "Direct high-speed train"),
+                       ("Pilatus Railway", "World's steepest cogwheel railway"),
+                       ("Train to Bern", "Interlaken Ost to Bern Hauptbahnhof"),
+                       ("Train to Innsbruck", "Zurich to Innsbruck by train")]:
+        assert transport_off_trip({"mode": mode, "description": desc}, trip), mode
+    for mode, desc in [("Train to Zurich", "Interlaken Ost to Zurich Hauptbahnhof, ~2 hours"),
+                       ("Metro", "Lines 1 and 13 reach the Louvre"), ("Tram", "Tram 10 runs to Zurich Airport"),
+                       ("Paris Visite card", "3-day travel pass")]:
+        assert not transport_off_trip({"mode": mode, "description": desc}, trip), mode
+
+
+def test_route_specific_transport_mode_does_not_absorb_a_generic_one():
+    from src.aigv2.writing.structured import extract_transport
+    out = extract_transport([{"mode": "Train", "description": "Interlaken-Lucerne Express runs hourly."},
+                             {"mode": "Train to Zurich", "description": "Interlaken Ost to Zurich HB, ~2 hours."}])
+    byh = {p.heading: p.body for p in out}
+    assert "Zurich" in byh["Train to Zurich"] and "Lucerne" not in byh["Train to Zurich"]

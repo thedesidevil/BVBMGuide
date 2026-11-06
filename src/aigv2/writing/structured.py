@@ -329,7 +329,9 @@ def extract_transport(items) -> list[Para]:
         words = _mode_words(mode)
         if not words:
             continue
-        m = next((x for x in merged if words <= x["w"] or x["w"] <= words), None)
+        # a route-specific mode ('Train to Zurich') never absorbs a generic one ('Train'): its text would be another route's
+        m = next((x for x in merged if (words <= x["w"] or x["w"] <= words)
+                  and (words == x["w"] or ("to" in words) == ("to" in x["w"]))), None)
         if m is None:
             m = {"mode": mode, "w": words, "desc": "", "how": ""}
             merged.append(m)

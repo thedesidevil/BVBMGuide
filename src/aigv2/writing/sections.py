@@ -7,7 +7,7 @@ from typing import Optional
 from pydantic import BaseModel, Field, model_validator
 
 from src.aigv2.llm import LLMStepError
-from src.aigv2.library import diet_fits, dish_fits_diet, norm_name, wants_veg
+from src.aigv2.library import _fold, diet_fits, dish_fits_diet, norm_name, wants_veg
 from src.aigv2.models import Marker
 from src.aigv2.money import FxUnavailable, city_currency
 from src.aigv2.writing import structured as st
@@ -301,6 +301,53 @@ def _flight_cities(trip) -> set[str]:
     return out
 
 
+_ROUTE_TO = re.compile(r"\bto\s+([A-Z][\w'’-]*(?:\s+[A-Z][\w'’-]*)*)")
+_GENERIC_RIDE_WORDS = {"railway", "cogwheel", "gondola", "funicular", "mountain", "summit", "panorama", "scenic", "train"}
+_ATTRACTION_RIDE = re.compile(r"railway|cogwheel|gondola|funicular|cable car|\bbahn\b", re.I)
+
+
+def _trip_place_words(trip) -> set[str]:
+    """Normalised names of the cities the trip visits (day cities, hotel cities, station towns) plus Basel."""
+    from src.aigv2.planning.slots import split_city
+    names = {"basel", "bale", "bâle"}
+    for d in getattr(trip, "days", []):
+        names |= {norm_name(x) for x in split_city(d.city)}
+    for h in getattr(trip, "hotels", []):
+        names.add(norm_name(h.city))
+    for t in getattr(trip, "transport", []):
+        names |= {norm_name(x) for x in (t.from_place, t.to_place) if x}
+    from src.aigv2.google.places import _CITY_ALIASES
+    for n in list(names):
+        names |= {norm_name(a) for a in _CITY_ALIASES.get(n, ())}
+    return {n for n in names if n}
+
+
+def transport_off_trip(entry, trip) -> bool:
+    """A library transport option for a route or ride the trip does not make: 'Taxi (CDG Airport to Bercy)',
+    'TGV (Gare de Lyon to Annecy)', 'Train to Bern', Pilatus Railway, or a 'Train to Zurich' heading whose text
+    describes another route."""
+    if not isinstance(entry, dict):
+        return False
+    mode = entry.get("mode") if isinstance(entry.get("mode"), str) else entry.get("heading") or ""
+    desc = " ".join(str(v) for k, v in entry.items() if k != "mode" and isinstance(v, str))
+    trip_words = {_fold(w) for w in _trip_place_words(trip)}
+    trip_text = _fold(" ".join(i.name + " " + i.note for d in getattr(trip, "days", []) for i in d.items)
+                      + " " + " ".join(b.name for b in getattr(trip, "bookings", [])))
+    for m in _ROUTE_TO.finditer(mode or ""):
+        end = _fold(m.group(1))
+        known = any(w in end.split() or end == w for w in trip_words) or any(
+            w in trip_text for w in end.split() if len(w) >= 5)
+        if not known and not re.search(r"airport|station|hbf|bahnhof|gare|terminal", end):
+            return True
+        if known and end.split()[0] not in _fold(desc) and mode.strip().lower().startswith(("train to", "bus to")):
+            return True  # the heading names a destination the text never mentions
+    if _ATTRACTION_RIDE.search(mode or ""):
+        words = [w for w in re.findall(r"[a-z]{5,}", _fold(mode)) if w not in _GENERIC_RIDE_WORDS]
+        if words and not any(w in trip_text or w in trip_words for w in words):
+            return True
+    return False
+
+
 def reference_filter(key: str, name: str, items: list, *, trip=None, cities: list[dict] = (), countries=()) -> list:
     """Drop library facts that do not fit the trip: rail passes when no pass is mentioned (getting around), airport
     transfer facts for a city the trip never flies from or to, hepatitis A / typhoid advice for Western Europe."""
@@ -312,6 +359,8 @@ def reference_filter(key: str, name: str, items: list, *, trip=None, cities: lis
             out = [x for x in out if not _RAIL_PASS.search(_entry_text(x))]
     if key == "dishes" and name == "local_dishes" and getattr(trip, "diet", None) and wants_veg(trip.diet):
         out = [x for x in out if dish_fits_diet(x.get("name", "") if isinstance(x, dict) else str(x), trip.diet)]
+    if key == "getting_around" and name == "transport_options":
+        out = [x for x in out if not transport_off_trip(x, trip)]
     if key == "health" and countries and {norm_name(c) for c in countries} <= WESTERN_EUROPE:
         out = [x for x in out if not _VACCINE_DISEASE.search(_entry_text(x))]
     return out

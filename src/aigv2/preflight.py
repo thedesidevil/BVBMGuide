@@ -473,12 +473,51 @@ def _apply_open_choice(dp: DayPlan, oc: OpenChoice, selected: list[str], n: int 
         note = f"Choose one: {', '.join(names[:-1])} or {names[-1]}.{own}"
     else:
         note = own.strip()
+    if re.match(r"\s*(?:return|back|stay|overnight)\b", oc.text, re.I):
+        return  # where to sleep or return to is not an activity card
     for o in missing:
         dp.items.append(PlannedItem(
             name=_readable(o), kind="activity", city=dp.city, slot_hint="afternoon",
             optional=len(selected) > 1, note=note,
             option_group=f"choice-{n}" if len(selected) > 1 else None,
         ))
+
+
+_IMG_LINE = re.compile(r"(?:[A-Za-z]{3,9},?\s+)?(\d{1,2})\s+([A-Za-z]{3,9})\s+(\d{4})\s+(\d{1,2}[:.]\d{2}\s*[ap]\.?m\.?|\d{1,2}[:.]\d{2})\s*[-–:]\s*(.+)", re.I)
+_MONTHS = {m: i for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
+
+
+def _stems(text: str) -> set[str]:
+    return {w[:4] for w in re.findall(r"[a-z]{4,}", text.casefold())}
+
+
+def _apply_image_details(out: TripPlan, original: TripPlan, ans: str) -> None:
+    """Lines typed from a booking screenshot ('Thu, 30 Apr 2026 03:30 PM - Louvre museum') become timed items on that
+    day unless the day already has that activity (same time, or a name sharing a word stem)."""
+    for line in re.split(r"[;\n]+", ans):
+        m = _IMG_LINE.search(line.strip())
+        if not m:
+            continue
+        mon = _MONTHS.get(m.group(2)[:3].lower())
+        t = _parse_time(m.group(4).replace(".", ":").replace(" ", "").replace("pm", " pm").replace("am", " am")
+                        if re.search(r"[ap]", m.group(4), re.I) else m.group(4).replace(".", ":"))
+        if not mon or t is None:
+            continue
+        try:
+            day = date(int(m.group(3)), mon, int(m.group(1)))
+        except ValueError:
+            continue
+        dp = next((x for x in out.days if x.date == day), None)
+        if dp is None:
+            continue
+        name = " ".join(m.group(5).split()).rstrip(".")
+        hhmm = f"{t.hour:02d}:{t.minute:02d}"
+        known = [it.name + " " + it.note for it in dp.items] + [b.name for b in out.bookings if b.day == day] \
+            + [oc.text for oc in original.open_choices if oc.day == day]
+        if any(it.time == hhmm for it in dp.items) or any(b.day == day and b.time == hhmm for b in out.bookings) \
+                or any(_stems(name) & _stems(k) for k in known):
+            continue
+        dp.items.append(PlannedItem(name=name, kind="activity", city=dp.city, time=hhmm))
 
 
 def apply_answers(plan: TripPlan, questions: list[Question], answers: Answers) -> TripPlan:
@@ -551,6 +590,8 @@ def apply_answers(plan: TripPlan, questions: list[Question], answers: Answers) -
                     dp.items = keep
                 if target is not None:
                     target.items.extend(moved)
+        elif kind == "image_details":
+            _apply_image_details(out, plan, ans)
         elif kind == "no_departure":
             t = _departure_time(ans)
             last = max((dp.date for dp in out.days), default=None)

@@ -54,6 +54,7 @@ class MealSlot(BaseModel):
     included: bool = False
     unanchored: bool = False
     in_package: bool = False  # a full-day package covers this meal window (options only when anchors are known)
+    near_label: Optional[str] = None  # where the group is at this meal when it is not the hotel city (a full-day excursion)
     max_min: Optional[int] = None  # car-time cap for this slot when it differs from the settings (rural anchors)
 
 
@@ -391,6 +392,79 @@ def _cumulative_stops(day: DayPlan, start: time) -> list[tuple[str, int]]:
     return out
 
 
+_CHECKIN_BUFFER_MIN = 60
+FULL_DAY_NAME = re.compile(r"full[- ]day|1[- ]day pass|day pass|disneyland|jungfraujoch|titlis|top of europe", re.I)
+FULL_DAY_MIN = 300
+
+
+def is_full_day(it: PlannedItem, durations: Optional[dict[str, int]] = None,
+                windows: Optional[dict[str, tuple[time, time]]] = None) -> bool:
+    """A ticketed excursion that fills the day (theme park, high-mountain trip): lunch is taken at the destination."""
+    if it.kind not in ("attraction", "activity") or it.optional:
+        return False
+    if (durations or {}).get(it.name, 0) >= FULL_DAY_MIN:
+        return True
+    w = (windows or {}).get(it.name)
+    if w and _minutes(w[1]) - _minutes(w[0]) >= _FULL_DAY_PACKAGE_MIN:
+        return True
+    return bool(FULL_DAY_NAME.search(f"{it.name} {it.note}"))
+
+
+_JOURNEY_LINE = re.compile(r"(?:scenic |direct |morning |afternoon )?(?:train|flight|bus|coach|ferry)(?: journey| ride| transfer)?\\s+(?:to|from)\\s+.+", re.I)
+
+
+def _is_journey_line(it: PlannedItem) -> bool:
+    return it.kind == "transfer" and bool(_JOURNEY_LINE.fullmatch(it.name.strip()))
+
+
+_RESTATES_DEPARTURE = re.compile(
+    r"(?:(?:flight|train|bus|ferry)(?: home| departure)?|departure|departure flight|fly home|check[- ]?out(?: and departure)?)",
+    re.I)
+_FIREWORKS = re.compile(r"fireworks?|light show|illumination", re.I)
+_FIREWORKS_AT = time(21, 30)
+
+
+_STATION_FILLER = {"hbf", "hauptbahnhof", "station", "gare", "bahnhof", "central", "centrale", "sbb", "main", "railway", "train", "stazione"}
+
+
+def station_in_city(station: str, city: str) -> bool:
+    """True when a station name plausibly lies in the city ('Luzern' / 'Lucerne', 'Paris Gare du Nord' / 'Paris')."""
+    from src.aigv2.google.places import _CITY_ALIASES
+    st, ct = set(_norm_city(station).split()), set(_norm_city(city).split())
+    names = [ct] + [set(_norm_city(a).split()) for a in _CITY_ALIASES.get(_norm_city(city), ())]
+    return any(n and n <= st for n in names)
+
+
+def _after_arrival(res: "DayResult", arr_t: time, settings: Settings) -> None:
+    """Untimed visits on an arrival day start after the arrival plus a check-in buffer, one after another."""
+    floor = _minutes(arr_t) + _CHECKIN_BUFFER_MIN
+    changed = False
+    for i, s in enumerate(res.scheduled):
+        it = s.item
+        if it.kind == "transfer" or it.time or it.pickup_time or it.option_group or _minutes(s.start) >= floor:
+            continue
+        if it.slot_hint == "evening" and s.start >= _t(settings.slot_windows["evening"][0]):
+            continue
+        new = _plus(time(floor // 60, floor % 60), 0)
+        res.scheduled[i] = ScheduledItem(item=it, slot=_slot_for(new, settings), start=new)
+        floor += _ITEM_MINUTES
+        changed = True
+    if changed:
+        res.scheduled.sort(key=lambda x: x.start)
+
+
+def _fireworks_last(res: "DayResult", settings: Settings) -> None:
+    """An untimed fireworks / light show is the day's last event, at a late hour, not at the start of the evening."""
+    changed = False
+    for i, s in enumerate(res.scheduled):
+        it = s.item
+        if _FIREWORKS.search(it.name) and not (it.time or it.pickup_time) and s.start < _FIREWORKS_AT:
+            res.scheduled[i] = ScheduledItem(item=it, slot="evening", start=_FIREWORKS_AT)
+            changed = True
+    if changed:
+        res.scheduled.sort(key=lambda x: x.start)
+
+
 def schedule_day(
     day: DayPlan,
     stays: list[HotelStay],
@@ -420,6 +494,12 @@ def schedule_day(
     cutoff = leave_by(dep, domestic) if dep else None
     if dep and dep.depart.time() < _PACKED_BREAKFAST_BEFORE:
         res.tips.append("Ask the hotel for a packed breakfast")
+    if dep:
+        # the day's departure shows once (check-out, transfer and the flight card at its own time): an untimed
+        # itinerary line that only restates it ('Flight', 'Departure') is dropped
+        res.scheduled = [sc for sc in res.scheduled if not _is_journey_line(sc.item) and not (
+            sc.item.kind == "transfer" and not sc.item.time and not sc.item.pickup_time
+            and _RESTATES_DEPARTURE.fullmatch(sc.item.name.strip()))]
     if dep and cutoff:
         # the untimed "check-out and airport drop" happens at the leave-by time, not at a default 9:00
         for i, sc in enumerate(res.scheduled):
@@ -427,6 +507,9 @@ def schedule_day(
                     and re.search(r"airport|station|port", sc.item.name, re.I):
                 res.scheduled[i] = ScheduledItem(item=sc.item, slot=_slot_for(cutoff, settings), start=cutoff)
         res.scheduled.sort(key=lambda x: x.start)
+    if arr_t is not None and arr_t >= _EARLY_ARRIVAL_BEFORE and arrival.kind in ("train", "flight"):
+        _after_arrival(res, arr_t, settings)
+    _fireworks_last(res, settings)
     early = arr_t is not None and arr_t < _EARLY_ARRIVAL_BEFORE
     next_night = bool(arrival and arrival.arrive and arrival.arrive.date() == d + timedelta(days=1)
                       and arrival.arrive.hour < 5)
@@ -479,6 +562,7 @@ def schedule_day(
 
     # a train/flight between two hotel cities is the day's arrival as well: the group is in the new city after it,
     # so the leave-by time of the old city does not close the day's meals
+    full_day = next((s.item for s in res.scheduled if is_full_day(s.item, durations, windows)), None)
     meal_cutoff = None if arrival is not None and arrival is departure else cutoff
 
     def add(meal: str, start: time, stay: Optional[HotelStay], spec, max_min: Optional[int] = None) -> None:
@@ -488,7 +572,11 @@ def schedule_day(
             res.meals.append(MealSlot(meal=meal, start=start, included=True))
             return
         found = anchors(spec(), stay)
-        res.meals.append(MealSlot(meal=meal, start=start, anchors=found, unanchored=not found, max_min=max_min))
+        label = None
+        if not found and meal == "lunch" and full_day is not None and not at_hotel_rule:
+            label = re.sub(r"\s*\([^)]*\)", "", full_day.name).strip()  # no hotel-city restaurants for a lunch elsewhere
+        res.meals.append(MealSlot(meal=meal, start=start, anchors=found, unanchored=not found, max_min=max_min,
+                                  near_label=label))
 
     # breakfast
     b_start = meal_start("breakfast", country, settings)
@@ -562,6 +650,11 @@ def schedule_day(
         return best.item
 
     def lunch_spec():
+        if full_day is not None and not at_hotel_rule:
+            p = places.get(full_day.name)
+            if p is not None and p.match_ok:
+                return [(full_day.locality or full_day.name, 3, (full_day.name,))]
+            return []
         if at_hotel_rule or midday_checkin or midday_arrival:
             return hotel_spec(l_stay, 3)
         if day.drive_stops:

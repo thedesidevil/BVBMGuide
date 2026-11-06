@@ -20,7 +20,8 @@ from src.aigv2.planning.late_night import is_late_night_landing, pickup_before_l
 from src.aigv2.planning.attraction_match import good_to_know, is_generic_name
 from src.aigv2.planning.slots import round15
 from src.aigv2.planning.meals import ChosenRestaurant, MealPick, wrong_meal
-from src.aigv2.planning.slots import MealSlot, ScheduledItem, arrival_buffer_min, is_optional, leave_by, parse_time
+from src.aigv2.planning.slots import MealSlot, ScheduledItem, station_in_city, is_full_day, arrival_buffer_min, is_optional, leave_by, parse_time
+from src.aigv2.planning.attraction_match import parse_minutes
 from src.aigv2.planning.travel import Leg, drive_day_legs, leg_markers, leg_options
 from src.aigv2.render.day_render import _PORT, _REACH, _SLOT_TITLE, day_header, sunset_time
 from src.aigv2.render.document import BEFORE_YOU_GO, WHILE_THERE, GuideData, RenderDay, _present, destinations
@@ -371,6 +372,12 @@ class _Day:
             self.marks([_verify(f"hotel for {rd.date.isoformat()}")])
             return
         port = arr.to_place or _PORT[arr.kind]
+        if arr.kind == "train" and arr.to_place.strip() and stay.check_in == rd.date \
+                and not station_in_city(arr.to_place, stay.city):
+            # the ticket ends short of the hotel city (Paris to Basel for a Lucerne hotel): the rest is not booked
+            self.marks([_verify(f"onward train {nice_name(arr.to_place)} → {stay.city}: ticket not provided")])
+            self._hotel_check_in_card()
+            return
         lines = []
         if arr.arrive and stay.check_in == rd.date == arr.arrive.date() and arr.arrive.time() < (stay.check_in_time or time(15)):
             lines.append("You arrive before check-in. If your room is not ready yet, ask the front desk to hold "
@@ -558,6 +565,10 @@ class _Day:
         stops = [s for s in rd.result.scheduled if s.item.kind in ("attraction", "activity") and not s.item.optional]
         if dinner is None or not stops or rd.departure is not None or rd.other_transport:
             return None
+        libdur = {n: parse_minutes(a.get("recommended_duration") or a.get("duration")) or 0
+                  for n, a in rd.library_attractions.items()}
+        if any(is_full_day(s.item, libdur) for s in rd.result.scheduled):
+            return None  # a full-day excursion leaves no free afternoon to return for
         end = 0
         for s in stops:  # a stop takes its default length
             end = max(end, s.start.hour * 60 + s.start.minute + _ITEM_MIN)
@@ -700,7 +711,9 @@ class _Day:
             marks.append(_verify("location not specified in the voucher" if is_generic_name(it.name) and not lib
                                  else "place not found on Google"))
         if p is not None and p.status not in ("OPERATIONAL", "UNKNOWN"):
-            marks.append(_verify(f"Google lists this place as {p.status.replace('_', ' ').lower()}"))
+            word = p.status.replace('_', ' ').lower()
+            marks.append(_verify(f"{word} per Google - check before the trip" if "temporarily" in word
+                                 else f"Google lists this place as {word}"))
         text = at.description if at and at.description else (lib.get("description") or "")
         if late_transfer:
             for line in (b.instructions if b else []):

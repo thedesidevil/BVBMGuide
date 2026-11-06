@@ -95,3 +95,103 @@ def test_train_day_lunch_follows_arrival_and_dinner_in_new_city():
     meals = {m.meal: m for m in res.meals}
     assert meals["lunch"].start >= time(13, 30) and meals["lunch"].anchors[0][0] == "Hotel Luzernerhof"
     assert meals["dinner"].anchors[0][0] == "Hotel Luzernerhof"
+
+
+def _sched(day, arrival=None, departure=None):
+    from src.aigv2.planning.slots import schedule_day
+    trip = _trip()
+    dp = next(d for d in trip.days if d.date == day)
+    places = {}
+    return schedule_day(dp, trip.hotels, arrival, departure, places, Settings(models={}), "France")
+
+
+def test_arrival_day_visits_start_after_the_train_plus_buffer():
+    from src.aigv2.planning.slots import schedule_day
+    trip = _trip()
+    dp = next(d for d in trip.days if d.date == date(2026, 4, 30))
+    dp.items.insert(1, dp.items[0].model_copy(update={"name": "Walk along the Seine", "kind": "activity"}))
+    res = schedule_day(dp, trip.hotels, trip.transport[0], None, {}, Settings(models={}), "France")
+    starts = {s.item.name: s.start for s in res.scheduled}
+    assert starts["Walk along the Seine"] >= time(12, 9)
+
+
+def test_fireworks_are_last_and_late():
+    res = _sched(date(2026, 5, 1))
+    last = res.scheduled[-1]
+    assert "fireworks" in last.item.name.lower() and last.start == time(21, 30)
+
+
+def test_full_day_excursion_lunch_is_marked_at_the_destination_not_the_hotel_city():
+    res = _sched(date(2026, 5, 1))
+    lunch = next(m for m in res.meals if m.meal == "lunch")
+    assert lunch.unanchored and lunch.near_label == "Disneyland Paris"
+    from src.aigv2.planning.meals import _Planner
+    from src.aigv2.models import Diet
+    p = _Planner(None, None, None, Diet(), ["public_transport"], None, Settings(models={}), "international")
+    pick = p.slot(2, date(2026, 5, 1), "Paris", lunch)
+    assert [m.text for m in pick.markers] == ["Lunch, Day 2, near Disneyland Paris"] * 3
+
+
+def test_is_full_day():
+    from src.aigv2.planning.slots import is_full_day
+    trip = _trip()
+    items = {i.name: i for d in trip.days for i in d.items}
+    assert is_full_day(items["Mount Titlis Excursion"]) and is_full_day(items["Full-day excursion to Jungfraujoch"])
+    assert not is_full_day(items["Optional fireworks in the evening"])
+    assert not is_full_day(items["Explore Höheweg"])
+
+
+def test_image_details_answer_adds_timed_item_without_duplicates():
+    from src.aigv2.models import Question
+    from src.aigv2.preflight import apply_answers
+    trip = _trip()
+    ans = json.loads((FIX / "answers_final.json").read_text())
+    key = next(k for k in ans if k.startswith("image_details"))
+    out = apply_answers(trip, [Question(id=key, kind="image_details", text="x")], ans)
+    d1 = next(d for d in out.days if d.date == date(2026, 4, 30))
+    assert [(i.name, i.time) for i in d1.items if i.time] == [("Loure museum+Seine River", "15:30")]
+    d2 = next(d for d in out.days if d.date == date(2026, 5, 2))
+    assert len(d2.items) == len(next(d for d in trip.days if d.date == date(2026, 5, 2)).items)  # bus/tour/Eiffel exist
+    d3 = next(d for d in out.days if d.date == date(2026, 5, 1))
+    assert len(d3.items) == len(next(d for d in trip.days if d.date == date(2026, 5, 1)).items)  # Disney exists
+
+
+def test_departure_day_has_no_9am_flight_item_and_meals_stop_at_leave_by():
+    from src.aigv2.planning.slots import schedule_day
+    trip = _trip()
+    trip.transport.append(TransportLeg(kind="flight", from_place="Zurich", to_place="Mumbai", source="answer",
+                                       depart=datetime(2026, 5, 9, 16, 30)))
+    dp = next(d for d in trip.days if d.date == date(2026, 5, 9))
+    res = schedule_day(dp, trip.hotels, None, trip.transport[2], {}, Settings(models={}), "Switzerland")
+    assert [s.item.name for s in res.scheduled] == []
+    assert all(m.start < time(13, 30) for m in res.meals)
+
+
+def test_station_in_city():
+    from src.aigv2.planning.slots import station_in_city
+    assert station_in_city("Luzern", "Lucerne") and station_in_city("Paris Gare du Nord", "Paris")
+    assert not station_in_city("BALE SBB", "Lucerne")
+
+
+def test_return_to_stay_choice_adds_no_activity():
+    from src.aigv2.models import Question
+    from src.aigv2.preflight import apply_answers
+    trip = _trip()
+    n = next(i for i, oc in enumerate(trip.open_choices) if oc.text.startswith("Return"))
+    out = apply_answers(trip, [Question(id=f"open_choice:{n}", kind="open_choice", text="x", options=["Interlaken", "nearby stay"])],
+                        {f"open_choice:{n}": "Interlaken"})
+    d = next(d for d in out.days if d.date == date(2026, 5, 7))
+    assert "Interlaken" not in [i.name for i in d.items]
+
+
+def test_library_country_prefers_the_cities_own_folder(tmp_path):
+    from src.aigv2.library import Library
+    (tmp_path / "Paris.json").write_text(json.dumps({"restaurants": [], "currency": "EUR",
+                                                    "_currency_source": {"_source_file": "France/x.docx"}}))
+    (tmp_path / "Lucerne.json").write_text(json.dumps({"restaurants": [], "currency": "CHF",
+                                                      "_currency_source": {"_source_file": "France/y.docx"}}))
+    (tmp_path / "_index.json").write_text(json.dumps({"_folder_coverage": {
+        "Switzerland": ["Lucerne", "Paris", "Rome", "Zurich"], "France": ["Paris", "Lucerne"], "Italy": ["Paris", "Rome"]}}))
+    lib = Library(tmp_path)
+    assert pipeline._library_country(lib, "Paris") == "France"
+    assert pipeline._library_country(lib, "Lucerne") == "Switzerland"

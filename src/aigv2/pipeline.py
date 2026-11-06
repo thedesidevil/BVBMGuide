@@ -331,7 +331,18 @@ def _city_country(place: Optional[Place], library: Library, city: str) -> str:
 def _library_country(library: Library, city: str) -> str:
     folders = [f for f, cities in library.coverage().items() if norm_name(city) in {norm_name(c) for c in cities}]
     known = [f for f in folders if _known_country(f)]
-    return (known or folders or [""])[0]
+    # a city filed under several country folders (Paris under Switzerland, Italy, France...): prefer the folder
+    # whose currency is the city's own, then the folder whose name is the city's best-known home (fewest cities)
+    shard = library.city(city) or {}
+    own = shard.get("currency")
+    same = [f for f in known if own and city_currency(f) == str(own).upper()]
+    pool = same or known
+    src_folder = str((shard.get("_currency_source") or {}).get("_source_file") or "").split("/")[0]
+    if src_folder in pool:
+        return src_folder
+    if len(pool) > 1:
+        pool = sorted(pool, key=lambda f: len(library.coverage().get(f, [])))
+    return (pool or folders or [""])[0]
 
 
 def _utc_offset(country: str, d: date) -> Optional[float]:

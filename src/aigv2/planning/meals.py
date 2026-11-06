@@ -211,7 +211,7 @@ class _Planner:
         pick = MealPick(slot=slot, day_index=n)
         meal = slot.meal.capitalize()
         if slot.unanchored or not slot.anchors:
-            pick.markers = [Marker(kind="ADD_RESTAURANT", text=f"{meal}, Day {n}, near {city}") for _ in range(3)]
+            pick.markers = [Marker(kind="ADD_RESTAURANT", text=f"{meal}, Day {n}, near {slot.near_label or city}") for _ in range(3)]
             return pick
         need_indian = self.international
         for anchor in slot.anchors:

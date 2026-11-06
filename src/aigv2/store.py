@@ -8,6 +8,7 @@ from pydantic import BaseModel
 
 from src.aigv2.config import Settings
 from src.aigv2.models import Place
+from src.aigv2.textnorm import fold_key
 from src.library.ui.storage import LocalStorageBackend, StorageBackend
 
 _RUNS = "runs/"
@@ -63,17 +64,24 @@ class RunStore:
 
 
 class PlaceCache:
+    """Disk cache of place lookups. Keys are accent/case-folded (textnorm.fold_key); entries written before folding
+    existed live under the sha1 of the raw key and are still read as a fallback."""
+
     def __init__(self, backend: StorageBackend, max_age_days: int):
         self.backend = backend
         self.max_age = timedelta(days=max_age_days)
 
     @staticmethod
     def _key(key: str) -> str:
+        return f"cache/places/{hashlib.sha1(fold_key(key).encode('utf-8')).hexdigest()}.json"
+
+    @staticmethod
+    def _legacy_key(key: str) -> str:
         return f"cache/places/{hashlib.sha1(key.encode('utf-8')).hexdigest()}.json"
 
-    def get(self, key: str) -> Optional[Place]:
+    def _read(self, path: str) -> Optional[Place]:
         try:
-            raw = self.backend.read_json(self._key(key))
+            raw = self.backend.read_json(path)
             if raw is None:
                 return None
             place = Place.model_validate(raw)
@@ -84,6 +92,12 @@ class PlaceCache:
             fetched = fetched.replace(tzinfo=timezone.utc)
         if datetime.now(timezone.utc) - fetched > self.max_age:
             return None
+        return place
+
+    def get(self, key: str) -> Optional[Place]:
+        place = self._read(self._key(key))
+        if place is None and self._legacy_key(key) != self._key(key):
+            place = self._read(self._legacy_key(key))
         return place
 
     def put(self, key: str, place: Place) -> None:

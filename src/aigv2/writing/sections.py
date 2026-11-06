@@ -1,6 +1,6 @@
+from src.aigv2.textnorm import fold
 import json
 import re
-import unicodedata
 from datetime import date
 from typing import Optional
 
@@ -608,21 +608,20 @@ _GENERIC_HOSPITAL = frozenset({
 
 def _tokens(text: str, generic: frozenset, cities: tuple = ()) -> frozenset:
     """Accent-folded word tokens without generic words or city names."""
-    d = unicodedata.normalize("NFKD", text or "")
-    d = "".join(ch for ch in d if not unicodedata.combining(ch)).casefold()
+    d = fold(text or "")
     drop = set(generic)
     for c in cities:
-        drop |= set(re.findall(r"\w+", unicodedata.normalize("NFKD", c).casefold()))
+        drop |= set(re.findall(r"\w+", fold(c)))
     return frozenset(w for w in re.findall(r"\w+", d) if w not in drop)
 
 
 def _strip_cities(mention: str, cities: tuple) -> str:
     """Drop city words from the front (and back) of an extracted name: 'Sanur ApotekKU Sanur' -> 'ApotekKU'."""
-    city_words = {w for c in cities for w in re.findall(r"\w+", c.casefold())}
+    city_words = {w for c in cities for w in re.findall(r"\w+", fold(c))}
     words = mention.split()
-    while words and words[0].casefold().strip(".,'’") in city_words:
+    while words and fold(words[0]).strip(".,'") in city_words:
         words.pop(0)
-    while words and words[-1].casefold().strip(".,'’") in city_words:
+    while words and fold(words[-1]).strip(".,'") in city_words:
         words.pop()
     return " ".join(words)
 

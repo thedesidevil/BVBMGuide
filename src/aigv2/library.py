@@ -1,9 +1,9 @@
 import json
 import re
-import unicodedata
 from pathlib import Path
 
 from src.aigv2.models import Diet
+from src.aigv2.textnorm import fold
 
 _ALIASES = {"nyc": ["New York", "New York City"]}
 _INDIAN = (
@@ -25,13 +25,11 @@ class LibraryDataError(Exception):
 
 
 def norm_name(s: str) -> str:
-    return " ".join(s.casefold().split())
+    """Matching form of a name: accent-insensitive (see textnorm.fold). Never for display."""
+    return fold(s)
 
 
-def _fold(s: str) -> str:
-    """norm_name plus accent folding (NFKD, combining marks dropped)."""
-    d = unicodedata.normalize("NFKD", s)
-    return norm_name("".join(ch for ch in d if not unicodedata.combining(ch)))
+_fold = fold
 
 
 _COUNTRY_ALIASES = [
@@ -244,7 +242,7 @@ def _landmark_match(a: list[str], b: list[str]) -> bool:
 class Library:
     def __init__(self, db_path: Path):
         self.root = Path(db_path)
-        self._files = {p.stem.casefold(): p for p in self.root.glob("*.json") if not p.name.startswith("_")}
+        self._files = {fold(p.stem): p for p in self.root.glob("*.json") if not p.name.startswith("_")}
         self._coverage = self._load(self.root / "_index.json").get("_folder_coverage", {})
         self._landmarks: dict[str, list[list[list[str]]]] | None = None
 
@@ -263,21 +261,21 @@ class Library:
 
     def _names(self, city: str) -> list[str]:
         c = city.strip()
-        out = list(_ALIASES.get(c.casefold(), [c]))
+        out = list(_ALIASES.get(fold(c), [c]))
         for n in list(out):
-            alt = n[:-5] if n.casefold().endswith(" city") else f"{n} City"
+            alt = n[:-5] if fold(n).endswith(" city") else f"{n} City"
             if alt not in out:
                 out.append(alt)
         return out
 
     def _folders(self, names: list[str]) -> list[str]:
-        want = {n.casefold() for n in names}
-        return [f for f, cities in self._coverage.items() if want & {c.casefold() for c in cities}]
+        want = {fold(n) for n in names}
+        return [f for f, cities in self._coverage.items() if want & {fold(c) for c in cities}]
 
     def _region_names(self, folders: list[str], city: str) -> list[str]:
         out = []
         for f in folders:
-            if re.search(r" and |&|\+", f.casefold()):
+            if re.search(r" and |&|\+", fold(f)):
                 continue
             words = norm_name(f).split()
             for c in self._coverage.get(f, []):
@@ -289,13 +287,13 @@ class Library:
     def other_destinations(self, cities: list[str]) -> set[str]:
         """Destination names the library files under the same folders as these cities, minus the cities themselves
         and the region name of the folder (e.g. 'Bali' for 'Bali Indonesia')."""
-        own = {c.casefold() for city in cities for c in self._names(city)}
+        own = {fold(c) for city in cities for c in self._names(city)}
         out: set[str] = set()
         for f in self._folders([n for city in cities for n in self._names(city)]):
             words = norm_name(f).split()
             for c in self._coverage.get(f, []):
                 cw = norm_name(c).split()
-                if not cw or c.casefold() in own or words[: len(cw)] == cw:
+                if not cw or fold(c) in own or words[: len(cw)] == cw:
                     continue
                 out.add(c)
         return out
@@ -303,7 +301,7 @@ class Library:
     def _shards(self, names: list[str]) -> list[dict]:
         seen, shards = set(), []
         for n in names:
-            p = self._files.get(n.casefold())
+            p = self._files.get(fold(n))
             if p and p not in seen:
                 seen.add(p)
                 shards.append(self._load(p))
@@ -332,13 +330,13 @@ class Library:
     def region_attractions(self, city: str) -> list[dict]:
         """Attractions filed under the other cities of the same library folder (e.g. Ceningan for Lembongan)."""
         names = self._names(city)
-        own = {n.casefold() for n in names}
+        own = {fold(n) for n in names}
         out: list[dict] = []
         for f in self._folders(names):
-            if re.search(r" and |&|\+", f.casefold()):
+            if re.search(r" and |&|\+", fold(f)):
                 continue
             for c in self._coverage.get(f, []):
-                if c.casefold() in own:
+                if fold(c) in own:
                     continue
                 for shard in self._shards([c]):
                     out += [a for a in shard.get("attractions", []) if isinstance(a, dict)]
@@ -389,7 +387,7 @@ class Library:
                 best = (hits, stem)
         if best is None:
             return None
-        return best[1], self._load(self._files[best[1].casefold()]).get("restaurants", [])
+        return best[1], self._load(self._files[fold(best[1])]).get("restaurants", [])
 
     def _landmark_index(self) -> dict[str, list[list[list[str]]]]:
         if self._landmarks is None:

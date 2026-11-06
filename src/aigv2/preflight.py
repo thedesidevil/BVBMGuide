@@ -1,3 +1,4 @@
+from src.aigv2.textnorm import fold
 import re
 from datetime import date, datetime, time, timedelta
 from typing import Optional
@@ -36,7 +37,7 @@ def _d(d: date) -> str:
 
 
 def _norm(s: str) -> str:
-    return re.sub(r"[^a-z0-9]+", " ", s.lower()).strip()
+    return re.sub(r"[^a-z0-9]+", " ", fold(s)).strip()
 
 
 def _same(a: str, b: str) -> bool:
@@ -470,8 +471,8 @@ def _choice_base(text: str, options: list[str]) -> str:
     if not m or not re.search(r"\(", text):
         return ""
     base = m.group(1).strip(" ,.-")
-    low = base.casefold()
-    return "" if not base or any(low in o.casefold() or o.casefold() in low for o in options) else base
+    low = fold(base)
+    return "" if not base or any(low in fold(o) or fold(o) in low for o in options) else base
 
 
 def _apply_open_choice(dp: DayPlan, oc: OpenChoice, selected: list[str], n: int = 0) -> None:
@@ -500,7 +501,7 @@ _MONTHS = {m: i for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun",
 
 
 def _stems(text: str) -> set[str]:
-    return {w[:4] for w in re.findall(r"[a-z]{4,}", text.casefold())}
+    return {w[:4] for w in re.findall(r"[a-z]{4,}", fold(text))}
 
 
 def _apply_image_details(out: TripPlan, original: TripPlan, ans: str) -> None:

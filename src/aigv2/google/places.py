@@ -1,6 +1,5 @@
 import math
 import re
-import unicodedata
 from datetime import datetime, timezone
 from typing import Optional
 from urllib.parse import parse_qsl, quote_plus, urlencode, urlsplit, urlunsplit
@@ -10,6 +9,7 @@ import requests
 from src.aigv2.hours import from_google, is_24h
 from src.aigv2.models import Place, WeeklyHours
 from src.aigv2.store import PlaceCache
+from src.aigv2.textnorm import fold as _fold, has_accents, strip_accents
 
 SEARCH_TEXT_URL = "https://places.googleapis.com/v1/places:searchText"
 SEARCH_NEARBY_URL = "https://places.googleapis.com/v1/places:searchNearby"
@@ -45,7 +45,7 @@ _HOSPITAL_LIKE = re.compile(r"hospital|rumah sakit|\brs\b|emergency|medical cent
 
 def unwanted_name(name: str, medical: bool = False) -> bool:
     """True for a place whose name shows it is not what we are looking for; 'emergency' in the name always keeps it."""
-    low = name.casefold()
+    low = _fold(name)
     if "emergency" in low:
         return False
     if any(w in low for w in _EXCLUDED_NAME_WORDS) or _UNWANTED_ANY.search(name):
@@ -108,6 +108,11 @@ def _simplified_names(name: str) -> list[str]:
     last = out[-1] if out else bare
     if re.search(r"\btear$", last, re.I):
         add(re.sub(r"(?i)tear$", lambda m: m.group(0) + ("S" if m.group(0).isupper() else "s"), last))
+    if has_accents(name):
+        # an accent-stripped spelling ('Cafe de Flore') replaces the lowest-value variant; the total stays <= _MAX_RETRIES
+        plain = " ".join(strip_accents(bare).split()).strip(" ,-")
+        if plain and plain.casefold() != name.casefold():
+            out = [plain] + [x for x in out if x.casefold() != plain.casefold()]
     return out[:_MAX_RETRIES]
 
 
@@ -123,11 +128,6 @@ def _adds_new_words(original: str, found: str, city: str) -> bool:
 
 def _add_note(place: Place, note: str) -> None:
     place.verify_note = f"{place.verify_note}; {note}" if place.verify_note else note
-
-
-def _fold(text: str) -> str:
-    text = unicodedata.normalize("NFKD", text.casefold())
-    return "".join(c for c in text if not unicodedata.combining(c))
 
 
 def _tokens(name: str) -> set[str]:
@@ -315,14 +315,14 @@ class PlacesClient:
     def _emergency_hospitals(places: list[Place]) -> list[Place]:
         kept = []
         for p in places:
-            named = "emergency" in p.name.casefold()
+            named = "emergency" in _fold(p.name)
             if p.hours is None:
                 if not named:
                     _add_note(p, _UNKNOWN_HOURS_NOTE)
             elif not (named or _is_24h_week(p.hours)):
                 continue
             kept.append(p)
-        return sorted(kept, key=lambda p: "emergency" not in p.name.casefold())
+        return sorted(kept, key=lambda p: "emergency" not in _fold(p.name))
 
     @staticmethod
     def _match_ok(name: str, city: str, near: Optional[tuple[float, float]], raw: dict) -> bool:

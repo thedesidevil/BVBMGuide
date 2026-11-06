@@ -1,3 +1,4 @@
+from src.aigv2.textnorm import fold
 import re
 from datetime import date, datetime, time, timedelta
 from typing import Literal, Optional, Sequence
@@ -34,7 +35,7 @@ _VAGUE_TAIL = re.compile(r"\s+(?:visit|tour)$")
 
 
 def _is_vague(name: str) -> bool:
-    return _VAGUE_TAIL.sub("", " ".join(name.casefold().split())) in _VAGUE_NAMES
+    return _VAGUE_TAIL.sub("", fold(name)) in _VAGUE_NAMES
 
 
 class ScheduledItem(BaseModel):
@@ -308,7 +309,7 @@ def leave_by(dep: TransportLeg, domestic: bool, road_min: Optional[int] = None) 
 
 
 def _norm_city(text: str) -> str:
-    return " ".join(re.sub(r"[^\w]+", " ", text.casefold()).split())
+    return " ".join(re.sub(r"[^\w]+", " ", fold(text)).split())
 
 
 _CITY_SEP = re.compile(r"\s*(?:/|→|->|,|&|\s-\s|\s+to\s+|\s+and\s+)\s*", re.I)

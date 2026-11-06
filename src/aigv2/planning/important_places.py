@@ -1,3 +1,4 @@
+from src.aigv2.textnorm import fold
 import re
 from typing import Optional
 
@@ -124,7 +125,7 @@ def important_places(
     out: list[ImportantPlaces] = []
     seen: set[tuple[str, str]] = set()
     for stay in stays:
-        key = (stay.hotel.casefold(), stay.city.casefold())
+        key = (fold(stay.hotel), fold(stay.city))
         if key in seen:
             continue
         seen.add(key)

@@ -1,4 +1,5 @@
 """Deterministic structured data for the reference sections (no LLM, nothing invented)."""
+from src.aigv2.textnorm import fold
 import re
 from collections import Counter
 from typing import Optional
@@ -72,8 +73,8 @@ def extract_apps(items) -> list[App]:
     out, seen = [], set()
     for a in _dicts(items):
         n = _s(a.get("name"))
-        if n and n.casefold() not in seen:
-            seen.add(n.casefold())
+        if n and fold(n) not in seen:
+            seen.add(fold(n))
             out.append(App(name=n, purpose=_s(a.get("purpose"))))
     return out
 
@@ -88,8 +89,8 @@ def extract_phrases(items) -> list[Phrase]:
         loc, eng = _s(p.get("local")), _s(p.get("english"))
         if (loc.casefold(), eng.casefold()) in KNOWN_BAD_PHRASES:
             continue
-        if loc and eng and loc.casefold() not in seen:
-            seen.add(loc.casefold())
+        if loc and eng and fold(loc) not in seen:
+            seen.add(fold(loc))
             out.append(Phrase(local=loc, english=eng))
     return out[:PHRASE_CAP]
 
@@ -99,14 +100,14 @@ _STOP = frozenset("a an the and or of in on at to for with by from is are be as 
 
 
 def _content_words(text: str) -> frozenset[str]:
-    return frozenset(w for w in re.findall(r"[^\W_]+", text.casefold()) if w not in _STOP)
+    return frozenset(w for w in re.findall(r"[^\W_]+", fold(text)) if w not in _STOP)
 
 
 def near_duplicate(a: str, b: str, threshold: float = 0.6) -> bool:
     """Token Jaccard similarity of the content words (stop words removed) >= threshold."""
     x, y = _content_words(a), _content_words(b)
     if not x or not y:
-        return a.casefold().strip() == b.casefold().strip()
+        return fold(a) == fold(b)
     return len(x & y) / len(x | y) >= threshold
 
 
@@ -191,7 +192,7 @@ def extract_contacts(emergency, embassies) -> list[Contact]:
     out = _extract_contacts(emergency, embassies)
     seen, uniq = {}, []
     for c in out:  # the same mission/line often arrives from several source guides
-        key = _digits(c.phone) if c.phone else (c.kind, c.name.casefold())
+        key = _digits(c.phone) if c.phone else (c.kind, fold(c.name))
         if c.phone and c.kind == "tourist_police":
             key = ("tp", key)
         if key not in seen:
@@ -240,9 +241,9 @@ def extract_dishes(items, restaurants: list[dict]) -> list[Dish]:
     allowed = {norm_name(r["name"]): r["name"] for r in restaurants if r.get("name")}
     for d in _dicts(items):
         name = _s(d.get("name"))
-        if not name or name.casefold() in seen:
+        if not name or fold(name) in seen:
             continue
-        seen.add(name.casefold())
+        seen.add(fold(name))
         where = []
         for r in restaurants:
             must = r.get("must_try_dishes")

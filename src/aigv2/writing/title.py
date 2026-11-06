@@ -1,3 +1,4 @@
+from src.aigv2.textnorm import fold
 import re
 
 from src.aigv2.writing.voice import first_person_problems
@@ -33,7 +34,7 @@ def _validate(out: TitleOut) -> list[str]:
     if _EMOJI.search(t):
         problems.append("title must not contain emojis")
     problems += first_person_problems("title", t)
-    if words and all(re.sub(r"\W", "", w).casefold() in _GENERIC for w in words):
+    if words and all(re.sub(r"\W", "", fold(w)) in _GENERIC for w in words):
         problems.append("title is generic; make it destination-specific")
     return problems
 
@@ -41,8 +42,8 @@ def _validate(out: TitleOut) -> list[str]:
 def names_destination(title: str, places: list[str]) -> bool:
     """True when the title contains a trip city or country by name (the same test the QC title rule applies;
     'Parisian' alone does not count)."""
-    low = " " + " ".join(re.findall(r"[^\W_]+", title.casefold())) + " "
-    return any(" " + " ".join(re.findall(r"[^\W_]+", p.casefold())) + " " in low for p in places if p.strip())
+    low = " " + " ".join(re.findall(r"[^\W_]+", fold(title))) + " "
+    return any(" " + " ".join(re.findall(r"[^\W_]+", fold(p))) + " " in low for p in places if p.strip())
 
 
 def write_title(trip, llm, countries=()) -> str:

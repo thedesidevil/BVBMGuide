@@ -1,3 +1,4 @@
+from src.aigv2.textnorm import fold
 import re
 from typing import Optional
 
@@ -77,7 +78,7 @@ def _validator(names: list[str]):
         text = " ".join(paras)
         if _WE.search(text):
             problems.append("never use we, our or us; address the client as 'you'")
-        if names and not any(n.casefold() in text.casefold() for n in names):
+        if names and not any(fold(n) in fold(text) for n in names):
             problems.append(f"mention the destination by name ({', '.join(names)})")
         if _EMOJI.search(text):
             problems.append("no emojis")

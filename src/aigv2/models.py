@@ -4,6 +4,8 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field, model_validator
 
+from src.aigv2.textnorm import fold
+
 
 class WeeklyHours(BaseModel):
     periods: dict[int, list[tuple[time, time]]]
@@ -191,7 +193,7 @@ class Place(BaseModel):
 
 
 def place_key(name: str, city: str) -> str:
-    return f"{' '.join(name.casefold().split())}|{' '.join(city.casefold().split())}"
+    return f"{fold(name)}|{fold(city)}"
 
 
 class Marker(BaseModel):

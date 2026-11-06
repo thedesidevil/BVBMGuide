@@ -309,3 +309,20 @@ def test_route_specific_transport_mode_does_not_absorb_a_generic_one():
                              {"mode": "Train to Zurich", "description": "Interlaken Ost to Zurich HB, ~2 hours."}])
     byh = {p.heading: p.body for p in out}
     assert "Zurich" in byh["Train to Zurich"] and "Lucerne" not in byh["Train to Zurich"]
+
+
+def test_section_inputs_dishes_come_from_the_city_own_shard():
+    from types import SimpleNamespace
+    from src.aigv2.pipeline import _section_inputs
+
+    class Lib:
+        def city(self, c, region=True):
+            own = {"local_dishes": [{"name": "Rösti"}]}
+            return {**own, "local_dishes": own["local_dishes"] + ([{"name": "Crepes"}] if region else [])}
+
+        def country(self, c):
+            return {"money": []}
+
+    state = SimpleNamespace(days=[SimpleNamespace(city="Lucerne")], countries={"Lucerne": "Switzerland"})
+    city_data, _ = _section_inputs(state, Lib())
+    assert [d["name"] for d in city_data[0]["local_dishes"]] == ["Rösti"]

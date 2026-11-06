@@ -309,9 +309,10 @@ class Library:
                 shards.append(self._load(p))
         return shards
 
-    def city(self, city: str) -> dict:
+    def city(self, city: str, region: bool = True) -> dict:
         names = self._names(city)
-        names += self._region_names(self._folders(names), city)
+        if region:
+            names += self._region_names(self._folders(names), city)
         merged: dict = {}
         seen: dict[str, set] = {}
         for shard in self._shards(names):

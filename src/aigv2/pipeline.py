@@ -773,6 +773,12 @@ def _day_facts(ds: DayState, state: PlanState) -> dict:
 def _section_inputs(state: PlanState, library: Library) -> tuple[list[dict], dict]:
     cities = list(dict.fromkeys(d.city for d in state.days))
     city_data = [{**library.city(c), "city": c, "country": state.countries.get(c, "")} for c in cities]
+    for cd in city_data:
+        # a region shard filed under another country's name (Lucerne merged with the 'France' shard of one guide)
+        # brings that country's dishes along: dishes come from the city's own shard when it has any
+        own = library.city(cd["city"], region=False).get("local_dishes")
+        if own:
+            cd["local_dishes"] = own
     country_data: dict[str, dict] = {}
     for c in cities:
         country = state.countries.get(c, "")

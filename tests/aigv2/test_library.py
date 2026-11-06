@@ -239,3 +239,9 @@ def test_other_destinations_excludes_trip_cities_and_region_name(tmp_path):
     lib = Library(tmp_path)
     assert lib.other_destinations(["Ubud", "Sanur"]) == {"Nusa Dua", "Kuta"}
     assert lib.other_destinations(["Nowhere"]) == set()
+
+
+def test_city_without_region_shard_keeps_only_its_own_lists(lib_dir):
+    lib = Library(lib_dir)
+    assert [r["name"] for r in lib.city("Ubud")["restaurants"]] == ["Locavore", "Warung Bali"]
+    assert [r["name"] for r in lib.city("Ubud", region=False)["restaurants"]] == ["Locavore"]

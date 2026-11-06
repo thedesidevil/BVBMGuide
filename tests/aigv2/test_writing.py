@@ -181,8 +181,8 @@ def test_safety_embassy_checked():
 
 
 def test_title_rejects_generic():
-    llm, _ = make([{"title": "All Inclusive Guide"}], [{"title": "Parisian Autumn Dreams"}])
-    assert write_title(trip(), llm) == "Parisian Autumn Dreams"
+    llm, _ = make([{"title": "All Inclusive Guide"}], [{"title": "Paris Autumn Dreams"}])
+    assert write_title(trip(), llm) == "Paris Autumn Dreams"
     assert llm.cost_log[1]["fallback"] is True
     llm, _ = make([{"title": "Your Trip"}], [{"title": "Paris"}])
     with pytest.raises(LLMStepError):
@@ -282,8 +282,8 @@ def test_verify_heuristic_precision():
 
 
 def test_title_rejects_hyphenated_and_strips_quotes():
-    llm, _ = make([{"title": "All-Inclusive Guide Paris"}], [{"title": "\"Parisian Autumn\""}])
-    assert write_title(trip(), llm) == "Parisian Autumn"
+    llm, _ = make([{"title": "All-Inclusive Guide Paris"}], [{"title": "\"Paris Autumn\""}])
+    assert write_title(trip(), llm) == "Paris Autumn"
     assert llm.cost_log[1]["fallback"] is True
 
 
@@ -742,3 +742,11 @@ def test_dishes_reference_filter_drops_meat_for_vegetarian_trip():
     assert [x["name"] for x in reference_filter("dishes", "local_dishes", items, trip=veg)] == ["Rösti", "Raclette"]
     anyone = SimpleNamespace(diet=Diet(), days=[])
     assert len(reference_filter("dishes", "local_dishes", items, trip=anyone)) == 4
+
+
+def test_title_must_name_a_destination_and_retries():
+    llm, _ = make([{"title": "Parisian Dreams, Swiss Peaks"}], [{"title": "Paris Dreams, Swiss Peaks"}])
+    assert write_title(trip(), llm) == "Paris Dreams, Swiss Peaks"
+    assert llm.cost_log[1]["fallback"] is True
+    llm2, _ = make([{"title": "Alpine Dreams Awaits"}], [{"title": "Switzerland Dreams Awaits"}])
+    assert write_title(trip(), llm2, ["Switzerland"]) == "Switzerland Dreams Awaits"

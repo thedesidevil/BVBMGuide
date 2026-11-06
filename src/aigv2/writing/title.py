@@ -38,10 +38,25 @@ def _validate(out: TitleOut) -> list[str]:
     return problems
 
 
-def write_title(trip, llm) -> str:
+def names_destination(title: str, places: list[str]) -> bool:
+    """True when the title contains a trip city or country by name (the same test the QC title rule applies;
+    'Parisian' alone does not count)."""
+    low = " " + " ".join(re.findall(r"[^\W_]+", title.casefold())) + " "
+    return any(" " + " ".join(re.findall(r"[^\W_]+", p.casefold())) + " " in low for p in places if p.strip())
+
+
+def write_title(trip, llm, countries=()) -> str:
     cities = list(dict.fromkeys(h.city for h in trip.hotels))
+    places = cities + [c for c in dict.fromkeys(countries) if c]
+
+    def validate(out: TitleOut) -> list[str]:
+        problems = _validate(out)
+        if not names_destination(_clean(out.title), places):
+            problems.append(f"title must name a destination: one of {', '.join(places)}")
+        return problems
+
     prompt = (f"Destinations in order: {', '.join(cities)}\nScope: {trip.trip_scope}\n"
               f"Occasion: {trip.occasion or 'none'}\nTravellers: {trip.travellers.adults} adults, "
               f"children ages {trip.travellers.kids_ages or 'none'}")
-    out = llm.run_json("title", _SYSTEM, prompt, TitleOut, validate=_validate)
+    out = llm.run_json("title", _SYSTEM, prompt, TitleOut, validate=validate)
     return _clean(out.title)

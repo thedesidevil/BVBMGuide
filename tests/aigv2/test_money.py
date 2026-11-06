@@ -189,3 +189,12 @@ def test_inr_price_in_foreign_city_is_shown_in_rupees():
 
 def test_no_zero_inr():
     assert format_price("MUR", 5, 10, 0.1) == "MUR 5–10"
+
+
+def test_strip_stale_inr_conversion():
+    from src.aigv2.money import strip_inr_conversion as s
+    assert s("CHF 29 (~INR 2,600)") == "CHF 29"
+    assert s("CHF 25–55 (~INR 2,300–5,000) one-way") == "CHF 25–55 one-way"
+    assert s("CHF 40 (about ₹3,500)") == "CHF 40"
+    assert s({"cost": "EUR 12 (~Rs. 1,100)", "n": 3}) == {"cost": "EUR 12", "n": 3}
+    assert s("INR 500 entry") == "INR 500 entry"

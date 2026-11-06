@@ -7,6 +7,7 @@ from typing import Optional
 from pydantic import BaseModel, Field, model_validator
 
 from src.aigv2.llm import LLMStepError
+from src.aigv2.money import strip_inr_conversion
 from src.aigv2.library import _fold, diet_fits, dish_fits_diet, norm_name, wants_veg
 from src.aigv2.models import Marker
 from src.aigv2.money import FxUnavailable, city_currency
@@ -690,6 +691,8 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
     named = _library_named(key, cities, cdatas, nationalities=frozenset(client_nationalities(trip)),
                            other_places=other_places, trip=trip,
                            countries=[c["country"] for c in cities if c.get("country")])
+    if not getattr(trip, "trip_scope", "") == "domestic":
+        named = {k: strip_inr_conversion(v) for k, v in named.items()}  # the section states its own INR rate
     lib = [x for v in named.values() for x in v]
     medical = key in ("safety", "health") and important is not None
     hospitals = hospital_facts(important) if medical else None

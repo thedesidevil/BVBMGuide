@@ -189,3 +189,18 @@ def price_text(lib_restaurant: dict, city_currency: str, fx, day: date) -> "str 
     except FxUnavailable:
         return _local(code, low, high)
     return format_price(code, low, high, rate)
+
+
+_INR_PAREN = re.compile(r"\s*[\(\[]\s*(?:~|≈|about|approx\.?|around)?\s*(?:INR|₹|Rs\.?)\s*[\d,.]+(?:\s*[-–—]\s*(?:INR|₹|Rs\.?)?\s*[\d,.]+)?\s*[\)\]]", re.I)
+
+
+def strip_inr_conversion(value):
+    """Library text often carries an old rupee conversion in brackets ('CHF 29 (~INR 2,600)'). It disagrees with the
+    guide's own rate, so the stale conversion is removed (strings, and strings inside dicts / lists)."""
+    if isinstance(value, str):
+        return _INR_PAREN.sub("", value).strip()
+    if isinstance(value, list):
+        return [strip_inr_conversion(v) for v in value]
+    if isinstance(value, dict):
+        return {k: strip_inr_conversion(v) for k, v in value.items()}
+    return value

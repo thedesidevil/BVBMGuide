@@ -281,3 +281,14 @@ def test_embassy_sharing_consulate_phone_keeps_consulate():
     assert [c.name for c in out] == ["Consulate General of India – Denpasar", "Embassy of India – Jakarta"]
     out2 = _st.extract_contacts([], list(reversed(em[:2])))
     assert [c.name for c in out2] == ["Consulate General of India – Denpasar"]
+
+
+def test_french_emergency_numbers_use_national_lines_and_skip_long_local_numbers():
+    from src.aigv2.writing.structured import extract_numbers
+    items = [{"service": "Police Emergency", "number": "112"}, {"service": "Medical Emergencies", "number": "01 53 94 94 94"},
+             {"service": "Medical emergency", "number": "15"}, {"service": "Police", "number": "17"},
+             {"service": "Fire", "number": "18"}, {"service": "Fire", "number": "112"}, {"service": "Ambulance", "number": "112"},
+             {"service": "Europe-wide emergency (police, ambulance, fire)", "number": "112"},
+             {"service": "Police Non Emergency", "number": "101"}]
+    assert [(n.service, n.number) for n in extract_numbers(items)] == [
+        ("Police", "17"), ("Ambulance", "15"), ("Fire", "18"), ("Emergency (all services)", "112")]

@@ -1,5 +1,6 @@
 """Deterministic structured data for the reference sections (no LLM, nothing invented)."""
 import re
+from collections import Counter
 from typing import Optional
 
 from pydantic import BaseModel, Field
@@ -140,17 +141,45 @@ _NUMBER_KINDS = [("Police", re.compile(r"police", re.I)), ("Ambulance", re.compi
                  ("Search & Rescue", re.compile(r"rescue|basarnas|\bsar\b", re.I))]
 
 
+_GENERAL = {"112", "911", "999"}
+_NON_EMERGENCY = re.compile(r"non[- ]?emergency|nhs", re.I)
+
+
+def _short(num: str) -> Optional[str]:
+    """A dial-able emergency number: 2 to 4 digits (17, 144, 3624); a long local line is not one."""
+    digits = _digits(num)
+    if 2 <= len(digits) <= 4 and re.fullmatch(r"[\d\s]+", num.strip()):
+        return digits
+    return num.strip() if num.strip().startswith("+") else None  # internationally formatted lines are kept as written
+
+
 def extract_numbers(items) -> list[EmergencyNumber]:
-    out, taken = [], set()
+    """Police / ambulance / fire from the library's emergency contacts. A country's own short number (17, 15, 18 in
+    France) is preferred over the shared 112; 112 is listed once as the all-purpose line."""
+    votes: dict[str, Counter] = {k: Counter() for k, _ in _NUMBER_KINDS}
+    labels: dict[tuple[str, str], str] = {}
+    general = False
     for e in _dicts(items):
         svc, num = _s(e.get("service")), _s(e.get("number"))
-        if not svc or not num or re.search(r"tourist", svc, re.I):
+        d = _short(num) if num else None
+        if not svc or not d or re.search(r"tourist", svc, re.I) or _NON_EMERGENCY.search(svc):
             continue
+        if d == "112":
+            general = True
         for kind, pat in _NUMBER_KINDS:
-            if pat.search(svc) and kind not in taken:
-                taken.add(kind)
-                out.append(EmergencyNumber(service=svc, number=num))
+            if pat.search(svc):
+                votes[kind][d] += 1
+                labels.setdefault((kind, d), svc)
                 break
+    out, used = [], set()
+    for kind, _ in _NUMBER_KINDS:
+        own = [(n, d) for d, n in votes[kind].items() if d not in _GENERAL]
+        if own:
+            d = max(own, key=lambda x: x[0])[1]
+            out.append(EmergencyNumber(service=kind, number=d))
+            used.add(d)
+    if general:
+        out.append(EmergencyNumber(service="Emergency (all services)", number="112"))
     return out[:NUMBER_CAP]
 
 

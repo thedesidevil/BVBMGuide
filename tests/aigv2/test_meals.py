@@ -570,3 +570,21 @@ def test_public_transport_only_allows_longer_walk_and_transit(tmp_path):
     assert [(c.lib["name"], c.travel_label) for c in picks[0].restaurants] == [
         ("Walk14", "Walk"), ("Metro20", "By public transport")]
     assert reasons(excl) == {("Far", "too_far")}
+
+
+def test_vegetarian_client_accepts_cuisine_prone_and_flags_unknown(tmp_path):
+    rs = [rest("A"), rest("Pasta House", cuisine=("Italian",), veg=None), rest("Mystery", cuisine=("Zorgian",), veg=None),
+          rest("Steak Barn", cuisine=("Steakhouse",), veg=None), rest("Fish", cuisine=("Seafood",), veg=None),
+          rest("Meaty", cuisine=("Swiss",), veg=False)]
+    lib, pl, rt = world(tmp_path, rs)
+    picks, excl = plan([(3, TUE, "Istanbul", [lunch()])], lib, pl, rt, diet=Diet(restrictions=["vegetarian"]))
+    assert names(picks[0]) == ["A", "Pasta House", "Mystery"]
+    assert [c.diet_verify for c in picks[0].restaurants] == [False, False, True]
+    assert picks[0].markers == []
+    assert {("Steak Barn", "diet"), ("Fish", "diet"), ("Meaty", "diet")} <= reasons(excl)
+
+
+def test_non_vegetarian_diet_unchanged_by_unknown_tier(tmp_path):
+    lib, pl, rt = world(tmp_path, [rest("A", veg=None), rest("B", veg=None), rest("C", veg=None)])
+    picks, _ = plan([(3, TUE, "Istanbul", [lunch()])], lib, pl, rt)
+    assert names(picks[0]) == ["A", "B", "C"] and not any(c.diet_verify for c in picks[0].restaurants)

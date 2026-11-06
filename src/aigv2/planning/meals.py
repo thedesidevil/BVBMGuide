@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 from src.aigv2.config import Settings
 from src.aigv2.hours import format_for_day, is_open_for, parse_library_hours
-from src.aigv2.library import diet_fits, is_indian, is_veg_only, norm_name, wants_veg
+from src.aigv2.library import diet_tier, is_indian, is_veg_only, norm_name, soft_veg_diet, wants_veg
 from src.aigv2.google.places import _haversine_km
 from src.aigv2.planning.travel import APPROX_LABEL, approx_car_minutes
 from src.aigv2.llm import LLMStepError
@@ -45,6 +45,7 @@ class ChosenRestaurant(BaseModel):
     travel_label: str
     hours_text: str
     hours_verify: bool
+    diet_verify: bool = False
 
 
 class MealPick(BaseModel):
@@ -145,6 +146,7 @@ class _Planner:
         self.resolved: dict[tuple[str, str], Optional[Place]] = {}
         self.stats = PlanStats()
         self.exclusions: list[Exclusion] = []
+        self._unknown_diet = False  # second pass: only venues whose diet fit is unknown (vegetarian clients)
 
     def _shard(self, anchor_name: str, city: str) -> tuple[str, list[dict]]:
         if norm_name(anchor_name) != norm_name(city):
@@ -238,9 +240,13 @@ class _Planner:
             if not key or key in seen:
                 continue
             seen.add(key)
-            if not diet_fits(r, self.diet):
-                self._exclude(rname, "diet", where, "not known to fit the client's diet")
+            tier = diet_tier(r, self.diet)
+            if tier is None:
+                if not self._unknown_diet:
+                    self._exclude(rname, "diet", where, "not known to fit the client's diet")
                 continue
+            if (tier == 2) != self._unknown_diet:
+                continue  # unknown-fit venues are only tried in the second (verify) pass
             if is_veg_only(r) and not wants_veg(self.diet):
                 self._exclude(rname, "diet", where, "vegetarian-only venue; the client did not ask for vegetarian")
                 continue
@@ -265,6 +271,9 @@ class _Planner:
             near = sorted((t for t in tier if t[4] is not None), key=lambda t: t[4])
             rest = sorted((t for t in tier if t[4] is None), key=lambda t: t[:3])
             ordered += [t[3] for t in near + rest]
+        if soft_veg_diet(self.diet):  # known vegetarian fit before cuisine-based guesses
+            ordered = ([r for r in ordered if diet_tier(r, self.diet) == 0]
+                       + [r for r in ordered if diet_tier(r, self.diet) != 0])
         if slot is not None:  # venues whose own text is for another meal go last
             ordered = ([r for r in ordered if not wrong_meal(r.get("best_for"), slot.meal)]
                        + [r for r in ordered if wrong_meal(r.get("best_for"), slot.meal)])
@@ -325,6 +334,16 @@ class _Planner:
                 repeats, need, need_indian and not any(is_indian(c.lib) for c in fresh)
                 and any(is_indian(c.lib) for c in repeats), slot, a_name, day)
             chosen = fresh + extra
+        if len(chosen) < count and soft_veg_diet(self.diet):
+            # nothing else qualifies: best-ranked venues with unknown vegetarian options, flagged to verify (max 3)
+            self._unknown_diet = True
+            try:
+                v3, s3 = self._collect(n, day, city, slot, a_name, a_xy, where, need_indian, count - len(chosen))
+            finally:
+                self._unknown_diet = False
+            for c in v3[: count - len(chosen)]:
+                shard_of[id(c)] = s3[id(c)]
+                chosen.append(c)
         for c in chosen:
             key = (norm_name(shard_of[id(c)]), norm_name(c.lib["name"]))
             pid = _pid(c.place, key)
@@ -416,7 +435,8 @@ class _Planner:
                 self._exclude(r["name"], "too_far", where, detail)
                 continue
             out.append(ChosenRestaurant(lib=r, place=place, travel_min=travel[1], travel_label=travel[0],
-                                        hours_text=format_for_day(hours, day), hours_verify=verify))
+                                        hours_text=format_for_day(hours, day), hours_verify=verify,
+                                        diet_verify=self._unknown_diet))
         return out
 
     def _rank(self, valid: list[ChosenRestaurant], count: int, require_indian: bool, slot: MealSlot,

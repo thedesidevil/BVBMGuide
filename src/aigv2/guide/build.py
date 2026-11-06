@@ -796,6 +796,8 @@ class _Day:
             marks.append(g.MarkerRef(kind="VERIFY", text=f"{name}: opening hours"))
         elif c.hours_verify:
             marks.append(g.MarkerRef(kind="VERIFY", text=f"{name}: opening hours from the library"))
+        if c.diet_verify:
+            marks.append(g.MarkerRef(kind="VERIFY", text=f"{name}: confirm vegetarian options"))
         dishes = lib.get("must_try_dishes")
         rt = self.rtexts.get(norm_name(name))
         travel = f"{c.travel_label} · {c.travel_min} min"

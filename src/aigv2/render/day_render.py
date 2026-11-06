@@ -433,6 +433,8 @@ class DayRenderer:
         facts.append(("OPENING HOURS", [c.hours_text, _verify("opening hours from the library")]
                       if c.hours_verify else c.hours_text))
         facts.append(("GETTING THERE", f"{c.travel_label} · {c.travel_min} min"))
+        if c.diet_verify:
+            facts.append(("DIET", _verify("confirm vegetarian options")))
         dishes = lib.get("must_try_dishes")
         if isinstance(dishes, list) and dishes:
             facts.append(("MUST TRY", ", ".join(str(x) for x in dishes[:3])))

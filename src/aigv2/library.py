@@ -161,6 +161,39 @@ def diet_fits(restaurant: dict, diet: Diet) -> bool:
     return True
 
 
+_MEAT_ONLY = ("steakhouse", "steak house", "steak", "bbq", "barbecue", "barbeque", "seafood", "grill", "grill and bar",
+              "churrascaria", "burger", "kebab", "sushi", "oyster bar", "fish", "rotisserie", "butcher")
+_VEG_PRONE = ("italian", "mediterranean", "pizza", "pizzeria", "pasta", "greek", "lebanese", "middle eastern",
+              "thai", "vietnamese", "chinese", "asian", "bakery", "cafe", "café", "brunch", "swiss", "alpine",
+              "fondue", "european", "international", "pastry", "tuscan", "turkish", "mexican", "falafel")
+
+
+def is_meat_only(r: dict) -> bool:
+    """Conservative: steakhouse / bbq / seafood-only style venue (by cuisine tag or name)."""
+    tags = _cuisines(r)
+    if any(_has(t, m) for t in tags for m in _MEAT_ONLY):
+        return True
+    return any(_has(norm_name(r.get("name") or ""), m) for m in ("steakhouse", "steak house", "bbq", "barbecue", "grill"))
+
+
+def soft_veg_diet(diet: Diet) -> bool:
+    """Plain 'vegetarian' (not pure-veg, not vegan, no other restriction): lenient tiers apply."""
+    items = [norm_name(x) for x in [*diet.restrictions, *diet.allergies] if x.strip()]
+    return bool(items) and not diet.pure_veg and all(_kind(x) == "vegetarian" for x in items)
+
+
+def diet_tier(r: dict, diet: Diet) -> int | None:
+    """0 = known to fit; 1 = cuisine usually has vegetarian dishes; 2 = unknown (verify). None = excluded."""
+    if diet_fits(r, diet):
+        return 0
+    if not soft_veg_diet(diet) or is_meat_only(r) or r.get("vegetarian_friendly") is False:
+        return None
+    cuisines = _cuisines(r)
+    if any(_has(c, w) for c in cuisines for w in _VEG_PRONE):
+        return 1
+    return 2
+
+
 _GENERIC = {"the", "of", "and", "de", "temple", "beach", "park", "market", "view", "point", "village", "bay",
             "club", "resort", "hotel", "street", "road", "garden", "forest", "mountain", "lake", "island",
             "museum", "palace", "waterfall", "cave"}

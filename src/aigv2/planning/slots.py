@@ -477,8 +477,12 @@ def schedule_day(
             res.markers.append(Marker(kind="VERIFY", text=f"no hotel known for {d.isoformat()}"))
         return []
 
+    # a train/flight between two hotel cities is the day's arrival as well: the group is in the new city after it,
+    # so the leave-by time of the old city does not close the day's meals
+    meal_cutoff = None if arrival is not None and arrival is departure else cutoff
+
     def add(meal: str, start: time, stay: Optional[HotelStay], spec, max_min: Optional[int] = None) -> None:
-        if cutoff is not None and start >= cutoff:
+        if meal_cutoff is not None and start >= meal_cutoff:
             return
         if _included(meal, stay, res.scheduled, d):
             res.meals.append(MealSlot(meal=meal, start=start, included=True))
@@ -520,6 +524,9 @@ def schedule_day(
         if l_start < w_start < _plus(l_start, _WINDOW_LUNCH_CLASH_MIN):
             # the tour leaves right after the usual lunch hour: eat before the pick-up, not mid-transfer
             l_start = max(_plus(w_start, -_WINDOW_LUNCH_LEAD_MIN), _EARLIEST_LUNCH)
+    if hotel_arr is not None and hotel_arr > l_start and arrival is not None and arrival.depart \
+            and arrival.depart.date() == d and arrival.depart.time() < l_start:
+        l_start = round15(hotel_arr)  # still on the train/flight at the usual lunch hour: lunch follows the arrival
     new = [s for s in stays if s.check_in == d]
     midday_checkin = any(s.check_in_time and time(11) <= s.check_in_time <= time(13) for s in new)
     midday_arrival = hotel_arr is not None and time(11) <= hotel_arr <= time(13)
@@ -578,7 +585,7 @@ def schedule_day(
     # countryside around it needs a wider drive than a hotel in town
     rural_cap = _RURAL_LUNCH_MAX_MIN if tour_day and not (at_hotel_rule or midday_checkin or midday_arrival) \
         and not day.drive_stops else None
-    if covering is not None and not (cutoff is not None and l_start >= cutoff):
+    if covering is not None and not (meal_cutoff is not None and l_start >= meal_cutoff):
         slot = MealSlot(meal="lunch", start=l_start, in_package=True)
         it = lunch_anchor_item()
         p = places.get(it.name) if it else None

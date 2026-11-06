@@ -57,6 +57,15 @@ def hospital_like(name: str) -> bool:
 _CLINIC_NOTE = "nearest clinic, not a hospital"
 _HOSPITAL_RADIUS_KM = 10
 _NEAR_KM = 25
+_LODGING_OVERLAP = 0.7
+_LODGING_TYPES = {"lodging", "hotel", "resort_hotel", "bed_and_breakfast", "hostel", "guest_house", "motel"}
+_CITY_ALIASES = {
+    "lucerne": ("luzern",), "zurich": ("zuerich",), "geneva": ("geneve",), "munich": ("munchen",),
+    "cologne": ("koln",), "vienna": ("wien",), "florence": ("firenze",), "rome": ("roma",),
+    "venice": ("venezia",), "prague": ("praha",), "brussels": ("bruxelles", "brussel"), "bern": ("berne",),
+    "milan": ("milano",), "naples": ("napoli",), "turin": ("torino",), "lisbon": ("lisboa",),
+    "copenhagen": ("kobenhavn",), "athens": ("athina",),
+}
 _MIN_OVERLAP = 0.6
 _TRAILING_PAREN = re.compile(r"\s*\([^()]*\)\s*$")
 _WEAK_COVERAGE = {
@@ -316,9 +325,15 @@ class PlacesClient:
 
     @staticmethod
     def _match_ok(name: str, city: str, near: Optional[tuple[float, float]], raw: dict) -> bool:
-        if _overlap(name, _display(raw)) < _MIN_OVERLAP:
+        overlap = _overlap(name, _display(raw))
+        if overlap < _MIN_OVERLAP:
             return False
-        if re.search(rf"(?<!\w){re.escape(_fold(city))}(?!\w)", _fold(raw.get("formattedAddress", ""))):
+        addr = _fold(raw.get("formattedAddress", ""))
+        for c in (city, *_CITY_ALIASES.get(_fold(city), ())):
+            if re.search(rf"(?<!\w){re.escape(_fold(c))}(?!\w)", addr):
+                return True
+        if overlap >= _LODGING_OVERLAP and _LODGING_TYPES & set(raw.get("types") or []):
+            # a named hotel in a suburb or neighbouring village ('Wilderswil' for Interlaken, 'Clichy' for Paris)
             return True
         loc = raw.get("location")
         if near and loc:

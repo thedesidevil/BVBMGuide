@@ -27,6 +27,7 @@ from src.aigv2.planning.boat import BOAT_BOOKING, DEPARTS_AT, enrich_boat_legs, 
 from src.aigv2.planning.late_night import AIRPORT_PICKUP, driver_time, is_late_night_landing
 from src.aigv2.planning.important_places import ImportantPlaces, important_places
 from src.aigv2.planning.meals import Exclusion, MealPick, PlanStats, plan_meals
+from src.aigv2.google.places import _overlap
 from src.aigv2.planning.slots import (DayResult, DEFAULT_STOP_MIN, parse_time, region_day_city, resolve_day_city, schedule_day,
                                       space_after_lunch)
 from src.aigv2.planning.travel import Leg, boat_leg, compute_legs
@@ -232,6 +233,23 @@ def _new_stay(trip: TripPlan, d: date) -> Optional[HotelStay]:
 
 
 pkey = place_key
+HOTEL_MATCH_OVERLAP = 0.7
+
+
+def _name_words(text: str) -> list[str]:
+    return norm_name(text).split()
+
+
+def hotel_overlap(voucher: str, google: str) -> float:
+    return _overlap(voucher, google)
+
+
+def is_name_extension(voucher: str, google: str) -> bool:
+    """Google's name is the voucher's name continued (or with its last word completed), never a different hotel."""
+    v, g = _name_words(voucher), _name_words(google)
+    if not v or len(g) < len(v) or v == g or len(g) - len(v) > 3:
+        return False
+    return g[:len(v) - 1] == v[:-1] and g[len(v) - 1].startswith(v[-1])
 
 
 def resolve_places(trip: TripPlan, client, places: dict[str, Optional[Place]],
@@ -242,6 +260,15 @@ def resolve_places(trip: TripPlan, client, places: dict[str, Optional[Place]],
     for h in trip.hotels:
         if pkey(h.hotel, h.city) not in places:
             places[pkey(h.hotel, h.city)] = client.find(h.hotel, h.city)
+        found = places.get(pkey(h.hotel, h.city))
+        if found is not None and not found.match_ok and hotel_overlap(h.hotel, found.name) >= HOTEL_MATCH_OVERLAP:
+            # a named hotel in a suburb or neighbouring village (address city differs): the name is the proof
+            found = places[pkey(h.hotel, h.city)] = found.model_copy(update={"match_ok": True})
+        if found is not None and found.match_ok and is_name_extension(h.hotel, found.name):
+            # the voucher name is a typo or a short form of Google's ('Airport Mess' / 'Airport Messe')
+            old, h.hotel = h.hotel, found.name
+            places[pkey(h.hotel, h.city)] = found
+            places.pop(pkey(old, h.city), None)
     for dp in trip.days:
         stay = _stay_for_day(trip, dp.date)
         near = _xy(places.get(pkey(stay.hotel, stay.city))) if stay else None

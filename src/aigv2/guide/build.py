@@ -43,6 +43,7 @@ def nice_name(name: str) -> str:
     return name.title() if name and name.isupper() and not _IATA.match(name) else name
 
 
+_COUNT_WORD = {2: "Two", 3: "Three", 4: "Four"}
 _CHOOSE = re.compile(r"\s*Choose [^.;]+? or [^.;]+?;\s*any expenses are your own\.\s*", re.I)
 _SHOUT = re.compile(r"\b[A-Z][A-Z'’&-]+(?:\s+[A-Z][A-Z'’&-]+)+\b")
 _CLOCK = re.compile(r"^\s*\d{1,2}[:.]\d{2}")
@@ -598,7 +599,7 @@ class _Day:
             return
         own = any("own expense" in f"{m.item.note}".lower() for m in members)
         self.out.append(g.OptionCards(
-            eyebrow=f"{_SLOT_TITLE[first.slot].upper()}  ·  YOUR CHOICE",
+            eyebrow=f"{_SLOT_TITLE[first.slot].upper()}  ·  {_COUNT_WORD.get(len(options), str(len(options))).upper()} OPTIONS - CHOOSE ONE",
             heading=" or ".join(o.name.text for o in options),
             chip="At your own expense" if own else None, own_expense=own, options=options))
         if marks:

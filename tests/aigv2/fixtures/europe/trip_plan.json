@@ -1,0 +1,624 @@
+{
+  "client_names": [
+    "Sneha Naik",
+    "Ashutosh Naik",
+    "Sharva Naik"
+  ],
+  "travellers": {
+    "adults": 2,
+    "kids_ages": [
+      8
+    ],
+    "notes": "1 child",
+    "child_counts": {}
+  },
+  "diet": {
+    "restrictions": [
+      "vegetarian"
+    ],
+    "allergies": [],
+    "likes": [],
+    "pure_veg": false
+  },
+  "travel_modes": [
+    "public_transport"
+  ],
+  "hotels": [
+    {
+      "city": "Paris",
+      "hotel": "Voco Paris- Porte de Clichy",
+      "check_in": "2026-04-30",
+      "check_out": "2026-05-03",
+      "source": "itinerary",
+      "check_in_time": null,
+      "check_out_time": null,
+      "kind": "hotel",
+      "meal_plan": "none",
+      "room_type": ""
+    },
+    {
+      "city": "Lucerne",
+      "hotel": "Hotel Luzernerhof",
+      "check_in": "2026-05-03",
+      "check_out": "2026-05-05",
+      "source": "itinerary",
+      "check_in_time": null,
+      "check_out_time": null,
+      "kind": "hotel",
+      "meal_plan": "none",
+      "room_type": ""
+    },
+    {
+      "city": "Interlaken",
+      "hotel": "Hotel Baren the Bear Inn",
+      "check_in": "2026-05-05",
+      "check_out": "2026-05-08",
+      "source": "itinerary",
+      "check_in_time": null,
+      "check_out_time": null,
+      "kind": "hotel",
+      "meal_plan": "none",
+      "room_type": ""
+    },
+    {
+      "city": "Zurich",
+      "hotel": "Novotel Zurich Airport Mess",
+      "check_in": "2026-05-08",
+      "check_out": "2026-05-09",
+      "source": "itinerary",
+      "check_in_time": null,
+      "check_out_time": null,
+      "kind": "hotel",
+      "meal_plan": "none",
+      "room_type": ""
+    }
+  ],
+  "transport": [
+    {
+      "kind": "train",
+      "from_place": "Brussels Midi / Zuid",
+      "to_place": "Paris Gare du Nord",
+      "depart": "2026-04-30T09:39:00",
+      "arrive": "2026-04-30T11:09:00",
+      "ref": "WZKHZY",
+      "source": "Eurostar ticket",
+      "pax_label": "Ashutosh Naik, Sneha Naik, Sharva Naik",
+      "operator": "Eurostar",
+      "number": "9420",
+      "seat": "",
+      "platform": "",
+      "duration_min": null,
+      "check_in": null
+    },
+    {
+      "kind": "train",
+      "from_place": "PARIS EST",
+      "to_place": "BALE SBB",
+      "depart": "2026-05-03T10:22:00",
+      "arrive": "2026-05-03T13:26:00",
+      "ref": "GMTRVZ",
+      "source": "TGV Lyria e-ticket",
+      "pax_label": "Sneha Naik, Ashutosh Naik, Sharva Naik",
+      "operator": "TGV Lyria",
+      "number": "9211",
+      "seat": "",
+      "platform": "",
+      "duration_min": null,
+      "check_in": null
+    }
+  ],
+  "bookings": [
+    {
+      "name": "Big Bus: Paris Hop-on Hop-off Bus Tour with Optional Seine River Cruise",
+      "day": "2026-05-02",
+      "time": "09:45",
+      "source": "MMT Booking ID AI0000101060949",
+      "end_time": "17:30",
+      "meeting_point": "Paris, Paris",
+      "duration": "",
+      "instructions": [
+        "Please check the official website on the day of your visit for the operational timing to avoid any inconvenience"
+      ],
+      "timed": true,
+      "pax_label": "3 Adults",
+      "included_in_package": false
+    },
+    {
+      "name": "Tootbus: Paris Night Bus Tour",
+      "day": "2026-05-02",
+      "time": "21:00",
+      "source": "MMT Booking ID AI0000101065000",
+      "end_time": "23:00",
+      "meeting_point": "Pl. du Carrousel, Paris",
+      "duration": "2-hour bus tour",
+      "instructions": [],
+      "timed": true,
+      "pax_label": "3 Adults",
+      "included_in_package": false
+    }
+  ],
+  "days": [
+    {
+      "date": "2026-04-30",
+      "title": "Arrival in Paris",
+      "city": "Paris",
+      "items": [
+        {
+          "name": "Arrival in Paris",
+          "kind": "transfer",
+          "city": "Paris",
+          "time": null,
+          "slot_hint": "any",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        },
+        {
+          "name": "Evening at leisure",
+          "kind": "free_time",
+          "city": "Paris",
+          "time": null,
+          "slot_hint": "evening",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        }
+      ],
+      "meal_rules": [],
+      "drive_stops": []
+    },
+    {
+      "date": "2026-05-01",
+      "title": "Disneyland Paris",
+      "city": "Paris",
+      "items": [
+        {
+          "name": "Disneyland Paris (1 Day Pass)",
+          "kind": "attraction",
+          "city": "Paris",
+          "time": null,
+          "slot_hint": "any",
+          "note": "Full day at Disneyland Paris; enjoy rides, shows & parades",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        },
+        {
+          "name": "Optional fireworks in the evening",
+          "kind": "activity",
+          "city": "Paris",
+          "time": null,
+          "slot_hint": "evening",
+          "note": "",
+          "optional": true,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        }
+      ],
+      "meal_rules": [],
+      "drive_stops": []
+    },
+    {
+      "date": "2026-05-02",
+      "title": "Paris City Exploration",
+      "city": "Paris",
+      "items": [
+        {
+          "name": "Big Bus: Paris Hop-on Hop-off Bus Tour with Optional Seine River Cruise",
+          "kind": "activity",
+          "city": "Paris",
+          "time": "09:45",
+          "slot_hint": "any",
+          "note": "",
+          "optional": false,
+          "booking_ref": "AI0000101060949",
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        },
+        {
+          "name": "Louvre (exterior), Champs-Élysées, Notre Dame (exterior)",
+          "kind": "attraction",
+          "city": "Paris",
+          "time": null,
+          "slot_hint": "any",
+          "note": "Cover major landmarks",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        },
+        {
+          "name": "Evening at leisure",
+          "kind": "free_time",
+          "city": "Paris",
+          "time": null,
+          "slot_hint": "evening",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        },
+        {
+          "name": "Tootbus: Paris Night Bus Tour",
+          "kind": "activity",
+          "city": "Paris",
+          "time": "21:00",
+          "slot_hint": "any",
+          "note": "",
+          "optional": false,
+          "booking_ref": "AI0000101065000",
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        }
+      ],
+      "meal_rules": [],
+      "drive_stops": []
+    },
+    {
+      "date": "2026-05-03",
+      "title": "Paris to Lucerne",
+      "city": "Paris / Lucerne",
+      "items": [
+        {
+          "name": "Train journey to Lucerne",
+          "kind": "transfer",
+          "city": "Lucerne",
+          "time": "10:22",
+          "slot_hint": "any",
+          "note": "Ticketed train travels from Paris Est to Bale SBB",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        },
+        {
+          "name": "Evening free: Chapel Bridge & lakefront walk",
+          "kind": "free_time",
+          "city": "Lucerne",
+          "time": null,
+          "slot_hint": "evening",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        }
+      ],
+      "meal_rules": [],
+      "drive_stops": []
+    },
+    {
+      "date": "2026-05-04",
+      "title": "Mount Titlis Excursion",
+      "city": "Lucerne",
+      "items": [
+        {
+          "name": "Mount Titlis Excursion",
+          "kind": "activity",
+          "city": "Lucerne",
+          "time": null,
+          "slot_hint": "any",
+          "note": "Activities: Rotair cable car, Cliff Walk, snow experiences",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        },
+        {
+          "name": "Evening at leisure",
+          "kind": "free_time",
+          "city": "Lucerne",
+          "time": null,
+          "slot_hint": "evening",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        }
+      ],
+      "meal_rules": [],
+      "drive_stops": []
+    },
+    {
+      "date": "2026-05-05",
+      "title": "Lucerne to Interlaken",
+      "city": "Lucerne / Interlaken",
+      "items": [
+        {
+          "name": "Scenic train to Interlaken",
+          "kind": "transfer",
+          "city": "Interlaken",
+          "time": null,
+          "slot_hint": "any",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        },
+        {
+          "name": "Explore Höheweg",
+          "kind": "attraction",
+          "city": "Interlaken",
+          "time": null,
+          "slot_hint": "any",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        }
+      ],
+      "meal_rules": [],
+      "drive_stops": []
+    },
+    {
+      "date": "2026-05-06",
+      "title": "Jungfraujoch – Top of Europe",
+      "city": "Interlaken",
+      "items": [
+        {
+          "name": "Full-day excursion to Jungfraujoch",
+          "kind": "activity",
+          "city": "Interlaken",
+          "time": null,
+          "slot_hint": "any",
+          "note": "Visit Ice Palace, Sphinx Observatory, glacier viewpoints",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        }
+      ],
+      "meal_rules": [],
+      "drive_stops": []
+    },
+    {
+      "date": "2026-05-07",
+      "title": "Grindelwald First",
+      "city": "Grindelwald / Interlaken",
+      "items": [
+        {
+          "name": "Travel to Grindelwald",
+          "kind": "transfer",
+          "city": "Grindelwald",
+          "time": null,
+          "slot_hint": "any",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        },
+        {
+          "name": "First Cable Car",
+          "kind": "activity",
+          "city": "Grindelwald",
+          "time": null,
+          "slot_hint": "any",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        },
+        {
+          "name": "Cliff Walk",
+          "kind": "activity",
+          "city": "Grindelwald",
+          "time": null,
+          "slot_hint": "any",
+          "note": "",
+          "optional": true,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        },
+        {
+          "name": "First Flyer",
+          "kind": "activity",
+          "city": "Grindelwald",
+          "time": null,
+          "slot_hint": "any",
+          "note": "",
+          "optional": true,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        },
+        {
+          "name": "Trottibike",
+          "kind": "activity",
+          "city": "Grindelwald",
+          "time": null,
+          "slot_hint": "any",
+          "note": "",
+          "optional": true,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        }
+      ],
+      "meal_rules": [],
+      "drive_stops": []
+    },
+    {
+      "date": "2026-05-08",
+      "title": "Lauterbrunnen & Trümmelbach Falls",
+      "city": "Lauterbrunnen / Zurich",
+      "items": [
+        {
+          "name": "Visit Lauterbrunnen",
+          "kind": "attraction",
+          "city": "Lauterbrunnen",
+          "time": null,
+          "slot_hint": "any",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        },
+        {
+          "name": "Explore Trümmelbach Falls",
+          "kind": "attraction",
+          "city": "Lauterbrunnen",
+          "time": null,
+          "slot_hint": "any",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        },
+        {
+          "name": "Travel to Zurich",
+          "kind": "transfer",
+          "city": "Zurich",
+          "time": null,
+          "slot_hint": "any",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        }
+      ],
+      "meal_rules": [],
+      "drive_stops": []
+    },
+    {
+      "date": "2026-05-09",
+      "title": "Departure",
+      "city": "Zurich",
+      "items": [
+        {
+          "name": "Flight",
+          "kind": "transfer",
+          "city": "Zurich",
+          "time": null,
+          "slot_hint": "any",
+          "note": "",
+          "optional": false,
+          "booking_ref": null,
+          "locality": "",
+          "includes_meal": [],
+          "pickup_time": null,
+          "pickup_place": "",
+          "option_group": null
+        }
+      ],
+      "meal_rules": [],
+      "drive_stops": []
+    }
+  ],
+  "open_choices": [
+    {
+      "day": "2026-05-02",
+      "text": "Timed visit to Eiffel Tower (Summit or 2nd floor)",
+      "options": [
+        "Summit",
+        "2nd floor"
+      ]
+    },
+    {
+      "day": "2026-05-05",
+      "text": "optional Lake Thun or Lake Brienz cruise",
+      "options": [
+        "Lake Thun cruise",
+        "Lake Brienz cruise"
+      ]
+    },
+    {
+      "day": "2026-05-07",
+      "text": "Return to Interlaken / nearby stay",
+      "options": [
+        "Interlaken",
+        "nearby stay"
+      ]
+    }
+  ],
+  "vague_days": [],
+  "commentary_removed": [],
+  "trip_scope": "international",
+  "budget": "",
+  "occasion": "family vacation",
+  "additional_notes": "2 adults + 1 child. Food preference: Vegetarian only. Public transport only."
+}

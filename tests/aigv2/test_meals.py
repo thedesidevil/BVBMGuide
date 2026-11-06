@@ -197,7 +197,7 @@ def test_distance_rules(tmp_path):
 
 
 def test_walk_only_without_car_modes(tmp_path):
-    mins = {"Near": {"WALK": 9, "DRIVE": 2}, "Ride": {"WALK": 14, "DRIVE": 3, "TRANSIT": 12}}
+    mins = {"Near": {"WALK": 9, "DRIVE": 2}, "Ride": {"WALK": 22, "DRIVE": 3, "TRANSIT": 12}}
     lib, pl, rt = world(tmp_path, [rest("Near"), rest("Ride")], minutes=mins)
     picks, excl = plan([(1, TUE, "Istanbul", [lunch()])], lib, pl, rt, modes=())
     assert names(picks[0]) == ["Near"] and reasons(excl) == {("Ride", "too_far")}
@@ -561,3 +561,12 @@ def test_wrong_meal_detection():
     assert wrong_meal("A fun casual dinner with cocktails.", "lunch")
     assert not wrong_meal("A relaxed lunch by the beach or a sunset dinner.", "lunch")
     assert not wrong_meal("Curries and seafood.", "lunch")
+
+
+def test_public_transport_only_allows_longer_walk_and_transit(tmp_path):
+    mins = {"Walk14": {"WALK": 14, "TRANSIT": 5}, "Metro20": {"WALK": 40, "TRANSIT": 20}, "Far": {"WALK": 60, "TRANSIT": 40}}
+    lib, pl, rt = world(tmp_path, [rest("Walk14"), rest("Metro20"), rest("Far")], minutes=mins)
+    picks, excl = plan([(1, TUE, "Istanbul", [lunch()])], lib, pl, rt, modes=("public_transport",))
+    assert [(c.lib["name"], c.travel_label) for c in picks[0].restaurants] == [
+        ("Walk14", "Walk"), ("Metro20", "By public transport")]
+    assert reasons(excl) == {("Far", "too_far")}

@@ -243,7 +243,7 @@ def test_day7_option_cards():
     assert types.count("OptionCards") == 1
     oc = next(c for c in comps if c.type == "OptionCards")
     assert len(oc.options) == 2 and oc.own_expense is True
-    assert oc.eyebrow.startswith("AFTERNOON") and oc.eyebrow.endswith("YOUR CHOICE")
+    assert oc.eyebrow.startswith("AFTERNOON") and oc.eyebrow.endswith("TWO OPTIONS - CHOOSE ONE")
     assert oc.heading == "Icon Mall or Sindhu Market"
     hours = {o.name.text: next(f.value for f in o.facts if f.label == "Opening hours") for o in oc.options}
     assert hours == {"Icon Mall": "10:00 AM – 10:00 PM", "Sindhu Market": "5:00 PM – 10:00 PM"}

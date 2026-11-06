@@ -7,6 +7,7 @@ from .hours import is_open_for
 from .intake.attachments import ZIP_MAX_BYTES, ZIP_MAX_FILES, Attachment
 from .intake.template import IntakeFields
 from .library import Library
+from .planning.slots import resolve_day_city
 from .models import Answers, DayPlan, HotelStay, OpenChoice, PlannedItem, Place, Question, TransportLeg, TripPlan, place_key
 
 DIET_LABEL = "Diet (restrictions, allergies, likes)"
@@ -270,8 +271,10 @@ def run_checklist(
 
     cities: list[str] = []
     for dp in plan.days:
-        if dp.city.strip() and dp.city not in cities:
-            cities.append(dp.city)
+        # a travel-day title ('Paris / Lucerne') names the city the group sleeps in that night
+        c = resolve_day_city(dp.city, dp.date, plan.hotels)
+        if c.strip() and c not in cities:
+            cities.append(c)
     for c in cities:
         if not library.has_data(c):
             add(f"no_library:{c}", "no_library",

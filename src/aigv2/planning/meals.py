@@ -24,6 +24,8 @@ _SPARE = 2
 _DINNER_RELAX_MIN = 5
 _ANCHOR_LOOKUPS = 9
 _CITY_CEILING = 60
+_TRANSIT_WALK_MIN = 15
+_TRANSIT_MAX_MIN = 25
 _KM_PER_MIN = 0.6
 _LOC_KEYS = ("area", "nearby_landmarks", "location")
 _STOP = {"the", "and", "near", "hotel", "restaurant", "cafe", "street", "road"}
@@ -129,6 +131,12 @@ class _Planner:
         self.diet, self.settings = diet, settings
         self.car = bool(_CAR_MODES & set(modes))
         self.transit = "public_transport" in modes
+        if self.transit and not self.car:
+            # no car: a longer walk plus the metro / tram / train reaches the same restaurants a taxi would
+            self.settings = settings.model_copy(update={
+                "walk_max_min": max(settings.walk_max_min, _TRANSIT_WALK_MIN),
+                "lunch_max_min": max(settings.lunch_max_min, _TRANSIT_MAX_MIN),
+                "dinner_max_min": max(settings.dinner_max_min, _TRANSIT_MAX_MIN)})
         self.international = trip_scope == "international"
         self.uses_by_place: Counter = Counter()
         self.uses_by_name: Counter = Counter()

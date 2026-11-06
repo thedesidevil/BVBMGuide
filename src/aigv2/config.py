@@ -19,6 +19,7 @@ class Settings(BaseModel):
     lunch_max_min: int = 15
     dinner_max_min: int = 20
     cache_days: int = 30
+    negative_cache_days: int = 7
     inr_round: int = 50
     slot_windows: dict[str, tuple[str, str]] = Field(default_factory=lambda: {
         "morning": ("09:00", "12:00"),

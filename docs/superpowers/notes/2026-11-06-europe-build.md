@@ -121,3 +121,12 @@ g) Title validator: must contain a trip city or country (country list passed fro
 
 ### Not verified
 No real build run; every fix is covered by unit tests on saved fixtures / fakes. Re-run Europe once to confirm QC counts.
+
+## Accent folding and negative cache
+
+- `src/aigv2/textnorm.py`: `fold()` = NFKD, combining marks dropped, casefold, extra map (ss, ae, oe, o, d, l, th, dotless i), curly quotes and dashes normalised, NBSP to space, whitespace collapsed. For MATCHING ONLY; display text keeps its accents.
+- `library.norm_name` and `models.place_key` now fold, so every caller (QC venue lookup, where_to_try validation, dish to restaurant mapping, guide text lookups, pipeline booking matches) is accent-insensitive with no call-site change. `library._fold` and `places._fold` are aliases of the shared helper. Also switched: library city/shard/coverage lookups, preflight `_norm`/`_same`/stems, planning slots and important_places keys, writing sections (hospital/pharmacy tokens), structured dedupe/near-duplicate, thanks and title checks, places `unwanted_name`/emergency checks.
+- Deliberately NOT folded: enum/status/style strings, regex section titles and heading comparisons in qc/rules and qc/reader, island-name sets (ASCII, matched against ASCII), `structured` KNOWN_BAD_PHRASES (exact local-phrase pairs), URL param names, docx style ids.
+- Cache keys: `PlaceCache` keys are now `sha1(fold_key(key))`. The old raw `sha1(key)` file is read as a fallback, so existing caches under aigv2_data/cache keep hitting (new writes use the folded key). RouteCache/NearbyCache keys are coordinate-based, unchanged.
+- Query fallbacks: for a name with accents `_simplified_names` puts the accent-stripped spelling first ('Cafe de Flore'); total retries per name stay capped at 3.
+- Negative cache (`Settings.negative_cache_days = 7`): `PlaceCache.put_no_match/is_no_match` under `cache/places_nomatch/`. Written only when every query answered cleanly with no candidate at all; errors raise before that and are never stored. Rejected-but-returned candidates (match_ok False) follow the existing positive path. `find(fresh=True)` bypasses it.

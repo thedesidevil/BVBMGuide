@@ -86,8 +86,65 @@ def test_place_cache_accent_variants_share_and_legacy_read(tmp_path):
     assert cache.get("Other|Zürich") is None
 
 
+def _client(tmp_path, *payloads, days=7):
+    s = FakeSession(*payloads)
+    cache = PlaceCache(LocalStorageBackend(tmp_path), 30, days)
+    return PlacesClient("K", cache, session=s), s, cache
+
+
 def test_hotel_match_across_accents(tmp_path):
-    c = PlacesClient("K", PlaceCache(LocalStorageBackend(tmp_path), 30),
-                     session=FakeSession({"places": [gp("Hôtel Bären", addr="Interlaken, Switzerland")]}))
+    c, s, _ = _client(tmp_path, {"places": [gp("Hôtel Bären", addr="Interlaken, Switzerland")]})
     p = c.find("Hotel Baren", "Interlaken")
     assert p is not None and p.match_ok and p.name == "Hôtel Bären"
+
+
+def test_no_match_cached_then_zero_http(tmp_path):
+    c, s, _ = _client(tmp_path, {})
+    assert c.find("Nothing Here", "Istanbul") is None
+    n = len(s.posts)
+    assert n >= 1
+    assert c.find("Nothing Here", "Istanbul") is None
+    assert len(s.posts) == n
+    assert c.find("Nöthing Hére", "Istanbul") is None  # accent variant shares the entry
+    assert len(s.posts) == n
+
+
+def test_rejected_candidates_cached_as_no_match(tmp_path):
+    c, s, _ = _client(tmp_path, {"places": [gp("Totally Different", addr="Paris, France")]})
+    p = c.find("Blue Mosque Cafe", "Istanbul")
+    assert p is not None and not p.match_ok  # a rejected candidate is still returned, positive cache path unchanged
+
+
+def test_error_not_cached(tmp_path):
+    class Boom(FakeSession):
+        def post(self, *a, **k):
+            raise ConnectionError("down")
+    s = Boom({})
+    cache = PlaceCache(LocalStorageBackend(tmp_path), 30)
+    c = PlacesClient("K", cache, session=s)
+    with pytest.raises(ConnectionError):
+        c.find("Nothing", "Istanbul")
+    assert not cache.is_no_match("Nothing|Istanbul")
+
+
+def test_negative_entry_expires_after_days(tmp_path):
+    c, s, cache = _client(tmp_path, {})
+    c.find("Nothing", "Istanbul")
+    assert cache.is_no_match("Nothing|Istanbul")
+    old = (datetime.now(timezone.utc) - timedelta(days=8)).isoformat()
+    cache.backend.write_json(cache._neg_key("Nothing|Istanbul"), {"no_match": True, "fetched_at": old})
+    assert not cache.is_no_match("Nothing|Istanbul")
+    n = len(s.posts)
+    c.find("Nothing", "Istanbul")
+    assert len(s.posts) > n
+
+
+def test_positive_cache_untouched_and_settings_knob(tmp_path):
+    from src.aigv2.config import Settings
+    assert Settings(models={}).negative_cache_days == 7
+    c, s, cache = _client(tmp_path, {"places": [gp("Blue Mosque", addr="Istanbul, Turkiye")]})
+    assert c.find("Blue Mosque", "Istanbul").name == "Blue Mosque"
+    assert not cache.is_no_match("Blue Mosque|Istanbul")
+    n = len(s.posts)
+    c.find("Blue Mosque", "Istanbul")
+    assert len(s.posts) == n

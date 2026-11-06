@@ -219,6 +219,8 @@ class PlacesClient:
             cached = self.cache.get(key)
             if cached is not None:
                 return cached
+        if not fresh and self.cache.is_no_match(key):
+            return None
         place = self._lookup(name, city, near, key)
         if place is None or not place.match_ok:
             bare = _TRAILING_PAREN.sub("", name).strip()
@@ -232,6 +234,9 @@ class PlacesClient:
                     break
         if place is not None:
             self.cache.put(key, place)
+        else:
+            # every query answered cleanly with no candidates (an HTTP/network error would have raised above)
+            self.cache.put_no_match(key)
         return place
 
     def _lookup(self, name: str, city: str, near: Optional[tuple[float, float]], key: str) -> Optional[Place]:

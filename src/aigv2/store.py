@@ -67,9 +67,10 @@ class PlaceCache:
     """Disk cache of place lookups. Keys are accent/case-folded (textnorm.fold_key); entries written before folding
     existed live under the sha1 of the raw key and are still read as a fallback."""
 
-    def __init__(self, backend: StorageBackend, max_age_days: int):
+    def __init__(self, backend: StorageBackend, max_age_days: int, negative_days: int = 7):
         self.backend = backend
         self.max_age = timedelta(days=max_age_days)
+        self.negative_age = timedelta(days=negative_days)
 
     @staticmethod
     def _key(key: str) -> str:
@@ -102,6 +103,28 @@ class PlaceCache:
 
     def put(self, key: str, place: Place) -> None:
         self.backend.write_json(self._key(key), place.model_dump(mode="json"))
+
+    @staticmethod
+    def _neg_key(key: str) -> str:
+        return f"cache/places_nomatch/{hashlib.sha1(fold_key(key).encode('utf-8')).hexdigest()}.json"
+
+    def is_no_match(self, key: str) -> bool:
+        """True when a clean zero-result answer for this key was stored within the last negative_days."""
+        try:
+            raw = self.backend.read_json(self._neg_key(key))
+            if not isinstance(raw, dict) or raw.get("no_match") is not True:
+                return False
+            fetched = datetime.fromisoformat(raw["fetched_at"])
+        except (ValueError, TypeError, KeyError, UnicodeDecodeError):
+            return False
+        if fetched.tzinfo is None:
+            fetched = fetched.replace(tzinfo=timezone.utc)
+        return datetime.now(timezone.utc) - fetched <= self.negative_age
+
+    def put_no_match(self, key: str) -> None:
+        """Remember that Google cleanly answered with nothing usable; callers must never call this for failures."""
+        self.backend.write_json(self._neg_key(key), {"no_match": True,
+                                                     "fetched_at": datetime.now(timezone.utc).isoformat()})
 
 
 class RouteCache:

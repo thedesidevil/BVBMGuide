@@ -72,6 +72,22 @@ function FileList({ files, onRemove }: { files: File[]; onRemove: (f: File) => v
   );
 }
 
+function AnswerBox({ value, onChange, placeholder }: { value: string; onChange: (v: string) => void; placeholder: string }) {
+  const ref = useRef<HTMLTextAreaElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    el.style.height = "auto";
+    const max = 12 * 22;
+    el.style.height = `${Math.min(el.scrollHeight + 2, max)}px`;
+    el.style.overflowY = el.scrollHeight > max ? "auto" : "hidden";
+  }, [value]);
+  return (
+    <textarea ref={ref} rows={2} value={value} placeholder={placeholder} onChange={(e) => onChange(e.target.value)}
+      className="mt-1 w-full border border-slate-300 rounded px-2 py-1 text-sm resize-y whitespace-pre-wrap break-words" />
+  );
+}
+
 function AttachmentPicker({ files, setFiles, disabled }: { files: File[]; setFiles: (f: File[]) => void; disabled: boolean }) {
   const [over, setOver] = useState(false);
   const filesRef = useRef<File[]>(files);
@@ -301,11 +317,8 @@ export function AigV2Tab() {
                         ))}
                       </div>
                     )}
-                    <input
-                      className="mt-1 w-full border border-slate-300 rounded px-2 py-1 text-sm"
-                      value={answers[q.id] ?? ""} onChange={(e) => setAnswers({ ...answers, [q.id]: e.target.value })}
-                      placeholder={q.options?.length ? "or type your own" : "answer"}
-                    />
+                    <AnswerBox value={answers[q.id] ?? ""} onChange={(v) => setAnswers({ ...answers, [q.id]: v })}
+                      placeholder={q.options?.length ? "or type your own" : "answer"} />
                   </div>
                 ))}
                 <button
@@ -323,11 +336,8 @@ export function AigV2Tab() {
                     {run.plan_items.map((q: any) => (
                       <div key={q.id}>
                         <label className="block text-sm text-slate-700">{q.text}</label>
-                        <input
-                          className="mt-1 w-full border border-slate-300 rounded px-2 py-1 text-sm"
-                          value={answers[q.id] ?? ""} onChange={(e) => setAnswers({ ...answers, [q.id]: e.target.value })}
-                          placeholder="https://maps.app.goo.gl/... or Skip"
-                        />
+                        <AnswerBox value={answers[q.id] ?? ""} onChange={(v) => setAnswers({ ...answers, [q.id]: v })}
+                          placeholder="https://maps.app.goo.gl/... or Skip" />
                       </div>
                     ))}
                   </div>

@@ -942,7 +942,7 @@ def _render_qc(store: RunStore, state: PlanState, answers: Answers, deps: Deps) 
             store.save_json("guide.json", guide)
         else:
             _save_guide_model(store, data, deps)
-        store.save_bytes("qc_report.md", (report + "\n" + _stats_md(state.stats)
+        store.save_bytes("qc_report.md", (f"Renderer: {deps.settings.renderer}\n\n" + report + "\n" + _stats_md(state.stats)
                                           + _links_md(store, state.trip, deps)).encode("utf-8"))
         store.save_json("qc_report.json", {**report_data, "plan_stats": state.stats.model_dump(mode="json")})
     if not store.has("verification.xlsx"):

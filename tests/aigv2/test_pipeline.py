@@ -132,7 +132,7 @@ def _library(root: Path) -> Library:
 @pytest.fixture
 def deps(tmp_path):
     models = {s: "gpt-6-luna" for s in STEPS} | {"qc_sense": "gpt-6.1-sol"}
-    settings = Settings(models=models, data_root=tmp_path / "data")
+    settings = Settings(models=models, data_root=tmp_path / "data", renderer="old")  # these tests read the old layout
     return Deps(settings=settings, llm=FakeLLM(settings), library=_library(tmp_path / "lib"), places=FakePlaces(),
                 routes=FakeRoutes(), fx=FakeFx(), backend=LocalStorageBackend(tmp_path / "data"))
 
@@ -1145,8 +1145,8 @@ def test_new_renderer_flag(deps, monkeypatch):
     assert store.has("guide.json") and not store.has("guide_error.txt")
 
 
-def test_old_renderer_default(deps):
-    assert deps.settings.renderer == "old"
+def test_new_renderer_is_default_and_old_is_escape_hatch(deps):
+    assert Settings(models={}).renderer == "new"
     store, _, _ = built(deps)
     assert day_headers(store.load_bytes("guide.docx"))
 
@@ -1154,11 +1154,11 @@ def test_old_renderer_default(deps):
 def test_load_settings_renderer_env(monkeypatch):
     from src.aigv2.config import load_settings
     monkeypatch.delenv("AIGV2_RENDERER", raising=False)
-    assert load_settings().renderer == "old"
-    monkeypatch.setenv("AIGV2_RENDERER", "NEW")
     assert load_settings().renderer == "new"
-    monkeypatch.setenv("AIGV2_RENDERER", "bogus")
+    monkeypatch.setenv("AIGV2_RENDERER", "OLD")
     assert load_settings().renderer == "old"
+    monkeypatch.setenv("AIGV2_RENDERER", "bogus")
+    assert load_settings().renderer == "new"
 
 
 def test_cli_renderer_option(deps, tmp_path, monkeypatch):

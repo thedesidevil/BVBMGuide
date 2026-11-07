@@ -33,7 +33,7 @@ class Settings(BaseModel):
         "Greece": {"dinner": ("20:00", "22:30")},
     })
     data_root: Path = Path("aigv2_data")
-    renderer: Literal["old", "new"] = "old"
+    renderer: Literal["old", "new"] = "new"
     google_usd_per_call: dict[str, float] = Field(default_factory=lambda: dict(GOOGLE_USD_PER_CALL))
 
     @model_validator(mode="after")
@@ -51,5 +51,5 @@ def load_settings() -> Settings:
     for step in STEPS:
         base = strong if step == "qc_sense" else fast
         models[step] = os.environ.get(f"AIGV2_MODEL_{step.upper()}") or base
-    renderer = "new" if os.environ.get("AIGV2_RENDERER", "").strip().lower() == "new" else "old"
+    renderer = "old" if os.environ.get("AIGV2_RENDERER", "").strip().lower() == "old" else "new"  # only "old" opts out
     return Settings(models=models, renderer=renderer)

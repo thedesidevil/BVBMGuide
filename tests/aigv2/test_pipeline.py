@@ -1196,3 +1196,11 @@ def test_booking_window_facts_shape():
     assert f == {"start": "09:00", "end": "16:00", "hours": 7.0, "lunch_in_package": True,
                  "lunch_included": None}
     assert pipeline.booking_window_facts(None, False) is None
+
+
+def test_default_deps_wires_overrides_in_library(tmp_path, monkeypatch):
+    monkeypatch.setenv("AIGV2_LIBRARY_DB", str(tmp_path / "lib"))
+    monkeypatch.setattr(pipeline, "default_backend", lambda s: LocalStorageBackend(tmp_path / "be"))
+    monkeypatch.setattr("dotenv.load_dotenv", lambda *a, **k: None)
+    d = pipeline.default_deps()
+    assert d.places.overrides.path == tmp_path / "lib" / "_place_overrides.json"

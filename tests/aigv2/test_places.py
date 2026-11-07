@@ -449,3 +449,64 @@ def test_simplified_retry_still_accepts_plural_and_reordered_names(tmp_path):
     assert not _adds_new_words("MANGROVE BOAT EXPERIENCE AT NUSA LEMBONGAN MANGROVE FOREST",
                                "Mangrove Forest Lembongan", "Nusa Lembongan")
     assert _adds_new_words("KINTAMANI VOLCANO VIEW", "Mountain View House Kintamani", "Ubud")
+
+
+# ---- place overrides and links ----
+from src.aigv2.google.maplink import MapLink, MapLinkError  # noqa: E402
+from src.aigv2.google.overrides import PlaceOverrides  # noqa: E402
+import pytest  # noqa: E402
+
+
+def _ov_client(tmp_path, *payloads):
+    c, s = client(tmp_path, *payloads)
+    c.overrides = PlaceOverrides(tmp_path / "_place_overrides.json")
+    return c, s
+
+
+def test_override_hit_makes_no_http_call(tmp_path):
+    c, s = _ov_client(tmp_path, {"places": []})
+    c.overrides.put("Hotel Baren", "Grindelwald", "Baeren Hotel", 46.66, 7.86, "https://maps.app.goo.gl/x")
+    for fresh in (False, True):
+        p = c.find("HÔTEL baren", "grindelwald", fresh=fresh)
+        assert p.match_ok and p.name == "Baeren Hotel" and p.maps_url == "https://maps.app.goo.gl/x"
+    assert c.peek("Hotel Baren", "Grindelwald").lat == 46.66
+    assert s.posts == [] and c.calls["text_search"] == 0
+
+
+def test_override_miss_falls_through(tmp_path):
+    c, s = _ov_client(tmp_path, {"places": [gp("Seher Restaurant")]})
+    c.overrides.put("Hotel Baren", "Grindelwald", "Baeren Hotel", 46.66, 7.86, "u")
+    assert c.find("Seher Restaurant", "Istanbul").name == "Seher Restaurant"
+    assert len(s.posts) == 1
+
+
+LINK = MapLink("Baeren Hotel, The Bear Inn", 46.6638, 7.8607, "0x1:0x2", "https://maps.app.goo.gl/T")
+
+
+def test_from_link_enriches_from_nearby_candidate(tmp_path):
+    far = gp("Far Cafe", pid="far", lat=46.70, lng=7.9)
+    near = gp("Baeren Hotel", pid="pid_b", lat=46.6638, lng=7.8607, ptype="lodging")
+    c, s = client(tmp_path, {"places": [far, near]})
+    p = c.from_link(LINK)
+    assert p.place_id == "pid_b" and p.match_ok and p.maps_url == LINK.url
+    body = s.posts[0][2]
+    assert body["locationBias"]["circle"]["radius"] == 150.0 and body["textQuery"] == LINK.name
+    assert c.calls["text_search"] == 1
+
+
+def test_from_link_without_candidate_or_on_error(tmp_path):
+    c, s = client(tmp_path, {"places": [gp("Far Cafe", lat=46.9, lng=7.9)]})
+    p = c.from_link(LINK)
+    assert p.place_id == "" and p.match_ok and p.hours is None and (p.lat, p.lng) == (46.6638, 7.8607)
+
+    class Boom(FakeSession):
+        def post(self, *a, **k):
+            raise RuntimeError("net")
+    c2 = PlacesClient("K", PlaceCache(LocalStorageBackend(tmp_path / "x"), 30), session=Boom())
+    assert c2.from_link(LINK).match_ok
+
+
+def test_from_link_needs_pin(tmp_path):
+    c, _ = client(tmp_path, {"places": []})
+    with pytest.raises(MapLinkError):
+        c.from_link(MapLink("", None, None, "1", "u"))

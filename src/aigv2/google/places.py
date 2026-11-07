@@ -6,6 +6,8 @@ from urllib.parse import parse_qsl, quote_plus, urlencode, urlsplit, urlunsplit
 
 import requests
 
+from src.aigv2.google.maplink import MapLinkError
+from src.aigv2.google.overrides import place_from_override
 from src.aigv2.hours import from_google, is_24h
 from src.aigv2.models import Place, WeeklyHours
 from src.aigv2.store import PlaceCache
@@ -88,6 +90,7 @@ def weak_coverage(country_or_city: str) -> bool:
 _GENERIC_WORDS = re.compile(r"\b(?:package|tour|experience|view)\b", re.I)
 _AT_IN = re.compile(r"^.*\s(?:at|in)\s+", re.I)
 _MAX_RETRIES = 3
+_LINK_RADIUS_M = 150.0
 
 
 def _simplified_names(name: str) -> list[str]:
@@ -172,8 +175,9 @@ def _is_24h_week(hours: Optional[WeeklyHours]) -> bool:
 
 class PlacesClient:
     def __init__(self, api_key: str, cache: PlaceCache, session: Optional[requests.Session] = None,
-                 nearby_cache=None):
+                 nearby_cache=None, overrides=None):
         self.api_key = api_key
+        self.overrides = overrides
         self.cache = cache
         self.nearby_cache = nearby_cache
         self.session = session or requests.Session()
@@ -211,10 +215,16 @@ class PlacesClient:
 
     def peek(self, name: str, city: str) -> Optional[Place]:
         """The cached place `find` would return for this exact key; no HTTP call, no counters."""
+        hit = self.overrides.get(name, city) if self.overrides is not None else None
+        if hit is not None:
+            return place_from_override(hit, f"{name}|{city}")
         return self.cache.get(f"{name}|{city}")
 
     def find(self, name: str, city: str, near: Optional[tuple[float, float]] = None, fresh: bool = False) -> Optional[Place]:
         key = f"{name}|{city}"
+        hit = self.overrides.get(name, city) if self.overrides is not None else None
+        if hit is not None:  # a team-confirmed Maps link beats any search; no HTTP call
+            return place_from_override(hit, key)
         if not fresh:
             cached = self.cache.get(key)
             if cached is not None:
@@ -238,6 +248,34 @@ class PlacesClient:
             # every query answered cleanly with no candidates (an HTTP/network error would have raised above)
             self.cache.put_no_match(key)
         return place
+
+    def from_link(self, link) -> Place:
+        """A Place for a user-pasted Maps link: one text search around the pin to borrow place_id/hours/status.
+        The link itself is the confirmation, so the result is match_ok even when Google offers nothing."""
+        if link.lat is None or link.lng is None or not link.name:
+            raise MapLinkError("the link has no place name or pin; paste the Share > Copy link of ONE place")
+        best = None
+        try:
+            body = {"textQuery": link.name, "languageCode": "en",
+                    "locationBias": {"circle": {"center": {"latitude": link.lat, "longitude": link.lng},
+                                                "radius": _LINK_RADIUS_M}}}
+            raw = [r for r in self._post(SEARCH_TEXT_URL, body, "text_search").get("places") or [] if _has_location(r)]
+            near = sorted(((_haversine_km(link.lat, link.lng, r["location"]["latitude"], r["location"]["longitude"]) * 1000, r)
+                           for r in raw), key=lambda t: t[0])
+            for dist, r in near:
+                if _overlap(link.name, _display(r)) >= 0.5 or dist < 40:
+                    best = r
+                    break
+        except Exception:  # API/network error: the link alone is enough
+            best = None
+        if best is not None:
+            place = self._to_place(best, link.name, link.name, True)
+            place = place.model_copy(update={"maps_url": link.url})
+        else:
+            place = Place(query=link.name, place_id="", name=link.name, address="", lat=link.lat, lng=link.lng,
+                          status="UNKNOWN", hours=None, website=None, phone=None, maps_url=link.url,
+                          fetched_at=datetime.now(timezone.utc), match_ok=True)
+        return place.model_copy(update={"verify_note": "Matched from a place link pasted by the team"})
 
     def _lookup(self, name: str, city: str, near: Optional[tuple[float, float]], key: str) -> Optional[Place]:
         body: dict = {"textQuery": f"{name}, {city}", "languageCode": "en"}

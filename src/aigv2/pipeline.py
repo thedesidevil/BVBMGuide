@@ -32,6 +32,7 @@ from src.aigv2.planning.slots import (DayResult, DEFAULT_STOP_MIN, after_journey
                                       space_after_lunch)
 from src.aigv2.planning.travel import Leg, boat_leg, compute_legs
 from src.aigv2.preflight import apply_answers, run_checklist, unanswered
+from src.aigv2.google.overrides import FILE_NAME as OVERRIDES_FILE, PlaceOverrides
 from src.aigv2.qc import run_qc
 from src.aigv2.qc.report import PRICE_KEY, QCResult, write_report
 from src.aigv2.render.document import GuideData, RenderDay, output_filename, render_guide
@@ -97,7 +98,8 @@ def default_deps() -> Deps:
     library_dir = Path(os.environ.get("AIGV2_LIBRARY_DB") or "library_db_new")
     return Deps(settings=settings, llm=StepLLM(settings), library=Library(library_dir),
                 places=PlacesClient(key, PlaceCache(backend, settings.cache_days, settings.negative_cache_days),
-                                    nearby_cache=NearbyCache(backend, settings.cache_days)),
+                                    nearby_cache=NearbyCache(backend, settings.cache_days),
+                                    overrides=PlaceOverrides(library_dir / OVERRIDES_FILE)),
                 routes=RoutesClient(key, cache=RouteCache(backend, settings.cache_days)),
                 fx=FxRates(backend), backend=backend)
 

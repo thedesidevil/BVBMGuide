@@ -64,7 +64,7 @@ def test_late_departure_question():
     qs = ask(plan)
     q = next(q for q in qs if q.id == "late_departure:2026-10-15")
     assert q.options == ["2026-10-14", "2026-10-15"]
-    assert q.text == "Departure is at 01:00 on 15 Oct. Is checkout on 14 Oct or 15 Oct?"
+    assert q.text.endswith("Departure is at 01:00 on 15 Oct. Is checkout on 14 Oct or 15 Oct?")
     out = apply_answers(plan, qs, {q.id: "2026-10-15"})
     assert out.hotels[0].check_out == date(2026, 10, 15)
     assert plan.hotels[0].check_out == date(2026, 10, 14)

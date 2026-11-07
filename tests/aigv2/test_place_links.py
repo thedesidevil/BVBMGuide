@@ -36,8 +36,8 @@ def test_questions_for_unmatched_and_near_miss():
               "louvre|paris": _place("Louvre"), "free time|paris": None, "overnight in paris|paris": None}
     qs = place_link_questions(trip, places)
     assert [q.id for q in qs] == ["place_link:hotel baren|paris", "place_link:secret cave|paris"]
-    assert 'Google could not find "Hotel Baren" (Paris, day 1)' in qs[0].text and qs[0].options == ["Skip"]
-    assert 'suggested "Secret Cavern"' in qs[1].text and qs[1].options == ["Yes", "Skip"]
+    assert 'Google could not find "Hotel Baren" (Paris)' in qs[0].text and qs[0].options == ["Skip"]
+    assert 'suggested "Secret Cavern"' in qs[1].text and qs[1].options == ["Yes (accept suggestion)", "Skip"]
 
 
 def test_checklist_appends_place_questions_last():
@@ -47,7 +47,7 @@ def test_checklist_appends_place_questions_last():
 
 def test_validation():
     q = Question(id="place_link:x|y", kind="place_link", text="t", options=["Skip"])
-    qn = q.model_copy(update={"options": ["Yes", "Skip"]})
+    qn = q.model_copy(update={"options": ["Yes (accept suggestion)", "Skip"]})
     ok = ["skip", "Skip", FINAL, "https://maps.app.goo.gl/abc", "Hotel Bear Inn"]
     for a in ok:
         assert validate_place_link(a, q) is None, a
@@ -148,3 +148,29 @@ def test_end_to_end_question_apply_and_persist(deps, tmp_path):
     report = store.load_bytes("qc_report.md").decode() if hasattr(store, "load_bytes") else ""
     assert "## Place links applied this run" in report and "maps.app.goo.gl/XYZ" in report
     assert "## Places matched from saved overrides" in report
+
+
+def test_pointless_questions_are_not_asked():
+    from src.aigv2.models import Booking
+    trip = make(hotels=[HotelStay(city="Paris", hotel="Hotel Baren", check_in=date(2026, 10, 10),
+                                  check_out=date(2026, 10, 12), source="voucher")],
+                bookings=[Booking(name="Big Bus: Paris Hop-on Hop-off", day=date(2026, 10, 10), source="v")],
+                days=[DayPlan(date=date(2026, 10, 10), title="t", city="Paris", items=[
+                    PlannedItem(name="Fireworks at Disneyland", kind="activity", city="Paris"),
+                    PlannedItem(name="Big Bus: Paris Hop-on Hop-off", kind="activity", city="Paris"),
+                    PlannedItem(name="Arrival in Paris", kind="activity", city="Paris"),
+                    PlannedItem(name="Train to Lyon", kind="activity", city="Paris"),
+                    PlannedItem(name="Secret Cave", kind="attraction", city="Paris")])])
+    from src.aigv2.place_links import place_targets
+    names = [v[0] for v in place_targets(trip).values()]
+    assert names == ["Hotel Baren", "Secret Cave"]
+
+
+def test_useless_near_miss_becomes_not_found_or_dropped():
+    trip = make(days=[DayPlan(date=date(2026, 10, 10), title="t", city="Paris", items=[
+        PlannedItem(name="Secret Cave", kind="attraction", city="Paris"),
+        PlannedItem(name="Wine tasting", kind="activity", city="Paris")])])
+    places = {"secret cave|paris": _unmatched("Paris"), "wine tasting|paris": _unmatched("Paris")}
+    qs = place_link_questions(trip, places)
+    assert len(qs) == 2 and all(q.options == ["Skip"] and "could not find" in q.text for q in qs)
+    assert place_link_questions(trip, {"secret cave|paris": _unmatched("Secret Cavern")})[0].options[0].startswith("Yes")

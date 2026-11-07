@@ -1,4 +1,5 @@
 """Place links: ask the team for a Google Maps link for places Google could not match, and apply the answers."""
+import re
 from datetime import date
 from typing import Callable, Optional
 
@@ -6,11 +7,49 @@ from src.aigv2.google.maplink import MapLinkError, default_fetch, is_maps_host, 
     parse_maps_url, resolve_maps_link
 from src.aigv2.models import Answers, Place, Question, TripPlan, place_key
 from src.aigv2.planning.attraction_match import is_generic_name
+from src.aigv2.textnorm import fold
 
 PREFIX = "place_link:"
 _SKIP_NAMES = ("free time", "overnight", "hotel check", "check-in", "check in", "check-out", "check out",
                "leisure", "at leisure", "rest day")
-NEAR_MISS_YES = "Yes"
+NEAR_MISS_YES = "Yes (accept suggestion)"
+_EVENT_RE = re.compile(r"\b(fireworks?|parade|shows?|light show|concert|ceremony|illuminations?|spectacular|"
+                       r"performance|live music)\b", re.I)
+_MOVE_RE = re.compile(r"^\s*(arrival in|arrive in|arrival at|departure from|depart from|departure|transfer to|transfer from|"
+                      r"return to|travel to|train to|bus to|flight|fly to|check[- ]?in|check[- ]?out|evening at leisure|"
+                      r"explore|stroll|walk around|day trip to)\b", re.I)
+
+
+def _toks(text: str) -> set[str]:
+    return {t for t in re.findall(r"[a-z0-9]+", fold(text)) if len(t) > 2}
+
+
+def _booked(trip: TripPlan, it) -> bool:
+    if it.booking_ref:
+        return True
+    names = [fold(b.name) for b in trip.bookings]
+    n = fold(it.name)
+    return bool(n) and any(n == b or n in b or b in n for b in names)
+
+
+def _not_worth_asking(trip: TripPlan, it) -> bool:
+    """Items whose name is not a single place Google can pin down, or that a ticket already confirms."""
+    if _booked(trip, it) or _EVENT_RE.search(it.name):
+        return True
+    m = _MOVE_RE.match(it.name)
+    return bool(m)
+
+
+def _useless_suggestion(asked: str, found: str, kind: str) -> bool:
+    """A near-miss that is only the city, or shares nothing with the asked name."""
+    a, f = _toks(asked), _toks(found)
+    if not f:
+        return True
+    if fold(found) in fold(asked) and len(f) <= 1 and kind not in ("hotel", "attraction", "activity"):
+        return True
+    if fold(found) in fold(asked) or fold(asked) in fold(found):
+        return False
+    return len(a & f) / max(len(a), len(f), 1) < 0.34
 
 
 def place_targets(trip: TripPlan) -> dict[str, tuple[str, str, Optional[date], str]]:
@@ -25,13 +64,14 @@ def place_targets(trip: TripPlan) -> dict[str, tuple[str, str, Optional[date], s
             low = it.name.casefold()
             if not it.name.strip() or any(w in low for w in _SKIP_NAMES) or is_generic_name(it.name):
                 continue
+            if _not_worth_asking(trip, it):
+                continue
             city = it.city or dp.city
             out.setdefault(place_key(it.name, city), (it.name, city, dp.date, it.kind))
     return out
 
 
 def place_link_questions(trip: TripPlan, places: dict[str, Optional[Place]]) -> list[Question]:
-    day_no = {dp.date: i for i, dp in enumerate(sorted(trip.days, key=lambda d: d.date), 1)}
     qs = []
     for k, (name, city, d, _kind) in place_targets(trip).items():
         if k not in places:
@@ -39,9 +79,13 @@ def place_link_questions(trip: TripPlan, places: dict[str, Optional[Place]]) -> 
         p = places[k]
         if p is not None and p.match_ok:
             continue
-        where = f"{city}, day {day_no[d]}" if d in day_no else city
+        where = city
         how = ("Paste its Google Maps link (open the place in Google Maps > Share > Copy link of ONE place), "
                "or type the exact name as Google shows it, or answer Skip.")
+        if p is not None and _useless_suggestion(name, p.name, _kind):
+            if _kind not in ("hotel", "attraction", "activity"):
+                continue
+            p = None
         if p is not None:
             text = f'Google suggested "{p.name}" for "{name}" ({where}) but was not sure. Answer Yes to accept it. {how}'
             opts = [NEAR_MISS_YES, "Skip"]
@@ -56,7 +100,7 @@ def validate_place_link(ans: str, q: Question) -> Optional[str]:
     low = ans.strip().casefold()
     if low == "skip":
         return None
-    if low == "yes":
+    if low == "yes" or low == NEAR_MISS_YES.casefold():
         return None if NEAR_MISS_YES in q.options else "there is no suggestion to accept; paste a link or type a name"
     if looks_like_url(ans):
         if not is_maps_host(ans):
@@ -103,7 +147,7 @@ def apply_place_answers(trip: TripPlan, questions: list[Question], answers: Answ
 
 
 def _resolve(ans: str, name: str, city: str, current, client, fetch) -> tuple[Place, dict]:
-    if ans.casefold() == "yes":
+    if ans.casefold() in ("yes", NEAR_MISS_YES.casefold()):
         if not current:
             raise ValueError("no suggestion to accept")
         return Place.model_validate(current).model_copy(update={"match_ok": True}), {}

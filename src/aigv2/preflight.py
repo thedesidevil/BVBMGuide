@@ -9,6 +9,7 @@ from .intake.attachments import ZIP_MAX_BYTES, ZIP_MAX_FILES, Attachment
 from .intake.template import IntakeFields
 from .library import Library
 from .place_links import place_link_questions, validate_place_link
+from .question_days import prefix_questions
 from .planning.slots import resolve_day_city
 from .models import Answers, DayPlan, HotelStay, OpenChoice, PlannedItem, Place, Question, TransportLeg, TripPlan, place_key
 
@@ -269,7 +270,7 @@ def run_checklist(
             list(oc.options), day=oc.day)
     for vd in plan.vague_days:
         add(f"vague_day:{vd.isoformat()}", "vague_day",
-            f"The plan for {_d(vd)} is vague. What should that day include? (comma-separated)", day=vd)
+            f"The plan for {_d(vd)} is vague. What should that day include? (comma-separated or one per line)", day=vd)
 
     cities: list[str] = []
     for dp in plan.days:
@@ -374,7 +375,7 @@ def run_checklist(
 
     for q in place_link_questions(plan, places):
         add(q.id, q.kind, q.text, q.options, day=q.day)
-    return qs
+    return prefix_questions(qs, plan, attachments)
 
 
 _DOT_TIME_RE = re.compile(r"(?<![\d./:-])(\d{1,2})\.(\d{2})\s*([ap]\.?m\.?)(?![\d])", re.I)
@@ -586,7 +587,7 @@ def apply_answers(plan: TripPlan, questions: list[Question], answers: Answers) -
             if dp:
                 dp.items = [
                     PlannedItem(name=p.strip(), kind="activity", city=dp.city)
-                    for p in ans.split(",") if p.strip()
+                    for p in re.split(r"[,;\n]+", ans) if p.strip()
                 ]
             out.vague_days = [x for x in out.vague_days if x != vd]
         elif kind == "hours_conflict" and ans.lower().startswith("remove"):

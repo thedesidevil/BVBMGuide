@@ -59,7 +59,7 @@ def meal_gaps(state) -> list[Gap]:
                 if norm_name(e.name) not in chosen and e.name not in sugg:
                     sugg.append(e.name)
         sugg = sugg[:_SUGGEST]
-        text = (f"Day {p.day_index} {p.slot.meal} near {near}: only {found} of {wanted} restaurants found. "
+        text = (f"{p.slot.meal.capitalize()} near {near}: only {found} of {wanted} restaurants found. "
                 "Add one by pasting a Google Maps link (open the restaurant in Google Maps > Share > Copy link of ONE "
                 f"place), or answer {SKIP}.")
         if sugg:
@@ -69,8 +69,10 @@ def meal_gaps(state) -> list[Gap]:
 
 
 def plan_items(state) -> list[Question]:
+    from src.aigv2.question_days import day_label
     day_date = {d.index: d.date for d in state.days}
-    return [Question(id=g.id, kind="plan_gap", text=g.text, options=[SKIP], day=day_date.get(g.day_index))
+    return [Question(id=g.id, kind="plan_gap", options=[SKIP], day=day_date.get(g.day_index),
+                     text=day_label(state.trip, [day_date[g.day_index]] if g.day_index in day_date else []) + g.text)
             for g in meal_gaps(state)]
 
 

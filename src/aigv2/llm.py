@@ -5,6 +5,7 @@ from pydantic import BaseModel, ValidationError
 
 from src.common.ai_provider import AIClient, _lookup_pricing
 
+from src.aigv2 import cancel
 from .config import Settings
 
 log = logging.getLogger(__name__)
@@ -33,6 +34,7 @@ class StepLLM:
     def run_json(self, step: str, system: str, prompt: str, schema: type[BaseModel],
                  validate: Callable[[BaseModel], list[str]] | None = None,
                  max_tokens: int = 8000) -> BaseModel:
+        cancel.check()
         model = self.settings.models[step]
         obj, problems = self._attempt(step, model, system, prompt, schema, validate, max_tokens, False)
         if obj is not None:
@@ -47,6 +49,7 @@ class StepLLM:
         raise LLMStepError(step, problems)
 
     def _attempt(self, step, model, system, prompt, schema, validate, max_tokens, fallback):
+        cancel.check()
         client = self._factory(model)
         resp = client._client.chat.completions.create(
             model=model,

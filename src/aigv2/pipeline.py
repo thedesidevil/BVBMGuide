@@ -10,6 +10,7 @@ from zoneinfo import ZoneInfo
 
 from pydantic import BaseModel, Field
 
+from src.aigv2 import cancel
 from src.aigv2.config import STEPS, Settings, load_settings
 from src.aigv2.guide.build import build_guide
 from src.aigv2.google.places import PlacesClient
@@ -203,6 +204,10 @@ def cost_summary(cost: dict) -> str:
 def _guarded(store: RunStore, meter: CostMeter, label: str, fn):
     try:
         out = fn()
+    except cancel.RunCancelled as e:
+        _record_cost(store, f"{label} (cancelled)", meter.cost())
+        e.run_cost, e.run_id = store.load_json("cost.json"), store.run_id
+        raise
     except Exception as e:
         cost = meter.cost()
         _record_cost(store, f"{label} (failed)", cost)
@@ -654,8 +659,11 @@ def _start(store: RunStore, intake_path: Path | None, paths: list[Path], deps: D
         store.save_bytes(f"inputs/{p.name}", p.read_bytes())
     intake = parse_template(intake_path) if intake_path else IntakeFields()
     attachments = read_attachments(paths)
+    cancel.check()
     trip = extract_trip(intake, attachments, deps.llm)
+    cancel.check()
     places = resolve_places(trip, deps.places, {}, deps.library)
+    cancel.check()
     questions = run_checklist(trip, intake, attachments, deps.library, places, deps.settings)
     store.save_json("intake.json", intake)
     store.save_json("attachments.json", {"attachments": [a.model_dump(mode="json") for a in attachments]})
@@ -976,9 +984,12 @@ def _start_answers(a: Answers) -> Answers:
 
 
 def _finish(store: RunStore, answers: Answers, deps: Deps) -> tuple[str, QCResult]:
+    cancel.check()
     state = _plan(store, answers, deps)
     _review(store, state, answers, deps)
+    cancel.check()
     _write(store, state, deps)
+    cancel.check()
     return output_filename(state.trip), _render_qc(store, state, answers, deps)
 
 

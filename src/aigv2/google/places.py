@@ -6,6 +6,7 @@ from urllib.parse import parse_qsl, quote_plus, urlencode, urlsplit, urlunsplit
 
 import requests
 
+from src.aigv2 import cancel
 from src.aigv2.google.maplink import MapLinkError
 from src.aigv2.google.overrides import okey, place_from_override
 from src.aigv2.hours import from_google, is_24h
@@ -185,6 +186,7 @@ class PlacesClient:
         self.calls: dict[str, int] = {"text_search": 0, "nearby": 0, "details": 0}
 
     def _post(self, url: str, body: dict, counter: str) -> dict:
+        cancel.check()
         self.calls[counter] += 1
         resp = self.session.post(
             url,
@@ -201,6 +203,7 @@ class PlacesClient:
 
     def fresh_status(self, place: Place) -> Optional[Place]:
         """Re-fetch only business status and hours by place ID (Place Details); None if Google no longer has it."""
+        cancel.check()
         self.calls["details"] += 1
         resp = self.session.get(
             DETAILS_URL.format(place.place_id),

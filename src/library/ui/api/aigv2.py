@@ -16,7 +16,7 @@ from fastapi import APIRouter, File, HTTPException, Request, UploadFile
 from fastapi.responses import Response
 from pydantic import BaseModel, Field
 
-from src.aigv2 import pipeline
+from src.aigv2 import cancel, pipeline
 from src.aigv2.intake.template import build_template
 from src.aigv2.preflight import PreflightStop
 from src.aigv2.store import RunStore
@@ -72,10 +72,15 @@ def _job(kind: str, run_id: Optional[str], fn) -> dict:
 
     def work():
         with _RUN_LOCK:
+            cancel.clear()  # a stale request from an earlier job must not stop this one
             job["status"] = "running"
             try:
                 job["result"] = fn(job)
                 job["status"] = "done"
+            except cancel.RunCancelled as e:
+                job["status"], job["error"] = "cancelled", "Run was cancelled"
+                job["run_id"] = getattr(e, "run_id", job["run_id"])
+                job["cost"] = getattr(e, "run_cost", None)
             except pipeline.UnansweredQuestions as e:
                 job["status"], job["error"] = "error", "Some pre-flight questions still need an answer"
                 job["questions"] = [q.model_dump(mode="json") for q in e.questions]
@@ -98,7 +103,7 @@ def _run_summary(store: RunStore) -> dict:
     return {
         "run_id": store.run_id,
         "title": " & ".join(trip.get("client_names") or []),
-        "stage": "built" if "guide.docx" in names else ("started" if "questions.json" in names else "new"),
+        "stage": "cancelled" if "cancelled.json" in names else "built" if "guide.docx" in names else ("started" if "questions.json" in names else "new"),
         "total_usd": cost.get("total_usd"),
         "ai_usd": (cost.get("ai") or {}).get("total_usd"),
         "google_usd": (cost.get("google") or {}).get("total_usd"),
@@ -152,6 +157,48 @@ async def get_run(request: Request, run_id: str):
     }
 
 
+def _not_cancelled(store: RunStore) -> None:
+    if store.has("cancelled.json"):
+        raise HTTPException(status_code=409, detail="run was cancelled; restore it first")
+
+
+def _active_job(run_id: Optional[str] = None) -> Optional[dict]:
+    return next((j for j in _JOBS.values() if j["status"] in ("queued", "running")
+                 and (run_id is None or j["run_id"] == run_id)), None)
+
+
+@router.post("/aigv2/runs/{run_id}/cancel")
+async def cancel_run(request: Request, run_id: str):
+    """Stop the run's job (if any) before its next paid call and mark the run cancelled. Nothing is deleted."""
+    store = _store(request, run_id)
+    job = _active_job(run_id)
+    if job is not None:
+        cancel.request()
+    cost = store.load_json("cost.json") or {}
+    store.save_json("cancelled.json", {"at": datetime.now(timezone.utc).isoformat(),
+                                       "stage": job["kind"] if job else _run_summary(store)["stage"],
+                                       "spent_usd": cost.get("total_usd")})
+    return {"run_id": run_id, "cancelling": job is not None}
+
+
+@router.post("/aigv2/jobs/{job_id}/cancel")
+async def cancel_job(job_id: str):
+    """Cancel a job that has no run yet (the Start step)."""
+    job = _JOBS.get(job_id)
+    if job is None:
+        raise HTTPException(status_code=404, detail="No such job")
+    if job["status"] in ("queued", "running"):
+        cancel.request()
+    return {"id": job_id, "cancelling": job["status"] in ("queued", "running")}
+
+
+@router.post("/aigv2/runs/{run_id}/restore")
+async def restore_run(request: Request, run_id: str):
+    store = _store(request, run_id)
+    store.delete("cancelled.json")
+    return {"run_id": run_id}
+
+
 @router.get("/aigv2/runs/{run_id}/files/{name:path}")
 async def get_file(request: Request, run_id: str, name: str):
     store = _store(request, run_id)
@@ -180,6 +227,10 @@ async def _save_uploads(files: list[UploadFile], tmp: Path) -> list[Path]:
         if not name:
             continue
         p = tmp / name
+        n = 2
+        while p.exists():  # same file name picked from two folders: keep both (a-2.pdf, a-3.pdf)
+            p = tmp / f"{Path(name).stem}-{n}{Path(name).suffix}"
+            n += 1
         p.write_bytes(await f.read())
         paths.append(p)
     return paths
@@ -209,6 +260,7 @@ async def start(request: Request, intake: Optional[UploadFile] = File(None),
 async def plan(request: Request, run_id: str, body: BuildBody):
     """Optional checkpoint between Start and Build: plan the guide and return the gaps (restaurants) as job.questions."""
     store, deps = _store(request, run_id), _deps(request)
+    _not_cancelled(store)
 
     def run(job):
         items = pipeline.plan_run(store, body.answers, deps)
@@ -221,6 +273,7 @@ async def plan(request: Request, run_id: str, body: BuildBody):
 @router.post("/aigv2/runs/{run_id}/build")
 async def build(request: Request, run_id: str, body: BuildBody):
     store, deps = _store(request, run_id), _deps(request)
+    _not_cancelled(store)
 
     def run(job):
         r = pipeline.build_run(store, body.answers, deps)
@@ -232,6 +285,7 @@ async def build(request: Request, run_id: str, body: BuildBody):
 @router.post("/aigv2/runs/{run_id}/regenerate")
 async def regenerate(request: Request, run_id: str, body: RegenBody):
     store, deps = _store(request, run_id), _deps(request)
+    _not_cancelled(store)
 
     def run(job):
         r = pipeline.regenerate(store, body.days, body.sections, deps)
@@ -243,6 +297,7 @@ async def regenerate(request: Request, run_id: str, body: RegenBody):
 @router.post("/aigv2/runs/{run_id}/qc")
 async def requalify(request: Request, run_id: str, file: UploadFile = File(...)):
     store, deps = _store(request, run_id), _deps(request)
+    _not_cancelled(store)
     if not (file.filename or "").lower().endswith(".docx"):
         raise HTTPException(status_code=400, detail="Upload the edited guide as a .docx")
     tmp = Path(tempfile.mkdtemp(prefix="aigv2_qc_"))

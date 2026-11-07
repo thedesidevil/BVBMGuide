@@ -5,6 +5,7 @@ from typing import Literal, Optional
 
 import requests
 
+from src.aigv2 import cancel
 from src.aigv2.models import TransitStep
 
 MATRIX_URL = "https://routes.googleapis.com/distanceMatrix/v2:computeRouteMatrix"
@@ -42,6 +43,7 @@ class RoutesClient:
         self.now = lambda: datetime.now(timezone.utc)
 
     def _post(self, url: str, mask: str, body: dict) -> requests.Response:
+        cancel.check()
         resp = self.session.post(
             url,
             headers={"X-Goog-Api-Key": self.api_key, "X-Goog-FieldMask": mask, "Content-Type": "application/json"},

@@ -14,7 +14,10 @@ _SKIP_NAMES = ("free time", "overnight", "hotel check", "check-in", "check in", 
                "leisure", "at leisure", "rest day")
 NEAR_MISS_YES = "Yes (accept suggestion)"
 CONFIRM_YES = "Yes (correct)"
-HOTEL_CONFIRM_OVERLAP = 0.9
+HOTEL_CONFIRM_OVERLAP = 0.95
+_CITY_ALIASES = {"lucerne": ("luzern",), "luzern": ("lucerne",), "zurich": ("zuerich",), "geneva": ("geneve", "genf"),
+                 "cologne": ("koln",), "munich": ("munchen",), "vienna": ("wien",), "florence": ("firenze",),
+                 "rome": ("roma",), "venice": ("venezia",), "milan": ("milano",), "prague": ("praha",)}
 _EVENT_RE = re.compile(r"\b(fireworks?|parade|shows?|light show|concert|ceremony|illuminations?|spectacular|"
                        r"performance|live music)\b", re.I)
 _MOVE_RE = re.compile(r"^\s*(arrival in|arrive in|arrival at|departure from|depart from|departure|transfer to|transfer from|"
@@ -43,10 +46,12 @@ def _not_worth_asking(trip: TripPlan, it) -> bool:
 
 
 def _weak_hotel_match(name: str, city: str, p: Place) -> bool:
-    """A hotel accepted by the fuzzy name rule: names differ noticeably, or the city is not in Google's address."""
+    """Not an exact match: names differ (token overlap < 0.95), or neither the city nor its local alias is in the address."""
     a, f = _toks(name), _toks(p.name)
     overlap = len(a & f) / max(len(a), len(f), 1)
-    in_addr = fold(city) in fold(p.address or "") if city else True
+    addr = fold(p.address or "")
+    names = [fold(city), *_CITY_ALIASES.get(fold(city), ())] if city else []
+    in_addr = (not names) or any(n in addr for n in names)
     return overlap < HOTEL_CONFIRM_OVERLAP or not in_addr
 
 
@@ -81,19 +86,21 @@ def place_targets(trip: TripPlan) -> dict[str, tuple[str, str, Optional[date], s
     return out
 
 
-def place_link_questions(trip: TripPlan, places: dict[str, Optional[Place]]) -> list[Question]:
+def place_link_questions(trip: TripPlan, places: dict[str, Optional[Place]], overrides=None) -> list[Question]:
     qs = []
     for k, (name, city, d, _kind) in place_targets(trip).items():
         if k not in places:
             continue
         p = places[k]
         if p is not None and p.match_ok:
-            if _kind == "hotel" and _weak_hotel_match(name, city, p):
+            if _kind == "hotel" and not (overrides is not None and overrides.get(name, city) is not None) \
+                    and _weak_hotel_match(name, city, p):
                 qs.append(Question(
                     id=PREFIX + k, kind="place_link", options=[CONFIRM_YES, "Skip"], day=d,
-                    text=f'We matched hotel "{name}" to Google\'s "{p.name}" at {p.address or "an unknown address"}. '
-                         "Answer Yes if correct, or paste the right Maps link (open the hotel in Google Maps > Share > "
-                         "Copy link of ONE place), or answer Skip."))
+                    text=f'Hotel "{name}" ({city}): we matched it to Google\'s "{p.name}" at '
+                         f'{p.address or "an unknown address"} ({p.maps_url}). Answer Yes if this is the right hotel, or '
+                         "paste the correct Google Maps link (open the hotel in Google Maps > Share > Copy link of ONE "
+                         "place), or Skip."))
             continue
         where = city
         how = ("Paste its Google Maps link (open the place in Google Maps > Share > Copy link of ONE place), "

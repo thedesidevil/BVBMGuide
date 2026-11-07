@@ -664,7 +664,8 @@ def _start(store: RunStore, intake_path: Path | None, paths: list[Path], deps: D
     cancel.check()
     places = resolve_places(trip, deps.places, {}, deps.library)
     cancel.check()
-    questions = run_checklist(trip, intake, attachments, deps.library, places, deps.settings)
+    questions = run_checklist(trip, intake, attachments, deps.library, places, deps.settings,
+                              overrides=getattr(deps.places, "overrides", None))
     store.save_json("intake.json", intake)
     store.save_json("attachments.json", {"attachments": [a.model_dump(mode="json") for a in attachments]})
     store.save_json("trip_plan.json", trip)

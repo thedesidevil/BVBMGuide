@@ -214,3 +214,49 @@ def test_yes_confirms_hotel_and_saves_override(tmp_path):
     assert len(rep["applied"]) == 1 and not rep["failed"]
     e = c.overrides.get(name, city)
     assert e["google_name"] == "Baeren Hotel, The Bear Inn" and e["confirmed_by"] == "user"
+
+
+EUROPE = [("Voco Paris- Porte de Clichy", "Paris", "voco Paris - Porte de Clichy by IHG", "2 Rue du 8 Mai 1945, 92110 Clichy, France"),
+          ("Hotel Luzernerhof", "Lucerne", "Hotel Luzernerhof", "Alpenstrasse 3, 6004 Luzern, Switzerland"),
+          ("Hotel Baren the Bear Inn", "Interlaken", "Baeren Hotel, The Bear Inn", "Oberdorfstrasse 1, 3812 Wilderswil, Switzerland"),
+          ("Novotel Zurich Airport Messe", "Zurich", "Novotel Zurich Airport Messe", "Lindbergh-Platz 1, 8152 Glattpark (Opfikon), Switzerland")]
+
+
+def _europe():
+    hotels = [HotelStay(city=c, hotel=n, check_in=date(2026, 5, 1 + i), check_out=date(2026, 5, 2 + i), source="voucher")
+              for i, (n, c, _g, _a) in enumerate(EUROPE)]
+    trip = make(hotels=hotels, days=[DayPlan(date=date(2026, 5, 1 + i), title="t", city=c) for i, (_n, c, _g, _a) in enumerate(EUROPE)])
+    places = {place_key(n, c): _gp(g, a) for n, c, g, a in EUROPE}
+    return trip, places
+
+
+def test_europe_hotels_asked_first_unless_exact(tmp_path):
+    trip, places = _europe()
+    trip.days[0].items.append(PlannedItem(name="Secret Cave", kind="attraction", city="Paris"))
+    places[place_key("Secret Cave", "Paris")] = None
+    qs = place_link_questions(trip, places)
+    ids = [q.id for q in qs]
+    # voco / baren (name differs) and novotel (no 'Zurich' in the address) are asked; Luzernerhof is exact (alias Luzern)
+    assert ids[:3] == [PREFIX_ + place_key(n, c) for n, c, _g, _a in (EUROPE[0], EUROPE[2], EUROPE[3])]
+    assert ids[3] == PREFIX_ + place_key("Secret Cave", "Paris")        # hotels come first
+    assert PREFIX_ + place_key("Hotel Luzernerhof", "Lucerne") not in ids
+    assert all(q.options == ["Yes (correct)", "Skip"] for q in qs[:3])
+    assert "2 Rue du 8 Mai 1945" in qs[0].text and "maps" in qs[0].text and qs[0].day == date(2026, 5, 1)
+
+
+def test_saved_override_stops_the_hotel_question(tmp_path):
+    trip, places = _europe()
+    c = LinkClient(tmp_path)
+    assert len(place_link_questions(trip, places, c.overrides)) == 3
+    c.overrides.put("Hotel Baren the Bear Inn", "Interlaken", "Baeren Hotel, The Bear Inn", 1, 2, "https://x")
+    assert len(place_link_questions(trip, places, c.overrides)) == 2
+
+
+def test_unmatched_hotel_says_could_not_find(tmp_path):
+    trip, places = _europe()
+    places[place_key(*EUROPE[0][:2])] = None
+    q = place_link_questions(trip, places)[0]
+    assert 'could not find' in q.text and "Voco" in q.text and q.options == ["Skip"]
+
+
+PREFIX_ = "place_link:"

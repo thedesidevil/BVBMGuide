@@ -181,6 +181,7 @@ def run_checklist(
     library: Library,
     places: dict[str, Optional[Place]],
     settings: Optional[Settings] = None,
+    overrides=None,
 ) -> list[Question]:
     windows = (settings or Settings(models={})).slot_windows
     qs: list[Question] = []
@@ -373,7 +374,7 @@ def run_checklist(
                         f"{item.name} is in a permit area ({area.title()}). Is a permit arranged?",
                         ["Permit arranged", "Will arrange", "Not needed"], day=dp.date)
 
-    for q in place_link_questions(plan, places):
+    for q in place_link_questions(plan, places, overrides):
         add(q.id, q.kind, q.text, q.options, day=q.day)
     return prefix_questions(qs, plan, attachments)
 

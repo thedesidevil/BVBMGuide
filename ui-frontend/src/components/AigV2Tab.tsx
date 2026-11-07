@@ -44,6 +44,81 @@ function CostPanel({ cost, title }: { cost: any; title: string }) {
   );
 }
 
+const fkey = (f: File) => `${f.name}|${f.size}|${f.lastModified}`;
+const fsize = (n: number) => (n >= 1048576 ? `${(n / 1048576).toFixed(1)} MB` : `${Math.max(1, Math.round(n / 1024))} KB`);
+function fileIcon(name: string) {
+  const ext = name.split(".").pop()?.toLowerCase() ?? "";
+  if (ext === "pdf") return "📕";
+  if (["doc", "docx"].includes(ext)) return "📘";
+  if (["xls", "xlsx", "csv"].includes(ext)) return "📗";
+  if (["png", "jpg", "jpeg", "heic", "webp", "gif"].includes(ext)) return "🖼";
+  if (ext === "zip") return "🗜";
+  return "📄";
+}
+
+function FileList({ files, onRemove }: { files: File[]; onRemove: (f: File) => void }) {
+  return (
+    <ul className="divide-y divide-slate-100 border border-slate-200 rounded-md">
+      {files.map((f) => (
+        <li key={fkey(f)} className="flex items-center gap-2 px-2 py-1 text-sm">
+          <span>{fileIcon(f.name)}</span>
+          <span className="flex-1 truncate text-slate-700">{f.name}</span>
+          <span className="text-xs text-slate-400">{fsize(f.size)}</span>
+          <button type="button" aria-label={`Remove ${f.name}`} onClick={() => onRemove(f)}
+            className="px-1 text-slate-400 hover:text-red-600">✕ Remove</button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function AttachmentPicker({ files, setFiles, disabled }: { files: File[]; setFiles: (f: File[]) => void; disabled: boolean }) {
+  const [over, setOver] = useState(false);
+  const filesRef = useRef<File[]>(files);
+  filesRef.current = files;
+  const add = (list: FileList | File[] | null) => {
+    if (!list) return;
+    const have = new Set(filesRef.current.map(fkey));
+    const fresh: File[] = [];
+    for (const f of Array.from(list)) { if (!have.has(fkey(f))) { have.add(fkey(f)); fresh.push(f); } }
+    if (fresh.length) setFiles([...filesRef.current, ...fresh]);
+  };
+  const fileInput = useRef<HTMLInputElement>(null);
+  const folderInput = useRef<HTMLInputElement>(null);
+  useEffect(() => { folderInput.current?.setAttribute("webkitdirectory", ""); }, []);
+  const picked = (e: React.ChangeEvent<HTMLInputElement>) => { add(e.target.files); e.target.value = ""; };
+  return (
+    <div className="space-y-2">
+      <div
+        onDragOver={(e) => { e.preventDefault(); setOver(true); }}
+        onDragLeave={() => setOver(false)}
+        onDrop={(e) => { e.preventDefault(); setOver(false); if (!disabled) add(e.dataTransfer.files); }}
+        className={`border-2 border-dashed rounded-lg p-4 text-center text-sm ${over ? "border-blue-500 bg-blue-50" : "border-slate-300 bg-slate-50"}`}
+      >
+        <p className="text-slate-600">Drag files here, or</p>
+        <div className="flex justify-center gap-2 mt-2">
+          <button type="button" disabled={disabled} onClick={() => fileInput.current?.click()}
+            className="px-3 py-1.5 rounded-md bg-blue-600 text-white text-sm font-medium disabled:opacity-40">Add files</button>
+          <button type="button" disabled={disabled} onClick={() => folderInput.current?.click()}
+            className="px-3 py-1.5 rounded-md border border-blue-600 text-blue-700 text-sm font-medium disabled:opacity-40">Add folder</button>
+        </div>
+        <p className="text-xs text-slate-400 mt-2">You can add more from other folders; everything is kept in the list below.</p>
+        <input ref={fileInput} type="file" multiple className="hidden" onChange={picked} />
+        <input ref={folderInput} type="file" multiple className="hidden" onChange={picked} />
+      </div>
+      {files.length > 0 && (
+        <>
+          <div className="flex justify-between text-xs text-slate-500">
+            <span>{files.length} file{files.length === 1 ? "" : "s"} attached</span>
+            <button type="button" disabled={disabled} onClick={() => setFiles([])} className="text-blue-600 hover:underline">Clear all</button>
+          </div>
+          <FileList files={files} onRemove={(f) => setFiles(files.filter((x) => fkey(x) !== fkey(f)))} />
+        </>
+      )}
+    </div>
+  );
+}
+
 export function AigV2Tab() {
   const [runs, setRuns] = useState<any[]>([]);
   const [runId, setRunId] = useState<string | null>(null);
@@ -53,6 +128,8 @@ export function AigV2Tab() {
   const [error, setError] = useState("");
   const [intake, setIntake] = useState<File | null>(null);
   const [attachments, setAttachments] = useState<File[]>([]);
+  const [confirmCancel, setConfirmCancel] = useState(false);
+  const [showCancelled, setShowCancelled] = useState(false);
   const [days, setDays] = useState("");
   const [sections, setSections] = useState<string[]>([]);
   const timer = useRef<number | null>(null);
@@ -92,6 +169,17 @@ export function AigV2Tab() {
   const busy = job && (job.status === "queued" || job.status === "running");
   const unanswered = run ? run.questions.filter((q: any) => !(answers[q.id] ?? "").trim()) : [];
   const built = run?.stage === "built";
+  const cancelled = run?.stage === "cancelled";
+  const jobBusy = !!busy;
+  async function doCancel() {
+    setConfirmCancel(false);
+    try {
+      if (runId) await api.v2Cancel(runId);
+      else if (job?.id) await api.v2CancelJob(job.id);
+      loadRuns(); if (runId) loadRun(runId);
+    } catch (e: any) { setError(e.message); }
+  }
+  const visibleRuns = runs.filter((r) => showCancelled || r.stage !== "cancelled");
 
   return (
     <div className="flex gap-6 max-w-6xl mx-auto">
@@ -100,7 +188,10 @@ export function AigV2Tab() {
           onClick={() => { setRunId(null); setJob(null); setError(""); }}
           className="w-full px-3 py-2 rounded-md bg-blue-600 text-white text-sm font-medium hover:bg-blue-700"
         >+ New run</button>
-        {runs.map((r) => (
+        <label className="flex items-center gap-1 text-xs text-slate-500 px-1">
+          <input type="checkbox" checked={showCancelled} onChange={(e) => setShowCancelled(e.target.checked)} />Show cancelled
+        </label>
+        {visibleRuns.map((r) => (
           <button
             key={r.run_id}
             onClick={() => { setRunId(r.run_id); setJob(null); setError(""); }}
@@ -109,7 +200,7 @@ export function AigV2Tab() {
             <div className="font-medium text-slate-700 truncate">{r.title || "(no names)"}</div>
             <div className="text-slate-400 font-mono truncate">{r.run_id}</div>
             <div className="flex justify-between text-slate-500 mt-1">
-              <span>{r.stage}</span>
+              <span className={r.stage === "cancelled" ? "px-1 rounded bg-slate-200 text-slate-600" : ""}>{r.stage === "cancelled" ? "Cancelled" : r.stage}</span>
               <span>{r.total_usd == null ? "" : `AI ${usd(r.ai_usd)} · G ${usd(r.google_usd)}`}</span>
             </div>
           </button>
@@ -118,6 +209,34 @@ export function AigV2Tab() {
 
       <section className="flex-1 space-y-4 min-w-0">
         {error && <p className="text-red-600 text-sm whitespace-pre-wrap">{error}</p>}
+
+        {confirmCancel && (
+          <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+            <div className="bg-white rounded-lg p-5 max-w-sm space-y-3 shadow-lg">
+              <p className="text-sm text-slate-800 font-medium">Cancel this run?</p>
+              <p className="text-sm text-slate-600">Work done so far is kept and costs already spent stay recorded, but the run will not continue.</p>
+              <div className="flex justify-end gap-2">
+                <button onClick={() => setConfirmCancel(false)} className="px-3 py-1.5 rounded-md border border-slate-300 text-sm">Keep run</button>
+                <button onClick={doCancel} className="px-3 py-1.5 rounded-md bg-red-600 text-white text-sm font-medium">Yes, cancel run</button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {(runId && !cancelled || jobBusy) && (
+          <div className="flex justify-end">
+            <button onClick={() => setConfirmCancel(true)}
+              className="px-3 py-1.5 rounded-md border border-red-300 text-red-700 text-sm hover:bg-red-50">Cancel run</button>
+          </div>
+        )}
+
+        {cancelled && (
+          <div className="rounded-lg border border-slate-300 bg-slate-100 p-4 text-sm flex items-center justify-between">
+            <span className="text-slate-700">This run was cancelled. Nothing was deleted.</span>
+            <button onClick={() => api.v2Restore(run.run_id).then(() => { loadRuns(); loadRun(run.run_id); }).catch((e) => setError(e.message))}
+              className="px-3 py-1.5 rounded-md bg-slate-700 text-white text-sm">Restore run</button>
+          </div>
+        )}
 
         {job && (
           <div className={`rounded-lg border p-4 text-sm ${job.status === "error" ? "border-red-300 bg-red-50" : "border-slate-200 bg-white"}`}>
@@ -137,17 +256,21 @@ export function AigV2Tab() {
               <label className="block text-sm text-slate-600 mb-1">
                 Filled intake template (.docx) — <a className="text-blue-600" href={api.v2TemplateUrl()}>download blank template</a>
               </label>
-              <input type="file" accept=".docx" onChange={(e) => setIntake(e.target.files?.[0] ?? null)} />
+              {intake ? (
+                <FileList files={[intake]} onRemove={() => setIntake(null)} />
+              ) : (
+                <input key="intake" type="file" accept=".docx" disabled={busy} onChange={(e) => { setIntake(e.target.files?.[0] ?? null); e.target.value = ""; }} />
+              )}
             </div>
             <div>
               <label className="block text-sm text-slate-600 mb-1">Attachments (itinerary, vouchers, tickets…)</label>
-              <input type="file" multiple onChange={(e) => setAttachments(Array.from(e.target.files ?? []))} />
+              <AttachmentPicker files={attachments} setFiles={setAttachments} disabled={!!busy} />
             </div>
             <button
               disabled={busy || (!intake && attachments.length === 0)}
               onClick={() => launch(() => api.v2Start(intake, attachments))}
               className="px-4 py-2 rounded-md bg-blue-600 text-white text-sm font-medium disabled:opacity-40"
-            >Read inputs &amp; list questions</button>
+            >{busy ? "Reading inputs… (this can take a minute)" : "Read inputs & list questions"}</button>
           </div>
         )}
 
@@ -161,7 +284,7 @@ export function AigV2Tab() {
               </p>
             </div>
 
-            {!built && (
+            {!built && !cancelled && (
               <div className="bg-white border border-slate-200 rounded-lg p-4 space-y-3">
                 <h3 className="text-sm font-semibold text-slate-700">
                   Pre-flight questions ({run.questions.length - unanswered.length}/{run.questions.length} answered)

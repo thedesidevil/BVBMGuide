@@ -210,6 +210,9 @@ export const api = {
     if (!res.ok) throw new Error(`Start failed: ${res.status} ${await res.text()}`);
     return res.json();
   },
+  v2Cancel: (id: string) => request<any>(`/aigv2/runs/${encodeURIComponent(id)}/cancel`, { method: "POST" }),
+  v2CancelJob: (id: string) => request<any>(`/aigv2/jobs/${id}/cancel`, { method: "POST" }),
+  v2Restore: (id: string) => request<any>(`/aigv2/runs/${encodeURIComponent(id)}/restore`, { method: "POST" }),
   v2Plan: (id: string, answers: Record<string, string>) =>
     request<any>(`/aigv2/runs/${encodeURIComponent(id)}/plan`, { method: "POST", body: JSON.stringify({ answers }) }),
   v2Build: (id: string, answers: Record<string, string>) =>

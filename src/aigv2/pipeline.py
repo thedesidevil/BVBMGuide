@@ -35,6 +35,7 @@ from src.aigv2.preflight import apply_answers, run_checklist, unanswered
 from src.aigv2.google.overrides import FILE_NAME as OVERRIDES_FILE, PlaceOverrides
 from src.aigv2.google.maplink import default_fetch
 from src.aigv2.place_links import apply_place_answers, override_report
+from src.aigv2.plan_review import GAP_PREFIX, REVIEW_FILE, apply_plan_answers, plan_items
 from src.aigv2.qc import run_qc
 from src.aigv2.qc.report import PRICE_KEY, QCResult, write_report
 from src.aigv2.render.document import GuideData, RenderDay, output_filename, render_guide
@@ -940,8 +941,43 @@ def _render_qc(store: RunStore, state: PlanState, answers: Answers, deps: Deps) 
     return result
 
 
+def _review(store: RunStore, state: PlanState, answers: Answers, deps: Deps) -> list[Question]:
+    """Apply the plan-checkpoint answers (pasted restaurant links) to the plan, save it, and write plan_review.json."""
+    prev = store.load_json(REVIEW_FILE) or {}
+    rep = {"applied": list(prev.get("applied", [])), "failed": [], "done": dict(prev.get("done", {}))}
+    if any(k.startswith(GAP_PREFIX) and (v or "").strip() for k, v in answers.items()):
+        new = apply_plan_answers(state, answers, deps.places, fetch=deps.link_fetch, done=rep["done"])
+        rep["applied"] += new["applied"]
+        rep["failed"], rep["done"] = new["failed"], new["done"]
+        if new["applied"]:
+            store.save_json("plan.json", state)
+    items = plan_items(state)
+    store.save_json(REVIEW_FILE, {"items": [q.model_dump(mode="json") for q in items], "applied": rep["applied"],
+                                  "failed": rep["failed"], "done": rep["done"]})
+    return items
+
+
+def plan_run(store: RunStore, answers: Answers, deps: Deps) -> list[Question]:
+    """Stage 1 (optional): plan the guide, apply any plan-checkpoint answers and return what still needs attention.
+    Pre-flight questions must be answered; the items returned are optional (Skip / no answer keeps the markers)."""
+    meter = CostMeter(deps)
+    missing = unanswered(_questions(store), answers)
+    if missing:
+        raise UnansweredQuestions(missing)
+    saved = store.load_json("answers.json")
+    if saved is not None and _start_answers(saved) != _start_answers(answers) and store.has("plan.json"):
+        raise ValueError("answers differ from the ones this run was built with; start a new run")
+    store.save_json("answers.json", {**(saved or {}), **answers} if saved is not None else answers)
+    return _guarded(store, meter, "plan", lambda: _review(store, _plan(store, answers, deps), answers, deps))
+
+
+def _start_answers(a: Answers) -> Answers:
+    return {k: v for k, v in a.items() if not k.startswith(GAP_PREFIX)}
+
+
 def _finish(store: RunStore, answers: Answers, deps: Deps) -> tuple[str, QCResult]:
     state = _plan(store, answers, deps)
+    _review(store, state, answers, deps)
     _write(store, state, deps)
     return output_filename(state.trip), _render_qc(store, state, answers, deps)
 
@@ -958,7 +994,7 @@ def build_run(store: RunStore, answers: Answers, deps: Deps) -> BuildResult:
     if missing:
         raise UnansweredQuestions(missing)
     saved = store.load_json("answers.json")
-    if saved is not None and saved != answers and store.has("plan.json"):
+    if saved is not None and _start_answers(saved) != _start_answers(answers) and store.has("plan.json"):
         raise ValueError("answers differ from the ones this run was built with; start a new run")
     store.save_json("answers.json", answers)
     return _result(store, meter, "build", lambda: _finish(store, answers, deps))

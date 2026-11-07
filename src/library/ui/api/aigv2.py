@@ -139,6 +139,8 @@ async def get_run(request: Request, run_id: str):
     return {
         **_run_summary(store),
         "questions": questions,
+        "plan_items": (store.load_json("plan_review.json") or {}).get("items", []),
+        "plan_failed": (store.load_json("plan_review.json") or {}).get("failed", []),
         "answers": store.load_json("answers.json"),
         "trip": trip,
         "day_count": len(plan.get("days", [])),
@@ -201,6 +203,19 @@ async def start(request: Request, intake: Optional[UploadFile] = File(None),
         return {"run_id": store.run_id, "questions": len(questions)}
 
     return _job("start", None, run)
+
+
+@router.post("/aigv2/runs/{run_id}/plan")
+async def plan(request: Request, run_id: str, body: BuildBody):
+    """Optional checkpoint between Start and Build: plan the guide and return the gaps (restaurants) as job.questions."""
+    store, deps = _store(request, run_id), _deps(request)
+
+    def run(job):
+        items = pipeline.plan_run(store, body.answers, deps)
+        job["questions"] = [q.model_dump(mode="json") for q in items]
+        return {"run_id": run_id, "items": len(items)}
+
+    return _job("plan", run_id, run)
 
 
 @router.post("/aigv2/runs/{run_id}/build")

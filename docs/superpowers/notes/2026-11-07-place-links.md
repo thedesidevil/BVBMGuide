@@ -30,5 +30,28 @@ To remove a wrong override, delete its entry from the json. `qc_report.md` lists
 overrides" (name -> Google name, link) so mistakes are noticed.
 
 ## Not covered / follow-up
-Restaurants chosen at plan time (inside `build`) are not in the start-phase question list. An override added later
-IS used for them. Proposal: a `plan` checkpoint (plan, list unmatched, ask, then write).
+Restaurants are chosen at plan time (inside `build`), so they cannot be in the start-phase question list; the plan
+checkpoint below covers them. Places that failed to match in attraction slots stay start-phase `place_link` questions.
+
+## Plan checkpoint (optional pause between PLAN and WRITE)
+Flow: `start` -> answer pre-flight questions -> `plan` (plans restaurants/schedule, saves `plan.json`, NO AI writing) ->
+fix gaps -> `build` (writes, renders, QC). `build` still works alone in one go; the checkpoint is optional.
+
+- CLI: `python -m src.aigv2 plan <run_id> --answers a.json` prints "Needs attention" items as `[meal_gap:<day>:<meal>]`.
+  Add those ids to the same json with a Maps link (or `Skip`), run `plan` again to apply and re-list, then `build` with
+  the same file. Several links for one slot may be separated by spaces.
+- UI: "Plan restaurants first (optional)" next to Build guide -> `POST /api/aigv2/runs/{id}/plan {answers}` (background
+  job; items are in `run.plan_items` and `job.questions`) -> paste links into the boxes -> press Plan again to apply,
+  or just Build (build applies them too).
+- Item `meal_gap` (kind `plan_gap`): a meal slot has fewer restaurants than wanted. Text: "Day N lunch near X: only k of 3
+  restaurants found ... Library suggests: A, B, C" - the suggestions are the top 3 library restaurants (library rank)
+  rejected only for "no confident Google match"; paste a link of one of those or any other place.
+- Link format: Google Maps > open the restaurant > Share > Copy link (one place; same rules as place links).
+- Applying: link -> `from_link` Place -> inserted as a pick (`lib.source = "user_link"`, no cuisine/price so PRICE UNKNOWN
+  shows; hours from Google if found, else VERIFY), ADD RESTAURANT marker removed, travel time = straight-line estimate
+  from the slot anchor (no Routes call), saved as an override (name|city). `plan.json` is rewritten, so
+  `regenerate` uses it. Skip / blank / bad link leaves the marker; failures are listed in `plan_review.json`
+  (`failed`) and printed as NOT USED. Applied answers are remembered in `plan_review.json` (`done`) so a later
+  `build` with the same answers does not add a venue twice.
+- Limitation: `regenerate --day N` re-plans that day from scratch, so links added to it must be re-applied.
+- Not covered: unverified-diet confirmations (still VERIFY markers in the guide).

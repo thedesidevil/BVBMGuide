@@ -114,6 +114,30 @@ def build(run_id: str, answers: Path = typer.Option(..., "--answers", help='JSON
 
 
 @app.command()
+def plan(run_id: str, answers: Path = typer.Option(..., "--answers", help='JSON {"question_id": "answer"}')):
+    """Plan the guide (no AI writing) and list the gaps to fix before building: restaurants to add by Maps link.
+    Re-run with the plan answers added to the same JSON; then run build with that file."""
+    deps = pipeline.default_deps()
+    store = _store(deps, run_id)
+    data = json.loads(answers.read_text(encoding="utf-8"))
+    items = _build_errors(lambda: pipeline.plan_run(store, data, deps))
+    typer.echo(f"Run id: {store.run_id}")
+    review = store.load_json("plan_review.json") or {}
+    for line in review.get("applied", []):
+        typer.echo(f"Added: {line}")
+    for line in review.get("failed", []):
+        typer.echo(f"NOT USED: {line}")
+    if items:
+        typer.echo(f"Needs attention ({len(items)}), all optional; add [id]: link (or Skip) to the answers file:")
+        for i, q in enumerate(items, 1):
+            typer.echo(f"  {i}. [{q.id}] {q.text}")
+    else:
+        typer.echo("Nothing needs attention.")
+    typer.echo(f"Plan: {_path(store, 'plan.json')}")
+    typer.echo(pipeline.cost_summary(store.load_json("cost.json")))
+
+
+@app.command()
 def regenerate(run_id: str, day: list[int] = typer.Option([], "--day", help="Day number to rewrite"),
                section: list[str] = typer.Option([], "--section", help="Section key to rewrite"),
                renderer: Optional[str] = _RENDERER_OPT):

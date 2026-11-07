@@ -187,6 +187,30 @@ export function AigV2Tab() {
                 ))}
                 <button
                   disabled={busy || unanswered.length > 0}
+                  onClick={() => launch(() => api.v2Plan(run.run_id, answers))}
+                  className="mr-2 px-4 py-2 rounded-md border border-blue-600 text-blue-700 text-sm font-medium disabled:opacity-40"
+                  title="Optional: plan the guide first (no AI writing) and fix restaurant gaps by pasting Google Maps links"
+                >Plan restaurants first (optional)</button>
+                {(run.plan_items ?? []).length > 0 && (
+                  <div className="border-t border-slate-200 pt-3 space-y-3">
+                    <h3 className="text-sm font-semibold text-slate-700">
+                      Needs attention before writing ({run.plan_items.length}) — optional; paste a Google Maps link of ONE place, or leave blank / Skip, then press Plan again to apply
+                    </h3>
+                    {(run.plan_failed ?? []).map((f: string) => <p key={f} className="text-xs text-red-700">NOT USED: {f}</p>)}
+                    {run.plan_items.map((q: any) => (
+                      <div key={q.id}>
+                        <label className="block text-sm text-slate-700">{q.text}</label>
+                        <input
+                          className="mt-1 w-full border border-slate-300 rounded px-2 py-1 text-sm"
+                          value={answers[q.id] ?? ""} onChange={(e) => setAnswers({ ...answers, [q.id]: e.target.value })}
+                          placeholder="https://maps.app.goo.gl/... or Skip"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+                <button
+                  disabled={busy || unanswered.length > 0}
                   onClick={() => launch(() => api.v2Build(run.run_id, answers))}
                   className="px-4 py-2 rounded-md bg-blue-600 text-white text-sm font-medium disabled:opacity-40"
                 >Build guide</button>

@@ -210,6 +210,8 @@ export const api = {
     if (!res.ok) throw new Error(`Start failed: ${res.status} ${await res.text()}`);
     return res.json();
   },
+  v2Plan: (id: string, answers: Record<string, string>) =>
+    request<any>(`/aigv2/runs/${encodeURIComponent(id)}/plan`, { method: "POST", body: JSON.stringify({ answers }) }),
   v2Build: (id: string, answers: Record<string, string>) =>
     request<any>(`/aigv2/runs/${encodeURIComponent(id)}/build`, { method: "POST", body: JSON.stringify({ answers }) }),
   v2Regenerate: (id: string, days: number[], sections: string[]) =>

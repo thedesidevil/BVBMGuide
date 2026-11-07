@@ -472,7 +472,7 @@ def dump_contamination(db_path: Path, output_path: Path) -> int:
     rows: list[tuple[str, str, str, str]] = []
 
     for shard_file in sorted(db_path.glob("*.json")):
-        if shard_file.name == "_index.json":
+        if shard_file.name.startswith("_"):
             continue
         dest = shard_file.stem
         data = json.loads(shard_file.read_text(encoding="utf-8"))
@@ -566,7 +566,7 @@ def dump_duplicates(db_path: Path, output_path: Path, threshold: float = 0.85) -
     rows: list[tuple[str, str, str, str]] = []
 
     for shard_file in sorted(db_path.glob("*.json")):
-        if shard_file.name == "_index.json":
+        if shard_file.name.startswith("_"):
             continue
         dest = shard_file.stem
         data = json.loads(shard_file.read_text(encoding="utf-8"))

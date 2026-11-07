@@ -8,6 +8,7 @@ from .hours import is_open_for
 from .intake.attachments import ZIP_MAX_BYTES, ZIP_MAX_FILES, Attachment
 from .intake.template import IntakeFields
 from .library import Library
+from .place_links import place_link_questions, validate_place_link
 from .planning.slots import resolve_day_city
 from .models import Answers, DayPlan, HotelStay, OpenChoice, PlannedItem, Place, Question, TransportLeg, TripPlan, place_key
 
@@ -370,6 +371,9 @@ def run_checklist(
                     add(f"permit:{item.name}", "permit",
                         f"{item.name} is in a permit area ({area.title()}). Is a permit arranged?",
                         ["Permit arranged", "Will arrange", "Not needed"], day=dp.date)
+
+    for q in place_link_questions(plan, places):
+        add(q.id, q.kind, q.text, q.options, day=q.day)
     return qs
 
 
@@ -409,6 +413,8 @@ def validate_answers(questions: list[Question], answers: Answers) -> dict[str, s
         elif q.kind == "open_choice":
             if q.options and not _selected_options(ans, q.options):
                 reason = f"choose one of {', '.join(q.options)}" + (" or both" if len(q.options) > 1 else "")
+        elif q.kind == "place_link":
+            reason = validate_place_link(ans, q)
         elif q.kind == "no_library":
             if ans.lower() not in ("proceed", "stop"):
                 reason = "answer Proceed or Stop"

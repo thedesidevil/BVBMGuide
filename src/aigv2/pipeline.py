@@ -5,7 +5,7 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Callable, Optional
 from zoneinfo import ZoneInfo
 
 from pydantic import BaseModel, Field
@@ -33,6 +33,8 @@ from src.aigv2.planning.slots import (DayResult, DEFAULT_STOP_MIN, after_journey
 from src.aigv2.planning.travel import Leg, boat_leg, compute_legs
 from src.aigv2.preflight import apply_answers, run_checklist, unanswered
 from src.aigv2.google.overrides import FILE_NAME as OVERRIDES_FILE, PlaceOverrides
+from src.aigv2.google.maplink import default_fetch
+from src.aigv2.place_links import apply_place_answers, override_report
 from src.aigv2.qc import run_qc
 from src.aigv2.qc.report import PRICE_KEY, QCResult, write_report
 from src.aigv2.render.document import GuideData, RenderDay, output_filename, render_guide
@@ -86,6 +88,7 @@ class Deps:
     routes: RoutesClient
     fx: FxRates
     backend: StorageBackend
+    link_fetch: Callable[[str], str] = default_fetch
 
 
 def default_deps() -> Deps:
@@ -671,6 +674,10 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
         dp.city = resolve_day_city(dp.city, dp.date, trip.hotels)
         dp.city = region_day_city(dp.city, dp.date, trip.hotels, lambda c: len(deps.library.restaurants(c)))
     raw = (store.load_json("places.json") or {}).get("places", {})
+    link_report = apply_place_answers(trip, _questions(store), answers, raw, deps.places, fetch=deps.link_fetch)
+    store.save_json("place_links.json", link_report)
+    if link_report["applied"]:
+        store.save_json("places.json", {"places": raw})
     places = resolve_places(trip, deps.places, {k: Place.model_validate(v) if v else None for k, v in raw.items()},
                             deps.library)
     s = deps.settings
@@ -879,6 +886,18 @@ def _save_guide_model(store: RunStore, data: GuideData, deps: Deps) -> None:
         store.save_bytes("guide_error.txt", f"{type(exc).__name__}: {exc}".encode("utf-8"))
 
 
+def _links_md(store: RunStore, trip: TripPlan, deps: Deps) -> str:
+    rep = store.load_json("place_links.json") or {}
+    lines = ["", "## Places matched from saved overrides", "",
+             "Team-confirmed Google Maps links used instead of a Google search. Check the pin is right; "
+             "to remove a wrong one, delete its entry from _place_overrides.json in the library folder.", ""]
+    lines += override_report(trip, deps.places) or ["None."]
+    lines += ["", "## Place links applied this run", ""]
+    lines += [f"- {x}" for x in rep.get("applied", [])] or ["None."]
+    lines += [f"- NOT USED: {x}" for x in rep.get("failed", [])]
+    return "\n".join(lines) + "\n"
+
+
 def _render_qc(store: RunStore, state: PlanState, answers: Answers, deps: Deps) -> QCResult:
     if store.has("guide.docx") and store.has("qc_report.json"):
         result = QCResult.model_validate(store.load_json("qc_report.json"))
@@ -913,7 +932,8 @@ def _render_qc(store: RunStore, state: PlanState, answers: Answers, deps: Deps) 
             store.save_json("guide.json", guide)
         else:
             _save_guide_model(store, data, deps)
-        store.save_bytes("qc_report.md", (report + "\n" + _stats_md(state.stats)).encode("utf-8"))
+        store.save_bytes("qc_report.md", (report + "\n" + _stats_md(state.stats)
+                                          + _links_md(store, state.trip, deps)).encode("utf-8"))
         store.save_json("qc_report.json", {**report_data, "plan_stats": state.stats.model_dump(mode="json")})
     if not store.has("verification.xlsx"):
         store.save_bytes("verification.xlsx", build_sheet(result.fact_rows, state.exclusions))

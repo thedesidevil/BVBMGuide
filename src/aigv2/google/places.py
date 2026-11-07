@@ -7,7 +7,7 @@ from urllib.parse import parse_qsl, quote_plus, urlencode, urlsplit, urlunsplit
 import requests
 
 from src.aigv2.google.maplink import MapLinkError
-from src.aigv2.google.overrides import place_from_override
+from src.aigv2.google.overrides import okey, place_from_override
 from src.aigv2.hours import from_google, is_24h
 from src.aigv2.models import Place, WeeklyHours
 from src.aigv2.store import PlaceCache
@@ -178,6 +178,7 @@ class PlacesClient:
                  nearby_cache=None, overrides=None):
         self.api_key = api_key
         self.overrides = overrides
+        self.override_hits: dict[str, dict] = {}
         self.cache = cache
         self.nearby_cache = nearby_cache
         self.session = session or requests.Session()
@@ -224,6 +225,7 @@ class PlacesClient:
         key = f"{name}|{city}"
         hit = self.overrides.get(name, city) if self.overrides is not None else None
         if hit is not None:  # a team-confirmed Maps link beats any search; no HTTP call
+            self.override_hits[okey(name, city)] = hit
             return place_from_override(hit, key)
         if not fresh:
             cached = self.cache.get(key)

@@ -8,12 +8,13 @@ from src.aigv2.qc.rules import _f, check_rules
 
 
 def run_qc(docx_bytes, trip, answers, library, places, routes, llm, exclusions, unit_usd=None, countries=None,
-           settings=None):
+           settings=None, resolved=None):
     log_start = len(llm.cost_log)
     google_start = {**places.calls, **routes.calls}
     doc = read_docx(docx_bytes)
     findings = check_rules(doc, trip, library)
-    fact_findings, rows = check_facts(doc, trip, places, routes, countries=countries, settings=settings)
+    fact_findings, rows = check_facts(doc, trip, places, routes, countries=countries, settings=settings,
+                                       resolved=resolved)
     findings += fact_findings
     try:
         findings += island_prose_findings(doc, trip, places)

@@ -407,3 +407,33 @@ def test_prose_naming_the_address_island_is_fine():
 def test_day_prompt_and_facts_carry_the_address_rule():
     from src.aigv2.writing import days
     assert "google_address or area" in days._SYSTEM
+
+
+def test_anchor_resolved_from_planner_places_not_a_fresh_find():
+    """Europe run: a fresh find('Voco Paris- Porte de Clichy', 'Paris') fails match_ok; the planner's pin is used."""
+    from src.aigv2.models import place_key
+    cached = cached_places()
+    anchor = cached.pop(HOTEL)
+    bad = anchor.model_copy(update={"match_ok": False})
+    cached[HOTEL] = bad                                   # what a fresh find returns on this path
+    doc = read_docx(render())
+    findings0, _ = check_facts(doc, trip(), FakePlaces(cached), FakeRoutes())
+    assert any("could not locate" in f.message for f in findings0)
+    resolved = {place_key(HOTEL, "Istanbul"): anchor}
+    findings1, rows = check_facts(doc, trip(), FakePlaces(cached), FakeRoutes(), resolved=resolved)
+    assert not any("could not locate" in f.message for f in findings1)
+
+
+def test_anchor_resolution_survives_city_alias_and_suburb():
+    from src.aigv2.models import place_key
+    from src.aigv2.qc.facts import _anchor_place
+    hotel = place("Baeren Hotel, The Bear Inn")
+    resolved = {place_key("Hotel Baren the Bear Inn", "Interlaken"): hotel,
+                place_key("voco Paris- Porte de Clichy", "Paris"): place("voco Paris - Porte de Clichy by IHG")}
+
+    class Nope:
+        def find(self, *a, **k):
+            return None
+    assert _anchor_place("Hotel Baren the Bear Inn", "Wilderswil", Nope(), resolved) is hotel
+    assert _anchor_place("Voco Paris- Porte de Clichy", "Paris", Nope(), resolved).name.startswith("voco")
+    assert _anchor_place("Unknown", "Paris", Nope(), resolved) is None

@@ -13,6 +13,8 @@ PREFIX = "place_link:"
 _SKIP_NAMES = ("free time", "overnight", "hotel check", "check-in", "check in", "check-out", "check out",
                "leisure", "at leisure", "rest day")
 NEAR_MISS_YES = "Yes (accept suggestion)"
+CONFIRM_YES = "Yes (correct)"
+HOTEL_CONFIRM_OVERLAP = 0.9
 _EVENT_RE = re.compile(r"\b(fireworks?|parade|shows?|light show|concert|ceremony|illuminations?|spectacular|"
                        r"performance|live music)\b", re.I)
 _MOVE_RE = re.compile(r"^\s*(arrival in|arrive in|arrival at|departure from|depart from|departure|transfer to|transfer from|"
@@ -38,6 +40,14 @@ def _not_worth_asking(trip: TripPlan, it) -> bool:
         return True
     m = _MOVE_RE.match(it.name)
     return bool(m)
+
+
+def _weak_hotel_match(name: str, city: str, p: Place) -> bool:
+    """A hotel accepted by the fuzzy name rule: names differ noticeably, or the city is not in Google's address."""
+    a, f = _toks(name), _toks(p.name)
+    overlap = len(a & f) / max(len(a), len(f), 1)
+    in_addr = fold(city) in fold(p.address or "") if city else True
+    return overlap < HOTEL_CONFIRM_OVERLAP or not in_addr
 
 
 def _useless_suggestion(asked: str, found: str, kind: str) -> bool:
@@ -78,6 +88,12 @@ def place_link_questions(trip: TripPlan, places: dict[str, Optional[Place]]) -> 
             continue
         p = places[k]
         if p is not None and p.match_ok:
+            if _kind == "hotel" and _weak_hotel_match(name, city, p):
+                qs.append(Question(
+                    id=PREFIX + k, kind="place_link", options=[CONFIRM_YES, "Skip"], day=d,
+                    text=f'We matched hotel "{name}" to Google\'s "{p.name}" at {p.address or "an unknown address"}. '
+                         "Answer Yes if correct, or paste the right Maps link (open the hotel in Google Maps > Share > "
+                         "Copy link of ONE place), or answer Skip."))
             continue
         where = city
         how = ("Paste its Google Maps link (open the place in Google Maps > Share > Copy link of ONE place), "
@@ -100,8 +116,8 @@ def validate_place_link(ans: str, q: Question) -> Optional[str]:
     low = ans.strip().casefold()
     if low == "skip":
         return None
-    if low == "yes" or low == NEAR_MISS_YES.casefold():
-        return None if NEAR_MISS_YES in q.options else "there is no suggestion to accept; paste a link or type a name"
+    if low in ("yes", NEAR_MISS_YES.casefold(), CONFIRM_YES.casefold()):
+        return None if (NEAR_MISS_YES in q.options or CONFIRM_YES in q.options) else "there is no suggestion to accept; paste a link or type a name"
     if looks_like_url(ans):
         if not is_maps_host(ans):
             return "that is not a Google Maps link; paste the Share > Copy link of ONE place"
@@ -147,7 +163,7 @@ def apply_place_answers(trip: TripPlan, questions: list[Question], answers: Answ
 
 
 def _resolve(ans: str, name: str, city: str, current, client, fetch) -> tuple[Place, dict]:
-    if ans.casefold() in ("yes", NEAR_MISS_YES.casefold()):
+    if ans.casefold() in ("yes", NEAR_MISS_YES.casefold(), CONFIRM_YES.casefold()):
         if not current:
             raise ValueError("no suggestion to accept")
         return Place.model_validate(current).model_copy(update={"match_ok": True}), {}

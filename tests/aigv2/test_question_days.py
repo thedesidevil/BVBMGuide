@@ -60,3 +60,8 @@ def test_vague_day_splits_on_newlines():
     q = Question(id="vague_day:2026-10-11", kind="vague_day", text="t")
     out = apply_answers(plan, [q], {q.id: "Louvre\nMusee d'Orsay, Seine cruise"})
     assert [i.name for i in out.days[1].items] == ["Louvre", "Musee d'Orsay", "Seine cruise"]
+
+
+def test_image_details_without_dates_has_no_prefix():
+    q = [x for x in ask(make(), [att("tickets.png", kind="image")]) if x.kind == "image_details"][0]
+    assert not q.text.startswith(("Whole trip", "Day "))

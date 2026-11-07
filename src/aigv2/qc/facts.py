@@ -8,7 +8,7 @@ from pydantic import BaseModel
 from src.aigv2.config import Settings
 from src.aigv2.hours import format_for_day, is_open_for
 from src.aigv2.library import norm_name
-from src.aigv2.models import DayPlan, Place, TripPlan
+from src.aigv2.models import DayPlan, Place, TripPlan, place_key
 from src.aigv2.planning.slots import is_optional, meal_start, parse_time
 from src.aigv2.qc.reader import DocModel, DocVenue
 from src.aigv2.qc.rules import _f
@@ -75,7 +75,8 @@ def _unverified(v: DocVenue, day_no: int, what: str):
 
 def check_facts(doc: DocModel, trip: TripPlan, places, routes, fresh: bool = True,
                 countries: Optional[dict[str, str]] = None,
-                settings: Optional[Settings] = None) -> tuple[list, list[FactRow]]:
+                settings: Optional[Settings] = None,
+                resolved: Optional[dict] = None) -> tuple[list, list[FactRow]]:
     findings, rows = [], []
     settings = settings or Settings(models={})
     countries = countries or {}
@@ -95,7 +96,8 @@ def check_facts(doc: DocModel, trip: TripPlan, places, routes, fresh: bool = Tru
                 try:
                     f, row = _check_venue(v, day.index, plan.date, plan.city, start,
                                           near.group(1).strip() if near else None, places, routes, fresh,
-                                          optional=bool(item and is_optional(item)), fresh_memo=fresh_memo)
+                                          optional=bool(item and is_optional(item)), fresh_memo=fresh_memo,
+                                          resolved=resolved)
                 except _LOOKUP_ERRORS as e:
                     f = [_f("fact_check_failed", f"{v.name}: Google lookup failed ({e.__class__.__name__})",
                             v.name, day.index)]
@@ -111,7 +113,8 @@ def _row(v: DocVenue, day_no: int, google_hours: str, guide_travel: str, google_
 
 
 def _check_venue(v: DocVenue, day_no: int, d: date, city: str, start: Optional[time], anchor: Optional[str],
-                 places, routes, fresh: bool, optional: bool = False, fresh_memo: Optional[dict] = None):
+                 places, routes, fresh: bool, optional: bool = False, fresh_memo: Optional[dict] = None,
+                 resolved: Optional[dict] = None):
     cached = places.find(v.name, city)
     place = None
     if cached is not None and cached.match_ok:
@@ -142,18 +145,31 @@ def _check_venue(v: DocVenue, day_no: int, d: date, city: str, start: Optional[t
                            f"(Google: {format_for_day(place.hours, d)})", v.name, day_no,
                            "warning" if optional else "error"))
     guide_travel, google_travel = _travel(v, city, anchor, place, places, routes, findings, day_no,
-                                          datetime.combine(d, start) if start is not None else None)
+                                          datetime.combine(d, start) if start is not None else None, resolved)
     return findings, _row(v, day_no, format_for_day(place.hours, d), guide_travel, google_travel, not findings)
 
 
-def _travel(v, city, anchor, place: Place, places, routes, findings, day_no, when=None):
+def _anchor_place(anchor: str, city: str, places, resolved: Optional[dict]):
+    """The anchor as the planner resolved it (same pins, overrides, suburb hotels) before any fresh Google lookup."""
+    if resolved:
+        key = place_key(anchor, city)
+        hit = resolved.get(key)
+        if hit is None:  # the hotel's own city can differ from the day's city (Luzern/Lucerne, a suburb)
+            prefix = place_key(anchor, "")
+            hit = next((p for k, p in resolved.items() if k.startswith(prefix) and p is not None), None)
+        if hit is not None and hit.match_ok:
+            return hit
+    return places.find(anchor, city)
+
+
+def _travel(v, city, anchor, place: Place, places, routes, findings, day_no, when=None, resolved=None):
     if not anchor:
         return "", ""
     legs = _guide_travel(v)
     if not legs:
         findings.append(_unverified(v, day_no, "travel time (none stated in the guide)"))
         return "", ""
-    a = places.find(anchor, city)
+    a = _anchor_place(anchor, city, places, resolved)
     if a is None or not a.match_ok:
         findings.append(_unverified(v, day_no, f"travel time (could not locate {anchor})"))
         return "; ".join(_minutes_text(l, m) for l, m in legs), ""

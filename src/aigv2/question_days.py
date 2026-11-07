@@ -103,6 +103,8 @@ def prefix_questions(qs: list[Question], trip: TripPlan, attachments=()) -> list
                                                  "days_mismatch", "kids_ages", "conflict"):
             continue
         ds = question_dates(q, trip, attachments)
+        if not ds and q.kind == "image_details":
+            continue  # the dates are in the pasted text, not the file: no prefix rather than 'Whole trip'
         if ds and not q.day:
             q.day = ds[0]
         q.text = day_label(trip, ds) + q.text

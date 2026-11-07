@@ -6,7 +6,7 @@ import pytest
 
 from src.aigv2.google.maplink import MapLink
 from src.aigv2.google.overrides import PlaceOverrides
-from src.aigv2.models import DayPlan, HotelStay, PlannedItem, Place, Question, Traveller, Diet, TripPlan
+from src.aigv2.models import DayPlan, HotelStay, PlannedItem, Place, Question, Traveller, Diet, TripPlan, place_key
 from src.aigv2.place_links import apply_place_answers, override_report, place_link_questions, validate_place_link
 from src.aigv2.preflight import unanswered, validate_answers
 from tests.aigv2.test_preflight import ask, make
@@ -174,3 +174,43 @@ def test_useless_near_miss_becomes_not_found_or_dropped():
     qs = place_link_questions(trip, places)
     assert len(qs) == 2 and all(q.options == ["Skip"] and "could not find" in q.text for q in qs)
     assert place_link_questions(trip, {"secret cave|paris": _unmatched("Secret Cavern")})[0].options[0].startswith("Yes")
+
+
+def _hotel_trip(name, city):
+    return make(hotels=[HotelStay(city=city, hotel=name, check_in=date(2026, 5, 1), check_out=date(2026, 5, 3),
+                                  source="voucher")],
+                days=[DayPlan(date=date(2026, 5, 1), title="t", city=city), DayPlan(date=date(2026, 5, 2), title="t", city=city)])
+
+
+def _gp(name, address):
+    return _place(name).model_copy(update={"address": address})
+
+
+def test_fuzzy_matched_hotels_ask_for_confirmation_exact_ones_do_not(tmp_path):
+    cases = [("Voco Paris- Porte de Clichy", "Paris", "voco Paris - Porte de Clichy by IHG", "2 Rue du 8 Mai 1945, 92110 Clichy, France"),
+             ("Hotel Baren the Bear Inn", "Interlaken", "Baeren Hotel, The Bear Inn", "Oberdorfstrasse 1, 3812 Wilderswil, Switzerland")]
+    for name, city, gname, addr in cases:
+        trip = _hotel_trip(name, city)
+        qs = place_link_questions(trip, {place_key(name, city): _gp(gname, addr)})
+        assert len(qs) == 1 and qs[0].options == ["Yes (correct)", "Skip"] and gname in qs[0].text and addr in qs[0].text
+        assert validate_place_link("Yes (correct)", qs[0]) is None and validate_place_link("yes", qs[0]) is None
+    exact = _hotel_trip("Hotel Luzernerhof", "Lucerne")
+    assert place_link_questions(exact, {place_key("Hotel Luzernerhof", "Lucerne"):
+                                        _gp("Hotel Luzernerhof", "Alpenstrasse 3, 6002 Lucerne, Switzerland")}) == []
+    # same name but the city is not in the address -> ask
+    assert len(place_link_questions(exact, {place_key("Hotel Luzernerhof", "Lucerne"):
+                                            _gp("Hotel Luzernerhof", "Somewhere 1, Zurich")})) == 1
+
+
+def test_yes_confirms_hotel_and_saves_override(tmp_path):
+    name, city = "Hotel Baren the Bear Inn", "Interlaken"
+    trip = _hotel_trip(name, city)
+    key = place_key(name, city)
+    g = _gp("Baeren Hotel, The Bear Inn", "Wilderswil")
+    q = place_link_questions(trip, {key: g})[0]
+    raw = {key: g.model_dump(mode="json")}
+    c = LinkClient(tmp_path)
+    rep = apply_place_answers(trip, [q], {q.id: "Yes (correct)"}, raw, c)
+    assert len(rep["applied"]) == 1 and not rep["failed"]
+    e = c.overrides.get(name, city)
+    assert e["google_name"] == "Baeren Hotel, The Bear Inn" and e["confirmed_by"] == "user"

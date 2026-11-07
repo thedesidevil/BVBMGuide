@@ -3,7 +3,7 @@ from collections import Counter
 from datetime import date
 from typing import Iterable, Optional
 
-from src.aigv2.library import Library, diet_fits, norm_name
+from src.aigv2.library import Library, diet_fits, diet_tier, norm_name
 from src.aigv2.planning.travel import TRANSIT_WALK_MIN
 from src.aigv2.models import Finding, TransportLeg, TripPlan
 from src.aigv2.qc.reader import MAPS_RE, MEAL_SLOT_RE, SECTION_TITLES, THANK_YOU, DocDay, DocModel, DocSlot, DocVenue
@@ -179,6 +179,13 @@ def _venues(slots: Iterable[DocSlot]) -> list[DocVenue]:
     return [v for s in slots for v in s.venues if _is_restaurant(v)]
 
 
+def _diet_flagged(v, slots) -> bool:
+    key = norm_name(v.name)
+    mine = [v.body, *v.facts.values(), v.travel]
+    mine += [m for s in slots for m in s.markers if key in norm_name(m)]
+    return any("confirm vegetarian options" in (t or "").casefold() for t in mine)
+
+
 def _meals(doc: DocModel, trip: TripPlan, library: Library) -> list[Finding]:
     out = []
     tdays = _trip_days(trip)
@@ -212,7 +219,15 @@ def _meals(doc: DocModel, trip: TripPlan, library: Library) -> list[Finding]:
                     out.append(_f("repeat_city", f"'{v.name}' is used more than twice in this city", v.name, n))
                 r = lib.get(city, {}).get(key) or next((m[key] for m in lib.values() if key in m), None)
                 if r is not None and not diet_fits(r, trip.diet):
-                    out.append(_f("diet", f"'{v.name}' is not known to fit the client's diet", v.name, n))
+                    # the planner deliberately picks tier 1 (cuisine usually has vegetarian dishes) and tier 2 (unknown,
+                    # with a 'confirm vegetarian options' marker): warnings. Error: excluded by the planner's own rules
+                    # (meat-only, known not vegetarian friendly) or unknown fit with no marker.
+                    tier = diet_tier(r, trip.diet)
+                    flagged = tier == 1 or (tier == 2 and _diet_flagged(v, slots))
+                    out.append(_f("diet", f"'{v.name}' is not known to fit the client's diet"
+                                  + (" (cuisine usually has vegetarian dishes; confirm)" if tier == 1 else
+                                     " (flagged to verify)" if flagged else ""), v.name, n,
+                                  "warning" if flagged else "error"))
                 other = _meal_mismatch(v, meal)
                 if other:
                     out.append(_f("meal_label_mismatch", f"'{v.name}' is described as best for {other} but "

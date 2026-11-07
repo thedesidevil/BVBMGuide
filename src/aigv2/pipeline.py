@@ -934,7 +934,8 @@ def _render_qc(store: RunStore, state: PlanState, answers: Answers, deps: Deps) 
             docx = render_guide(data, deps.settings)
         annotated, result, report = run_qc(docx, state.trip, answers, deps.library, deps.places, deps.routes,
                                            deps.llm, state.exclusions, deps.settings.google_usd_per_call,
-                                           countries=state.countries, settings=deps.settings)
+                                           countries=state.countries, settings=deps.settings,
+                                           resolved=state.places)
         _, report_data = write_report(result, state.exclusions, result.cost)
         store.save_bytes("guide.docx", annotated)
         if guide is not None:
@@ -1071,7 +1072,7 @@ def _requalify(store: RunStore, docx_path: Path, deps: Deps) -> tuple[bytes, QCR
     answers, exclusions = store.load_json("answers.json") or {}, state.exclusions
     out, result, report = run_qc(docx, state.trip, answers, deps.library, deps.places, deps.routes, deps.llm,
                                  exclusions, deps.settings.google_usd_per_call, countries=state.countries,
-                                 settings=deps.settings)
+                                 settings=deps.settings, resolved=state.places)
     n = _version(store, "requalify/guide", "docx")
     _, data = write_report(result, exclusions, result.cost)
     store.save_bytes(f"requalify/input.v{n}.docx", docx)

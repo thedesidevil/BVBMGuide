@@ -111,6 +111,7 @@ class DayRenderer:
                 self._check_in()
         self._drive_stops()
         self._timeline()
+        self._unshown_bookings()
         if rd.text.free_time_idea and not self.free_time_used:
             doc.add_paragraph(rd.text.free_time_idea)
         final = bool(dep and not early_dep and not cruise)
@@ -118,6 +119,21 @@ class DayRenderer:
             self._departure(dep, transport_card=True, city=rd.city)
         else:
             self._overnight(cruise)
+
+    def _unshown_bookings(self) -> None:
+        """Every voucher booking of the day appears by name, even when no item card carries it (the team chose a
+        different activity for that day, or the tour covers several stops)."""
+        rd = self.rd
+        shown = {norm_name(b.name) for d in self.data.days
+                 for b in [*d.booking_by_item.values(), d.arrival_booking] if b is not None}
+        for b in self.data.trip.bookings:
+            if b.day != rd.date or norm_name(b.name) in shown:
+                continue
+            shown.add(norm_name(b.name))
+            bits = [b.time + (f"-{b.end_time}" if b.end_time else "")] if b.timed and b.time else []
+            if b.meeting_point:
+                bits.append(f"Meeting point: {b.meeting_point}")
+            self.doc.add_paragraph(f"Your booking: {b.name}" + (f" ({' · '.join(bits)})" if bits else ""))
 
     def _overnight(self, cruise: Optional[HotelStay]) -> None:
         d = self.rd.date

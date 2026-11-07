@@ -721,3 +721,14 @@ def test_midnight_pickup_item_is_late_night_even_when_scheduled_in_the_morning()
     block = day_block(load(data(trip=t, days=[d, day2()])), 1)
     assert "Late night" in block and "Morning" not in block
     assert "Your representative and driver will meet you after you land at 00:10." in block
+
+
+def test_booking_with_no_item_card_is_still_named_old_renderer():
+    """Europe run: the team picked another activity, so no item carried the Big Bus / Tootbus vouchers."""
+    t = trip(bookings=[
+        Booking(name="Big Bus: Paris Hop-on Hop-off Bus Tour with Optional Seine River Cruise", day=D2, time="09:45",
+                end_time="17:30", source="voucher"),
+        Booking(name="Tootbus: Paris Night Bus Tour", day=D2, time="21:00", source="voucher", meeting_point="Pl. du Carrousel")])
+    block = day_block(load(data(trip=t)), 2)
+    assert "Your booking: Big Bus: Paris Hop-on Hop-off Bus Tour with Optional Seine River Cruise (09:45-17:30)" in block
+    assert "Your booking: Tootbus: Paris Night Bus Tour (21:00 · Meeting point: Pl. du Carrousel)" in block

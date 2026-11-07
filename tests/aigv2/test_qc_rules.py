@@ -533,3 +533,21 @@ def test_walk_limit_matches_planner_for_public_transport_only(library):
     assert not findings(render(data(days=[d1, day2(), day3()])), library, "walk_limit", t2)
     d1.meals[0].restaurants[0].travel_min = 16
     assert findings(render(data(days=[d1, day2(), day3()])), library, "walk_limit", t2)
+
+
+def test_diet_severity_tiers(tmp_path):
+    shard = {"restaurants": [
+        {"name": "Mikla", "cuisine_type": ["Italian"]},            # tier 1: cuisine usually has vegetarian dishes
+        {"name": "Hamdi", "cuisine_type": ["Kebab"]}]}              # tier 2 (unknown), no marker in the guide
+    (tmp_path / "Istanbul.json").write_text(json.dumps(shard), encoding="utf-8")
+    (tmp_path / "_index.json").write_text(json.dumps({"_folder_coverage": {"Turkey": ["Istanbul"]}}), encoding="utf-8")
+    lib = Library(tmp_path)
+    t = trip(diet=Diet(restrictions=["vegetarian"]))
+    sev = {f.anchor_text: f.severity for f in findings(render(data(trip=t)), lib, "diet", t)}
+    assert sev == {"Mikla": "warning", "Hamdi": "error"}
+    # a known not-vegetarian-friendly venue stays an error
+    (tmp_path / "Istanbul.json").write_text(json.dumps({"restaurants": [
+        {"name": "Mikla", "cuisine_type": ["Italian"], "vegetarian_friendly": False},
+        {"name": "Hamdi", "cuisine_type": ["Kebab"]}]}), encoding="utf-8")
+    sev = {f.anchor_text: f.severity for f in findings(render(data(trip=t)), Library(tmp_path), "diet", t)}
+    assert sev["Mikla"] == "error"

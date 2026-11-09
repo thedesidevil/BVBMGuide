@@ -25,6 +25,17 @@ _MOVE_RE = re.compile(r"^\s*(arrival in|arrive in|arrival at|departure from|depa
                       r"explore|stroll|walk around|day trip to)\b", re.I)
 
 
+_NOT_A_PLACE = re.compile(r"\b(return to hotel|back to (?:the )?hotel|overnight|free time|breakfast)\b|\bhotel\b.*\bcheck|"
+                          r"\bcheck[- ]?(?:in|out)\b", re.I)
+
+
+def is_non_place(name: str) -> bool:
+    """Cards that are not a place Google can verify: returns to the hotel, check-in/out, overnight, free time, events."""
+    low = (name or "").casefold()
+    return bool(_NOT_A_PLACE.search(name or "") or any(w in low for w in _SKIP_NAMES) or _MOVE_RE.match(name or "")
+                or _EVENT_RE.search(name or ""))
+
+
 def _toks(text: str) -> set[str]:
     return {t for t in re.findall(r"[a-z0-9]+", fold(text)) if len(t) > 2}
 

@@ -11,6 +11,7 @@ from src.aigv2.library import norm_name
 from src.aigv2.models import DayPlan, Place, TripPlan, place_key
 from src.aigv2.planning.slots import is_optional, meal_start, parse_time
 from src.aigv2.qc.reader import DocModel, DocVenue
+from src.aigv2.place_links import is_non_place
 from src.aigv2.qc.rules import _f
 
 _NEAR = re.compile(r"\bnear\s+(.+)$", re.I)
@@ -34,6 +35,29 @@ class FactRow(BaseModel):
     google_travel: str
     link: str
     match: bool
+
+
+_OUTDOOR = re.compile(r"\bexterior\b|\bday pass\b|\b\d+[- ]day\b|\bhop[- ]on\b|\b(?:champs|avenue|boulevard|promenade|lakefront|"
+                      r"waterfront|bridge walk|cliff walk|old town|city walk|walking tour)\b", re.I)
+
+
+def _name_tokens(text: str) -> set[str]:
+    return {t for t in re.findall(r"[a-z0-9]+", norm_name(text)) if len(t) > 2}
+
+
+def _booking_backed(v: DocVenue, trip: TripPlan, plan: DayPlan) -> bool:
+    """A ticket or voucher confirms the item; Google has nothing more to say about it."""
+    if "YOUR BOOKING" in v.facts or v.name.casefold().startswith("booked"):
+        return True
+    item = next((it for it in plan.items if norm_name(it.name) == norm_name(v.name)), None)
+    if item is not None and item.booking_ref:
+        return True
+    mine = _name_tokens(v.name)
+    for b in trip.bookings:
+        theirs = _name_tokens(b.name)
+        if mine and theirs and len(mine & theirs) / min(len(mine), len(theirs)) >= 0.6:
+            return True
+    return False
 
 
 def _visit_time(v: DocVenue, heading: str, plan: DayPlan, country: str, settings: Settings) -> Optional[time]:
@@ -89,7 +113,7 @@ def check_facts(doc: DocModel, trip: TripPlan, places, routes, fresh: bool = Tru
         for slot in day.slots:
             near = _NEAR.search(slot.heading)
             for v in slot.venues:
-                if v.kind != "venue":
+                if v.kind != "venue" or is_non_place(v.name):
                     continue
                 start = _visit_time(v, slot.heading, plan, countries.get(plan.city, ""), settings)
                 item = next((it for it in plan.items if norm_name(it.name) == norm_name(v.name)), None)
@@ -97,7 +121,8 @@ def check_facts(doc: DocModel, trip: TripPlan, places, routes, fresh: bool = Tru
                     f, row = _check_venue(v, day.index, plan.date, plan.city, start,
                                           near.group(1).strip() if near else None, places, routes, fresh,
                                           optional=bool(item and is_optional(item)), fresh_memo=fresh_memo,
-                                          resolved=resolved)
+                                          resolved=resolved, hours_exempt=bool(_OUTDOOR.search(v.name)),
+                                          backed=_booking_backed(v, trip, plan))
                 except _LOOKUP_ERRORS as e:
                     f = [_f("fact_check_failed", f"{v.name}: Google lookup failed ({e.__class__.__name__})",
                             v.name, day.index)]
@@ -114,7 +139,7 @@ def _row(v: DocVenue, day_no: int, google_hours: str, guide_travel: str, google_
 
 def _check_venue(v: DocVenue, day_no: int, d: date, city: str, start: Optional[time], anchor: Optional[str],
                  places, routes, fresh: bool, optional: bool = False, fresh_memo: Optional[dict] = None,
-                 resolved: Optional[dict] = None):
+                 resolved: Optional[dict] = None, hours_exempt: bool = False, backed: bool = False):
     cached = places.find(v.name, city)
     place = None
     if cached is not None and cached.match_ok:
@@ -127,6 +152,8 @@ def _check_venue(v: DocVenue, day_no: int, d: date, city: str, start: Optional[t
             place = memo[cached.place_id]
         else:
             place = places.find(v.name, city, near=(cached.lat, cached.lng), fresh=True)
+    if (place is None or not place.match_ok) and backed:
+        return [], _row(v, day_no, "Confirmed by booking", "", "", True)  # the ticket is the confirmation
     if place is None or not place.match_ok:
         return [_unverified(v, day_no, "status, hours and travel time (no confident Google match)")], \
             _row(v, day_no, _UNVERIFIED, "", _UNVERIFIED, False)
@@ -136,7 +163,9 @@ def _check_venue(v: DocVenue, day_no: int, d: date, city: str, start: Optional[t
         findings.append(_f("closed_now", f"{v.name} is shown as closed {state} on Google", v.name, day_no))
     elif place.status == "UNKNOWN":
         findings.append(_unverified(v, day_no, "business status"))
-    if place.hours is None:
+    if hours_exempt:
+        pass  # exterior views, all-day passes and open-air landmarks have no slot opening hours to verify
+    elif place.hours is None:
         findings.append(_unverified(v, day_no, "opening hours (Google has none)"))
     elif start is None:
         findings.append(_unverified(v, day_no, "opening hours (unknown slot time)"))

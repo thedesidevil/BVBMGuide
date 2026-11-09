@@ -437,3 +437,33 @@ def test_anchor_resolution_survives_city_alias_and_suburb():
     assert _anchor_place("Hotel Baren the Bear Inn", "Wilderswil", Nope(), resolved) is hotel
     assert _anchor_place("Voco Paris- Porte de Clichy", "Paris", Nope(), resolved).name.startswith("voco")
     assert _anchor_place("Unknown", "Paris", Nope(), resolved) is None
+
+
+def _doc_with(*names, facts=None):
+    from src.aigv2.qc.reader import DocDay, DocModel, DocSlot, DocVenue
+    venues = [DocVenue(name=n, url="https://x", facts=dict(facts or {})) for n in names]
+    return DocModel(headings=[], days=[DocDay(header="Day 1", index=1, slots=[DocSlot(heading="Morning", venues=venues)])],
+                    sections={}, markers=[], links=[], text="")
+
+
+def test_fact_noise_non_places_bookings_and_exterior_stops():
+    from src.aigv2.models import Booking
+    t = trip(bookings=[Booking(name="Big Bus: Paris Hop-on Hop-off Bus Tour", day=trip().days[0].date, source="v")])
+    unknown = FakePlaces({})          # Google knows nothing: every checked venue would be 'no confident match'
+    doc = _doc_with("Return to Hotel", "Overnight in Paris", "Check-out from Paris hotel", "Hotel check-in",
+                    "Evening at leisure", "Free time", "Optional fireworks", "Big Bus: Paris Hop-on Hop-off Bus Tour with Optional Seine River Cruise")
+    findings, rows = check_facts(doc, t, unknown, FakeRoutes())
+    assert findings == [] and [r.venue for r in rows] == ["Big Bus: Paris Hop-on Hop-off Bus Tour with Optional Seine River Cruise"]
+    # an unrelated, unknown place is still flagged
+    findings, _ = check_facts(_doc_with("Mystery Museum"), t, unknown, FakeRoutes())
+    assert [f.rule for f in findings] == ["fact_unverified"]
+
+
+def test_exterior_and_day_pass_skip_hours_check_but_timed_visits_keep_it():
+    p = {n: late_place(n) for n in ("Louvre (exterior)", "Disneyland Paris (1 Day Pass)", "Mikla")}
+    for n in p:
+        p[n].hours = None
+    f, _ = check_facts(_doc_with("Louvre (exterior)", "Disneyland Paris (1 Day Pass)"), trip(), FakePlaces(p), FakeRoutes())
+    assert not [x for x in f if "opening hours" in x.message]
+    f, _ = check_facts(_doc_with("Mikla"), trip(), FakePlaces(p), FakeRoutes())
+    assert [x for x in f if "opening hours" in x.message]

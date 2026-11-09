@@ -30,6 +30,15 @@ _KM_PER_MIN = 0.6
 _LOC_KEYS = ("area", "nearby_landmarks", "location")
 _STOP = {"the", "and", "near", "hotel", "restaurant", "cafe", "street", "road"}
 _CAPPED = object()
+_CHAIN = re.compile(r"\b(starbucks|mcdonald'?s|burger king|subway|kfc|costa|dunkin'?|tim hortons|pret a manger)\b", re.I)
+
+
+def is_chain_coffee(r: dict) -> bool:
+    """Chain / airport coffee shops: last resort as a dinner or lunch option."""
+    cuisine = r.get("cuisine_type")
+    coffee = any(isinstance(c, str) and c.strip().casefold() in ("coffee", "coffee shop") for c in
+                 (cuisine if isinstance(cuisine, list) else [cuisine]))
+    return bool(_CHAIN.search(r.get("name") or "")) or coffee
 _RANK_SYSTEM = (
     "You choose restaurants for a travel guide. Pick only from the candidate names given, copied exactly. "
     "Answer in JSON only."
@@ -277,6 +286,12 @@ class _Planner:
         if slot is not None:  # venues whose own text is for another meal go last
             ordered = ([r for r in ordered if not wrong_meal(r.get("best_for"), slot.meal)]
                        + [r for r in ordered if wrong_meal(r.get("best_for"), slot.meal)])
+        # chain and airport coffee shops only when fewer than two other candidates remain
+        others = [r for r in ordered if not is_chain_coffee(r)]
+        if len(others) >= 2:
+            ordered = others
+        else:
+            ordered = others + [r for r in ordered if is_chain_coffee(r)]
         return ordered
 
     def _collect(self, n, day, city, slot, a_name, a_xy, where, need_indian, count):

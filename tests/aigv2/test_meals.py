@@ -611,3 +611,21 @@ def test_route_calls_skipped_for_walkable_and_for_straight_line_too_far(tmp_path
     plan([(1, TUE, "Istanbul", [lunch()])], lib, pl, rt)
     modes = [(c[2], len(c[1])) for c in rt.calls]
     assert modes == [("WALK", 2), ("DRIVE", 1)]  # the walkable venue is not sent to DRIVE
+
+
+def test_chain_coffee_shops_only_when_few_other_candidates():
+    from src.aigv2.planning.meals import is_chain_coffee
+    assert is_chain_coffee({"name": "Starbucks Zurich Airport"}) and is_chain_coffee({"name": "X", "cuisine_type": ["Coffee"]})
+    assert not is_chain_coffee({"name": "Confiserie Bachmann Luzern", "cuisine_type": ["Bakery"]})
+
+
+def test_starbucks_is_left_out_when_three_other_restaurants_exist(tmp_path):
+    lib, pl, rt = world(tmp_path, [rest("Starbucks Zurich Airport", cuisine=("Coffee",)), rest("A"), rest("B"), rest("C")])
+    picks, _ = plan([(3, TUE, "Istanbul", [dinner()])], lib, pl, rt, llm=FirstN())
+    assert "Starbucks Zurich Airport" not in names(picks[0]) and len(picks[0].restaurants) == 3
+
+
+def test_starbucks_kept_as_last_resort(tmp_path):
+    lib, pl, rt = world(tmp_path, [rest("Starbucks Zurich Airport", cuisine=("Coffee",)), rest("A")])
+    picks, _ = plan([(3, TUE, "Istanbul", [dinner()])], lib, pl, rt, llm=FirstN())
+    assert set(names(picks[0])) == {"Starbucks Zurich Airport", "A"}

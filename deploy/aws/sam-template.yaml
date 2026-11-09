@@ -20,7 +20,7 @@ Resources:
       Environment:
         Variables:
           LIBRARY_S3_BUCKET: bvbm-aig-library
-          LIBRARY_S3_PREFIX: library_db
+          LIBRARY_S3_PREFIX: library_db_v2
       FunctionUrlConfig:
         AuthType: NONE
         Cors:

@@ -11,7 +11,7 @@ BVBMGuide is a Python CLI + web UI tool that generates personalized 30–40 page
 ```
 BVBMGuide/
 ├── aig-library/          # Reference AIGs organized by destination folder
-├── library_db/           # Sharded JSON database (one file per destination city)
+├── library_db_new/         # Sharded JSON database (one file per destination city)
 ├── input/                # Place letterhead DOCX and hotel comparison XLSXs here
 ├── src/
 │   ├── common/           # Shared utilities (AI provider, brand voice, Pydantic models, Maps)
@@ -75,7 +75,7 @@ python -m src.library inspect <file.pdf> [--field restaurants]
 python -m src.aig parse <input_dir_or_pdf> [--days]
 
 # Generate an All Inclusive Guide
-python -m src.aig generate <input_dir_or_pdf> [--db library_db] [--output output.docx]
+python -m src.aig generate <input_dir_or_pdf> [--db library_db_new] [--output output.docx]
 ```
 
 ## Environment Configuration

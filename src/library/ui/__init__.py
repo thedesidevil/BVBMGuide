@@ -52,7 +52,7 @@ def create_app(
 
     if storage_backend is None:
         if db_path is None:
-            db_path = Path("library_db")
+            db_path = Path("library_db_new")
         storage_backend = LocalStorageBackend(db_path)
 
     app.state.storage_backend = storage_backend

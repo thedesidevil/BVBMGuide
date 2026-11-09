@@ -31,7 +31,7 @@ async def aig_prep(request: Request, file: UploadFile = File(...)):
 
     # Resolve library DB path from app state (set by create_app)
     storage = request.app.state.storage_backend
-    db_path = getattr(storage, "db_path", Path("library_db"))
+    db_path = getattr(storage, "db_path", Path("library_db_new"))
 
     # Write DOCX to a temp file so parse_itinerary / run_prep can read it
     with tempfile.TemporaryDirectory() as tmpdir:

@@ -27,7 +27,7 @@ def build(
         help="Path to the AIG library directory (source files)",
     ),
     db_path: Path = typer.Option(
-        Path("library_db"),
+        Path("library_db_new"),
         "--db",
         help="Output database path (sharded directory)",
     ),
@@ -158,7 +158,7 @@ def _repo_root() -> Path:
 def backup(
     dest: Path = typer.Option(..., "--dest", help="New folder to hold the copies (must not exist)"),
     tag: str = typer.Option(..., "--tag", help="Local git tag to create at HEAD"),
-    db_path: Path = typer.Option(Path("library_db"), "--db", help="Library database folder"),
+    db_path: Path = typer.Option(Path("library_db_new"), "--db", help="Library database folder"),
     library_path: Path = typer.Option(Path("aig-library"), "--library", "-l", help="AIG library folder"),
 ):
     """Copy library_db and aig-library to DEST and tag the current git state (no push)."""
@@ -364,7 +364,7 @@ def ingest(
 @app.command()
 def stats(
     db_path: Path = typer.Option(
-        Path("library_db"),
+        Path("library_db_new"),
         "--db",
         help="Path to the library database directory",
     ),
@@ -415,7 +415,7 @@ def stats(
 @app.command()
 def verify(
     db_path: Path = typer.Option(
-        Path("library_db"),
+        Path("library_db_new"),
         "--db",
         help="Path to the library database directory",
     ),
@@ -548,7 +548,7 @@ def find(
         help="Comma-separated list of cities (e.g. 'Amsterdam, Florence, Rome')",
     ),
     db_path: Path = typer.Option(
-        Path("library_db"),
+        Path("library_db_new"),
         "--db",
         help="Path to the library database directory",
     ),
@@ -594,7 +594,7 @@ def find(
 @app.command()
 def qc(
     db_path: Path = typer.Option(
-        Path("library_db"),
+        Path("library_db_new"),
         "--db",
         help="Path to the library database directory",
     ),
@@ -688,7 +688,7 @@ def qc(
 @app.command()
 def clean(
     db_path: Path = typer.Option(
-        Path("library_db"),
+        Path("library_db_new"),
         "--db",
         help="Path to the library database directory",
     ),
@@ -824,7 +824,7 @@ def inspect(
 @app.command()
 def ui(
     db_path: Path = typer.Option(
-        Path("library_db"),
+        Path("library_db_new"),
         "--db",
         help="Path to the library database directory",
     ),

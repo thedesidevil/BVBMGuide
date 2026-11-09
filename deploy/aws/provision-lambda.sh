@@ -163,7 +163,7 @@ sleep 10
 # --- Step 5: Create or update Lambda function ---
 echo "==> Step 5: Lambda function"
 
-ENV_VARS="Variables={LIBRARY_S3_BUCKET=${DATA_S3_BUCKET},LIBRARY_S3_PREFIX=library_db}"
+ENV_VARS="Variables={LIBRARY_S3_BUCKET=${DATA_S3_BUCKET},LIBRARY_S3_PREFIX=library_db_v2}"
 
 if aws lambda get-function --function-name "$LAMBDA_FUNCTION_NAME" &>/dev/null; then
   echo "    Function '${LAMBDA_FUNCTION_NAME}' exists — updating code..."
@@ -237,5 +237,5 @@ echo ""
 echo "    To set AI keys (required for classify/extract):"
 echo "    aws lambda update-function-configuration \\"
 echo "      --function-name ${LAMBDA_FUNCTION_NAME} \\"
-echo "      --environment \"Variables={LIBRARY_S3_BUCKET=${DATA_S3_BUCKET},LIBRARY_S3_PREFIX=library_db,AI_API_KEY=<key>,AI_BASE_URL=<url>,AI_MODEL=<model>}\" \\"
+echo "      --environment \"Variables={LIBRARY_S3_BUCKET=${DATA_S3_BUCKET},LIBRARY_S3_PREFIX=library_db_v2,AI_API_KEY=<key>,AI_BASE_URL=<url>,AI_MODEL=<model>}\" \\"
 echo "      --profile ${AWS_PROFILE} --region ${AWS_REGION}"

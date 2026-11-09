@@ -69,7 +69,7 @@ def test_no_restaurants_gives_placeholder_meal():
     assert not [c for c in p.components if c.type == "MealBlock" and c.meal == "lunch"]
     review = [c for c in p.components if c.type == "ReviewMarkerBlock"]
     texts = [mk.text for b in review for mk in b.markers if mk.kind == "ADD_RESTAURANT"]
-    assert texts == ["Lunch, Day 2, near Ubud Palace"] * 3
+    assert texts == ["Lunch, Day 2, near Ubud Palace"]  # one staff marker per slot
 
 
 def test_missing_hours_gives_marker_not_blank():
@@ -140,7 +140,7 @@ def test_meal_without_pick_is_placeholder():
     ph = [c for c in p.components if c.type == "PlaceholderMeal"]
     assert [c.meal for c in ph] == ["lunch", "dinner"]
     adds = [mk for b in p.components if b.type == "ReviewMarkerBlock" for mk in b.markers if mk.kind == "ADD_RESTAURANT"]
-    assert len(adds) == 6 and adds[0].text == "Lunch, Day 2, near Ubud Palace"
+    assert len(adds) == 2 and adds[0].text == "Lunch, Day 2, near Ubud Palace"
 
 
 def test_restaurant_without_maps_link_gets_search_url():
@@ -450,3 +450,17 @@ def test_nice_text_and_choose_sentence():
     assert nice_text("Airport pick-up and transfer to MAYURA UBUD RETREAT") == "Airport pick-up and transfer to Mayura Ubud Retreat"
     assert nice_text("Icon Mall") == "Icon Mall"
     assert _CHOOSE.sub(" ", "Nice. Choose A or B; any expenses are your own.").strip() == "Nice."
+
+
+def test_partial_meal_gets_three_rows_and_one_marker():
+    data = load()
+    for pick in day(data, 2).meals:
+        if pick.slot.meal == "lunch":
+            pick.restaurants = pick.restaurants[:1]
+            pick.markers = [Marker(kind="ADD_RESTAURANT", text="Lunch, Day 2, near Ubud Palace")] * 2
+    p = page(2, data)
+    lunch = next(c for c in p.components if c.type == "MealBlock" and c.meal == "lunch")
+    assert len(lunch.restaurants) == 1 and lunch.placeholders == 2
+    adds = [mk for b in p.components if b.type == "ReviewMarkerBlock" for mk in b.markers
+            if mk.kind == "ADD_RESTAURANT" and mk.text.startswith("Lunch")]
+    assert len(adds) == 1

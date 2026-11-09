@@ -124,7 +124,8 @@ def render_meal_block(doc, W: float, block: MealBlock) -> None:
     K.cell_shade(c, T.HARBOUR_FILL)
     K.borders(c, l=BAR, t=(T.HARBOUR_EDGE, 4), b=(T.HARBOUR_EDGE, 6), r=(T.HARBOUR_EDGE, 4))
     rs = block.restaurants
-    nt = _nested(c, W, len(rs))
+    extra = min(max(block.placeholders, 0), MAX_PLACEHOLDERS - len(rs)) if len(rs) < MAX_PLACEHOLDERS else 0
+    nt = _nested(c, W, len(rs) + extra)
     for row, r in zip(nt.rows, rs):
         a, b = row.cells
         _left(a, r)
@@ -134,40 +135,46 @@ def render_meal_block(doc, W: float, block: MealBlock) -> None:
         _stack(b, "FROM HERE", travel_text(r.travel), after=0)
         K.close(a, 1)
         K.close(b, 1)
+    for i in range(len(rs), len(rs) + extra):
+        _placeholder_row(nt.rows[i], i)
     K.close(c, 1)
     K.spacer(doc, GAP_PT)
 
 
+def _placeholder_row(row, i: int) -> None:
+    """A not-yet-chosen restaurant in the same row layout as a real one; only the text is grey italic."""
+    a, b = row.cells
+    S = PLACEHOLDER_STYLE
+    K.R(K.np(a, after=3, style=S), f"ADD RESTAURANT {i + 1}", size=7.5, color=T.ROYAL, bold=True, italic=False,
+        spacing=1.8)
+    K.R(K.np(a, after=5, line=1.0, style=S), "Restaurant name (Maps link)", font=T.HEAD, size=18, italic=True,
+        color=T.SLATE)
+    K.R(K.np(a, after=7, style=S), "Cuisine · Veg-friendly?", size=7.5, italic=True, color=T.SLATE)
+    K.R(K.np(a, after=0, line=1.45, style=S),
+        "Two lines on the setting and why it suits this family, in the guide's voice.", size=10, italic=True,
+        color=T.SLATE)
+    _stack(b, "PER PERSON", "INR –", big=True, style=S, italic=True, color=T.SLATE)
+    _stack(b, "OPEN", "– : –", style=S, italic=True, color=T.SLATE)
+    _stack(b, "FROM HERE", "– min", after=0, style=S, italic=True, color=T.SLATE)
+    K.close(a, 1)
+    K.close(b, 1)
+
+
 def render_placeholder_meal(doc, W: float, block: PlaceholderMeal) -> None:
+    """Whole slot still empty: three plain rows in the real card layout (solid Harbour card, same columns and row
+    separators). The 'Placeholder Card (internal)' table style and 'Placeholder (internal)' paragraph style stay, so the
+    QC reader and the strip-internal-text pass still find them."""
     _head(doc, block.eyebrow, block.heading)
     K.review_marker(doc, "ADD_RESTAURANT", block.heading).paragraph_format.keep_with_next = True
     t = K.tbl(doc, 1, [W], margins=PAD)
     t.style = doc.styles[PLACEHOLDER_TABLE]
     K.row_keep(t.rows[0])
     c = t.rows[0].cells[0]
-    K.cell_shade(c, T.FROST)
-    K.cell_borders(c, left=(T.ROYAL, 12, "dashed"), top=(T.POWDER, 8, "dashed"), bottom=(T.POWDER, 8, "dashed"),
-                   right=(T.POWDER, 8, "dashed"))
+    K.cell_shade(c, T.HARBOUR_FILL)
+    K.borders(c, l=BAR, t=(T.HARBOUR_EDGE, 4), b=(T.HARBOUR_EDGE, 6), r=(T.HARBOUR_EDGE, 4))
     n = min(max(block.count, 1), MAX_PLACEHOLDERS)  # count is clamped to 1..6
     nt = _nested(c, W, n)
-    S = PLACEHOLDER_STYLE
     for i, row in enumerate(nt.rows):
-        a, b = row.cells
-        if i:
-            for x in (a, b):
-                K.cell_borders(x, top=(T.POWDER, 6, "dashed"))
-        K.R(K.np(a, after=3, style=S), f"ADD RESTAURANT {i + 1}", size=7.5, color=T.ROYAL, bold=True, italic=False,
-            spacing=1.8)
-        K.R(K.np(a, after=5, line=1.0, style=S), "Restaurant name (Maps link)", font=T.HEAD, size=18, italic=True,
-            color=T.SLATE)
-        K.R(K.np(a, after=7, style=S), "Cuisine · Veg-friendly?", size=7.5, italic=True, color=T.SLATE)
-        K.R(K.np(a, after=0, line=1.45, style=S),
-            "Two lines on the setting and why it suits this family, in the guide's voice.", size=10, italic=True,
-            color=T.SLATE)
-        _stack(b, "PER PERSON", "INR –", big=True, style=S, italic=True, color=T.SLATE)
-        _stack(b, "OPEN", "– : –", style=S, italic=True, color=T.SLATE)
-        _stack(b, "FROM HERE", "– min", after=0, style=S, italic=True, color=T.SLATE)
-        K.close(a, 1)
-        K.close(b, 1)
+        _placeholder_row(row, i)
     K.close(c, 1)
     K.spacer(doc, GAP_PT)

@@ -47,11 +47,11 @@ def _placeholder_table_style(doc) -> None:
     tbl_pr = el("w:tblPr")
     b = el("w:tblBorders")
     for side in ("top", "left", "bottom", "right", "insideH", "insideV"):
-        b.append(el(f"w:{side}", val="dashed", sz=6, space=0, color=T.POWDER))
+        b.append(el(f"w:{side}", val="single", sz=4, space=0, color=T.HARBOUR_EDGE))
     tbl_pr.append(b)
     e.append(tbl_pr)
     tc_pr = el("w:tcPr")
-    tc_pr.append(el("w:shd", val="clear", color="auto", fill=T.FROST))
+    tc_pr.append(el("w:shd", val="clear", color="auto", fill=T.HARBOUR_FILL))
     e.append(tc_pr)
 
 

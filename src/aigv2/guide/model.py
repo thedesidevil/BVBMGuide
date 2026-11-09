@@ -131,6 +131,7 @@ class MealBlock(_M):
     eyebrow: str
     heading: str
     restaurants: list[Restaurant] = Field(default_factory=list)
+    placeholders: int = 0  # extra plain placeholder rows after the real ones (numbered by row position)
 
 
 class PlaceholderMeal(_M):

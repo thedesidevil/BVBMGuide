@@ -275,3 +275,22 @@ def test_zero_minute_walk_reads_at_your_hotel():
     from src.aigv2.render2.meals import travel_text
     assert travel_text("Walk · 0 min") == "At your hotel"
     assert travel_text("Walk · 5 min") == "Walk · 5 min"
+
+
+def test_partial_block_has_three_plain_rows_with_numbered_placeholders():
+    doc = _render(_block([_r(1)]).model_copy(update={"placeholders": 2}))
+    rows = _nested(doc).rows
+    assert len(rows) == 3
+    assert rows[0].cells[0].paragraphs[0].text == "Warung 1"
+    assert [rows[i].cells[0].paragraphs[0].text for i in (1, 2)] == ["ADD RESTAURANT 2", "ADD RESTAURANT 3"]
+    assert _card(doc).style.name != "Placeholder Card (internal)"
+
+
+def test_placeholder_card_is_solid_not_dashed():
+    from docx.oxml.ns import qn as q
+    doc = _ph()
+    xml = doc.element.xml + doc.styles.element.xml
+    card = _card(doc)._tbl.xml
+    assert 'w:val="dashed"' not in card
+    sty = [s for s in doc.styles.element.findall(q("w:style")) if "Placeholder Card" in s.xml][0].xml
+    assert "dashed" not in sty

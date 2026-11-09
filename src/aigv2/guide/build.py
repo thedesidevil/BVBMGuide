@@ -796,17 +796,19 @@ class _Day:
             take = len(rest) if i == len(anchors) - 1 else max(count - len(mine), 0)
             chunk, rest = rest[:take], rest[take:]
             markers = [m for m in markers if m not in mine]
-            self._meal_block(slot, eyebrow, f"{meal} near {nice_name(name)}", chunk, mine, count)
+            rows = max(count, 3) if len(anchors) == 1 and slot.meal in ("lunch", "dinner") else count
+            self._meal_block(slot, eyebrow, f"{meal} near {nice_name(name)}", chunk, mine, rows)
         self.marks(markers)
 
     def _meal_block(self, slot, eyebrow, heading, chunk, mine, count) -> None:
         if not chunk:
             self.out.append(g.PlaceholderMeal(meal=slot.meal, eyebrow=eyebrow, heading=heading, count=count))
-            self.marks(mine)
+            self.marks(mine[:1])
             return
         built = [self._restaurant(c, slot.meal) for c in chunk]
-        self.out.append(g.MealBlock(meal=slot.meal, eyebrow=eyebrow, heading=heading, restaurants=[r for r, _ in built]))
-        self.marks([m for _, ms in built for m in ms] + mine)
+        self.out.append(g.MealBlock(meal=slot.meal, eyebrow=eyebrow, heading=heading, restaurants=[r for r, _ in built],
+                                    placeholders=max(count - len(built), 0)))
+        self.marks([m for _, ms in built for m in ms] + mine[:1])  # one staff marker per slot, whatever is missing
 
     def _restaurant(self, c: ChosenRestaurant, meal: str = "") -> tuple[g.Restaurant, list]:
         rd, lib = self.rd, c.lib

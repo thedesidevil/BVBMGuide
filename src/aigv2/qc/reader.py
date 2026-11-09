@@ -354,6 +354,8 @@ class _Reader:
             if len(tcs) != 2:
                 return []
             left = [p for p in _all_paras(tcs[0]) if _ptext(p)]
+            if left and all(self._style_name(p).casefold().startswith("placeholder") for p in left):
+                continue  # a staff-only 'ADD RESTAURANT n' row: not a venue, and the marker paragraph above counts once
             links = [(t, u) for p in left[:1] for t, u in self._links(p) if MAPS_RE.match(u)]
             if not links:
                 return []

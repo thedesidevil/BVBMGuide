@@ -12,6 +12,7 @@ THANK_YOU = "Thank You"
 SECTION_TITLES = [t for _, t in BEFORE_YOU_GO + WHILE_THERE] + [THANK_YOU]
 _KNOWN_H1 = {t.casefold() for t in SECTION_TITLES}
 MARKER_RE = re.compile(r"⚠ [^⚠]*?(?=\s+·\s|\s*⚠|\s*$)")
+_DAY_PREFIX_STRIP = re.compile(r"^Day\s*\d+\s*[–—:\-|,]\s*")
 DAY_RE = re.compile(r"^Day\s*(\d+)\s*[–—:\-|,]")
 MEAL_SLOT_RE = re.compile(r"^(Breakfast|Lunch|Dinner)\s+(?:near\b|[—–-]\s*Included\b)", re.I)
 _MEAL_LINE = re.compile(r"^(Breakfast|Lunch|Dinner)\s+(?:near\s+[^.!?]{1,70}|[—–-]\s*Included in your package)$", re.I)
@@ -283,15 +284,19 @@ class _Reader:
             self.slot = None
             m = DAY_RE.match(text)
             pend, self.pending_day = self.pending_day, None
-            self.headings.append((1, f"Day {pend[0]} – {pend[1]}, {pend[2]} {pend[3]} | {text}" if pend and not m else text))
-            if m:
+            if pend:  # new layout: weekday/date live in the eyebrow; the heading may carry its own 'Day N – ' prefix
+                n, wd, d, mon = pend
+                title = _DAY_PREFIX_STRIP.sub("", text) if m else text
+                header = f"Day {n} – {wd}, {d} {mon} | {title}"
+                self.headings.append((1, header))
+                self.day = DocDay(header=header, index=n)
+                self.days.append(self.day)
+            elif m:
+                self.headings.append((1, text))
                 self.day = DocDay(header=text, index=int(m.group(1)))
                 self.days.append(self.day)
-            elif pend:
-                n, wd, d, mon = pend
-                self.day = DocDay(header=f"Day {n} – {wd}, {d} {mon} | {text}", index=n)
-                self.days.append(self.day)
             else:
+                self.headings.append((1, text))
                 self.day, self.section = None, text
                 self.sections.setdefault(text, [])
             if pend:

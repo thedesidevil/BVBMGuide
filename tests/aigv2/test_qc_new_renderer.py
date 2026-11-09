@@ -238,3 +238,33 @@ def test_dish_and_souvenir_links_still_read():
     doc.save(buf)
     links = read_docx(buf.getvalue()).links
     assert ("Warung A", "https://m/a") in links and ("Ubud Market", "https://m/u") in links
+
+
+def test_new_layout_headers_match_header_re_and_no_false_header_findings(blob):
+    from src.aigv2.qc.rules import HEADER_RE
+    m = read_docx(blob)
+    assert m.days and all(HEADER_RE.match(d.header) for d in m.days), [d.header for d in m.days]
+    assert all(HEADER_RE.match(t) for lvl, t in m.headings if lvl == 1 and t.startswith("Day "))
+    _, result = _qc(blob, _data())
+    assert not {"day_header_format", "day_weekday"} & _rules(result)  # day_dates: the Bali fixture trip and days disagree
+
+
+def test_heading_with_own_day_prefix_and_eyebrow_is_normalised():
+    from docx import Document
+    from src.aigv2.qc.rules import HEADER_RE
+    doc = Document()
+    doc.add_paragraph("Title", style="Title")
+    eb = doc.add_paragraph("◆ DAY 1 · THURSDAY, 30 APRIL ◆")
+    from src.aigv2.qc.reader import DAY_EYEBROW_STYLE
+    try:
+        eb.style = DAY_EYEBROW_STYLE
+    except KeyError:
+        doc.styles.add_style(DAY_EYEBROW_STYLE, 1)
+        eb.style = DAY_EYEBROW_STYLE
+    doc.add_paragraph("Day 1 – Arrival in Paris", style="Heading 1")
+    import io
+    buf = io.BytesIO()
+    doc.save(buf)
+    m = read_docx(buf.getvalue())
+    assert m.days[0].header == "Day 1 – Thu, 30 Apr | Arrival in Paris" and HEADER_RE.match(m.days[0].header)
+    assert (1, m.days[0].header) in m.headings

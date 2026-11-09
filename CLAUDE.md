@@ -15,7 +15,7 @@ pip install -r requirements.txt
 # --- Library Management (python -m src.library) ---
 
 # Build/rebuild the library database from aig-library/ files
-python -m src.library build [--library aig-library] [--db library_db] [--force] [--workers 5] [--max-usd N]
+python -m src.library build [--library aig-library] [--db library_db_new] [--force] [--workers 5] [--max-usd N]
 # (--max-usd is required when more than 5 files would be extracted; build refuses a legacy
 #  index whose processed-file records lack content hashes - use plan/rebuild into a new folder)
 
@@ -29,20 +29,20 @@ python -m src.library rebuild --plan ingest_plan --db library_db_new --dry-run -
 python -m src.library ingest --input <folder>
 
 # View library statistics
-python -m src.library stats [--db library_db]
+python -m src.library stats [--db library_db_new]
 
 # Find which library folders cover specific cities
-python -m src.library find "Amsterdam, Florence, Rome" [--db library_db]
+python -m src.library find "Amsterdam, Florence, Rome" [--db library_db_new]
 
 # Run verification checks on the library database
-python -m src.library verify [--db library_db] [--library aig-library]
+python -m src.library verify [--db library_db_new] [--library aig-library]
 
 # Run comprehensive QC (structural + optional source verification)
-python -m src.library qc [--db library_db] [--verify-sources] [--spot-check]
+python -m src.library qc [--db library_db_new] [--verify-sources] [--spot-check]
 
 # Clean contaminated or duplicate entries
-python -m src.library clean [--db library_db] --dump contaminated.tsv
-python -m src.library clean [--db library_db] --apply contaminated.tsv
+python -m src.library clean [--db library_db_new] --dump contaminated.tsv
+python -m src.library clean [--db library_db_new] --apply contaminated.tsv
 
 # Inspect a single AIG file (re-extract without modifying DB)
 python -m src.library inspect <file.pdf> [--field restaurants]
@@ -53,7 +53,7 @@ python -m src.library inspect <file.pdf> [--field restaurants]
 python -m src.aig parse <input_dir_or_pdf> [--days]
 
 # Generate an All Inclusive Guide (section logic being built incrementally)
-python -m src.aig generate <input_dir_or_pdf> [--db library_db] [--output output.docx]
+python -m src.aig generate <input_dir_or_pdf> [--db library_db_new] [--output output.docx]
 ```
 
 No test suite exists. No lint/format tooling is configured.
@@ -97,7 +97,7 @@ src/
 
 ## Data: The AIG Library
 
-`aig-library/` contains reference guides (DOCX/PDF) organized in destination folders. `library_db/` (at project root) is the sharded database — one JSON file per destination city, plus `_index.json` with metadata and coverage index. Rebuild with `python -m src.library build --force`.
+`aig-library/` contains reference guides (DOCX/PDF) organized in destination folders. `library_db_new/` (at project root; the only library — pushed to S3 as `library_db_v2/`) is the sharded database — one JSON file per destination city, plus `_index.json` with metadata and coverage index. Rebuild with `python -m src.library build --force`.
 
 ## AIG Output Requirements (from `docs/AIG_QC_CHECK.md`)
 

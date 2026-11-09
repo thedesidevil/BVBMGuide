@@ -14,10 +14,10 @@
 aws s3 mb s3://bvbm-aig-library --region ap-south-1 --profile bvbm
 ```
 
-### 2. Upload existing library_db
+### 2. Upload the v2 library (library_db_new)
 
 ```bash
-aws s3 sync library_db/ s3://bvbm-aig-library/library_db/ \
+aws s3 sync library_db_new/ s3://bvbm-aig-library/library_db_v2/ \
   --exclude "_staging/*" \
   --profile bvbm --region ap-south-1
 ```
@@ -46,7 +46,7 @@ aws lambda create-function \
     --code S3Bucket=bvbm-code,S3Key=aig-library-builder/function-4695d6f-20260514T115802Z.zip \
     --timeout 900 \
     --memory-size 512 \
-    --environment "Variables={LIBRARY_S3_BUCKET=bvbm-aig-library,LIBRARY_S3_PREFIX=library_db,AI_API_KEY=123,AI_BASE_URL=123,AI_MODEL=gpt-4o-mini}" \
+    --environment "Variables={LIBRARY_S3_BUCKET=bvbm-aig-library,LIBRARY_S3_PREFIX=library_db_v2,AI_API_KEY=123,AI_BASE_URL=123,AI_MODEL=gpt-4o-mini}" \
     --region ap-south-1 \
     --profile bvbm
 ```
@@ -103,7 +103,7 @@ The Lambda execution role (`lambda-library-qc`) needs:
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `LIBRARY_S3_BUCKET` | Yes | S3 bucket name |
-| `LIBRARY_S3_PREFIX` | No | Key prefix (default: `library_db`) |
+| `LIBRARY_S3_PREFIX` | No | Key prefix (default: `library_db_v2`) |
 | `AI_API_KEY` | Yes | For classify/extract AI calls |
 | `AI_BASE_URL` | Yes | OpenAI-compatible endpoint |
 | `AI_MODEL` | Yes | Model name |

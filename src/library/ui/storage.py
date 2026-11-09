@@ -175,8 +175,8 @@ def get_storage_backend() -> StorageBackend:
     """Select backend based on environment. S3 on Lambda, local filesystem otherwise."""
     if os.environ.get("AWS_LAMBDA_FUNCTION_NAME"):
         bucket = os.environ["LIBRARY_S3_BUCKET"]
-        prefix = os.environ.get("LIBRARY_S3_PREFIX", "library_db")
+        prefix = os.environ.get("LIBRARY_S3_PREFIX", "library_db_v2")
         return S3StorageBackend(bucket=bucket, prefix=prefix)
     else:
-        db_path = os.environ.get("LIBRARY_DB_PATH", "library_db")
+        db_path = os.environ.get("LIBRARY_DB_PATH", "library_db_new")
         return LocalStorageBackend(Path(db_path))

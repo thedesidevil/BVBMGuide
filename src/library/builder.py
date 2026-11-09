@@ -111,7 +111,7 @@ class LibraryBuilder:
         from src.library.ui.services.db_service import LibraryDBService
         from src.library.ui.storage import LocalStorageBackend
 
-        output_path = Path(output_path) if output_path is not None else Path("library_db")
+        output_path = Path(output_path) if output_path is not None else Path("library_db_new")
         if output_path.suffix.lower() == ".json":
             raise ValueError("single-file library output is no longer supported; use a directory")
         output_path.mkdir(parents=True, exist_ok=True)

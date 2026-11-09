@@ -268,3 +268,50 @@ def test_heading_with_own_day_prefix_and_eyebrow_is_normalised():
     m = read_docx(buf.getvalue())
     assert m.days[0].header == "Day 1 – Thu, 30 Apr | Arrival in Paris" and HEADER_RE.match(m.days[0].header)
     assert (1, m.days[0].header) in m.headings
+
+
+def _day_spans(blob):
+    from docx.oxml.ns import qn
+    from src.aigv2.qc.annotate import _day_map, _text
+    doc = Document(io.BytesIO(blob))
+    paras = list(doc.element.body.iter(qn("w:p")))
+    return doc, paras, _day_map(paras), _text
+
+
+def test_annotate_puts_every_note_in_its_own_day(blob):
+    from docx.oxml.ns import qn
+    from src.aigv2.models import Finding
+    from src.aigv2.qc.annotate import annotate
+    doc, paras, dm, text = _day_spans(blob)
+    days = sorted({d for d in dm.values() if d})
+    findings = []
+    for n in days:   # a distinctive in-day paragraph per day, nested in cards/tables where the layout has them
+        cand = [p for p in paras if dm[id(p)] == n and len(text(p)) > 25 and text(p) not in {text(q) for q in paras if dm[id(q)] != n}]
+        for k, p in enumerate(cand[:3]):
+            findings.append(Finding(rule="sense", severity="warning", message=f"note-{n}-{k}", anchor_text=text(p), day=n))
+    out = annotate(blob, findings)
+    _, ps, m, t = _day_spans(out)
+    for f in findings:
+        hit = [p for p in ps if t(p) == f"⚠ CHECK: {f.message}"]
+        assert len(hit) == 1 and m[id(hit[0])] == f.day, (f.message, [m[id(h)] for h in hit])
+
+
+def test_annotate_anchor_on_two_days_and_missing_anchor_stay_in_scope(blob):
+    from src.aigv2.models import Finding
+    from src.aigv2.qc.annotate import annotate
+    doc, paras, dm, text = _day_spans(blob)
+    days = sorted({d for d in dm.values() if d})
+    shared = next(t for t in {text(p) for p in paras if dm[id(p)] == days[0] and len(text(p)) > 8}
+                  if any(text(q) == t and dm[id(q)] == days[1] for q in paras))
+    fs = [Finding(rule="x", severity="warning", message="on-second", anchor_text=shared, day=days[1]),
+          Finding(rule="x", severity="warning", message="no-anchor", anchor_text="zzz not in the document", day=days[2])]
+    _, ps, m, t = _day_spans(annotate(blob, fs))
+    for f, want in zip(fs, (days[1], days[2])):
+        hit = [p for p in ps if t(p) == f"⚠ CHECK: {f.message}"]
+        assert len(hit) == 1 and m[id(hit[0])] == want
+    # a day finding whose anchor only exists on another day goes to its own day header, not the other day
+    other = next(t for t in {text(p) for p in paras if dm[id(p)] == days[-1] and len(text(p)) > 25}
+                 if not any(text(q) == t and dm[id(q)] != days[-1] for q in paras))
+    _, ps, m, t = _day_spans(annotate(blob, [Finding(rule="x", severity="warning", message="wrong-day", anchor_text=other, day=days[0])]))
+    hit = [p for p in ps if t(p) == "⚠ CHECK: wrong-day"]
+    assert m[id(hit[0])] == days[0]

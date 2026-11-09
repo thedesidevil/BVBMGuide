@@ -51,8 +51,11 @@ def _find(paras, needle: str, day=None, days=None):
     if not needle:
         return None
     hits = [p for p in paras if needle in _text(p) and not _internal_link(p)]
-    scoped = [p for p in hits if day is not None and days.get(id(p)) == day]
-    pool = scoped or hits or [p for p in paras if needle in _text(p)]
+    if day is not None and days and day in days.values():
+        # a day finding belongs to that day: never to another day's paragraph (the caller falls back to the day header)
+        pool = [p for p in hits if days.get(id(p)) == day]
+        return pool[0] if pool else None
+    pool = hits or [p for p in paras if needle in _text(p)]
     return pool[0] if pool else None
 
 
@@ -81,21 +84,25 @@ def annotate(docx_bytes: bytes, findings: list[Finding]) -> bytes:
     doc = Document(io.BytesIO(docx_bytes))
     body = doc.element.body
     paras = list(body.iter(qn("w:p")))
-    days = _day_map(paras)
-    tail: dict[int, object] = {}
+    days = _day_map(paras)  # paras stays referenced for the whole run, so id(p) keys stay valid
+    tail: dict = {}  # keyed by the element itself: lxml proxies are temporary and id() values get reused
     at_start = 0
     for f in findings:
         target = _find(paras, " ".join(f.anchor_text.split()), f.day, days)
         if target is None:
             target = _day_header(paras, f.day)
+        if target is not None and _style_id(target) == _DAY_EYEBROW_ID:
+            nxt = target.getnext()  # never between a day's eyebrow and its title heading
+            if nxt is not None and nxt.tag == qn("w:p") and _style_id(nxt).startswith("heading"):
+                target = nxt
         new_p = OxmlElement("w:p")
         if target is None:
             body.insert(at_start, new_p)
             at_start += 1
         else:
             top = _outside_tables(target)
-            (tail[id(top)] if id(top) in tail else top).addnext(new_p)
-            tail[id(top)] = new_p
+            (tail[top] if top in tail else top).addnext(new_p)
+            tail[top] = new_p
         add_marker(Paragraph(new_p, doc._body), Marker(kind="CHECK", text=f.message))
     out = io.BytesIO()
     doc.save(out)

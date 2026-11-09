@@ -1,3 +1,4 @@
+import { chimeMuted, playChime, setChimeMuted, unlockChime } from "../lib/chime";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { api } from "../api/client";
 
@@ -149,6 +150,7 @@ export function AigV2Tab() {
   const [days, setDays] = useState("");
   const [sections, setSections] = useState<string[]>([]);
   const timer = useRef<number | null>(null);
+  const [muted, setMuted] = useState<boolean>(chimeMuted());
 
   const loadRuns = useCallback(() => api.v2Runs().then((r) => setRuns(r.runs)).catch(() => {}), []);
   const loadRun = useCallback((id: string) => api.v2Run(id).then((r) => {
@@ -168,12 +170,14 @@ export function AigV2Tab() {
         return;
       }
       loadRuns();
+      if (j.status !== "cancelled") playChime(j.status === "error" ? "error" : "done");
       const target = j.result?.run_id ?? j.run_id;
       if (target) { if (target === runId) loadRun(target); else setRunId(target); }
     }).catch((e) => { setError(e.message); setJob(null); });
   }, [loadRuns, loadRun, runId]);
 
   async function launch(fn: () => Promise<any>) {
+    unlockChime();
     setError(""); setJob(null);
     try {
       const j = await fn();
@@ -207,6 +211,16 @@ export function AigV2Tab() {
         <label className="flex items-center gap-1 text-xs text-slate-500 px-1">
           <input type="checkbox" checked={showCancelled} onChange={(e) => setShowCancelled(e.target.checked)} />Show cancelled
         </label>
+        <div className="flex items-center justify-between text-xs text-slate-500 px-1">
+          <label className="flex items-center gap-1">
+            <input
+              type="checkbox"
+              checked={!muted}
+              onChange={(e) => { const m = !e.target.checked; setMuted(m); setChimeMuted(m); if (!m) { unlockChime(); playChime("done"); } }}
+            />Chime when a stage finishes
+          </label>
+          <button type="button" className="underline hover:text-slate-700" onClick={() => { unlockChime(); playChime("done"); }}>Test</button>
+        </div>
         {visibleRuns.map((r) => (
           <button
             key={r.run_id}

@@ -1,0 +1,832 @@
+{
+  "restaurants": [
+    {
+      "name": "Marina Ristorante",
+      "city": "Prague",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "ambience": "Converted riverboat with a stylish setting",
+      "highlights": [
+        "Open kitchen",
+        "Beautiful city-wide river views"
+      ],
+      "notes": "Stays open late",
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "L'Osteria Národní",
+      "city": "Prague",
+      "cuisine_type": [
+        "Italian",
+        "Pizza"
+      ],
+      "area": "Národní třída",
+      "ambience": "Relaxed casual dining",
+      "highlights": [
+        "Large pizzas",
+        "Pasta",
+        "Great late-night option"
+      ],
+      "notes": "Stays open late",
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Fat Cat Old Town",
+      "city": "Prague",
+      "cuisine_type": [
+        "Pub food"
+      ],
+      "area": "Old Town",
+      "ambience": "Lively late-night pub-style restaurant, casual",
+      "highlights": [
+        "Burgers",
+        "Comfort food"
+      ],
+      "notes": "Stays open late",
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "The Little Chimney",
+      "city": "Prague",
+      "highlights": [
+        "Prague's famous trdelník (chimney cake)"
+      ],
+      "must_try_dishes": [
+        "Trdelník"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Bistro Monk, Mala Strana",
+      "city": "Prague",
+      "cuisine_type": [
+        "Café"
+      ],
+      "area": "Malá Strana",
+      "ambience": "Cozy café",
+      "highlights": [
+        "Excellent breakfast plates",
+        "Coffee"
+      ],
+      "meal_slots": [
+        "breakfast"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Mlýnská Kavárna",
+      "city": "Prague",
+      "cuisine_type": [
+        "Café"
+      ],
+      "ambience": "Cozy café-style restaurant with a relaxed atmosphere and riverside charm",
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Noi Restaurant",
+      "city": "Prague",
+      "cuisine_type": [
+        "Asian"
+      ],
+      "ambience": "Stylish with elegant interiors",
+      "highlights": [
+        "Sushi",
+        "Thai curries"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Café Savoy",
+      "city": "Prague",
+      "cuisine_type": [
+        "Café"
+      ],
+      "ambience": "Elegant old-world café atmosphere",
+      "must_try_dishes": [
+        "Rich hot chocolate",
+        "Savoy cake"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Pizza Nuova",
+      "city": "Prague",
+      "cuisine_type": [
+        "Italian",
+        "Pizza"
+      ],
+      "highlights": [
+        "Excellent pizzas",
+        "Fresh pasta",
+        "Tiramisu"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Wokin, New Town",
+      "city": "Prague",
+      "cuisine_type": [
+        "Asian"
+      ],
+      "area": "New Town",
+      "ambience": "Casual",
+      "highlights": [
+        "Quick dinner of noodles and rice bowls"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Lokál Dlouhááá",
+      "city": "Prague",
+      "cuisine_type": [
+        "Czech"
+      ],
+      "ambience": "Authentic Czech beer hall with lively local atmosphere",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Artic Bakehouse",
+      "city": "Prague",
+      "cuisine_type": [
+        "Bakery"
+      ],
+      "highlights": [
+        "Fresh pastries",
+        "Sourdough bread",
+        "Specialty coffee"
+      ],
+      "meal_slots": [
+        "breakfast"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Café Mosaic",
+      "city": "Prague",
+      "cuisine_type": [
+        "Café"
+      ],
+      "ambience": "Cozy, relaxed atmosphere",
+      "highlights": [
+        "Great breakfast plates",
+        "Coffee"
+      ],
+      "meal_slots": [
+        "breakfast"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Petite France Bakery and Confectionery",
+      "city": "Prague",
+      "cuisine_type": [
+        "French bakery"
+      ],
+      "ambience": "Charming French-style bakery",
+      "meal_slots": [
+        "breakfast"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Kafka Hummus Bar",
+      "city": "Prague",
+      "cuisine_type": [
+        "Middle Eastern"
+      ],
+      "highlights": [
+        "Great lighter lunch option"
+      ],
+      "must_try_dishes": [
+        "Mezze platter",
+        "Hummus plates",
+        "Pita & dips"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Maitrea restaurace",
+      "city": "Prague",
+      "cuisine_type": [
+        "Vegetarian",
+        "Czech"
+      ],
+      "area": "Old Town",
+      "highlights": [
+        "Vegetarian restaurant offering Czech classics"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Bistro Monk",
+      "city": "Prague",
+      "cuisine_type": [
+        "Café",
+        "Breakfast"
+      ],
+      "ambience": "Cozy café",
+      "area": "Malá Strana",
+      "highlights": [
+        "Excellent breakfast plates and coffee"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Wokin",
+      "city": "Prague",
+      "cuisine_type": [
+        "Asian"
+      ],
+      "ambience": "Casual",
+      "area": "New Town",
+      "highlights": [
+        "Casual quick dinner option",
+        "Noodles and rice bowls"
+      ],
+      "must_try_dishes": [
+        "Noodles",
+        "Rice bowls"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": null
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Old Town Square",
+      "city": "Prague",
+      "description": "Historic heart of Prague with the Astronomical Clock, Powder Tower and surrounding cobbled lanes",
+      "tips": [
+        "Feels magical after dark once daytime crowds fade"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Charles Bridge",
+      "city": "Prague",
+      "description": "Historic bridge with views of Prague Castle",
+      "tips": [
+        "Visit at night after the daytime crowds fade for an atmospheric experience"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "St. Nicholas Church",
+      "city": "Prague",
+      "description": "Church in Malá Strana with beautiful baroque interiors and a peaceful atmosphere",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "John Lennon Wall",
+      "city": "Prague",
+      "description": "Colorful street-art landmark and quick photo stop",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Spanish Synagogue",
+      "city": "Prague",
+      "description": "Stunning interiors; Prague's most visually impressive synagogue",
+      "tips": [
+        "Avoid trying to visit every synagogue; the Spanish Synagogue and Old Jewish Cemetery give the most rewarding visit"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Old Jewish Cemetery",
+      "city": "Prague",
+      "description": "One of Prague's most historic and atmospheric sites",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Wenceslas Square",
+      "city": "Prague",
+      "description": "Prague's lively modern center",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Head of Franz Kafka",
+      "city": "Prague",
+      "description": "Rotating Kafka sculpture",
+      "tips": [
+        "Best watched at dusk or evening"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Prague Castle",
+      "city": "Prague",
+      "description": "Castle complex with St. Vitus Cathedral, courtyards and panoramic viewpoints",
+      "recommended_duration": "2.5 hours",
+      "tips": [
+        "Arrive early to avoid peak crowds",
+        "Visit St. Vitus Cathedral first before queues build",
+        "No need to see every interior; atmosphere and views are the highlight"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Golden Lane",
+      "city": "Prague",
+      "description": "Small colorful historic lane within the Prague Castle complex",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Wallenstein Palace Gardens",
+      "city": "Prague",
+      "description": "Peaceful formal gardens below the castle area with peacocks, hidden corners and baroque architecture; one of Prague's quieter gems",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Havelské tržiště",
+      "city": "Prague",
+      "description": "Prague's oldest market, good for snacks, souvenirs, local treats and small gifts",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Klementinum",
+      "city": "Prague",
+      "description": "Historic library interiors and tower views",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Letná Park",
+      "city": "Prague",
+      "description": "Relaxed sunset skyline views over Prague with an optional beer garden; one of the best panoramic viewpoints in the city",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Prague Astronomical Clock",
+      "city": "Prague",
+      "description": "Historic astronomical clock in Old Town Square, beautifully lit at night.",
+      "recommended_duration": "Included in Old Town walk",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Powder Tower",
+      "city": "Prague",
+      "description": "Historic Gothic tower in Old Town Prague.",
+      "recommended_duration": "Included in Old Town walk",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "St. Vitus Cathedral",
+      "city": "Prague",
+      "description": "Located within Prague Castle complex. Visit first before queues build.",
+      "recommended_duration": "Included in Prague Castle visit",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Havelské tržiště Market",
+      "city": "Prague",
+      "description": "Prague's oldest market. Great for snacks, souvenirs, local treats, and small gifts.",
+      "recommended_duration": "30 minutes",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Prague Castle Complex",
+      "city": "Prague",
+      "description": "Includes St. Vitus Cathedral, castle courtyards and panoramic viewpoints, and Golden Lane — a small colorful historic lane within the castle complex.",
+      "recommended_duration": "2.5 hours",
+      "source_files": [
+        "Europe/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest, Prague, Austria.docx",
+        "Austria/Itinerary- Budapest Prague Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Malá Strana",
+      "city": "Prague",
+      "description": "Charming neighbourhood with baroque interiors at St. Nicholas Church, John Lennon Wall street-art landmark, and quieter lanes. Optional riverside stroll along the Vltava",
+      "recommended_duration": "2 hours",
+      "source_files": [
+        "Austria/Itinerary- Budapest, Prague, Austria.docx"
+      ],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": null
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Airbnb",
+      "city": "Prague",
+      "location": "Záhořanského 5, Prague 2",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Trdelník",
+      "city": "Prague",
+      "description": "Chimney cake",
+      "where_to_try": "The Little Chimney",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "name": "Trdelník (Chimney Cake)",
+      "city": "Prague",
+      "description": "Prague's famous chimney cake, a sweet pastry",
+      "vegetarian": true,
+      "where_to_try": "The Little Chimney",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": null
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Local snacks and small gifts",
+      "city": "Prague",
+      "category": "Food and gifts",
+      "where_to_buy": [
+        "Havelské tržiště"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "item": "Snacks and local treats",
+      "city": "Prague",
+      "category": "Food",
+      "where_to_buy": [
+        "Havelské tržiště"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "item": "Small gifts",
+      "city": "Prague",
+      "category": "General",
+      "where_to_buy": [
+        "Havelské tržiště"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "item": "Local souvenirs and snacks",
+      "city": "Prague",
+      "category": "Gifts",
+      "where_to_buy": [
+        "Havelské tržiště Market"
+      ],
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "item": "Souvenirs and small gifts",
+      "city": "Prague",
+      "category": "General souvenirs",
+      "where_to_buy": [
+        "Havelské tržiště"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "item": "Local treats and snacks",
+      "city": "Prague",
+      "category": "Food",
+      "where_to_buy": [
+        "Havelské tržiště Market"
+      ],
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Prague",
+      "mode": "Bolt taxi",
+      "description": "Recommended for short transfers, e.g. from the main station to the center (~10–15 mins) and to the bus station",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "city": "Prague",
+      "mode": "RegioJet bus",
+      "description": "Direct bus from Prague (Na Knížecí station) to Český Krumlov in about 2 hr 35 min; good day-trip option with a fixed departure",
+      "how_to_use": "Book tickets in advance",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_date": "2026-08-27",
+      "_source_format": "old"
+    },
+    {
+      "city": "Prague",
+      "mode": "Taxi (Bolt)",
+      "description": "Bolt taxi recommended for transfers around Prague, approximately 10–15 minutes from Prague Main Station to accommodation.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Prague",
+      "mode": "Taxi (Bolt)",
+      "description": "Bolt taxi recommended for transfers around the city, approximately 10–15 minutes from Prague Main Station to accommodation.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Prague",
+      "mode": "Bus (RegioJet)",
+      "description": "RegioJet bus from Na Knížecí Station to Český Krumlov. Comfortable countryside journey through southern Bohemia. Departure at 09:00, arrival at 11:35. Tickets booked.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Prague",
+      "mode": "Tram",
+      "description": "Walk and tram combination recommended for travel toward Prague Castle.",
+      "_source_file": "Europe/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787827071.4775765,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Prague",
+      "mode": "Taxi (Bolt)",
+      "description": "Bolt taxi recommended for transfers from Prague Main Station and around the city",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Prague",
+      "mode": "Currency Exchange",
+      "description": "Recommended exchange locations: Palladium shopping mall (preferred) or Exchange CZ at Štefánikova 203/23, Prague 5",
+      "_source_file": "Austria/Itinerary- Budapest, Prague, Austria.docx",
+      "_source_mtime": 1787826599.9011912,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Prague",
+      "mode": "Taxi (Bolt)",
+      "description": "Bolt taxi recommended for transfer from Prague Main Station to accommodation (~10–15 mins) and for general city transfers.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    },
+    {
+      "city": "Prague",
+      "mode": "Tram / Walk",
+      "description": "Walk plus tram combination recommended for travel toward Prague Castle. Travel time approximately 30 minutes.",
+      "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+      "_source_mtime": 1787829346.2370243,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Prague",
+      "_source_format": "old",
+      "_source_date": "2026-08-27"
+    }
+  ],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "Austria/Itinerary- Budapest Prague Austria.docx"
+  ],
+  "currency": "CZK",
+  "_currency_source": {
+    "_source_file": "Austria/Itinerary- Budapest Prague Austria.docx",
+    "_source_date": "2026-08-27",
+    "_source_format": "old"
+  }
+}

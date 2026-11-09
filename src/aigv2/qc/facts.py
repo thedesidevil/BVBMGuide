@@ -1,0 +1,254 @@
+import re
+from datetime import date, datetime, time
+from typing import Optional
+
+import requests
+from pydantic import BaseModel
+
+from src.aigv2.config import Settings
+from src.aigv2.hours import format_for_day, is_open_for
+from src.aigv2.library import norm_name
+from src.aigv2.models import DayPlan, Place, TripPlan, place_key
+from src.aigv2.planning.slots import is_optional, meal_start, parse_time
+from src.aigv2.qc.reader import DocModel, DocVenue
+from src.aigv2.place_links import is_non_place
+from src.aigv2.qc.rules import _f
+
+_NEAR = re.compile(r"\bnear\s+(.+)$", re.I)
+_TRAVEL = re.compile(r"(Walk|By car|By public transport)\s*·\s*(\d+)\s*min", re.I)
+_MODES = {"walk": "WALK", "by car": "DRIVE", "by public transport": "TRANSIT"}
+_MEALS = ("breakfast", "lunch", "dinner")
+_TIME_FACTS = ("YOUR BOOKING", "PICK-UP TIME", "PICKUP", "TIME")
+_LOOKUP_ERRORS = (requests.RequestException, ValueError, KeyError)
+_UNVERIFIED = "Not verified"
+_VISIT_MIN = 30
+_MAX_DIFF_MIN = 5
+_MAX_DIFF_RATIO = 0.3
+
+
+class FactRow(BaseModel):
+    day: int
+    venue: str
+    guide_hours: str
+    google_hours: str
+    guide_travel: str
+    google_travel: str
+    link: str
+    match: bool
+
+
+_OUTDOOR = re.compile(r"\bexterior\b|\bday pass\b|\b\d+[- ]day\b|\bhop[- ]on\b|\b(?:champs|avenue|boulevard|promenade|lakefront|"
+                      r"waterfront|bridge walk|cliff walk|old town|city walk|walking tour)\b", re.I)
+
+
+def _name_tokens(text: str) -> set[str]:
+    return {t for t in re.findall(r"[a-z0-9]+", norm_name(text)) if len(t) > 2}
+
+
+def _booking_backed(v: DocVenue, trip: TripPlan, plan: DayPlan) -> bool:
+    """A ticket or voucher confirms the item; Google has nothing more to say about it."""
+    if "YOUR BOOKING" in v.facts or v.name.casefold().startswith("booked"):
+        return True
+    item = next((it for it in plan.items if norm_name(it.name) == norm_name(v.name)), None)
+    if item is not None and item.booking_ref:
+        return True
+    mine = _name_tokens(v.name)
+    for b in trip.bookings:
+        theirs = _name_tokens(b.name)
+        if mine and theirs and len(mine & theirs) / min(len(mine), len(theirs)) >= 0.6:
+            return True
+    return False
+
+
+def _visit_time(v: DocVenue, heading: str, plan: DayPlan, country: str, settings: Settings) -> Optional[time]:
+    """The card's own time (booking, pickup, stated time), else the planned item time, else the slot/meal start."""
+    for label in _TIME_FACTS:
+        t = parse_time(v.facts.get(label))
+        if t:
+            return t
+    item = next((it for it in plan.items if norm_name(it.name) == norm_name(v.name)), None)
+    t = item and (parse_time(item.pickup_time) or parse_time(item.time))
+    if t:
+        return t
+    word = heading.split()[0].casefold() if heading.split() else ""
+    if word in _MEALS:
+        return meal_start(word, country, settings)
+    start = settings.slot_windows.get(word, (None,))[0]
+    return time.fromisoformat(start) if start else None
+
+
+def _minutes_text(mode: str, minutes: int) -> str:
+    return f"{mode} · {minutes} min"
+
+
+def _guide_travel(v: DocVenue) -> list[tuple[str, int]]:
+    text = v.facts.get("GETTING THERE", "")
+    if re.fullmatch(r"\s*At your hotel\s*", text, re.I):
+        return [("Walk", 0)]
+    return [(m.group(1), int(m.group(2))) for m in _TRAVEL.finditer(text)]
+
+
+def _differs(guide: int, google: int) -> bool:
+    diff = abs(guide - google)
+    return diff > _MAX_DIFF_MIN or diff > _MAX_DIFF_RATIO * google
+
+
+def _unverified(v: DocVenue, day_no: int, what: str):
+    return _f("fact_unverified", f"Could not verify {what} for {v.name}; check it by hand", v.name, day_no, "warning")
+
+
+def check_facts(doc: DocModel, trip: TripPlan, places, routes, fresh: bool = True,
+                countries: Optional[dict[str, str]] = None,
+                settings: Optional[Settings] = None,
+                resolved: Optional[dict] = None) -> tuple[list, list[FactRow]]:
+    findings, rows = [], []
+    settings = settings or Settings(models={})
+    countries = countries or {}
+    plan_days = sorted(trip.days, key=lambda d: d.date)
+    fresh_memo: dict = {}
+    for day in doc.days:
+        if day.index is None or not 1 <= day.index <= len(plan_days):
+            continue
+        plan = plan_days[day.index - 1]
+        for slot in day.slots:
+            near = _NEAR.search(slot.heading)
+            for v in slot.venues:
+                if v.kind != "venue" or is_non_place(v.name):
+                    continue
+                start = _visit_time(v, slot.heading, plan, countries.get(plan.city, ""), settings)
+                item = next((it for it in plan.items if norm_name(it.name) == norm_name(v.name)), None)
+                try:
+                    f, row = _check_venue(v, day.index, plan.date, plan.city, start,
+                                          near.group(1).strip() if near else None, places, routes, fresh,
+                                          optional=bool(item and is_optional(item)), fresh_memo=fresh_memo,
+                                          resolved=resolved, hours_exempt=bool(_OUTDOOR.search(v.name)),
+                                          backed=_booking_backed(v, trip, plan))
+                except _LOOKUP_ERRORS as e:
+                    f = [_f("fact_check_failed", f"{v.name}: Google lookup failed ({e.__class__.__name__})",
+                            v.name, day.index)]
+                    row = _row(v, day.index, _UNVERIFIED, "", _UNVERIFIED, False)
+                findings += f
+                rows.append(row)
+    return findings, rows
+
+
+def _row(v: DocVenue, day_no: int, google_hours: str, guide_travel: str, google_travel: str, match: bool) -> FactRow:
+    return FactRow(day=day_no, venue=v.name, guide_hours=v.facts.get("OPENING HOURS", ""), google_hours=google_hours,
+                   guide_travel=guide_travel, google_travel=google_travel, link=v.url or "", match=match)
+
+
+def _check_venue(v: DocVenue, day_no: int, d: date, city: str, start: Optional[time], anchor: Optional[str],
+                 places, routes, fresh: bool, optional: bool = False, fresh_memo: Optional[dict] = None,
+                 resolved: Optional[dict] = None, hours_exempt: bool = False, backed: bool = False):
+    cached = places.find(v.name, city)
+    place = None
+    if cached is not None and cached.match_ok:
+        if not fresh:
+            place = cached
+        elif cached.place_id:
+            memo = fresh_memo if fresh_memo is not None else {}
+            if cached.place_id not in memo:  # one Place Details call per place, however many days list it
+                memo[cached.place_id] = places.fresh_status(cached)
+            place = memo[cached.place_id]
+        else:
+            place = places.find(v.name, city, near=(cached.lat, cached.lng), fresh=True)
+    if (place is None or not place.match_ok) and backed:
+        return [], _row(v, day_no, "Confirmed by booking", "", "", True)  # the ticket is the confirmation
+    if place is None or not place.match_ok:
+        return [_unverified(v, day_no, "status, hours and travel time (no confident Google match)")], \
+            _row(v, day_no, _UNVERIFIED, "", _UNVERIFIED, False)
+    findings = []
+    if place.status in ("CLOSED_PERMANENTLY", "CLOSED_TEMPORARILY"):
+        state = "permanently" if place.status == "CLOSED_PERMANENTLY" else "temporarily"
+        findings.append(_f("closed_now", f"{v.name} is shown as closed {state} on Google", v.name, day_no))
+    elif place.status == "UNKNOWN":
+        findings.append(_unverified(v, day_no, "business status"))
+    if hours_exempt:
+        pass  # exterior views, all-day passes and open-air landmarks have no slot opening hours to verify
+    elif place.hours is None:
+        findings.append(_unverified(v, day_no, "opening hours (Google has none)"))
+    elif start is None:
+        findings.append(_unverified(v, day_no, "opening hours (unknown slot time)"))
+    elif is_open_for(place.hours, d, start, _VISIT_MIN) is False:
+        findings.append(_f("not_open_at_slot", f"{v.name} does not look open on {d:%a %d %b} at {start:%H:%M} "
+                           f"(Google: {format_for_day(place.hours, d)})", v.name, day_no,
+                           "warning" if optional else "error"))
+    guide_travel, google_travel = _travel(v, city, anchor, place, places, routes, findings, day_no,
+                                          datetime.combine(d, start) if start is not None else None, resolved)
+    return findings, _row(v, day_no, format_for_day(place.hours, d), guide_travel, google_travel, not findings)
+
+
+def _anchor_place(anchor: str, city: str, places, resolved: Optional[dict]):
+    """The anchor as the planner resolved it (same pins, overrides, suburb hotels) before any fresh Google lookup."""
+    if resolved:
+        key = place_key(anchor, city)
+        hit = resolved.get(key)
+        if hit is None:  # the hotel's own city can differ from the day's city (Luzern/Lucerne, a suburb)
+            prefix = place_key(anchor, "")
+            hit = next((p for k, p in resolved.items() if k.startswith(prefix) and p is not None), None)
+        if hit is not None and hit.match_ok:
+            return hit
+    return places.find(anchor, city)
+
+
+def _travel(v, city, anchor, place: Place, places, routes, findings, day_no, when=None, resolved=None):
+    if not anchor:
+        return "", ""
+    legs = _guide_travel(v)
+    if not legs:
+        findings.append(_unverified(v, day_no, "travel time (none stated in the guide)"))
+        return "", ""
+    a = _anchor_place(anchor, city, places, resolved)
+    if a is None or not a.match_ok:
+        findings.append(_unverified(v, day_no, f"travel time (could not locate {anchor})"))
+        return "; ".join(_minutes_text(l, m) for l, m in legs), ""
+    guide, google = [], []
+    for label, minutes in legs:
+        mode = _MODES[label.casefold()]
+        got = routes.durations([(a.lat, a.lng)], [(place.lat, place.lng)], mode,
+                               when=when if mode == "TRANSIT" else None).get((0, 0))  # same departure the planner used
+        guide.append(_minutes_text(label, minutes))
+        if got is None:
+            findings.append(_unverified(v, day_no, f"{label.lower()} travel time (no Google route)"))
+            continue
+        google.append(_minutes_text(label, got))
+        if _differs(minutes, got):
+            findings.append(_f("travel_time_mismatch", f"{v.name}: guide says {label.lower()} {minutes} min from "
+                               f"{anchor}, Google says {got} min", v.name, day_no))
+    return "; ".join(guide), "; ".join(google)
+
+
+_ISLAND = re.compile(r"\b(?:Nusa\s+([A-Z][a-z]+)|([A-Z][a-z]+)\s+Island)\b")
+
+
+def _islands(text: str) -> set[str]:
+    return {(a or b).casefold() for a, b in _ISLAND.findall(text or "")}
+
+
+def island_prose_findings(doc: DocModel, trip: TripPlan, places) -> list:
+    """Prose that puts a stop on an island other than the one its Google address names. The island names are
+    learned from the trip's own addresses, so nothing is hard-coded."""
+    plan_days = sorted(trip.days, key=lambda d: d.date)
+    venues = []
+    for day in doc.days:
+        if day.index is None or not 1 <= day.index <= len(plan_days):
+            continue
+        for slot in day.slots:
+            for v in slot.venues:
+                if v.kind == "venue" and v.body:
+                    p = places.find(v.name, plan_days[day.index - 1].city)
+                    venues.append((day.index, v, p if p is not None and p.match_ok else None))
+    known = set().union(*(_islands(p.address) for _, _, p in venues if p)) if venues else set()
+    out = []
+    for day_no, v, p in venues:
+        own = _islands(p.address) if p else set()
+        if not own:
+            continue
+        for m in _ISLAND.finditer(v.body):
+            name = (m.group(1) or m.group(2)).casefold()
+            before = v.body[max(0, m.start() - 12):m.start()].casefold()
+            if name in known and name not in own and re.search(r"\b(on|of)\s+(the\s+)?(island\s+of\s+)?$", before):
+                out.append(_f("prose_island", f"{v.name}: the text puts it on {m.group(0)}, but its Google address names "
+                              f"{', '.join(sorted(i.title() for i in own))}", v.name, day_no))
+                break
+    return out

@@ -1,0 +1,680 @@
+{
+  "restaurants": [
+    {
+      "name": "Cafe Troisieme Marche",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Cafe",
+        "Bakery"
+      ],
+      "price_range": "₹800–1400 per person",
+      "hours": "11:30 AM – 5:00 PM",
+      "ambience": "Minimalist, calm countryside atmosphere",
+      "area": "Kawaguchiko",
+      "nearby_landmarks": [
+        "Kawaguchiko Station, Kawaguchiko"
+      ],
+      "highlights": [
+        "Fresh baked goods and handcrafted desserts"
+      ],
+      "must_try_dishes": [
+        "Fresh pastries",
+        "Vegetarian quiche",
+        "Cakes",
+        "Coffee"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_date": "2026-05-12",
+      "_source_format": "new",
+      "_replaced_from": "Japan/TVP_Tokyo_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Shaw's Sushi Bar & Dining",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Sushi",
+        "Japanese"
+      ],
+      "price_range": "₹1,200–2,000",
+      "hours": "11:30 AM – 1:30 PM | 5:30 PM - 7:30 PM",
+      "highlights": [
+        "Casual dining with flexible menu"
+      ],
+      "must_try_dishes": [
+        "Veg sushi",
+        "Tempura"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_date": "2026-04-01",
+      "_source_format": "new"
+    },
+    {
+      "name": "Hoto Fudo Kawaguchiko",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹1,200–2,000 per person",
+      "hours": "11:00 AM – 7:00 PM",
+      "area": "Kawaguchiko",
+      "highlights": [
+        "Local specialty dining"
+      ],
+      "must_try_dishes": [
+        "Hoto noodles",
+        "Tempura"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-04-09",
+      "_source_format": "new"
+    },
+    {
+      "name": "Lake Side Café Ku",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Café",
+        "Italian"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "11:00 AM – 5:00 PM",
+      "area": "Kawaguchiko",
+      "ambience": "Scenic lakeside café",
+      "must_try_dishes": [
+        "Seafood pasta",
+        "Sandwiches"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-04-09",
+      "_source_format": "new"
+    },
+    {
+      "name": "Hotokura Funari",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "₹1,500–2,500 per person",
+      "hours": "11:00 AM – 8:30 PM",
+      "area": "Kawaguchiko",
+      "ambience": "Rustic Japanese dining",
+      "must_try_dishes": [
+        "Chicken dishes",
+        "Tempura"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-04-09",
+      "_source_format": "new"
+    },
+    {
+      "name": "CISCO Coffee",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "₹900–1600 per person",
+      "hours": "9:00 AM – 5:00 PM",
+      "ambience": "Cozy lakeside café with large windows and Mt. Fuji views",
+      "area": "Kawaguchiko",
+      "nearby_landmarks": [
+        "Kawaguchiko Station, Kawaguchiko"
+      ],
+      "highlights": [
+        "Comforting café-style meals with Mt. Fuji views"
+      ],
+      "must_try_dishes": [
+        "Vegetarian sandwiches",
+        "Cakes",
+        "Café latte",
+        "Seasonal desserts"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_date": "2026-05-12",
+      "_source_format": "new"
+    },
+    {
+      "name": "Alladin Indo Restaurant",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "₹900–1600 per person",
+      "hours": "11:00 AM – 9:30 PM",
+      "area": "Kawaguchiko",
+      "highlights": [
+        "Casual Indian restaurant with reliable vegetarian curries"
+      ],
+      "must_try_dishes": [
+        "Vegetable curry",
+        "Naan basket",
+        "Paneer dishes"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_date": "2026-05-12",
+      "_source_format": "new"
+    },
+    {
+      "name": "Fuji Tempura Idaten",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Japanese",
+        "Tempura"
+      ],
+      "price_range": "INR 1,000–2,000 per person",
+      "hours": "10:00 AM – 10:00 PM",
+      "ambience": "Modern Japanese restaurant known for freshly prepared tempura and welcoming interiors",
+      "area": "Kawaguchiko Station",
+      "nearby_landmarks": [
+        "Kawaguchiko Station, Kawaguchiko"
+      ],
+      "must_try_dishes": [
+        "Vegetable Tempura Set",
+        "Tempura Udon",
+        "Seasonal Vegetable Bowl",
+        "Tempura Rice Bowl"
+      ],
+      "best_for": [
+        "Authentic Japanese lunch near Kawaguchiko Station",
+        "Casual Japanese dinner near the station"
+      ],
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    },
+    {
+      "name": "Hoto Fudo Kawaguchiko Station",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Japanese",
+        "Regional (Yamanashi)"
+      ],
+      "price_range": "INR 800–1,500 per person",
+      "hours": "11:00 AM – 7:00 PM",
+      "ambience": "Famous local restaurant serving Yamanashi's signature noodle dish in a spacious contemporary setting",
+      "area": "Kawaguchiko Station",
+      "nearby_landmarks": [
+        "Kawaguchiko Station, Kawaguchiko"
+      ],
+      "must_try_dishes": [
+        "Vegetable Hoto Noodles",
+        "Seasonal Mountain Vegetables",
+        "Local Pickles"
+      ],
+      "best_for": [
+        "Sampling the region's most famous local speciality"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    },
+    {
+      "name": "38KAWAGUCHIKO",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Café",
+        "Japanese"
+      ],
+      "price_range": "INR 800–1,500 per person",
+      "hours": "1:00  AM –3:00 PM, 6:00 –9:00 PM (Wed-Mon) | (closed on Tue)",
+      "ambience": "Contemporary lakeside café and dining space with stylish interiors and beautiful views of the Kawaguchiko area",
+      "area": "Lake Kawaguchiko",
+      "must_try_dishes": [
+        "Seasonal Curry Rice",
+        "Japanese-style Sandwiches",
+        "Specialty Coffee & Homemade Desserts"
+      ],
+      "best_for": [
+        "Relaxed brunch",
+        "Specialty coffee",
+        "Light meals"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    },
+    {
+      "name": "Fudo Chaya",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Japanese",
+        "Regional"
+      ],
+      "price_range": "INR 800–1,400 per person",
+      "hours": "11:00 AM – 7:00 PM",
+      "ambience": "Casual traditional eatery popular with both locals and visitors exploring the Fuji region",
+      "must_try_dishes": [
+        "Hoto Noodles",
+        "Vegetable Rice Bowl",
+        "Local Seasonal Specialities"
+      ],
+      "best_for": [
+        "Relaxed dinner after a day of sightseeing"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    },
+    {
+      "name": "CRANE Garden",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Western",
+        "Japanese"
+      ],
+      "price_range": "INR 1,200–2,000 per person",
+      "hours": "9:30 AM – 5:00 PM",
+      "ambience": "Modern motorsport-themed restaurant overlooking parts of the Fuji Speedway complex with beautiful views of Mount Fuji",
+      "area": "Fuji Speedway",
+      "nearby_landmarks": [
+        "Fuji Speedway, Kawaguchiko"
+      ],
+      "must_try_dishes": [
+        "Vegetable Curry Rice",
+        "Seasonal Pasta",
+        "Fresh Garden Salad"
+      ],
+      "best_for": [
+        "Scenic lunch with race track views"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    },
+    {
+      "name": "Fuji Speedway Food Court",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Japanese",
+        "International"
+      ],
+      "price_range": "INR 600–1,200 per person",
+      "hours": "Event & Circuit Hours",
+      "ambience": "Casual dining area offering a variety of Japanese and international meal options",
+      "area": "Fuji Speedway",
+      "nearby_landmarks": [
+        "Fuji Speedway, Kawaguchiko"
+      ],
+      "must_try_dishes": [
+        "Vegetable Udon",
+        "Curry Rice",
+        "Tempura Set"
+      ],
+      "best_for": [
+        "Quick and convenient lunch"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    },
+    {
+      "name": "La Luce",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "INR 1,200 – 2,000 per person",
+      "hours": "11:30 AM – 2:00 PM, 6:00 PM – 9:00 PM | (closed on Mon)",
+      "ambience": "Charming Italian restaurant near Kawaguchiko Station with warm interiors and a relaxed atmosphere",
+      "area": "Kawaguchiko Station",
+      "nearby_landmarks": [
+        "Kawaguchiko Station, Kawaguchiko"
+      ],
+      "must_try_dishes": [
+        "Margherita Pizza",
+        "Seasonal Vegetable Pasta",
+        "Mushroom Risotto"
+      ],
+      "best_for": [
+        "Cozy Italian dinner with vegetarian-friendly choices"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    },
+    {
+      "name": "IDATEN BETTEI Honten",
+      "city": "Kawaguchiko",
+      "cuisine_type": [
+        "Japanese",
+        "Kaiseki"
+      ],
+      "price_range": "INR 1,500 – 3,500 per person",
+      "hours": "11:00 AM – 10:00 PM",
+      "ambience": "Elegant Japanese dining experience with views of Mt. Fuji, offering beautifully presented seasonal cuisine in a refined setting",
+      "area": "Kawaguchiko Station",
+      "nearby_landmarks": [
+        "Kawaguchiko Station, Kawaguchiko"
+      ],
+      "must_try_dishes": [
+        "Seasonal Vegetable Tempura",
+        "Vegetarian Course Menu",
+        "Yuba Rice & Seasonal Side Dishes"
+      ],
+      "best_for": [
+        "Premium Japanese dinner with Mt. Fuji views"
+      ],
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Lake Kawaguchiko",
+      "city": "Kawaguchiko",
+      "description": "Most famous of the Fuji Five Lakes, offering Mount Fuji reflections on calm days and waterfront walks",
+      "hours": "Open 24 Hours",
+      "entry_fee": "Free",
+      "tips": [
+        "Mount Fuji often glows gold, pink and orange at sunset, weather permitting"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new",
+      "_replaced_from": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Chureito Pagoda",
+      "city": "Kawaguchiko",
+      "description": "Red pagoda with Mount Fuji backdrop, the most photographed Fuji viewpoint.",
+      "recommended_duration": "45–60 minutes",
+      "tips": [
+        "About 300–400 steps to the observation deck"
+      ],
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan.docx",
+      "_source_date": "2026-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Oishi Park",
+      "city": "Kawaguchiko",
+      "description": "Lakeside park with famous Mt. Fuji viewpoints and seasonal flowers; reached by local sightseeing buses from Kawaguchiko Station.",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_date": "2026-05-12",
+      "_source_format": "new",
+      "_replaced_from": "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+    },
+    {
+      "name": "Oshino Hakkai",
+      "city": "Kawaguchiko",
+      "description": "Traditional village with crystal-clear spring ponds fed by melted snow from Mount Fuji.",
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan.docx",
+      "_source_date": "2026-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Mount Fuji Panoramic Ropeway",
+      "city": "Kawaguchiko",
+      "description": "Short ropeway ride up the hillside with sweeping views of Lake Kawaguchiko, Mount Fuji and valleys; observation decks at the top.",
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan.docx",
+      "_source_date": "2026-03-08",
+      "_source_format": "new"
+    },
+    {
+      "name": "Lake Yamanaka",
+      "city": "Kawaguchiko",
+      "description": "Largest of the Fuji Five Lakes; quieter and more expansive with open landscapes and swans",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_date": "2026-04-01",
+      "_source_format": "new"
+    },
+    {
+      "name": "Arakurayama Sengen Park",
+      "city": "Kawaguchiko",
+      "description": "Famous for Chureito Pagoda with Mt. Fuji in the background",
+      "tips": [
+        "About 20–25 min from Kawaguchiko",
+        "Requires climbing steps (~10–15 min uphill)"
+      ],
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_date": "2026-04-01",
+      "_source_format": "new"
+    },
+    {
+      "name": "Oike Park",
+      "city": "Kawaguchiko",
+      "description": "Accessible lakefront park with open views of Mount Fuji and good photography spots",
+      "hours": "Open 24 Hours",
+      "entry_fee": "Free",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    },
+    {
+      "name": "Kawaguchiko Lakeside Promenade",
+      "city": "Kawaguchiko",
+      "description": "Lakeside walkway with views of Mount Fuji and surrounding mountains",
+      "hours": "Open 24 Hours",
+      "entry_fee": "Free",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    },
+    {
+      "name": "Fuji Speedway",
+      "city": "Kawaguchiko",
+      "description": "Famous racing circuit at the base of Mount Fuji that has hosted Formula One and the FIA World Endurance Championship; Mount Fuji often visible from the circuit",
+      "hours": "9:00 AM – 5:00 PM",
+      "entry_fee": "INR 600–1,200 per person (depending on events)",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    },
+    {
+      "name": "Fuji Motorsports Museum",
+      "city": "Kawaguchiko",
+      "description": "Museum on motorsport history with race cars, engineering innovations and interactive exhibits",
+      "hours": "10:00 AM – 5:00 PM",
+      "entry_fee": "INR 1,000–1,500 per person",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    },
+    {
+      "name": "Fuji Speedway Main Grandstand",
+      "city": "Kawaguchiko",
+      "description": "Panoramic views of the main straight and surrounding mountains; exciting on event days",
+      "hours": "During Circuit Hours",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    },
+    {
+      "name": "Fuji Speedway Official Shop",
+      "city": "Kawaguchiko",
+      "description": "Motorsport merchandise, model cars, racing apparel and Fuji Speedway souvenirs",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Kagelow Mt. Fuji Hostel Kawaguchiko",
+      "city": "Kawaguchiko",
+      "location": "Quiet neighbourhood near Lake Kawaguchiko, about 11 minutes' walk from Kawaguchiko Station; restored traditional building",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    }
+  ],
+  "local_dishes": [
+    {
+      "name": "Hoto Noodles",
+      "city": "Kawaguchiko",
+      "description": "Yamanashi's signature noodle dish; vegetable versions available",
+      "where_to_try": "Hoto Fudo Kawaguchiko Station, Fudo Chaya",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new",
+      "_replaced_from": "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Fuji Speedway Merchandise, Scale Model Cars, JDM Stickers, Motorsport Apparel, Automotive Keychains",
+      "city": "Kawaguchiko",
+      "category": "JDM & Automotive Merchandise",
+      "where_to_buy": [
+        "Fuji Speedway Official Shop",
+        "Fuji Motorsports Museum",
+        "Akihabara Hobby Stores"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    },
+    {
+      "item": "Mt. Fuji Miniatures, Local Snacks, Fuji-Themed Stationery, Art Prints, Traditional Crafts",
+      "city": "Kawaguchiko",
+      "category": "Mt. Fuji Souvenirs",
+      "where_to_buy": [
+        "Lake Kawaguchiko Souvenir Shops",
+        "Kawaguchiko Station"
+      ],
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Kawaguchiko"
+      ],
+      "tip": "Matsumoto Kiyoshi Fuji Kawaguchiko Store drug store is open 9:00 AM – 8:00 PM",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Kawaguchiko"
+      ],
+      "tip": "Ishihara Clinic is open 8:45–11:30 AM and 2:30–5:15 PM, closed Sun",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    }
+  ],
+  "route_guides": [],
+  "season_notes": [
+    {
+      "city": "Kawaguchiko",
+      "tip": "Fuji area is cooler; carry a light jacket",
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan.docx",
+      "_source_date": "2026-03-08",
+      "_source_format": "new"
+    },
+    {
+      "city": "Kawaguchiko",
+      "tip": "Cherry blossoms starting to bloom make the lake area especially beautiful",
+      "_source_file": "Japan/AA_All Inclusive Guide_Japan.docx",
+      "_source_date": "2026-03-08",
+      "_source_format": "new"
+    },
+    {
+      "city": "Kawaguchiko",
+      "tip": "Cherry blossoms or soft greenery frame Lake Kawaguchiko depending on season",
+      "_source_file": "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+      "_source_date": "2026-04-01",
+      "_source_format": "new"
+    },
+    {
+      "city": "Kawaguchiko",
+      "tip": "Oishi Park is especially scenic during flower seasons",
+      "_source_file": "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-04-09",
+      "_source_format": "new"
+    },
+    {
+      "city": "Kawaguchiko",
+      "tip": "Mt. Fuji visibility is clearer from morning to afternoon",
+      "_source_file": "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+      "_source_date": "2026-05-12",
+      "_source_format": "new"
+    },
+    {
+      "city": "Kawaguchiko",
+      "tip": "Bring a warm layer and windproof jacket in the Mt. Fuji region, even in June–July",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    },
+    {
+      "city": "Kawaguchiko",
+      "tip": "Mount Fuji views depend on weather and are often best at sunset",
+      "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+      "_source_date": "2026-06-11",
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "Japan/AA_All Inclusive Guide_Japan.docx",
+    "Japan/TVP_Tokyo_All Inclusive Guide.docx",
+    "Japan/Vishnuprasad_Japan_All Inclusive Guide.docx",
+    "Japan/Karthik_Japan + Singapore_All Inclusive Guide.docx",
+    "Japan/Akankshaa- Japan_All Inclusive Guide.docx"
+  ],
+  "currency": "JPY",
+  "_currency_source": {
+    "_source_file": "Japan/Akankshaa- Japan_All Inclusive Guide.docx",
+    "_source_date": "2026-06-11",
+    "_source_format": "new"
+  }
+}

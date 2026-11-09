@@ -10,10 +10,11 @@ import { IngestHistory } from "./components/IngestHistory";
 import { AuditLog } from "./components/AuditLog";
 import { AIGTab } from "./components/AIGTab";
 import { HotelOptionsTab } from "./components/HotelOptionsTab";
+import { AigV2Tab } from "./components/AigV2Tab";
 import type { TreeData } from "./types";
 import { api } from "./api/client";
 
-type Mode = "city" | "sweep" | "ingest" | "history" | "audit" | "verify" | "hotel_options";
+type Mode = "city" | "sweep" | "ingest" | "history" | "audit" | "verify" | "hotel_options" | "aigv2";
 
 export default function App() {
   const [isAdmin, setIsAdmin] = useState<boolean>(true);
@@ -111,6 +112,7 @@ export default function App() {
         {mode === "audit" && <AuditLog />}
         {mode === "verify" && <AIGTab />}
         {mode === "hotel_options" && <HotelOptionsTab />}
+        {mode === "aigv2" && <AigV2Tab />}
       </Layout>
     </>
   );

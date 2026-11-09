@@ -1,0 +1,112 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [
+    {
+      "city": "Pune",
+      "from": "Pune",
+      "to": "Hampi",
+      "stops": [
+        {
+          "name": "Balaji Sarovar Premiere, Solapur",
+          "minutes": 270,
+          "suggested_stop": "Overnight halt"
+        },
+        {
+          "name": "Heritage Resort Hampi",
+          "minutes": 330,
+          "suggested_stop": "Check in and sightsee"
+        }
+      ],
+      "total_time": "About 10 hrs driving, split over two days",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).docx",
+      "_source_date": "2024-10-27",
+      "_source_format": "old"
+    },
+    {
+      "city": "Pune",
+      "from": "Pune",
+      "to": "Solapur",
+      "stops": [
+        {
+          "name": "Solapur",
+          "suggested_stop": "Optional visit to Solapur Bhuikot Fort"
+        }
+      ],
+      "total_time": "Approx. 4.5 hrs",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new",
+      "_replaced_from": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi(1).docx"
+    },
+    {
+      "city": "Pune",
+      "from": "Pune",
+      "to": "Kolhapur",
+      "stops": [
+        {
+          "name": "Cafe Valentine Khandala",
+          "minutes": 120,
+          "suggested_stop": "Cafe stop (75 km)"
+        },
+        {
+          "name": "McDonald's Satara",
+          "minutes": 180,
+          "suggested_stop": "Fast food stop before reaching Satara (116 km)"
+        },
+        {
+          "name": "Hotel Sadguru Pure Veg",
+          "minutes": 180,
+          "suggested_stop": "Pure veg meal (119 km)"
+        },
+        {
+          "name": "Vithal Kamats Satara",
+          "minutes": 180,
+          "suggested_stop": "Meal stop (120 km)"
+        },
+        {
+          "name": "Coffea Satara",
+          "minutes": 190,
+          "suggested_stop": "Coffee stop (125 km)"
+        },
+        {
+          "name": "Rau Misal House",
+          "minutes": 240,
+          "suggested_stop": "Misal meal (175 km)"
+        },
+        {
+          "name": "McDonald's Karad",
+          "minutes": 270,
+          "suggested_stop": "Fast food stop (190 km)"
+        }
+      ],
+      "total_km": "255",
+      "total_time": "~6 hrs",
+      "_source_file": "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+      "_source_date": "2025-12-15",
+      "_source_format": "new"
+    }
+  ],
+  "season_notes": [],
+  "source_files": [
+    "Karnataka, Kerala and Tamil Nadu/Hampi - All Inclusive Guide(1).docx",
+    "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi(1).docx",
+    "Goa/Goa All Inclusive Guide - Rashi and Rajnesh(1).docx",
+    "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.docx"
+  ],
+  "currency": "INR",
+  "_currency_source": {
+    "_source_file": "Karnataka, Kerala and Tamil Nadu/Oishee_All Inclusive Guide_Hampi.docx",
+    "_source_date": "2025-12-15",
+    "_source_format": "new"
+  }
+}

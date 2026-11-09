@@ -1,0 +1,83 @@
+{
+  "restaurants": [],
+  "attractions": [
+    {
+      "name": "Whale watching at Mirissa Harbour",
+      "city": "Mirissa",
+      "description": "Whale watching boat trips from Mirissa Harbour, about 2.5 hrs from Kalutara",
+      "tips": [
+        "Reach Mirissa Harbour at 6 am to head out",
+        "December is the best season to spot whales"
+      ],
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka(1).docx",
+      "_source_date": "2024-12-20",
+      "_source_format": "old",
+      "_replaced_from": "Srilanka/All Inclusive Guide- Sri Lanka.docx"
+    },
+    {
+      "name": "Mirissa Whale Watching",
+      "city": "Mirissa",
+      "description": "Whale watching from Mirissa Harbour, best season to spot whales",
+      "hours": "Need to reach at 6am",
+      "recommended_duration": "Half day",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Mirissa",
+      "_source_format": "old",
+      "_source_date": null
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Colombo",
+        "Kandy",
+        "Kalutara",
+        "Mirissa",
+        "Galle",
+        "Pinnawala"
+      ],
+      "tip": "Activate roaming on your home number even without an international plan, to receive messages such as OTPs",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka(1).docx",
+      "_source_date": "2024-12-20",
+      "_source_format": "old"
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [
+    {
+      "city": "Mirissa",
+      "tip": "Late December is the best season for whale watching",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka.docx",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "city": "Mirissa",
+      "tip": "December is the best season to spot whales",
+      "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka(1).docx",
+      "_source_date": "2024-12-20",
+      "_source_format": "old"
+    }
+  ],
+  "source_files": [
+    "Srilanka/All Inclusive Guide- Sri Lanka.docx",
+    "Srilanka/All Inclusive Guide- Sri Lanka(1).docx"
+  ],
+  "currency": "LKR",
+  "_currency_source": {
+    "_source_file": "Srilanka/All Inclusive Guide- Sri Lanka(1).docx",
+    "_source_date": "2024-12-20",
+    "_source_format": "old"
+  }
+}

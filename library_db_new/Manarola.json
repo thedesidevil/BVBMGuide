@@ -1,0 +1,52 @@
+{
+  "restaurants": [],
+  "attractions": [
+    {
+      "name": "Manarola",
+      "city": "Manarola",
+      "description": "Iconic village with cliffside houses and sea views; sunset viewpoint a ~10 min uphill walk from the station.",
+      "entry_fee": "Free",
+      "tips": [
+        "Visit the viewpoint at sunset"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "name": "Manarola Sunset Viewpoint",
+      "city": "Manarola",
+      "description": "A cliffside viewpoint where the entire village glows in golden-orange light as the sun sets over the Ligurian Sea.",
+      "hours": null,
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Manarola",
+      "_source_format": "old",
+      "_source_date": null
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "Europe/Kunal_Europe_All Inclusive Guide.docx"
+  ],
+  "currency": "EUR",
+  "_currency_source": {
+    "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+    "_source_date": "2026-05-04",
+    "_source_format": "new"
+  }
+}

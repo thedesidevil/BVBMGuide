@@ -301,7 +301,7 @@ def ingest_history(request: Request):
     for filename, meta in processed.items():
         files.append({
             "filename": filename,
-            "destination": meta.get("destination", ""),
+            "destination": meta.get("destination") or meta.get("folder", ""),
             "covered_cities": meta.get("covered_cities", []),
             "ingested_at": meta.get("processed_at", ""),
         })

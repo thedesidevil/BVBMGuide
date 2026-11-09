@@ -1,0 +1,469 @@
+import io
+
+import pytest
+import requests
+from datetime import time
+from types import SimpleNamespace
+
+from docx import Document
+from docx.oxml.ns import qn
+
+from src.aigv2.config import load_settings
+from src.aigv2.llm import StepLLM
+from src.aigv2.models import Finding
+from src.aigv2.planning.meals import Exclusion
+from src.aigv2.qc import run_qc
+from src.aigv2.qc.annotate import annotate
+from src.aigv2.qc.facts import check_facts
+from src.aigv2.qc.llm_checks import prose_fact_check, sense_check
+from src.aigv2.qc.reader import read_docx
+from src.aigv2.qc.report import QCResult, build_cost, marker_kinds, write_report
+from tests.aigv2.test_qc_rules import edit_text, library, render  # noqa: F401
+from tests.aigv2.test_render_document import HOTEL, place, trip
+
+
+class FakePlaces:
+    def __init__(self, cached, fresh=None):
+        self.cached, self.fresh_map = cached, fresh or {}
+        self.calls = {"text_search": 0, "nearby": 0, "details": 0}
+        self.fresh_calls = []
+        self.fresh_searches = []
+
+    def find(self, name, city, near=None, fresh=False):
+        if fresh:
+            self.calls["text_search"] += 1
+            self.fresh_searches.append(name)
+            return self.fresh_map.get(name, self.cached.get(name))
+        return self.cached.get(name)
+
+    def fresh_status(self, place):
+        self.calls["details"] += 1
+        self.fresh_calls.append(place.name)
+        return self.fresh_map.get(place.name, place)
+
+
+class FakeRoutes:
+    def __init__(self, minutes=6):
+        self.minutes = minutes
+        self.calls = {"matrix_elements": 0, "directions": 0}
+
+    def durations(self, origins, destinations, mode, when=None):
+        self.calls["matrix_elements"] += 1
+        return {(0, 0): self.minutes}
+
+
+def late_place(name):
+    p = place(name)
+    p.hours.periods = {d: [(time(9), time(23))] for d in range(7)}
+    return p
+
+
+def cached_places(**overrides):
+    names = [HOTEL, "Mikla", "Saray Muhallebicisi", "Galata Tower", "Balikci Sabahattin", "Ciya Sofrasi", "Hamdi",
+             "Topkapi Palace", "Bosphorus Sunset Cruise", "Bosphorus Sunset Cruise"]
+    return {n: late_place(n) for n in names} | overrides
+
+
+def closed(name, status="CLOSED_PERMANENTLY"):
+    p = place(name)
+    p.status = status
+    return p
+
+
+def test_closed_venue_found_fresh():
+    doc = read_docx(render())
+    places = FakePlaces(cached_places(), {"Mikla": closed("Mikla")})
+    findings, rows = check_facts(doc, trip(), places, FakeRoutes())
+    assert [f.rule for f in findings if f.rule == "closed_now"] == ["closed_now"]
+    assert "Mikla" in places.fresh_calls and places.fresh_searches == [] and places.calls["text_search"] == 0
+    assert next(r for r in rows if r.venue == "Mikla").match is False
+    _, rows = check_facts(doc, trip(), FakePlaces(cached_places(), {"Mikla": closed("Mikla")}), FakeRoutes(), fresh=False)
+    assert all(r.match for r in rows if r.venue == "Mikla")
+
+
+def test_travel_time_mismatch_and_rows():
+    doc = read_docx(render())
+    findings, rows = check_facts(doc, trip(), FakePlaces(cached_places()), FakeRoutes(minutes=20))
+    assert any(f.rule == "travel_time_mismatch" and f.anchor_text == "Mikla" for f in findings)
+    row = next(r for r in rows if r.venue == "Mikla")
+    assert row.guide_travel == "Walk · 6 min" and row.google_travel == "Walk · 20 min" and row.link.startswith("https://")
+    findings, rows = check_facts(doc, trip(), FakePlaces(cached_places()), FakeRoutes(minutes=7))
+    assert not [f for f in findings if f.rule == "travel_time_mismatch"]
+
+
+def test_not_open_at_slot():
+    p = place("Mikla")
+    p.hours.periods = {d: [(time(9), time(17))] for d in range(7)}
+    findings, _ = check_facts(read_docx(render()), trip(), FakePlaces(cached_places(), {"Mikla": p}), FakeRoutes())
+    assert any(f.rule == "not_open_at_slot" and f.anchor_text == "Mikla" for f in findings)
+
+
+class FakeClient:
+    def __init__(self, model, replies, calls):
+        self.model = model
+        self._client = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=self._create)))
+        self._replies, self._calls = replies, calls
+
+    def _create(self, **kw):
+        self._calls.append((self.model, kw["messages"][-1]["content"]))
+        usage = SimpleNamespace(prompt_tokens=10, completion_tokens=5)
+        msg = SimpleNamespace(content=self._replies)
+        return SimpleNamespace(choices=[SimpleNamespace(message=msg)], usage=usage)
+
+
+def fake_llm(reply, monkeypatch):
+    for k in ("AI_MODEL_FAST", "AIGV2_MODEL_QC_SENSE", "AIGV2_MODEL_QC_PROSE"):
+        monkeypatch.delenv(k, raising=False)
+    monkeypatch.setenv("AI_MODEL", "gpt-6.1-sol")
+    calls = []
+    return StepLLM(load_settings(), client_factory=lambda m: FakeClient(m, reply, calls)), calls
+
+
+def test_sense_check_uses_sol(monkeypatch):
+    llm, calls = fake_llm('{"issues": [{"quote": "Galata Tower", "problem": "Check timing"}]}', monkeypatch)
+    doc = read_docx(render())
+    out = sense_check(doc, trip(), llm, {"q1": "yes"})
+    assert [c[0] for c in calls] == ["gpt-6.1-sol"]
+    assert "Pera Palace" in calls[0][1] and '"q1"' in calls[0][1]
+    assert out[0].rule == "sense" and out[0].anchor_text == "Galata Tower" and out[0].day == 1
+
+
+def test_prose_check_batches_on_luna(monkeypatch):
+    llm, calls = fake_llm('{"issues": [{"quote": "A medieval stone tower.", "problem": "Date unverified"}]}', monkeypatch)
+    doc = read_docx(render())
+    out = prose_fact_check(doc, llm)
+    assert len(calls) == 1 and calls[0][0] == "gpt-6-luna"
+    assert "Galata Tower" in calls[0][1] and "Ottoman palace" in calls[0][1]
+    assert out[0].rule == "prose_fact" and out[0].anchor_text == "A medieval stone tower."
+
+
+def paras(data):
+    body = Document(io.BytesIO(data)).element.body
+    return ["".join(t.text or "" for t in p.iter(qn("w:t"))) for p in body.iter(qn("w:p"))]
+
+
+def test_annotate_inserts_after_anchor():
+    data = render()
+    before = paras(data)
+    target = next(t for t in before if "A medieval stone tower." in t)
+    out = annotate(data, [Finding(rule="prose_fact", severity="error", message="Check the date",
+                                  anchor_text="A medieval stone tower.", day=1)])
+    after = paras(out)
+    i = after.index(target)
+    assert after[i + 1] == "⚠ CHECK: Check the date"
+    assert [t for t in after if not t.startswith("⚠ CHECK: Check")] == before
+    marker_p = list(Document(io.BytesIO(out)).element.body.iter(qn("w:p")))[i + 1]
+    assert marker_p.find(".//" + qn("w:highlight")).get(qn("w:val")) == "yellow"
+
+
+def test_annotate_falls_back_to_day_header():
+    out = annotate(render(), [Finding(rule="sense", severity="error", message="Odd", anchor_text="not in doc", day=2)])
+    after = paras(out)
+    i = next(i for i, t in enumerate(after) if t.startswith("Day 2 – ") and after[i + 1].startswith("⚠ CHECK"))
+    assert after[i + 1] == "⚠ CHECK: Odd"
+
+
+def test_pass_requires_zero_markers():
+    assert QCResult.build([], 0, []).passed is True
+    assert QCResult.build([], 2, []).passed is False
+    f = Finding(rule="x", severity="warning", message="m")
+    assert QCResult.build([f], 0, []).passed is False
+
+
+def test_report_lists_exclusions_and_cost():
+    cost = build_cost([{"step": "qc_sense", "model": "gpt-6.1-sol", "usd": 0.1},
+                       {"step": "qc_prose", "model": "gpt-6-luna", "usd": 0.01}],
+                      {"text_search": 2, "nearby": 0, "matrix_elements": 4, "directions": 0})
+    res = QCResult.build([Finding(rule="closed_now", severity="error", message="Mikla closed", day=1)], 1, [],
+                         marker_kinds(["⚠ ADD RESTAURANT – x", "⚠ PRICE UNKNOWN"]))
+    md, js = write_report(res, [Exclusion(name="Hamdi", reason="closed", detail="Google says closed")], cost)
+    assert "**FAIL**" in md and "Hamdi (closed): Google says closed" in md
+    assert "### Day 1" in md and "PRICE UNKNOWN: 1" in md and "## Cost" in md
+    assert "gpt-6.1-sol" in md and "Places text search: 2" in md
+    assert js["cost"]["total_usd"] == pytest.approx(0.11 + 2 * 0.035 + 4 * 0.005)
+    assert js["exclusions"][0]["name"] == "Hamdi"
+
+
+def test_run_qc_end_to_end(library, monkeypatch):  # noqa: F811
+    llm, _ = fake_llm('{"issues": []}', monkeypatch)
+    places, routes = FakePlaces(cached_places(), {"Mikla": closed("Mikla")}), FakeRoutes()
+    data = render()
+    out, result, report = run_qc(data, trip(), {}, library, places, routes, llm, [])
+    assert result.passed is False and result.marker_count > 0
+    assert any(f.rule == "closed_now" for f in result.findings)
+    assert "⚠ CHECK: Mikla is shown as closed" in "\n".join(paras(out))
+    assert result.cost["google"]["usd"] > 0 and result.cost["ai"]["usd"] >= 0
+    assert "## Cost" in report and "Google total" in report
+
+
+def rules_of(findings, name=None):
+    return [f for f in findings if f.rule == "fact_unverified" and (name is None or f.anchor_text == name)]
+
+
+def test_unverified_when_no_google_match():
+    p = cached_places()
+    del p["Mikla"]
+    findings, rows = check_facts(read_docx(render()), trip(), FakePlaces(p), FakeRoutes())
+    assert rules_of(findings, "Mikla")
+    assert all(r.match is False and r.google_hours == "Not verified" for r in rows if r.venue == "Mikla")
+    bad = place("Mikla", match_ok=False)
+    findings, _ = check_facts(read_docx(render()), trip(), FakePlaces(cached_places(Mikla=bad)), FakeRoutes())
+    assert rules_of(findings, "Mikla")
+
+
+def test_unverified_when_fresh_lookup_empty_or_unmatched():
+    class NoFresh(FakePlaces):
+        def fresh_status(self, place):
+            return None if place.name == "Mikla" else super().fresh_status(place)
+
+    findings, rows = check_facts(read_docx(render()), trip(), NoFresh(cached_places()), FakeRoutes())
+    assert rules_of(findings, "Mikla") and not next(r for r in rows if r.venue == "Mikla").match
+
+
+def test_unverified_when_hours_or_status_unknown():
+    nohours = place("Mikla", hrs=False)
+    findings, rows = check_facts(read_docx(render()), trip(), FakePlaces(cached_places(), {"Mikla": nohours}),
+                                 FakeRoutes())
+    assert any("opening hours" in f.message for f in rules_of(findings, "Mikla"))
+    assert not next(r for r in rows if r.venue == "Mikla").match
+    unknown = late_place("Mikla")
+    unknown.status = "UNKNOWN"
+    findings, _ = check_facts(read_docx(render()), trip(), FakePlaces(cached_places(), {"Mikla": unknown}), FakeRoutes())
+    assert any("business status" in f.message for f in rules_of(findings, "Mikla"))
+
+
+def test_unverified_when_anchor_unresolved():
+    p = cached_places()
+    del p[HOTEL]
+    findings, rows = check_facts(read_docx(render()), trip(), FakePlaces(p), FakeRoutes())
+    assert any("could not locate" in f.message for f in rules_of(findings, "Mikla"))
+    assert not next(r for r in rows if r.venue == "Mikla").match
+
+
+def test_unverified_when_route_missing():
+    class NoRoute(FakeRoutes):
+        def durations(self, origins, destinations, mode, when=None):
+            return {(0, 0): None}
+
+    findings, rows = check_facts(read_docx(render()), trip(), FakePlaces(cached_places()), NoRoute())
+    assert any("no Google route" in f.message for f in rules_of(findings, "Mikla"))
+    assert not next(r for r in rows if r.venue == "Mikla").match
+
+
+def test_unverified_when_guide_states_no_travel_leg():
+    data = edit_text(render(), "GETTING THERE", "ELSEWHERE")
+    findings, _ = check_facts(read_docx(data), trip(), FakePlaces(cached_places()), FakeRoutes())
+    assert any("none stated" in f.message for f in rules_of(findings, "Mikla"))
+
+
+def test_fully_verified_row_matches():
+    _, rows = check_facts(read_docx(render()), trip(), FakePlaces(cached_places()), FakeRoutes())
+    assert next(r for r in rows if r.venue == "Mikla").match is True
+
+
+class RaisingPlaces(FakePlaces):
+    def __init__(self, exc):
+        super().__init__(cached_places())
+        self.exc = exc
+
+    def find(self, name, city, near=None, fresh=False):
+        if name == "Mikla":
+            raise self.exc
+        return super().find(name, city, near, fresh)
+
+
+@pytest.mark.parametrize("exc", [requests.ConnectionError("down"), KeyError("location"), ValueError("bad json")])
+def test_fact_check_failed_surfaces(exc):
+    findings, rows = check_facts(read_docx(render()), trip(), RaisingPlaces(exc), FakeRoutes())
+    assert any(f.rule == "fact_check_failed" and f.anchor_text == "Mikla" for f in findings)
+    assert not next(r for r in rows if r.venue == "Mikla").match
+
+
+def test_qc_llm_failed_surfaces(library, monkeypatch):  # noqa: F811
+    llm, _ = fake_llm("not json", monkeypatch)
+    out, result, report = run_qc(render(), trip(), {}, library, FakePlaces(cached_places()), FakeRoutes(), llm, [])
+    failed = [f for f in result.findings if f.rule == "qc_llm_failed"]
+    assert len(failed) == 2 and result.passed is False
+
+
+def test_annotate_scopes_to_day_and_stays_out_of_tables():
+    data = render()
+    out = annotate(data, [Finding(rule="sense", severity="error", message="Hotel transfer odd",
+                                  anchor_text=HOTEL, day=3),
+                          Finding(rule="sense", severity="error", message="Tower odd", anchor_text="Galata Tower")])
+    body = Document(io.BytesIO(out)).element.body
+    all_p = list(body.iter(qn("w:p")))
+    texts = ["".join(t.text or "" for t in p.iter(qn("w:t"))) for p in all_p]
+    for msg in ("⚠ CHECK: Hotel transfer odd", "⚠ CHECK: Tower odd"):
+        mp = all_p[texts.index(msg)]
+        assert mp.getparent() is body
+    day3 = next(i for i, t in enumerate(texts) if t.startswith("Day 3 – ") and "Farewell" in t
+                and all_p[i].find(".//" + qn("w:hyperlink")) is None)
+    assert texts.index("⚠ CHECK: Hotel transfer odd") > day3
+    assert texts.index("⚠ CHECK: Tower odd") < day3
+
+
+def test_unfound_llm_anchor_attaches_to_day_header(monkeypatch):
+    llm, _ = fake_llm('{"issues": [{"quote": "text the guide never says", "problem": "Odd", "day": 2}]}', monkeypatch)
+    out = sense_check(read_docx(render()), trip(), llm)
+    assert out[0].day == 2 and out[0].anchor_text == "text the guide never says"
+    after = paras(annotate(render(), out))
+    i = next(i for i, t in enumerate(after) if t == "⚠ CHECK: Odd")
+    assert after[i - 1].startswith("Day 2 – ")
+
+
+def test_sense_check_accepts_pydantic_answers(monkeypatch):
+    llm, calls = fake_llm('{"issues": []}', monkeypatch)
+    sense_check(read_docx(render()), trip(), llm, Finding(rule="x", severity="error", message="m"))
+    assert '"rule": "x"' in calls[0][1]
+
+
+def test_fresh_search_only_without_cached_place_id():
+    p = cached_places()
+    p["Mikla"] = p["Mikla"].model_copy(update={"place_id": ""})
+    places = FakePlaces(p, {"Mikla": place("Mikla", match_ok=False)})
+    findings, _ = check_facts(read_docx(render()), trip(), places, FakeRoutes())
+    assert places.fresh_searches == ["Mikla"] and "Mikla" not in places.fresh_calls
+    assert rules_of(findings, "Mikla")
+
+
+def test_meal_checked_at_country_window():
+    from src.aigv2.config import Settings
+    p = late_place("Mikla")
+    p.hours.periods = {d: [(time(9), time(21, 15))] for d in range(7)}
+    s = Settings(models={}, country_meal_windows={"Turkey": {"dinner": ("21:00", "23:00")}})
+    findings, _ = check_facts(read_docx(render()), trip(), FakePlaces(cached_places(Mikla=p)), FakeRoutes())
+    assert not [f for f in findings if f.rule == "not_open_at_slot" and f.anchor_text == "Mikla"]
+    findings, _ = check_facts(read_docx(render()), trip(), FakePlaces(cached_places(Mikla=p)), FakeRoutes(),
+                              countries={"Istanbul": "Turkey"}, settings=s)
+    hit = [f for f in findings if f.rule == "not_open_at_slot" and f.anchor_text == "Mikla"]
+    assert hit and "21:00" in hit[0].message
+
+
+def test_attraction_checked_at_booked_time():
+    p = late_place("Topkapi Palace")
+    p.hours.periods = {d: [(time(8), time(9, 45))] for d in range(7)}
+    findings, _ = check_facts(read_docx(render()), trip(), FakePlaces(cached_places(**{"Topkapi Palace": p})),
+                              FakeRoutes())
+    hit = [f for f in findings if f.rule == "not_open_at_slot" and f.anchor_text == "Topkapi Palace"]
+    assert hit and "10:00" in hit[0].message
+
+
+def test_sense_prompt_states_late_night_arrival_fact(monkeypatch):
+    from datetime import datetime
+    from src.aigv2.models import Booking, TransportLeg
+    from tests.aigv2.test_render_document import D1
+    llm, calls = fake_llm('{"issues": []}', monkeypatch)
+    leg = TransportLeg(kind="flight", from_place="SIN", to_place="DPS", arrive=datetime(2026, 10, 30, 0, 10), source="v")
+    pick = Booking(name="Airport pick-up and transfer", day=D1, time="23:00", source="voucher")
+    sense_check(read_docx(render()), trip(transport=[leg], bookings=[pick]), llm)
+    assert "Day 1 is a late-night arrival: landing 00:10 next calendar day" in calls[0][1]
+    assert "pick-up booked from 23:00" in calls[0][1]
+
+
+def test_sense_prompt_has_no_late_night_fact_for_normal_trip(monkeypatch):
+    llm, calls = fake_llm('{"issues": []}', monkeypatch)
+    sense_check(read_docx(render()), trip(), llm)
+    assert "late-night" not in calls[0][1]
+
+
+def test_optional_stop_not_open_at_slot_is_a_warning():
+    p = late_place("Topkapi Palace")
+    p.hours.periods = {d: [(time(8), time(9, 45))] for d in range(7)}
+    from src.aigv2.models import PlannedItem
+    t = trip()
+    t.days[1].items = [PlannedItem(name="Topkapi Palace", kind="attraction", city="Istanbul", optional=True)]
+    findings, _ = check_facts(read_docx(render()), t, FakePlaces(cached_places(**{"Topkapi Palace": p})), FakeRoutes())
+    hit = [f for f in findings if f.rule == "not_open_at_slot" and f.anchor_text == "Topkapi Palace"]
+    assert hit and hit[0].severity == "warning"
+
+
+def test_sense_prompt_tells_reviewer_optional_hours_are_not_errors():
+    from src.aigv2.qc.llm_checks import _SENSE_SYSTEM
+    assert "optional or choose-one stop" in _SENSE_SYSTEM
+
+
+def _island_setup(text):
+    galata = late_place("Galata Tower").model_copy(update={"address": "Ceningan Island, Lembongan, Bali, Indonesia"})
+    mikla = late_place("Mikla").model_copy(update={"address": "Jungutbatu, Nusa Lembongan, Bali, Indonesia"})
+    raw = edit_text(render(), "A medieval stone tower.", text)
+    return read_docx(raw), FakePlaces(cached_places(**{"Galata Tower": galata, "Mikla": mikla}))
+
+
+def test_prose_naming_a_different_island_than_the_address_is_an_error():
+    from src.aigv2.qc.facts import island_prose_findings
+    doc, pl = _island_setup("A lovely cliff on Nusa Lembongan.")
+    fs = island_prose_findings(doc, trip(), pl)
+    assert [(f.rule, f.severity, f.anchor_text) for f in fs] == [("prose_island", "error", "Galata Tower")]
+    assert "Ceningan" in fs[0].message
+
+
+def test_prose_naming_the_address_island_is_fine():
+    from src.aigv2.qc.facts import island_prose_findings
+    doc, pl = _island_setup("A lovely cliff on Ceningan Island.")
+    assert island_prose_findings(doc, trip(), pl) == []
+
+
+def test_day_prompt_and_facts_carry_the_address_rule():
+    from src.aigv2.writing import days
+    assert "google_address or area" in days._SYSTEM
+
+
+def test_anchor_resolved_from_planner_places_not_a_fresh_find():
+    """Europe run: a fresh find('Voco Paris- Porte de Clichy', 'Paris') fails match_ok; the planner's pin is used."""
+    from src.aigv2.models import place_key
+    cached = cached_places()
+    anchor = cached.pop(HOTEL)
+    bad = anchor.model_copy(update={"match_ok": False})
+    cached[HOTEL] = bad                                   # what a fresh find returns on this path
+    doc = read_docx(render())
+    findings0, _ = check_facts(doc, trip(), FakePlaces(cached), FakeRoutes())
+    assert any("could not locate" in f.message for f in findings0)
+    resolved = {place_key(HOTEL, "Istanbul"): anchor}
+    findings1, rows = check_facts(doc, trip(), FakePlaces(cached), FakeRoutes(), resolved=resolved)
+    assert not any("could not locate" in f.message for f in findings1)
+
+
+def test_anchor_resolution_survives_city_alias_and_suburb():
+    from src.aigv2.models import place_key
+    from src.aigv2.qc.facts import _anchor_place
+    hotel = place("Baeren Hotel, The Bear Inn")
+    resolved = {place_key("Hotel Baren the Bear Inn", "Interlaken"): hotel,
+                place_key("voco Paris- Porte de Clichy", "Paris"): place("voco Paris - Porte de Clichy by IHG")}
+
+    class Nope:
+        def find(self, *a, **k):
+            return None
+    assert _anchor_place("Hotel Baren the Bear Inn", "Wilderswil", Nope(), resolved) is hotel
+    assert _anchor_place("Voco Paris- Porte de Clichy", "Paris", Nope(), resolved).name.startswith("voco")
+    assert _anchor_place("Unknown", "Paris", Nope(), resolved) is None
+
+
+def _doc_with(*names, facts=None):
+    from src.aigv2.qc.reader import DocDay, DocModel, DocSlot, DocVenue
+    venues = [DocVenue(name=n, url="https://x", facts=dict(facts or {})) for n in names]
+    return DocModel(headings=[], days=[DocDay(header="Day 1", index=1, slots=[DocSlot(heading="Morning", venues=venues)])],
+                    sections={}, markers=[], links=[], text="")
+
+
+def test_fact_noise_non_places_bookings_and_exterior_stops():
+    from src.aigv2.models import Booking
+    t = trip(bookings=[Booking(name="Big Bus: Paris Hop-on Hop-off Bus Tour", day=trip().days[0].date, source="v")])
+    unknown = FakePlaces({})          # Google knows nothing: every checked venue would be 'no confident match'
+    doc = _doc_with("Return to Hotel", "Overnight in Paris", "Check-out from Paris hotel", "Hotel check-in",
+                    "Evening at leisure", "Free time", "Optional fireworks", "Big Bus: Paris Hop-on Hop-off Bus Tour with Optional Seine River Cruise")
+    findings, rows = check_facts(doc, t, unknown, FakeRoutes())
+    assert findings == [] and [r.venue for r in rows] == ["Big Bus: Paris Hop-on Hop-off Bus Tour with Optional Seine River Cruise"]
+    # an unrelated, unknown place is still flagged
+    findings, _ = check_facts(_doc_with("Mystery Museum"), t, unknown, FakeRoutes())
+    assert [f.rule for f in findings] == ["fact_unverified"]
+
+
+def test_exterior_and_day_pass_skip_hours_check_but_timed_visits_keep_it():
+    p = {n: late_place(n) for n in ("Louvre (exterior)", "Disneyland Paris (1 Day Pass)", "Mikla")}
+    for n in p:
+        p[n].hours = None
+    f, _ = check_facts(_doc_with("Louvre (exterior)", "Disneyland Paris (1 Day Pass)"), trip(), FakePlaces(p), FakeRoutes())
+    assert not [x for x in f if "opening hours" in x.message]
+    f, _ = check_facts(_doc_with("Mikla"), trip(), FakePlaces(p), FakeRoutes())
+    assert [x for x in f if "opening hours" in x.message]

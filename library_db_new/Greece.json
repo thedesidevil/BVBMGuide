@@ -1,0 +1,226 @@
+{
+  "restaurants": [],
+  "attractions": [],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Tzatziki",
+      "city": "Greece",
+      "description": "A cool, creamy dip made from Greek yogurt, cucumber, garlic, and olive oil. Best enjoyed with warm pita",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Greece",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "name": "Melitzanosalata",
+      "city": "Greece",
+      "description": "Smoky roasted eggplant blended with garlic and lemon—similar to baba ghanoush, but uniquely Greek",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Greece",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "name": "Moussaka",
+      "city": "Greece",
+      "description": "Greece's national comfort food: layers of eggplant, ground beef (or lamb), and creamy béchamel sauce",
+      "vegetarian": false,
+      "where_to_try": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Greece",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "name": "Souvlaki",
+      "city": "Greece",
+      "description": "Grilled meat skewers, typically pork or chicken, served with pita, fries, and tzatziki",
+      "vegetarian": false,
+      "where_to_try": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Greece",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "name": "Baklava",
+      "city": "Greece",
+      "description": "Layers of filo pastry with chopped nuts and honey syrup. Crunchy, sticky, and irresistible",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Greece",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "name": "Ouzo",
+      "city": "Greece",
+      "description": "An anise-flavored spirit served with ice or water, ideal for sipping alongside salty bites",
+      "vegetarian": true,
+      "where_to_try": null,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Greece",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Athens"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Handmade Ceramics & Pottery",
+      "city": "Greece",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kerameikos District of Athens"
+      ],
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Greece",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "item": "Greek Leather Sandals",
+      "city": "Greece",
+      "category": "Fashion",
+      "where_to_buy": [
+        "Melissinos Art -The Poet Sandal Maker shop in Athens"
+      ],
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Greece",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "item": "Organic honey and olive oil",
+      "city": "Greece",
+      "category": "Food",
+      "where_to_buy": [
+        "Supermarkets all over Greece"
+      ],
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Greece",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "item": "Komboloi (Worry Beads)",
+      "city": "Greece",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "Kombologadiko in Athens"
+      ],
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Greece",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Athens"
+    },
+    {
+      "item": "Santorini Wine",
+      "city": "Greece",
+      "category": "Food",
+      "where_to_buy": [
+        "supermarkets in Santorini"
+      ],
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Greece",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Santorini"
+    },
+    {
+      "item": "Volcani Lava Jewellery",
+      "city": "Greece",
+      "category": "Artisan crafts",
+      "where_to_buy": [
+        "MATI Art Gallery in Fira, Santorini"
+      ],
+      "_source_file": "England and Scotland/london.pdf",
+      "_source_mtime": 1772384249.4079556,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Greece",
+      "_source_format": "old",
+      "_source_date": "2026-03-01"
+    },
+    {
+      "item": "Natural Soaps & Skincare",
+      "city": "Greece",
+      "category": "Fashion",
+      "where_to_buy": [
+        "supermarkets in Greece"
+      ],
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_mtime": 1772384254.6976671,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Greece",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Athens"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": []
+}

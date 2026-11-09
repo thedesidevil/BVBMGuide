@@ -1,0 +1,425 @@
+{
+  "restaurants": [
+    {
+      "name": "Parea Tavern",
+      "city": "Santorini",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€15-25 per person",
+      "hours": "12:00 PM - 11:00 PM",
+      "ambience": "Cozy, family-friendly tavern with a warm Mediterranean feel; relaxed indoor and outdoor seating",
+      "area": "Fira",
+      "must_try_dishes": [
+        "Lamb kleftiko",
+        "Zucchini balls",
+        "Tzatziki dip",
+        "Santorini salad",
+        "Grilled octopus",
+        "Moussaka"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.docx",
+      "_source_date": "2025-06-30",
+      "_source_format": "new",
+      "_replaced_from": "Greece and Turkey/Sample All Inclusive Guide.docx"
+    },
+    {
+      "name": "Ouzeri",
+      "city": "Santorini",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€15-25 per person",
+      "hours": "12:00 PM - 11:00 PM",
+      "ambience": "Casual Greek ouzeri just off the main walkway with outdoor seating and friendly service",
+      "area": "Fira",
+      "highlights": [
+        "Genuine local experience",
+        "No caldera view"
+      ],
+      "must_try_dishes": [
+        "Vegetarian moussaka",
+        "Tzatziki",
+        "Greek salad",
+        "Pastitsio",
+        "Wild greens"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.docx",
+      "_source_date": "2025-06-30",
+      "_source_format": "new",
+      "_replaced_from": "Greece and Turkey/Sample All Inclusive Guide.docx"
+    },
+    {
+      "name": "Mehmet & Ali Baba Kebab House",
+      "city": "Santorini",
+      "cuisine_type": [
+        "Greek"
+      ],
+      "price_range": "€20-30 per person",
+      "hours": "9:00 AM - 10:30 PM",
+      "ambience": "Charming cliffside taverna with stunning views over the old port and caldera",
+      "area": "Fira",
+      "highlights": [
+        "Cliffside location",
+        "Old port and caldera views"
+      ],
+      "must_try_dishes": [
+        "Meatballs",
+        "Grilled fish",
+        "Slow-cooked lamb shoulder"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Greece and Turkey/Sample All Inclusive Guide.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Pitogyros Oia",
+      "city": "Santorini",
+      "cuisine_type": [
+        "Greek",
+        "Street food"
+      ],
+      "price_range": "₹800–1,500",
+      "hours": "12:00 PM – 11:00 PM",
+      "area": "Oia",
+      "must_try_dishes": [
+        "Veg gyros",
+        "Wraps",
+        "Quick bites"
+      ],
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-04-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Skiza Café",
+      "city": "Santorini",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "₹800–1,500",
+      "hours": "9:00 AM – 9:00 PM",
+      "area": "Oia",
+      "must_try_dishes": [
+        "Sandwiches",
+        "Coffee",
+        "Desserts"
+      ],
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-04-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Lolita's Gelato",
+      "city": "Santorini",
+      "cuisine_type": [
+        "Gelato"
+      ],
+      "price_range": "₹400–800",
+      "hours": "10:00 AM – 9:00 PM",
+      "area": "Oia",
+      "must_try_dishes": [
+        "Gelato",
+        "Sorbets"
+      ],
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-04-26",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Fira",
+      "city": "Santorini",
+      "description": "Capital of Santorini, full of shops and cafés; take the cable car down to the old port or walk the caldera path",
+      "hours": "7:00 AM - 9:00 PM",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.docx",
+      "_source_date": "2025-06-30",
+      "_source_format": "new",
+      "_replaced_from": "Greece and Turkey/Sample All Inclusive Guide.docx"
+    },
+    {
+      "name": "Oia",
+      "city": "Santorini",
+      "description": "Gorgeous cliffside village with blue domes and postcard-perfect scenery",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.docx",
+      "_source_date": "2025-06-30",
+      "_source_format": "new",
+      "_replaced_from": "Greece and Turkey/Sample All Inclusive Guide.docx"
+    },
+    {
+      "name": "Santorini Cable Car",
+      "city": "Santorini",
+      "description": "Short scenic ride from the Old Port up the cliffs to Fira.",
+      "hours": "8:00 AM – 9:00 PM",
+      "entry_fee": "~₹800–1,000 per person",
+      "tips": [
+        "Move early and return early to avoid long queues",
+        "Queue time can be 30–90 mins",
+        "Avoid the last-minute rush"
+      ],
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-04-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Fira Town",
+      "city": "Santorini",
+      "description": "Lively town with narrow lanes, white buildings and caldera viewpoints.",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-04-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Oia Village",
+      "city": "Santorini",
+      "description": "Postcard Santorini with blue domes, whitewashed homes and cliffside views.",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-04-26",
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Tomatokeftedes",
+      "city": "Santorini",
+      "description": "Crispy Santorini-style tomato fritters with herbs",
+      "vegetarian": "true",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.docx",
+      "_source_date": "2025-06-30",
+      "_source_format": "new",
+      "_replaced_from": "Greece and Turkey/Sample All Inclusive Guide.docx"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Civitavecchia",
+        "Salerno",
+        "Santorini",
+        "Kusadasi",
+        "Katakolon"
+      ],
+      "tip": "Return to the ship at least 60–90 minutes before departure; the ship will not wait for late passengers",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-04-26",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Civitavecchia",
+        "Salerno",
+        "Santorini",
+        "Kusadasi",
+        "Katakolon"
+      ],
+      "tip": "Carry ship ID and a passport copy when going ashore",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-04-26",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Civitavecchia",
+        "Salerno",
+        "Santorini",
+        "Kusadasi",
+        "Katakolon"
+      ],
+      "tip": "Stick to official or well-reviewed excursions",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-04-26",
+      "_source_format": "new"
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Santorini Wine",
+      "city": "Santorini",
+      "category": "Wine",
+      "where_to_buy": [
+        "Supermarkets in Santorini"
+      ],
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.docx",
+      "_source_date": "2025-06-30",
+      "_source_format": "new",
+      "_replaced_from": "Greece and Turkey/Sample All Inclusive Guide.docx"
+    },
+    {
+      "item": "Volcanic Lava Jewellery",
+      "city": "Santorini",
+      "category": "Jewellery",
+      "where_to_buy": [
+        "MATI Art Gallery, Fira"
+      ],
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.docx",
+      "_source_date": "2025-06-30",
+      "_source_format": "new",
+      "_replaced_from": "Greece and Turkey/Sample All Inclusive Guide.docx"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Civitavecchia",
+        "Salerno",
+        "Santorini",
+        "Kusadasi",
+        "Katakolon"
+      ],
+      "tip": "Mobile signal switches to a maritime network at sea and roaming becomes very expensive onboard",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-04-26",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Civitavecchia",
+        "Salerno",
+        "Santorini",
+        "Kusadasi",
+        "Katakolon"
+      ],
+      "tip": "Expect limited connectivity on sea days; turn off data roaming at sea unless using cruise WiFi",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-04-26",
+      "_source_format": "new"
+    }
+  ],
+  "transport_options": [
+    {
+      "city": "Santorini",
+      "mode": "Cable car",
+      "description": "Cable car from Fira down to the old port; the caldera path can be walked instead",
+      "cost": "€6 one-way",
+      "covers": "Fira to the old port",
+      "_source_file": "Greece and Turkey/Sample All Inclusive Guide.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "city": "Santorini",
+      "mode": "Cable car",
+      "description": "Cable car in Fira down to the old port; alternative is walking the caldera path",
+      "cost": "€6 one-way",
+      "covers": "Fira to the old port",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.docx",
+      "_source_date": "2025-06-30",
+      "_source_format": "new"
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Santorini",
+        "Mykonos"
+      ],
+      "tip": "Tap water is not recommended",
+      "_source_file": "Greece and Turkey/Sample All Inclusive Guide.docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Santorini",
+        "Mykonos"
+      ],
+      "tip": "Tap water is not recommended for drinking",
+      "_source_file": "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.docx",
+      "_source_date": "2025-06-30",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Civitavecchia",
+        "Salerno",
+        "Santorini",
+        "Kusadasi",
+        "Katakolon"
+      ],
+      "tip": "Carry motion sickness medication for cruise sea days",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-04-26",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Civitavecchia",
+        "Salerno",
+        "Santorini",
+        "Kusadasi",
+        "Katakolon"
+      ],
+      "tip": "Stay hydrated as cruise environments can be dehydrating",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-04-26",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Civitavecchia",
+        "Salerno",
+        "Santorini",
+        "Kusadasi",
+        "Katakolon"
+      ],
+      "tip": "Practise regular hand hygiene in shared dining and public spaces",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-04-26",
+      "_source_format": "new"
+    }
+  ],
+  "route_guides": [
+    {
+      "city": "Santorini",
+      "from": "Santorini Old Port (Fira Port)",
+      "to": "Oia",
+      "stops": [
+        {
+          "name": "Fira",
+          "suggested_stop": "Cable car up and walk through town"
+        },
+        {
+          "name": "Oia",
+          "minutes": 40,
+          "suggested_stop": "Explore the village"
+        }
+      ],
+      "total_time": "~40 mins drive from Fira to Oia",
+      "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-04-26",
+      "_source_format": "new"
+    }
+  ],
+  "season_notes": [],
+  "source_files": [
+    "Greece and Turkey/Sample All Inclusive Guide.docx",
+    "Greece and Turkey/All Inclusive Guide - Greece and Turkey_Shital.docx",
+    "Netherlands/Anurag_Europe_All Inclusive Guide.docx"
+  ],
+  "currency": "EUR",
+  "_currency_source": {
+    "_source_file": "Netherlands/Anurag_Europe_All Inclusive Guide.docx",
+    "_source_date": "2026-04-26",
+    "_source_format": "new"
+  }
+}

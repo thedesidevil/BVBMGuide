@@ -1,0 +1,4949 @@
+{
+ "trip": {
+  "client_names": [
+   "Test Client One"
+  ],
+  "travellers": {
+   "adults": 2,
+   "kids_ages": [
+    2
+   ],
+   "notes": "Family with kids (one child, 2 years old). No special requirements.",
+   "child_counts": {}
+  },
+  "diet": {
+   "restrictions": [],
+   "allergies": [],
+   "likes": [],
+   "pure_veg": false
+  },
+  "travel_modes": [
+   "taxi",
+   "private_driver"
+  ],
+  "hotels": [
+   {
+    "city": "Ubud",
+    "hotel": "MAYURA UBUD RETREAT",
+    "check_in": "2026-09-24",
+    "check_out": "2026-09-28",
+    "source": "voucher",
+    "check_in_time": "14:00:00",
+    "check_out_time": "12:00:00",
+    "kind": "hotel",
+    "meal_plan": "breakfast",
+    "room_type": "Deluxe Room"
+   },
+   {
+    "city": "Nusa Lembongan",
+    "hotel": "D'NUSA BEACH CLUB AND RESORT",
+    "check_in": "2026-09-28",
+    "check_out": "2026-09-30",
+    "source": "voucher",
+    "check_in_time": "14:00:00",
+    "check_out_time": "12:00:00",
+    "kind": "hotel",
+    "meal_plan": "breakfast",
+    "room_type": "Grand Deluxe Room"
+   },
+   {
+    "city": "Sanur",
+    "hotel": "TAKSU SANUR HOTEL",
+    "check_in": "2026-09-30",
+    "check_out": "2026-10-01",
+    "source": "voucher",
+    "check_in_time": "14:00:00",
+    "check_out_time": "12:00:00",
+    "kind": "hotel",
+    "meal_plan": "breakfast",
+    "room_type": "Suite no balcony"
+   }
+  ],
+  "transport": [
+   {
+    "kind": "flight",
+    "from_place": "SIN",
+    "to_place": "DPS",
+    "depart": null,
+    "arrive": "2026-09-25T00:10:00",
+    "ref": "IND/PB/2026/2411",
+    "source": "voucher",
+    "pax_label": "",
+    "operator": "Singapore Airlines",
+    "number": "SQ 948",
+    "seat": "",
+    "platform": "",
+    "duration_min": null,
+    "check_in": null
+   },
+   {
+    "kind": "flight",
+    "from_place": "DPS",
+    "to_place": "SIN",
+    "depart": "2026-10-01T13:15:00",
+    "arrive": null,
+    "ref": "IND/PB/2026/2411",
+    "source": "voucher",
+    "pax_label": "",
+    "operator": "Singapore Airlines",
+    "number": "SQ 938",
+    "seat": "",
+    "platform": "",
+    "duration_min": null,
+    "check_in": null
+   },
+   {
+    "kind": "boat",
+    "from_place": "Sanur Harbour",
+    "to_place": "Nusa Lembongan",
+    "depart": "2026-09-28T09:15:00",
+    "arrive": null,
+    "ref": "IND/PB/2026/2411",
+    "source": "voucher",
+    "pax_label": "",
+    "operator": "",
+    "number": "",
+    "seat": "",
+    "platform": "",
+    "duration_min": null,
+    "check_in": "2026-09-28T08:15:00"
+   },
+   {
+    "kind": "boat",
+    "from_place": "Nusa Lembongan",
+    "to_place": "Sanur Harbour",
+    "depart": "2026-09-30T12:00:00",
+    "arrive": null,
+    "ref": "IND/PB/2026/2411",
+    "source": "voucher",
+    "pax_label": "",
+    "operator": "",
+    "number": "",
+    "seat": "",
+    "platform": "",
+    "duration_min": null,
+    "check_in": "2026-09-30T11:00:00"
+   }
+  ],
+  "bookings": [
+   {
+    "name": "Airport pick-up and transfer to MAYURA UBUD RETREAT",
+    "day": "2026-09-25",
+    "time": "00:10",
+    "source": "voucher",
+    "end_time": null,
+    "meeting_point": "Bali International Airport",
+    "duration": "",
+    "instructions": [
+     "Driver will come to the airport at 11:00 PM."
+    ],
+    "timed": true,
+    "pax_label": "",
+    "included_in_package": true
+   },
+   {
+    "name": "Tegallalang Rice Terrace, Ubud Palace and Ubud Market tour",
+    "day": "2026-09-25",
+    "time": "13:00",
+    "source": "voucher",
+    "end_time": "18:00",
+    "meeting_point": "",
+    "duration": "",
+    "instructions": [
+     "Private transfer without guide."
+    ],
+    "timed": true,
+    "pax_label": "",
+    "included_in_package": true
+   },
+   {
+    "name": "Marine Park (Sea Dragon Package)",
+    "day": "2026-09-26",
+    "time": "09:00",
+    "source": "voucher",
+    "end_time": "16:00",
+    "meeting_point": "Hotel",
+    "duration": "",
+    "instructions": [
+     "Private basis."
+    ],
+    "timed": true,
+    "pax_label": "",
+    "included_in_package": true
+   },
+   {
+    "name": "Kintamani Volcano View, Tirta Empul Temple and Coffee Plantation tour",
+    "day": "2026-09-27",
+    "time": "08:00",
+    "source": "voucher",
+    "end_time": "18:00",
+    "meeting_point": "Hotel",
+    "duration": "",
+    "instructions": [
+     "Private transfer without guide.",
+     "Woman on menstruation cycle is not permitted to enter Tirta Empul Temple."
+    ],
+    "timed": true,
+    "pax_label": "",
+    "included_in_package": true
+   },
+   {
+    "name": "Transfer to Sanur Harbour, shared fast boat and Mangrove Boat Experience",
+    "day": "2026-09-28",
+    "time": "07:00",
+    "source": "voucher",
+    "end_time": "17:00",
+    "meeting_point": "MAYURA UBUD RETREAT",
+    "duration": "",
+    "instructions": [
+     "Check in at 08:15 AM.",
+     "Shared fast boat departs at 09:15 AM.",
+     "Hotel check-in in Nusa Lembongan."
+    ],
+    "timed": true,
+    "pax_label": "",
+    "included_in_package": true
+   },
+   {
+    "name": "Nusa Lembongan tour",
+    "day": "2026-09-29",
+    "time": "09:00",
+    "source": "voucher",
+    "end_time": "18:00",
+    "meeting_point": "Hotel",
+    "duration": "",
+    "instructions": [
+     "Private tour."
+    ],
+    "timed": true,
+    "pax_label": "",
+    "included_in_package": true
+   },
+   {
+    "name": "Transfer to Sanur Harbour, shared fast boat, and transfer to Sanur hotel",
+    "day": "2026-09-30",
+    "time": "10:30",
+    "source": "voucher",
+    "end_time": "21:00",
+    "meeting_point": "D'NUSA BEACH CLUB AND RESORT",
+    "duration": "",
+    "instructions": [
+     "Check in for the fast boat at 11:00 AM.",
+     "Shared fast boat departs at 12:00 PM."
+    ],
+    "timed": true,
+    "pax_label": "",
+    "included_in_package": true
+   },
+   {
+    "name": "TAKSU SANUR HOTEL to Bali Airport transfer",
+    "day": "2026-10-01",
+    "time": null,
+    "source": "voucher",
+    "end_time": null,
+    "meeting_point": "TAKSU SANUR HOTEL",
+    "duration": "",
+    "instructions": [
+     "Airport drop for departure from Bali."
+    ],
+    "timed": false,
+    "pax_label": "",
+    "included_in_package": true
+   }
+  ],
+  "days": [
+   {
+    "date": "2026-09-24",
+    "title": "Arrival in Bali",
+    "city": "Ubud",
+    "items": [
+     {
+      "name": "Airport pick-up and transfer to MAYURA UBUD RETREAT",
+      "kind": "transfer",
+      "city": "Ubud",
+      "time": null,
+      "slot_hint": "any",
+      "note": "Midnight arrival at 00:10 on 25 September.",
+      "optional": false,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     }
+    ],
+    "meal_rules": [
+     "No Meals"
+    ],
+    "drive_stops": []
+   },
+   {
+    "date": "2026-09-25",
+    "title": "Tegallalang Rice Terrace, Ubud Palace and Ubud Market",
+    "city": "Ubud",
+    "items": [
+     {
+      "name": "Tegallalang Rice Terrace (Viewpoint & Scenic Cafe)",
+      "kind": "attraction",
+      "city": "Ubud",
+      "time": null,
+      "slot_hint": "any",
+      "note": "",
+      "optional": false,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     },
+     {
+      "name": "Ubud Palace",
+      "kind": "attraction",
+      "city": "Ubud",
+      "time": null,
+      "slot_hint": "any",
+      "note": "",
+      "optional": false,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     },
+     {
+      "name": "Ubud Market",
+      "kind": "attraction",
+      "city": "Ubud",
+      "time": null,
+      "slot_hint": "any",
+      "note": "",
+      "optional": false,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     }
+    ],
+    "meal_rules": [
+     "Breakfast"
+    ],
+    "drive_stops": []
+   },
+   {
+    "date": "2026-09-27",
+    "title": "Kintamani, Tirta Empul and Coffee Plantation",
+    "city": "Ubud",
+    "items": [
+     {
+      "name": "Kintamani Volcano View",
+      "kind": "attraction",
+      "city": "Ubud",
+      "time": null,
+      "slot_hint": "any",
+      "note": "",
+      "optional": false,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     },
+     {
+      "name": "Tirta Empul Temple",
+      "kind": "attraction",
+      "city": "Ubud",
+      "time": null,
+      "slot_hint": "any",
+      "note": "",
+      "optional": false,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     },
+     {
+      "name": "Coffee Plantation",
+      "kind": "attraction",
+      "city": "Ubud",
+      "time": null,
+      "slot_hint": "any",
+      "note": "",
+      "optional": false,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     }
+    ],
+    "meal_rules": [
+     "Breakfast"
+    ],
+    "drive_stops": []
+   },
+   {
+    "date": "2026-09-28",
+    "title": "Transfer to Nusa Lembongan and Mangrove Boat Experience",
+    "city": "Nusa Lembongan",
+    "items": [
+     {
+      "name": "Transfer to Sanur Harbour",
+      "kind": "transfer",
+      "city": "Ubud",
+      "time": "07:00",
+      "slot_hint": "any",
+      "note": "",
+      "optional": false,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     },
+     {
+      "name": "Mangrove Boat Experience at Nusa Lembongan Mangrove Forest",
+      "kind": "activity",
+      "city": "Nusa Lembongan",
+      "time": null,
+      "slot_hint": "any",
+      "note": "",
+      "optional": false,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     }
+    ],
+    "meal_rules": [
+     "Breakfast"
+    ],
+    "drive_stops": []
+   },
+   {
+    "date": "2026-09-30",
+    "title": "Nusa Lembongan to Sanur",
+    "city": "Sanur",
+    "items": [
+     {
+      "name": "Dinner in Sanur",
+      "kind": "meal_out",
+      "city": "Sanur",
+      "time": null,
+      "slot_hint": "any",
+      "note": "At own expense.",
+      "optional": false,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     },
+     {
+      "name": "Icon Mall",
+      "kind": "activity",
+      "city": "Nusa Lembongan / Sanur",
+      "time": null,
+      "slot_hint": "afternoon",
+      "note": "Choose one: Icon Mall or Sindhu Market. At own expense.",
+      "optional": true,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     },
+     {
+      "name": "Sindhu Market",
+      "kind": "activity",
+      "city": "Nusa Lembongan / Sanur",
+      "time": null,
+      "slot_hint": "afternoon",
+      "note": "Choose one: Icon Mall or Sindhu Market. At own expense.",
+      "optional": true,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     }
+    ],
+    "meal_rules": [
+     "Breakfast",
+     "DINNER IN SANUR (AT OWN EXPENSE)"
+    ],
+    "drive_stops": []
+   },
+   {
+    "date": "2026-10-01",
+    "title": "Departure from Bali",
+    "city": "Sanur",
+    "items": [
+     {
+      "name": "Hotel check-out and airport drop",
+      "kind": "transfer",
+      "city": "Sanur",
+      "time": null,
+      "slot_hint": "any",
+      "note": "",
+      "optional": false,
+      "booking_ref": null,
+      "locality": "",
+      "includes_meal": [],
+      "pickup_time": null,
+      "pickup_place": "",
+      "option_group": null
+     }
+    ],
+    "meal_rules": [
+     "Breakfast"
+    ],
+    "drive_stops": []
+   }
+  ],
+  "open_choices": [],
+  "vague_days": [],
+  "commentary_removed": [],
+  "trip_scope": "international",
+  "budget": "mid-range",
+  "occasion": "family",
+  "additional_notes": "No special requirements."
+ },
+ "title": "Ubud, Nusa Lembongan, Sanur Magic",
+ "days": [
+  {
+   "index": 1,
+   "date": "2026-09-24",
+   "city": "Ubud",
+   "text": {
+    "title": "Arrival in Bali",
+    "intro": "We arrive in Ubud as a family, with our two-year-old along for the day.",
+    "attractions": [],
+    "restaurants": [],
+    "free_time_idea": null
+   },
+   "result": {
+    "scheduled": [
+     {
+      "item": {
+       "name": "Airport pick-up and transfer to MAYURA UBUD RETREAT",
+       "kind": "transfer",
+       "city": "Ubud",
+       "time": null,
+       "slot_hint": "any",
+       "note": "Midnight arrival at 00:10 on 25 September.",
+       "optional": false,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": null
+      },
+      "slot": "morning",
+      "start": "09:00:00"
+     }
+    ],
+    "meals": [],
+    "tips": [],
+    "markers": []
+   },
+   "meals": [],
+   "legs": {},
+   "places": {
+    "mayura ubud retreat|ubud": {
+     "query": "MAYURA UBUD RETREAT|Ubud",
+     "place_id": "ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "name": "Mayura Ubud Retreat",
+     "address": "Jl. Bangkilesan, Banjar Kawan Desa Mas, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.5468956,
+     "lng": 115.2693623,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "http://www.mayuraubud.com/",
+     "phone": "+62 361 4792956",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=MAYURA+UBUD+RETREAT+Ubud&query_place_id=ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "fetched_at": "2026-11-02T10:57:24.763405Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "MAYURA UBUD RETREAT": {
+     "query": "MAYURA UBUD RETREAT|Ubud",
+     "place_id": "ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "name": "Mayura Ubud Retreat",
+     "address": "Jl. Bangkilesan, Banjar Kawan Desa Mas, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.5468956,
+     "lng": 115.2693623,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "http://www.mayuraubud.com/",
+     "phone": "+62 361 4792956",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=MAYURA+UBUD+RETREAT+Ubud&query_place_id=ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "fetched_at": "2026-11-02T10:57:24.763405Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "dps|ubud": {
+     "query": "DPS|Ubud",
+     "place_id": "ChIJgb3r5Q890i0Rq97Q0rOxEeg",
+     "name": "ATM Mandiri DPS SB UBUDPASARSENI",
+     "address": "Jl. Raya Ubud No.14, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.507427999999999,
+     "lng": 115.2640485,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "0": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "1": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "2": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "3": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "4": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "5": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "6": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": "http://www.bankmandiri.co.id/",
+     "phone": "+62 21 52997777",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=DPS+Ubud&query_place_id=ChIJgb3r5Q890i0Rq97Q0rOxEeg",
+     "fetched_at": "2026-11-02T09:59:56.270129Z",
+     "match_ok": false,
+     "verify_note": null
+    },
+    "DPS": {
+     "query": "DPS|Ubud",
+     "place_id": "ChIJgb3r5Q890i0Rq97Q0rOxEeg",
+     "name": "ATM Mandiri DPS SB UBUDPASARSENI",
+     "address": "Jl. Raya Ubud No.14, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.507427999999999,
+     "lng": 115.2640485,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "0": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "1": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "2": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "3": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "4": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "5": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "6": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": "http://www.bankmandiri.co.id/",
+     "phone": "+62 21 52997777",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=DPS+Ubud&query_place_id=ChIJgb3r5Q890i0Rq97Q0rOxEeg",
+     "fetched_at": "2026-11-02T09:59:56.270129Z",
+     "match_ok": false,
+     "verify_note": null
+    },
+    "Airport pick-up and transfer to MAYURA UBUD RETREAT": null
+   },
+   "booking_by_item": {
+    "Airport pick-up and transfer to MAYURA UBUD RETREAT": {
+     "name": "Airport pick-up and transfer to MAYURA UBUD RETREAT",
+     "day": "2026-09-25",
+     "time": "00:10",
+     "source": "voucher",
+     "end_time": null,
+     "meeting_point": "Bali International Airport",
+     "duration": "",
+     "instructions": [
+      "Driver will come to the airport at 11:00 PM."
+     ],
+     "timed": true,
+     "pax_label": "",
+     "included_in_package": true
+    }
+   },
+   "arrival_booking": null,
+   "price_by_restaurant": {},
+   "arrival": {
+    "kind": "flight",
+    "from_place": "SIN",
+    "to_place": "DPS",
+    "depart": null,
+    "arrive": "2026-09-25T00:10:00",
+    "ref": "IND/PB/2026/2411",
+    "source": "voucher",
+    "pax_label": "",
+    "operator": "Singapore Airlines",
+    "number": "SQ 948",
+    "seat": "",
+    "platform": "",
+    "duration_min": null,
+    "check_in": null
+   },
+   "departure": null,
+   "other_transport": [],
+   "prev_city": null,
+   "utc_offset_hours": null,
+   "library_attractions": {},
+   "lands_next_day": true,
+   "driver_from": null
+  },
+  {
+   "index": 2,
+   "date": "2026-09-25",
+   "city": "Ubud",
+   "text": {
+    "title": "Tegallalang Rice Terrace, Ubud Palace and Ubud Market",
+    "intro": "We can enjoy a scenic view at Tegallalang Rice Terrace, explore Ubud Palace’s traditional architecture, and browse the colourful stalls at Ubud Market.",
+    "attractions": [
+     {
+      "name": "Tegallalang Rice Terrace (Viewpoint & Scenic Cafe)",
+      "description": "We can take in the rice terrace from the viewpoint and enjoy the scenic café.",
+      "entry_fee": null,
+      "dress_code": null,
+      "tips": null,
+      "best_time": null,
+      "duration": null
+     },
+     {
+      "name": "Ubud Palace",
+      "description": "We can explore this former royal residence at the heart of Ubud, with its ornate gateways, carved stonework and traditional courtyards—a compact introduction to Balinese royal architecture.",
+      "entry_fee": null,
+      "dress_code": null,
+      "tips": null,
+      "best_time": null,
+      "duration": null
+     },
+     {
+      "name": "Ubud Market",
+      "description": "We can browse colourful stalls with woven baskets, textiles, carved pieces, jewellery, artwork and small souvenirs. The market is directly across from Ubud Palace.",
+      "entry_fee": null,
+      "dress_code": null,
+      "tips": null,
+      "best_time": null,
+      "duration": null
+     }
+    ],
+    "restaurants": [
+     {
+      "name": "Queens of India",
+      "ambience": "Indian cuisine.",
+      "best_for": "An Indian lunch."
+     },
+     {
+      "name": "Milk & Madu Ubud",
+      "ambience": "A casual, welcoming café serving comfort food.",
+      "best_for": "A relaxed lunch with comfort-food options."
+     },
+     {
+      "name": "Natah Ubud",
+      "ambience": "Garden dining in a tropical setting, with contemporary design and traditional Balinese charm.",
+      "best_for": "A Balinese lunch in a garden setting."
+     },
+     {
+      "name": "Galle Club | Sri Lankan & Coastal Indian Cuisine",
+      "ambience": "Sri Lankan and coastal Indian cuisine.",
+      "best_for": "A Sri Lankan or coastal Indian dinner."
+     },
+     {
+      "name": "Sendang Restaurant",
+      "ambience": "A poolside restaurant at a Mas retreat hotel, with light or full meal options.",
+      "best_for": "A Balinese, Indonesian or Western dinner, whether we want something light or a full meal."
+     },
+     {
+      "name": "Lao Ba Cha",
+      "ambience": "Stylish interiors and a creative menu inspired by regional Asian flavours, with sharing-style meals.",
+      "best_for": "A dinner of Asian flavours to share."
+     }
+    ],
+    "free_time_idea": null
+   },
+   "result": {
+    "scheduled": [
+     {
+      "item": {
+       "name": "Tegallalang Rice Terrace (Viewpoint & Scenic Cafe)",
+       "kind": "attraction",
+       "city": "Ubud",
+       "time": null,
+       "slot_hint": "any",
+       "note": "",
+       "optional": false,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": null
+      },
+      "slot": "morning",
+      "start": "09:00:00"
+     },
+     {
+      "item": {
+       "name": "Ubud Palace",
+       "kind": "attraction",
+       "city": "Ubud",
+       "time": null,
+       "slot_hint": "any",
+       "note": "",
+       "optional": false,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": null
+      },
+      "slot": "morning",
+      "start": "10:30:00"
+     },
+     {
+      "item": {
+       "name": "Ubud Market",
+       "kind": "attraction",
+       "city": "Ubud",
+       "time": null,
+       "slot_hint": "any",
+       "note": "",
+       "optional": false,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": null
+      },
+      "slot": "afternoon",
+      "start": "14:00:00"
+     }
+    ],
+    "meals": [
+     {
+      "meal": "breakfast",
+      "start": "07:30:00",
+      "anchors": [],
+      "included": true,
+      "unanchored": false
+     },
+     {
+      "meal": "lunch",
+      "start": "12:30:00",
+      "anchors": [
+       [
+        "Ubud Palace",
+        [
+         -8.5065977,
+         115.2625884
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     },
+     {
+      "meal": "dinner",
+      "start": "19:30:00",
+      "anchors": [
+       [
+        "MAYURA UBUD RETREAT",
+        [
+         -8.5468956,
+         115.2693623
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     }
+    ],
+    "tips": [],
+    "markers": [
+     {
+      "kind": "VERIFY",
+      "text": "booking 'Tegallalang Rice Terrace, Ubud Palace and Ubud Market tour' at 13:00 is not placed in the day plan"
+     }
+    ]
+   },
+   "meals": [
+    {
+     "slot": {
+      "meal": "lunch",
+      "start": "12:30:00",
+      "anchors": [
+       [
+        "Ubud Palace",
+        [
+         -8.5065977,
+         115.2625884
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     },
+     "day_index": 2,
+     "restaurants": [
+      {
+       "lib": {
+        "name": "Queens of India",
+        "city": "Ubud",
+        "cuisine_type": [
+         "Indian"
+        ],
+        "price_range": "INR 800–1,800 per person",
+        "hours": "12:00 PM – 11:30 PM",
+        "ambience": "One of Bali's most established Indian restaurants with extensive vegetarian choices",
+        "area": "Ubud Centre",
+        "nearby_landmarks": [
+         "Ubud Palace, Ubud"
+        ],
+        "must_try_dishes": [
+         "Chole Bhature",
+         "Paneer Tikka",
+         "Vegetable Biryani"
+        ],
+        "best_for": [
+         "authentic Indian dining"
+        ],
+        "vegetarian_friendly": "true",
+        "meal_slots": [
+         "dinner"
+        ],
+        "_source_file": "Bali Indonesia/05062026_Test_Bali _All Inclusive Guide.docx",
+        "_source_date": "2026-06-06",
+        "_source_format": "new"
+       },
+       "place": {
+        "query": "Queens of India|Ubud",
+        "place_id": "ChIJjWGUjks90i0RcGYrryYFSRQ",
+        "name": "Queen's of India",
+        "address": "Jl. Suweta, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+        "lat": -8.5062322,
+        "lng": 115.26245530000001,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "12:00:00",
+            "23:30:00"
+           ]
+          ],
+          "0": [
+           [
+            "12:00:00",
+            "23:30:00"
+           ]
+          ],
+          "1": [
+           [
+            "12:00:00",
+            "23:30:00"
+           ]
+          ],
+          "2": [
+           [
+            "12:00:00",
+            "23:30:00"
+           ]
+          ],
+          "3": [
+           [
+            "12:00:00",
+            "23:30:00"
+           ]
+          ],
+          "4": [
+           [
+            "12:00:00",
+            "23:30:00"
+           ]
+          ],
+          "5": [
+           [
+            "12:00:00",
+            "23:30:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "https://bali.queenstandoor.com/location/ubud",
+        "phone": "+62 361 977399",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Queens+of+India+Ubud&query_place_id=ChIJjWGUjks90i0RcGYrryYFSRQ",
+        "fetched_at": "2026-11-02T10:00:00.372750Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 1,
+       "travel_label": "Walk",
+       "hours_text": "12:00 PM – 11:30 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Milk & Madu Ubud",
+        "city": "Ubud",
+        "cuisine_type": [
+         "Western",
+         "Café"
+        ],
+        "price_range": "INR 400–1,200 per person",
+        "hours": "07:00 AM – 11:00 PM",
+        "ambience": "Bright, lively café with a casual and welcoming atmosphere",
+        "area": "Ubud Centre",
+        "nearby_landmarks": [
+         "Ubud Palace, Ubud"
+        ],
+        "highlights": [
+         "Casual, welcoming café",
+         "Comfort food"
+        ],
+        "must_try_dishes": [
+         "Wood-Fired Pizzas",
+         "Gourmet Burgers",
+         "Fresh Salads"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "notes": "Parking available",
+        "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+        "_source_date": "2026-07-01",
+        "_source_format": "new",
+        "_replaced_from": "Bali Indonesia/All Inclusive Guide- Bali.docx"
+       },
+       "place": {
+        "query": "Milk & Madu Ubud|Ubud",
+        "place_id": "ChIJSQmJjmo90i0RYAAftLe2Y24",
+        "name": "Milk & Madu Ubud",
+        "address": "Jl. Suweta No.3, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+        "lat": -8.5063024,
+        "lng": 115.2623691,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "https://www.milkandmadu.com/location/ubud",
+        "phone": "+62 813-2975-6708",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Milk+%26+Madu+Ubud+Ubud&query_place_id=ChIJSQmJjmo90i0RYAAftLe2Y24",
+        "fetched_at": "2026-11-02T10:00:01.359119Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 1,
+       "travel_label": "Walk",
+       "hours_text": "7:00 AM – 10:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Natah Ubud",
+        "city": "Ubud",
+        "cuisine_type": [
+         "Balinese"
+        ],
+        "price_range": "INR 700–1,800 per person",
+        "hours": "08:00 AM – 11:00 PM",
+        "ambience": "Serene and elegant tropical garden setting blending contemporary design with traditional Balinese charm",
+        "area": "Ubud Centre",
+        "highlights": [
+         "Tropical garden setting",
+         "Contemporary design with traditional Balinese charm",
+         "Garden dining"
+        ],
+        "must_try_dishes": [
+         "Crispy Duck",
+         "Balinese Chicken Satay",
+         "Nasi Campur"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "notes": "Parking available",
+        "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+        "_source_date": "2026-07-01",
+        "_source_format": "new"
+       },
+       "place": {
+        "query": "Natah Ubud|Ubud",
+        "place_id": "ChIJ2crezDU90i0RnWifZOtWUQY",
+        "name": "Natah Ubud Restaurant",
+        "address": "Jl. Monkey Forest, Selatan Pasar, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+        "lat": -8.507428599999999,
+        "lng": 115.26228809999999,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "08:00:00",
+            "23:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "08:00:00",
+            "23:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "08:00:00",
+            "23:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "08:00:00",
+            "23:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "08:00:00",
+            "23:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "08:00:00",
+            "23:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "08:00:00",
+            "23:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "http://www.natahubud.com/",
+        "phone": "+62 851-9065-4417",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Natah+Ubud+Ubud&query_place_id=ChIJ2crezDU90i0RnWifZOtWUQY",
+        "fetched_at": "2026-11-02T10:00:05.926757Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 2,
+       "travel_label": "Walk",
+       "hours_text": "8:00 AM – 11:00 PM",
+       "hours_verify": false
+      }
+     ],
+     "markers": []
+    },
+    {
+     "slot": {
+      "meal": "dinner",
+      "start": "19:30:00",
+      "anchors": [
+       [
+        "MAYURA UBUD RETREAT",
+        [
+         -8.5468956,
+         115.2693623
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     },
+     "day_index": 2,
+     "restaurants": [
+      {
+       "lib": {
+        "name": "Galle Club | Sri Lankan & Coastal Indian Cuisine",
+        "city": "Ubud",
+        "cuisine_type": [
+         "Sri Lankan",
+         "Coastal Indian"
+        ],
+        "price_range": "INR 1,000–2,200 per person",
+        "hours": "12:00 PM – 10:30 PM",
+        "ambience": "Elegant contemporary restaurant with stylish interiors and a refined atmosphere",
+        "must_try_dishes": [
+         "Vegetable Kottu Roti",
+         "Jackfruit Curry",
+         "Malabar Vegetable Curry"
+        ],
+        "best_for": [
+         "coastal Indian and Sri Lankan flavours"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "_source_file": "Bali Indonesia/05062026_Test_Bali _All Inclusive Guide.docx",
+        "_source_date": "2026-06-06",
+        "_source_format": "new"
+       },
+       "place": {
+        "query": "Galle Club | Sri Lankan & Coastal Indian Cuisine|Ubud",
+        "place_id": "ChIJ6yNwn7M90i0R-fajQzlhn10",
+        "name": "Galle Club | Sri Lankan & Coastal Indian Restaurant",
+        "address": "Jl. Nyuh Gading No.2, Mas, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+        "lat": -8.524447799999999,
+        "lng": 115.25666000000001,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "12:00:00",
+            "22:30:00"
+           ]
+          ],
+          "0": [
+           [
+            "12:00:00",
+            "22:30:00"
+           ]
+          ],
+          "1": [
+           [
+            "12:00:00",
+            "22:30:00"
+           ]
+          ],
+          "2": [
+           [
+            "12:00:00",
+            "22:30:00"
+           ]
+          ],
+          "3": [
+           [
+            "12:00:00",
+            "22:30:00"
+           ]
+          ],
+          "4": [
+           [
+            "12:00:00",
+            "22:30:00"
+           ]
+          ],
+          "5": [
+           [
+            "12:00:00",
+            "22:30:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "https://galleclubbali.com/",
+        "phone": "+62 852-1225-7973",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Galle+Club+%7C+Sri+Lankan+%26+Coastal+Indian+Cuisine+Ubud&query_place_id=ChIJ6yNwn7M90i0R-fajQzlhn10",
+        "fetched_at": "2026-11-02T10:58:07.882493Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 14,
+       "travel_label": "By car",
+       "hours_text": "12:00 PM – 10:30 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Sendang Restaurant",
+        "city": "Ubud",
+        "cuisine_type": [
+         "Balinese",
+         "Indonesian",
+         "Western"
+        ],
+        "price_range": "Approx. INR 800–1,500 pp",
+        "hours": "8:00 AM–11:00 PM",
+        "ambience": "Tranquil poolside setting",
+        "area": "Mas",
+        "highlights": [
+         "Poolside restaurant at a Mas retreat hotel",
+         "Light or full meal options"
+        ],
+        "must_try_dishes": [
+         "Balinese/Indonesian specialities",
+         "Western favourites"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-08-29",
+        "_source_format": "new",
+        "_replaced_from": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx"
+       },
+       "place": {
+        "query": "Sendang Restaurant|Ubud",
+        "place_id": "ChIJcU-qzrU90i0RUJWQ2PJQmI4",
+        "name": "Sendang Restaurant",
+        "address": "Jl. Bangkilesan, Banjar Kawan, Mas, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+        "lat": -8.5468757,
+        "lng": 115.26935950000001,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "08:00:00",
+            "23:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "08:00:00",
+            "23:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "08:00:00",
+            "23:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "08:00:00",
+            "23:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "08:00:00",
+            "23:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "08:00:00",
+            "23:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "08:00:00",
+            "23:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "https://mayuraubud.com/",
+        "phone": "+62 361 4792956",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Sendang+Restaurant+Ubud&query_place_id=ChIJcU-qzrU90i0RUJWQ2PJQmI4",
+        "fetched_at": "2026-11-02T16:39:27.966631Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 0,
+       "travel_label": "Walk",
+       "hours_text": "8:00 AM – 11:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Lao Ba Cha",
+        "city": "Ubud",
+        "cuisine_type": [
+         "Asian"
+        ],
+        "price_range": "INR 800–2,000 per person",
+        "hours": "9:00 AM – 9:00 PM",
+        "ambience": "Vibrant, contemporary and lively with stylish interiors",
+        "area": "Ubud",
+        "highlights": [
+         "Stylish interiors",
+         "Creative menu inspired by regional Asian flavours",
+         "Sharing-style meals"
+        ],
+        "must_try_dishes": [
+         "Dim Sum Selection",
+         "Noodles",
+         "Asian Small Plates"
+        ],
+        "meal_slots": [
+         "lunch"
+        ],
+        "notes": "Parking available",
+        "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+        "_source_date": "2026-07-01",
+        "_source_format": "new"
+       },
+       "place": {
+        "query": "Lao Ba Cha|Ubud",
+        "place_id": "ChIJ0zvkeH090i0R-YKPUUVnf7g",
+        "name": "Lao Ba Cha",
+        "address": "F749+8MX, Jl. Werkudara, Mas, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+        "lat": -8.544149899999999,
+        "lng": 115.2692482,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "09:00:00",
+            "21:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "09:00:00",
+            "21:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "09:00:00",
+            "21:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "09:00:00",
+            "21:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "09:00:00",
+            "21:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "09:00:00",
+            "21:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "09:00:00",
+            "21:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": null,
+        "phone": "+62 858-7777-7798",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Lao+Ba+Cha+Ubud&query_place_id=ChIJ0zvkeH090i0R-YKPUUVnf7g",
+        "fetched_at": "2026-11-02T10:00:05.658987Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 5,
+       "travel_label": "Walk",
+       "hours_text": "9:00 AM – 9:00 PM",
+       "hours_verify": false
+      }
+     ],
+     "markers": []
+    }
+   ],
+   "legs": {
+    "Tegallalang Rice Terrace (Viewpoint & Scenic Cafe)": {
+     "from_name": "MAYURA UBUD RETREAT",
+     "to_name": "Tegallalang Rice Terrace (Viewpoint & Scenic Cafe)",
+     "walk_min": 203,
+     "drive_min": 33,
+     "transit_min": null,
+     "transit_steps": [],
+     "kind": "",
+     "km": null,
+     "ticketed": true,
+     "no_route": false,
+     "approx_min": null
+    },
+    "Ubud Palace": {
+     "from_name": "Tegallalang Rice Terrace (Viewpoint & Scenic Cafe)",
+     "to_name": "Ubud Palace",
+     "walk_min": 118,
+     "drive_min": 24,
+     "transit_min": null,
+     "transit_steps": [],
+     "kind": "",
+     "km": null,
+     "ticketed": true,
+     "no_route": false,
+     "approx_min": null
+    },
+    "Ubud Market": {
+     "from_name": "Ubud Palace",
+     "to_name": "Ubud Market",
+     "walk_min": 4,
+     "drive_min": 2,
+     "transit_min": null,
+     "transit_steps": [],
+     "kind": "",
+     "km": null,
+     "ticketed": true,
+     "no_route": false,
+     "approx_min": null
+    }
+   },
+   "places": {
+    "mayura ubud retreat|ubud": {
+     "query": "MAYURA UBUD RETREAT|Ubud",
+     "place_id": "ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "name": "Mayura Ubud Retreat",
+     "address": "Jl. Bangkilesan, Banjar Kawan Desa Mas, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.5468956,
+     "lng": 115.2693623,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "http://www.mayuraubud.com/",
+     "phone": "+62 361 4792956",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=MAYURA+UBUD+RETREAT+Ubud&query_place_id=ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "fetched_at": "2026-11-02T10:57:24.763405Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "MAYURA UBUD RETREAT": {
+     "query": "MAYURA UBUD RETREAT|Ubud",
+     "place_id": "ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "name": "Mayura Ubud Retreat",
+     "address": "Jl. Bangkilesan, Banjar Kawan Desa Mas, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.5468956,
+     "lng": 115.2693623,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "http://www.mayuraubud.com/",
+     "phone": "+62 361 4792956",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=MAYURA+UBUD+RETREAT+Ubud&query_place_id=ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "fetched_at": "2026-11-02T10:57:24.763405Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "Tegallalang Rice Terrace (Viewpoint & Scenic Cafe)": {
+     "query": "Tegallalang Rice Terrace (Viewpoint & Scenic Cafe)|Ubud",
+     "place_id": "ChIJ4wD5Iwsi0i0R7QRsOGmJGo0",
+     "name": "Tegallalang Rice Terrace",
+     "address": "Jl. Raya Tegallalang, Tegallalang, Kec. Tegallalang, Kabupaten Gianyar, Bali 80561, Indonesia",
+     "lat": -8.431711199999999,
+     "lng": 115.279303,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "6": [
+        [
+         "08:00:00",
+         "18:00:00"
+        ]
+       ],
+       "0": [
+        [
+         "08:00:00",
+         "18:00:00"
+        ]
+       ],
+       "1": [
+        [
+         "08:00:00",
+         "18:00:00"
+        ]
+       ],
+       "2": [
+        [
+         "08:00:00",
+         "18:00:00"
+        ]
+       ],
+       "3": [
+        [
+         "08:00:00",
+         "18:00:00"
+        ]
+       ],
+       "4": [
+        [
+         "08:00:00",
+         "18:00:00"
+        ]
+       ],
+       "5": [
+        [
+         "08:00:00",
+         "18:00:00"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": null,
+     "phone": null,
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=Tegallalang+Rice+Terrace+%28Viewpoint+%26+Scenic+Cafe%29+Ubud&query_place_id=ChIJ4wD5Iwsi0i0R7QRsOGmJGo0",
+     "fetched_at": "2026-11-02T09:38:15.176079Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "Ubud Palace": {
+     "query": "Ubud Palace|Ubud",
+     "place_id": "ChIJS7J-82o90i0RMj8cKJr2zUs",
+     "name": "Ubud Palace",
+     "address": "F7V7+72R, Jl. Raya Ubud No.8, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.5065977,
+     "lng": 115.2625884,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "6": [
+        [
+         "07:00:00",
+         "17:00:00"
+        ]
+       ],
+       "0": [
+        [
+         "07:00:00",
+         "17:00:00"
+        ]
+       ],
+       "1": [
+        [
+         "07:00:00",
+         "17:00:00"
+        ]
+       ],
+       "2": [
+        [
+         "07:00:00",
+         "17:00:00"
+        ]
+       ],
+       "3": [
+        [
+         "07:00:00",
+         "17:00:00"
+        ]
+       ],
+       "4": [
+        [
+         "07:00:00",
+         "17:00:00"
+        ]
+       ],
+       "5": [
+        [
+         "07:00:00",
+         "17:00:00"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": null,
+     "phone": null,
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=Ubud+Palace+Ubud&query_place_id=ChIJS7J-82o90i0RMj8cKJr2zUs",
+     "fetched_at": "2026-11-02T09:38:15.442213Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "Ubud Market": {
+     "query": "Ubud Market|Ubud",
+     "place_id": "ChIJKV3e_2o90i0RLIEK_AfKjE0",
+     "name": "Ubud Street Market",
+     "address": "F7R7+V5F, Jl. Karna, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.5078082,
+     "lng": 115.2629127,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "6": [
+        [
+         "09:00:00",
+         "18:00:00"
+        ]
+       ],
+       "0": [
+        [
+         "09:00:00",
+         "18:00:00"
+        ]
+       ],
+       "1": [
+        [
+         "09:00:00",
+         "18:00:00"
+        ]
+       ],
+       "2": [
+        [
+         "09:00:00",
+         "18:00:00"
+        ]
+       ],
+       "3": [
+        [
+         "09:00:00",
+         "18:00:00"
+        ]
+       ],
+       "4": [
+        [
+         "09:00:00",
+         "18:00:00"
+        ]
+       ],
+       "5": [
+        [
+         "09:00:00",
+         "18:00:00"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": null,
+     "phone": null,
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=Ubud+Market+Ubud&query_place_id=ChIJKV3e_2o90i0RLIEK_AfKjE0",
+     "fetched_at": "2026-11-02T09:38:15.749828Z",
+     "match_ok": true,
+     "verify_note": null
+    }
+   },
+   "booking_by_item": {},
+   "arrival_booking": null,
+   "price_by_restaurant": {
+    "Queens of India": "₹800–1,800",
+    "Milk & Madu Ubud": "₹400–1,200",
+    "Natah Ubud": "₹700–1,800",
+    "Galle Club | Sri Lankan & Coastal Indian Cuisine": "₹1,000–2,200",
+    "Sendang Restaurant": "₹800–1,500",
+    "Lao Ba Cha": "₹800–2,000"
+   },
+   "arrival": null,
+   "departure": null,
+   "other_transport": [],
+   "prev_city": "Ubud",
+   "utc_offset_hours": null,
+   "library_attractions": {
+    "Ubud Palace": {
+     "name": "Ubud Palace",
+     "city": "Ubud",
+     "description": "Former royal residence at the heart of Ubud, a compact complex with ornate gateways, carved stonework and traditional courtyards; a good introduction to Balinese royal architecture.",
+     "hours": "7:00 AM – 5:00 PM",
+     "entry_fee": "Free for general palace grounds",
+     "recommended_duration": "30–45 minutes",
+     "dress_code": "Dress respectfully; shoulders and knees covered",
+     "tips": [
+      "Allow time for photographs of carved gates and courtyards",
+      "Wear comfortable footwear"
+     ],
+     "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+     "_source_date": "2026-10-20",
+     "_source_format": "new",
+     "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+    },
+    "Ubud Market": {
+     "name": "Ubud Market",
+     "city": "Ubud",
+     "description": "Colourful market with woven baskets, textiles, carved pieces, jewellery, artwork and small souvenirs; located directly across from Ubud Palace.",
+     "hours": "9:00 AM – 6:00 PM",
+     "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+     "_source_date": "2026-10-20",
+     "_source_format": "new",
+     "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+    }
+   },
+   "lands_next_day": false,
+   "driver_from": null
+  },
+  {
+   "index": 4,
+   "date": "2026-09-27",
+   "city": "Ubud",
+   "text": {
+    "title": "Kintamani, Tirta Empul and Coffee Plantation",
+    "intro": "We explore a day of Balinese sights, from the volcano view at Kintamani to Tirta Empul Temple and a Coffee Plantation. For meals, we can choose Indonesian flavors at lunch and dinner, with options ranging from a relaxed riverside setting to a garden or jungle view.",
+    "attractions": [
+     {
+      "name": "Kintamani Volcano View",
+      "description": "We take in the volcano view at Kintamani.",
+      "entry_fee": null,
+      "dress_code": null,
+      "tips": null,
+      "best_time": null,
+      "duration": null
+     },
+     {
+      "name": "Tirta Empul Temple",
+      "description": "We visit a sacred Balinese Hindu temple founded over a thousand years ago, known for its holy spring water and purification pools.",
+      "entry_fee": null,
+      "dress_code": null,
+      "tips": null,
+      "best_time": null,
+      "duration": null
+     },
+     {
+      "name": "Coffee Plantation",
+      "description": "We visit a Coffee Plantation.",
+      "entry_fee": null,
+      "dress_code": null,
+      "tips": null,
+      "best_time": null,
+      "duration": null
+     }
+    ],
+    "restaurants": [
+     {
+      "name": "Bararasa Bali",
+      "ambience": "Highly rated restaurant in the Tampaksiring area.",
+      "best_for": "Indonesian cuisine at lunch."
+     },
+     {
+      "name": "Nukad Tampaksiring",
+      "ambience": "Relaxed riverside setting with an offbeat Bali experience.",
+      "best_for": "A riverside lunch with grilled meats and Indonesian cuisine."
+     },
+     {
+      "name": "Wedja Restaurant",
+      "ambience": "Beautiful garden setting.",
+      "best_for": "Authentic Indonesian flavors and meat dishes."
+     },
+     {
+      "name": "Ramu Kitchen",
+      "ambience": "Sophisticated dinner with jungle views.",
+      "best_for": "Creative Pan-Asian cuisine with Indonesian influences."
+     },
+     {
+      "name": "Basilico Ubud Restaurant",
+      "ambience": "Italian favorites blended with contemporary and Indonesian influences.",
+      "best_for": "Quality meat and seafood."
+     }
+    ],
+    "free_time_idea": null
+   },
+   "result": {
+    "scheduled": [
+     {
+      "item": {
+       "name": "Kintamani Volcano View",
+       "kind": "attraction",
+       "city": "Ubud",
+       "time": null,
+       "slot_hint": "any",
+       "note": "",
+       "optional": false,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": null
+      },
+      "slot": "morning",
+      "start": "09:00:00"
+     },
+     {
+      "item": {
+       "name": "Tirta Empul Temple",
+       "kind": "attraction",
+       "city": "Ubud",
+       "time": null,
+       "slot_hint": "any",
+       "note": "",
+       "optional": false,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": null
+      },
+      "slot": "morning",
+      "start": "10:30:00"
+     },
+     {
+      "item": {
+       "name": "Coffee Plantation",
+       "kind": "attraction",
+       "city": "Ubud",
+       "time": null,
+       "slot_hint": "any",
+       "note": "",
+       "optional": false,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": null
+      },
+      "slot": "afternoon",
+      "start": "14:00:00"
+     }
+    ],
+    "meals": [
+     {
+      "meal": "breakfast",
+      "start": "07:30:00",
+      "anchors": [],
+      "included": true,
+      "unanchored": false
+     },
+     {
+      "meal": "lunch",
+      "start": "12:30:00",
+      "anchors": [
+       [
+        "Tirta Empul Temple",
+        [
+         -8.4156589,
+         115.3153284
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     },
+     {
+      "meal": "dinner",
+      "start": "19:30:00",
+      "anchors": [
+       [
+        "MAYURA UBUD RETREAT",
+        [
+         -8.5468956,
+         115.2693623
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     }
+    ],
+    "tips": [],
+    "markers": [
+     {
+      "kind": "VERIFY",
+      "text": "booking 'Kintamani Volcano View, Tirta Empul Temple and Coffee Plantation tour' at 08:00 is not placed in the day plan"
+     }
+    ]
+   },
+   "meals": [
+    {
+     "slot": {
+      "meal": "lunch",
+      "start": "12:30:00",
+      "anchors": [
+       [
+        "Tirta Empul Temple",
+        [
+         -8.4156589,
+         115.3153284
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     },
+     "day_index": 4,
+     "restaurants": [
+      {
+       "lib": {
+        "name": "Bararasa Bali",
+        "city": "Tampaksiring",
+        "cuisine_type": [
+         "Indonesian"
+        ],
+        "price_range": "Approx. INR 500–1,200 pp",
+        "hours": "12:00 PM – 9:00 PM",
+        "ambience": "Relaxed, surrounded by lush greenery",
+        "area": "Tampaksiring",
+        "nearby_landmarks": [
+         "Tirta Empul Temple, Tampaksiring"
+        ],
+        "highlights": [
+         "Highly rated restaurant in the Tampaksiring area"
+        ],
+        "must_try_dishes": [
+         "Grilled Chicken",
+         "Beef dishes",
+         "Duck",
+         "Seafood",
+         "Indonesian specialities"
+        ],
+        "meal_slots": [
+         "lunch"
+        ],
+        "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-10-20",
+        "_source_format": "new",
+        "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+       },
+       "place": {
+        "query": "Bararasa Bali|Tampaksiring",
+        "place_id": "ChIJJ3dXDqUZ0i0RZfqHO697AJo",
+        "name": "Bararasa Bali",
+        "address": "Jl. Basangambu, Manukaya, Kec. Tampaksiring, Kabupaten Gianyar, Bali 80552, Indonesia",
+        "lat": -8.407682099999999,
+        "lng": 115.32210620000001,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "12:00:00",
+            "21:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "12:00:00",
+            "21:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "12:00:00",
+            "21:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "12:00:00",
+            "21:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "12:00:00",
+            "21:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "12:00:00",
+            "21:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "12:00:00",
+            "21:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": null,
+        "phone": "+62 857-0670-6491",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Bararasa+Bali+Tampaksiring&query_place_id=ChIJJ3dXDqUZ0i0RZfqHO697AJo",
+        "fetched_at": "2026-11-02T15:30:25.463096Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 5,
+       "travel_label": "By car",
+       "hours_text": "12:00 PM – 9:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Nukad Tampaksiring",
+        "city": "Tampaksiring",
+        "cuisine_type": [
+         "Indonesian"
+        ],
+        "price_range": "Approx. INR 300–700 pp",
+        "hours": "10:00 AM – 6:00 PM",
+        "ambience": "Hidden-gem style, riverside setting, relaxed atmosphere surrounded by greenery",
+        "area": "Tampaksiring",
+        "nearby_landmarks": [
+         "Tirta Empul Temple, Tampaksiring"
+        ],
+        "highlights": [
+         "Relaxed riverside lunch",
+         "Grilled meats and an offbeat Bali experience"
+        ],
+        "must_try_dishes": [
+         "Ayam Guling",
+         "Fried Duck",
+         "Fried Chicken",
+         "Beef Grill",
+         "Indonesian dishes"
+        ],
+        "meal_slots": [
+         "lunch"
+        ],
+        "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-10-20",
+        "_source_format": "new",
+        "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+       },
+       "place": {
+        "query": "Nukad Tampaksiring|Tampaksiring",
+        "place_id": "ChIJeZRQbl8Z0i0RrItOeR8jIHk",
+        "name": "Nukad Tampaksiring",
+        "address": "Jl. Pertiwi Brata, Selat, Kec. Tampaksiring, Kabupaten Gianyar, Bali 80552, Indonesia",
+        "lat": -8.4348068,
+        "lng": 115.31790939999999,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "10:00:00",
+            "18:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "10:00:00",
+            "18:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "10:00:00",
+            "18:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "10:00:00",
+            "18:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "10:00:00",
+            "18:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "10:00:00",
+            "18:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "10:00:00",
+            "18:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": null,
+        "phone": "+62 823-2914-5807",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Nukad+Tampaksiring+Tampaksiring&query_place_id=ChIJeZRQbl8Z0i0RrItOeR8jIHk",
+        "fetched_at": "2026-11-02T15:30:25.980856Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 10,
+       "travel_label": "By car",
+       "hours_text": "10:00 AM – 6:00 PM",
+       "hours_verify": false
+      }
+     ],
+     "markers": [
+      {
+       "kind": "ADD_RESTAURANT",
+       "text": "Lunch, Day 4, near Tirta Empul Temple"
+      }
+     ]
+    },
+    {
+     "slot": {
+      "meal": "dinner",
+      "start": "19:30:00",
+      "anchors": [
+       [
+        "MAYURA UBUD RETREAT",
+        [
+         -8.5468956,
+         115.2693623
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     },
+     "day_index": 4,
+     "restaurants": [
+      {
+       "lib": {
+        "name": "Wedja Restaurant",
+        "city": "Ubud",
+        "cuisine_type": [
+         "Indonesian"
+        ],
+        "price_range": "Approx. INR 500–1,200 pp",
+        "hours": "8:00 AM – 10:00 PM",
+        "ambience": "Lush greenery, rice fields and tranquil garden spaces",
+        "highlights": [
+         "Authentic Indonesian flavours and meat dishes in a beautiful garden setting"
+        ],
+        "must_try_dishes": [
+         "Lamb Nasi Goreng",
+         "Crispy Duck",
+         "Grilled Chicken",
+         "Fried Fish",
+         "Grilled Seafood"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-10-20",
+        "_source_format": "new",
+        "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+       },
+       "place": {
+        "query": "Wedja Restaurant|Ubud",
+        "place_id": "ChIJZRao86M90i0RWDXbSIypCzw",
+        "name": "Wedja Restaurant",
+        "address": "Jl. Ambarawati, Mas, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+        "lat": -8.541720399999999,
+        "lng": 115.2691361,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "08:00:00",
+            "22:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "08:00:00",
+            "22:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "08:00:00",
+            "22:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "08:00:00",
+            "22:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "08:00:00",
+            "22:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "08:00:00",
+            "22:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "08:00:00",
+            "22:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "https://wedjabali.com/",
+        "phone": "+62 853-3701-9910",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Wedja+Restaurant+Ubud&query_place_id=ChIJZRao86M90i0RWDXbSIypCzw",
+        "fetched_at": "2026-11-02T16:39:28.183668Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 10,
+       "travel_label": "Walk",
+       "hours_text": "8:00 AM – 10:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Ramu Kitchen",
+        "city": "Ubud",
+        "cuisine_type": [
+         "Pan-Asian",
+         "Indonesian"
+        ],
+        "price_range": "Approx. INR 900–2,000 pp",
+        "hours": "3:00 PM – 11:00 PM",
+        "ambience": "Stylish rooftop with forest views",
+        "area": "Titik Dua Ubud",
+        "highlights": [
+         "Creative Pan-Asian cuisine with Indonesian influences",
+         "Sophisticated dinner with jungle views"
+        ],
+        "must_try_dishes": [
+         "Aged Duck Ssam",
+         "Honey Grilled Lamb Shank Curry",
+         "Kiwami Top Sirloin Steak",
+         "Spiced Grilled Chicken",
+         "Grilled Fish"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-10-20",
+        "_source_format": "new",
+        "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+       },
+       "place": {
+        "query": "Ramu Kitchen|Ubud",
+        "place_id": "ChIJnYN3zEs90i0RPY0Y_l_EMjw",
+        "name": "Ramu Kitchen",
+        "address": "Jl. Cok Rai Pudak No.48, Peliatan, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+        "lat": -8.5280141,
+        "lng": 115.27121989999999,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "15:00:00",
+            "23:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "15:00:00",
+            "23:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "15:00:00",
+            "23:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "15:00:00",
+            "23:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "15:00:00",
+            "23:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "15:00:00",
+            "23:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "15:00:00",
+            "23:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "https://ramukitchen.com/",
+        "phone": "+62 811-3897-976",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Ramu+Kitchen+Ubud&query_place_id=ChIJnYN3zEs90i0RPY0Y_l_EMjw",
+        "fetched_at": "2026-11-02T10:00:06.154059Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 7,
+       "travel_label": "By car",
+       "hours_text": "3:00 PM – 11:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Basilico Ubud Restaurant",
+        "city": "Ubud",
+        "cuisine_type": [
+         "Italian",
+         "Fusion",
+         "Indonesian"
+        ],
+        "price_range": "Approx. INR 600–1,800 pp",
+        "hours": "10:00 AM – 11:00 PM",
+        "ambience": "Inviting, relaxed",
+        "area": "Pengosekan",
+        "highlights": [
+         "Italian favourites blended with contemporary and Indonesian influences",
+         "Quality meat and seafood"
+        ],
+        "must_try_dishes": [
+         "Beef Cheek",
+         "Roast Ribeye Beef",
+         "Tagliatelle Duck",
+         "Chicken Marsala",
+         "Seafood & Vongole",
+         "Tuna Sambal Matah Pizza"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-10-20",
+        "_source_format": "new",
+        "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+       },
+       "place": {
+        "query": "Basilico Ubud Restaurant|Ubud",
+        "place_id": "ChIJq-sJjR090i0RxPW9kxKj_YI",
+        "name": "Basilico Ubud Restaurant",
+        "address": "Jl. Raya Pengosekan, Mas, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+        "lat": -8.5256746,
+        "lng": 115.2636663,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "https://basilicofusionubud.com/",
+        "phone": "+62 877-4768-4458",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Basilico+Ubud+Restaurant+Ubud&query_place_id=ChIJq-sJjR090i0RxPW9kxKj_YI",
+        "fetched_at": "2026-11-02T16:50:25.962880Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 10,
+       "travel_label": "By car",
+       "hours_text": "10:00 AM – 11:00 PM",
+       "hours_verify": false
+      }
+     ],
+     "markers": []
+    }
+   ],
+   "legs": {
+    "Tirta Empul Temple": {
+     "from_name": "MAYURA UBUD RETREAT",
+     "to_name": "Tirta Empul Temple",
+     "walk_min": 270,
+     "drive_min": 36,
+     "transit_min": null,
+     "transit_steps": [],
+     "kind": "",
+     "km": null,
+     "ticketed": true,
+     "no_route": false,
+     "approx_min": null
+    },
+    "Coffee Plantation": {
+     "from_name": "Tirta Empul Temple",
+     "to_name": "Coffee Plantation",
+     "walk_min": 247,
+     "drive_min": 41,
+     "transit_min": null,
+     "transit_steps": [],
+     "kind": "",
+     "km": null,
+     "ticketed": true,
+     "no_route": false,
+     "approx_min": null
+    }
+   },
+   "places": {
+    "mayura ubud retreat|ubud": {
+     "query": "MAYURA UBUD RETREAT|Ubud",
+     "place_id": "ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "name": "Mayura Ubud Retreat",
+     "address": "Jl. Bangkilesan, Banjar Kawan Desa Mas, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.5468956,
+     "lng": 115.2693623,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "http://www.mayuraubud.com/",
+     "phone": "+62 361 4792956",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=MAYURA+UBUD+RETREAT+Ubud&query_place_id=ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "fetched_at": "2026-11-02T10:57:24.763405Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "MAYURA UBUD RETREAT": {
+     "query": "MAYURA UBUD RETREAT|Ubud",
+     "place_id": "ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "name": "Mayura Ubud Retreat",
+     "address": "Jl. Bangkilesan, Banjar Kawan Desa Mas, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.5468956,
+     "lng": 115.2693623,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "http://www.mayuraubud.com/",
+     "phone": "+62 361 4792956",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=MAYURA+UBUD+RETREAT+Ubud&query_place_id=ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "fetched_at": "2026-11-02T10:57:24.763405Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "Kintamani Volcano View": {
+     "query": "Kintamani Volcano View|Ubud",
+     "place_id": "ChIJ9yBCSkH10S0ROAa-NwUaBDk",
+     "name": "Mountain View House Kintamani",
+     "address": "Kintamani, Bangli Regency, Bali 80652, Indonesia",
+     "lat": -8.2435832,
+     "lng": 115.3279487,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": null,
+     "phone": "+62 813-2227-795",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=Kintamani+Volcano+View+Ubud&query_place_id=ChIJ9yBCSkH10S0ROAa-NwUaBDk",
+     "fetched_at": "2026-11-02T09:38:16.422642Z",
+     "match_ok": false,
+     "verify_note": null
+    },
+    "Tirta Empul Temple": {
+     "query": "Tirta Empul Temple|Ubud",
+     "place_id": "ChIJtTFh4PQY0i0RwewUdwFaolM",
+     "name": "Pura Tirta Empul",
+     "address": "Tampaksiring, Gianyar Regency, Bali 80552, Indonesia",
+     "lat": -8.4156589,
+     "lng": 115.3153284,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "6": [
+        [
+         "08:00:00",
+         "18:00:00"
+        ]
+       ],
+       "0": [
+        [
+         "08:00:00",
+         "18:00:00"
+        ]
+       ],
+       "1": [
+        [
+         "08:00:00",
+         "18:00:00"
+        ]
+       ],
+       "2": [
+        [
+         "08:00:00",
+         "18:00:00"
+        ]
+       ],
+       "3": [
+        [
+         "08:00:00",
+         "18:00:00"
+        ]
+       ],
+       "4": [
+        [
+         "08:00:00",
+         "18:00:00"
+        ]
+       ],
+       "5": [
+        [
+         "08:00:00",
+         "18:00:00"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": null,
+     "phone": null,
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=Tirta+Empul+Temple+Ubud&query_place_id=ChIJtTFh4PQY0i0RwewUdwFaolM",
+     "fetched_at": "2026-11-02T09:38:16.690098Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "Coffee Plantation": {
+     "query": "Coffee Plantation|Ubud",
+     "place_id": "ChIJSWuRZAA90i0RfPOr0XEWLtU",
+     "name": "Coffee plantation",
+     "address": "F726+G7R, Jl. Yudistira Barat, Peliatan, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.548699599999999,
+     "lng": 115.26030259999999,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": null,
+     "phone": null,
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=Coffee+Plantation+Ubud&query_place_id=ChIJSWuRZAA90i0RfPOr0XEWLtU",
+     "fetched_at": "2026-11-02T09:38:17.094666Z",
+     "match_ok": true,
+     "verify_note": null
+    }
+   },
+   "booking_by_item": {},
+   "arrival_booking": null,
+   "price_by_restaurant": {
+    "Bararasa Bali": "₹500–1,200",
+    "Nukad Tampaksiring": "₹300–700",
+    "Wedja Restaurant": "₹500–1,200",
+    "Ramu Kitchen": "₹900–2,000",
+    "Basilico Ubud Restaurant": "₹600–1,800"
+   },
+   "arrival": null,
+   "departure": null,
+   "other_transport": [],
+   "prev_city": "Ubud",
+   "utc_offset_hours": null,
+   "library_attractions": {
+    "Tirta Empul Temple": {
+     "name": "Tirta Empul Temple",
+     "city": "Ubud",
+     "description": "Sacred Balinese Hindu temple founded over a thousand years ago, known for its holy spring water and purification pools",
+     "hours": "08:00 AM – 06:00 PM",
+     "recommended_duration": "1–1.5 Hours",
+     "dress_code": "Modest clothing recommended; sarongs are generally provided at the entrance",
+     "tips": [
+      "Carry a change of clothes to take part in the holy spring purification ritual",
+      "Women who are menstruating are not permitted to enter the temple premises"
+     ],
+     "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+     "_source_date": "2026-07-01",
+     "_source_format": "new",
+     "_replaced_from": "Bali Indonesia/05062026_Test_Bali _All Inclusive Guide.docx"
+    }
+   },
+   "lands_next_day": false,
+   "driver_from": null
+  },
+  {
+   "index": 5,
+   "date": "2026-09-28",
+   "city": "Nusa Lembongan",
+   "text": {
+    "title": "Transfer to Nusa Lembongan and Mangrove Boat Experience",
+    "intro": "We’ll make our way to Nusa Lembongan and enjoy a boat outing at the mangrove forest, with a range of lunch and dinner options to choose from.",
+    "attractions": [
+     {
+      "name": "Mangrove Boat Experience at Nusa Lembongan Mangrove Forest",
+      "description": "We can explore the mangrove forest by boat during the Mangrove Boat Experience.",
+      "entry_fee": null,
+      "dress_code": null,
+      "tips": null,
+      "best_time": null,
+      "duration": null
+     }
+    ],
+    "restaurants": [
+     {
+      "name": "The Sampan",
+      "ambience": "A broad menu of local and international favourites.",
+      "best_for": "Lunch with Indonesian dishes, seafood, and grill options."
+     },
+     {
+      "name": "Kayu Lembongan",
+      "ambience": "A garden-style café serving wholesome dishes, brunch favourites, and comfort food.",
+      "best_for": "Lunch with café fare and comfort food."
+     },
+     {
+      "name": "Nisi – House of Mediterranean",
+      "ambience": "An air-conditioned setting with Greek, Italian, and Spanish influences.",
+      "best_for": "Lunch with Mediterranean dishes, meat, and seafood."
+     },
+     {
+      "name": "Curry Traders Restaurant and Bar",
+      "ambience": "A restaurant and bar known for curries and seafood.",
+      "best_for": "Dinner with Indian, Sri Lankan, and Asian dishes."
+     },
+     {
+      "name": "Little Prema Warung",
+      "ambience": "A popular warung where the fresh catch is displayed and charcoal-grilled.",
+      "best_for": "Dinner with seafood and Indonesian dishes; it’s best to go early."
+     },
+     {
+      "name": "Ginger & Jamu",
+      "ambience": "A health-focused restaurant with plant-based options.",
+      "best_for": "Dinner with healthy, plant-based options."
+     }
+    ],
+    "free_time_idea": null
+   },
+   "result": {
+    "scheduled": [
+     {
+      "item": {
+       "name": "Transfer to Sanur Harbour",
+       "kind": "transfer",
+       "city": "Ubud",
+       "time": "07:00",
+       "slot_hint": "any",
+       "note": "",
+       "optional": false,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": null
+      },
+      "slot": "morning",
+      "start": "07:00:00"
+     },
+     {
+      "item": {
+       "name": "Mangrove Boat Experience at Nusa Lembongan Mangrove Forest",
+       "kind": "activity",
+       "city": "Nusa Lembongan",
+       "time": null,
+       "slot_hint": "any",
+       "note": "",
+       "optional": false,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": null
+      },
+      "slot": "morning",
+      "start": "11:05:00"
+     }
+    ],
+    "meals": [
+     {
+      "meal": "breakfast",
+      "start": "07:30:00",
+      "anchors": [],
+      "included": true,
+      "unanchored": false
+     },
+     {
+      "meal": "lunch",
+      "start": "12:30:00",
+      "anchors": [
+       [
+        "D'NUSA BEACH CLUB AND RESORT",
+        [
+         -8.6646133,
+         115.4501372
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     },
+     {
+      "meal": "dinner",
+      "start": "19:30:00",
+      "anchors": [
+       [
+        "D'NUSA BEACH CLUB AND RESORT",
+        [
+         -8.6646133,
+         115.4501372
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     }
+    ],
+    "tips": [],
+    "markers": [
+     {
+      "kind": "VERIFY",
+      "text": "location of Mangrove Boat Experience at Nusa Lembongan Mangrove Forest unknown"
+     },
+     {
+      "kind": "VERIFY",
+      "text": "booking 'Transfer to Sanur Harbour, shared fast boat and Mangrove Boat Experience' at 07:00 is not placed in the day plan"
+     }
+    ]
+   },
+   "meals": [
+    {
+     "slot": {
+      "meal": "lunch",
+      "start": "12:30:00",
+      "anchors": [
+       [
+        "D'NUSA BEACH CLUB AND RESORT",
+        [
+         -8.6646133,
+         115.4501372
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     },
+     "day_index": 5,
+     "restaurants": [
+      {
+       "lib": {
+        "name": "The Sampan",
+        "city": "Nusa Lembongan",
+        "cuisine_type": [
+         "Indonesian",
+         "Seafood",
+         "Grill"
+        ],
+        "price_range": "Approx. INR 400–1,000 pp",
+        "hours": "6:00 AM – 10:00 PM",
+        "ambience": "Lively, casual island atmosphere",
+        "highlights": [
+         "Broad menu of local and international favourites"
+        ],
+        "must_try_dishes": [
+         "Grilled Prawns",
+         "Fried Fish",
+         "Grilled Seafood",
+         "Grilled Chicken",
+         "Beef dishes"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-10-20",
+        "_source_format": "new",
+        "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+       },
+       "place": {
+        "query": "The Sampan|Nusa Lembongan",
+        "place_id": "ChIJS6Lz6HJt0i0R9ShseYBIGhc",
+        "name": "The Sampan",
+        "address": "Pulau Nusa Lembongan, Jungutbatu, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771, Indonesia",
+        "lat": -8.665534899999999,
+        "lng": 115.451358,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "06:00:00",
+            "22:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "06:00:00",
+            "22:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "06:00:00",
+            "22:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "06:00:00",
+            "22:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "06:00:00",
+            "22:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "06:00:00",
+            "22:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "06:00:00",
+            "22:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": null,
+        "phone": "+62 813-2341-6722",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=The+Sampan+Nusa+Lembongan&query_place_id=ChIJS6Lz6HJt0i0R9ShseYBIGhc",
+        "fetched_at": "2026-11-02T10:00:23.521012Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 3,
+       "travel_label": "Walk",
+       "hours_text": "6:00 AM – 10:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Kayu Lembongan",
+        "city": "Nusa Lembongan",
+        "cuisine_type": [
+         "Cafe",
+         "Comfort food",
+         "Brunch"
+        ],
+        "price_range": "Approx. INR 500–1,200 pp",
+        "hours": "7:00 AM – 10:00 PM",
+        "ambience": "Relaxed, leafy garden setting",
+        "area": "Jungutbatu",
+        "highlights": [
+         "Garden-style café with wholesome dishes, brunch favourites and comfort food"
+        ],
+        "must_try_dishes": [
+         "Royale with Cheese Burger",
+         "Turkish Eggs",
+         "Chicken dishes",
+         "Epic Salads"
+        ],
+        "meal_slots": [
+         "lunch"
+        ],
+        "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-10-20",
+        "_source_format": "new",
+        "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+       },
+       "place": {
+        "query": "Kayu Lembongan|Nusa Lembongan",
+        "place_id": "ChIJ4eanYFNt0i0R6MxYKTz-PgI",
+        "name": "Kayu Lembongan",
+        "address": "Jl. Jungutbatu, Nusa Lembongan, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771, Indonesia",
+        "lat": -8.6710195,
+        "lng": 115.44979090000001,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "http://www.kayulembongan.com/",
+        "phone": "+62 878-5180-6128",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Kayu+Lembongan+Nusa+Lembongan&query_place_id=ChIJ4eanYFNt0i0R6MxYKTz-PgI",
+        "fetched_at": "2026-11-02T10:00:25.892197Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 3,
+       "travel_label": "By car",
+       "hours_text": "7:00 AM – 10:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Nisi – House of Mediterranean",
+        "city": "Nusa Lembongan",
+        "cuisine_type": [
+         "Mediterranean",
+         "Greek",
+         "Italian",
+         "Spanish"
+        ],
+        "price_range": "Approx. INR 700–1,500 pp",
+        "hours": "7:00 AM – 11:00 PM",
+        "ambience": "Stylish, air-conditioned",
+        "area": "Jungutbatu",
+        "highlights": [
+         "Greek, Italian and Spanish influences",
+         "Quality meat and seafood in an air-conditioned setting"
+        ],
+        "must_try_dishes": [
+         "Lamb Kleftiko",
+         "Beef Kefta",
+         "Chicken Souvlaki",
+         "Butter Fish",
+         "Seafood Paella",
+         "Grilled Octopus"
+        ],
+        "meal_slots": [
+         "lunch"
+        ],
+        "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-10-20",
+        "_source_format": "new",
+        "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+       },
+       "place": {
+        "query": "Nisi – House of Mediterranean|Nusa Lembongan",
+        "place_id": "ChIJZdwSnuZt0i0Rek8XQdv0ipQ",
+        "name": "Nisi - House of Mediterranean",
+        "address": "Nusa Lembongan, Jl. Jungutbatu, Jungutbatu, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80711, Indonesia",
+        "lat": -8.671626999999999,
+        "lng": 115.4494658,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "http://nisilembongan.co/",
+        "phone": "+62 819-3006-2023",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Nisi+%E2%80%93+House+of+Mediterranean+Nusa+Lembongan&query_place_id=ChIJZdwSnuZt0i0Rek8XQdv0ipQ",
+        "fetched_at": "2026-11-02T10:00:25.305801Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 4,
+       "travel_label": "By car",
+       "hours_text": "7:00 AM – 10:00 PM",
+       "hours_verify": false
+      }
+     ],
+     "markers": []
+    },
+    {
+     "slot": {
+      "meal": "dinner",
+      "start": "19:30:00",
+      "anchors": [
+       [
+        "D'NUSA BEACH CLUB AND RESORT",
+        [
+         -8.6646133,
+         115.4501372
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     },
+     "day_index": 5,
+     "restaurants": [
+      {
+       "lib": {
+        "name": "Curry Traders Restaurant and Bar",
+        "city": "Nusa Lembongan",
+        "cuisine_type": [
+         "Indian",
+         "Sri Lankan",
+         "Asian"
+        ],
+        "price_range": "Approx. INR 1,000–1,800 pp",
+        "hours": "5:00 PM–11:00 PM | 12:00 PM–11:00 PM (Sundays)",
+        "ambience": "Cosy, relaxed island vibe",
+        "highlights": [
+         "Well-loved curries and seafood"
+        ],
+        "must_try_dishes": [
+         "Goan fish curry",
+         "Butter prawns",
+         "Tandoori naan",
+         "Kulfi"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-08-29",
+        "_source_format": "new"
+       },
+       "place": {
+        "query": "Curry Traders Restaurant and Bar|Nusa Lembongan",
+        "place_id": "ChIJxyJDyWht0i0RyiJzvpqhQ5E",
+        "name": "Curry Traders Restaurant and Bar",
+        "address": "Jl. Jungutbatu, Jungutbatu, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771, Indonesia",
+        "lat": -8.6672347,
+        "lng": 115.4506428,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "12:00:00",
+            "23:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "17:00:00",
+            "23:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "17:00:00",
+            "23:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "17:00:00",
+            "23:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "17:00:00",
+            "23:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "17:00:00",
+            "23:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "17:00:00",
+            "23:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "http://wa.me/+6282146684894",
+        "phone": "+62 821-4668-4894",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Curry+Traders+Restaurant+and+Bar+Nusa+Lembongan&query_place_id=ChIJxyJDyWht0i0RyiJzvpqhQ5E",
+        "fetched_at": "2026-11-02T10:00:24.096165Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 6,
+       "travel_label": "Walk",
+       "hours_text": "5:00 PM – 11:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Little Prema Warung",
+        "city": "Nusa Lembongan",
+        "cuisine_type": [
+         "Seafood",
+         "Indonesian"
+        ],
+        "price_range": "Approx. INR 250–900 pp depending on the seafood selected",
+        "hours": "9:00 AM–10:00 PM",
+        "ambience": "No-frills local warung",
+        "area": "Jungutbatu",
+        "highlights": [
+         "Fresh catch displayed and charcoal-grilled",
+         "Popular, best to go early"
+        ],
+        "must_try_dishes": [
+         "Grilled snapper",
+         "Grilled prawns",
+         "Squid or octopus satay",
+         "Grilled corn with sambal"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "notes": "Popular spot; go early in the evening before the dinner rush",
+        "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-08-29",
+        "_source_format": "new"
+       },
+       "place": {
+        "query": "Little Prema Warung|Nusa Lembongan",
+        "place_id": "ChIJC5Mkds1t0i0RrAfrmDtbgnI",
+        "name": "Little Prema Warung (local food)",
+        "address": "Lembongan island, Jungutbatu, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771, Indonesia",
+        "lat": -8.668049,
+        "lng": 115.45037920000001,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "09:00:00",
+            "22:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "09:00:00",
+            "22:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "09:00:00",
+            "22:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "09:00:00",
+            "22:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "09:00:00",
+            "22:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "09:00:00",
+            "22:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "09:00:00",
+            "22:30:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": null,
+        "phone": "+62 812-3686-1251",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Little+Prema+Warung+Nusa+Lembongan&query_place_id=ChIJC5Mkds1t0i0RrAfrmDtbgnI",
+        "fetched_at": "2026-11-02T10:00:24.991634Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 7,
+       "travel_label": "Walk",
+       "hours_text": "9:00 AM – 10:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Ginger & Jamu",
+        "city": "Nusa Lembongan",
+        "cuisine_type": [
+         "Healthy",
+         "Plant-based"
+        ],
+        "price_range": "Approx. INR 500–1,200 pp",
+        "hours": "7:30 AM–9:00 PM",
+        "ambience": "Laid-back beachfront café",
+        "highlights": [
+         "Health-focused",
+         "Plant-based options"
+        ],
+        "must_try_dishes": [
+         "Smoothie bowls",
+         "Fresh salads",
+         "Vegan mains",
+         "Raw desserts",
+         "Signature jamu"
+        ],
+        "vegetarian_friendly": "true",
+        "meal_slots": [
+         "lunch"
+        ],
+        "notes": "Vegan and plant-based options available",
+        "_source_file": "Bali Indonesia/Tanya- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-08-29",
+        "_source_format": "new"
+       },
+       "place": {
+        "query": "Ginger & Jamu|Nusa Lembongan",
+        "place_id": "ChIJVVVVVZlt0i0RXSr-FDflZ1w",
+        "name": "Ginger & Jamu",
+        "address": "Jungutbatu, Nusa Penida, Klungkung Regency, Bali 80771, Indonesia",
+        "lat": -8.668990899999999,
+        "lng": 115.44798080000001,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "07:30:00",
+            "21:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "07:30:00",
+            "21:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "07:30:00",
+            "21:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "07:30:00",
+            "21:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "07:30:00",
+            "21:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "07:30:00",
+            "21:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "07:30:00",
+            "21:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "https://gingerandjamu.com/",
+        "phone": "+62 821-3451-6106",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Ginger+%26+Jamu+Nusa+Lembongan&query_place_id=ChIJVVVVVZlt0i0RXSr-FDflZ1w",
+        "fetched_at": "2026-11-02T10:00:23.270496Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 4,
+       "travel_label": "By car",
+       "hours_text": "7:30 AM – 9:00 PM",
+       "hours_verify": false
+      }
+     ],
+     "markers": []
+    }
+   ],
+   "legs": {
+    "arrival": {
+     "from_name": "MAYURA UBUD RETREAT",
+     "to_name": "D'NUSA BEACH CLUB AND RESORT",
+     "walk_min": null,
+     "drive_min": null,
+     "transit_min": null,
+     "transit_steps": [],
+     "kind": "boat",
+     "km": null,
+     "ticketed": true,
+     "no_route": false,
+     "approx_min": null
+    }
+   },
+   "places": {
+    "mayura ubud retreat|ubud": {
+     "query": "MAYURA UBUD RETREAT|Ubud",
+     "place_id": "ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "name": "Mayura Ubud Retreat",
+     "address": "Jl. Bangkilesan, Banjar Kawan Desa Mas, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.5468956,
+     "lng": 115.2693623,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "http://www.mayuraubud.com/",
+     "phone": "+62 361 4792956",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=MAYURA+UBUD+RETREAT+Ubud&query_place_id=ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "fetched_at": "2026-11-02T10:57:24.763405Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "MAYURA UBUD RETREAT": {
+     "query": "MAYURA UBUD RETREAT|Ubud",
+     "place_id": "ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "name": "Mayura Ubud Retreat",
+     "address": "Jl. Bangkilesan, Banjar Kawan Desa Mas, Ubud, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571, Indonesia",
+     "lat": -8.5468956,
+     "lng": 115.2693623,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "http://www.mayuraubud.com/",
+     "phone": "+62 361 4792956",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=MAYURA+UBUD+RETREAT+Ubud&query_place_id=ChIJFcBBI1o90i0RdnLbk6Kwp3U",
+     "fetched_at": "2026-11-02T10:57:24.763405Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "d'nusa beach club and resort|nusa lembongan": {
+     "query": "D'NUSA BEACH CLUB AND RESORT|Nusa Lembongan",
+     "place_id": "ChIJxaQtt3Jt0i0ROuMF_dXcows",
+     "name": "d'Nusa Beach Club and Resort",
+     "address": "Nusa Lembongan, Light House Beach, Br. Kaja, Jungutbatu, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771, Indonesia",
+     "lat": -8.6646133,
+     "lng": 115.4501372,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "https://dnusaresortlembongan.com/",
+     "phone": "+62 811-3989-168",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=D%27NUSA+BEACH+CLUB+AND+RESORT+Nusa+Lembongan&query_place_id=ChIJxaQtt3Jt0i0ROuMF_dXcows",
+     "fetched_at": "2026-11-02T10:57:25.109329Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "D'NUSA BEACH CLUB AND RESORT": {
+     "query": "D'NUSA BEACH CLUB AND RESORT|Nusa Lembongan",
+     "place_id": "ChIJxaQtt3Jt0i0ROuMF_dXcows",
+     "name": "d'Nusa Beach Club and Resort",
+     "address": "Nusa Lembongan, Light House Beach, Br. Kaja, Jungutbatu, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771, Indonesia",
+     "lat": -8.6646133,
+     "lng": 115.4501372,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "https://dnusaresortlembongan.com/",
+     "phone": "+62 811-3989-168",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=D%27NUSA+BEACH+CLUB+AND+RESORT+Nusa+Lembongan&query_place_id=ChIJxaQtt3Jt0i0ROuMF_dXcows",
+     "fetched_at": "2026-11-02T10:57:25.109329Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "Transfer to Sanur Harbour": null,
+    "Mangrove Boat Experience at Nusa Lembongan Mangrove Forest": {
+     "query": "Mangrove Boat Experience at Nusa Lembongan Mangrove Forest|Nusa Lembongan",
+     "place_id": "ChIJ-zu7WABt0i0RqiSn3Yhr4_s",
+     "name": "Mangrove Forest Lembongan",
+     "address": "8CJX+C63, Jungutbatu, Nusa Penida, Klungkung Regency, Bali 80771, Indonesia",
+     "lat": -8.6669336,
+     "lng": 115.46759399999999,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "6": [
+        [
+         "08:00:00",
+         "17:00:00"
+        ]
+       ],
+       "0": [
+        [
+         "08:00:00",
+         "17:30:00"
+        ]
+       ],
+       "1": [
+        [
+         "08:00:00",
+         "17:30:00"
+        ]
+       ],
+       "2": [
+        [
+         "08:00:00",
+         "17:30:00"
+        ]
+       ],
+       "3": [
+        [
+         "08:00:00",
+         "17:30:00"
+        ]
+       ],
+       "4": [
+        [
+         "08:00:00",
+         "17:30:00"
+        ]
+       ],
+       "5": [
+        [
+         "08:00:00",
+         "17:30:00"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": "http://mangrovetour.my.canva.site/",
+     "phone": "+62 823-3952-6191",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=Mangrove+Boat+Experience+at+Nusa+Lembongan+Mangrove+Forest+Nusa+Lembongan&query_place_id=ChIJ-zu7WABt0i0RqiSn3Yhr4_s",
+     "fetched_at": "2026-11-02T09:38:17.801433Z",
+     "match_ok": false,
+     "verify_note": null
+    }
+   },
+   "booking_by_item": {},
+   "arrival_booking": null,
+   "price_by_restaurant": {
+    "The Sampan": "₹400–1,000",
+    "Kayu Lembongan": "₹500–1,200",
+    "Nisi – House of Mediterranean": "₹700–1,500",
+    "Curry Traders Restaurant and Bar": "₹1,000–1,800",
+    "Little Prema Warung": "₹250–900",
+    "Ginger & Jamu": "₹500–1,200"
+   },
+   "arrival": null,
+   "departure": null,
+   "other_transport": [
+    {
+     "kind": "boat",
+     "from_place": "Sanur Harbour",
+     "to_place": "Nusa Lembongan",
+     "depart": "2026-09-28T09:15:00",
+     "arrive": null,
+     "ref": "IND/PB/2026/2411",
+     "source": "voucher",
+     "pax_label": "",
+     "operator": "",
+     "number": "",
+     "seat": "",
+     "platform": "",
+     "duration_min": null,
+     "check_in": "2026-09-28T08:15:00"
+    }
+   ],
+   "prev_city": "Ubud",
+   "utc_offset_hours": null,
+   "library_attractions": {},
+   "lands_next_day": false,
+   "driver_from": null
+  },
+  {
+   "index": 7,
+   "date": "2026-09-30",
+   "city": "Sanur",
+   "text": {
+    "title": "Nusa Lembongan to Sanur",
+    "intro": "We make our way from Nusa Lembongan to Sanur, with a choice of an afternoon stop at Icon Mall or Sindhu Market and dinner options for our family.",
+    "attractions": [
+     {
+      "name": "Icon Mall",
+      "description": "One option for the afternoon; the visit is at our own expense.",
+      "entry_fee": null,
+      "dress_code": null,
+      "tips": null,
+      "best_time": null,
+      "duration": null
+     },
+     {
+      "name": "Sindhu Market",
+      "description": "An informal local market with small shops, handicrafts, souvenirs and local goods. It is one option for the afternoon, at our own expense.",
+      "entry_fee": null,
+      "dress_code": null,
+      "tips": null,
+      "best_time": null,
+      "duration": null
+     }
+    ],
+    "restaurants": [
+     {
+      "name": "Sumak Turkish Cuisine Sanur",
+      "ambience": "Not specified in the verified details.",
+      "best_for": "Traditional Anatolian flavours, grilled meats, kebabs, meze and Turkish breads."
+     },
+     {
+      "name": "Warung Blanjong",
+      "ambience": "A garden-style setting.",
+      "best_for": "Authentic Balinese home-style cooking at a long-standing local favourite."
+     },
+     {
+      "name": "COSTA - Beach Restaurant Sanur",
+      "ambience": "An elegant open-air setting with a beachfront location and ocean views.",
+      "best_for": "Mediterranean, seafood and Italian cuisine."
+     }
+    ],
+    "free_time_idea": null
+   },
+   "result": {
+    "scheduled": [
+     {
+      "item": {
+       "name": "Icon Mall",
+       "kind": "activity",
+       "city": "Nusa Lembongan / Sanur",
+       "time": null,
+       "slot_hint": "afternoon",
+       "note": "Choose one: Icon Mall or Sindhu Market. At own expense.",
+       "optional": true,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": "choice-0"
+      },
+      "slot": "afternoon",
+      "start": "15:20:00"
+     },
+     {
+      "item": {
+       "name": "Sindhu Market",
+       "kind": "activity",
+       "city": "Nusa Lembongan / Sanur",
+       "time": null,
+       "slot_hint": "afternoon",
+       "note": "Choose one: Icon Mall or Sindhu Market. At own expense.",
+       "optional": true,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": "choice-0"
+      },
+      "slot": "afternoon",
+      "start": "15:20:00"
+     },
+     {
+      "item": {
+       "name": "Dinner in Sanur",
+       "kind": "meal_out",
+       "city": "Sanur",
+       "time": null,
+       "slot_hint": "any",
+       "note": "At own expense.",
+       "optional": false,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": null
+      },
+      "slot": "evening",
+      "start": "17:30:00"
+     }
+    ],
+    "meals": [
+     {
+      "meal": "breakfast",
+      "start": "07:30:00",
+      "anchors": [],
+      "included": true,
+      "unanchored": false
+     },
+     {
+      "meal": "dinner",
+      "start": "19:30:00",
+      "anchors": [
+       [
+        "TAKSU SANUR HOTEL",
+        [
+         -8.705838199999999,
+         115.25594930000001
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     }
+    ],
+    "tips": [],
+    "markers": []
+   },
+   "meals": [
+    {
+     "slot": {
+      "meal": "dinner",
+      "start": "19:30:00",
+      "anchors": [
+       [
+        "TAKSU SANUR HOTEL",
+        [
+         -8.705838199999999,
+         115.25594930000001
+        ],
+        3
+       ]
+      ],
+      "included": false,
+      "unanchored": false
+     },
+     "day_index": 7,
+     "restaurants": [
+      {
+       "lib": {
+        "name": "Sumak Turkish Cuisine Sanur",
+        "city": "Sanur",
+        "cuisine_type": [
+         "Turkish"
+        ],
+        "price_range": "Approx. INR 700–1,500 pp",
+        "hours": "10:00 AM – 11:00 PM",
+        "ambience": "Elegant",
+        "area": "Taksu Sanur",
+        "highlights": [
+         "Traditional Anatolian flavours with a strong selection of grilled meats, kebabs, meze and Turkish breads"
+        ],
+        "must_try_dishes": [
+         "Adana Kebab",
+         "Mixed Grill",
+         "Lahmacun",
+         "Bursa Kebab",
+         "Beef/chicken Tava"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+        "_source_date": "2026-10-20",
+        "_source_format": "new",
+        "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+       },
+       "place": {
+        "query": "Sumak Turkish Cuisine Sanur|Sanur",
+        "place_id": "ChIJ643Pe0JB0i0RqWHPIMakg1s",
+        "name": "Sumak Turkish Cuisine Sanur",
+        "address": "Jl. Sudamala No.26, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+        "lat": -8.7058343,
+        "lng": 115.2559592,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "11:00:00",
+            "23:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "http://www.sumakbali.com/",
+        "phone": "+62 811-3095-2626",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Sumak+Turkish+Cuisine+Sanur+Sanur&query_place_id=ChIJ643Pe0JB0i0RqWHPIMakg1s",
+        "fetched_at": "2026-11-02T10:00:41.391095Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 0,
+       "travel_label": "Walk",
+       "hours_text": "11:00 AM – 11:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "Warung Blanjong",
+        "city": "Sanur",
+        "cuisine_type": [
+         "Balinese"
+        ],
+        "price_range": "INR 300–900 per person",
+        "hours": "07:00 AM – 10:00 PM",
+        "ambience": "Relaxed garden-style setting with a warm Balinese atmosphere",
+        "area": "Sanur",
+        "highlights": [
+         "Long-standing local favourite",
+         "Authentic Balinese home-style cooking",
+         "Garden-style setting"
+        ],
+        "must_try_dishes": [
+         "Nasi Campur Bali",
+         "Chicken Satay",
+         "Pepes Ikan (Balinese Fish in Banana Leaf)"
+        ],
+        "meal_slots": [
+         "dinner"
+        ],
+        "notes": "Parking available",
+        "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+        "_source_date": "2026-07-01",
+        "_source_format": "new"
+       },
+       "place": {
+        "query": "Warung Blanjong|Sanur",
+        "place_id": "ChIJN-gjPWlB0i0RLkGLsPrdDJQ",
+        "name": "Warung Blanjong",
+        "address": "Jl. Danau Poso No.78, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali, Indonesia",
+        "lat": -8.705597,
+        "lng": 115.2560616,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "07:00:00",
+            "22:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "https://warungblanjong.shop/",
+        "phone": "+62 361 285613",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Warung+Blanjong+Sanur&query_place_id=ChIJN-gjPWlB0i0RLkGLsPrdDJQ",
+        "fetched_at": "2026-11-02T10:00:41.704470Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 1,
+       "travel_label": "Walk",
+       "hours_text": "7:00 AM – 10:00 PM",
+       "hours_verify": false
+      },
+      {
+       "lib": {
+        "name": "COSTA - Beach Restaurant Sanur",
+        "city": "Sanur",
+        "cuisine_type": [
+         "Mediterranean",
+         "Seafood",
+         "Italian"
+        ],
+        "price_range": "INR 1,000–2,500 per person",
+        "hours": "10:00 AM – 11:00 PM",
+        "ambience": "Stylish beachfront restaurant combining Mediterranean charm with a relaxed tropical atmosphere, open-air setting with sea breeze",
+        "area": "Sanur",
+        "highlights": [
+         "Beachfront location",
+         "Ocean views",
+         "Elegant open-air setting",
+         "One of Sanur's most popular dining spots"
+        ],
+        "must_try_dishes": [
+         "Fresh Seafood",
+         "Handmade Pasta",
+         "Artisan Pizza"
+        ],
+        "meal_slots": [
+         "lunch"
+        ],
+        "notes": "Parking available",
+        "_source_file": "Bali Indonesia/Peter - Bali - All Inclusive Guide.docx",
+        "_source_date": "2026-07-01",
+        "_source_format": "new"
+       },
+       "place": {
+        "query": "COSTA - Beach Restaurant Sanur|Sanur",
+        "place_id": "ChIJK12jNaFB0i0REHd4u4szsJ0",
+        "name": "COSTA - Beach Restaurant Sanur",
+        "address": "Jl. Cemara No.3, Sanur, Denpasar Selatan, Kota Denpasar, Bali 80227, Indonesia",
+        "lat": -8.709971699999999,
+        "lng": 115.2581699,
+        "status": "OPERATIONAL",
+        "hours": {
+         "periods": {
+          "6": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "0": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "1": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "2": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "3": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "4": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ],
+          "5": [
+           [
+            "10:00:00",
+            "23:00:00"
+           ]
+          ]
+         },
+         "source": "google"
+        },
+        "website": "https://costasanur.com/",
+        "phone": "+62 877-7609-8232",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=COSTA+-+Beach+Restaurant+Sanur+Sanur&query_place_id=ChIJK12jNaFB0i0REHd4u4szsJ0",
+        "fetched_at": "2026-11-02T10:00:39.847424Z",
+        "match_ok": true,
+        "verify_note": null
+       },
+       "travel_min": 6,
+       "travel_label": "By car",
+       "hours_text": "10:00 AM – 11:00 PM",
+       "hours_verify": false
+      }
+     ],
+     "markers": []
+    }
+   ],
+   "legs": {
+    "arrival": {
+     "from_name": "D'NUSA BEACH CLUB AND RESORT",
+     "to_name": "TAKSU SANUR HOTEL",
+     "walk_min": null,
+     "drive_min": null,
+     "transit_min": null,
+     "transit_steps": [],
+     "kind": "boat",
+     "km": null,
+     "ticketed": true,
+     "no_route": false,
+     "approx_min": null
+    },
+    "Sindhu Market": {
+     "from_name": "Icon Mall",
+     "to_name": "Sindhu Market",
+     "walk_min": 13,
+     "drive_min": 9,
+     "transit_min": null,
+     "transit_steps": [],
+     "kind": "",
+     "km": null,
+     "ticketed": true,
+     "no_route": false,
+     "approx_min": null
+    }
+   },
+   "places": {
+    "d'nusa beach club and resort|nusa lembongan": {
+     "query": "D'NUSA BEACH CLUB AND RESORT|Nusa Lembongan",
+     "place_id": "ChIJxaQtt3Jt0i0ROuMF_dXcows",
+     "name": "d'Nusa Beach Club and Resort",
+     "address": "Nusa Lembongan, Light House Beach, Br. Kaja, Jungutbatu, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771, Indonesia",
+     "lat": -8.6646133,
+     "lng": 115.4501372,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "https://dnusaresortlembongan.com/",
+     "phone": "+62 811-3989-168",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=D%27NUSA+BEACH+CLUB+AND+RESORT+Nusa+Lembongan&query_place_id=ChIJxaQtt3Jt0i0ROuMF_dXcows",
+     "fetched_at": "2026-11-02T10:57:25.109329Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "D'NUSA BEACH CLUB AND RESORT": {
+     "query": "D'NUSA BEACH CLUB AND RESORT|Nusa Lembongan",
+     "place_id": "ChIJxaQtt3Jt0i0ROuMF_dXcows",
+     "name": "d'Nusa Beach Club and Resort",
+     "address": "Nusa Lembongan, Light House Beach, Br. Kaja, Jungutbatu, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771, Indonesia",
+     "lat": -8.6646133,
+     "lng": 115.4501372,
+     "status": "OPERATIONAL",
+     "hours": null,
+     "website": "https://dnusaresortlembongan.com/",
+     "phone": "+62 811-3989-168",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=D%27NUSA+BEACH+CLUB+AND+RESORT+Nusa+Lembongan&query_place_id=ChIJxaQtt3Jt0i0ROuMF_dXcows",
+     "fetched_at": "2026-11-02T10:57:25.109329Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "taksu sanur hotel|sanur": {
+     "query": "TAKSU SANUR HOTEL|Sanur",
+     "place_id": "ChIJg_UKXL5B0i0RG1yXu705PfM",
+     "name": "Taksu Sanur Hotel",
+     "address": "Jl. Sudamala No.26, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+     "lat": -8.705838199999999,
+     "lng": 115.25594930000001,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "0": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "1": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "2": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "3": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "4": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "5": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "6": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": "http://www.taksusanur.com/",
+     "phone": "+62 361 283401",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=TAKSU+SANUR+HOTEL+Sanur&query_place_id=ChIJg_UKXL5B0i0RG1yXu705PfM",
+     "fetched_at": "2026-11-02T10:57:25.491222Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "TAKSU SANUR HOTEL": {
+     "query": "TAKSU SANUR HOTEL|Sanur",
+     "place_id": "ChIJg_UKXL5B0i0RG1yXu705PfM",
+     "name": "Taksu Sanur Hotel",
+     "address": "Jl. Sudamala No.26, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+     "lat": -8.705838199999999,
+     "lng": 115.25594930000001,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "0": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "1": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "2": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "3": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "4": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "5": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "6": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": "http://www.taksusanur.com/",
+     "phone": "+62 361 283401",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=TAKSU+SANUR+HOTEL+Sanur&query_place_id=ChIJg_UKXL5B0i0RG1yXu705PfM",
+     "fetched_at": "2026-11-02T10:57:25.491222Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "Dinner in Sanur": {
+     "query": "Dinner in Sanur|Sanur",
+     "place_id": "ChIJK12jNaFB0i0REHd4u4szsJ0",
+     "name": "COSTA - Beach Restaurant Sanur",
+     "address": "Jl. Cemara No.3, Sanur, Denpasar Selatan, Kota Denpasar, Bali 80227, Indonesia",
+     "lat": -8.709971699999999,
+     "lng": 115.2581699,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "6": [
+        [
+         "10:00:00",
+         "23:00:00"
+        ]
+       ],
+       "0": [
+        [
+         "10:00:00",
+         "23:00:00"
+        ]
+       ],
+       "1": [
+        [
+         "10:00:00",
+         "23:00:00"
+        ]
+       ],
+       "2": [
+        [
+         "10:00:00",
+         "23:00:00"
+        ]
+       ],
+       "3": [
+        [
+         "10:00:00",
+         "23:00:00"
+        ]
+       ],
+       "4": [
+        [
+         "10:00:00",
+         "23:00:00"
+        ]
+       ],
+       "5": [
+        [
+         "10:00:00",
+         "23:00:00"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": "https://costasanur.com/",
+     "phone": "+62 877-7609-8232",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=Dinner+in+Sanur+Sanur&query_place_id=ChIJK12jNaFB0i0REHd4u4szsJ0",
+     "fetched_at": "2026-11-02T09:38:19.790181Z",
+     "match_ok": false,
+     "verify_note": null
+    },
+    "Icon Mall": {
+     "query": "Icon Mall|Nusa Lembongan / Sanur",
+     "place_id": "ChIJybN_QQBB0i0RVIazfZeP1Ak",
+     "name": "Icon Mall Beach",
+     "address": "Jl. Segara Ayu No.36, Sanur, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+     "lat": -8.687020799999999,
+     "lng": 115.2652821,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "6": [
+        [
+         "10:00:00",
+         "22:00:00"
+        ]
+       ],
+       "0": [
+        [
+         "10:00:00",
+         "22:00:00"
+        ]
+       ],
+       "1": [
+        [
+         "10:00:00",
+         "22:00:00"
+        ]
+       ],
+       "2": [
+        [
+         "10:00:00",
+         "22:00:00"
+        ]
+       ],
+       "3": [
+        [
+         "10:00:00",
+         "22:00:00"
+        ]
+       ],
+       "4": [
+        [
+         "10:00:00",
+         "22:00:00"
+        ]
+       ],
+       "5": [
+        [
+         "10:00:00",
+         "22:00:00"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": null,
+     "phone": null,
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=Icon+Mall+Nusa+Lembongan+%2F+Sanur&query_place_id=ChIJybN_QQBB0i0RVIazfZeP1Ak",
+     "fetched_at": "2026-11-02T15:30:09.696873Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "Sindhu Market": {
+     "query": "Sindhu Market|Nusa Lembongan / Sanur",
+     "place_id": "ChIJh9SNZDVA0i0RzptNzMnYR8M",
+     "name": "Sindhu Night Market",
+     "address": "8776+W29, Jl. Pasar No.2, Sanur, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+     "lat": -8.6851101,
+     "lng": 115.259878,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "6": [
+        [
+         "17:00:00",
+         "22:00:00"
+        ]
+       ],
+       "0": [
+        [
+         "17:00:00",
+         "22:00:00"
+        ]
+       ],
+       "1": [
+        [
+         "17:00:00",
+         "22:00:00"
+        ]
+       ],
+       "2": [
+        [
+         "17:00:00",
+         "22:00:00"
+        ]
+       ],
+       "3": [
+        [
+         "17:00:00",
+         "22:00:00"
+        ]
+       ],
+       "4": [
+        [
+         "17:00:00",
+         "22:00:00"
+        ]
+       ],
+       "5": [
+        [
+         "17:00:00",
+         "22:00:00"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": null,
+     "phone": null,
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=Sindhu+Market+Nusa+Lembongan+%2F+Sanur&query_place_id=ChIJh9SNZDVA0i0RzptNzMnYR8M",
+     "fetched_at": "2026-11-02T15:30:10.015083Z",
+     "match_ok": true,
+     "verify_note": null
+    }
+   },
+   "booking_by_item": {},
+   "arrival_booking": null,
+   "price_by_restaurant": {
+    "Sumak Turkish Cuisine Sanur": "₹700–1,500",
+    "Warung Blanjong": "₹300–900",
+    "COSTA - Beach Restaurant Sanur": "₹1,000–2,500"
+   },
+   "arrival": null,
+   "departure": null,
+   "other_transport": [
+    {
+     "kind": "boat",
+     "from_place": "Nusa Lembongan",
+     "to_place": "Sanur Harbour",
+     "depart": "2026-09-30T12:00:00",
+     "arrive": null,
+     "ref": "IND/PB/2026/2411",
+     "source": "voucher",
+     "pax_label": "",
+     "operator": "",
+     "number": "",
+     "seat": "",
+     "platform": "",
+     "duration_min": null,
+     "check_in": "2026-09-30T11:00:00"
+    }
+   ],
+   "prev_city": "Nusa Lembongan",
+   "utc_offset_hours": null,
+   "library_attractions": {
+    "Sindhu Market": {
+     "name": "Sindhu Market",
+     "city": "Sanur",
+     "description": "Informal local market with small shops, handicrafts, souvenirs and local goods.",
+     "hours": "5:00 PM – 10:00 PM",
+     "_source_file": "Bali Indonesia/Test- Bali- All Inclusive Guide.docx",
+     "_source_date": "2026-10-20",
+     "_source_format": "new",
+     "_replaced_from": "Bali Indonesia/Test- Bali- All Inclusive Guide(1).docx"
+    }
+   },
+   "lands_next_day": false,
+   "driver_from": null
+  },
+  {
+   "index": 8,
+   "date": "2026-10-01",
+   "city": "Sanur",
+   "text": {
+    "title": "Departure from Bali",
+    "intro": "We’ll keep our plans simple as we leave Bali together as a family.",
+    "attractions": [],
+    "restaurants": [],
+    "free_time_idea": null
+   },
+   "result": {
+    "scheduled": [
+     {
+      "item": {
+       "name": "Hotel check-out and airport drop",
+       "kind": "transfer",
+       "city": "Sanur",
+       "time": null,
+       "slot_hint": "any",
+       "note": "",
+       "optional": false,
+       "booking_ref": null,
+       "locality": "",
+       "includes_meal": [],
+       "pickup_time": null,
+       "pickup_place": "",
+       "option_group": null
+      },
+      "slot": "morning",
+      "start": "09:00:00"
+     }
+    ],
+    "meals": [
+     {
+      "meal": "breakfast",
+      "start": "07:30:00",
+      "anchors": [],
+      "included": true,
+      "unanchored": false
+     }
+    ],
+    "tips": [],
+    "markers": [
+     {
+      "kind": "VERIFY",
+      "text": "booking 'TAKSU SANUR HOTEL to Bali Airport transfer' is not placed in the day plan"
+     }
+    ]
+   },
+   "meals": [],
+   "legs": {},
+   "places": {
+    "taksu sanur hotel|sanur": {
+     "query": "TAKSU SANUR HOTEL|Sanur",
+     "place_id": "ChIJg_UKXL5B0i0RG1yXu705PfM",
+     "name": "Taksu Sanur Hotel",
+     "address": "Jl. Sudamala No.26, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+     "lat": -8.705838199999999,
+     "lng": 115.25594930000001,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "0": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "1": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "2": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "3": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "4": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "5": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "6": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": "http://www.taksusanur.com/",
+     "phone": "+62 361 283401",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=TAKSU+SANUR+HOTEL+Sanur&query_place_id=ChIJg_UKXL5B0i0RG1yXu705PfM",
+     "fetched_at": "2026-11-02T10:57:25.491222Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "TAKSU SANUR HOTEL": {
+     "query": "TAKSU SANUR HOTEL|Sanur",
+     "place_id": "ChIJg_UKXL5B0i0RG1yXu705PfM",
+     "name": "Taksu Sanur Hotel",
+     "address": "Jl. Sudamala No.26, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+     "lat": -8.705838199999999,
+     "lng": 115.25594930000001,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "0": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "1": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "2": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "3": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "4": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "5": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ],
+       "6": [
+        [
+         "00:00:00",
+         "23:59:59"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": "http://www.taksusanur.com/",
+     "phone": "+62 361 283401",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=TAKSU+SANUR+HOTEL+Sanur&query_place_id=ChIJg_UKXL5B0i0RG1yXu705PfM",
+     "fetched_at": "2026-11-02T10:57:25.491222Z",
+     "match_ok": true,
+     "verify_note": null
+    },
+    "dps|sanur": {
+     "query": "DPS|Sanur",
+     "place_id": "ChIJHyEloSBB0i0RGoQXaUKT7qU",
+     "name": "PONDOK JAS DPS",
+     "address": "8723+4HH, Jl. Tirtanadi, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+     "lat": -8.6996795,
+     "lng": 115.2539702,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "6": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "0": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "1": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "2": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "3": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "4": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "5": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": null,
+     "phone": "+62 821-4472-2224",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=DPS+Sanur&query_place_id=ChIJHyEloSBB0i0RGoQXaUKT7qU",
+     "fetched_at": "2026-11-02T10:00:00.049959Z",
+     "match_ok": false,
+     "verify_note": null
+    },
+    "DPS": {
+     "query": "DPS|Sanur",
+     "place_id": "ChIJHyEloSBB0i0RGoQXaUKT7qU",
+     "name": "PONDOK JAS DPS",
+     "address": "8723+4HH, Jl. Tirtanadi, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228, Indonesia",
+     "lat": -8.6996795,
+     "lng": 115.2539702,
+     "status": "OPERATIONAL",
+     "hours": {
+      "periods": {
+       "6": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "0": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "1": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "2": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "3": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "4": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ],
+       "5": [
+        [
+         "10:00:00",
+         "21:00:00"
+        ]
+       ]
+      },
+      "source": "google"
+     },
+     "website": null,
+     "phone": "+62 821-4472-2224",
+     "maps_url": "https://www.google.com/maps/search/?api=1&query=DPS+Sanur&query_place_id=ChIJHyEloSBB0i0RGoQXaUKT7qU",
+     "fetched_at": "2026-11-02T10:00:00.049959Z",
+     "match_ok": false,
+     "verify_note": null
+    },
+    "Hotel check-out and airport drop": null
+   },
+   "booking_by_item": {},
+   "arrival_booking": null,
+   "price_by_restaurant": {},
+   "arrival": null,
+   "departure": {
+    "kind": "flight",
+    "from_place": "DPS",
+    "to_place": "SIN",
+    "depart": "2026-10-01T13:15:00",
+    "arrive": null,
+    "ref": "IND/PB/2026/2411",
+    "source": "voucher",
+    "pax_label": "",
+    "operator": "Singapore Airlines",
+    "number": "SQ 938",
+    "seat": "",
+    "platform": "",
+    "duration_min": null,
+    "check_in": null
+   },
+   "other_transport": [],
+   "prev_city": "Sanur",
+   "utc_offset_hours": null,
+   "library_attractions": {},
+   "lands_next_day": false,
+   "driver_from": null
+  }
+ ],
+ "sections": {},
+ "important": [],
+ "trip_scope": "international",
+ "modes": [
+  "taxi",
+  "private_driver"
+ ],
+ "domestic": false
+}

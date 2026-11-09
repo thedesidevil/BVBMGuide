@@ -1,0 +1,88 @@
+{
+  "restaurants": [
+    {
+      "name": "Great Ocean Road Brewhouse",
+      "city": "Apollo Bay",
+      "cuisine_type": [
+        "Pub",
+        "Brewpub"
+      ],
+      "price_range": "INR 1200–2000",
+      "hours": "11:00 am – 9:00 pm",
+      "highlights": [
+        "Local brews",
+        "Hearty pub meals"
+      ],
+      "must_try_dishes": [
+        "Beer-battered fish & chips"
+      ],
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Chris's Beacon Point Restaurant",
+      "city": "Apollo Bay",
+      "cuisine_type": [
+        "Seafood"
+      ],
+      "highlights": [
+        "Grilled local seafood with a view"
+      ],
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Apollo Bay",
+      "city": "Apollo Bay",
+      "description": "Great for scenic breaks and coffee on the Great Ocean Road",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Beer-Battered Fish & Chips",
+      "city": "Apollo Bay",
+      "description": "Fresh coastal classic",
+      "where_to_try": "Great Ocean Road Brewhouse",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Grilled Local Seafood with a View",
+      "city": "Apollo Bay",
+      "where_to_try": "Chris's Beacon Point Restaurant",
+      "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "Australia/Australia - All Inclusive Guide - Bipasha(1).docx"
+  ],
+  "currency": "AUD",
+  "_currency_source": {
+    "_source_file": "Australia/Australia - All Inclusive Guide - Bipasha(1).docx",
+    "_source_date": null,
+    "_source_format": "new"
+  }
+}

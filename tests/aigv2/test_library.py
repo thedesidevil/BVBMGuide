@@ -1,0 +1,247 @@
+import json
+import os
+
+import pytest
+
+from src.aigv2.library import Library, LibraryDataError, diet_fits, is_indian
+from src.aigv2.models import Diet
+
+
+def _r(name, cuisine=None, veg=None, **kw):
+    r = {"name": name, "cuisine_type": cuisine or []}
+    if veg is not None:
+        r["vegetarian_friendly"] = veg
+    r.update(kw)
+    return r
+
+
+def _write(path, data):
+    path.write_text(json.dumps(data))
+
+
+@pytest.fixture
+def lib_dir(tmp_path):
+    _write(tmp_path / "_index.json", {
+        "_folder_coverage": {
+            "USA": ["New York", "New York City"],
+            "Bali Indonesia": ["Bali", "Ubud", "Sanur"],
+        },
+    })
+    _write(tmp_path / "New York.json", {
+        "restaurants": [_r("Joe's"), _r("Vatan", ["Gujarati"])],
+        "attractions": [{"name": "Met"}],
+    })
+    _write(tmp_path / "New York City.json", {
+        "restaurants": [_r("JOE'S"), _r("Katz")],
+    })
+    _write(tmp_path / "Ubud.json", {"restaurants": [_r("Locavore")]})
+    _write(tmp_path / "Bali.json", {"restaurants": [_r("Warung Bali"), _r("Locavore")]})
+    _write(tmp_path / "Engelberg.json", {"restaurants": [_r("Alp Hut")]})
+    (tmp_path / "_country").mkdir()
+    _write(tmp_path / "_country" / "Bali Indonesia.json", {"safety_tips": [{"tip": "x"}]})
+    return tmp_path
+
+
+def test_city_aliases_merge(lib_dir):
+    lib = Library(lib_dir)
+    names = [r["name"] for r in lib.restaurants("New York")]
+    assert len(names) == 3
+    assert len(lib.restaurants("NYC")) == 3
+    assert lib.has_data("New York City")
+    assert not lib.has_data("Nowhere")
+
+
+def test_region_shard_merged(lib_dir):
+    lib = Library(lib_dir)
+    names = sorted(r["name"] for r in lib.restaurants("Ubud"))
+    assert names == ["Locavore", "Warung Bali"]
+
+
+def test_country_via_folder(lib_dir):
+    lib = Library(lib_dir)
+    assert lib.country("Bali Indonesia")["safety_tips"]
+    assert lib.country("Ubud")["safety_tips"]
+    assert lib.country("Atlantis") == {}
+
+
+def test_restaurants_near_locality(lib_dir):
+    assert [r["name"] for r in Library(lib_dir).restaurants_near("Engelberg")] == ["Alp Hut"]
+    assert Library(lib_dir).restaurants_near("Nope") == []
+
+
+def test_library_files_unchanged(lib_dir):
+    files = [p for p in lib_dir.rglob("*.json")]
+    before = {p: (p.stat().st_mtime_ns, p.read_bytes()) for p in files}
+    lib = Library(lib_dir)
+    lib.city("New York"); lib.country("Bali Indonesia"); lib.restaurants("Ubud")
+    lib.restaurants_near("Engelberg"); lib.has_data("x")
+    assert {p: (p.stat().st_mtime_ns, p.read_bytes()) for p in files} == before
+    assert not hasattr(lib, "save") and not hasattr(lib, "write")
+
+
+def test_diet_no_restrictions_all_fit():
+    assert diet_fits(_r("X"), Diet())
+
+
+def test_vegetarian_requires_flag_or_cuisine():
+    d = Diet(restrictions=["vegetarian"])
+    assert diet_fits(_r("A", veg=True), d)
+    assert diet_fits(_r("B", ["Vegan"]), d)
+    assert not diet_fits(_r("C", ["Steakhouse"]), d)
+    assert not diet_fits(_r("D", ["Steakhouse"], veg=False), d)
+
+
+def test_gujarati_fits_vegetarian():
+    d = Diet(restrictions=["vegetarian"])
+    assert diet_fits(_r("Vatan", ["Gujarati"]), d)
+    assert diet_fits(_r("Udupi Cafe", ["South Indian"]), d)
+    assert is_indian(_r("X", ["Punjabi"]))
+    assert not is_indian(_r("X", ["Italian"]))
+
+
+def test_pure_veg_requires_explicit():
+    d = Diet(restrictions=["vegetarian"], pure_veg=True)
+    assert not diet_fits(_r("Vatan", ["Gujarati"]), d)
+    assert not diet_fits(_r("Veg-ish", ["Indian"], veg=True), d)
+    assert diet_fits(_r("Pure Veg Thali", ["Indian"], veg=True, highlights=["Pure veg thali"]), d)
+    assert diet_fits(_r("Saffron", ["Indian"], veg=True, highlights=["Vegetarian-only menu"]), d)
+
+
+def test_japanese_needs_explicit_veg():
+    d = Diet(restrictions=["vegetarian"])
+    assert not diet_fits(_r("Sushi Go", ["Japanese"], veg=True), d)
+    assert diet_fits(_r("Sushi Go", ["Japanese"], veg=True, highlights=["Vegetarian ramen without fish stock"]), d)
+    assert diet_fits(_r("Shojin", ["Japanese", "Vegan"]), d)
+    assert not diet_fits(_r("Seoul BBQ", ["Korean"], veg=True), d)
+
+
+def test_no_beef_unknown_excluded():
+    assert not diet_fits(_r("Vatan", ["Gujarati"], veg=True), Diet(restrictions=["no beef"]))
+
+
+def test_halal_mention_fits_no_pork():
+    d = Diet(restrictions=["no pork"])
+    assert diet_fits(_r("Kebab", highlights=["Halal grill"]), d)
+    assert not diet_fits(_r("Kebab", highlights=["Grill"]), d)
+    assert diet_fits(_r("Y", must_try_dishes=["no beef curry"]), Diet(restrictions=["no beef"]))
+    assert diet_fits(_r("Z", notes="nut-free kitchen"), Diet(allergies=["nut allergy"]))
+
+
+def test_multi_destination_folder_has_no_region(tmp_path):
+    _write(tmp_path / "_index.json", {"_folder_coverage": {"Singapore and Malaysia": ["Singapore", "Kuala Lumpur"]}})
+    _write(tmp_path / "Singapore.json", {"restaurants": [_r("Hawker SG")]})
+    _write(tmp_path / "Kuala Lumpur.json", {"restaurants": [_r("Nasi KL")]})
+    lib = Library(tmp_path)
+    assert [r["name"] for r in lib.restaurants("Kuala Lumpur")] == ["Nasi KL"]
+
+
+def test_region_shard_not_self_merged(lib_dir):
+    assert [r["name"] for r in Library(lib_dir).restaurants("Bali")] == ["Warung Bali", "Locavore"]
+
+
+def test_allergy_word_boundaries():
+    nut = Diet(allergies=["nut allergy"])
+    assert not diet_fits(_r("A", notes="peanut-free kitchen"), nut)
+    assert not diet_fits(_r("A", notes="no nutmeg used"), nut)
+    assert not diet_fits(_r("A", notes="shellfish-free"), Diet(allergies=["fish allergy"]))
+    assert diet_fits(_r("A", notes="fish-free menu"), Diet(allergies=["fish allergy"]))
+
+
+def test_negated_mentions_rejected():
+    d = Diet(restrictions=["no pork"])
+    assert not diet_fits(_r("A", highlights=["not halal"]), d)
+    assert not diet_fits(_r("A", highlights=["no halal options"]), d)
+    assert not diet_fits(_r("A", cuisine=["non-vegetarian"]), Diet(restrictions=["vegetarian"]))
+
+
+def test_vegan_needs_explicit_vegan():
+    d = Diet(restrictions=["vegan"])
+    assert not diet_fits(_r("Vatan", ["Gujarati"], veg=True), d)
+    assert diet_fits(_r("V", highlights=["Vegan menu"]), d)
+
+
+def test_negated_proof_rejected():
+    d = Diet(restrictions=["vegetarian"])
+    assert not diet_fits(_r("S", ["Japanese"], veg=True, highlights=["No vegetarian options"]), d)
+    assert not diet_fits(_r("S", ["Korean"], veg=True, highlights=["not vegan friendly"]), d)
+    assert not diet_fits(_r("S", ["Japanese"], veg=True, highlights=["non-vegetarian only"]), d)
+    pv = Diet(restrictions=["vegetarian"], pure_veg=True)
+    assert not diet_fits(_r("P", ["Indian"], veg=True, highlights=["not pure veg"]), pv)
+
+
+def test_corrupt_shard_raises(tmp_path):
+    _write(tmp_path / "_index.json", {"_folder_coverage": {}})
+    (tmp_path / "Rome.json").write_text("{bad")
+    with pytest.raises(LibraryDataError):
+        Library(tmp_path).restaurants("Rome")
+    assert Library(tmp_path).restaurants("Missing") == []
+
+
+def _country_lib(tmp_path, *stems):
+    (tmp_path / "_country").mkdir()
+    for st in stems:
+        _write(tmp_path / "_country" / f"{st}.json", {"tipping": [{"tip": st}]})
+    return Library(tmp_path)
+
+
+@pytest.mark.parametrize("stem,asked", [
+    ("Türkiye", "Turkey"), ("Türkiye", "turkey"), ("Türkiye", "Türkiye"), ("Türkiye", "Turkiye"),
+    ("Turkey", "Türkiye"), ("USA", "United States"), ("UK", "United Kingdom"), ("UK", "England"),
+    ("UAE", "United Arab Emirates"), ("United States", "USA"),
+])
+def test_country_accent_and_alias_lookup(tmp_path, stem, asked):
+    assert _country_lib(tmp_path, stem).country(asked) == {"tipping": [{"tip": stem}]}
+
+
+def test_country_missing_and_exact_unchanged(tmp_path):
+    lib = _country_lib(tmp_path, "France", "Türkiye")
+    assert lib.country("Atlantis") == {}
+    assert lib.country("france") == {"tipping": [{"tip": "France"}]}
+    assert lib.country("Japan") == {}
+
+
+def _area_lib(tmp_path):
+    def w(name, rs):
+        (tmp_path / f"{name}.json").write_text(json.dumps({"restaurants": rs}), encoding="utf-8")
+    w("Tampaksiring", [{"name": "Bararasa", "nearby_landmarks": ["Tirta Empul Temple, Tampaksiring"]},
+                       {"name": "Other"}])
+    w("Nusa Lembongan", [{"name": "A", "nearby_landmarks": ["Blue Lagoon, Nusa Lembongan"]}])
+    w("Nusa Ceningan", [{"name": "B", "nearby_landmarks": ["Blue Lagoon, Nusa Ceningan"]},
+                        {"name": "C", "nearby_landmarks": ["Blue Lagoon"]}])
+    w("Ubud", [{"name": "U", "nearby_landmarks": ["Ubud Palace, Ubud", "Sacred Temple", "Padang Beach"]}])
+    w("Sanur", [{"name": "S", "nearby_landmarks": ["Sanur Beach"]}])
+    return Library(tmp_path)
+
+
+def test_area_for_landmark_match(tmp_path):
+    lib = _area_lib(tmp_path)
+    name, rs = lib.area_for("TIRTA EMPUL TEMPLE")
+    assert name == "Tampaksiring" and [r["name"] for r in rs] == ["Bararasa", "Other"]
+    assert lib.area_for("Blue Lagoon")[0] == "Nusa Ceningan"
+    assert lib.area_for("Ubud Palace")[0] == "Ubud"
+
+
+def test_area_for_rejects_lone_generic_word_and_hotel(tmp_path):
+    lib = _area_lib(tmp_path)
+    assert lib.area_for("Temple") is None
+    assert lib.area_for("Beach") is None
+    assert lib.area_for("Some Hotel Sanur") is None
+    assert lib.area_for("Ubud Palace", city="Ubud") is None
+
+
+def test_area_for_exact_shard_wins(tmp_path):
+    lib = _area_lib(tmp_path)
+    assert lib.area_for("sanur")[0] == "Sanur"
+
+
+def test_other_destinations_excludes_trip_cities_and_region_name(tmp_path):
+    _write(tmp_path / "_index.json", {"_folder_coverage": {"Bali Indonesia": ["Ubud", "Nusa Dua", "Bali", "Kuta", "Sanur"]}})
+    lib = Library(tmp_path)
+    assert lib.other_destinations(["Ubud", "Sanur"]) == {"Nusa Dua", "Kuta"}
+    assert lib.other_destinations(["Nowhere"]) == set()
+
+
+def test_city_without_region_shard_keeps_only_its_own_lists(lib_dir):
+    lib = Library(lib_dir)
+    assert [r["name"] for r in lib.city("Ubud")["restaurants"]] == ["Locavore", "Warung Bali"]
+    assert [r["name"] for r in lib.city("Ubud", region=False)["restaurants"]] == ["Locavore"]

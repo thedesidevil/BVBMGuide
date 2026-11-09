@@ -34,7 +34,7 @@ def build(
     force: bool = typer.Option(
         False,
         "--force", "-f",
-        help="Force re-processing of all files (ignore cache)",
+        help="Re-extract and re-merge all files (clears the processed-files index; shards are kept)",
     ),
     workers: int = typer.Option(
         5,
@@ -42,6 +42,11 @@ def build(
         help="Number of parallel AI extraction workers",
         min=1,
         max=20,
+    ),
+    max_usd: Optional[float] = typer.Option(
+        None,
+        "--max-usd",
+        help="Cost ceiling in USD; required when more than 5 files would be extracted",
     ),
     api_key: Optional[str] = typer.Option(
         None,
@@ -63,13 +68,251 @@ def build(
     try:
         builder = LibraryBuilder(library_path, api_key=api_key, workers=workers)
         console.print(f"[dim]Using AI: {builder.client}[/dim]\n")
-        builder.build_database(force=force, output_path=db_path)
+        builder.build_database(force=force, output_path=db_path, max_usd=max_usd)
     except ValueError as e:
         console.print(f"\n[red]Error:[/red] {e}")
         raise typer.Exit(1)
     except Exception as e:
         console.print(f"\n[red]Error:[/red] {e}")
         raise typer.Exit(1)
+
+
+@app.command()
+def plan(
+    input_path: Path = typer.Option(..., "--input", "-i", help="Folder of past AIGs to plan", exists=True),
+    library_path: Path = typer.Option(Path("aig-library"), "--library", "-l", help="AIG library directory (folder names and same-named files)"),
+    out: Path = typer.Option(Path("ingest_plan"), "--out", help="Where to write plan.json and order_report.md"),
+    api_key: Optional[str] = typer.Option(None, "--api-key", help="API key (uses AI_API_KEY from .env if not set)"),
+):
+    """Order every past AIG and assign it a library folder (no extraction).
+
+    Re-running keeps the folders already in plan.json (including hand edits); delete plan.json to re-plan from scratch.
+    """
+    from .ingest_core.extract import get_ingest_client
+    from .ingest_core.plan import build_plan
+
+    try:
+        client = get_ingest_client(api_key=api_key)
+        entries = build_plan(input_path, library_path, client, out)
+    except Exception as e:
+        console.print(f"\n[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+    import json as _json
+
+    rows = _json.loads((out / "plan.json").read_text(encoding="utf-8"))
+    missing = [Path(r["path"]).name for r in rows if r.get("skipped_reason") == "no_folder"]
+    failed = [r for r in rows if r.get("classify_error")]
+    if failed:
+        console.print(f"\n[bold red]{len(failed)} files could not be classified "
+                      f"(first error: {failed[0]['classify_error']}) - these are marked no_folder[/bold red]")
+    if missing:
+        console.print(f"\n[yellow]{len(missing)} file(s) have no folder:[/yellow]")
+        for n in missing:
+            console.print(f"  - {n}")
+        console.print("Put a folder for each in plan.json, or accept leaving them out.")
+    console.print(f"\n[bold green]{len(entries)} file(s) planned.[/bold green] "
+                  f"Review {out / 'order_report.md'} and edit folders in {out / 'plan.json'} if needed.")
+
+
+@app.command()
+def pilot(
+    plan_dir: Path = typer.Option(Path("ingest_plan"), "--plan", help="Folder holding plan.json"),
+    models: str = typer.Option(..., "--models", help="Comma-separated model names to compare"),
+    count: int = typer.Option(10, "--count", help="Number of files to run", min=1),
+    out: Path = typer.Option(Path("pilot_out"), "--out", help="Where to write pilot_report.md/json"),
+):
+    """Run a few plan files through each model and report cost and quality. Writes no library data."""
+    from .ingest_core.pilot import PilotError, run_pilot, select_pilot_files
+    from .ingest_core.plan import load_plan
+
+    names = [m.strip() for m in models.split(",") if m.strip()]
+    if not names:
+        console.print("\n[red]Error:[/red] --models is empty")
+        raise typer.Exit(1)
+    try:
+        entries = select_pilot_files(load_plan(plan_dir), count)
+        run_pilot(entries, names, out)
+    except PilotError as e:
+        console.print(f"\n[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+    except Exception as e:
+        console.print(f"\n[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+    console.print(f"\n[bold green]Pilot done.[/bold green] See {out / 'pilot_report.md'}")
+
+
+def _is_live_library(path: Path) -> bool:
+    resolved = path.resolve()
+    repo_db = (Path(__file__).resolve().parents[2] / "library_db").resolve()
+    for live in {Path("library_db").resolve(), repo_db}:
+        if resolved == live or resolved.is_relative_to(live):
+            return True
+    return False
+
+
+def _repo_root() -> Path:
+    return Path(__file__).resolve().parents[2]
+
+
+@app.command()
+def backup(
+    dest: Path = typer.Option(..., "--dest", help="New folder to hold the copies (must not exist)"),
+    tag: str = typer.Option(..., "--tag", help="Local git tag to create at HEAD"),
+    db_path: Path = typer.Option(Path("library_db"), "--db", help="Library database folder"),
+    library_path: Path = typer.Option(Path("aig-library"), "--library", "-l", help="AIG library folder"),
+):
+    """Copy library_db and aig-library to DEST and tag the current git state (no push)."""
+    from .ingest_core.edits import backup_library, backup_stats
+
+    try:
+        backup_library(db_path, library_path, dest, tag)
+    except ValueError as e:
+        console.print(f"\n[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+    from .ingest_core.edits import has_uncommitted_changes
+
+    if has_uncommitted_changes(db_path):
+        console.print("[yellow]Warning:[/yellow] the tag marks HEAD, which does NOT include the uncommitted "
+                      "edits in the database folder, but the copied folder does.")
+    files, size = backup_stats(dest)
+    console.print(f"Backed up {files} files ({size:,} bytes) to {dest}; created local git tag {tag}")
+
+
+@app.command(name="edit-candidates")
+def edit_candidates(
+    old: Path = typer.Option(..., "--old", help="Old library_db folder (backup copy)"),
+    new: Path = typer.Option(Path("library_db_new"), "--new", help="New library_db folder"),
+    git_commit: Optional[str] = typer.Option(None, "--git-commit", help="Commit of hand edits, e.g. d4147e1"),
+    out: Path = typer.Option(Path("edit_candidates.md"), "--out", help="Markdown file to write"),
+    repo: Optional[Path] = typer.Option(None, "--repo", help="Git repo (default: this project)"),
+):
+    """List old items missing from or different in the new library."""
+    from .ingest_core.edits import load_audit, write_edit_candidates
+
+    if load_audit(old / "_audit.json") is None:
+        console.print(f"Warning: no audit log found in {old}; audit cities skipped")
+    try:
+        write_edit_candidates(old, new, git_commit, repo or _repo_root(), out)
+    except ValueError as e:
+        console.print(f"\n[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+    console.print(f"Wrote {out}")
+
+
+@app.command()
+def rebuild(
+    plan_dir: Path = typer.Option(Path("ingest_plan"), "--plan", help="Folder holding plan.json"),
+    db_path: Path = typer.Option(..., "--db", help="NEW database folder (never library_db)"),
+    max_usd: Optional[float] = typer.Option(None, "--max-usd", help="Cost ceiling in USD; required unless --dry-run"),
+    workers: int = typer.Option(5, "--workers", "-w", min=1, max=20, help="Parallel extraction workers"),
+    estimate_from: Optional[Path] = typer.Option(None, "--estimate-from", help="pilot_report.json for --dry-run"),
+    model: Optional[str] = typer.Option(None, "--model", help="Model whose pilot average is used for --dry-run"),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Print the projected cost and file count; extract nothing"),
+    api_key: Optional[str] = typer.Option(None, "--api-key", help="API key (uses AI_API_KEY from .env if not set)"),
+    blocklist_from_git: Optional[str] = typer.Option(
+        None, "--blocklist-from-git",
+        help="Git commit whose removed items (plus audit-log deletes) are blocked in the new database",
+    ),
+    max_output_tokens: int = typer.Option(
+        64000, "--max-output-tokens", min=4000, max=128000,
+        help="Output token limit per extraction call; raise it (max 128000) if guides are still cut off",
+    ),
+):
+    """Run the paid ingest of a plan into a new, empty database folder."""
+    import json
+
+    from .ingest_core.plan import load_plan
+    from .ingest_core.runner import run_ingest
+    from .ui.services.db_service import LibraryDBService
+    from .ui.storage import LocalStorageBackend
+
+    if _is_live_library(db_path):
+        console.print("\n[red]Error:[/red] refusing to rebuild into library_db; use a new folder (e.g. library_db_new)")
+        raise typer.Exit(1)
+    if max_usd is None and not dry_run:
+        console.print("\n[red]Error:[/red] --max-usd is required unless --dry-run")
+        raise typer.Exit(1)
+    if max_usd is not None and max_usd <= 0:
+        console.print("\n[red]Error:[/red] --max-usd must be greater than 0")
+        raise typer.Exit(1)
+
+    blocklist = None
+    if blocklist_from_git is not None:
+        from .ingest_core.edits import build_blocklist, commit_has_parent, resolve_commit
+
+        root = _repo_root()
+        try:
+            sha = resolve_commit(root, blocklist_from_git)
+            if not commit_has_parent(root, sha):
+                console.print("commit has no parent; only audit deletions are used")
+            blocklist = build_blocklist(root / "library_db" / "_audit.json", sha, root)
+        except ValueError as e:
+            console.print(f"\n[red]Error:[/red] {e}")
+            raise typer.Exit(1)
+
+    try:
+        entries = load_plan(plan_dir)
+    except Exception as e:
+        console.print(f"\n[red]Error:[/red] {e}" if isinstance(e, ValueError) else f"\n[red]Error:[/red] cannot read plan: {e}")
+        raise typer.Exit(1)
+
+    if dry_run:
+        done: dict = {}
+        if (db_path / "_index.json").exists():
+            done = LibraryDBService(LocalStorageBackend(db_path))._index.get("_processed_files") or {}
+        todo = [e for e in entries
+                if (done.get(f"{e.folder}/{Path(e.path).name}") or {}).get("text_hash") != e.text_hash]
+        console.print(f"Files to extract: {len(todo)}")
+        if estimate_from is None or model is None:
+            console.print("[red]Error:[/red] a projection needs both --estimate-from and --model")
+            raise typer.Exit(1)
+        try:
+            avg = json.loads(estimate_from.read_text(encoding="utf-8"))["models"][model]["avg_usd_per_file"]
+        except (OSError, KeyError, ValueError) as e:
+            console.print(f"\n[red]Error:[/red] no average for model {model} in {estimate_from}: {e}")
+            raise typer.Exit(1)
+        if avg is None:
+            console.print(f"\n[red]Error:[/red] pilot has no cost figure for {model}")
+            raise typer.Exit(1)
+        console.print(f"Average per file ({model}): ${avg:.4f}")
+        console.print(f"Projected total: ${avg * len(todo):.2f}")
+        return
+
+    try:
+        from .ingest_core.extract import get_ingest_client
+
+        client = get_ingest_client(model=model, api_key=api_key)
+        db_path.mkdir(parents=True, exist_ok=True)
+        db = LibraryDBService(LocalStorageBackend(db_path))
+        if blocklist is not None:
+            db.set_blocklist(blocklist)
+            console.print(f"Loaded {len(blocklist)} blocklist entries")
+        done = db._index.get("_processed_files") or {}
+        todo = [e for e in entries
+                if (done.get(f"{e.folder}/{Path(e.path).name}") or {}).get("text_hash") != e.text_hash]
+        used = client.model + ("" if model else " (default from the environment; --model not given)")
+        console.print(f"Model: {used}")
+        console.print(f"Files to process: {len(todo)}")
+        console.print(f"Cost ceiling (--max-usd): ${max_usd:.2f}")
+        if max_output_tokens != 64000:
+            console.print(f"Output token limit: {max_output_tokens}")
+        console.print()
+        report = run_ingest(entries, db, client, log_dir=db_path / "_ingest_log",
+                            workers=workers, max_usd=max_usd, max_output_tokens=max_output_tokens)
+    except KeyboardInterrupt:
+        console.print("\nStopping: waiting for in-flight extractions to finish (up to 5 minutes). "
+                      "Progress is saved; re-run the same command to resume.")
+        raise typer.Exit(130)
+    except ValueError as e:
+        console.print(f"\n[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+    except Exception as e:
+        console.print(f"\n[red]Error:[/red] {e}")
+        raise typer.Exit(1)
+    console.print(f"\n[bold green]{len(report.processed)} processed, {len(report.failed)} failed, "
+                  f"{len(report.skipped)} skipped.[/bold green]")
+    if report.cost_usd is not None:
+        console.print(f"Cost: ${report.cost_usd:.2f}")
 
 
 @app.command()
@@ -553,7 +796,15 @@ def inspect(
 
     with Progress(SpinnerColumn(), TextColumn("[progress.description]{task.description}"), console=console) as progress:
         task = progress.add_task("Running AI extraction...", total=None)
-        data = builder._process_file(file_path)
+        from .ingest_core.extract import ExtractionError, extract_file
+
+        try:
+            extraction = extract_file(builder.client, file_path)
+        except ExtractionError as e:
+            progress.update(task, completed=True)
+            console.print(f"[red]Extraction failed:[/red] {e}")
+            raise typer.Exit(1)
+        data = extraction.data if extraction else None
         progress.update(task, completed=True)
 
     if data is None:

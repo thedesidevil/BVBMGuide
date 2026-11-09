@@ -1,0 +1,98 @@
+{
+  "restaurants": [],
+  "attractions": [
+    {
+      "name": "Val d'Orcia",
+      "city": "Tuscany",
+      "description": "A UNESCO World Heritage valley famed for its rolling hills, cypress-lined roads, vineyards, and Renaissance towns",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "4 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tuscany",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Pienza"
+    },
+    {
+      "name": "Chapel of Vitaleta",
+      "city": "Tuscany",
+      "description": "Iconic chapel that is a postcard-perfect image of Tuscany",
+      "hours": "09:00–19:00",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tuscany",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Pienza"
+    },
+    {
+      "name": "San Quirico d'Orcia",
+      "city": "Tuscany",
+      "description": "A charming medieval hill town in Val d'Orcia, known for its historic walls, Romanesque churches, and Renaissance gardens",
+      "hours": "24 hours",
+      "entry_fee": "Free",
+      "recommended_duration": "2 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tuscany",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in San Quirico D'Orcia"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Tuscan olive oil",
+      "city": "Tuscany",
+      "category": "Food",
+      "where_to_buy": [
+        "Local producers"
+      ],
+      "_source_file": "France/All Inclusive Guide- Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1756788202.0,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tuscany",
+      "_source_format": "old",
+      "_source_date": "2025-09-02",
+      "_legacy_note": "same name also exists in Florence"
+    },
+    {
+      "item": "Tuscan red wines (Brunello di Montalcino, Vino Nobile di Montepulciano)",
+      "city": "Tuscany",
+      "category": "Food",
+      "where_to_buy": [],
+      "_source_file": "France/Paris, Switzerland and Italy.pdf",
+      "_source_mtime": 1772384273.086379,
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Tuscany",
+      "_source_format": "old",
+      "_source_date": "2026-03-01",
+      "_legacy_note": "same name also exists in Pienza"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": []
+}

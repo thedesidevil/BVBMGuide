@@ -1,0 +1,60 @@
+{
+  "restaurants": [
+    {
+      "name": "Rondorama Restaurant",
+      "city": "Stanserhorn",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "price_range": "CHF 30–45 per person",
+      "ambience": "A revolving restaurant with panoramic Alpine and lake views",
+      "highlights": [
+        "Revolving restaurant",
+        "Panoramic Alpine views"
+      ],
+      "must_try_dishes": [
+        "Rösti",
+        "cheese dishes",
+        "local fish",
+        "light vegetarian options"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Stanserhorn",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Stans"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Stanserhorn CabriO",
+      "city": "Stanserhorn",
+      "description": "World's first double-decker cable car with an open upper deck, offering 360° views of Lake Lucerne and the Alps",
+      "recommended_duration": "4-5 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Stanserhorn",
+      "_source_format": "old",
+      "_source_date": null,
+      "_legacy_note": "same name also exists in Stans"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": []
+}

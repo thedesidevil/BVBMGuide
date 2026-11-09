@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-type Mode = "city" | "sweep" | "ingest" | "history" | "audit" | "verify" | "hotel_options";
+type Mode = "city" | "sweep" | "ingest" | "history" | "audit" | "verify" | "hotel_options" | "aigv2";
 
 interface LayoutProps {
   mode: Mode;
@@ -43,13 +43,14 @@ function SectionTab({
   );
 }
 
-function activeSection(mode: Mode): "hotel" | "verify" | "library" {
+function activeSection(mode: Mode): "hotel" | "verify" | "aigv2" | "library" {
+  if (mode === "aigv2") return "aigv2";
   if (mode === "hotel_options") return "hotel";
   if (mode === "verify") return "verify";
   return "library";
 }
 
-const NO_SIDEBAR_MODES: Mode[] = ["ingest", "history", "audit", "verify", "hotel_options"];
+const NO_SIDEBAR_MODES: Mode[] = ["ingest", "history", "audit", "verify", "hotel_options", "aigv2"];
 
 export function Layout({ mode, onModeChange, lastLibraryMode, isAdmin, reviewedCount, totalCount, sidebar, children, userEmail, serverVersion }: LayoutProps) {
   return (
@@ -68,6 +69,11 @@ export function Layout({ mode, onModeChange, lastLibraryMode, isAdmin, reviewedC
               label="AIG"
               active={activeSection(mode) === "verify"}
               onClick={() => onModeChange("verify")}
+            />
+            <SectionTab
+              label="AIG v2 (test)"
+              active={activeSection(mode) === "aigv2"}
+              onClick={() => onModeChange("aigv2")}
             />
             {isAdmin && (
               <SectionTab

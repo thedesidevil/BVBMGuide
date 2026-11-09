@@ -1,0 +1,24 @@
+{
+  "questions": [
+    {
+      "id": "open_choice:0",
+      "kind": "open_choice",
+      "text": "Which do you want: ICON MALL or SINDHU MARKET? (SHOPPING AT ICON MALL/SINDHU MARKET (AT OWN EXPENSE))",
+      "options": [
+        "ICON MALL",
+        "SINDHU MARKET"
+      ],
+      "day": "2026-09-30"
+    },
+    {
+      "id": "early_arrival:2026-09-25",
+      "kind": "early_arrival",
+      "text": "Arrival is at 00:10 on 25 Sep. The hotel night would start on 24 Sep — is Day 1 24 Sep or 25 Sep?",
+      "options": [
+        "2026-09-24",
+        "2026-09-25"
+      ],
+      "day": "2026-09-25"
+    }
+  ]
+}

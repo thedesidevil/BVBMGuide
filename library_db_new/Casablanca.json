@@ -1,0 +1,394 @@
+{
+  "restaurants": [
+    {
+      "name": "La Sqala",
+      "city": "Casablanca",
+      "cuisine_type": [
+        "Moroccan"
+      ],
+      "price_range": "Mid",
+      "hours": "8:00 AM – 11:00 PM",
+      "ambience": "Old fort/bastion with tranquil garden; relaxed and family-friendly",
+      "highlights": [
+        "Traditional Moroccan vegetarian dishes"
+      ],
+      "must_try_dishes": [
+        "Harira soup",
+        "Tajines",
+        "Couscous",
+        "Zaalouk",
+        "Vegetable tajine",
+        "Fresh Moroccan salads"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ],
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "Rick's Café",
+      "city": "Casablanca",
+      "cuisine_type": [
+        "Moroccan",
+        "International"
+      ],
+      "price_range": "Mid–High",
+      "hours": "12 PM to 3 PM",
+      "ambience": "Atmospheric, film-inspired; live music some evenings",
+      "highlights": [
+        "Popular with visitors",
+        "Inspired by the classic film"
+      ],
+      "must_try_dishes": [
+        "Classic cocktails",
+        "Moroccan-inspired mains"
+      ],
+      "meal_slots": [
+        "lunch",
+        "dinner"
+      ],
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "Pomme de Pain",
+      "city": "Casablanca",
+      "cuisine_type": [
+        "Cafe"
+      ],
+      "price_range": "Budget",
+      "hours": "7:00 AM – 12:00 AM",
+      "ambience": "Casual café chain",
+      "highlights": [
+        "Reliable vegetarian sandwiches and light meals"
+      ],
+      "must_try_dishes": [
+        "Vegetarian sandwiches",
+        "Salads",
+        "Soups",
+        "Fresh juices"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Hassan II Mosque",
+      "city": "Casablanca",
+      "description": "One of the world's largest mosques, set over the Atlantic Ocean, with a soaring minaret, zellige tilework, carved marble floors and cedarwood ceilings.",
+      "entry_fee": "130 MAD pp",
+      "tips": [
+        "Non-Muslims can visit the interior on guided tours"
+      ],
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "Corniche Ain Diab",
+      "city": "Casablanca",
+      "description": "Lively seaside promenade lined with cafés, ocean-view restaurants and walking paths.",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "Habous Quarter (New Medina)",
+      "city": "Casablanca",
+      "description": "1930s neighborhood blending Moroccan architecture with French urban planning; artisan shops, bookstalls and bakeries, good for souvenirs without the chaos of older medinas.",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "United Nations Square",
+      "city": "Casablanca",
+      "description": "Central landmark linking the old medina with modern Casablanca, surrounded by colonial-era buildings and cafés.",
+      "tips": [
+        "Drive-by or short stop"
+      ],
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Tagine",
+      "city": "Casablanca",
+      "description": "Slow-cooked stew made in a cone-shaped clay pot.",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "Couscous",
+      "city": "Casablanca",
+      "description": "Morocco's national dish, usually served on Fridays; steamed semolina topped with vegetables, chickpeas and slow-cooked meat.",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "Harira Soup",
+      "city": "Casablanca",
+      "description": "Hearty soup of tomatoes, lentils, chickpeas and herbs; popular during Ramadan.",
+      "where_to_try": "La Sqala",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "Zaalouk",
+      "city": "Casablanca",
+      "description": "Smoky eggplant and tomato dip served with bread; a common starter.",
+      "where_to_try": "La Sqala",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "Moroccan Mint Tea",
+      "city": "Casablanca",
+      "description": "Sweet green tea infused with fresh mint, the symbol of Moroccan hospitality.",
+      "where_to_try": "Café Maure",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "Msemen",
+      "city": "Casablanca",
+      "description": "Flaky, square pan-fried bread.",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "Baghrir",
+      "city": "Casablanca",
+      "description": "\"Thousand-hole\" honeycomb pancakes.",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "Chebakia",
+      "city": "Casablanca",
+      "description": "Flower-shaped sesame cookie coated in honey and sesame seeds; popular during Ramadan.",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "Sellou (Sfouf)",
+      "city": "Casablanca",
+      "description": "Nutty, sweet, crumbly mix of toasted flour, almonds, sesame and spices.",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "Ghriba Cookies",
+      "city": "Casablanca",
+      "description": "Soft, chewy almond or coconut cookies dusted with sugar.",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "M'hancha",
+      "city": "Casablanca",
+      "description": "'The Snake': coiled almond-filled pastry flavored with orange blossom water",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Briouat (Sweet)",
+      "city": "Casablanca",
+      "description": "Fried phyllo triangles filled with almond paste and dipped in honey",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx",
+      "_source_date": null,
+      "_source_format": "new"
+    },
+    {
+      "name": "Orange & Cinnamon Salad",
+      "city": "Casablanca",
+      "description": "Moroccan oranges topped with cinnamon and honey.",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "Pastilla au Lait",
+      "city": "Casablanca",
+      "description": "Creamy layered dessert with milk, cinnamon and crispy pastry.",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    },
+    {
+      "name": "M'hancha (The Snake)",
+      "city": "Casablanca",
+      "description": "Coiled almond-filled pastry flavored with orange blossom water.",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new"
+    },
+    {
+      "name": "Sweet Briouat",
+      "city": "Casablanca",
+      "description": "Fried phyllo triangles filled with almond paste and dipped in honey.",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new"
+    }
+  ],
+  "phrases": [],
+  "safety_tips": [
+    {
+      "cities": [
+        "Cairo",
+        "Giza",
+        "Luxor",
+        "Aswan",
+        "Alexandria",
+        "Casablanca",
+        "Rabat",
+        "Chefchaouen",
+        "Fez",
+        "Marrakech"
+      ],
+      "tip": "Avoid walking alone at night in unfamiliar or poorly lit areas",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Cairo",
+        "Giza",
+        "Luxor",
+        "Aswan",
+        "Alexandria",
+        "Casablanca",
+        "Rabat",
+        "Chefchaouen",
+        "Fez",
+        "Marrakech"
+      ],
+      "tip": "Use registered taxis or ride-hailing apps rather than unmarked taxis",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new"
+    }
+  ],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Casablanca",
+        "Marrakech",
+        "Rabat",
+        "Fez"
+      ],
+      "tip": "Major airports often have kiosks or shops selling tourist prepaid SIMs",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new"
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [
+    {
+      "cities": [
+        "Casablanca",
+        "Rabat",
+        "Chefchaouen",
+        "Fez",
+        "Marrakech",
+        "Beni Mellal"
+      ],
+      "tip": "Be cautious with ice in drinks and unpeeled fruits from small vendors",
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new"
+    }
+  ],
+  "route_guides": [
+    {
+      "city": "Casablanca",
+      "from": "Hassan II Mosque",
+      "to": "United Nations Square",
+      "stops": [
+        {
+          "name": "Hassan II Mosque",
+          "suggested_stop": "Guided interior tour"
+        },
+        {
+          "name": "Corniche Ain Diab",
+          "minutes": 11,
+          "suggested_stop": "Seaside stroll"
+        },
+        {
+          "name": "Habous Quarter (New Medina)",
+          "minutes": 24,
+          "suggested_stop": "Souvenir shopping"
+        },
+        {
+          "name": "United Nations Square",
+          "minutes": 19,
+          "suggested_stop": "Drive-by or short stop"
+        }
+      ],
+      "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+      "_source_date": "2025-12-29",
+      "_source_format": "new",
+      "_replaced_from": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx"
+    }
+  ],
+  "season_notes": [],
+  "source_files": [
+    "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco(1).docx",
+    "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx"
+  ],
+  "currency": "MAD",
+  "_currency_source": {
+    "_source_file": "Egypt/Kaushal_All Inclusive Guide_Egypt and Morocco.docx",
+    "_source_date": "2025-12-29",
+    "_source_format": "new"
+  }
+}

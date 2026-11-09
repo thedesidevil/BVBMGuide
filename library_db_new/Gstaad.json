@@ -1,0 +1,59 @@
+{
+  "restaurants": [
+    {
+      "name": "Mango Indian Restaurant",
+      "city": "Gstaad",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "INR 2,500–4,000 per person",
+      "hours": "11:30 AM – 9:00 PM",
+      "ambience": "Cozy and elegant, warm interiors",
+      "must_try_dishes": [
+        "Paneer butter masala",
+        "Dal tadka",
+        "Vegetable biryani"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Gstaad",
+      "city": "Gstaad",
+      "description": "Understated luxury alpine village with boutiques, chalet-style architecture, horse-drawn carriages and mountain cafés.",
+      "entry_fee": "Free",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+    "Europe/Kunal_Europe_All Inclusive Guide.docx"
+  ],
+  "currency": "CHF",
+  "_currency_source": {
+    "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+    "_source_date": "2026-05-04",
+    "_source_format": "new"
+  }
+}

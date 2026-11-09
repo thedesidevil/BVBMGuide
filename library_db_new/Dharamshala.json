@@ -1,0 +1,147 @@
+{
+  "restaurants": [
+    {
+      "name": "The Other Space",
+      "city": "Dharamshala",
+      "cuisine_type": [
+        "Continental"
+      ],
+      "price_range": "₹900–₹1,200 per person",
+      "hours": "10:00 AM – 9:00 PM",
+      "ambience": "One of the most scenic cafés with spectacular Dhauladhar mountain views and cozy reading corners",
+      "highlights": [
+        "Spectacular mountain views",
+        "Cozy reading corners filled with books"
+      ],
+      "must_try_dishes": [
+        "Pasta",
+        "Grilled chicken",
+        "Pizza",
+        "Hot chocolate"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "vegetarian_friendly": true,
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Dharamshala",
+      "_source_format": "old",
+      "_source_date": null
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Kotwali Bazaar",
+      "city": "Dharamshala",
+      "description": "One of the oldest and busiest markets in Dharamshala, offering Himachali products, Tibetan handicrafts, woolens and souvenirs.",
+      "hours": "10:00 AM – 9:00 PM",
+      "entry_fee": "Free",
+      "_source_file": "North India/Mr. Amit Sinkar- North India- All Inclusive Guide.docx",
+      "_source_date": "2026-03-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "HPCA Cricket Stadium Dharamshala",
+      "city": "Dharamshala",
+      "description": "Cricket stadium at about 1,457 m altitude with Tibetan-inspired architecture and views of the Dhauladhar range.",
+      "hours": "9:00 AM – 6:00 PM (subject to match schedules)",
+      "entry_fee": "Approx. ₹30–₹50 per person",
+      "_source_file": "North India/Mr. Amit Sinkar- North India- All Inclusive Guide.docx",
+      "_source_date": "2026-03-13",
+      "_source_format": "new"
+    },
+    {
+      "name": "Tsuglagkhang Complex (Dalai Lama Temple)",
+      "city": "Dharamshala",
+      "description": "Official residence of His Holiness the Dalai Lama, includes temples, prayer halls, monasteries, and prayer wheels",
+      "hours": "5:00 AM – 8:00 PM",
+      "entry_fee": "Free",
+      "recommended_duration": "2-3 hours",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Dharamshala",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "Dal Lake Dharamshala",
+      "city": "Dharamshala",
+      "description": "Peaceful mountain lake surrounded by tall deodar cedar trees with nearby Shiva temple, offering calm atmosphere and scenic walking paths",
+      "hours": "Open all day",
+      "entry_fee": "Free",
+      "recommended_duration": "1 hour",
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Dharamshala",
+      "_source_format": "old",
+      "_source_date": null
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Asia Spa Resort Dharamshala",
+      "city": "Dharamshala",
+      "location": "About 10 minutes from Dharamshala town center",
+      "_source_file": "North India/Mr. Amit Sinkar- North India- All Inclusive Guide.docx",
+      "_source_date": "2026-03-13",
+      "_source_format": "new"
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [
+    {
+      "item": "Woolens and Tibetan handicrafts",
+      "city": "Dharamshala",
+      "category": "Textiles & handicrafts",
+      "where_to_buy": [
+        "Kotwali Bazaar"
+      ],
+      "_source_file": "North India/Mr. Amit Sinkar- North India- All Inclusive Guide.docx",
+      "_source_date": "2026-03-13",
+      "_source_format": "new"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [
+    {
+      "city": "Dharamshala",
+      "from": "Dharamshala",
+      "to": "Palampur",
+      "total_km": 40,
+      "total_time": "1.5 hours",
+      "_source_file": "North India/Mr. Amit Sinkar- North India- All Inclusive Guide.docx",
+      "_source_date": "2026-03-13",
+      "_source_format": "new"
+    }
+  ],
+  "season_notes": [
+    {
+      "city": "Dharamshala",
+      "tip": "Evenings can be cool even when daytime weather is pleasant",
+      "_source_file": "North India/Mr. Amit Sinkar- North India- All Inclusive Guide.docx",
+      "_source_date": "2026-03-13",
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "North India/Mr. Amit Sinkar- North India- All Inclusive Guide.docx"
+  ],
+  "currency": "INR",
+  "_currency_source": {
+    "_source_file": "North India/Mr. Amit Sinkar- North India- All Inclusive Guide.docx",
+    "_source_date": "2026-03-13",
+    "_source_format": "new"
+  }
+}

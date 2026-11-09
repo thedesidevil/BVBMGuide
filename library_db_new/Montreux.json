@@ -1,0 +1,372 @@
+{
+  "restaurants": [
+    {
+      "name": "Le Palais Oriental",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Middle Eastern"
+      ],
+      "price_range": "Approx. INR 2,500–4,000 per person",
+      "hours": "11:30 PM – 9:30 PM (Saturday 11:30 am–10 pm, Sunday 12–9 pm)",
+      "ambience": "Elegant, beautifully designed, near the lake",
+      "highlights": [
+        "Refined vegetarian dishes"
+      ],
+      "must_try_dishes": [
+        "Falafel platter",
+        "Hummus",
+        "Vegetable tagine"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Restaurant Dolce",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "Approx. INR 3,000–5,000 per person",
+      "hours": "11:00 AM – 9:30 PM",
+      "ambience": "Relaxed, refined lakeside charm",
+      "highlights": [
+        "Fresh vegetarian pastas"
+      ],
+      "must_try_dishes": [
+        "Truffle pasta",
+        "Wood-fired vegetarian pizza",
+        "Tiramisu"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Huit Sushi",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Japanese"
+      ],
+      "price_range": "Approx. INR 3,000–4,500 per person",
+      "hours": "11:30 AM – 2:30 PM | 6:00 PM - 10:00 PM",
+      "ambience": "Sleek contemporary interiors",
+      "highlights": [
+        "Beautifully plated vegetarian sushi"
+      ],
+      "must_try_dishes": [
+        "Avocado sushi rolls",
+        "Vegetable tempura",
+        "Miso soup"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Tandoori Restaurant Montreux",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Indian"
+      ],
+      "price_range": "Approx. INR 2,500–4,000 per person",
+      "hours": "11:30 AM – 10:00 PM",
+      "ambience": "Cozy",
+      "highlights": [
+        "Comforting vegetarian dinner"
+      ],
+      "must_try_dishes": [
+        "Malai kofta",
+        "Dal makhani",
+        "Butter naan"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "La Rouvenaz",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "price_range": "INR 3,000–5,000 per person",
+      "hours": "12:00 PM - 3:00 PM | 6:00 PM – 10:30 PM",
+      "ambience": "Lively lakeside, relaxed European atmosphere",
+      "highlights": [
+        "Charming outdoor seating"
+      ],
+      "must_try_dishes": [
+        "Vegetarian pizza",
+        "Fresh pasta",
+        "Tiramisu"
+      ],
+      "vegetarian_friendly": "true",
+      "meal_slots": [
+        "dinner"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "name": "1820 Restaurant and Cocktails Bar",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Italian"
+      ],
+      "hours": "10am-12am",
+      "must_try_dishes": [
+        "Risotto",
+        "Pastas",
+        "Salads",
+        "Pizzas"
+      ],
+      "_source_file": "Switzerland/Where to eat in Switzerland.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Mayfair House",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "hours": "7:30am-12am",
+      "must_try_dishes": [
+        "Fondue"
+      ],
+      "notes": "Shisha also available",
+      "_source_file": "Switzerland/Where to eat in Switzerland.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Restaurant Le Museum",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Swiss"
+      ],
+      "hours": "6pm-11:30pm; closed Mon",
+      "must_try_dishes": [
+        "Raclette",
+        "Gratin",
+        "Meringue"
+      ],
+      "_source_file": "Switzerland/Where to eat in Switzerland.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    },
+    {
+      "name": "Montreux Jazz Café",
+      "city": "Montreux",
+      "cuisine_type": [
+        "Multicuisine"
+      ],
+      "must_try_dishes": [
+        "Caesar's salad",
+        "Lobster risotto",
+        "Cheesecake"
+      ],
+      "_source_file": "Switzerland/Where to eat in Switzerland.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Montreux Lakeside Promenade",
+      "city": "Montreux",
+      "description": "Flower-lined promenade beside Lake Geneva with Belle Époque architecture, palm trees, sculptures and lakeside cafés.",
+      "entry_fee": "Free",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Château de Chillon",
+      "city": "Montreux",
+      "description": "Medieval lakeside castle with stone corridors, historic chambers, towers and panoramic viewpoints.",
+      "entry_fee": "Approx. INR 1,600–2,000 per person",
+      "tips": [
+        "Large paid parking area available"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Montreux Old Town",
+      "city": "Montreux",
+      "description": "Quiet, traditional hillside district above the lake with cobblestone streets, historic homes and lake views.",
+      "entry_fee": "Free",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Rochers-de-Naye",
+      "city": "Montreux",
+      "description": "Scenic cogwheel train to a summit with panoramic views over Lake Geneva, alpine peaks and vineyards.",
+      "entry_fee": "Approx. INR 6,000–8,000 per person (round trip)",
+      "tips": [
+        "Best on a clear-weather day"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Freddie Mercury Statue",
+      "city": "Montreux",
+      "description": "Iconic statue beside Lake Geneva; the surrounding promenade is atmospheric at sunset.",
+      "entry_fee": "Free",
+      "tips": [
+        "Visit around sunset"
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "The Freddie Mercury Hotel",
+      "city": "Montreux",
+      "location": "Lakeside Montreux; hotel parking available",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    }
+  ],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [
+    {
+      "city": "Montreux",
+      "mode": "Cogwheel train",
+      "description": "Scenic cogwheel train to Rochers-de-Naye.",
+      "cost": "Approx. INR 6,000–8,000 per person (round trip)",
+      "how_to_use": "Parking available near the station.",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    }
+  ],
+  "health_tips": [
+    {
+      "cities": [
+        "Montreux"
+      ],
+      "tip": "BENU Pharmacie Montreux Gare is ~5 mins walk from The Freddie Mercury Hotel (7:30 AM – 8:00 PM; Sundays 9:00 AM – 6:00 PM)",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Montreux"
+      ],
+      "tip": "Clinique Suisse Montreux SA is ~5 mins walk from The Freddie Mercury Hotel",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+      "_source_date": "2026-05-03",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Montreux"
+      ],
+      "tip": "BENU Pharmacie Montreux Gare is a pharmacy in Montreux",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    },
+    {
+      "cities": [
+        "Montreux"
+      ],
+      "tip": "Clinique Suisse Montreux SA is a medical centre in Montreux",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    }
+  ],
+  "route_guides": [
+    {
+      "city": "Montreux",
+      "from": "Montreux",
+      "to": "Interlaken",
+      "stops": [
+        {
+          "name": "Gstaad",
+          "minutes": 75,
+          "suggested_stop": "Boutiques and promenade"
+        },
+        {
+          "name": "Saanen",
+          "minutes": 5,
+          "suggested_stop": "Traditional chalet village and lunch"
+        },
+        {
+          "name": "Interlaken",
+          "minutes": 105,
+          "suggested_stop": "Check in; Harder Kulm sunset"
+        }
+      ],
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new",
+      "_replaced_from": "Europe/Kunal_Europe_All Inclusive Guide(1).docx"
+    }
+  ],
+  "season_notes": [
+    {
+      "city": "Montreux",
+      "tip": "Rochers-de-Naye train is best on clear-weather days",
+      "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+      "_source_date": "2026-05-04",
+      "_source_format": "new"
+    }
+  ],
+  "source_files": [
+    "Europe/Kunal_Europe_All Inclusive Guide(1).docx",
+    "Europe/Kunal_Europe_All Inclusive Guide.docx",
+    "Switzerland/Where to eat in Switzerland.pdf"
+  ],
+  "currency": "CHF",
+  "_currency_source": {
+    "_source_file": "Europe/Kunal_Europe_All Inclusive Guide.docx",
+    "_source_date": "2026-05-04",
+    "_source_format": "new"
+  }
+}

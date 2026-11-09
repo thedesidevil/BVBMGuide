@@ -49,7 +49,7 @@ For each file:
 │     Truncated at 50,000 characters                      │
 │                                                         │
 │  b) Send to AI with extraction prompt                   │
-│     max_tokens = 32,000                                 │
+│     max_tokens = 64,000                                 │
 │     timeout = 300s                                      │
 │                                                         │
 │  c) Parse JSON response                                 │
@@ -155,6 +155,42 @@ library_db/                ← project root, NOT inside aig-library/
 ```
 
 Each city shard contains all data for that city: restaurants, attractions, hotels, local dishes, phrases, safety tips, souvenirs, emergency contacts, connectivity tips, transport options, and health tips.
+
+## Plan, Pilot, Rebuild (redesigned ingest)
+
+For a full rebuild from past AIGs, run the steps in this order. Nothing here touches `library_db/`.
+
+1. **plan**: `python -m src.library plan --input <dir> --library aig-library --out ingest_plan`. Free except one small classification call per file with no same-named file in the library. Writes `plan.json` (path, folder, order date, basis, format, hash, skipped reason) and `order_report.md`. Check the report, and edit folders in `plan.json` if needed; later steps read the file as it is on disk. Re-running `plan` keeps the folders already in `plan.json` (hand edits included) and classifies only new files; delete `plan.json` to re-plan from scratch. Files that got no folder are listed under "Needs a folder" in the report; fill the folder in `plan.json` to include them.
+2. **pilot**: `python -m src.library pilot --plan ingest_plan --models claude-sonnet-5-5,claude-haiku-5-5 --out pilot_out`. Probes each model with one tiny call (stops if a model does not answer), then extracts about 10 chosen files per model into memory only. Writes `pilot_report.md` (tokens, cost, item counts, a flag for prompts over 100K tokens, side-by-side restaurant and attraction names) and `pilot_report.json`.
+3. **dry-run**: `python -m src.library rebuild --plan ingest_plan --db library_db_new --dry-run --estimate-from pilot_out/pilot_report.json --model NAME` prints the file count and projected total. No extraction, nothing written.
+4. **backup**: tag git and copy `library_db/` and `aig-library/` outside the repo.
+5. **rebuild**: `python -m src.library rebuild --plan ingest_plan --db library_db_new --max-usd N`. Refuses `library_db` and refuses to run without `--max-usd`. Resumable: Ctrl-C saves progress, re-run the same command. The run log is in `library_db_new/_ingest_log/`.
+6. **verify**: `python -m src.library verify --db library_db_new`, then review before swapping it in.
+
+### Try it on a subset first
+
+Before the full plan, check the whole chain on a few files:
+
+1. Make a new folder (for example `ingest_try/`) and copy 3 past AIGs into it.
+2. Run `python -m src.library plan --input ingest_try --library aig-library --out ingest_plan_try`. Read the "Classification FAILED" block (if any) and `order_report.md`.
+3. Run `python -m src.library pilot --plan ingest_plan_try --models <model> --count 3 --out pilot_out_try`. Check `pilot_report.md`: no failed files, sensible item counts, a cost per file.
+4. Only then run `plan` on the full input folder. A file that fails the AI step is reported with its reason (`truncated`, `unparseable`, `api_error: ...`) in the pilot report, the rebuild log and the `failed` list.
+
+### Swapping the new library in
+
+These are manual steps; no command moves or overwrites `library_db`.
+
+1. Stop the library UI server (port 8765).
+2. Move `library_db` to a dated backup name (for example `library_db_backup_2026-10-27`).
+3. Move `library_db_new` to `library_db`.
+4. Restart the server.
+
+Notes:
+
+- Review statuses are not carried over: the new library marks every shard that received items as `pending`. That is acceptable today because the old statuses described the old extraction, which the new items replace.
+- Source files that came from the `input/` folder are not copied into `aig-library/`, so `qc --verify-sources` cannot find them for the new library.
+
+`build` also takes `--max-usd` (required for more than 5 files) and refuses a legacy index whose processed-file records have no content hash.
 
 ## Key Design Decisions
 

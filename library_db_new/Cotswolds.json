@@ -1,0 +1,113 @@
+{
+  "restaurants": [
+    {
+      "name": "The Swan Hotel",
+      "city": "Cotswolds",
+      "cuisine_type": [
+        "British"
+      ],
+      "price_range": "INR 2500 pp",
+      "hours": "12:00 pm – 3:00 pm",
+      "ambience": "Riverside elegance, British classics",
+      "area": "Bibury",
+      "highlights": [
+        "Riverside elegance",
+        "British classics"
+      ],
+      "must_try_dishes": [
+        "Cotswold lamb",
+        "roast chicken"
+      ],
+      "best_for": [
+        "romantic"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Cotswolds",
+      "_source_format": "old",
+      "_source_date": null
+    },
+    {
+      "name": "The Old Bakery Tearoom",
+      "city": "Cotswolds",
+      "cuisine_type": [
+        "British"
+      ],
+      "price_range": "INR 1500 pp",
+      "hours": "10:00 am – 4:00 pm",
+      "ambience": "Cozy English tea room",
+      "area": "Stow-on-the-Wold",
+      "highlights": [
+        "Cozy English tea room"
+      ],
+      "must_try_dishes": [
+        "Cream tea",
+        "quiche",
+        "homemade scones"
+      ],
+      "best_for": [
+        "casual"
+      ],
+      "source_files": [],
+      "_legacy": true,
+      "_needs_verification": true,
+      "_legacy_from": "library_db backup 2026-10-28",
+      "_legacy_shard": "Cotswolds",
+      "_source_format": "old",
+      "_source_date": null
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Cotswolds",
+      "city": "Cotswolds",
+      "description": "Area of Outstanding Natural Beauty with picturesque villages, rolling hills and historic sites",
+      "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh(1).docx",
+      "_source_date": "2025-10-22",
+      "_source_format": "new",
+      "_replaced_from": "England and Scotland/Edlyn London - All Inclusive Guide(1).docx"
+    },
+    {
+      "name": "Cotswolds Villages",
+      "city": "Cotswolds",
+      "description": "Area of Outstanding Natural Beauty with picturesque villages, rolling hills and historic sites, a quintessential English countryside experience.",
+      "_source_file": "England and Scotland/Edlyn London.pdf",
+      "_source_date": null,
+      "_source_format": "old"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [],
+  "phrases": [],
+  "safety_tips": [],
+  "souvenirs": [],
+  "emergency_contacts": [],
+  "connectivity_tips": [
+    {
+      "cities": [
+        "Cotswolds"
+      ],
+      "tip": "Expect 3G and occasional dead zones in remote countryside such as the Cotswolds hills",
+      "_source_file": "England and Scotland/Edlyn London - All Inclusive Guide(1).docx",
+      "_source_date": "2025-10-17",
+      "_source_format": "new"
+    }
+  ],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "England and Scotland/Edlyn London - All Inclusive Guide(1).docx",
+    "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh(1).docx",
+    "England and Scotland/Edlyn London.pdf"
+  ],
+  "currency": "GBP",
+  "_currency_source": {
+    "_source_file": "England and Scotland/Edlyn All Inclusive Guide- London and Edinburgh(1).docx",
+    "_source_date": "2025-10-22",
+    "_source_format": "new"
+  }
+}

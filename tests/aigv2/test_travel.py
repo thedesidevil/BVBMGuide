@@ -381,3 +381,11 @@ def test_far_leg_without_a_road_route_stays_no_route():
 def test_meals_and_legs_share_the_estimate():
     from src.aigv2.planning.travel import approx_car_minutes
     assert approx_car_minutes(2.2) == 12 and approx_car_minutes(5.0) == 20 and approx_car_minutes(5.1) is None
+
+
+def test_public_transport_only_family_never_sees_by_car_approx():
+    l = Leg(from_name="A", to_name="B", walk_min=128, drive_min=None, transit_min=None, approx_min=17)
+    assert leg_options(l, ["public_transport"], 10) == [("By public transport (approx.)", 17)]
+    assert leg_options(l, ["taxi"], 10) == [("By car (approx.)", 17)]
+    assert [m.render() for m in leg_markers(l, ["public_transport"], 10)] == ["⚠ VERIFY: public transport time is estimated; check it"]
+    assert leg_markers(l, ["taxi"], 10) == []

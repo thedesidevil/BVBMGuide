@@ -246,6 +246,48 @@ def space_after_lunch(res: "DayResult", settings: Settings, travel: Optional[dic
         res.scheduled.sort(key=lambda x: x.start)
 
 
+_RETURN_RE = re.compile(r"^\s*(return|back|travel back|transfer back|drive back)\b", re.I)
+_LATE_START = time(17, 30)
+_LATEST_STOP_START = time(16, 45)
+_STOP_GAP_MIN = 15
+_EVENING_KIND = re.compile(r"firework|night|sunset|dinner|show|parade|illumination|light|concert|ceremony", re.I)
+
+
+def fit_before_return(res: "DayResult", durations: Optional[dict[str, int]] = None) -> None:
+    """Untimed stops that the lunch spacing pushed into the evening move back to follow the day's earlier stops, and an
+    untimed 'Return to X' comes last. When a stop cannot start by 16:45 it is clamped there with a VERIFY marker."""
+    durations = durations or {}
+    ret_i = [i for i, s in enumerate(res.scheduled)
+             if s.item.kind == "transfer" and _RETURN_RE.match(s.item.name) and not (s.item.time or s.item.pickup_time)]
+    if not ret_i:
+        return
+    movable = lambda s: (s.item.kind in ("attraction", "activity") and not (s.item.time or s.item.pickup_time)
+                         and not s.item.option_group and not _EVENING_KIND.search(s.item.name))
+    late = [i for i, s in enumerate(res.scheduled) if movable(s) and s.start >= _LATE_START]
+    if not late:
+        return
+    rest = [s for i, s in enumerate(res.scheduled) if i not in late and i not in ret_i]
+    fixed_end = max((_minutes(s.start) + durations.get(s.item.name, DEFAULT_STOP_MIN) for s in rest), default=9 * 60)
+    cursor = fixed_end + _STOP_GAP_MIN
+    latest = _minutes(_LATEST_STOP_START)
+    out = list(rest)
+    for i in sorted(late, key=lambda i: res.scheduled[i].start):
+        s = res.scheduled[i]
+        start = min(cursor, latest) if cursor > latest else cursor
+        if cursor > latest:
+            res.markers.append(Marker(kind="VERIFY", text=f"timing of {s.item.name} to confirm (it did not fit before the return)"))
+        t = time(start // 60, start % 60)
+        out.append(ScheduledItem(item=s.item, slot="afternoon" if t < _LATE_START else "evening", start=t))
+        cursor = start + durations.get(s.item.name, DEFAULT_STOP_MIN) + _STOP_GAP_MIN
+    end = min(cursor, 23 * 60 + 59)
+    for i in ret_i:
+        s = res.scheduled[i]
+        t = max(s.start, time(end // 60, end % 60)) if s.start >= _LATE_START else time(end // 60, end % 60)
+        out.append(ScheduledItem(item=s.item, slot="afternoon" if t < _LATE_START else "evening", start=t))
+        end += 5
+    res.scheduled[:] = sorted(out, key=lambda x: x.start)
+
+
 _OPTIONAL_VISIT_MIN = 30
 _FULL_DAY_PACKAGE_MIN = 6 * 60
 _WINDOW_LUNCH_CLASH_MIN = 120

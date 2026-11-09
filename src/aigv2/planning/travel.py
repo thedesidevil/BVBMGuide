@@ -80,10 +80,12 @@ def leg_options(leg: Leg, modes: list[str], walk_max: int) -> list[tuple[str, in
         opts.append(("By car", leg.drive_min))
     if "public_transport" in modes and leg.transit_min is not None:
         opts.append(("By public transport", leg.transit_min))
+    car_ok = bool(_CAR_MODES & set(modes)) or "public_transport" not in modes
     if not opts and leg.drive_min is not None:
         opts.append(("By car", leg.drive_min))
     if not opts and leg.approx_min is not None:
-        opts.append((APPROX_LABEL, leg.approx_min))
+        # a public-transport-only family is never shown a car trip: the same estimate, labelled as public transport
+        opts.append((APPROX_LABEL if car_ok else "By public transport (approx.)", leg.approx_min))
     return opts
 
 
@@ -100,8 +102,11 @@ def leg_markers(leg: Leg, modes: list[str], walk_max: int) -> list[Marker]:
         (_CAR_MODES & set(modes) and leg.drive_min is not None)
         or ("public_transport" in modes and leg.transit_min is not None)
     )
+    car_ok = bool(_CAR_MODES & set(modes)) or "public_transport" not in modes
     if not walk_ok and not allowed and leg.approx_min is None:
         return [Marker(kind="VERIFY", text="travel mode for this leg")]
+    if not walk_ok and not allowed and not car_ok:
+        return [Marker(kind="VERIFY", text="public transport time is estimated; check it")]
     return []
 
 

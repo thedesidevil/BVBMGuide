@@ -670,3 +670,38 @@ def test_after_journey_pushes_early_visits_and_lunch():
     before = [s.start for s in r2.scheduled]
     after_journey(r2, None, S)
     assert [s.start for s in r2.scheduled] == before
+
+
+def test_untimed_optional_stops_stay_before_the_return_and_out_of_the_evening():
+    """Europe Day 8: Trottibike landed at 18:23, the same time as 'Return to Interlaken'."""
+    from src.aigv2.models import Marker
+    from src.aigv2.planning.slots import DayResult, ScheduledItem, fit_before_return
+    t = lambda h, m=0: time(h, m)
+    mk = lambda n, kind="activity", **kw: PlannedItem(name=n, kind=kind, city="Interlaken", **kw)
+    res = DayResult(scheduled=[
+        ScheduledItem(item=mk("Travel to Grindelwald", "transfer"), slot="morning", start=t(9)),
+        ScheduledItem(item=mk("First Cable Car"), slot="morning", start=t(10, 30)),
+        ScheduledItem(item=mk("Cliff Walk", optional=True), slot="afternoon", start=t(14)),
+        ScheduledItem(item=mk("First Flyer", optional=True), slot="afternoon", start=t(15, 30)),
+        ScheduledItem(item=mk("Trottibike", optional=True), slot="evening", start=t(18, 23)),
+        ScheduledItem(item=mk("Return to Interlaken", "transfer"), slot="afternoon", start=t(18, 30))])
+    fit_before_return(res, {"First Cable Car": 60, "Cliff Walk": 45, "First Flyer": 30, "Trottibike": 45})
+    order = [s.item.name for s in res.scheduled]
+    assert order[-1] == "Return to Interlaken" and order.index("Trottibike") < order.index("Return to Interlaken")
+    by = {s.item.name: s.start for s in res.scheduled}
+    assert by["Trottibike"] <= t(16, 45) and by["Trottibike"] < by["Return to Interlaken"]
+    assert by["Return to Interlaken"] > by["Trottibike"]
+    assert any("Trottibike" in m.text for m in res.markers if isinstance(m, Marker)) or by["Trottibike"] < t(16, 45)
+
+
+def test_timed_and_evening_events_are_left_alone_by_fit_before_return():
+    from src.aigv2.planning.slots import DayResult, ScheduledItem, fit_before_return
+    mk = lambda n, kind="activity", **kw: PlannedItem(name=n, kind=kind, city="X", **kw)
+    res = DayResult(scheduled=[
+        ScheduledItem(item=mk("Museum"), slot="afternoon", start=time(14)),
+        ScheduledItem(item=mk("Night Bus Tour", time="21:00"), slot="evening", start=time(21)),
+        ScheduledItem(item=mk("Fireworks"), slot="evening", start=time(21, 30)),
+        ScheduledItem(item=mk("Return to hotel", "transfer"), slot="evening", start=time(22))])
+    before = [(s.item.name, s.start) for s in res.scheduled]
+    fit_before_return(res)
+    assert [(s.item.name, s.start) for s in res.scheduled] == before

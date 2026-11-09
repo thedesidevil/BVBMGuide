@@ -84,15 +84,21 @@ def _answers_of(raw: str) -> list[str]:
     return urls if urls else [raw]
 
 
-def _travel(pick, place) -> tuple[str, int]:
+def _travel(pick, place, modes=()) -> tuple[str, int]:
     """Straight-line estimate from the slot's first anchor (no Routes call at the checkpoint)."""
     if pick.slot.anchors and pick.slot.anchors[0][1]:
         ax, ay = pick.slot.anchors[0][1]
         m = _haversine_km(ax, ay, place.lat, place.lng) * 1000
         if m / _WALK_M_PER_MIN <= 10:
             return "Walk", max(1, math.ceil(m / _WALK_M_PER_MIN))
-        return APPROX_LABEL, math.ceil(m / 1000 * 3.0 + 5)
-    return APPROX_LABEL, 15
+        return _approx(modes), math.ceil(m / 1000 * 3.0 + 5)
+    return _approx(modes), 15
+
+
+def _approx(modes) -> str:
+    """A public-transport-only family is never shown a car trip."""
+    return "By public transport (approx.)" if "public_transport" in modes and not (
+        {"taxi", "self_drive", "private_driver"} & set(modes)) else APPROX_LABEL
 
 
 def _insert_at(pick, marker_text: str) -> int:
@@ -146,7 +152,7 @@ def apply_plan_answers(state, answers: Answers, client, fetch: Callable[[str], s
             if norm_name(place.name) in names:
                 report["failed"].append(f"Day {gap.day_index} {gap.meal}: {place.name} is already in this day")
                 continue
-            label, minutes = _travel(pick, place)
+            label, minutes = _travel(pick, place, state.trip.travel_modes)
             chosen = ChosenRestaurant(lib={"name": place.name, "source": "user_link"}, place=place,
                                       travel_min=minutes, travel_label=label,
                                       hours_text=format_for_day(place.hours, dates[gap.day_index]) if place.hours else "",

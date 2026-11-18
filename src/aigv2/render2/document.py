@@ -71,4 +71,7 @@ def render_guide2(guide: M.Guide, *, start_page: int = 1) -> bytes:
             pages = again
         else:
             data = _build(guide, pages, start_page)
+    else:
+        # No soffice/pdftotext (e.g. Lambda): leave page numbers out rather than show "p. –" placeholders.
+        data = _build(guide, False, start_page)
     return data

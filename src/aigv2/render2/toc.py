@@ -1,6 +1,7 @@
 """Contents page for the render2 renderer (locked design: day cards + Before/While two-column list)."""
 from __future__ import annotations
 
+import os
 import re
 import shutil
 import subprocess
@@ -50,6 +51,8 @@ def date_range(guide: Guide) -> str:
 
 def _number(p, bookmark_name: str, pages: Optional[dict], prefix: str = "", **kw) -> None:
     """Known number: a plain run (Google Docs does not evaluate PAGEREF). Unmeasured: a PAGEREF with a dash."""
+    if pages is False:  # numbers could not be measured: show none (entries stay clickable links)
+        return
     n = (pages or {}).get(bookmark_name)
     if n is not None:
         R(p, f"{prefix}{n}", **kw)
@@ -99,7 +102,8 @@ def _day_card(doc, W: float, page: Page, pages) -> None:
     else:
         title = page.title
     anchor_link(p, page.bookmark, title, font=T.HEAD, size=14, bold=True, color=T.INK)
-    R(p, "\t")
+    if pages is not False:
+        R(p, "\t")
     _number(p, page.bookmark, pages, prefix="p." + NB, font=T.HEAD, size=14, bold=True, color=T.ROYAL)
     close(c, 1)
     spacer(doc, 2)
@@ -195,7 +199,8 @@ def _entry(cont, page: Page, width: float, pages, size: float = _ENTRY_PT) -> No
     anchor_link(p, page.bookmark, page.title, font=T.HEAD, size=size, bold=True, color=T.INK)
     p.paragraph_format.line_spacing = Pt(ENTRY_LINE_PT)  # exact line: all three cells share one baseline
     p = np(c_fill, after=0, align=AL.RIGHT)  # real dot characters on the baseline, no cell border
-    K.R(p, dots_for(fw).rstrip("\u00a0"), font=T.HEAD, size=DOT_PT, color=T.DOT_RULE)
+    if pages is not False:
+        K.R(p, dots_for(fw).rstrip("\u00a0"), font=T.HEAD, size=DOT_PT, color=T.DOT_RULE)
     p.paragraph_format.line_spacing = Pt(ENTRY_LINE_PT)
     p = np(c_num, after=0, align=AL.RIGHT)
     _number(p, page.bookmark, pages, font=T.HEAD, size=size, bold=True, color=T.ROYAL)
@@ -252,7 +257,9 @@ def page_map(docx_bytes: bytes, titles: dict[str, str], *, skip_pages: int, star
     skip_pages: number of leading PDF pages to ignore (letter + contents pages); only later pages are matched.
     A title matches a page only when found in the first five non-empty lines (the heading area).
 
-    Returns {} when soffice or pdftotext is unavailable or conversion fails."""
+    Returns {} when soffice or pdftotext is unavailable, conversion fails, or AIGV2_TOC_PAGE_NUMBERS=off."""
+    if os.environ.get("AIGV2_TOC_PAGE_NUMBERS", "").strip().lower() in ("off", "0", "false", "no"):
+        return {}  # switch: simulate a machine that cannot measure pages (e.g. Lambda)
     if not (shutil.which("soffice") and shutil.which("pdftotext")):
         return {}
     norm = lambda s: re.sub(r"\s+", " ", s).strip()

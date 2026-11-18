@@ -185,3 +185,13 @@ def test_toc_numbers_match_final_page_map(guide, blob):
         shown[h.get(qn("w:anchor"))] = tail
     assert shown
     assert {k: str(v) for k, v in final.items()} == shown
+
+
+def test_unmeasured_toc_has_no_page_number_placeholders(guide, monkeypatch):
+    """Without soffice/pdftotext (Lambda) the TOC shows no 'p. –' / '–' placeholders; entries stay links."""
+    from src.aigv2.render2 import toc as TOC
+    monkeypatch.setattr(TOC, "page_map", lambda *a, **k: {})
+    data = render_guide2(guide)
+    xml = ZipFile(io.BytesIO(data)).read("word/document.xml").decode("utf-8")
+    assert "p. –" not in xml and "PAGEREF" not in xml
+    assert 'w:anchor="day_1"' in xml

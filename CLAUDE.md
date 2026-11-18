@@ -66,6 +66,7 @@ Requires a `.env` file with:
 - `AI_MODEL` — model name (e.g., `claude-sonnet-5-5`; do not use Opus-tier models without the owner's say-so)
 - `GOOGLE_MAPS_API_KEY` — for geocoding/proximity calculations
 - `AIGV2_RENDERER` — AIG v2 renderer; the default is `new`, `AIGV2_RENDERER=old` (or `--renderer old`) selects the old layout. `qc_report.md` starts with a `Renderer:` line.
+- `AIGV2_TOC_PAGE_NUMBERS` — set to `off` to leave page numbers out of the contents page (what Lambda gets automatically when `soffice`/`pdftotext` are missing); handy for previewing that layout locally
 
 ## Architecture
 

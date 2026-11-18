@@ -18,6 +18,7 @@ from pydantic import BaseModel, Field
 
 from src.aigv2 import cancel, pipeline
 from src.aigv2.intake.template import build_template
+from src.aigv2.library_sync import refresh_if_stale
 from src.aigv2.preflight import PreflightStop
 from src.aigv2.store import RunStore
 
@@ -46,6 +47,8 @@ class RegenBody(BaseModel):
 def _deps(request: Request) -> pipeline.Deps:
     state = request.app.state
     with _DEPS_LOCK:
+        if getattr(state, "aigv2_deps", None) is not None and refresh_if_stale():
+            state.aigv2_deps = None  # library edited in Library & QC: rebuild deps so Library re-reads its files
         if getattr(state, "aigv2_deps", None) is None:
             state.aigv2_deps = pipeline.default_deps()
         return state.aigv2_deps

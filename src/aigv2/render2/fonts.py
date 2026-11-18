@@ -29,13 +29,13 @@ def _w(tag: str) -> str:
 
 
 def find_cormorant() -> list[Path]:
-    """Per-file lookup: ~/Library/Fonts first, then bundled assets/fonts. [] if none."""
-    folders = []
+    """Per-file lookup: the copies bundled in assets/fonts first (so every machine, Lambda included, embeds the same
+    bytes and paginates the same), then ~/Library/Fonts. [] if none."""
+    folders = [ASSETS / "fonts"]
     try:
         folders.append(Path.home() / "Library" / "Fonts")
     except (RuntimeError, KeyError):
         pass
-    folders.append(ASSETS / "fonts")
     found = []
     for name in _FILES:
         for folder in folders:

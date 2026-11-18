@@ -131,7 +131,8 @@ def test_find_cormorant_merges_folders(tmp_path, monkeypatch):
     monkeypatch.setattr(fonts, "ASSETS", assets)
     got = fonts.find_cormorant()
     assert [p.name for p in got] == list(fonts._FILES)
-    assert got[1].parent == home / "Library" / "Fonts"
+    assert got[0].parent == home / "Library" / "Fonts"      # only in the home folder
+    assert got[1].parent == assets / "fonts"                 # in both: the bundled copy wins (same bytes everywhere)
     assert got[3].parent == assets / "fonts"
 
 

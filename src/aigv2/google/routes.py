@@ -1,5 +1,7 @@
 import json
+import logging
 import math
+import time
 from datetime import datetime, timedelta, timezone
 from typing import Literal, Optional
 
@@ -7,6 +9,8 @@ import requests
 
 from src.aigv2 import cancel
 from src.aigv2.models import TransitStep
+
+log = logging.getLogger(__name__)
 
 MATRIX_URL = "https://routes.googleapis.com/distanceMatrix/v2:computeRouteMatrix"
 DIRECTIONS_URL = "https://routes.googleapis.com/directions/v2:computeRoutes"
@@ -44,12 +48,14 @@ class RoutesClient:
 
     def _post(self, url: str, mask: str, body: dict) -> requests.Response:
         cancel.check()
+        t0 = time.monotonic()
         resp = self.session.post(
             url,
             headers={"X-Goog-Api-Key": self.api_key, "X-Goog-FieldMask": mask, "Content-Type": "application/json"},
             json=body,
             timeout=30,
         )
+        log.info("google routes -> HTTP %s in %.0f ms", getattr(resp, "status_code", "?"), (time.monotonic() - t0) * 1000)
         resp.raise_for_status()
         return resp
 

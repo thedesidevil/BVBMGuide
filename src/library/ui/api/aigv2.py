@@ -4,7 +4,9 @@ Local-dev oriented: jobs run in threads of this process, one at a time (CostMete
 concurrent builds would mix their costs). Lambda needs staged checkpoints instead (see the deployment plan).
 """
 
+import logging
 import secrets
+import time
 import tempfile
 import threading
 import traceback
@@ -23,6 +25,7 @@ from src.aigv2.preflight import PreflightStop
 from src.aigv2.store import RunStore
 
 router = APIRouter()
+log = logging.getLogger(__name__)
 
 _MIME = {
     "docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -69,6 +72,7 @@ def _job(kind: str, run_id: Optional[str], fn) -> dict:
     """Run fn() in a thread under the single-job lock; fn returns a dict merged into the job's `result`."""
     if any(j["status"] in ("queued", "running") for j in _JOBS.values()):
         raise HTTPException(status_code=409, detail="Another job is still running; wait for it to finish")
+    log.info("job queued kind=%s run_id=%s", kind, run_id)
     job = {"id": secrets.token_hex(4), "kind": kind, "run_id": run_id, "status": "queued", "result": None,
            "error": None, "questions": [], "cost": None, "started_at": datetime.now(timezone.utc).isoformat()}
     _JOBS[job["id"]] = job
@@ -77,14 +81,20 @@ def _job(kind: str, run_id: Optional[str], fn) -> dict:
         with _RUN_LOCK:
             cancel.clear()  # a stale request from an earlier job must not stop this one
             job["status"] = "running"
+            t0 = time.monotonic()
+            log.info("job %s (%s) started run_id=%s", job["id"], kind, run_id)
             try:
                 job["result"] = fn(job)
                 job["status"] = "done"
+                log.info("job %s (%s) done in %.1f s run_id=%s result=%s", job["id"], kind, time.monotonic() - t0,
+                         job["run_id"], job["result"])
             except cancel.RunCancelled as e:
+                log.warning("job %s (%s) cancelled after %.1f s", job["id"], kind, time.monotonic() - t0)
                 job["status"], job["error"] = "cancelled", "Run was cancelled"
                 job["run_id"] = getattr(e, "run_id", job["run_id"])
                 job["cost"] = getattr(e, "run_cost", None)
             except pipeline.UnansweredQuestions as e:
+                log.warning("job %s (%s) stopped: %d unanswered question(s)", job["id"], kind, len(e.questions))
                 job["status"], job["error"] = "error", "Some pre-flight questions still need an answer"
                 job["questions"] = [q.model_dump(mode="json") for q in e.questions]
             except Exception as e:  # surface every failure to the page, with the partial cost
@@ -92,8 +102,10 @@ def _job(kind: str, run_id: Optional[str], fn) -> dict:
                 job["error"] = str(e) if isinstance(e, (PreflightStop, ValueError)) else f"{type(e).__name__}: {e}"
                 job["run_id"] = getattr(e, "run_id", job["run_id"])
                 job["cost"] = getattr(e, "run_cost", None)
-                if not isinstance(e, (PreflightStop, ValueError)):
-                    traceback.print_exc()
+                if isinstance(e, (PreflightStop, ValueError)):
+                    log.warning("job %s (%s) stopped after %.1f s: %s", job["id"], kind, time.monotonic() - t0, e)
+                else:
+                    log.exception("job %s (%s) failed after %.1f s", job["id"], kind, time.monotonic() - t0)
 
     threading.Thread(target=work, daemon=True).start()
     return job

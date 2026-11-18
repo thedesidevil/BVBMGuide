@@ -1,6 +1,7 @@
 import logging
 import os
 import re
+from time import monotonic
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from datetime import date, datetime, time, timedelta, timezone
@@ -203,18 +204,25 @@ def cost_summary(cost: dict) -> str:
 
 
 def _guarded(store: RunStore, meter: CostMeter, label: str, fn):
+    t0 = monotonic()
+    log.info("[%s] %s: begin", store.run_id, label)
     try:
         out = fn()
     except cancel.RunCancelled as e:
+        log.warning("[%s] %s: cancelled after %.1f s", store.run_id, label, monotonic() - t0)
         _record_cost(store, f"{label} (cancelled)", meter.cost())
         e.run_cost, e.run_id = store.load_json("cost.json"), store.run_id
         raise
     except Exception as e:
         cost = meter.cost()
+        log.error("[%s] %s: failed after %.1f s (%s: %s) cost so far $%.4f", store.run_id, label, monotonic() - t0,
+                  type(e).__name__, e, cost.get("total_usd") or 0)
         _record_cost(store, f"{label} (failed)", cost)
         e.run_cost, e.run_id = cost, store.run_id
         raise
-    _record_cost(store, label, meter.cost())
+    done = meter.cost()
+    log.info("[%s] %s: done in %.1f s, cost $%.4f", store.run_id, label, monotonic() - t0, done.get("total_usd") or 0)
+    _record_cost(store, label, done)
     return out
 
 
@@ -658,12 +666,18 @@ def start_run(intake_path: Path | None, attachment_paths: list[Path], deps: Deps
 def _start(store: RunStore, intake_path: Path | None, paths: list[Path], deps: Deps) -> tuple[RunStore, list[Question]]:
     for p in ([intake_path] if intake_path else []) + paths:
         store.save_bytes(f"inputs/{p.name}", p.read_bytes())
+    log.info("[%s] start: reading intake (%s) and %d attachment(s)", store.run_id, "yes" if intake_path else "none", len(paths))
     intake = parse_template(intake_path) if intake_path else IntakeFields()
     attachments = read_attachments(paths)
+    log.info("[%s] start: read %d attachment(s); extracting trip with the model", store.run_id, len(attachments))
     cancel.check()
     trip = extract_trip(intake, attachments, deps.llm)
+    log.info("[%s] start: trip extracted (%d day(s), %d hotel(s)); resolving places on Google", store.run_id,
+             len(trip.days), len(trip.hotels))
     cancel.check()
     places = resolve_places(trip, deps.places, {}, deps.library)
+    log.info("[%s] start: resolved %d place(s) (%d not found); running the pre-flight checklist", store.run_id,
+             len(places), sum(1 for v in places.values() if v is None))
     cancel.check()
     questions = run_checklist(trip, intake, attachments, deps.library, places, deps.settings,
                               overrides=getattr(deps.places, "overrides", None))
@@ -673,6 +687,7 @@ def _start(store: RunStore, intake_path: Path | None, paths: list[Path], deps: D
     store.save_json("places.json", {"places": {k: v.model_dump(mode="json") if v else None for k, v in places.items()}})
     store.save_json("questions.json", {"questions": [q.model_dump(mode="json") for q in questions]})
     store.save_json("answers.template.json", {q.id: "" for q in questions})
+    log.info("[%s] start: saved; %d question(s) to answer", store.run_id, len(questions))
     return store, questions
 
 
@@ -989,11 +1004,15 @@ def _start_answers(a: Answers) -> Answers:
 
 def _finish(store: RunStore, answers: Answers, deps: Deps) -> tuple[str, QCResult]:
     cancel.check()
+    log.info("[%s] build: planning days", store.run_id)
     state = _plan(store, answers, deps)
+    log.info("[%s] build: reviewing plan", store.run_id)
     _review(store, state, answers, deps)
     cancel.check()
+    log.info("[%s] build: writing guide content (%d day(s))", store.run_id, len(state.days))
     _write(store, state, deps)
     cancel.check()
+    log.info("[%s] build: rendering the document and running QC", store.run_id)
     return output_filename(state.trip), _render_qc(store, state, answers, deps)
 
 

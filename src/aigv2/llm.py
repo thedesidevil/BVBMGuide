@@ -1,4 +1,5 @@
 import logging
+import time
 from typing import Callable
 
 from pydantic import BaseModel, ValidationError
@@ -51,6 +52,7 @@ class StepLLM:
     def _attempt(self, step, model, system, prompt, schema, validate, max_tokens, fallback):
         cancel.check()
         client = self._factory(model)
+        t0 = time.monotonic()
         resp = client._client.chat.completions.create(
             model=model,
             messages=[{"role": "system", "content": system}, {"role": "user", "content": prompt}],
@@ -64,6 +66,8 @@ class StepLLM:
         usd = (p_tok * price[0] + c_tok * price[1]) / 1_000_000 if price else 0.0
         if price is None:
             log.warning("model %s (step %s) has no price; its cost is counted as $0", model, step)
+        log.info("llm step=%s model=%s fallback=%s tokens in/out=%d/%d $%.4f %.1f s", step, model, fallback, p_tok,
+                 c_tok, usd, time.monotonic() - t0)
         self._log.append({"step": step, "model": model, "prompt_tokens": p_tok,
                           "completion_tokens": c_tok, "usd": usd, "fallback": fallback, "unpriced": price is None})
         text = resp.choices[0].message.content or ""

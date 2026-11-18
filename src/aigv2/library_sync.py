@@ -84,7 +84,6 @@ def _sync() -> bool:
         _manifest.clear()
         _manifest.update(remote)
         _last_check = time.monotonic()
-    if changed or removed:
-        log.info("library mirror: %d updated, %d removed (%s)", len(changed), len(removed),
-                 "initial sync" if first else "refresh")
+    log.info("library mirror: %s - %d file(s) in S3, %d updated, %d removed", "initial sync" if first else "check",
+             len(remote), len(changed), len(removed))
     return bool(changed or removed) and not first

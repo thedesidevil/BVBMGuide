@@ -1,5 +1,7 @@
+import logging
 import math
 import re
+import time
 from datetime import datetime, timezone
 from typing import Optional
 from urllib.parse import parse_qsl, quote_plus, urlencode, urlsplit, urlunsplit
@@ -13,6 +15,8 @@ from src.aigv2.hours import from_google, is_24h
 from src.aigv2.models import Place, WeeklyHours
 from src.aigv2.store import PlaceCache
 from src.aigv2.textnorm import fold as _fold, has_accents, strip_accents
+
+log = logging.getLogger(__name__)
 
 SEARCH_TEXT_URL = "https://places.googleapis.com/v1/places:searchText"
 SEARCH_NEARBY_URL = "https://places.googleapis.com/v1/places:searchNearby"
@@ -188,6 +192,7 @@ class PlacesClient:
     def _post(self, url: str, body: dict, counter: str) -> dict:
         cancel.check()
         self.calls[counter] += 1
+        t0 = time.monotonic()
         resp = self.session.post(
             url,
             headers={
@@ -198,6 +203,8 @@ class PlacesClient:
             json=body,
             timeout=30,
         )
+        log.info("google places %s -> HTTP %s in %.0f ms (call #%d)", counter, getattr(resp, "status_code", "?"),
+                 (time.monotonic() - t0) * 1000, self.calls[counter])
         resp.raise_for_status()
         return resp.json()
 

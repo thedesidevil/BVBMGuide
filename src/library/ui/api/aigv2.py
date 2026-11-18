@@ -9,6 +9,7 @@ import tempfile
 import threading
 from datetime import datetime, timezone
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Optional
 
 from fastapi import APIRouter, File, HTTPException, Request, UploadFile
@@ -16,10 +17,11 @@ from fastapi.responses import Response
 from pydantic import BaseModel, Field
 
 from src.aigv2 import cancel, jobs, pipeline
+from src.aigv2.config import load_settings
 from src.aigv2.intake.template import build_template
 from src.aigv2.library_sync import refresh_if_stale
 from src.aigv2.preflight import PreflightStop
-from src.aigv2.store import RunStore
+from src.aigv2.store import RunStore, default_backend
 
 router = APIRouter()
 log = logging.getLogger(__name__)
@@ -47,6 +49,12 @@ class RegenBody(BaseModel):
 def _deps(request: Request) -> pipeline.Deps:
     state = request.app.state
     with _DEPS_LOCK:
+        if jobs.remote_enabled():
+            # On Lambda the web side only reads and writes runs and job records in S3. The library (a 650-file sync
+            # that took ~16 s on a cold instance), the Google and model clients are the worker's business.
+            if getattr(state, "aigv2_deps", None) is None:
+                state.aigv2_deps = SimpleNamespace(backend=default_backend(load_settings()))
+            return state.aigv2_deps
         if getattr(state, "aigv2_deps", None) is not None and refresh_if_stale():
             state.aigv2_deps = None  # library edited in Library & QC: rebuild deps so Library re-reads its files
         if getattr(state, "aigv2_deps", None) is None:

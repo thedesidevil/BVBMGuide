@@ -134,3 +134,16 @@ def test_failed_invoke_does_not_leave_the_lock_held(env, monkeypatch):
     j = env.client.post("/api/aigv2/runs/20260101-000000-abc123/build", json={"answers": {}}).json()
     assert j["status"] == "error" and "not allowed" in j["error"]
     assert jobs.JobStore(env.backend).active() is None
+
+
+def test_web_side_on_lambda_never_builds_the_library(tmp_path, monkeypatch):
+    """A cold instance must answer list/start quickly: no library sync, no Google or model clients."""
+    monkeypatch.setenv("AWS_LAMBDA_FUNCTION_NAME", "fn")
+    monkeypatch.setenv("AIGV2_DATA_ROOT", str(tmp_path / "data"))
+    monkeypatch.setattr(pipeline, "default_deps", lambda: pytest.fail("web side must not build the full deps"))
+    monkeypatch.setattr(jobs, "invoke_worker", lambda job_id: None)
+    app = create_app(db_path=tmp_path / "lib")
+    c = TestClient(app)
+    assert c.get("/api/aigv2/runs").json() == {"runs": []}
+    r = c.post("/api/aigv2/start", files=[("attachments", ("a.pdf", b"PDF", "application/pdf"))])
+    assert r.status_code == 200 and r.json()["status"] == "queued"

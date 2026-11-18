@@ -5,11 +5,8 @@ concurrent builds would mix their costs). Lambda needs staged checkpoints instea
 """
 
 import logging
-import secrets
-import time
 import tempfile
 import threading
-import traceback
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
@@ -18,7 +15,7 @@ from fastapi import APIRouter, File, HTTPException, Request, UploadFile
 from fastapi.responses import Response
 from pydantic import BaseModel, Field
 
-from src.aigv2 import cancel, pipeline
+from src.aigv2 import cancel, jobs, pipeline
 from src.aigv2.intake.template import build_template
 from src.aigv2.library_sync import refresh_if_stale
 from src.aigv2.preflight import PreflightStop
@@ -68,47 +65,36 @@ def _store(request: Request, run_id: str) -> RunStore:
     return store
 
 
-def _job(kind: str, run_id: Optional[str], fn) -> dict:
-    """Run fn() in a thread under the single-job lock; fn returns a dict merged into the job's `result`."""
+def _job(request: Request, kind: str, run_id: Optional[str], spec: Optional[dict] = None,
+         intake_path: Optional[Path] = None, paths: Optional[list[Path]] = None) -> dict:
+    """Start a job. Locally: a thread of this process (one at a time). On Lambda: an asynchronous invocation of this
+    same function, with the job record in S3 so any instance can report on it (see src/aigv2/jobs.py)."""
+    spec = spec or {}
+    deps = _deps(request)
+    if jobs.remote_enabled():
+        job = jobs.submit(deps, kind, run_id, spec, intake_path, paths)
+        if job is None:
+            raise HTTPException(status_code=409, detail="Another job is still running; wait for it to finish")
+        return job
     if any(j["status"] in ("queued", "running") for j in _JOBS.values()):
         raise HTTPException(status_code=409, detail="Another job is still running; wait for it to finish")
     log.info("job queued kind=%s run_id=%s", kind, run_id)
-    job = {"id": secrets.token_hex(4), "kind": kind, "run_id": run_id, "status": "queued", "result": None,
-           "error": None, "questions": [], "cost": None, "started_at": datetime.now(timezone.utc).isoformat()}
+    job = jobs.new_job(kind, run_id)
     _JOBS[job["id"]] = job
 
     def work():
         with _RUN_LOCK:
             cancel.clear()  # a stale request from an earlier job must not stop this one
-            job["status"] = "running"
-            t0 = time.monotonic()
-            log.info("job %s (%s) started run_id=%s", job["id"], kind, run_id)
-            try:
-                job["result"] = fn(job)
-                job["status"] = "done"
-                log.info("job %s (%s) done in %.1f s run_id=%s result=%s", job["id"], kind, time.monotonic() - t0,
-                         job["run_id"], job["result"])
-            except cancel.RunCancelled as e:
-                log.warning("job %s (%s) cancelled after %.1f s", job["id"], kind, time.monotonic() - t0)
-                job["status"], job["error"] = "cancelled", "Run was cancelled"
-                job["run_id"] = getattr(e, "run_id", job["run_id"])
-                job["cost"] = getattr(e, "run_cost", None)
-            except pipeline.UnansweredQuestions as e:
-                log.warning("job %s (%s) stopped: %d unanswered question(s)", job["id"], kind, len(e.questions))
-                job["status"], job["error"] = "error", "Some pre-flight questions still need an answer"
-                job["questions"] = [q.model_dump(mode="json") for q in e.questions]
-            except Exception as e:  # surface every failure to the page, with the partial cost
-                job["status"] = "error"
-                job["error"] = str(e) if isinstance(e, (PreflightStop, ValueError)) else f"{type(e).__name__}: {e}"
-                job["run_id"] = getattr(e, "run_id", job["run_id"])
-                job["cost"] = getattr(e, "run_cost", None)
-                if isinstance(e, (PreflightStop, ValueError)):
-                    log.warning("job %s (%s) stopped after %.1f s: %s", job["id"], kind, time.monotonic() - t0, e)
-                else:
-                    log.exception("job %s (%s) failed after %.1f s", job["id"], kind, time.monotonic() - t0)
+            jobs.execute(job, spec, deps, intake_path, paths)
 
     threading.Thread(target=work, daemon=True).start()
     return job
+
+
+def _find_job(request: Request, job_id: str) -> Optional[dict]:
+    if jobs.remote_enabled():
+        return jobs.JobStore(_deps(request).backend).get(job_id)
+    return _JOBS.get(job_id)
 
 
 def _run_summary(store: RunStore) -> dict:
@@ -177,18 +163,28 @@ def _not_cancelled(store: RunStore) -> None:
         raise HTTPException(status_code=409, detail="run was cancelled; restore it first")
 
 
-def _active_job(run_id: Optional[str] = None) -> Optional[dict]:
+def _active_job(request: Request, run_id: Optional[str] = None) -> Optional[dict]:
+    if jobs.remote_enabled():
+        job = jobs.JobStore(_deps(request).backend).active()
+        return job if job is not None and (run_id is None or job["run_id"] == run_id) else None
     return next((j for j in _JOBS.values() if j["status"] in ("queued", "running")
                  and (run_id is None or j["run_id"] == run_id)), None)
+
+
+def _request_cancel(request: Request, job: dict) -> None:
+    if jobs.remote_enabled():
+        jobs.JobStore(_deps(request).backend).request_cancel(job["id"])  # the worker invocation polls this flag
+    else:
+        cancel.request()
 
 
 @router.post("/aigv2/runs/{run_id}/cancel")
 async def cancel_run(request: Request, run_id: str):
     """Stop the run's job (if any) before its next paid call and mark the run cancelled. Nothing is deleted."""
     store = _store(request, run_id)
-    job = _active_job(run_id)
+    job = _active_job(request, run_id)
     if job is not None:
-        cancel.request()
+        _request_cancel(request, job)
     cost = store.load_json("cost.json") or {}
     store.save_json("cancelled.json", {"at": datetime.now(timezone.utc).isoformat(),
                                        "stage": job["kind"] if job else _run_summary(store)["stage"],
@@ -197,13 +193,13 @@ async def cancel_run(request: Request, run_id: str):
 
 
 @router.post("/aigv2/jobs/{job_id}/cancel")
-async def cancel_job(job_id: str):
+async def cancel_job(request: Request, job_id: str):
     """Cancel a job that has no run yet (the Start step)."""
-    job = _JOBS.get(job_id)
+    job = _find_job(request, job_id)
     if job is None:
         raise HTTPException(status_code=404, detail="No such job")
     if job["status"] in ("queued", "running"):
-        cancel.request()
+        _request_cancel(request, job)
     return {"id": job_id, "cancelling": job["status"] in ("queued", "running")}
 
 
@@ -228,8 +224,8 @@ async def get_file(request: Request, run_id: str, name: str):
 
 
 @router.get("/aigv2/jobs/{job_id}")
-async def get_job(job_id: str):
-    job = _JOBS.get(job_id)
+async def get_job(request: Request, job_id: str):
+    job = _find_job(request, job_id)
     if job is None:
         raise HTTPException(status_code=404, detail="No such job")
     return job
@@ -263,12 +259,7 @@ async def start(request: Request, intake: Optional[UploadFile] = File(None),
     if intake_path is None and not paths:
         raise HTTPException(status_code=400, detail="Upload an intake template and/or at least one attachment")
 
-    def run(job):
-        store, questions = pipeline.start_run(intake_path, paths, deps)
-        job["run_id"] = store.run_id
-        return {"run_id": store.run_id, "questions": len(questions)}
-
-    return _job("start", None, run)
+    return _job(request, "start", None, {}, intake_path, paths)
 
 
 @router.post("/aigv2/runs/{run_id}/plan")
@@ -277,12 +268,7 @@ async def plan(request: Request, run_id: str, body: BuildBody):
     store, deps = _store(request, run_id), _deps(request)
     _not_cancelled(store)
 
-    def run(job):
-        items = pipeline.plan_run(store, body.answers, deps)
-        job["questions"] = [q.model_dump(mode="json") for q in items]
-        return {"run_id": run_id, "items": len(items)}
-
-    return _job("plan", run_id, run)
+    return _job(request, "plan", run_id, {"answers": body.answers})
 
 
 @router.post("/aigv2/runs/{run_id}/build")
@@ -290,11 +276,7 @@ async def build(request: Request, run_id: str, body: BuildBody):
     store, deps = _store(request, run_id), _deps(request)
     _not_cancelled(store)
 
-    def run(job):
-        r = pipeline.build_run(store, body.answers, deps)
-        return {"docx_name": r.docx_name, "passed": r.qc.passed}
-
-    return _job("build", run_id, run)
+    return _job(request, "build", run_id, {"answers": body.answers})
 
 
 @router.post("/aigv2/runs/{run_id}/regenerate")
@@ -302,11 +284,7 @@ async def regenerate(request: Request, run_id: str, body: RegenBody):
     store, deps = _store(request, run_id), _deps(request)
     _not_cancelled(store)
 
-    def run(job):
-        r = pipeline.regenerate(store, body.days, body.sections, deps)
-        return {"docx_name": r.docx_name, "passed": r.qc.passed}
-
-    return _job("regenerate", run_id, run)
+    return _job(request, "regenerate", run_id, {"days": body.days, "sections": body.sections})
 
 
 @router.post("/aigv2/runs/{run_id}/qc")
@@ -318,9 +296,4 @@ async def requalify(request: Request, run_id: str, file: UploadFile = File(...))
     tmp = Path(tempfile.mkdtemp(prefix="aigv2_qc_"))
     path = (await _save_uploads([file], tmp))[0]
 
-    def run(job):
-        _, result, _ = pipeline.requalify(store, path, deps)
-        names = [n for n in store.names() if n.startswith("requalify/")]
-        return {"passed": result.passed, "findings": len(result.findings), "files": names}
-
-    return _job("qc", run_id, run)
+    return _job(request, "qc", run_id, {}, None, [path])

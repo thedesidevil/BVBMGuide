@@ -1,4 +1,5 @@
 import hashlib
+import os
 import re
 import secrets
 from datetime import datetime, timedelta, timezone
@@ -189,4 +190,11 @@ class NearbyCache:
 
 
 def default_backend(settings: Settings) -> StorageBackend:
+    """Runs and caches live in S3 on Lambda (instances do not share /tmp, and it is wiped on recycle);
+    on disk under settings.data_root elsewhere or when AIGV2_DATA_ROOT is set."""
+    if os.environ.get("AWS_LAMBDA_FUNCTION_NAME") and not os.environ.get("AIGV2_DATA_ROOT"):
+        from src.library.ui.storage import S3StorageBackend
+
+        return S3StorageBackend(bucket=os.environ["LIBRARY_S3_BUCKET"],
+                                prefix=os.environ.get("AIGV2_S3_PREFIX", "aigv2_data"))
     return LocalStorageBackend(settings.data_root)

@@ -52,4 +52,10 @@ def load_settings() -> Settings:
         base = strong if step == "qc_sense" else fast
         models[step] = os.environ.get(f"AIGV2_MODEL_{step.upper()}") or base
     renderer = "old" if os.environ.get("AIGV2_RENDERER", "").strip().lower() == "old" else "new"  # only "old" opts out
-    return Settings(models=models, renderer=renderer)
+    extra = {}
+    data_root = os.environ.get("AIGV2_DATA_ROOT", "").strip()
+    if data_root:
+        extra["data_root"] = Path(data_root)
+    elif os.environ.get("AWS_LAMBDA_FUNCTION_NAME"):
+        extra["data_root"] = Path("/tmp/aigv2_data")  # Lambda's code dir is read-only; /tmp is the only writable path
+    return Settings(models=models, renderer=renderer, **extra)

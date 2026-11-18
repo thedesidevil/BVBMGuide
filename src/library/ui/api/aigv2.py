@@ -5,6 +5,7 @@ concurrent builds would mix their costs). Lambda needs staged checkpoints instea
 """
 
 import logging
+import secrets
 import tempfile
 import threading
 from datetime import datetime, timezone
@@ -39,6 +40,22 @@ _DEPS_LOCK = threading.Lock()
 
 class BuildBody(BaseModel):
     answers: dict[str, str] = Field(default_factory=dict)
+
+
+class UploadFileSpec(BaseModel):
+    name: str
+    content_type: str = "application/octet-stream"
+
+
+class PresignBody(BaseModel):
+    files: list[UploadFileSpec] = Field(default_factory=list)
+    intake: Optional[str] = None  # the name (as in files) of the intake template, if any
+
+
+class StagedStartBody(BaseModel):
+    upload_id: str
+    intake: Optional[str] = None
+    files: list[str] = Field(default_factory=list)
 
 
 class RegenBody(BaseModel):
@@ -268,6 +285,63 @@ async def start(request: Request, intake: Optional[UploadFile] = File(None),
         raise HTTPException(status_code=400, detail="Upload an intake template and/or at least one attachment")
 
     return _job(request, "start", None, {}, intake_path, paths)
+
+
+def _unique_names(names: list[str]) -> list[str]:
+    """Safe, distinct file names (same name picked from two folders: keep both as a-2.pdf, a-3.pdf)."""
+    out: list[str] = []
+    for raw in names:
+        name = Path(raw or "").name
+        if not name or name in (".", ".."):
+            raise HTTPException(status_code=400, detail=f"Bad file name {raw!r}")
+        base, n = name, 2
+        while name in out:
+            name = f"{Path(base).stem}-{n}{Path(base).suffix}"
+            n += 1
+        out.append(name)
+    return out
+
+
+@router.post("/aigv2/uploads/presign")
+async def presign_uploads(request: Request, body: PresignBody):
+    """Presigned PUT URLs so the browser uploads straight to S3 (a request through Lambda is capped at 6 MB).
+    use_presigned is false on a backend that cannot presign (local disk): the page then posts the files to /start."""
+    if not body.files:
+        raise HTTPException(status_code=400, detail="No files to upload")
+    backend = _deps(request).backend
+    names = _unique_names([f.name for f in body.files])
+    upload_id = secrets.token_hex(8)
+    files = []
+    for spec, name in zip(body.files, names):
+        key = f"uploads/{upload_id}/{name}"
+        files.append({"name": name, "original": spec.name, "key": key,
+                      "presigned_url": backend.generate_presigned_put(key, content_type=spec.content_type)})
+    return {"upload_id": upload_id, "files": files, "use_presigned": all(f["presigned_url"] for f in files)}
+
+
+@router.post("/aigv2/start-staged")
+async def start_staged(request: Request, body: StagedStartBody):
+    """Start a run from files already uploaded with /aigv2/uploads/presign."""
+    deps = _deps(request)
+    if not body.upload_id.isalnum():
+        raise HTTPException(status_code=400, detail="Bad upload id")
+    if body.intake is not None and not body.intake.lower().endswith(".docx"):
+        raise HTTPException(status_code=400, detail="The intake template must be a .docx")
+    if body.intake is None and not body.files:
+        raise HTTPException(status_code=400, detail="Upload an intake template and/or at least one attachment")
+    names = _unique_names(([body.intake] if body.intake else []) + body.files)
+    if names != ([body.intake] if body.intake else []) + body.files:
+        raise HTTPException(status_code=400, detail="Use the file names returned by /aigv2/uploads/presign")
+    prefix = f"uploads/{body.upload_id}"
+    missing = [n for n in names if not deps.backend.exists(f"{prefix}/{n}")]
+    if missing:
+        raise HTTPException(status_code=400, detail=f"These files did not finish uploading: {', '.join(missing)}")
+    if not jobs.remote_enabled():
+        raise HTTPException(status_code=400, detail="Staged uploads are for Lambda; post the files to /aigv2/start")
+    job = jobs.submit(deps, "start", None, {}, staged={"prefix": prefix, "intake": body.intake, "inputs": body.files})
+    if job is None:
+        raise HTTPException(status_code=409, detail="Another job is still running; wait for it to finish")
+    return job
 
 
 @router.post("/aigv2/runs/{run_id}/plan")

@@ -203,6 +203,27 @@ export const api = {
   v2Run: (id: string) => request<any>(`/aigv2/runs/${encodeURIComponent(id)}`),
   v2Job: (id: string) => request<any>(`/aigv2/jobs/${id}`),
   v2Start: async (intake: File | null, attachments: File[]): Promise<any> => {
+    // On Lambda a request is capped at 6 MB, so the files go straight to S3 (presigned PUT) and only their
+    // names are sent to start. Locally (no presigning) the files are posted to /start as before.
+    const all = [...(intake ? [intake] : []), ...attachments];
+    const pre = await request<any>("/aigv2/uploads/presign", {
+      method: "POST",
+      body: JSON.stringify({ files: all.map((f) => ({ name: f.name, content_type: f.type || "application/octet-stream" })) }),
+    }).catch(() => null);
+    if (pre?.use_presigned) {
+      await Promise.all(pre.files.map(async (info: any, i: number) => {
+        const f = all[i];
+        const res = await fetch(info.presigned_url, {
+          method: "PUT", body: f, headers: { "Content-Type": f.type || "application/octet-stream" },
+        });
+        if (!res.ok) throw new Error(`Upload of ${f.name} failed: ${res.status}`);
+      }));
+      const names: string[] = pre.files.map((info: any) => info.name);
+      return request<any>("/aigv2/start-staged", {
+        method: "POST",
+        body: JSON.stringify({ upload_id: pre.upload_id, intake: intake ? names[0] : null, files: names.slice(intake ? 1 : 0) }),
+      });
+    }
     const fd = new FormData();
     if (intake) fd.append("intake", intake);
     attachments.forEach((f) => fd.append("attachments", f));

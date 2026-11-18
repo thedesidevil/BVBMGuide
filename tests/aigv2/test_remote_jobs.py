@@ -147,3 +147,43 @@ def test_web_side_on_lambda_never_builds_the_library(tmp_path, monkeypatch):
     assert c.get("/api/aigv2/runs").json() == {"runs": []}
     r = c.post("/api/aigv2/start", files=[("attachments", ("a.pdf", b"PDF", "application/pdf"))])
     assert r.status_code == 200 and r.json()["status"] == "queued"
+
+
+def test_presign_returns_no_urls_on_a_backend_that_cannot_presign(env):
+    r = env.client.post("/api/aigv2/uploads/presign", json={"files": [{"name": "a.pdf"}, {"name": "a.pdf"}]}).json()
+    assert r["use_presigned"] is False
+    assert [f["name"] for f in r["files"]] == ["a.pdf", "a-2.pdf"]  # same name from two folders: both kept
+
+
+def test_presign_rejects_empty_and_path_names(env):
+    assert env.client.post("/api/aigv2/uploads/presign", json={"files": []}).status_code == 400
+    r = env.client.post("/api/aigv2/uploads/presign", json={"files": [{"name": "../../x.pdf"}]}).json()
+    assert r["files"][0]["name"] == "x.pdf" and r["files"][0]["key"].endswith("/x.pdf")
+
+
+def test_start_staged_runs_the_worker_on_browser_uploaded_files(env, monkeypatch):
+    env.backend.write_bytes("uploads/abc123/intake.docx", b"I")
+    env.backend.write_bytes("uploads/abc123/t.pdf", b"T")
+    seen = {}
+
+    def fake_start(intake, paths, deps):
+        seen["intake"], seen["paths"] = intake.read_bytes(), [p.read_bytes() for p in paths]
+        store = seed(env, "20260101-000000-def456")
+        return store, []
+
+    monkeypatch.setattr(pipeline, "start_run", fake_start)
+    r = env.client.post("/api/aigv2/start-staged", json={"upload_id": "abc123", "intake": "intake.docx", "files": ["t.pdf"]})
+    job = r.json()
+    assert r.status_code == 200 and job["status"] == "queued" and env.fired == [job["id"]]
+    jobs.run_worker(job["id"], env.deps)
+    done = env.client.get(f"/api/aigv2/jobs/{job['id']}").json()
+    assert done["status"] == "done" and seen == {"intake": b"I", "paths": [b"T"]}
+    assert not env.backend.exists("uploads/abc123/t.pdf")  # staged copies are removed after the run
+
+
+def test_start_staged_rejects_missing_files_and_bad_input(env):
+    post = lambda **b: env.client.post("/api/aigv2/start-staged", json=b)
+    assert post(upload_id="abc123", files=["gone.pdf"]).status_code == 400  # never finished uploading
+    assert post(upload_id="abc123").status_code == 400                      # nothing to run
+    assert post(upload_id="../x", files=["a.pdf"]).status_code == 400
+    assert post(upload_id="abc123", intake="notes.pdf").status_code == 400

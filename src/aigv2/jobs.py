@@ -11,6 +11,8 @@ Lambda-side state, all under the AIG v2 storage backend:
   jobs/<id>.json          the job record the page polls (status, result, error, questions, cost)
   jobs/<id>.spec.json     what to run (kind, run id, answers, ...)
   jobs/<id>/inputs/<name> uploaded files, copied to the worker's /tmp
+  uploads/<upload id>/<name> files the browser put straight into S3 (presigned PUT: a request through Lambda is
+                          capped at 6 MB); the job spec's "input_prefix" points the worker at them
   jobs/<id>.cancel        cancel flag, checked before every paid call
   jobs/_active.json       the single-job lock (one job at a time: CostMeter diffs shared counters)
 """
@@ -172,17 +174,22 @@ def execute(job: dict, spec: dict, deps, intake_path: Optional[Path] = None, pat
 # ---- Lambda side -----------------------------------------------------------------------------------------------
 
 def submit(deps, kind: str, run_id: Optional[str], spec: dict, intake_path: Optional[Path] = None,
-           paths: Optional[list[Path]] = None) -> Optional[dict]:
-    """Record a job in S3 and start the worker invocation. Returns None if another job holds the lock."""
+           paths: Optional[list[Path]] = None, *, staged: Optional[dict] = None) -> Optional[dict]:
+    """Record a job in S3 and start the worker invocation. Returns None if another job holds the lock.
+
+    staged: {"prefix", "intake", "inputs"} - the files are already in storage under prefix (browser upload)."""
     js = JobStore(deps.backend)
     if js.active() is not None:
         return None
     job = new_job(kind, run_id)
     spec = dict(spec)
-    spec["intake"] = intake_path.name if intake_path else None
-    spec["inputs"] = [p.name for p in (paths or [])]
-    for p in ([intake_path] if intake_path else []) + list(paths or []):
-        deps.backend.write_bytes(f"jobs/{job['id']}/inputs/{p.name}", p.read_bytes())
+    if staged:
+        spec["intake"], spec["inputs"], spec["input_prefix"] = staged["intake"], list(staged["inputs"]), staged["prefix"]
+    else:
+        spec["intake"] = intake_path.name if intake_path else None
+        spec["inputs"] = [p.name for p in (paths or [])]
+        for p in ([intake_path] if intake_path else []) + list(paths or []):
+            deps.backend.write_bytes(f"jobs/{job['id']}/inputs/{p.name}", p.read_bytes())
     deps.backend.write_json(f"jobs/{job['id']}.spec.json", spec)
     js.save(job)
     js.acquire(job)
@@ -204,6 +211,10 @@ def invoke_worker(job_id: str) -> None:
                                   Payload=json.dumps({"aigv2_job": job_id}).encode("utf-8"))
 
 
+def names_staged(spec: dict) -> list[str]:
+    return ([spec["intake"]] if spec.get("intake") else []) + list(spec.get("inputs") or [])
+
+
 def run_worker(job_id: str, deps) -> None:
     """Entry point of the worker invocation."""
     js = JobStore(deps.backend)
@@ -221,8 +232,9 @@ def run_worker(job_id: str, deps) -> None:
     try:
         names = ([spec["intake"]] if spec.get("intake") else []) + list(spec.get("inputs") or [])
         local = {}
+        prefix = spec.get("input_prefix") or f"jobs/{job_id}/inputs"
         for n in names:
-            data = deps.backend.read_bytes(f"jobs/{job_id}/inputs/{n}")
+            data = deps.backend.read_bytes(f"{prefix}/{n}")
             if data is None:
                 raise FileNotFoundError(f"uploaded file {n} is missing from storage")
             (tmp / n).write_bytes(data)
@@ -233,6 +245,9 @@ def run_worker(job_id: str, deps) -> None:
         job["status"], job["error"] = "error", f"{type(e).__name__}: {e}"
     finally:
         cancel.set_external(None)
+        if spec.get("input_prefix"):  # browser-uploaded copies; the run keeps its own copy of the inputs
+            for n in names_staged(spec):
+                deps.backend.delete(f"{spec['input_prefix']}/{n}")
         js.save(job)
         js.release(job_id)
         shutil.rmtree(tmp, ignore_errors=True)

@@ -1,6 +1,7 @@
 import { chimeMuted, playChime, setChimeMuted, unlockChime } from "../lib/chime";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { api } from "../api/client";
+import { LoadingScreen } from "./LoadingScreen";
 
 const usd = (n: number | null | undefined) => (n == null ? "—" : `$${n.toFixed(2)}`);
 
@@ -152,13 +153,14 @@ export function AigV2Tab() {
   const timer = useRef<number | null>(null);
   const [muted, setMuted] = useState<boolean>(chimeMuted());
 
+  const [ready, setReady] = useState(false);
   const loadRuns = useCallback(() => api.v2Runs().then((r) => setRuns(r.runs)).catch(() => {}), []);
   const loadRun = useCallback((id: string) => api.v2Run(id).then((r) => {
     setRun(r);
     setAnswers((a) => ({ ...Object.fromEntries(r.questions.map((q: any) => [q.id, ""])), ...(r.answers ?? {}), ...a }));
   }).catch((e) => setError(e.message)), []);
 
-  useEffect(() => { loadRuns(); }, [loadRuns]);
+  useEffect(() => { loadRuns().finally(() => setReady(true)); }, [loadRuns]);
   useEffect(() => () => { if (timer.current) window.clearTimeout(timer.current); }, []);
   useEffect(() => { if (runId) { setRun(null); setAnswers({}); loadRun(runId); } else setRun(null); }, [runId, loadRun]);
 
@@ -176,14 +178,18 @@ export function AigV2Tab() {
     }).catch((e) => { setError(e.message); setJob(null); });
   }, [loadRuns, loadRun, runId]);
 
+  const launching = useRef(false);
   async function launch(fn: () => Promise<any>) {
+    if (launching.current) return;  // a slow first response must not invite a second click
+    launching.current = true;
     unlockChime();
-    setError(""); setJob(null);
+    setError(""); setJob({ kind: "start", status: "queued" });
     try {
       const j = await fn();
       setJob(j);
       poll(j.id);
-    } catch (e: any) { setError(e.message); }
+    } catch (e: any) { setError(e.message); setJob(null); }
+    finally { launching.current = false; }
   }
 
   const busy = job && (job.status === "queued" || job.status === "running");
@@ -202,6 +208,8 @@ export function AigV2Tab() {
   const visibleRuns = runs.filter((r) => showCancelled || r.stage !== "cancelled");
 
   return (
+    <>
+    <LoadingScreen loaded={ready} title="AIG V2" message="Loading runs..." />
     <div className="flex gap-6 max-w-6xl mx-auto">
       <aside className="w-64 flex-shrink-0 space-y-2">
         <button
@@ -432,5 +440,6 @@ export function AigV2Tab() {
         )}
       </section>
     </div>
+    </>
   );
 }

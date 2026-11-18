@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 
 interface LoadingScreenProps {
   loaded: boolean;
+  title?: string;
+  message?: string;
 }
 
-export function LoadingScreen({ loaded }: LoadingScreenProps) {
+export function LoadingScreen({ loaded, title = "Library QC", message = "Loading library data..." }: LoadingScreenProps) {
   const [progress, setProgress] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -33,14 +35,14 @@ export function LoadingScreen({ loaded }: LoadingScreenProps) {
   return (
     <div className={`fixed inset-0 z-50 flex items-center justify-center bg-slate-50 transition-opacity duration-300 ${loaded ? "opacity-0" : "opacity-100"}`}>
       <div className="w-80 text-center">
-        <h1 className="text-xl font-bold text-slate-900 mb-6">Library QC</h1>
+        <h1 className="text-xl font-bold text-slate-900 mb-6">{title}</h1>
         <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
           <div
             className="h-full bg-blue-500 rounded-full transition-all duration-200 ease-out"
             style={{ width: `${progress}%` }}
           />
         </div>
-        <p className="text-sm text-slate-500 mt-3">Loading library data...</p>
+        <p className="text-sm text-slate-500 mt-3">{message}</p>
       </div>
     </div>
   );

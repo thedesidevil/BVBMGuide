@@ -352,14 +352,22 @@ export function AigV2Tab() {
                 {(run.plan_items ?? []).length > 0 && (
                   <div className="border-t border-slate-200 pt-3 space-y-3">
                     <h3 className="text-sm font-semibold text-slate-700">
-                      Needs attention before writing ({run.plan_items.length}) — optional; paste a Google Maps link of ONE place, or leave blank / Skip, then press Plan again to apply
+                      Needs attention before writing ({run.plan_items.length}) — optional; paste one or several Google Maps links (separate with commas), or choose At hotel / Skip, then press Plan again to apply
                     </h3>
                     {(run.plan_failed ?? []).map((f: string) => <p key={f} className="text-xs text-red-700">NOT USED: {f}</p>)}
                     {run.plan_items.map((q: any) => (
                       <div key={q.id}>
                         <label className="block text-sm text-slate-700">{q.text}</label>
+                        {q.options?.length > 0 && (
+                          <div className="flex flex-wrap gap-2 mt-1">
+                            {q.options.map((o: string) => (
+                              <button key={o} onClick={() => setAnswers({ ...answers, [q.id]: o })}
+                                className={`px-2 py-1 rounded border text-xs ${answers[q.id] === o ? "bg-blue-600 text-white border-blue-600" : "border-slate-300 text-slate-600"}`}>{o}</button>
+                            ))}
+                          </div>
+                        )}
                         <AnswerBox value={answers[q.id] ?? ""} onChange={(v) => setAnswers({ ...answers, [q.id]: v })}
-                          placeholder="https://maps.app.goo.gl/... or Skip" />
+                          placeholder="https://maps.app.goo.gl/..., https://maps.app.goo.gl/... (one or several, comma-separated)" />
                       </div>
                     ))}
                   </div>

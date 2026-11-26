@@ -60,7 +60,7 @@ def test_gap_detection_and_items(deps, tmp_path):
     assert gaps[0].id == f"meal_gap:{day}:{meal}" and "Library suggests: Lib A, Lib B, Lib C" in gaps[0].text
     assert "Lib D" not in gaps[0].text and "only 2 of 3" in gaps[0].text
     items = [q for q in plan_items(state) if q.id == gaps[0].id]
-    assert items[0].kind == "plan_gap" and items[0].options == ["Skip"]
+    assert items[0].kind == "plan_gap" and items[0].options == ["At hotel", "Skip"]
 
 
 def test_apply_url_adds_pick_and_clears_marker(deps, tmp_path):
@@ -148,3 +148,39 @@ def test_cli_plan_output(deps, tmp_path, monkeypatch):
     monkeypatch.setattr(pipeline, "default_deps", lambda: deps)
     out = CliRunner().invoke(cli.app, ["plan", store.run_id, "--answers", str(f)]).output
     assert "Needs attention (" in out and "meal_gap:" in out and "Library suggests" in out
+
+
+def test_answers_split_comma_separated_links_and_keep_long_urls_whole():
+    from src.aigv2.plan_review import _answers_of
+    long = "https://www.google.com/maps/place/Caves/@11.6,76.2,17z/data=!4m6!3m5"
+    assert _answers_of(f"https://maps.app.goo.gl/a, https://maps.app.goo.gl/b,https://maps.app.goo.gl/c") == [
+        "https://maps.app.goo.gl/a", "https://maps.app.goo.gl/b", "https://maps.app.goo.gl/c"]
+    assert _answers_of(f"{long}, https://maps.app.goo.gl/z") == [long, "https://maps.app.goo.gl/z"]
+    assert _answers_of("https://maps.app.goo.gl/a\nhttps://maps.app.goo.gl/a") == ["https://maps.app.goo.gl/a"]
+    assert _answers_of("Skip") == [] and _answers_of("At hotel") == [] and _answers_of("") == []
+
+
+def test_three_links_fill_three_missing_restaurants(deps, tmp_path):
+    store, answers = _planned(deps, tmp_path)
+    day, meal, _ = _gap(store, drop=2)
+    state = pipeline._load_plan(store)
+    gid = f"meal_gap:{day}:{meal}"
+    links = [LINK + "?a=1", LINK + "?a=2", LINK + "?a=3"]
+    names = iter(["Chez Nous", "Cafe Deux", "Trois Bistro"])
+    deps.places.from_link = lambda link: _place(next(names)).model_copy(update={"maps_url": link.url})
+    deps.link_fetch = lambda u: LINK
+    rep = apply_plan_answers(state, {gid: ", ".join(links)}, deps.places, fetch=deps.link_fetch)
+    assert len(rep["applied"]) == 2 and len(rep["failed"]) == 1 and "already full" in rep["failed"][0]
+    assert not [m for m in state.picks[0].markers if m.kind == "ADD_RESTAURANT"]
+
+
+def test_at_hotel_answer_clears_the_gap_and_is_kept(deps, tmp_path):
+    store, answers = _planned(deps, tmp_path)
+    day, meal, _ = _gap(store)
+    gid = f"meal_gap:{day}:{meal}"
+    items = plan_run(store, {**answers, gid: "At hotel"}, deps)
+    assert gid not in [q.id for q in items]
+    saved = store.load_json("plan.json")["picks"][0]
+    assert saved["at_hotel"] is True and not [m for m in saved["markers"] if m["kind"] == "ADD_RESTAURANT"]
+    res = build_run(store, {**answers, gid: "At hotel"}, deps)
+    assert res.docx_name

@@ -464,3 +464,27 @@ def test_partial_meal_gets_three_rows_and_one_marker():
     adds = [mk for b in p.components if b.type == "ReviewMarkerBlock" for mk in b.markers
             if mk.kind == "ADD_RESTAURANT" and mk.text.startswith("Lunch")]
     assert len(adds) == 1
+
+
+def _stub_day(stays, legs, d=date(2026, 12, 1)):
+    from src.aigv2.guide.build import _Day
+    obj = object.__new__(_Day)
+    obj.rd = SimpleNamespace(date=d, legs=legs)
+    obj.data = SimpleNamespace(trip=SimpleNamespace(hotels=stays))
+    return obj
+
+
+def test_check_in_item_gets_road_time_and_check_in_times_not_hours():
+    from src.aigv2.models import PlannedItem
+    from src.aigv2.planning.travel import Leg
+    stay = HotelStay(city="Wayanad", hotel="Pepper Trail", check_in=date(2026, 12, 1), check_out=date(2026, 12, 7),
+                     source="voucher", check_in_time=time(14, 0), check_out_time=time(11, 0))
+    leg = Leg(from_name="Mysore airport", to_name="Pepper Trail", drive_min=150)
+    d = _stub_day([stay], {"arrival": leg})
+    it = PlannedItem(name="Check in at Pepper Trail", kind="activity", city="Wayanad")
+    assert d._hotel_item_stay(it) is stay
+    marks = []
+    pairs = d._hotel_item_facts(stay, marks)
+    assert pairs[0] == ("GETTING THERE", "By car · 2 h 30 min from the airport")
+    assert ("CHECK-IN / CHECK-OUT", "2:00 PM / 11:00 AM") in pairs and marks == []
+    assert d._hotel_item_stay(PlannedItem(name="Edakkal Caves", kind="attraction", city="Wayanad")) is None

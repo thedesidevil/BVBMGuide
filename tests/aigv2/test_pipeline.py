@@ -1005,7 +1005,21 @@ def test_airport_code_endpoint_is_searched_as_an_airport():
     pipeline._endpoint("DPS", "Sanur", places, c)
     pipeline._endpoint("Ngurah Rai Airport", "Sanur", places, c)
     pipeline._endpoint("DPS", "Sanur", places, c)
-    assert c.q == ["DPS airport", "Ngurah Rai Airport"] and "dps|sanur" in places
+    assert c.q == ["DPS airport", "Ngurah Rai Airport", "Ngurah Rai Airport"] and "dps|sanur" in places
+
+
+def test_airport_named_after_another_town_is_retried_under_that_town():
+    from types import SimpleNamespace as NS
+
+    class Rec:
+        def __init__(self): self.q = []
+        def find(self, name, city, near=None):
+            self.q.append((name, city))
+            return NS(match_ok=city == "Mysore", name=name)
+    c, places = Rec(), {}
+    pipeline._endpoint("Mysore airport", "Wayanad", places, c)
+    assert c.q == [("Mysore airport", "Wayanad"), ("Mysore airport", "Mysore")]
+    assert places["mysore airport|wayanad"].match_ok
 
 
 # ---------- guide.json ----------

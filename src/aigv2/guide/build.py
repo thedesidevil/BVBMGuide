@@ -12,6 +12,7 @@ from src.aigv2.guide.departure import departure_checklist
 from src.aigv2.guide.reference import (FACILITY_KEYS, HOSPITALS_NOTE_TITLE, hospitals_note_text, strip_facility_items,
                                        structured_components)
 from src.aigv2.hours import _fmt12, format_for_day, is_open_for, next_opening
+from src.aigv2.place_links import is_stay_activity
 from src.aigv2.library import norm_name
 from src.aigv2.models import HotelStay, Marker, TransportLeg, booking_lunch_included
 from src.aigv2.planning.boat import boat_bookings, parse_boat_type
@@ -638,6 +639,28 @@ class _Day:
         if marks:
             self.out.append(g.ReviewMarkerBlock(markers=marks))
 
+    _HOTEL_ITEM = re.compile(r"^\s*(?:hotel\s+)?check[- ]?(?:in|out)\b", re.I)
+
+    def _hotel_item_stay(self, it) -> Optional[HotelStay]:
+        """The stay a 'Check in at <hotel>' / 'Check out from <hotel>' itinerary line belongs to."""
+        if it.kind == "transfer" or not self._HOTEL_ITEM.match(it.name or ""):
+            return None
+        d = self.rd.date
+        return next((s for s in self.data.trip.hotels if d in (s.check_in, s.check_out)), None)
+
+    def _hotel_item_facts(self, stay: HotelStay, marks: list) -> list:
+        """Road time from the airport (arrival day) and the hotel's check-in / check-out times."""
+        pairs: list = []
+        arr_leg = self.rd.legs.get("arrival")
+        road = self._road_minutes(arr_leg) if stay.check_in == self.rd.date else None
+        if road:
+            pairs.append(("GETTING THERE", f"By car · {minutes_text(road)} from the airport"))
+        if stay.check_in_time and stay.check_out_time:
+            pairs.append(("CHECK-IN / CHECK-OUT", f"{_fmt12(stay.check_in_time)} / {_fmt12(stay.check_out_time)}"))
+        else:
+            marks.append(_verify("check-in and check-out times"))
+        return pairs
+
     def _late_night_item(self, s: ScheduledItem) -> bool:
         arr = self.rd.arrival
         if not (arr and is_late_night_landing(arr, self.rd.date)):
@@ -663,6 +686,10 @@ class _Day:
         pairs: list = []
         marks: list[Marker] = []
         leg = rd.legs.get(it.name)
+        hotel_stay = self._hotel_item_stay(it)
+        if hotel_stay is not None:
+            leg = None  # the hotel's own card: no distance-to-itself or front-desk hours
+            pairs += self._hotel_item_facts(hotel_stay, marks)
         if leg is not None:
             opts = self._options(leg)
             if opts:
@@ -699,8 +726,8 @@ class _Day:
             opening = next_opening(p.hours, rd.date, s.start)
             if opening:
                 pairs.append(("NOTE", f"Opens {_fmt12(opening)}: best visited later in the day"))
-        lib_hours = lib.get("hours") if isinstance(lib.get("hours"), str) and lib.get("hours").strip() else None
-        if found and it.kind != "transfer":
+        lib_hours = None if hotel_stay is not None else lib.get("hours") if isinstance(lib.get("hours"), str) and lib.get("hours").strip() else None
+        if found and it.kind != "transfer" and hotel_stay is None:
             pairs.append(("OPENING HOURS", format_for_day(p.hours, rd.date) if p.hours else
                           [lib_hours, _verify("opening hours from the library")] if lib_hours else _verify("opening hours")))
         elif lib_hours and it.kind != "transfer":
@@ -733,7 +760,7 @@ class _Day:
         if found and p.website and at and at.entry_fee:
             facts.append(g.Fact(label="Tickets and entry fees", value="official website",
                                 link=g.Link(text="official website", url=p.website)))
-        if not found and it.kind != "transfer":
+        if not found and it.kind != "transfer" and not is_stay_activity(it.name):
             marks.append(_verify("location not specified in the voucher" if is_generic_name(it.name) and not lib
                                  else "place not found on Google"))
         if p is not None and p.status not in ("OPERATIONAL", "UNKNOWN"):
@@ -785,6 +812,12 @@ class _Day:
             if not slot.anchors:
                 return
         pick: Optional[MealPick] = next((m for m in rd.meals if m.slot.meal == slot.meal and m.slot.start == slot.start), None)
+        if pick is not None and pick.at_hotel:
+            stay = self._stay(arriving=False) if rd.date == max((s.check_out for s in self.data.trip.hotels), default=None) \
+                else next((s for s in self.data.trip.hotels if s.check_in <= rd.date < s.check_out), None)
+            self.out.append(g.SimpleCard(when=_fmt12(slot.start), part=meal,
+                                         heading=f"{meal} at {nice_name(stay.hotel)}" if stay else f"{meal} at your hotel"))
+            return
         anchors = slot.anchors if not slot.unanchored and slot.anchors else [(rd.city, None, 3)]
         rest, markers = (list(pick.restaurants), list(pick.markers)) if pick else ([], [])
         day_index = pick.day_index if pick else rd.index

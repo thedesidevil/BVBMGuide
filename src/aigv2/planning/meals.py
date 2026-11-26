@@ -62,6 +62,7 @@ class MealPick(BaseModel):
     day_index: int
     restaurants: list[ChosenRestaurant] = Field(default_factory=list)
     markers: list[Marker] = Field(default_factory=list)
+    at_hotel: bool = False  # the team answered "At hotel": the meal is taken at the property, no restaurants listed
 
 
 class Exclusion(BaseModel):

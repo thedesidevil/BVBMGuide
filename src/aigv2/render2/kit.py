@@ -465,6 +465,36 @@ def close(cell, pt: float = 1) -> None:
         spacer(cell, pt)
 
 
+def free_markers(doc) -> int:
+    """Word and Google Docs cannot delete the last paragraph of a table cell, so a staff marker that ends its cell can be
+    emptied but never removed, and its yellow shading stays. A tiny plain paragraph after it makes every marker
+    deletable. Returns how many spacers were added."""
+    ids = _review_style_ids(doc)
+    added = 0
+    for tc in doc.element.body.iter(qn("w:tc")):
+        last = tc[-1] if len(tc) else None
+        if last is None or last.tag != qn("w:p"):
+            continue
+        st = last.find(qn("w:pPr") + "/" + qn("w:pStyle"))
+        if st is None or st.get(qn("w:val")) not in ids:
+            continue
+        sp = OxmlElement("w:p")
+        ppr = OxmlElement("w:pPr")
+        ppr.append(el("w:spacing", before=0, after=0, line=20, lineRule="exact"))
+        rpr = OxmlElement("w:rPr")
+        rpr.append(el("w:sz", val=2))
+        rpr.append(el("w:szCs", val=2))
+        ppr.append(rpr)
+        sp.append(ppr)
+        tc.append(sp)
+        added += 1
+    return added
+
+
+def _review_style_ids(doc) -> set[str]:
+    return {s.style_id for s in doc.styles if s.name == REVIEW_STYLE}
+
+
 # ---------- text primitives ----------
 def R(p, text: str, font: str = BODYF, size: float = 9.5, color: str = INK, **kw):
     return run(p, text, font=font, size=size, color=color, **kw)

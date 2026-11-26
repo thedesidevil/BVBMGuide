@@ -10,7 +10,7 @@ from src.aigv2.hours import format_for_day, is_open_for
 from src.aigv2.library import norm_name
 from src.aigv2.models import DayPlan, Place, TripPlan, place_key
 from src.aigv2.planning.slots import is_optional, meal_start, parse_time
-from src.aigv2.qc.reader import DocModel, DocVenue
+from src.aigv2.qc.reader import MARKER_RE, DocModel, DocVenue
 from src.aigv2.place_links import is_non_place
 from src.aigv2.qc.rules import _f
 
@@ -93,7 +93,29 @@ def _differs(guide: int, google: int) -> bool:
     return diff > _MAX_DIFF_MIN or diff > _MAX_DIFF_RATIO * google
 
 
-def _unverified(v: DocVenue, day_no: int, what: str):
+_COVERED = {  # what QC could not verify -> words of the guide's own VERIFY marker that already tell the team
+    "opening hours": ("opening hours", "hours"), "business status": ("status",),
+    "status, hours and travel time": ("not found on google", "location", "place not found"),
+    "travel time": ("travel time", "getting there"),
+}
+
+
+def _covered(what: str, own: list[str]) -> bool:
+    low = [m.casefold() for m in own]
+    for key, words in _COVERED.items():
+        if what.startswith(key) and any(w in m for w in words for m in low):
+            return True
+    return False
+
+
+def _add(findings: list, f) -> None:
+    if f is not None:
+        findings.append(f)
+
+
+def _unverified(v: DocVenue, day_no: int, what: str, own: Optional[list[str]] = None):
+    if own and _covered(what, own):
+        return None  # the card already carries its own VERIFY marker for this fact: one marker, not two
     return _f("fact_unverified", f"Could not verify {what} for {v.name}; check it by hand", v.name, day_no, "warning")
 
 
@@ -106,6 +128,10 @@ def check_facts(doc: DocModel, trip: TripPlan, places, routes, fresh: bool = Tru
     countries = countries or {}
     plan_days = sorted(trip.days, key=lambda d: d.date)
     fresh_memo: dict = {}
+    own_markers: dict[tuple, list[str]] = {}
+    for para in getattr(doc, "paragraphs", []):
+        if para.venue and para.day is not None:
+            own_markers.setdefault((para.day, norm_name(para.venue)), []).extend(MARKER_RE.findall(para.text))
     for day in doc.days:
         if day.index is None or not 1 <= day.index <= len(plan_days):
             continue
@@ -122,7 +148,8 @@ def check_facts(doc: DocModel, trip: TripPlan, places, routes, fresh: bool = Tru
                                           near.group(1).strip() if near else None, places, routes, fresh,
                                           optional=bool(item and is_optional(item)), fresh_memo=fresh_memo,
                                           resolved=resolved, hours_exempt=bool(_OUTDOOR.search(v.name)),
-                                          backed=_booking_backed(v, trip, plan))
+                                          backed=_booking_backed(v, trip, plan),
+                                          own=own_markers.get((day.index, norm_name(v.name)), []))
                 except _LOOKUP_ERRORS as e:
                     f = [_f("fact_check_failed", f"{v.name}: Google lookup failed ({e.__class__.__name__})",
                             v.name, day.index)]
@@ -139,7 +166,8 @@ def _row(v: DocVenue, day_no: int, google_hours: str, guide_travel: str, google_
 
 def _check_venue(v: DocVenue, day_no: int, d: date, city: str, start: Optional[time], anchor: Optional[str],
                  places, routes, fresh: bool, optional: bool = False, fresh_memo: Optional[dict] = None,
-                 resolved: Optional[dict] = None, hours_exempt: bool = False, backed: bool = False):
+                 resolved: Optional[dict] = None, hours_exempt: bool = False, backed: bool = False,
+                 own: Optional[list[str]] = None):
     cached = places.find(v.name, city)
     place = None
     if cached is not None and cached.match_ok:
@@ -155,26 +183,26 @@ def _check_venue(v: DocVenue, day_no: int, d: date, city: str, start: Optional[t
     if (place is None or not place.match_ok) and backed:
         return [], _row(v, day_no, "Confirmed by booking", "", "", True)  # the ticket is the confirmation
     if place is None or not place.match_ok:
-        return [_unverified(v, day_no, "status, hours and travel time (no confident Google match)")], \
+        return [x for x in [_unverified(v, day_no, "status, hours and travel time (no confident Google match)", own)] if x], \
             _row(v, day_no, _UNVERIFIED, "", _UNVERIFIED, False)
     findings = []
     if place.status in ("CLOSED_PERMANENTLY", "CLOSED_TEMPORARILY"):
         state = "permanently" if place.status == "CLOSED_PERMANENTLY" else "temporarily"
         findings.append(_f("closed_now", f"{v.name} is shown as closed {state} on Google", v.name, day_no))
     elif place.status == "UNKNOWN":
-        findings.append(_unverified(v, day_no, "business status"))
+        _add(findings, _unverified(v, day_no, "business status", own))
     if hours_exempt:
         pass  # exterior views, all-day passes and open-air landmarks have no slot opening hours to verify
     elif place.hours is None:
-        findings.append(_unverified(v, day_no, "opening hours (Google has none)"))
+        _add(findings, _unverified(v, day_no, "opening hours (Google has none)", own))
     elif start is None:
-        findings.append(_unverified(v, day_no, "opening hours (unknown slot time)"))
+        _add(findings, _unverified(v, day_no, "opening hours (unknown slot time)", own))
     elif is_open_for(place.hours, d, start, _VISIT_MIN) is False:
         findings.append(_f("not_open_at_slot", f"{v.name} does not look open on {d:%a %d %b} at {start:%H:%M} "
                            f"(Google: {format_for_day(place.hours, d)})", v.name, day_no,
                            "warning" if optional else "error"))
     guide_travel, google_travel = _travel(v, city, anchor, place, places, routes, findings, day_no,
-                                          datetime.combine(d, start) if start is not None else None, resolved)
+                                          datetime.combine(d, start) if start is not None else None, resolved, own)
     return findings, _row(v, day_no, format_for_day(place.hours, d), guide_travel, google_travel, not findings)
 
 
@@ -191,16 +219,16 @@ def _anchor_place(anchor: str, city: str, places, resolved: Optional[dict]):
     return places.find(anchor, city)
 
 
-def _travel(v, city, anchor, place: Place, places, routes, findings, day_no, when=None, resolved=None):
+def _travel(v, city, anchor, place: Place, places, routes, findings, day_no, when=None, resolved=None, own=None):
     if not anchor:
         return "", ""
     legs = _guide_travel(v)
     if not legs:
-        findings.append(_unverified(v, day_no, "travel time (none stated in the guide)"))
+        _add(findings, _unverified(v, day_no, "travel time (none stated in the guide)", own))
         return "", ""
     a = _anchor_place(anchor, city, places, resolved)
     if a is None or not a.match_ok:
-        findings.append(_unverified(v, day_no, f"travel time (could not locate {anchor})"))
+        _add(findings, _unverified(v, day_no, f"travel time (could not locate {anchor})", own))
         return "; ".join(_minutes_text(l, m) for l, m in legs), ""
     guide, google = [], []
     for label, minutes in legs:
@@ -209,7 +237,7 @@ def _travel(v, city, anchor, place: Place, places, routes, findings, day_no, whe
                                when=when if mode == "TRANSIT" else None).get((0, 0))  # same departure the planner used
         guide.append(_minutes_text(label, minutes))
         if got is None:
-            findings.append(_unverified(v, day_no, f"{label.lower()} travel time (no Google route)"))
+            _add(findings, _unverified(v, day_no, f"{label.lower()} travel time (no Google route)", own))
             continue
         google.append(_minutes_text(label, got))
         if _differs(minutes, got):

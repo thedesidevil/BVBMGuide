@@ -17,6 +17,7 @@ FIELDS: list[tuple[str, bool]] = [
     ("Trip dates", False),
     ("Cities and nights", False),
     ("Hotel per city", False),
+    ("Meals included at the hotel", False),
     ("Flights / trains", False),
     ("Confirmed bookings (tours, shows, times)", False),
     ("Seniors / mobility notes", False),

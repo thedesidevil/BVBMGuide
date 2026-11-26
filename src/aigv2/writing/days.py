@@ -31,7 +31,14 @@ _SYSTEM = (
     "Only name an island, district or city for a stop if it appears in that stop's google_address or area; otherwise leave it out. "
     "If a stop has matched=false, its location is unknown: do not name any place, district, village or area for it, "
     "and do not describe what it is like beyond what its name and note say. "
+    "For a stop with elaborate=true the library has no description: write 2 to 3 sentences (about 45 to 70 words) saying "
+    "what the place is and why visitors go, using only well-established general knowledge of that specific named place "
+    "at its google_address, and set general_knowledge=true. Never repeat a claim from its note that you cannot confirm "
+    "(a note calling a river island a 'backwater', for example). If you are not sure what the place is, write one "
+    "careful sentence from its name and note and set general_knowledge=false. For every other stop leave "
+    "general_knowledge=false and keep the description short and grounded in the facts given. "
     "JSON shape: {\"title\": str, \"intro\": str, \"attractions\": [{\"name\": str, \"description\": str, "
+    "\"general_knowledge\": bool, "
     "\"entry_fee\": str|null, \"dress_code\": str|null, \"tips\": str|null, \"best_time\": str|null, "
     "\"duration\": str|null}], \"restaurants\": [{\"name\": str, \"ambience\": str, \"best_for\": str}], "
     "\"free_time_idea\": str|null}."
@@ -41,6 +48,7 @@ _SYSTEM = (
 class AttractionText(BaseModel):
     name: str
     description: str
+    general_knowledge: bool = False  # written from the model's own knowledge of the place (a human must check it)
     entry_fee: Optional[str] = None
     dress_code: Optional[str] = None
     tips: Optional[str] = None
@@ -184,7 +192,9 @@ def write_day(day_facts: dict, llm) -> DayText:
     day = llm.run_json("write_days", _SYSTEM, prompt, DayText, validate=_validator(day_facts))
     canon_a = {norm_name(i["name"]): i["name"] for i in day_facts["attractions"]}
     canon_r = {norm_name(i["name"]): i["name"] for i in day_facts["restaurants"]}
+    allowed = {norm_name(i["name"]) for i in day_facts["attractions"] if i.get("elaborate")}
     for a in day.attractions:
+        a.general_knowledge = a.general_knowledge and norm_name(a.name) in allowed  # only where the facts allowed it
         a.name = canon_a[norm_name(a.name)]
     for r in day.restaurants:
         r.name = canon_r[norm_name(r.name)]

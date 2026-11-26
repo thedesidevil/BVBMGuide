@@ -38,7 +38,7 @@ from src.aigv2.planning.travel import Leg, boat_leg, compute_legs
 from src.aigv2.preflight import apply_answers, run_checklist, unanswered
 from src.aigv2.google.overrides import FILE_NAME as OVERRIDES_FILE, PlaceOverrides
 from src.aigv2.google.maplink import default_fetch
-from src.aigv2.place_links import apply_place_answers, override_report
+from src.aigv2.place_links import apply_place_answers, is_stay_activity as regions_is_stay, override_report
 from src.aigv2.plan_review import GAP_PREFIX, REVIEW_FILE, apply_plan_answers, plan_items
 from src.aigv2.qc import run_qc
 from src.aigv2.qc.report import PRICE_KEY, QCResult, write_report
@@ -801,7 +801,10 @@ def _day_facts(ds: DayState, state: PlanState) -> dict:
                     "generic_name": is_generic_name(s.item.name),
                     "area": ds.library_attractions.get(s.item.name, {}).get("area")
                     or ds.library_attractions.get(s.item.name, {}).get("location"),
-                    "library_description": ds.library_attractions.get(s.item.name, {}).get("description")}
+                    "library_description": ds.library_attractions.get(s.item.name, {}).get("description"),
+                    "elaborate": bool(ds.places.get(s.item.name) and ds.places[s.item.name].match_ok
+                                      and not is_generic_name(s.item.name) and not regions_is_stay(s.item.name)
+                                      and not ds.library_attractions.get(s.item.name, {}).get("description"))}
                    for s in ds.result.scheduled if s.item.kind in ("attraction", "activity")]
     restaurants, seen = [], set()
     for p in state.picks:

@@ -467,3 +467,15 @@ def test_exterior_and_day_pass_skip_hours_check_but_timed_visits_keep_it():
     assert not [x for x in f if "opening hours" in x.message]
     f, _ = check_facts(_doc_with("Mikla"), trip(), FakePlaces(p), FakeRoutes())
     assert [x for x in f if "opening hours" in x.message]
+
+
+def test_no_second_marker_when_the_card_already_flags_the_same_fact():
+    from src.aigv2.qc.facts import _covered, _unverified
+    from src.aigv2.qc.reader import DocVenue
+    v = DocVenue(name="Kuruva Island")
+    own = ["⚠ VERIFY: opening hours", "⚠ VERIFY: place not found on Google"]
+    assert _unverified(v, 4, "opening hours (unknown slot time)", own) is None
+    assert _unverified(v, 4, "status, hours and travel time (no confident Google match)", own) is None
+    assert _unverified(v, 4, "opening hours (unknown slot time)", []) is not None
+    assert _unverified(v, 4, "travel time (none stated in the guide)", own) is not None  # nothing on the card covers it
+    assert _covered("business status", ["⚠ VERIFY: status unknown"])

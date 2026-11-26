@@ -21,6 +21,7 @@ Rules:
 - A Booking is created only from an attachment (voucher, ticket, confirmation). "Confirmed" in the notes without an attachment stays a PlannedItem, not a Booking.
 - Service vouchers: read the passenger table, flights (free text such as "MIDNIGHT ARRIVAL AT 00:10 ON 25 SEPTEMBER (NIGHT OF 24 SEPTEMBER)" means arrival 00:10 on 25 September), the hotel table (city, hotel, check-in, check-out, confirmation notes) and the day-wise blocks (type, time window, pickup/checkout times, notes). Turn services into Booking or PlannedItem with included_in_package=true for Bookings. Ignore stray document headings such as a leftover destination name.
 - Meal plans: "Breakfast included" -> meal_plan "breakfast"; "half board" -> "half_board"; "full board" -> "full_board"; "all meals", "all inclusive" -> "all_inclusive". For a single included meal on an activity (for example "BBQ dinner included") set PlannedItem.includes_meal.
+- The intake row "Meals included at the hotel" states what each stay's rate covers (for example "all meals at the resort", "breakfast only", "dinner at the resort"). Apply it to every HotelStay it names (or all stays when it names none) as meal_plan; "no meals" or an empty row leaves meal_plan "none". Never assume meals are included for a resort when this row and the vouchers are silent.
 - Cruise nights and sleeper-train nights become HotelStay with kind "cruise" or "sleeper_train".
 - "Pure veg" wording sets diet.pure_veg=true (and add "vegetarian" to restrictions).
 - Drive-day stops named in the inputs become drive_stops on that day.

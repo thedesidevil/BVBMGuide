@@ -47,7 +47,13 @@ _UNWANTED_MEDICAL = re.compile(
     r"|radiolog|\bimaging\b|diagnostic|r\u00f6ntgen|roentgen|\binstitut(?:e|o)?\b|\binstitut\b|\bscan\b|\bmri\b|\bIRG\b",
     re.I,
 )
-_HOSPITAL_LIKE = re.compile(r"hospital|rumah sakit|\brs\b|emergency|medical cent(?:re|er)|clinic", re.I)
+# a place whose whole name is a place of worship / school / bank is not a pharmacy, grocery or hospital, whatever type
+# Google tagged it with ('Church'); a shop that merely mentions one ('Church Road Pharmacy') is kept
+_NOT_A_SHOP = re.compile(r"^\W*(?:[\w.'-]+\s+){0,2}(?:church|chapel|cathedral|temple|mandir|mosque|masjid|gurdwara|"
+                         r"shrine|monastery|school|college|university|bank|atm|post office|police station)\W*$", re.I)
+_SHOP_WORD = re.compile(r"pharm|medic|chemist|drug|hospital|clinic|health|store|mart|super|grocer|stores", re.I)
+_HOSPITAL_LIKE = re.compile(r"hospital|rumah sakit|\brs\b|emergency|medical cent(?:re|er)|medicity|medical city|"
+                            r"(?:multi|super)[- ]?special|clinic", re.I)
 
 
 def unwanted_name(name: str, medical: bool = False) -> bool:
@@ -56,6 +62,8 @@ def unwanted_name(name: str, medical: bool = False) -> bool:
     if "emergency" in low:
         return False
     if any(w in low for w in _EXCLUDED_NAME_WORDS) or _UNWANTED_ANY.search(name):
+        return True
+    if _NOT_A_SHOP.match(name) and not _SHOP_WORD.search(name):
         return True
     return medical and bool(_UNWANTED_MEDICAL.search(name))
 

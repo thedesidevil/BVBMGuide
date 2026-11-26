@@ -768,6 +768,8 @@ class _Day:
             marks.append(_verify(f"{word} per Google - check before the trip" if "temporarily" in word
                                  else f"Google lists this place as {word}"))
         text = at.description if at and at.description else (lib.get("description") or "")
+        if at and at.general_knowledge and at.description and not lib.get("description"):
+            marks.append(_verify("description written from general knowledge of the place; check it before sending"))
         if late_transfer:
             for line in (b.instructions if b else []):
                 t = parse_time(line)

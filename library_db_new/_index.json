@@ -1644,6 +1644,15 @@
     },
     "Paro": {
       "status": "pending"
+    },
+    "Wayanad": {
+      "status": "pending"
+    },
+    "Thrikkaipetta": {
+      "status": "pending"
+    },
+    "Sultan Bathery": {
+      "status": "pending"
     }
   },
   "_processed_files": {
@@ -5280,6 +5289,22 @@
         "Paro"
       ],
       "processed_at": "2026-10-28T10:19:00.942140+00:00"
+    },
+    "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx": {
+      "text_hash": "12dc2f963513687df0daa8db9eb9e2c446ef80ee",
+      "order_date": "2026-11-26",
+      "fmt": "new",
+      "folder": "Karnataka, Kerala and Tamil Nadu",
+      "covered_cities": [
+        "Mysore",
+        "Wayanad",
+        "Chulliyode",
+        "Sultan Bathery",
+        "Thrikkaipetta",
+        "Ambukuthi",
+        "Muthanga"
+      ],
+      "processed_at": "2026-11-27T00:41:12.141060+00:00"
     }
   },
   "_folder_coverage": {
@@ -5484,7 +5509,13 @@
       "Athirappilly",
       "Kerala",
       "Fort Kochi",
-      "Sanapur"
+      "Sanapur",
+      "Wayanad",
+      "Chulliyode",
+      "Sultan Bathery",
+      "Thrikkaipetta",
+      "Ambukuthi",
+      "Muthanga"
     ],
     "Netherlands": [
       "Amsterdam",

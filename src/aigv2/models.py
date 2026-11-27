@@ -190,6 +190,13 @@ class Place(BaseModel):
     fetched_at: datetime
     match_ok: bool
     verify_note: Optional[str] = None
+    # richer fields, fetched only for places the team pasted a link for (restaurants without a library entry)
+    price_low: Optional[int] = None
+    price_high: Optional[int] = None
+    price_currency: Optional[str] = None
+    summary: Optional[str] = None
+    kind_label: Optional[str] = None  # Google's own type label, e.g. "Indian restaurant"
+    serves_vegetarian: Optional[bool] = None
 
 
 def place_key(name: str, city: str) -> str:

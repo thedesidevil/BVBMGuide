@@ -184,3 +184,17 @@ def test_at_hotel_answer_clears_the_gap_and_is_kept(deps, tmp_path):
     assert saved["at_hotel"] is True and not [m for m in saved["markers"] if m["kind"] == "ADD_RESTAURANT"]
     res = build_run(store, {**answers, gid: "At hotel"}, deps)
     assert res.docx_name
+
+
+def test_pasted_link_restaurant_takes_price_cuisine_and_summary_from_google():
+    from datetime import datetime
+    from src.aigv2.models import Place
+    from src.aigv2.plan_review import _link_lib
+    p = Place(query="q", place_id="x", name="Travelicious", address="", lat=1, lng=2, status="OPERATIONAL", maps_url="u",
+              fetched_at=datetime(2026, 1, 1), match_ok=True, price_low=300, price_high=500, price_currency="INR",
+              summary="A cosy restaurant.", kind_label="Indian restaurant", serves_vegetarian=True)
+    lib = _link_lib(p)
+    assert lib == {"name": "Travelicious", "source": "user_link", "price_range": "INR 300 - 500",
+                   "cuisine_type": ["Indian restaurant"], "highlights": "A cosy restaurant.", "vegetarian_friendly": True}
+    bare = _link_lib(p.model_copy(update={"price_low": None, "summary": None, "kind_label": None, "serves_vegetarian": None}))
+    assert bare == {"name": "Travelicious", "source": "user_link"}

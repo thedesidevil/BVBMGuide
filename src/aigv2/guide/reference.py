@@ -327,7 +327,7 @@ def _etiquette(c: SectionContent, data) -> list:
         out.append(g.DosDonts(do=distinct([x for x in c.dos if not _NOT_ETIQUETTE.search(x)]),
                               dont=distinct(c.donts)))
     if c.phrases:
-        out.append(g.PhraseTable(phrases=[g.Phrase(local=p.local, english=p.english) for p in c.phrases]))
+        out.append(g.PhraseTable(phrases=[g.Phrase(local=p.local, english=p.english, language=p.language) for p in c.phrases]))
     if not out:
         return _titled(c.items)
     market = [i for i in c.items if _MARKET.search(i.heading)]

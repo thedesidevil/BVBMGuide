@@ -124,7 +124,8 @@ def region_entries(name: str, items: list, states: set[str]) -> list:
         return items
     if name == "phrases":
         langs = {STATE_LANGUAGE[s] for s in states if s in STATE_LANGUAGE}
-        return [e for e in regional if not langs or phrase_language(e.get("local", "")) in (*langs, None)]
+        keep = [e for e in regional if not langs or phrase_language(e.get("local", "")) in (*langs, None)]
+        return [{**e, "language": phrase_language(e.get("local", "")) or ""} for e in keep]
     regional = [e for e in regional if not _PACKING_TIP.match(e.get("tip", ""))]  # the packing list covers these
     if len(regional) >= MIN_REGIONAL_DOS:
         return regional

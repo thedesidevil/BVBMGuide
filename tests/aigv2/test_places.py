@@ -510,3 +510,16 @@ def test_from_link_needs_pin(tmp_path):
     c, _ = client(tmp_path, {"places": []})
     with pytest.raises(MapLinkError):
         c.from_link(MapLink("", None, None, "1", "u"))
+
+
+def test_rich_fields_parsed_from_a_places_answer():
+    from src.aigv2.google.places import _rich
+    raw = {"priceRange": {"startPrice": {"currencyCode": "INR", "units": "300"}, "endPrice": {"currencyCode": "INR", "units": "600"}},
+           "editorialSummary": {"text": "A cosy restaurant on Edakkal Caves Road."},
+           "primaryTypeDisplayName": {"text": "Indian restaurant"}, "servesVegetarianFood": True}
+    assert _rich(raw) == {"price_low": 300, "price_high": 600, "price_currency": "INR",
+                          "summary": "A cosy restaurant on Edakkal Caves Road.", "kind_label": "Indian restaurant",
+                          "serves_vegetarian": True}
+    empty = _rich({})
+    assert empty["price_low"] is None and empty["summary"] is None and empty["serves_vegetarian"] is None
+    assert _rich({"priceRange": {"startPrice": {"currencyCode": "INR", "units": "200"}}})["price_high"] == 200

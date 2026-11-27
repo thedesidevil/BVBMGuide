@@ -411,6 +411,13 @@ def render_dos_donts(doc, W: float, c: DosDonts) -> None:
 
 
 def render_phrase_table(doc, W: float, c: PhraseTable) -> None:
+    langs = list(dict.fromkeys(p.language for p in c.phrases if p.language))
+    if len(langs) > 1:  # one titled table per language
+        for lg in langs:
+            p = K.np(doc, before=6, after=4, keep=True)
+            K.eyebrow(p, lg, color=T.GOLD_INK)
+            render_phrase_table(doc, W, PhraseTable(phrases=[x.model_copy(update={"language": ""}) for x in c.phrases if x.language == lg]))
+        return
     n = len(c.phrases)
     if not n:
         return

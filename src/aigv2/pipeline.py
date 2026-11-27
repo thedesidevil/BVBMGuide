@@ -933,7 +933,8 @@ def _render_days(store: RunStore, state: PlanState, deps: Deps) -> list[RenderDa
         t = state.trip.transport
         picks = [p for p in state.picks if p.day_index == ds.index]
         currency = city_currency(ds.country, deps.library.city(ds.city)) or ""
-        prices = {c.lib["name"]: price_text(c.lib, currency, deps.fx, ds.date) for p in picks for c in p.restaurants}
+        prices = {c.lib["name"]: price_text(c.lib, currency or c.place.price_currency or "", deps.fx, ds.date)
+                  for p in picks for c in p.restaurants}
         out.append(RenderDay(
             index=ds.index, date=ds.date, city=ds.city,
             text=DayText.model_validate(store.load_json(f"days/day_{ds.index:02d}.json")),

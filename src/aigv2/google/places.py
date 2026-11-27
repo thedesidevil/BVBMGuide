@@ -29,6 +29,8 @@ FIELD_MASK = ",".join(
         "regularOpeningHours", "websiteUri", "internationalPhoneNumber", "primaryType", "types",
     )
 )
+RICH_FIELDS = ("priceRange", "editorialSummary", "primaryTypeDisplayName", "servesVegetarianFood")
+RICH_FIELD_MASK = FIELD_MASK + "," + ",".join(f"places.{f}" for f in RICH_FIELDS)
 _DROP_WORDS = {"restaurant", "cafe", "the"}
 _EXCLUDED_NAME_WORDS = (
     "dental", "dentist", "physio", "cardio", "sexual health", "circumcision", "sports",
@@ -197,7 +199,7 @@ class PlacesClient:
         self.session = session or requests.Session()
         self.calls: dict[str, int] = {"text_search": 0, "nearby": 0, "details": 0}
 
-    def _post(self, url: str, body: dict, counter: str) -> dict:
+    def _post(self, url: str, body: dict, counter: str, mask: Optional[str] = None) -> dict:
         cancel.check()
         self.calls[counter] += 1
         t0 = time.monotonic()
@@ -205,7 +207,7 @@ class PlacesClient:
             url,
             headers={
                 "X-Goog-Api-Key": self.api_key,
-                "X-Goog-FieldMask": FIELD_MASK,
+                "X-Goog-FieldMask": mask or FIELD_MASK,
                 "Content-Type": "application/json",
             },
             json=body,
@@ -279,7 +281,8 @@ class PlacesClient:
             body = {"textQuery": link.name, "languageCode": "en",
                     "locationBias": {"circle": {"center": {"latitude": link.lat, "longitude": link.lng},
                                                 "radius": _LINK_RADIUS_M}}}
-            raw = [r for r in self._post(SEARCH_TEXT_URL, body, "text_search").get("places") or [] if _has_location(r)]
+            raw = [r for r in self._post(SEARCH_TEXT_URL, body, "text_search", RICH_FIELD_MASK).get("places") or []
+                   if _has_location(r)]
             near = sorted(((_haversine_km(link.lat, link.lng, r["location"]["latitude"], r["location"]["longitude"]) * 1000, r)
                            for r in raw), key=lambda t: t[0])
             for dist, r in near:
@@ -290,7 +293,7 @@ class PlacesClient:
             best = None
         if best is not None:
             place = self._to_place(best, link.name, link.name, True)
-            place = place.model_copy(update={"maps_url": link.url})
+            place = place.model_copy(update={"maps_url": link.url, **_rich(best)})
         else:
             place = Place(query=link.name, place_id="", name=link.name, address="", lat=link.lat, lng=link.lng,
                           status="UNKNOWN", hours=None, website=None, phone=None, maps_url=link.url,
@@ -432,6 +435,25 @@ def _has_location(raw: dict) -> bool:
     loc = raw.get("location")
     return isinstance(loc, dict) and isinstance(loc.get("latitude"), (int, float)) \
         and isinstance(loc.get("longitude"), (int, float))
+
+
+def _money(m: Optional[dict]) -> Optional[int]:
+    try:
+        return int(float(m["units"])) if m and m.get("units") not in (None, "") else None
+    except (TypeError, ValueError, KeyError):
+        return None
+
+
+def _rich(raw: dict) -> dict:
+    """Price range, Google's one-line summary, type label and vegetarian flag of a place, when Google gave them."""
+    pr = raw.get("priceRange") or {}
+    low, high = _money(pr.get("startPrice")), _money(pr.get("endPrice"))
+    cur = (pr.get("startPrice") or pr.get("endPrice") or {}).get("currencyCode")
+    summary = ((raw.get("editorialSummary") or {}).get("text") or "").strip() or None
+    kind = ((raw.get("primaryTypeDisplayName") or {}).get("text") or "").strip() or None
+    veg = raw.get("servesVegetarianFood")
+    return {"price_low": low, "price_high": high if high is not None else low, "price_currency": cur,
+            "summary": summary, "kind_label": kind, "serves_vegetarian": veg if isinstance(veg, bool) else None}
 
 
 def _display(raw: dict) -> str:

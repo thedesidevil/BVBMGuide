@@ -164,7 +164,7 @@ def apply_plan_answers(state, answers: Answers, client, fetch: Callable[[str], s
                 report["failed"].append(f"Day {gap.day_index} {gap.meal}: {place.name} is already in this day")
                 continue
             label, minutes = _travel(pick, place, state.trip.travel_modes)
-            chosen = ChosenRestaurant(lib={"name": place.name, "source": "user_link"}, place=place,
+            chosen = ChosenRestaurant(lib=_link_lib(place), place=place,
                                       travel_min=minutes, travel_label=label,
                                       hours_text=format_for_day(place.hours, dates[gap.day_index]) if place.hours else "",
                                       hours_verify=False)
@@ -178,6 +178,22 @@ def apply_plan_answers(state, answers: Answers, client, fetch: Callable[[str], s
             count_ok += 1
         done[gap.id] = raw
     return report
+
+
+def _link_lib(place) -> dict:
+    """What the guide may say about a restaurant the team pasted a link for: Google's own price range, type, summary and
+    vegetarian flag (no library entry exists). Each is flagged for a check by the card."""
+    lib: dict = {"name": place.name, "source": "user_link"}
+    if place.price_low is not None and place.price_currency:
+        lo, hi = place.price_low, place.price_high if place.price_high is not None else place.price_low
+        lib["price_range"] = f"{place.price_currency} {lo}" + (f" - {hi}" if hi != lo else "")
+    if place.kind_label:
+        lib["cuisine_type"] = [place.kind_label]
+    if place.summary:
+        lib["highlights"] = place.summary
+    if place.serves_vegetarian is not None:
+        lib["vegetarian_friendly"] = place.serves_vegetarian
+    return lib
 
 
 def pick_has_gap(pick) -> bool:

@@ -873,6 +873,16 @@ class _Day:
         marks += [_ref(m) for m in place_markers(c.place)]
         text = " ".join(x for x in (rt.ambience if rt else "", f"Best for {rt.best_for}" if rt and rt.best_for and not (meal and wrong_meal(rt.best_for, meal)) else "") if x)
         text = _NOT_SPECIFIED.sub("", text).strip()
+        if lib.get("source") == "user_link":
+            # a pasted link: Google's own summary stands in for the library's description, and every borrowed fact is checked
+            if not text and isinstance(lib.get("highlights"), str):
+                text = lib["highlights"].strip()
+            for what, have in (("description", bool(text)), ("cuisine", bool(cuisines)),
+                               ("vegetarian options", lib.get("vegetarian_friendly") is not None)):
+                if not have:
+                    marks.append(g.MarkerRef(kind="VERIFY", text=f"{name}: {what}"))
+            if lib.get("price_range"):
+                marks.append(g.MarkerRef(kind="VERIFY", text=f"{name}: price range from Google"))
         return g.Restaurant(
             name=name, maps_url=c.place.maps_url or search_url(name, rd.city), cuisines=cuisines,
             veg=lib.get("vegetarian_friendly") is True, text=text,

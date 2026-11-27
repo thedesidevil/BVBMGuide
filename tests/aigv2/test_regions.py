@@ -87,3 +87,18 @@ def test_stay_town_without_souvenirs_is_not_filled_from_the_gateway_city_and_is_
     city_data, _ = _section_inputs(state, Lib())
     assert [c["city"] for c in city_data] == ["Wayanad"] and not city_data[0].get("souvenirs")
     assert city_data[0]["local_dishes"] == [{"name": "Sadya"}]
+
+
+def test_phrases_get_a_language_and_two_languages_split_into_two_tables():
+    from src.aigv2.writing.structured import extract_phrases
+    one = extract_phrases([{"local": "Athe", "english": "Yes", "language": "Malayalam"},
+                           {"local": "Nanni", "english": "Thank you", "language": "Malayalam"}])
+    assert [p.language for p in one] == ["", ""]  # one language: no sub-headings
+    two = extract_phrases([{"local": "Athe", "english": "Yes", "language": "Malayalam"},
+                           {"local": "Haudu", "english": "Yes", "language": "Kannada"}])
+    assert {p.language for p in two} == {"Malayalam", "Kannada"}
+
+
+def test_india_phrases_carry_their_language():
+    ph = [{"english": "Yes", "local": "Athe", "_source_file": "Karnataka, Kerala and Tamil Nadu/x.docx"}]
+    assert R.region_entries("phrases", ph, {"Kerala"})[0]["language"] == "Malayalam"

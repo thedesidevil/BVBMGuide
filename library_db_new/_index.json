@@ -1653,6 +1653,18 @@
     },
     "Sultan Bathery": {
       "status": "pending"
+    },
+    "Ambalavayal": {
+      "status": "pending"
+    },
+    "Kattikkulam": {
+      "status": "pending"
+    },
+    "Mananthavady": {
+      "status": "pending"
+    },
+    "Chulliyode": {
+      "status": "pending"
     }
   },
   "_processed_files": {
@@ -5291,7 +5303,7 @@
       "processed_at": "2026-10-28T10:19:00.942140+00:00"
     },
     "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx": {
-      "text_hash": "12dc2f963513687df0daa8db9eb9e2c446ef80ee",
+      "text_hash": "750be4f740362b5a9fb83feb7585a0b4144a0929",
       "order_date": "2026-11-26",
       "fmt": "new",
       "folder": "Karnataka, Kerala and Tamil Nadu",
@@ -5300,11 +5312,13 @@
         "Wayanad",
         "Chulliyode",
         "Sultan Bathery",
+        "Ambalavayal",
+        "Kattikkulam",
+        "Mananthavady",
         "Thrikkaipetta",
-        "Ambukuthi",
-        "Muthanga"
+        "Nenmeni"
       ],
-      "processed_at": "2026-11-27T00:41:12.141060+00:00"
+      "processed_at": "2026-11-27T01:02:26.883020+00:00"
     }
   },
   "_folder_coverage": {
@@ -5515,7 +5529,11 @@
       "Sultan Bathery",
       "Thrikkaipetta",
       "Ambukuthi",
-      "Muthanga"
+      "Muthanga",
+      "Ambalavayal",
+      "Kattikkulam",
+      "Mananthavady",
+      "Nenmeni"
     ],
     "Netherlands": [
       "Amsterdam",

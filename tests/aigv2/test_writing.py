@@ -750,3 +750,33 @@ def test_title_must_name_a_destination_and_retries():
     assert llm.cost_log[1]["fallback"] is True
     llm2, _ = make([{"title": "Alpine Dreams Awaits"}], [{"title": "Switzerland Dreams Awaits"}])
     assert write_title(trip(), llm2, ["Switzerland"]) == "Switzerland Dreams Awaits"
+
+
+def _elab_facts(elaborate=True):
+    f = {**FACTS, "attractions": [{"name": "Kuruva Island", "matched": True, "generic_name": False,
+                                   "google_address": "Pakkam, Kerala", "elaborate": elaborate,
+                                   "note": "serene backwaters", "library_description": None}]}
+    return f
+
+
+def _elab_reply(gk=True):
+    r = day_reply()
+    r["attractions"] = [{"name": "Kuruva Island", "description": "A cluster of river islands in the Kabini.",
+                         "general_knowledge": gk}]
+    return r
+
+
+def test_general_knowledge_flag_kept_only_where_the_facts_allowed_it():
+    llm, _ = make(_elab_reply(True))
+    facts = {**_elab_facts(True), "restaurants": [{"name": "Chez A"}]}
+    assert write_day(facts, llm).attractions[0].general_knowledge is True
+    llm, _ = make(_elab_reply(True))
+    facts = {**_elab_facts(False), "restaurants": [{"name": "Chez A"}]}
+    assert write_day(facts, llm).attractions[0].general_knowledge is False
+
+
+def test_prompt_tells_the_writer_not_to_repeat_unverified_notes():
+    llm, calls = make(_elab_reply(True))
+    write_day({**_elab_facts(True), "restaurants": [{"name": "Chez A"}]}, llm)
+    system = calls[0][1]["messages"][0]["content"]
+    assert "elaborate=true" in system and "backwater" in system

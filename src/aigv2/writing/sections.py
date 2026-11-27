@@ -1,3 +1,4 @@
+from src.aigv2 import regions
 from src.aigv2.textnorm import fold
 import json
 import re
@@ -384,6 +385,43 @@ def reference_filter(key: str, name: str, items: list, *, trip=None, cities: lis
     return out
 
 
+def _trip_regions(trip, cities: list[dict], countries) -> tuple[set[str], set[str]]:
+    """(states, allowed city tags): what a country-level entry may be tagged with to stay in the guide."""
+    states = {c["state"] for c in cities if c.get("state")}
+    allowed = {fold(c.get("city", "")) for c in cities} | {fold(s) for s in states} | {fold(x) for x in countries or ()}
+    if trip is not None:
+        allowed |= {fold(h.city) for h in getattr(trip, "hotels", [])} | {fold(d.city) for d in getattr(trip, "days", [])}
+        allowed |= {fold(p) for p in _flight_cities(trip)}
+        allowed |= {fold(x) for city in list(allowed) for x in regions.TOWN_STATE.get(city, "").split("|") if x}
+    return states, {a for a in allowed if a}
+
+
+_PRIVATE_TRANSFER = {"mode": "Private transfer", "description": "Your airport pick-up and drop-off and your sightseeing "
+                     "are arranged with a private vehicle and driver, so there is no need to book taxis or hire a car."}
+
+
+def _is_private(entry) -> bool:
+    return isinstance(entry, dict) and bool(re.search(r"private|driver|chauffeur", f"{entry.get('mode', '')} {entry.get('description', '')}", re.I))
+
+
+def _region_filter(key: str, name: str, items: list, scope: str, trip, cities: list[dict], countries) -> list:
+    """Country-level facts keep only what belongs to this trip's region; getting-around follows how the client travels."""
+    if trip is None:
+        return items
+    states, allowed = _trip_regions(trip, cities, countries)
+    if scope == "country" and name in ("transport_options", "souvenirs", "local_dishes"):
+        items = regions.drop_off_trip_city(items, allowed)
+    if scope == "country" and name in ("phrases", "dos_donts"):
+        items = regions.region_entries(name, items, states)
+    if key == "getting_around" and name == "transport_options":
+        modes = set(getattr(trip, "travel_modes", []) or [])
+        if modes and "self_drive" not in modes:
+            items = [x for x in items if not regions.is_self_drive(x)]
+        if "private_driver" in modes and not any(_is_private(x) for x in items):
+            items = [*items, dict(_PRIVATE_TRANSFER)]
+    return items
+
+
 def _library_named(key: str, cities: list[dict], cdatas: list[dict], *,
                    nationalities: frozenset[str] = frozenset(), other_places=(), trip=None, countries=()) -> dict[str, list]:
     rx = _place_regex(other_places)
@@ -404,6 +442,8 @@ def _library_named(key: str, cities: list[dict], cdatas: list[dict], *,
                 if name == "embassies":  # Indian by default; foreign missions only for that passport
                     items = [e for e in items if _embassy_wanted(e, nationalities)]
                 out += items
+        out = _region_filter(key, name, out, scope, trip, cities, countries)
+        named[name] = out
         if name in _PLACE_FILTERED:
             named[name] = drop_other_places(out, rx)
         named[name] = reference_filter(key, name, named[name], trip=trip, cities=cities, countries=countries)
@@ -735,6 +775,9 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
         extra = "\nCountry facts: " + json.dumps(cdatas, ensure_ascii=False, default=str)
     if key == "dishes":
         extra += "\nLibrary restaurants allowed in where_to_try: " + json.dumps(sorted(restaurants.values()), ensure_ascii=False)
+        if not restaurants:
+            extra += ("\nThere are NO allowed restaurants: where_to_try must be an empty list [] for every dish. Never name a "
+                      "bakery, market, street or any other place in where_to_try.")
     if hospitals is not None:  # facilities live under Important Places only: the writer must not repeat them
         extra += ("\nDo not name hospitals, clinics or pharmacies, and give no addresses, hours or drive times for them; "
                   "they are listed under Important Places. Do not write a Hospitals, Pharmacies or Medical care item.")
@@ -896,5 +939,11 @@ def write_section(key: str, city_data: list[dict], country_data: dict, trip, llm
     if grouped and key == "safety":
         extra = {"numbers_by_country": {c: f["numbers"] for c, f in zip(countries, fields_by_country) if f.get("numbers")},
                  "contacts_by_country": {c: f["contacts"] for c, f in zip(countries, fields_by_country) if f.get("contacts")}}
-    return SectionContent(key=key, items=flat, from_library=all_lib,
-                          by_country=by_country if grouped else {}, **extra, **_merge_fields(fields_by_country))
+    content = SectionContent(key=key, items=flat, from_library=all_lib,
+                             by_country=by_country if grouped else {}, **extra, **_merge_fields(fields_by_country))
+    if key in ("souvenirs", "dishes") and not all_lib:
+        where = ", ".join(dict.fromkeys(c.get("city") for c in city_data if c.get("city"))) or "this destination"
+        what = "souvenir shops" if key == "souvenirs" else "local dishes"
+        content.markers.append(Marker(kind="VERIFY", text=f"no library data for {what} in {where}; "
+                                                          "the team needs to add them (the text below is general guidance)"))
+    return content

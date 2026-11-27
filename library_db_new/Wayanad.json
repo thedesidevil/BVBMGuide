@@ -1,0 +1,434 @@
+{
+  "restaurants": [
+    {
+      "name": "Caves Multi-Cuisine Restaurant by Evora",
+      "city": "Wayanad",
+      "cuisine_type": [
+        "Kerala",
+        "Indian",
+        "International"
+      ],
+      "price_range": "INR 300 - 600 per person",
+      "hours": "8 AM : 11 PM",
+      "ambience": "Premium dining surrounded by greenery",
+      "area": "Evora Resort",
+      "highlights": [
+        "Located within Evora Resort"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Mathai’s Restocafe",
+      "city": "Wayanad",
+      "cuisine_type": [
+        "Kerala",
+        "North Indian",
+        "Chinese",
+        "Continental"
+      ],
+      "price_range": "INR 200 - 600 per person",
+      "hours": "11 AM : 10 PM",
+      "ambience": "Comfortable, relaxed café-style setting",
+      "highlights": [
+        "Extensive menu with beverages and desserts",
+        "Generous portions"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Travelicious Restaurant",
+      "city": "Wayanad",
+      "cuisine_type": [
+        "Indian",
+        "Chinese",
+        "International"
+      ],
+      "price_range": "INR 300 - 500 per person",
+      "hours": "12 PM : 10:30 PM",
+      "ambience": "Cosy and welcoming",
+      "area": "Edakkal Caves Road",
+      "nearby_landmarks": [
+        "Edakkal Caves, Wayanad"
+      ],
+      "highlights": [
+        "Books and games",
+        "Outdoor seating"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Mysore Veg Cafe",
+      "city": "Wayanad",
+      "cuisine_type": [
+        "Mysore-style",
+        "South Indian",
+        "North Indian",
+        "Indo-Chinese"
+      ],
+      "price_range": "INR 150- 300 per person",
+      "hours": "7:30 AM : 10 PM",
+      "nearby_landmarks": [
+        "Wayanad Wildlife Sanctuary, Wayanad"
+      ],
+      "highlights": [
+        "Specialises in Mysore-style and South Indian cuisine",
+        "Serves dosas, idlis and vadas"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "notes": "Pure vegetarian restaurant.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "MINT FLOWER RESTAURANT",
+      "city": "Wayanad",
+      "cuisine_type": [
+        "Kerala",
+        "Malabar",
+        "Indian",
+        "Chinese",
+        "Arabian-style"
+      ],
+      "price_range": "INR 200 - 400 per person",
+      "hours": "8 AM : 9 PM",
+      "ambience": "Casual",
+      "nearby_landmarks": [
+        "Wayanad Wildlife Sanctuary, Wayanad"
+      ],
+      "highlights": [
+        "Extensive menu including appam, porotta and biryani"
+      ],
+      "best_for": [
+        "family"
+      ],
+      "vegetarian_friendly": true,
+      "meal_slots": [
+        "lunch"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    }
+  ],
+  "attractions": [
+    {
+      "name": "Edakkal Caves",
+      "city": "Wayanad",
+      "description": "Caves in the Ambukuthi hills known for ancient rock engravings, carvings and symbols associated with prehistoric life.",
+      "hours": "9:00 AM – 4:00 PM",
+      "tips": [
+        "The visit involves an uphill walk.",
+        "Wear broken-in walking shoes with good grip."
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Jungle Treasures Ayurvedic Spice Garden",
+      "city": "Wayanad",
+      "description": "Recommended spice garden for exploring Wayanad's spice-growing heritage, including pepper, cardamom, cinnamon and cloves.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Kuruva Island",
+      "city": "Wayanad",
+      "description": "Cluster of river islands on the Kabini River with dense greenery, bamboo groves and a riverside ecosystem.",
+      "tips": [
+        "Wear secure walking shoes for island paths."
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Wayanad Wildlife Sanctuary",
+      "city": "Wayanad",
+      "description": "Forest safari destination in the Muthanga range with opportunities to spot elephants, deer, wild boars and birds.",
+      "hours": "6 AM – 10 AM, 3 PM – 6 PM",
+      "tips": [
+        "Wear neutral-colored safari clothing.",
+        "Bring binoculars.",
+        "Carry safari confirmations and required entry documents.",
+        "Maintain silence during wildlife viewing.",
+        "Do not feed animals.",
+        "Do not use flash.",
+        "Follow forest department instructions."
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    }
+  ],
+  "hotels": [],
+  "local_dishes": [
+    {
+      "name": "Puttu with Kadala Curry",
+      "city": "Wayanad",
+      "description": "Steamed rice flour and coconut cakes served with black chickpea curry.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Appam with Vegetable Stew",
+      "city": "Wayanad",
+      "description": "Soft, lacy rice pancakes paired with a mildly spiced coconut milk-based vegetable stew.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Kerala Sadya",
+      "city": "Wayanad",
+      "description": "Traditional vegetarian feast served on a banana leaf, featuring rice, avial, thoran, sambar, olan and payasam.",
+      "vegetarian": true,
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Malabar Vegetable Biryani",
+      "city": "Wayanad",
+      "description": "Fragrant rice cooked with vegetables and regional spices.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Pazham Pori",
+      "city": "Wayanad",
+      "description": "Kerala-style ripe banana fritters, popular as a tea-time snack.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "name": "Unniyappam",
+      "city": "Wayanad",
+      "description": "Small sweet fritters made with rice flour, banana, jaggery and coconut.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    }
+  ],
+  "phrases": [
+    {
+      "city": "Wayanad",
+      "english": "Hello",
+      "local": "Namaskaram",
+      "category": "Malayalam greeting",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "city": "Wayanad",
+      "english": "Thank you",
+      "local": "Nanni",
+      "category": "Malayalam courtesy",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "city": "Wayanad",
+      "english": "Please",
+      "local": "Dayavayi",
+      "category": "Malayalam courtesy",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "city": "Wayanad",
+      "english": "Yes",
+      "local": "Athe",
+      "category": "Malayalam basic",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "city": "Wayanad",
+      "english": "No",
+      "local": "Illa",
+      "category": "Malayalam basic",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "city": "Wayanad",
+      "english": "How are you?",
+      "local": "Sukhamaano?",
+      "category": "Malayalam greeting",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "city": "Wayanad",
+      "english": "How much does this cost?",
+      "local": "Ithinu Ethrayaanu?",
+      "category": "Malayalam shopping",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "city": "Wayanad",
+      "english": "Goodbye",
+      "local": "Veendum Kaanam",
+      "category": "Malayalam farewell",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    }
+  ],
+  "safety_tips": [
+    {
+      "cities": [
+        "Wayanad"
+      ],
+      "tip": "Wear secure walking shoes on plantation paths.",
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    }
+  ],
+  "souvenirs": [
+    {
+      "item": "Wayanadan pepper",
+      "city": "Wayanad",
+      "category": "Spices",
+      "where_to_buy": [
+        "Spice and coffee shops in Sultan Bathery",
+        "Local plantation shops in Wayanad",
+        "Local spice shops in Wayanad"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "item": "Cardamom, cinnamon and cloves",
+      "city": "Wayanad",
+      "category": "Spices",
+      "where_to_buy": [
+        "Spice and coffee shops in Sultan Bathery",
+        "Local plantation shops in Wayanad",
+        "Local spice shops in Wayanad"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "item": "Locally grown coffee beans and powder",
+      "city": "Wayanad",
+      "category": "Coffee",
+      "where_to_buy": [
+        "Spice and coffee shops in Sultan Bathery",
+        "Local plantation shops in Wayanad"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "item": "Wayanad tea",
+      "city": "Wayanad",
+      "category": "Tea",
+      "where_to_buy": [
+        "Local plantation shops in Wayanad"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "item": "Locally sourced honey",
+      "city": "Wayanad",
+      "category": "Food and local produce",
+      "where_to_buy": [
+        "Local produce and honey shops, Wayanad",
+        "Local markets in Sultan Bathery"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "item": "Amla preserved in honey",
+      "city": "Wayanad",
+      "category": "Food and local produce",
+      "where_to_buy": [
+        "Local produce and honey shops, Wayanad",
+        "Local markets in Sultan Bathery"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    },
+    {
+      "item": "Homemade spice blends",
+      "city": "Wayanad",
+      "category": "Food and local produce",
+      "where_to_buy": [
+        "Local markets in Sultan Bathery"
+      ],
+      "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+      "_source_date": "2026-11-26",
+      "_source_format": "new"
+    }
+  ],
+  "emergency_contacts": [],
+  "connectivity_tips": [],
+  "transport_options": [],
+  "health_tips": [],
+  "route_guides": [],
+  "season_notes": [],
+  "source_files": [
+    "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx"
+  ],
+  "currency": "INR",
+  "_currency_source": {
+    "_source_file": "Karnataka, Kerala and Tamil Nadu/Apoorva_Wayanad_All Inclusive Guide.docx",
+    "_source_date": "2026-11-26",
+    "_source_format": "new"
+  }
+}

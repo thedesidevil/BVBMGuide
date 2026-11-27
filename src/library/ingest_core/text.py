@@ -5,18 +5,19 @@ import re
 from pathlib import Path
 
 
+_W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
+
+
 class UnreadableFile(Exception):
     """Raised when a file cannot be read as text."""
 
 
-def _read_docx(path: Path) -> str:
-    from docx import Document
+def _container_lines(el, doc, lines: list[str]) -> None:
+    """Paragraphs and tables of a body or cell, in order; tables nested in a cell are read too."""
     from docx.table import Table
     from docx.text.paragraph import Paragraph
 
-    doc = Document(str(path))
-    lines: list[str] = []
-    for child in doc.element.body.iterchildren():
+    for child in el.iterchildren():
         tag = child.tag.rsplit("}", 1)[-1]
         if tag == "p":
             lines.append(Paragraph(child, doc).text)
@@ -29,8 +30,21 @@ def _read_docx(path: Path) -> str:
                     if prev is not None and cell._tc is prev:
                         continue
                     prev = cell._tc
-                    cells.append(cell.text.strip())
+                    if cell._tc.findall(f"{_W}tbl"):
+                        inner: list[str] = []
+                        _container_lines(cell._tc, doc, inner)
+                        cells.append("\n".join(x for x in (t.strip() for t in inner) if x))
+                    else:
+                        cells.append(cell.text.strip())
                 lines.append(" | ".join(cells))
+
+
+def _read_docx(path: Path) -> str:
+    from docx import Document
+
+    doc = Document(str(path))
+    lines: list[str] = []
+    _container_lines(doc.element.body, doc, lines)
     return "\n".join(lines)
 
 

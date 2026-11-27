@@ -500,6 +500,28 @@ _RESTATES_DEPARTURE = re.compile(
     r"(?:(?:flight|train|bus|ferry)(?: home| departure)?|departure|departure flight|fly home|check[- ]?out(?: and departure)?)",
     re.I)
 _RESTATES_ARRIVAL = re.compile(r"(?:arrival|arrive|arriving)(?:\s+(?:in|at|into|to)\s+[\w .'-]+)?", re.I)
+_TRANSFER_LINE = re.compile(r"(?:(?:road|private|airport|hotel|resort)\s+)*(?:transfer|drive|ride|taxi|cab|travel|pick[- ]?up|drop[- ]?off)\b.*", re.I)
+_PLACE_STOP = {"airport", "international", "domestic", "station", "railway", "junction", "the", "hotel", "resort", "from", "to"}
+
+
+def _place_words(*places: str) -> set[str]:
+    out: set[str] = set()
+    for p in places:
+        out |= {w for w in re.findall(r"[a-z]{4,}", (p or "").casefold()) if w not in _PLACE_STOP}
+    return out
+
+
+def _restates_leg(name: str, leg, *extra: str) -> bool:
+    """An untimed 'Transfer from Mysore to Pepper Trail, Wayanad' line on a day whose booked flight/train already shows
+    that journey as a transfer card: it names the leg's port (or its city) or the hotel."""
+    n = name.strip()
+    if not _TRANSFER_LINE.fullmatch(n):
+        return False
+    low = n.casefold()
+    return bool(re.search(r"airport|station|terminal", low) or
+                _place_words(leg.from_place, leg.to_place, *extra) & set(re.findall(r"[a-z]{4,}", low)))
+
+
 _ONWARD_LATE_LUNCH_CUTOFF = time(16, 0)
 _ONWARD_TRAIN_MIN = 75  # Basel -> Lucerne style leg that the tickets do not cover
 _DEPARTURE_LUNCH_NEEDED_MIN = 135  # lunch (75) + 60 spare before leave-by
@@ -562,6 +584,7 @@ def schedule_day(
     booking_ends: Optional[dict[str, time]] = None,
     windows: Optional[dict[str, tuple[time, time]]] = None,
     durations: Optional[dict[str, int]] = None,
+    arrival_road_min: Optional[int] = None,
 ) -> DayResult:
     floor = boat_floor(day.date, legs, stays, (arrival, departure))
     res = DayResult(scheduled=_schedule_items(day, settings, floor, windows, durations))
@@ -581,6 +604,9 @@ def schedule_day(
     hotel_arr = None
     if arr:
         hotel_arr = _plus(arr_t, _HOTEL_ARRIVAL_BUFFER.get(arrival.kind, _DEFAULT_BUFFER))
+        if arrival_road_min and arrival.kind in ("flight", "train") and arr.date() == d:
+            # a long road after the airport (Mysore -> Wayanad is ~2.5 h): the hotel is reached after the whole drive
+            hotel_arr = _plus(arr_t, max(_HOTEL_ARRIVAL_BUFFER.get(arrival.kind, _DEFAULT_BUFFER), arrival_road_min + 20))
     dep = departure if departure and departure.depart and departure.depart.date() == d else None
     cutoff = leave_by(dep, domestic) if dep else None
     if dep and dep.depart.time() < _PACKED_BREAKFAST_BEFORE:
@@ -590,13 +616,15 @@ def schedule_day(
         # itinerary line that only restates it ('Flight', 'Departure') is dropped
         res.scheduled = [sc for sc in res.scheduled if not _is_journey_line(sc.item) and not (
             sc.item.kind == "transfer" and not sc.item.time and not sc.item.pickup_time
-            and _RESTATES_DEPARTURE.fullmatch(sc.item.name.strip()))]
+            and (_RESTATES_DEPARTURE.fullmatch(sc.item.name.strip())
+                 or _restates_leg(sc.item.name, dep, *[x.hotel for x in stays if x.check_out == d])))]
     if arrival is not None and arr is not None:
         # the booking card shows the arrival; an untimed itinerary line that only restates it ("Arrival in Paris")
         # would otherwise sit at a default 9:00 AM before the train even lands
         res.scheduled = [sc for sc in res.scheduled if not (
             sc.item.kind == "transfer" and not sc.item.time and not sc.item.pickup_time
-            and _RESTATES_ARRIVAL.fullmatch(sc.item.name.strip()))]
+            and (_RESTATES_ARRIVAL.fullmatch(sc.item.name.strip())
+                 or _restates_leg(sc.item.name, arrival, *[x.hotel for x in stays if x.check_in == d])))]
     if dep and cutoff:
         # the untimed "check-out and airport drop" happens at the leave-by time, not at a default 9:00
         for i, sc in enumerate(res.scheduled):
@@ -623,7 +651,9 @@ def schedule_day(
                 return (p.lat, p.lng)
         if name not in flagged:
             flagged.add(name)
-            res.markers.append(Marker(kind="VERIFY", text=f"location of {name} unknown"))
+            from src.aigv2.place_links import is_stay_activity
+            if not is_stay_activity(name):  # 'Relax at the property' has no location to look up
+                res.markers.append(Marker(kind="VERIFY", text=f"location of {name} unknown"))
         return None
 
     def anchors(spec: list[tuple[str, int, tuple[str, ...]]], stay: Optional[HotelStay]) -> list[Anchor]:

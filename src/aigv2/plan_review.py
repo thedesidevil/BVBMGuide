@@ -18,7 +18,9 @@ from src.aigv2.place_links import _resolve, validate_place_link
 GAP_PREFIX = "meal_gap:"
 REVIEW_FILE = "plan_review.json"
 SKIP = "Skip"
-_URL = re.compile(r"https?://\S+", re.I)
+_URL = re.compile(r"https?://[^\s<>\"'|]+", re.I)
+_SPLIT_JOIN = re.compile(r"[,;](?=\s*https?://)", re.I)  # only a comma that starts the next link separates two links
+AT_HOTEL = "At hotel"
 _WALK_M_PER_MIN = 80
 _SUGGEST = 3
 
@@ -60,8 +62,8 @@ def meal_gaps(state) -> list[Gap]:
                     sugg.append(e.name)
         sugg = sugg[:_SUGGEST]
         text = (f"{p.slot.meal.capitalize()} near {near}: only {found} of {wanted} restaurants found. "
-                "Add one by pasting a Google Maps link (open the restaurant in Google Maps > Share > Copy link of ONE "
-                f"place), or answer {SKIP}.")
+                "Add restaurants by pasting Google Maps links (open each restaurant in Google Maps > Share > Copy link), "
+                f"one or several separated by commas. Answer {AT_HOTEL} if this meal is at the property, or {SKIP}.")
         if sugg:
             text += f" Library suggests: {', '.join(sugg)} - paste a link for one of them."
         out.append(Gap(gid, i, p.day_index, p.slot.meal, texts, text, sugg))
@@ -71,17 +73,19 @@ def meal_gaps(state) -> list[Gap]:
 def plan_items(state) -> list[Question]:
     from src.aigv2.question_days import day_label
     day_date = {d.index: d.date for d in state.days}
-    return [Question(id=g.id, kind="plan_gap", options=[SKIP], day=day_date.get(g.day_index),
+    return [Question(id=g.id, kind="plan_gap", options=[AT_HOTEL, SKIP], day=day_date.get(g.day_index),
                      text=day_label(state.trip, [day_date[g.day_index]] if g.day_index in day_date else []) + g.text)
             for g in meal_gaps(state)]
 
 
 def _answers_of(raw: str) -> list[str]:
     raw = (raw or "").strip()
-    if not raw or raw.casefold() == "skip":
+    if not raw or raw.casefold() in ("skip", AT_HOTEL.casefold()):
         return []
-    urls = _URL.findall(raw)
-    return urls if urls else [raw]
+    urls = [u.rstrip(".,;)") for u in _URL.findall(_SPLIT_JOIN.sub(" ", raw))]
+    if urls:
+        return list(dict.fromkeys(urls))
+    return [x.strip() for x in re.split(r"\s*[,;]\s*", raw) if x.strip()] or [raw]
 
 
 def _travel(pick, place, modes=()) -> tuple[str, int]:
@@ -128,6 +132,13 @@ def apply_plan_answers(state, answers: Answers, client, fetch: Callable[[str], s
     dates = {d.index: d.date for d in state.days}
     for gap in meal_gaps(state):
         raw = (answers.get(gap.id) or "").strip()
+        if raw.casefold() == AT_HOTEL.casefold() and done.get(gap.id) != raw:
+            pick = state.picks[gap.pick_idx]
+            pick.at_hotel = True
+            pick.markers = [m for m in pick.markers if m.kind != "ADD_RESTAURANT"]
+            report["applied"].append(f"Day {gap.day_index} {gap.meal}: at the hotel")
+            done[gap.id] = raw
+            continue
         if not _answers_of(raw) or done.get(gap.id) == raw:
             continue
         pick = state.picks[gap.pick_idx]
@@ -153,7 +164,7 @@ def apply_plan_answers(state, answers: Answers, client, fetch: Callable[[str], s
                 report["failed"].append(f"Day {gap.day_index} {gap.meal}: {place.name} is already in this day")
                 continue
             label, minutes = _travel(pick, place, state.trip.travel_modes)
-            chosen = ChosenRestaurant(lib={"name": place.name, "source": "user_link"}, place=place,
+            chosen = ChosenRestaurant(lib=_link_lib(place), place=place,
                                       travel_min=minutes, travel_label=label,
                                       hours_text=format_for_day(place.hours, dates[gap.day_index]) if place.hours else "",
                                       hours_verify=False)
@@ -167,6 +178,22 @@ def apply_plan_answers(state, answers: Answers, client, fetch: Callable[[str], s
             count_ok += 1
         done[gap.id] = raw
     return report
+
+
+def _link_lib(place) -> dict:
+    """What the guide may say about a restaurant the team pasted a link for: Google's own price range, type, summary and
+    vegetarian flag (no library entry exists). Each is flagged for a check by the card."""
+    lib: dict = {"name": place.name, "source": "user_link"}
+    if place.price_low is not None and place.price_currency:
+        lo, hi = place.price_low, place.price_high if place.price_high is not None else place.price_low
+        lib["price_range"] = f"{place.price_currency} {lo}" + (f" - {hi}" if hi != lo else "")
+    if place.kind_label:
+        lib["cuisine_type"] = [place.kind_label]
+    if place.summary:
+        lib["highlights"] = place.summary
+    if place.serves_vegetarian is not None:
+        lib["vegetarian_friendly"] = place.serves_vegetarian
+    return lib
 
 
 def pick_has_gap(pick) -> bool:

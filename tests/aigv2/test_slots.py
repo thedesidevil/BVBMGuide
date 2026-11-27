@@ -705,3 +705,38 @@ def test_timed_and_evening_events_are_left_alone_by_fit_before_return():
     before = [(s.item.name, s.start) for s in res.scheduled]
     fit_before_return(res)
     assert [(s.item.name, s.start) for s in res.scheduled] == before
+
+
+def test_untimed_transfer_line_restating_the_arrival_flight_is_dropped():
+    arr = TransportLeg(kind="flight", from_place="", to_place="Mysore airport", arrive=datetime(2026, 11, 3, 13, 0), source="t")
+    r = run(day([item("Transfer from Mysore to Hotel H, Wayanad", kind="transfer"), item("Old town", slot_hint="afternoon")]),
+            arrival=arr)
+    assert [s.item.name for s in r.scheduled] == ["Old town"]
+
+
+def test_untimed_transfer_line_restating_the_departure_flight_is_dropped():
+    dep = TransportLeg(kind="flight", from_place="Mysore airport", to_place="", depart=datetime(2026, 11, 3, 13, 30), source="t")
+    r = run(day([item("Transfer from Wayanad to Mysore", kind="transfer")]), departure=dep)
+    assert all(s.item.name != "Transfer from Wayanad to Mysore" for s in r.scheduled)
+
+
+def test_a_transfer_to_somewhere_else_is_kept():
+    arr = TransportLeg(kind="flight", from_place="", to_place="Mysore airport", arrive=datetime(2026, 11, 3, 13, 0), source="t")
+    r = run(day([item("Transfer to the safari lodge", kind="transfer")]), arrival=arr)
+    assert any(s.item.name == "Transfer to the safari lodge" for s in r.scheduled)
+
+
+def test_stay_at_the_property_line_raises_no_location_marker():
+    r = run(day([item("Relax at the property"), item("Old town", slot_hint="afternoon")]))
+    assert not any("Relax at the property" in m.text for m in r.markers)
+
+
+def test_long_road_after_the_airport_pushes_lunch_after_the_drive():
+    arr = TransportLeg(kind="flight", from_place="", to_place="Mysore airport", arrive=datetime(2026, 11, 3, 13, 0), source="t")
+    short = run(day(), stays=[stay(cin=D)], arrival=arr)
+    long_ = run(day(), stays=[stay(cin=D)], arrival=arr, arrival_road_min=160)
+    lunch_short, lunch_long = meal(short, "lunch"), meal(long_, "lunch")
+    assert lunch_long is None or lunch_short is None or lunch_long.start >= lunch_short.start
+    assert lunch_long is None or lunch_long.start >= time(15, 40)   # not before the clients reach the hotel
+    dinner = meal(long_, "dinner")
+    assert dinner is not None and dinner.start >= time(19, 0)

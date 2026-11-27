@@ -29,6 +29,8 @@ FIELD_MASK = ",".join(
         "regularOpeningHours", "websiteUri", "internationalPhoneNumber", "primaryType", "types",
     )
 )
+RICH_FIELDS = ("priceRange", "editorialSummary", "primaryTypeDisplayName", "servesVegetarianFood")
+RICH_FIELD_MASK = FIELD_MASK + "," + ",".join(f"places.{f}" for f in RICH_FIELDS)
 _DROP_WORDS = {"restaurant", "cafe", "the"}
 _EXCLUDED_NAME_WORDS = (
     "dental", "dentist", "physio", "cardio", "sexual health", "circumcision", "sports",
@@ -47,7 +49,13 @@ _UNWANTED_MEDICAL = re.compile(
     r"|radiolog|\bimaging\b|diagnostic|r\u00f6ntgen|roentgen|\binstitut(?:e|o)?\b|\binstitut\b|\bscan\b|\bmri\b|\bIRG\b",
     re.I,
 )
-_HOSPITAL_LIKE = re.compile(r"hospital|rumah sakit|\brs\b|emergency|medical cent(?:re|er)|clinic", re.I)
+# a place whose whole name is a place of worship / school / bank is not a pharmacy, grocery or hospital, whatever type
+# Google tagged it with ('Church'); a shop that merely mentions one ('Church Road Pharmacy') is kept
+_NOT_A_SHOP = re.compile(r"^\W*(?:[\w.'-]+\s+){0,2}(?:church|chapel|cathedral|temple|mandir|mosque|masjid|gurdwara|"
+                         r"shrine|monastery|school|college|university|bank|atm|post office|police station)\W*$", re.I)
+_SHOP_WORD = re.compile(r"pharm|medic|chemist|drug|hospital|clinic|health|store|mart|super|grocer|stores", re.I)
+_HOSPITAL_LIKE = re.compile(r"hospital|rumah sakit|\brs\b|emergency|medical cent(?:re|er)|medicity|medical city|"
+                            r"(?:multi|super)[- ]?special|clinic", re.I)
 
 
 def unwanted_name(name: str, medical: bool = False) -> bool:
@@ -56,6 +64,8 @@ def unwanted_name(name: str, medical: bool = False) -> bool:
     if "emergency" in low:
         return False
     if any(w in low for w in _EXCLUDED_NAME_WORDS) or _UNWANTED_ANY.search(name):
+        return True
+    if _NOT_A_SHOP.match(name) and not _SHOP_WORD.search(name):
         return True
     return medical and bool(_UNWANTED_MEDICAL.search(name))
 
@@ -73,6 +83,12 @@ _CITY_ALIASES = {
     "venice": ("venezia",), "prague": ("praha",), "brussels": ("bruxelles", "brussel"), "bern": ("berne",),
     "milan": ("milano",), "naples": ("napoli",), "turin": ("torino",), "lisbon": ("lisboa",),
     "copenhagen": ("kobenhavn",), "athens": ("athina",),
+    # India: Google's addresses use the current official names
+    "mysore": ("mysuru",), "mysuru": ("mysore",), "bangalore": ("bengaluru",), "bengaluru": ("bangalore",),
+    "cochin": ("kochi",), "kochi": ("cochin",), "calicut": ("kozhikode",), "kozhikode": ("calicut",),
+    "trivandrum": ("thiruvananthapuram",), "thiruvananthapuram": ("trivandrum",), "madras": ("chennai",),
+    "pondicherry": ("puducherry",), "puducherry": ("pondicherry",), "alleppey": ("alappuzha",),
+    "alappuzha": ("alleppey",), "bombay": ("mumbai",), "calcutta": ("kolkata",),
 }
 _MIN_OVERLAP = 0.6
 _TRAILING_PAREN = re.compile(r"\s*\([^()]*\)\s*$")
@@ -189,7 +205,7 @@ class PlacesClient:
         self.session = session or requests.Session()
         self.calls: dict[str, int] = {"text_search": 0, "nearby": 0, "details": 0}
 
-    def _post(self, url: str, body: dict, counter: str) -> dict:
+    def _post(self, url: str, body: dict, counter: str, mask: Optional[str] = None) -> dict:
         cancel.check()
         self.calls[counter] += 1
         t0 = time.monotonic()
@@ -197,7 +213,7 @@ class PlacesClient:
             url,
             headers={
                 "X-Goog-Api-Key": self.api_key,
-                "X-Goog-FieldMask": FIELD_MASK,
+                "X-Goog-FieldMask": mask or FIELD_MASK,
                 "Content-Type": "application/json",
             },
             json=body,
@@ -271,7 +287,8 @@ class PlacesClient:
             body = {"textQuery": link.name, "languageCode": "en",
                     "locationBias": {"circle": {"center": {"latitude": link.lat, "longitude": link.lng},
                                                 "radius": _LINK_RADIUS_M}}}
-            raw = [r for r in self._post(SEARCH_TEXT_URL, body, "text_search").get("places") or [] if _has_location(r)]
+            raw = [r for r in self._post(SEARCH_TEXT_URL, body, "text_search", RICH_FIELD_MASK).get("places") or []
+                   if _has_location(r)]
             near = sorted(((_haversine_km(link.lat, link.lng, r["location"]["latitude"], r["location"]["longitude"]) * 1000, r)
                            for r in raw), key=lambda t: t[0])
             for dist, r in near:
@@ -282,7 +299,7 @@ class PlacesClient:
             best = None
         if best is not None:
             place = self._to_place(best, link.name, link.name, True)
-            place = place.model_copy(update={"maps_url": link.url})
+            place = place.model_copy(update={"maps_url": link.url, **_rich(best)})
         else:
             place = Place(query=link.name, place_id="", name=link.name, address="", lat=link.lat, lng=link.lng,
                           status="UNKNOWN", hours=None, website=None, phone=None, maps_url=link.url,
@@ -424,6 +441,25 @@ def _has_location(raw: dict) -> bool:
     loc = raw.get("location")
     return isinstance(loc, dict) and isinstance(loc.get("latitude"), (int, float)) \
         and isinstance(loc.get("longitude"), (int, float))
+
+
+def _money(m: Optional[dict]) -> Optional[int]:
+    try:
+        return int(float(m["units"])) if m and m.get("units") not in (None, "") else None
+    except (TypeError, ValueError, KeyError):
+        return None
+
+
+def _rich(raw: dict) -> dict:
+    """Price range, Google's one-line summary, type label and vegetarian flag of a place, when Google gave them."""
+    pr = raw.get("priceRange") or {}
+    low, high = _money(pr.get("startPrice")), _money(pr.get("endPrice"))
+    cur = (pr.get("startPrice") or pr.get("endPrice") or {}).get("currencyCode")
+    summary = ((raw.get("editorialSummary") or {}).get("text") or "").strip() or None
+    kind = ((raw.get("primaryTypeDisplayName") or {}).get("text") or "").strip() or None
+    veg = raw.get("servesVegetarianFood")
+    return {"price_low": low, "price_high": high if high is not None else low, "price_currency": cur,
+            "summary": summary, "kind_label": kind, "serves_vegetarian": veg if isinstance(veg, bool) else None}
 
 
 def _display(raw: dict) -> str:

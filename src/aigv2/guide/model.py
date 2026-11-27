@@ -261,6 +261,7 @@ class DosDonts(_M):
 class Phrase(_M):
     local: str
     english: str
+    language: str = ""
 
 
 class PhraseTable(_M):

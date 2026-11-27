@@ -24,6 +24,7 @@ class App(BaseModel):
 class Phrase(BaseModel):
     local: str
     english: str
+    language: str = ""  # set only when the trip meets more than one language (Malayalam in Wayanad, Kannada in Mysore)
 
 
 class EmergencyNumber(BaseModel):
@@ -91,7 +92,13 @@ def extract_phrases(items) -> list[Phrase]:
             continue
         if loc and eng and fold(loc) not in seen:
             seen.add(fold(loc))
-            out.append(Phrase(local=loc, english=eng))
+            out.append(Phrase(local=loc, english=eng, language=_s(p.get("language"))))
+    langs = list(dict.fromkeys(x.language for x in out if x.language))
+    if len(langs) > 1:  # a fair share of each language, not the first dozen of one
+        per = max(PHRASE_CAP // len(langs), 4)
+        out = [x for lg in langs for x in [y for y in out if y.language == lg][:per]]
+    else:
+        out = [x.model_copy(update={"language": ""}) for x in out]
     return out[:PHRASE_CAP]
 
 

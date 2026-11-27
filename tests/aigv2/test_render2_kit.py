@@ -183,3 +183,24 @@ def test_review_marker_unknown_kind_raises():
     import pytest
     with pytest.raises(ValueError):
         K.review_marker(K.new_doc(), "NOPE", "x")
+
+
+def test_free_markers_adds_a_plain_paragraph_after_a_marker_that_ends_a_cell():
+    from docx import Document
+    from docx.oxml.ns import qn
+    from src.aigv2.render2 import kit as K
+    from src.aigv2.render2.styles import install_styles
+
+    doc = Document()
+    install_styles(doc)
+    t = doc.add_table(rows=1, cols=2)
+    K.review_marker(t.rows[0].cells[0], "VERIFY", "opening hours")          # ends its cell
+    K.R(K.np(t.rows[0].cells[1]), "text")
+    K.review_marker(t.rows[0].cells[1], "VERIFY", "price")
+    K.R(K.np(t.rows[0].cells[1]), "more text after the marker")             # does not end its cell
+    assert K.free_markers(doc) == 1
+    ids = K._review_style_ids(doc)
+    for tc in doc.element.body.iter(qn("w:tc")):
+        st = tc[-1].find(qn("w:pPr") + "/" + qn("w:pStyle"))
+        assert st is None or st.get(qn("w:val")) not in ids
+    assert K.free_markers(doc) == 0

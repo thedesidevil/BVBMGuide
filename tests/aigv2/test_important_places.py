@@ -181,3 +181,12 @@ def test_radiology_and_institute_names_are_not_hospital_candidates():
         assert unwanted_name(n, medical=True), n
     for n in ("Spital Interlaken", "Hospital Lariboisière", "Klinik Hirslanden", "Emergency Institute Hospital"):
         assert not unwanted_name(n, medical=True), n
+
+
+def test_a_church_tagged_as_pharmacy_is_not_listed():
+    from src.aigv2.google.places import unwanted_name
+    for bad in ("Church", "St. Mary's Church", "Jama Masjid", "Sree Krishna Temple", "Government School"):
+        assert unwanted_name(bad), bad
+    for ok in ("Church Road Pharmacy", "Dhanya Medicals", "Temple Street Medical Store", "Central Medicity",
+               "Holy Cross Hospital", "Nilgiri Tea Agencies and Spices World"):
+        assert not unwanted_name(ok), ok

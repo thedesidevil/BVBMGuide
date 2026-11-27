@@ -19,7 +19,9 @@ from src.aigv2.google.routes import RoutesClient
 from src.aigv2.intake.attachments import read_attachments
 from src.aigv2.intake.extract import extract_trip
 from src.aigv2.intake.template import IntakeFields, parse_template
+from src.aigv2 import regions
 from src.aigv2.library import Library, norm_name
+from src.aigv2.textnorm import fold
 from src.aigv2.llm import StepLLM
 from src.aigv2.models import (Answers, Booking, booking_lunch_included, HotelStay, Marker, Place, Question, TransportLeg, TripPlan,
                               place_key)
@@ -36,7 +38,7 @@ from src.aigv2.planning.travel import Leg, boat_leg, compute_legs
 from src.aigv2.preflight import apply_answers, run_checklist, unanswered
 from src.aigv2.google.overrides import FILE_NAME as OVERRIDES_FILE, PlaceOverrides
 from src.aigv2.google.maplink import default_fetch
-from src.aigv2.place_links import apply_place_answers, override_report
+from src.aigv2.place_links import apply_place_answers, is_stay_activity as regions_is_stay, override_report
 from src.aigv2.plan_review import GAP_PREFIX, REVIEW_FILE, apply_plan_answers, plan_items
 from src.aigv2.qc import run_qc
 from src.aigv2.qc.report import PRICE_KEY, QCResult, write_report
@@ -452,11 +454,28 @@ def _boat_legs(trip: TripPlan, d: date) -> list[TransportLeg]:
 _IATA = re.compile(r"[A-Z]{3}")
 
 
+_PORT_GENERIC = re.compile(r"\b(?:international|domestic|airport|airfield|railway|station|junction|terminal|port|harbou?r|"
+                           r"bus|stand|stop|central|hbf|the)\b", re.I)
+
+
+def _port_town(name: str) -> str:
+    """'Mysore airport' -> 'Mysore': the town a port is named after, for a retry when the day's city is another town."""
+    return re.sub(r"\s+", " ", _PORT_GENERIC.sub(" ", name)).strip(" ,-")
+
+
 def _endpoint(name: str, city: str, places: dict, client) -> None:
-    """Transport endpoints are often airport codes ('DPS'): search them as '<code> airport', keep the key as is."""
+    """Transport endpoints are often airport codes ('DPS'): search them as '<code> airport', keep the key as is.
+    An airport named after another town than the day's city (Mysore airport on a Wayanad day) is searched under its own town."""
     if name.strip() and pkey(name, city) not in places:
         query = f"{name.strip()} airport" if _IATA.fullmatch(name.strip()) else name
-        places[pkey(name, city)] = client.find(query, city)
+        found = client.find(query, city)
+        if (found is None or not found.match_ok) and not _IATA.fullmatch(name.strip()):
+            town = _port_town(name)
+            if town and norm_name(town) != norm_name(city):
+                retry = client.find(name, town)
+                if retry is not None and retry.match_ok:
+                    found = retry
+        places[pkey(name, city)] = found
 
 
 def _pair(a: str, pa: Optional[Place], b: str, pb: Optional[Place], deps: Deps, modes: list[str]) -> Optional[Leg]:
@@ -739,14 +758,19 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
                       booking_by_item=booked,
                       arrival_booking=_arrival_booking(trip, dp.date, arr, dp.items),
                       library_attractions=lib_att)
-        ds.result = schedule_day(dp, trip.hotels, trip.transport[arr] if arr is not None else None,
-                                 trip.transport[dep] if dep is not None else None, ds.places, s, ds.country,
-                                 trip.trip_scope == "domestic",
-                                 [trip.transport[i] for i in ds.other_legs] + _boat_legs(trip, dp.date),
-                                 {n: t for n, b in ds.booking_by_item.items() if (t := parse_time(b.end_time))},
-                                 _item_windows(trip, dp.date, dp.items), durs)
-        _package_lunch_options(ds)
+        def schedule(road: Optional[int] = None):
+            return schedule_day(dp, trip.hotels, trip.transport[arr] if arr is not None else None,
+                                trip.transport[dep] if dep is not None else None, ds.places, s, ds.country,
+                                trip.trip_scope == "domestic",
+                                [trip.transport[i] for i in ds.other_legs] + _boat_legs(trip, dp.date),
+                                {n: t for n, b in ds.booking_by_item.items() if (t := parse_time(b.end_time))},
+                                _item_windows(trip, dp.date, dp.items), durs, arrival_road_min=road)
+        ds.result = schedule()
         ds.legs = _legs(ds, trip, deps)
+        road = _leg_minutes(ds.legs["arrival"]) if "arrival" in ds.legs and arr is not None else None
+        if road and road >= _LONG_ROAD_MIN:
+            ds.result = schedule(road)  # the same day, planned around a long drive from the airport
+        _package_lunch_options(ds)
         if "arrival" in ds.legs:  # untimed 'Scenic train to X': the visits start after the journey has ended
             after_journey(ds.result, _leg_minutes(ds.legs["arrival"]), s)
         space_after_lunch(ds.result, s, {n: _leg_minutes(l) for n, l in ds.legs.items()},
@@ -782,7 +806,10 @@ def _day_facts(ds: DayState, state: PlanState) -> dict:
                     "generic_name": is_generic_name(s.item.name),
                     "area": ds.library_attractions.get(s.item.name, {}).get("area")
                     or ds.library_attractions.get(s.item.name, {}).get("location"),
-                    "library_description": ds.library_attractions.get(s.item.name, {}).get("description")}
+                    "library_description": ds.library_attractions.get(s.item.name, {}).get("description"),
+                    "elaborate": bool(ds.places.get(s.item.name) and ds.places[s.item.name].match_ok
+                                      and not is_generic_name(s.item.name) and not regions_is_stay(s.item.name)
+                                      and not ds.library_attractions.get(s.item.name, {}).get("description"))}
                    for s in ds.result.scheduled if s.item.kind in ("attraction", "activity")]
     restaurants, seen = [], set()
     for p in state.picks:
@@ -806,9 +833,42 @@ def _day_facts(ds: DayState, state: PlanState) -> dict:
     return facts
 
 
+_LONG_ROAD_MIN = 60  # an airport-to-hotel drive this long moves the day's first meal
+
+
+def _stay_cities(state: PlanState) -> list[str]:
+    """Cities the clients sleep in, longest stay first; a day-only city (the arrival airport town) is left out
+    whenever the trip has hotels, so its dishes, shops and phrases never stand in for the destination."""
+    nights: dict[str, int] = {}
+    for h in getattr(getattr(state, "trip", None), "hotels", None) or []:
+        nights[h.city] = nights.get(h.city, 0) + max((h.check_out - h.check_in).days, 0)
+    days = list(dict.fromkeys(d.city for d in state.days))
+    if not nights:
+        return days
+    return sorted(nights, key=lambda c: -nights[c])
+
+
+def _state_shard(library: Library, city: str, address: str = "") -> dict:
+    """The state's own shard for a town the library has no data for (Wayanad -> Kerala); {} when unknown."""
+    st = regions.state_of(city, address)
+    return library.city(st, region=False) if st and fold(st) != fold(city) else {}
+
+
 def _section_inputs(state: PlanState, library: Library) -> tuple[list[dict], dict]:
-    cities = list(dict.fromkeys(d.city for d in state.days))
-    city_data = [{**library.city(c), "city": c, "country": state.countries.get(c, "")} for c in cities]
+    cities = _stay_cities(state)
+    fallback_country = next((c for c in state.countries.values() if c), "")
+    city_data = []
+    for c in cities:
+        shard = library.city(c)
+        addr = next((p.address for k, p in (getattr(state, "places", None) or {}).items() if p and p.address and k.endswith("|" + fold(c))), "")
+        base = _state_shard(library, c, addr)
+        # a town with no list of its own takes its state's (dishes, phrases, souvenirs, safety, health)
+        merged = dict(shard)
+        for k in regions.FILL_KEYS:
+            if base.get(k) and not merged.get(k):
+                merged[k] = base[k]
+        city_data.append({**merged, "city": c, "country": state.countries.get(c, "") or fallback_country,
+                          "state": regions.state_of(c, addr) or ""})
     for cd in city_data:
         # a region shard filed under another country's name (Lucerne merged with the 'France' shard of one guide)
         # brings that country's dishes along: dishes come from the city's own shard when it has any
@@ -817,7 +877,7 @@ def _section_inputs(state: PlanState, library: Library) -> tuple[list[dict], dic
             cd["local_dishes"] = own
     country_data: dict[str, dict] = {}
     for c in cities:
-        country = state.countries.get(c, "")
+        country = state.countries.get(c, "") or fallback_country
         if country and country not in country_data:
             country_data[country] = library.country(country) or library.country(c)
             if not country_data[country]:
@@ -881,7 +941,8 @@ def _render_days(store: RunStore, state: PlanState, deps: Deps) -> list[RenderDa
         t = state.trip.transport
         picks = [p for p in state.picks if p.day_index == ds.index]
         currency = city_currency(ds.country, deps.library.city(ds.city)) or ""
-        prices = {c.lib["name"]: price_text(c.lib, currency, deps.fx, ds.date) for p in picks for c in p.restaurants}
+        prices = {c.lib["name"]: price_text(c.lib, currency or c.place.price_currency or "", deps.fx, ds.date)
+                  for p in picks for c in p.restaurants}
         out.append(RenderDay(
             index=ds.index, date=ds.date, city=ds.city,
             text=DayText.model_validate(store.load_json(f"days/day_{ds.index:02d}.json")),

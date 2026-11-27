@@ -6,6 +6,7 @@ import io
 from src.aigv2.guide import model as M
 from src.aigv2.render2 import frame as F
 from src.aigv2.render2 import fonts as FN
+from src.aigv2.render2 import kit as K
 from src.aigv2.render2 import render as RN
 from src.aigv2.render2 import toc as TOC
 
@@ -31,6 +32,7 @@ def _build(guide: M.Guide, pages, start_page: int) -> bytes:
             TOC.render_toc(doc, guide, pages)
         else:
             RN.render_day_page(doc, W, page)
+    K.free_markers(doc)
     buf = io.BytesIO()
     doc.save(buf)
     return _embed(buf.getvalue())

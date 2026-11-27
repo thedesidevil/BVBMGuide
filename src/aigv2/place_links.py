@@ -29,11 +29,23 @@ _NOT_A_PLACE = re.compile(r"\b(return to hotel|back to (?:the )?hotel|overnight|
                           r"\bcheck[- ]?(?:in|out)\b", re.I)
 
 
+_STAY_ACTIVITY = re.compile(r"^\s*(?:relax|relaxing|unwind|rest|settle in|chill|laze|lounge|enjoy (?:the |your )?(?:day|time|stay|property|resort|hotel))\b"
+                            r".*\b(?:at|in|around|on|by)?\s*(?:the |your )?(?:property|resort|hotel|villa|lodge|room|pool|stay|day)\s*$|"
+                            r"^\s*(?:day|time|morning|afternoon|evening)\s+(?:at|in)\s+(?:the\s+)?(?:property|resort|hotel)\s*$", re.I)
+
+
+def is_stay_activity(name: str) -> bool:
+    """'Relax at the property', 'Enjoy the day at leisure', 'Check out from X': time at the hotel, not a venue."""
+    low = (name or "").casefold()
+    return bool(_STAY_ACTIVITY.search(name or "") or _NOT_A_PLACE.search(name or "")
+                or any(w in low for w in _SKIP_NAMES))
+
+
 def is_non_place(name: str) -> bool:
     """Cards that are not a place Google can verify: returns to the hotel, check-in/out, overnight, free time, events."""
     low = (name or "").casefold()
     return bool(_NOT_A_PLACE.search(name or "") or any(w in low for w in _SKIP_NAMES) or _MOVE_RE.match(name or "")
-                or _EVENT_RE.search(name or ""))
+                or _EVENT_RE.search(name or "") or _STAY_ACTIVITY.search(name or ""))
 
 
 def _toks(text: str) -> set[str]:

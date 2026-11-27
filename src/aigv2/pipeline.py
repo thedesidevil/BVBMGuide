@@ -758,14 +758,19 @@ def _plan(store: RunStore, answers: Answers, deps: Deps) -> PlanState:
                       booking_by_item=booked,
                       arrival_booking=_arrival_booking(trip, dp.date, arr, dp.items),
                       library_attractions=lib_att)
-        ds.result = schedule_day(dp, trip.hotels, trip.transport[arr] if arr is not None else None,
-                                 trip.transport[dep] if dep is not None else None, ds.places, s, ds.country,
-                                 trip.trip_scope == "domestic",
-                                 [trip.transport[i] for i in ds.other_legs] + _boat_legs(trip, dp.date),
-                                 {n: t for n, b in ds.booking_by_item.items() if (t := parse_time(b.end_time))},
-                                 _item_windows(trip, dp.date, dp.items), durs)
-        _package_lunch_options(ds)
+        def schedule(road: Optional[int] = None):
+            return schedule_day(dp, trip.hotels, trip.transport[arr] if arr is not None else None,
+                                trip.transport[dep] if dep is not None else None, ds.places, s, ds.country,
+                                trip.trip_scope == "domestic",
+                                [trip.transport[i] for i in ds.other_legs] + _boat_legs(trip, dp.date),
+                                {n: t for n, b in ds.booking_by_item.items() if (t := parse_time(b.end_time))},
+                                _item_windows(trip, dp.date, dp.items), durs, arrival_road_min=road)
+        ds.result = schedule()
         ds.legs = _legs(ds, trip, deps)
+        road = _leg_minutes(ds.legs["arrival"]) if "arrival" in ds.legs and arr is not None else None
+        if road and road >= _LONG_ROAD_MIN:
+            ds.result = schedule(road)  # the same day, planned around a long drive from the airport
+        _package_lunch_options(ds)
         if "arrival" in ds.legs:  # untimed 'Scenic train to X': the visits start after the journey has ended
             after_journey(ds.result, _leg_minutes(ds.legs["arrival"]), s)
         space_after_lunch(ds.result, s, {n: _leg_minutes(l) for n, l in ds.legs.items()},
@@ -826,6 +831,9 @@ def _day_facts(ds: DayState, state: PlanState) -> dict:
         lunch_inc = True if True in inc else (False if False in inc else None)
         facts["booking_window"] = booking_window_facts(w, any(m.in_package for m in ds.result.meals), lunch_inc)
     return facts
+
+
+_LONG_ROAD_MIN = 60  # an airport-to-hotel drive this long moves the day's first meal
 
 
 def _stay_cities(state: PlanState) -> list[str]:

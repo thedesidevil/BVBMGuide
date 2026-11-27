@@ -579,7 +579,8 @@ class _Day:
         rd = self.rd
         dinner = next((m for m in rd.result.meals if m.meal == "dinner" and not m.included), None)
         # optional / choose-one stops count: the afternoon is not free when a cruise is planned in it
-        stops = [s for s in rd.result.scheduled if s.item.kind in ("attraction", "activity")]
+        stops = [s for s in rd.result.scheduled if s.item.kind in ("attraction", "activity")
+                 and not is_stay_activity(s.item.name)]  # 'Relax at the property' is not an outing to return from
         if dinner is None or not stops or rd.departure is not None or rd.other_transport:
             return None
         if rd.prev_city and norm_name(rd.prev_city) != norm_name(rd.city):

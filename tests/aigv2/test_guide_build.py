@@ -488,3 +488,17 @@ def test_check_in_item_gets_road_time_and_check_in_times_not_hours():
     assert pairs[0] == ("GETTING THERE", "By car · 2 h 30 min from the airport")
     assert ("CHECK-IN / CHECK-OUT", "2:00 PM / 11:00 AM") in pairs and marks == []
     assert d._hotel_item_stay(PlannedItem(name="Edakkal Caves", kind="attraction", city="Wayanad")) is None
+
+
+def test_relax_at_the_property_does_not_get_a_return_to_hotel_beat():
+    from src.aigv2.guide.build import _Day
+    from src.aigv2.models import PlannedItem
+    from src.aigv2.planning.slots import DayResult, MealSlot, ScheduledItem
+    item = PlannedItem(name="Relax at the property", kind="activity", city="Wayanad")
+    res = DayResult(scheduled=[ScheduledItem(item=item, slot="afternoon", start=time(14, 15))],
+                    meals=[MealSlot(meal="dinner", start=time(19, 30))])
+    d = object.__new__(_Day)
+    d.rd = SimpleNamespace(result=res, departure=None, other_transport=[], prev_city=None, city="Wayanad",
+                           library_attractions={}, date=date(2026, 12, 2))
+    d.data = SimpleNamespace(trip=SimpleNamespace(bookings=[]))
+    assert d._return_beat_time() is None

@@ -775,6 +775,9 @@ def _one(key: str, cities: list[dict], cdatas: list[dict], trip, llm, important=
         extra = "\nCountry facts: " + json.dumps(cdatas, ensure_ascii=False, default=str)
     if key == "dishes":
         extra += "\nLibrary restaurants allowed in where_to_try: " + json.dumps(sorted(restaurants.values()), ensure_ascii=False)
+        if not restaurants:
+            extra += ("\nThere are NO allowed restaurants: where_to_try must be an empty list [] for every dish. Never name a "
+                      "bakery, market, street or any other place in where_to_try.")
     if hospitals is not None:  # facilities live under Important Places only: the writer must not repeat them
         extra += ("\nDo not name hospitals, clinics or pharmacies, and give no addresses, hours or drive times for them; "
                   "they are listed under Important Places. Do not write a Hospitals, Pharmacies or Medical care item.")

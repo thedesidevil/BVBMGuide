@@ -383,7 +383,7 @@ class _Reader:
 
     def _card(self, tc, extra=()) -> None:
         title, url, facts, body, paras = None, None, {}, [], []
-        eyebrow = False
+        eyebrow, when = False, ""
         for el in _children(tc):
             if el.tag == qn("w:tbl"):
                 if title is None:
@@ -405,6 +405,7 @@ class _Reader:
             self.links.extend(links)
             if text and self._style_name(el) in EYEBROW_STYLES:
                 eyebrow = True  # a kicker line, never the card title
+                when = when or text
             elif title is None and text:
                 title, url = text, (links[0][1] if links else None)
                 if self._style_level(el) == 3:
@@ -428,6 +429,8 @@ class _Reader:
             self.slot = None  # a timed card after the restaurants starts a new part of the day
         if title and self.day is None and not url and not facts and not eyebrow:
             title = None  # reference prose (a titled paragraph), not a place card
+        if title and "TIME" not in facts and (m := _CARD_CLOCK.match(when)):
+            facts["TIME"] = m.group(1)  # the card's own eyebrow time ('9:00 AM ◆ MORNING') is its slot time
         if title:
             for para in paras:
                 if para is not None:
@@ -436,6 +439,7 @@ class _Reader:
                                      kind=_card_kind(title, facts)))
 
 
+_CARD_CLOCK = re.compile(r"^\s*(\d{1,2}(?::\d{2})?\s*[AP]M|\d{1,2}:\d{2})\b", re.I)
 _CHECKOUT_TITLE = re.compile(r"^Check out of\b", re.I)
 
 

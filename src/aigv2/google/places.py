@@ -83,6 +83,12 @@ _CITY_ALIASES = {
     "venice": ("venezia",), "prague": ("praha",), "brussels": ("bruxelles", "brussel"), "bern": ("berne",),
     "milan": ("milano",), "naples": ("napoli",), "turin": ("torino",), "lisbon": ("lisboa",),
     "copenhagen": ("kobenhavn",), "athens": ("athina",),
+    # India: Google's addresses use the current official names
+    "mysore": ("mysuru",), "mysuru": ("mysore",), "bangalore": ("bengaluru",), "bengaluru": ("bangalore",),
+    "cochin": ("kochi",), "kochi": ("cochin",), "calicut": ("kozhikode",), "kozhikode": ("calicut",),
+    "trivandrum": ("thiruvananthapuram",), "thiruvananthapuram": ("trivandrum",), "madras": ("chennai",),
+    "pondicherry": ("puducherry",), "puducherry": ("pondicherry",), "alleppey": ("alappuzha",),
+    "alappuzha": ("alleppey",), "bombay": ("mumbai",), "calcutta": ("kolkata",),
 }
 _MIN_OVERLAP = 0.6
 _TRAILING_PAREN = re.compile(r"\s*\([^()]*\)\s*$")

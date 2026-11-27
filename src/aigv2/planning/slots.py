@@ -584,6 +584,7 @@ def schedule_day(
     booking_ends: Optional[dict[str, time]] = None,
     windows: Optional[dict[str, tuple[time, time]]] = None,
     durations: Optional[dict[str, int]] = None,
+    arrival_road_min: Optional[int] = None,
 ) -> DayResult:
     floor = boat_floor(day.date, legs, stays, (arrival, departure))
     res = DayResult(scheduled=_schedule_items(day, settings, floor, windows, durations))
@@ -603,6 +604,9 @@ def schedule_day(
     hotel_arr = None
     if arr:
         hotel_arr = _plus(arr_t, _HOTEL_ARRIVAL_BUFFER.get(arrival.kind, _DEFAULT_BUFFER))
+        if arrival_road_min and arrival.kind in ("flight", "train") and arr.date() == d:
+            # a long road after the airport (Mysore -> Wayanad is ~2.5 h): the hotel is reached after the whole drive
+            hotel_arr = _plus(arr_t, max(_HOTEL_ARRIVAL_BUFFER.get(arrival.kind, _DEFAULT_BUFFER), arrival_road_min + 20))
     dep = departure if departure and departure.depart and departure.depart.date() == d else None
     cutoff = leave_by(dep, domestic) if dep else None
     if dep and dep.depart.time() < _PACKED_BREAKFAST_BEFORE:
